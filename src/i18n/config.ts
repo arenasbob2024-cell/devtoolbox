@@ -1,6 +1,6 @@
 export const i18n = {
   defaultLocale: 'en',
-  locales: ['en', 'fr', 'de', 'it', 'es'],
+  locales: ['en', 'fr', 'de', 'it', 'es', 'zh', 'id', 'th'],
 } as const;
 
 export type Locale = (typeof i18n)['locales'][number];
@@ -11,6 +11,9 @@ export const localeNames: Record<Locale, string> = {
   de: 'Deutsch',
   it: 'Italiano',
   es: 'Español',
+  zh: '中文',
+  id: 'Bahasa Indonesia',
+  th: 'ไทย',
 };
 
 export const localeFlags: Record<Locale, string> = {
@@ -19,4 +22,7 @@ export const localeFlags: Record<Locale, string> = {
   de: '🇩🇪',
   it: '🇮🇹',
   es: '🇪🇸',
+  zh: '🇨🇳',
+  id: '🇮🇩',
+  th: '🇹🇭',
 };

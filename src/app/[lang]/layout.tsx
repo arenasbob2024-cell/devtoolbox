@@ -30,7 +30,7 @@ export async function generateMetadata({
       title: dict.meta.homeTitle,
       description: dict.meta.homeDescription,
       type: 'website',
-      locale: lang === 'en' ? 'en_US' : lang === 'fr' ? 'fr_FR' : lang === 'de' ? 'de_DE' : lang === 'it' ? 'it_IT' : 'es_ES',
+      locale: { en: 'en_US', fr: 'fr_FR', de: 'de_DE', it: 'it_IT', es: 'es_ES', zh: 'zh_CN', id: 'id_ID', th: 'th_TH' }[lang] || 'en_US',
       siteName: 'DevToolBox',
     },
     twitter: {
