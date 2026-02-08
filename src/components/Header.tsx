@@ -131,6 +131,22 @@ export default function Header() {
 
         {/* Right side */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <Link
+            href={`/${lang}/blog`}
+            style={{
+              fontSize: 14,
+              fontWeight: 600,
+              color: 'var(--text-secondary)',
+              textDecoration: 'none',
+              transition: 'color 0.2s',
+              padding: '6px 12px',
+              borderRadius: 6,
+            }}
+            onMouseEnter={e => (e.currentTarget.style.color = 'var(--text-primary)')}
+            onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-secondary)')}
+          >
+            {(dict as Record<string, unknown> as { blog?: { nav?: string } }).blog?.nav || 'Blog'}
+          </Link>
           <LanguageSwitcher />
           <a
             href="https://github.com"

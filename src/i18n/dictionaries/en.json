@@ -1212,5 +1212,11 @@
   "meta": {
     "homeTitle": "DevToolBox - Free Online Developer Tools",
     "homeDescription": "Free online developer tools: JSON formatter, Base64 encoder, UUID generator, regex tester, hash generator, and 25+ more. No signup required. All processing in your browser."
+  },
+  "blog": {
+    "nav": "Blog",
+    "title": "DevToolBox Blog",
+    "description": "Developer guides, tutorials, and best practices for working with online tools",
+    "readMore": "Read More"
   }
 }

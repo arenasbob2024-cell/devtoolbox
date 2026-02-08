@@ -1,6 +1,7 @@
 const fs = require('fs');
 const locales = ['en','fr','de','it','es','zh','id','th'];
 const tools = ['json-formatter','base64','url-encoder','hash-generator','uuid-generator','timestamp-converter','color-converter','regex-tester','markdown-preview','jwt-decoder','qrcode-generator','lorem-ipsum','html-entity','css-minifier','number-base','text-diff','word-counter','password-generator','sql-formatter','cron-parser','json-yaml','string-case','slug-generator','chmod-calculator','line-sorter'];
+const blogPosts = ['uuid-v4-vs-v7-vs-ulid-vs-nanoid','cron-schedule-serverless-github-actions-vercel-cloudflare','base64-encoding-real-world-uses','regex-patterns-copy-paste-ready','docker-compose-yaml-errors'];
 const BASE = 'https://viadreams.cc';
 const date = new Date().toISOString().split('T')[0];
 
@@ -21,9 +22,12 @@ function addUrl(path, freq, priority) {
 
 addUrl('', 'weekly', '1.0');
 tools.forEach(t => addUrl('tools/' + t, 'monthly', '0.8'));
+addUrl('blog', 'weekly', '0.7');
+blogPosts.forEach(p => addUrl('blog/' + p, 'monthly', '0.6'));
 addUrl('about', 'monthly', '0.3');
 addUrl('privacy', 'monthly', '0.2');
 xml += '</urlset>';
 
+const totalUrls = locales.length * (tools.length + blogPosts.length + 4);
 fs.writeFileSync('public/sitemap.xml', xml);
-console.log('Generated sitemap.xml with ' + (locales.length * (tools.length + 3)) + ' URLs');
+console.log('Generated sitemap.xml with ' + totalUrls + ' URLs');

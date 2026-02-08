@@ -1212,5 +1212,11 @@
   "meta": {
     "homeTitle": "DevToolBox - Herramientas gratuitas en línea para desarrolladores",
     "homeDescription": "Herramientas gratuitas en línea para desarrolladores: formateador JSON, codificador Base64, generador de UUID, probador de regex, generador de hash y más de 20 herramientas más. Sin registro. Todo el procesamiento en tu navegador."
+  },
+  "blog": {
+    "nav": "Blog",
+    "title": "Blog DevToolBox",
+    "description": "Guías, tutoriales y mejores prácticas para desarrolladores",
+    "readMore": "Leer más"
   }
 }

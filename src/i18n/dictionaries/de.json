@@ -1212,5 +1212,11 @@
   "meta": {
     "homeTitle": "DevToolBox – Kostenlose Online-Entwicklerwerkzeuge",
     "homeDescription": "Kostenlose Online-Entwicklerwerkzeuge: JSON-Formatierer, Base64-Kodierer, UUID-Generator, Regex-Tester, Hash-Generator und über 20 weitere. Keine Registrierung erforderlich. Alle Verarbeitung in deinem Browser."
+  },
+  "blog": {
+    "nav": "Blog",
+    "title": "DevToolBox Blog",
+    "description": "Entwickler-Anleitungen, Tutorials und Best Practices für Online-Tools",
+    "readMore": "Weiterlesen"
   }
 }

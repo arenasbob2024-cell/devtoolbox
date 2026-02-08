@@ -1212,5 +1212,11 @@
   "meta": {
     "homeTitle": "DevToolBox - 免费在线开发者工具",
     "homeDescription": "免费在线开发者工具：JSON 格式化、Base64 编码、UUID 生成器、正则测试、哈希生成器等 20 多款工具。无需注册。所有处理均在浏览器中完成。"
+  },
+  "blog": {
+    "nav": "博客",
+    "title": "DevToolBox 博客",
+    "description": "开发者指南、教程和在线工具最佳实践",
+    "readMore": "阅读更多"
   }
 }

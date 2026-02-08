@@ -1,0 +1,182 @@
+'use client';
+
+import Link from 'next/link';
+import { useLang } from '@/i18n/LangContext';
+import { getBlogPost, blogPosts } from '@/data/blog-posts';
+import { tools } from '@/lib/tools';
+import AdSlot from '@/components/AdSlot';
+import { useParams } from 'next/navigation';
+
+/* ---------- lazy-load article bodies ---------- */
+import UuidComparison from '@/data/posts/uuid-v4-vs-v7-vs-ulid';
+import CronServerless from '@/data/posts/cron-schedule-serverless';
+import Base64Uses from '@/data/posts/base64-encoding-real-world-uses';
+import RegexPatterns from '@/data/posts/regex-patterns-copy-paste';
+import DockerYamlErrors from '@/data/posts/docker-compose-yaml-errors';
+
+const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
+  'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
+  'cron-schedule-serverless-github-actions-vercel-cloudflare': CronServerless,
+  'base64-encoding-real-world-uses': Base64Uses,
+  'regex-patterns-copy-paste-ready': RegexPatterns,
+  'docker-compose-yaml-errors': DockerYamlErrors,
+};
+
+export default function BlogPostPage() {
+  const { lang } = useLang();
+  const params = useParams();
+  const slug = params.slug as string;
+  const post = getBlogPost(slug);
+
+  if (!post) {
+    return (
+      <div style={{ maxWidth: 800, margin: '80px auto', textAlign: 'center', padding: '0 24px' }}>
+        <h1 style={{ fontSize: 32, fontWeight: 800 }}>Post Not Found</h1>
+        <Link href={`/${lang}/blog`} style={{ color: 'var(--accent-blue)' }}>Back to Blog</Link>
+      </div>
+    );
+  }
+
+  const PostContent = postComponents[slug];
+  const relatedToolsList = post.relatedTools.map(id => tools.find(t => t.id === id)).filter(Boolean);
+  const relatedPostsList = post.relatedPosts.map(s => blogPosts.find(p => p.slug === s)).filter(Boolean);
+
+  /* JSON-LD Article Schema */
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.description,
+    datePublished: post.date,
+    author: { '@type': 'Organization', name: post.author, url: 'https://viadreams.cc' },
+    publisher: { '@type': 'Organization', name: 'DevToolBox', url: 'https://viadreams.cc' },
+    mainEntityOfPage: `https://viadreams.cc/${lang}/blog/${slug}`,
+    image: 'https://viadreams.cc/og-image.png',
+    keywords: post.keywords.join(', '),
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `https://viadreams.cc/${lang}` },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `https://viadreams.cc/${lang}/blog` },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `https://viadreams.cc/${lang}/blog/${slug}` },
+    ],
+  };
+
+  return (
+    <div style={{ maxWidth: 820, margin: '0 auto', padding: '30px 24px 60px' }}>
+      {/* JSON-LD */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+
+      {/* Breadcrumb */}
+      <nav style={{ fontSize: 13, color: 'var(--text-secondary)', marginBottom: 24, display: 'flex', gap: 8 }}>
+        <Link href={`/${lang}`} style={{ color: 'var(--accent-blue)', textDecoration: 'none' }}>Home</Link>
+        <span>/</span>
+        <Link href={`/${lang}/blog`} style={{ color: 'var(--accent-blue)', textDecoration: 'none' }}>Blog</Link>
+        <span>/</span>
+        <span style={{ color: 'var(--text-secondary)' }}>{post.title.length > 50 ? post.title.slice(0, 50) + '...' : post.title}</span>
+      </nav>
+
+      {/* Article Header */}
+      <header style={{ marginBottom: 32 }}>
+        <h1 style={{
+          fontSize: 34,
+          fontWeight: 800,
+          lineHeight: 1.2,
+          marginBottom: 16,
+          color: 'var(--text-primary)',
+        }}>
+          {post.title}
+        </h1>
+        <div style={{ display: 'flex', gap: 16, fontSize: 14, color: 'var(--text-secondary)' }}>
+          <time>{post.date}</time>
+          <span>{post.readingTime}</span>
+          <span>by {post.author}</span>
+        </div>
+      </header>
+
+      <AdSlot size="leaderboard" />
+
+      {/* Article Body */}
+      <article className="blog-article" style={{ marginTop: 24 }}>
+        {PostContent ? <PostContent lang={lang} /> : <p>Content not available.</p>}
+      </article>
+
+      {/* Related Tools CTA */}
+      {relatedToolsList.length > 0 && (
+        <div style={{
+          marginTop: 40,
+          padding: 24,
+          background: 'linear-gradient(135deg, rgba(59,130,246,0.08), rgba(139,92,246,0.08))',
+          borderRadius: 12,
+          border: '1px solid rgba(59,130,246,0.2)',
+        }}>
+          <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16 }}>
+            Try These Related Tools
+          </h3>
+          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+            {relatedToolsList.map(tool => tool && (
+              <Link
+                key={tool.id}
+                href={`/${lang}${tool.path}`}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 8,
+                  padding: '10px 18px',
+                  background: 'var(--bg-card)',
+                  border: '1px solid var(--border-color)',
+                  borderRadius: 8,
+                  textDecoration: 'none',
+                  fontSize: 14,
+                  fontWeight: 600,
+                  color: 'var(--accent-blue)',
+                  transition: 'border-color 0.2s',
+                }}
+              >
+                <span style={{ fontFamily: 'monospace', fontWeight: 800 }}>{tool.icon}</span>
+                {tool.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <AdSlot size="leaderboard" style={{ marginTop: 30 }} />
+
+      {/* Related Posts */}
+      {relatedPostsList.length > 0 && (
+        <div style={{ marginTop: 40 }}>
+          <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>Related Articles</h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+            {relatedPostsList.map(rp => rp && (
+              <Link
+                key={rp.slug}
+                href={`/${lang}/blog/${rp.slug}`}
+                style={{
+                  display: 'block',
+                  padding: 20,
+                  background: 'var(--bg-card)',
+                  border: '1px solid var(--border-color)',
+                  borderRadius: 10,
+                  textDecoration: 'none',
+                  transition: 'border-color 0.2s',
+                }}
+              >
+                <h4 style={{ fontSize: 15, fontWeight: 700, color: 'var(--text-primary)', marginBottom: 6 }}>
+                  {rp.title}
+                </h4>
+                <p style={{ fontSize: 13, color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                  {rp.description}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}

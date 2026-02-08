@@ -1212,5 +1212,11 @@
   "meta": {
     "homeTitle": "DevToolBox - Alat Developer Online Gratis",
     "homeDescription": "Alat developer online gratis: JSON formatter, Base64 encoder, UUID generator, regex tester, hash generator, dan 25+ lainnya. Tanpa perlu daftar akun. Semua diproses di browser Anda."
+  },
+  "blog": {
+    "nav": "Blog",
+    "title": "Blog DevToolBox",
+    "description": "Panduan pengembang, tutorial, dan praktik terbaik untuk alat online",
+    "readMore": "Baca Selengkapnya"
   }
 }
