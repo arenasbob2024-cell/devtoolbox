@@ -41,7 +41,7 @@
   "home": {
     "heroTitle1": "Alat Developer",
     "heroTitle2": "Online Gratis",
-    "heroDescription": "25+ alat penting untuk developer. Tanpa daftar akun, tanpa batasan. Semua pemrosesan dilakukan langsung di browser Anda — data Anda tidak pernah keluar dari perangkat Anda.",
+    "heroDescription": "28+ alat penting untuk developer. Tanpa daftar akun, tanpa batasan. Semua pemrosesan dilakukan langsung di browser Anda — data Anda tidak pernah keluar dari perangkat Anda.",
     "searchPlaceholder": "Cari alat... (json, base64, uuid, hash...)",
     "whyTitle": "Mengapa",
     "whyBrand": "DevToolBox",
@@ -1171,6 +1171,133 @@
         "Randomizing quiz questions or playlist order",
         "Cleaning up data exports from spreadsheets"
       ]
+    },
+    "js-html-formatter": {
+      "name": "Pemformat JS/HTML",
+      "description": "Minifikasi atau percantik kode JavaScript dan HTML",
+      "pageTitle": "Minifier / Beautifier JavaScript & HTML",
+      "pageDescription": "Minifikasi atau percantik kode JavaScript dan HTML secara online.",
+      "inputLabel": "Kode Input",
+      "jsPlaceholder": "Tempel kode JavaScript di sini...",
+      "htmlPlaceholder": "Tempel kode HTML di sini...",
+      "seoTitle": "Tentang Pemformatan JS/HTML",
+      "seoContent": "Minifikasi JavaScript dan HTML menghapus karakter yang tidak diperlukan untuk mengurangi ukuran file.",
+      "faqTitle": "Pertanyaan Umum",
+      "faqs": [
+        {
+          "q": "Apakah minifikasi mengubah cara kerja kode?",
+          "a": "Tidak. Minifikasi hanya menghapus format."
+        },
+        {
+          "q": "Berapa ukuran yang bisa dihemat?",
+          "a": "Biasanya 20-50% untuk JavaScript dan 10-30% untuk HTML."
+        },
+        {
+          "q": "Apakah ini parser JavaScript lengkap?",
+          "a": "Ini adalah pemformat ringan untuk minifikasi dan beautifikasi cepat."
+        }
+      ],
+      "howToUseTitle": "Cara Menggunakan",
+      "howToUseSteps": [
+        "Pilih mode JavaScript atau HTML",
+        "Tempel kode Anda",
+        "Klik 'Minify' atau 'Beautify'",
+        "Salin hasilnya"
+      ],
+      "useCasesTitle": "Kasus Penggunaan",
+      "useCases": [
+        "Minifikasi JS/HTML untuk produksi",
+        "Mempercantik kode terminifikasi",
+        "Mengurangi waktu muat",
+        "Memformat potongan kode"
+      ]
+    },
+    "image-base64": {
+      "name": "Konverter Gambar Base64",
+      "description": "Konversi gambar ke string Base64 dengan drag & drop",
+      "pageTitle": "Konverter Gambar ke Base64",
+      "pageDescription": "Konversi gambar ke string Base64 dan URI data.",
+      "encodeTab": "Gambar → Base64",
+      "decodeTab": "Base64 → Gambar",
+      "dropText": "Seret gambar ke sini atau klik untuk memilih",
+      "supportedFormats": "Mendukung PNG, JPG, GIF, SVG, WebP, ICO",
+      "fileNameLabel": "File",
+      "fileSizeLabel": "Ukuran",
+      "typeLabel": "Tipe",
+      "lengthLabel": "panjang",
+      "htmlSnippet": "Tag HTML <img>",
+      "cssSnippet": "Latar Belakang CSS",
+      "base64Input": "Tempel Base64 atau URI data",
+      "decodePlaceholder": "Tempel string Base64 atau data:image/... di sini",
+      "decodeBtn": "Dekode ke gambar",
+      "seoTitle": "Tentang Encoding Base64 Gambar",
+      "seoContent": "Mengkonversi gambar ke Base64 memungkinkan penyisipan langsung dalam HTML, CSS, atau JSON.",
+      "faqTitle": "Pertanyaan Umum",
+      "faqs": [
+        {
+          "q": "Format gambar apa yang didukung?",
+          "a": "PNG, JPG, GIF, SVG, WebP, ICO, dan BMP."
+        },
+        {
+          "q": "Apakah ada batas ukuran?",
+          "a": "Tidak ada batas keras, tetapi Base64 meningkatkan ukuran ~33%."
+        },
+        {
+          "q": "Apakah gambar diunggah ke server?",
+          "a": "Tidak. Semua konversi terjadi di browser Anda."
+        }
+      ],
+      "howToUseTitle": "Cara Menggunakan",
+      "howToUseSteps": [
+        "Seret atau pilih gambar",
+        "Lihat string Base64",
+        "Salin format yang dibutuhkan",
+        "Gunakan tab decode"
+      ],
+      "useCasesTitle": "Kasus Penggunaan",
+      "useCases": [
+        "Menyisipkan ikon dalam HTML/CSS",
+        "Gambar dalam template email",
+        "Menyimpan gambar dalam config JSON",
+        "Mengurangi permintaan HTTP"
+      ]
+    },
+    "git-command-generator": {
+      "name": "Generator Perintah Git",
+      "description": "Pembuat perintah Git visual",
+      "pageTitle": "Generator Perintah Git",
+      "pageDescription": "Pembuat perintah Git visual. Pilih, sesuaikan, dan salin.",
+      "seoTitle": "Tentang Perintah Git",
+      "seoContent": "Git adalah sistem kontrol versi yang paling banyak digunakan di dunia. Alat ini membantu Anda membangun perintah Git secara visual.",
+      "faqTitle": "Pertanyaan Umum",
+      "faqs": [
+        {
+          "q": "Apakah alat ini menjalankan perintah Git?",
+          "a": "Tidak. Ini menghasilkan string perintah untuk disalin."
+        },
+        {
+          "q": "Operasi apa saja yang dicakup?",
+          "a": "Lebih dari 40 operasi: init, clone, branch, commit, push, pull, merge, rebase, stash, dll."
+        },
+        {
+          "q": "Bisakah saya menyesuaikan parameter?",
+          "a": "Ya. Klik perintah untuk mengisi parameter."
+        }
+      ],
+      "howToUseTitle": "Cara Menggunakan",
+      "howToUseSteps": [
+        "Pilih kategori",
+        "Klik operasi",
+        "Isi parameter",
+        "Salin perintah"
+      ],
+      "useCasesTitle": "Kasus Penggunaan",
+      "useCases": [
+        "Belajar Git sebagai pemula",
+        "Menghasilkan perintah kompleks",
+        "Panduan referensi",
+        "Skrip CI/CD"
+      ]
     }
   },
   "footer": {
@@ -1183,7 +1310,7 @@
     "missionTitle": "Misi Kami",
     "missionText": "Kami percaya alat developer harus gratis, cepat, dan privat. Setiap alat di DevToolBox memproses data sepenuhnya di browser Anda — tidak ada yang pernah dikirim ke server.",
     "featuresTitle": "Fitur",
-    "feature1": "25+ alat developer penting",
+    "feature1": "28+ alat developer penting",
     "feature2": "100% diproses di sisi klien — data Anda tidak pernah keluar dari browser",
     "feature3": "Tanpa daftar akun, tanpa akun, tanpa pelacakan",
     "feature4": "Berfungsi di desktop, tablet, dan ponsel",
@@ -1211,7 +1338,7 @@
   },
   "meta": {
     "homeTitle": "DevToolBox - Alat Developer Online Gratis",
-    "homeDescription": "Alat developer online gratis: JSON formatter, Base64 encoder, UUID generator, regex tester, hash generator, dan 25+ lainnya. Tanpa perlu daftar akun. Semua diproses di browser Anda."
+    "homeDescription": "Alat developer online gratis: JSON formatter, Base64 encoder, UUID generator, regex tester, hash generator, dan 28+ lainnya. Tanpa perlu daftar akun. Semua diproses di browser Anda."
   },
   "blog": {
     "nav": "Blog",

@@ -1171,6 +1171,133 @@
         "Randomizing quiz questions or playlist order",
         "Cleaning up data exports from spreadsheets"
       ]
+    },
+    "js-html-formatter": {
+      "name": "จัดรูปแบบ JS/HTML",
+      "description": "ย่อหรือจัดรูปแบบโค้ด JavaScript และ HTML",
+      "pageTitle": "เครื่องมือย่อ/จัดรูปแบบ JavaScript & HTML",
+      "pageDescription": "ย่อหรือจัดรูปแบบโค้ด JavaScript และ HTML ออนไลน์",
+      "inputLabel": "โค้ดอินพุต",
+      "jsPlaceholder": "วางโค้ด JavaScript ที่นี่...",
+      "htmlPlaceholder": "วางโค้ด HTML ที่นี่...",
+      "seoTitle": "เกี่ยวกับการจัดรูปแบบ JS/HTML",
+      "seoContent": "การย่อ JavaScript และ HTML จะลบอักขระที่ไม่จำเป็นเพื่อลดขนาดไฟล์",
+      "faqTitle": "คำถามที่พบบ่อย",
+      "faqs": [
+        {
+          "q": "การย่อเปลี่ยนการทำงานของโค้ดหรือไม่?",
+          "a": "ไม่ การย่อจะลบเฉพาะการจัดรูปแบบเท่านั้น"
+        },
+        {
+          "q": "ประหยัดขนาดได้เท่าไร?",
+          "a": "โดยทั่วไป 20-50% สำหรับ JavaScript และ 10-30% สำหรับ HTML"
+        },
+        {
+          "q": "นี่คือ parser JavaScript เต็มรูปแบบหรือไม่?",
+          "a": "นี่คือเครื่องมือจัดรูปแบบน้ำหนักเบา"
+        }
+      ],
+      "howToUseTitle": "วิธีใช้",
+      "howToUseSteps": [
+        "เลือกโหมด JavaScript หรือ HTML",
+        "วางโค้ดของคุณ",
+        "คลิก 'ย่อ' หรือ 'จัดรูปแบบ'",
+        "คัดลอกผลลัพธ์"
+      ],
+      "useCasesTitle": "กรณีใช้งาน",
+      "useCases": [
+        "ย่อ JS/HTML สำหรับโปรดักชัน",
+        "จัดรูปแบบโค้ดที่ถูกย่อ",
+        "ลดเวลาโหลดหน้า",
+        "จัดรูปแบบโค้ดสำหรับเอกสาร"
+      ]
+    },
+    "image-base64": {
+      "name": "ตัวแปลงภาพ Base64",
+      "description": "แปลงภาพเป็นสตริง Base64 พร้อมลากและวาง",
+      "pageTitle": "ตัวแปลงภาพเป็น Base64",
+      "pageDescription": "แปลงภาพเป็นสตริง Base64 และ Data URI",
+      "encodeTab": "ภาพ → Base64",
+      "decodeTab": "Base64 → ภาพ",
+      "dropText": "ลากภาพมาที่นี่หรือคลิกเพื่อเลือก",
+      "supportedFormats": "รองรับ PNG, JPG, GIF, SVG, WebP, ICO",
+      "fileNameLabel": "ไฟล์",
+      "fileSizeLabel": "ขนาด",
+      "typeLabel": "ประเภท",
+      "lengthLabel": "ความยาว",
+      "htmlSnippet": "แท็ก HTML <img>",
+      "cssSnippet": "พื้นหลัง CSS",
+      "base64Input": "วาง Base64 หรือ Data URI",
+      "decodePlaceholder": "วางสตริง Base64 หรือ data:image/... ที่นี่",
+      "decodeBtn": "ถอดรหัสเป็นภาพ",
+      "seoTitle": "เกี่ยวกับการเข้ารหัส Base64 ของภาพ",
+      "seoContent": "การแปลงภาพเป็น Base64 ช่วยให้ฝังได้โดยตรงใน HTML, CSS หรือ JSON",
+      "faqTitle": "คำถามที่พบบ่อย",
+      "faqs": [
+        {
+          "q": "รองรับรูปแบบภาพอะไรบ้าง?",
+          "a": "PNG, JPG, GIF, SVG, WebP, ICO และ BMP"
+        },
+        {
+          "q": "มีข้อจำกัดขนาดไฟล์หรือไม่?",
+          "a": "ไม่มีข้อจำกัดแน่นอน แต่ Base64 เพิ่มขนาด ~33%"
+        },
+        {
+          "q": "ภาพถูกอัพโหลดไปยังเซิร์ฟเวอร์หรือไม่?",
+          "a": "ไม่ ทุกอย่างเกิดขึ้นในเบราว์เซอร์ของคุณ"
+        }
+      ],
+      "howToUseTitle": "วิธีใช้",
+      "howToUseSteps": [
+        "ลากหรือเลือกภาพ",
+        "ดูสตริง Base64",
+        "คัดลอกรูปแบบที่ต้องการ",
+        "ใช้แท็บถอดรหัส"
+      ],
+      "useCasesTitle": "กรณีใช้งาน",
+      "useCases": [
+        "ฝังไอคอนใน HTML/CSS",
+        "ภาพในเทมเพลตอีเมล",
+        "เก็บภาพใน config JSON",
+        "ลดคำขอ HTTP"
+      ]
+    },
+    "git-command-generator": {
+      "name": "ตัวสร้างคำสั่ง Git",
+      "description": "ตัวสร้างคำสั่ง Git แบบภาพ",
+      "pageTitle": "ตัวสร้างคำสั่ง Git",
+      "pageDescription": "ตัวสร้างคำสั่ง Git แบบภาพ เลือก ปรับแต่ง และคัดลอก",
+      "seoTitle": "เกี่ยวกับคำสั่ง Git",
+      "seoContent": "Git เป็นระบบควบคุมเวอร์ชันที่ใช้กันมากที่สุดในโลก เครื่องมือนี้ช่วยสร้างคำสั่ง Git แบบภาพ",
+      "faqTitle": "คำถามที่พบบ่อย",
+      "faqs": [
+        {
+          "q": "เครื่องมือนี้รันคำสั่ง Git หรือไม่?",
+          "a": "ไม่ มันสร้างสตริงคำสั่งเพื่อคัดลอก"
+        },
+        {
+          "q": "ครอบคลุมการดำเนินการอะไรบ้าง?",
+          "a": "มากกว่า 40 การดำเนินการ: init, clone, branch, commit, push, pull, merge, rebase, stash ฯลฯ"
+        },
+        {
+          "q": "สามารถปรับแต่งพารามิเตอร์ได้หรือไม่?",
+          "a": "ได้ คลิกที่คำสั่งเพื่อกรอกพารามิเตอร์"
+        }
+      ],
+      "howToUseTitle": "วิธีใช้",
+      "howToUseSteps": [
+        "เลือกหมวดหมู่",
+        "คลิกที่การดำเนินการ",
+        "กรอกพารามิเตอร์",
+        "คัดลอกคำสั่ง"
+      ],
+      "useCasesTitle": "กรณีใช้งาน",
+      "useCases": [
+        "เรียนรู้ Git สำหรับมือใหม่",
+        "สร้างคำสั่งที่ซับซ้อน",
+        "คู่มืออ้างอิง",
+        "สคริปต์ CI/CD"
+      ]
     }
   },
   "footer": {

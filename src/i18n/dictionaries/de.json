@@ -1171,6 +1171,133 @@
         "Randomizing quiz questions or playlist order",
         "Cleaning up data exports from spreadsheets"
       ]
+    },
+    "js-html-formatter": {
+      "name": "JS/HTML Formatierer",
+      "description": "JavaScript und HTML Code minifizieren oder verschönern",
+      "pageTitle": "JavaScript & HTML Minifier / Beautifier",
+      "pageDescription": "JavaScript und HTML Code online minifizieren oder verschönern.",
+      "inputLabel": "Eingabecode",
+      "jsPlaceholder": "JavaScript-Code hier einfügen...",
+      "htmlPlaceholder": "HTML-Code hier einfügen...",
+      "seoTitle": "Über JS/HTML-Formatierung",
+      "seoContent": "Das Minifizieren von JavaScript und HTML entfernt unnötige Zeichen, um die Dateigröße zu reduzieren.",
+      "faqTitle": "Häufig gestellte Fragen",
+      "faqs": [
+        {
+          "q": "Ändert die Minifizierung die Funktionsweise?",
+          "a": "Nein. Die Minifizierung entfernt nur die Formatierung."
+        },
+        {
+          "q": "Wie viel Dateigröße kann ich sparen?",
+          "a": "Typisch 20-50% für JavaScript und 10-30% für HTML."
+        },
+        {
+          "q": "Ist dies ein vollständiger JavaScript-Parser?",
+          "a": "Dies ist ein leichtgewichtiger Formatierer."
+        }
+      ],
+      "howToUseTitle": "Anleitung",
+      "howToUseSteps": [
+        "JavaScript- oder HTML-Modus wählen",
+        "Code einfügen",
+        "Auf 'Minifizieren' oder 'Verschönern' klicken",
+        "Ergebnis kopieren"
+      ],
+      "useCasesTitle": "Anwendungsfälle",
+      "useCases": [
+        "JS/HTML für Produktion minifizieren",
+        "Minifizierten Code verschönern",
+        "Ladezeiten reduzieren",
+        "Code-Snippets formatieren"
+      ]
+    },
+    "image-base64": {
+      "name": "Bild-Base64-Konverter",
+      "description": "Bilder in Base64-Strings konvertieren mit Drag & Drop",
+      "pageTitle": "Bild zu Base64 Konverter",
+      "pageDescription": "Konvertieren Sie Bilder in Base64-kodierte Strings und Daten-URIs.",
+      "encodeTab": "Bild → Base64",
+      "decodeTab": "Base64 → Bild",
+      "dropText": "Bild hierher ziehen oder klicken zum Auswählen",
+      "supportedFormats": "Unterstützt PNG, JPG, GIF, SVG, WebP, ICO",
+      "fileNameLabel": "Datei",
+      "fileSizeLabel": "Größe",
+      "typeLabel": "Typ",
+      "lengthLabel": "Länge",
+      "htmlSnippet": "HTML <img> Tag",
+      "cssSnippet": "CSS Hintergrund",
+      "base64Input": "Base64 oder Daten-URI einfügen",
+      "decodePlaceholder": "Base64-String oder data:image/... hier einfügen",
+      "decodeBtn": "In Bild dekodieren",
+      "seoTitle": "Über Bild-Base64-Kodierung",
+      "seoContent": "Das Konvertieren von Bildern in Base64 ermöglicht die direkte Einbettung in HTML, CSS oder JSON.",
+      "faqTitle": "Häufig gestellte Fragen",
+      "faqs": [
+        {
+          "q": "Welche Bildformate werden unterstützt?",
+          "a": "PNG, JPG, GIF, SVG, WebP, ICO und BMP."
+        },
+        {
+          "q": "Gibt es eine Größenbeschränkung?",
+          "a": "Keine harte Grenze, aber Base64 erhöht die Größe um ~33%."
+        },
+        {
+          "q": "Wird mein Bild auf einen Server hochgeladen?",
+          "a": "Nein. Alles passiert in Ihrem Browser."
+        }
+      ],
+      "howToUseTitle": "Anleitung",
+      "howToUseSteps": [
+        "Bild ziehen oder auswählen",
+        "Base64-String anzeigen",
+        "Gewünschtes Format kopieren",
+        "Dekodier-Tab zum Zurückkonvertieren nutzen"
+      ],
+      "useCasesTitle": "Anwendungsfälle",
+      "useCases": [
+        "Kleine Icons in HTML/CSS einbetten",
+        "Bilder in E-Mail-Vorlagen",
+        "Bilder in JSON-Configs speichern",
+        "HTTP-Anfragen reduzieren"
+      ]
+    },
+    "git-command-generator": {
+      "name": "Git-Befehlsgenerator",
+      "description": "Visueller Git-Befehlsersteller",
+      "pageTitle": "Git-Befehlsgenerator",
+      "pageDescription": "Visueller Git-Befehlsersteller. Wählen, anpassen und kopieren.",
+      "seoTitle": "Über Git-Befehle",
+      "seoContent": "Git ist das weltweit am meisten verwendete Versionskontrollsystem. Dieses Tool hilft Ihnen, Git-Befehle visuell zu erstellen.",
+      "faqTitle": "Häufig gestellte Fragen",
+      "faqs": [
+        {
+          "q": "Führt dieses Tool Git-Befehle aus?",
+          "a": "Nein. Es generiert Befehlszeichenfolgen zum Kopieren."
+        },
+        {
+          "q": "Welche Operationen werden abgedeckt?",
+          "a": "Über 40 Operationen: init, clone, branch, commit, push, pull, merge, rebase, stash, usw."
+        },
+        {
+          "q": "Kann ich die Parameter anpassen?",
+          "a": "Ja. Klicken Sie auf einen Befehl, um Parameter einzugeben."
+        }
+      ],
+      "howToUseTitle": "Anleitung",
+      "howToUseSteps": [
+        "Kategorie wählen",
+        "Operation anklicken",
+        "Parameter ausfüllen",
+        "Befehl kopieren"
+      ],
+      "useCasesTitle": "Anwendungsfälle",
+      "useCases": [
+        "Git als Anfänger lernen",
+        "Komplexe Git-Befehle generieren",
+        "Referenzhandbuch",
+        "CI/CD-Pipeline-Skripte"
+      ]
     }
   },
   "footer": {

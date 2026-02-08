@@ -41,7 +41,7 @@
   "home": {
     "heroTitle1": "Free Online",
     "heroTitle2": "Developer Tools",
-    "heroDescription": "25+ essential tools for developers. No signup, no limits. All processing happens right in your browser — your data never leaves your device.",
+    "heroDescription": "28+ essential tools for developers. No signup, no limits. All processing happens right in your browser — your data never leaves your device.",
     "searchPlaceholder": "Search tools... (json, base64, uuid, hash...)",
     "whyTitle": "Why",
     "whyBrand": "DevToolBox",
@@ -1171,6 +1171,133 @@
         "Randomizing quiz questions or playlist order",
         "Cleaning up data exports from spreadsheets"
       ]
+    },
+    "js-html-formatter": {
+      "name": "JS/HTML Formatter",
+      "description": "Minify or beautify JavaScript and HTML code",
+      "pageTitle": "JavaScript & HTML Minifier / Beautifier",
+      "pageDescription": "Minify or beautify JavaScript and HTML code online. Remove comments, compress whitespace, or format for readability.",
+      "inputLabel": "Input Code",
+      "jsPlaceholder": "Paste your JavaScript code here...",
+      "htmlPlaceholder": "Paste your HTML code here...",
+      "seoTitle": "About JS/HTML Formatting",
+      "seoContent": "Minifying JavaScript and HTML removes unnecessary characters like whitespace, comments, and line breaks to reduce file size and improve page load speed. Beautifying does the opposite — adding proper indentation and formatting for readability. This tool supports both JavaScript and HTML with instant results in your browser.",
+      "faqTitle": "Frequently Asked Questions",
+      "faqs": [
+        {
+          "q": "Does minification change how my code works?",
+          "a": "No. Minification only removes formatting — whitespace, comments, and line breaks. The code logic and behavior remain identical."
+        },
+        {
+          "q": "How much file size can I save?",
+          "a": "Typically 20-50% for JavaScript and 10-30% for HTML, depending on the original formatting and comment density."
+        },
+        {
+          "q": "Is this a full JavaScript parser?",
+          "a": "This is a lightweight formatter designed for quick minification and beautification. For production builds, use dedicated tools like Terser or esbuild."
+        }
+      ],
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Select JavaScript or HTML mode",
+        "Paste your code in the input field",
+        "Click 'Minify' to compress or 'Beautify' to format",
+        "Copy the result"
+      ],
+      "useCasesTitle": "Common Use Cases",
+      "useCases": [
+        "Minifying JS/HTML for production deployment",
+        "Beautifying minified code for debugging",
+        "Reducing page load times",
+        "Formatting code snippets for documentation"
+      ]
+    },
+    "image-base64": {
+      "name": "Image Base64 Converter",
+      "description": "Convert images to Base64 strings and data URIs with drag & drop",
+      "pageTitle": "Image to Base64 Converter",
+      "pageDescription": "Convert images to Base64 encoded strings and data URIs. Supports PNG, JPG, GIF, SVG, WebP. Drag & drop upload.",
+      "encodeTab": "Image → Base64",
+      "decodeTab": "Base64 → Image",
+      "dropText": "Drop an image here or click to select",
+      "supportedFormats": "Supports PNG, JPG, GIF, SVG, WebP, ICO",
+      "fileNameLabel": "File",
+      "fileSizeLabel": "Original size",
+      "typeLabel": "Type",
+      "lengthLabel": "length",
+      "htmlSnippet": "HTML <img> Tag",
+      "cssSnippet": "CSS Background",
+      "base64Input": "Paste Base64 or Data URI",
+      "decodePlaceholder": "Paste a Base64 string or data:image/png;base64,... URI here",
+      "decodeBtn": "Decode to Image",
+      "seoTitle": "About Image Base64 Encoding",
+      "seoContent": "Converting images to Base64 strings allows you to embed them directly in HTML, CSS, or JSON without separate image files. This is useful for small icons (under 10KB), email templates, and reducing HTTP requests. The trade-off is a ~33% increase in data size compared to the binary original.",
+      "faqTitle": "Frequently Asked Questions",
+      "faqs": [
+        {
+          "q": "What image formats are supported?",
+          "a": "PNG, JPG/JPEG, GIF, SVG, WebP, ICO, and BMP. Any image format your browser can display."
+        },
+        {
+          "q": "Is there a file size limit?",
+          "a": "No hard limit, but Base64 encoding increases size by ~33%. Images over 10KB are generally not recommended for Base64 embedding."
+        },
+        {
+          "q": "Is my image uploaded to a server?",
+          "a": "No. All conversion happens entirely in your browser. Your images never leave your device."
+        }
+      ],
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Drag & drop an image or click to select a file",
+        "View the Base64 string, data URI, HTML tag, and CSS snippet",
+        "Copy any format you need",
+        "Switch to 'Base64 → Image' tab to decode"
+      ],
+      "useCasesTitle": "Common Use Cases",
+      "useCases": [
+        "Embedding small icons in HTML/CSS",
+        "Including images in email templates",
+        "Storing images in JSON/YAML configs",
+        "Reducing HTTP requests for small assets"
+      ]
+    },
+    "git-command-generator": {
+      "name": "Git Command Generator",
+      "description": "Visual Git command builder — select an action, fill in parameters, copy the command",
+      "pageTitle": "Git Command Generator",
+      "pageDescription": "Visual Git command builder. Select an operation, customize parameters, and copy the ready-to-use command. Covers init, branch, commit, merge, rebase, stash, and more.",
+      "seoTitle": "About Git Commands",
+      "seoContent": "Git is the most widely used version control system in the world. While powerful, its command-line interface has a steep learning curve. This tool helps you build Git commands visually — select the operation you need, fill in parameters like branch names or commit messages, and copy the complete command. Covers 40+ common Git operations organized by category.",
+      "faqTitle": "Frequently Asked Questions",
+      "faqs": [
+        {
+          "q": "Does this tool run Git commands?",
+          "a": "No. This tool generates Git command strings for you to copy and paste into your terminal. No commands are executed."
+        },
+        {
+          "q": "What Git operations are covered?",
+          "a": "Over 40 operations: init, clone, branch, checkout, commit, push, pull, merge, rebase, cherry-pick, stash, reset, revert, tag, and more."
+        },
+        {
+          "q": "Can I customize the parameters?",
+          "a": "Yes. Click on any command to expand it and fill in parameters like branch names, commit messages, file paths, etc. The command updates in real-time."
+        }
+      ],
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Select a category (Branch, Commit, Push & Pull, etc.)",
+        "Click on the operation you need",
+        "Fill in the parameters (branch name, message, etc.)",
+        "Copy the generated command and paste it in your terminal"
+      ],
+      "useCasesTitle": "Common Use Cases",
+      "useCases": [
+        "Learning Git commands as a beginner",
+        "Quickly generating complex Git commands",
+        "Reference guide for less common operations (cherry-pick, rebase, stash)",
+        "Building CI/CD pipeline scripts"
+      ]
     }
   },
   "footer": {
@@ -1183,7 +1310,7 @@
     "missionTitle": "Our Mission",
     "missionText": "We believe developer tools should be free, fast, and private. Every tool on DevToolBox processes data entirely in your browser — nothing is ever sent to a server.",
     "featuresTitle": "Features",
-    "feature1": "25+ essential developer tools",
+    "feature1": "28+ essential developer tools",
     "feature2": "100% client-side processing — your data never leaves your browser",
     "feature3": "No signup, no accounts, no tracking",
     "feature4": "Works on desktop, tablet, and mobile",
@@ -1211,7 +1338,7 @@
   },
   "meta": {
     "homeTitle": "DevToolBox - Free Online Developer Tools",
-    "homeDescription": "Free online developer tools: JSON formatter, Base64 encoder, UUID generator, regex tester, hash generator, and 25+ more. No signup required. All processing in your browser."
+    "homeDescription": "Free online developer tools: JSON formatter, Base64 encoder, UUID generator, regex tester, hash generator, and 28+ more. No signup required. All processing in your browser."
   },
   "blog": {
     "nav": "Blog",

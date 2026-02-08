@@ -1171,6 +1171,133 @@
         "Randomizing quiz questions or playlist order",
         "Cleaning up data exports from spreadsheets"
       ]
+    },
+    "js-html-formatter": {
+      "name": "Formateur JS/HTML",
+      "description": "Minifier ou embellir du code JavaScript et HTML",
+      "pageTitle": "Minificateur / Embellisseur JavaScript & HTML",
+      "pageDescription": "Minifier ou embellir du code JavaScript et HTML en ligne.",
+      "inputLabel": "Code d'entrée",
+      "jsPlaceholder": "Collez votre code JavaScript ici...",
+      "htmlPlaceholder": "Collez votre code HTML ici...",
+      "seoTitle": "À propos du formatage JS/HTML",
+      "seoContent": "Minifier JavaScript et HTML supprime les caractères inutiles pour réduire la taille des fichiers et améliorer la vitesse de chargement.",
+      "faqTitle": "Questions fréquentes",
+      "faqs": [
+        {
+          "q": "La minification change-t-elle le fonctionnement du code ?",
+          "a": "Non. La minification ne supprime que le formatage."
+        },
+        {
+          "q": "Combien de taille puis-je économiser ?",
+          "a": "Typiquement 20-50% pour JavaScript et 10-30% pour HTML."
+        },
+        {
+          "q": "Est-ce un parseur JavaScript complet ?",
+          "a": "C'est un formateur léger pour une minification et embellissement rapides."
+        }
+      ],
+      "howToUseTitle": "Comment utiliser",
+      "howToUseSteps": [
+        "Sélectionnez le mode JavaScript ou HTML",
+        "Collez votre code",
+        "Cliquez sur 'Minifier' ou 'Embellir'",
+        "Copiez le résultat"
+      ],
+      "useCasesTitle": "Cas d'utilisation",
+      "useCases": [
+        "Minifier JS/HTML pour la production",
+        "Embellir du code minifié pour le débogage",
+        "Réduire les temps de chargement",
+        "Formater des extraits de code"
+      ]
+    },
+    "image-base64": {
+      "name": "Convertisseur Image Base64",
+      "description": "Convertir des images en chaînes Base64 avec glisser-déposer",
+      "pageTitle": "Convertisseur Image vers Base64",
+      "pageDescription": "Convertissez des images en chaînes Base64 et URI de données.",
+      "encodeTab": "Image → Base64",
+      "decodeTab": "Base64 → Image",
+      "dropText": "Déposez une image ici ou cliquez pour sélectionner",
+      "supportedFormats": "Supporte PNG, JPG, GIF, SVG, WebP, ICO",
+      "fileNameLabel": "Fichier",
+      "fileSizeLabel": "Taille",
+      "typeLabel": "Type",
+      "lengthLabel": "longueur",
+      "htmlSnippet": "Balise HTML <img>",
+      "cssSnippet": "Fond CSS",
+      "base64Input": "Collez le Base64 ou l'URI de données",
+      "decodePlaceholder": "Collez une chaîne Base64 ou data:image/... ici",
+      "decodeBtn": "Décoder en image",
+      "seoTitle": "À propos de l'encodage Base64 d'images",
+      "seoContent": "Convertir des images en Base64 permet de les intégrer directement dans HTML, CSS ou JSON.",
+      "faqTitle": "Questions fréquentes",
+      "faqs": [
+        {
+          "q": "Quels formats d'image sont supportés ?",
+          "a": "PNG, JPG, GIF, SVG, WebP, ICO et BMP."
+        },
+        {
+          "q": "Y a-t-il une limite de taille ?",
+          "a": "Pas de limite stricte, mais le Base64 augmente la taille de ~33%."
+        },
+        {
+          "q": "Mon image est-elle envoyée à un serveur ?",
+          "a": "Non. Tout se passe dans votre navigateur."
+        }
+      ],
+      "howToUseTitle": "Comment utiliser",
+      "howToUseSteps": [
+        "Glissez-déposez ou sélectionnez une image",
+        "Visualisez la chaîne Base64",
+        "Copiez le format souhaité",
+        "Utilisez l'onglet décodage pour reconvertir"
+      ],
+      "useCasesTitle": "Cas d'utilisation",
+      "useCases": [
+        "Intégrer des icônes dans HTML/CSS",
+        "Images dans les modèles d'email",
+        "Stocker des images dans des configs JSON",
+        "Réduire les requêtes HTTP"
+      ]
+    },
+    "git-command-generator": {
+      "name": "Générateur de commandes Git",
+      "description": "Constructeur visuel de commandes Git",
+      "pageTitle": "Générateur de commandes Git",
+      "pageDescription": "Constructeur visuel de commandes Git. Sélectionnez, personnalisez et copiez.",
+      "seoTitle": "À propos des commandes Git",
+      "seoContent": "Git est le système de contrôle de version le plus utilisé au monde. Cet outil vous aide à construire des commandes Git visuellement.",
+      "faqTitle": "Questions fréquentes",
+      "faqs": [
+        {
+          "q": "Cet outil exécute-t-il des commandes Git ?",
+          "a": "Non. Il génère des chaînes de commandes à copier-coller."
+        },
+        {
+          "q": "Quelles opérations sont couvertes ?",
+          "a": "Plus de 40 opérations : init, clone, branch, commit, push, pull, merge, rebase, stash, etc."
+        },
+        {
+          "q": "Puis-je personnaliser les paramètres ?",
+          "a": "Oui. Cliquez sur une commande pour remplir les paramètres."
+        }
+      ],
+      "howToUseTitle": "Comment utiliser",
+      "howToUseSteps": [
+        "Sélectionnez une catégorie",
+        "Cliquez sur l'opération",
+        "Remplissez les paramètres",
+        "Copiez la commande"
+      ],
+      "useCasesTitle": "Cas d'utilisation",
+      "useCases": [
+        "Apprendre Git en tant que débutant",
+        "Générer des commandes complexes",
+        "Guide de référence",
+        "Scripts CI/CD"
+      ]
     }
   },
   "footer": {

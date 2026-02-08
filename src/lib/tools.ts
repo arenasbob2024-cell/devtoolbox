@@ -243,6 +243,33 @@ export const tools: Tool[] = [
     keywords: ['sort', 'lines', 'deduplicate', 'unique', 'reverse', 'shuffle', 'alphabetical'],
     path: '/tools/line-sorter',
   },
+  {
+    id: 'js-html-formatter',
+    name: 'JS/HTML Formatter',
+    description: 'Minify or beautify JavaScript and HTML code',
+    icon: 'JS',
+    category: 'formatter',
+    keywords: ['javascript', 'html', 'minify', 'beautify', 'compress', 'format', 'uglify'],
+    path: '/tools/js-html-formatter',
+  },
+  {
+    id: 'image-base64',
+    name: 'Image Base64 Converter',
+    description: 'Convert images to Base64 strings and data URIs with drag & drop',
+    icon: '🖼️',
+    category: 'encoder',
+    keywords: ['image', 'base64', 'convert', 'data uri', 'encode', 'decode', 'png', 'jpg', 'svg'],
+    path: '/tools/image-base64',
+  },
+  {
+    id: 'git-command-generator',
+    name: 'Git Command Generator',
+    description: 'Visual Git command builder — select an action, fill in parameters, copy the command',
+    icon: '🔀',
+    category: 'web',
+    keywords: ['git', 'command', 'generator', 'branch', 'merge', 'rebase', 'commit', 'push', 'pull', 'stash'],
+    path: '/tools/git-command-generator',
+  },
 ];
 
 export function getToolsByCategory(categoryId: string): Tool[] {

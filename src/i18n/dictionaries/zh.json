@@ -1171,6 +1171,133 @@
         "Randomizing quiz questions or playlist order",
         "Cleaning up data exports from spreadsheets"
       ]
+    },
+    "js-html-formatter": {
+      "name": "JS/HTML 格式化",
+      "description": "压缩或美化 JavaScript 和 HTML 代码",
+      "pageTitle": "JavaScript & HTML 压缩/美化工具",
+      "pageDescription": "在线压缩或美化 JavaScript 和 HTML 代码，去除注释和多余空白。",
+      "inputLabel": "输入代码",
+      "jsPlaceholder": "在此粘贴 JavaScript 代码...",
+      "htmlPlaceholder": "在此粘贴 HTML 代码...",
+      "seoTitle": "关于 JS/HTML 格式化",
+      "seoContent": "压缩 JavaScript 和 HTML 可以去除空白、注释和换行符，减小文件体积，提高页面加载速度。美化则相反——添加缩进和格式以提高可读性。",
+      "faqTitle": "常见问题",
+      "faqs": [
+        {
+          "q": "压缩会改变代码行为吗？",
+          "a": "不会。压缩只去除格式——空白、注释和换行。代码逻辑完全不变。"
+        },
+        {
+          "q": "能节省多少文件大小？",
+          "a": "JavaScript 通常 20-50%，HTML 通常 10-30%。"
+        },
+        {
+          "q": "这是完整的 JavaScript 解析器吗？",
+          "a": "这是轻量级格式化工具，用于快速压缩和美化。生产构建建议使用 Terser 或 esbuild。"
+        }
+      ],
+      "howToUseTitle": "使用方法",
+      "howToUseSteps": [
+        "选择 JavaScript 或 HTML 模式",
+        "粘贴代码到输入框",
+        "点击 Minify 或 Beautify 按钮",
+        "复制结果"
+      ],
+      "useCasesTitle": "常见用途",
+      "useCases": [
+        "为生产环境压缩 JS/HTML",
+        "美化压缩代码以便调试",
+        "减少页面加载时间",
+        "格式化文档中的代码片段"
+      ]
+    },
+    "image-base64": {
+      "name": "图片 Base64 转换器",
+      "description": "将图片转换为 Base64 字符串，支持拖拽上传",
+      "pageTitle": "图片转 Base64 工具",
+      "pageDescription": "将图片转换为 Base64 编码字符串和 Data URI。支持 PNG、JPG、GIF、SVG、WebP，支持拖拽上传。",
+      "encodeTab": "图片 → Base64",
+      "decodeTab": "Base64 → 图片",
+      "dropText": "拖拽图片到此处或点击选择文件",
+      "supportedFormats": "支持 PNG、JPG、GIF、SVG、WebP、ICO",
+      "fileNameLabel": "文件名",
+      "fileSizeLabel": "原始大小",
+      "typeLabel": "类型",
+      "lengthLabel": "长度",
+      "htmlSnippet": "HTML <img> 标签",
+      "cssSnippet": "CSS 背景",
+      "base64Input": "粘贴 Base64 或 Data URI",
+      "decodePlaceholder": "在此粘贴 Base64 字符串或 data:image/... URI",
+      "decodeBtn": "解码为图片",
+      "seoTitle": "关于图片 Base64 编码",
+      "seoContent": "将图片转换为 Base64 字符串可以直接嵌入 HTML、CSS 或 JSON 中，无需单独的图片文件。适合小图标（10KB 以下）、邮件模板和减少 HTTP 请求。",
+      "faqTitle": "常见问题",
+      "faqs": [
+        {
+          "q": "支持哪些图片格式？",
+          "a": "PNG、JPG/JPEG、GIF、SVG、WebP、ICO 和 BMP。"
+        },
+        {
+          "q": "有文件大小限制吗？",
+          "a": "没有硬性限制，但 Base64 编码会增加约 33% 的体积。"
+        },
+        {
+          "q": "图片会上传到服务器吗？",
+          "a": "不会。所有转换都在浏览器本地完成，图片不会离开您的设备。"
+        }
+      ],
+      "howToUseTitle": "使用方法",
+      "howToUseSteps": [
+        "拖拽图片或点击选择文件",
+        "查看 Base64 字符串、Data URI、HTML 标签和 CSS 代码",
+        "复制所需格式",
+        "切换到 Base64 → 图片 标签页可进行解码"
+      ],
+      "useCasesTitle": "常见用途",
+      "useCases": [
+        "在 HTML/CSS 中嵌入小图标",
+        "邮件模板中包含图片",
+        "在 JSON/YAML 配置中存储图片",
+        "减少小资源的 HTTP 请求"
+      ]
+    },
+    "git-command-generator": {
+      "name": "Git 命令生成器",
+      "description": "可视化 Git 命令构建器——选择操作、填写参数、复制命令",
+      "pageTitle": "Git 命令生成器",
+      "pageDescription": "可视化 Git 命令构建工具。选择操作、自定义参数，复制即用。覆盖 init、branch、commit、merge、rebase、stash 等 40+ 常用操作。",
+      "seoTitle": "关于 Git 命令",
+      "seoContent": "Git 是全球使用最广泛的版本控制系统。虽然功能强大，但命令行接口学习曲线较陡。本工具帮助你可视化构建 Git 命令——选择需要的操作，填入分支名、提交信息等参数，复制完整命令即可使用。",
+      "faqTitle": "常见问题",
+      "faqs": [
+        {
+          "q": "这个工具会执行 Git 命令吗？",
+          "a": "不会。本工具只生成 Git 命令字符串，供你复制到终端中使用。"
+        },
+        {
+          "q": "覆盖了哪些 Git 操作？",
+          "a": "超过 40 种操作：init、clone、branch、checkout、commit、push、pull、merge、rebase、cherry-pick、stash、reset、revert、tag 等。"
+        },
+        {
+          "q": "可以自定义参数吗？",
+          "a": "可以。点击任意命令展开后，填入分支名、提交信息、文件路径等参数，命令会实时更新。"
+        }
+      ],
+      "howToUseTitle": "使用方法",
+      "howToUseSteps": [
+        "选择操作类别（分支、提交、推送等）",
+        "点击需要的操作",
+        "填入参数（分支名、提交信息等）",
+        "复制生成的命令到终端使用"
+      ],
+      "useCasesTitle": "常见用途",
+      "useCases": [
+        "Git 初学者学习命令",
+        "快速生成复杂 Git 命令",
+        "不常用操作的参考指南（cherry-pick、rebase、stash）",
+        "构建 CI/CD 脚本"
+      ]
     }
   },
   "footer": {
