@@ -82,7 +82,36 @@
       "seoFeature1": "จัดรูปแบบ & ทำให้ JSON สวยงามด้วยการเยื้องแบบกำหนดเอง (2, 4 หรือ 8 ช่องว่าง)",
       "seoFeature2": "ย่อ JSON สำหรับใช้งานจริง",
       "seoFeature3": "ตรวจสอบไวยากรณ์ JSON พร้อมข้อความแจ้งข้อผิดพลาดอย่างละเอียด",
-      "seoFeature4": "ประมวลผลฝั่งไคลเอนต์ 100% — ข้อมูลของคุณไม่ออกจากเบราว์เซอร์"
+      "seoFeature4": "ประมวลผลฝั่งไคลเอนต์ 100% — ข้อมูลของคุณไม่ออกจากเบราว์เซอร์",
+      "faqTitle": "คำถามที่พบบ่อย",
+      "faqs": [
+        {
+          "q": "What is JSON formatting?",
+          "a": "JSON formatting is the process of adding proper indentation, line breaks, and spacing to JSON data to make it more readable. It doesn't change the data itself, just its visual presentation."
+        },
+        {
+          "q": "Is this JSON formatter safe to use?",
+          "a": "Yes, 100% safe. All processing happens directly in your browser. Your JSON data is never sent to any server or stored anywhere."
+        },
+        {
+          "q": "Can I validate JSON with this tool?",
+          "a": "Yes. Click the Validate button to check if your JSON is syntactically correct. The tool will show detailed error messages if any issues are found."
+        }
+      ],
+      "howToUseTitle": "วิธีใช้งาน",
+      "howToUseSteps": [
+        "Paste your JSON data into the input field on the left",
+        "Choose your preferred indentation (2, 4, or 8 spaces)",
+        "Click 'Format / Beautify' for readable output, or 'Minify' for compact output",
+        "Copy the result using the copy button"
+      ],
+      "useCasesTitle": "กรณีการใช้งาน",
+      "useCases": [
+        "Debugging API responses and payloads",
+        "Formatting configuration files (package.json, tsconfig.json)",
+        "Validating JSON data before processing",
+        "Minifying JSON for production use"
+      ]
     },
     "base64": {
       "name": "ตัวเข้ารหัส/ถอดรหัส Base64",
@@ -96,7 +125,35 @@
       "invalidBase64": "สตริง Base64 ไม่ถูกต้อง",
       "encodingError": "ข้อผิดพลาดในการเข้ารหัส",
       "seoTitle": "เกี่ยวกับการเข้ารหัส Base64",
-      "seoContent": "Base64 เป็นรูปแบบการเข้ารหัสที่แปลงข้อมูลไบนารีเป็นสตริง ASCII ใช้กันทั่วไปสำหรับการเข้ารหัสข้อมูลใน URL อีเมล HTML และ API เครื่องมือนี้รองรับการเข้ารหัสและถอดรหัส UTF-8 อย่างเต็มรูปแบบ"
+      "seoContent": "Base64 เป็นรูปแบบการเข้ารหัสที่แปลงข้อมูลไบนารีเป็นสตริง ASCII ใช้กันทั่วไปสำหรับการเข้ารหัสข้อมูลใน URL อีเมล HTML และ API เครื่องมือนี้รองรับการเข้ารหัสและถอดรหัส UTF-8 อย่างเต็มรูปแบบ",
+      "faqTitle": "คำถามที่พบบ่อย",
+      "faqs": [
+        {
+          "q": "What is Base64 encoding?",
+          "a": "Base64 is a binary-to-text encoding scheme that converts binary data into ASCII characters. It's commonly used to transmit data safely over text-based protocols like HTTP and email."
+        },
+        {
+          "q": "Is Base64 encoding the same as encryption?",
+          "a": "No. Base64 is an encoding scheme, not encryption. Anyone can decode Base64 data. It's meant for data transport, not security."
+        },
+        {
+          "q": "Does this tool support UTF-8?",
+          "a": "Yes. This tool fully supports UTF-8 encoding and decoding, allowing you to work with international characters and emojis."
+        }
+      ],
+      "howToUseTitle": "วิธีใช้งาน",
+      "howToUseSteps": [
+        "Enter your plain text in the top field to encode, or Base64 string in the bottom field to decode",
+        "Click 'Encode' to convert text to Base64, or 'Decode' to convert Base64 back to text",
+        "Copy the result with the copy button"
+      ],
+      "useCasesTitle": "กรณีการใช้งาน",
+      "useCases": [
+        "Encoding images for embedding in HTML/CSS",
+        "Encoding data for URL parameters",
+        "Transmitting binary data in JSON APIs",
+        "Email attachment encoding"
+      ]
     },
     "url-encoder": {
       "name": "ตัวเข้ารหัส/ถอดรหัส URL",
@@ -106,7 +163,36 @@
       "uriComponent": "URI Component",
       "fullUri": "URI เต็มรูปแบบ",
       "seoTitle": "เกี่ยวกับการเข้ารหัส URL",
-      "seoContent": "การเข้ารหัส URL จะแทนที่อักขระ ASCII ที่ไม่ปลอดภัยด้วย \"%\" ตามด้วยเลขฐานสิบหก 2 ตัว สิ่งนี้จำเป็นสำหรับการส่งอักขระพิเศษใน URL พารามิเตอร์ query และข้อมูลฟอร์ม ใช้ encodeURIComponent สำหรับพารามิเตอร์ query และ encodeURI สำหรับ URL เต็มรูปแบบ"
+      "seoContent": "การเข้ารหัส URL จะแทนที่อักขระ ASCII ที่ไม่ปลอดภัยด้วย \"%\" ตามด้วยเลขฐานสิบหก 2 ตัว สิ่งนี้จำเป็นสำหรับการส่งอักขระพิเศษใน URL พารามิเตอร์ query และข้อมูลฟอร์ม ใช้ encodeURIComponent สำหรับพารามิเตอร์ query และ encodeURI สำหรับ URL เต็มรูปแบบ",
+      "faqTitle": "คำถามที่พบบ่อย",
+      "faqs": [
+        {
+          "q": "What is URL encoding?",
+          "a": "URL encoding replaces unsafe ASCII characters with a '%' followed by two hex digits. This ensures special characters are safely transmitted in URLs."
+        },
+        {
+          "q": "What's the difference between encodeURI and encodeURIComponent?",
+          "a": "encodeURI encodes a full URL but preserves characters like :, /, ?, &. encodeURIComponent encodes everything including those characters, making it suitable for query parameter values."
+        },
+        {
+          "q": "When should I URL encode?",
+          "a": "Always URL encode when passing user input as query parameters, form data, or any URL component that may contain special characters like spaces, &, =, or #."
+        }
+      ],
+      "howToUseTitle": "วิธีใช้งาน",
+      "howToUseSteps": [
+        "Enter text in the input field",
+        "Choose between URI Component or Full URI encoding mode",
+        "Click 'Encode' or 'Decode'",
+        "Copy the result"
+      ],
+      "useCasesTitle": "กรณีการใช้งาน",
+      "useCases": [
+        "Encoding query parameters in URLs",
+        "Encoding form data for submission",
+        "Handling special characters in API requests",
+        "Debugging URL encoding issues"
+      ]
     },
     "hash-generator": {
       "name": "ตัวสร้างแฮช",
@@ -118,7 +204,36 @@
       "uppercase": "ตัวพิมพ์ใหญ่",
       "generateHashes": "สร้างแฮช",
       "seoTitle": "เกี่ยวกับฟังก์ชันแฮช",
-      "seoContent": "ฟังก์ชันแฮชเข้ารหัสจะสร้างค่าแฮชขนาดคงที่จากข้อมูลที่ป้อน ใช้สำหรับการตรวจสอบความถูกต้องของข้อมูล การเก็บรหัสผ่าน ลายเซ็นดิจิทัล และอื่นๆ SHA-256 เป็นอัลกอริทึมที่ใช้กันมากที่สุดในปัจจุบัน"
+      "seoContent": "ฟังก์ชันแฮชเข้ารหัสจะสร้างค่าแฮชขนาดคงที่จากข้อมูลที่ป้อน ใช้สำหรับการตรวจสอบความถูกต้องของข้อมูล การเก็บรหัสผ่าน ลายเซ็นดิจิทัล และอื่นๆ SHA-256 เป็นอัลกอริทึมที่ใช้กันมากที่สุดในปัจจุบัน",
+      "faqTitle": "คำถามที่พบบ่อย",
+      "faqs": [
+        {
+          "q": "What is a hash function?",
+          "a": "A hash function takes input data and produces a fixed-size string of characters (hash). The same input always produces the same hash, but you cannot reverse a hash back to the original data."
+        },
+        {
+          "q": "Which hash algorithm should I use?",
+          "a": "SHA-256 is recommended for most purposes. SHA-512 offers more security. MD5 and SHA-1 are considered weak for security but are still used for checksums."
+        },
+        {
+          "q": "Is my data safe?",
+          "a": "Yes. All hash computation happens in your browser using the Web Crypto API. No data is sent to any server."
+        }
+      ],
+      "howToUseTitle": "วิธีใช้งาน",
+      "howToUseSteps": [
+        "Enter or paste your text in the input field",
+        "Click 'Generate Hashes' to compute all hash values",
+        "Toggle 'Uppercase' for uppercase hex output",
+        "Copy any hash value with the copy button"
+      ],
+      "useCasesTitle": "กรณีการใช้งาน",
+      "useCases": [
+        "Verifying file integrity with checksums",
+        "Password hashing for storage",
+        "Data deduplication",
+        "Digital signatures and certificates"
+      ]
     },
     "uuid-generator": {
       "name": "ตัวสร้าง UUID",
@@ -131,7 +246,36 @@
       "generateUuids": "สร้าง UUID",
       "emptyState": "คลิก \"สร้าง UUID\" เพื่อสร้าง UUID แบบสุ่ม",
       "seoTitle": "เกี่ยวกับ UUID v4",
-      "seoContent": "UUID (Universally Unique Identifier) v4 สร้างตัวระบุแบบสุ่มขนาด 128 บิต ด้วยบิตสุ่ม 122 บิต ความน่าจะเป็นที่จะซ้ำกันนั้นต่ำมากจนแทบเป็นไปไม่ได้ UUID ใช้กันทั่วไปเป็น primary key ในฐานข้อมูล session token และตัวระบุในระบบแบบกระจาย"
+      "seoContent": "UUID (Universally Unique Identifier) v4 สร้างตัวระบุแบบสุ่มขนาด 128 บิต ด้วยบิตสุ่ม 122 บิต ความน่าจะเป็นที่จะซ้ำกันนั้นต่ำมากจนแทบเป็นไปไม่ได้ UUID ใช้กันทั่วไปเป็น primary key ในฐานข้อมูล session token และตัวระบุในระบบแบบกระจาย",
+      "faqTitle": "คำถามที่พบบ่อย",
+      "faqs": [
+        {
+          "q": "What is a UUID?",
+          "a": "UUID (Universally Unique Identifier) is a 128-bit number used to uniquely identify information. Version 4 UUIDs are randomly generated, making collision probability astronomically low."
+        },
+        {
+          "q": "Are UUIDs truly unique?",
+          "a": "While not mathematically guaranteed, UUID v4 has 2^122 possible values. The probability of generating a duplicate is essentially zero for practical purposes."
+        },
+        {
+          "q": "When should I use UUIDs?",
+          "a": "Use UUIDs as database primary keys, API resource identifiers, session tokens, or any time you need a unique identifier without a central authority."
+        }
+      ],
+      "howToUseTitle": "วิธีใช้งาน",
+      "howToUseSteps": [
+        "Set the number of UUIDs to generate (1-20)",
+        "Choose options: uppercase, no dashes",
+        "Click 'Generate UUIDs'",
+        "Click on any UUID to copy, or use 'Copy All'"
+      ],
+      "useCasesTitle": "กรณีการใช้งาน",
+      "useCases": [
+        "Database primary keys",
+        "API resource identifiers",
+        "Distributed system identifiers",
+        "Session and correlation IDs"
+      ]
     },
     "timestamp-converter": {
       "name": "ตัวแปลง Unix Timestamp",
@@ -155,7 +299,36 @@
       "ago": "ที่แล้ว",
       "fromNow": "นับจากนี้",
       "seoTitle": "เกี่ยวกับ Unix Timestamp",
-      "seoContent": "Unix timestamp แสดงจำนวนวินาทีนับตั้งแต่วันที่ 1 มกราคม 1970 (UTC) ใช้กันอย่างแพร่หลายในการเขียนโปรแกรม ฐานข้อมูล และ API เครื่องมือนี้ตรวจจับอัตโนมัติว่าข้อมูลที่ป้อนเป็นหน่วยวินาทีหรือมิลลิวินาที"
+      "seoContent": "Unix timestamp แสดงจำนวนวินาทีนับตั้งแต่วันที่ 1 มกราคม 1970 (UTC) ใช้กันอย่างแพร่หลายในการเขียนโปรแกรม ฐานข้อมูล และ API เครื่องมือนี้ตรวจจับอัตโนมัติว่าข้อมูลที่ป้อนเป็นหน่วยวินาทีหรือมิลลิวินาที",
+      "faqTitle": "คำถามที่พบบ่อย",
+      "faqs": [
+        {
+          "q": "What is a Unix timestamp?",
+          "a": "A Unix timestamp is the number of seconds elapsed since January 1, 1970 00:00:00 UTC (the Unix epoch). It's a universal way to represent time in computing."
+        },
+        {
+          "q": "What's the difference between seconds and milliseconds?",
+          "a": "Unix timestamps in seconds are 10 digits (e.g., 1700000000), while milliseconds are 13 digits (e.g., 1700000000000). JavaScript uses milliseconds, most systems use seconds."
+        },
+        {
+          "q": "Does this tool handle timezones?",
+          "a": "Yes. The tool shows both UTC and your local timezone when converting timestamps, so you can see the exact time in both."
+        }
+      ],
+      "howToUseTitle": "วิธีใช้งาน",
+      "howToUseSteps": [
+        "Enter a Unix timestamp to convert to a human-readable date",
+        "Or enter a date string to convert to a Unix timestamp",
+        "The tool auto-detects seconds vs milliseconds",
+        "View results in UTC, local time, and ISO format"
+      ],
+      "useCasesTitle": "กรณีการใช้งาน",
+      "useCases": [
+        "Converting API timestamps to readable dates",
+        "Debugging date-related issues",
+        "Comparing timestamps across systems",
+        "Working with JWT token expiration times"
+      ]
     },
     "color-converter": {
       "name": "ตัวแปลงสี",
@@ -166,7 +339,36 @@
       "colorPicker": "เลือกสี",
       "emptyState": "ป้อนค่าสีแล้วคลิกแปลง",
       "seoTitle": "เกี่ยวกับรูปแบบสี",
-      "seoContent": "สี HEX ใช้เลขฐานสิบหก (#RRGGBB) RGB ใช้ช่องแดง เขียว และน้ำเงิน (0-255) HSL ใช้เฉดสี (0-360°) ความอิ่มตัว (0-100%) และความสว่าง (0-100%) แต่ละรูปแบบมีการใช้งานเฉพาะในการออกแบบเว็บ CSS และกราฟิกดีไซน์"
+      "seoContent": "สี HEX ใช้เลขฐานสิบหก (#RRGGBB) RGB ใช้ช่องแดง เขียว และน้ำเงิน (0-255) HSL ใช้เฉดสี (0-360°) ความอิ่มตัว (0-100%) และความสว่าง (0-100%) แต่ละรูปแบบมีการใช้งานเฉพาะในการออกแบบเว็บ CSS และกราฟิกดีไซน์",
+      "faqTitle": "คำถามที่พบบ่อย",
+      "faqs": [
+        {
+          "q": "What color formats are supported?",
+          "a": "This tool supports HEX (e.g., #FF5733), RGB (e.g., rgb(255,87,51)), and HSL (e.g., hsl(11,100%,60%)) formats."
+        },
+        {
+          "q": "What's the difference between HEX, RGB, and HSL?",
+          "a": "HEX uses hexadecimal notation. RGB defines colors by red, green, blue values (0-255). HSL uses hue (0-360), saturation, and lightness percentages."
+        },
+        {
+          "q": "Can I use the color picker?",
+          "a": "Yes. Use the built-in color picker to visually select a color, and all format values will update automatically."
+        }
+      ],
+      "howToUseTitle": "วิธีใช้งาน",
+      "howToUseSteps": [
+        "Enter a color value in any format (HEX, RGB, or HSL)",
+        "All other formats update automatically in real-time",
+        "Use the color picker for visual selection",
+        "Copy any color format with the copy button"
+      ],
+      "useCasesTitle": "กรณีการใช้งาน",
+      "useCases": [
+        "Converting design specs between formats",
+        "Finding HEX values for CSS styling",
+        "Adjusting colors with HSL for hue/saturation tweaks",
+        "Matching brand colors across tools"
+      ]
     },
     "regex-tester": {
       "name": "ตัวทดสอบ Regex",
@@ -187,7 +389,36 @@
       "atIndex": "ที่ตำแหน่ง",
       "groups": "กลุ่ม:",
       "seoTitle": "เกี่ยวกับ Regular Expression",
-      "seoContent": "Regular expression (regex) เป็นรูปแบบที่ทรงพลังสำหรับการจับคู่ ค้นหา และแทนที่ข้อความ จำเป็นสำหรับการตรวจสอบข้อมูลเข้า การประมวลผลข้อความ และการดึงข้อมูล เครื่องมือนี้ทดสอบ regex ของคุณแบบเรียลไทม์ด้วยเอนจิน regex ของ JavaScript"
+      "seoContent": "Regular expression (regex) เป็นรูปแบบที่ทรงพลังสำหรับการจับคู่ ค้นหา และแทนที่ข้อความ จำเป็นสำหรับการตรวจสอบข้อมูลเข้า การประมวลผลข้อความ และการดึงข้อมูล เครื่องมือนี้ทดสอบ regex ของคุณแบบเรียลไทม์ด้วยเอนจิน regex ของ JavaScript",
+      "faqTitle": "คำถามที่พบบ่อย",
+      "faqs": [
+        {
+          "q": "What is a regular expression?",
+          "a": "A regular expression (regex) is a pattern used to match, search, and manipulate text. It's supported in virtually every programming language."
+        },
+        {
+          "q": "How do I test my regex?",
+          "a": "Enter your regex pattern in the pattern field, add test text below, and the tool will highlight all matches in real-time. Flags like 'g' (global) and 'i' (case-insensitive) are supported."
+        },
+        {
+          "q": "Is my regex data safe?",
+          "a": "Yes. All regex processing happens in your browser using JavaScript's built-in RegExp engine. No data is sent anywhere."
+        }
+      ],
+      "howToUseTitle": "วิธีใช้งาน",
+      "howToUseSteps": [
+        "Enter your regex pattern in the pattern field",
+        "Add flags (g for global, i for case-insensitive, m for multiline)",
+        "Type or paste your test text",
+        "View highlighted matches and match details in real-time"
+      ],
+      "useCasesTitle": "กรณีการใช้งาน",
+      "useCases": [
+        "Validating email addresses, URLs, or phone numbers",
+        "Extracting data from text (log parsing, web scraping)",
+        "Search and replace operations",
+        "Input validation in web forms"
+      ]
     },
     "markdown-preview": {
       "name": "ตัวอย่าง Markdown",
@@ -199,7 +430,35 @@
       "copyHtml": "คัดลอก HTML",
       "placeholder": "พิมพ์ Markdown ของคุณที่นี่...",
       "seoTitle": "เกี่ยวกับ Markdown",
-      "seoContent": "Markdown เป็นภาษามาร์กอัปขนาดเบาที่สร้างโดย John Gruber ใช้กันอย่างแพร่หลายสำหรับไฟล์ README เอกสาร บล็อก และโน้ต เครื่องมือนี้แสดงผล Markdown ของคุณแบบเรียลไทม์โดยไม่ส่งข้อมูลไปยังเซิร์ฟเวอร์ใดๆ"
+      "seoContent": "Markdown เป็นภาษามาร์กอัปขนาดเบาที่สร้างโดย John Gruber ใช้กันอย่างแพร่หลายสำหรับไฟล์ README เอกสาร บล็อก และโน้ต เครื่องมือนี้แสดงผล Markdown ของคุณแบบเรียลไทม์โดยไม่ส่งข้อมูลไปยังเซิร์ฟเวอร์ใดๆ",
+      "faqTitle": "คำถามที่พบบ่อย",
+      "faqs": [
+        {
+          "q": "What is Markdown?",
+          "a": "Markdown is a lightweight markup language for creating formatted text using a plain-text editor. It's widely used for README files, documentation, blogs, and forums."
+        },
+        {
+          "q": "What Markdown syntax is supported?",
+          "a": "This tool supports standard Markdown: headings, bold, italic, links, images, code blocks, lists, tables, blockquotes, and more."
+        },
+        {
+          "q": "Can I export the HTML?",
+          "a": "Yes. The rendered HTML output can be copied and used directly in your web pages or documentation."
+        }
+      ],
+      "howToUseTitle": "วิธีใช้งาน",
+      "howToUseSteps": [
+        "Type or paste Markdown in the left editor",
+        "See the rendered preview on the right in real-time",
+        "Copy the rendered HTML for use in your projects"
+      ],
+      "useCasesTitle": "กรณีการใช้งาน",
+      "useCases": [
+        "Previewing README.md files",
+        "Writing documentation and blog posts",
+        "Formatting messages for GitHub, Slack, or Discord",
+        "Learning Markdown syntax"
+      ]
     },
     "jwt-decoder": {
       "name": "ตัวถอดรหัส JWT",
@@ -215,7 +474,36 @@
       "invalidFormat": "รูปแบบ JWT ไม่ถูกต้อง: ต้องมี 3 ส่วนคั่นด้วยจุด",
       "invalidJwt": "JWT ไม่ถูกต้อง",
       "seoTitle": "เกี่ยวกับ JSON Web Token",
-      "seoContent": "JWT (JSON Web Token) เป็นรูปแบบโทเค็นที่กระทัดรัดและปลอดภัยสำหรับ URL ใช้สำหรับการพิสูจน์ตัวตนและการแลกเปลี่ยนข้อมูล JWT ประกอบด้วย 3 ส่วน: Header (อัลกอริทึมและประเภท) Payload (claims และข้อมูล) และ Signature (การยืนยัน) JWT ใช้กันทั่วไปใน OAuth 2.0, OpenID Connect และการพิสูจน์ตัวตน API"
+      "seoContent": "JWT (JSON Web Token) เป็นรูปแบบโทเค็นที่กระทัดรัดและปลอดภัยสำหรับ URL ใช้สำหรับการพิสูจน์ตัวตนและการแลกเปลี่ยนข้อมูล JWT ประกอบด้วย 3 ส่วน: Header (อัลกอริทึมและประเภท) Payload (claims และข้อมูล) และ Signature (การยืนยัน) JWT ใช้กันทั่วไปใน OAuth 2.0, OpenID Connect และการพิสูจน์ตัวตน API",
+      "faqTitle": "คำถามที่พบบ่อย",
+      "faqs": [
+        {
+          "q": "What is a JWT?",
+          "a": "JWT (JSON Web Token) is a compact, URL-safe token format used for authentication and information exchange. It contains a header, payload, and signature."
+        },
+        {
+          "q": "Is it safe to decode JWTs here?",
+          "a": "Yes. Decoding happens entirely in your browser. No tokens are sent to any server. Note: decoding only reads the token — it does not verify the signature."
+        },
+        {
+          "q": "Can this tool verify JWT signatures?",
+          "a": "This tool decodes and displays the token contents. Signature verification requires the secret key, which should not be entered into any online tool."
+        }
+      ],
+      "howToUseTitle": "วิธีใช้งาน",
+      "howToUseSteps": [
+        "Paste your JWT token in the input field",
+        "The header, payload, and signature are decoded automatically",
+        "View expiration time and other claims",
+        "Copy decoded sections as needed"
+      ],
+      "useCasesTitle": "กรณีการใช้งาน",
+      "useCases": [
+        "Debugging authentication tokens",
+        "Inspecting JWT claims and expiration",
+        "Verifying token structure during development",
+        "Understanding OAuth2 and API tokens"
+      ]
     },
     "qrcode-generator": {
       "name": "ตัวสร้าง QR Code",
@@ -229,7 +517,36 @@
       "placeholder": "ป้อนข้อความ URL หรือข้อมูลใดก็ได้...",
       "qrPreview": "ตัวอย่าง QR Code",
       "seoTitle": "เกี่ยวกับ QR Code",
-      "seoContent": "QR (Quick Response) code เป็นบาร์โค้ดสองมิติที่สามารถเก็บ URL ข้อความ ข้อมูลติดต่อ และอื่นๆ สแกนได้ด้วยกล้องสมาร์ทโฟนทุกรุ่น เครื่องมือนี้สร้าง QR code พร้อมการแก้ไขข้อผิดพลาดเพื่อการสแกนที่เชื่อถือได้"
+      "seoContent": "QR (Quick Response) code เป็นบาร์โค้ดสองมิติที่สามารถเก็บ URL ข้อความ ข้อมูลติดต่อ และอื่นๆ สแกนได้ด้วยกล้องสมาร์ทโฟนทุกรุ่น เครื่องมือนี้สร้าง QR code พร้อมการแก้ไขข้อผิดพลาดเพื่อการสแกนที่เชื่อถือได้",
+      "faqTitle": "คำถามที่พบบ่อย",
+      "faqs": [
+        {
+          "q": "What is a QR code?",
+          "a": "QR (Quick Response) code is a two-dimensional barcode that stores data like URLs, text, or contact info. It can be scanned by smartphones and QR readers."
+        },
+        {
+          "q": "What data can I encode?",
+          "a": "You can encode any text: URLs, email addresses, phone numbers, WiFi credentials, plain text, and more."
+        },
+        {
+          "q": "Can I download the QR code?",
+          "a": "Yes. Click the Download button to save the QR code as a PNG image that you can use in print or digital materials."
+        }
+      ],
+      "howToUseTitle": "วิธีใช้งาน",
+      "howToUseSteps": [
+        "Enter the text or URL you want to encode",
+        "The QR code generates automatically",
+        "Download the QR code as a PNG image",
+        "Scan with any smartphone camera to verify"
+      ],
+      "useCasesTitle": "กรณีการใช้งาน",
+      "useCases": [
+        "Sharing URLs and links",
+        "Business cards and marketing materials",
+        "WiFi network sharing",
+        "Event tickets and check-in systems"
+      ]
     },
     "lorem-ipsum": {
       "name": "ตัวสร้าง Lorem Ipsum",
@@ -241,7 +558,36 @@
       "startWithLorem": "เริ่มต้นด้วย \"Lorem ipsum...\"",
       "placeholder": "คลิก \"สร้าง\" เพื่อสร้างข้อความตัวอย่าง...",
       "seoTitle": "เกี่ยวกับ Lorem Ipsum",
-      "seoContent": "Lorem Ipsum เป็นข้อความจำลองที่ใช้ในอุตสาหกรรมการพิมพ์และการเรียงพิมพ์ตั้งแต่ปี 1500 นักออกแบบและนักพัฒนาใช้เป็นข้อความตัวอย่างเมื่อยังไม่มีเนื้อหาจริง ช่วยให้มองเห็นเลย์เอาต์โดยไม่ทำให้ผู้อ่านเสียสมาธิกับเนื้อหาที่มีความหมาย"
+      "seoContent": "Lorem Ipsum เป็นข้อความจำลองที่ใช้ในอุตสาหกรรมการพิมพ์และการเรียงพิมพ์ตั้งแต่ปี 1500 นักออกแบบและนักพัฒนาใช้เป็นข้อความตัวอย่างเมื่อยังไม่มีเนื้อหาจริง ช่วยให้มองเห็นเลย์เอาต์โดยไม่ทำให้ผู้อ่านเสียสมาธิกับเนื้อหาที่มีความหมาย",
+      "faqTitle": "คำถามที่พบบ่อย",
+      "faqs": [
+        {
+          "q": "What is Lorem Ipsum?",
+          "a": "Lorem Ipsum is standard placeholder text used in publishing and design since the 1500s. It helps designers focus on layout without being distracted by readable content."
+        },
+        {
+          "q": "Can I choose the output format?",
+          "a": "Yes. Generate output as paragraphs, sentences, or individual words. You can also control the exact quantity."
+        },
+        {
+          "q": "Is the text random?",
+          "a": "The text follows the structure of classical Latin but is scrambled so it doesn't form meaningful sentences. It looks realistic but is intentionally meaningless."
+        }
+      ],
+      "howToUseTitle": "วิธีใช้งาน",
+      "howToUseSteps": [
+        "Choose the type: paragraphs, sentences, or words",
+        "Set the quantity you need",
+        "Click Generate to create placeholder text",
+        "Copy the result for your design or development project"
+      ],
+      "useCasesTitle": "กรณีการใช้งาน",
+      "useCases": [
+        "Filling web page layouts during design",
+        "Placeholder content for mockups and wireframes",
+        "Testing text rendering and typography",
+        "Populating demo databases"
+      ]
     },
     "html-entity": {
       "name": "ตัวเข้ารหัส HTML Entity",
@@ -251,7 +597,36 @@
       "encodeSpecial": "เข้ารหัส (เฉพาะอักขระพิเศษ)",
       "encodeAll": "เข้ารหัสทั้งหมด (รวม Unicode)",
       "seoTitle": "เกี่ยวกับ HTML Entity",
-      "seoContent": "HTML entity เป็นรหัสพิเศษที่ใช้แสดงอักขระสงวนใน HTML อักขระอย่าง <, >, & และ \\\" ต้องถูกเข้ารหัสเพื่อป้องกันไม่ให้ถูกตีความเป็นมาร์กอัป HTML สิ่งนี้สำคัญมากสำหรับการป้องกันการโจมตี XSS และการแสดงโค้ดตัวอย่าง"
+      "seoContent": "HTML entity เป็นรหัสพิเศษที่ใช้แสดงอักขระสงวนใน HTML อักขระอย่าง <, >, & และ \\\" ต้องถูกเข้ารหัสเพื่อป้องกันไม่ให้ถูกตีความเป็นมาร์กอัป HTML สิ่งนี้สำคัญมากสำหรับการป้องกันการโจมตี XSS และการแสดงโค้ดตัวอย่าง",
+      "faqTitle": "คำถามที่พบบ่อย",
+      "faqs": [
+        {
+          "q": "What are HTML entities?",
+          "a": "HTML entities are special codes that represent characters that have meaning in HTML (like <, >, &) or characters not available on a standard keyboard."
+        },
+        {
+          "q": "When should I encode HTML entities?",
+          "a": "Encode when displaying user input in HTML to prevent XSS attacks, or when you need to display special characters like ©, ™, or mathematical symbols."
+        },
+        {
+          "q": "Does this handle all special characters?",
+          "a": "Yes. This tool handles all standard HTML entities including named entities (&amp;), decimal (&#38;), and hexadecimal (&#x26;) formats."
+        }
+      ],
+      "howToUseTitle": "วิธีใช้งาน",
+      "howToUseSteps": [
+        "Enter HTML text or entities in the input field",
+        "Click 'Encode' to convert special characters to HTML entities",
+        "Click 'Decode' to convert HTML entities back to readable text",
+        "Copy the result"
+      ],
+      "useCasesTitle": "กรณีการใช้งาน",
+      "useCases": [
+        "Preventing XSS attacks by escaping user input",
+        "Displaying code snippets in HTML pages",
+        "Working with special characters in web content",
+        "Email template development"
+      ]
     },
     "css-minifier": {
       "name": "ตัวย่อ / ทำให้สวย CSS",
@@ -261,7 +636,36 @@
       "inputCss": "CSS ข้อมูลเข้า",
       "placeholder": "วางโค้ด CSS ของคุณที่นี่...",
       "seoTitle": "เกี่ยวกับการย่อ CSS",
-      "seoContent": "การย่อ CSS จะลบอักขระที่ไม่จำเป็น เช่น ช่องว่าง คอมเมนต์ และเซมิโคลอน เพื่อลดขนาดไฟล์ ไฟล์ CSS ที่เล็กลงจะโหลดเร็วขึ้น ช่วยเพิ่มประสิทธิภาพเว็บไซต์และประสบการณ์ผู้ใช้ ใช้โหมดทำให้สวยเพื่อทำให้ CSS ที่ย่อแล้วกลับมาอ่านได้อีกครั้ง"
+      "seoContent": "การย่อ CSS จะลบอักขระที่ไม่จำเป็น เช่น ช่องว่าง คอมเมนต์ และเซมิโคลอน เพื่อลดขนาดไฟล์ ไฟล์ CSS ที่เล็กลงจะโหลดเร็วขึ้น ช่วยเพิ่มประสิทธิภาพเว็บไซต์และประสบการณ์ผู้ใช้ ใช้โหมดทำให้สวยเพื่อทำให้ CSS ที่ย่อแล้วกลับมาอ่านได้อีกครั้ง",
+      "faqTitle": "คำถามที่พบบ่อย",
+      "faqs": [
+        {
+          "q": "What is CSS minification?",
+          "a": "CSS minification removes whitespace, comments, and unnecessary characters from CSS code to reduce file size and improve page load speed."
+        },
+        {
+          "q": "Does minification change my CSS behavior?",
+          "a": "No. Minification only removes formatting — it doesn't change how your CSS works. The minified version produces identical visual results."
+        },
+        {
+          "q": "How much file size can I save?",
+          "a": "Typically 20-40% reduction depending on the original formatting. Heavily commented files may see even greater savings."
+        }
+      ],
+      "howToUseTitle": "วิธีใช้งาน",
+      "howToUseSteps": [
+        "Paste your CSS code in the input field",
+        "Click 'Minify' to remove whitespace and comments",
+        "Or click 'Beautify' to format compressed CSS for readability",
+        "Copy the result for your project"
+      ],
+      "useCasesTitle": "กรณีการใช้งาน",
+      "useCases": [
+        "Optimizing CSS for production deployment",
+        "Reducing page load times",
+        "Beautifying minified CSS for debugging",
+        "Preparing stylesheets for CDN delivery"
+      ]
     },
     "number-base": {
       "name": "ตัวแปลงเลขฐาน",
@@ -278,7 +682,35 @@
       "hexPlaceholder": "เช่น FF",
       "helperText": "พิมพ์ตัวเลขในช่องใดก็ได้ แล้วเลขฐานอื่นจะถูกคำนวณโดยอัตโนมัติ",
       "seoTitle": "เกี่ยวกับระบบเลขฐาน",
-      "seoContent": "ระบบเลขฐานต่างๆ ถูกใช้ในคอมพิวเตอร์: เลขฐานสอง (base 2) สำหรับการทำงานระดับเครื่อง เลขฐานแปด (base 8) สำหรับสิทธิ์ Unix เลขฐานสิบ (base 10) สำหรับใช้งานทั่วไป และเลขฐานสิบหก (base 16) สำหรับ memory address สี และการแสดงเลขฐานสองแบบกระชับ"
+      "seoContent": "ระบบเลขฐานต่างๆ ถูกใช้ในคอมพิวเตอร์: เลขฐานสอง (base 2) สำหรับการทำงานระดับเครื่อง เลขฐานแปด (base 8) สำหรับสิทธิ์ Unix เลขฐานสิบ (base 10) สำหรับใช้งานทั่วไป และเลขฐานสิบหก (base 16) สำหรับ memory address สี และการแสดงเลขฐานสองแบบกระชับ",
+      "faqTitle": "คำถามที่พบบ่อย",
+      "faqs": [
+        {
+          "q": "What are number bases?",
+          "a": "Number bases (or radixes) are systems for representing numbers. Common bases: binary (base 2), octal (base 8), decimal (base 10), and hexadecimal (base 16)."
+        },
+        {
+          "q": "Why do programmers use hexadecimal?",
+          "a": "Hexadecimal is compact and maps neatly to binary — each hex digit represents exactly 4 binary bits. It's widely used for colors, memory addresses, and byte values."
+        },
+        {
+          "q": "What's binary used for?",
+          "a": "Binary (base 2) is the fundamental language of computers. Understanding binary helps with bitwise operations, networking (IP addresses), and low-level programming."
+        }
+      ],
+      "howToUseTitle": "วิธีใช้งาน",
+      "howToUseSteps": [
+        "Enter a number in any base (binary, octal, decimal, or hex)",
+        "All other base conversions update automatically",
+        "Copy any converted value with the copy button"
+      ],
+      "useCasesTitle": "กรณีการใช้งาน",
+      "useCases": [
+        "Converting between hex and binary for programming",
+        "Working with RGB color codes",
+        "Understanding IP addresses and subnet masks",
+        "Debugging low-level data formats"
+      ]
     },
     "text-diff": {
       "name": "ตัวตรวจสอบความแตกต่าง",
@@ -290,7 +722,36 @@
       "originalPlaceholder": "วางข้อความต้นฉบับที่นี่...",
       "modifiedPlaceholder": "วางข้อความที่แก้ไขที่นี่...",
       "seoTitle": "เกี่ยวกับ Text Diff",
-      "seoContent": "Text diff เปรียบเทียบข้อความสองเวอร์ชันและไฮไลต์ส่วนที่แตกต่าง จำเป็นสำหรับการรีวิวโค้ด การเปรียบเทียบเอกสาร และการติดตามการเปลี่ยนแปลง บรรทัดสีเขียวแสดงส่วนที่เพิ่ม บรรทัดสีแดงแสดงส่วนที่ลบ"
+      "seoContent": "Text diff เปรียบเทียบข้อความสองเวอร์ชันและไฮไลต์ส่วนที่แตกต่าง จำเป็นสำหรับการรีวิวโค้ด การเปรียบเทียบเอกสาร และการติดตามการเปลี่ยนแปลง บรรทัดสีเขียวแสดงส่วนที่เพิ่ม บรรทัดสีแดงแสดงส่วนที่ลบ",
+      "faqTitle": "คำถามที่พบบ่อย",
+      "faqs": [
+        {
+          "q": "What is a text diff?",
+          "a": "A text diff compares two texts and highlights the differences — additions, deletions, and unchanged lines. It's similar to how Git shows code changes."
+        },
+        {
+          "q": "What diff algorithm is used?",
+          "a": "This tool uses a line-by-line comparison algorithm that identifies added, removed, and unchanged lines between the two texts."
+        },
+        {
+          "q": "Can I compare code?",
+          "a": "Yes. The diff tool works with any text including source code, configuration files, documentation, or plain text."
+        }
+      ],
+      "howToUseTitle": "วิธีใช้งาน",
+      "howToUseSteps": [
+        "Paste the original text in the left field",
+        "Paste the modified text in the right field",
+        "Click 'Compare' to see highlighted differences",
+        "Green lines are additions, red lines are deletions"
+      ],
+      "useCasesTitle": "กรณีการใช้งาน",
+      "useCases": [
+        "Comparing code versions before committing",
+        "Reviewing configuration file changes",
+        "Finding differences between document versions",
+        "Verifying data migration accuracy"
+      ]
     },
     "word-counter": {
       "name": "ตัวนับคำ",
@@ -304,7 +765,36 @@
       "readingTimeNote": "(ที่ 200 คำ/นาที)",
       "placeholder": "เริ่มพิมพ์หรือวางข้อความที่นี่เพื่อดูจำนวนคำ จำนวนตัวอักษร และอื่นๆ...",
       "seoTitle": "เกี่ยวกับตัวนับคำ",
-      "seoContent": "เครื่องมือนับคำนี้ให้สถิติข้อความอย่างละเอียด ได้แก่ จำนวนคำ จำนวนตัวอักษร (รวมและไม่รวมเว้นวรรค) จำนวนประโยค จำนวนย่อหน้า และเวลาอ่านโดยประมาณ เหมาะสำหรับนักเขียน นักศึกษา และผู้สร้างเนื้อหาที่ต้องการกำหนดจำนวนคำ"
+      "seoContent": "เครื่องมือนับคำนี้ให้สถิติข้อความอย่างละเอียด ได้แก่ จำนวนคำ จำนวนตัวอักษร (รวมและไม่รวมเว้นวรรค) จำนวนประโยค จำนวนย่อหน้า และเวลาอ่านโดยประมาณ เหมาะสำหรับนักเขียน นักศึกษา และผู้สร้างเนื้อหาที่ต้องการกำหนดจำนวนคำ",
+      "faqTitle": "คำถามที่พบบ่อย",
+      "faqs": [
+        {
+          "q": "What does this tool count?",
+          "a": "It counts words, characters (with and without spaces), sentences, paragraphs, and lines. It also estimates reading time."
+        },
+        {
+          "q": "How is reading time calculated?",
+          "a": "Reading time is estimated based on an average reading speed of 200 words per minute, which is the standard for English text."
+        },
+        {
+          "q": "Does it work with non-English text?",
+          "a": "Yes. The character and line counting works with all languages. Word counting is space-based, which works well for most languages."
+        }
+      ],
+      "howToUseTitle": "วิธีใช้งาน",
+      "howToUseSteps": [
+        "Paste or type your text in the input field",
+        "Statistics update in real-time as you type",
+        "View word frequency analysis below the text",
+        "Check the reading time estimate for your content"
+      ],
+      "useCasesTitle": "กรณีการใช้งาน",
+      "useCases": [
+        "Meeting blog post or essay word count requirements",
+        "Checking character limits for social media",
+        "Estimating article reading time",
+        "Analyzing word frequency for SEO"
+      ]
     },
     "password-generator": {
       "name": "ตัวสร้างรหัสผ่าน",
@@ -324,7 +814,36 @@
       "generatePasswords": "สร้างรหัสผ่าน",
       "emptyState": "คลิก \"สร้างรหัสผ่าน\" เพื่อสร้างรหัสผ่านที่ปลอดภัย",
       "seoTitle": "เกี่ยวกับความปลอดภัยของรหัสผ่าน",
-      "seoContent": "รหัสผ่านที่แข็งแกร่งควรมีความยาวอย่างน้อย 12 ตัวอักษร และประกอบด้วยตัวพิมพ์ใหญ่ ตัวพิมพ์เล็ก ตัวเลข และสัญลักษณ์ ตัวสร้างนี้ใช้การสุ่มเลขที่ปลอดภัยทางการเข้ารหัส (crypto.getRandomValues) เพื่อความปลอดภัยสูงสุด"
+      "seoContent": "รหัสผ่านที่แข็งแกร่งควรมีความยาวอย่างน้อย 12 ตัวอักษร และประกอบด้วยตัวพิมพ์ใหญ่ ตัวพิมพ์เล็ก ตัวเลข และสัญลักษณ์ ตัวสร้างนี้ใช้การสุ่มเลขที่ปลอดภัยทางการเข้ารหัส (crypto.getRandomValues) เพื่อความปลอดภัยสูงสุด",
+      "faqTitle": "คำถามที่พบบ่อย",
+      "faqs": [
+        {
+          "q": "Are the passwords truly random?",
+          "a": "Yes. This tool uses the Web Crypto API (crypto.getRandomValues), which provides cryptographically secure random values."
+        },
+        {
+          "q": "What makes a strong password?",
+          "a": "Strong passwords are at least 12 characters long, use a mix of uppercase, lowercase, numbers, and symbols, and avoid dictionary words or personal information."
+        },
+        {
+          "q": "Are my passwords stored anywhere?",
+          "a": "No. Passwords are generated entirely in your browser and never sent to any server. There is no logging or storage."
+        }
+      ],
+      "howToUseTitle": "วิธีใช้งาน",
+      "howToUseSteps": [
+        "Set your desired password length (recommended: 16+)",
+        "Choose character types: uppercase, lowercase, numbers, symbols",
+        "Set how many passwords to generate",
+        "Click 'Generate' and copy your preferred password"
+      ],
+      "useCasesTitle": "กรณีการใช้งาน",
+      "useCases": [
+        "Creating strong passwords for new accounts",
+        "Generating API keys and secrets",
+        "Creating temporary access codes",
+        "Generating secure tokens for applications"
+      ]
     },
     "sql-formatter": {
       "name": "ตัวจัดรูปแบบ SQL",
@@ -337,7 +856,36 @@
       "placeholder": "วางคำสั่ง SQL ของคุณที่นี่...",
       "outputPlaceholder": "SQL ที่จัดรูปแบบแล้ว...",
       "seoTitle": "เกี่ยวกับการจัดรูปแบบ SQL",
-      "seoContent": "คำสั่ง SQL ที่จัดรูปแบบดีจะอ่าน ดีบัก และดูแลรักษาได้ง่ายกว่า เครื่องมือนี้จะเพิ่มการเยื้องอัตโนมัติ ทำให้คีย์เวิร์ดเป็นตัวพิมพ์ใหญ่ และจัดให้แต่ละ clause อยู่คนละบรรทัด รองรับคำสั่ง SELECT, INSERT, UPDATE, DELETE และ JOIN"
+      "seoContent": "คำสั่ง SQL ที่จัดรูปแบบดีจะอ่าน ดีบัก และดูแลรักษาได้ง่ายกว่า เครื่องมือนี้จะเพิ่มการเยื้องอัตโนมัติ ทำให้คีย์เวิร์ดเป็นตัวพิมพ์ใหญ่ และจัดให้แต่ละ clause อยู่คนละบรรทัด รองรับคำสั่ง SELECT, INSERT, UPDATE, DELETE และ JOIN",
+      "faqTitle": "คำถามที่พบบ่อย",
+      "faqs": [
+        {
+          "q": "What SQL dialects are supported?",
+          "a": "This formatter supports standard SQL syntax that works with MySQL, PostgreSQL, SQLite, SQL Server, and most other databases."
+        },
+        {
+          "q": "Does formatting change query behavior?",
+          "a": "No. SQL formatting only adds whitespace and line breaks. The query logic and results remain identical."
+        },
+        {
+          "q": "Can I format complex queries?",
+          "a": "Yes. The tool handles SELECT, INSERT, UPDATE, DELETE, JOIN, subqueries, CTEs (WITH clauses), and other standard SQL constructs."
+        }
+      ],
+      "howToUseTitle": "วิธีใช้งาน",
+      "howToUseSteps": [
+        "Paste your SQL query in the input field",
+        "Click 'Format SQL' to beautify the query",
+        "Keywords are capitalized and clauses are placed on separate lines",
+        "Copy the formatted SQL for use in your project"
+      ],
+      "useCasesTitle": "กรณีการใช้งาน",
+      "useCases": [
+        "Formatting complex queries for code reviews",
+        "Beautifying auto-generated SQL",
+        "Preparing queries for documentation",
+        "Debugging SQL syntax issues"
+      ]
     },
     "cron-parser": {
       "name": "ตัวแยกวิเคราะห์ Cron Expression",
@@ -364,7 +912,36 @@
       "weekdaysMorning": "วันจันทร์-ศุกร์ 8 โมงเช้า",
       "invalidCron": "Cron expression ไม่ถูกต้อง (ต้องมี 5 ช่อง)",
       "seoTitle": "เกี่ยวกับ Cron Expression",
-      "seoContent": "Cron เป็นตัวจัดตารางงานตามเวลาในระบบ Unix Cron expression ประกอบด้วย 5 ช่อง: นาที ชั่วโมง วันของเดือน เดือน และวันในสัปดาห์ อักขระพิเศษได้แก่ * (ทุกค่า) / (ช่วง) , (รายการ) และ - (ช่วง) ใช้กันอย่างแพร่หลายใน CI/CD งานตามกำหนดเวลา และระบบอัตโนมัติ"
+      "seoContent": "Cron เป็นตัวจัดตารางงานตามเวลาในระบบ Unix Cron expression ประกอบด้วย 5 ช่อง: นาที ชั่วโมง วันของเดือน เดือน และวันในสัปดาห์ อักขระพิเศษได้แก่ * (ทุกค่า) / (ช่วง) , (รายการ) และ - (ช่วง) ใช้กันอย่างแพร่หลายใน CI/CD งานตามกำหนดเวลา และระบบอัตโนมัติ",
+      "faqTitle": "คำถามที่พบบ่อย",
+      "faqs": [
+        {
+          "q": "What is a cron expression?",
+          "a": "A cron expression is a string of 5 fields (minute, hour, day, month, weekday) that defines a schedule for recurring tasks in Unix-like systems."
+        },
+        {
+          "q": "What do the special characters mean?",
+          "a": "* means any value, / means step (*/5 = every 5), , means list (1,3,5), - means range (1-5), and specific numbers mean exact values."
+        },
+        {
+          "q": "Can I see when my cron job will run next?",
+          "a": "Yes. Enter your cron expression and the tool will show the next scheduled execution times, plus a human-readable description."
+        }
+      ],
+      "howToUseTitle": "วิธีใช้งาน",
+      "howToUseSteps": [
+        "Enter a cron expression (5 fields: minute hour day month weekday)",
+        "Or click a quick preset button for common schedules",
+        "View the human-readable description",
+        "Check the next scheduled run times"
+      ],
+      "useCasesTitle": "กรณีการใช้งาน",
+      "useCases": [
+        "Setting up scheduled tasks on Linux servers",
+        "Configuring CI/CD pipeline schedules",
+        "Planning cron jobs for backups",
+        "Debugging crontab entries"
+      ]
     },
     "json-yaml": {
       "name": "ตัวแปลง JSON ↔ YAML",
@@ -378,7 +955,36 @@
       "invalidJson": "JSON ไม่ถูกต้อง",
       "invalidYaml": "YAML ไม่ถูกต้อง",
       "seoTitle": "เกี่ยวกับ JSON และ YAML",
-      "seoContent": "JSON (JavaScript Object Notation) และ YAML (YAML Ain't Markup Language) เป็นรูปแบบการจัดเก็บข้อมูลที่นิยม JSON ใช้กันอย่างแพร่หลายใน API และเว็บแอป ในขณะที่ YAML นิยมสำหรับไฟล์กำหนดค่า (Docker, Kubernetes, CI/CD) เครื่องมือนี้แปลงระหว่างทั้งสองรูปแบบทันทีในเบราว์เซอร์ของคุณ"
+      "seoContent": "JSON (JavaScript Object Notation) และ YAML (YAML Ain't Markup Language) เป็นรูปแบบการจัดเก็บข้อมูลที่นิยม JSON ใช้กันอย่างแพร่หลายใน API และเว็บแอป ในขณะที่ YAML นิยมสำหรับไฟล์กำหนดค่า (Docker, Kubernetes, CI/CD) เครื่องมือนี้แปลงระหว่างทั้งสองรูปแบบทันทีในเบราว์เซอร์ของคุณ",
+      "faqTitle": "คำถามที่พบบ่อย",
+      "faqs": [
+        {
+          "q": "What's the difference between JSON and YAML?",
+          "a": "JSON uses braces and brackets with strict syntax. YAML uses indentation and is more human-readable. Both represent the same data structures."
+        },
+        {
+          "q": "Why convert between JSON and YAML?",
+          "a": "JSON is standard for APIs and web apps. YAML is preferred for configuration files (Docker, Kubernetes, CI/CD). Developers often need to convert between them."
+        },
+        {
+          "q": "Is the conversion accurate?",
+          "a": "Yes. The tool handles objects, arrays, strings, numbers, booleans, and null values. For basic to moderately complex structures, the conversion is accurate."
+        }
+      ],
+      "howToUseTitle": "วิธีใช้งาน",
+      "howToUseSteps": [
+        "Paste JSON in the left panel or YAML in the right panel",
+        "Click 'JSON → YAML' or 'YAML → JSON' to convert",
+        "Copy the converted output",
+        "Use 'Load Sample' to try with example data"
+      ],
+      "useCasesTitle": "กรณีการใช้งาน",
+      "useCases": [
+        "Converting JSON configs to YAML for Kubernetes/Docker",
+        "Converting YAML CI/CD configs to JSON for programmatic access",
+        "Migrating between configuration formats",
+        "Learning YAML syntax from familiar JSON structures"
+      ]
     },
     "string-case": {
       "name": "ตัวแปลงตัวพิมพ์สตริง",
@@ -388,7 +994,35 @@
       "inputLabel": "ข้อความอินพุต",
       "inputPlaceholder": "ป้อนข้อความ ชื่อตัวแปร หรือประโยค...\n\nเช่น my variable name",
       "seoTitle": "เกี่ยวกับหลักการตั้งชื่อ",
-      "seoContent": "หลักการตั้งชื่อมีความสำคัญในการเขียนโปรแกรมเพื่อความสามารถในการอ่านและความสม่ำเสมอของโค้ด รูปแบบทั่วไปได้แก่ camelCase (JavaScript), snake_case (Python), kebab-case (CSS/URL), PascalCase (คลาส) และ CONSTANT_CASE (ค่าคงที่) เครื่องมือนี้แปลงระหว่างรูปแบบการตั้งชื่อยอดนิยมทั้งหมดทันที"
+      "seoContent": "หลักการตั้งชื่อมีความสำคัญในการเขียนโปรแกรมเพื่อความสามารถในการอ่านและความสม่ำเสมอของโค้ด รูปแบบทั่วไปได้แก่ camelCase (JavaScript), snake_case (Python), kebab-case (CSS/URL), PascalCase (คลาส) และ CONSTANT_CASE (ค่าคงที่) เครื่องมือนี้แปลงระหว่างรูปแบบการตั้งชื่อยอดนิยมทั้งหมดทันที",
+      "faqTitle": "คำถามที่พบบ่อย",
+      "faqs": [
+        {
+          "q": "What naming conventions are supported?",
+          "a": "9 conventions: camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE, Title Case, Sentence case, dot.case, and path/case."
+        },
+        {
+          "q": "Which naming convention should I use?",
+          "a": "It depends on the language: camelCase for JavaScript variables, snake_case for Python, kebab-case for CSS/URLs, PascalCase for classes, CONSTANT_CASE for constants."
+        },
+        {
+          "q": "Can I convert multiple words?",
+          "a": "Yes. Enter any text — words, variable names, sentences — and all 9 case conversions appear instantly."
+        }
+      ],
+      "howToUseTitle": "วิธีใช้งาน",
+      "howToUseSteps": [
+        "Type or paste any text in the input field",
+        "All 9 naming conventions are shown instantly",
+        "Click the copy button next to any format you need"
+      ],
+      "useCasesTitle": "กรณีการใช้งาน",
+      "useCases": [
+        "Converting variable names between programming languages",
+        "Generating CSS class names from descriptions",
+        "Creating URL slugs from titles",
+        "Standardizing naming conventions in codebases"
+      ]
     },
     "slug-generator": {
       "name": "ตัวสร้าง URL Slug",
@@ -405,7 +1039,36 @@
       "separator": "ตัวคั่น",
       "maxLength": "ความยาวสูงสุด",
       "seoTitle": "เกี่ยวกับ URL Slug",
-      "seoContent": "URL slug คือส่วนของ URL ที่ระบุหน้าเว็บในรูปแบบที่มนุษย์อ่านได้ Slug ที่ดีควรสั้น มีความหมาย และเป็นมิตรกับ SEO โดยทั่วไปใช้ตัวอักษรพิมพ์เล็ก ขีดกลางเป็นตัวคั่น และหลีกเลี่ยงอักขระพิเศษ"
+      "seoContent": "URL slug คือส่วนของ URL ที่ระบุหน้าเว็บในรูปแบบที่มนุษย์อ่านได้ Slug ที่ดีควรสั้น มีความหมาย และเป็นมิตรกับ SEO โดยทั่วไปใช้ตัวอักษรพิมพ์เล็ก ขีดกลางเป็นตัวคั่น และหลีกเลี่ยงอักขระพิเศษ",
+      "faqTitle": "คำถามที่พบบ่อย",
+      "faqs": [
+        {
+          "q": "What is a URL slug?",
+          "a": "A slug is the human-readable part of a URL that identifies a specific page. For example, in '/blog/how-to-code', 'how-to-code' is the slug."
+        },
+        {
+          "q": "Why are slugs important for SEO?",
+          "a": "Search engines use slugs to understand page content. Clean, descriptive slugs with relevant keywords can improve search rankings and click-through rates."
+        },
+        {
+          "q": "What are stop words?",
+          "a": "Stop words are common words like 'the', 'a', 'in', 'on' that add little meaning. Removing them creates shorter, cleaner slugs."
+        }
+      ],
+      "howToUseTitle": "วิธีใช้งาน",
+      "howToUseSteps": [
+        "Enter a title or text in the input field",
+        "The slug generates automatically in real-time",
+        "Customize: toggle lowercase, stop word removal, separator type, and max length",
+        "Copy the generated slug or preview the full URL"
+      ],
+      "useCasesTitle": "กรณีการใช้งาน",
+      "useCases": [
+        "Creating URL slugs for blog posts",
+        "Generating SEO-friendly page URLs",
+        "Creating file names from titles",
+        "Building permalink structures for CMS systems"
+      ]
     },
     "chmod-calculator": {
       "name": "เครื่องคำนวณ Chmod",
@@ -430,7 +1093,36 @@
       "common600": "ไฟล์ส่วนตัว",
       "common444": "อ่านอย่างเดียว",
       "seoTitle": "เกี่ยวกับสิทธิ์ไฟล์ Linux",
-      "seoContent": "สิทธิ์ไฟล์ Linux ควบคุมว่าใครสามารถอ่าน (r) เขียน (w) และดำเนินการ (x) ไฟล์และไดเรกทอรี สิทธิ์ถูกตั้งค่าสำหรับสามกลุ่ม: เจ้าของ กลุ่ม และอื่นๆ คำสั่ง chmod ใช้เลขฐานแปด เช่น 755 หรือสัญลักษณ์ เช่น rwxr-xr-x"
+      "seoContent": "สิทธิ์ไฟล์ Linux ควบคุมว่าใครสามารถอ่าน (r) เขียน (w) และดำเนินการ (x) ไฟล์และไดเรกทอรี สิทธิ์ถูกตั้งค่าสำหรับสามกลุ่ม: เจ้าของ กลุ่ม และอื่นๆ คำสั่ง chmod ใช้เลขฐานแปด เช่น 755 หรือสัญลักษณ์ เช่น rwxr-xr-x",
+      "faqTitle": "คำถามที่พบบ่อย",
+      "faqs": [
+        {
+          "q": "What is chmod?",
+          "a": "chmod (change mode) is a Unix/Linux command that sets file and directory permissions. It controls who can read, write, and execute files."
+        },
+        {
+          "q": "What does 755 mean?",
+          "a": "755 means: owner can read/write/execute (7), group can read/execute (5), others can read/execute (5). It's the standard permission for directories and scripts."
+        },
+        {
+          "q": "What's the difference between numeric and symbolic notation?",
+          "a": "Numeric uses octal digits (755). Symbolic uses letters (rwxr-xr-x). They represent the same permissions — numeric is more compact, symbolic is more readable."
+        }
+      ],
+      "howToUseTitle": "วิธีใช้งาน",
+      "howToUseSteps": [
+        "Click checkboxes to set read/write/execute permissions for owner, group, and others",
+        "Or type a numeric permission (e.g., 755) to auto-set checkboxes",
+        "View the numeric, symbolic, and command representations",
+        "Click a common permission preset for quick setup"
+      ],
+      "useCasesTitle": "กรณีการใช้งาน",
+      "useCases": [
+        "Setting up web server file permissions",
+        "Configuring deployment scripts",
+        "Securing sensitive files (SSH keys, config files)",
+        "Troubleshooting 'permission denied' errors"
+      ]
     },
     "line-sorter": {
       "name": "เรียงลำดับและลบบรรทัดซ้ำ",
@@ -449,7 +1141,36 @@
       "linesLabel": "บรรทัด",
       "inputPlaceholder": "ป้อนข้อความ หนึ่งรายการต่อบรรทัด...\n\nกล้วย\nแอปเปิ้ล\nเชอร์รี่\nแอปเปิ้ล\nอินทผลัม",
       "seoTitle": "เกี่ยวกับการเรียงลำดับบรรทัด",
-      "seoContent": "การเรียงลำดับบรรทัดเป็นงานประมวลผลข้อความที่พบบ่อยในการเขียนโปรแกรมและการจัดการข้อมูล เครื่องมือนี้มีตัวเลือกการเรียงหลายแบบ: ตามตัวอักษร ตัวเลข และความยาวบรรทัด รองรับการลบรายการซ้ำ กลับลำดับ สับเปลี่ยนแบบสุ่ม และเพิ่มหมายเลขบรรทัด"
+      "seoContent": "การเรียงลำดับบรรทัดเป็นงานประมวลผลข้อความที่พบบ่อยในการเขียนโปรแกรมและการจัดการข้อมูล เครื่องมือนี้มีตัวเลือกการเรียงหลายแบบ: ตามตัวอักษร ตัวเลข และความยาวบรรทัด รองรับการลบรายการซ้ำ กลับลำดับ สับเปลี่ยนแบบสุ่ม และเพิ่มหมายเลขบรรทัด",
+      "faqTitle": "คำถามที่พบบ่อย",
+      "faqs": [
+        {
+          "q": "What sorting methods are available?",
+          "a": "Alphabetical (A-Z, Z-A), numeric, by line length. Plus: remove duplicates, reverse order, random shuffle, trim whitespace, and add line numbers."
+        },
+        {
+          "q": "Does it preserve empty lines?",
+          "a": "Empty lines are automatically removed during processing to keep results clean. Use 'Trim Lines' to also remove leading/trailing whitespace."
+        },
+        {
+          "q": "Can I sort large lists?",
+          "a": "Yes. All processing happens in your browser, so it handles thousands of lines quickly without any server dependency."
+        }
+      ],
+      "howToUseTitle": "วิธีใช้งาน",
+      "howToUseSteps": [
+        "Paste your text with one item per line in the input field",
+        "Click any operation button: Sort A-Z, Remove Duplicates, Shuffle, etc.",
+        "View the processed result in the output field",
+        "Copy the result with the copy button"
+      ],
+      "useCasesTitle": "กรณีการใช้งาน",
+      "useCases": [
+        "Sorting lists of names, emails, or data entries",
+        "Removing duplicate entries from lists",
+        "Randomizing quiz questions or playlist order",
+        "Cleaning up data exports from spreadsheets"
+      ]
     }
   },
   "footer": {

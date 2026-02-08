@@ -82,7 +82,36 @@
       "seoFeature1": "Formattazione e abbellimento JSON con indentazione personalizzata (2, 4 o 8 spazi)",
       "seoFeature2": "Compressione JSON per uso in produzione",
       "seoFeature3": "Validazione della sintassi JSON con messaggi di errore dettagliati",
-      "seoFeature4": "Elaborazione 100% lato client — i tuoi dati non lasciano mai il browser"
+      "seoFeature4": "Elaborazione 100% lato client — i tuoi dati non lasciano mai il browser",
+      "faqTitle": "Domande frequenti",
+      "faqs": [
+        {
+          "q": "What is JSON formatting?",
+          "a": "JSON formatting is the process of adding proper indentation, line breaks, and spacing to JSON data to make it more readable. It doesn't change the data itself, just its visual presentation."
+        },
+        {
+          "q": "Is this JSON formatter safe to use?",
+          "a": "Yes, 100% safe. All processing happens directly in your browser. Your JSON data is never sent to any server or stored anywhere."
+        },
+        {
+          "q": "Can I validate JSON with this tool?",
+          "a": "Yes. Click the Validate button to check if your JSON is syntactically correct. The tool will show detailed error messages if any issues are found."
+        }
+      ],
+      "howToUseTitle": "Come usare",
+      "howToUseSteps": [
+        "Paste your JSON data into the input field on the left",
+        "Choose your preferred indentation (2, 4, or 8 spaces)",
+        "Click 'Format / Beautify' for readable output, or 'Minify' for compact output",
+        "Copy the result using the copy button"
+      ],
+      "useCasesTitle": "Casi d'uso",
+      "useCases": [
+        "Debugging API responses and payloads",
+        "Formatting configuration files (package.json, tsconfig.json)",
+        "Validating JSON data before processing",
+        "Minifying JSON for production use"
+      ]
     },
     "base64": {
       "name": "Codificatore/Decodificatore Base64",
@@ -96,7 +125,35 @@
       "invalidBase64": "Stringa Base64 non valida",
       "encodingError": "Errore di codifica",
       "seoTitle": "Informazioni sulla codifica Base64",
-      "seoContent": "Base64 è uno schema di codifica da binario a testo che rappresenta i dati binari in formato stringa ASCII. È comunemente usato per codificare dati in URL, email, HTML e API. Questo strumento supporta la codifica e decodifica completa UTF-8."
+      "seoContent": "Base64 è uno schema di codifica da binario a testo che rappresenta i dati binari in formato stringa ASCII. È comunemente usato per codificare dati in URL, email, HTML e API. Questo strumento supporta la codifica e decodifica completa UTF-8.",
+      "faqTitle": "Domande frequenti",
+      "faqs": [
+        {
+          "q": "What is Base64 encoding?",
+          "a": "Base64 is a binary-to-text encoding scheme that converts binary data into ASCII characters. It's commonly used to transmit data safely over text-based protocols like HTTP and email."
+        },
+        {
+          "q": "Is Base64 encoding the same as encryption?",
+          "a": "No. Base64 is an encoding scheme, not encryption. Anyone can decode Base64 data. It's meant for data transport, not security."
+        },
+        {
+          "q": "Does this tool support UTF-8?",
+          "a": "Yes. This tool fully supports UTF-8 encoding and decoding, allowing you to work with international characters and emojis."
+        }
+      ],
+      "howToUseTitle": "Come usare",
+      "howToUseSteps": [
+        "Enter your plain text in the top field to encode, or Base64 string in the bottom field to decode",
+        "Click 'Encode' to convert text to Base64, or 'Decode' to convert Base64 back to text",
+        "Copy the result with the copy button"
+      ],
+      "useCasesTitle": "Casi d'uso",
+      "useCases": [
+        "Encoding images for embedding in HTML/CSS",
+        "Encoding data for URL parameters",
+        "Transmitting binary data in JSON APIs",
+        "Email attachment encoding"
+      ]
     },
     "url-encoder": {
       "name": "Codificatore/Decodificatore URL",
@@ -106,7 +163,36 @@
       "uriComponent": "Componente URI",
       "fullUri": "URI completo",
       "seoTitle": "Informazioni sulla codifica URL",
-      "seoContent": "La codifica URL sostituisce i caratteri ASCII non sicuri con un \"%\" seguito da due cifre esadecimali. È essenziale per passare caratteri speciali in URL, parametri di query e dati dei form. Usa encodeURIComponent per i parametri di query e encodeURI per gli URL completi."
+      "seoContent": "La codifica URL sostituisce i caratteri ASCII non sicuri con un \"%\" seguito da due cifre esadecimali. È essenziale per passare caratteri speciali in URL, parametri di query e dati dei form. Usa encodeURIComponent per i parametri di query e encodeURI per gli URL completi.",
+      "faqTitle": "Domande frequenti",
+      "faqs": [
+        {
+          "q": "What is URL encoding?",
+          "a": "URL encoding replaces unsafe ASCII characters with a '%' followed by two hex digits. This ensures special characters are safely transmitted in URLs."
+        },
+        {
+          "q": "What's the difference between encodeURI and encodeURIComponent?",
+          "a": "encodeURI encodes a full URL but preserves characters like :, /, ?, &. encodeURIComponent encodes everything including those characters, making it suitable for query parameter values."
+        },
+        {
+          "q": "When should I URL encode?",
+          "a": "Always URL encode when passing user input as query parameters, form data, or any URL component that may contain special characters like spaces, &, =, or #."
+        }
+      ],
+      "howToUseTitle": "Come usare",
+      "howToUseSteps": [
+        "Enter text in the input field",
+        "Choose between URI Component or Full URI encoding mode",
+        "Click 'Encode' or 'Decode'",
+        "Copy the result"
+      ],
+      "useCasesTitle": "Casi d'uso",
+      "useCases": [
+        "Encoding query parameters in URLs",
+        "Encoding form data for submission",
+        "Handling special characters in API requests",
+        "Debugging URL encoding issues"
+      ]
     },
     "hash-generator": {
       "name": "Generatore di hash",
@@ -118,7 +204,36 @@
       "uppercase": "Maiuscolo",
       "generateHashes": "Genera hash",
       "seoTitle": "Informazioni sulle funzioni hash",
-      "seoContent": "Le funzioni hash crittografiche generano un valore hash di dimensione fissa a partire dai dati in ingresso. Vengono utilizzate per la verifica dell'integrità dei dati, l'archiviazione delle password, le firme digitali e altro ancora. SHA-256 è l'algoritmo più comunemente usato oggi."
+      "seoContent": "Le funzioni hash crittografiche generano un valore hash di dimensione fissa a partire dai dati in ingresso. Vengono utilizzate per la verifica dell'integrità dei dati, l'archiviazione delle password, le firme digitali e altro ancora. SHA-256 è l'algoritmo più comunemente usato oggi.",
+      "faqTitle": "Domande frequenti",
+      "faqs": [
+        {
+          "q": "What is a hash function?",
+          "a": "A hash function takes input data and produces a fixed-size string of characters (hash). The same input always produces the same hash, but you cannot reverse a hash back to the original data."
+        },
+        {
+          "q": "Which hash algorithm should I use?",
+          "a": "SHA-256 is recommended for most purposes. SHA-512 offers more security. MD5 and SHA-1 are considered weak for security but are still used for checksums."
+        },
+        {
+          "q": "Is my data safe?",
+          "a": "Yes. All hash computation happens in your browser using the Web Crypto API. No data is sent to any server."
+        }
+      ],
+      "howToUseTitle": "Come usare",
+      "howToUseSteps": [
+        "Enter or paste your text in the input field",
+        "Click 'Generate Hashes' to compute all hash values",
+        "Toggle 'Uppercase' for uppercase hex output",
+        "Copy any hash value with the copy button"
+      ],
+      "useCasesTitle": "Casi d'uso",
+      "useCases": [
+        "Verifying file integrity with checksums",
+        "Password hashing for storage",
+        "Data deduplication",
+        "Digital signatures and certificates"
+      ]
     },
     "uuid-generator": {
       "name": "Generatore UUID",
@@ -131,7 +246,36 @@
       "generateUuids": "Genera UUID",
       "emptyState": "Clicca \"Genera UUID\" per creare UUID casuali",
       "seoTitle": "Informazioni su UUID v4",
-      "seoContent": "UUID (Universally Unique Identifier) v4 genera identificatori casuali a 128 bit. Con 122 bit casuali, la probabilità di una collisione è astronomicamente bassa. Gli UUID sono comunemente usati come chiavi primarie nei database, token di sessione e identificatori nei sistemi distribuiti."
+      "seoContent": "UUID (Universally Unique Identifier) v4 genera identificatori casuali a 128 bit. Con 122 bit casuali, la probabilità di una collisione è astronomicamente bassa. Gli UUID sono comunemente usati come chiavi primarie nei database, token di sessione e identificatori nei sistemi distribuiti.",
+      "faqTitle": "Domande frequenti",
+      "faqs": [
+        {
+          "q": "What is a UUID?",
+          "a": "UUID (Universally Unique Identifier) is a 128-bit number used to uniquely identify information. Version 4 UUIDs are randomly generated, making collision probability astronomically low."
+        },
+        {
+          "q": "Are UUIDs truly unique?",
+          "a": "While not mathematically guaranteed, UUID v4 has 2^122 possible values. The probability of generating a duplicate is essentially zero for practical purposes."
+        },
+        {
+          "q": "When should I use UUIDs?",
+          "a": "Use UUIDs as database primary keys, API resource identifiers, session tokens, or any time you need a unique identifier without a central authority."
+        }
+      ],
+      "howToUseTitle": "Come usare",
+      "howToUseSteps": [
+        "Set the number of UUIDs to generate (1-20)",
+        "Choose options: uppercase, no dashes",
+        "Click 'Generate UUIDs'",
+        "Click on any UUID to copy, or use 'Copy All'"
+      ],
+      "useCasesTitle": "Casi d'uso",
+      "useCases": [
+        "Database primary keys",
+        "API resource identifiers",
+        "Distributed system identifiers",
+        "Session and correlation IDs"
+      ]
     },
     "timestamp-converter": {
       "name": "Convertitore timestamp Unix",
@@ -155,7 +299,36 @@
       "ago": "fa",
       "fromNow": "da adesso",
       "seoTitle": "Informazioni sui timestamp Unix",
-      "seoContent": "Un timestamp Unix rappresenta il numero di secondi trascorsi dal 1° gennaio 1970 (UTC). È ampiamente utilizzato nella programmazione, nei database e nelle API. Questo strumento rileva automaticamente se l'input è in secondi o millisecondi."
+      "seoContent": "Un timestamp Unix rappresenta il numero di secondi trascorsi dal 1° gennaio 1970 (UTC). È ampiamente utilizzato nella programmazione, nei database e nelle API. Questo strumento rileva automaticamente se l'input è in secondi o millisecondi.",
+      "faqTitle": "Domande frequenti",
+      "faqs": [
+        {
+          "q": "What is a Unix timestamp?",
+          "a": "A Unix timestamp is the number of seconds elapsed since January 1, 1970 00:00:00 UTC (the Unix epoch). It's a universal way to represent time in computing."
+        },
+        {
+          "q": "What's the difference between seconds and milliseconds?",
+          "a": "Unix timestamps in seconds are 10 digits (e.g., 1700000000), while milliseconds are 13 digits (e.g., 1700000000000). JavaScript uses milliseconds, most systems use seconds."
+        },
+        {
+          "q": "Does this tool handle timezones?",
+          "a": "Yes. The tool shows both UTC and your local timezone when converting timestamps, so you can see the exact time in both."
+        }
+      ],
+      "howToUseTitle": "Come usare",
+      "howToUseSteps": [
+        "Enter a Unix timestamp to convert to a human-readable date",
+        "Or enter a date string to convert to a Unix timestamp",
+        "The tool auto-detects seconds vs milliseconds",
+        "View results in UTC, local time, and ISO format"
+      ],
+      "useCasesTitle": "Casi d'uso",
+      "useCases": [
+        "Converting API timestamps to readable dates",
+        "Debugging date-related issues",
+        "Comparing timestamps across systems",
+        "Working with JWT token expiration times"
+      ]
     },
     "color-converter": {
       "name": "Convertitore di colori",
@@ -166,7 +339,36 @@
       "colorPicker": "Selettore colore",
       "emptyState": "Inserisci un valore di colore e clicca Converti",
       "seoTitle": "Informazioni sui formati colore",
-      "seoContent": "I colori HEX usano la notazione esadecimale (#RRGGBB). RGB usa i canali rosso, verde e blu (0-255). HSL usa tonalità (0-360°), saturazione (0-100%) e luminosità (0-100%). Ogni formato ha i suoi utilizzi nel web design, CSS e grafica."
+      "seoContent": "I colori HEX usano la notazione esadecimale (#RRGGBB). RGB usa i canali rosso, verde e blu (0-255). HSL usa tonalità (0-360°), saturazione (0-100%) e luminosità (0-100%). Ogni formato ha i suoi utilizzi nel web design, CSS e grafica.",
+      "faqTitle": "Domande frequenti",
+      "faqs": [
+        {
+          "q": "What color formats are supported?",
+          "a": "This tool supports HEX (e.g., #FF5733), RGB (e.g., rgb(255,87,51)), and HSL (e.g., hsl(11,100%,60%)) formats."
+        },
+        {
+          "q": "What's the difference between HEX, RGB, and HSL?",
+          "a": "HEX uses hexadecimal notation. RGB defines colors by red, green, blue values (0-255). HSL uses hue (0-360), saturation, and lightness percentages."
+        },
+        {
+          "q": "Can I use the color picker?",
+          "a": "Yes. Use the built-in color picker to visually select a color, and all format values will update automatically."
+        }
+      ],
+      "howToUseTitle": "Come usare",
+      "howToUseSteps": [
+        "Enter a color value in any format (HEX, RGB, or HSL)",
+        "All other formats update automatically in real-time",
+        "Use the color picker for visual selection",
+        "Copy any color format with the copy button"
+      ],
+      "useCasesTitle": "Casi d'uso",
+      "useCases": [
+        "Converting design specs between formats",
+        "Finding HEX values for CSS styling",
+        "Adjusting colors with HSL for hue/saturation tweaks",
+        "Matching brand colors across tools"
+      ]
     },
     "regex-tester": {
       "name": "Tester Regex",
@@ -187,7 +389,36 @@
       "atIndex": "all'indice",
       "groups": "gruppi:",
       "seoTitle": "Informazioni sulle espressioni regolari",
-      "seoContent": "Le espressioni regolari (regex) sono potenti pattern utilizzati per la corrispondenza, la ricerca e la sostituzione di testo. Sono essenziali per la validazione dell'input, l'elaborazione del testo e l'estrazione di dati. Questo strumento testa le tue regex in tempo reale con il motore regex di JavaScript."
+      "seoContent": "Le espressioni regolari (regex) sono potenti pattern utilizzati per la corrispondenza, la ricerca e la sostituzione di testo. Sono essenziali per la validazione dell'input, l'elaborazione del testo e l'estrazione di dati. Questo strumento testa le tue regex in tempo reale con il motore regex di JavaScript.",
+      "faqTitle": "Domande frequenti",
+      "faqs": [
+        {
+          "q": "What is a regular expression?",
+          "a": "A regular expression (regex) is a pattern used to match, search, and manipulate text. It's supported in virtually every programming language."
+        },
+        {
+          "q": "How do I test my regex?",
+          "a": "Enter your regex pattern in the pattern field, add test text below, and the tool will highlight all matches in real-time. Flags like 'g' (global) and 'i' (case-insensitive) are supported."
+        },
+        {
+          "q": "Is my regex data safe?",
+          "a": "Yes. All regex processing happens in your browser using JavaScript's built-in RegExp engine. No data is sent anywhere."
+        }
+      ],
+      "howToUseTitle": "Come usare",
+      "howToUseSteps": [
+        "Enter your regex pattern in the pattern field",
+        "Add flags (g for global, i for case-insensitive, m for multiline)",
+        "Type or paste your test text",
+        "View highlighted matches and match details in real-time"
+      ],
+      "useCasesTitle": "Casi d'uso",
+      "useCases": [
+        "Validating email addresses, URLs, or phone numbers",
+        "Extracting data from text (log parsing, web scraping)",
+        "Search and replace operations",
+        "Input validation in web forms"
+      ]
     },
     "markdown-preview": {
       "name": "Anteprima Markdown",
@@ -199,7 +430,35 @@
       "copyHtml": "Copia HTML",
       "placeholder": "Scrivi il tuo Markdown qui...",
       "seoTitle": "Informazioni su Markdown",
-      "seoContent": "Markdown è un linguaggio di markup leggero creato da John Gruber. È ampiamente usato per file README, documentazione, blog e appunti. Questo strumento di anteprima renderizza il tuo Markdown in tempo reale senza inviare dati a nessun server."
+      "seoContent": "Markdown è un linguaggio di markup leggero creato da John Gruber. È ampiamente usato per file README, documentazione, blog e appunti. Questo strumento di anteprima renderizza il tuo Markdown in tempo reale senza inviare dati a nessun server.",
+      "faqTitle": "Domande frequenti",
+      "faqs": [
+        {
+          "q": "What is Markdown?",
+          "a": "Markdown is a lightweight markup language for creating formatted text using a plain-text editor. It's widely used for README files, documentation, blogs, and forums."
+        },
+        {
+          "q": "What Markdown syntax is supported?",
+          "a": "This tool supports standard Markdown: headings, bold, italic, links, images, code blocks, lists, tables, blockquotes, and more."
+        },
+        {
+          "q": "Can I export the HTML?",
+          "a": "Yes. The rendered HTML output can be copied and used directly in your web pages or documentation."
+        }
+      ],
+      "howToUseTitle": "Come usare",
+      "howToUseSteps": [
+        "Type or paste Markdown in the left editor",
+        "See the rendered preview on the right in real-time",
+        "Copy the rendered HTML for use in your projects"
+      ],
+      "useCasesTitle": "Casi d'uso",
+      "useCases": [
+        "Previewing README.md files",
+        "Writing documentation and blog posts",
+        "Formatting messages for GitHub, Slack, or Discord",
+        "Learning Markdown syntax"
+      ]
     },
     "jwt-decoder": {
       "name": "Decodificatore JWT",
@@ -215,7 +474,36 @@
       "invalidFormat": "Formato JWT non valido: previste 3 parti separate da punti",
       "invalidJwt": "JWT non valido",
       "seoTitle": "Informazioni sui JSON Web Token",
-      "seoContent": "JWT (JSON Web Token) è un formato di token compatto e sicuro per gli URL, utilizzato per l'autenticazione e lo scambio di informazioni. Un JWT è composto da tre parti: Header (algoritmo e tipo), Payload (claims e dati) e Firma (verifica). I JWT sono comunemente usati in OAuth 2.0, OpenID Connect e autenticazione API."
+      "seoContent": "JWT (JSON Web Token) è un formato di token compatto e sicuro per gli URL, utilizzato per l'autenticazione e lo scambio di informazioni. Un JWT è composto da tre parti: Header (algoritmo e tipo), Payload (claims e dati) e Firma (verifica). I JWT sono comunemente usati in OAuth 2.0, OpenID Connect e autenticazione API.",
+      "faqTitle": "Domande frequenti",
+      "faqs": [
+        {
+          "q": "What is a JWT?",
+          "a": "JWT (JSON Web Token) is a compact, URL-safe token format used for authentication and information exchange. It contains a header, payload, and signature."
+        },
+        {
+          "q": "Is it safe to decode JWTs here?",
+          "a": "Yes. Decoding happens entirely in your browser. No tokens are sent to any server. Note: decoding only reads the token — it does not verify the signature."
+        },
+        {
+          "q": "Can this tool verify JWT signatures?",
+          "a": "This tool decodes and displays the token contents. Signature verification requires the secret key, which should not be entered into any online tool."
+        }
+      ],
+      "howToUseTitle": "Come usare",
+      "howToUseSteps": [
+        "Paste your JWT token in the input field",
+        "The header, payload, and signature are decoded automatically",
+        "View expiration time and other claims",
+        "Copy decoded sections as needed"
+      ],
+      "useCasesTitle": "Casi d'uso",
+      "useCases": [
+        "Debugging authentication tokens",
+        "Inspecting JWT claims and expiration",
+        "Verifying token structure during development",
+        "Understanding OAuth2 and API tokens"
+      ]
     },
     "qrcode-generator": {
       "name": "Generatore di codici QR",
@@ -229,7 +517,36 @@
       "placeholder": "Inserisci testo, URL o qualsiasi dato...",
       "qrPreview": "Anteprima codice QR",
       "seoTitle": "Informazioni sui codici QR",
-      "seoContent": "I codici QR (Quick Response) sono codici a barre bidimensionali che possono memorizzare URL, testo, informazioni di contatto e altro. Possono essere scansionati da qualsiasi fotocamera di smartphone. Questo strumento genera codici QR con correzione degli errori per una scansione affidabile."
+      "seoContent": "I codici QR (Quick Response) sono codici a barre bidimensionali che possono memorizzare URL, testo, informazioni di contatto e altro. Possono essere scansionati da qualsiasi fotocamera di smartphone. Questo strumento genera codici QR con correzione degli errori per una scansione affidabile.",
+      "faqTitle": "Domande frequenti",
+      "faqs": [
+        {
+          "q": "What is a QR code?",
+          "a": "QR (Quick Response) code is a two-dimensional barcode that stores data like URLs, text, or contact info. It can be scanned by smartphones and QR readers."
+        },
+        {
+          "q": "What data can I encode?",
+          "a": "You can encode any text: URLs, email addresses, phone numbers, WiFi credentials, plain text, and more."
+        },
+        {
+          "q": "Can I download the QR code?",
+          "a": "Yes. Click the Download button to save the QR code as a PNG image that you can use in print or digital materials."
+        }
+      ],
+      "howToUseTitle": "Come usare",
+      "howToUseSteps": [
+        "Enter the text or URL you want to encode",
+        "The QR code generates automatically",
+        "Download the QR code as a PNG image",
+        "Scan with any smartphone camera to verify"
+      ],
+      "useCasesTitle": "Casi d'uso",
+      "useCases": [
+        "Sharing URLs and links",
+        "Business cards and marketing materials",
+        "WiFi network sharing",
+        "Event tickets and check-in systems"
+      ]
     },
     "lorem-ipsum": {
       "name": "Generatore Lorem Ipsum",
@@ -241,7 +558,36 @@
       "startWithLorem": "Inizia con \"Lorem ipsum...\"",
       "placeholder": "Clicca \"Genera\" per creare testo segnaposto...",
       "seoTitle": "Informazioni su Lorem Ipsum",
-      "seoContent": "Lorem Ipsum è un testo fittizio usato nell'industria della stampa e della tipografia fin dal 1500. Designer e sviluppatori lo usano come testo segnaposto quando il contenuto effettivo non è ancora disponibile. Aiuta a visualizzare i layout senza distrarre i lettori con contenuti significativi."
+      "seoContent": "Lorem Ipsum è un testo fittizio usato nell'industria della stampa e della tipografia fin dal 1500. Designer e sviluppatori lo usano come testo segnaposto quando il contenuto effettivo non è ancora disponibile. Aiuta a visualizzare i layout senza distrarre i lettori con contenuti significativi.",
+      "faqTitle": "Domande frequenti",
+      "faqs": [
+        {
+          "q": "What is Lorem Ipsum?",
+          "a": "Lorem Ipsum is standard placeholder text used in publishing and design since the 1500s. It helps designers focus on layout without being distracted by readable content."
+        },
+        {
+          "q": "Can I choose the output format?",
+          "a": "Yes. Generate output as paragraphs, sentences, or individual words. You can also control the exact quantity."
+        },
+        {
+          "q": "Is the text random?",
+          "a": "The text follows the structure of classical Latin but is scrambled so it doesn't form meaningful sentences. It looks realistic but is intentionally meaningless."
+        }
+      ],
+      "howToUseTitle": "Come usare",
+      "howToUseSteps": [
+        "Choose the type: paragraphs, sentences, or words",
+        "Set the quantity you need",
+        "Click Generate to create placeholder text",
+        "Copy the result for your design or development project"
+      ],
+      "useCasesTitle": "Casi d'uso",
+      "useCases": [
+        "Filling web page layouts during design",
+        "Placeholder content for mockups and wireframes",
+        "Testing text rendering and typography",
+        "Populating demo databases"
+      ]
     },
     "html-entity": {
       "name": "Codificatore entità HTML",
@@ -251,7 +597,36 @@
       "encodeSpecial": "Codifica (solo caratteri speciali)",
       "encodeAll": "Codifica tutto (incluso Unicode)",
       "seoTitle": "Informazioni sulle entità HTML",
-      "seoContent": "Le entità HTML sono codici speciali usati per visualizzare caratteri riservati in HTML. Caratteri come <, >, & e \\\" devono essere codificati per evitare che vengano interpretati come markup HTML. Questo è fondamentale per prevenire attacchi XSS e visualizzare frammenti di codice."
+      "seoContent": "Le entità HTML sono codici speciali usati per visualizzare caratteri riservati in HTML. Caratteri come <, >, & e \\\" devono essere codificati per evitare che vengano interpretati come markup HTML. Questo è fondamentale per prevenire attacchi XSS e visualizzare frammenti di codice.",
+      "faqTitle": "Domande frequenti",
+      "faqs": [
+        {
+          "q": "What are HTML entities?",
+          "a": "HTML entities are special codes that represent characters that have meaning in HTML (like <, >, &) or characters not available on a standard keyboard."
+        },
+        {
+          "q": "When should I encode HTML entities?",
+          "a": "Encode when displaying user input in HTML to prevent XSS attacks, or when you need to display special characters like ©, ™, or mathematical symbols."
+        },
+        {
+          "q": "Does this handle all special characters?",
+          "a": "Yes. This tool handles all standard HTML entities including named entities (&amp;), decimal (&#38;), and hexadecimal (&#x26;) formats."
+        }
+      ],
+      "howToUseTitle": "Come usare",
+      "howToUseSteps": [
+        "Enter HTML text or entities in the input field",
+        "Click 'Encode' to convert special characters to HTML entities",
+        "Click 'Decode' to convert HTML entities back to readable text",
+        "Copy the result"
+      ],
+      "useCasesTitle": "Casi d'uso",
+      "useCases": [
+        "Preventing XSS attacks by escaping user input",
+        "Displaying code snippets in HTML pages",
+        "Working with special characters in web content",
+        "Email template development"
+      ]
     },
     "css-minifier": {
       "name": "Compressore / Formattatore CSS",
@@ -261,7 +636,36 @@
       "inputCss": "CSS in ingresso",
       "placeholder": "Incolla il tuo CSS qui...",
       "seoTitle": "Informazioni sulla compressione CSS",
-      "seoContent": "La compressione CSS rimuove caratteri non necessari come spazi bianchi, commenti e punti e virgola per ridurre la dimensione del file. File CSS più piccoli si caricano più velocemente, migliorando le prestazioni del sito web e l'esperienza utente. Usa la modalità di formattazione per rendere nuovamente leggibile il CSS compresso."
+      "seoContent": "La compressione CSS rimuove caratteri non necessari come spazi bianchi, commenti e punti e virgola per ridurre la dimensione del file. File CSS più piccoli si caricano più velocemente, migliorando le prestazioni del sito web e l'esperienza utente. Usa la modalità di formattazione per rendere nuovamente leggibile il CSS compresso.",
+      "faqTitle": "Domande frequenti",
+      "faqs": [
+        {
+          "q": "What is CSS minification?",
+          "a": "CSS minification removes whitespace, comments, and unnecessary characters from CSS code to reduce file size and improve page load speed."
+        },
+        {
+          "q": "Does minification change my CSS behavior?",
+          "a": "No. Minification only removes formatting — it doesn't change how your CSS works. The minified version produces identical visual results."
+        },
+        {
+          "q": "How much file size can I save?",
+          "a": "Typically 20-40% reduction depending on the original formatting. Heavily commented files may see even greater savings."
+        }
+      ],
+      "howToUseTitle": "Come usare",
+      "howToUseSteps": [
+        "Paste your CSS code in the input field",
+        "Click 'Minify' to remove whitespace and comments",
+        "Or click 'Beautify' to format compressed CSS for readability",
+        "Copy the result for your project"
+      ],
+      "useCasesTitle": "Casi d'uso",
+      "useCases": [
+        "Optimizing CSS for production deployment",
+        "Reducing page load times",
+        "Beautifying minified CSS for debugging",
+        "Preparing stylesheets for CDN delivery"
+      ]
     },
     "number-base": {
       "name": "Convertitore di basi numeriche",
@@ -278,7 +682,35 @@
       "hexPlaceholder": "es. FF",
       "helperText": "Digita un numero in qualsiasi campo e le altre basi verranno calcolate automaticamente.",
       "seoTitle": "Informazioni sui sistemi di basi numeriche",
-      "seoContent": "Diversi sistemi di basi numeriche sono usati nell'informatica: Binario (base 2) per le operazioni a livello macchina, Ottale (base 8) per i permessi Unix, Decimale (base 10) per l'uso quotidiano, ed Esadecimale (base 16) per indirizzi di memoria, colori e rappresentazione binaria compatta."
+      "seoContent": "Diversi sistemi di basi numeriche sono usati nell'informatica: Binario (base 2) per le operazioni a livello macchina, Ottale (base 8) per i permessi Unix, Decimale (base 10) per l'uso quotidiano, ed Esadecimale (base 16) per indirizzi di memoria, colori e rappresentazione binaria compatta.",
+      "faqTitle": "Domande frequenti",
+      "faqs": [
+        {
+          "q": "What are number bases?",
+          "a": "Number bases (or radixes) are systems for representing numbers. Common bases: binary (base 2), octal (base 8), decimal (base 10), and hexadecimal (base 16)."
+        },
+        {
+          "q": "Why do programmers use hexadecimal?",
+          "a": "Hexadecimal is compact and maps neatly to binary — each hex digit represents exactly 4 binary bits. It's widely used for colors, memory addresses, and byte values."
+        },
+        {
+          "q": "What's binary used for?",
+          "a": "Binary (base 2) is the fundamental language of computers. Understanding binary helps with bitwise operations, networking (IP addresses), and low-level programming."
+        }
+      ],
+      "howToUseTitle": "Come usare",
+      "howToUseSteps": [
+        "Enter a number in any base (binary, octal, decimal, or hex)",
+        "All other base conversions update automatically",
+        "Copy any converted value with the copy button"
+      ],
+      "useCasesTitle": "Casi d'uso",
+      "useCases": [
+        "Converting between hex and binary for programming",
+        "Working with RGB color codes",
+        "Understanding IP addresses and subnet masks",
+        "Debugging low-level data formats"
+      ]
     },
     "text-diff": {
       "name": "Confronto testi",
@@ -290,7 +722,36 @@
       "originalPlaceholder": "Incolla il testo originale qui...",
       "modifiedPlaceholder": "Incolla il testo modificato qui...",
       "seoTitle": "Informazioni sul confronto di testi",
-      "seoContent": "Il confronto di testi (diff) compara due versioni di un testo ed evidenzia le differenze. È essenziale per la revisione del codice, il confronto di documenti e il tracciamento delle modifiche. Le righe verdi indicano aggiunte, le righe rosse indicano rimozioni."
+      "seoContent": "Il confronto di testi (diff) compara due versioni di un testo ed evidenzia le differenze. È essenziale per la revisione del codice, il confronto di documenti e il tracciamento delle modifiche. Le righe verdi indicano aggiunte, le righe rosse indicano rimozioni.",
+      "faqTitle": "Domande frequenti",
+      "faqs": [
+        {
+          "q": "What is a text diff?",
+          "a": "A text diff compares two texts and highlights the differences — additions, deletions, and unchanged lines. It's similar to how Git shows code changes."
+        },
+        {
+          "q": "What diff algorithm is used?",
+          "a": "This tool uses a line-by-line comparison algorithm that identifies added, removed, and unchanged lines between the two texts."
+        },
+        {
+          "q": "Can I compare code?",
+          "a": "Yes. The diff tool works with any text including source code, configuration files, documentation, or plain text."
+        }
+      ],
+      "howToUseTitle": "Come usare",
+      "howToUseSteps": [
+        "Paste the original text in the left field",
+        "Paste the modified text in the right field",
+        "Click 'Compare' to see highlighted differences",
+        "Green lines are additions, red lines are deletions"
+      ],
+      "useCasesTitle": "Casi d'uso",
+      "useCases": [
+        "Comparing code versions before committing",
+        "Reviewing configuration file changes",
+        "Finding differences between document versions",
+        "Verifying data migration accuracy"
+      ]
     },
     "word-counter": {
       "name": "Contaparole",
@@ -304,7 +765,36 @@
       "readingTimeNote": "(a 200 parole/min)",
       "placeholder": "Inizia a digitare o incolla il tuo testo qui per vedere il conteggio delle parole, dei caratteri e altro...",
       "seoTitle": "Informazioni sul contaparole",
-      "seoContent": "Questo strumento contaparole fornisce statistiche dettagliate sul testo, inclusi conteggio delle parole, conteggio dei caratteri (con e senza spazi), conteggio delle frasi, conteggio dei paragrafi e tempo di lettura stimato. Perfetto per scrittori, studenti e creatori di contenuti che devono rispettare requisiti di conteggio parole."
+      "seoContent": "Questo strumento contaparole fornisce statistiche dettagliate sul testo, inclusi conteggio delle parole, conteggio dei caratteri (con e senza spazi), conteggio delle frasi, conteggio dei paragrafi e tempo di lettura stimato. Perfetto per scrittori, studenti e creatori di contenuti che devono rispettare requisiti di conteggio parole.",
+      "faqTitle": "Domande frequenti",
+      "faqs": [
+        {
+          "q": "What does this tool count?",
+          "a": "It counts words, characters (with and without spaces), sentences, paragraphs, and lines. It also estimates reading time."
+        },
+        {
+          "q": "How is reading time calculated?",
+          "a": "Reading time is estimated based on an average reading speed of 200 words per minute, which is the standard for English text."
+        },
+        {
+          "q": "Does it work with non-English text?",
+          "a": "Yes. The character and line counting works with all languages. Word counting is space-based, which works well for most languages."
+        }
+      ],
+      "howToUseTitle": "Come usare",
+      "howToUseSteps": [
+        "Paste or type your text in the input field",
+        "Statistics update in real-time as you type",
+        "View word frequency analysis below the text",
+        "Check the reading time estimate for your content"
+      ],
+      "useCasesTitle": "Casi d'uso",
+      "useCases": [
+        "Meeting blog post or essay word count requirements",
+        "Checking character limits for social media",
+        "Estimating article reading time",
+        "Analyzing word frequency for SEO"
+      ]
     },
     "password-generator": {
       "name": "Generatore di password",
@@ -324,7 +814,36 @@
       "generatePasswords": "Genera password",
       "emptyState": "Clicca \"Genera password\" per creare password sicure",
       "seoTitle": "Informazioni sulla sicurezza delle password",
-      "seoContent": "Le password forti dovrebbero essere lunghe almeno 12 caratteri e includere un mix di lettere maiuscole, lettere minuscole, numeri e simboli. Questo generatore utilizza la generazione di numeri casuali crittograficamente sicura (crypto.getRandomValues) per la massima sicurezza."
+      "seoContent": "Le password forti dovrebbero essere lunghe almeno 12 caratteri e includere un mix di lettere maiuscole, lettere minuscole, numeri e simboli. Questo generatore utilizza la generazione di numeri casuali crittograficamente sicura (crypto.getRandomValues) per la massima sicurezza.",
+      "faqTitle": "Domande frequenti",
+      "faqs": [
+        {
+          "q": "Are the passwords truly random?",
+          "a": "Yes. This tool uses the Web Crypto API (crypto.getRandomValues), which provides cryptographically secure random values."
+        },
+        {
+          "q": "What makes a strong password?",
+          "a": "Strong passwords are at least 12 characters long, use a mix of uppercase, lowercase, numbers, and symbols, and avoid dictionary words or personal information."
+        },
+        {
+          "q": "Are my passwords stored anywhere?",
+          "a": "No. Passwords are generated entirely in your browser and never sent to any server. There is no logging or storage."
+        }
+      ],
+      "howToUseTitle": "Come usare",
+      "howToUseSteps": [
+        "Set your desired password length (recommended: 16+)",
+        "Choose character types: uppercase, lowercase, numbers, symbols",
+        "Set how many passwords to generate",
+        "Click 'Generate' and copy your preferred password"
+      ],
+      "useCasesTitle": "Casi d'uso",
+      "useCases": [
+        "Creating strong passwords for new accounts",
+        "Generating API keys and secrets",
+        "Creating temporary access codes",
+        "Generating secure tokens for applications"
+      ]
     },
     "sql-formatter": {
       "name": "Formattatore SQL",
@@ -337,7 +856,36 @@
       "placeholder": "Incolla la tua query SQL qui...",
       "outputPlaceholder": "SQL formattato...",
       "seoTitle": "Informazioni sulla formattazione SQL",
-      "seoContent": "Le query SQL ben formattate sono più facili da leggere, debuggare e mantenere. Questo strumento aggiunge automaticamente l'indentazione, mette in maiuscolo le parole chiave e posiziona le clausole su righe separate. Supporta istruzioni SELECT, INSERT, UPDATE, DELETE e JOIN."
+      "seoContent": "Le query SQL ben formattate sono più facili da leggere, debuggare e mantenere. Questo strumento aggiunge automaticamente l'indentazione, mette in maiuscolo le parole chiave e posiziona le clausole su righe separate. Supporta istruzioni SELECT, INSERT, UPDATE, DELETE e JOIN.",
+      "faqTitle": "Domande frequenti",
+      "faqs": [
+        {
+          "q": "What SQL dialects are supported?",
+          "a": "This formatter supports standard SQL syntax that works with MySQL, PostgreSQL, SQLite, SQL Server, and most other databases."
+        },
+        {
+          "q": "Does formatting change query behavior?",
+          "a": "No. SQL formatting only adds whitespace and line breaks. The query logic and results remain identical."
+        },
+        {
+          "q": "Can I format complex queries?",
+          "a": "Yes. The tool handles SELECT, INSERT, UPDATE, DELETE, JOIN, subqueries, CTEs (WITH clauses), and other standard SQL constructs."
+        }
+      ],
+      "howToUseTitle": "Come usare",
+      "howToUseSteps": [
+        "Paste your SQL query in the input field",
+        "Click 'Format SQL' to beautify the query",
+        "Keywords are capitalized and clauses are placed on separate lines",
+        "Copy the formatted SQL for use in your project"
+      ],
+      "useCasesTitle": "Casi d'uso",
+      "useCases": [
+        "Formatting complex queries for code reviews",
+        "Beautifying auto-generated SQL",
+        "Preparing queries for documentation",
+        "Debugging SQL syntax issues"
+      ]
     },
     "cron-parser": {
       "name": "Parser espressioni Cron",
@@ -364,7 +912,36 @@
       "weekdaysMorning": "Giorni feriali alle 8",
       "invalidCron": "Espressione cron non valida (previsti 5 campi)",
       "seoTitle": "Informazioni sulle espressioni Cron",
-      "seoContent": "Cron è un pianificatore di attività basato sul tempo nei sistemi Unix-like. Un'espressione cron è composta da 5 campi: minuto, ora, giorno del mese, mese e giorno della settimana. I caratteri speciali includono * (qualsiasi), / (passo), , (elenco) e - (intervallo). Ampiamente utilizzato in CI/CD, attività pianificate e automazione."
+      "seoContent": "Cron è un pianificatore di attività basato sul tempo nei sistemi Unix-like. Un'espressione cron è composta da 5 campi: minuto, ora, giorno del mese, mese e giorno della settimana. I caratteri speciali includono * (qualsiasi), / (passo), , (elenco) e - (intervallo). Ampiamente utilizzato in CI/CD, attività pianificate e automazione.",
+      "faqTitle": "Domande frequenti",
+      "faqs": [
+        {
+          "q": "What is a cron expression?",
+          "a": "A cron expression is a string of 5 fields (minute, hour, day, month, weekday) that defines a schedule for recurring tasks in Unix-like systems."
+        },
+        {
+          "q": "What do the special characters mean?",
+          "a": "* means any value, / means step (*/5 = every 5), , means list (1,3,5), - means range (1-5), and specific numbers mean exact values."
+        },
+        {
+          "q": "Can I see when my cron job will run next?",
+          "a": "Yes. Enter your cron expression and the tool will show the next scheduled execution times, plus a human-readable description."
+        }
+      ],
+      "howToUseTitle": "Come usare",
+      "howToUseSteps": [
+        "Enter a cron expression (5 fields: minute hour day month weekday)",
+        "Or click a quick preset button for common schedules",
+        "View the human-readable description",
+        "Check the next scheduled run times"
+      ],
+      "useCasesTitle": "Casi d'uso",
+      "useCases": [
+        "Setting up scheduled tasks on Linux servers",
+        "Configuring CI/CD pipeline schedules",
+        "Planning cron jobs for backups",
+        "Debugging crontab entries"
+      ]
     },
     "json-yaml": {
       "name": "Convertitore JSON ↔ YAML",
@@ -378,7 +955,36 @@
       "invalidJson": "JSON non valido",
       "invalidYaml": "YAML non valido",
       "seoTitle": "Informazioni su JSON e YAML",
-      "seoContent": "JSON (JavaScript Object Notation) e YAML (YAML Ain't Markup Language) sono formati popolari di serializzazione dei dati. JSON è ampiamente usato nelle API e nelle app web, mentre YAML è preferito per i file di configurazione (Docker, Kubernetes, CI/CD). Questo strumento converte istantaneamente tra i due formati nel tuo browser."
+      "seoContent": "JSON (JavaScript Object Notation) e YAML (YAML Ain't Markup Language) sono formati popolari di serializzazione dei dati. JSON è ampiamente usato nelle API e nelle app web, mentre YAML è preferito per i file di configurazione (Docker, Kubernetes, CI/CD). Questo strumento converte istantaneamente tra i due formati nel tuo browser.",
+      "faqTitle": "Domande frequenti",
+      "faqs": [
+        {
+          "q": "What's the difference between JSON and YAML?",
+          "a": "JSON uses braces and brackets with strict syntax. YAML uses indentation and is more human-readable. Both represent the same data structures."
+        },
+        {
+          "q": "Why convert between JSON and YAML?",
+          "a": "JSON is standard for APIs and web apps. YAML is preferred for configuration files (Docker, Kubernetes, CI/CD). Developers often need to convert between them."
+        },
+        {
+          "q": "Is the conversion accurate?",
+          "a": "Yes. The tool handles objects, arrays, strings, numbers, booleans, and null values. For basic to moderately complex structures, the conversion is accurate."
+        }
+      ],
+      "howToUseTitle": "Come usare",
+      "howToUseSteps": [
+        "Paste JSON in the left panel or YAML in the right panel",
+        "Click 'JSON → YAML' or 'YAML → JSON' to convert",
+        "Copy the converted output",
+        "Use 'Load Sample' to try with example data"
+      ],
+      "useCasesTitle": "Casi d'uso",
+      "useCases": [
+        "Converting JSON configs to YAML for Kubernetes/Docker",
+        "Converting YAML CI/CD configs to JSON for programmatic access",
+        "Migrating between configuration formats",
+        "Learning YAML syntax from familiar JSON structures"
+      ]
     },
     "string-case": {
       "name": "Convertitore Maiuscole/Minuscole",
@@ -388,7 +994,35 @@
       "inputLabel": "Testo di input",
       "inputPlaceholder": "Inserisci testo, nome variabile o frase...\n\nes. il mio nome variabile",
       "seoTitle": "Informazioni sulle convenzioni di denominazione",
-      "seoContent": "Le convenzioni di denominazione sono importanti nella programmazione per la leggibilità e la coerenza del codice. Le convenzioni comuni includono camelCase (JavaScript), snake_case (Python), kebab-case (CSS/URL), PascalCase (classi) e CONSTANT_CASE (costanti). Questo strumento converte istantaneamente tra tutte le convenzioni popolari."
+      "seoContent": "Le convenzioni di denominazione sono importanti nella programmazione per la leggibilità e la coerenza del codice. Le convenzioni comuni includono camelCase (JavaScript), snake_case (Python), kebab-case (CSS/URL), PascalCase (classi) e CONSTANT_CASE (costanti). Questo strumento converte istantaneamente tra tutte le convenzioni popolari.",
+      "faqTitle": "Domande frequenti",
+      "faqs": [
+        {
+          "q": "What naming conventions are supported?",
+          "a": "9 conventions: camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE, Title Case, Sentence case, dot.case, and path/case."
+        },
+        {
+          "q": "Which naming convention should I use?",
+          "a": "It depends on the language: camelCase for JavaScript variables, snake_case for Python, kebab-case for CSS/URLs, PascalCase for classes, CONSTANT_CASE for constants."
+        },
+        {
+          "q": "Can I convert multiple words?",
+          "a": "Yes. Enter any text — words, variable names, sentences — and all 9 case conversions appear instantly."
+        }
+      ],
+      "howToUseTitle": "Come usare",
+      "howToUseSteps": [
+        "Type or paste any text in the input field",
+        "All 9 naming conventions are shown instantly",
+        "Click the copy button next to any format you need"
+      ],
+      "useCasesTitle": "Casi d'uso",
+      "useCases": [
+        "Converting variable names between programming languages",
+        "Generating CSS class names from descriptions",
+        "Creating URL slugs from titles",
+        "Standardizing naming conventions in codebases"
+      ]
     },
     "slug-generator": {
       "name": "Generatore di Slug URL",
@@ -405,7 +1039,36 @@
       "separator": "Separatore",
       "maxLength": "Lunghezza massima",
       "seoTitle": "Informazioni sugli slug URL",
-      "seoContent": "Uno slug URL è la parte di un URL che identifica una pagina in forma leggibile. I buoni slug sono brevi, descrittivi e SEO-friendly. Tipicamente usano lettere minuscole, trattini come separatori e evitano caratteri speciali."
+      "seoContent": "Uno slug URL è la parte di un URL che identifica una pagina in forma leggibile. I buoni slug sono brevi, descrittivi e SEO-friendly. Tipicamente usano lettere minuscole, trattini come separatori e evitano caratteri speciali.",
+      "faqTitle": "Domande frequenti",
+      "faqs": [
+        {
+          "q": "What is a URL slug?",
+          "a": "A slug is the human-readable part of a URL that identifies a specific page. For example, in '/blog/how-to-code', 'how-to-code' is the slug."
+        },
+        {
+          "q": "Why are slugs important for SEO?",
+          "a": "Search engines use slugs to understand page content. Clean, descriptive slugs with relevant keywords can improve search rankings and click-through rates."
+        },
+        {
+          "q": "What are stop words?",
+          "a": "Stop words are common words like 'the', 'a', 'in', 'on' that add little meaning. Removing them creates shorter, cleaner slugs."
+        }
+      ],
+      "howToUseTitle": "Come usare",
+      "howToUseSteps": [
+        "Enter a title or text in the input field",
+        "The slug generates automatically in real-time",
+        "Customize: toggle lowercase, stop word removal, separator type, and max length",
+        "Copy the generated slug or preview the full URL"
+      ],
+      "useCasesTitle": "Casi d'uso",
+      "useCases": [
+        "Creating URL slugs for blog posts",
+        "Generating SEO-friendly page URLs",
+        "Creating file names from titles",
+        "Building permalink structures for CMS systems"
+      ]
     },
     "chmod-calculator": {
       "name": "Calcolatore Chmod",
@@ -430,7 +1093,36 @@
       "common600": "File privati",
       "common444": "Solo lettura",
       "seoTitle": "Informazioni sui permessi Linux",
-      "seoContent": "I permessi dei file Linux controllano chi può leggere (r), scrivere (w) ed eseguire (x) file e directory. I permessi sono impostati per tre gruppi: proprietario, gruppo e altri. Il comando chmod usa la notazione numerica (ottale) come 755 o la notazione simbolica come rwxr-xr-x."
+      "seoContent": "I permessi dei file Linux controllano chi può leggere (r), scrivere (w) ed eseguire (x) file e directory. I permessi sono impostati per tre gruppi: proprietario, gruppo e altri. Il comando chmod usa la notazione numerica (ottale) come 755 o la notazione simbolica come rwxr-xr-x.",
+      "faqTitle": "Domande frequenti",
+      "faqs": [
+        {
+          "q": "What is chmod?",
+          "a": "chmod (change mode) is a Unix/Linux command that sets file and directory permissions. It controls who can read, write, and execute files."
+        },
+        {
+          "q": "What does 755 mean?",
+          "a": "755 means: owner can read/write/execute (7), group can read/execute (5), others can read/execute (5). It's the standard permission for directories and scripts."
+        },
+        {
+          "q": "What's the difference between numeric and symbolic notation?",
+          "a": "Numeric uses octal digits (755). Symbolic uses letters (rwxr-xr-x). They represent the same permissions — numeric is more compact, symbolic is more readable."
+        }
+      ],
+      "howToUseTitle": "Come usare",
+      "howToUseSteps": [
+        "Click checkboxes to set read/write/execute permissions for owner, group, and others",
+        "Or type a numeric permission (e.g., 755) to auto-set checkboxes",
+        "View the numeric, symbolic, and command representations",
+        "Click a common permission preset for quick setup"
+      ],
+      "useCasesTitle": "Casi d'uso",
+      "useCases": [
+        "Setting up web server file permissions",
+        "Configuring deployment scripts",
+        "Securing sensitive files (SSH keys, config files)",
+        "Troubleshooting 'permission denied' errors"
+      ]
     },
     "line-sorter": {
       "name": "Ordinamento e Deduplicazione Righe",
@@ -449,7 +1141,36 @@
       "linesLabel": "righe",
       "inputPlaceholder": "Inserisci testo, un elemento per riga...\n\nbanana\nmela\nciliegia\nmela\ndattero",
       "seoTitle": "Informazioni sull'ordinamento righe",
-      "seoContent": "L'ordinamento delle righe è un'operazione comune nell'elaborazione del testo. Questo strumento offre opzioni multiple: ordinamento alfabetico, numerico e per lunghezza. Supporta anche la rimozione dei duplicati, inversione, mescolamento casuale e numerazione delle righe."
+      "seoContent": "L'ordinamento delle righe è un'operazione comune nell'elaborazione del testo. Questo strumento offre opzioni multiple: ordinamento alfabetico, numerico e per lunghezza. Supporta anche la rimozione dei duplicati, inversione, mescolamento casuale e numerazione delle righe.",
+      "faqTitle": "Domande frequenti",
+      "faqs": [
+        {
+          "q": "What sorting methods are available?",
+          "a": "Alphabetical (A-Z, Z-A), numeric, by line length. Plus: remove duplicates, reverse order, random shuffle, trim whitespace, and add line numbers."
+        },
+        {
+          "q": "Does it preserve empty lines?",
+          "a": "Empty lines are automatically removed during processing to keep results clean. Use 'Trim Lines' to also remove leading/trailing whitespace."
+        },
+        {
+          "q": "Can I sort large lists?",
+          "a": "Yes. All processing happens in your browser, so it handles thousands of lines quickly without any server dependency."
+        }
+      ],
+      "howToUseTitle": "Come usare",
+      "howToUseSteps": [
+        "Paste your text with one item per line in the input field",
+        "Click any operation button: Sort A-Z, Remove Duplicates, Shuffle, etc.",
+        "View the processed result in the output field",
+        "Copy the result with the copy button"
+      ],
+      "useCasesTitle": "Casi d'uso",
+      "useCases": [
+        "Sorting lists of names, emails, or data entries",
+        "Removing duplicate entries from lists",
+        "Randomizing quiz questions or playlist order",
+        "Cleaning up data exports from spreadsheets"
+      ]
     }
   },
   "footer": {

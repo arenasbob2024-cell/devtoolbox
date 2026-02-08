@@ -9,6 +9,43 @@ import { useLang } from '@/i18n/LangContext';
 export default function Home() {
   const { lang, dict } = useLang();
   const [search, setSearch] = useState('');
+
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'DevToolBox',
+    url: `https://viadreams.cc/${lang}`,
+    description: dict.meta.homeDescription,
+    inLanguage: lang,
+    publisher: {
+      '@type': 'Organization',
+      name: 'DevToolBox',
+      url: 'https://viadreams.cc',
+    },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: `https://viadreams.cc/${lang}?q={search_term_string}`,
+      'query-input': 'required name=search_term_string',
+    },
+  };
+
+  const collectionSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: dict.meta.homeTitle,
+    description: dict.meta.homeDescription,
+    url: `https://viadreams.cc/${lang}`,
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: tools.length,
+      itemListElement: tools.map((tool, idx) => ({
+        '@type': 'ListItem',
+        position: idx + 1,
+        name: dict.tools[tool.id as keyof typeof dict.tools]?.name || tool.name,
+        url: `https://viadreams.cc/${lang}${tool.path}`,
+      })),
+    },
+  };
   const [activeCategory, setActiveCategory] = useState('all');
 
   const filteredTools = search
@@ -25,6 +62,10 @@ export default function Home() {
 
   return (
     <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
+
       {/* Hero */}
       <section style={{ textAlign: 'center', padding: '50px 0 30px' }}>
         <h1 style={{

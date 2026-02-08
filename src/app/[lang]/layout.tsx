@@ -29,22 +29,26 @@ export async function generateMetadata({
     openGraph: {
       title: dict.meta.homeTitle,
       description: dict.meta.homeDescription,
+      url: `https://viadreams.cc/${lang}`,
       type: 'website',
       locale: { en: 'en_US', fr: 'fr_FR', de: 'de_DE', it: 'it_IT', es: 'es_ES', zh: 'zh_CN', id: 'id_ID', th: 'th_TH' }[lang] || 'en_US',
       siteName: 'DevToolBox',
+      images: [{ url: 'https://viadreams.cc/og-image.png', width: 1200, height: 630, alt: 'DevToolBox - Free Online Developer Tools' }],
     },
     twitter: {
       card: 'summary_large_image',
       title: dict.meta.homeTitle,
       description: dict.meta.homeDescription,
+      images: ['https://viadreams.cc/og-image.png'],
     },
     robots: {
       index: true,
       follow: true,
     },
     alternates: {
+      canonical: `https://viadreams.cc/${lang}`,
       languages: Object.fromEntries(
-        i18n.locales.map((l) => [l, `/${l}`])
+        i18n.locales.map((l) => [l, `https://viadreams.cc/${l}`])
       ),
     },
   };

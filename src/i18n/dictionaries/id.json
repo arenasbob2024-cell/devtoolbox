@@ -82,7 +82,36 @@
       "seoFeature1": "Format & percantik JSON dengan indentasi kustom (2, 4, atau 8 spasi)",
       "seoFeature2": "Perkecil JSON untuk penggunaan produksi",
       "seoFeature3": "Validasi sintaks JSON dengan pesan kesalahan terperinci",
-      "seoFeature4": "100% diproses di sisi klien — data Anda tidak pernah keluar dari browser"
+      "seoFeature4": "100% diproses di sisi klien — data Anda tidak pernah keluar dari browser",
+      "faqTitle": "Pertanyaan Umum",
+      "faqs": [
+        {
+          "q": "What is JSON formatting?",
+          "a": "JSON formatting is the process of adding proper indentation, line breaks, and spacing to JSON data to make it more readable. It doesn't change the data itself, just its visual presentation."
+        },
+        {
+          "q": "Is this JSON formatter safe to use?",
+          "a": "Yes, 100% safe. All processing happens directly in your browser. Your JSON data is never sent to any server or stored anywhere."
+        },
+        {
+          "q": "Can I validate JSON with this tool?",
+          "a": "Yes. Click the Validate button to check if your JSON is syntactically correct. The tool will show detailed error messages if any issues are found."
+        }
+      ],
+      "howToUseTitle": "Cara Penggunaan",
+      "howToUseSteps": [
+        "Paste your JSON data into the input field on the left",
+        "Choose your preferred indentation (2, 4, or 8 spaces)",
+        "Click 'Format / Beautify' for readable output, or 'Minify' for compact output",
+        "Copy the result using the copy button"
+      ],
+      "useCasesTitle": "Kasus Penggunaan",
+      "useCases": [
+        "Debugging API responses and payloads",
+        "Formatting configuration files (package.json, tsconfig.json)",
+        "Validating JSON data before processing",
+        "Minifying JSON for production use"
+      ]
     },
     "base64": {
       "name": "Base64 Enkoder/Dekoder",
@@ -96,7 +125,35 @@
       "invalidBase64": "String Base64 tidak valid",
       "encodingError": "Kesalahan encoding",
       "seoTitle": "Tentang Encoding Base64",
-      "seoContent": "Base64 adalah skema encoding biner-ke-teks yang merepresentasikan data biner dalam format string ASCII. Umumnya digunakan untuk encoding data di URL, email, HTML, dan API. Alat ini mendukung encoding dan decoding UTF-8 secara penuh."
+      "seoContent": "Base64 adalah skema encoding biner-ke-teks yang merepresentasikan data biner dalam format string ASCII. Umumnya digunakan untuk encoding data di URL, email, HTML, dan API. Alat ini mendukung encoding dan decoding UTF-8 secara penuh.",
+      "faqTitle": "Pertanyaan Umum",
+      "faqs": [
+        {
+          "q": "What is Base64 encoding?",
+          "a": "Base64 is a binary-to-text encoding scheme that converts binary data into ASCII characters. It's commonly used to transmit data safely over text-based protocols like HTTP and email."
+        },
+        {
+          "q": "Is Base64 encoding the same as encryption?",
+          "a": "No. Base64 is an encoding scheme, not encryption. Anyone can decode Base64 data. It's meant for data transport, not security."
+        },
+        {
+          "q": "Does this tool support UTF-8?",
+          "a": "Yes. This tool fully supports UTF-8 encoding and decoding, allowing you to work with international characters and emojis."
+        }
+      ],
+      "howToUseTitle": "Cara Penggunaan",
+      "howToUseSteps": [
+        "Enter your plain text in the top field to encode, or Base64 string in the bottom field to decode",
+        "Click 'Encode' to convert text to Base64, or 'Decode' to convert Base64 back to text",
+        "Copy the result with the copy button"
+      ],
+      "useCasesTitle": "Kasus Penggunaan",
+      "useCases": [
+        "Encoding images for embedding in HTML/CSS",
+        "Encoding data for URL parameters",
+        "Transmitting binary data in JSON APIs",
+        "Email attachment encoding"
+      ]
     },
     "url-encoder": {
       "name": "URL Enkoder/Dekoder",
@@ -106,7 +163,36 @@
       "uriComponent": "Komponen URI",
       "fullUri": "URI Lengkap",
       "seoTitle": "Tentang URL Encoding",
-      "seoContent": "URL encoding mengganti karakter ASCII yang tidak aman dengan \"%\" diikuti dua digit heksadesimal. Ini penting untuk melewatkan karakter khusus di URL, parameter query, dan data formulir. Gunakan encodeURIComponent untuk parameter query dan encodeURI untuk URL lengkap."
+      "seoContent": "URL encoding mengganti karakter ASCII yang tidak aman dengan \"%\" diikuti dua digit heksadesimal. Ini penting untuk melewatkan karakter khusus di URL, parameter query, dan data formulir. Gunakan encodeURIComponent untuk parameter query dan encodeURI untuk URL lengkap.",
+      "faqTitle": "Pertanyaan Umum",
+      "faqs": [
+        {
+          "q": "What is URL encoding?",
+          "a": "URL encoding replaces unsafe ASCII characters with a '%' followed by two hex digits. This ensures special characters are safely transmitted in URLs."
+        },
+        {
+          "q": "What's the difference between encodeURI and encodeURIComponent?",
+          "a": "encodeURI encodes a full URL but preserves characters like :, /, ?, &. encodeURIComponent encodes everything including those characters, making it suitable for query parameter values."
+        },
+        {
+          "q": "When should I URL encode?",
+          "a": "Always URL encode when passing user input as query parameters, form data, or any URL component that may contain special characters like spaces, &, =, or #."
+        }
+      ],
+      "howToUseTitle": "Cara Penggunaan",
+      "howToUseSteps": [
+        "Enter text in the input field",
+        "Choose between URI Component or Full URI encoding mode",
+        "Click 'Encode' or 'Decode'",
+        "Copy the result"
+      ],
+      "useCasesTitle": "Kasus Penggunaan",
+      "useCases": [
+        "Encoding query parameters in URLs",
+        "Encoding form data for submission",
+        "Handling special characters in API requests",
+        "Debugging URL encoding issues"
+      ]
     },
     "hash-generator": {
       "name": "Hash Generator",
@@ -118,7 +204,36 @@
       "uppercase": "Huruf Besar",
       "generateHashes": "Buat Hash",
       "seoTitle": "Tentang Fungsi Hash",
-      "seoContent": "Fungsi hash kriptografi menghasilkan nilai hash berukuran tetap dari data input. Digunakan untuk verifikasi integritas data, penyimpanan kata sandi, tanda tangan digital, dan lainnya. SHA-256 adalah algoritma yang paling umum digunakan saat ini."
+      "seoContent": "Fungsi hash kriptografi menghasilkan nilai hash berukuran tetap dari data input. Digunakan untuk verifikasi integritas data, penyimpanan kata sandi, tanda tangan digital, dan lainnya. SHA-256 adalah algoritma yang paling umum digunakan saat ini.",
+      "faqTitle": "Pertanyaan Umum",
+      "faqs": [
+        {
+          "q": "What is a hash function?",
+          "a": "A hash function takes input data and produces a fixed-size string of characters (hash). The same input always produces the same hash, but you cannot reverse a hash back to the original data."
+        },
+        {
+          "q": "Which hash algorithm should I use?",
+          "a": "SHA-256 is recommended for most purposes. SHA-512 offers more security. MD5 and SHA-1 are considered weak for security but are still used for checksums."
+        },
+        {
+          "q": "Is my data safe?",
+          "a": "Yes. All hash computation happens in your browser using the Web Crypto API. No data is sent to any server."
+        }
+      ],
+      "howToUseTitle": "Cara Penggunaan",
+      "howToUseSteps": [
+        "Enter or paste your text in the input field",
+        "Click 'Generate Hashes' to compute all hash values",
+        "Toggle 'Uppercase' for uppercase hex output",
+        "Copy any hash value with the copy button"
+      ],
+      "useCasesTitle": "Kasus Penggunaan",
+      "useCases": [
+        "Verifying file integrity with checksums",
+        "Password hashing for storage",
+        "Data deduplication",
+        "Digital signatures and certificates"
+      ]
     },
     "uuid-generator": {
       "name": "UUID Generator",
@@ -131,7 +246,36 @@
       "generateUuids": "Buat UUID",
       "emptyState": "Klik \"Buat UUID\" untuk membuat UUID acak",
       "seoTitle": "Tentang UUID v4",
-      "seoContent": "UUID (Universally Unique Identifier) v4 menghasilkan pengenal acak 128-bit. Dengan 122 bit acak, kemungkinan tabrakan sangatlah kecil. UUID umumnya digunakan sebagai kunci utama database, token sesi, dan pengenal sistem terdistribusi."
+      "seoContent": "UUID (Universally Unique Identifier) v4 menghasilkan pengenal acak 128-bit. Dengan 122 bit acak, kemungkinan tabrakan sangatlah kecil. UUID umumnya digunakan sebagai kunci utama database, token sesi, dan pengenal sistem terdistribusi.",
+      "faqTitle": "Pertanyaan Umum",
+      "faqs": [
+        {
+          "q": "What is a UUID?",
+          "a": "UUID (Universally Unique Identifier) is a 128-bit number used to uniquely identify information. Version 4 UUIDs are randomly generated, making collision probability astronomically low."
+        },
+        {
+          "q": "Are UUIDs truly unique?",
+          "a": "While not mathematically guaranteed, UUID v4 has 2^122 possible values. The probability of generating a duplicate is essentially zero for practical purposes."
+        },
+        {
+          "q": "When should I use UUIDs?",
+          "a": "Use UUIDs as database primary keys, API resource identifiers, session tokens, or any time you need a unique identifier without a central authority."
+        }
+      ],
+      "howToUseTitle": "Cara Penggunaan",
+      "howToUseSteps": [
+        "Set the number of UUIDs to generate (1-20)",
+        "Choose options: uppercase, no dashes",
+        "Click 'Generate UUIDs'",
+        "Click on any UUID to copy, or use 'Copy All'"
+      ],
+      "useCasesTitle": "Kasus Penggunaan",
+      "useCases": [
+        "Database primary keys",
+        "API resource identifiers",
+        "Distributed system identifiers",
+        "Session and correlation IDs"
+      ]
     },
     "timestamp-converter": {
       "name": "Konverter Unix Timestamp",
@@ -155,7 +299,36 @@
       "ago": "yang lalu",
       "fromNow": "dari sekarang",
       "seoTitle": "Tentang Unix Timestamp",
-      "seoContent": "Unix timestamp merepresentasikan jumlah detik sejak 1 Januari 1970 (UTC). Digunakan secara luas dalam pemrograman, database, dan API. Alat ini mendeteksi secara otomatis apakah input dalam satuan detik atau milidetik."
+      "seoContent": "Unix timestamp merepresentasikan jumlah detik sejak 1 Januari 1970 (UTC). Digunakan secara luas dalam pemrograman, database, dan API. Alat ini mendeteksi secara otomatis apakah input dalam satuan detik atau milidetik.",
+      "faqTitle": "Pertanyaan Umum",
+      "faqs": [
+        {
+          "q": "What is a Unix timestamp?",
+          "a": "A Unix timestamp is the number of seconds elapsed since January 1, 1970 00:00:00 UTC (the Unix epoch). It's a universal way to represent time in computing."
+        },
+        {
+          "q": "What's the difference between seconds and milliseconds?",
+          "a": "Unix timestamps in seconds are 10 digits (e.g., 1700000000), while milliseconds are 13 digits (e.g., 1700000000000). JavaScript uses milliseconds, most systems use seconds."
+        },
+        {
+          "q": "Does this tool handle timezones?",
+          "a": "Yes. The tool shows both UTC and your local timezone when converting timestamps, so you can see the exact time in both."
+        }
+      ],
+      "howToUseTitle": "Cara Penggunaan",
+      "howToUseSteps": [
+        "Enter a Unix timestamp to convert to a human-readable date",
+        "Or enter a date string to convert to a Unix timestamp",
+        "The tool auto-detects seconds vs milliseconds",
+        "View results in UTC, local time, and ISO format"
+      ],
+      "useCasesTitle": "Kasus Penggunaan",
+      "useCases": [
+        "Converting API timestamps to readable dates",
+        "Debugging date-related issues",
+        "Comparing timestamps across systems",
+        "Working with JWT token expiration times"
+      ]
     },
     "color-converter": {
       "name": "Konverter Warna",
@@ -166,7 +339,36 @@
       "colorPicker": "Pemilih Warna",
       "emptyState": "Masukkan nilai warna lalu klik Konversi",
       "seoTitle": "Tentang Format Warna",
-      "seoContent": "Warna HEX menggunakan notasi heksadesimal (#RRGGBB). RGB menggunakan kanal merah, hijau, dan biru (0-255). HSL menggunakan hue (0-360°), saturasi (0-100%), dan lightness (0-100%). Setiap format memiliki kegunaannya masing-masing dalam desain web, CSS, dan desain grafis."
+      "seoContent": "Warna HEX menggunakan notasi heksadesimal (#RRGGBB). RGB menggunakan kanal merah, hijau, dan biru (0-255). HSL menggunakan hue (0-360°), saturasi (0-100%), dan lightness (0-100%). Setiap format memiliki kegunaannya masing-masing dalam desain web, CSS, dan desain grafis.",
+      "faqTitle": "Pertanyaan Umum",
+      "faqs": [
+        {
+          "q": "What color formats are supported?",
+          "a": "This tool supports HEX (e.g., #FF5733), RGB (e.g., rgb(255,87,51)), and HSL (e.g., hsl(11,100%,60%)) formats."
+        },
+        {
+          "q": "What's the difference between HEX, RGB, and HSL?",
+          "a": "HEX uses hexadecimal notation. RGB defines colors by red, green, blue values (0-255). HSL uses hue (0-360), saturation, and lightness percentages."
+        },
+        {
+          "q": "Can I use the color picker?",
+          "a": "Yes. Use the built-in color picker to visually select a color, and all format values will update automatically."
+        }
+      ],
+      "howToUseTitle": "Cara Penggunaan",
+      "howToUseSteps": [
+        "Enter a color value in any format (HEX, RGB, or HSL)",
+        "All other formats update automatically in real-time",
+        "Use the color picker for visual selection",
+        "Copy any color format with the copy button"
+      ],
+      "useCasesTitle": "Kasus Penggunaan",
+      "useCases": [
+        "Converting design specs between formats",
+        "Finding HEX values for CSS styling",
+        "Adjusting colors with HSL for hue/saturation tweaks",
+        "Matching brand colors across tools"
+      ]
     },
     "regex-tester": {
       "name": "Regex Tester",
@@ -187,7 +389,36 @@
       "atIndex": "pada indeks",
       "groups": "grup:",
       "seoTitle": "Tentang Ekspresi Reguler",
-      "seoContent": "Ekspresi reguler (regex) adalah pola yang kuat untuk mencocokkan, mencari, dan mengganti teks. Regex sangat penting untuk validasi input, pemrosesan teks, dan ekstraksi data. Alat ini menguji regex Anda secara real-time menggunakan mesin regex JavaScript."
+      "seoContent": "Ekspresi reguler (regex) adalah pola yang kuat untuk mencocokkan, mencari, dan mengganti teks. Regex sangat penting untuk validasi input, pemrosesan teks, dan ekstraksi data. Alat ini menguji regex Anda secara real-time menggunakan mesin regex JavaScript.",
+      "faqTitle": "Pertanyaan Umum",
+      "faqs": [
+        {
+          "q": "What is a regular expression?",
+          "a": "A regular expression (regex) is a pattern used to match, search, and manipulate text. It's supported in virtually every programming language."
+        },
+        {
+          "q": "How do I test my regex?",
+          "a": "Enter your regex pattern in the pattern field, add test text below, and the tool will highlight all matches in real-time. Flags like 'g' (global) and 'i' (case-insensitive) are supported."
+        },
+        {
+          "q": "Is my regex data safe?",
+          "a": "Yes. All regex processing happens in your browser using JavaScript's built-in RegExp engine. No data is sent anywhere."
+        }
+      ],
+      "howToUseTitle": "Cara Penggunaan",
+      "howToUseSteps": [
+        "Enter your regex pattern in the pattern field",
+        "Add flags (g for global, i for case-insensitive, m for multiline)",
+        "Type or paste your test text",
+        "View highlighted matches and match details in real-time"
+      ],
+      "useCasesTitle": "Kasus Penggunaan",
+      "useCases": [
+        "Validating email addresses, URLs, or phone numbers",
+        "Extracting data from text (log parsing, web scraping)",
+        "Search and replace operations",
+        "Input validation in web forms"
+      ]
     },
     "markdown-preview": {
       "name": "Pratinjau Markdown",
@@ -199,7 +430,35 @@
       "copyHtml": "Salin HTML",
       "placeholder": "Ketik Markdown Anda di sini...",
       "seoTitle": "Tentang Markdown",
-      "seoContent": "Markdown adalah bahasa markup ringan yang dibuat oleh John Gruber. Digunakan secara luas untuk file README, dokumentasi, blog, dan catatan. Alat pratinjau ini merender Markdown Anda secara real-time tanpa mengirim data ke server mana pun."
+      "seoContent": "Markdown adalah bahasa markup ringan yang dibuat oleh John Gruber. Digunakan secara luas untuk file README, dokumentasi, blog, dan catatan. Alat pratinjau ini merender Markdown Anda secara real-time tanpa mengirim data ke server mana pun.",
+      "faqTitle": "Pertanyaan Umum",
+      "faqs": [
+        {
+          "q": "What is Markdown?",
+          "a": "Markdown is a lightweight markup language for creating formatted text using a plain-text editor. It's widely used for README files, documentation, blogs, and forums."
+        },
+        {
+          "q": "What Markdown syntax is supported?",
+          "a": "This tool supports standard Markdown: headings, bold, italic, links, images, code blocks, lists, tables, blockquotes, and more."
+        },
+        {
+          "q": "Can I export the HTML?",
+          "a": "Yes. The rendered HTML output can be copied and used directly in your web pages or documentation."
+        }
+      ],
+      "howToUseTitle": "Cara Penggunaan",
+      "howToUseSteps": [
+        "Type or paste Markdown in the left editor",
+        "See the rendered preview on the right in real-time",
+        "Copy the rendered HTML for use in your projects"
+      ],
+      "useCasesTitle": "Kasus Penggunaan",
+      "useCases": [
+        "Previewing README.md files",
+        "Writing documentation and blog posts",
+        "Formatting messages for GitHub, Slack, or Discord",
+        "Learning Markdown syntax"
+      ]
     },
     "jwt-decoder": {
       "name": "JWT Dekoder",
@@ -215,7 +474,36 @@
       "invalidFormat": "Format JWT tidak valid: diharapkan 3 bagian yang dipisahkan dengan titik",
       "invalidJwt": "JWT Tidak Valid",
       "seoTitle": "Tentang JSON Web Token",
-      "seoContent": "JWT (JSON Web Token) adalah format token yang ringkas dan aman untuk URL, digunakan untuk autentikasi dan pertukaran informasi. JWT terdiri dari tiga bagian: Header (algoritma & tipe), Payload (klaim & data), dan Signature (verifikasi). JWT umum digunakan dalam OAuth 2.0, OpenID Connect, dan autentikasi API."
+      "seoContent": "JWT (JSON Web Token) adalah format token yang ringkas dan aman untuk URL, digunakan untuk autentikasi dan pertukaran informasi. JWT terdiri dari tiga bagian: Header (algoritma & tipe), Payload (klaim & data), dan Signature (verifikasi). JWT umum digunakan dalam OAuth 2.0, OpenID Connect, dan autentikasi API.",
+      "faqTitle": "Pertanyaan Umum",
+      "faqs": [
+        {
+          "q": "What is a JWT?",
+          "a": "JWT (JSON Web Token) is a compact, URL-safe token format used for authentication and information exchange. It contains a header, payload, and signature."
+        },
+        {
+          "q": "Is it safe to decode JWTs here?",
+          "a": "Yes. Decoding happens entirely in your browser. No tokens are sent to any server. Note: decoding only reads the token — it does not verify the signature."
+        },
+        {
+          "q": "Can this tool verify JWT signatures?",
+          "a": "This tool decodes and displays the token contents. Signature verification requires the secret key, which should not be entered into any online tool."
+        }
+      ],
+      "howToUseTitle": "Cara Penggunaan",
+      "howToUseSteps": [
+        "Paste your JWT token in the input field",
+        "The header, payload, and signature are decoded automatically",
+        "View expiration time and other claims",
+        "Copy decoded sections as needed"
+      ],
+      "useCasesTitle": "Kasus Penggunaan",
+      "useCases": [
+        "Debugging authentication tokens",
+        "Inspecting JWT claims and expiration",
+        "Verifying token structure during development",
+        "Understanding OAuth2 and API tokens"
+      ]
     },
     "qrcode-generator": {
       "name": "QR Code Generator",
@@ -229,7 +517,36 @@
       "placeholder": "Masukkan teks, URL, atau data apa pun...",
       "qrPreview": "Pratinjau QR Code",
       "seoTitle": "Tentang QR Code",
-      "seoContent": "QR (Quick Response) code adalah barcode dua dimensi yang dapat menyimpan URL, teks, info kontak, dan lainnya. Dapat dipindai oleh kamera ponsel mana pun. Alat ini menghasilkan QR code dengan koreksi kesalahan untuk pemindaian yang andal."
+      "seoContent": "QR (Quick Response) code adalah barcode dua dimensi yang dapat menyimpan URL, teks, info kontak, dan lainnya. Dapat dipindai oleh kamera ponsel mana pun. Alat ini menghasilkan QR code dengan koreksi kesalahan untuk pemindaian yang andal.",
+      "faqTitle": "Pertanyaan Umum",
+      "faqs": [
+        {
+          "q": "What is a QR code?",
+          "a": "QR (Quick Response) code is a two-dimensional barcode that stores data like URLs, text, or contact info. It can be scanned by smartphones and QR readers."
+        },
+        {
+          "q": "What data can I encode?",
+          "a": "You can encode any text: URLs, email addresses, phone numbers, WiFi credentials, plain text, and more."
+        },
+        {
+          "q": "Can I download the QR code?",
+          "a": "Yes. Click the Download button to save the QR code as a PNG image that you can use in print or digital materials."
+        }
+      ],
+      "howToUseTitle": "Cara Penggunaan",
+      "howToUseSteps": [
+        "Enter the text or URL you want to encode",
+        "The QR code generates automatically",
+        "Download the QR code as a PNG image",
+        "Scan with any smartphone camera to verify"
+      ],
+      "useCasesTitle": "Kasus Penggunaan",
+      "useCases": [
+        "Sharing URLs and links",
+        "Business cards and marketing materials",
+        "WiFi network sharing",
+        "Event tickets and check-in systems"
+      ]
     },
     "lorem-ipsum": {
       "name": "Lorem Ipsum Generator",
@@ -241,7 +558,36 @@
       "startWithLorem": "Mulai dengan \"Lorem ipsum...\"",
       "placeholder": "Klik \"Buat\" untuk membuat teks placeholder...",
       "seoTitle": "Tentang Lorem Ipsum",
-      "seoContent": "Lorem Ipsum adalah teks dummy yang digunakan dalam industri percetakan dan penyusunan huruf sejak tahun 1500-an. Desainer dan developer menggunakannya sebagai teks placeholder ketika konten sebenarnya belum tersedia. Ini membantu memvisualisasikan tata letak tanpa mengalihkan perhatian pembaca dengan konten yang bermakna."
+      "seoContent": "Lorem Ipsum adalah teks dummy yang digunakan dalam industri percetakan dan penyusunan huruf sejak tahun 1500-an. Desainer dan developer menggunakannya sebagai teks placeholder ketika konten sebenarnya belum tersedia. Ini membantu memvisualisasikan tata letak tanpa mengalihkan perhatian pembaca dengan konten yang bermakna.",
+      "faqTitle": "Pertanyaan Umum",
+      "faqs": [
+        {
+          "q": "What is Lorem Ipsum?",
+          "a": "Lorem Ipsum is standard placeholder text used in publishing and design since the 1500s. It helps designers focus on layout without being distracted by readable content."
+        },
+        {
+          "q": "Can I choose the output format?",
+          "a": "Yes. Generate output as paragraphs, sentences, or individual words. You can also control the exact quantity."
+        },
+        {
+          "q": "Is the text random?",
+          "a": "The text follows the structure of classical Latin but is scrambled so it doesn't form meaningful sentences. It looks realistic but is intentionally meaningless."
+        }
+      ],
+      "howToUseTitle": "Cara Penggunaan",
+      "howToUseSteps": [
+        "Choose the type: paragraphs, sentences, or words",
+        "Set the quantity you need",
+        "Click Generate to create placeholder text",
+        "Copy the result for your design or development project"
+      ],
+      "useCasesTitle": "Kasus Penggunaan",
+      "useCases": [
+        "Filling web page layouts during design",
+        "Placeholder content for mockups and wireframes",
+        "Testing text rendering and typography",
+        "Populating demo databases"
+      ]
     },
     "html-entity": {
       "name": "HTML Entity Enkoder",
@@ -251,7 +597,36 @@
       "encodeSpecial": "Enkode (karakter khusus saja)",
       "encodeAll": "Enkode Semua (termasuk Unicode)",
       "seoTitle": "Tentang Entitas HTML",
-      "seoContent": "Entitas HTML adalah kode khusus yang digunakan untuk menampilkan karakter tertentu di HTML. Karakter seperti <, >, &, dan \\\" harus dienkode agar tidak diinterpretasikan sebagai markup HTML. Ini penting untuk mencegah serangan XSS dan menampilkan cuplikan kode."
+      "seoContent": "Entitas HTML adalah kode khusus yang digunakan untuk menampilkan karakter tertentu di HTML. Karakter seperti <, >, &, dan \\\" harus dienkode agar tidak diinterpretasikan sebagai markup HTML. Ini penting untuk mencegah serangan XSS dan menampilkan cuplikan kode.",
+      "faqTitle": "Pertanyaan Umum",
+      "faqs": [
+        {
+          "q": "What are HTML entities?",
+          "a": "HTML entities are special codes that represent characters that have meaning in HTML (like <, >, &) or characters not available on a standard keyboard."
+        },
+        {
+          "q": "When should I encode HTML entities?",
+          "a": "Encode when displaying user input in HTML to prevent XSS attacks, or when you need to display special characters like ©, ™, or mathematical symbols."
+        },
+        {
+          "q": "Does this handle all special characters?",
+          "a": "Yes. This tool handles all standard HTML entities including named entities (&amp;), decimal (&#38;), and hexadecimal (&#x26;) formats."
+        }
+      ],
+      "howToUseTitle": "Cara Penggunaan",
+      "howToUseSteps": [
+        "Enter HTML text or entities in the input field",
+        "Click 'Encode' to convert special characters to HTML entities",
+        "Click 'Decode' to convert HTML entities back to readable text",
+        "Copy the result"
+      ],
+      "useCasesTitle": "Kasus Penggunaan",
+      "useCases": [
+        "Preventing XSS attacks by escaping user input",
+        "Displaying code snippets in HTML pages",
+        "Working with special characters in web content",
+        "Email template development"
+      ]
     },
     "css-minifier": {
       "name": "CSS Minifier / Beautifier",
@@ -261,7 +636,36 @@
       "inputCss": "Input CSS",
       "placeholder": "Tempel CSS Anda di sini...",
       "seoTitle": "Tentang Minifikasi CSS",
-      "seoContent": "Minifikasi CSS menghapus karakter yang tidak diperlukan seperti spasi, komentar, dan titik koma untuk mengurangi ukuran file. File CSS yang lebih kecil dimuat lebih cepat, meningkatkan performa dan pengalaman pengguna situs web. Gunakan mode percantik untuk membuat CSS yang diminifikasi mudah dibaca kembali."
+      "seoContent": "Minifikasi CSS menghapus karakter yang tidak diperlukan seperti spasi, komentar, dan titik koma untuk mengurangi ukuran file. File CSS yang lebih kecil dimuat lebih cepat, meningkatkan performa dan pengalaman pengguna situs web. Gunakan mode percantik untuk membuat CSS yang diminifikasi mudah dibaca kembali.",
+      "faqTitle": "Pertanyaan Umum",
+      "faqs": [
+        {
+          "q": "What is CSS minification?",
+          "a": "CSS minification removes whitespace, comments, and unnecessary characters from CSS code to reduce file size and improve page load speed."
+        },
+        {
+          "q": "Does minification change my CSS behavior?",
+          "a": "No. Minification only removes formatting — it doesn't change how your CSS works. The minified version produces identical visual results."
+        },
+        {
+          "q": "How much file size can I save?",
+          "a": "Typically 20-40% reduction depending on the original formatting. Heavily commented files may see even greater savings."
+        }
+      ],
+      "howToUseTitle": "Cara Penggunaan",
+      "howToUseSteps": [
+        "Paste your CSS code in the input field",
+        "Click 'Minify' to remove whitespace and comments",
+        "Or click 'Beautify' to format compressed CSS for readability",
+        "Copy the result for your project"
+      ],
+      "useCasesTitle": "Kasus Penggunaan",
+      "useCases": [
+        "Optimizing CSS for production deployment",
+        "Reducing page load times",
+        "Beautifying minified CSS for debugging",
+        "Preparing stylesheets for CDN delivery"
+      ]
     },
     "number-base": {
       "name": "Konverter Basis Bilangan",
@@ -278,7 +682,35 @@
       "hexPlaceholder": "mis. FF",
       "helperText": "Ketik angka di kolom mana pun dan basis lainnya akan dihitung secara otomatis.",
       "seoTitle": "Tentang Sistem Basis Bilangan",
-      "seoContent": "Sistem basis bilangan yang berbeda digunakan dalam komputasi: Biner (basis 2) untuk operasi level mesin, Oktal (basis 8) untuk izin Unix, Desimal (basis 10) untuk penggunaan sehari-hari, dan Heksadesimal (basis 16) untuk alamat memori, warna, dan representasi biner yang ringkas."
+      "seoContent": "Sistem basis bilangan yang berbeda digunakan dalam komputasi: Biner (basis 2) untuk operasi level mesin, Oktal (basis 8) untuk izin Unix, Desimal (basis 10) untuk penggunaan sehari-hari, dan Heksadesimal (basis 16) untuk alamat memori, warna, dan representasi biner yang ringkas.",
+      "faqTitle": "Pertanyaan Umum",
+      "faqs": [
+        {
+          "q": "What are number bases?",
+          "a": "Number bases (or radixes) are systems for representing numbers. Common bases: binary (base 2), octal (base 8), decimal (base 10), and hexadecimal (base 16)."
+        },
+        {
+          "q": "Why do programmers use hexadecimal?",
+          "a": "Hexadecimal is compact and maps neatly to binary — each hex digit represents exactly 4 binary bits. It's widely used for colors, memory addresses, and byte values."
+        },
+        {
+          "q": "What's binary used for?",
+          "a": "Binary (base 2) is the fundamental language of computers. Understanding binary helps with bitwise operations, networking (IP addresses), and low-level programming."
+        }
+      ],
+      "howToUseTitle": "Cara Penggunaan",
+      "howToUseSteps": [
+        "Enter a number in any base (binary, octal, decimal, or hex)",
+        "All other base conversions update automatically",
+        "Copy any converted value with the copy button"
+      ],
+      "useCasesTitle": "Kasus Penggunaan",
+      "useCases": [
+        "Converting between hex and binary for programming",
+        "Working with RGB color codes",
+        "Understanding IP addresses and subnet masks",
+        "Debugging low-level data formats"
+      ]
     },
     "text-diff": {
       "name": "Pemeriksa Perbedaan Teks",
@@ -290,7 +722,36 @@
       "originalPlaceholder": "Tempel teks asli di sini...",
       "modifiedPlaceholder": "Tempel teks yang diubah di sini...",
       "seoTitle": "Tentang Perbedaan Teks",
-      "seoContent": "Perbandingan teks membandingkan dua versi teks dan menyorot perbedaannya. Ini penting untuk review kode, perbandingan dokumen, dan pelacakan perubahan. Baris hijau menandakan penambahan, baris merah menandakan penghapusan."
+      "seoContent": "Perbandingan teks membandingkan dua versi teks dan menyorot perbedaannya. Ini penting untuk review kode, perbandingan dokumen, dan pelacakan perubahan. Baris hijau menandakan penambahan, baris merah menandakan penghapusan.",
+      "faqTitle": "Pertanyaan Umum",
+      "faqs": [
+        {
+          "q": "What is a text diff?",
+          "a": "A text diff compares two texts and highlights the differences — additions, deletions, and unchanged lines. It's similar to how Git shows code changes."
+        },
+        {
+          "q": "What diff algorithm is used?",
+          "a": "This tool uses a line-by-line comparison algorithm that identifies added, removed, and unchanged lines between the two texts."
+        },
+        {
+          "q": "Can I compare code?",
+          "a": "Yes. The diff tool works with any text including source code, configuration files, documentation, or plain text."
+        }
+      ],
+      "howToUseTitle": "Cara Penggunaan",
+      "howToUseSteps": [
+        "Paste the original text in the left field",
+        "Paste the modified text in the right field",
+        "Click 'Compare' to see highlighted differences",
+        "Green lines are additions, red lines are deletions"
+      ],
+      "useCasesTitle": "Kasus Penggunaan",
+      "useCases": [
+        "Comparing code versions before committing",
+        "Reviewing configuration file changes",
+        "Finding differences between document versions",
+        "Verifying data migration accuracy"
+      ]
     },
     "word-counter": {
       "name": "Penghitung Kata",
@@ -304,7 +765,36 @@
       "readingTimeNote": "(200 kata/menit)",
       "placeholder": "Mulai mengetik atau tempel teks Anda di sini untuk melihat jumlah kata, jumlah karakter, dan lainnya...",
       "seoTitle": "Tentang Penghitung Kata",
-      "seoContent": "Alat penghitung kata ini menyediakan statistik teks terperinci termasuk jumlah kata, jumlah karakter (dengan dan tanpa spasi), jumlah kalimat, jumlah paragraf, dan estimasi waktu baca. Cocok untuk penulis, mahasiswa, dan pembuat konten yang perlu memenuhi persyaratan jumlah kata."
+      "seoContent": "Alat penghitung kata ini menyediakan statistik teks terperinci termasuk jumlah kata, jumlah karakter (dengan dan tanpa spasi), jumlah kalimat, jumlah paragraf, dan estimasi waktu baca. Cocok untuk penulis, mahasiswa, dan pembuat konten yang perlu memenuhi persyaratan jumlah kata.",
+      "faqTitle": "Pertanyaan Umum",
+      "faqs": [
+        {
+          "q": "What does this tool count?",
+          "a": "It counts words, characters (with and without spaces), sentences, paragraphs, and lines. It also estimates reading time."
+        },
+        {
+          "q": "How is reading time calculated?",
+          "a": "Reading time is estimated based on an average reading speed of 200 words per minute, which is the standard for English text."
+        },
+        {
+          "q": "Does it work with non-English text?",
+          "a": "Yes. The character and line counting works with all languages. Word counting is space-based, which works well for most languages."
+        }
+      ],
+      "howToUseTitle": "Cara Penggunaan",
+      "howToUseSteps": [
+        "Paste or type your text in the input field",
+        "Statistics update in real-time as you type",
+        "View word frequency analysis below the text",
+        "Check the reading time estimate for your content"
+      ],
+      "useCasesTitle": "Kasus Penggunaan",
+      "useCases": [
+        "Meeting blog post or essay word count requirements",
+        "Checking character limits for social media",
+        "Estimating article reading time",
+        "Analyzing word frequency for SEO"
+      ]
     },
     "password-generator": {
       "name": "Password Generator",
@@ -324,7 +814,36 @@
       "generatePasswords": "Buat Kata Sandi",
       "emptyState": "Klik \"Buat Kata Sandi\" untuk membuat kata sandi yang aman",
       "seoTitle": "Tentang Keamanan Kata Sandi",
-      "seoContent": "Kata sandi yang kuat harus minimal 12 karakter dan mencakup kombinasi huruf besar, huruf kecil, angka, dan simbol. Generator ini menggunakan pembangkitan angka acak yang aman secara kriptografis (crypto.getRandomValues) untuk keamanan maksimal."
+      "seoContent": "Kata sandi yang kuat harus minimal 12 karakter dan mencakup kombinasi huruf besar, huruf kecil, angka, dan simbol. Generator ini menggunakan pembangkitan angka acak yang aman secara kriptografis (crypto.getRandomValues) untuk keamanan maksimal.",
+      "faqTitle": "Pertanyaan Umum",
+      "faqs": [
+        {
+          "q": "Are the passwords truly random?",
+          "a": "Yes. This tool uses the Web Crypto API (crypto.getRandomValues), which provides cryptographically secure random values."
+        },
+        {
+          "q": "What makes a strong password?",
+          "a": "Strong passwords are at least 12 characters long, use a mix of uppercase, lowercase, numbers, and symbols, and avoid dictionary words or personal information."
+        },
+        {
+          "q": "Are my passwords stored anywhere?",
+          "a": "No. Passwords are generated entirely in your browser and never sent to any server. There is no logging or storage."
+        }
+      ],
+      "howToUseTitle": "Cara Penggunaan",
+      "howToUseSteps": [
+        "Set your desired password length (recommended: 16+)",
+        "Choose character types: uppercase, lowercase, numbers, symbols",
+        "Set how many passwords to generate",
+        "Click 'Generate' and copy your preferred password"
+      ],
+      "useCasesTitle": "Kasus Penggunaan",
+      "useCases": [
+        "Creating strong passwords for new accounts",
+        "Generating API keys and secrets",
+        "Creating temporary access codes",
+        "Generating secure tokens for applications"
+      ]
     },
     "sql-formatter": {
       "name": "SQL Formatter",
@@ -337,7 +856,36 @@
       "placeholder": "Tempel query SQL Anda di sini...",
       "outputPlaceholder": "SQL Terformat...",
       "seoTitle": "Tentang Pemformatan SQL",
-      "seoContent": "Query SQL yang terformat dengan baik lebih mudah dibaca, di-debug, dan dipelihara. Alat ini secara otomatis menambahkan indentasi, mengkapitalisasi kata kunci, dan menempatkan klausa pada baris terpisah. Mendukung pernyataan SELECT, INSERT, UPDATE, DELETE, dan JOIN."
+      "seoContent": "Query SQL yang terformat dengan baik lebih mudah dibaca, di-debug, dan dipelihara. Alat ini secara otomatis menambahkan indentasi, mengkapitalisasi kata kunci, dan menempatkan klausa pada baris terpisah. Mendukung pernyataan SELECT, INSERT, UPDATE, DELETE, dan JOIN.",
+      "faqTitle": "Pertanyaan Umum",
+      "faqs": [
+        {
+          "q": "What SQL dialects are supported?",
+          "a": "This formatter supports standard SQL syntax that works with MySQL, PostgreSQL, SQLite, SQL Server, and most other databases."
+        },
+        {
+          "q": "Does formatting change query behavior?",
+          "a": "No. SQL formatting only adds whitespace and line breaks. The query logic and results remain identical."
+        },
+        {
+          "q": "Can I format complex queries?",
+          "a": "Yes. The tool handles SELECT, INSERT, UPDATE, DELETE, JOIN, subqueries, CTEs (WITH clauses), and other standard SQL constructs."
+        }
+      ],
+      "howToUseTitle": "Cara Penggunaan",
+      "howToUseSteps": [
+        "Paste your SQL query in the input field",
+        "Click 'Format SQL' to beautify the query",
+        "Keywords are capitalized and clauses are placed on separate lines",
+        "Copy the formatted SQL for use in your project"
+      ],
+      "useCasesTitle": "Kasus Penggunaan",
+      "useCases": [
+        "Formatting complex queries for code reviews",
+        "Beautifying auto-generated SQL",
+        "Preparing queries for documentation",
+        "Debugging SQL syntax issues"
+      ]
     },
     "cron-parser": {
       "name": "Cron Expression Parser",
@@ -364,7 +912,36 @@
       "weekdaysMorning": "Hari kerja jam 8 pagi",
       "invalidCron": "Ekspresi cron tidak valid (diharapkan 5 kolom)",
       "seoTitle": "Tentang Ekspresi Cron",
-      "seoContent": "Cron adalah penjadwal tugas berbasis waktu di sistem mirip Unix. Ekspresi cron terdiri dari 5 kolom: menit, jam, hari dalam bulan, bulan, dan hari dalam minggu. Karakter khusus meliputi * (apa saja), / (langkah), , (daftar), dan - (rentang). Digunakan secara luas dalam CI/CD, tugas terjadwal, dan otomatisasi."
+      "seoContent": "Cron adalah penjadwal tugas berbasis waktu di sistem mirip Unix. Ekspresi cron terdiri dari 5 kolom: menit, jam, hari dalam bulan, bulan, dan hari dalam minggu. Karakter khusus meliputi * (apa saja), / (langkah), , (daftar), dan - (rentang). Digunakan secara luas dalam CI/CD, tugas terjadwal, dan otomatisasi.",
+      "faqTitle": "Pertanyaan Umum",
+      "faqs": [
+        {
+          "q": "What is a cron expression?",
+          "a": "A cron expression is a string of 5 fields (minute, hour, day, month, weekday) that defines a schedule for recurring tasks in Unix-like systems."
+        },
+        {
+          "q": "What do the special characters mean?",
+          "a": "* means any value, / means step (*/5 = every 5), , means list (1,3,5), - means range (1-5), and specific numbers mean exact values."
+        },
+        {
+          "q": "Can I see when my cron job will run next?",
+          "a": "Yes. Enter your cron expression and the tool will show the next scheduled execution times, plus a human-readable description."
+        }
+      ],
+      "howToUseTitle": "Cara Penggunaan",
+      "howToUseSteps": [
+        "Enter a cron expression (5 fields: minute hour day month weekday)",
+        "Or click a quick preset button for common schedules",
+        "View the human-readable description",
+        "Check the next scheduled run times"
+      ],
+      "useCasesTitle": "Kasus Penggunaan",
+      "useCases": [
+        "Setting up scheduled tasks on Linux servers",
+        "Configuring CI/CD pipeline schedules",
+        "Planning cron jobs for backups",
+        "Debugging crontab entries"
+      ]
     },
     "json-yaml": {
       "name": "Konverter JSON ↔ YAML",
@@ -378,7 +955,36 @@
       "invalidJson": "JSON tidak valid",
       "invalidYaml": "YAML tidak valid",
       "seoTitle": "Tentang JSON dan YAML",
-      "seoContent": "JSON (JavaScript Object Notation) dan YAML (YAML Ain't Markup Language) adalah format serialisasi data yang populer. JSON banyak digunakan di API dan aplikasi web, sementara YAML lebih disukai untuk file konfigurasi (Docker, Kubernetes, CI/CD). Alat ini mengkonversi antara kedua format secara instan di browser Anda."
+      "seoContent": "JSON (JavaScript Object Notation) dan YAML (YAML Ain't Markup Language) adalah format serialisasi data yang populer. JSON banyak digunakan di API dan aplikasi web, sementara YAML lebih disukai untuk file konfigurasi (Docker, Kubernetes, CI/CD). Alat ini mengkonversi antara kedua format secara instan di browser Anda.",
+      "faqTitle": "Pertanyaan Umum",
+      "faqs": [
+        {
+          "q": "What's the difference between JSON and YAML?",
+          "a": "JSON uses braces and brackets with strict syntax. YAML uses indentation and is more human-readable. Both represent the same data structures."
+        },
+        {
+          "q": "Why convert between JSON and YAML?",
+          "a": "JSON is standard for APIs and web apps. YAML is preferred for configuration files (Docker, Kubernetes, CI/CD). Developers often need to convert between them."
+        },
+        {
+          "q": "Is the conversion accurate?",
+          "a": "Yes. The tool handles objects, arrays, strings, numbers, booleans, and null values. For basic to moderately complex structures, the conversion is accurate."
+        }
+      ],
+      "howToUseTitle": "Cara Penggunaan",
+      "howToUseSteps": [
+        "Paste JSON in the left panel or YAML in the right panel",
+        "Click 'JSON → YAML' or 'YAML → JSON' to convert",
+        "Copy the converted output",
+        "Use 'Load Sample' to try with example data"
+      ],
+      "useCasesTitle": "Kasus Penggunaan",
+      "useCases": [
+        "Converting JSON configs to YAML for Kubernetes/Docker",
+        "Converting YAML CI/CD configs to JSON for programmatic access",
+        "Migrating between configuration formats",
+        "Learning YAML syntax from familiar JSON structures"
+      ]
     },
     "string-case": {
       "name": "Konverter Huruf String",
@@ -388,7 +994,35 @@
       "inputLabel": "Teks Masukan",
       "inputPlaceholder": "Masukkan teks, nama variabel, atau kalimat...\n\ncontoh: nama variabel saya",
       "seoTitle": "Tentang Konvensi Penamaan",
-      "seoContent": "Konvensi penamaan penting dalam pemrograman untuk keterbacaan dan konsistensi kode. Konvensi umum termasuk camelCase (JavaScript), snake_case (Python), kebab-case (CSS/URL), PascalCase (kelas), dan CONSTANT_CASE (konstanta). Alat ini mengkonversi secara instan antara semua konvensi penamaan populer."
+      "seoContent": "Konvensi penamaan penting dalam pemrograman untuk keterbacaan dan konsistensi kode. Konvensi umum termasuk camelCase (JavaScript), snake_case (Python), kebab-case (CSS/URL), PascalCase (kelas), dan CONSTANT_CASE (konstanta). Alat ini mengkonversi secara instan antara semua konvensi penamaan populer.",
+      "faqTitle": "Pertanyaan Umum",
+      "faqs": [
+        {
+          "q": "What naming conventions are supported?",
+          "a": "9 conventions: camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE, Title Case, Sentence case, dot.case, and path/case."
+        },
+        {
+          "q": "Which naming convention should I use?",
+          "a": "It depends on the language: camelCase for JavaScript variables, snake_case for Python, kebab-case for CSS/URLs, PascalCase for classes, CONSTANT_CASE for constants."
+        },
+        {
+          "q": "Can I convert multiple words?",
+          "a": "Yes. Enter any text — words, variable names, sentences — and all 9 case conversions appear instantly."
+        }
+      ],
+      "howToUseTitle": "Cara Penggunaan",
+      "howToUseSteps": [
+        "Type or paste any text in the input field",
+        "All 9 naming conventions are shown instantly",
+        "Click the copy button next to any format you need"
+      ],
+      "useCasesTitle": "Kasus Penggunaan",
+      "useCases": [
+        "Converting variable names between programming languages",
+        "Generating CSS class names from descriptions",
+        "Creating URL slugs from titles",
+        "Standardizing naming conventions in codebases"
+      ]
     },
     "slug-generator": {
       "name": "Generator Slug URL",
@@ -405,7 +1039,36 @@
       "separator": "Pemisah",
       "maxLength": "Panjang maksimum",
       "seoTitle": "Tentang Slug URL",
-      "seoContent": "Slug URL adalah bagian dari URL yang mengidentifikasi halaman dalam bentuk yang mudah dibaca manusia. Slug yang baik harus pendek, deskriptif, dan ramah SEO. Biasanya menggunakan huruf kecil, tanda hubung sebagai pemisah, dan menghindari karakter khusus."
+      "seoContent": "Slug URL adalah bagian dari URL yang mengidentifikasi halaman dalam bentuk yang mudah dibaca manusia. Slug yang baik harus pendek, deskriptif, dan ramah SEO. Biasanya menggunakan huruf kecil, tanda hubung sebagai pemisah, dan menghindari karakter khusus.",
+      "faqTitle": "Pertanyaan Umum",
+      "faqs": [
+        {
+          "q": "What is a URL slug?",
+          "a": "A slug is the human-readable part of a URL that identifies a specific page. For example, in '/blog/how-to-code', 'how-to-code' is the slug."
+        },
+        {
+          "q": "Why are slugs important for SEO?",
+          "a": "Search engines use slugs to understand page content. Clean, descriptive slugs with relevant keywords can improve search rankings and click-through rates."
+        },
+        {
+          "q": "What are stop words?",
+          "a": "Stop words are common words like 'the', 'a', 'in', 'on' that add little meaning. Removing them creates shorter, cleaner slugs."
+        }
+      ],
+      "howToUseTitle": "Cara Penggunaan",
+      "howToUseSteps": [
+        "Enter a title or text in the input field",
+        "The slug generates automatically in real-time",
+        "Customize: toggle lowercase, stop word removal, separator type, and max length",
+        "Copy the generated slug or preview the full URL"
+      ],
+      "useCasesTitle": "Kasus Penggunaan",
+      "useCases": [
+        "Creating URL slugs for blog posts",
+        "Generating SEO-friendly page URLs",
+        "Creating file names from titles",
+        "Building permalink structures for CMS systems"
+      ]
     },
     "chmod-calculator": {
       "name": "Kalkulator Chmod",
@@ -430,7 +1093,36 @@
       "common600": "File Pribadi",
       "common444": "Hanya Baca",
       "seoTitle": "Tentang Izin File Linux",
-      "seoContent": "Izin file Linux mengontrol siapa yang dapat membaca (r), menulis (w), dan mengeksekusi (x) file dan direktori. Izin ditetapkan untuk tiga grup: pemilik, grup, dan lainnya. Perintah chmod menggunakan notasi numerik (oktal) seperti 755 atau notasi simbolik seperti rwxr-xr-x."
+      "seoContent": "Izin file Linux mengontrol siapa yang dapat membaca (r), menulis (w), dan mengeksekusi (x) file dan direktori. Izin ditetapkan untuk tiga grup: pemilik, grup, dan lainnya. Perintah chmod menggunakan notasi numerik (oktal) seperti 755 atau notasi simbolik seperti rwxr-xr-x.",
+      "faqTitle": "Pertanyaan Umum",
+      "faqs": [
+        {
+          "q": "What is chmod?",
+          "a": "chmod (change mode) is a Unix/Linux command that sets file and directory permissions. It controls who can read, write, and execute files."
+        },
+        {
+          "q": "What does 755 mean?",
+          "a": "755 means: owner can read/write/execute (7), group can read/execute (5), others can read/execute (5). It's the standard permission for directories and scripts."
+        },
+        {
+          "q": "What's the difference between numeric and symbolic notation?",
+          "a": "Numeric uses octal digits (755). Symbolic uses letters (rwxr-xr-x). They represent the same permissions — numeric is more compact, symbolic is more readable."
+        }
+      ],
+      "howToUseTitle": "Cara Penggunaan",
+      "howToUseSteps": [
+        "Click checkboxes to set read/write/execute permissions for owner, group, and others",
+        "Or type a numeric permission (e.g., 755) to auto-set checkboxes",
+        "View the numeric, symbolic, and command representations",
+        "Click a common permission preset for quick setup"
+      ],
+      "useCasesTitle": "Kasus Penggunaan",
+      "useCases": [
+        "Setting up web server file permissions",
+        "Configuring deployment scripts",
+        "Securing sensitive files (SSH keys, config files)",
+        "Troubleshooting 'permission denied' errors"
+      ]
     },
     "line-sorter": {
       "name": "Pengurutan & Deduplikasi Baris",
@@ -449,7 +1141,36 @@
       "linesLabel": "baris",
       "inputPlaceholder": "Masukkan teks, satu item per baris...\n\npisang\napel\nceri\napel\nkurma",
       "seoTitle": "Tentang Pengurutan Baris",
-      "seoContent": "Pengurutan baris adalah tugas pemrosesan teks yang umum dalam pemrograman dan manajemen data. Alat ini menyediakan beberapa opsi pengurutan: alfabet, numerik, dan berdasarkan panjang baris. Juga mendukung penghapusan duplikat, pembalikan, pengacakan, dan penomoran baris."
+      "seoContent": "Pengurutan baris adalah tugas pemrosesan teks yang umum dalam pemrograman dan manajemen data. Alat ini menyediakan beberapa opsi pengurutan: alfabet, numerik, dan berdasarkan panjang baris. Juga mendukung penghapusan duplikat, pembalikan, pengacakan, dan penomoran baris.",
+      "faqTitle": "Pertanyaan Umum",
+      "faqs": [
+        {
+          "q": "What sorting methods are available?",
+          "a": "Alphabetical (A-Z, Z-A), numeric, by line length. Plus: remove duplicates, reverse order, random shuffle, trim whitespace, and add line numbers."
+        },
+        {
+          "q": "Does it preserve empty lines?",
+          "a": "Empty lines are automatically removed during processing to keep results clean. Use 'Trim Lines' to also remove leading/trailing whitespace."
+        },
+        {
+          "q": "Can I sort large lists?",
+          "a": "Yes. All processing happens in your browser, so it handles thousands of lines quickly without any server dependency."
+        }
+      ],
+      "howToUseTitle": "Cara Penggunaan",
+      "howToUseSteps": [
+        "Paste your text with one item per line in the input field",
+        "Click any operation button: Sort A-Z, Remove Duplicates, Shuffle, etc.",
+        "View the processed result in the output field",
+        "Copy the result with the copy button"
+      ],
+      "useCasesTitle": "Kasus Penggunaan",
+      "useCases": [
+        "Sorting lists of names, emails, or data entries",
+        "Removing duplicate entries from lists",
+        "Randomizing quiz questions or playlist order",
+        "Cleaning up data exports from spreadsheets"
+      ]
     }
   },
   "footer": {
