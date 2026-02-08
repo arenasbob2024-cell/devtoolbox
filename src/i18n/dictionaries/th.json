@@ -41,7 +41,7 @@
   "home": {
     "heroTitle1": "เครื่องมือนักพัฒนา",
     "heroTitle2": "ออนไลน์ฟรี",
-    "heroDescription": "เครื่องมือสำคัญกว่า 20 รายการสำหรับนักพัฒนา ไม่ต้องสมัครสมาชิก ไม่มีข้อจำกัด ทุกอย่างประมวลผลในเบราว์เซอร์ของคุณ — ข้อมูลของคุณไม่ถูกส่งออกจากอุปกรณ์",
+    "heroDescription": "เครื่องมือสำคัญกว่า 40 รายการสำหรับนักพัฒนา ไม่ต้องสมัครสมาชิก ไม่มีข้อจำกัด ทุกอย่างประมวลผลในเบราว์เซอร์ของคุณ — ข้อมูลของคุณไม่ถูกส่งออกจากอุปกรณ์",
     "searchPlaceholder": "ค้นหาเครื่องมือ... (json, base64, uuid, hash...)",
     "whyTitle": "ทำไมต้อง",
     "whyBrand": "DevToolBox",
@@ -1298,7 +1298,20 @@
         "คู่มืออ้างอิง",
         "สคริปต์ CI/CD"
       ]
-    }
+    },
+    "xml-formatter": {"name":"XML Formatter","description":"จัดรูปแบบ minify และตรวจสอบ XML","pageTitle":"XML Formatter และ Validator","pageDescription":"จัดรูปแบบ minify และตรวจสอบ XML ออนไลน์."},
+    "csv-json": {"name":"ตัวแปลง CSV ↔ JSON","description":"แปลงระหว่าง CSV และ JSON","pageTitle":"ตัวแปลง CSV เป็น JSON","pageDescription":"แปลง CSV เป็น JSON และ JSON เป็น CSV ออนไลน์."},
+    "http-status": {"name":"อ้างอิงรหัสสถานะ HTTP","description":"ค้นหารหัสสถานะ HTTP","pageTitle":"อ้างอิงรหัสสถานะ HTTP","pageDescription":"ค้นหารหัส HTTP: 1xx, 2xx, 3xx, 4xx, 5xx."},
+    "mime-types": {"name":"ค้นหาประเภท MIME","description":"ค้นหาประเภท MIME ตามนามสกุลไฟล์","pageTitle":"ค้นหาประเภท MIME","pageDescription":"ค้นหาประเภท MIME ตามนามสกุลไฟล์."},
+    "escape-unescape": {"name":"Escape / Unescape","description":"Escape หรือ unescape HTML, JavaScript และ JSON","pageTitle":"เครื่องมือ Escape Unescape","pageDescription":"Escape อักขระพิเศษสำหรับ HTML, JavaScript หรือ JSON."},
+    "ip-calculator": {"name":"เครื่องคำนวณ subnet IP","description":"คำนวณ subnet mask, network และ broadcast","pageTitle":"เครื่องคำนวณ subnet IP","pageDescription":"คำนวณ subnet mask, ที่อยู่เครือข่ายและ broadcast."},
+    "fake-data": {"name":"ตัวสร้างข้อมูลปลอม","description":"สร้างชื่อ อีเมลปลอมสำหรับการทดสอบ","pageTitle":"ตัวสร้างข้อมูลปลอม","pageDescription":"สร้างชื่อ อีเมลและที่อยู่ปลอมสำหรับการทดสอบ."},
+    "hmac-generator": {"name":"ตัวสร้าง HMAC","description":"สร้าง HMAC-SHA256, HMAC-SHA1","pageTitle":"ตัวสร้าง HMAC","pageDescription":"สร้างลายเซ็น HMAC ด้วย SHA-256 หรือ SHA-1."},
+    "url-parser": {"name":"ตัวแยกวิเคราะห์ URL","description":"แยก URL เป็นส่วนประกอบ","pageTitle":"ตัวแยกวิเคราะห์ URL","pageDescription":"แยก URL เป็นโปรโตคอล โฮสต์ pathname และพารามิเตอร์."},
+    "binary-text": {"name":"ตัวแปลงข้อความ ↔ ไบนารี","description":"แปลงข้อความเป็นไบนารีและกลับกัน","pageTitle":"ตัวแปลงข้อความเป็นไบนารี","pageDescription":"แปลงข้อความเป็นไบนารีและไบนารีเป็นข้อความ."},
+    "pem-decoder": {"name":"ตัวถอดรหัส PEM / ใบรับรอง","description":"ถอดรหัสใบรับรอง PEM","pageTitle":"ตัวถอดรหัสใบรับรอง PEM","pageDescription":"ถอดรหัสใบรับรองในรูปแบบ PEM."},
+    "html-table": {"name":"ตัวสร้างตาราง HTML","description":"แปลง CSV หรือ JSON เป็นตาราง HTML","pageTitle":"ตัวสร้างตาราง HTML","pageDescription":"แปลง CSV หรือ JSON เป็นมาร์กอัปตาราง HTML."},
+    "bcrypt-generator": {"name":"ตัวสร้างแฮช Bcrypt","description":"สร้างแฮชรหัสผ่าน bcrypt ที่กำหนดค่าได้","pageTitle":"ตัวสร้างแฮช Bcrypt","pageDescription":"สร้างแฮชรหัสผ่าน bcrypt ด้วยปัจจัยต้นทุนที่กำหนดค่าได้."}
   },
   "footer": {
     "tagline": "เครื่องมือนักพัฒนาออนไลน์ฟรี ไม่ต้องสมัครสมาชิก ทุกอย่างประมวลผลในเบราว์เซอร์ของคุณ — ข้อมูลของคุณไม่ถูกส่งออกจากอุปกรณ์",
@@ -1310,7 +1323,7 @@
     "missionTitle": "พันธกิจของเรา",
     "missionText": "เราเชื่อว่าเครื่องมือสำหรับนักพัฒนาควรฟรี เร็ว และเป็นส่วนตัว เครื่องมือทุกตัวบน DevToolBox ประมวลผลข้อมูลทั้งหมดในเบราว์เซอร์ของคุณ — ไม่มีข้อมูลใดถูกส่งไปยังเซิร์ฟเวอร์เลย",
     "featuresTitle": "คุณสมบัติ",
-    "feature1": "เครื่องมือนักพัฒนาสำคัญกว่า 20 รายการ",
+    "feature1": "เครื่องมือนักพัฒนาสำคัญกว่า 40 รายการ",
     "feature2": "ประมวลผลฝั่งไคลเอนต์ 100% — ข้อมูลของคุณไม่ออกจากเบราว์เซอร์",
     "feature3": "ไม่ต้องสมัครสมาชิก ไม่มีบัญชีผู้ใช้ ไม่มีการติดตาม",
     "feature4": "ใช้ได้บนเดสก์ท็อป แท็บเล็ต และมือถือ",
@@ -1338,7 +1351,7 @@
   },
   "meta": {
     "homeTitle": "DevToolBox - เครื่องมือนักพัฒนาออนไลน์ฟรี",
-    "homeDescription": "เครื่องมือนักพัฒนาออนไลน์ฟรี: ตัวจัดรูปแบบ JSON, ตัวเข้ารหัส Base64, ตัวสร้าง UUID, ตัวทดสอบ regex, ตัวสร้างแฮช และอีกกว่า 20 รายการ ไม่ต้องสมัครสมาชิก ประมวลผลทั้งหมดในเบราว์เซอร์ของคุณ"
+    "homeDescription": "เครื่องมือนักพัฒนาออนไลน์ฟรี: ตัวจัดรูปแบบ JSON, ตัวเข้ารหัส Base64, ตัวสร้าง UUID, ตัวทดสอบ regex, ตัวสร้างแฮช และอีกกว่า 40 รายการ ไม่ต้องสมัครสมาชิก ประมวลผลทั้งหมดในเบราว์เซอร์ของคุณ"
   },
   "blog": {
     "nav": "บล็อก",

@@ -41,7 +41,7 @@
   "home": {
     "heroTitle1": "Outils en ligne gratuits",
     "heroTitle2": "pour développeurs",
-    "heroDescription": "Plus de 20 outils essentiels pour les développeurs. Sans inscription, sans limites. Tout le traitement se fait directement dans votre navigateur — vos données ne quittent jamais votre appareil.",
+    "heroDescription": "Plus de 40 outils essentiels pour les développeurs. Sans inscription, sans limites. Tout le traitement se fait directement dans votre navigateur — vos données ne quittent jamais votre appareil.",
     "searchPlaceholder": "Rechercher des outils... (json, base64, uuid, hash...)",
     "whyTitle": "Pourquoi",
     "whyBrand": "DevToolBox",
@@ -1298,7 +1298,20 @@
         "Guide de référence",
         "Scripts CI/CD"
       ]
-    }
+    },
+    "xml-formatter": {"name":"Formatage XML","description":"Formatez, minifiez et validez XML","pageTitle":"Formatage et validation XML","pageDescription":"Formatez, minifiez et validez XML en ligne."},
+    "csv-json": {"name":"Convertisseur CSV ↔ JSON","description":"Convertissez entre CSV et JSON","pageTitle":"Convertisseur CSV vers JSON","pageDescription":"Convertissez CSV en JSON et JSON en CSV en ligne."},
+    "http-status": {"name":"Référence des codes HTTP","description":"Recherchez les codes de statut HTTP","pageTitle":"Référence des codes de statut HTTP","pageDescription":"Recherchez les codes HTTP: 1xx, 2xx, 3xx, 4xx, 5xx."},
+    "mime-types": {"name":"Recherche de types MIME","description":"Trouvez les types MIME par extension","pageTitle":"Recherche de types MIME","pageDescription":"Trouvez les types MIME par extension de fichier."},
+    "escape-unescape": {"name":"Escape / Unescape","description":"Échappez ou déséchappez HTML, JavaScript et JSON","pageTitle":"Outil Escape Unescape","pageDescription":"Échappez les caractères spéciaux pour HTML, JavaScript ou JSON."},
+    "ip-calculator": {"name":"Calculateur de sous-réseau IP","description":"Calculez le masque, le réseau et le broadcast","pageTitle":"Calculateur de sous-réseau IP","pageDescription":"Calculez le masque de sous-réseau et l'adresse broadcast."},
+    "fake-data": {"name":"Générateur de fausses données","description":"Générez de faux noms et e-mails pour les tests","pageTitle":"Générateur de fausses données","pageDescription":"Générez de faux noms, e-mails et adresses pour les tests."},
+    "hmac-generator": {"name":"Générateur HMAC","description":"Générez HMAC-SHA256, HMAC-SHA1","pageTitle":"Générateur HMAC","pageDescription":"Générez des signatures HMAC avec SHA-256 ou SHA-1."},
+    "url-parser": {"name":"Analyseur d'URL","description":"Analysez une URL en composants","pageTitle":"Analyseur d'URL","pageDescription":"Analysez les URL en protocole, host, pathname et paramètres."},
+    "binary-text": {"name":"Convertisseur texte ↔ binaire","description":"Convertissez du texte en binaire et vice versa","pageTitle":"Convertisseur texte en binaire","pageDescription":"Convertissez du texte en binaire et du binaire en texte."},
+    "pem-decoder": {"name":"Décodeur PEM / certificat","description":"Décodez les certificats PEM","pageTitle":"Décodeur de certificat PEM","pageDescription":"Décodez les certificats au format PEM."},
+    "html-table": {"name":"Générateur de tableau HTML","description":"Convertissez CSV ou JSON en tableau HTML","pageTitle":"Générateur de tableau HTML","pageDescription":"Convertissez CSV ou JSON en balisage de tableau HTML."},
+    "bcrypt-generator": {"name":"Générateur de hash Bcrypt","description":"Générez des hashes bcrypt avec coût configurable","pageTitle":"Générateur de hash Bcrypt","pageDescription":"Générez des hashes de mot de passe bcrypt."}
   },
   "footer": {
     "tagline": "Outils en ligne gratuits pour développeurs. Sans inscription. Tout le traitement se fait dans votre navigateur — vos données ne quittent jamais votre appareil.",
@@ -1310,7 +1323,7 @@
     "missionTitle": "Notre mission",
     "missionText": "Nous pensons que les outils pour développeurs doivent être gratuits, rapides et respectueux de la vie privée. Chaque outil sur DevToolBox traite les données entièrement dans votre navigateur — rien n'est jamais envoyé à un serveur.",
     "featuresTitle": "Fonctionnalités",
-    "feature1": "Plus de 20 outils essentiels pour développeurs",
+    "feature1": "Plus de 40 outils essentiels pour développeurs",
     "feature2": "Traitement 100 % côté client — vos données ne quittent jamais votre navigateur",
     "feature3": "Sans inscription, sans compte, sans pistage",
     "feature4": "Fonctionne sur ordinateur, tablette et mobile",
@@ -1338,7 +1351,7 @@
   },
   "meta": {
     "homeTitle": "DevToolBox - Outils en ligne gratuits pour développeurs",
-    "homeDescription": "Outils en ligne gratuits pour développeurs : formateur JSON, encodeur Base64, générateur UUID, testeur regex, générateur de hash, et plus de 20 autres outils. Sans inscription. Tout le traitement se fait dans votre navigateur."
+    "homeDescription": "Outils en ligne gratuits pour développeurs : formateur JSON, encodeur Base64, générateur UUID, testeur regex, générateur de hash, et plus de 40 autres outils. Sans inscription. Tout le traitement se fait dans votre navigateur."
   },
   "blog": {
     "nav": "Blog",

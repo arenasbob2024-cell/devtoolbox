@@ -31,7 +31,7 @@ export async function generateMetadata({
       description: dict.meta.homeDescription,
       url: `https://viadreams.cc/${lang}`,
       type: 'website',
-      locale: { en: 'en_US', fr: 'fr_FR', de: 'de_DE', it: 'it_IT', es: 'es_ES', zh: 'zh_CN', id: 'id_ID', th: 'th_TH' }[lang] || 'en_US',
+      locale: { en: 'en_US', fr: 'fr_FR', de: 'de_DE', it: 'it_IT', es: 'es_ES', pt: 'pt_PT', nl: 'nl_NL', pl: 'pl_PL', sv: 'sv_SE', no: 'nb_NO', zh: 'zh_CN', ja: 'ja_JP', ko: 'ko_KR', id: 'id_ID', th: 'th_TH' }[lang] || 'en_US',
       siteName: 'DevToolBox',
       images: [{ url: 'https://viadreams.cc/og-image.png', width: 1200, height: 630, alt: 'DevToolBox - Free Online Developer Tools' }],
     },

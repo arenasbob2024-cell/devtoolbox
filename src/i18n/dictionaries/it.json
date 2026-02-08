@@ -41,7 +41,7 @@
   "home": {
     "heroTitle1": "Strumenti per sviluppatori",
     "heroTitle2": "online e gratuiti",
-    "heroDescription": "Oltre 20 strumenti essenziali per sviluppatori. Senza registrazione, senza limiti. Tutto viene elaborato direttamente nel tuo browser: i tuoi dati non lasciano mai il tuo dispositivo.",
+    "heroDescription": "Oltre 40 strumenti essenziali per sviluppatori. Senza registrazione, senza limiti. Tutto viene elaborato direttamente nel tuo browser: i tuoi dati non lasciano mai il tuo dispositivo.",
     "searchPlaceholder": "Cerca strumenti... (json, base64, uuid, hash...)",
     "whyTitle": "Perché",
     "whyBrand": "DevToolBox",
@@ -1298,7 +1298,20 @@
         "Guida di riferimento",
         "Script CI/CD"
       ]
-    }
+    },
+    "xml-formatter": {"name":"Formatore XML","description":"Formatta, minifica e valida XML","pageTitle":"Formatore e validatore XML","pageDescription":"Formatta, minifica e valida XML online."},
+    "csv-json": {"name":"Convertitore CSV ↔ JSON","description":"Converti tra CSV e JSON","pageTitle":"Convertitore CSV in JSON","pageDescription":"Converti CSV in JSON e JSON in CSV online."},
+    "http-status": {"name":"Riferimento codici HTTP","description":"Cerca codici di stato HTTP","pageTitle":"Riferimento codici di stato HTTP","pageDescription":"Cerca codici HTTP: 1xx, 2xx, 3xx, 4xx, 5xx."},
+    "mime-types": {"name":"Ricerca tipi MIME","description":"Trova tipi MIME per estensione","pageTitle":"Ricerca tipi MIME","pageDescription":"Trova tipi MIME per estensione file."},
+    "escape-unescape": {"name":"Escape / Unescape","description":"Escape o unescape HTML, JavaScript e JSON","pageTitle":"Strumento Escape Unescape","pageDescription":"Escape caratteri speciali per HTML, JavaScript o JSON."},
+    "ip-calculator": {"name":"Calcolatore sottorete IP","description":"Calcola maschera sottorete, rete e broadcast","pageTitle":"Calcolatore sottorete IP","pageDescription":"Calcola maschera sottorete, indirizzo di rete e broadcast."},
+    "fake-data": {"name":"Generatore dati fittizi","description":"Genera nomi, email per test","pageTitle":"Generatore dati fittizi","pageDescription":"Genera nomi, email e indirizzi fittizi per test."},
+    "hmac-generator": {"name":"Generatore HMAC","description":"Genera HMAC-SHA256, HMAC-SHA1","pageTitle":"Generatore HMAC","pageDescription":"Genera firme HMAC con SHA-256 o SHA-1."},
+    "url-parser": {"name":"Parser URL","description":"Analizza URL in componenti","pageTitle":"Parser URL","pageDescription":"Analizza URL in protocollo, host, pathname e parametri."},
+    "binary-text": {"name":"Convertitore testo ↔ binario","description":"Converti testo in binario e viceversa","pageTitle":"Convertitore testo in binario","pageDescription":"Converti testo in binario e binario in testo."},
+    "pem-decoder": {"name":"Decodificatore PEM / certificato","description":"Decodifica certificati PEM","pageTitle":"Decodificatore certificato PEM","pageDescription":"Decodifica certificati in formato PEM."},
+    "html-table": {"name":"Generatore tabella HTML","description":"Converti CSV o JSON in tabella HTML","pageTitle":"Generatore tabella HTML","pageDescription":"Converti CSV o JSON in markup tabella HTML."},
+    "bcrypt-generator": {"name":"Generatore hash Bcrypt","description":"Genera hash bcrypt con costo configurabile","pageTitle":"Generatore hash Bcrypt","pageDescription":"Genera hash password bcrypt con fattore di costo configurabile."}
   },
   "footer": {
     "tagline": "Strumenti online gratuiti per sviluppatori. Senza registrazione. Tutta l'elaborazione avviene nel tuo browser — i tuoi dati non lasciano mai il tuo dispositivo.",
@@ -1310,7 +1323,7 @@
     "missionTitle": "La nostra missione",
     "missionText": "Crediamo che gli strumenti per sviluppatori debbano essere gratuiti, veloci e rispettosi della privacy. Ogni strumento su DevToolBox elabora i dati interamente nel tuo browser — nulla viene mai inviato a un server.",
     "featuresTitle": "Funzionalità",
-    "feature1": "Oltre 20 strumenti essenziali per sviluppatori",
+    "feature1": "Oltre 40 strumenti essenziali per sviluppatori",
     "feature2": "Elaborazione 100% lato client — i tuoi dati non lasciano mai il browser",
     "feature3": "Senza registrazione, senza account, senza tracciamento",
     "feature4": "Funziona su desktop, tablet e smartphone",
@@ -1338,7 +1351,7 @@
   },
   "meta": {
     "homeTitle": "DevToolBox - Strumenti online gratuiti per sviluppatori",
-    "homeDescription": "Strumenti online gratuiti per sviluppatori: formattatore JSON, codificatore Base64, generatore UUID, tester regex, generatore hash e oltre 20 altri. Senza registrazione. Tutta l'elaborazione avviene nel tuo browser."
+    "homeDescription": "Strumenti online gratuiti per sviluppatori: formattatore JSON, codificatore Base64, generatore UUID, tester regex, generatore hash e oltre 40 altri. Senza registrazione. Tutta l'elaborazione avviene nel tuo browser."
   },
   "blog": {
     "nav": "Blog",

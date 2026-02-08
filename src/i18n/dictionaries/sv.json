@@ -1,9 +1,9 @@
 {
   "common": {
-    "searchPlaceholder": "Search tools... (e.g. json, base64, uuid)",
-    "allTools": "All Tools",
-    "free": "FREE",
-    "home": "Home",
+    "searchPlaceholder": "Sök verktyg... (t.ex. json, base64, uuid)",
+    "allTools": "Alla verktyg",
+    "free": "GRATIS",
+    "home": "Hem",
     "moreTools": "More Tools",
     "copy": "Copy",
     "copied": "Copied!",
@@ -39,9 +39,9 @@
     "unchanged": "unchanged"
   },
   "home": {
-    "heroTitle1": "Free Online",
-    "heroTitle2": "Developer Tools",
-    "heroDescription": "40+ essential tools for developers. No signup, no limits. All processing happens right in your browser — your data never leaves your device.",
+    "heroTitle1": "Gratis online",
+    "heroTitle2": "utvecklarverktyg",
+    "heroDescription": "40+ väsentliga verktyg för utvecklare. Ingen registrering, inga gränser. All bearbetning sker i din webbläsare — dina data lämnar aldrig din enhet.",
     "searchPlaceholder": "Search tools... (json, base64, uuid, hash...)",
     "whyTitle": "Why",
     "whyBrand": "DevToolBox",
@@ -55,12 +55,12 @@
     "responsiveDesc": "Fully responsive. Use on desktop, tablet, or mobile."
   },
   "categories": {
-    "encoder": "Encoder / Decoder",
-    "formatter": "Formatter / Beautifier",
+    "encoder": "Enkoder / Dekoder",
+    "formatter": "Formatterare / Förskönare",
     "generator": "Generator",
-    "converter": "Converter",
-    "text": "Text Tools",
-    "web": "Web Tools"
+    "converter": "Konverterare",
+    "text": "Textverktyg",
+    "web": "Webbverktyg"
   },
   "tools": {
     "json-formatter": {
@@ -1299,19 +1299,19 @@
         "Building CI/CD pipeline scripts"
       ]
     },
-    "xml-formatter": {"name":"XML Formatter","description":"Format, minify, and validate XML with syntax highlighting","pageTitle":"XML Formatter & Validator","pageDescription":"Format, minify, and validate XML online. Beautify or compress XML for production."},
-    "csv-json": {"name":"CSV ↔ JSON Converter","description":"Convert between CSV and JSON formats instantly","pageTitle":"CSV to JSON Converter","pageDescription":"Convert CSV to JSON and JSON to CSV online. Handles headers and nested structures."},
-    "http-status": {"name":"HTTP Status Code Reference","description":"Lookup HTTP status codes with meanings and use cases","pageTitle":"HTTP Status Code Reference","pageDescription":"Lookup HTTP status codes: 1xx, 2xx, 3xx, 4xx, 5xx with descriptions and when to use them."},
-    "mime-types": {"name":"MIME Type Lookup","description":"Find MIME types by file extension or content type","pageTitle":"MIME Type Lookup","pageDescription":"Find MIME types by file extension. Browse common content types for web development."},
-    "escape-unescape": {"name":"Escape / Unescape","description":"Escape or unescape HTML, JavaScript, and JSON strings","pageTitle":"Escape Unescape Tool","pageDescription":"Escape special characters for HTML, JavaScript, or JSON. Unescape encoded strings."},
-    "ip-calculator": {"name":"IP Subnet Calculator","description":"Calculate subnet mask, network, broadcast, and host range","pageTitle":"IP Subnet Calculator","pageDescription":"Calculate subnet mask, network address, broadcast address, and host range from IP and CIDR."},
-    "fake-data": {"name":"Fake Data Generator","description":"Generate fake names, emails, addresses for testing","pageTitle":"Fake Data Generator","pageDescription":"Generate fake names, emails, phone numbers, and addresses for testing and development."},
-    "hmac-generator": {"name":"HMAC Generator","description":"Generate HMAC-SHA256, HMAC-SHA1 from message and secret key","pageTitle":"HMAC Generator","pageDescription":"Generate HMAC signatures with SHA-256 or SHA-1 for API verification and webhooks."},
-    "url-parser": {"name":"URL Parser","description":"Parse URL into components: protocol, host, path, query params","pageTitle":"URL Parser","pageDescription":"Parse URLs into protocol, host, pathname, query parameters, and hash. Extract URL components."},
-    "binary-text": {"name":"Text ↔ Binary Converter","description":"Convert text to binary and binary to text","pageTitle":"Text to Binary Converter","pageDescription":"Convert text to binary (0s and 1s) and binary back to text. Supports UTF-8."},
-    "pem-decoder": {"name":"PEM / Certificate Decoder","description":"Decode PEM certificates and view certificate details","pageTitle":"PEM Certificate Decoder","pageDescription":"Decode PEM format certificates and view X.509 certificate details."},
-    "html-table": {"name":"HTML Table Generator","description":"Convert CSV or JSON to HTML table markup","pageTitle":"HTML Table Generator","pageDescription":"Convert CSV or JSON data to HTML table markup. Customize headers and styling."},
-    "bcrypt-generator": {"name":"Bcrypt Hash Generator","description":"Generate bcrypt password hashes with configurable cost","pageTitle":"Bcrypt Hash Generator","pageDescription":"Generate bcrypt password hashes with configurable cost factor for secure password storage."}
+    "xml-formatter": {"name":"XML-formaterare","description":"Formatera, minifiera och validera XML","pageTitle":"XML-formaterare och -validator","pageDescription":"Formatera, minifiera och validera XML online."},
+    "csv-json": {"name":"CSV ↔ JSON-konverterare","description":"Konvertera mellan CSV och JSON","pageTitle":"CSV till JSON-konverterare","pageDescription":"Konvertera CSV till JSON och JSON till CSV online."},
+    "http-status": {"name":"HTTP-statuskodsreferens","description":"Slå upp HTTP-statuskoder med betydelser","pageTitle":"HTTP-statuskodsreferens","pageDescription":"Slå upp HTTP-statuskoder: 1xx, 2xx, 3xx, 4xx, 5xx."},
+    "mime-types": {"name":"MIME-typsökning","description":"Hitta MIME-typer efter filändelse","pageTitle":"MIME-typsökning","pageDescription":"Hitta MIME-typer efter filändelse."},
+    "escape-unescape": {"name":"Escape / Unescape","description":"Escape eller unescape HTML, JavaScript och JSON","pageTitle":"Escape Unescape-verktyg","pageDescription":"Escape specialtecken för HTML, JavaScript eller JSON."},
+    "ip-calculator": {"name":"IP-nätverkskalkylator","description":"Beräkna nätmask, nätverk och broadcast","pageTitle":"IP-nätverkskalkylator","pageDescription":"Beräkna nätmask, nätverksadress och broadcast."},
+    "fake-data": {"name":"Falsk datagenerator","description":"Generera falska namn, e-post för testning","pageTitle":"Falsk datagenerator","pageDescription":"Generera falska namn, e-post och adresser för testning."},
+    "hmac-generator": {"name":"HMAC-generator","description":"Generera HMAC-SHA256, HMAC-SHA1","pageTitle":"HMAC-generator","pageDescription":"Generera HMAC-signaturer med SHA-256 eller SHA-1."},
+    "url-parser": {"name":"URL-parser","description":"Parsa URL till komponenter","pageTitle":"URL-parser","pageDescription":"Parsa URL:er till protokoll, host, pathname och parametrar."},
+    "binary-text": {"name":"Text ↔ binär konverterare","description":"Konvertera text till binär och vice versa","pageTitle":"Text till binär konverterare","pageDescription":"Konvertera text till binär och binär till text."},
+    "pem-decoder": {"name":"PEM / certifikatdekoder","description":"Dekoda PEM-certifikat","pageTitle":"PEM-certifikatdekoder","pageDescription":"Dekoda certifikat i PEM-format."},
+    "html-table": {"name":"HTML-tabellgenerator","description":"Konvertera CSV eller JSON till HTML-tabell","pageTitle":"HTML-tabellgenerator","pageDescription":"Konvertera CSV eller JSON till HTML-tabellmarkup."},
+    "bcrypt-generator": {"name":"Bcrypt-hashgenerator","description":"Generera bcrypt-lösenordshashar","pageTitle":"Bcrypt-hashgenerator","pageDescription":"Generera bcrypt-lösenordshashar med konfigurerbar kostnad."}
   },
   "footer": {
     "tagline": "Free online developer tools. No signup required. All processing happens in your browser — your data never leaves your device.",
@@ -1350,13 +1350,13 @@
     "contactText": "Questions about this policy? Open an issue on our GitHub repository."
   },
   "meta": {
-    "homeTitle": "DevToolBox - Free Online Developer Tools",
-    "homeDescription": "Free online developer tools: JSON formatter, Base64 encoder, UUID generator, regex tester, hash generator, and 40+ more. No signup required. All processing in your browser."
+    "homeTitle": "DevToolBox - Gratis Online Utvecklarverktyg",
+    "homeDescription": "Gratis online utvecklarverktyg: JSON-formaterare, Base64-enkoder, UUID-generator, regex-tester, hash-generator och 40+ fler. Ingen registrering. All bearbetning i din webbläsare."
   },
   "blog": {
-    "nav": "Blog",
-    "title": "DevToolBox Blog",
-    "description": "Developer guides, tutorials, and best practices for working with online tools",
-    "readMore": "Read More"
+    "nav": "Blogg",
+    "title": "DevToolBox Blogg",
+    "description": "Utvecklarguider, tutorials och bästa praxis för online-verktyg",
+    "readMore": "Läs mer"
   }
 }

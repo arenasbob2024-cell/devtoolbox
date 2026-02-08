@@ -41,7 +41,7 @@
   "home": {
     "heroTitle1": "Alat Developer",
     "heroTitle2": "Online Gratis",
-    "heroDescription": "28+ alat penting untuk developer. Tanpa daftar akun, tanpa batasan. Semua pemrosesan dilakukan langsung di browser Anda — data Anda tidak pernah keluar dari perangkat Anda.",
+    "heroDescription": "40+ alat penting untuk developer. Tanpa daftar akun, tanpa batasan. Semua pemrosesan dilakukan langsung di browser Anda — data Anda tidak pernah keluar dari perangkat Anda.",
     "searchPlaceholder": "Cari alat... (json, base64, uuid, hash...)",
     "whyTitle": "Mengapa",
     "whyBrand": "DevToolBox",
@@ -1298,7 +1298,20 @@
         "Panduan referensi",
         "Skrip CI/CD"
       ]
-    }
+    },
+    "xml-formatter": {"name":"Format XML","description":"Format, minify dan validasi XML","pageTitle":"Format dan Validator XML","pageDescription":"Format, minify dan validasi XML online."},
+    "csv-json": {"name":"Konverter CSV ↔ JSON","description":"Konversi antara CSV dan JSON","pageTitle":"Konverter CSV ke JSON","pageDescription":"Konversi CSV ke JSON dan JSON ke CSV online."},
+    "http-status": {"name":"Referensi Kode HTTP","description":"Cari kode status HTTP","pageTitle":"Referensi Kode Status HTTP","pageDescription":"Cari kode HTTP: 1xx, 2xx, 3xx, 4xx, 5xx."},
+    "mime-types": {"name":"Pencarian Tipe MIME","description":"Temukan tipe MIME menurut ekstensi","pageTitle":"Pencarian Tipe MIME","pageDescription":"Temukan tipe MIME menurut ekstensi file."},
+    "escape-unescape": {"name":"Escape / Unescape","description":"Escape atau unescape HTML, JavaScript dan JSON","pageTitle":"Alat Escape Unescape","pageDescription":"Escape karakter khusus untuk HTML, JavaScript atau JSON."},
+    "ip-calculator": {"name":"Kalkulator Subnet IP","description":"Hitung subnet mask, jaringan dan broadcast","pageTitle":"Kalkulator Subnet IP","pageDescription":"Hitung subnet mask, alamat jaringan dan broadcast."},
+    "fake-data": {"name":"Generator Data Palsu","description":"Hasilkan nama, email palsu untuk pengujian","pageTitle":"Generator Data Palsu","pageDescription":"Hasilkan nama, email dan alamat palsu untuk pengujian."},
+    "hmac-generator": {"name":"Generator HMAC","description":"Hasilkan HMAC-SHA256, HMAC-SHA1","pageTitle":"Generator HMAC","pageDescription":"Hasilkan tanda tangan HMAC dengan SHA-256 atau SHA-1."},
+    "url-parser": {"name":"Parser URL","description":"Parse URL ke komponen","pageTitle":"Parser URL","pageDescription":"Parse URL ke protokol, host, pathname dan parameter."},
+    "binary-text": {"name":"Konverter Teks ↔ Biner","description":"Konversi teks ke biner dan sebaliknya","pageTitle":"Konverter Teks ke Biner","pageDescription":"Konversi teks ke biner dan biner ke teks."},
+    "pem-decoder": {"name":"Dekoder PEM / Sertifikat","description":"Dekode sertifikat PEM","pageTitle":"Dekoder Sertifikat PEM","pageDescription":"Dekode sertifikat dalam format PEM."},
+    "html-table": {"name":"Generator Tabel HTML","description":"Konversi CSV atau JSON ke tabel HTML","pageTitle":"Generator Tabel HTML","pageDescription":"Konversi CSV atau JSON ke markup tabel HTML."},
+    "bcrypt-generator": {"name":"Generator Hash Bcrypt","description":"Hasilkan hash bcrypt dengan biaya yang dapat dikonfigurasi","pageTitle":"Generator Hash Bcrypt","pageDescription":"Hasilkan hash kata sandi bcrypt dengan faktor biaya yang dapat dikonfigurasi."}
   },
   "footer": {
     "tagline": "Alat developer online gratis. Tanpa perlu daftar akun. Semua pemrosesan dilakukan di browser Anda — data Anda tidak pernah keluar dari perangkat Anda.",
@@ -1310,7 +1323,7 @@
     "missionTitle": "Misi Kami",
     "missionText": "Kami percaya alat developer harus gratis, cepat, dan privat. Setiap alat di DevToolBox memproses data sepenuhnya di browser Anda — tidak ada yang pernah dikirim ke server.",
     "featuresTitle": "Fitur",
-    "feature1": "28+ alat developer penting",
+    "feature1": "40+ alat developer penting",
     "feature2": "100% diproses di sisi klien — data Anda tidak pernah keluar dari browser",
     "feature3": "Tanpa daftar akun, tanpa akun, tanpa pelacakan",
     "feature4": "Berfungsi di desktop, tablet, dan ponsel",
@@ -1338,7 +1351,7 @@
   },
   "meta": {
     "homeTitle": "DevToolBox - Alat Developer Online Gratis",
-    "homeDescription": "Alat developer online gratis: JSON formatter, Base64 encoder, UUID generator, regex tester, hash generator, dan 28+ lainnya. Tanpa perlu daftar akun. Semua diproses di browser Anda."
+    "homeDescription": "Alat developer online gratis: JSON formatter, Base64 encoder, UUID generator, regex tester, hash generator, dan 40+ lainnya. Tanpa perlu daftar akun. Semua diproses di browser Anda."
   },
   "blog": {
     "nav": "Blog",

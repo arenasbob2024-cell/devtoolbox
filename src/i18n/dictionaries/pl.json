@@ -1,9 +1,9 @@
 {
   "common": {
-    "searchPlaceholder": "Search tools... (e.g. json, base64, uuid)",
-    "allTools": "All Tools",
-    "free": "FREE",
-    "home": "Home",
+    "searchPlaceholder": "Szukaj narzędzi... (np. json, base64, uuid)",
+    "allTools": "Wszystkie narzędzia",
+    "free": "ZA DARMO",
+    "home": "Strona główna",
     "moreTools": "More Tools",
     "copy": "Copy",
     "copied": "Copied!",
@@ -39,9 +39,9 @@
     "unchanged": "unchanged"
   },
   "home": {
-    "heroTitle1": "Free Online",
-    "heroTitle2": "Developer Tools",
-    "heroDescription": "40+ essential tools for developers. No signup, no limits. All processing happens right in your browser — your data never leaves your device.",
+    "heroTitle1": "Darmowe online",
+    "heroTitle2": "narzędzia dla programistów",
+    "heroDescription": "40+ niezbędnych narzędzi dla programistów. Bez rejestracji, bez limitów. Wszystkie operacje odbywają się w przeglądarce — twoje dane nigdy nie opuszczają urządzenia.",
     "searchPlaceholder": "Search tools... (json, base64, uuid, hash...)",
     "whyTitle": "Why",
     "whyBrand": "DevToolBox",
@@ -55,12 +55,12 @@
     "responsiveDesc": "Fully responsive. Use on desktop, tablet, or mobile."
   },
   "categories": {
-    "encoder": "Encoder / Decoder",
-    "formatter": "Formatter / Beautifier",
+    "encoder": "Enkoder / Dekoder",
+    "formatter": "Formatowanie / Upiększanie",
     "generator": "Generator",
-    "converter": "Converter",
-    "text": "Text Tools",
-    "web": "Web Tools"
+    "converter": "Konwerter",
+    "text": "Narzędzia tekstowe",
+    "web": "Narzędzia webowe"
   },
   "tools": {
     "json-formatter": {
@@ -1299,19 +1299,19 @@
         "Building CI/CD pipeline scripts"
       ]
     },
-    "xml-formatter": {"name":"XML Formatter","description":"Format, minify, and validate XML with syntax highlighting","pageTitle":"XML Formatter & Validator","pageDescription":"Format, minify, and validate XML online. Beautify or compress XML for production."},
-    "csv-json": {"name":"CSV ↔ JSON Converter","description":"Convert between CSV and JSON formats instantly","pageTitle":"CSV to JSON Converter","pageDescription":"Convert CSV to JSON and JSON to CSV online. Handles headers and nested structures."},
-    "http-status": {"name":"HTTP Status Code Reference","description":"Lookup HTTP status codes with meanings and use cases","pageTitle":"HTTP Status Code Reference","pageDescription":"Lookup HTTP status codes: 1xx, 2xx, 3xx, 4xx, 5xx with descriptions and when to use them."},
-    "mime-types": {"name":"MIME Type Lookup","description":"Find MIME types by file extension or content type","pageTitle":"MIME Type Lookup","pageDescription":"Find MIME types by file extension. Browse common content types for web development."},
-    "escape-unescape": {"name":"Escape / Unescape","description":"Escape or unescape HTML, JavaScript, and JSON strings","pageTitle":"Escape Unescape Tool","pageDescription":"Escape special characters for HTML, JavaScript, or JSON. Unescape encoded strings."},
-    "ip-calculator": {"name":"IP Subnet Calculator","description":"Calculate subnet mask, network, broadcast, and host range","pageTitle":"IP Subnet Calculator","pageDescription":"Calculate subnet mask, network address, broadcast address, and host range from IP and CIDR."},
-    "fake-data": {"name":"Fake Data Generator","description":"Generate fake names, emails, addresses for testing","pageTitle":"Fake Data Generator","pageDescription":"Generate fake names, emails, phone numbers, and addresses for testing and development."},
-    "hmac-generator": {"name":"HMAC Generator","description":"Generate HMAC-SHA256, HMAC-SHA1 from message and secret key","pageTitle":"HMAC Generator","pageDescription":"Generate HMAC signatures with SHA-256 or SHA-1 for API verification and webhooks."},
-    "url-parser": {"name":"URL Parser","description":"Parse URL into components: protocol, host, path, query params","pageTitle":"URL Parser","pageDescription":"Parse URLs into protocol, host, pathname, query parameters, and hash. Extract URL components."},
-    "binary-text": {"name":"Text ↔ Binary Converter","description":"Convert text to binary and binary to text","pageTitle":"Text to Binary Converter","pageDescription":"Convert text to binary (0s and 1s) and binary back to text. Supports UTF-8."},
-    "pem-decoder": {"name":"PEM / Certificate Decoder","description":"Decode PEM certificates and view certificate details","pageTitle":"PEM Certificate Decoder","pageDescription":"Decode PEM format certificates and view X.509 certificate details."},
-    "html-table": {"name":"HTML Table Generator","description":"Convert CSV or JSON to HTML table markup","pageTitle":"HTML Table Generator","pageDescription":"Convert CSV or JSON data to HTML table markup. Customize headers and styling."},
-    "bcrypt-generator": {"name":"Bcrypt Hash Generator","description":"Generate bcrypt password hashes with configurable cost","pageTitle":"Bcrypt Hash Generator","pageDescription":"Generate bcrypt password hashes with configurable cost factor for secure password storage."}
+    "xml-formatter": {"name":"Formatowanie XML","description":"Formatuj, minifikuj i waliduj XML","pageTitle":"Formatowanie i walidacja XML","pageDescription":"Formatuj, minifikuj i waliduj XML online."},
+    "csv-json": {"name":"Konwerter CSV ↔ JSON","description":"Konwertuj między CSV i JSON","pageTitle":"Konwerter CSV na JSON","pageDescription":"Konwertuj CSV na JSON i JSON na CSV online."},
+    "http-status": {"name":"Referencja kodów HTTP","description":"Sprawdź kody statusu HTTP z opisami","pageTitle":"Referencja kodów statusu HTTP","pageDescription":"Sprawdź kody statusu HTTP: 1xx, 2xx, 3xx, 4xx, 5xx."},
+    "mime-types": {"name":"Wyszukiwarka MIME Type","description":"Znajdź typy MIME po rozszerzeniu pliku","pageTitle":"Wyszukiwarka MIME Type","pageDescription":"Znajdź typy MIME po rozszerzeniu pliku."},
+    "escape-unescape": {"name":"Escape / Unescape","description":"Escape lub unescape HTML, JavaScript i JSON","pageTitle":"Narzędzie Escape Unescape","pageDescription":"Escape znaków specjalnych dla HTML, JavaScript lub JSON."},
+    "ip-calculator": {"name":"Kalkulator podsieci IP","description":"Oblicz maskę podsieci, sieć i broadcast","pageTitle":"Kalkulator podsieci IP","pageDescription":"Oblicz maskę podsieci, adres sieci i broadcast."},
+    "fake-data": {"name":"Generator fałszywych danych","description":"Generuj fałszywe nazwiska, emaile do testów","pageTitle":"Generator fałszywych danych","pageDescription":"Generuj fałszywe nazwiska, emaile i adresy do testów."},
+    "hmac-generator": {"name":"Generator HMAC","description":"Generuj HMAC-SHA256, HMAC-SHA1","pageTitle":"Generator HMAC","pageDescription":"Generuj podpisy HMAC z SHA-256 lub SHA-1."},
+    "url-parser": {"name":"Parser URL","description":"Parsuj URL na składniki","pageTitle":"Parser URL","pageDescription":"Parsuj URL na protokół, host, ścieżkę i parametry."},
+    "binary-text": {"name":"Konwerter tekst-binarny","description":"Konwertuj tekst na binarny i odwrotnie","pageTitle":"Konwerter tekstu na binarny","pageDescription":"Konwertuj tekst na binarny i binarny na tekst."},
+    "pem-decoder": {"name":"Dekoder PEM / certyfikat","description":"Dekoduj certyfikaty PEM","pageTitle":"Dekoder certyfikatu PEM","pageDescription":"Dekoduj certyfikaty w formacie PEM."},
+    "html-table": {"name":"Generator tabel HTML","description":"Konwertuj CSV lub JSON na tabelę HTML","pageTitle":"Generator tabel HTML","pageDescription":"Konwertuj CSV lub JSON na znaczniki tabeli HTML."},
+    "bcrypt-generator": {"name":"Generator hashy Bcrypt","description":"Generuj hashe bcrypt z konfigurowalnym kosztem","pageTitle":"Generator hashy Bcrypt","pageDescription":"Generuj hashe haseł bcrypt z konfigurowalnym współczynnikiem."}
   },
   "footer": {
     "tagline": "Free online developer tools. No signup required. All processing happens in your browser — your data never leaves your device.",
@@ -1350,13 +1350,13 @@
     "contactText": "Questions about this policy? Open an issue on our GitHub repository."
   },
   "meta": {
-    "homeTitle": "DevToolBox - Free Online Developer Tools",
-    "homeDescription": "Free online developer tools: JSON formatter, Base64 encoder, UUID generator, regex tester, hash generator, and 40+ more. No signup required. All processing in your browser."
+    "homeTitle": "DevToolBox - Darmowe Narzędzia Online dla Programistów",
+    "homeDescription": "Darmowe narzędzia online: formatowanie JSON, enkoder Base64, generator UUID, tester regex, generator hashy i 40+ więcej. Bez rejestracji. Wszystko w przeglądarce."
   },
   "blog": {
     "nav": "Blog",
-    "title": "DevToolBox Blog",
-    "description": "Developer guides, tutorials, and best practices for working with online tools",
-    "readMore": "Read More"
+    "title": "Blog DevToolBox",
+    "description": "Przewodniki, tutoriale i najlepsze praktyki dla programistów",
+    "readMore": "Czytaj więcej"
   }
 }

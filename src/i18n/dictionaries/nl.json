@@ -1,8 +1,8 @@
 {
   "common": {
-    "searchPlaceholder": "Search tools... (e.g. json, base64, uuid)",
-    "allTools": "All Tools",
-    "free": "FREE",
+    "searchPlaceholder": "Zoek tools... (bijv. json, base64, uuid)",
+    "allTools": "Alle tools",
+    "free": "GRATIS",
     "home": "Home",
     "moreTools": "More Tools",
     "copy": "Copy",
@@ -39,9 +39,9 @@
     "unchanged": "unchanged"
   },
   "home": {
-    "heroTitle1": "Free Online",
-    "heroTitle2": "Developer Tools",
-    "heroDescription": "40+ essential tools for developers. No signup, no limits. All processing happens right in your browser — your data never leaves your device.",
+    "heroTitle1": "Gratis online",
+    "heroTitle2": "ontwikkeltools",
+    "heroDescription": "40+ essentiële tools voor ontwikkelaars. Geen registratie, geen limieten. Alle verwerking gebeurt in je browser — je data verlaat je apparaat nooit.",
     "searchPlaceholder": "Search tools... (json, base64, uuid, hash...)",
     "whyTitle": "Why",
     "whyBrand": "DevToolBox",
@@ -59,8 +59,8 @@
     "formatter": "Formatter / Beautifier",
     "generator": "Generator",
     "converter": "Converter",
-    "text": "Text Tools",
-    "web": "Web Tools"
+    "text": "Teksttools",
+    "web": "Webtools"
   },
   "tools": {
     "json-formatter": {
@@ -1299,19 +1299,19 @@
         "Building CI/CD pipeline scripts"
       ]
     },
-    "xml-formatter": {"name":"XML Formatter","description":"Format, minify, and validate XML with syntax highlighting","pageTitle":"XML Formatter & Validator","pageDescription":"Format, minify, and validate XML online. Beautify or compress XML for production."},
-    "csv-json": {"name":"CSV ↔ JSON Converter","description":"Convert between CSV and JSON formats instantly","pageTitle":"CSV to JSON Converter","pageDescription":"Convert CSV to JSON and JSON to CSV online. Handles headers and nested structures."},
-    "http-status": {"name":"HTTP Status Code Reference","description":"Lookup HTTP status codes with meanings and use cases","pageTitle":"HTTP Status Code Reference","pageDescription":"Lookup HTTP status codes: 1xx, 2xx, 3xx, 4xx, 5xx with descriptions and when to use them."},
-    "mime-types": {"name":"MIME Type Lookup","description":"Find MIME types by file extension or content type","pageTitle":"MIME Type Lookup","pageDescription":"Find MIME types by file extension. Browse common content types for web development."},
-    "escape-unescape": {"name":"Escape / Unescape","description":"Escape or unescape HTML, JavaScript, and JSON strings","pageTitle":"Escape Unescape Tool","pageDescription":"Escape special characters for HTML, JavaScript, or JSON. Unescape encoded strings."},
-    "ip-calculator": {"name":"IP Subnet Calculator","description":"Calculate subnet mask, network, broadcast, and host range","pageTitle":"IP Subnet Calculator","pageDescription":"Calculate subnet mask, network address, broadcast address, and host range from IP and CIDR."},
-    "fake-data": {"name":"Fake Data Generator","description":"Generate fake names, emails, addresses for testing","pageTitle":"Fake Data Generator","pageDescription":"Generate fake names, emails, phone numbers, and addresses for testing and development."},
-    "hmac-generator": {"name":"HMAC Generator","description":"Generate HMAC-SHA256, HMAC-SHA1 from message and secret key","pageTitle":"HMAC Generator","pageDescription":"Generate HMAC signatures with SHA-256 or SHA-1 for API verification and webhooks."},
-    "url-parser": {"name":"URL Parser","description":"Parse URL into components: protocol, host, path, query params","pageTitle":"URL Parser","pageDescription":"Parse URLs into protocol, host, pathname, query parameters, and hash. Extract URL components."},
-    "binary-text": {"name":"Text ↔ Binary Converter","description":"Convert text to binary and binary to text","pageTitle":"Text to Binary Converter","pageDescription":"Convert text to binary (0s and 1s) and binary back to text. Supports UTF-8."},
-    "pem-decoder": {"name":"PEM / Certificate Decoder","description":"Decode PEM certificates and view certificate details","pageTitle":"PEM Certificate Decoder","pageDescription":"Decode PEM format certificates and view X.509 certificate details."},
-    "html-table": {"name":"HTML Table Generator","description":"Convert CSV or JSON to HTML table markup","pageTitle":"HTML Table Generator","pageDescription":"Convert CSV or JSON data to HTML table markup. Customize headers and styling."},
-    "bcrypt-generator": {"name":"Bcrypt Hash Generator","description":"Generate bcrypt password hashes with configurable cost","pageTitle":"Bcrypt Hash Generator","pageDescription":"Generate bcrypt password hashes with configurable cost factor for secure password storage."}
+    "xml-formatter": {"name":"XML Formatter","description":"Format, minify en valideer XML","pageTitle":"XML Formatter en Validator","pageDescription":"Format, minify en valideer XML online."},
+    "csv-json": {"name":"CSV ↔ JSON Converter","description":"Converteer tussen CSV en JSON","pageTitle":"CSV naar JSON Converter","pageDescription":"Converteer CSV naar JSON en JSON naar CSV online."},
+    "http-status": {"name":"HTTP Status Code Referentie","description":"Zoek HTTP statuscodes met betekenissen","pageTitle":"HTTP Status Code Referentie","pageDescription":"Zoek HTTP statuscodes: 1xx, 2xx, 3xx, 4xx, 5xx."},
+    "mime-types": {"name":"MIME Type Zoeken","description":"Vind MIME types op bestandsextensie","pageTitle":"MIME Type Zoeken","pageDescription":"Vind MIME types op bestandsextensie."},
+    "escape-unescape": {"name":"Escape / Unescape","description":"Escape of unescape HTML, JavaScript en JSON","pageTitle":"Escape Unescape Tool","pageDescription":"Escape speciale tekens voor HTML, JavaScript of JSON."},
+    "ip-calculator": {"name":"IP Subnet Calculator","description":"Bereken subnetmasker, netwerk en broadcast","pageTitle":"IP Subnet Calculator","pageDescription":"Bereken subnetmasker, netwerkadres en broadcast."},
+    "fake-data": {"name":"Nepgegevens Generator","description":"Genereer valse namen, e-mails voor testen","pageTitle":"Nepgegevens Generator","pageDescription":"Genereer valse namen, e-mails en adressen voor testen."},
+    "hmac-generator": {"name":"HMAC Generator","description":"Genereer HMAC-SHA256, HMAC-SHA1","pageTitle":"HMAC Generator","pageDescription":"Genereer HMAC-handtekeningen met SHA-256 of SHA-1."},
+    "url-parser": {"name":"URL Parser","description":"Parse URL in componenten","pageTitle":"URL Parser","pageDescription":"Parse URLs in protocol, host, pathname en parameters."},
+    "binary-text": {"name":"Tekst ↔ Binair Converter","description":"Converteer tekst naar binair en vice versa","pageTitle":"Tekst naar Binair Converter","pageDescription":"Converteer tekst naar binair en binair naar tekst."},
+    "pem-decoder": {"name":"PEM / Certificaat Decoder","description":"Decodeer PEM-certificaten","pageTitle":"PEM Certificaat Decoder","pageDescription":"Decodeer certificaten in PEM-formaat."},
+    "html-table": {"name":"HTML Tabel Generator","description":"Converteer CSV of JSON naar HTML-tabel","pageTitle":"HTML Tabel Generator","pageDescription":"Converteer CSV of JSON naar HTML-tabelmarkering."},
+    "bcrypt-generator": {"name":"Bcrypt Hash Generator","description":"Genereer bcrypt-wachtwoordhashes","pageTitle":"Bcrypt Hash Generator","pageDescription":"Genereer bcrypt-wachtwoordhashes met configureerbare kost."}
   },
   "footer": {
     "tagline": "Free online developer tools. No signup required. All processing happens in your browser — your data never leaves your device.",
@@ -1350,13 +1350,13 @@
     "contactText": "Questions about this policy? Open an issue on our GitHub repository."
   },
   "meta": {
-    "homeTitle": "DevToolBox - Free Online Developer Tools",
-    "homeDescription": "Free online developer tools: JSON formatter, Base64 encoder, UUID generator, regex tester, hash generator, and 40+ more. No signup required. All processing in your browser."
+    "homeTitle": "DevToolBox - Gratis Online Ontwikkeltools",
+    "homeDescription": "Gratis online ontwikkeltools: JSON formatter, Base64 encoder, UUID generator, regex tester, hash generator en 40+ meer. Geen registratie. Alle verwerking in je browser."
   },
   "blog": {
     "nav": "Blog",
     "title": "DevToolBox Blog",
-    "description": "Developer guides, tutorials, and best practices for working with online tools",
-    "readMore": "Read More"
+    "description": "Ontwikkelgidsen, tutorials en best practices voor online tools",
+    "readMore": "Lees meer"
   }
 }
