@@ -1,7 +1,14 @@
+'use client';
+
 import Link from 'next/link';
 import { categories, tools } from '@/lib/tools';
+import { useLang } from '@/i18n/LangContext';
 
 export default function Footer() {
+  const { lang, dict } = useLang();
+  const t = dict.tools;
+  const c = dict.categories;
+
   return (
     <footer style={{
       borderTop: '1px solid var(--border-color)',
@@ -25,7 +32,7 @@ export default function Footer() {
               marginBottom: 12,
             }}>DevToolBox</h3>
             <p style={{ fontSize: 13, color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-              Free online developer tools. No signup required. All processing happens in your browser — your data never leaves your device.
+              {dict.footer.tagline}
             </p>
           </div>
 
@@ -33,16 +40,19 @@ export default function Footer() {
           {categories.slice(0, 3).map(cat => (
             <div key={cat.id}>
               <h4 style={{ fontSize: 13, fontWeight: 700, color: 'var(--text-primary)', marginBottom: 10, textTransform: 'uppercase', letterSpacing: 1 }}>
-                {cat.icon} {cat.name}
+                {cat.icon} {c[cat.id as keyof typeof c] || cat.name}
               </h4>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                {tools.filter(t => t.category === cat.id).map(t => (
-                  <li key={t.id} style={{ marginBottom: 6 }}>
-                    <Link href={t.path} style={{ fontSize: 13, color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.2s' }}>
-                      {t.name}
-                    </Link>
-                  </li>
-                ))}
+                {tools.filter(tool => tool.category === cat.id).map(tool => {
+                  const toolDict = t[tool.id as keyof typeof t];
+                  return (
+                    <li key={tool.id} style={{ marginBottom: 6 }}>
+                      <Link href={`/${lang}${tool.path}`} style={{ fontSize: 13, color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.2s' }}>
+                        {toolDict?.name || tool.name}
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}
@@ -59,11 +69,11 @@ export default function Footer() {
           gap: 10,
         }}>
           <p style={{ fontSize: 12, color: 'var(--text-secondary)' }}>
-            &copy; {new Date().getFullYear()} DevToolBox. All tools are free and open-source.
+            &copy; {new Date().getFullYear()} {dict.footer.copyright}
           </p>
           <div style={{ display: 'flex', gap: 16 }}>
-            <Link href="/privacy" style={{ fontSize: 12, color: 'var(--text-secondary)', textDecoration: 'none' }}>Privacy Policy</Link>
-            <Link href="/about" style={{ fontSize: 12, color: 'var(--text-secondary)', textDecoration: 'none' }}>About</Link>
+            <Link href={`/${lang}/privacy`} style={{ fontSize: 12, color: 'var(--text-secondary)', textDecoration: 'none' }}>{dict.common.privacyPolicy}</Link>
+            <Link href={`/${lang}/about`} style={{ fontSize: 12, color: 'var(--text-secondary)', textDecoration: 'none' }}>{dict.common.about}</Link>
           </div>
         </div>
       </div>

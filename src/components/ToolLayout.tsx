@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import AdSlot from './AdSlot';
 import { tools } from '@/lib/tools';
+import { useLang } from '@/i18n/LangContext';
 
 interface ToolLayoutProps {
   title: string;
@@ -12,13 +13,15 @@ interface ToolLayoutProps {
 }
 
 export default function ToolLayout({ title, description, children, toolId }: ToolLayoutProps) {
+  const { lang, dict } = useLang();
+  const t = dict.tools;
   const relatedTools = tools.filter(t => t.id !== toolId).slice(0, 4);
 
   return (
     <div style={{ maxWidth: 1200, margin: '0 auto', padding: '24px' }}>
       {/* Breadcrumb */}
       <nav style={{ fontSize: 13, color: 'var(--text-secondary)', marginBottom: 16, display: 'flex', gap: 8, alignItems: 'center' }}>
-        <Link href="/" style={{ color: 'var(--accent-blue)', textDecoration: 'none' }}>Home</Link>
+        <Link href={`/${lang}`} style={{ color: 'var(--accent-blue)', textDecoration: 'none' }}>{dict.common.home}</Link>
         <span>/</span>
         <span>{title}</span>
       </nav>
@@ -54,25 +57,28 @@ export default function ToolLayout({ title, description, children, toolId }: Too
           {/* Related Tools */}
           <div className="card" style={{ padding: 16 }}>
             <h3 style={{ fontSize: 14, fontWeight: 700, marginBottom: 12, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: 1 }}>
-              More Tools
+              {dict.common.moreTools}
             </h3>
-            {relatedTools.map(t => (
-              <Link
-                key={t.id}
-                href={t.path}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 10,
-                  padding: '8px 0',
-                  textDecoration: 'none',
-                  borderBottom: '1px solid var(--border-color)',
-                }}
-              >
-                <span style={{ fontFamily: 'monospace', fontWeight: 700, fontSize: 14, width: 30, textAlign: 'center' }}>{t.icon}</span>
-                <span style={{ fontSize: 13, color: 'var(--text-primary)' }}>{t.name}</span>
-              </Link>
-            ))}
+            {relatedTools.map(tool => {
+              const toolDict = t[tool.id as keyof typeof t];
+              return (
+                <Link
+                  key={tool.id}
+                  href={`/${lang}${tool.path}`}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 10,
+                    padding: '8px 0',
+                    textDecoration: 'none',
+                    borderBottom: '1px solid var(--border-color)',
+                  }}
+                >
+                  <span style={{ fontFamily: 'monospace', fontWeight: 700, fontSize: 14, width: 30, textAlign: 'center' }}>{tool.icon}</span>
+                  <span style={{ fontSize: 13, color: 'var(--text-primary)' }}>{toolDict?.name || tool.name}</span>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </div>
