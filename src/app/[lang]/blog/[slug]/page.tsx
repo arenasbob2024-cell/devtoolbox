@@ -1,11 +1,12 @@
 'use client';
 
 import Link from 'next/link';
-import { useLang } from '@/i18n/LangContext';
-import { getBlogPost, blogPosts } from '@/data/blog-posts';
-import { tools } from '@/lib/tools';
-import AdSlot from '@/components/AdSlot';
 import { useParams } from 'next/navigation';
+import { useLang } from '@/i18n/LangContext';
+import { getLocalizedPost, blogPosts } from '@/data/blog-posts';
+import { tools } from '@/lib/tools';
+import { i18n, type Locale } from '@/i18n/config';
+import AdSlot from '@/components/AdSlot';
 
 /* ---------- lazy-load article bodies ---------- */
 import UuidComparison from '@/data/posts/uuid-v4-vs-v7-vs-ulid';
@@ -22,24 +23,41 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'docker-compose-yaml-errors': DockerYamlErrors,
 };
 
+/* i18n for UI strings on this page */
+const ui: Record<string, { home: string; blog: string; relatedTools: string; relatedArticles: string; by: string }> = {
+  en: { home: 'Home', blog: 'Blog', relatedTools: 'Try These Related Tools', relatedArticles: 'Related Articles', by: 'by' },
+  fr: { home: 'Accueil', blog: 'Blog', relatedTools: 'Essayez ces outils associés', relatedArticles: 'Articles connexes', by: 'par' },
+  de: { home: 'Startseite', blog: 'Blog', relatedTools: 'Verwandte Tools ausprobieren', relatedArticles: 'Verwandte Artikel', by: 'von' },
+  it: { home: 'Home', blog: 'Blog', relatedTools: 'Prova questi strumenti correlati', relatedArticles: 'Articoli correlati', by: 'di' },
+  es: { home: 'Inicio', blog: 'Blog', relatedTools: 'Prueba estas herramientas relacionadas', relatedArticles: 'Artículos relacionados', by: 'por' },
+  zh: { home: '首页', blog: '博客', relatedTools: '试试这些相关工具', relatedArticles: '相关文章', by: '作者' },
+  id: { home: 'Beranda', blog: 'Blog', relatedTools: 'Coba Alat Terkait', relatedArticles: 'Artikel Terkait', by: 'oleh' },
+  th: { home: 'หน้าแรก', blog: 'บล็อก', relatedTools: 'ลองเครื่องมือที่เกี่ยวข้อง', relatedArticles: 'บทความที่เกี่ยวข้อง', by: 'โดย' },
+};
+
 export default function BlogPostPage() {
-  const { lang } = useLang();
   const params = useParams();
+  const { lang: contextLang } = useLang();
   const slug = params.slug as string;
-  const post = getBlogPost(slug);
+  // Prefer lang from URL - ensures article body and metadata use correct language
+  const lang = (params?.lang && i18n.locales.includes(params.lang as Locale) ? params.lang : contextLang) as Locale;
+  const post = getLocalizedPost(slug, lang);
+  const uiText = ui[lang] || ui['en'];
 
   if (!post) {
     return (
       <div style={{ maxWidth: 800, margin: '80px auto', textAlign: 'center', padding: '0 24px' }}>
         <h1 style={{ fontSize: 32, fontWeight: 800 }}>Post Not Found</h1>
-        <Link href={`/${lang}/blog`} style={{ color: 'var(--accent-blue)' }}>Back to Blog</Link>
+        <Link href={`/${lang}/blog`} style={{ color: 'var(--accent-blue)' }}>← {uiText.blog}</Link>
       </div>
     );
   }
 
   const PostContent = postComponents[slug];
   const relatedToolsList = post.relatedTools.map(id => tools.find(t => t.id === id)).filter(Boolean);
-  const relatedPostsList = post.relatedPosts.map(s => blogPosts.find(p => p.slug === s)).filter(Boolean);
+  const relatedPostsList = post.relatedPosts
+    .map(s => getLocalizedPost(s, lang) || blogPosts.find(p => p.slug === s))
+    .filter(Boolean);
 
   /* JSON-LD Article Schema */
   const articleSchema = {
@@ -48,6 +66,7 @@ export default function BlogPostPage() {
     headline: post.title,
     description: post.description,
     datePublished: post.date,
+    inLanguage: lang,
     author: { '@type': 'Organization', name: post.author, url: 'https://viadreams.cc' },
     publisher: { '@type': 'Organization', name: 'DevToolBox', url: 'https://viadreams.cc' },
     mainEntityOfPage: `https://viadreams.cc/${lang}/blog/${slug}`,
@@ -59,8 +78,8 @@ export default function BlogPostPage() {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: `https://viadreams.cc/${lang}` },
-      { '@type': 'ListItem', position: 2, name: 'Blog', item: `https://viadreams.cc/${lang}/blog` },
+      { '@type': 'ListItem', position: 1, name: uiText.home, item: `https://viadreams.cc/${lang}` },
+      { '@type': 'ListItem', position: 2, name: uiText.blog, item: `https://viadreams.cc/${lang}/blog` },
       { '@type': 'ListItem', position: 3, name: post.title, item: `https://viadreams.cc/${lang}/blog/${slug}` },
     ],
   };
@@ -73,9 +92,9 @@ export default function BlogPostPage() {
 
       {/* Breadcrumb */}
       <nav style={{ fontSize: 13, color: 'var(--text-secondary)', marginBottom: 24, display: 'flex', gap: 8 }}>
-        <Link href={`/${lang}`} style={{ color: 'var(--accent-blue)', textDecoration: 'none' }}>Home</Link>
+        <Link href={`/${lang}`} style={{ color: 'var(--accent-blue)', textDecoration: 'none' }}>{uiText.home}</Link>
         <span>/</span>
-        <Link href={`/${lang}/blog`} style={{ color: 'var(--accent-blue)', textDecoration: 'none' }}>Blog</Link>
+        <Link href={`/${lang}/blog`} style={{ color: 'var(--accent-blue)', textDecoration: 'none' }}>{uiText.blog}</Link>
         <span>/</span>
         <span style={{ color: 'var(--text-secondary)' }}>{post.title.length > 50 ? post.title.slice(0, 50) + '...' : post.title}</span>
       </nav>
@@ -94,7 +113,7 @@ export default function BlogPostPage() {
         <div style={{ display: 'flex', gap: 16, fontSize: 14, color: 'var(--text-secondary)' }}>
           <time>{post.date}</time>
           <span>{post.readingTime}</span>
-          <span>by {post.author}</span>
+          <span>{uiText.by} {post.author}</span>
         </div>
       </header>
 
@@ -115,7 +134,7 @@ export default function BlogPostPage() {
           border: '1px solid rgba(59,130,246,0.2)',
         }}>
           <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 16 }}>
-            Try These Related Tools
+            {uiText.relatedTools}
           </h3>
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             {relatedToolsList.map(tool => tool && (
@@ -150,7 +169,7 @@ export default function BlogPostPage() {
       {/* Related Posts */}
       {relatedPostsList.length > 0 && (
         <div style={{ marginTop: 40 }}>
-          <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>Related Articles</h3>
+          <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>{uiText.relatedArticles}</h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             {relatedPostsList.map(rp => rp && (
               <Link

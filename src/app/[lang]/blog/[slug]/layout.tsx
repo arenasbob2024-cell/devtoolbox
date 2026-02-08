@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { i18n, type Locale } from '@/i18n/config';
-import { getBlogPost, getAllSlugs } from '@/data/blog-posts';
+import { getLocalizedPost, getAllSlugs } from '@/data/blog-posts';
 
 export async function generateStaticParams() {
   const slugs = getAllSlugs();
@@ -16,7 +16,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang: rawLang, slug } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
-  const post = getBlogPost(slug);
+  const post = getLocalizedPost(slug, lang);
 
   if (!post) {
     return { title: 'Post Not Found' };
