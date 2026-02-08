@@ -1,6 +1,6 @@
 const fs = require('fs');
 const locales = ['en','fr','de','it','es','zh','id','th'];
-const tools = ['json-formatter','base64','url-encoder','hash-generator','uuid-generator','timestamp-converter','color-converter','regex-tester','markdown-preview','jwt-decoder','qrcode-generator','lorem-ipsum','html-entity','css-minifier','number-base','text-diff','word-counter','password-generator','sql-formatter','cron-parser'];
+const tools = ['json-formatter','base64','url-encoder','hash-generator','uuid-generator','timestamp-converter','color-converter','regex-tester','markdown-preview','jwt-decoder','qrcode-generator','lorem-ipsum','html-entity','css-minifier','number-base','text-diff','word-counter','password-generator','sql-formatter','cron-parser','json-yaml','string-case','slug-generator','chmod-calculator','line-sorter'];
 const BASE = 'https://viadreams.cc';
 const date = new Date().toISOString().split('T')[0];
 
