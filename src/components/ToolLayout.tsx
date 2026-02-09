@@ -16,8 +16,10 @@ interface ToolLayoutProps {
 export default function ToolLayout({ title, description, children, toolId }: ToolLayoutProps) {
   const { lang, dict } = useLang();
   const t = dict.tools;
-  const relatedTools = tools.filter(t => t.id !== toolId).slice(0, 4);
   const currentTool = tools.find(t => t.id === toolId);
+  const relatedTools = currentTool?.relatedTools
+    ? currentTool.relatedTools.map(id => tools.find(t => t.id === id)).filter((t): t is NonNullable<typeof t> => t != null).slice(0, 4)
+    : tools.filter(t => t.id !== toolId).slice(0, 4);
   const toolUrl = `https://viadreams.cc/${lang}/tools/${toolId}`;
 
   const breadcrumbSchema = {

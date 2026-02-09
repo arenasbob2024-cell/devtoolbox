@@ -14,6 +14,14 @@ import CronServerless from '@/data/posts/cron-schedule-serverless';
 import Base64Uses from '@/data/posts/base64-encoding-real-world-uses';
 import RegexPatterns from '@/data/posts/regex-patterns-copy-paste';
 import DockerYamlErrors from '@/data/posts/docker-compose-yaml-errors';
+import JsonToTsGuide from '@/data/posts/json-to-typescript-complete-guide';
+import HtmlToJsxGuide from '@/data/posts/html-to-jsx-react-migration';
+import JsonToGoGuide from '@/data/posts/json-to-go-struct-guide';
+import CssToTailwindGuide from '@/data/posts/css-to-tailwind-migration';
+import SvgOptimization from '@/data/posts/svg-optimization-react';
+import JsonSchemaGuide from '@/data/posts/json-schema-validation-guide';
+import TsVsJsGuide from '@/data/posts/typescript-vs-javascript-when-to-convert';
+import GraphqlTypeGen from '@/data/posts/graphql-type-generation';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -21,6 +29,14 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'base64-encoding-real-world-uses': Base64Uses,
   'regex-patterns-copy-paste-ready': RegexPatterns,
   'docker-compose-yaml-errors': DockerYamlErrors,
+  'json-to-typescript-complete-guide': JsonToTsGuide,
+  'html-to-jsx-react-migration': HtmlToJsxGuide,
+  'json-to-go-struct-guide': JsonToGoGuide,
+  'css-to-tailwind-migration': CssToTailwindGuide,
+  'svg-optimization-react': SvgOptimization,
+  'json-schema-validation-guide': JsonSchemaGuide,
+  'typescript-vs-javascript-when-to-convert': TsVsJsGuide,
+  'graphql-type-generation': GraphqlTypeGen,
 };
 
 /* i18n for UI strings on this page */
