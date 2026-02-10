@@ -3214,6 +3214,336 @@
           "a": "Tailwind class name, HEX, RGB, and HSL values."
         }
       ]
+    },
+    "curl-to-code": {
+      "name": "cURL to Code Converter",
+      "description": "Convert cURL commands to Python, JavaScript, Go, PHP, and more",
+      "pageTitle": "cURL to Code Converter — Python, JavaScript, Go, PHP",
+      "pageDescription": "Convert cURL commands to Python requests, JavaScript fetch, Go, PHP, Ruby, Java, and C#. Paste any cURL command and get clean code instantly.",
+      "seoTitle": "What is a cURL to Code Converter?",
+      "seoContent": "A cURL to code converter translates cURL commands from API documentation or browser DevTools into equivalent code in your preferred programming language.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Paste a cURL command",
+        "Select target language",
+        "View generated code",
+        "Copy the code"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Converting API docs to code",
+        "Translating browser network requests",
+        "Quick API prototyping",
+        "Learning HTTP request syntax"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What languages are supported?",
+          "a": "Python, JavaScript (fetch/axios), Go, PHP, Ruby, Java, C#, and more."
+        },
+        {
+          "q": "Can I paste cURL from Chrome DevTools?",
+          "a": "Yes, copy as cURL from Chrome Network tab and paste directly."
+        }
+      ]
+    },
+    "yaml-validator": {
+      "name": "YAML Validator & Formatter",
+      "description": "Validate and format YAML with error highlighting",
+      "pageTitle": "YAML Validator & Formatter — Lint and Beautify YAML",
+      "pageDescription": "Validate YAML syntax, highlight errors with line numbers, and auto-format for readability. Supports Kubernetes, Docker Compose, and GitHub Actions.",
+      "seoTitle": "What is a YAML Validator?",
+      "seoContent": "A YAML validator checks your YAML files for syntax errors, indentation issues, and formatting problems. Essential for DevOps and configuration management.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Paste YAML content",
+        "View validation results",
+        "Fix highlighted errors",
+        "Copy formatted YAML"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Validating Kubernetes manifests",
+        "Checking Docker Compose files",
+        "Debugging CI/CD configs",
+        "Formatting YAML for readability"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "Does it support multi-document YAML?",
+          "a": "Yes, documents separated by --- are validated independently."
+        },
+        {
+          "q": "Can it detect indentation errors?",
+          "a": "Yes, indentation issues are highlighted with specific line numbers."
+        }
+      ]
+    },
+    "gitignore-generator": {
+      "name": ".gitignore Generator",
+      "description": "Generate .gitignore files for any language, framework, or IDE",
+      "pageTitle": ".gitignore Generator — Templates for Every Stack",
+      "pageDescription": "Generate .gitignore files for Node.js, Python, Java, Go, React, Vue, VS Code, IntelliJ, macOS, and 100+ more templates.",
+      "seoTitle": "What is a .gitignore Generator?",
+      "seoContent": "A .gitignore generator creates customized .gitignore files by combining templates for your programming language, framework, IDE, and operating system.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Search for your language or framework",
+        "Select multiple templates",
+        "Preview the combined .gitignore",
+        "Copy or download the file"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Setting up new projects",
+        "Adding framework-specific ignores",
+        "Preventing accidental commits",
+        "Standardizing team .gitignore"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "Can I combine multiple templates?",
+          "a": "Yes, select multiple languages, frameworks, and IDEs to combine them."
+        },
+        {
+          "q": "Are the templates up to date?",
+          "a": "Templates follow GitHub's official gitignore repository patterns."
+        }
+      ]
+    },
+    "json-to-dart": {
+      "name": "JSON to Dart",
+      "description": "Convert JSON to Dart classes with fromJson/toJson for Flutter",
+      "pageTitle": "JSON to Dart Converter — Flutter Class Generator",
+      "pageDescription": "Convert JSON data to null-safe Dart classes with fromJson() and toJson() methods. Perfect for Flutter app development.",
+      "seoTitle": "What is JSON to Dart?",
+      "seoContent": "JSON to Dart converts JSON API responses into Dart model classes with serialization methods, making Flutter development faster and type-safe.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Paste JSON data",
+        "Set root class name",
+        "Choose options (null safety, etc.)",
+        "Copy generated Dart code"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Flutter API integration",
+        "Creating model classes",
+        "Type-safe JSON parsing",
+        "Rapid prototyping"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "Does it support null safety?",
+          "a": "Yes, generated classes use Dart null safety with nullable types where appropriate."
+        },
+        {
+          "q": "Can it handle nested JSON?",
+          "a": "Yes, nested objects generate separate classes with proper references."
+        }
+      ]
+    },
+    "nginx-config": {
+      "name": "Nginx Config Generator",
+      "description": "Generate Nginx configuration for reverse proxy, SSL, and more",
+      "pageTitle": "Nginx Config Generator — Reverse Proxy, SSL, Static Sites",
+      "pageDescription": "Generate production-ready Nginx configuration for reverse proxy, SSL/HTTPS, static sites, PHP-FPM, Node.js, and load balancing.",
+      "seoTitle": "What is an Nginx Config Generator?",
+      "seoContent": "An Nginx config generator creates production-ready server configuration files with proper security headers, SSL, and reverse proxy settings.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Select server type (reverse proxy, static, etc.)",
+        "Configure domain and ports",
+        "Enable SSL and security options",
+        "Copy the generated config"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Setting up reverse proxy",
+        "Configuring SSL/HTTPS",
+        "Serving static websites",
+        "Load balancing setup"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "Does it include SSL configuration?",
+          "a": "Yes, with Let's Encrypt compatible settings, HSTS, and modern cipher suites."
+        },
+        {
+          "q": "Can I configure multiple server blocks?",
+          "a": "The generator creates a single server block. Add multiple blocks manually."
+        }
+      ]
+    },
+    "htaccess-generator": {
+      "name": ".htaccess Generator",
+      "description": "Generate .htaccess files for redirects, security, and caching",
+      "pageTitle": ".htaccess Generator — Redirects, Security Headers, Caching",
+      "pageDescription": "Generate Apache .htaccess files for 301 redirects, HTTPS enforcement, security headers, browser caching, gzip compression, and URL rewriting.",
+      "seoTitle": "What is an .htaccess Generator?",
+      "seoContent": "An .htaccess generator creates Apache configuration files for URL redirects, security headers, caching rules, and access control without editing the main server config.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Select features to enable",
+        "Configure redirects and rules",
+        "Preview the .htaccess code",
+        "Copy and upload to your server"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Setting up 301 redirects",
+        "Enforcing HTTPS",
+        "Adding security headers",
+        "Enabling browser caching"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "Does it work with all Apache servers?",
+          "a": "Yes, if mod_rewrite is enabled (standard on most hosts)."
+        },
+        {
+          "q": "Can I use this for WordPress?",
+          "a": "Yes, the generated rules work alongside WordPress .htaccess rules."
+        }
+      ]
+    },
+    "docker-compose-generator": {
+      "name": "Docker Compose Generator",
+      "description": "Build docker-compose.yml visually with service presets",
+      "pageTitle": "Docker Compose Generator — Visual YAML Builder",
+      "pageDescription": "Build docker-compose.yml files visually. Add services from presets (PostgreSQL, Redis, MongoDB, Nginx, Node.js) with volumes, networks, and environment variables.",
+      "seoTitle": "What is a Docker Compose Generator?",
+      "seoContent": "A Docker Compose generator helps you build docker-compose.yml files visually by selecting pre-configured service templates and customizing settings.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Add services from presets",
+        "Configure ports and volumes",
+        "Set environment variables",
+        "Copy the docker-compose.yml"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Setting up development environments",
+        "Creating multi-container apps",
+        "Learning Docker Compose",
+        "Quick stack prototyping"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What service presets are available?",
+          "a": "PostgreSQL, MySQL, MongoDB, Redis, Nginx, Node.js, Python, and more."
+        },
+        {
+          "q": "Does it generate valid YAML?",
+          "a": "Yes, the output is valid docker-compose.yml that can be used directly."
+        }
+      ]
+    },
+    "json-to-protobuf": {
+      "name": "JSON to Protobuf",
+      "description": "Convert JSON to Protocol Buffers .proto schema definitions",
+      "pageTitle": "JSON to Protobuf Converter — Generate .proto Files",
+      "pageDescription": "Convert JSON data to Protocol Buffers (.proto) schema definitions with proper type inference, nested messages, and enum detection for gRPC.",
+      "seoTitle": "What is JSON to Protobuf?",
+      "seoContent": "JSON to Protobuf converts JSON sample data into Protocol Buffer schema definitions (.proto files) used in gRPC microservices and high-performance APIs.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Paste JSON data",
+        "Set package and message name",
+        "Review generated .proto schema",
+        "Copy the schema"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "gRPC service development",
+        "API schema design",
+        "Migrating REST to gRPC",
+        "Protobuf learning"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What protobuf syntax version is used?",
+          "a": "Proto3 syntax is generated by default."
+        },
+        {
+          "q": "Does it detect repeated fields?",
+          "a": "Yes, JSON arrays are converted to repeated fields automatically."
+        }
+      ]
+    },
+    "csp-generator": {
+      "name": "CSP Header Generator",
+      "description": "Build Content-Security-Policy headers interactively",
+      "pageTitle": "CSP Header Generator — Content Security Policy Builder",
+      "pageDescription": "Build Content-Security-Policy headers with an interactive directive editor. Presets for strict, moderate, and permissive policies.",
+      "seoTitle": "What is a CSP Generator?",
+      "seoContent": "A Content-Security-Policy generator helps you build CSP headers that protect your website from XSS, data injection, and other code injection attacks.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Select a preset or start from scratch",
+        "Configure each directive",
+        "Add trusted sources",
+        "Copy the CSP header"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Preventing XSS attacks",
+        "Meeting security compliance",
+        "Configuring Content-Security-Policy",
+        "Testing CSP rules"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What directives are supported?",
+          "a": "All standard CSP directives including default-src, script-src, style-src, img-src, and more."
+        },
+        {
+          "q": "Can I test my CSP?",
+          "a": "Use report-uri directive for monitoring. This tool generates the header you need."
+        }
+      ]
+    },
+    "sql-to-prisma": {
+      "name": "SQL to Prisma Schema",
+      "description": "Convert SQL CREATE TABLE to Prisma schema models",
+      "pageTitle": "SQL to Prisma Schema Converter — Generate Prisma Models",
+      "pageDescription": "Convert SQL CREATE TABLE statements to Prisma schema models with proper types, relations, indexes, and default values. Supports MySQL and PostgreSQL.",
+      "seoTitle": "What is SQL to Prisma?",
+      "seoContent": "SQL to Prisma converts existing SQL database schemas into Prisma schema format, making it easy to adopt Prisma ORM in TypeScript/Node.js projects.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Paste SQL CREATE TABLE statements",
+        "Select SQL dialect (MySQL/PostgreSQL)",
+        "Review generated Prisma schema",
+        "Copy the schema"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Migrating to Prisma ORM",
+        "Reverse-engineering databases",
+        "Learning Prisma schema syntax",
+        "Database documentation"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What SQL dialects are supported?",
+          "a": "MySQL and PostgreSQL CREATE TABLE syntax."
+        },
+        {
+          "q": "Does it handle foreign keys?",
+          "a": "Yes, foreign key constraints are converted to Prisma @relation directives."
+        }
+      ]
     }
   },
   "footer": {
