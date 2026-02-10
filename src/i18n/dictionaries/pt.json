@@ -60,7 +60,8 @@
     "generator": "Gerador",
     "converter": "Conversor",
     "text": "Ferramentas de texto",
-    "web": "Ferramentas web"
+    "web": "Ferramentas web",
+    "css": "Ferramentas CSS"
   },
   "tools": {
     "json-formatter": {
@@ -2598,6 +2599,385 @@
         "Migrating XML configuration files to JSON format",
         "Processing RSS/Atom feeds as JSON data",
         "Transforming XML exports from legacy systems"
+      ]
+    },
+    "css-gradient": {
+      "name": "CSS Gradient Generator",
+      "description": "Create beautiful CSS gradients with a visual editor",
+      "pageTitle": "CSS Gradient Generator",
+      "pageDescription": "Create beautiful CSS linear, radial, and conic gradients with a visual editor. Copy CSS code instantly.",
+      "seoTitle": "What is CSS Gradient Generator?",
+      "seoContent": "CSS gradients let you display smooth transitions between two or more colors. This visual generator helps you create linear-gradient, radial-gradient, and conic-gradient CSS code with an interactive editor.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Select gradient type (linear, radial, or conic)",
+        "Adjust the angle or direction",
+        "Add or modify color stops",
+        "Preview the gradient in real-time",
+        "Copy the CSS code"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Website backgrounds and hero sections",
+        "Button hover effects",
+        "Text gradient effects",
+        "Card and UI element styling"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What CSS gradient types are supported?",
+          "a": "This tool supports linear-gradient, radial-gradient, and conic-gradient."
+        },
+        {
+          "q": "Can I use the generated CSS in any browser?",
+          "a": "Yes, CSS gradients are supported in all modern browsers."
+        },
+        {
+          "q": "How many color stops can I add?",
+          "a": "You can add multiple color stops. Most designs use 2-4 colors."
+        }
+      ]
+    },
+    "box-shadow": {
+      "name": "Box Shadow Generator",
+      "description": "Design CSS box shadows visually with real-time preview",
+      "pageTitle": "CSS Box Shadow Generator",
+      "pageDescription": "Design CSS box shadows visually with controls for offset, blur, spread, color, and inset. Copy CSS code instantly.",
+      "seoTitle": "What is CSS Box Shadow Generator?",
+      "seoContent": "The CSS box-shadow property adds shadow effects around elements. This visual generator lets you adjust offset, blur, spread, color, and inset with real-time preview.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Adjust shadow offset",
+        "Set blur and spread radius",
+        "Choose shadow color",
+        "Toggle inset for inner shadows",
+        "Copy the CSS code"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Card elevation effects",
+        "Button hover states",
+        "Modal shadows",
+        "Navigation bar shadows"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What is CSS box-shadow?",
+          "a": "box-shadow adds shadow effects around an element's frame with offset, blur, spread, and color values."
+        },
+        {
+          "q": "Can I add multiple shadows?",
+          "a": "Yes, CSS supports multiple box shadows. This tool lets you add up to 4 layers."
+        },
+        {
+          "q": "What is inset shadow?",
+          "a": "An inset shadow appears inside the element, creating a pressed effect."
+        }
+      ]
+    },
+    "meta-tag-generator": {
+      "name": "Meta Tag Generator",
+      "description": "Generate HTML meta tags, Open Graph, and Twitter Card tags for SEO",
+      "pageTitle": "Meta Tag Generator",
+      "pageDescription": "Generate HTML meta tags, Open Graph tags, and Twitter Card tags for better SEO and social media sharing.",
+      "seoTitle": "What is Meta Tag Generator?",
+      "seoContent": "Meta tags help search engines understand your content and control how your page appears in search results and social media.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Enter page title and description",
+        "Fill in Open Graph fields",
+        "Configure Twitter Card",
+        "Preview appearance",
+        "Copy the HTML meta tags"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "SEO optimization",
+        "Social media sharing",
+        "Content publishing",
+        "Website launches"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What are meta tags?",
+          "a": "Meta tags are HTML elements in the <head> section that provide metadata about the page."
+        },
+        {
+          "q": "What is Open Graph?",
+          "a": "Open Graph controls how your page appears when shared on social media."
+        },
+        {
+          "q": "What is the ideal description length?",
+          "a": "Google displays 150-160 characters of a meta description."
+        }
+      ]
+    },
+    "schema-generator": {
+      "name": "Schema Markup Generator",
+      "description": "Generate JSON-LD structured data for rich snippets in search results",
+      "pageTitle": "Schema Markup Generator (JSON-LD)",
+      "pageDescription": "Generate JSON-LD structured data for Article, FAQ, HowTo, Product, and more. Boost SEO with rich snippets.",
+      "seoTitle": "What is Schema Markup?",
+      "seoContent": "Schema markup helps search engines understand your content and display rich results like FAQ dropdowns and product ratings.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Select schema type",
+        "Fill in required fields",
+        "Preview JSON-LD code",
+        "Validate the output",
+        "Copy into your HTML"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "FAQ rich snippets",
+        "Article markup",
+        "Product listings",
+        "Local business info"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What is JSON-LD?",
+          "a": "JSON-LD is Google's recommended format for encoding structured data on web pages."
+        },
+        {
+          "q": "Does schema improve SEO?",
+          "a": "Schema enables rich snippets that increase click-through rates in search results."
+        },
+        {
+          "q": "Where to place JSON-LD?",
+          "a": "Add the script tag in the <head> section or before </body>."
+        }
+      ]
+    },
+    "robots-generator": {
+      "name": "Robots.txt Generator",
+      "description": "Generate robots.txt files with crawler rules and sitemap directives",
+      "pageTitle": "Robots.txt Generator",
+      "pageDescription": "Generate robots.txt files with user-agent rules, allow/disallow paths, and sitemap directives.",
+      "seoTitle": "What is Robots.txt?",
+      "seoContent": "The robots.txt file tells search engine crawlers which pages they can or cannot access on your site.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Select user-agent",
+        "Add Allow/Disallow rules",
+        "Enter sitemap URL",
+        "Use presets for quick setup",
+        "Copy or download"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Control crawling",
+        "Block private pages",
+        "Set crawl limits",
+        "Reference sitemaps"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What is robots.txt?",
+          "a": "A text file at your website root that instructs crawlers which URLs they can access."
+        },
+        {
+          "q": "Does it block indexing?",
+          "a": "No, robots.txt controls crawling, not indexing. Use noindex for that."
+        },
+        {
+          "q": "Where to place it?",
+          "a": "At your domain root: https://example.com/robots.txt"
+        }
+      ]
+    },
+    "json-viewer": {
+      "name": "JSON Viewer / Tree",
+      "description": "View JSON data as an interactive collapsible tree",
+      "pageTitle": "JSON Viewer & Tree Visualizer",
+      "pageDescription": "View and explore JSON data as an interactive collapsible tree with search and JSONPath display.",
+      "seoTitle": "What is JSON Viewer?",
+      "seoContent": "JSON Viewer displays JSON data in a visual tree structure for easy exploration of complex nested data.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Paste JSON data",
+        "Click Parse",
+        "Expand/collapse nodes",
+        "Search keys or values",
+        "Click values to see JSONPath"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Exploring API responses",
+        "Debugging JSON",
+        "Navigating nested configs",
+        "Understanding data schemas"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What is a JSON tree viewer?",
+          "a": "It displays JSON in a hierarchical tree for easier navigation of complex data."
+        },
+        {
+          "q": "What is JSONPath?",
+          "a": "A query language for JSON using dot notation like $.users[0].name."
+        },
+        {
+          "q": "Can I view large files?",
+          "a": "Yes, the tree handles large files by only rendering expanded nodes."
+        }
+      ]
+    },
+    "favicon-generator": {
+      "name": "Favicon Generator",
+      "description": "Create favicons from text or emoji with custom colors and sizes",
+      "pageTitle": "Favicon Generator",
+      "pageDescription": "Create favicons from text or emoji with custom colors, sizes, and border radius. Download as PNG.",
+      "seoTitle": "What is Favicon Generator?",
+      "seoContent": "A favicon is the small icon in browser tabs. This tool generates favicons from text or emoji with customizable colors and sizes.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Enter text or emoji",
+        "Choose colors",
+        "Adjust size and radius",
+        "Preview in real-time",
+        "Download desired size"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Quick website favicons",
+        "Brand icons",
+        "App icons",
+        "Development placeholders"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What favicon sizes do I need?",
+          "a": "Common: 16x16 (tab), 32x32 (taskbar), 48x48 (Windows), 180x180 (Apple Touch)."
+        },
+        {
+          "q": "What format for favicons?",
+          "a": "PNG is widely supported. ICO can contain multiple sizes."
+        },
+        {
+          "q": "Can I use emoji?",
+          "a": "Yes! Modern browsers support emoji favicons with custom backgrounds."
+        }
+      ]
+    },
+    "ascii-art": {
+      "name": "ASCII Art Generator",
+      "description": "Convert text to ASCII art with multiple font styles",
+      "pageTitle": "ASCII Art Generator",
+      "pageDescription": "Convert text to ASCII art with multiple font styles for terminals, comments, and README files.",
+      "seoTitle": "What is ASCII Art?",
+      "seoContent": "ASCII art uses printable characters to create visual designs and text banners for terminals, code comments, and README headers.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Type your text",
+        "Select a font style",
+        "Preview the output",
+        "Copy to clipboard"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Terminal banners",
+        "Code comment headers",
+        "README decorations",
+        "Fun text art"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What is ASCII art?",
+          "a": "A graphic design technique using printable characters to create visual art and text banners."
+        },
+        {
+          "q": "Where to use it?",
+          "a": "Terminal banners, code comments, README files, email signatures."
+        },
+        {
+          "q": "What characters are supported?",
+          "a": "Uppercase A-Z, numbers 0-9, and space."
+        }
+      ]
+    },
+    "svg-optimizer": {
+      "name": "SVG Optimizer",
+      "description": "Optimize and minify SVG files to reduce file size",
+      "pageTitle": "SVG Optimizer & Minifier",
+      "pageDescription": "Optimize and minify SVG files online. Remove metadata, comments, and unnecessary attributes.",
+      "seoTitle": "What is SVG Optimizer?",
+      "seoContent": "SVG files often contain unnecessary metadata and attributes. This optimizer cleans SVG files, typically reducing size by 20-60%.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Paste or upload SVG",
+        "Select optimization options",
+        "Click Optimize",
+        "Compare sizes",
+        "Copy or download"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Reducing icon file sizes",
+        "Optimizing web illustrations",
+        "Cleaning design tool exports",
+        "Preparing inline SVGs"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "Is optimization safe?",
+          "a": "Yes, it only removes unnecessary metadata. Visual output stays identical."
+        },
+        {
+          "q": "How much size reduction?",
+          "a": "Typically 20-60% depending on the source."
+        },
+        {
+          "q": "Works with animated SVGs?",
+          "a": "Basic optimization works, but be cautious with animation attributes."
+        }
+      ]
+    },
+    "placeholder-image": {
+      "name": "Placeholder Image Generator",
+      "description": "Generate placeholder images with custom dimensions, colors, and text",
+      "pageTitle": "Placeholder Image Generator",
+      "pageDescription": "Generate placeholder images with custom dimensions, colors, and text. Download as PNG or Data URI.",
+      "seoTitle": "What is Placeholder Image?",
+      "seoContent": "Placeholder images are used during development to represent future content. Generate custom images with specified dimensions and colors.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Set width and height",
+        "Choose colors",
+        "Customize text",
+        "Preview the image",
+        "Download or copy Data URI"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "UI mockups",
+        "Frontend development",
+        "Design prototyping",
+        "Email templates"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What is a placeholder image?",
+          "a": "A temporary image used during development where real content will eventually appear."
+        },
+        {
+          "q": "What is a Data URI?",
+          "a": "An image embedded directly in HTML/CSS as a base64 string."
+        },
+        {
+          "q": "What sizes available?",
+          "a": "Any custom size. Presets for social media, avatar, HD, etc."
+        }
       ]
     }
   },

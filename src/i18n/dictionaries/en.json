@@ -60,7 +60,8 @@
     "generator": "Generator",
     "converter": "Converter",
     "text": "Text Tools",
-    "web": "Web Tools"
+    "web": "Web Tools",
+    "css": "CSS Tools"
   },
   "tools": {
     "json-formatter": {
@@ -1308,9 +1309,18 @@
       "seoContent": "XML (Extensible Markup Language) is widely used for data exchange, configuration files, and web services like SOAP APIs. Properly formatted XML improves readability and helps identify structural errors quickly. This tool formats, minifies, and validates XML documents in your browser. It supports large XML files, preserves CDATA sections and comments, and highlights syntax for easier inspection. Whether you are debugging API responses or cleaning up configuration files, this formatter handles it all without sending your data to any server.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "How do I format XML online?", "a": "Paste your XML into the input area and click Format. The tool will indent and structure your XML with proper nesting and line breaks." },
-        { "q": "Can I minify XML to reduce file size?", "a": "Yes. Switch to Minify mode to remove all unnecessary whitespace, comments, and line breaks from your XML." },
-        { "q": "Does this tool validate XML syntax?", "a": "Yes. The formatter checks for well-formedness including matching tags, proper nesting, and valid attribute syntax. Errors are highlighted with line numbers." }
+        {
+          "q": "How do I format XML online?",
+          "a": "Paste your XML into the input area and click Format. The tool will indent and structure your XML with proper nesting and line breaks."
+        },
+        {
+          "q": "Can I minify XML to reduce file size?",
+          "a": "Yes. Switch to Minify mode to remove all unnecessary whitespace, comments, and line breaks from your XML."
+        },
+        {
+          "q": "Does this tool validate XML syntax?",
+          "a": "Yes. The formatter checks for well-formedness including matching tags, proper nesting, and valid attribute syntax. Errors are highlighted with line numbers."
+        }
       ],
       "howToUseTitle": "How to Use",
       "howToUseSteps": [
@@ -1336,9 +1346,18 @@
       "seoContent": "CSV and JSON are two of the most common data formats in software development. CSV excels for spreadsheet data and database exports, while JSON is the standard for APIs and web applications. This tool converts between the two formats instantly in your browser. It automatically detects headers from CSV files, handles quoted fields with commas, and produces clean JSON output. When converting JSON to CSV, it flattens nested objects and arrays into tabular columns. Perfect for transforming data between different systems without writing scripts.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "How do I convert CSV to JSON online?", "a": "Paste your CSV data into the input area. The first row is used as headers. Click Convert to generate a JSON array of objects." },
-        { "q": "Can I convert JSON back to CSV?", "a": "Yes. Switch to JSON → CSV mode, paste your JSON array, and the tool will generate a CSV file with headers derived from object keys." },
-        { "q": "Does it handle nested JSON objects?", "a": "Yes. Nested objects are flattened using dot notation (e.g., address.city) when converting to CSV columns." }
+        {
+          "q": "How do I convert CSV to JSON online?",
+          "a": "Paste your CSV data into the input area. The first row is used as headers. Click Convert to generate a JSON array of objects."
+        },
+        {
+          "q": "Can I convert JSON back to CSV?",
+          "a": "Yes. Switch to JSON → CSV mode, paste your JSON array, and the tool will generate a CSV file with headers derived from object keys."
+        },
+        {
+          "q": "Does it handle nested JSON objects?",
+          "a": "Yes. Nested objects are flattened using dot notation (e.g., address.city) when converting to CSV columns."
+        }
       ],
       "howToUseTitle": "How to Use",
       "howToUseSteps": [
@@ -1364,9 +1383,18 @@
       "seoContent": "HTTP status codes are three-digit numbers returned by servers to indicate the result of a client request. They are grouped into five classes: 1xx (informational), 2xx (success), 3xx (redirection), 4xx (client errors), and 5xx (server errors). Understanding these codes is essential for API development, debugging network issues, and building robust web applications. This reference tool lets you quickly look up any status code, understand its meaning, and learn when to use it in your own APIs. It covers all standard codes defined in RFC 7231 and common extensions.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "What is the difference between 401 and 403?", "a": "401 Unauthorized means the client has not provided valid authentication credentials. 403 Forbidden means the client is authenticated but does not have permission to access the resource." },
-        { "q": "When should I use 200 vs 201 vs 204?", "a": "Use 200 OK for successful GET requests, 201 Created when a new resource is created (POST), and 204 No Content for successful requests with no response body (DELETE)." },
-        { "q": "What does a 502 Bad Gateway error mean?", "a": "502 means the server acting as a gateway received an invalid response from an upstream server. It usually indicates a problem with the backend service, not the client." }
+        {
+          "q": "What is the difference between 401 and 403?",
+          "a": "401 Unauthorized means the client has not provided valid authentication credentials. 403 Forbidden means the client is authenticated but does not have permission to access the resource."
+        },
+        {
+          "q": "When should I use 200 vs 201 vs 204?",
+          "a": "Use 200 OK for successful GET requests, 201 Created when a new resource is created (POST), and 204 No Content for successful requests with no response body (DELETE)."
+        },
+        {
+          "q": "What does a 502 Bad Gateway error mean?",
+          "a": "502 means the server acting as a gateway received an invalid response from an upstream server. It usually indicates a problem with the backend service, not the client."
+        }
       ],
       "howToUseTitle": "How to Use",
       "howToUseSteps": [
@@ -1392,9 +1420,18 @@
       "seoContent": "MIME types (Multipurpose Internet Mail Extensions) define the nature and format of a document or file. Web servers use MIME types in Content-Type headers to tell browsers how to handle files. Getting the MIME type wrong can cause browsers to download files instead of displaying them, or break file uploads. This tool lets you look up the correct MIME type for any file extension, or find which extensions correspond to a given content type. It includes hundreds of MIME types covering images, audio, video, documents, fonts, and application-specific formats.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "What is a MIME type?", "a": "A MIME type is a string like 'text/html' or 'image/png' that tells the browser or client how to interpret and display a file. It consists of a type and subtype separated by a slash." },
-        { "q": "How do I find the MIME type for a file extension?", "a": "Type the file extension (e.g., .pdf, .webp) into the search box. The tool will show the corresponding MIME type and category." },
-        { "q": "What MIME type should I use for JSON?", "a": "Use 'application/json' for JSON data. For JSON with a specific schema, you can use vendor types like 'application/vnd.api+json'." }
+        {
+          "q": "What is a MIME type?",
+          "a": "A MIME type is a string like 'text/html' or 'image/png' that tells the browser or client how to interpret and display a file. It consists of a type and subtype separated by a slash."
+        },
+        {
+          "q": "How do I find the MIME type for a file extension?",
+          "a": "Type the file extension (e.g., .pdf, .webp) into the search box. The tool will show the corresponding MIME type and category."
+        },
+        {
+          "q": "What MIME type should I use for JSON?",
+          "a": "Use 'application/json' for JSON data. For JSON with a specific schema, you can use vendor types like 'application/vnd.api+json'."
+        }
       ],
       "howToUseTitle": "How to Use",
       "howToUseSteps": [
@@ -1420,9 +1457,18 @@
       "seoContent": "Character escaping converts special characters into safe representations to prevent injection attacks and parsing errors. HTML escaping converts characters like < > & into entities (&lt; &gt; &amp;). JavaScript escaping handles quotes and backslashes in strings. JSON escaping ensures strings are valid within JSON documents. This tool supports all three escaping modes and their reverse operations. It is essential for security-conscious developers who need to sanitize user input, build safe HTML output, or debug encoded strings in logs and API responses.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "What is the difference between HTML and JavaScript escaping?", "a": "HTML escaping converts < > & \" to HTML entities for safe display in web pages. JavaScript escaping adds backslashes before quotes, newlines, and special characters for safe use in JS strings." },
-        { "q": "Why do I need to escape strings?", "a": "Unescaped strings can cause XSS (cross-site scripting) attacks in HTML, syntax errors in JavaScript, or invalid JSON. Escaping ensures special characters are treated as data, not code." },
-        { "q": "Can I unescape encoded strings back to plain text?", "a": "Yes. Switch to Unescape mode and paste the encoded string. The tool will convert escape sequences back to their original characters." }
+        {
+          "q": "What is the difference between HTML and JavaScript escaping?",
+          "a": "HTML escaping converts < > & \" to HTML entities for safe display in web pages. JavaScript escaping adds backslashes before quotes, newlines, and special characters for safe use in JS strings."
+        },
+        {
+          "q": "Why do I need to escape strings?",
+          "a": "Unescaped strings can cause XSS (cross-site scripting) attacks in HTML, syntax errors in JavaScript, or invalid JSON. Escaping ensures special characters are treated as data, not code."
+        },
+        {
+          "q": "Can I unescape encoded strings back to plain text?",
+          "a": "Yes. Switch to Unescape mode and paste the encoded string. The tool will convert escape sequences back to their original characters."
+        }
       ],
       "howToUseTitle": "How to Use",
       "howToUseSteps": [
@@ -1448,9 +1494,18 @@
       "seoContent": "IP subnetting divides a network into smaller subnetworks to improve performance and security. Understanding subnets is critical for network administrators, DevOps engineers, and anyone configuring cloud infrastructure. This calculator takes an IP address with a CIDR prefix (e.g., 192.168.1.0/24) and instantly computes the subnet mask, network address, broadcast address, first and last usable host, and total number of hosts. It supports both IPv4 addresses and various CIDR notations from /8 to /30. All calculations are done locally in your browser.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "What is CIDR notation?", "a": "CIDR (Classless Inter-Domain Routing) notation like /24 indicates how many bits are used for the network portion of an IP address. /24 means 24 network bits and 8 host bits, allowing 254 usable hosts." },
-        { "q": "How do I calculate the number of hosts in a subnet?", "a": "The formula is 2^(32-prefix) - 2 for IPv4. The subtraction accounts for the network address and broadcast address. A /24 subnet has 2^8 - 2 = 254 usable hosts." },
-        { "q": "What is the difference between network and broadcast address?", "a": "The network address is the first address in a subnet (all host bits 0) and identifies the subnet. The broadcast address is the last (all host bits 1) and sends packets to all hosts in the subnet." }
+        {
+          "q": "What is CIDR notation?",
+          "a": "CIDR (Classless Inter-Domain Routing) notation like /24 indicates how many bits are used for the network portion of an IP address. /24 means 24 network bits and 8 host bits, allowing 254 usable hosts."
+        },
+        {
+          "q": "How do I calculate the number of hosts in a subnet?",
+          "a": "The formula is 2^(32-prefix) - 2 for IPv4. The subtraction accounts for the network address and broadcast address. A /24 subnet has 2^8 - 2 = 254 usable hosts."
+        },
+        {
+          "q": "What is the difference between network and broadcast address?",
+          "a": "The network address is the first address in a subnet (all host bits 0) and identifies the subnet. The broadcast address is the last (all host bits 1) and sends packets to all hosts in the subnet."
+        }
       ],
       "howToUseTitle": "How to Use",
       "howToUseSteps": [
@@ -1476,9 +1531,18 @@
       "seoContent": "Generating realistic test data is essential for software development, QA testing, and database seeding. Using real personal data for testing creates privacy risks and compliance issues with regulations like GDPR. This tool generates fake but realistic names, email addresses, phone numbers, physical addresses, and other data types. All data is generated randomly in your browser using established patterns — no real personal information is used. You can generate single records or bulk data sets, and copy the results in various formats for use in your applications.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "Is the generated data based on real people?", "a": "No. All names, emails, addresses, and phone numbers are randomly generated using common patterns and formats. No real personal information is used." },
-        { "q": "Can I generate data in bulk?", "a": "Yes. Specify the number of records you want to generate and the tool will create them all at once. You can copy the results as JSON or CSV." },
-        { "q": "What data types are supported?", "a": "Names, emails, phone numbers, addresses, companies, dates, UUIDs, IP addresses, and more. Each type produces realistic-looking values." }
+        {
+          "q": "Is the generated data based on real people?",
+          "a": "No. All names, emails, addresses, and phone numbers are randomly generated using common patterns and formats. No real personal information is used."
+        },
+        {
+          "q": "Can I generate data in bulk?",
+          "a": "Yes. Specify the number of records you want to generate and the tool will create them all at once. You can copy the results as JSON or CSV."
+        },
+        {
+          "q": "What data types are supported?",
+          "a": "Names, emails, phone numbers, addresses, companies, dates, UUIDs, IP addresses, and more. Each type produces realistic-looking values."
+        }
       ],
       "howToUseTitle": "How to Use",
       "howToUseSteps": [
@@ -1504,9 +1568,18 @@
       "seoContent": "HMAC (Hash-based Message Authentication Code) combines a cryptographic hash function with a secret key to verify both data integrity and authenticity. Unlike simple hashing, HMAC requires the secret key to generate and verify signatures, making it resistant to tampering. HMAC-SHA256 is the most commonly used variant and is required by many APIs and webhook systems (Stripe, GitHub, Shopify). This tool generates HMAC signatures using SHA-1, SHA-256, or SHA-512 algorithms. Enter your message and secret key, and get the signature in hexadecimal or Base64 format. All computation happens locally.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "What is the difference between HMAC and a regular hash?", "a": "A regular hash (like SHA-256) only takes a message as input. HMAC also requires a secret key, so only parties who know the key can generate or verify the signature. This prevents tampering." },
-        { "q": "Which HMAC algorithm should I use?", "a": "HMAC-SHA256 is the most common and recommended choice. It offers strong security and is required by most modern APIs. Use SHA-1 only for legacy compatibility." },
-        { "q": "How do I verify a webhook signature with HMAC?", "a": "Compute the HMAC of the webhook payload using your secret key, then compare it to the signature in the webhook header. If they match, the webhook is authentic and untampered." }
+        {
+          "q": "What is the difference between HMAC and a regular hash?",
+          "a": "A regular hash (like SHA-256) only takes a message as input. HMAC also requires a secret key, so only parties who know the key can generate or verify the signature. This prevents tampering."
+        },
+        {
+          "q": "Which HMAC algorithm should I use?",
+          "a": "HMAC-SHA256 is the most common and recommended choice. It offers strong security and is required by most modern APIs. Use SHA-1 only for legacy compatibility."
+        },
+        {
+          "q": "How do I verify a webhook signature with HMAC?",
+          "a": "Compute the HMAC of the webhook payload using your secret key, then compare it to the signature in the webhook header. If they match, the webhook is authentic and untampered."
+        }
       ],
       "howToUseTitle": "How to Use",
       "howToUseSteps": [
@@ -1532,9 +1605,18 @@
       "seoContent": "URLs (Uniform Resource Locators) contain multiple components: protocol (https), hostname, port, pathname, query parameters, and fragment hash. Understanding URL structure is essential for web development, API design, and debugging network requests. This tool breaks any URL into its individual components for easy inspection. It decodes percent-encoded characters, parses query strings into key-value pairs, and validates URL format. Useful for debugging redirect chains, analyzing tracking parameters, and understanding complex API endpoints.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "What are the parts of a URL?", "a": "A URL consists of: protocol (https://), hostname (example.com), port (:8080), pathname (/api/users), query string (?id=123&sort=name), and fragment hash (#section)." },
-        { "q": "How are query parameters parsed?", "a": "Query parameters start after the ? character and are separated by &. Each parameter is a key=value pair. Values may be percent-encoded for special characters." },
-        { "q": "Does it handle encoded URLs?", "a": "Yes. The tool automatically decodes percent-encoded characters (like %20 for spaces) and displays the decoded values alongside the raw encoded form." }
+        {
+          "q": "What are the parts of a URL?",
+          "a": "A URL consists of: protocol (https://), hostname (example.com), port (:8080), pathname (/api/users), query string (?id=123&sort=name), and fragment hash (#section)."
+        },
+        {
+          "q": "How are query parameters parsed?",
+          "a": "Query parameters start after the ? character and are separated by &. Each parameter is a key=value pair. Values may be percent-encoded for special characters."
+        },
+        {
+          "q": "Does it handle encoded URLs?",
+          "a": "Yes. The tool automatically decodes percent-encoded characters (like %20 for spaces) and displays the decoded values alongside the raw encoded form."
+        }
       ],
       "howToUseTitle": "How to Use",
       "howToUseSteps": [
@@ -1560,9 +1642,18 @@
       "seoContent": "Binary representation is the foundation of all digital computing. Every character you see on screen is stored as a sequence of 0s and 1s. This tool converts text to its binary representation and back. Each character is converted to its UTF-8 binary encoding, displayed as 8-bit groups. It supports all Unicode characters including emoji and characters from non-Latin scripts. The tool is useful for learning about character encoding, debugging encoding issues, and understanding how computers store text data at the lowest level.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "How does text to binary conversion work?", "a": "Each character is converted to its Unicode code point, then encoded as binary digits. ASCII characters use 8 bits (1 byte), while other Unicode characters may use 16 or 32 bits." },
-        { "q": "What encoding does this tool use?", "a": "The tool uses UTF-8 encoding by default, which is backward-compatible with ASCII and supports all Unicode characters." },
-        { "q": "Can I convert binary back to text?", "a": "Yes. Switch to Binary → Text mode and paste your binary string (space-separated 8-bit groups). The tool will decode it back to readable text." }
+        {
+          "q": "How does text to binary conversion work?",
+          "a": "Each character is converted to its Unicode code point, then encoded as binary digits. ASCII characters use 8 bits (1 byte), while other Unicode characters may use 16 or 32 bits."
+        },
+        {
+          "q": "What encoding does this tool use?",
+          "a": "The tool uses UTF-8 encoding by default, which is backward-compatible with ASCII and supports all Unicode characters."
+        },
+        {
+          "q": "Can I convert binary back to text?",
+          "a": "Yes. Switch to Binary → Text mode and paste your binary string (space-separated 8-bit groups). The tool will decode it back to readable text."
+        }
       ],
       "howToUseTitle": "How to Use",
       "howToUseSteps": [
@@ -1588,9 +1679,18 @@
       "seoContent": "PEM (Privacy Enhanced Mail) is the most common format for SSL/TLS certificates, private keys, and certificate chains. PEM files are Base64-encoded with header and footer lines like -----BEGIN CERTIFICATE-----. This tool decodes PEM-formatted certificates and displays all X.509 fields: subject, issuer, validity dates, serial number, signature algorithm, public key details, and extensions like Subject Alternative Names (SANs). It is essential for DevOps engineers managing SSL certificates, debugging TLS handshake failures, and verifying certificate chains.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "What information can I see from a PEM certificate?", "a": "You can see the subject (domain name), issuer (CA), validity dates, serial number, signature algorithm, public key type and size, and extensions like SANs and key usage." },
-        { "q": "Is it safe to paste my certificate here?", "a": "Yes. All decoding happens locally in your browser. Your certificate data is never sent to any server. Note: never paste private keys in any online tool." },
-        { "q": "What is the difference between PEM and DER format?", "a": "PEM is Base64-encoded text with header/footer lines, readable in any text editor. DER is the raw binary format. This tool only handles PEM format." }
+        {
+          "q": "What information can I see from a PEM certificate?",
+          "a": "You can see the subject (domain name), issuer (CA), validity dates, serial number, signature algorithm, public key type and size, and extensions like SANs and key usage."
+        },
+        {
+          "q": "Is it safe to paste my certificate here?",
+          "a": "Yes. All decoding happens locally in your browser. Your certificate data is never sent to any server. Note: never paste private keys in any online tool."
+        },
+        {
+          "q": "What is the difference between PEM and DER format?",
+          "a": "PEM is Base64-encoded text with header/footer lines, readable in any text editor. DER is the raw binary format. This tool only handles PEM format."
+        }
       ],
       "howToUseTitle": "How to Use",
       "howToUseSteps": [
@@ -1616,9 +1716,18 @@
       "seoContent": "HTML tables remain the correct semantic element for displaying tabular data on the web. This tool converts CSV or JSON data into clean, well-structured HTML table markup. It automatically generates thead with header rows and tbody with data rows, applies optional CSS classes for styling, and produces valid HTML5 markup. You can customize the table with classes for popular CSS frameworks like Bootstrap or Tailwind. The generated markup is ready to copy and paste into your web project, documentation, or email templates.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "What input formats are supported?", "a": "You can paste CSV data (comma-separated values) or JSON arrays of objects. The first row of CSV or the object keys become table headers." },
-        { "q": "Can I customize the table styling?", "a": "Yes. You can add CSS classes to the table element (e.g., Bootstrap's 'table table-striped' or custom classes). The generated HTML uses semantic thead/tbody elements." },
-        { "q": "Does it generate responsive tables?", "a": "The tool generates standard HTML table markup. For responsiveness, wrap the output in a div with overflow-x: auto or use your CSS framework's responsive table classes." }
+        {
+          "q": "What input formats are supported?",
+          "a": "You can paste CSV data (comma-separated values) or JSON arrays of objects. The first row of CSV or the object keys become table headers."
+        },
+        {
+          "q": "Can I customize the table styling?",
+          "a": "Yes. You can add CSS classes to the table element (e.g., Bootstrap's 'table table-striped' or custom classes). The generated HTML uses semantic thead/tbody elements."
+        },
+        {
+          "q": "Does it generate responsive tables?",
+          "a": "The tool generates standard HTML table markup. For responsiveness, wrap the output in a div with overflow-x: auto or use your CSS framework's responsive table classes."
+        }
       ],
       "howToUseTitle": "How to Use",
       "howToUseSteps": [
@@ -1644,9 +1753,18 @@
       "seoContent": "Bcrypt is a password hashing function designed to be slow and computationally expensive, making brute-force attacks impractical. Unlike fast hashes like MD5 or SHA-256, bcrypt incorporates a configurable cost factor that controls how many iterations are performed. Each increase in cost doubles the computation time. Bcrypt also automatically generates and embeds a random salt, preventing rainbow table attacks. This tool generates bcrypt hashes from passwords with your chosen cost factor (typically 10-12 for web applications). It can also verify if a password matches a given bcrypt hash. All processing happens locally.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "What cost factor should I use for bcrypt?", "a": "A cost of 10-12 is recommended for most web applications, balancing security and performance. Cost 10 takes about 100ms per hash. Each increment doubles the time." },
-        { "q": "Is bcrypt better than SHA-256 for passwords?", "a": "Yes. SHA-256 is designed to be fast, which makes it vulnerable to brute-force attacks. Bcrypt is intentionally slow and includes a built-in salt, making it much more secure for password storage." },
-        { "q": "Can I verify a password against a bcrypt hash?", "a": "Yes. Enter the password and the bcrypt hash, and the tool will tell you if they match. The salt is embedded in the hash, so no separate salt is needed." }
+        {
+          "q": "What cost factor should I use for bcrypt?",
+          "a": "A cost of 10-12 is recommended for most web applications, balancing security and performance. Cost 10 takes about 100ms per hash. Each increment doubles the time."
+        },
+        {
+          "q": "Is bcrypt better than SHA-256 for passwords?",
+          "a": "Yes. SHA-256 is designed to be fast, which makes it vulnerable to brute-force attacks. Bcrypt is intentionally slow and includes a built-in salt, making it much more secure for password storage."
+        },
+        {
+          "q": "Can I verify a password against a bcrypt hash?",
+          "a": "Yes. Enter the password and the bcrypt hash, and the tool will tell you if they match. The salt is embedded in the hash, so no separate salt is needed."
+        }
       ],
       "howToUseTitle": "How to Use",
       "howToUseSteps": [
@@ -1672,11 +1790,26 @@
       "seoContent": "Converting JSON data to TypeScript interfaces is one of the most common tasks in modern web development. TypeScript's type system helps catch errors at compile time and improves code quality through better IDE support and auto-completion. Manually writing interfaces for complex JSON structures is tedious and error-prone. This tool automates the process by analyzing your JSON data and generating accurate TypeScript interfaces. It handles nested objects by creating separate named interfaces, correctly types arrays (including mixed-type arrays as union types), and treats null values appropriately. You can customize the root interface name, toggle the export keyword, and add readonly modifiers. All conversion happens locally in your browser — your JSON data is never sent to any server.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "How do I convert JSON to TypeScript interfaces?", "a": "Paste your JSON data into the left panel, optionally set a root interface name, and click Convert. The tool will generate TypeScript interfaces with proper types for all fields." },
-        { "q": "Does it handle nested JSON objects?", "a": "Yes. Nested objects are converted to separate named interfaces. For example, an 'address' field containing an object will generate both a Root interface and an Address interface." },
-        { "q": "How are arrays typed in the output?", "a": "Homogeneous arrays (all same type) are typed as Type[]. Mixed arrays are typed as union types like (string | number)[]. Empty arrays become unknown[]." },
-        { "q": "Can I use the generated types in my project?", "a": "Yes. Copy the output and paste it directly into a .ts or .d.ts file. The generated interfaces are valid TypeScript and ready for production use." },
-        { "q": "Is my JSON data safe?", "a": "Absolutely. All processing happens locally in your browser using JavaScript. Your data never leaves your device — no server requests are made." }
+        {
+          "q": "How do I convert JSON to TypeScript interfaces?",
+          "a": "Paste your JSON data into the left panel, optionally set a root interface name, and click Convert. The tool will generate TypeScript interfaces with proper types for all fields."
+        },
+        {
+          "q": "Does it handle nested JSON objects?",
+          "a": "Yes. Nested objects are converted to separate named interfaces. For example, an 'address' field containing an object will generate both a Root interface and an Address interface."
+        },
+        {
+          "q": "How are arrays typed in the output?",
+          "a": "Homogeneous arrays (all same type) are typed as Type[]. Mixed arrays are typed as union types like (string | number)[]. Empty arrays become unknown[]."
+        },
+        {
+          "q": "Can I use the generated types in my project?",
+          "a": "Yes. Copy the output and paste it directly into a .ts or .d.ts file. The generated interfaces are valid TypeScript and ready for production use."
+        },
+        {
+          "q": "Is my JSON data safe?",
+          "a": "Absolutely. All processing happens locally in your browser using JavaScript. Your data never leaves your device — no server requests are made."
+        }
       ],
       "howToUseTitle": "How to Use",
       "howToUseSteps": [
@@ -1702,10 +1835,22 @@
       "seoContent": "JSX is React's syntax extension that looks like HTML but has important differences. When migrating HTML templates to React components, you need to convert class to className, for to htmlFor, inline style strings to JavaScript objects, and ensure all tags are properly closed. Event handlers also need conversion from lowercase (onclick) to camelCase (onClick). This tool automates all of these transformations. Paste any HTML snippet and get valid JSX output instantly. It handles self-closing void elements (br, hr, img, input), converts HTML comments to JSX comments, and transforms common HTML attributes to their JSX equivalents. Perfect for migrating static HTML sites to React or converting HTML templates from design tools.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "What does HTML to JSX conversion change?", "a": "The main changes are: class → className, for → htmlFor, inline style strings → style objects, self-closing tags get />, HTML comments → {/* */}, and event handlers become camelCase." },
-        { "q": "Why can't I use class in JSX?", "a": "In JSX, 'class' is a reserved JavaScript keyword. React uses 'className' instead. Similarly, 'for' becomes 'htmlFor' because 'for' is also a JS reserved word." },
-        { "q": "How are inline styles converted?", "a": "CSS style strings like style=\"color: red; font-size: 16px\" are converted to style objects: style={{color: \"red\", fontSize: \"16px\"}}. CSS properties become camelCase." },
-        { "q": "Does it handle self-closing tags?", "a": "Yes. HTML void elements like <br>, <hr>, <img>, and <input> are converted to self-closing JSX: <br />, <hr />, <img />, <input />." }
+        {
+          "q": "What does HTML to JSX conversion change?",
+          "a": "The main changes are: class → className, for → htmlFor, inline style strings → style objects, self-closing tags get />, HTML comments → {/* */}, and event handlers become camelCase."
+        },
+        {
+          "q": "Why can't I use class in JSX?",
+          "a": "In JSX, 'class' is a reserved JavaScript keyword. React uses 'className' instead. Similarly, 'for' becomes 'htmlFor' because 'for' is also a JS reserved word."
+        },
+        {
+          "q": "How are inline styles converted?",
+          "a": "CSS style strings like style=\"color: red; font-size: 16px\" are converted to style objects: style={{color: \"red\", fontSize: \"16px\"}}. CSS properties become camelCase."
+        },
+        {
+          "q": "Does it handle self-closing tags?",
+          "a": "Yes. HTML void elements like <br>, <hr>, <img>, and <input> are converted to self-closing JSX: <br />, <hr />, <img />, <input />."
+        }
       ],
       "howToUseTitle": "How to Use",
       "howToUseSteps": [
@@ -1731,10 +1876,22 @@
       "seoContent": "Go's strict type system requires defining structs before unmarshaling JSON data. Writing Go structs manually for complex JSON APIs is time-consuming and error-prone. This tool analyzes your JSON and generates idiomatic Go struct definitions with proper field names (PascalCase), correct Go types (string, int, float64, bool), and json struct tags for serialization. Nested objects become separate named structs, arrays are typed by their element type, and null values map to interface{}. You can customize the root struct name, add omitempty tags for optional fields, and choose between separate or inline struct definitions. All processing is done in your browser.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "How do I convert JSON to Go struct?", "a": "Paste your JSON data, set the root struct name, and click Convert. The tool generates Go struct definitions with proper types and json tags for each field." },
-        { "q": "What Go types are generated from JSON?", "a": "Strings map to string, integers to int, decimals to float64, booleans to bool, null to interface{}, objects to named structs, and arrays to slices of the element type." },
-        { "q": "What are json struct tags?", "a": "Struct tags like `json:\"field_name\"` tell Go's encoding/json package how to map between JSON keys and struct fields. The tool adds these automatically." },
-        { "q": "What does omitempty do?", "a": "Adding omitempty to a json tag means the field is omitted from JSON output if it has a zero value (empty string, 0, false, nil). Enable this for optional fields." }
+        {
+          "q": "How do I convert JSON to Go struct?",
+          "a": "Paste your JSON data, set the root struct name, and click Convert. The tool generates Go struct definitions with proper types and json tags for each field."
+        },
+        {
+          "q": "What Go types are generated from JSON?",
+          "a": "Strings map to string, integers to int, decimals to float64, booleans to bool, null to interface{}, objects to named structs, and arrays to slices of the element type."
+        },
+        {
+          "q": "What are json struct tags?",
+          "a": "Struct tags like `json:\"field_name\"` tell Go's encoding/json package how to map between JSON keys and struct fields. The tool adds these automatically."
+        },
+        {
+          "q": "What does omitempty do?",
+          "a": "Adding omitempty to a json tag means the field is omitted from JSON output if it has a zero value (empty string, 0, false, nil). Enable this for optional fields."
+        }
       ],
       "howToUseTitle": "How to Use",
       "howToUseSteps": [
@@ -1760,10 +1917,22 @@
       "seoContent": "Using SVG icons and graphics in React requires converting SVG attributes to JSX-compatible syntax. SVG uses kebab-case attributes like stroke-width, fill-opacity, and clip-path that must become camelCase in JSX: strokeWidth, fillOpacity, clipPath. Additionally, class becomes className, inline styles need conversion to objects, and xlink:href becomes xlinkHref. This tool handles all these transformations automatically. It can also wrap the SVG in a React component with an export statement, remove the xmlns attribute (unnecessary in JSX), and pass through props for customization. Perfect for converting SVGs from design tools into reusable React icon components.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "What SVG attributes are converted?", "a": "All kebab-case SVG attributes are converted to camelCase: stroke-width → strokeWidth, fill-opacity → fillOpacity, clip-path → clipPath, and 40+ other attributes." },
-        { "q": "Can I wrap the SVG as a React component?", "a": "Yes. Enable the 'Wrap as Component' option to generate a complete React component with export. You can customize the component name." },
-        { "q": "Why remove xmlns from SVG in React?", "a": "The xmlns attribute is only needed for standalone SVG files. In JSX/React, it's unnecessary because the SVG is embedded in HTML. Removing it keeps the code clean." },
-        { "q": "Does it handle inline styles?", "a": "Yes. Inline style strings are converted to JavaScript style objects with camelCase properties, just like regular HTML to JSX conversion." }
+        {
+          "q": "What SVG attributes are converted?",
+          "a": "All kebab-case SVG attributes are converted to camelCase: stroke-width → strokeWidth, fill-opacity → fillOpacity, clip-path → clipPath, and 40+ other attributes."
+        },
+        {
+          "q": "Can I wrap the SVG as a React component?",
+          "a": "Yes. Enable the 'Wrap as Component' option to generate a complete React component with export. You can customize the component name."
+        },
+        {
+          "q": "Why remove xmlns from SVG in React?",
+          "a": "The xmlns attribute is only needed for standalone SVG files. In JSX/React, it's unnecessary because the SVG is embedded in HTML. Removing it keeps the code clean."
+        },
+        {
+          "q": "Does it handle inline styles?",
+          "a": "Yes. Inline style strings are converted to JavaScript style objects with camelCase properties, just like regular HTML to JSX conversion."
+        }
       ],
       "howToUseTitle": "How to Use",
       "howToUseSteps": [
@@ -1789,10 +1958,22 @@
       "seoContent": "Tailwind CSS is a utility-first CSS framework that uses predefined classes instead of custom CSS. Migrating from traditional CSS to Tailwind involves mapping CSS properties to their equivalent utility classes. This tool automates the conversion for common CSS properties including display, position, flexbox, grid, spacing, typography, colors, borders, and more. For properties without exact Tailwind equivalents, it generates arbitrary value classes using Tailwind's bracket notation (e.g., bg-[#custom]). The converter handles both individual declarations and complete CSS rulesets with selectors. While not every CSS property has a 1:1 Tailwind equivalent, this tool covers the most frequently used properties to accelerate your migration.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "Can all CSS be converted to Tailwind?", "a": "Not all CSS has a direct Tailwind equivalent. The tool converts common properties like display, flexbox, typography, and spacing. Complex or unusual CSS is flagged as 'unconverted' for manual handling." },
-        { "q": "How does it handle custom colors?", "a": "Custom colors are converted using Tailwind's arbitrary value syntax: color: #ff5733 becomes text-[#ff5733]. You can later map these to your Tailwind theme colors." },
-        { "q": "Does it support responsive breakpoints?", "a": "The tool converts the CSS properties within each rule. Responsive classes (sm:, md:, lg:) need to be added manually based on your media query breakpoints." },
-        { "q": "Can I paste CSS with selectors?", "a": "Yes. The tool parses CSS rulesets with selectors and shows the Tailwind classes for each selector. You can also paste raw declarations without selectors." }
+        {
+          "q": "Can all CSS be converted to Tailwind?",
+          "a": "Not all CSS has a direct Tailwind equivalent. The tool converts common properties like display, flexbox, typography, and spacing. Complex or unusual CSS is flagged as 'unconverted' for manual handling."
+        },
+        {
+          "q": "How does it handle custom colors?",
+          "a": "Custom colors are converted using Tailwind's arbitrary value syntax: color: #ff5733 becomes text-[#ff5733]. You can later map these to your Tailwind theme colors."
+        },
+        {
+          "q": "Does it support responsive breakpoints?",
+          "a": "The tool converts the CSS properties within each rule. Responsive classes (sm:, md:, lg:) need to be added manually based on your media query breakpoints."
+        },
+        {
+          "q": "Can I paste CSS with selectors?",
+          "a": "Yes. The tool parses CSS rulesets with selectors and shows the Tailwind classes for each selector. You can also paste raw declarations without selectors."
+        }
       ],
       "howToUseTitle": "How to Use",
       "howToUseSteps": [
@@ -1818,10 +1999,22 @@
       "seoContent": "TypeScript is a typed superset of JavaScript that compiles to plain JS. Sometimes you need to quickly strip TypeScript-specific syntax to get clean JavaScript — for sharing code with non-TS projects, debugging, or learning what TypeScript compiles to. This tool removes type annotations, interfaces, type aliases, generic parameters, access modifiers (public, private, protected, readonly), type assertions (as Type), non-null assertions (!), and declare statements. It preserves all runtime JavaScript code including classes, functions, imports, and expressions. The output is clean, readable JavaScript ready to run in any environment. All processing happens in your browser with no external dependencies.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "What TypeScript syntax is removed?", "a": "Type annotations (: string), interfaces, type aliases, generic parameters (<T>), access modifiers (public/private/protected/readonly), type assertions (as Type), non-null assertions (!), and declare statements." },
-        { "q": "Does it handle enums?", "a": "Basic enums are preserved as they have runtime JavaScript output. Const enums and ambient enums are removed as they don't exist at runtime." },
-        { "q": "Is the output production-ready?", "a": "The output removes TypeScript syntax to produce valid JavaScript. For production builds, we recommend using the official TypeScript compiler (tsc) or a bundler like esbuild for proper downleveling and module handling." },
-        { "q": "Does it downlevel modern JavaScript features?", "a": "No. This tool only strips TypeScript-specific syntax. Modern JS features (async/await, optional chaining, etc.) are preserved as-is. For downleveling, use the TypeScript compiler with a target setting." }
+        {
+          "q": "What TypeScript syntax is removed?",
+          "a": "Type annotations (: string), interfaces, type aliases, generic parameters (<T>), access modifiers (public/private/protected/readonly), type assertions (as Type), non-null assertions (!), and declare statements."
+        },
+        {
+          "q": "Does it handle enums?",
+          "a": "Basic enums are preserved as they have runtime JavaScript output. Const enums and ambient enums are removed as they don't exist at runtime."
+        },
+        {
+          "q": "Is the output production-ready?",
+          "a": "The output removes TypeScript syntax to produce valid JavaScript. For production builds, we recommend using the official TypeScript compiler (tsc) or a bundler like esbuild for proper downleveling and module handling."
+        },
+        {
+          "q": "Does it downlevel modern JavaScript features?",
+          "a": "No. This tool only strips TypeScript-specific syntax. Modern JS features (async/await, optional chaining, etc.) are preserved as-is. For downleveling, use the TypeScript compiler with a target setting."
+        }
       ],
       "howToUseTitle": "How to Use",
       "howToUseSteps": [
@@ -1847,15 +2040,37 @@
       "seoContent": "GraphQL uses a strongly-typed schema to define the shape of data available through an API. When designing a GraphQL API, you often start with sample JSON data from an existing REST endpoint or database. This tool analyzes your JSON structure and generates the corresponding GraphQL type definitions. It maps JavaScript types to GraphQL scalars (String, Int, Float, Boolean), creates separate type blocks for nested objects, and handles arrays as list types. The generated schema can serve as a starting point for your GraphQL server implementation. All processing happens locally in your browser.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "How does JSON to GraphQL conversion work?", "a": "The tool analyzes your JSON structure and maps each field to the appropriate GraphQL type. Strings become String, numbers become Int or Float, booleans become Boolean, nested objects become separate types, and arrays become list types." },
-        { "q": "Does it generate a complete GraphQL schema?", "a": "It generates type definitions that you can use in your schema. You may need to add custom resolvers, mutations, and input types depending on your API design." },
-        { "q": "How are nested objects handled?", "a": "Nested objects are extracted into separate named types. For example, a user with an address object will generate both a User type and an Address type." },
-        { "q": "Is the output ready to use in a GraphQL server?", "a": "The generated types are valid GraphQL SDL (Schema Definition Language) and can be used directly in servers like Apollo, Yoga, or any SDL-first GraphQL framework." }
+        {
+          "q": "How does JSON to GraphQL conversion work?",
+          "a": "The tool analyzes your JSON structure and maps each field to the appropriate GraphQL type. Strings become String, numbers become Int or Float, booleans become Boolean, nested objects become separate types, and arrays become list types."
+        },
+        {
+          "q": "Does it generate a complete GraphQL schema?",
+          "a": "It generates type definitions that you can use in your schema. You may need to add custom resolvers, mutations, and input types depending on your API design."
+        },
+        {
+          "q": "How are nested objects handled?",
+          "a": "Nested objects are extracted into separate named types. For example, a user with an address object will generate both a User type and an Address type."
+        },
+        {
+          "q": "Is the output ready to use in a GraphQL server?",
+          "a": "The generated types are valid GraphQL SDL (Schema Definition Language) and can be used directly in servers like Apollo, Yoga, or any SDL-first GraphQL framework."
+        }
       ],
       "howToUseTitle": "How to Use",
-      "howToUseSteps": ["Paste your JSON data into the input panel", "Set the root type name (default: Root)", "Click Convert to generate GraphQL types", "Copy the schema into your GraphQL server"],
+      "howToUseSteps": [
+        "Paste your JSON data into the input panel",
+        "Set the root type name (default: Root)",
+        "Click Convert to generate GraphQL types",
+        "Copy the schema into your GraphQL server"
+      ],
       "useCasesTitle": "Common Use Cases",
-      "useCases": ["Designing GraphQL schemas from existing REST API responses", "Prototyping GraphQL types from sample data", "Migrating REST APIs to GraphQL", "Generating type definitions for GraphQL code generators"]
+      "useCases": [
+        "Designing GraphQL schemas from existing REST API responses",
+        "Prototyping GraphQL types from sample data",
+        "Migrating REST APIs to GraphQL",
+        "Generating type definitions for GraphQL code generators"
+      ]
     },
     "json-to-java": {
       "name": "JSON to Java Class",
@@ -1866,15 +2081,37 @@
       "seoContent": "Java's strong type system requires defining classes before deserializing JSON data. Manually writing Java POJOs (Plain Old Java Objects) for complex JSON APIs is tedious and error-prone. This tool analyzes your JSON and generates complete Java class definitions with proper field types, constructors, getters, and setters. It supports Lombok's @Data annotation to reduce boilerplate. Nested objects become separate classes, arrays become List<Type>, and null values are handled with nullable types. All processing happens in your browser.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "How do I convert JSON to Java classes?", "a": "Paste your JSON data, set a root class name, and click Convert. The tool generates Java POJO classes with proper types, fields, constructors, getters, and setters." },
-        { "q": "What is the Lombok option?", "a": "When enabled, the tool adds Lombok's @Data annotation which auto-generates getters, setters, toString, equals, and hashCode methods, significantly reducing boilerplate code." },
-        { "q": "How are arrays handled?", "a": "JSON arrays are converted to List<Type> with appropriate generic types. The tool adds the java.util.List import automatically." },
-        { "q": "Can I use the generated classes directly?", "a": "Yes. The output is valid Java code ready to use with Jackson, Gson, or any JSON library. Just copy into .java files." }
+        {
+          "q": "How do I convert JSON to Java classes?",
+          "a": "Paste your JSON data, set a root class name, and click Convert. The tool generates Java POJO classes with proper types, fields, constructors, getters, and setters."
+        },
+        {
+          "q": "What is the Lombok option?",
+          "a": "When enabled, the tool adds Lombok's @Data annotation which auto-generates getters, setters, toString, equals, and hashCode methods, significantly reducing boilerplate code."
+        },
+        {
+          "q": "How are arrays handled?",
+          "a": "JSON arrays are converted to List<Type> with appropriate generic types. The tool adds the java.util.List import automatically."
+        },
+        {
+          "q": "Can I use the generated classes directly?",
+          "a": "Yes. The output is valid Java code ready to use with Jackson, Gson, or any JSON library. Just copy into .java files."
+        }
       ],
       "howToUseTitle": "How to Use",
-      "howToUseSteps": ["Paste your JSON data into the input panel", "Set the root class name (default: Root)", "Toggle Lombok support if desired", "Copy the generated Java classes into your project"],
+      "howToUseSteps": [
+        "Paste your JSON data into the input panel",
+        "Set the root class name (default: Root)",
+        "Toggle Lombok support if desired",
+        "Copy the generated Java classes into your project"
+      ],
       "useCasesTitle": "Common Use Cases",
-      "useCases": ["Creating Java POJOs from REST API responses", "Generating model classes for Spring Boot applications", "Building typed data models for Android apps", "Quickly scaffolding Java classes from sample data"]
+      "useCases": [
+        "Creating Java POJOs from REST API responses",
+        "Generating model classes for Spring Boot applications",
+        "Building typed data models for Android apps",
+        "Quickly scaffolding Java classes from sample data"
+      ]
     },
     "json-to-kotlin": {
       "name": "JSON to Kotlin",
@@ -1885,15 +2122,37 @@
       "seoContent": "Kotlin data classes provide a concise way to define typed data models. When working with JSON APIs in Kotlin (especially on Android), you need data classes that match the JSON structure. This tool analyzes your JSON and generates idiomatic Kotlin data classes with proper type inference. It handles nullable types for null values, uses List<Type> for arrays, and creates separate data classes for nested objects. The generated code works seamlessly with Kotlinx.serialization, Moshi, or Gson. All processing happens locally in your browser.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "How do I convert JSON to Kotlin data classes?", "a": "Paste your JSON, set the root class name, and click Convert. The tool generates Kotlin data classes with proper types for each field." },
-        { "q": "How are nullable types handled?", "a": "Fields with null values are typed as nullable (String?). You can also enable the nullable option to make all fields nullable." },
-        { "q": "Does it work with Android development?", "a": "Yes. The generated data classes are compatible with Retrofit, Moshi, Gson, and Kotlinx.serialization commonly used in Android apps." },
-        { "q": "How are nested objects converted?", "a": "Nested JSON objects become separate Kotlin data classes. For example, an address field generates both a Root data class and an Address data class." }
+        {
+          "q": "How do I convert JSON to Kotlin data classes?",
+          "a": "Paste your JSON, set the root class name, and click Convert. The tool generates Kotlin data classes with proper types for each field."
+        },
+        {
+          "q": "How are nullable types handled?",
+          "a": "Fields with null values are typed as nullable (String?). You can also enable the nullable option to make all fields nullable."
+        },
+        {
+          "q": "Does it work with Android development?",
+          "a": "Yes. The generated data classes are compatible with Retrofit, Moshi, Gson, and Kotlinx.serialization commonly used in Android apps."
+        },
+        {
+          "q": "How are nested objects converted?",
+          "a": "Nested JSON objects become separate Kotlin data classes. For example, an address field generates both a Root data class and an Address data class."
+        }
       ],
       "howToUseTitle": "How to Use",
-      "howToUseSteps": ["Paste your JSON data into the input panel", "Set the root class name (default: Root)", "Toggle nullable option if needed", "Copy the generated Kotlin data classes into your project"],
+      "howToUseSteps": [
+        "Paste your JSON data into the input panel",
+        "Set the root class name (default: Root)",
+        "Toggle nullable option if needed",
+        "Copy the generated Kotlin data classes into your project"
+      ],
       "useCasesTitle": "Common Use Cases",
-      "useCases": ["Creating Kotlin data classes for Android API integration", "Generating models for Ktor server applications", "Building typed models for Kotlin Multiplatform projects", "Converting API response samples to Kotlin types"]
+      "useCases": [
+        "Creating Kotlin data classes for Android API integration",
+        "Generating models for Ktor server applications",
+        "Building typed models for Kotlin Multiplatform projects",
+        "Converting API response samples to Kotlin types"
+      ]
     },
     "json-to-python": {
       "name": "JSON to Python",
@@ -1904,15 +2163,37 @@
       "seoContent": "Python's dataclasses and TypedDict provide structured ways to define typed data models. When consuming JSON APIs in Python, having properly typed classes improves code quality and IDE support. This tool analyzes your JSON and generates Python dataclasses with type hints or TypedDict definitions. It maps types correctly (str, int, float, bool, Optional, List), converts field names to snake_case, and creates separate classes for nested objects. The generated code includes proper imports from dataclasses and typing modules. All processing happens in your browser.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "What's the difference between dataclass and TypedDict?", "a": "Dataclasses create full Python classes with __init__, __repr__, etc. TypedDict defines dictionary shapes for type checking without creating a class. Use dataclass for objects, TypedDict for JSON-like dicts." },
-        { "q": "How are field names converted?", "a": "camelCase and PascalCase field names are automatically converted to snake_case following Python naming conventions." },
-        { "q": "Does it handle Optional types?", "a": "Yes. Fields with null values are typed as Optional[type], and the typing.Optional import is added automatically." },
-        { "q": "Can I use this with Pydantic?", "a": "The dataclass output is close to Pydantic models. You can easily adapt it by changing @dataclass to inherit from pydantic.BaseModel." }
+        {
+          "q": "What's the difference between dataclass and TypedDict?",
+          "a": "Dataclasses create full Python classes with __init__, __repr__, etc. TypedDict defines dictionary shapes for type checking without creating a class. Use dataclass for objects, TypedDict for JSON-like dicts."
+        },
+        {
+          "q": "How are field names converted?",
+          "a": "camelCase and PascalCase field names are automatically converted to snake_case following Python naming conventions."
+        },
+        {
+          "q": "Does it handle Optional types?",
+          "a": "Yes. Fields with null values are typed as Optional[type], and the typing.Optional import is added automatically."
+        },
+        {
+          "q": "Can I use this with Pydantic?",
+          "a": "The dataclass output is close to Pydantic models. You can easily adapt it by changing @dataclass to inherit from pydantic.BaseModel."
+        }
       ],
       "howToUseTitle": "How to Use",
-      "howToUseSteps": ["Paste your JSON data into the input panel", "Set the root class name (default: Root)", "Choose between dataclass and TypedDict output", "Copy the generated Python code into your project"],
+      "howToUseSteps": [
+        "Paste your JSON data into the input panel",
+        "Set the root class name (default: Root)",
+        "Choose between dataclass and TypedDict output",
+        "Copy the generated Python code into your project"
+      ],
       "useCasesTitle": "Common Use Cases",
-      "useCases": ["Creating Python dataclasses from API response data", "Generating typed models for FastAPI or Flask applications", "Building type-safe data parsers for JSON files", "Converting API documentation examples to Python types"]
+      "useCases": [
+        "Creating Python dataclasses from API response data",
+        "Generating typed models for FastAPI or Flask applications",
+        "Building type-safe data parsers for JSON files",
+        "Converting API documentation examples to Python types"
+      ]
     },
     "json-to-csharp": {
       "name": "JSON to C#",
@@ -1923,15 +2204,37 @@
       "seoContent": "C#'s strong type system is central to .NET development. When working with JSON APIs, you need class definitions that match the JSON structure for proper deserialization with System.Text.Json or Newtonsoft.Json. This tool analyzes your JSON data and generates C# class definitions with correct property types (string, int, double, bool, List<T>), PascalCase naming, and optional namespace wrapping. Nested objects become separate classes, and nullable types are used for null values. All processing happens locally in your browser.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "How do I convert JSON to C# classes?", "a": "Paste your JSON data, set a root class name, optionally add a namespace, and click Convert. The tool generates C# classes with proper property types." },
-        { "q": "Does it work with System.Text.Json?", "a": "Yes. The generated classes use standard C# properties that work with both System.Text.Json and Newtonsoft.Json (Json.NET)." },
-        { "q": "How are arrays handled?", "a": "JSON arrays are converted to List<Type>. The tool adds using System.Collections.Generic when List types are present." },
-        { "q": "Can I add a namespace?", "a": "Yes. Enter a namespace name and the generated classes will be wrapped in a namespace block with proper indentation." }
+        {
+          "q": "How do I convert JSON to C# classes?",
+          "a": "Paste your JSON data, set a root class name, optionally add a namespace, and click Convert. The tool generates C# classes with proper property types."
+        },
+        {
+          "q": "Does it work with System.Text.Json?",
+          "a": "Yes. The generated classes use standard C# properties that work with both System.Text.Json and Newtonsoft.Json (Json.NET)."
+        },
+        {
+          "q": "How are arrays handled?",
+          "a": "JSON arrays are converted to List<Type>. The tool adds using System.Collections.Generic when List types are present."
+        },
+        {
+          "q": "Can I add a namespace?",
+          "a": "Yes. Enter a namespace name and the generated classes will be wrapped in a namespace block with proper indentation."
+        }
       ],
       "howToUseTitle": "How to Use",
-      "howToUseSteps": ["Paste your JSON data into the input panel", "Set the root class name and optional namespace", "Click Convert to generate C# classes", "Copy the classes into your .NET project"],
+      "howToUseSteps": [
+        "Paste your JSON data into the input panel",
+        "Set the root class name and optional namespace",
+        "Click Convert to generate C# classes",
+        "Copy the classes into your .NET project"
+      ],
       "useCasesTitle": "Common Use Cases",
-      "useCases": ["Creating C# models from REST API responses", "Generating DTOs for ASP.NET Core applications", "Building typed models for Blazor apps", "Converting API documentation samples to C# types"]
+      "useCases": [
+        "Creating C# models from REST API responses",
+        "Generating DTOs for ASP.NET Core applications",
+        "Building typed models for Blazor apps",
+        "Converting API documentation samples to C# types"
+      ]
     },
     "markdown-to-html": {
       "name": "Markdown to HTML",
@@ -1942,15 +2245,37 @@
       "seoContent": "Markdown is a lightweight markup language widely used for documentation, README files, and content creation. Converting Markdown to HTML is essential for rendering content in web pages, email templates, and CMS systems. This tool converts Markdown syntax to clean HTML markup, supporting headers (h1-h6), bold and italic text, inline code and fenced code blocks, links, images, ordered and unordered lists, blockquotes, and horizontal rules. The output is clean, semantic HTML ready for use in any web project. All processing happens locally in your browser.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "What Markdown syntax is supported?", "a": "Headers (#), bold (**), italic (*), code (`), code blocks (```), links, images, unordered lists (-), ordered lists (1.), blockquotes (>), and horizontal rules (---)." },
-        { "q": "Does it support GitHub Flavored Markdown?", "a": "The tool supports common Markdown syntax including fenced code blocks with language hints. Some GFM extensions like tables and task lists are not yet supported." },
-        { "q": "Is the HTML output semantic?", "a": "Yes. The tool generates proper semantic HTML tags: h1-h6 for headings, strong for bold, em for italic, ul/ol for lists, blockquote for quotes, and pre/code for code blocks." },
-        { "q": "Can I use the output in email templates?", "a": "The generated HTML uses standard tags that work in email clients. You may want to add inline CSS for consistent email rendering." }
+        {
+          "q": "What Markdown syntax is supported?",
+          "a": "Headers (#), bold (**), italic (*), code (`), code blocks (```), links, images, unordered lists (-), ordered lists (1.), blockquotes (>), and horizontal rules (---)."
+        },
+        {
+          "q": "Does it support GitHub Flavored Markdown?",
+          "a": "The tool supports common Markdown syntax including fenced code blocks with language hints. Some GFM extensions like tables and task lists are not yet supported."
+        },
+        {
+          "q": "Is the HTML output semantic?",
+          "a": "Yes. The tool generates proper semantic HTML tags: h1-h6 for headings, strong for bold, em for italic, ul/ol for lists, blockquote for quotes, and pre/code for code blocks."
+        },
+        {
+          "q": "Can I use the output in email templates?",
+          "a": "The generated HTML uses standard tags that work in email clients. You may want to add inline CSS for consistent email rendering."
+        }
       ],
       "howToUseTitle": "How to Use",
-      "howToUseSteps": ["Paste or type Markdown text in the input panel", "Click Convert to generate HTML", "Review the HTML output", "Copy the HTML for use in your project"],
+      "howToUseSteps": [
+        "Paste or type Markdown text in the input panel",
+        "Click Convert to generate HTML",
+        "Review the HTML output",
+        "Copy the HTML for use in your project"
+      ],
       "useCasesTitle": "Common Use Cases",
-      "useCases": ["Converting README files to HTML for web display", "Generating HTML content from Markdown blog posts", "Building HTML email bodies from Markdown drafts", "Previewing Markdown as rendered HTML"]
+      "useCases": [
+        "Converting README files to HTML for web display",
+        "Generating HTML content from Markdown blog posts",
+        "Building HTML email bodies from Markdown drafts",
+        "Previewing Markdown as rendered HTML"
+      ]
     },
     "html-to-markdown": {
       "name": "HTML to Markdown",
@@ -1961,15 +2286,37 @@
       "seoContent": "Converting HTML to Markdown is useful when migrating content from web pages to Markdown-based systems like GitHub, Notion, or static site generators. This tool transforms HTML tags into equivalent Markdown syntax: h1-h6 become # headers, strong/b become **bold**, a tags become [links](url), img tags become ![images](src), lists become - or 1. items, and code blocks become fenced ```blocks```. It also decodes common HTML entities and cleans up excess whitespace. All processing happens locally in your browser.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "What HTML tags are converted?", "a": "The tool converts h1-h6, strong/b, em/i, a (links), img (images), ul/ol/li (lists), blockquote, pre/code (code blocks), hr, p, and br tags." },
-        { "q": "Does it handle HTML entities?", "a": "Yes. Common entities like &amp;, &lt;, &gt;, &quot;, &#39;, and &nbsp; are decoded to their text equivalents." },
-        { "q": "What happens to unsupported tags?", "a": "Unsupported HTML tags are stripped, preserving their inner text content. The tool aims to extract readable Markdown from any HTML." },
-        { "q": "Can I convert a full web page?", "a": "You can paste any HTML snippet. For full pages, paste the body content. The tool handles most common HTML patterns found in articles and documentation." }
+        {
+          "q": "What HTML tags are converted?",
+          "a": "The tool converts h1-h6, strong/b, em/i, a (links), img (images), ul/ol/li (lists), blockquote, pre/code (code blocks), hr, p, and br tags."
+        },
+        {
+          "q": "Does it handle HTML entities?",
+          "a": "Yes. Common entities like &amp;, &lt;, &gt;, &quot;, &#39;, and &nbsp; are decoded to their text equivalents."
+        },
+        {
+          "q": "What happens to unsupported tags?",
+          "a": "Unsupported HTML tags are stripped, preserving their inner text content. The tool aims to extract readable Markdown from any HTML."
+        },
+        {
+          "q": "Can I convert a full web page?",
+          "a": "You can paste any HTML snippet. For full pages, paste the body content. The tool handles most common HTML patterns found in articles and documentation."
+        }
       ],
       "howToUseTitle": "How to Use",
-      "howToUseSteps": ["Paste your HTML markup into the input panel", "Click Convert to generate Markdown", "Review the Markdown output", "Copy the Markdown for use in your project"],
+      "howToUseSteps": [
+        "Paste your HTML markup into the input panel",
+        "Click Convert to generate Markdown",
+        "Review the Markdown output",
+        "Copy the Markdown for use in your project"
+      ],
       "useCasesTitle": "Common Use Cases",
-      "useCases": ["Migrating web content to Markdown-based CMS systems", "Converting HTML documentation to Markdown for GitHub", "Extracting Markdown from copied web page content", "Preparing content for static site generators like Hugo or Jekyll"]
+      "useCases": [
+        "Migrating web content to Markdown-based CMS systems",
+        "Converting HTML documentation to Markdown for GitHub",
+        "Extracting Markdown from copied web page content",
+        "Preparing content for static site generators like Hugo or Jekyll"
+      ]
     },
     "toml-yaml": {
       "name": "TOML to YAML / YAML to TOML",
@@ -1980,15 +2327,37 @@
       "seoContent": "TOML and YAML are popular configuration file formats used in modern development. TOML (Tom's Obvious Minimal Language) is used by Rust's Cargo, Python's pyproject.toml, and Hugo. YAML is used by Docker Compose, Kubernetes, GitHub Actions, and many CI/CD tools. Converting between these formats is common when migrating projects or adapting configurations. This tool provides bidirectional conversion: TOML to YAML and YAML to TOML. It handles sections, nested tables, arrays, strings, numbers, and booleans. All processing happens locally in your browser.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "What TOML features are supported?", "a": "The tool supports key-value pairs, sections ([section]), nested sections, arrays, inline tables, strings (quoted and bare), numbers, and booleans." },
-        { "q": "What YAML features are supported?", "a": "The tool supports key-value pairs, nested keys (indentation-based), arrays (- items and inline []), strings, numbers, booleans, and null values." },
-        { "q": "Can I convert in both directions?", "a": "Yes. Use the direction selector to switch between TOML → YAML and YAML → TOML conversion." },
-        { "q": "Does it preserve comments?", "a": "Comments are not preserved during conversion, as TOML and YAML have different comment syntaxes. Only data values are converted." }
+        {
+          "q": "What TOML features are supported?",
+          "a": "The tool supports key-value pairs, sections ([section]), nested sections, arrays, inline tables, strings (quoted and bare), numbers, and booleans."
+        },
+        {
+          "q": "What YAML features are supported?",
+          "a": "The tool supports key-value pairs, nested keys (indentation-based), arrays (- items and inline []), strings, numbers, booleans, and null values."
+        },
+        {
+          "q": "Can I convert in both directions?",
+          "a": "Yes. Use the direction selector to switch between TOML → YAML and YAML → TOML conversion."
+        },
+        {
+          "q": "Does it preserve comments?",
+          "a": "Comments are not preserved during conversion, as TOML and YAML have different comment syntaxes. Only data values are converted."
+        }
       ],
       "howToUseTitle": "How to Use",
-      "howToUseSteps": ["Select the conversion direction (TOML→YAML or YAML→TOML)", "Paste your configuration data into the input panel", "Click Convert to transform the format", "Copy the converted output for use in your project"],
+      "howToUseSteps": [
+        "Select the conversion direction (TOML→YAML or YAML→TOML)",
+        "Paste your configuration data into the input panel",
+        "Click Convert to transform the format",
+        "Copy the converted output for use in your project"
+      ],
       "useCasesTitle": "Common Use Cases",
-      "useCases": ["Converting Cargo.toml settings to YAML for CI/CD pipelines", "Migrating Docker Compose YAML to TOML format", "Adapting pyproject.toml configurations for YAML-based tools", "Comparing configuration formats for new projects"]
+      "useCases": [
+        "Converting Cargo.toml settings to YAML for CI/CD pipelines",
+        "Migrating Docker Compose YAML to TOML format",
+        "Adapting pyproject.toml configurations for YAML-based tools",
+        "Comparing configuration formats for new projects"
+      ]
     },
     "json-to-zod": {
       "name": "JSON to Zod Schema",
@@ -1999,15 +2368,37 @@
       "seoContent": "Zod is a TypeScript-first schema validation library that lets you define schemas and validate data at runtime. When building TypeScript applications, Zod schemas provide both runtime validation and compile-time type inference. This tool analyzes your JSON data and generates corresponding Zod schemas with proper type mappings: strings become z.string(), numbers become z.number(), booleans become z.boolean(), arrays become z.array(), and nested objects become z.object(). The generated schemas can be used directly in your TypeScript project for form validation, API response validation, and more. All processing happens locally in your browser.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "What is Zod?", "a": "Zod is a TypeScript-first schema declaration and validation library. It lets you define the shape of data and validates it at runtime while providing automatic TypeScript type inference." },
-        { "q": "How does JSON to Zod conversion work?", "a": "The tool analyzes your JSON structure and maps each value to the appropriate Zod schema method: z.string(), z.number(), z.boolean(), z.array(), z.object(), and z.null()." },
-        { "q": "Can I use the output directly in my project?", "a": "Yes. The generated code includes the Zod import statement and is ready to use. Just copy it into a .ts file where Zod is installed." },
-        { "q": "Does it handle nested objects?", "a": "Yes. Nested objects are converted to nested z.object() calls with all their properties properly typed." }
+        {
+          "q": "What is Zod?",
+          "a": "Zod is a TypeScript-first schema declaration and validation library. It lets you define the shape of data and validates it at runtime while providing automatic TypeScript type inference."
+        },
+        {
+          "q": "How does JSON to Zod conversion work?",
+          "a": "The tool analyzes your JSON structure and maps each value to the appropriate Zod schema method: z.string(), z.number(), z.boolean(), z.array(), z.object(), and z.null()."
+        },
+        {
+          "q": "Can I use the output directly in my project?",
+          "a": "Yes. The generated code includes the Zod import statement and is ready to use. Just copy it into a .ts file where Zod is installed."
+        },
+        {
+          "q": "Does it handle nested objects?",
+          "a": "Yes. Nested objects are converted to nested z.object() calls with all their properties properly typed."
+        }
       ],
       "howToUseTitle": "How to Use",
-      "howToUseSteps": ["Paste your JSON data into the input panel", "Set the schema variable name", "Click Convert to generate the Zod schema", "Copy the schema into your TypeScript project"],
+      "howToUseSteps": [
+        "Paste your JSON data into the input panel",
+        "Set the schema variable name",
+        "Click Convert to generate the Zod schema",
+        "Copy the schema into your TypeScript project"
+      ],
       "useCasesTitle": "Common Use Cases",
-      "useCases": ["Generating Zod schemas from API response samples", "Creating form validation schemas from JSON data", "Building type-safe parsers for configuration files", "Prototyping Zod schemas for new TypeScript projects"]
+      "useCases": [
+        "Generating Zod schemas from API response samples",
+        "Creating form validation schemas from JSON data",
+        "Building type-safe parsers for configuration files",
+        "Prototyping Zod schemas for new TypeScript projects"
+      ]
     },
     "json-to-json-schema": {
       "name": "JSON to JSON Schema",
@@ -2018,15 +2409,37 @@
       "seoContent": "JSON Schema is a vocabulary for annotating and validating JSON documents. It's widely used for API documentation (OpenAPI/Swagger), form generation, configuration validation, and data interchange. This tool analyzes your JSON data and generates a JSON Schema (draft-07) that describes its structure. It correctly identifies types, marks all existing fields as required, handles arrays with item schemas, and creates nested schemas for objects. The output can be used with any JSON Schema validator or integrated into OpenAPI specifications. All processing happens in your browser.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "What JSON Schema draft is used?", "a": "The tool generates schemas following JSON Schema draft-07, which is widely supported by validators and tools." },
-        { "q": "Are all fields marked as required?", "a": "Yes. Since the tool infers the schema from sample data, all present fields are marked as required. You can adjust this manually after generation." },
-        { "q": "Does it handle nested objects?", "a": "Yes. Nested objects generate nested schema definitions with their own properties and required arrays." },
-        { "q": "Can I use this with OpenAPI/Swagger?", "a": "Yes. The generated JSON Schema is compatible with OpenAPI specifications. You can paste the schema into your API documentation." }
+        {
+          "q": "What JSON Schema draft is used?",
+          "a": "The tool generates schemas following JSON Schema draft-07, which is widely supported by validators and tools."
+        },
+        {
+          "q": "Are all fields marked as required?",
+          "a": "Yes. Since the tool infers the schema from sample data, all present fields are marked as required. You can adjust this manually after generation."
+        },
+        {
+          "q": "Does it handle nested objects?",
+          "a": "Yes. Nested objects generate nested schema definitions with their own properties and required arrays."
+        },
+        {
+          "q": "Can I use this with OpenAPI/Swagger?",
+          "a": "Yes. The generated JSON Schema is compatible with OpenAPI specifications. You can paste the schema into your API documentation."
+        }
       ],
       "howToUseTitle": "How to Use",
-      "howToUseSteps": ["Paste your JSON data into the input panel", "Set the schema title", "Click Convert to generate the JSON Schema", "Copy the schema for use with validators or API docs"],
+      "howToUseSteps": [
+        "Paste your JSON data into the input panel",
+        "Set the schema title",
+        "Click Convert to generate the JSON Schema",
+        "Copy the schema for use with validators or API docs"
+      ],
       "useCasesTitle": "Common Use Cases",
-      "useCases": ["Creating JSON Schema for OpenAPI/Swagger documentation", "Generating validation schemas for REST APIs", "Building configuration file validators", "Documenting data structures for team collaboration"]
+      "useCases": [
+        "Creating JSON Schema for OpenAPI/Swagger documentation",
+        "Generating validation schemas for REST APIs",
+        "Building configuration file validators",
+        "Documenting data structures for team collaboration"
+      ]
     },
     "css-to-js": {
       "name": "CSS to JS Object",
@@ -2037,15 +2450,37 @@
       "seoContent": "CSS-in-JS is a popular approach in modern frontend development, especially with React. Libraries like styled-components, Emotion, and React's inline styles use JavaScript objects instead of CSS strings. Converting CSS to JS objects requires changing property names from kebab-case to camelCase (font-size becomes fontSize), wrapping string values in quotes, and converting pixel values to numbers where appropriate. This tool automates the conversion process, handling selectors, property names, and values. All processing happens locally in your browser.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "How are CSS property names converted?", "a": "Kebab-case CSS properties are converted to camelCase: font-size becomes fontSize, background-color becomes backgroundColor, border-radius becomes borderRadius." },
-        { "q": "Are pixel values converted to numbers?", "a": "Yes. Pure pixel values like 16px become the number 16. Values with other units (em, rem, %) remain as strings." },
-        { "q": "Does it handle CSS selectors?", "a": "Yes. CSS rules with selectors are converted to named JavaScript objects. Class selectors like .container produce a const named container." },
-        { "q": "Can I use the output with React?", "a": "Yes. The generated objects work with React's style prop, styled-components, Emotion, and other CSS-in-JS libraries." }
+        {
+          "q": "How are CSS property names converted?",
+          "a": "Kebab-case CSS properties are converted to camelCase: font-size becomes fontSize, background-color becomes backgroundColor, border-radius becomes borderRadius."
+        },
+        {
+          "q": "Are pixel values converted to numbers?",
+          "a": "Yes. Pure pixel values like 16px become the number 16. Values with other units (em, rem, %) remain as strings."
+        },
+        {
+          "q": "Does it handle CSS selectors?",
+          "a": "Yes. CSS rules with selectors are converted to named JavaScript objects. Class selectors like .container produce a const named container."
+        },
+        {
+          "q": "Can I use the output with React?",
+          "a": "Yes. The generated objects work with React's style prop, styled-components, Emotion, and other CSS-in-JS libraries."
+        }
       ],
       "howToUseTitle": "How to Use",
-      "howToUseSteps": ["Paste your CSS code into the input panel", "Click Convert to generate JS objects", "Review the camelCase property names", "Copy the objects into your JavaScript/React project"],
+      "howToUseSteps": [
+        "Paste your CSS code into the input panel",
+        "Click Convert to generate JS objects",
+        "Review the camelCase property names",
+        "Copy the objects into your JavaScript/React project"
+      ],
       "useCasesTitle": "Common Use Cases",
-      "useCases": ["Converting CSS to React inline style objects", "Migrating CSS to CSS-in-JS libraries", "Generating style objects for React Native", "Converting design tool CSS output to JavaScript"]
+      "useCases": [
+        "Converting CSS to React inline style objects",
+        "Migrating CSS to CSS-in-JS libraries",
+        "Generating style objects for React Native",
+        "Converting design tool CSS output to JavaScript"
+      ]
     },
     "graphql-to-typescript": {
       "name": "GraphQL to TypeScript",
@@ -2056,15 +2491,37 @@
       "seoContent": "GraphQL schemas define the shape of data in your API using SDL (Schema Definition Language). When building TypeScript clients or servers, you need TypeScript types that match your GraphQL schema for type safety. This tool converts GraphQL type definitions to TypeScript interfaces. It handles scalar types (String, Int, Float, Boolean, ID), object types, input types, enums, unions, and list types. Non-null types (!) become required fields, while nullable types become optional. All processing happens locally in your browser.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "What GraphQL types are supported?", "a": "The tool supports type, input, enum, scalar, and union definitions. It handles both nullable and non-null (!) types, and list types ([Type])." },
-        { "q": "How are GraphQL scalars mapped?", "a": "String and ID become string, Int and Float become number, Boolean becomes boolean. Custom scalars default to unknown." },
-        { "q": "Does it handle enums?", "a": "Yes. GraphQL enums are converted to TypeScript enum declarations with string values matching the GraphQL enum values." },
-        { "q": "How is nullability handled?", "a": "Non-null types (!) become required TypeScript fields. Nullable types (without !) become optional fields with the ? suffix." }
+        {
+          "q": "What GraphQL types are supported?",
+          "a": "The tool supports type, input, enum, scalar, and union definitions. It handles both nullable and non-null (!) types, and list types ([Type])."
+        },
+        {
+          "q": "How are GraphQL scalars mapped?",
+          "a": "String and ID become string, Int and Float become number, Boolean becomes boolean. Custom scalars default to unknown."
+        },
+        {
+          "q": "Does it handle enums?",
+          "a": "Yes. GraphQL enums are converted to TypeScript enum declarations with string values matching the GraphQL enum values."
+        },
+        {
+          "q": "How is nullability handled?",
+          "a": "Non-null types (!) become required TypeScript fields. Nullable types (without !) become optional fields with the ? suffix."
+        }
       ],
       "howToUseTitle": "How to Use",
-      "howToUseSteps": ["Paste your GraphQL schema (SDL) into the input", "Toggle the export option if needed", "Click Convert to generate TypeScript types", "Copy the types into your TypeScript project"],
+      "howToUseSteps": [
+        "Paste your GraphQL schema (SDL) into the input",
+        "Toggle the export option if needed",
+        "Click Convert to generate TypeScript types",
+        "Copy the types into your TypeScript project"
+      ],
       "useCasesTitle": "Common Use Cases",
-      "useCases": ["Generating TypeScript types from GraphQL API schemas", "Building type-safe GraphQL clients", "Creating shared types between GraphQL server and client", "Documenting API types for TypeScript projects"]
+      "useCases": [
+        "Generating TypeScript types from GraphQL API schemas",
+        "Building type-safe GraphQL clients",
+        "Creating shared types between GraphQL server and client",
+        "Documenting API types for TypeScript projects"
+      ]
     },
     "json-to-rust": {
       "name": "JSON to Rust Struct",
@@ -2075,15 +2532,37 @@
       "seoContent": "Rust's type system requires defining structs before deserializing JSON data with serde. Manually writing Rust structs for complex JSON APIs is time-consuming. This tool analyzes your JSON and generates Rust struct definitions with proper types (String, i64, f64, bool, Vec<T>), serde derive macros (Serialize, Deserialize, Debug, Clone), and automatic snake_case field naming with #[serde(rename)] attributes when needed. Nested objects become separate named structs, and null values are wrapped in Option<T>. All processing happens in your browser.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "How do I convert JSON to Rust structs?", "a": "Paste your JSON, set the root struct name, select derive macros, and click Convert. The tool generates Rust structs with proper types and serde attributes." },
-        { "q": "What derive macros are available?", "a": "You can toggle Debug, Clone, Serialize, and Deserialize. The serde import is added automatically when Serialize or Deserialize is selected." },
-        { "q": "How are field names handled?", "a": "Field names are converted to snake_case. If the original JSON key differs, a #[serde(rename = \"originalKey\")] attribute is added." },
-        { "q": "How are null values handled?", "a": "Fields with null values are typed as Option<String>. This allows the field to be None when the value is null in JSON." }
+        {
+          "q": "How do I convert JSON to Rust structs?",
+          "a": "Paste your JSON, set the root struct name, select derive macros, and click Convert. The tool generates Rust structs with proper types and serde attributes."
+        },
+        {
+          "q": "What derive macros are available?",
+          "a": "You can toggle Debug, Clone, Serialize, and Deserialize. The serde import is added automatically when Serialize or Deserialize is selected."
+        },
+        {
+          "q": "How are field names handled?",
+          "a": "Field names are converted to snake_case. If the original JSON key differs, a #[serde(rename = \"originalKey\")] attribute is added."
+        },
+        {
+          "q": "How are null values handled?",
+          "a": "Fields with null values are typed as Option<String>. This allows the field to be None when the value is null in JSON."
+        }
       ],
       "howToUseTitle": "How to Use",
-      "howToUseSteps": ["Paste your JSON data into the input panel", "Set the root struct name and derive options", "Click Convert to generate Rust structs", "Copy the structs into your Rust project"],
+      "howToUseSteps": [
+        "Paste your JSON data into the input panel",
+        "Set the root struct name and derive options",
+        "Click Convert to generate Rust structs",
+        "Copy the structs into your Rust project"
+      ],
       "useCasesTitle": "Common Use Cases",
-      "useCases": ["Creating Rust structs from REST API responses", "Building typed models for Actix-web or Axum servers", "Generating serde-compatible types from JSON configs", "Quickly scaffolding Rust data models from sample data"]
+      "useCases": [
+        "Creating Rust structs from REST API responses",
+        "Building typed models for Actix-web or Axum servers",
+        "Generating serde-compatible types from JSON configs",
+        "Quickly scaffolding Rust data models from sample data"
+      ]
     },
     "xml-to-json": {
       "name": "XML to JSON",
@@ -2094,15 +2573,416 @@
       "seoContent": "XML and JSON are two of the most common data interchange formats. While XML uses tags and attributes, JSON uses key-value pairs and arrays. Converting XML to JSON is useful when migrating legacy systems, consuming SOAP APIs, or processing XML feeds in modern JavaScript applications. This tool parses XML and converts it to a structured JSON representation where elements become objects, attributes are prefixed with @, text content is stored as #text, and repeated elements automatically become arrays. It handles CDATA sections, self-closing tags, and nested structures. All processing happens in your browser.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "How are XML attributes handled?", "a": "Attributes are prefixed with @ in the JSON output. For example, <item id=\"1\"> becomes {\"@id\": \"1\"}." },
-        { "q": "How is text content represented?", "a": "Text content within elements is stored as #text. If an element has both attributes and text, both are preserved: {\"@attr\": \"val\", \"#text\": \"content\"}." },
-        { "q": "Does it handle repeated elements?", "a": "Yes. When multiple sibling elements share the same tag name, they are automatically grouped into a JSON array." },
-        { "q": "Does it support CDATA sections?", "a": "Yes. CDATA sections are parsed and their content is included as text in the JSON output." }
+        {
+          "q": "How are XML attributes handled?",
+          "a": "Attributes are prefixed with @ in the JSON output. For example, <item id=\"1\"> becomes {\"@id\": \"1\"}."
+        },
+        {
+          "q": "How is text content represented?",
+          "a": "Text content within elements is stored as #text. If an element has both attributes and text, both are preserved: {\"@attr\": \"val\", \"#text\": \"content\"}."
+        },
+        {
+          "q": "Does it handle repeated elements?",
+          "a": "Yes. When multiple sibling elements share the same tag name, they are automatically grouped into a JSON array."
+        },
+        {
+          "q": "Does it support CDATA sections?",
+          "a": "Yes. CDATA sections are parsed and their content is included as text in the JSON output."
+        }
       ],
       "howToUseTitle": "How to Use",
-      "howToUseSteps": ["Paste your XML content into the input panel", "Click Convert to generate JSON", "Review the JSON output with attributes and text", "Copy the JSON for use in your application"],
+      "howToUseSteps": [
+        "Paste your XML content into the input panel",
+        "Click Convert to generate JSON",
+        "Review the JSON output with attributes and text",
+        "Copy the JSON for use in your application"
+      ],
       "useCasesTitle": "Common Use Cases",
-      "useCases": ["Converting SOAP API responses to JSON for modern apps", "Migrating XML configuration files to JSON format", "Processing RSS/Atom feeds as JSON data", "Transforming XML exports from legacy systems"]
+      "useCases": [
+        "Converting SOAP API responses to JSON for modern apps",
+        "Migrating XML configuration files to JSON format",
+        "Processing RSS/Atom feeds as JSON data",
+        "Transforming XML exports from legacy systems"
+      ]
+    },
+    "css-gradient": {
+      "name": "CSS Gradient Generator",
+      "description": "Create beautiful CSS gradients with a visual editor",
+      "pageTitle": "CSS Gradient Generator",
+      "pageDescription": "Create beautiful CSS linear, radial, and conic gradients with a visual editor. Copy CSS code instantly.",
+      "seoTitle": "What is CSS Gradient Generator?",
+      "seoContent": "CSS gradients let you display smooth transitions between two or more colors. This visual generator helps you create linear-gradient, radial-gradient, and conic-gradient CSS code with an interactive editor.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Select gradient type (linear, radial, or conic)",
+        "Adjust the angle or direction",
+        "Add or modify color stops",
+        "Preview the gradient in real-time",
+        "Copy the CSS code"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Website backgrounds and hero sections",
+        "Button hover effects",
+        "Text gradient effects",
+        "Card and UI element styling"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What CSS gradient types are supported?",
+          "a": "This tool supports linear-gradient, radial-gradient, and conic-gradient."
+        },
+        {
+          "q": "Can I use the generated CSS in any browser?",
+          "a": "Yes, CSS gradients are supported in all modern browsers."
+        },
+        {
+          "q": "How many color stops can I add?",
+          "a": "You can add multiple color stops. Most designs use 2-4 colors."
+        }
+      ]
+    },
+    "box-shadow": {
+      "name": "Box Shadow Generator",
+      "description": "Design CSS box shadows visually with real-time preview",
+      "pageTitle": "CSS Box Shadow Generator",
+      "pageDescription": "Design CSS box shadows visually with controls for offset, blur, spread, color, and inset. Copy CSS code instantly.",
+      "seoTitle": "What is CSS Box Shadow Generator?",
+      "seoContent": "The CSS box-shadow property adds shadow effects around elements. This visual generator lets you adjust offset, blur, spread, color, and inset with real-time preview.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Adjust shadow offset",
+        "Set blur and spread radius",
+        "Choose shadow color",
+        "Toggle inset for inner shadows",
+        "Copy the CSS code"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Card elevation effects",
+        "Button hover states",
+        "Modal shadows",
+        "Navigation bar shadows"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What is CSS box-shadow?",
+          "a": "box-shadow adds shadow effects around an element's frame with offset, blur, spread, and color values."
+        },
+        {
+          "q": "Can I add multiple shadows?",
+          "a": "Yes, CSS supports multiple box shadows. This tool lets you add up to 4 layers."
+        },
+        {
+          "q": "What is inset shadow?",
+          "a": "An inset shadow appears inside the element, creating a pressed effect."
+        }
+      ]
+    },
+    "meta-tag-generator": {
+      "name": "Meta Tag Generator",
+      "description": "Generate HTML meta tags, Open Graph, and Twitter Card tags for SEO",
+      "pageTitle": "Meta Tag Generator",
+      "pageDescription": "Generate HTML meta tags, Open Graph tags, and Twitter Card tags for better SEO and social media sharing.",
+      "seoTitle": "What is Meta Tag Generator?",
+      "seoContent": "Meta tags help search engines understand your content and control how your page appears in search results and social media.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Enter page title and description",
+        "Fill in Open Graph fields",
+        "Configure Twitter Card",
+        "Preview appearance",
+        "Copy the HTML meta tags"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "SEO optimization",
+        "Social media sharing",
+        "Content publishing",
+        "Website launches"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What are meta tags?",
+          "a": "Meta tags are HTML elements in the <head> section that provide metadata about the page."
+        },
+        {
+          "q": "What is Open Graph?",
+          "a": "Open Graph controls how your page appears when shared on social media."
+        },
+        {
+          "q": "What is the ideal description length?",
+          "a": "Google displays 150-160 characters of a meta description."
+        }
+      ]
+    },
+    "schema-generator": {
+      "name": "Schema Markup Generator",
+      "description": "Generate JSON-LD structured data for rich snippets in search results",
+      "pageTitle": "Schema Markup Generator (JSON-LD)",
+      "pageDescription": "Generate JSON-LD structured data for Article, FAQ, HowTo, Product, and more. Boost SEO with rich snippets.",
+      "seoTitle": "What is Schema Markup?",
+      "seoContent": "Schema markup helps search engines understand your content and display rich results like FAQ dropdowns and product ratings.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Select schema type",
+        "Fill in required fields",
+        "Preview JSON-LD code",
+        "Validate the output",
+        "Copy into your HTML"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "FAQ rich snippets",
+        "Article markup",
+        "Product listings",
+        "Local business info"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What is JSON-LD?",
+          "a": "JSON-LD is Google's recommended format for encoding structured data on web pages."
+        },
+        {
+          "q": "Does schema improve SEO?",
+          "a": "Schema enables rich snippets that increase click-through rates in search results."
+        },
+        {
+          "q": "Where to place JSON-LD?",
+          "a": "Add the script tag in the <head> section or before </body>."
+        }
+      ]
+    },
+    "robots-generator": {
+      "name": "Robots.txt Generator",
+      "description": "Generate robots.txt files with crawler rules and sitemap directives",
+      "pageTitle": "Robots.txt Generator",
+      "pageDescription": "Generate robots.txt files with user-agent rules, allow/disallow paths, and sitemap directives.",
+      "seoTitle": "What is Robots.txt?",
+      "seoContent": "The robots.txt file tells search engine crawlers which pages they can or cannot access on your site.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Select user-agent",
+        "Add Allow/Disallow rules",
+        "Enter sitemap URL",
+        "Use presets for quick setup",
+        "Copy or download"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Control crawling",
+        "Block private pages",
+        "Set crawl limits",
+        "Reference sitemaps"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What is robots.txt?",
+          "a": "A text file at your website root that instructs crawlers which URLs they can access."
+        },
+        {
+          "q": "Does it block indexing?",
+          "a": "No, robots.txt controls crawling, not indexing. Use noindex for that."
+        },
+        {
+          "q": "Where to place it?",
+          "a": "At your domain root: https://example.com/robots.txt"
+        }
+      ]
+    },
+    "json-viewer": {
+      "name": "JSON Viewer / Tree",
+      "description": "View JSON data as an interactive collapsible tree",
+      "pageTitle": "JSON Viewer & Tree Visualizer",
+      "pageDescription": "View and explore JSON data as an interactive collapsible tree with search and JSONPath display.",
+      "seoTitle": "What is JSON Viewer?",
+      "seoContent": "JSON Viewer displays JSON data in a visual tree structure for easy exploration of complex nested data.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Paste JSON data",
+        "Click Parse",
+        "Expand/collapse nodes",
+        "Search keys or values",
+        "Click values to see JSONPath"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Exploring API responses",
+        "Debugging JSON",
+        "Navigating nested configs",
+        "Understanding data schemas"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What is a JSON tree viewer?",
+          "a": "It displays JSON in a hierarchical tree for easier navigation of complex data."
+        },
+        {
+          "q": "What is JSONPath?",
+          "a": "A query language for JSON using dot notation like $.users[0].name."
+        },
+        {
+          "q": "Can I view large files?",
+          "a": "Yes, the tree handles large files by only rendering expanded nodes."
+        }
+      ]
+    },
+    "favicon-generator": {
+      "name": "Favicon Generator",
+      "description": "Create favicons from text or emoji with custom colors and sizes",
+      "pageTitle": "Favicon Generator",
+      "pageDescription": "Create favicons from text or emoji with custom colors, sizes, and border radius. Download as PNG.",
+      "seoTitle": "What is Favicon Generator?",
+      "seoContent": "A favicon is the small icon in browser tabs. This tool generates favicons from text or emoji with customizable colors and sizes.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Enter text or emoji",
+        "Choose colors",
+        "Adjust size and radius",
+        "Preview in real-time",
+        "Download desired size"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Quick website favicons",
+        "Brand icons",
+        "App icons",
+        "Development placeholders"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What favicon sizes do I need?",
+          "a": "Common: 16x16 (tab), 32x32 (taskbar), 48x48 (Windows), 180x180 (Apple Touch)."
+        },
+        {
+          "q": "What format for favicons?",
+          "a": "PNG is widely supported. ICO can contain multiple sizes."
+        },
+        {
+          "q": "Can I use emoji?",
+          "a": "Yes! Modern browsers support emoji favicons with custom backgrounds."
+        }
+      ]
+    },
+    "ascii-art": {
+      "name": "ASCII Art Generator",
+      "description": "Convert text to ASCII art with multiple font styles",
+      "pageTitle": "ASCII Art Generator",
+      "pageDescription": "Convert text to ASCII art with multiple font styles for terminals, comments, and README files.",
+      "seoTitle": "What is ASCII Art?",
+      "seoContent": "ASCII art uses printable characters to create visual designs and text banners for terminals, code comments, and README headers.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Type your text",
+        "Select a font style",
+        "Preview the output",
+        "Copy to clipboard"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Terminal banners",
+        "Code comment headers",
+        "README decorations",
+        "Fun text art"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What is ASCII art?",
+          "a": "A graphic design technique using printable characters to create visual art and text banners."
+        },
+        {
+          "q": "Where to use it?",
+          "a": "Terminal banners, code comments, README files, email signatures."
+        },
+        {
+          "q": "What characters are supported?",
+          "a": "Uppercase A-Z, numbers 0-9, and space."
+        }
+      ]
+    },
+    "svg-optimizer": {
+      "name": "SVG Optimizer",
+      "description": "Optimize and minify SVG files to reduce file size",
+      "pageTitle": "SVG Optimizer & Minifier",
+      "pageDescription": "Optimize and minify SVG files online. Remove metadata, comments, and unnecessary attributes.",
+      "seoTitle": "What is SVG Optimizer?",
+      "seoContent": "SVG files often contain unnecessary metadata and attributes. This optimizer cleans SVG files, typically reducing size by 20-60%.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Paste or upload SVG",
+        "Select optimization options",
+        "Click Optimize",
+        "Compare sizes",
+        "Copy or download"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Reducing icon file sizes",
+        "Optimizing web illustrations",
+        "Cleaning design tool exports",
+        "Preparing inline SVGs"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "Is optimization safe?",
+          "a": "Yes, it only removes unnecessary metadata. Visual output stays identical."
+        },
+        {
+          "q": "How much size reduction?",
+          "a": "Typically 20-60% depending on the source."
+        },
+        {
+          "q": "Works with animated SVGs?",
+          "a": "Basic optimization works, but be cautious with animation attributes."
+        }
+      ]
+    },
+    "placeholder-image": {
+      "name": "Placeholder Image Generator",
+      "description": "Generate placeholder images with custom dimensions, colors, and text",
+      "pageTitle": "Placeholder Image Generator",
+      "pageDescription": "Generate placeholder images with custom dimensions, colors, and text. Download as PNG or Data URI.",
+      "seoTitle": "What is Placeholder Image?",
+      "seoContent": "Placeholder images are used during development to represent future content. Generate custom images with specified dimensions and colors.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Set width and height",
+        "Choose colors",
+        "Customize text",
+        "Preview the image",
+        "Download or copy Data URI"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "UI mockups",
+        "Frontend development",
+        "Design prototyping",
+        "Email templates"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What is a placeholder image?",
+          "a": "A temporary image used during development where real content will eventually appear."
+        },
+        {
+          "q": "What is a Data URI?",
+          "a": "An image embedded directly in HTML/CSS as a base64 string."
+        },
+        {
+          "q": "What sizes available?",
+          "a": "Any custom size. Presets for social media, avatar, HD, etc."
+        }
+      ]
     }
   },
   "footer": {

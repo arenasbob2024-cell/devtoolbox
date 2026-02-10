@@ -60,7 +60,8 @@
     "generator": "ジェネレーター",
     "converter": "コンバーター",
     "text": "テキストツール",
-    "web": "Webツール"
+    "web": "Webツール",
+    "css": "CSSツール"
   },
   "tools": {
     "json-formatter": {
@@ -2598,6 +2599,385 @@
         "Migrating XML configuration files to JSON format",
         "Processing RSS/Atom feeds as JSON data",
         "Transforming XML exports from legacy systems"
+      ]
+    },
+    "css-gradient": {
+      "name": "CSSグラデーション生成",
+      "description": "ビジュアルエディタでCSSグラデーションを作成",
+      "pageTitle": "CSSグラデーション生成ツール",
+      "pageDescription": "ビジュアルエディタでCSS線形・放射・円錐グラデーションを作成。",
+      "seoTitle": "What is CSS Gradient Generator?",
+      "seoContent": "CSS gradients let you display smooth transitions between two or more colors. This visual generator helps you create linear-gradient, radial-gradient, and conic-gradient CSS code with an interactive editor.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Select gradient type (linear, radial, or conic)",
+        "Adjust the angle or direction",
+        "Add or modify color stops",
+        "Preview the gradient in real-time",
+        "Copy the CSS code"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Website backgrounds and hero sections",
+        "Button hover effects",
+        "Text gradient effects",
+        "Card and UI element styling"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What CSS gradient types are supported?",
+          "a": "This tool supports linear-gradient, radial-gradient, and conic-gradient."
+        },
+        {
+          "q": "Can I use the generated CSS in any browser?",
+          "a": "Yes, CSS gradients are supported in all modern browsers."
+        },
+        {
+          "q": "How many color stops can I add?",
+          "a": "You can add multiple color stops. Most designs use 2-4 colors."
+        }
+      ]
+    },
+    "box-shadow": {
+      "name": "Box Shadow生成",
+      "description": "CSSボックスシャドウをビジュアルでデザイン",
+      "pageTitle": "CSS Box Shadow生成ツール",
+      "pageDescription": "CSSボックスシャドウをビジュアルでデザインし、コードをコピー。",
+      "seoTitle": "What is CSS Box Shadow Generator?",
+      "seoContent": "The CSS box-shadow property adds shadow effects around elements. This visual generator lets you adjust offset, blur, spread, color, and inset with real-time preview.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Adjust shadow offset",
+        "Set blur and spread radius",
+        "Choose shadow color",
+        "Toggle inset for inner shadows",
+        "Copy the CSS code"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Card elevation effects",
+        "Button hover states",
+        "Modal shadows",
+        "Navigation bar shadows"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What is CSS box-shadow?",
+          "a": "box-shadow adds shadow effects around an element's frame with offset, blur, spread, and color values."
+        },
+        {
+          "q": "Can I add multiple shadows?",
+          "a": "Yes, CSS supports multiple box shadows. This tool lets you add up to 4 layers."
+        },
+        {
+          "q": "What is inset shadow?",
+          "a": "An inset shadow appears inside the element, creating a pressed effect."
+        }
+      ]
+    },
+    "meta-tag-generator": {
+      "name": "Metaタグ生成",
+      "description": "HTMLメタタグ、OG、Twitterカードを生成",
+      "pageTitle": "Metaタグ生成ツール",
+      "pageDescription": "HTMLメタタグ、Open Graph、Twitterカードタグを生成。",
+      "seoTitle": "What is Meta Tag Generator?",
+      "seoContent": "Meta tags help search engines understand your content and control how your page appears in search results and social media.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Enter page title and description",
+        "Fill in Open Graph fields",
+        "Configure Twitter Card",
+        "Preview appearance",
+        "Copy the HTML meta tags"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "SEO optimization",
+        "Social media sharing",
+        "Content publishing",
+        "Website launches"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What are meta tags?",
+          "a": "Meta tags are HTML elements in the <head> section that provide metadata about the page."
+        },
+        {
+          "q": "What is Open Graph?",
+          "a": "Open Graph controls how your page appears when shared on social media."
+        },
+        {
+          "q": "What is the ideal description length?",
+          "a": "Google displays 150-160 characters of a meta description."
+        }
+      ]
+    },
+    "schema-generator": {
+      "name": "Schema Markup生成",
+      "description": "JSON-LD構造化データを生成",
+      "pageTitle": "Schema Markup生成ツール",
+      "pageDescription": "Article、FAQ、HowTo等のJSON-LD構造化データを生成。",
+      "seoTitle": "What is Schema Markup?",
+      "seoContent": "Schema markup helps search engines understand your content and display rich results like FAQ dropdowns and product ratings.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Select schema type",
+        "Fill in required fields",
+        "Preview JSON-LD code",
+        "Validate the output",
+        "Copy into your HTML"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "FAQ rich snippets",
+        "Article markup",
+        "Product listings",
+        "Local business info"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What is JSON-LD?",
+          "a": "JSON-LD is Google's recommended format for encoding structured data on web pages."
+        },
+        {
+          "q": "Does schema improve SEO?",
+          "a": "Schema enables rich snippets that increase click-through rates in search results."
+        },
+        {
+          "q": "Where to place JSON-LD?",
+          "a": "Add the script tag in the <head> section or before </body>."
+        }
+      ]
+    },
+    "robots-generator": {
+      "name": "Robots.txt生成",
+      "description": "robots.txtファイルを生成",
+      "pageTitle": "Robots.txt生成ツール",
+      "pageDescription": "ユーザーエージェントルールとサイトマップ指令付きrobots.txtを生成。",
+      "seoTitle": "What is Robots.txt?",
+      "seoContent": "The robots.txt file tells search engine crawlers which pages they can or cannot access on your site.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Select user-agent",
+        "Add Allow/Disallow rules",
+        "Enter sitemap URL",
+        "Use presets for quick setup",
+        "Copy or download"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Control crawling",
+        "Block private pages",
+        "Set crawl limits",
+        "Reference sitemaps"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What is robots.txt?",
+          "a": "A text file at your website root that instructs crawlers which URLs they can access."
+        },
+        {
+          "q": "Does it block indexing?",
+          "a": "No, robots.txt controls crawling, not indexing. Use noindex for that."
+        },
+        {
+          "q": "Where to place it?",
+          "a": "At your domain root: https://example.com/robots.txt"
+        }
+      ]
+    },
+    "json-viewer": {
+      "name": "JSONビューア / ツリー",
+      "description": "JSONデータをインタラクティブなツリーで表示",
+      "pageTitle": "JSONビューア＆ツリー",
+      "pageDescription": "JSONデータを折りたたみ可能なツリーで表示・検索。",
+      "seoTitle": "What is JSON Viewer?",
+      "seoContent": "JSON Viewer displays JSON data in a visual tree structure for easy exploration of complex nested data.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Paste JSON data",
+        "Click Parse",
+        "Expand/collapse nodes",
+        "Search keys or values",
+        "Click values to see JSONPath"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Exploring API responses",
+        "Debugging JSON",
+        "Navigating nested configs",
+        "Understanding data schemas"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What is a JSON tree viewer?",
+          "a": "It displays JSON in a hierarchical tree for easier navigation of complex data."
+        },
+        {
+          "q": "What is JSONPath?",
+          "a": "A query language for JSON using dot notation like $.users[0].name."
+        },
+        {
+          "q": "Can I view large files?",
+          "a": "Yes, the tree handles large files by only rendering expanded nodes."
+        }
+      ]
+    },
+    "favicon-generator": {
+      "name": "Favicon生成",
+      "description": "テキストや絵文字からFaviconを作成",
+      "pageTitle": "Favicon生成ツール",
+      "pageDescription": "テキストや絵文字からカスタムFaviconを作成。",
+      "seoTitle": "What is Favicon Generator?",
+      "seoContent": "A favicon is the small icon in browser tabs. This tool generates favicons from text or emoji with customizable colors and sizes.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Enter text or emoji",
+        "Choose colors",
+        "Adjust size and radius",
+        "Preview in real-time",
+        "Download desired size"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Quick website favicons",
+        "Brand icons",
+        "App icons",
+        "Development placeholders"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What favicon sizes do I need?",
+          "a": "Common: 16x16 (tab), 32x32 (taskbar), 48x48 (Windows), 180x180 (Apple Touch)."
+        },
+        {
+          "q": "What format for favicons?",
+          "a": "PNG is widely supported. ICO can contain multiple sizes."
+        },
+        {
+          "q": "Can I use emoji?",
+          "a": "Yes! Modern browsers support emoji favicons with custom backgrounds."
+        }
+      ]
+    },
+    "ascii-art": {
+      "name": "ASCIIアート生成",
+      "description": "テキストをASCIIアートに変換",
+      "pageTitle": "ASCIIアート生成ツール",
+      "pageDescription": "テキストを複数のフォントスタイルでASCIIアートに変換。",
+      "seoTitle": "What is ASCII Art?",
+      "seoContent": "ASCII art uses printable characters to create visual designs and text banners for terminals, code comments, and README headers.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Type your text",
+        "Select a font style",
+        "Preview the output",
+        "Copy to clipboard"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Terminal banners",
+        "Code comment headers",
+        "README decorations",
+        "Fun text art"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What is ASCII art?",
+          "a": "A graphic design technique using printable characters to create visual art and text banners."
+        },
+        {
+          "q": "Where to use it?",
+          "a": "Terminal banners, code comments, README files, email signatures."
+        },
+        {
+          "q": "What characters are supported?",
+          "a": "Uppercase A-Z, numbers 0-9, and space."
+        }
+      ]
+    },
+    "svg-optimizer": {
+      "name": "SVG最適化",
+      "description": "SVGファイルを最適化・圧縮",
+      "pageTitle": "SVG最適化＆圧縮ツール",
+      "pageDescription": "SVGファイルをオンラインで最適化・圧縮。",
+      "seoTitle": "What is SVG Optimizer?",
+      "seoContent": "SVG files often contain unnecessary metadata and attributes. This optimizer cleans SVG files, typically reducing size by 20-60%.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Paste or upload SVG",
+        "Select optimization options",
+        "Click Optimize",
+        "Compare sizes",
+        "Copy or download"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Reducing icon file sizes",
+        "Optimizing web illustrations",
+        "Cleaning design tool exports",
+        "Preparing inline SVGs"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "Is optimization safe?",
+          "a": "Yes, it only removes unnecessary metadata. Visual output stays identical."
+        },
+        {
+          "q": "How much size reduction?",
+          "a": "Typically 20-60% depending on the source."
+        },
+        {
+          "q": "Works with animated SVGs?",
+          "a": "Basic optimization works, but be cautious with animation attributes."
+        }
+      ]
+    },
+    "placeholder-image": {
+      "name": "プレースホルダー画像生成",
+      "description": "カスタムサイズのプレースホルダー画像を生成",
+      "pageTitle": "プレースホルダー画像生成ツール",
+      "pageDescription": "カスタムサイズ・色・テキストのプレースホルダー画像を生成。",
+      "seoTitle": "What is Placeholder Image?",
+      "seoContent": "Placeholder images are used during development to represent future content. Generate custom images with specified dimensions and colors.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Set width and height",
+        "Choose colors",
+        "Customize text",
+        "Preview the image",
+        "Download or copy Data URI"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "UI mockups",
+        "Frontend development",
+        "Design prototyping",
+        "Email templates"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What is a placeholder image?",
+          "a": "A temporary image used during development where real content will eventually appear."
+        },
+        {
+          "q": "What is a Data URI?",
+          "a": "An image embedded directly in HTML/CSS as a base64 string."
+        },
+        {
+          "q": "What sizes available?",
+          "a": "Any custom size. Presets for social media, avatar, HD, etc."
+        }
       ]
     }
   },

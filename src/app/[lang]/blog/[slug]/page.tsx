@@ -22,6 +22,11 @@ import SvgOptimization from '@/data/posts/svg-optimization-react';
 import JsonSchemaGuide from '@/data/posts/json-schema-validation-guide';
 import TsVsJsGuide from '@/data/posts/typescript-vs-javascript-when-to-convert';
 import GraphqlTypeGen from '@/data/posts/graphql-type-generation';
+import RegexCheatSheet from '@/data/posts/regex-cheat-sheet';
+import GitCommandsCheatSheet from '@/data/posts/git-commands-cheat-sheet';
+import HttpStatusCodesRef from '@/data/posts/http-status-codes-reference';
+import CssGradientGuide from '@/data/posts/css-gradient-guide';
+import MetaTagsGuide from '@/data/posts/meta-tags-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -37,6 +42,11 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'json-schema-validation-guide': JsonSchemaGuide,
   'typescript-vs-javascript-when-to-convert': TsVsJsGuide,
   'graphql-type-generation': GraphqlTypeGen,
+  'regex-cheat-sheet': RegexCheatSheet,
+  'git-commands-cheat-sheet': GitCommandsCheatSheet,
+  'http-status-codes-reference': HttpStatusCodesRef,
+  'css-gradient-guide': CssGradientGuide,
+  'meta-tags-guide': MetaTagsGuide,
 };
 
 /* i18n for UI strings on this page */
