@@ -5,6 +5,7 @@ import Link from 'next/link';
 import AdSlot from './AdSlot';
 import { tools } from '@/lib/tools';
 import { useLang } from '@/i18n/LangContext';
+import NewsletterSignup from './NewsletterSignup';
 
 interface ToolLayoutProps {
   title: string;
@@ -114,6 +115,8 @@ export default function ToolLayout({ title, description, children, toolId }: Too
               );
             })}
           </div>
+
+          <NewsletterSignup variant="compact" />
         </div>
       </div>
 

@@ -2979,6 +2979,241 @@
           "a": "Any custom size. Presets for social media, avatar, HD, etc."
         }
       ]
+    },
+    "color-palette": {
+      "name": "调色板生成器",
+      "description": "从任意基础色生成和谐配色方案",
+      "pageTitle": "调色板生成器 — 互补、类似、三色配色",
+      "pageDescription": "生成互补、类似、三色、四色等和谐配色方案，支持导出 HEX、RGB、HSL 格式。",
+      "seoTitle": "What is a Color Palette Generator?",
+      "seoContent": "A color palette generator creates harmonious color schemes based on color theory. Input a base color and get complementary, analogous, triadic, and tetradic palettes instantly.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Enter or pick a base color",
+        "Choose a harmony type (complementary, analogous, etc.)",
+        "Preview generated palettes",
+        "Click any color to copy its value",
+        "Export all colors as JSON or CSS variables"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Web and app UI design",
+        "Brand color selection",
+        "Data visualization coloring",
+        "CSS theme creation"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What color harmonies are available?",
+          "a": "Complementary, analogous, triadic, tetradic, and split-complementary schemes."
+        },
+        {
+          "q": "What formats can I export?",
+          "a": "HEX, RGB, and HSL values. You can also export as JSON or CSS custom properties."
+        }
+      ]
+    },
+    "flexbox-generator": {
+      "name": "Flexbox 生成器",
+      "description": "可视化 Flexbox 布局构建器",
+      "pageTitle": "CSS Flexbox 生成器 — 可视化布局构建",
+      "pageDescription": "可视化构建 CSS Flexbox 布局，配置方向、对齐、换行和间距，实时预览并复制代码。",
+      "seoTitle": "What is a Flexbox Generator?",
+      "seoContent": "A Flexbox generator lets you visually configure CSS Flexbox container properties like direction, justify-content, align-items, and gap. See the layout update in real-time and copy the CSS code.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Set flex-direction (row or column)",
+        "Choose justify-content and align-items",
+        "Adjust wrap and gap settings",
+        "See the live preview update",
+        "Copy the generated CSS code"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Learning CSS Flexbox",
+        "Rapid layout prototyping",
+        "Generating boilerplate CSS",
+        "Teaching web development"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "Does this support all Flexbox properties?",
+          "a": "Yes — direction, justify-content, align-items, flex-wrap, and gap are all configurable."
+        },
+        {
+          "q": "Can I add or remove flex items?",
+          "a": "Yes, you can add 3 to 12 items and see how the layout responds."
+        }
+      ]
+    },
+    "emoji-picker": {
+      "name": "Emoji 选择器",
+      "description": "浏览搜索表情符号，复制 Unicode 和 HTML 实体",
+      "pageTitle": "Emoji 选择器 — 复制 Unicode、HTML 实体、CSS",
+      "pageDescription": "按分类浏览表情符号，按名称搜索，一键复制 Unicode 码点、HTML 实体和 CSS 转义。",
+      "seoTitle": "What is an Emoji Picker?",
+      "seoContent": "An emoji picker lets you browse and search emojis by category or keyword. Click any emoji to see its Unicode code point, HTML entity, and CSS escape, then copy with one click.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Browse categories or search by keyword",
+        "Click an emoji to select it",
+        "View Unicode, HTML entity, and CSS values",
+        "Click copy to copy any format"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Finding the right emoji for social media",
+        "Getting HTML entities for web pages",
+        "Unicode code points for programming",
+        "CSS content property values"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "How many emojis are included?",
+          "a": "Over 100 commonly used emojis across 9 categories."
+        },
+        {
+          "q": "Can I copy different formats?",
+          "a": "Yes — Unicode character, code point, HTML entity, and CSS escape."
+        }
+      ]
+    },
+    "border-radius": {
+      "name": "圆角生成器",
+      "description": "独立控制四角的 CSS 圆角设计器",
+      "pageTitle": "CSS 圆角生成器 — 可视化圆角编辑",
+      "pageDescription": "独立控制每个角的 CSS border-radius，实时预览、预设形状和即时代码输出。",
+      "seoTitle": "What is a Border Radius Generator?",
+      "seoContent": "A CSS border-radius generator lets you visually design rounded corners for HTML elements. Control each corner independently and copy the CSS code.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Adjust sliders for each corner",
+        "Toggle link mode to sync all corners",
+        "Choose your preferred unit (px, %, em)",
+        "Preview the shape in real-time",
+        "Copy the CSS code"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Rounding card corners",
+        "Creating pill-shaped buttons",
+        "Making circular avatars",
+        "Designing organic blob shapes"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "Can I control each corner independently?",
+          "a": "Yes, each corner has its own slider. You can also link them to move together."
+        },
+        {
+          "q": "What presets are available?",
+          "a": "Circle, rounded, pill, and blob shapes are included as presets."
+        }
+      ]
+    },
+    "css-unit-converter": {
+      "name": "CSS 单位转换器",
+      "description": "px、rem、em、vw、vh、pt、% 互转",
+      "pageTitle": "CSS 单位转换器 — px/rem/em/vw/vh/pt/%",
+      "pageDescription": "在 px、rem、em、vw、vh、pt 和百分比之间转换 CSS 单位，支持自定义根字体大小。",
+      "seoTitle": "What is a CSS Unit Converter?",
+      "seoContent": "A CSS unit converter helps you translate between different CSS length units like px, rem, em, vw, vh, pt, and %. Configure base font-size and viewport for accurate results.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Enter a value and select the source unit",
+        "Set root font-size (default 16px)",
+        "Set viewport dimensions if using vw/vh",
+        "See all conversions instantly",
+        "Copy any converted value"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Converting px designs to rem",
+        "Responsive design calculations",
+        "Understanding relative units",
+        "Design system unit standardization"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "Why does root font-size matter for rem?",
+          "a": "1rem equals the root font-size (usually 16px). Changing it affects all rem conversions."
+        },
+        {
+          "q": "What viewport size is used for vw/vh?",
+          "a": "Default is 1920x1080. You can change it to match your target viewport."
+        }
+      ]
+    },
+    "og-image-preview": {
+      "name": "OG 图片预览",
+      "description": "预览页面在社交媒体上的分享效果",
+      "pageTitle": "Open Graph 图片预览 — 社交分享卡片测试",
+      "pageDescription": "预览页面在 Facebook、Twitter/X、LinkedIn 和 Discord 上的分享效果，生成 og 标签。",
+      "seoTitle": "What is Open Graph Preview?",
+      "seoContent": "Open Graph tags control how your page appears when shared on social media. This tool previews your share cards on Facebook, Twitter, LinkedIn, and Discord.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Enter your page title, description, and image URL",
+        "Set your site name and page URL",
+        "Preview cards for each platform",
+        "Copy the generated meta tags"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Testing social share appearance",
+        "Optimizing click-through rates",
+        "Generating Open Graph meta tags",
+        "Previewing Discord embeds"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What platforms are previewed?",
+          "a": "Facebook, Twitter/X, LinkedIn, and Discord card previews."
+        },
+        {
+          "q": "What is the recommended og:image size?",
+          "a": "1200x630 pixels for optimal display across all platforms."
+        }
+      ]
+    },
+    "tailwind-colors": {
+      "name": "Tailwind 颜色选择器",
+      "description": "浏览完整的 Tailwind CSS 调色板",
+      "pageTitle": "Tailwind CSS 颜色选择器 — 完整色板浏览",
+      "pageDescription": "浏览所有 Tailwind CSS v3 颜色，按名称或色值搜索，一键复制类名和颜色值。",
+      "seoTitle": "What is the Tailwind CSS Color Picker?",
+      "seoContent": "Browse the complete Tailwind CSS color palette with all 22 color groups and shades from 50 to 950. Search, preview, and copy color values in any format.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Browse colors by group or search",
+        "Click a swatch to view details",
+        "Copy the Tailwind class name",
+        "Copy HEX, RGB, or HSL values"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Finding Tailwind color classes",
+        "Getting hex values for Tailwind colors",
+        "Comparing color shades",
+        "Designing Tailwind CSS themes"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "Is this the official Tailwind palette?",
+          "a": "Yes, all colors match the Tailwind CSS v3 default color palette."
+        },
+        {
+          "q": "What formats can I copy?",
+          "a": "Tailwind class name, HEX, RGB, and HSL values."
+        }
+      ]
     }
   },
   "footer": {
@@ -3026,5 +3261,13 @@
     "title": "DevToolBox 博客",
     "description": "开发者指南、教程及在线工具最佳实践",
     "readMore": "阅读更多"
+  },
+  "newsletter": {
+    "title": "保持更新",
+    "subtitle": "获取每周开发技巧和新工具通知。",
+    "placeholder": "your@email.com",
+    "subscribe": "订阅",
+    "success": "感谢！请查收邮箱确认。",
+    "privacy": "无垃圾邮件，随时退订。"
   }
 }

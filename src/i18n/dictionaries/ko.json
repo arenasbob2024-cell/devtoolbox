@@ -2979,6 +2979,241 @@
           "a": "Any custom size. Presets for social media, avatar, HD, etc."
         }
       ]
+    },
+    "color-palette": {
+      "name": "색상 팔레트 생성기",
+      "description": "조화로운 색상 팔레트 생성",
+      "pageTitle": "색상 팔레트 생성기 — 보색, 유사색, 삼색 배색",
+      "pageDescription": "보색, 유사색, 삼색 배색 등 조화로운 팔레트를 생성합니다. HEX, RGB, HSL로 내보내기.",
+      "seoTitle": "What is a Color Palette Generator?",
+      "seoContent": "A color palette generator creates harmonious color schemes based on color theory. Input a base color and get complementary, analogous, triadic, and tetradic palettes instantly.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Enter or pick a base color",
+        "Choose a harmony type (complementary, analogous, etc.)",
+        "Preview generated palettes",
+        "Click any color to copy its value",
+        "Export all colors as JSON or CSS variables"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Web and app UI design",
+        "Brand color selection",
+        "Data visualization coloring",
+        "CSS theme creation"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What color harmonies are available?",
+          "a": "Complementary, analogous, triadic, tetradic, and split-complementary schemes."
+        },
+        {
+          "q": "What formats can I export?",
+          "a": "HEX, RGB, and HSL values. You can also export as JSON or CSS custom properties."
+        }
+      ]
+    },
+    "flexbox-generator": {
+      "name": "Flexbox 생성기",
+      "description": "시각적 Flexbox 레이아웃 빌더",
+      "pageTitle": "CSS Flexbox 생성기 — 시각적 레이아웃",
+      "pageDescription": "CSS Flexbox 레이아웃을 시각적으로 구축. 실시간 미리보기 및 코드 출력.",
+      "seoTitle": "What is a Flexbox Generator?",
+      "seoContent": "A Flexbox generator lets you visually configure CSS Flexbox container properties like direction, justify-content, align-items, and gap. See the layout update in real-time and copy the CSS code.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Set flex-direction (row or column)",
+        "Choose justify-content and align-items",
+        "Adjust wrap and gap settings",
+        "See the live preview update",
+        "Copy the generated CSS code"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Learning CSS Flexbox",
+        "Rapid layout prototyping",
+        "Generating boilerplate CSS",
+        "Teaching web development"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "Does this support all Flexbox properties?",
+          "a": "Yes — direction, justify-content, align-items, flex-wrap, and gap are all configurable."
+        },
+        {
+          "q": "Can I add or remove flex items?",
+          "a": "Yes, you can add 3 to 12 items and see how the layout responds."
+        }
+      ]
+    },
+    "emoji-picker": {
+      "name": "이모지 선택기",
+      "description": "이모지 검색 및 유니코드 복사",
+      "pageTitle": "이모지 선택기 — 유니코드, HTML 엔티티 복사",
+      "pageDescription": "카테고리별 이모지 탐색, 이름 검색, 유니코드 코드포인트 원클릭 복사.",
+      "seoTitle": "What is an Emoji Picker?",
+      "seoContent": "An emoji picker lets you browse and search emojis by category or keyword. Click any emoji to see its Unicode code point, HTML entity, and CSS escape, then copy with one click.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Browse categories or search by keyword",
+        "Click an emoji to select it",
+        "View Unicode, HTML entity, and CSS values",
+        "Click copy to copy any format"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Finding the right emoji for social media",
+        "Getting HTML entities for web pages",
+        "Unicode code points for programming",
+        "CSS content property values"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "How many emojis are included?",
+          "a": "Over 100 commonly used emojis across 9 categories."
+        },
+        {
+          "q": "Can I copy different formats?",
+          "a": "Yes — Unicode character, code point, HTML entity, and CSS escape."
+        }
+      ]
+    },
+    "border-radius": {
+      "name": "테두리 둥글기 생성기",
+      "description": "CSS 모서리 둥글기를 개별 제어",
+      "pageTitle": "CSS 테두리 둥글기 생성기",
+      "pageDescription": "각 모서리를 독립적으로 제어하는 CSS border-radius 생성기.",
+      "seoTitle": "What is a Border Radius Generator?",
+      "seoContent": "A CSS border-radius generator lets you visually design rounded corners for HTML elements. Control each corner independently and copy the CSS code.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Adjust sliders for each corner",
+        "Toggle link mode to sync all corners",
+        "Choose your preferred unit (px, %, em)",
+        "Preview the shape in real-time",
+        "Copy the CSS code"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Rounding card corners",
+        "Creating pill-shaped buttons",
+        "Making circular avatars",
+        "Designing organic blob shapes"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "Can I control each corner independently?",
+          "a": "Yes, each corner has its own slider. You can also link them to move together."
+        },
+        {
+          "q": "What presets are available?",
+          "a": "Circle, rounded, pill, and blob shapes are included as presets."
+        }
+      ]
+    },
+    "css-unit-converter": {
+      "name": "CSS 단위 변환기",
+      "description": "px, rem, em, vw, vh, pt, % 변환",
+      "pageTitle": "CSS 단위 변환기 — px/rem/em/vw/vh/pt/%",
+      "pageDescription": "CSS 단위를 px, rem, em, vw, vh, pt, % 간에 변환합니다.",
+      "seoTitle": "What is a CSS Unit Converter?",
+      "seoContent": "A CSS unit converter helps you translate between different CSS length units like px, rem, em, vw, vh, pt, and %. Configure base font-size and viewport for accurate results.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Enter a value and select the source unit",
+        "Set root font-size (default 16px)",
+        "Set viewport dimensions if using vw/vh",
+        "See all conversions instantly",
+        "Copy any converted value"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Converting px designs to rem",
+        "Responsive design calculations",
+        "Understanding relative units",
+        "Design system unit standardization"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "Why does root font-size matter for rem?",
+          "a": "1rem equals the root font-size (usually 16px). Changing it affects all rem conversions."
+        },
+        {
+          "q": "What viewport size is used for vw/vh?",
+          "a": "Default is 1920x1080. You can change it to match your target viewport."
+        }
+      ]
+    },
+    "og-image-preview": {
+      "name": "OG 이미지 미리보기",
+      "description": "SNS 공유 시 페이지 모습 미리보기",
+      "pageTitle": "Open Graph 미리보기 — 소셜 공유 카드 테스트",
+      "pageDescription": "Facebook, Twitter/X, LinkedIn, Discord에서 페이지 표시를 미리봅니다.",
+      "seoTitle": "What is Open Graph Preview?",
+      "seoContent": "Open Graph tags control how your page appears when shared on social media. This tool previews your share cards on Facebook, Twitter, LinkedIn, and Discord.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Enter your page title, description, and image URL",
+        "Set your site name and page URL",
+        "Preview cards for each platform",
+        "Copy the generated meta tags"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Testing social share appearance",
+        "Optimizing click-through rates",
+        "Generating Open Graph meta tags",
+        "Previewing Discord embeds"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What platforms are previewed?",
+          "a": "Facebook, Twitter/X, LinkedIn, and Discord card previews."
+        },
+        {
+          "q": "What is the recommended og:image size?",
+          "a": "1200x630 pixels for optimal display across all platforms."
+        }
+      ]
+    },
+    "tailwind-colors": {
+      "name": "Tailwind CSS 색상",
+      "description": "Tailwind CSS 전체 색상 팔레트",
+      "pageTitle": "Tailwind CSS 색상 선택기 — 전체 팔레트",
+      "pageDescription": "Tailwind CSS v3 전체 색상을 탐색, 검색, 복사합니다.",
+      "seoTitle": "What is the Tailwind CSS Color Picker?",
+      "seoContent": "Browse the complete Tailwind CSS color palette with all 22 color groups and shades from 50 to 950. Search, preview, and copy color values in any format.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Browse colors by group or search",
+        "Click a swatch to view details",
+        "Copy the Tailwind class name",
+        "Copy HEX, RGB, or HSL values"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Finding Tailwind color classes",
+        "Getting hex values for Tailwind colors",
+        "Comparing color shades",
+        "Designing Tailwind CSS themes"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "Is this the official Tailwind palette?",
+          "a": "Yes, all colors match the Tailwind CSS v3 default color palette."
+        },
+        {
+          "q": "What formats can I copy?",
+          "a": "Tailwind class name, HEX, RGB, and HSL values."
+        }
+      ]
     }
   },
   "footer": {
@@ -3026,5 +3261,13 @@
     "title": "DevToolBox 블로그",
     "description": "온라인 도구 개발자 가이드, 튜토리얼 및 모범 사례",
     "readMore": "더 읽기"
+  },
+  "newsletter": {
+    "title": "최신 소식 받기",
+    "subtitle": "주간 개발 팁과 새 도구 알림을 받으세요.",
+    "placeholder": "your@email.com",
+    "subscribe": "구독",
+    "success": "감사합니다! 받은편지함을 확인하세요.",
+    "privacy": "스팸 없음. 언제든 구독 해지 가능."
   }
 }

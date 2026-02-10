@@ -2979,6 +2979,241 @@
           "a": "Any custom size. Presets for social media, avatar, HD, etc."
         }
       ]
+    },
+    "color-palette": {
+      "name": "カラーパレットジェネレーター",
+      "description": "調和のとれたカラーパレットを生成",
+      "pageTitle": "カラーパレットジェネレーター — 補色・類似色・三色配色",
+      "pageDescription": "補色、類似色、三色、四色の調和パレットを生成。HEX、RGB、HSL形式でエクスポート。",
+      "seoTitle": "What is a Color Palette Generator?",
+      "seoContent": "A color palette generator creates harmonious color schemes based on color theory. Input a base color and get complementary, analogous, triadic, and tetradic palettes instantly.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Enter or pick a base color",
+        "Choose a harmony type (complementary, analogous, etc.)",
+        "Preview generated palettes",
+        "Click any color to copy its value",
+        "Export all colors as JSON or CSS variables"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Web and app UI design",
+        "Brand color selection",
+        "Data visualization coloring",
+        "CSS theme creation"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What color harmonies are available?",
+          "a": "Complementary, analogous, triadic, tetradic, and split-complementary schemes."
+        },
+        {
+          "q": "What formats can I export?",
+          "a": "HEX, RGB, and HSL values. You can also export as JSON or CSS custom properties."
+        }
+      ]
+    },
+    "flexbox-generator": {
+      "name": "Flexboxジェネレーター",
+      "description": "ビジュアルFlexboxレイアウトビルダー",
+      "pageTitle": "CSS Flexboxジェネレーター — ビジュアルレイアウト",
+      "pageDescription": "CSS Flexboxレイアウトをビジュアルに構築。リアルタイムプレビューとコード出力。",
+      "seoTitle": "What is a Flexbox Generator?",
+      "seoContent": "A Flexbox generator lets you visually configure CSS Flexbox container properties like direction, justify-content, align-items, and gap. See the layout update in real-time and copy the CSS code.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Set flex-direction (row or column)",
+        "Choose justify-content and align-items",
+        "Adjust wrap and gap settings",
+        "See the live preview update",
+        "Copy the generated CSS code"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Learning CSS Flexbox",
+        "Rapid layout prototyping",
+        "Generating boilerplate CSS",
+        "Teaching web development"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "Does this support all Flexbox properties?",
+          "a": "Yes — direction, justify-content, align-items, flex-wrap, and gap are all configurable."
+        },
+        {
+          "q": "Can I add or remove flex items?",
+          "a": "Yes, you can add 3 to 12 items and see how the layout responds."
+        }
+      ]
+    },
+    "emoji-picker": {
+      "name": "絵文字ピッカー",
+      "description": "絵文字を検索してUnicodeをコピー",
+      "pageTitle": "絵文字ピッカー — Unicode・HTMLエンティティをコピー",
+      "pageDescription": "カテゴリ別に絵文字を閲覧、名前で検索、Unicodeコードポイントをワンクリックコピー。",
+      "seoTitle": "What is an Emoji Picker?",
+      "seoContent": "An emoji picker lets you browse and search emojis by category or keyword. Click any emoji to see its Unicode code point, HTML entity, and CSS escape, then copy with one click.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Browse categories or search by keyword",
+        "Click an emoji to select it",
+        "View Unicode, HTML entity, and CSS values",
+        "Click copy to copy any format"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Finding the right emoji for social media",
+        "Getting HTML entities for web pages",
+        "Unicode code points for programming",
+        "CSS content property values"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "How many emojis are included?",
+          "a": "Over 100 commonly used emojis across 9 categories."
+        },
+        {
+          "q": "Can I copy different formats?",
+          "a": "Yes — Unicode character, code point, HTML entity, and CSS escape."
+        }
+      ]
+    },
+    "border-radius": {
+      "name": "ボーダー角丸ジェネレーター",
+      "description": "CSS角丸を個別に制御",
+      "pageTitle": "CSS角丸ジェネレーター — ビジュアルエディター",
+      "pageDescription": "各コーナーを独立制御するCSS border-radius。リアルタイムプレビュー付き。",
+      "seoTitle": "What is a Border Radius Generator?",
+      "seoContent": "A CSS border-radius generator lets you visually design rounded corners for HTML elements. Control each corner independently and copy the CSS code.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Adjust sliders for each corner",
+        "Toggle link mode to sync all corners",
+        "Choose your preferred unit (px, %, em)",
+        "Preview the shape in real-time",
+        "Copy the CSS code"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Rounding card corners",
+        "Creating pill-shaped buttons",
+        "Making circular avatars",
+        "Designing organic blob shapes"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "Can I control each corner independently?",
+          "a": "Yes, each corner has its own slider. You can also link them to move together."
+        },
+        {
+          "q": "What presets are available?",
+          "a": "Circle, rounded, pill, and blob shapes are included as presets."
+        }
+      ]
+    },
+    "css-unit-converter": {
+      "name": "CSS単位変換",
+      "description": "px・rem・em・vw・vh・ptを変換",
+      "pageTitle": "CSS単位変換ツール — px/rem/em/vw/vh/pt/%",
+      "pageDescription": "CSS単位をpx、rem、em、vw、vh、pt、%間で変換。ルートフォントサイズ設定対応。",
+      "seoTitle": "What is a CSS Unit Converter?",
+      "seoContent": "A CSS unit converter helps you translate between different CSS length units like px, rem, em, vw, vh, pt, and %. Configure base font-size and viewport for accurate results.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Enter a value and select the source unit",
+        "Set root font-size (default 16px)",
+        "Set viewport dimensions if using vw/vh",
+        "See all conversions instantly",
+        "Copy any converted value"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Converting px designs to rem",
+        "Responsive design calculations",
+        "Understanding relative units",
+        "Design system unit standardization"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "Why does root font-size matter for rem?",
+          "a": "1rem equals the root font-size (usually 16px). Changing it affects all rem conversions."
+        },
+        {
+          "q": "What viewport size is used for vw/vh?",
+          "a": "Default is 1920x1080. You can change it to match your target viewport."
+        }
+      ]
+    },
+    "og-image-preview": {
+      "name": "OG画像プレビュー",
+      "description": "SNSでの共有表示をプレビュー",
+      "pageTitle": "Open Graphプレビュー — SNS共有カードテスト",
+      "pageDescription": "Facebook、Twitter/X、LinkedIn、Discordでのページ表示をプレビュー。",
+      "seoTitle": "What is Open Graph Preview?",
+      "seoContent": "Open Graph tags control how your page appears when shared on social media. This tool previews your share cards on Facebook, Twitter, LinkedIn, and Discord.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Enter your page title, description, and image URL",
+        "Set your site name and page URL",
+        "Preview cards for each platform",
+        "Copy the generated meta tags"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Testing social share appearance",
+        "Optimizing click-through rates",
+        "Generating Open Graph meta tags",
+        "Previewing Discord embeds"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What platforms are previewed?",
+          "a": "Facebook, Twitter/X, LinkedIn, and Discord card previews."
+        },
+        {
+          "q": "What is the recommended og:image size?",
+          "a": "1200x630 pixels for optimal display across all platforms."
+        }
+      ]
+    },
+    "tailwind-colors": {
+      "name": "Tailwind CSSカラー",
+      "description": "Tailwind CSS全カラーパレット",
+      "pageTitle": "Tailwind CSSカラーピッカー — 全色一覧",
+      "pageDescription": "Tailwind CSS v3の全カラーを閲覧、検索、コピー。",
+      "seoTitle": "What is the Tailwind CSS Color Picker?",
+      "seoContent": "Browse the complete Tailwind CSS color palette with all 22 color groups and shades from 50 to 950. Search, preview, and copy color values in any format.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Browse colors by group or search",
+        "Click a swatch to view details",
+        "Copy the Tailwind class name",
+        "Copy HEX, RGB, or HSL values"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Finding Tailwind color classes",
+        "Getting hex values for Tailwind colors",
+        "Comparing color shades",
+        "Designing Tailwind CSS themes"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "Is this the official Tailwind palette?",
+          "a": "Yes, all colors match the Tailwind CSS v3 default color palette."
+        },
+        {
+          "q": "What formats can I copy?",
+          "a": "Tailwind class name, HEX, RGB, and HSL values."
+        }
+      ]
     }
   },
   "footer": {
@@ -3026,5 +3261,13 @@
     "title": "DevToolBoxブログ",
     "description": "オンラインツールの開発者ガイド、チュートリアル、ベストプラクティス",
     "readMore": "続きを読む"
+  },
+  "newsletter": {
+    "title": "最新情報を受け取る",
+    "subtitle": "毎週の開発ヒントと新ツール情報。",
+    "placeholder": "your@email.com",
+    "subscribe": "購読",
+    "success": "ありがとうございます！受信箱を確認してください。",
+    "privacy": "スパムなし。いつでも解除可能。"
   }
 }

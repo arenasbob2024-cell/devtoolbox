@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { categories, tools } from '@/lib/tools';
 import { useLang } from '@/i18n/LangContext';
+import NewsletterSignup from './NewsletterSignup';
 
 export default function Footer() {
   const { lang, dict } = useLang();
@@ -34,6 +35,9 @@ export default function Footer() {
             <p style={{ fontSize: 13, color: 'var(--text-secondary)', lineHeight: 1.6 }}>
               {dict.footer.tagline}
             </p>
+            <div style={{ marginTop: 16 }}>
+              <NewsletterSignup variant="compact" />
+            </div>
           </div>
 
           {/* Tool Categories */}

@@ -7,6 +7,7 @@ import { getLocalizedPost, blogPosts } from '@/data/blog-posts';
 import { tools } from '@/lib/tools';
 import { i18n, type Locale } from '@/i18n/config';
 import AdSlot from '@/components/AdSlot';
+import NewsletterSignup from '@/components/NewsletterSignup';
 
 /* ---------- lazy-load article bodies ---------- */
 import UuidComparison from '@/data/posts/uuid-v4-vs-v7-vs-ulid';
@@ -27,6 +28,11 @@ import GitCommandsCheatSheet from '@/data/posts/git-commands-cheat-sheet';
 import HttpStatusCodesRef from '@/data/posts/http-status-codes-reference';
 import CssGradientGuide from '@/data/posts/css-gradient-guide';
 import MetaTagsGuide from '@/data/posts/meta-tags-guide';
+import ChmodPermissions from '@/data/posts/chmod-permissions-explained';
+import CronExpressionExamples from '@/data/posts/cron-expression-examples';
+import JsonVsYamlVsToml from '@/data/posts/json-vs-yaml-vs-toml';
+import JwtTokenExplained from '@/data/posts/jwt-token-explained';
+import CssFlexboxCheatSheet from '@/data/posts/css-flexbox-cheat-sheet';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -47,6 +53,11 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'http-status-codes-reference': HttpStatusCodesRef,
   'css-gradient-guide': CssGradientGuide,
   'meta-tags-guide': MetaTagsGuide,
+  'chmod-permissions-explained': ChmodPermissions,
+  'cron-expression-examples': CronExpressionExamples,
+  'json-vs-yaml-vs-toml': JsonVsYamlVsToml,
+  'jwt-token-explained': JwtTokenExplained,
+  'css-flexbox-cheat-sheet': CssFlexboxCheatSheet,
 };
 
 /* i18n for UI strings on this page */
@@ -149,6 +160,9 @@ export default function BlogPostPage() {
       <article className="blog-article" style={{ marginTop: 24 }}>
         {PostContent ? <PostContent lang={lang} /> : <p>Content not available.</p>}
       </article>
+
+      {/* Newsletter */}
+      <NewsletterSignup variant="wide" />
 
       {/* Related Tools CTA */}
       {relatedToolsList.length > 0 && (
