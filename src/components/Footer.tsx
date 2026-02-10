@@ -37,13 +37,13 @@ export default function Footer() {
           </div>
 
           {/* Tool Categories */}
-          {categories.slice(0, 3).map(cat => (
+          {categories.map(cat => (
             <div key={cat.id}>
               <h4 style={{ fontSize: 13, fontWeight: 700, color: 'var(--text-primary)', marginBottom: 10, textTransform: 'uppercase', letterSpacing: 1 }}>
                 {cat.icon} {c[cat.id as keyof typeof c] || cat.name}
               </h4>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                {tools.filter(tool => tool.category === cat.id).map(tool => {
+                {tools.filter(tool => tool.category === cat.id).slice(0, 5).map(tool => {
                   const toolDict = t[tool.id as keyof typeof t];
                   return (
                     <li key={tool.id} style={{ marginBottom: 6 }}>

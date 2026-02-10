@@ -22,7 +22,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     twitter: { card: 'summary_large_image', title: `${t.pageTitle} | DevToolBox`, description: t.pageDescription, images: ['https://viadreams.cc/og-image.png'] },
     alternates: {
       canonical: url,
-      languages: Object.fromEntries(i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/git-command-generator`])),
+      languages: {
+        ...Object.fromEntries(
+          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/git-command-generator`])
+        ),
+        'x-default': `https://viadreams.cc/en/tools/git-command-generator`,
+      },
     },
   };
 }

@@ -13,7 +13,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description: t.pageDescription,
     openGraph: { title: `${t.pageTitle} | DevToolBox`, description: t.pageDescription, url, type: 'website', siteName: 'DevToolBox', images: [{ url: 'https://viadreams.cc/og-image.png', width: 1200, height: 630 }] },
     twitter: { card: 'summary_large_image', title: `${t.pageTitle} | DevToolBox`, description: t.pageDescription, images: ['https://viadreams.cc/og-image.png'] },
-    alternates: { canonical: url, languages: Object.fromEntries(i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/ip-calculator`])) },
+    alternates: { canonical: url, languages: {
+        ...Object.fromEntries(
+          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/ip-calculator`])
+        ),
+        'x-default': `https://viadreams.cc/en/tools/ip-calculator`,
+      } },
   };
 }
 

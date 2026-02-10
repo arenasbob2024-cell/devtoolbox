@@ -27,9 +27,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     },
     alternates: {
       canonical: url,
-      languages: Object.fromEntries(
-        i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/cron-parser`])
-      ),
+      languages: {
+        ...Object.fromEntries(
+          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/cron-parser`])
+        ),
+        'x-default': `https://viadreams.cc/en/tools/cron-parser`,
+      },
     },
   };
 }

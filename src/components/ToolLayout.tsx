@@ -41,6 +41,7 @@ export default function ToolLayout({ title, description, children, toolId }: Too
     operatingSystem: 'Any',
     browserRequirements: 'Requires JavaScript',
     softwareVersion: '1.0',
+    inLanguage: lang,
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
     creator: { '@type': 'Organization', name: 'DevToolBox', url: 'https://viadreams.cc' },
     keywords: currentTool?.keywords.join(', ') || '',

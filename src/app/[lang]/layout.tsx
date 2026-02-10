@@ -1,13 +1,32 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
+import { Inter, JetBrains_Mono } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { LangProvider } from '@/i18n/LangContext';
 import { getDictionary } from '@/i18n/getDictionary';
 import { i18n, type Locale } from '@/i18n/config';
 
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-jetbrains',
+  display: 'swap',
+});
+
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#0a0a0f',
+};
 
 export async function generateMetadata({
   params,
@@ -47,9 +66,12 @@ export async function generateMetadata({
     },
     alternates: {
       canonical: `https://viadreams.cc/${lang}`,
-      languages: Object.fromEntries(
-        i18n.locales.map((l) => [l, `https://viadreams.cc/${l}`])
-      ),
+      languages: {
+        ...Object.fromEntries(
+          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}`])
+        ),
+        'x-default': `https://viadreams.cc/en`,
+      },
     },
   };
 }
@@ -66,15 +88,22 @@ export default async function LangLayout({
   const dict = await getDictionary(lang);
 
   return (
-    <html lang={lang}>
+    <html lang={lang} className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4725521983849501" crossOrigin="anonymous"></script>
         {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-85N12XK3TY"></script>
         <script dangerouslySetInnerHTML={{ __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-85N12XK3TY');` }} />
+        {/* Organization Schema */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Organization',
+          name: 'DevToolBox',
+          url: 'https://viadreams.cc',
+          logo: 'https://viadreams.cc/og-image.png',
+          description: 'Free online developer tools for encoding, formatting, generating, and converting data.',
+          sameAs: [],
+        }) }} />
       </head>
       <body style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         <LangProvider lang={lang} dict={dict}>

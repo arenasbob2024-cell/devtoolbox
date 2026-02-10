@@ -27,9 +27,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     },
     alternates: {
       canonical: url,
-      languages: Object.fromEntries(
-        i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/sql-formatter`])
-      ),
+      languages: {
+        ...Object.fromEntries(
+          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/sql-formatter`])
+        ),
+        'x-default': `https://viadreams.cc/en/tools/sql-formatter`,
+      },
     },
   };
 }

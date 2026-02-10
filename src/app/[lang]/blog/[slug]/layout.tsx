@@ -47,9 +47,12 @@ export async function generateMetadata({
     },
     alternates: {
       canonical: url,
-      languages: Object.fromEntries(
-        i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/blog/${slug}`])
-      ),
+      languages: {
+        ...Object.fromEntries(
+          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/blog/${slug}`])
+        ),
+        'x-default': `https://viadreams.cc/en/blog/${slug}`,
+      },
     },
   };
 }

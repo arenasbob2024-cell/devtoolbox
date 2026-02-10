@@ -27,9 +27,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     },
     alternates: {
       canonical: url,
-      languages: Object.fromEntries(
-        i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/string-case`])
-      ),
+      languages: {
+        ...Object.fromEntries(
+          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/string-case`])
+        ),
+        'x-default': `https://viadreams.cc/en/tools/string-case`,
+      },
     },
   };
 }
