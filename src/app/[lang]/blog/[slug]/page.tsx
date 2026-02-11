@@ -38,6 +38,11 @@ import YamlSyntaxValidationGuide from '@/data/posts/yaml-syntax-validation-guide
 import NginxConfigExamples from '@/data/posts/nginx-config-examples';
 import DockerComposeCheatSheet from '@/data/posts/docker-compose-cheat-sheet';
 import CspHeaderGuide from '@/data/posts/csp-header-guide';
+import SqlJoinsVisualGuide from '@/data/posts/sql-joins-explained-visual-guide';
+import GitRebaseVsMerge from '@/data/posts/git-rebase-vs-merge-explained';
+import TailwindCssCheatSheet from '@/data/posts/tailwind-css-cheat-sheet';
+import TypescriptGenericsExplained from '@/data/posts/typescript-generics-explained';
+import RestApiBestPractices from '@/data/posts/rest-api-best-practices-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -68,6 +73,11 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'nginx-config-examples': NginxConfigExamples,
   'docker-compose-cheat-sheet': DockerComposeCheatSheet,
   'csp-header-guide': CspHeaderGuide,
+  'sql-joins-explained-visual-guide': SqlJoinsVisualGuide,
+  'git-rebase-vs-merge-explained': GitRebaseVsMerge,
+  'tailwind-css-cheat-sheet': TailwindCssCheatSheet,
+  'typescript-generics-explained': TypescriptGenericsExplained,
+  'rest-api-best-practices-guide': RestApiBestPractices,
 };
 
 /* i18n for UI strings on this page */

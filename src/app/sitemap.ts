@@ -16,12 +16,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 1.0,
-      alternates: {
-        languages: {
-          ...Object.fromEntries(locales.map((l) => [l, `${BASE}/${l}`])),
-          'x-default': `${BASE}/en`,
-        },
-      },
     });
   }
 
@@ -33,12 +27,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: new Date(),
         changeFrequency: 'weekly',
         priority: 0.8,
-        alternates: {
-          languages: {
-            ...Object.fromEntries(locales.map((l) => [l, `${BASE}/${l}${tool.path}`])),
-            'x-default': `${BASE}/en${tool.path}`,
-          },
-        },
       });
     }
   }
@@ -50,13 +38,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.7,
-      alternates: {
-        languages: {
-          ...Object.fromEntries(locales.map((l) => [l, `${BASE}/${l}/blog`])),
-          'x-default': `${BASE}/en/blog`,
-        },
-      },
     });
+  }
+
+  // About and Privacy pages
+  for (const page of ['about', 'privacy']) {
+    for (const lang of locales) {
+      entries.push({
+        url: `${BASE}/${lang}/${page}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority: 0.3,
+      });
+    }
   }
 
   // Blog post pages
@@ -68,12 +62,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: new Date(),
         changeFrequency: 'monthly',
         priority: 0.6,
-        alternates: {
-          languages: {
-            ...Object.fromEntries(locales.map((l) => [l, `${BASE}/${l}/blog/${slug}`])),
-            'x-default': `${BASE}/en/blog/${slug}`,
-          },
-        },
       });
     }
   }
