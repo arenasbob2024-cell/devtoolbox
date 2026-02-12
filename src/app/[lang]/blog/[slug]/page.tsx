@@ -73,6 +73,36 @@ import SvgViewboxExplained from '@/data/posts/svg-viewbox-width-height-explained
 import XmlVsJson from '@/data/posts/xml-vs-json-comparison';
 import Base64ImageEmbed from '@/data/posts/base64-image-embed-html-css';
 import SqlFormattingGuide from '@/data/posts/sql-formatting-best-practices';
+import GitignoreTemplates from '@/data/posts/gitignore-templates-common-patterns';
+import CssGridCheatSheet from '@/data/posts/css-grid-layout-cheat-sheet';
+import JsDateFormatGuide from '@/data/posts/javascript-date-format-complete-guide';
+import SshKeygenGuide from '@/data/posts/ssh-keygen-ed25519-rsa-guide';
+import JsArrayMethods from '@/data/posts/javascript-array-methods-cheat-sheet';
+import RobotsTxtGuide from '@/data/posts/robots-txt-syntax-examples';
+import AsciiUnicodeUtf8 from '@/data/posts/ascii-unicode-utf8-encoding-explained';
+import CssMediaQueries from '@/data/posts/css-media-queries-breakpoints-2025';
+import GitBranchNaming from '@/data/posts/git-branch-naming-convention';
+import DnsRecordTypes from '@/data/posts/dns-record-types-a-cname-mx-txt';
+import DockerfilePractices from '@/data/posts/dockerfile-best-practices-multi-stage';
+import CssAnimationKeyframes from '@/data/posts/css-animation-keyframes-examples';
+import ApiAuthOauthJwt from '@/data/posts/api-authentication-oauth-jwt-apikey';
+import JqCommandTutorial from '@/data/posts/jq-command-tutorial-examples';
+import CssVariablesGuide from '@/data/posts/css-variables-custom-properties-guide';
+import ProtobufVsJson from '@/data/posts/protobuf-vs-json-grpc-rest';
+import PrismaSchemaGuide from '@/data/posts/prisma-schema-relations-guide';
+import NginxLocationGuide from '@/data/posts/nginx-location-block-regex-guide';
+import JsMapFilterReduce from '@/data/posts/javascript-map-filter-reduce-examples';
+import HtmlInputTypes from '@/data/posts/html-input-types-attributes-guide';
+import CssSpecificity from '@/data/posts/css-specificity-calculator-rules';
+import GitCherryPickGuide from '@/data/posts/git-cherry-pick-revert-reset-guide';
+import DockerVolumesGuide from '@/data/posts/docker-volumes-bind-mounts-guide';
+import HttpHeadersList from '@/data/posts/http-request-response-headers-list';
+import ViteVsWebpack from '@/data/posts/vite-vs-webpack-esbuild-comparison';
+import CssPositionGuide from '@/data/posts/css-position-sticky-fixed-absolute';
+import LinuxChmodChown from '@/data/posts/linux-chmod-chown-permissions-guide';
+import TomlSyntaxGuide from '@/data/posts/toml-syntax-config-guide';
+import YamlAnchorsAliases from '@/data/posts/yaml-anchors-aliases-merge-keys';
+import PythonPipVenv from '@/data/posts/python-pip-requirements-virtualenv';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -138,6 +168,36 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'xml-vs-json-comparison': XmlVsJson,
   'base64-image-embed-html-css': Base64ImageEmbed,
   'sql-formatting-best-practices': SqlFormattingGuide,
+  'gitignore-templates-common-patterns': GitignoreTemplates,
+  'css-grid-layout-cheat-sheet': CssGridCheatSheet,
+  'javascript-date-format-complete-guide': JsDateFormatGuide,
+  'ssh-keygen-ed25519-rsa-guide': SshKeygenGuide,
+  'javascript-array-methods-cheat-sheet': JsArrayMethods,
+  'robots-txt-syntax-examples': RobotsTxtGuide,
+  'ascii-unicode-utf8-encoding-explained': AsciiUnicodeUtf8,
+  'css-media-queries-breakpoints-2025': CssMediaQueries,
+  'git-branch-naming-convention': GitBranchNaming,
+  'dns-record-types-a-cname-mx-txt': DnsRecordTypes,
+  'dockerfile-best-practices-multi-stage': DockerfilePractices,
+  'css-animation-keyframes-examples': CssAnimationKeyframes,
+  'api-authentication-oauth-jwt-apikey': ApiAuthOauthJwt,
+  'jq-command-tutorial-examples': JqCommandTutorial,
+  'css-variables-custom-properties-guide': CssVariablesGuide,
+  'protobuf-vs-json-grpc-rest': ProtobufVsJson,
+  'prisma-schema-relations-guide': PrismaSchemaGuide,
+  'nginx-location-block-regex-guide': NginxLocationGuide,
+  'javascript-map-filter-reduce-examples': JsMapFilterReduce,
+  'html-input-types-attributes-guide': HtmlInputTypes,
+  'css-specificity-calculator-rules': CssSpecificity,
+  'git-cherry-pick-revert-reset-guide': GitCherryPickGuide,
+  'docker-volumes-bind-mounts-guide': DockerVolumesGuide,
+  'http-request-response-headers-list': HttpHeadersList,
+  'vite-vs-webpack-esbuild-comparison': ViteVsWebpack,
+  'css-position-sticky-fixed-absolute': CssPositionGuide,
+  'linux-chmod-chown-permissions-guide': LinuxChmodChown,
+  'toml-syntax-config-guide': TomlSyntaxGuide,
+  'yaml-anchors-aliases-merge-keys': YamlAnchorsAliases,
+  'python-pip-requirements-virtualenv': PythonPipVenv,
 };
 
 /* i18n for UI strings on this page */
