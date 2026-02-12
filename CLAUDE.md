@@ -19,7 +19,7 @@
 
 | 类别 | 内容 |
 |------|------|
-| **工具数量** | 41 款（从 28 款增至 40+） |
+| **工具数量** | 78 款（从 28 → 41 → 71 → 78） |
 | **支持语言** | 15 种：en, fr, de, it, es, pt, nl, pl, sv, no, zh, ja, ko, id, th |
 | **新增工具** | xml-formatter, csv-json, http-status, mime-types, escape-unescape, ip-calculator, fake-data, hmac-generator, url-parser, binary-text, pem-decoder, html-table, bcrypt-generator |
 | **新增语言** | 欧洲：pt, nl, pl, sv, no；东亚：ja, ko |
@@ -110,7 +110,9 @@ node scripts/generate-ja-ko.js
 ## 7. 当前状态
 
 - 线上站点：https://viadreams.cc，功能正常
-- 15 种语言、41 款工具、5 篇博客已配置
+- 15 种语言、88 款工具、33 篇博客已配置
+- 邮件订阅组件（Buttondown）已集成到 Footer、工具页侧边栏、博客页
+- 总索引页：1880 页
 - 无已知未完成任务
 - 可在此基础上继续扩展工具、语言或功能
 

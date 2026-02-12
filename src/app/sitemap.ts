@@ -1,67 +1,68 @@
-import type { MetadataRoute } from 'next';
-import { i18n } from '@/i18n/config';
+import { MetadataRoute } from 'next';
 import { tools } from '@/lib/tools';
-import { getAllSlugs } from '@/data/blog-posts';
+import { blogPosts } from '@/data/blog-posts';
+import { i18n } from '@/i18n/config';
 
-const BASE = 'https://viadreams.cc';
+const BASE_URL = 'https://viadreams.cc';
+
+type ChangeFrequency = 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never';
+
+function buildAlternates(path: string): { languages: Record<string, string> } {
+  const languages: Record<string, string> = {};
+  for (const locale of i18n.locales) {
+    languages[locale] = `${BASE_URL}/${locale}${path}`;
+  }
+  languages['x-default'] = `${BASE_URL}/en${path}`;
+  return { languages };
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const locales = i18n.locales;
   const entries: MetadataRoute.Sitemap = [];
 
-  // Home pages
-  for (const lang of locales) {
+  // Homepage (15 locales)
+  for (const locale of i18n.locales) {
     entries.push({
-      url: `${BASE}/${lang}`,
+      url: `${BASE_URL}/${locale}`,
       lastModified: new Date(),
-      changeFrequency: 'daily',
+      changeFrequency: 'weekly' as ChangeFrequency,
       priority: 1.0,
+      alternates: buildAlternates(''),
     });
   }
 
-  // Tool pages
+  // Tool pages (tools × 15 locales)
   for (const tool of tools) {
-    for (const lang of locales) {
+    for (const locale of i18n.locales) {
       entries.push({
-        url: `${BASE}/${lang}${tool.path}`,
+        url: `${BASE_URL}/${locale}${tool.path}`,
         lastModified: new Date(),
-        changeFrequency: 'weekly',
+        changeFrequency: 'monthly' as ChangeFrequency,
         priority: 0.8,
+        alternates: buildAlternates(tool.path),
       });
     }
   }
 
-  // Blog list pages
-  for (const lang of locales) {
+  // Blog list page (15 locales)
+  for (const locale of i18n.locales) {
     entries.push({
-      url: `${BASE}/${lang}/blog`,
+      url: `${BASE_URL}/${locale}/blog`,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: 'weekly' as ChangeFrequency,
       priority: 0.7,
+      alternates: buildAlternates('/blog'),
     });
   }
 
-  // About and Privacy pages
-  for (const page of ['about', 'privacy']) {
-    for (const lang of locales) {
+  // Blog posts (blogPosts × 15 locales)
+  for (const post of blogPosts) {
+    for (const locale of i18n.locales) {
       entries.push({
-        url: `${BASE}/${lang}/${page}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
-        priority: 0.3,
-      });
-    }
-  }
-
-  // Blog post pages
-  const slugs = getAllSlugs();
-  for (const slug of slugs) {
-    for (const lang of locales) {
-      entries.push({
-        url: `${BASE}/${lang}/blog/${slug}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly',
+        url: `${BASE_URL}/${locale}/blog/${post.slug}`,
+        lastModified: new Date(post.date),
+        changeFrequency: 'monthly' as ChangeFrequency,
         priority: 0.6,
+        alternates: buildAlternates(`/blog/${post.slug}`),
       });
     }
   }

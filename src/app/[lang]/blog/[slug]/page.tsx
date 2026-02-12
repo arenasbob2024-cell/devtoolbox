@@ -43,6 +43,16 @@ import GitRebaseVsMerge from '@/data/posts/git-rebase-vs-merge-explained';
 import TailwindCssCheatSheet from '@/data/posts/tailwind-css-cheat-sheet';
 import TypescriptGenericsExplained from '@/data/posts/typescript-generics-explained';
 import RestApiBestPractices from '@/data/posts/rest-api-best-practices-guide';
+import CorsErrorsGuide from '@/data/posts/how-to-fix-cors-errors-complete-guide';
+import NpmVsYarnVsPnpmVsBun from '@/data/posts/npm-vs-yarn-vs-pnpm-vs-bun-comparison';
+import DotenvBestPractices from '@/data/posts/dotenv-environment-variables-best-practices';
+import FaviconGuide from '@/data/posts/favicon-guide-sizes-formats-generator';
+import CurlCheatSheet from '@/data/posts/curl-command-cheat-sheet-examples';
+import BcryptVsArgon2 from '@/data/posts/bcrypt-vs-argon2-vs-scrypt-password-hashing';
+import NpmInstallErrors from '@/data/posts/npm-install-errors-fix-guide';
+import HtaccessRedirectCheatSheet from '@/data/posts/htaccess-redirect-cheat-sheet-examples';
+import DockerComposeSecrets from '@/data/posts/docker-compose-secrets-environment-variables-guide';
+import OpenGraphTwitterCard from '@/data/posts/open-graph-twitter-card-meta-tags-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -78,6 +88,16 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'tailwind-css-cheat-sheet': TailwindCssCheatSheet,
   'typescript-generics-explained': TypescriptGenericsExplained,
   'rest-api-best-practices-guide': RestApiBestPractices,
+  'how-to-fix-cors-errors-complete-guide': CorsErrorsGuide,
+  'npm-vs-yarn-vs-pnpm-vs-bun-comparison': NpmVsYarnVsPnpmVsBun,
+  'dotenv-environment-variables-best-practices': DotenvBestPractices,
+  'favicon-guide-sizes-formats-generator': FaviconGuide,
+  'curl-command-cheat-sheet-examples': CurlCheatSheet,
+  'bcrypt-vs-argon2-vs-scrypt-password-hashing': BcryptVsArgon2,
+  'npm-install-errors-fix-guide': NpmInstallErrors,
+  'htaccess-redirect-cheat-sheet-examples': HtaccessRedirectCheatSheet,
+  'docker-compose-secrets-environment-variables-guide': DockerComposeSecrets,
+  'open-graph-twitter-card-meta-tags-guide': OpenGraphTwitterCard,
 };
 
 /* i18n for UI strings on this page */
