@@ -53,6 +53,26 @@ import NpmInstallErrors from '@/data/posts/npm-install-errors-fix-guide';
 import HtaccessRedirectCheatSheet from '@/data/posts/htaccess-redirect-cheat-sheet-examples';
 import DockerComposeSecrets from '@/data/posts/docker-compose-secrets-environment-variables-guide';
 import OpenGraphTwitterCard from '@/data/posts/open-graph-twitter-card-meta-tags-guide';
+import Base64CommandLine from '@/data/posts/base64-encode-decode-command-line';
+import JsonParseError from '@/data/posts/json-parse-error-unexpected-token';
+import YamlMultilineString from '@/data/posts/yaml-multiline-string-block-folded';
+import GitUndoLastCommit from '@/data/posts/git-undo-last-commit-keep-changes';
+import UrlEncodeCharacters from '@/data/posts/url-encode-special-characters-list';
+import RegexMatchPatterns from '@/data/posts/regex-match-email-phone-url-patterns';
+import UnixTimestampToDate from '@/data/posts/unix-timestamp-to-date-conversion';
+import CssTextGradient from '@/data/posts/css-text-gradient-examples';
+import HtmlEntitiesList from '@/data/posts/html-special-characters-entities-list';
+import JwtDecodeNoLib from '@/data/posts/jwt-decode-without-library';
+import QrCodeBestPractices from '@/data/posts/qr-code-size-format-best-practices';
+import JsStringReplaceRegex from '@/data/posts/javascript-string-replace-regex';
+import DockerEnvFile from '@/data/posts/docker-env-file-vs-environment';
+import IpSubnetCidr from '@/data/posts/ip-subnet-mask-cidr-explained';
+import MarkdownCheatSheetGithub from '@/data/posts/markdown-cheat-sheet-github-readme';
+import PasswordStrength2025 from '@/data/posts/password-strength-requirements-2025';
+import SvgViewboxExplained from '@/data/posts/svg-viewbox-width-height-explained';
+import XmlVsJson from '@/data/posts/xml-vs-json-comparison';
+import Base64ImageEmbed from '@/data/posts/base64-image-embed-html-css';
+import SqlFormattingGuide from '@/data/posts/sql-formatting-best-practices';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -98,6 +118,26 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'htaccess-redirect-cheat-sheet-examples': HtaccessRedirectCheatSheet,
   'docker-compose-secrets-environment-variables-guide': DockerComposeSecrets,
   'open-graph-twitter-card-meta-tags-guide': OpenGraphTwitterCard,
+  'base64-encode-decode-command-line': Base64CommandLine,
+  'json-parse-error-unexpected-token': JsonParseError,
+  'yaml-multiline-string-block-folded': YamlMultilineString,
+  'git-undo-last-commit-keep-changes': GitUndoLastCommit,
+  'url-encode-special-characters-list': UrlEncodeCharacters,
+  'regex-match-email-phone-url-patterns': RegexMatchPatterns,
+  'unix-timestamp-to-date-conversion': UnixTimestampToDate,
+  'css-text-gradient-examples': CssTextGradient,
+  'html-special-characters-entities-list': HtmlEntitiesList,
+  'jwt-decode-without-library': JwtDecodeNoLib,
+  'qr-code-size-format-best-practices': QrCodeBestPractices,
+  'javascript-string-replace-regex': JsStringReplaceRegex,
+  'docker-env-file-vs-environment': DockerEnvFile,
+  'ip-subnet-mask-cidr-explained': IpSubnetCidr,
+  'markdown-cheat-sheet-github-readme': MarkdownCheatSheetGithub,
+  'password-strength-requirements-2025': PasswordStrength2025,
+  'svg-viewbox-width-height-explained': SvgViewboxExplained,
+  'xml-vs-json-comparison': XmlVsJson,
+  'base64-image-embed-html-css': Base64ImageEmbed,
+  'sql-formatting-best-practices': SqlFormattingGuide,
 };
 
 /* i18n for UI strings on this page */
