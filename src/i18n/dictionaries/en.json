@@ -236,6 +236,41 @@
         "Digital signatures and certificates"
       ]
     },
+    "multi-hash-generator": {
+      "name": "Multi Hash Generator",
+      "description": "Generate MD5, SHA-1, SHA-256, SHA-384, SHA-512 hashes simultaneously from text or files",
+      "pageTitle": "Multi Hash Generator - MD5, SHA256, SHA512 & All Hash Types at Once",
+      "pageDescription": "Generate ALL hashes simultaneously — MD5, SHA-1, SHA-256, SHA-384, SHA-512. Hash text or files instantly. Free online multi-hash calculator with file support.",
+      "textMode": "Text Input",
+      "fileMode": "File Input",
+      "inputPlaceholder": "Enter text to hash...",
+      "dropFile": "Drop a file here or click to browse",
+      "fileSelected": "File selected",
+      "algorithm": "Algorithm",
+      "results": "Hash Results",
+      "hashValue": "Hash Value",
+      "uppercase": "Uppercase",
+      "noInput": "Enter text or upload a file to generate hashes",
+      "seoTitle": "Multi Hash Generator — All Hash Types at Once",
+      "seoContent": "Generate MD5, SHA-1, SHA-256, SHA-384, and SHA-512 hashes simultaneously from text or files. Our multi-hash generator computes all popular cryptographic hash functions in one go, making it easy to compare checksums and verify file integrity. All processing happens locally in your browser — your data is never sent to any server.",
+      "featuresTitle": "Key Features",
+      "features": [
+        "Generate all 5 hash types simultaneously in real-time",
+        "Support for both text input and file uploads (drag & drop)",
+        "Toggle between uppercase and lowercase hex output",
+        "Copy individual hashes or all hashes at once",
+        "Instant processing with no file size limits",
+        "100% client-side — your data never leaves your browser"
+      ],
+      "algorithmsTitle": "Supported Algorithms",
+      "algorithms": [
+        "MD5 — Fast but cryptographically weak; used for checksums",
+        "SHA-1 — 160-bit hash; deprecated for security use",
+        "SHA-256 — 256-bit hash; recommended for security",
+        "SHA-384 — 384-bit hash; part of SHA-2 family",
+        "SHA-512 — 512-bit hash; highest security of the set"
+      ]
+    },
     "uuid-generator": {
       "name": "UUID Generator",
       "description": "Generate random UUIDs (v4) in bulk with one click",
@@ -3565,6 +3600,29 @@
       "nextRunsTitle": "Next 5 Scheduled Runs",
       "seoTitle": "What is a Cron Expression?",
       "seoContent": "A cron expression is a string of five fields representing a schedule for automated tasks in Unix-like systems. The five fields are: minute (0-59), hour (0-23), day of month (1-31), month (1-12), and day of week (0-6, where 0 is Sunday). Special characters include * (any value), / (step values), - (ranges), and , (lists). Cron expressions are widely used in Linux crontab, Kubernetes CronJobs, AWS CloudWatch Events, GitHub Actions, and many other scheduling systems. Our free online cron expression generator helps you build, validate, and understand cron schedules visually."
+    },
+    "text-to-pdf": {
+      "name": "Text to PDF Converter",
+      "description": "Convert plain text to PDF documents with custom formatting options",
+      "pageTitle": "Text to PDF Converter - Convert Text to PDF Online",
+      "pageDescription": "Free online text to PDF converter. Convert plain text files to PDF with custom font size, page size, margins, and line spacing. No signup required.",
+      "fontSize": "Font Size (pt)",
+      "pageSize": "Page Size",
+      "a4": "A4",
+      "letter": "Letter",
+      "legal": "Legal",
+      "margins": "Margins",
+      "normal": "Normal",
+      "narrow": "Narrow",
+      "wide": "Wide",
+      "lineSpacing": "Line Spacing",
+      "characters": "Characters",
+      "words": "Words",
+      "lines": "Lines",
+      "placeholder": "Paste or type your text here to convert to PDF...",
+      "convertToPdf": "Convert to PDF",
+      "seoTitle": "Convert Text to PDF Online",
+      "seoContent": "This text to PDF converter tool allows you to transform plain text files into professionally formatted PDF documents. Choose your preferred font size (8-24pt), page size (A4, Letter, or Legal), margins (Normal, Narrow, or Wide), and line spacing (1.0 to 2.0) to customize the output. All processing happens in your browser — your text never leaves your device. Perfect for creating quick documents, formatting notes, or exporting text content."
     }
   },
   "footer": {

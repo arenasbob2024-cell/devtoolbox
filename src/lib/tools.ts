@@ -58,6 +58,16 @@ export const tools: Tool[] = [
     path: '/tools/hash-generator',
   },
   {
+    id: 'multi-hash-generator',
+    name: 'Multi Hash Generator',
+    description: 'Generate MD5, SHA-1, SHA-256, SHA-384, SHA-512 hashes simultaneously from text or files',
+    icon: '🔐',
+    category: 'generator',
+    keywords: ['multi hash', 'hash generator', 'md5 generator', 'sha256 generator', 'sha1 generator', 'sha512 generator', 'file hash', 'checksum calculator', 'hash all', 'all hashes at once'],
+    path: '/tools/multi-hash-generator',
+    relatedTools: ['hash-generator', 'hmac-generator', 'bcrypt-generator', 'password-generator'],
+  },
+  {
     id: 'uuid-generator',
     name: 'UUID Generator',
     description: 'Generate random UUIDs (v4) in bulk with one click',
@@ -878,6 +888,16 @@ export const tools: Tool[] = [
     keywords: ['cron', 'crontab', 'schedule', 'timer', 'cron expression', 'cron job', 'automated', 'recurring'],
     path: '/tools/cron-generator',
     relatedTools: ['timestamp-converter', 'uuid-generator', 'password-generator'],
+  },
+  {
+    id: 'text-to-pdf',
+    name: 'Text to PDF Converter',
+    description: 'Convert plain text to PDF documents with custom formatting options',
+    icon: '📄',
+    category: 'converter',
+    keywords: ['text to pdf', 'convert text to pdf', 'txt to pdf', 'text to pdf converter', 'text file to pdf', 'plain text to pdf', 'notepad to pdf', 'convert txt to pdf online'],
+    path: '/tools/text-to-pdf',
+    relatedTools: ['markdown-to-html', 'word-counter', 'csv-json', 'html-to-markdown'],
   },
 ];
 
