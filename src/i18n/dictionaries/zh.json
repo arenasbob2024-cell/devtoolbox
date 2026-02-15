@@ -3544,6 +3544,23 @@
           "a": "Yes, foreign key constraints are converted to Prisma @relation directives."
         }
       ]
+    },
+    "cron-generator": {
+      "name": "Cron 表达式生成器",
+      "description": "使用可视化编辑器创建、验证和理解 Cron 表达式",
+      "pageTitle": "Cron 表达式生成器 - 在线创建和验证 Cron 定时任务",
+      "pageDescription": "免费在线 Cron 表达式生成器和验证器。可视化创建 Cron 定时计划，查看下次运行时间，轻松理解 Cron 语法。",
+      "presetsTitle": "常用预设",
+      "customPlaceholder": "输入 Cron 表达式（例如 */5 * * * *）",
+      "parseBtn": "解析",
+      "minute": "分钟",
+      "hour": "小时",
+      "dayOfMonth": "日期",
+      "month": "月份",
+      "dayOfWeek": "周日",
+      "nextRunsTitle": "接下来 5 次运行时间",
+      "seoTitle": "什么是 Cron 表达式?",
+      "seoContent": "Cron 表达式是一个五字段字符串，代表在类 Unix 系统中自动化任务的计划。五个字段分别为：分钟 (0-59)、小时 (0-23)、月份中的日期 (1-31)、月份 (1-12) 和周几 (0-6，其中 0 是星期日)。特殊字符包括 * (任何值)、/ (步长值)、- (范围) 和 , (列表)。Cron 表达式被广泛用于 Linux crontab、Kubernetes CronJobs、AWS CloudWatch Events、GitHub Actions 和许多其他调度系统。我们的免费在线 Cron 表达式生成器可帮助您直观地创建、验证和理解 Cron 时间表。"
     }
   },
   "footer": {

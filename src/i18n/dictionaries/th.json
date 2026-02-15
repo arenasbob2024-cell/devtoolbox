@@ -3544,6 +3544,23 @@
           "a": "Yes, foreign key constraints are converted to Prisma @relation directives."
         }
       ]
+    },
+    "cron-generator": {
+      "name": "เครื่องสร้าง Cron Expression",
+      "description": "สร้าง ตรวจสอบ และทำความเข้าใจ Cron Expression ด้วยตัวแก้ไขแบบภาพ",
+      "pageTitle": "เครื่องสร้าง Cron Expression - สร้างและตรวจสอบ Cron Schedule ออนไลน์",
+      "pageDescription": "เครื่องสร้างและตรวจสอบ Cron Expression ออนไลน์ฟรี สร้างตาราง Cron แบบเห็นภาพและเข้าใจไวยากรณ์ Cron",
+      "presetsTitle": "พรีเซตทั่วไป",
+      "customPlaceholder": "ป้อน Cron Expression (เช่น */5 * * * *)",
+      "parseBtn": "วิเคราะห์",
+      "minute": "นาที",
+      "hour": "ชั่วโมง",
+      "dayOfMonth": "วัน (เดือน)",
+      "month": "เดือน",
+      "dayOfWeek": "วัน (สัปดาห์)",
+      "nextRunsTitle": "การรันตามกำหนดการ 5 รายการถัดไป",
+      "seoTitle": "Cron Expression คืออะไร?",
+      "seoContent": "Cron Expression เป็นสตริงของห้าฟิลด์ที่แสดงตารางเวลาสำหรับงานอัตโนมัติในระบบที่เหมือน Unix ห้าฟิลด์ได้แก่: นาที (0-59), ชั่วโมง (0-23), วันของเดือน (1-31), เดือน (1-12), และวันของสัปดาห์ (0-6 โดยที่ 0 คือวันอาทิตย์) อักขระพิเศษรวมถึง * (ค่าใด ๆ), / (ค่าขั้นตอน), - (ช่วง), และ , (รายการ) Cron Expression ถูกใช้กันอย่างแพร่หลายใน Linux crontab, Kubernetes CronJobs, AWS CloudWatch Events, GitHub Actions และระบบการจัดกำหนดการอื่น ๆ อีกมากมาย เครื่องสร้าง Cron Expression ออนไลน์ฟรีของเราช่วยให้คุณสร้าง ตรวจสอบ และทำความเข้าใจตาราง Cron แบบภาพ"
     }
   },
   "footer": {

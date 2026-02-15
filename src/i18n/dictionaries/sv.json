@@ -3544,6 +3544,23 @@
           "a": "Yes, foreign key constraints are converted to Prisma @relation directives."
         }
       ]
+    },
+    "cron-generator": {
+      "name": "Cron-uttrycksgenerator",
+      "description": "Skapa, validera och förstå cron-uttryck med en visuell editor",
+      "pageTitle": "Cron-uttrycksgenerator - Bygg och Validera Cron-scheman Online",
+      "pageDescription": "Gratis cron-uttrycksgenerator och validator online. Bygg cron-scheman visuellt och förstå cron-syntax.",
+      "presetsTitle": "Vanliga Förinställningar",
+      "customPlaceholder": "Ange cron-uttryck (t.ex. */5 * * * *)",
+      "parseBtn": "Tolka",
+      "minute": "Minut",
+      "hour": "Timme",
+      "dayOfMonth": "Dag (Månad)",
+      "month": "Månad",
+      "dayOfWeek": "Dag (Vecka)",
+      "nextRunsTitle": "Nästa 5 Schemalagda Körningar",
+      "seoTitle": "Vad är ett Cron-uttryck?",
+      "seoContent": "Ett cron-uttryck är en sträng av fem fält som representerar ett schema för automatiserade uppgifter i Unix-liknande system. De fem fälten är: minut (0-59), timme (0-23), dag i månaden (1-31), månad (1-12) och dag i veckan (0-6, där 0 är söndag). Specialtecken inkluderar * (vilket värde som helst), / (stegvärden), - (intervall) och , (listor). Cron-uttryck används ofta i Linux crontab, Kubernetes CronJobs, AWS CloudWatch Events, GitHub Actions och många andra schemaläggningssystem. Vår gratis online cron-uttrycksgenerator hjälper dig att skapa, validera och visuellt förstå cron-scheman."
     }
   },
   "footer": {

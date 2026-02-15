@@ -3544,6 +3544,23 @@
           "a": "Yes, foreign key constraints are converted to Prisma @relation directives."
         }
       ]
+    },
+    "cron-generator": {
+      "name": "Generador de Expresiones Cron",
+      "description": "Crea, valida y comprende expresiones cron con un editor visual",
+      "pageTitle": "Generador de Expresiones Cron - Crear y Validar Programaciones Cron en Línea",
+      "pageDescription": "Generador y validador de expresiones cron gratuito en línea. Cree programaciones cron visualmente y comprenda la sintaxis cron.",
+      "presetsTitle": "Preajustes Comunes",
+      "customPlaceholder": "Ingrese una expresión cron (p. ej. */5 * * * *)",
+      "parseBtn": "Analizar",
+      "minute": "Minuto",
+      "hour": "Hora",
+      "dayOfMonth": "Día (Mes)",
+      "month": "Mes",
+      "dayOfWeek": "Día (Semana)",
+      "nextRunsTitle": "Próximas 5 Ejecuciones Programadas",
+      "seoTitle": "¿Qué es una Expresión Cron?",
+      "seoContent": "Una expresión cron es una cadena de cinco campos que representa un horario para tareas automatizadas en sistemas tipo Unix. Los cinco campos son: minuto (0-59), hora (0-23), día del mes (1-31), mes (1-12) y día de la semana (0-6, donde 0 es domingo). Los caracteres especiales incluyen * (cualquier valor), / (valores de paso), - (intervalos) y , (listas). Las expresiones cron se usan ampliamente en crontab de Linux, Kubernetes CronJobs, AWS CloudWatch Events, GitHub Actions y muchos otros sistemas de programación. Nuestro generador gratuito de expresiones cron en línea le ayuda a crear, validar y comprender visualmente los horarios cron."
     }
   },
   "footer": {

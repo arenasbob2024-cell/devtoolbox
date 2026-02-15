@@ -3544,6 +3544,23 @@
           "a": "Yes, foreign key constraints are converted to Prisma @relation directives."
         }
       ]
+    },
+    "cron-generator": {
+      "name": "Cron式ジェネレーター",
+      "description": "ビジュアルエディタでCron式を作成、検証、理解します",
+      "pageTitle": "Cron式ジェネレーター - Cronスケジュールをオンラインで作成・検証",
+      "pageDescription": "無料オンラインCron式ジェネレーターとバリデーター。Cronスケジュールを視覚的に作成し、Cron構文を理解しましょう。",
+      "presetsTitle": "一般的なプリセット",
+      "customPlaceholder": "Cron式を入力（例：*/5 * * * *）",
+      "parseBtn": "解析",
+      "minute": "分",
+      "hour": "時",
+      "dayOfMonth": "日（月）",
+      "month": "月",
+      "dayOfWeek": "曜日",
+      "nextRunsTitle": "次の5回の実行予定",
+      "seoTitle": "Cron式とは？",
+      "seoContent": "Cron式はUnix系システムにおいて自動化されたタスクのスケジュールを表す5つのフィールドからなる文字列です。5つのフィールドは：分（0-59）、時（0-23）、日付（1-31）、月（1-12）、曜日（0-6、0は日曜日）です。特殊文字には*（任意の値）、/（ステップ値）、-（範囲）、,（リスト）があります。Cron式はLinux crontab、Kubernetes CronJobs、AWS CloudWatch Events、GitHub Actions、その他多くのスケジューリングシステムで広く使用されています。当社の無料オンラインCron式ジェネレーターは、Cronスケジュールを視覚的に作成、検証、理解するのに役立ちます。"
     }
   },
   "footer": {

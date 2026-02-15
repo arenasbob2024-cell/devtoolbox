@@ -3544,6 +3544,23 @@
           "a": "Yes, foreign key constraints are converted to Prisma @relation directives."
         }
       ]
+    },
+    "cron-generator": {
+      "name": "Cron-Ausdruck-Generator",
+      "description": "Erstellen, validieren und verstehen Sie Cron-Ausdrücke mit einem visuellen Editor",
+      "pageTitle": "Cron-Ausdruck-Generator - Cron-Zeitpläne Online Erstellen und Validieren",
+      "pageDescription": "Kostenloser Online Cron-Ausdruck-Generator und -Validator. Erstellen Sie Cron-Zeitpläne visuell und verstehen Sie die Cron-Syntax.",
+      "presetsTitle": "Häufige Voreinstellungen",
+      "customPlaceholder": "Geben Sie einen Cron-Ausdruck ein (z. B. */5 * * * *)",
+      "parseBtn": "Analysieren",
+      "minute": "Minute",
+      "hour": "Stunde",
+      "dayOfMonth": "Tag (Monat)",
+      "month": "Monat",
+      "dayOfWeek": "Tag (Woche)",
+      "nextRunsTitle": "Nächste 5 geplanten Ausführungen",
+      "seoTitle": "Was ist ein Cron-Ausdruck?",
+      "seoContent": "Ein Cron-Ausdruck ist eine Zeichenkette mit fünf Feldern, die einen Zeitplan für automatisierte Aufgaben in Unix-ähnlichen Systemen darstellt. Die fünf Felder sind: Minute (0-59), Stunde (0-23), Tag des Monats (1-31), Monat (1-12) und Tag der Woche (0-6, wobei 0 Sonntag ist). Spezielle Zeichen sind * (beliebiger Wert), / (Schrittweite), - (Bereiche) und , (Listen). Cron-Ausdrücke werden häufig in Linux crontab, Kubernetes CronJobs, AWS CloudWatch Events, GitHub Actions und vielen anderen Planungssystemen verwendet. Unser kostenloser Online Cron-Ausdruck-Generator hilft Ihnen, Cron-Zeitpläne visuell zu erstellen, zu validieren und zu verstehen."
     }
   },
   "footer": {

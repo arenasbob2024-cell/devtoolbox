@@ -3544,6 +3544,23 @@
           "a": "Yes, foreign key constraints are converted to Prisma @relation directives."
         }
       ]
+    },
+    "cron-generator": {
+      "name": "Generatore di Espressioni Cron",
+      "description": "Crea, valida e comprendi le espressioni cron con un editor visivo",
+      "pageTitle": "Generatore di Espressioni Cron - Crea e Valida Pianificazioni Cron Online",
+      "pageDescription": "Generatore e validatore di espressioni cron gratuito online. Crea pianificazioni cron visivamente e comprendi la sintassi cron.",
+      "presetsTitle": "Predefiniti Comuni",
+      "customPlaceholder": "Inserisci un'espressione cron (p. es. */5 * * * *)",
+      "parseBtn": "Analizza",
+      "minute": "Minuto",
+      "hour": "Ora",
+      "dayOfMonth": "Giorno (Mese)",
+      "month": "Mese",
+      "dayOfWeek": "Giorno (Settimana)",
+      "nextRunsTitle": "Prossime 5 Esecuzioni Programmate",
+      "seoTitle": "Che cos'è un'Espressione Cron?",
+      "seoContent": "Un'espressione cron è una stringa di cinque campi che rappresenta una pianificazione per attività automatizzate in sistemi simili a Unix. I cinque campi sono: minuto (0-59), ora (0-23), giorno del mese (1-31), mese (1-12) e giorno della settimana (0-6, dove 0 è domenica). I caratteri speciali includono * (qualsiasi valore), / (valori di passo), - (intervalli) e , (elenchi). Le espressioni cron sono ampiamente utilizzate in crontab Linux, Kubernetes CronJobs, AWS CloudWatch Events, GitHub Actions e molti altri sistemi di pianificazione. Il nostro generatore gratuito di espressioni cron online ti aiuta a creare, convalidare e comprendere visivamente i programmi cron."
     }
   },
   "footer": {

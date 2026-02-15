@@ -3544,6 +3544,23 @@
           "a": "Yes, foreign key constraints are converted to Prisma @relation directives."
         }
       ]
+    },
+    "cron-generator": {
+      "name": "Cron-uttrykk Generator",
+      "description": "Opprett, valider og forstå cron-uttrykk med en visuell editor",
+      "pageTitle": "Cron-uttrykk Generator - Bygg og Valider Cron-tidsplaner Online",
+      "pageDescription": "Gratis cron-uttrykk generator og validator online. Bygg cron-tidsplaner visuelt og forstå cron-syntaks.",
+      "presetsTitle": "Vanlige Forhåndsinnstillinger",
+      "customPlaceholder": "Skriv inn cron-uttrykk (f.eks. */5 * * * *)",
+      "parseBtn": "Analyser",
+      "minute": "Minutt",
+      "hour": "Time",
+      "dayOfMonth": "Dag (Måned)",
+      "month": "Måned",
+      "dayOfWeek": "Dag (Uke)",
+      "nextRunsTitle": "Neste 5 Planlagte Kjøringer",
+      "seoTitle": "Hva er et Cron-uttrykk?",
+      "seoContent": "Et cron-uttrykk er en streng med fem felt som representerer en tidsplan for automatiserte oppgaver i Unix-lignende systemer. De fem feltene er: minutt (0-59), time (0-23), dag i måneden (1-31), måned (1-12) og dag i uken (0-6, der 0 er søndag). Spesialtegn inkluderer * (enhver verdi), / (trinnverdier), - (intervaller) og , (lister). Cron-uttrykk brukes mye i Linux crontab, Kubernetes CronJobs, AWS CloudWatch Events, GitHub Actions og mange andre planleggingssystemer. Vår gratis online cron-uttrykk generator hjelper deg med å opprette, validere og forstå cron-tidsplaner visuelt."
     }
   },
   "footer": {

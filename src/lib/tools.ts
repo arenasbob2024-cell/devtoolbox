@@ -54,7 +54,7 @@ export const tools: Tool[] = [
     description: 'Generate MD5, SHA-1, SHA-256, SHA-512 hashes from text',
     icon: '#',
     category: 'generator',
-    keywords: ['hash', 'md5', 'sha1', 'sha256', 'sha512', 'checksum', 'digest'],
+    keywords: ['hash', 'md5', 'sha1', 'sha256', 'sha512', 'checksum', 'digest', 'sha256 hash generator', 'multi hash generator', 'sha1 hash generator'],
     path: '/tools/hash-generator',
   },
   {
@@ -63,7 +63,7 @@ export const tools: Tool[] = [
     description: 'Generate random UUIDs (v4) in bulk with one click',
     icon: 'ID',
     category: 'generator',
-    keywords: ['uuid', 'guid', 'unique id', 'random', 'identifier'],
+    keywords: ['uuid', 'guid', 'unique id', 'random', 'identifier', 'uuid v4', 'uuid v7', 'guid generator', 'online uuid generator'],
     path: '/tools/uuid-generator',
   },
   {
@@ -72,7 +72,7 @@ export const tools: Tool[] = [
     description: 'Convert between Unix timestamps and human-readable dates',
     icon: '🕐',
     category: 'converter',
-    keywords: ['timestamp', 'unix', 'epoch', 'date', 'time', 'convert'],
+    keywords: ['timestamp', 'unix', 'epoch', 'date', 'time', 'convert', 'convert unix timestamp to date', 'epoch converter', 'timestamp to datetime', 'date to timestamp'],
     path: '/tools/timestamp-converter',
   },
   {
@@ -81,7 +81,7 @@ export const tools: Tool[] = [
     description: 'Convert colors between HEX, RGB, HSL formats with preview',
     icon: '🎨',
     category: 'converter',
-    keywords: ['color', 'hex', 'rgb', 'hsl', 'convert', 'picker', 'palette'],
+    keywords: ['color', 'hex', 'rgb', 'hsl', 'convert', 'picker', 'palette', 'hex to rgb', 'hex to pantone', 'color code converter', 'hexadecimal to rgb'],
     path: '/tools/color-converter',
   },
   {
@@ -90,7 +90,7 @@ export const tools: Tool[] = [
     description: 'Test regular expressions with real-time matching and highlighting',
     icon: '.*',
     category: 'text',
-    keywords: ['regex', 'regular expression', 'pattern', 'match', 'test', 'replace'],
+    keywords: ['regex', 'regular expression', 'pattern', 'match', 'test', 'replace', 'regex tester', 'regex debugger', 'javascript regex', 'python regex'],
     path: '/tools/regex-tester',
   },
   {
@@ -868,6 +868,16 @@ export const tools: Tool[] = [
     keywords: ['sql', 'prisma', 'schema', 'orm', 'convert', 'model', 'typescript', 'database'],
     path: '/tools/sql-to-prisma',
     relatedTools: ['sql-formatter', 'json-to-typescript', 'json-to-graphql', 'json-formatter'],
+  },
+  {
+    id: 'cron-generator',
+    name: 'Cron Expression Generator',
+    description: 'Build, validate, and understand cron expressions with a visual editor',
+    icon: '⏰',
+    category: 'generator',
+    keywords: ['cron', 'crontab', 'schedule', 'timer', 'cron expression', 'cron job', 'automated', 'recurring'],
+    path: '/tools/cron-generator',
+    relatedTools: ['timestamp-converter', 'uuid-generator', 'password-generator'],
   },
 ];
 

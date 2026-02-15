@@ -3544,6 +3544,23 @@
           "a": "Yes, foreign key constraints are converted to Prisma @relation directives."
         }
       ]
+    },
+    "cron-generator": {
+      "name": "Cron Expressie Generator",
+      "description": "Maak, valideer en begrijp cron-expressies met een visuele editor",
+      "pageTitle": "Cron Expressie Generator - Bouw en Valideer Cron Schema's Online",
+      "pageDescription": "Gratis online cron expressie generator en validator. Bouw cron schema's visueel en begrijp cron syntaxis.",
+      "presetsTitle": "Veelgebruikte Voorinstellingen",
+      "customPlaceholder": "Voer cron-expressie in (bijv. */5 * * * *)",
+      "parseBtn": "Parseren",
+      "minute": "Minuut",
+      "hour": "Uur",
+      "dayOfMonth": "Dag (Maand)",
+      "month": "Maand",
+      "dayOfWeek": "Dag (Week)",
+      "nextRunsTitle": "Volgende 5 Geplande Uitvoeringen",
+      "seoTitle": "Wat is een Cron-expressie?",
+      "seoContent": "Een cron-expressie is een string van vijf velden die een schema voor geautomatiseerde taken in Unix-achtige systemen vertegenwoordigt. De vijf velden zijn: minuut (0-59), uur (0-23), dag van de maand (1-31), maand (1-12) en dag van de week (0-6, waarbij 0 zondag is). Speciale tekens omvatten * (elke waarde), / (stapwaarden), - (bereiken) en , (lijsten). Cron-expressies worden veel gebruikt in Linux crontab, Kubernetes CronJobs, AWS CloudWatch Events, GitHub Actions en vele andere planningssystemen. Onze gratis online cron-expressie generator helpt u cron-schema's visueel te maken, valideren en begrijpen."
     }
   },
   "footer": {

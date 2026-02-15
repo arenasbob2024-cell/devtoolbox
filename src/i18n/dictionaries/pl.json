@@ -3544,6 +3544,23 @@
           "a": "Yes, foreign key constraints are converted to Prisma @relation directives."
         }
       ]
+    },
+    "cron-generator": {
+      "name": "Generator Wyrażeń Cron",
+      "description": "Twórz, waliduj i zrozum wyrażenia cron za pomocą edytora wizualnego",
+      "pageTitle": "Generator Wyrażeń Cron - Tworzenie i Walidacja Harmonogramów Cron Online",
+      "pageDescription": "Darmowy generator i walidator wyrażeń cron online. Twórz harmonogramy cron wizualnie i zrozum składnię cron.",
+      "presetsTitle": "Popularne Predykcje",
+      "customPlaceholder": "Wpisz wyrażenie cron (np. */5 * * * *)",
+      "parseBtn": "Analizuj",
+      "minute": "Minuta",
+      "hour": "Godzina",
+      "dayOfMonth": "Dzień (Miesiąc)",
+      "month": "Miesiąc",
+      "dayOfWeek": "Dzień (Tydzień)",
+      "nextRunsTitle": "Następne 5 Zaplanowanych Uruchomień",
+      "seoTitle": "Co to jest wyrażenie Cron?",
+      "seoContent": "Wyrażenie cron to ciąg pięciu pól reprezentujących harmonogram dla zadań automatycznych w systemach typu Unix. Pięć pól to: minuta (0-59), godzina (0-23), dzień miesiąca (1-31), miesiąc (1-12) i dzień tygodnia (0-6, gdzie 0 to niedziela). Znaki specjalne obejmują * (dowolna wartość), / (wartości kroku), - (zakresy) i , (listy). Wyrażenia cron są szeroko stosowane w crontab Linuksa, Kubernetes CronJobs, AWS CloudWatch Events, GitHub Actions i wielu innych systemach planowania. Nasz darmowy generator wyrażeń cron online pomaga tworzyć, walidować i wizualnie zrozumieć harmonogramy cron."
     }
   },
   "footer": {

@@ -198,8 +198,8 @@
     "hash-generator": {
       "name": "Hash Generator",
       "description": "Generate MD5, SHA-1, SHA-256, SHA-512 hashes from text",
-      "pageTitle": "Hash Generator",
-      "pageDescription": "Generate SHA-1, SHA-256, SHA-384, SHA-512 hashes from any text. All computed in your browser.",
+      "pageTitle": "Hash Generator - MD5, SHA1, SHA256, SHA512 Online Hash Calculator",
+      "pageDescription": "Free online hash generator. Generate MD5, SHA-1, SHA-256, SHA-512 hashes from text instantly. Multi hash generator supporting all major hashing algorithms.",
       "inputText": "Input Text",
       "inputPlaceholder": "Enter text to hash...",
       "uppercase": "Uppercase",
@@ -239,8 +239,8 @@
     "uuid-generator": {
       "name": "UUID Generator",
       "description": "Generate random UUIDs (v4) in bulk with one click",
-      "pageTitle": "UUID Generator",
-      "pageDescription": "Generate random UUIDs (v4) in bulk. Supports uppercase, no-dash formats.",
+      "pageTitle": "UUID Generator Online - Generate UUID v4, v7 & GUID Instantly",
+      "pageDescription": "Free online UUID generator. Generate random UUID v4, UUID v7, and GUID identifiers in bulk. Copy UUIDs instantly with our fast, secure UUID generation tool.",
       "count": "Count:",
       "uppercase": "Uppercase",
       "noDashes": "No dashes",
@@ -281,8 +281,8 @@
     "timestamp-converter": {
       "name": "Unix Timestamp Converter",
       "description": "Convert between Unix timestamps and human-readable dates",
-      "pageTitle": "Unix Timestamp Converter",
-      "pageDescription": "Convert Unix timestamps to readable dates and vice versa. Auto-detects seconds and milliseconds.",
+      "pageTitle": "Unix Timestamp Converter - Convert Timestamp to Date & DateTime Online",
+      "pageDescription": "Free online Unix timestamp converter. Convert Unix timestamp to date, datetime, and human-readable format. Convert date to Unix timestamp instantly. Supports epoch time conversion.",
       "currentTimestamp": "Current Unix Timestamp",
       "timestampToDate": "Timestamp → Date",
       "dateToTimestamp": "Date → Timestamp",
@@ -334,8 +334,8 @@
     "color-converter": {
       "name": "Color Converter",
       "description": "Convert colors between HEX, RGB, HSL formats with preview",
-      "pageTitle": "Color Converter",
-      "pageDescription": "Convert colors between HEX, RGB, and HSL formats with live preview.",
+      "pageTitle": "Color Converter - HEX to RGB, Pantone, CMYK Color Conversion Online",
+      "pageDescription": "Free online color converter tool. Convert between HEX, RGB, HSL, CMYK and Pantone color formats. Hexadecimal to RGB color converter with live preview and color picker.",
       "randomColor": "🎲 Random Color",
       "colorPicker": "Color Picker",
       "emptyState": "Enter a color value and click Convert",
@@ -374,8 +374,8 @@
     "regex-tester": {
       "name": "Regex Tester",
       "description": "Test regular expressions with real-time matching and highlighting",
-      "pageTitle": "Regex Tester",
-      "pageDescription": "Test regular expressions with real-time matching, highlighting, and capture group support.",
+      "pageTitle": "Regex Tester Online - Test Regular Expressions for JavaScript, Python, C#",
+      "pageDescription": "Free online regex tester and debugger. Test regular expressions in real-time with syntax highlighting. Supports JavaScript, Python, C#, Perl regex patterns with match highlighting.",
       "regex": "Regular Expression",
       "testString": "Test String",
       "highlightedMatches": "Highlighted Matches",
@@ -3548,6 +3548,23 @@
           "a": "Yes, foreign key constraints are converted to Prisma @relation directives."
         }
       ]
+    },
+    "cron-generator": {
+      "name": "Cron Expression Generator",
+      "description": "Build, validate, and understand cron expressions with a visual editor",
+      "pageTitle": "Cron Expression Generator - Build & Validate Cron Schedules Online",
+      "pageDescription": "Free online cron expression generator and validator. Build cron schedules visually, see next run times, and understand cron syntax with our easy-to-use tool.",
+      "presetsTitle": "Common Presets",
+      "customPlaceholder": "Enter cron expression (e.g. */5 * * * *)",
+      "parseBtn": "Parse",
+      "minute": "Minute",
+      "hour": "Hour",
+      "dayOfMonth": "Day (Month)",
+      "month": "Month",
+      "dayOfWeek": "Day (Week)",
+      "nextRunsTitle": "Next 5 Scheduled Runs",
+      "seoTitle": "What is a Cron Expression?",
+      "seoContent": "A cron expression is a string of five fields representing a schedule for automated tasks in Unix-like systems. The five fields are: minute (0-59), hour (0-23), day of month (1-31), month (1-12), and day of week (0-6, where 0 is Sunday). Special characters include * (any value), / (step values), - (ranges), and , (lists). Cron expressions are widely used in Linux crontab, Kubernetes CronJobs, AWS CloudWatch Events, GitHub Actions, and many other scheduling systems. Our free online cron expression generator helps you build, validate, and understand cron schedules visually."
     }
   },
   "footer": {

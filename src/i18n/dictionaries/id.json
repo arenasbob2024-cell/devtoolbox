@@ -3544,6 +3544,23 @@
           "a": "Yes, foreign key constraints are converted to Prisma @relation directives."
         }
       ]
+    },
+    "cron-generator": {
+      "name": "Generator Ekspresi Cron",
+      "description": "Buat, validasi, dan pahami ekspresi cron dengan editor visual",
+      "pageTitle": "Generator Ekspresi Cron - Buat dan Validasi Jadwal Cron Online",
+      "pageDescription": "Generator dan validator ekspresi cron gratis online. Buat jadwal cron secara visual dan pahami sintaks cron.",
+      "presetsTitle": "Preset Umum",
+      "customPlaceholder": "Masukkan ekspresi cron (misalnya */5 * * * *)",
+      "parseBtn": "Parse",
+      "minute": "Menit",
+      "hour": "Jam",
+      "dayOfMonth": "Hari (Bulan)",
+      "month": "Bulan",
+      "dayOfWeek": "Hari (Minggu)",
+      "nextRunsTitle": "5 Waktu Eksekusi Terjadwal Berikutnya",
+      "seoTitle": "Apa itu Ekspresi Cron?",
+      "seoContent": "Ekspresi cron adalah string lima bidang yang mewakili jadwal untuk tugas otomatis dalam sistem mirip Unix. Lima bidang tersebut adalah: menit (0-59), jam (0-23), hari dalam sebulan (1-31), bulan (1-12), dan hari dalam minggu (0-6, di mana 0 adalah Minggu). Karakter khusus mencakup * (nilai apa pun), / (nilai langkah), - (rentang), dan , (daftar). Ekspresi cron banyak digunakan dalam crontab Linux, Kubernetes CronJobs, AWS CloudWatch Events, GitHub Actions, dan banyak sistem penjadwalan lainnya. Generator ekspresi cron online gratis kami membantu Anda membuat, memvalidasi, dan memahami jadwal cron secara visual."
     }
   },
   "footer": {
