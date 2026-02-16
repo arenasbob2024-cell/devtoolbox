@@ -899,6 +899,36 @@ export const tools: Tool[] = [
     path: '/tools/text-to-pdf',
     relatedTools: ['markdown-to-html', 'word-counter', 'csv-json', 'html-to-markdown'],
   },
+  {
+    id: 'chmod-calculator',
+    name: 'Chmod Calculator',
+    description: 'Calculate and visualize Linux file permissions with an interactive chmod calculator',
+    icon: '🔐',
+    category: 'web',
+    keywords: ['chmod', 'chmod calculator', 'linux permissions', 'file permissions', 'chmod 755', 'chmod 644', 'permission calculator', 'unix permissions', 'chmod command'],
+    path: '/tools/chmod-calculator',
+    relatedTools: ['password-generator', 'htaccess-generator', 'cron-generator'],
+  },
+  {
+    id: 'hex-to-decimal',
+    name: 'Hex to Decimal Converter',
+    description: 'Convert between hexadecimal, decimal, and binary number systems',
+    icon: '🔢',
+    category: 'converter',
+    keywords: ['hex to decimal', 'hex to decimal converter', 'hex to decimal calculator', 'decimal to hex', 'hexadecimal converter', 'hex converter', 'number base converter', 'convert hex to decimal'],
+    path: '/tools/hex-to-decimal',
+    relatedTools: ['base64-encoder', 'binary-text', 'url-encoder'],
+  },
+  {
+    id: 'yaml-json-converter',
+    name: 'YAML ↔ JSON Converter',
+    description: 'Convert between YAML and JSON formats with real-time preview',
+    icon: '🔄',
+    category: 'converter',
+    keywords: ['yaml to json', 'json to yaml', 'yaml to json converter', 'json to yaml converter', 'convert yaml to json', 'yaml json', 'yaml converter', 'json converter'],
+    path: '/tools/yaml-json-converter',
+    relatedTools: ['json-formatter', 'yaml-validator', 'csv-json', 'xml-to-json'],
+  },
 ];
 
 export function getToolsByCategory(categoryId: string): Tool[] {
