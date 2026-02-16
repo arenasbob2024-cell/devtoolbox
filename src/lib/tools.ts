@@ -929,6 +929,36 @@ export const tools: Tool[] = [
     path: '/tools/yaml-json-converter',
     relatedTools: ['json-formatter', 'yaml-validator', 'csv-json', 'xml-to-json'],
   },
+  {
+    id: 'hex-to-rgb',
+    name: 'Hex to RGB Converter',
+    description: 'Convert between hex color codes and RGB values with color preview',
+    icon: '🎨',
+    category: 'converter',
+    keywords: ['hex to rgb', 'hex to rgb converter', 'hex to rgb color', 'rgb to hex', 'hex color to rgb', 'hex to rgb calculator', 'convert hex to rgb', 'hex to rgb color converter', 'hex to rgb conversion', 'color converter'],
+    path: '/tools/hex-to-rgb',
+    relatedTools: ['hex-to-decimal', 'css-gradient', 'color-converter', 'css-shadow'],
+  },
+  {
+    id: 'octal-decimal-converter',
+    name: 'Octal Decimal Converter',
+    description: 'Convert between octal and decimal number systems with binary and hex output',
+    icon: '8️⃣',
+    category: 'converter',
+    keywords: ['octal to decimal', 'decimal to octal', 'octal to decimal converter', 'octal to decimal calculator', 'decimal to octal converter', 'decimal to octal calculator', 'octal converter', 'convert octal to decimal', 'octal number converter'],
+    path: '/tools/octal-decimal-converter',
+    relatedTools: ['hex-to-decimal', 'binary-text', 'base64', 'chmod-calculator'],
+  },
+  {
+    id: 'roman-numeral-converter',
+    name: 'Roman Numeral Converter',
+    description: 'Convert between numbers and Roman numerals with date converter',
+    icon: 'IV',
+    category: 'converter',
+    keywords: ['roman numeral converter', 'roman numerals converter', 'roman numeral date converter', 'convert to roman numerals', 'roman numeral birthday converter', 'number to roman numeral', 'roman numeral calculator', 'roman numerals'],
+    path: '/tools/roman-numeral-converter',
+    relatedTools: ['hex-to-decimal', 'octal-decimal-converter', 'number-base-converter'],
+  },
 ];
 
 export function getToolsByCategory(categoryId: string): Tool[] {
