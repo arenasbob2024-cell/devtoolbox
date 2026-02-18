@@ -41,7 +41,7 @@
   "home": {
     "heroTitle1": "Gratis online",
     "heroTitle2": "ontwikkeltools",
-    "heroDescription": "40+ essentiële tools voor ontwikkelaars. Geen registratie, geen limieten. Alle verwerking gebeurt in je browser — je data verlaat je apparaat nooit.",
+    "heroDescription": "100+ essentiële tools voor ontwikkelaars. Geen registratie, geen limieten. Alle verwerking gebeurt in je browser — je data verlaat je apparaat nooit.",
     "searchPlaceholder": "Search tools... (json, base64, uuid, hash...)",
     "whyTitle": "Why",
     "whyBrand": "DevToolBox",
@@ -4016,7 +4016,7 @@
     "missionTitle": "Our Mission",
     "missionText": "We believe developer tools should be free, fast, and private. Every tool on DevToolBox processes data entirely in your browser — nothing is ever sent to a server.",
     "featuresTitle": "Features",
-    "feature1": "40+ essential developer tools",
+    "feature1": "100+ essential developer tools",
     "feature2": "100% client-side processing — your data never leaves your browser",
     "feature3": "No signup, no accounts, no tracking",
     "feature4": "Works on desktop, tablet, and mobile",
@@ -4044,7 +4044,7 @@
   },
   "meta": {
     "homeTitle": "DevToolBox - Gratis Online Ontwikkeltools",
-    "homeDescription": "Gratis online ontwikkeltools: JSON formatter, Base64 encoder, UUID generator, regex tester, hash generator en 40+ meer. Geen registratie. Alle verwerking in je browser."
+    "homeDescription": "Gratis online ontwikkeltools: JSON formatter, Base64 encoder, UUID generator, regex tester, hash generator en 100+ meer. Geen registratie. Alle verwerking in je browser."
   },
   "blog": {
     "nav": "Blog",

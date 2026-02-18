@@ -41,7 +41,7 @@
   "home": {
     "heroTitle1": "Outils en ligne gratuits",
     "heroTitle2": "pour développeurs",
-    "heroDescription": "Plus de 40 outils essentiels pour les développeurs. Sans inscription, sans limites. Tout le traitement se fait directement dans votre navigateur — vos données ne quittent jamais votre appareil.",
+    "heroDescription": "Plus de 100 outils essentiels pour les développeurs. Sans inscription, sans limites. Tout le traitement se fait directement dans votre navigateur — vos données ne quittent jamais votre appareil.",
     "searchPlaceholder": "Rechercher des outils... (json, base64, uuid, hash...)",
     "whyTitle": "Pourquoi",
     "whyBrand": "DevToolBox",
@@ -4016,7 +4016,7 @@
     "missionTitle": "Notre mission",
     "missionText": "Nous pensons que les outils pour développeurs doivent être gratuits, rapides et respectueux de la vie privée. Chaque outil sur DevToolBox traite les données entièrement dans votre navigateur — rien n'est jamais envoyé à un serveur.",
     "featuresTitle": "Fonctionnalités",
-    "feature1": "Plus de 40 outils essentiels pour développeurs",
+    "feature1": "Plus de 100 outils essentiels pour développeurs",
     "feature2": "Traitement 100 % côté client — vos données ne quittent jamais votre navigateur",
     "feature3": "Sans inscription, sans compte, sans pistage",
     "feature4": "Fonctionne sur ordinateur, tablette et mobile",
@@ -4044,7 +4044,7 @@
   },
   "meta": {
     "homeTitle": "DevToolBox - Outils en ligne gratuits pour développeurs",
-    "homeDescription": "Outils en ligne gratuits pour développeurs : formateur JSON, encodeur Base64, générateur UUID, testeur regex, générateur de hash, et plus de 40 autres outils. Sans inscription. Tout le traitement se fait dans votre navigateur."
+    "homeDescription": "Outils en ligne gratuits pour développeurs : formateur JSON, encodeur Base64, générateur UUID, testeur regex, générateur de hash, et plus de 100 autres outils. Sans inscription. Tout le traitement se fait dans votre navigateur."
   },
   "blog": {
     "nav": "Blog",

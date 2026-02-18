@@ -41,7 +41,7 @@
   "home": {
     "heroTitle1": "Kostenlose Online",
     "heroTitle2": "Entwickler-Werkzeuge",
-    "heroDescription": "Über 40 unverzichtbare Werkzeuge für Entwickler. Keine Registrierung, keine Einschränkungen. Alles wird direkt in deinem Browser verarbeitet — deine Daten verlassen niemals dein Gerät.",
+    "heroDescription": "Über 100 unverzichtbare Werkzeuge für Entwickler. Keine Registrierung, keine Einschränkungen. Alles wird direkt in deinem Browser verarbeitet — deine Daten verlassen niemals dein Gerät.",
     "searchPlaceholder": "Werkzeuge suchen... (JSON, Base64, UUID, Hash...)",
     "whyTitle": "Warum",
     "whyBrand": "DevToolBox",
@@ -4016,7 +4016,7 @@
     "missionTitle": "Unsere Mission",
     "missionText": "Wir glauben, dass Entwicklerwerkzeuge kostenlos, schnell und privat sein sollten. Jedes Werkzeug auf DevToolBox verarbeitet Daten vollständig in deinem Browser — nichts wird jemals an einen Server gesendet.",
     "featuresTitle": "Funktionen",
-    "feature1": "Über 40 unverzichtbare Entwicklerwerkzeuge",
+    "feature1": "Über 100 unverzichtbare Entwicklerwerkzeuge",
     "feature2": "100 % clientseitige Verarbeitung — deine Daten verlassen niemals deinen Browser",
     "feature3": "Keine Registrierung, keine Konten, kein Tracking",
     "feature4": "Funktioniert auf Desktop, Tablet und Smartphone",
@@ -4044,7 +4044,7 @@
   },
   "meta": {
     "homeTitle": "DevToolBox – Kostenlose Online-Entwicklerwerkzeuge",
-    "homeDescription": "Kostenlose Online-Entwicklerwerkzeuge: JSON-Formatierer, Base64-Kodierer, UUID-Generator, Regex-Tester, Hash-Generator und über 40 weitere. Keine Registrierung erforderlich. Alle Verarbeitung in deinem Browser."
+    "homeDescription": "Kostenlose Online-Entwicklerwerkzeuge: JSON-Formatierer, Base64-Kodierer, UUID-Generator, Regex-Tester, Hash-Generator und über 100 weitere. Keine Registrierung erforderlich. Alle Verarbeitung in deinem Browser."
   },
   "blog": {
     "nav": "Blog",

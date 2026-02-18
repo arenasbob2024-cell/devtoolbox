@@ -239,15 +239,6 @@ export const tools: Tool[] = [
     path: '/tools/slug-generator',
   },
   {
-    id: 'chmod-calculator',
-    name: 'Chmod Calculator',
-    description: 'Calculate Linux file permissions with interactive checkboxes',
-    icon: '🛡️',
-    category: 'web',
-    keywords: ['chmod', 'permissions', 'linux', 'unix', 'file', 'rwx', 'octal'],
-    path: '/tools/chmod-calculator',
-  },
-  {
     id: 'line-sorter',
     name: 'Line Sort & Dedup',
     description: 'Sort lines, remove duplicates, reverse, shuffle, and more',

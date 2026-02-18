@@ -41,7 +41,7 @@
   "home": {
     "heroTitle1": "Herramientas para",
     "heroTitle2": "desarrolladores gratuitas",
-    "heroDescription": "Más de 40 herramientas esenciales para desarrolladores. Sin registro, sin límites. Todo el procesamiento ocurre en tu navegador — tus datos nunca salen de tu dispositivo.",
+    "heroDescription": "Más de 100 herramientas esenciales para desarrolladores. Sin registro, sin límites. Todo el procesamiento ocurre en tu navegador — tus datos nunca salen de tu dispositivo.",
     "searchPlaceholder": "Buscar herramientas... (json, base64, uuid, hash...)",
     "whyTitle": "¿Por qué",
     "whyBrand": "DevToolBox",
@@ -4016,7 +4016,7 @@
     "missionTitle": "Nuestra misión",
     "missionText": "Creemos que las herramientas para desarrolladores deben ser gratuitas, rápidas y privadas. Cada herramienta en DevToolBox procesa los datos completamente en tu navegador — nada se envía jamás a un servidor.",
     "featuresTitle": "Características",
-    "feature1": "Más de 40 herramientas esenciales para desarrolladores",
+    "feature1": "Más de 100 herramientas esenciales para desarrolladores",
     "feature2": "Procesamiento 100% del lado del cliente — tus datos nunca salen de tu navegador",
     "feature3": "Sin registro, sin cuentas, sin rastreo",
     "feature4": "Funciona en escritorio, tablet y móvil",
@@ -4044,7 +4044,7 @@
   },
   "meta": {
     "homeTitle": "DevToolBox - Herramientas gratuitas en línea para desarrolladores",
-    "homeDescription": "Herramientas gratuitas en línea para desarrolladores: formateador JSON, codificador Base64, generador de UUID, probador de regex, generador de hash y más de 40 herramientas más. Sin registro. Todo el procesamiento en tu navegador."
+    "homeDescription": "Herramientas gratuitas en línea para desarrolladores: formateador JSON, codificador Base64, generador de UUID, probador de regex, generador de hash y más de 100 herramientas más. Sin registro. Todo el procesamiento en tu navegador."
   },
   "blog": {
     "nav": "Blog",

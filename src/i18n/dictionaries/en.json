@@ -41,7 +41,7 @@
   "home": {
     "heroTitle1": "Free Online",
     "heroTitle2": "Developer Tools",
-    "heroDescription": "40+ essential tools for developers. No signup, no limits. All processing happens right in your browser — your data never leaves your device.",
+    "heroDescription": "100+ essential tools for developers. No signup, no limits. All processing happens right in your browser — your data never leaves your device.",
     "searchPlaceholder": "Search tools... (json, base64, uuid, hash...)",
     "whyTitle": "Why",
     "whyBrand": "DevToolBox",
@@ -4020,7 +4020,7 @@
     "missionTitle": "Our Mission",
     "missionText": "We believe developer tools should be free, fast, and private. Every tool on DevToolBox processes data entirely in your browser — nothing is ever sent to a server.",
     "featuresTitle": "Features",
-    "feature1": "40+ essential developer tools",
+    "feature1": "100+ essential developer tools",
     "feature2": "100% client-side processing — your data never leaves your browser",
     "feature3": "No signup, no accounts, no tracking",
     "feature4": "Works on desktop, tablet, and mobile",
@@ -4048,7 +4048,7 @@
   },
   "meta": {
     "homeTitle": "DevToolBox - Free Online Developer Tools",
-    "homeDescription": "Free online developer tools: JSON formatter, Base64 encoder, UUID generator, regex tester, hash generator, and 40+ more. No signup required. All processing in your browser."
+    "homeDescription": "Free online developer tools: JSON formatter, Base64 encoder, UUID generator, regex tester, hash generator, and 100+ more. No signup required. All processing in your browser."
   },
   "blog": {
     "nav": "Blog",

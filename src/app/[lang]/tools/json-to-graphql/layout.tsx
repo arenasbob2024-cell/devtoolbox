@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import ToolSeoServer from '@/components/ToolSeoServer';
 import { getDictionary } from '@/i18n/getDictionary';
 import { i18n, type Locale } from '@/i18n/config';
 
@@ -22,6 +23,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   };
 }
 
-export default function Layout({ children }: { children: React.ReactNode }) {
-  return children;
+export default async function Layout({ children, params }: { children: React.ReactNode; params: Promise<{ lang: string }> }) {
+  const { lang: rawLang } = await params;
+  const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
+  return (
+    <ToolSeoServer toolId="json-to-graphql" lang={lang}>
+      {children}
+    </ToolSeoServer>
+  );
 }

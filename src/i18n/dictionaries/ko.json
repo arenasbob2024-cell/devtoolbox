@@ -41,7 +41,7 @@
   "home": {
     "heroTitle1": "무료 온라인",
     "heroTitle2": "개발자 도구",
-    "heroDescription": "40개 이상의 필수 개발자 도구. 가입 불필요, 제한 없음. 모든 처리는 브라우저에서 이루어집니다 — 데이터가 기기를 벗어나지 않습니다.",
+    "heroDescription": "100개 이상의 필수 개발자 도구. 가입 불필요, 제한 없음. 모든 처리는 브라우저에서 이루어집니다 — 데이터가 기기를 벗어나지 않습니다.",
     "searchPlaceholder": "도구 검색... (json, base64, uuid, hash...)",
     "whyTitle": "왜",
     "whyBrand": "DevToolBox",
@@ -4016,7 +4016,7 @@
     "missionTitle": "우리의 미션",
     "missionText": "개발자 도구는 무료하고, 빠르고, 사적으로 유지되어야 한다고 믿습니다. DevToolBox의 모든 도구는 브라우저에서 데이터를 완전히 처리하며 서버로 전송되지 않습니다.",
     "featuresTitle": "기능",
-    "feature1": "40개 이상의 필수 개발자 도구",
+    "feature1": "100개 이상의 필수 개발자 도구",
     "feature2": "100% 클라이언트 측 처리 — 데이터가 브라우저를 벗어나지 않습니다",
     "feature3": "가입 불필요, 계정 불필요, 추적 없음",
     "feature4": "데스크톱, 태블릿, 모바일에서 작동",
@@ -4044,7 +4044,7 @@
   },
   "meta": {
     "homeTitle": "DevToolBox - 무료 온라인 개발자 도구",
-    "homeDescription": "무료 온라인 개발자 도구: JSON 포맷터, Base64 인코더, UUID 생성기, 정규식 테스터, 해시 생성기 등 40개 이상. 가입 불필요. 모든 처리는 브라우저에서."
+    "homeDescription": "무료 온라인 개발자 도구: JSON 포맷터, Base64 인코더, UUID 생성기, 정규식 테스터, 해시 생성기 등 100개 이상. 가입 불필요. 모든 처리는 브라우저에서."
   },
   "blog": {
     "nav": "블로그",

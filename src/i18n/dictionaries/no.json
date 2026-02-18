@@ -41,7 +41,7 @@
   "home": {
     "heroTitle1": "Gratis online",
     "heroTitle2": "utviklerverktøy",
-    "heroDescription": "40+ essensielle verktøy for utviklere. Ingen registrering, ingen grenser. All behandling skjer i nettleseren — dataene dine forlater aldri enheten.",
+    "heroDescription": "100+ essensielle verktøy for utviklere. Ingen registrering, ingen grenser. All behandling skjer i nettleseren — dataene dine forlater aldri enheten.",
     "searchPlaceholder": "Search tools... (json, base64, uuid, hash...)",
     "whyTitle": "Why",
     "whyBrand": "DevToolBox",
@@ -4016,7 +4016,7 @@
     "missionTitle": "Our Mission",
     "missionText": "We believe developer tools should be free, fast, and private. Every tool on DevToolBox processes data entirely in your browser — nothing is ever sent to a server.",
     "featuresTitle": "Features",
-    "feature1": "40+ essential developer tools",
+    "feature1": "100+ essential developer tools",
     "feature2": "100% client-side processing — your data never leaves your browser",
     "feature3": "No signup, no accounts, no tracking",
     "feature4": "Works on desktop, tablet, and mobile",
@@ -4044,7 +4044,7 @@
   },
   "meta": {
     "homeTitle": "DevToolBox - Gratis Online Utviklerverktøy",
-    "homeDescription": "Gratis online utviklerverktøy: JSON-formaterer, Base64-enkoder, UUID-generator, regex-tester, hash-generator og 40+ flere. Ingen registrering. Alt behandles i nettleseren."
+    "homeDescription": "Gratis online utviklerverktøy: JSON-formaterer, Base64-enkoder, UUID-generator, regex-tester, hash-generator og 100+ flere. Ingen registrering. Alt behandles i nettleseren."
   },
   "blog": {
     "nav": "Blogg",

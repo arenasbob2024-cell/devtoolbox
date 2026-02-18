@@ -41,7 +41,7 @@
   "home": {
     "heroTitle1": "免费在线",
     "heroTitle2": "开发者工具",
-    "heroDescription": "40 多款开发者必备工具。无需注册，没有限制。所有数据处理均在浏览器本地完成——数据绝不离开你的设备。",
+    "heroDescription": "100 多款开发者必备工具。无需注册，没有限制。所有数据处理均在浏览器本地完成——数据绝不离开你的设备。",
     "searchPlaceholder": "搜索工具...（json、base64、uuid、hash...）",
     "whyTitle": "为什么",
     "whyBrand": "DevToolBox",
@@ -4016,7 +4016,7 @@
     "missionTitle": "我们的使命",
     "missionText": "我们相信开发者工具应该是免费、快速和保护隐私的。DevToolBox 上的每个工具都完全在浏览器中处理数据——绝不会将任何内容发送到服务器。",
     "featuresTitle": "功能特性",
-    "feature1": "40 多款开发者必备工具",
+    "feature1": "100 多款开发者必备工具",
     "feature2": "100% 客户端处理——你的数据绝不会离开浏览器",
     "feature3": "无需注册、无需账户、无跟踪",
     "feature4": "支持桌面端、平板和手机",
@@ -4044,7 +4044,7 @@
   },
   "meta": {
     "homeTitle": "DevToolBox - 免费在线开发者工具",
-    "homeDescription": "免费在线开发者工具：JSON 格式化、Base64 编码、UUID 生成器、正则测试、哈希生成器等 40 多款工具。无需注册。所有处理均在浏览器中完成。"
+    "homeDescription": "免费在线开发者工具：JSON 格式化、Base64 编码、UUID 生成器、正则测试、哈希生成器等 100 多款工具。无需注册。所有处理均在浏览器中完成。"
   },
   "blog": {
     "nav": "博客",

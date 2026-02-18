@@ -41,7 +41,7 @@
   "home": {
     "heroTitle1": "Alat Developer",
     "heroTitle2": "Online Gratis",
-    "heroDescription": "40+ alat penting untuk developer. Tanpa daftar akun, tanpa batasan. Semua pemrosesan dilakukan langsung di browser Anda — data Anda tidak pernah keluar dari perangkat Anda.",
+    "heroDescription": "100+ alat penting untuk developer. Tanpa daftar akun, tanpa batasan. Semua pemrosesan dilakukan langsung di browser Anda — data Anda tidak pernah keluar dari perangkat Anda.",
     "searchPlaceholder": "Cari alat... (json, base64, uuid, hash...)",
     "whyTitle": "Mengapa",
     "whyBrand": "DevToolBox",
@@ -4016,7 +4016,7 @@
     "missionTitle": "Misi Kami",
     "missionText": "Kami percaya alat developer harus gratis, cepat, dan privat. Setiap alat di DevToolBox memproses data sepenuhnya di browser Anda — tidak ada yang pernah dikirim ke server.",
     "featuresTitle": "Fitur",
-    "feature1": "40+ alat developer penting",
+    "feature1": "100+ alat developer penting",
     "feature2": "100% diproses di sisi klien — data Anda tidak pernah keluar dari browser",
     "feature3": "Tanpa daftar akun, tanpa akun, tanpa pelacakan",
     "feature4": "Berfungsi di desktop, tablet, dan ponsel",
@@ -4044,7 +4044,7 @@
   },
   "meta": {
     "homeTitle": "DevToolBox - Alat Developer Online Gratis",
-    "homeDescription": "Alat developer online gratis: JSON formatter, Base64 encoder, UUID generator, regex tester, hash generator, dan 40+ lainnya. Tanpa perlu daftar akun. Semua diproses di browser Anda."
+    "homeDescription": "Alat developer online gratis: JSON formatter, Base64 encoder, UUID generator, regex tester, hash generator, dan 100+ lainnya. Tanpa perlu daftar akun. Semua diproses di browser Anda."
   },
   "blog": {
     "nav": "Blog",
