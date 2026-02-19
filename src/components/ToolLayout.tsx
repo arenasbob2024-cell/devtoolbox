@@ -5,6 +5,7 @@ import AdSlot from './AdSlot';
 import { tools } from '@/lib/tools';
 import { useLang } from '@/i18n/LangContext';
 import NewsletterSignup from './NewsletterSignup';
+import SupportButton from './SupportButton';
 
 interface ToolLayoutProps {
   title: string;
@@ -86,6 +87,14 @@ export default function ToolLayout({ title, description, children, toolId }: Too
           </div>
 
           <NewsletterSignup variant="compact" />
+
+          {/* Support */}
+          <div className="card" style={{ padding: 16, textAlign: 'center' }}>
+            <p style={{ fontSize: 12, color: 'var(--text-secondary)', marginBottom: 10 }}>
+              Enjoy these free tools?
+            </p>
+            <SupportButton />
+          </div>
         </div>
       </div>
 

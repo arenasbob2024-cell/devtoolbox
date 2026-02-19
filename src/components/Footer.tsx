@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { categories, tools } from '@/lib/tools';
 import { useLang } from '@/i18n/LangContext';
 import NewsletterSignup from './NewsletterSignup';
+import SupportButton from './SupportButton';
 
 export default function Footer() {
   const { lang, dict } = useLang();
@@ -37,6 +38,9 @@ export default function Footer() {
             </p>
             <div style={{ marginTop: 16 }}>
               <NewsletterSignup variant="compact" />
+            </div>
+            <div style={{ marginTop: 12 }}>
+              <SupportButton />
             </div>
           </div>
 
