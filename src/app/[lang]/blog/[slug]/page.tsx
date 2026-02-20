@@ -105,6 +105,8 @@ import YamlAnchorsAliases from '@/data/posts/yaml-anchors-aliases-merge-keys';
 import PythonPipVenv from '@/data/posts/python-pip-requirements-virtualenv';
 import HexToRgbGuide from '@/data/posts/hex-to-rgb-converter-guide';
 import Base64EncodeDecodeGuide from '@/data/posts/base64-encode-decode-guide';
+import JsonFormatterGuide from '@/data/posts/json-formatter-validator-guide';
+import UrlEncodeDecodeGuide from '@/data/posts/url-encode-decode-complete-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -202,6 +204,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'python-pip-requirements-virtualenv': PythonPipVenv,
   'hex-to-rgb-converter-color-guide': HexToRgbGuide,
   'base64-encode-decode-guide': Base64EncodeDecodeGuide,
+  'json-formatter-validator-guide': JsonFormatterGuide,
+  'url-encode-decode-complete-guide': UrlEncodeDecodeGuide,
 };
 
 /* i18n for UI strings on this page */
