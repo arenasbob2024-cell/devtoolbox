@@ -1,8 +1,9 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import ToolLayout from '@/components/ToolLayout';
 import { useLang } from '@/i18n/LangContext';
+import { encodeForUrl, decodeFromUrl, getHashParams, setHashParams } from '@/lib/url-state';
 
 interface Match {
   text: string;
@@ -18,6 +19,35 @@ export default function RegexTester() {
   const [flags, setFlags] = useState('g');
   const [testStr, setTestStr] = useState('');
   const [error, setError] = useState('');
+  const [shareCopied, setShareCopied] = useState(false);
+
+  // Restore state from URL hash on mount
+  useEffect(() => {
+    const params = getHashParams();
+    if (params.pattern) {
+      const decodedPattern = decodeFromUrl(params.pattern);
+      if (decodedPattern) setPattern(decodedPattern);
+    }
+    if (params.flags) {
+      setFlags(decodeURIComponent(params.flags));
+    }
+    if (params.text) {
+      const decodedText = decodeFromUrl(params.text);
+      if (decodedText) setTestStr(decodedText);
+    }
+  }, []);
+
+  const handleShare = () => {
+    if (!pattern) return;
+    const params: Record<string, string> = { pattern: encodeForUrl(pattern) };
+    if (flags) params.flags = encodeURIComponent(flags);
+    if (testStr) params.text = encodeForUrl(testStr);
+    setHashParams(params);
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      setShareCopied(true);
+      setTimeout(() => setShareCopied(false), 2000);
+    });
+  };
 
   const matches = useMemo((): Match[] => {
     if (!pattern || !testStr) { setError(''); return []; }
@@ -98,7 +128,7 @@ export default function RegexTester() {
       </div>
 
       {/* Flags */}
-      <div style={{ display: 'flex', gap: 8, marginBottom: 16, flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', gap: 8, marginBottom: 16, flexWrap: 'wrap', alignItems: 'center' }}>
         {flagOptions.map(f => (
           <label key={f.value} style={{
             display: 'flex', alignItems: 'center', gap: 4, fontSize: 12,
@@ -111,6 +141,9 @@ export default function RegexTester() {
             {f.label}
           </label>
         ))}
+        <button onClick={handleShare} className="btn btn-secondary" style={{ marginLeft: 'auto', fontSize: 12, padding: '4px 12px' }} title="Share via URL">
+          {shareCopied ? '\u2713 Link Copied!' : '\uD83D\uDD17 Share'}
+        </button>
       </div>
 
       {/* Error */}

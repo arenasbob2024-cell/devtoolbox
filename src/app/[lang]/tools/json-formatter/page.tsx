@@ -1,9 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ToolLayout from '@/components/ToolLayout';
 import CopyButton from '@/components/CopyButton';
 import { useLang } from '@/i18n/LangContext';
+import { encodeForUrl, decodeFromUrl, getHashParams, setHashParams } from '@/lib/url-state';
 
 export default function JsonFormatter() {
   const { dict } = useLang();
@@ -12,6 +13,32 @@ export default function JsonFormatter() {
   const [output, setOutput] = useState('');
   const [error, setError] = useState('');
   const [indent, setIndent] = useState(2);
+  const [shareCopied, setShareCopied] = useState(false);
+
+  // Restore state from URL hash on mount
+  useEffect(() => {
+    const params = getHashParams();
+    if (params.json) {
+      const decoded = decodeFromUrl(params.json);
+      if (decoded) {
+        setInput(decoded);
+        try {
+          const parsed = JSON.parse(decoded);
+          setOutput(JSON.stringify(parsed, null, 2));
+        } catch { /* silently ignore invalid JSON from URL */ }
+      }
+    }
+  }, []);
+
+  const handleShare = () => {
+    if (!input) return;
+    const params = { json: encodeForUrl(input) };
+    setHashParams(params);
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      setShareCopied(true);
+      setTimeout(() => setShareCopied(false), 2000);
+    });
+  };
 
   const format = () => {
     try {
@@ -74,6 +101,9 @@ export default function JsonFormatter() {
         <button onClick={minify} className="btn btn-secondary">{dict.common.minify}</button>
         <button onClick={validate} className="btn btn-secondary">{dict.common.validate}</button>
         <button onClick={loadSample} className="btn btn-secondary">{dict.common.loadSample}</button>
+        <button onClick={handleShare} className="btn btn-secondary" title="Share via URL">
+          {shareCopied ? '\u2713 Link Copied!' : '\uD83D\uDD17 Share'}
+        </button>
         <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 8 }}>
           <label style={{ fontSize: 12, color: 'var(--text-secondary)' }}>{t.indent}:</label>
           <select

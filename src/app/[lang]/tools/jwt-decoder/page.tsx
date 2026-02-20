@@ -1,9 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ToolLayout from '@/components/ToolLayout';
 import CopyButton from '@/components/CopyButton';
 import { useLang } from '@/i18n/LangContext';
+import { encodeForUrl, decodeFromUrl, getHashParams, setHashParams } from '@/lib/url-state';
 
 function decodeJwt(token: string) {
   const parts = token.split('.');
@@ -30,6 +31,35 @@ export default function JwtDecoder() {
   const [payload, setPayload] = useState('');
   const [signature, setSignature] = useState('');
   const [error, setError] = useState('');
+  const [shareCopied, setShareCopied] = useState(false);
+
+  // Restore state from URL hash on mount
+  useEffect(() => {
+    const params = getHashParams();
+    if (params.token) {
+      const decoded = decodeFromUrl(params.token);
+      if (decoded) {
+        setInput(decoded);
+        // Auto-decode
+        try {
+          const result = decodeJwt(decoded.trim());
+          setHeader(JSON.stringify(result.header, null, 2));
+          setPayload(JSON.stringify(result.payload, null, 2));
+          setSignature(result.signature);
+        } catch { /* silently ignore invalid JWT from URL */ }
+      }
+    }
+  }, []);
+
+  const handleShare = () => {
+    if (!input) return;
+    const params = { token: encodeForUrl(input) };
+    setHashParams(params);
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      setShareCopied(true);
+      setTimeout(() => setShareCopied(false), 2000);
+    });
+  };
 
   const decode = () => {
     try {
@@ -65,7 +95,12 @@ export default function JwtDecoder() {
           style={{ minHeight: 100 }} />
       </div>
 
-      <button onClick={decode} className="btn btn-primary" style={{ marginBottom: 16 }}>{t.decodeJwt}</button>
+      <div style={{ display: 'flex', gap: 8, marginBottom: 16 }}>
+        <button onClick={decode} className="btn btn-primary">{t.decodeJwt}</button>
+        <button onClick={handleShare} className="btn btn-secondary" title="Share via URL">
+          {shareCopied ? '\u2713 Link Copied!' : '\uD83D\uDD17 Share'}
+        </button>
+      </div>
 
       {error && (
         <div style={{

@@ -1,9 +1,10 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import ToolLayout from '@/components/ToolLayout';
 import CopyButton from '@/components/CopyButton';
 import { useLang } from '@/i18n/LangContext';
+import { encodeForUrl, decodeFromUrl, getHashParams, setHashParams } from '@/lib/url-state';
 
 const presets = [
   { label: 'Every minute', cron: '* * * * *' },
@@ -106,6 +107,21 @@ export default function CronGenerator() {
   const [month, setMonth] = useState('*');
   const [dow, setDow] = useState('*');
   const [customInput, setCustomInput] = useState('');
+  const [shareCopied, setShareCopied] = useState(false);
+
+  // Restore state from URL hash on mount
+  useEffect(() => {
+    const params = getHashParams();
+    if (params.expr) {
+      const decoded = decodeFromUrl(params.expr);
+      if (decoded) {
+        const p = decoded.trim().split(/\s+/);
+        if (p.length === 5) {
+          setMinute(p[0]); setHour(p[1]); setDom(p[2]); setMonth(p[3]); setDow(p[4]);
+        }
+      }
+    }
+  }, []);
 
   const expression = `${minute} ${hour} ${dom} ${month} ${dow}`;
   const parts = expression.split(' ');
@@ -122,6 +138,15 @@ export default function CronGenerator() {
     if (p.length === 5) {
       setMinute(p[0]); setHour(p[1]); setDom(p[2]); setMonth(p[3]); setDow(p[4]);
     }
+  };
+
+  const handleShare = () => {
+    const params = { expr: encodeForUrl(expression) };
+    setHashParams(params);
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      setShareCopied(true);
+      setTimeout(() => setShareCopied(false), 2000);
+    });
   };
 
   const fieldStyle = { padding: '8px 12px', fontSize: 14, width: 100, textAlign: 'center' as const, fontFamily: 'monospace' };
@@ -182,6 +207,9 @@ export default function CronGenerator() {
             {expression}
           </code>
           <CopyButton text={expression} label={dict.common?.copy || 'Copy'} />
+          <button onClick={handleShare} className="btn btn-secondary" style={{ fontSize: 12, padding: '4px 12px' }} title="Share via URL">
+            {shareCopied ? '\u2713 Link Copied!' : '\uD83D\uDD17 Share'}
+          </button>
         </div>
         <p style={{ fontSize: 14, color: 'var(--text-secondary)' }}>{description}</p>
       </div>

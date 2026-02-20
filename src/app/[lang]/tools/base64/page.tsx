@@ -1,9 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ToolLayout from '@/components/ToolLayout';
 import CopyButton from '@/components/CopyButton';
 import { useLang } from '@/i18n/LangContext';
+import { encodeForUrl, decodeFromUrl, getHashParams, setHashParams } from '@/lib/url-state';
 
 export default function Base64Tool() {
   const { dict } = useLang();
@@ -12,6 +13,40 @@ export default function Base64Tool() {
   const [output, setOutput] = useState('');
   const [mode, setMode] = useState<'encode' | 'decode'>('encode');
   const [error, setError] = useState('');
+  const [shareCopied, setShareCopied] = useState(false);
+
+  // Restore state from URL hash on mount
+  useEffect(() => {
+    const params = getHashParams();
+    if (params.mode === 'encode' || params.mode === 'decode') {
+      setMode(params.mode);
+    }
+    if (params.input) {
+      const decoded = decodeFromUrl(params.input);
+      if (decoded) {
+        setInput(decoded);
+        // Auto-process
+        try {
+          const m = params.mode === 'decode' ? 'decode' : 'encode';
+          if (m === 'encode') {
+            setOutput(btoa(unescape(encodeURIComponent(decoded))));
+          } else {
+            setOutput(decodeURIComponent(escape(atob(decoded.trim()))));
+          }
+        } catch { /* silently ignore */ }
+      }
+    }
+  }, []);
+
+  const handleShare = () => {
+    if (!input) return;
+    const params = { input: encodeForUrl(input), mode };
+    setHashParams(params);
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      setShareCopied(true);
+      setTimeout(() => setShareCopied(false), 2000);
+    });
+  };
 
   const process = () => {
     try {
@@ -82,8 +117,11 @@ export default function Base64Tool() {
         <button onClick={process} className="btn btn-primary">
           {mode === 'encode' ? `${dict.common.encode} →` : `← ${dict.common.decode}`}
         </button>
-        <button onClick={swap} className="btn btn-secondary">⇅ {dict.common.swap}</button>
+        <button onClick={swap} className="btn btn-secondary">{'\u21C5'} {dict.common.swap}</button>
         <button onClick={() => { setInput(''); setOutput(''); setError(''); }} className="btn btn-secondary">{dict.common.clear}</button>
+        <button onClick={handleShare} className="btn btn-secondary" style={{ marginLeft: 'auto' }} title="Share via URL">
+          {shareCopied ? '\u2713 Link Copied!' : '\uD83D\uDD17 Share'}
+        </button>
       </div>
 
       {error && (
