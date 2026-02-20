@@ -121,6 +121,9 @@ import CronExpressionGeneratorParserGuide from '@/data/posts/cron-expression-gen
 import JsonToKotlinDataClassGuide from '@/data/posts/json-to-kotlin-data-class-guide';
 import JsonToPythonDataclassGuide from '@/data/posts/json-to-python-dataclass-guide';
 import JsonToCsharpClassGuide from '@/data/posts/json-to-csharp-class-guide';
+import ChmodCalculatorLinuxPermissionsGuide from '@/data/posts/chmod-calculator-linux-permissions-guide';
+import UrlEncodingPercentEncodingGuide from '@/data/posts/url-encoding-percent-encoding-guide';
+import CrontabCheatSheetCronExamplesGuide from '@/data/posts/crontab-cheat-sheet-cron-examples-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -232,6 +235,9 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'json-to-kotlin-data-class-guide': JsonToKotlinDataClassGuide,
   'json-to-python-dataclass-guide': JsonToPythonDataclassGuide,
   'json-to-csharp-class-guide': JsonToCsharpClassGuide,
+  'chmod-calculator-linux-permissions-guide': ChmodCalculatorLinuxPermissionsGuide,
+  'url-encoding-percent-encoding-guide': UrlEncodingPercentEncodingGuide,
+  'crontab-cheat-sheet-cron-examples-guide': CrontabCheatSheetCronExamplesGuide,
 };
 
 /* i18n for UI strings on this page */
