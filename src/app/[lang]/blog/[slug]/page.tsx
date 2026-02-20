@@ -113,6 +113,9 @@ import CsvToJsonConverterGuide from '@/data/posts/csv-to-json-converter-guide';
 import YamlToJsonConverterGuide from '@/data/posts/yaml-to-json-converter-guide';
 import MarkdownToHtmlConverterGuide from '@/data/posts/markdown-to-html-converter-guide';
 import ColorConverterRgbHexHslGuide from '@/data/posts/color-converter-rgb-hex-hsl-guide';
+import JsonToJavaClassConverterGuide from '@/data/posts/json-to-java-class-converter-guide';
+import XmlToJsonConverterGuide from '@/data/posts/xml-to-json-converter-guide';
+import CronExpressionGeneratorParserGuide from '@/data/posts/cron-expression-generator-parser-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -218,6 +221,9 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'yaml-to-json-converter-guide': YamlToJsonConverterGuide,
   'markdown-to-html-converter-guide': MarkdownToHtmlConverterGuide,
   'color-converter-rgb-hex-hsl-guide': ColorConverterRgbHexHslGuide,
+  'json-to-java-class-converter-guide': JsonToJavaClassConverterGuide,
+  'xml-to-json-converter-guide': XmlToJsonConverterGuide,
+  'cron-expression-generator-parser-guide': CronExpressionGeneratorParserGuide,
 };
 
 /* i18n for UI strings on this page */

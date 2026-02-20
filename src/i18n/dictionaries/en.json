@@ -1946,8 +1946,8 @@
     "svg-to-jsx": {
       "name": "SVG to JSX/React",
       "description": "Convert SVG markup to JSX React components",
-      "pageTitle": "SVG to JSX/React Converter",
-      "pageDescription": "Convert SVG to JSX React components online. Transforms SVG attributes to camelCase, wraps as React component. Free and instant.",
+      "pageTitle": "SVG to JSX Converter Online — Convert SVG to React Component",
+      "pageDescription": "Convert SVG to JSX React components online free. Transforms SVG attributes to camelCase, self-closes tags, wraps as reusable React component. Instant SVG to JSX conversion.",
       "seoTitle": "About SVG to JSX Conversion",
       "seoContent": "Using SVG icons and graphics in React requires converting SVG attributes to JSX-compatible syntax. SVG uses kebab-case attributes like stroke-width, fill-opacity, and clip-path that must become camelCase in JSX: strokeWidth, fillOpacity, clipPath. Additionally, class becomes className, inline styles need conversion to objects, and xlink:href becomes xlinkHref. This tool handles all these transformations automatically. It can also wrap the SVG in a React component with an export statement, remove the xmlns attribute (unnecessary in JSX), and pass through props for customization. Perfect for converting SVGs from design tools into reusable React icon components.",
       "faqTitle": "Frequently Asked Questions",
@@ -2028,8 +2028,8 @@
     "typescript-to-javascript": {
       "name": "TypeScript to JavaScript",
       "description": "Compile TypeScript code to plain JavaScript",
-      "pageTitle": "TypeScript to JavaScript Converter",
-      "pageDescription": "Convert TypeScript to JavaScript online. Strips type annotations, interfaces, and TS-specific syntax. Free and instant.",
+      "pageTitle": "TypeScript to JavaScript Converter Online — TS to JS Free Tool",
+      "pageDescription": "Convert TypeScript to JavaScript online free. TS to JS converter that strips type annotations, interfaces, generics, and TS-specific syntax instantly in your browser.",
       "seoTitle": "About TypeScript to JavaScript Conversion",
       "seoContent": "TypeScript is a typed superset of JavaScript that compiles to plain JS. Sometimes you need to quickly strip TypeScript-specific syntax to get clean JavaScript — for sharing code with non-TS projects, debugging, or learning what TypeScript compiles to. This tool removes type annotations, interfaces, type aliases, generic parameters, access modifiers (public, private, protected, readonly), type assertions (as Type), non-null assertions (!), and declare statements. It preserves all runtime JavaScript code including classes, functions, imports, and expressions. The output is clean, readable JavaScript ready to run in any environment. All processing happens in your browser with no external dependencies.",
       "faqTitle": "Frequently Asked Questions",
@@ -2110,8 +2110,8 @@
     "json-to-java": {
       "name": "JSON to Java Class",
       "description": "Convert JSON data to Java class definitions",
-      "pageTitle": "JSON to Java Class Converter",
-      "pageDescription": "Convert JSON to Java POJO classes online. Generate Java classes with getters, setters, and Lombok support. Free, fast, and private.",
+      "pageTitle": "JSON to Java Class Converter Online — Generate POJO from JSON",
+      "pageDescription": "Convert JSON to Java class online free. Generate Java POJO classes with getters, setters, constructors, and Lombok support. Instant JSON to Java conversion in your browser.",
       "seoTitle": "About JSON to Java Conversion",
       "seoContent": "Java's strong type system requires defining classes before deserializing JSON data. Manually writing Java POJOs (Plain Old Java Objects) for complex JSON APIs is tedious and error-prone. This tool analyzes your JSON and generates complete Java class definitions with proper field types, constructors, getters, and setters. It supports Lombok's @Data annotation to reduce boilerplate. Nested objects become separate classes, arrays become List<Type>, and null values are handled with nullable types. All processing happens in your browser.",
       "faqTitle": "Frequently Asked Questions",
@@ -2438,8 +2438,8 @@
     "json-to-json-schema": {
       "name": "JSON to JSON Schema",
       "description": "Generate JSON Schema from JSON data",
-      "pageTitle": "JSON to JSON Schema Generator",
-      "pageDescription": "Generate JSON Schema from JSON data online. Create validation schemas with proper types, required fields, and nested structures. Free and instant.",
+      "pageTitle": "JSON Schema Generator — Generate JSON Schema from JSON Online",
+      "pageDescription": "Generate JSON Schema from JSON data online free. Create validation schemas with proper types, required fields, formats, and nested object structures. Instant JSON Schema generator.",
       "seoTitle": "About JSON to JSON Schema Conversion",
       "seoContent": "JSON Schema is a vocabulary for annotating and validating JSON documents. It's widely used for API documentation (OpenAPI/Swagger), form generation, configuration validation, and data interchange. This tool analyzes your JSON data and generates a JSON Schema (draft-07) that describes its structure. It correctly identifies types, marks all existing fields as required, handles arrays with item schemas, and creates nested schemas for objects. The output can be used with any JSON Schema validator or integrated into OpenAPI specifications. All processing happens in your browser.",
       "faqTitle": "Frequently Asked Questions",
