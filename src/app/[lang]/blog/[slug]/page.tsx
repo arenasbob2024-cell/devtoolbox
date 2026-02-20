@@ -118,6 +118,9 @@ import ColorConverterRgbHexHslGuide from '@/data/posts/color-converter-rgb-hex-h
 import JsonToJavaClassConverterGuide from '@/data/posts/json-to-java-class-converter-guide';
 import XmlToJsonConverterGuide from '@/data/posts/xml-to-json-converter-guide';
 import CronExpressionGeneratorParserGuide from '@/data/posts/cron-expression-generator-parser-guide';
+import JsonToKotlinDataClassGuide from '@/data/posts/json-to-kotlin-data-class-guide';
+import JsonToPythonDataclassGuide from '@/data/posts/json-to-python-dataclass-guide';
+import JsonToCsharpClassGuide from '@/data/posts/json-to-csharp-class-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -226,6 +229,9 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'json-to-java-class-converter-guide': JsonToJavaClassConverterGuide,
   'xml-to-json-converter-guide': XmlToJsonConverterGuide,
   'cron-expression-generator-parser-guide': CronExpressionGeneratorParserGuide,
+  'json-to-kotlin-data-class-guide': JsonToKotlinDataClassGuide,
+  'json-to-python-dataclass-guide': JsonToPythonDataclassGuide,
+  'json-to-csharp-class-guide': JsonToCsharpClassGuide,
 };
 
 /* i18n for UI strings on this page */
