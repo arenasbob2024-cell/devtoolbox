@@ -107,6 +107,9 @@ import HexToRgbGuide from '@/data/posts/hex-to-rgb-converter-guide';
 import Base64EncodeDecodeGuide from '@/data/posts/base64-encode-decode-guide';
 import JsonFormatterGuide from '@/data/posts/json-formatter-validator-guide';
 import UrlEncodeDecodeGuide from '@/data/posts/url-encode-decode-complete-guide';
+import DiffCheckerTextCompareGuide from '@/data/posts/diff-checker-text-compare-guide';
+import HashGeneratorMd5Sha256Guide from '@/data/posts/hash-generator-md5-sha256-guide';
+import CsvToJsonConverterGuide from '@/data/posts/csv-to-json-converter-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -206,6 +209,9 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'base64-encode-decode-guide': Base64EncodeDecodeGuide,
   'json-formatter-validator-guide': JsonFormatterGuide,
   'url-encode-decode-complete-guide': UrlEncodeDecodeGuide,
+  'diff-checker-text-compare-guide': DiffCheckerTextCompareGuide,
+  'hash-generator-md5-sha256-guide': HashGeneratorMd5Sha256Guide,
+  'csv-to-json-converter-guide': CsvToJsonConverterGuide,
 };
 
 /* i18n for UI strings on this page */
