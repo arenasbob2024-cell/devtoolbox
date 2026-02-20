@@ -6,6 +6,9 @@ import { tools } from '@/lib/tools';
 import { useLang } from '@/i18n/LangContext';
 import NewsletterSignup from './NewsletterSignup';
 import SupportButton from './SupportButton';
+import ToolRating from './ugc/ToolRating';
+import ShareBar from './ugc/ShareBar';
+import FeedbackWidget from './ugc/FeedbackWidget';
 
 interface ToolLayoutProps {
   title: string;
@@ -53,11 +56,15 @@ export default function ToolLayout({ title, description, children, toolId }: Too
           <div className="card">
             {children}
           </div>
+          <ShareBar url={`https://viadreams.cc/${lang}/tools/${toolId}`} title={title} lang={lang} />
+          <FeedbackWidget toolId={toolId} lang={lang} />
         </div>
 
         {/* Sidebar */}
         <div style={{ width: 300, flexShrink: 0, display: 'flex', flexDirection: 'column', gap: 20 }}>
           <AdSlot size="rectangle" />
+
+          <ToolRating toolId={toolId} lang={lang} />
 
           {/* Related Tools */}
           <div className="card" style={{ padding: 16 }}>

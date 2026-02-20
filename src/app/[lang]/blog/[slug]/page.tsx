@@ -8,6 +8,8 @@ import { tools } from '@/lib/tools';
 import { i18n, type Locale } from '@/i18n/config';
 import AdSlot from '@/components/AdSlot';
 import NewsletterSignup from '@/components/NewsletterSignup';
+import ShareBar from '@/components/ugc/ShareBar';
+import HelpfulButton from '@/components/ugc/HelpfulButton';
 
 /* ---------- lazy-load article bodies ---------- */
 import UuidComparison from '@/data/posts/uuid-v4-vs-v7-vs-ulid';
@@ -326,6 +328,10 @@ export default function BlogPostPage() {
       <article className="blog-article" style={{ marginTop: 24 }}>
         {PostContent ? <PostContent lang={lang} /> : <p>Content not available.</p>}
       </article>
+
+      {/* Share & Helpful */}
+      <ShareBar url={`https://viadreams.cc/${lang}/blog/${slug}`} title={post.title} lang={lang} />
+      <HelpfulButton slug={slug} lang={lang} />
 
       {/* Newsletter */}
       <NewsletterSignup variant="wide" />
