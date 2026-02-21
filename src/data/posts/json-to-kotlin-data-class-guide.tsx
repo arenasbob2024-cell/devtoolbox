@@ -52,6 +52,10 @@ const t: Record<string, Record<string, string>> = {
     faq2_a: 'Declare optional fields as nullable with a default value: val nickname: String? = null. This ensures the data class can be instantiated even when the field is missing from the JSON. With kotlinx.serialization, properties with default values are automatically treated as optional. With Moshi, nullable properties are handled correctly by the Kotlin codegen adapter. With Gson, always declare potentially absent fields as nullable because Gson will silently set them to null even if declared as non-nullable in Kotlin.',
     faq3_q: 'What is the difference between a Kotlin data class and a regular class for JSON deserialization?',
     faq3_a: 'A Kotlin data class automatically generates equals(), hashCode(), toString(), copy(), and componentN() (destructuring) functions based on the primary constructor parameters. This makes data classes ideal for JSON models because you get value-based equality, readable debug output, and easy immutable copying for free. A regular class does not generate these functions, requiring manual implementation. Use data class for all JSON models unless you need custom equality logic, mutable state, or class inheritance hierarchies.',
+    faq4_q: 'Can I convert JSON to Kotlin data class online without installing any tools?',
+    faq4_a: 'Yes. Our free online <strong>JSON to Kotlin converter</strong> at DevToolBox lets you paste any JSON and instantly generate Kotlin data classes with proper type inference, null safety annotations, and serialization annotations. No IDE plugin or command-line tool needed. Just paste your JSON, select your preferred serialization library (kotlinx.serialization, Moshi, or Gson), and copy the generated Kotlin code directly into your project.',
+    faq5_q: 'How do I convert a nested JSON array to Kotlin data classes?',
+    faq5_a: 'For nested JSON arrays like <code>{"users": [{"name": "Alice"}, {"name": "Bob"}]}</code>, create a data class for the array element (<code>data class User(val name: String)</code>) and declare the field as <code>val users: List&lt;User&gt;</code> in the parent class. With kotlinx.serialization, this works automatically. With Moshi, use <code>Types.newParameterizedType(List::class.java, User::class.java)</code>. Our JSON to Kotlin tool handles nested arrays automatically.',
     conclusion: 'Converting <strong>JSON to Kotlin data classes</strong> is a foundational skill for every Kotlin developer working with APIs. From kotlinx.serialization for Kotlin Multiplatform to Moshi for Android Retrofit integration, choosing the right library and following idiomatic patterns ensures type-safe, null-safe, and maintainable code. Use our free online <strong>JSON to Kotlin</strong> converter for instant data class generation, and refer to this guide for best practices on <strong>Kotlin JSON parsing</strong>, sealed class polymorphism, and serialization library selection.',
     linkToolBottom: 'Convert JSON to Kotlin data classes instantly with our free online tool.',
   },
@@ -391,6 +395,8 @@ export default function JsonToKotlinDataClassGuide({ lang }: { lang: string }) {
       { '@type': 'Question', name: s.faq1_q, acceptedAnswer: { '@type': 'Answer', text: s.faq1_a } },
       { '@type': 'Question', name: s.faq2_q, acceptedAnswer: { '@type': 'Answer', text: s.faq2_a } },
       { '@type': 'Question', name: s.faq3_q, acceptedAnswer: { '@type': 'Answer', text: s.faq3_a } },
+      ...(s.faq4_q ? [{ '@type': 'Question', name: s.faq4_q, acceptedAnswer: { '@type': 'Answer', text: s.faq4_a } }] : []),
+      ...(s.faq5_q ? [{ '@type': 'Question', name: s.faq5_q, acceptedAnswer: { '@type': 'Answer', text: s.faq5_a } }] : []),
     ],
   };
 
@@ -761,9 +767,24 @@ inline fun <reified T> String.parseJson(): T {
       <p dangerouslySetInnerHTML={{ __html: s.faq2_a }} />
       <h3>{s.faq3_q}</h3>
       <p dangerouslySetInnerHTML={{ __html: s.faq3_a }} />
+      {s.faq4_q && <><h3>{s.faq4_q}</h3><p dangerouslySetInnerHTML={{ __html: s.faq4_a }} /></>}
+      {s.faq5_q && <><h3>{s.faq5_q}</h3><p dangerouslySetInnerHTML={{ __html: s.faq5_a }} /></>}
 
       <p style={{ marginTop: 32 }} dangerouslySetInnerHTML={{ __html: s.conclusion }} />
       <p><Link href={`/${lang}/tools/json-to-kotlin`} style={{ fontWeight: 600 }}>{s.linkToolBottom}</Link></p>
+
+      {/* Internal links for SEO */}
+      <h2>Related Developer Tools and Guides</h2>
+      <ul>
+        <li><Link href={`/${lang}/tools/json-to-kotlin`}>JSON to Kotlin Converter</Link> - Convert JSON to Kotlin data classes instantly</li>
+        <li><Link href={`/${lang}/tools/json-to-java`}>JSON to Java Converter</Link> - Generate Java POJOs from JSON</li>
+        <li><Link href={`/${lang}/tools/json-to-typescript`}>JSON to TypeScript Converter</Link> - Create TypeScript interfaces from JSON</li>
+        <li><Link href={`/${lang}/tools/json-to-dart`}>JSON to Dart Converter</Link> - Generate Dart/Flutter models from JSON</li>
+        <li><Link href={`/${lang}/tools/json-to-python`}>JSON to Python Converter</Link> - Create Python dataclasses from JSON</li>
+        <li><Link href={`/${lang}/tools/json-to-csharp`}>JSON to C# Converter</Link> - Generate C# classes from JSON</li>
+        <li><Link href={`/${lang}/tools/json-to-go`}>JSON to Go Converter</Link> - Create Go structs from JSON</li>
+        <li><Link href={`/${lang}/tools/json-formatter`}>JSON Formatter</Link> - Format and validate JSON data</li>
+      </ul>
     </>
   );
 }

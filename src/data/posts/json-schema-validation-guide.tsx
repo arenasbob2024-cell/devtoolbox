@@ -2,8 +2,8 @@ import Link from 'next/link';
 
 const t: Record<string, Record<string, string>> = {
   en: {
-    intro: 'JSON Schema is the industry standard for describing and validating JSON data structures. Whether you\'re building REST APIs, validating form inputs, or generating documentation, understanding JSON Schema is a <strong>must-have skill</strong> for modern developers.',
-    try_tool: 'Generate JSON Schema from your data instantly \u2192',
+    intro: 'Need to <strong>create JSON Schema from JSON</strong> data? JSON Schema is the industry standard for describing and validating JSON data structures. Whether you want to <strong>generate JSON Schema from JSON</strong> automatically, build REST APIs, validate form inputs, or generate documentation, understanding JSON Schema is a <strong>must-have skill</strong> for modern developers. Our free online tool lets you create a JSON Schema from any JSON data instantly.',
+    try_tool: 'Create JSON Schema from JSON instantly (free online tool) \u2192',
     h2_1: '1. What is JSON Schema?',
     p1_1: 'JSON Schema is a <strong>vocabulary for annotating and validating JSON documents</strong>. It describes the shape of your data \u2014 what fields exist, what types they are, which are required, and what constraints apply. Think of it as TypeScript types, but for JSON data at runtime.',
     p1_2: 'JSON Schema is defined in JSON itself, making it language-agnostic. The same schema works in JavaScript, Python, Go, Java, and any other language with a JSON Schema validator.',
@@ -30,10 +30,10 @@ const t: Record<string, Record<string, string>> = {
     p6_1: 'OpenAPI (formerly Swagger) uses a <strong>superset of JSON Schema</strong> to define API request and response bodies. If you know JSON Schema, you already understand 90% of OpenAPI data modeling.',
     p6_2: 'Key differences in OpenAPI: <code>nullable</code> replaces <code>"type": ["string", "null"]</code>, <code>discriminator</code> provides explicit union type handling, and <code>example</code>/<code>examples</code> are first-class keywords.',
     p6_3: '<strong>Workflow tip:</strong> Start with JSON Schema for your data models, then extend to OpenAPI for API documentation. Many tools can generate one from the other.',
-    h2_7: '7. Tool Recommendation: JSON to JSON Schema',
-    p7_1: 'Writing JSON Schema by hand is tedious, especially for complex nested objects. Our <strong>JSON to JSON Schema generator</strong> analyzes your sample data and produces a complete schema:',
-    p7_list: '<li>Automatically infers types from your JSON data</li><li>Detects required vs. optional fields from multiple samples</li><li>Handles nested objects and arrays recursively</li><li>Outputs valid JSON Schema draft-07 compatible schemas</li>',
-    p7_2: 'Paste your JSON data and get a production-ready schema in seconds. Then customize the generated schema to add constraints like patterns, min/max values, and descriptions.',
+    h2_7: '7. How to Create JSON Schema from JSON Automatically',
+    p7_1: 'Writing JSON Schema by hand is tedious, especially for complex nested objects. The fastest way to <strong>create JSON Schema from JSON</strong> is to use an automatic generator. Our free <strong>JSON to JSON Schema generator</strong> analyzes your sample data and produces a complete schema:',
+    p7_list: '<li>Automatically infers types from your JSON data</li><li>Detects required vs. optional fields from multiple samples</li><li>Handles nested objects and arrays recursively</li><li>Outputs valid JSON Schema draft-07 compatible schemas</li><li>Works entirely in your browser - no data is sent to any server</li>',
+    p7_2: 'To <strong>generate JSON Schema from JSON</strong>, simply paste your JSON data into the tool and get a production-ready schema in seconds. Then customize the generated schema to add constraints like patterns, min/max values, and descriptions.',
     h2_faq: 'Frequently Asked Questions',
     faq1_q: 'Which JSON Schema draft version should I use?',
     faq1_a: 'For new projects, use Draft 2020-12 (the latest) if your tooling supports it. Otherwise, Draft-07 has the widest support across validators, code generators, and API tools. The differences between recent drafts are minor for most use cases.',
@@ -232,6 +232,27 @@ components:
       <p dangerouslySetInnerHTML={{ __html: tx.faq2_a }} />
       <h3>{tx.faq3_q}</h3>
       <p dangerouslySetInnerHTML={{ __html: tx.faq3_a }} />
+
+      {lang === 'en' && (
+        <>
+          <h3>How do I create JSON Schema from JSON automatically?</h3>
+          <p>The fastest way to create JSON Schema from JSON is to use an automatic generator tool. Paste your sample JSON data into our <Link href={`/${lang}/tools/json-to-json-schema`}>JSON to JSON Schema generator</Link>, and it will analyze the structure, infer types for every field, determine which fields are required, and output a valid JSON Schema draft-07 document. This is much faster than writing schemas by hand, especially for complex nested objects.</p>
+
+          <h3>Can I generate JSON Schema from multiple JSON samples?</h3>
+          <p>Yes. Advanced JSON Schema generators can analyze multiple JSON samples to produce a more accurate schema. By comparing several documents, the generator determines which fields are always present (required) versus sometimes absent (optional), and whether fields have consistent types or mixed types. Our tool handles single samples with smart inference for nullability and optionality.</p>
+        </>
+      )}
+
+      {/* Internal links for SEO */}
+      <h2>Related Developer Tools and Guides</h2>
+      <ul>
+        <li><Link href={`/${lang}/tools/json-to-json-schema`}>JSON to JSON Schema Generator</Link> - Create JSON Schema from JSON data automatically</li>
+        <li><Link href={`/${lang}/tools/json-formatter`}>JSON Formatter</Link> - Format and validate JSON data</li>
+        <li><Link href={`/${lang}/tools/json-to-typescript`}>JSON to TypeScript Converter</Link> - Generate TypeScript interfaces from JSON</li>
+        <li><Link href={`/${lang}/tools/json-to-zod`}>JSON to Zod Converter</Link> - Generate Zod validation schemas from JSON</li>
+        <li><Link href={`/${lang}/blog/json-to-typescript-complete-guide`}>JSON to TypeScript: Complete Guide</Link></li>
+        <li><Link href={`/${lang}/blog/json-formatter-validator-guide`}>JSON Formatter and Validator Guide</Link></li>
+      </ul>
     </>
   );
 }

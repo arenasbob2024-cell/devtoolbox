@@ -2,8 +2,8 @@ import Link from 'next/link';
 
 const t: Record<string, Record<string, string>> = {
   en: {
-    intro: 'SVG is the preferred format for icons, illustrations, and logos in modern web apps. But dropping raw SVG files into a React project often leads to <strong>broken attributes, bloated markup, and accessibility issues</strong>. This guide walks you through the full journey from raw SVG to optimized, reusable React components.',
-    try_tool: 'Convert SVG to JSX instantly with our tool \u2192',
+    intro: 'Need to <strong>convert SVG to JSX</strong> for your React project? SVG is the preferred format for icons, illustrations, and logos in modern web apps, but dropping raw SVG files into React leads to <strong>broken attributes, bloated markup, and accessibility issues</strong>. This guide walks you through the full <strong>SVG to JSX</strong> conversion process: from raw SVG to optimized, reusable React components. Use our free <strong>SVG to JSX converter</strong> below for instant results.',
+    try_tool: 'Convert SVG to JSX/React online (free tool) \u2192',
     h2_1: '1. Why Inline SVG in React?',
     p1_1: 'There are three common ways to use SVG in React: <code>&lt;img&gt;</code> tags, CSS backgrounds, and <strong>inline SVG</strong>. Inline SVG is often the best choice because it gives you full control over styling, animation, and accessibility.',
     p1_2: '<strong>Inline SVG advantages:</strong> You can style individual paths with CSS or Tailwind classes, animate parts of the SVG, change colors dynamically via props, and add proper ARIA attributes for screen readers.',
@@ -27,8 +27,8 @@ const t: Record<string, Record<string, string>> = {
     p6_1: 'SVG icons are often invisible to screen readers unless you add proper ARIA attributes. Follow these rules:',
     p6_list: '<li><strong>Decorative icons</strong> (next to text labels): Add <code>aria-hidden="true"</code> and <code>focusable="false"</code></li><li><strong>Meaningful icons</strong> (standalone, no text): Add <code>role="img"</code> and <code>aria-label="description"</code></li><li><strong>Interactive icons</strong> (inside buttons): The button should have <code>aria-label</code>; the SVG gets <code>aria-hidden="true"</code></li>',
     p6_2: 'A well-structured accessible icon component handles this automatically:',
-    h2_7: '7. Tool Recommendation: SVG to JSX Converter',
-    p7_1: 'Manually converting SVG attributes and cleaning up markup is tedious and error-prone. Our <strong>SVG to JSX converter</strong> handles all of this automatically:',
+    h2_7: '7. Free Online SVG to JSX Converter',
+    p7_1: 'Manually converting SVG attributes and cleaning up markup is tedious and error-prone. Use our free <strong>SVG to JSX converter</strong> to transform any SVG into a clean React component automatically:',
     p7_list: '<li>Converts all HTML attributes to camelCase JSX equivalents</li><li>Removes unnecessary metadata and editor attributes</li><li>Formats the output as a clean React component</li><li>Preserves viewBox and essential SVG structure</li>',
     p7_2: 'Paste your raw SVG and get a production-ready JSX component in seconds.',
     h2_faq: 'Frequently Asked Questions',
@@ -208,6 +208,27 @@ function CheckIcon({ size = 24, color = "currentColor", ...props }: IconProps) {
       <p dangerouslySetInnerHTML={{ __html: tx.faq2_a }} />
       <h3>{tx.faq3_q}</h3>
       <p dangerouslySetInnerHTML={{ __html: tx.faq3_a }} />
+
+      {lang === 'en' && (
+        <>
+          <h3>How do I convert SVG to JSX online?</h3>
+          <p>Use our free <Link href={`/${lang}/tools/svg-to-jsx`}>SVG to JSX converter</Link>. Paste your raw SVG markup and instantly get a clean React/JSX component. The tool automatically converts HTML attributes to camelCase (class to className, stroke-width to strokeWidth), removes unnecessary metadata, and formats the output as a reusable React component. No installation required.</p>
+
+          <h3>What is the difference between SVG to JSX and SVG to React component?</h3>
+          <p>They refer to the same process. Converting SVG to JSX means transforming raw SVG markup into JSX-compatible syntax that React can render. This involves converting kebab-case attributes to camelCase, replacing class with className, and optionally wrapping the result in a React component function with TypeScript props. Our SVG to JSX tool handles both the syntax conversion and component wrapping.</p>
+        </>
+      )}
+
+      {/* Internal links for SEO */}
+      <h2>Related Developer Tools and Guides</h2>
+      <ul>
+        <li><Link href={`/${lang}/tools/svg-to-jsx`}>SVG to JSX Converter</Link> - Convert SVG to React components instantly</li>
+        <li><Link href={`/${lang}/tools/svg-optimizer`}>SVG Optimizer</Link> - Optimize and minify SVG files</li>
+        <li><Link href={`/${lang}/tools/html-to-jsx`}>HTML to JSX Converter</Link> - Convert HTML to React JSX</li>
+        <li><Link href={`/${lang}/tools/image-base64`}>Image to Base64</Link> - Convert images to Base64 data URIs</li>
+        <li><Link href={`/${lang}/blog/html-to-jsx-react-migration`}>HTML to JSX: React Migration Guide</Link></li>
+        <li><Link href={`/${lang}/blog/svg-viewbox-width-height-explained`}>SVG ViewBox Explained</Link></li>
+      </ul>
     </>
   );
 }

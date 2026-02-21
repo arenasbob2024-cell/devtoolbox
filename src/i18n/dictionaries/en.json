@@ -2151,8 +2151,8 @@
     "json-to-kotlin": {
       "name": "JSON to Kotlin",
       "description": "Convert JSON data to Kotlin data classes",
-      "pageTitle": "JSON to Kotlin Data Class Converter",
-      "pageDescription": "Convert JSON to Kotlin data classes online. Generate idiomatic Kotlin code with nullable types and proper type inference. Free and instant.",
+      "pageTitle": "JSON to Kotlin Converter — Generate Kotlin Data Classes Online Free",
+      "pageDescription": "Free JSON to Kotlin converter. Generate Kotlin data classes from JSON instantly with null safety, @SerialName annotations, and proper type inference. Works with kotlinx.serialization, Moshi, and Gson.",
       "seoTitle": "About JSON to Kotlin Conversion",
       "seoContent": "Kotlin data classes provide a concise way to define typed data models. When working with JSON APIs in Kotlin (especially on Android), you need data classes that match the JSON structure. This tool analyzes your JSON and generates idiomatic Kotlin data classes with proper type inference. It handles nullable types for null values, uses List<Type> for arrays, and creates separate data classes for nested objects. The generated code works seamlessly with Kotlinx.serialization, Moshi, or Gson. All processing happens locally in your browser.",
       "faqTitle": "Frequently Asked Questions",
@@ -2438,8 +2438,8 @@
     "json-to-json-schema": {
       "name": "JSON to JSON Schema",
       "description": "Generate JSON Schema from JSON data",
-      "pageTitle": "JSON Schema Generator — Generate JSON Schema from JSON Online",
-      "pageDescription": "Generate JSON Schema from JSON data online free. Create validation schemas with proper types, required fields, formats, and nested object structures. Instant JSON Schema generator.",
+      "pageTitle": "Create JSON Schema from JSON — Free Online JSON Schema Generator",
+      "pageDescription": "Create JSON Schema from JSON data automatically. Free online tool to generate JSON Schema with proper types, required fields, nested objects, and array validation. Instant JSON to JSON Schema converter.",
       "seoTitle": "About JSON to JSON Schema Conversion",
       "seoContent": "JSON Schema is a vocabulary for annotating and validating JSON documents. It's widely used for API documentation (OpenAPI/Swagger), form generation, configuration validation, and data interchange. This tool analyzes your JSON data and generates a JSON Schema (draft-07) that describes its structure. It correctly identifies types, marks all existing fields as required, handles arrays with item schemas, and creates nested schemas for objects. The output can be used with any JSON Schema validator or integrated into OpenAPI specifications. All processing happens in your browser.",
       "faqTitle": "Frequently Asked Questions",
