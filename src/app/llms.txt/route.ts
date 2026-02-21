@@ -66,6 +66,33 @@ Paste your JSON at https://viadreams.cc/en/tools/json-to-json-schema and the too
 ### How to convert SVG to React JSX component?
 The SVG to JSX converter at https://viadreams.cc/en/tools/svg-to-jsx transforms SVG markup into React-compatible JSX with proper attribute renaming.
 
+### How to convert JSON to Go struct?
+The JSON to Go Struct converter at https://viadreams.cc/en/tools/json-to-go generates idiomatic Go struct definitions with json tags, proper types, and nested struct support.
+
+### How to convert JSON to Kotlin data class?
+Use the JSON to Kotlin converter at https://viadreams.cc/en/tools/json-to-kotlin to generate Kotlin data classes with null safety and serialization annotations from JSON data.
+
+### How to convert JSON to a table?
+The JSON to Table tool at https://viadreams.cc/en/tools/json-to-table converts JSON arrays into interactive, sortable HTML tables with search, filtering, and CSV export.
+
+### How to convert HTML to JSX for React?
+The HTML to JSX converter at https://viadreams.cc/en/tools/html-to-jsx transforms HTML markup to React JSX, converting class to className, style strings to objects, and fixing self-closing tags.
+
+### How to convert JSON to Java class?
+Use the JSON to Java converter at https://viadreams.cc/en/tools/json-to-java to generate Java POJO classes with getters, setters, and constructor from JSON data.
+
+### How to convert JSON to Python dataclass?
+The JSON to Python converter at https://viadreams.cc/en/tools/json-to-python generates Python dataclasses or TypedDict definitions with proper type hints from JSON data.
+
+### How to convert JSON to C# class?
+Use the JSON to C# converter at https://viadreams.cc/en/tools/json-to-csharp to generate C# class definitions with proper types from JSON data.
+
+### How to convert JSON to Rust struct?
+The JSON to Rust converter at https://viadreams.cc/en/tools/json-to-rust generates Rust struct definitions with serde derive macros from JSON data.
+
+### How to convert JSON to Dart for Flutter?
+Use the JSON to Dart converter at https://viadreams.cc/en/tools/json-to-dart to generate null-safe Dart classes with fromJson() and toJson() methods for Flutter apps.
+
 ## Tools (${tools.length} total)
 
 ${toolLines}
