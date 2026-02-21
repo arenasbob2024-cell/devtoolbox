@@ -90,6 +90,7 @@ export default async function LangLayout({
   return (
     <html lang={lang} className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <head>
+        <link rel="llms" href="https://viadreams.cc/llms.txt" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4725521983849501" crossOrigin="anonymous"></script>
         {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-85N12XK3TY"></script>

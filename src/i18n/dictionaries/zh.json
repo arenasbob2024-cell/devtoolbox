@@ -4004,6 +4004,48 @@
       "notableDates": "重要时间戳",
       "seoTitle": "Unix 时间戳转换器在线工具",
       "seoContent": "这个 Unix 时间戳转换器工具可以在 Unix 纪元时间戳和可读日期之间转换。输入时间戳查看本地时间、UTC 和 ISO 8601 格式。或选择日期获取 Unix 时间戳。支持秒和毫秒。功能包括当前时间戳显示、相对时间和重要时间戳参考。适用于调试、日志记录和 API 开发。所有处理都在浏览器中完成——数据不会离开您的设备。"
+    },
+    "json-to-table": {
+      "name": "JSON to Table",
+      "description": "Convert JSON data to an interactive, sortable HTML table with search, filter, and CSV export",
+      "pageTitle": "JSON to Table Converter - View JSON as Interactive Table | DevToolBox",
+      "pageDescription": "Convert JSON data to a sortable, filterable HTML table online. Paste JSON arrays or objects, view as interactive table, search rows, sort columns, and download as CSV. Free, fast, and private.",
+      "seoTitle": "About JSON to Table Conversion",
+      "seoContent": "JSON (JavaScript Object Notation) is the most common data format for APIs and configuration files. While JSON is great for machines, viewing large JSON arrays as raw text is hard for humans. This JSON to Table converter transforms JSON data into an interactive HTML table with sortable columns, row search and filtering, and CSV export. It handles arrays of objects (the most common API response format), nested objects using dot notation flattening (e.g. address.city), and single objects displayed as one-row tables. All processing happens in your browser — your data never leaves your device.",
+      "faqTitle": "Frequently Asked Questions",
+      "faqs": [
+        {
+          "q": "What JSON formats are supported?",
+          "a": "The tool supports arrays of objects (most common), single objects, and nested JSON. Nested objects are flattened using dot notation."
+        },
+        {
+          "q": "Can I sort the table columns?",
+          "a": "Yes. Click any column header to sort ascending, click again for descending, and a third click removes sorting."
+        },
+        {
+          "q": "How do I filter or search the table?",
+          "a": "Use the search box above the table. It filters rows in real time, matching against all columns."
+        },
+        {
+          "q": "Can I export the table as CSV?",
+          "a": "Yes. Click the Download CSV button to download the current table as a CSV file."
+        }
+      ],
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Paste your JSON data into the input text area",
+        "The table renders automatically",
+        "Click column headers to sort ascending or descending",
+        "Use the search box to filter rows",
+        "Download as CSV or copy to clipboard"
+      ],
+      "useCasesTitle": "Common Use Cases",
+      "useCases": [
+        "Viewing API response data as a readable table",
+        "Exploring JSON datasets and finding specific records",
+        "Converting JSON arrays to CSV for spreadsheet import",
+        "Debugging and inspecting JSON data from REST APIs"
+      ]
     }
   },
   "footer": {

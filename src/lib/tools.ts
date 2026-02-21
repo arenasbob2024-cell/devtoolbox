@@ -217,7 +217,7 @@ export const tools: Tool[] = [
     description: 'Convert between JSON and YAML formats instantly',
     icon: 'Y{}',
     category: 'converter',
-    keywords: ['json', 'yaml', 'yml', 'convert', 'config', 'configuration'],
+    keywords: ['json', 'yaml', 'yml', 'convert', 'config', 'configuration', 'json to yaml', 'yaml to json', 'json to yaml converter', 'yaml to json converter', 'convert json to yaml', 'convert yaml to json'],
     path: '/tools/json-yaml',
   },
   {
@@ -289,7 +289,7 @@ export const tools: Tool[] = [
     description: 'Convert between CSV and JSON formats instantly',
     icon: '📊',
     category: 'converter',
-    keywords: ['csv', 'json', 'convert', 'spreadsheet', 'data', 'export'],
+    keywords: ['csv', 'json', 'convert', 'spreadsheet', 'data', 'export', 'json to csv', 'csv to json', 'json to csv converter', 'csv to json converter', 'convert json to csv', 'convert csv to json'],
     path: '/tools/csv-json',
   },
   {
@@ -395,10 +395,10 @@ export const tools: Tool[] = [
   {
     id: 'json-to-typescript',
     name: 'JSON to TypeScript',
-    description: 'Convert JSON data to TypeScript interfaces and types',
+    description: 'Convert JSON to TypeScript interfaces and types online',
     icon: 'TS',
     category: 'converter',
-    keywords: ['json', 'typescript', 'interface', 'type', 'convert', 'ts'],
+    keywords: ['json', 'typescript', 'interface', 'type', 'convert', 'ts', 'json to typescript', 'json to ts', 'json to typescript converter', 'convert json to typescript'],
     path: '/tools/json-to-typescript',
     relatedTools: ['json-formatter', 'json-to-go', 'json-to-java', 'json-to-zod'],
   },
@@ -546,11 +546,11 @@ export const tools: Tool[] = [
   },
   {
     id: 'json-to-json-schema',
-    name: 'JSON to JSON Schema',
-    description: 'Generate JSON Schema from JSON data',
+    name: 'JSON to JSON Schema Generator',
+    description: 'Generate JSON Schema from JSON data — free JSON Schema generator',
     icon: 'JS',
     category: 'converter',
-    keywords: ['json', 'json-schema', 'schema', 'validation', 'convert'],
+    keywords: ['json', 'json-schema', 'schema', 'validation', 'convert', 'json to json schema', 'json schema generator', 'create json schema from json', 'generate json schema from json', 'json schema from json', 'json to schema'],
     path: '/tools/json-to-json-schema',
     relatedTools: ['json-to-zod', 'json-to-typescript', 'json-formatter', 'json-to-graphql'],
   },
@@ -586,11 +586,11 @@ export const tools: Tool[] = [
   },
   {
     id: 'xml-to-json',
-    name: 'XML to JSON',
-    description: 'Convert XML markup to JSON format',
+    name: 'XML to JSON Converter',
+    description: 'Convert XML to JSON online free',
     icon: 'XJ',
     category: 'converter',
-    keywords: ['xml', 'json', 'convert', 'markup', 'data'],
+    keywords: ['xml', 'json', 'convert', 'markup', 'data', 'xml to json', 'xml to json converter', 'convert xml to json', 'xml to json online'],
     path: '/tools/xml-to-json',
     relatedTools: ['xml-formatter', 'json-formatter', 'json-yaml', 'csv-json'],
   },
@@ -1387,6 +1387,17 @@ export const tools: Tool[] = [
     keywords: ['typescript vs javascript', 'javascript vs typescript', 'ts vs js', 'typescript or javascript', 'should i use typescript'],
     path: '/tools/typescript-vs-javascript',
     relatedTools: ['json-to-typescript', 'typescript-to-javascript', 'json-formatter', 'regex-tester'],
+  },
+  // JSON to Table — interactive table viewer
+  {
+    id: 'json-to-table',
+    name: 'JSON to Table',
+    description: 'Convert JSON data to an interactive, sortable HTML table with search, filter, and CSV export',
+    icon: '📊',
+    category: 'converter',
+    keywords: ['json to table', 'json table viewer', 'json to html table', 'json table converter', 'view json as table', 'json table', 'json to csv', 'json viewer table', 'json data table'],
+    path: '/tools/json-to-table',
+    relatedTools: ['json-formatter', 'csv-json', 'json-viewer', 'json-to-typescript'],
   },
 ];
 

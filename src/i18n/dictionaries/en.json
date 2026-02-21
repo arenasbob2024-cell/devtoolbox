@@ -981,9 +981,9 @@
     },
     "json-yaml": {
       "name": "JSON ↔ YAML Converter",
-      "description": "Convert between JSON and YAML formats instantly",
-      "pageTitle": "JSON to YAML Converter",
-      "pageDescription": "Convert JSON to YAML and YAML to JSON online. Fast, free, and works in your browser.",
+      "description": "Convert JSON to YAML and YAML to JSON online instantly",
+      "pageTitle": "JSON to YAML Converter - Convert YAML to JSON Online Free | DevToolBox",
+      "pageDescription": "Free JSON to YAML converter and YAML to JSON converter. Convert between JSON and YAML formats instantly in your browser. Handles nested objects and arrays.",
       "jsonToYaml": "JSON → YAML",
       "yamlToJson": "YAML → JSON",
       "jsonPlaceholder": "Paste your JSON here...\n\n{\"key\": \"value\"}",
@@ -1374,9 +1374,9 @@
     },
     "csv-json": {
       "name": "CSV ↔ JSON Converter",
-      "description": "Convert between CSV and JSON formats instantly",
-      "pageTitle": "CSV to JSON Converter",
-      "pageDescription": "Convert CSV to JSON and JSON to CSV online. Handles headers and nested structures.",
+      "description": "Convert JSON to CSV and CSV to JSON online for free",
+      "pageTitle": "JSON to CSV Converter & CSV to JSON - Free Online Tool | DevToolBox",
+      "pageDescription": "Convert JSON to CSV and CSV to JSON online instantly. Free JSON to CSV converter handles nested objects, arrays, and large datasets. No signup required.",
       "seoTitle": "About CSV and JSON Conversion",
       "seoContent": "CSV and JSON are two of the most common data formats in software development. CSV excels for spreadsheet data and database exports, while JSON is the standard for APIs and web applications. This tool converts between the two formats instantly in your browser. It automatically detects headers from CSV files, handles quoted fields with commas, and produces clean JSON output. When converting JSON to CSV, it flattens nested objects and arrays into tabular columns. Perfect for transforming data between different systems without writing scripts.",
       "faqTitle": "Frequently Asked Questions",
@@ -1818,9 +1818,9 @@
     },
     "json-to-typescript": {
       "name": "JSON to TypeScript",
-      "description": "Convert JSON data to TypeScript interfaces and types",
-      "pageTitle": "JSON to TypeScript Converter",
-      "pageDescription": "Convert JSON to TypeScript interfaces online. Generate accurate TS types with nested objects, arrays, and optional properties. Free, fast, privacy-first.",
+      "description": "Convert JSON to TypeScript interfaces and types online",
+      "pageTitle": "JSON to TypeScript - Convert JSON to TS Interfaces Online Free | DevToolBox",
+      "pageDescription": "Free JSON to TypeScript converter. Generate TypeScript interfaces and types from JSON data instantly. Handles nested objects, arrays, and optional properties.",
       "seoTitle": "About JSON to TypeScript Conversion",
       "seoContent": "Converting JSON data to TypeScript interfaces is one of the most common tasks in modern web development. TypeScript's type system helps catch errors at compile time and improves code quality through better IDE support and auto-completion. Manually writing interfaces for complex JSON structures is tedious and error-prone. This tool automates the process by analyzing your JSON data and generating accurate TypeScript interfaces. It handles nested objects by creating separate named interfaces, correctly types arrays (including mixed-type arrays as union types), and treats null values appropriately. You can customize the root interface name, toggle the export keyword, and add readonly modifiers. All conversion happens locally in your browser — your JSON data is never sent to any server.",
       "faqTitle": "Frequently Asked Questions",
@@ -2437,9 +2437,9 @@
     },
     "json-to-json-schema": {
       "name": "JSON to JSON Schema",
-      "description": "Generate JSON Schema from JSON data",
-      "pageTitle": "Create JSON Schema from JSON — Free Online JSON Schema Generator",
-      "pageDescription": "Create JSON Schema from JSON data automatically. Free online tool to generate JSON Schema with proper types, required fields, nested objects, and array validation. Instant JSON to JSON Schema converter.",
+      "description": "Convert JSON to JSON Schema — generate schema from JSON instantly",
+      "pageTitle": "JSON to JSON Schema Generator - Create JSON Schema from JSON Online | DevToolBox",
+      "pageDescription": "Free JSON to JSON Schema converter. Generate JSON Schema from JSON data automatically with proper types, required fields, nested objects, and array validation. Create JSON Schema from JSON online instantly.",
       "seoTitle": "About JSON to JSON Schema Conversion",
       "seoContent": "JSON Schema is a vocabulary for annotating and validating JSON documents. It's widely used for API documentation (OpenAPI/Swagger), form generation, configuration validation, and data interchange. This tool analyzes your JSON data and generates a JSON Schema (draft-07) that describes its structure. It correctly identifies types, marks all existing fields as required, handles arrays with item schemas, and creates nested schemas for objects. The output can be used with any JSON Schema validator or integrated into OpenAPI specifications. All processing happens in your browser.",
       "faqTitle": "Frequently Asked Questions",
@@ -2600,10 +2600,10 @@
       ]
     },
     "xml-to-json": {
-      "name": "XML to JSON",
-      "description": "Convert XML markup to JSON format",
-      "pageTitle": "XML to JSON Converter",
-      "pageDescription": "Convert XML to JSON online. Transform XML documents to JSON with attribute handling, nested elements, and array detection. Free and instant.",
+      "name": "XML to JSON Converter",
+      "description": "Convert XML to JSON online — free XML to JSON converter",
+      "pageTitle": "XML to JSON Converter - Convert XML to JSON Online Free | DevToolBox",
+      "pageDescription": "Free XML to JSON converter online. Transform XML documents to JSON with attribute handling, nested elements, and array detection. Fast, instant, no signup.",
       "seoTitle": "About XML to JSON Conversion",
       "seoContent": "XML and JSON are two of the most common data interchange formats. While XML uses tags and attributes, JSON uses key-value pairs and arrays. Converting XML to JSON is useful when migrating legacy systems, consuming SOAP APIs, or processing XML feeds in modern JavaScript applications. This tool parses XML and converts it to a structured JSON representation where elements become objects, attributes are prefixed with @, text content is stored as #text, and repeated elements automatically become arrays. It handles CDATA sections, self-closing tags, and nested structures. All processing happens in your browser.",
       "faqTitle": "Frequently Asked Questions",
@@ -4008,6 +4008,48 @@
       "notableDates": "Notable Timestamps",
       "seoTitle": "Unix Timestamp Converter Online",
       "seoContent": "This Unix timestamp converter tool lets you convert between Unix epoch timestamps and human-readable dates. Enter a timestamp to see the local time, UTC, and ISO 8601 format. Or pick a date to get the Unix timestamp. Supports both seconds and milliseconds. Features include current timestamp display, relative time, and notable timestamp references. Useful for debugging, logging, and API development. All processing happens in your browser — your data never leaves your device."
+    },
+    "json-to-table": {
+      "name": "JSON to Table",
+      "description": "Convert JSON data to an interactive, sortable HTML table with search, filter, and CSV export",
+      "pageTitle": "JSON to Table Converter - View JSON as Interactive Table | DevToolBox",
+      "pageDescription": "Convert JSON data to a sortable, filterable HTML table online. Paste JSON arrays or objects, view as interactive table, search rows, sort columns, and download as CSV. Free, fast, and private.",
+      "seoTitle": "About JSON to Table Conversion",
+      "seoContent": "JSON (JavaScript Object Notation) is the most common data format for APIs and configuration files. While JSON is great for machines, viewing large JSON arrays as raw text is hard for humans. This JSON to Table converter transforms JSON data into an interactive HTML table with sortable columns, row search and filtering, and CSV export. It handles arrays of objects (the most common API response format), nested objects using dot notation flattening (e.g. address.city), and single objects displayed as one-row tables. All processing happens in your browser — your data never leaves your device.",
+      "faqTitle": "Frequently Asked Questions",
+      "faqs": [
+        {
+          "q": "What JSON formats are supported?",
+          "a": "The tool supports arrays of objects (most common), single objects, and nested JSON. Nested objects are flattened using dot notation (e.g. address.city becomes a column named 'address.city')."
+        },
+        {
+          "q": "Can I sort the table columns?",
+          "a": "Yes. Click any column header to sort ascending, click again for descending, and a third click removes sorting. Numeric columns are sorted numerically, text columns alphabetically."
+        },
+        {
+          "q": "How do I filter or search the table?",
+          "a": "Use the search box above the table. It filters rows in real time, matching against all columns. The row count updates to show how many rows match your search."
+        },
+        {
+          "q": "Can I export the table as CSV?",
+          "a": "Yes. Click the 'Download CSV' button to download the current table (including any active filters and sort order) as a CSV file. You can also copy the CSV text to clipboard."
+        }
+      ],
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Paste your JSON data into the input text area",
+        "The table renders automatically — no button needed",
+        "Click column headers to sort ascending or descending",
+        "Use the search box to filter rows",
+        "Download as CSV or copy to clipboard"
+      ],
+      "useCasesTitle": "Common Use Cases",
+      "useCases": [
+        "Viewing API response data as a readable table",
+        "Exploring JSON datasets and finding specific records",
+        "Converting JSON arrays to CSV for spreadsheet import",
+        "Debugging and inspecting JSON data from REST APIs"
+      ]
     }
   },
   "footer": {
