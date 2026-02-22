@@ -205,6 +205,11 @@ import TypescriptBestPractices2026 from '@/data/posts/typescript-best-practices-
 import DockerSecurityBestPractices from '@/data/posts/docker-security-best-practices';
 import GraphqlSubscriptionsRealtime from '@/data/posts/graphql-subscriptions-realtime';
 import TailwindV4NewFeatures from '@/data/posts/tailwind-v4-new-features';
+import RustVsGo2026 from '@/data/posts/rust-vs-go-2026';
+import PostgresqlPerformanceTuning from '@/data/posts/postgresql-performance-tuning';
+import WebAccessibilityWcagGuide from '@/data/posts/web-accessibility-wcag-guide';
+import CiCdPipelineBestPractices from '@/data/posts/ci-cd-pipeline-best-practices';
+import NodejsStreamsGuide from '@/data/posts/nodejs-streams-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -400,6 +405,11 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'docker-security-best-practices': DockerSecurityBestPractices,
   'graphql-subscriptions-realtime': GraphqlSubscriptionsRealtime,
   'tailwind-v4-new-features': TailwindV4NewFeatures,
+  'rust-vs-go-2026': RustVsGo2026,
+  'postgresql-performance-tuning': PostgresqlPerformanceTuning,
+  'web-accessibility-wcag-guide': WebAccessibilityWcagGuide,
+  'ci-cd-pipeline-best-practices': CiCdPipelineBestPractices,
+  'nodejs-streams-guide': NodejsStreamsGuide,
 };
 
 /* i18n for UI strings on this page */
