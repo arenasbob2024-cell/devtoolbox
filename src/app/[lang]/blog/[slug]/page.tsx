@@ -200,6 +200,11 @@ import CssContainerQueriesGuide from '@/data/posts/css-container-queries-guide';
 import NextjsMiddlewareGuide from '@/data/posts/nextjs-middleware-guide';
 import PythonFastapiTutorial from '@/data/posts/python-fastapi-tutorial';
 import TypescriptTypeGuards from '@/data/posts/typescript-type-guards';
+import NextjsVsNuxt2026 from '@/data/posts/nextjs-vs-nuxt-2026';
+import TypescriptBestPractices2026 from '@/data/posts/typescript-best-practices-2026';
+import DockerSecurityBestPractices from '@/data/posts/docker-security-best-practices';
+import GraphqlSubscriptionsRealtime from '@/data/posts/graphql-subscriptions-realtime';
+import TailwindV4NewFeatures from '@/data/posts/tailwind-v4-new-features';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -390,6 +395,11 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'nextjs-middleware-guide': NextjsMiddlewareGuide,
   'python-fastapi-tutorial': PythonFastapiTutorial,
   'typescript-type-guards': TypescriptTypeGuards,
+  'nextjs-vs-nuxt-2026': NextjsVsNuxt2026,
+  'typescript-best-practices-2026': TypescriptBestPractices2026,
+  'docker-security-best-practices': DockerSecurityBestPractices,
+  'graphql-subscriptions-realtime': GraphqlSubscriptionsRealtime,
+  'tailwind-v4-new-features': TailwindV4NewFeatures,
 };
 
 /* i18n for UI strings on this page */
