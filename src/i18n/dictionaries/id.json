@@ -4070,6 +4070,12 @@
       "description": "Minifikasi kode JavaScript dengan menghapus komentar dan spasi",
       "pageTitle": "JavaScript Minifier - Minifikasi JS Online Gratis",
       "pageDescription": "Minifier JavaScript online gratis."
+    },
+    "json-path-finder": {
+      "name": "JSON Path Finder",
+      "description": "Tempel JSON, klik node untuk mendapatkan JSONPath",
+      "pageTitle": "JSON Path Finder - JSONPath Online Gratis",
+      "pageDescription": "Temukan JSONPath untuk setiap node dalam JSON Anda."
     }
   },
   "footer": {

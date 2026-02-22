@@ -4070,6 +4070,12 @@
       "description": "Minifiser JavaScript-kode ved a fjerne kommentarer og mellomrom",
       "pageTitle": "JavaScript Minifier - Minifiser JS Online",
       "pageDescription": "Gratis online JavaScript minifier."
+    },
+    "json-path-finder": {
+      "name": "JSON Sti Finner",
+      "description": "Lim inn JSON, klikk pa en node for aa faa JSONPath",
+      "pageTitle": "JSON Sti Finner - JSONPath Online Gratis",
+      "pageDescription": "Finn JSONPath for enhver node i din JSON."
     }
   },
   "footer": {

@@ -4070,6 +4070,12 @@
       "description": "ย่อโค้ด JavaScript โดยลบคอมเมนต์และช่องว่าง",
       "pageTitle": "JavaScript Minifier - ย่อ JS ออนไลน์ฟรี",
       "pageDescription": "เครื่องมือย่อ JavaScript ออนไลน์ฟรี"
+    },
+    "json-path-finder": {
+      "name": "JSON Path Finder",
+      "description": "วาง JSON คลิกโหนดเพื่อรับ JSONPath",
+      "pageTitle": "JSON Path Finder - ค้นหา JSONPath ออนไลน์ฟรี",
+      "pageDescription": "ค้นหา JSONPath สำหรับทุกโหนดใน JSON ของคุณ"
     }
   },
   "footer": {

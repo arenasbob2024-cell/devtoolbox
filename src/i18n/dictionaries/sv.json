@@ -4070,6 +4070,12 @@
       "description": "Minifiera JavaScript-kod genom att ta bort kommentarer och blanksteg",
       "pageTitle": "JavaScript Minifier - Minifiera JS Online",
       "pageDescription": "Gratis online JavaScript minifier."
+    },
+    "json-path-finder": {
+      "name": "JSON-sokvagsfinnare",
+      "description": "Klistra in JSON, klicka pa en nod for att fa JSONPath",
+      "pageTitle": "JSON-sokvagsfinnare - JSONPath Online Gratis",
+      "pageDescription": "Hitta JSONPath for varje nod i din JSON."
     }
   },
   "footer": {

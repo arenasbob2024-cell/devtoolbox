@@ -4070,6 +4070,12 @@
       "description": "Minifique codigo JavaScript removendo comentarios e espacos",
       "pageTitle": "Minificador JavaScript - Minificar JS Online",
       "pageDescription": "Minificador JavaScript gratuito online."
+    },
+    "json-path-finder": {
+      "name": "Buscador de Caminho JSON",
+      "description": "Cole JSON, clique em um no para obter o JSONPath",
+      "pageTitle": "Buscador de Caminho JSON - JSONPath Online Gratis",
+      "pageDescription": "Encontre o caminho JSONPath de qualquer no no seu JSON."
     }
   },
   "footer": {

@@ -4070,6 +4070,12 @@
       "description": "Minificeer JavaScript-code door opmerkingen en spaties te verwijderen",
       "pageTitle": "JavaScript Minifier - JS Online Minificeren",
       "pageDescription": "Gratis online JavaScript minifier."
+    },
+    "json-path-finder": {
+      "name": "JSON Pad Finder",
+      "description": "Plak JSON, klik op een knooppunt voor het JSONPath",
+      "pageTitle": "JSON Pad Finder - JSONPath Online Gratis",
+      "pageDescription": "Vind het JSONPath voor elk knooppunt in uw JSON."
     }
   },
   "footer": {

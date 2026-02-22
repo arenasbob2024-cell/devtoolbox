@@ -696,6 +696,16 @@ export const tools: Tool[] = [
     path: '/tools/json-viewer',
     relatedTools: ['json-formatter', 'json-yaml', 'json-to-typescript', 'csv-json'],
   },
+  {
+    id: 'json-path-finder',
+    name: 'JSON Path Finder',
+    description: 'Paste JSON, click any node in the interactive tree to get its JSONPath expression',
+    icon: '🔍',
+    category: 'formatter',
+    keywords: ['jsonpath', 'json path', 'json path finder', 'json path online', 'jsonpath tester', 'json path expression', 'json tree', 'json explorer', 'json query'],
+    path: '/tools/json-path-finder',
+    relatedTools: ['json-formatter', 'json-viewer', 'json-to-typescript', 'json-validator'],
+  },
   // Generator tools
   {
     id: 'favicon-generator',

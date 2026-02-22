@@ -4070,6 +4070,12 @@
       "description": "Minifiez le code JavaScript en supprimant les commentaires et espaces inutiles",
       "pageTitle": "Minificateur JavaScript - Minifier JS en Ligne",
       "pageDescription": "Minificateur JavaScript gratuit en ligne."
+    },
+    "json-path-finder": {
+      "name": "Chercheur de Chemin JSON",
+      "description": "Collez du JSON, cliquez pour obtenir le JSONPath",
+      "pageTitle": "Chercheur de Chemin JSON - JSONPath en Ligne",
+      "pageDescription": "Trouvez le chemin JSONPath de n'importe quel noeud dans votre JSON."
     }
   },
   "footer": {

@@ -4070,6 +4070,12 @@
       "description": "Minifica il codice JavaScript rimuovendo commenti e spazi",
       "pageTitle": "Minificatore JavaScript - Minifica JS Online",
       "pageDescription": "Minificatore JavaScript gratuito online."
+    },
+    "json-path-finder": {
+      "name": "Trova Percorso JSON",
+      "description": "Incolla JSON, clicca un nodo per ottenere il JSONPath",
+      "pageTitle": "Trova Percorso JSON - JSONPath Online Gratis",
+      "pageDescription": "Trova il percorso JSONPath per qualsiasi nodo nel tuo JSON."
     }
   },
   "footer": {

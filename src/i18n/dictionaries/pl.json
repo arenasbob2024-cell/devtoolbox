@@ -4070,6 +4070,12 @@
       "description": "Minifikuj kod JavaScript usuwajac komentarze i spacje",
       "pageTitle": "Minifikator JavaScript - Minifikuj JS Online",
       "pageDescription": "Darmowy minifikator JavaScript online."
+    },
+    "json-path-finder": {
+      "name": "JSON Path Finder",
+      "description": "Wklej JSON, kliknij wezel aby uzyskac JSONPath",
+      "pageTitle": "JSON Path Finder - JSONPath Online Za Darmo",
+      "pageDescription": "Znajdz sciezke JSONPath dla kazdego wezla w JSON."
     }
   },
   "footer": {

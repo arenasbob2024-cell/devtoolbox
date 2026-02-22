@@ -4070,6 +4070,12 @@
       "description": "Minifizieren Sie JavaScript-Code durch Entfernung von Kommentaren und Leerzeichen",
       "pageTitle": "JavaScript Minifier - JS Online Minifizieren",
       "pageDescription": "Kostenloser Online JavaScript Minifier."
+    },
+    "json-path-finder": {
+      "name": "JSON-Pfad-Finder",
+      "description": "JSON einfuegen, Knoten anklicken fuer JSONPath",
+      "pageTitle": "JSON-Pfad-Finder - JSONPath Online Kostenlos",
+      "pageDescription": "Finden Sie den JSONPath fuer jeden Knoten in Ihrem JSON."
     }
   },
   "footer": {
