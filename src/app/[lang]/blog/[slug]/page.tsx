@@ -157,6 +157,15 @@ import JwtAuthenticationGuide from '@/data/posts/jwt-authentication-guide';
 import NextjsVsRemix from '@/data/posts/nextjs-vs-remix';
 import GitBranchingStrategies from '@/data/posts/git-branching-strategies';
 import LinuxCommandsCheatSheet from '@/data/posts/linux-commands-cheat-sheet';
+import VscodeShortcutsGuide from '@/data/posts/vscode-shortcuts-guide';
+import CssAnimationsGuide from '@/data/posts/css-animations-guide';
+import KuberneticsBasics from '@/data/posts/kubernetes-basics';
+import TypescriptVsJavascript from '@/data/posts/typescript-vs-javascript';
+import KubernetesBasicsGuide from '@/data/posts/kubernetes-basics-guide';
+import GithubActionsCiCd from '@/data/posts/github-actions-ci-cd';
+import RedisCachingGuide from '@/data/posts/redis-caching-guide';
+import AwsLambdaServerless from '@/data/posts/aws-lambda-serverless';
+import ReactPerformanceTips from '@/data/posts/react-performance-tips';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -304,6 +313,15 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'nextjs-vs-remix': NextjsVsRemix,
   'git-branching-strategies': GitBranchingStrategies,
   'linux-commands-cheat-sheet': LinuxCommandsCheatSheet,
+  'vscode-shortcuts-guide': VscodeShortcutsGuide,
+  'css-animations-guide': CssAnimationsGuide,
+  'kubernetes-basics': KuberneticsBasics,
+  'typescript-vs-javascript': TypescriptVsJavascript,
+  'kubernetes-basics-guide': KubernetesBasicsGuide,
+  'github-actions-ci-cd': GithubActionsCiCd,
+  'redis-caching-guide': RedisCachingGuide,
+  'aws-lambda-serverless': AwsLambdaServerless,
+  'react-performance-tips': ReactPerformanceTips,
 };
 
 /* i18n for UI strings on this page */
