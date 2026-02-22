@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { seedCount } from './seedHash';
-import { getUgcStrings } from './ugcStrings';
+import { getUGCStrings } from './ugcStrings';
 
 interface HelpfulButtonProps {
   slug: string;
@@ -10,38 +10,31 @@ interface HelpfulButtonProps {
 }
 
 export default function HelpfulButton({ slug, lang }: HelpfulButtonProps) {
-  const t = getUgcStrings(lang).helpful;
-  const [vote, setVote] = useState<'up' | 'down' | null>(null);
-  const [showThanks, setShowThanks] = useState(false);
-
+  const t = getUGCStrings(lang);
   const baseUp = seedCount(slug, 15, 89);
   const baseDown = seedCount(slug + '_down', 1, 8);
 
+  const [vote, setVote] = useState<'up' | 'down' | null>(null);
+  const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
-    try {
-      const stored = localStorage.getItem(`dtb_ugc_helpful_${slug}`);
-      if (stored === 'up' || stored === 'down') setVote(stored);
-    } catch {}
+    setMounted(true);
+    const saved = localStorage.getItem(`dtb_ugc_helpful_${slug}`);
+    if (saved === 'up' || saved === 'down') setVote(saved);
   }, [slug]);
 
-  const handleVote = (dir: 'up' | 'down') => {
-    const newVote = vote === dir ? null : dir;
+  const handleVote = (v: 'up' | 'down') => {
+    const newVote = vote === v ? null : v;
     setVote(newVote);
-    try {
-      if (newVote) {
-        localStorage.setItem(`dtb_ugc_helpful_${slug}`, newVote);
-      } else {
-        localStorage.removeItem(`dtb_ugc_helpful_${slug}`);
-      }
-    } catch {}
-    if (newVote && !showThanks) {
-      setShowThanks(true);
-      setTimeout(() => setShowThanks(false), 3000);
+    if (newVote) {
+      localStorage.setItem(`dtb_ugc_helpful_${slug}`, newVote);
+    } else {
+      localStorage.removeItem(`dtb_ugc_helpful_${slug}`);
     }
   };
 
-  const upCount = baseUp + (vote === 'up' ? 1 : 0);
-  const downCount = baseDown + (vote === 'down' ? 1 : 0);
+  const upCount = baseUp + (mounted && vote === 'up' ? 1 : 0);
+  const downCount = baseDown + (mounted && vote === 'down' ? 1 : 0);
 
   const btnBase: React.CSSProperties = {
     display: 'inline-flex',
@@ -51,53 +44,43 @@ export default function HelpfulButton({ slug, lang }: HelpfulButtonProps) {
     borderRadius: 8,
     border: '1px solid var(--border-color)',
     background: 'var(--bg-card)',
-    color: 'var(--text-secondary)',
-    cursor: 'pointer',
     fontSize: 14,
-    fontWeight: 600,
-    transition: 'all 0.2s',
+    cursor: 'pointer',
+    transition: 'all 0.15s',
   };
 
   return (
     <div style={{
-      marginTop: 24,
-      marginBottom: 24,
-      padding: '20px 24px',
-      background: 'var(--bg-card)',
-      border: '1px solid var(--border-color)',
-      borderRadius: 12,
-      textAlign: 'center',
+      display: 'flex',
+      alignItems: 'center',
+      gap: 12,
+      marginTop: 16,
+      marginBottom: 16,
+      flexWrap: 'wrap',
     }}>
-      <p style={{ fontSize: 15, fontWeight: 600, color: 'var(--text-primary)', marginBottom: 14 }}>
-        {t.question}
-      </p>
-      <div style={{ display: 'flex', justifyContent: 'center', gap: 12 }}>
-        <button
-          onClick={() => handleVote('up')}
-          aria-label="Helpful"
-          style={{
-            ...btnBase,
-            ...(vote === 'up' ? { borderColor: 'var(--accent-emerald)', color: 'var(--accent-emerald)', background: 'rgba(16,185,129,0.1)' } : {}),
-          }}
-        >
-          <span style={{ fontSize: 18 }}>👍</span> {upCount}
-        </button>
-        <button
-          onClick={() => handleVote('down')}
-          aria-label="Not helpful"
-          style={{
-            ...btnBase,
-            ...(vote === 'down' ? { borderColor: 'var(--accent-rose)', color: 'var(--accent-rose)', background: 'rgba(244,63,94,0.1)' } : {}),
-          }}
-        >
-          <span style={{ fontSize: 18 }}>👎</span> {downCount}
-        </button>
-      </div>
-      {showThanks && (
-        <p style={{ fontSize: 13, color: 'var(--accent-emerald)', marginTop: 10, fontWeight: 600 }}>
-          {t.thankYou}
-        </p>
-      )}
+      <span style={{ fontSize: 14, color: 'var(--text-secondary)', fontWeight: 500 }}>
+        {t.helpful}
+      </span>
+      <button
+        onClick={() => handleVote('up')}
+        style={{
+          ...btnBase,
+          color: vote === 'up' ? '#10b981' : 'var(--text-secondary)',
+          borderColor: vote === 'up' ? '#10b981' : 'var(--border-color)',
+        }}
+      >
+        👍 {t.yes} ({upCount})
+      </button>
+      <button
+        onClick={() => handleVote('down')}
+        style={{
+          ...btnBase,
+          color: vote === 'down' ? '#f43f5e' : 'var(--text-secondary)',
+          borderColor: vote === 'down' ? '#f43f5e' : 'var(--border-color)',
+        }}
+      >
+        👎 {t.no} ({downCount})
+      </button>
     </div>
   );
 }

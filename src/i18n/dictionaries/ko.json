@@ -4046,6 +4046,24 @@
         "Converting JSON arrays to CSV for spreadsheet import",
         "Debugging and inspecting JSON data from REST APIs"
       ]
+    },
+    "base64-image-converter": {
+      "name": "Base64 이미지 변환기",
+      "description": "이미지를 Base64 문자열로 변환하거나 Base64를 이미지로 변환",
+      "pageTitle": "Base64 이미지 변환기 - 이미지를 Base64로 무료 변환 | DevToolBox",
+      "pageDescription": "무료 온라인 Base64 이미지 변환기. PNG, JPG, GIF, SVG, WebP 지원."
+    },
+    "jwt-decoder-online": {
+      "name": "JWT 디코더 온라인",
+      "description": "JWT 토큰을 무료로 온라인 디코딩",
+      "pageTitle": "JWT 디코더 온라인 - JWT 토큰 무료 디코딩 | DevToolBox",
+      "pageDescription": "JWT 토큰을 무료로 온라인 디코딩."
+    },
+    "regex-tester-online": {
+      "name": "정규식 테스터 온라인",
+      "description": "실시간 매칭으로 정규 표현식을 온라인 테스트",
+      "pageTitle": "정규식 테스터 온라인 - 정규 표현식 무료 테스트 | DevToolBox",
+      "pageDescription": "무료 온라인 정규식 테스터. 실시간 매칭 지원."
     }
   },
   "footer": {

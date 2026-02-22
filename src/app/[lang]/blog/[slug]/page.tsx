@@ -129,6 +129,9 @@ import JsonToCsvConversionGuide from '@/data/posts/json-to-csv-conversion-guide'
 import JsonSchemaCompleteGuide from '@/data/posts/json-schema-complete-guide';
 import TypescriptToJavascriptGuide from '@/data/posts/typescript-to-javascript-guide';
 import CurlToCodeGuide from '@/data/posts/curl-to-code-guide';
+import SvgToReactComponentGuide from '@/data/posts/svg-to-react-component-guide';
+import JsonToGolangStructConversionGuide from '@/data/posts/json-to-golang-struct-conversion-guide';
+import Base64EncodingGuide from '@/data/posts/base64-encoding-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -248,6 +251,9 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'json-schema-complete-guide': JsonSchemaCompleteGuide,
   'typescript-to-javascript-guide': TypescriptToJavascriptGuide,
   'curl-to-code-guide': CurlToCodeGuide,
+  'svg-to-react-component-guide': SvgToReactComponentGuide,
+  'json-to-golang-struct-conversion-guide': JsonToGolangStructConversionGuide,
+  'base64-encoding-guide': Base64EncodingGuide,
 };
 
 /* i18n for UI strings on this page */

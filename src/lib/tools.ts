@@ -1438,6 +1438,37 @@ export const tools: Tool[] = [
     path: '/tools/json-to-table',
     relatedTools: ['json-formatter', 'csv-json', 'json-viewer', 'json-to-typescript'],
   },
+  // Programmatic SEO — Additional high-volume variants
+  {
+    id: 'base64-image-converter',
+    name: 'Base64 Image Converter',
+    description: 'Convert images to Base64 strings and Base64 back to images with drag & drop support',
+    icon: '🖼️',
+    category: 'converter',
+    keywords: ['base64 image converter', 'image to base64', 'base64 to image', 'image base64 converter', 'convert image to base64', 'base64 image encoder', 'image to base64 string', 'base64 image decoder'],
+    path: '/tools/base64-image-converter',
+    relatedTools: ['image-base64', 'base64', 'base64-encoder', 'base64-decoder'],
+  },
+  {
+    id: 'jwt-decoder-online',
+    name: 'JWT Decoder Online',
+    description: 'Decode JWT tokens online for free. View header, payload, claims, and expiration instantly',
+    icon: 'JWT',
+    category: 'encoder',
+    keywords: ['jwt decoder online', 'decode jwt token', 'jwt decode online', 'online jwt decoder', 'jwt token decoder online', 'jwt decode', 'decode jwt online free'],
+    path: '/tools/jwt-decoder-online',
+    relatedTools: ['jwt-decoder', 'jwt-token-decoder', 'jwt-parser', 'jwt-validator'],
+  },
+  {
+    id: 'regex-tester-online',
+    name: 'Regex Tester Online',
+    description: 'Test regular expressions online with real-time matching, highlighting, and capture groups',
+    icon: '.*',
+    category: 'text',
+    keywords: ['regex tester online', 'regex checker', 'online regex tester', 'test regex online', 'regex online', 'regular expression tester online', 'regex tester free', 'regex test online'],
+    path: '/tools/regex-tester-online',
+    relatedTools: ['regex-tester', 'regex-checker', 'regex-matcher', 'regex-generator'],
+  },
 ];
 
 export function getToolsByCategory(categoryId: string): Tool[] {

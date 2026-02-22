@@ -4050,6 +4050,24 @@
         "Converting JSON arrays to CSV for spreadsheet import",
         "Debugging and inspecting JSON data from REST APIs"
       ]
+    },
+    "base64-image-converter": {
+      "name": "Base64 Image Converter",
+      "description": "Convert images to Base64 strings and Base64 back to images with drag & drop",
+      "pageTitle": "Base64 Image Converter - Convert Image to Base64 Online Free | DevToolBox",
+      "pageDescription": "Free online Base64 image converter. Convert images to Base64 strings and Base64 to images. Supports PNG, JPG, GIF, SVG, WebP."
+    },
+    "jwt-decoder-online": {
+      "name": "JWT Decoder Online",
+      "description": "Decode JWT tokens online for free. View header, payload, claims, and expiration instantly",
+      "pageTitle": "JWT Decoder Online - Decode JWT Token Free | DevToolBox",
+      "pageDescription": "Decode JWT tokens online for free. View header, payload, claims, and expiration instantly. Secure client-side JWT decoder tool."
+    },
+    "regex-tester-online": {
+      "name": "Regex Tester Online",
+      "description": "Test regular expressions online with real-time matching, highlighting, and capture groups",
+      "pageTitle": "Regex Tester Online - Test Regular Expressions Free | DevToolBox",
+      "pageDescription": "Free online regex tester with real-time matching and highlighting. Test JavaScript and Python regular expressions instantly."
     }
   },
   "footer": {

@@ -4046,6 +4046,24 @@
         "Converting JSON arrays to CSV for spreadsheet import",
         "Debugging and inspecting JSON data from REST APIs"
       ]
+    },
+    "base64-image-converter": {
+      "name": "Base64 画像変換ツール",
+      "description": "画像を Base64 文字列に変換、または Base64 を画像に変換",
+      "pageTitle": "Base64 画像変換ツール - 画像をBase64に無料変換 | DevToolBox",
+      "pageDescription": "無料オンライン Base64 画像変換ツール。PNG、JPG、GIF、SVG、WebP 対応。"
+    },
+    "jwt-decoder-online": {
+      "name": "JWT デコーダーオンライン",
+      "description": "JWTトークンを無料でオンラインデコード",
+      "pageTitle": "JWT デコーダーオンライン - JWT トークン無料デコード | DevToolBox",
+      "pageDescription": "JWTトークンを無料でオンラインデコード。"
+    },
+    "regex-tester-online": {
+      "name": "正規表現テスター オンライン",
+      "description": "リアルタイムマッチングで正規表現をオンラインテスト",
+      "pageTitle": "正規表現テスター オンライン - 無料で正規表現をテスト | DevToolBox",
+      "pageDescription": "無料オンライン正規表現テスター。リアルタイムマッチング対応。"
     }
   },
   "footer": {

@@ -4046,6 +4046,24 @@
         "Converting JSON arrays to CSV for spreadsheet import",
         "Debugging and inspecting JSON data from REST APIs"
       ]
+    },
+    "base64-image-converter": {
+      "name": "ตัวแปลงรูปภาพ Base64",
+      "description": "แปลงรูปภาพเป็นสตริง Base64 และ Base64 เป็นรูปภาพ",
+      "pageTitle": "ตัวแปลงรูปภาพ Base64 - แปลงรูปภาพเป็น Base64 ออนไลน์ฟรี | DevToolBox",
+      "pageDescription": "ตัวแปลงรูปภาพ Base64 ออนไลน์ฟรี รองรับ PNG, JPG, GIF, SVG, WebP"
+    },
+    "jwt-decoder-online": {
+      "name": "JWT Decoder ออนไลน์",
+      "description": "ถอดรหัส JWT token ออนไลน์ฟรี",
+      "pageTitle": "JWT Decoder ออนไลน์ - ถอดรหัส JWT Token ฟรี | DevToolBox",
+      "pageDescription": "ถอดรหัส JWT token ออนไลน์ฟรี"
+    },
+    "regex-tester-online": {
+      "name": "Regex Tester ออนไลน์",
+      "description": "ทดสอบ regular expression ออนไลน์แบบเรียลไทม์",
+      "pageTitle": "Regex Tester ออนไลน์ - ทดสอบ Regular Expression ฟรี | DevToolBox",
+      "pageDescription": "เครื่องมือทดสอบ regex ออนไลน์ฟรี พร้อมการจับคู่แบบเรียลไทม์"
     }
   },
   "footer": {

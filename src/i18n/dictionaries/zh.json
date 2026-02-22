@@ -4046,6 +4046,24 @@
         "Converting JSON arrays to CSV for spreadsheet import",
         "Debugging and inspecting JSON data from REST APIs"
       ]
+    },
+    "base64-image-converter": {
+      "name": "Base64 图片转换器",
+      "description": "将图片转换为 Base64 字符串，或将 Base64 转换为图片",
+      "pageTitle": "Base64 图片转换器 - 免费在线图片转 Base64 | DevToolBox",
+      "pageDescription": "免费在线 Base64 图片转换器。支持 PNG、JPG、GIF、SVG、WebP 格式。"
+    },
+    "jwt-decoder-online": {
+      "name": "JWT 在线解码器",
+      "description": "免费在线解码 JWT 令牌，即时查看 Header、Payload 和过期时间",
+      "pageTitle": "JWT 在线解码器 - 免费解码 JWT Token | DevToolBox",
+      "pageDescription": "免费在线解码 JWT 令牌。安全的客户端 JWT 解码工具。"
+    },
+    "regex-tester-online": {
+      "name": "正则表达式在线测试器",
+      "description": "在线测试正则表达式，支持实时匹配、高亮显示和捕获组",
+      "pageTitle": "正则表达式在线测试器 - 免费测试正则 | DevToolBox",
+      "pageDescription": "免费在线正则表达式测试器，支持实时匹配和高亮显示。"
     }
   },
   "footer": {
