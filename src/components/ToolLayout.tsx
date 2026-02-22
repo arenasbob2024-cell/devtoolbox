@@ -9,6 +9,7 @@ import SupportButton from './SupportButton';
 import ToolRating from './ugc/ToolRating';
 import ShareBar from './ugc/ShareBar';
 import FeedbackWidget from './ugc/FeedbackWidget';
+import AffiliateCard from './AffiliateCard';
 
 interface ToolLayoutProps {
   title: string;
@@ -93,6 +94,7 @@ export default function ToolLayout({ title, description, children, toolId }: Too
             })}
           </div>
 
+          <AffiliateCard category={currentTool?.category} />
           <NewsletterSignup variant="compact" />
 
           {/* Support */}
