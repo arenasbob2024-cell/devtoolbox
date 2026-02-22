@@ -187,6 +187,9 @@ import JavascriptPromisesGuide from '@/data/posts/javascript-promises-guide';
 import WebpackVsVite2026 from '@/data/posts/webpack-vs-vite-2026';
 import GitRebaseVsMergeGuide from '@/data/posts/git-rebase-vs-merge';
 import DockerNetworkingGuide from '@/data/posts/docker-networking-guide';
+import NginxVsApache2026 from '@/data/posts/nginx-vs-apache-2026';
+import ReactServerComponentsGuide from '@/data/posts/react-server-components-guide';
+import SqlVsNosqlGuide from '@/data/posts/sql-vs-nosql-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -364,6 +367,9 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'webpack-vs-vite-2026': WebpackVsVite2026,
   'git-rebase-vs-merge': GitRebaseVsMergeGuide,
   'docker-networking-guide': DockerNetworkingGuide,
+  'nginx-vs-apache-2026': NginxVsApache2026,
+  'react-server-components-guide': ReactServerComponentsGuide,
+  'sql-vs-nosql-guide': SqlVsNosqlGuide,
 };
 
 /* i18n for UI strings on this page */
