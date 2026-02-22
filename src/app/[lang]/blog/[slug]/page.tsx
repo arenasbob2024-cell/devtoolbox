@@ -168,6 +168,9 @@ import AwsLambdaServerless from '@/data/posts/aws-lambda-serverless';
 import ReactPerformanceTips from '@/data/posts/react-performance-tips';
 import NginxConfigurationGuide from '@/data/posts/nginx-configuration-guide';
 import ReactVsVue2026 from '@/data/posts/react-vs-vue-2026';
+import GithubActionsTutorial from '@/data/posts/github-actions-tutorial';
+import DnsExplained from '@/data/posts/dns-explained';
+import SvgOptimizationGuide from '@/data/posts/svg-optimization-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -326,6 +329,9 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'react-performance-tips': ReactPerformanceTips,
   'nginx-configuration-guide': NginxConfigurationGuide,
   'react-vs-vue-2026': ReactVsVue2026,
+  'github-actions-tutorial': GithubActionsTutorial,
+  'dns-explained': DnsExplained,
+  'svg-optimization-guide': SvgOptimizationGuide,
 };
 
 /* i18n for UI strings on this page */
