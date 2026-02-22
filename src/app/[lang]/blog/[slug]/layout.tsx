@@ -3,10 +3,9 @@ import { i18n, type Locale } from '@/i18n/config';
 import { getLocalizedPost, getAllSlugs } from '@/data/blog-posts';
 
 export async function generateStaticParams() {
+  // Only pre-render 'en' at build time; other locales use ISR (on-demand)
   const slugs = getAllSlugs();
-  return i18n.locales.flatMap(lang =>
-    slugs.map(slug => ({ lang, slug }))
-  );
+  return slugs.map(slug => ({ lang: 'en', slug }));
 }
 
 export async function generateMetadata({
