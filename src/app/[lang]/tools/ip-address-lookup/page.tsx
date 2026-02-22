@@ -1,0 +1,381 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import ToolLayout from '@/components/ToolLayout';
+import CopyButton from '@/components/CopyButton';
+import Link from 'next/link';
+import { useLang } from '@/i18n/LangContext';
+
+const ui: Record<string, Record<string, string>> = {
+  en: {
+    title: 'IP Address Lookup Tool',
+    description: 'Look up any IP address to find geolocation, ISP, timezone, and more. Automatically detects your current IP address.',
+    ipLabel: 'IP Address',
+    ipPlaceholder: 'Enter an IP address (e.g., 8.8.8.8)',
+    lookupBtn: 'Lookup',
+    lookupMyIp: 'My IP',
+    clear: 'Clear',
+    yourIp: 'Your IP Address',
+    loading: 'Looking up...',
+    results: 'Lookup Results',
+    ip: 'IP Address',
+    city: 'City',
+    region: 'Region',
+    country: 'Country',
+    loc: 'Location',
+    org: 'Organization / ISP',
+    postal: 'Postal Code',
+    timezone: 'Timezone',
+    hostname: 'Hostname',
+    error: 'Could not look up this IP address. Please check the address and try again.',
+    invalidIp: 'Please enter a valid IPv4 or IPv6 address.',
+    introTitle: 'Free Online IP Address Lookup Tool',
+    introText: 'Quickly look up geolocation data for any IPv4 or IPv6 address. This tool uses the ipinfo.io API to retrieve city, region, country, ISP/organization, coordinates, postal code, and timezone information. Your own IP is detected automatically when you first load the page. All lookups happen client-side; no data is stored on our servers.',
+    tipTitle: 'What Can You Learn from an IP Address?',
+    tip1: 'Approximate geographic location (city, region, country)',
+    tip2: 'Internet Service Provider (ISP) or organization',
+    tip3: 'Timezone and postal code area',
+    tip4: 'Whether it is a VPN, proxy, or hosting provider IP',
+    tip5: 'Latitude and longitude coordinates for mapping',
+    faqTitle: 'Frequently Asked Questions',
+    faq1q: 'What is an IP address lookup?',
+    faq1a: 'An IP address lookup queries a geolocation database to find information associated with an IP address, such as the approximate physical location (city, region, country), the Internet Service Provider (ISP), timezone, and coordinates. This data is useful for security analysis, network troubleshooting, and understanding web traffic origins.',
+    faq2q: 'How accurate is IP geolocation?',
+    faq2a: 'IP geolocation is typically accurate to the city level for most residential connections, though exact street addresses cannot be determined from an IP alone. VPNs, proxies, and mobile networks may show the location of the server or carrier gateway rather than the actual user location. Accuracy varies by region and ISP.',
+    faq3q: 'Can I look up my own IP address?',
+    faq3a: 'Yes. This tool automatically detects and displays your current public IP address when you first load the page. Click the "My IP" button at any time to look up your current IP. Note that if you are using a VPN, it will show the VPN server IP, not your actual IP.',
+    faq4q: 'Is this tool free to use?',
+    faq4a: 'Yes, this tool is completely free. It uses the public ipinfo.io API for lookups. For high-volume or commercial use, consider using a paid geolocation API service for better rate limits and additional data fields.',
+    relatedTitle: 'Related Tools',
+  },
+  zh: {
+    title: 'IP 地址查询工具',
+    description: '查询任何 IP 地址的地理位置、ISP、时区等信息。自动检测您的当前 IP 地址。',
+    ipLabel: 'IP 地址',
+    ipPlaceholder: '输入 IP 地址 (例如 8.8.8.8)',
+    lookupBtn: '查询',
+    lookupMyIp: '我的 IP',
+    clear: '清除',
+    yourIp: '您的 IP 地址',
+    loading: '查询中...',
+    results: '查询结果',
+    ip: 'IP 地址',
+    city: '城市',
+    region: '地区',
+    country: '国家',
+    loc: '位置坐标',
+    org: '组织 / ISP',
+    postal: '邮政编码',
+    timezone: '时区',
+    hostname: '主机名',
+    error: '无法查询此 IP 地址，请检查地址后重试。',
+    invalidIp: '请输入有效的 IPv4 或 IPv6 地址。',
+    introTitle: '免费在线 IP 地址查询工具',
+    introText: '快速查询任何 IPv4 或 IPv6 地址的地理位置数据。使用 ipinfo.io API 获取城市、地区、国家、ISP/组织、坐标、邮编和时区信息。首次加载页面时自动检测您的 IP。所有查询在客户端完成，不存储任何数据。',
+    tipTitle: '从 IP 地址可以了解什么？',
+    tip1: '大致地理位置（城市、地区、国家）',
+    tip2: '互联网服务提供商（ISP）或组织',
+    tip3: '时区和邮政编码区域',
+    tip4: '是否为 VPN、代理或主机托管商 IP',
+    tip5: '用于地图标注的经纬度坐标',
+    faqTitle: '常见问题',
+    faq1q: '什么是 IP 地址查询？', faq1a: 'IP 地址查询通过地理位置数据库查找与 IP 地址相关的信息，如大致物理位置、ISP、时区和坐标。适用于安全分析、网络故障排查和流量来源分析。',
+    faq2q: 'IP 地理定位有多准确？', faq2a: '对于大多数家庭连接，IP 地理定位通常精确到城市级别。VPN、代理和移动网络可能显示服务器或运营商网关位置。准确度因地区和 ISP 而异。',
+    faq3q: '可以查询自己的 IP 地址吗？', faq3a: '可以。本工具在页面加载时自动检测并显示您的公网 IP 地址。如果使用 VPN，将显示 VPN 服务器 IP。',
+    faq4q: '这个工具免费吗？', faq4a: '完全免费。使用 ipinfo.io 公共 API 进行查询。大批量或商业用途建议使用付费地理位置 API 服务。',
+    relatedTitle: '相关工具',
+  },
+  fr: {
+    title: 'Outil de Recherche d\'Adresse IP',
+    description: 'Recherchez n\'importe quelle adresse IP. Detecte automatiquement votre IP actuelle.',
+    ipLabel: 'Adresse IP', ipPlaceholder: 'Entrez une adresse IP (ex: 8.8.8.8)', lookupBtn: 'Rechercher',
+    lookupMyIp: 'Mon IP', clear: 'Effacer', yourIp: 'Votre adresse IP', loading: 'Recherche en cours...',
+    results: 'Resultats', ip: 'Adresse IP', city: 'Ville', region: 'Region', country: 'Pays',
+    loc: 'Localisation', org: 'Organisation / FAI', postal: 'Code postal', timezone: 'Fuseau horaire', hostname: 'Nom d\'hote',
+    error: 'Impossible de rechercher cette adresse IP.', invalidIp: 'Veuillez entrer une adresse IPv4 ou IPv6 valide.',
+    introTitle: 'Outil de recherche IP gratuit', introText: 'Recherchez les donnees de geolocalisation pour toute adresse IP. Utilise l\'API ipinfo.io.',
+    tipTitle: 'Que peut-on apprendre d\'une adresse IP?', tip1: 'Localisation geographique', tip2: 'Fournisseur d\'acces', tip3: 'Fuseau horaire', tip4: 'VPN ou proxy', tip5: 'Coordonnees GPS',
+    faqTitle: 'Questions frequentes',
+    faq1q: 'Qu\'est-ce que la recherche IP?', faq1a: 'La recherche IP interroge une base de geolocalisation pour trouver les informations associees a une adresse IP.',
+    faq2q: 'Quelle precision?', faq2a: 'Typiquement precise au niveau de la ville pour les connexions residentielle.',
+    faq3q: 'Puis-je rechercher mon propre IP?', faq3a: 'Oui, l\'outil detecte automatiquement votre IP publique.',
+    faq4q: 'Est-ce gratuit?', faq4a: 'Oui, completement gratuit via l\'API publique ipinfo.io.',
+    relatedTitle: 'Outils connexes',
+  },
+  de: {
+    title: 'IP-Adresse Nachschlagen',
+    description: 'Jede IP-Adresse nachschlagen. Erkennt automatisch Ihre aktuelle IP.',
+    ipLabel: 'IP-Adresse', ipPlaceholder: 'IP-Adresse eingeben (z.B. 8.8.8.8)', lookupBtn: 'Nachschlagen',
+    lookupMyIp: 'Meine IP', clear: 'Loeschen', yourIp: 'Ihre IP-Adresse', loading: 'Suche laeuft...',
+    results: 'Ergebnisse', ip: 'IP-Adresse', city: 'Stadt', region: 'Region', country: 'Land',
+    loc: 'Standort', org: 'Organisation / ISP', postal: 'Postleitzahl', timezone: 'Zeitzone', hostname: 'Hostname',
+    error: 'Diese IP-Adresse konnte nicht nachgeschlagen werden.', invalidIp: 'Bitte geben Sie eine gueltige IPv4- oder IPv6-Adresse ein.',
+    introTitle: 'Kostenloses IP-Nachschlage-Tool', introText: 'Geolokalisierungsdaten fuer jede IP-Adresse nachschlagen. Verwendet die ipinfo.io API.',
+    tipTitle: 'Was kann man von einer IP lernen?', tip1: 'Geographische Lage', tip2: 'Internet-Provider', tip3: 'Zeitzone', tip4: 'VPN oder Proxy', tip5: 'GPS-Koordinaten',
+    faqTitle: 'Haeufig gestellte Fragen',
+    faq1q: 'Was ist IP-Nachschlagen?', faq1a: 'IP-Nachschlagen fragt eine Geolokalisierungsdatenbank ab um Informationen zu einer IP-Adresse zu finden.',
+    faq2q: 'Wie genau ist es?', faq2a: 'Typischerweise auf Stadtebene genau fuer Wohnverbindungen.',
+    faq3q: 'Kann ich meine eigene IP nachschlagen?', faq3a: 'Ja, das Tool erkennt automatisch Ihre oeffentliche IP.',
+    faq4q: 'Ist es kostenlos?', faq4a: 'Ja, komplett kostenlos ueber die oeffentliche ipinfo.io API.',
+    relatedTitle: 'Verwandte Tools',
+  },
+  es: {
+    title: 'Herramienta de Busqueda de IP',
+    description: 'Busque cualquier direccion IP. Detecta automaticamente su IP actual.',
+    ipLabel: 'Direccion IP', ipPlaceholder: 'Ingrese una direccion IP (ej: 8.8.8.8)', lookupBtn: 'Buscar',
+    lookupMyIp: 'Mi IP', clear: 'Limpiar', yourIp: 'Su direccion IP', loading: 'Buscando...',
+    results: 'Resultados', ip: 'Direccion IP', city: 'Ciudad', region: 'Region', country: 'Pais',
+    loc: 'Ubicacion', org: 'Organizacion / ISP', postal: 'Codigo postal', timezone: 'Zona horaria', hostname: 'Nombre de host',
+    error: 'No se pudo buscar esta direccion IP.', invalidIp: 'Ingrese una direccion IPv4 o IPv6 valida.',
+    introTitle: 'Herramienta de busqueda IP gratuita', introText: 'Busque datos de geolocalizacion para cualquier direccion IP. Usa la API ipinfo.io.',
+    tipTitle: 'Que se puede saber de una IP?', tip1: 'Ubicacion geografica', tip2: 'Proveedor de internet', tip3: 'Zona horaria', tip4: 'VPN o proxy', tip5: 'Coordenadas GPS',
+    faqTitle: 'Preguntas frecuentes',
+    faq1q: 'Que es la busqueda de IP?', faq1a: 'La busqueda de IP consulta una base de geolocalizacion para encontrar informacion asociada a una direccion IP.',
+    faq2q: 'Que tan precisa es?', faq2a: 'Tipicamente precisa a nivel de ciudad para conexiones residenciales.',
+    faq3q: 'Puedo buscar mi propia IP?', faq3a: 'Si, la herramienta detecta automaticamente su IP publica.',
+    faq4q: 'Es gratis?', faq4a: 'Si, completamente gratis a traves de la API publica ipinfo.io.',
+    relatedTitle: 'Herramientas relacionadas',
+  },
+  ja: {
+    title: 'IP アドレス検索ツール',
+    description: 'IP アドレスの地理位置、ISP、タイムゾーンなどを検索。現在の IP を自動検出。',
+    ipLabel: 'IP アドレス', ipPlaceholder: 'IP アドレスを入力 (例: 8.8.8.8)', lookupBtn: '検索',
+    lookupMyIp: '自分の IP', clear: 'クリア', yourIp: 'あなたの IP アドレス', loading: '検索中...',
+    results: '検索結果', ip: 'IP アドレス', city: '都市', region: '地域', country: '国',
+    loc: '位置', org: '組織 / ISP', postal: '郵便番号', timezone: 'タイムゾーン', hostname: 'ホスト名',
+    error: 'この IP アドレスを検索できませんでした。', invalidIp: '有効な IPv4 または IPv6 アドレスを入力してください。',
+    introTitle: '無料 IP アドレス検索ツール', introText: 'ipinfo.io API を使用して任意の IP アドレスの地理位置データを検索します。',
+    tipTitle: 'IP アドレスからわかること', tip1: '地理的位置', tip2: 'プロバイダー', tip3: 'タイムゾーン', tip4: 'VPN やプロキシ', tip5: 'GPS 座標',
+    faqTitle: 'よくある質問',
+    faq1q: 'IP アドレス検索とは？', faq1a: 'ジオロケーションデータベースに問い合わせて IP アドレスに関連する情報を見つけます。',
+    faq2q: '精度は？', faq2a: '住宅接続の場合、通常は市レベルの精度です。',
+    faq3q: '自分の IP を検索できますか？', faq3a: 'はい、ツールが自動的に公開 IP を検出します。',
+    faq4q: '無料ですか？', faq4a: 'はい、ipinfo.io の公開 API を通じて完全に無料です。',
+    relatedTitle: '関連ツール',
+  },
+  ko: {
+    title: 'IP 주소 조회 도구',
+    description: 'IP 주소의 지리적 위치, ISP, 시간대 등을 조회합니다. 현재 IP를 자동 감지합니다.',
+    ipLabel: 'IP 주소', ipPlaceholder: 'IP 주소 입력 (예: 8.8.8.8)', lookupBtn: '조회',
+    lookupMyIp: '내 IP', clear: '지우기', yourIp: '당신의 IP 주소', loading: '조회 중...',
+    results: '조회 결과', ip: 'IP 주소', city: '도시', region: '지역', country: '국가',
+    loc: '위치', org: '조직 / ISP', postal: '우편번호', timezone: '시간대', hostname: '호스트명',
+    error: '이 IP 주소를 조회할 수 없습니다.', invalidIp: '유효한 IPv4 또는 IPv6 주소를 입력하세요.',
+    introTitle: '무료 IP 주소 조회 도구', introText: 'ipinfo.io API를 사용하여 모든 IP 주소의 지리 위치 데이터를 조회합니다.',
+    tipTitle: 'IP 주소로 알 수 있는 것', tip1: '지리적 위치', tip2: '인터넷 제공업체', tip3: '시간대', tip4: 'VPN 또는 프록시', tip5: 'GPS 좌표',
+    faqTitle: '자주 묻는 질문',
+    faq1q: 'IP 주소 조회란?', faq1a: '지리 위치 데이터베이스에 질의하여 IP 주소 관련 정보를 찾습니다.',
+    faq2q: '정확도는?', faq2a: '주거 연결의 경우 일반적으로 도시 수준의 정확도입니다.',
+    faq3q: '내 IP를 조회할 수 있나요?', faq3a: '네, 도구가 자동으로 공인 IP를 감지합니다.',
+    faq4q: '무료인가요?', faq4a: '네, ipinfo.io 공개 API를 통해 완전 무료입니다.',
+    relatedTitle: '관련 도구',
+  },
+};
+
+interface IpInfo {
+  ip: string;
+  city?: string;
+  region?: string;
+  country?: string;
+  loc?: string;
+  org?: string;
+  postal?: string;
+  timezone?: string;
+  hostname?: string;
+}
+
+const IP_REGEX = /^(?:(?:25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(?:25[0-5]|2[0-4]\d|[01]?\d\d?)$|^(?:[0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}$|^::(?:[0-9a-fA-F]{1,4}:){0,5}[0-9a-fA-F]{1,4}$|^[0-9a-fA-F]{1,4}::(?:[0-9a-fA-F]{1,4}:){0,4}[0-9a-fA-F]{1,4}$/;
+
+export default function IpAddressLookup() {
+  const { lang } = useLang();
+  const t = ui[lang] || ui.en;
+  const [ipInput, setIpInput] = useState('');
+  const [result, setResult] = useState<IpInfo | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [myIp, setMyIp] = useState('');
+
+  // Auto-detect user IP on mount
+  useEffect(() => {
+    fetch('https://ipinfo.io/json?token=')
+      .then(r => r.json())
+      .then((data: IpInfo) => {
+        setMyIp(data.ip);
+        setResult(data);
+      })
+      .catch(() => { /* silently fail */ });
+  }, []);
+
+  const lookupIp = async (ip?: string) => {
+    const target = ip || ipInput.trim();
+    if (!target) return;
+    if (!IP_REGEX.test(target) && target !== myIp) {
+      setError(t.invalidIp);
+      return;
+    }
+    setLoading(true);
+    setError('');
+    setResult(null);
+    try {
+      const res = await fetch(`https://ipinfo.io/${target}/json?token=`);
+      if (!res.ok) throw new Error('Lookup failed');
+      const data: IpInfo = await res.json();
+      setResult(data);
+    } catch {
+      setError(t.error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const resultText = result
+    ? Object.entries(result)
+        .filter(([, v]) => v)
+        .map(([k, v]) => `${k}: ${v}`)
+        .join('\n')
+    : '';
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: t.faq1q, acceptedAnswer: { '@type': 'Answer', text: t.faq1a } },
+      { '@type': 'Question', name: t.faq2q, acceptedAnswer: { '@type': 'Answer', text: t.faq2a } },
+      { '@type': 'Question', name: t.faq3q, acceptedAnswer: { '@type': 'Answer', text: t.faq3a } },
+      { '@type': 'Question', name: t.faq4q, acceptedAnswer: { '@type': 'Answer', text: t.faq4a } },
+    ],
+  };
+
+  const fields: { key: keyof IpInfo; label: string }[] = [
+    { key: 'ip', label: t.ip },
+    { key: 'city', label: t.city },
+    { key: 'region', label: t.region },
+    { key: 'country', label: t.country },
+    { key: 'loc', label: t.loc },
+    { key: 'org', label: t.org },
+    { key: 'postal', label: t.postal },
+    { key: 'timezone', label: t.timezone },
+    { key: 'hostname', label: t.hostname },
+  ];
+
+  return (
+    <ToolLayout title={t.title} description={t.description} toolId="ip-address-lookup">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+
+      {/* Your IP banner */}
+      {myIp && (
+        <div style={{
+          background: 'rgba(59,130,246,0.1)', border: '1px solid rgba(59,130,246,0.3)',
+          borderRadius: 8, padding: '10px 14px', marginBottom: 16, fontSize: 13,
+          display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+        }}>
+          <span><strong>{t.yourIp}:</strong> {myIp}</span>
+          <CopyButton text={myIp} />
+        </div>
+      )}
+
+      {/* Input */}
+      <div style={{ display: 'flex', gap: 8, marginBottom: 16, flexWrap: 'wrap' }}>
+        <input
+          type="text"
+          value={ipInput}
+          onChange={e => setIpInput(e.target.value)}
+          placeholder={t.ipPlaceholder}
+          onKeyDown={e => e.key === 'Enter' && lookupIp()}
+          style={{ flex: 1, minWidth: 200, padding: '8px 12px', fontSize: 14 }}
+        />
+        <button onClick={() => lookupIp()} className="btn btn-primary" disabled={loading}>{t.lookupBtn}</button>
+        <button onClick={() => lookupIp(myIp)} className="btn btn-secondary" disabled={loading || !myIp}>{t.lookupMyIp}</button>
+        <button onClick={() => { setIpInput(''); setResult(null); setError(''); }} className="btn btn-secondary">{t.clear}</button>
+      </div>
+
+      {loading && <div style={{ fontSize: 13, color: 'var(--text-secondary)', marginBottom: 16 }}>{t.loading}</div>}
+      {error && <div style={{ color: 'var(--accent-rose)', fontSize: 13, marginBottom: 16 }}>{error}</div>}
+
+      {/* Results table */}
+      {result && (
+        <div style={{ marginBottom: 16 }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
+            <label style={{ fontSize: 13, fontWeight: 600 }}>{t.results}</label>
+            <CopyButton text={resultText} />
+          </div>
+          <div style={{ border: '1px solid var(--border-color)', borderRadius: 8, overflow: 'hidden' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
+              <tbody>
+                {fields.map(({ key, label }) => {
+                  const value = result[key];
+                  if (!value) return null;
+                  return (
+                    <tr key={key} style={{ borderBottom: '1px solid var(--border-color)' }}>
+                      <td style={{ padding: '10px 14px', fontWeight: 600, width: 160, background: 'var(--bg-input)', whiteSpace: 'nowrap' }}>{label}</td>
+                      <td style={{ padding: '10px 14px', fontFamily: 'monospace' }}>{value}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+
+          {/* Map link */}
+          {result.loc && (
+            <div style={{ marginTop: 12 }}>
+              <a
+                href={`https://www.google.com/maps?q=${result.loc}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ fontSize: 13, color: 'var(--accent-blue)', textDecoration: 'underline' }}
+              >
+                View on Google Maps ({result.loc})
+              </a>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* SEO Content */}
+      <div style={{ marginTop: 30, paddingTop: 24, borderTop: '1px solid var(--border-color)' }}>
+        <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 12 }}>{t.introTitle}</h2>
+        <p style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 20 }}>{t.introText}</p>
+
+        <h3 style={{ fontSize: 16, fontWeight: 600, marginBottom: 8 }}>{t.tipTitle}</h3>
+        <ul style={{ paddingLeft: 20, marginBottom: 24, fontSize: 13, lineHeight: 2, color: 'var(--text-secondary)' }}>
+          <li>{t.tip1}</li>
+          <li>{t.tip2}</li>
+          <li>{t.tip3}</li>
+          <li>{t.tip4}</li>
+          <li>{t.tip5}</li>
+        </ul>
+
+        <h3 style={{ fontSize: 16, fontWeight: 600, marginBottom: 8 }}>{t.faqTitle}</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 24 }}>
+          {[
+            { q: t.faq1q, a: t.faq1a },
+            { q: t.faq2q, a: t.faq2a },
+            { q: t.faq3q, a: t.faq3a },
+            { q: t.faq4q, a: t.faq4a },
+          ].map((faq, idx) => (
+            <details key={idx} style={{ border: '1px solid var(--border-color)', borderRadius: 8, overflow: 'hidden', background: 'var(--bg-input)' }}>
+              <summary style={{ padding: '14px 16px', cursor: 'pointer', fontSize: 14, fontWeight: 600, color: 'var(--text-primary)' }}>{faq.q}</summary>
+              <div style={{ padding: '0 16px 14px', fontSize: 13, lineHeight: 1.7, color: 'var(--text-secondary)' }}>{faq.a}</div>
+            </details>
+          ))}
+        </div>
+
+        <h3 style={{ fontSize: 16, fontWeight: 600, marginBottom: 8 }}>{t.relatedTitle}</h3>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+          {[
+            { href: `/${lang}/tools/ip-calculator`, label: 'IP Calculator' },
+            { href: `/${lang}/tools/password-generator-online`, label: 'Password Generator' },
+            { href: `/${lang}/tools/url-parser`, label: 'URL Parser' },
+            { href: `/${lang}/tools/hash-generator`, label: 'Hash Generator' },
+          ].map((link) => (
+            <Link key={link.href} href={link.href}
+              style={{ display: 'inline-block', padding: '8px 16px', borderRadius: 8, border: '1px solid var(--border-color)', fontSize: 13, color: 'var(--accent-blue)', textDecoration: 'none', background: 'var(--bg-input)' }}>
+              {link.label}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </ToolLayout>
+  );
+}
