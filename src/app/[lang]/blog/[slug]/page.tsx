@@ -144,6 +144,11 @@ import JavascriptArrayMethods from '@/data/posts/javascript-array-methods';
 import CssGridLayoutGuide from '@/data/posts/css-grid-layout-guide';
 import ApiRateLimitingGuide from '@/data/posts/api-rate-limiting-guide';
 import SqlJoinsExplained from '@/data/posts/sql-joins-explained';
+import ReactHooksGuide from '@/data/posts/react-hooks-guide';
+import PythonVsJavascript from '@/data/posts/python-vs-javascript';
+import GraphqlVsRestApi from '@/data/posts/graphql-vs-rest-api';
+import WebPerformanceOptimization from '@/data/posts/web-performance-optimization';
+import TypescriptUtilityTypes from '@/data/posts/typescript-utility-types';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -278,6 +283,11 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'css-grid-layout-guide': CssGridLayoutGuide,
   'api-rate-limiting-guide': ApiRateLimitingGuide,
   'sql-joins-explained': SqlJoinsExplained,
+  'react-hooks-guide': ReactHooksGuide,
+  'python-vs-javascript': PythonVsJavascript,
+  'graphql-vs-rest-api': GraphqlVsRestApi,
+  'web-performance-optimization': WebPerformanceOptimization,
+  'typescript-utility-types': TypescriptUtilityTypes,
 };
 
 /* i18n for UI strings on this page */
