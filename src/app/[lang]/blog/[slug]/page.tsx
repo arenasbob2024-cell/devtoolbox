@@ -210,6 +210,12 @@ import PostgresqlPerformanceTuning from '@/data/posts/postgresql-performance-tun
 import WebAccessibilityWcagGuide from '@/data/posts/web-accessibility-wcag-guide';
 import CiCdPipelineBestPractices from '@/data/posts/ci-cd-pipeline-best-practices';
 import NodejsStreamsGuide from '@/data/posts/nodejs-streams-guide';
+import VscodeShortcutsGuide from '@/data/posts/vscode-shortcuts-guide';
+import LinuxCommandsCheatSheet from '@/data/posts/linux-commands-cheat-sheet';
+import ApiDesignBestPractices from '@/data/posts/api-design-best-practices';
+import JavascriptArrayMethods from '@/data/posts/javascript-array-methods';
+import TypescriptGenericsGuide from '@/data/posts/typescript-generics-guide';
+import NextjsAppRouterGuide from '@/data/posts/nextjs-app-router-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -410,6 +416,12 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'web-accessibility-wcag-guide': WebAccessibilityWcagGuide,
   'ci-cd-pipeline-best-practices': CiCdPipelineBestPractices,
   'nodejs-streams-guide': NodejsStreamsGuide,
+  'vscode-shortcuts-guide': VscodeShortcutsGuide,
+  'linux-commands-cheat-sheet': LinuxCommandsCheatSheet,
+  'api-design-best-practices': ApiDesignBestPractices,
+  'javascript-array-methods': JavascriptArrayMethods,
+  'typescript-generics-guide': TypescriptGenericsGuide,
+  'nextjs-app-router-guide': NextjsAppRouterGuide,
 };
 
 /* i18n for UI strings on this page */
