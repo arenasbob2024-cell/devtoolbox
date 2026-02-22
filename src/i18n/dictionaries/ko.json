@@ -4064,6 +4064,12 @@
       "description": "실시간 매칭으로 정규 표현식을 온라인 테스트",
       "pageTitle": "정규식 테스터 온라인 - 정규 표현식 무료 테스트 | DevToolBox",
       "pageDescription": "무료 온라인 정규식 테스터. 실시간 매칭 지원."
+    },
+    "javascript-minifier": {
+      "name": "JavaScript 압축 도구",
+      "description": "주석, 공백, 줄바꿈을 제거하여 JavaScript 코드를 압축",
+      "pageTitle": "JavaScript 압축 도구 - JS 온라인 무료 압축",
+      "pageDescription": "무료 온라인 JavaScript 압축 도구."
     }
   },
   "footer": {

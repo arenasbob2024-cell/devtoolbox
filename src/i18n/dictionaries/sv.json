@@ -4064,6 +4064,12 @@
       "description": "Testa reguljaera uttryck online med realtidsmatchning",
       "pageTitle": "Regex Tester Online - Testa Reguljaera Uttryck Gratis | DevToolBox",
       "pageDescription": "Gratis online regex-testare med realtidsmatchning."
+    },
+    "javascript-minifier": {
+      "name": "JavaScript Minifier",
+      "description": "Minifiera JavaScript-kod genom att ta bort kommentarer och blanksteg",
+      "pageTitle": "JavaScript Minifier - Minifiera JS Online",
+      "pageDescription": "Gratis online JavaScript minifier."
     }
   },
   "footer": {

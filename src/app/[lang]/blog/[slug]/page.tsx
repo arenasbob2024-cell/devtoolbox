@@ -132,6 +132,10 @@ import CurlToCodeGuide from '@/data/posts/curl-to-code-guide';
 import SvgToReactComponentGuide from '@/data/posts/svg-to-react-component-guide';
 import JsonToGolangStructConversionGuide from '@/data/posts/json-to-golang-struct-conversion-guide';
 import Base64EncodingGuide from '@/data/posts/base64-encoding-guide';
+import JwtTokenGuide from '@/data/posts/jwt-token-guide';
+import YamlVsJsonGuide from '@/data/posts/yaml-vs-json-guide';
+import CurlCommandGuide from '@/data/posts/curl-command-guide';
+import RegexCheatSheet2026 from '@/data/posts/regex-cheat-sheet-2026';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -254,6 +258,10 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'svg-to-react-component-guide': SvgToReactComponentGuide,
   'json-to-golang-struct-conversion-guide': JsonToGolangStructConversionGuide,
   'base64-encoding-guide': Base64EncodingGuide,
+  'jwt-token-guide': JwtTokenGuide,
+  'yaml-vs-json-guide': YamlVsJsonGuide,
+  'curl-command-guide': CurlCommandGuide,
+  'regex-cheat-sheet-2026': RegexCheatSheet2026,
 };
 
 /* i18n for UI strings on this page */

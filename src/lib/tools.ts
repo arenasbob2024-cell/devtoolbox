@@ -1460,6 +1460,16 @@ export const tools: Tool[] = [
     relatedTools: ['jwt-decoder', 'jwt-token-decoder', 'jwt-parser', 'jwt-validator'],
   },
   {
+    id: 'javascript-minifier',
+    name: 'JavaScript Minifier',
+    description: 'Minify JavaScript code by removing comments, whitespace, and newlines with size comparison',
+    icon: 'JS',
+    category: 'formatter',
+    keywords: ['javascript minifier', 'minify js', 'js minifier', 'minify javascript online', 'javascript compressor', 'js compress', 'minify js online', 'uglify js'],
+    path: '/tools/javascript-minifier',
+    relatedTools: ['css-minifier', 'js-html-formatter', 'json-minifier', 'typescript-to-javascript'],
+  },
+  {
     id: 'regex-tester-online',
     name: 'Regex Tester Online',
     description: 'Test regular expressions online with real-time matching, highlighting, and capture groups',

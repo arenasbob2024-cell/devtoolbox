@@ -4064,6 +4064,12 @@
       "description": "ทดสอบ regular expression ออนไลน์แบบเรียลไทม์",
       "pageTitle": "Regex Tester ออนไลน์ - ทดสอบ Regular Expression ฟรี | DevToolBox",
       "pageDescription": "เครื่องมือทดสอบ regex ออนไลน์ฟรี พร้อมการจับคู่แบบเรียลไทม์"
+    },
+    "javascript-minifier": {
+      "name": "JavaScript Minifier",
+      "description": "ย่อโค้ด JavaScript โดยลบคอมเมนต์และช่องว่าง",
+      "pageTitle": "JavaScript Minifier - ย่อ JS ออนไลน์ฟรี",
+      "pageDescription": "เครื่องมือย่อ JavaScript ออนไลน์ฟรี"
     }
   },
   "footer": {

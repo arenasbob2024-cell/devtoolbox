@@ -4064,6 +4064,12 @@
       "description": "Regulaere Ausdruecke online mit Echtzeit-Matching testen",
       "pageTitle": "Regex Tester Online - Regulaere Ausdruecke Kostenlos Testen | DevToolBox",
       "pageDescription": "Kostenloser Online Regex-Tester mit Echtzeit-Matching."
+    },
+    "javascript-minifier": {
+      "name": "JavaScript Minifier",
+      "description": "Minifizieren Sie JavaScript-Code durch Entfernung von Kommentaren und Leerzeichen",
+      "pageTitle": "JavaScript Minifier - JS Online Minifizieren",
+      "pageDescription": "Kostenloser Online JavaScript Minifier."
     }
   },
   "footer": {

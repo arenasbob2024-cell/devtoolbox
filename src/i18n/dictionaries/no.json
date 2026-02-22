@@ -4064,6 +4064,12 @@
       "description": "Test regulaere uttrykk online med sanntidsmatching",
       "pageTitle": "Regex Tester Online - Test Regulaere Uttrykk Gratis | DevToolBox",
       "pageDescription": "Gratis online regex-tester med sanntidsmatching."
+    },
+    "javascript-minifier": {
+      "name": "JavaScript Minifier",
+      "description": "Minifiser JavaScript-kode ved a fjerne kommentarer og mellomrom",
+      "pageTitle": "JavaScript Minifier - Minifiser JS Online",
+      "pageDescription": "Gratis online JavaScript minifier."
     }
   },
   "footer": {

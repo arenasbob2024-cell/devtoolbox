@@ -4068,6 +4068,12 @@
       "description": "Test regular expressions online with real-time matching, highlighting, and capture groups",
       "pageTitle": "Regex Tester Online - Test Regular Expressions Free | DevToolBox",
       "pageDescription": "Free online regex tester with real-time matching and highlighting. Test JavaScript and Python regular expressions instantly."
+    },
+    "javascript-minifier": {
+      "name": "JavaScript Minifier",
+      "description": "Minify JavaScript code by removing comments, whitespace, and newlines with size comparison",
+      "pageTitle": "JavaScript Minifier - Minify JS Online Free",
+      "pageDescription": "Free online JavaScript minifier. Minify JS code by removing comments, whitespace, and newlines. Compare original vs minified size."
     }
   },
   "footer": {

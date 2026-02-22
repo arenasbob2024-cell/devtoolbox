@@ -4064,6 +4064,12 @@
       "description": "Reguliere expressies online testen met realtime matching",
       "pageTitle": "Regex Tester Online - Reguliere Expressies Gratis Testen | DevToolBox",
       "pageDescription": "Gratis online regex-tester met realtime matching."
+    },
+    "javascript-minifier": {
+      "name": "JavaScript Minifier",
+      "description": "Minificeer JavaScript-code door opmerkingen en spaties te verwijderen",
+      "pageTitle": "JavaScript Minifier - JS Online Minificeren",
+      "pageDescription": "Gratis online JavaScript minifier."
     }
   },
   "footer": {

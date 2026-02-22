@@ -4064,6 +4064,12 @@
       "description": "Teste expressoes regulares online com correspondencia em tempo real",
       "pageTitle": "Regex Tester Online - Testar Expressoes Regulares Gratis | DevToolBox",
       "pageDescription": "Testador de regex online gratuito com correspondencia em tempo real."
+    },
+    "javascript-minifier": {
+      "name": "Minificador JavaScript",
+      "description": "Minifique codigo JavaScript removendo comentarios e espacos",
+      "pageTitle": "Minificador JavaScript - Minificar JS Online",
+      "pageDescription": "Minificador JavaScript gratuito online."
     }
   },
   "footer": {

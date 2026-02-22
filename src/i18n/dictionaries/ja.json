@@ -4064,6 +4064,12 @@
       "description": "リアルタイムマッチングで正規表現をオンラインテスト",
       "pageTitle": "正規表現テスター オンライン - 無料で正規表現をテスト | DevToolBox",
       "pageDescription": "無料オンライン正規表現テスター。リアルタイムマッチング対応。"
+    },
+    "javascript-minifier": {
+      "name": "JavaScript 圧縮ツール",
+      "description": "コメント、空白、改行を削除してJavaScriptコードを圧縮",
+      "pageTitle": "JavaScript 圧縮ツール - JS を無料でオンライン圧縮",
+      "pageDescription": "無料オンライン JavaScript 圧縮ツール。"
     }
   },
   "footer": {
