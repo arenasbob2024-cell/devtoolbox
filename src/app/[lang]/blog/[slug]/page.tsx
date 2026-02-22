@@ -181,6 +181,9 @@ import GraphqlTutorialBeginners from '@/data/posts/graphql-tutorial-beginners';
 import DockerBestPractices from '@/data/posts/docker-best-practices';
 import TypescriptDecoratorsGuide from '@/data/posts/typescript-decorators-guide';
 import RestApiDesignGuide from '@/data/posts/rest-api-design-guide';
+import ResponsiveDesignGuide from '@/data/posts/responsive-design-guide';
+import PythonDecoratorsGuide from '@/data/posts/python-decorators-guide';
+import JavascriptPromisesGuide from '@/data/posts/javascript-promises-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -352,6 +355,9 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'docker-best-practices': DockerBestPractices,
   'typescript-decorators-guide': TypescriptDecoratorsGuide,
   'rest-api-design-guide': RestApiDesignGuide,
+  'responsive-design-guide': ResponsiveDesignGuide,
+  'python-decorators-guide': PythonDecoratorsGuide,
+  'javascript-promises-guide': JavascriptPromisesGuide,
 };
 
 /* i18n for UI strings on this page */
