@@ -1952,6 +1952,16 @@ export const tools: Tool[] = [
     path: '/tools/css-gradient-generator',
     relatedTools: ['css-gradient', 'color-converter', 'color-palette', 'tailwind-colors'],
   },
+  {
+    id: 'json-diff-tool',
+    name: 'JSON Diff Tool',
+    description: 'Compare two JSON objects side by side. Highlight differences, additions, and deletions with a visual diff viewer.',
+    icon: '⇄',
+    category: 'formatter',
+    keywords: ['json diff', 'json compare', 'json diff tool', 'compare json', 'json difference', 'json diff online'],
+    path: '/tools/json-diff-tool',
+    relatedTools: ['json-formatter', 'json-viewer', 'json-validator', 'text-diff'],
+  },
 ];
 
 export function getToolsByCategory(categoryId: string): Tool[] {
