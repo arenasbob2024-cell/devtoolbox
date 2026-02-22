@@ -186,6 +186,7 @@ import PythonDecoratorsGuide from '@/data/posts/python-decorators-guide';
 import JavascriptPromisesGuide from '@/data/posts/javascript-promises-guide';
 import WebpackVsVite2026 from '@/data/posts/webpack-vs-vite-2026';
 import GitRebaseVsMergeGuide from '@/data/posts/git-rebase-vs-merge';
+import DockerNetworkingGuide from '@/data/posts/docker-networking-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -362,6 +363,7 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'javascript-promises-guide': JavascriptPromisesGuide,
   'webpack-vs-vite-2026': WebpackVsVite2026,
   'git-rebase-vs-merge': GitRebaseVsMergeGuide,
+  'docker-networking-guide': DockerNetworkingGuide,
 };
 
 /* i18n for UI strings on this page */
