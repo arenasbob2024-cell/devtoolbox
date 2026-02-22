@@ -28,7 +28,7 @@ export const tools: Tool[] = [
     category: 'formatter',
     keywords: ['json', 'format', 'validate', 'beautify', 'pretty print', 'minify'],
     path: '/tools/json-formatter',
-    relatedTools: ['json-yaml', 'csv-json', 'xml-formatter', 'json-to-typescript'],
+    relatedTools: ['json-yaml', 'csv-json', 'xml-formatter', 'json-to-typescript', 'json-viewer', 'json-validator'],
   },
   {
     id: 'base64',
@@ -38,6 +38,7 @@ export const tools: Tool[] = [
     category: 'encoder',
     keywords: ['base64', 'encode', 'decode', 'binary', 'text'],
     path: '/tools/base64',
+    relatedTools: ['base64-encoder', 'base64-decoder', 'url-encoder', 'image-base64'],
   },
   {
     id: 'url-encoder',
@@ -47,6 +48,7 @@ export const tools: Tool[] = [
     category: 'encoder',
     keywords: ['url', 'encode', 'decode', 'uri', 'percent encoding', 'query string'],
     path: '/tools/url-encoder',
+    relatedTools: ['url-decoder', 'url-encode-online', 'percent-encoding-tool', 'base64'],
   },
   {
     id: 'hash-generator',
@@ -56,6 +58,7 @@ export const tools: Tool[] = [
     category: 'generator',
     keywords: ['hash', 'md5', 'sha1', 'sha256', 'sha512', 'checksum', 'digest', 'sha256 hash generator', 'multi hash generator', 'sha1 hash generator'],
     path: '/tools/hash-generator',
+    relatedTools: ['multi-hash-generator', 'md5-hash-generator', 'sha256-hash-generator', 'hmac-generator'],
   },
   {
     id: 'multi-hash-generator',
@@ -75,6 +78,7 @@ export const tools: Tool[] = [
     category: 'generator',
     keywords: ['uuid', 'guid', 'unique id', 'random', 'identifier', 'uuid v4', 'uuid v7', 'guid generator', 'online uuid generator'],
     path: '/tools/uuid-generator',
+    relatedTools: ['password-generator', 'fake-data', 'qrcode-generator', 'hash-generator'],
   },
   {
     id: 'timestamp-converter',
@@ -84,6 +88,7 @@ export const tools: Tool[] = [
     category: 'converter',
     keywords: ['timestamp', 'unix', 'epoch', 'date', 'time', 'convert', 'convert unix timestamp to date', 'epoch converter', 'timestamp to datetime', 'date to timestamp'],
     path: '/tools/timestamp-converter',
+    relatedTools: ['unix-timestamp-converter', 'cron-parser', 'json-formatter', 'number-base'],
   },
   {
     id: 'color-converter',
@@ -93,6 +98,7 @@ export const tools: Tool[] = [
     category: 'converter',
     keywords: ['color', 'hex', 'rgb', 'hsl', 'convert', 'picker', 'palette', 'hex to rgb', 'hex to pantone', 'color code converter', 'hexadecimal to rgb'],
     path: '/tools/color-converter',
+    relatedTools: ['hex-to-rgb', 'color-palette', 'color-name-to-hex', 'tailwind-colors'],
   },
   {
     id: 'regex-tester',
@@ -102,6 +108,7 @@ export const tools: Tool[] = [
     category: 'text',
     keywords: ['regex', 'regular expression', 'pattern', 'match', 'test', 'replace', 'regex tester', 'regex debugger', 'javascript regex', 'python regex'],
     path: '/tools/regex-tester',
+    relatedTools: ['regex-checker', 'regex-matcher', 'regex-generator', 'escape-unescape'],
   },
   {
     id: 'markdown-preview',
@@ -111,6 +118,7 @@ export const tools: Tool[] = [
     category: 'text',
     keywords: ['markdown', 'preview', 'render', 'md', 'editor'],
     path: '/tools/markdown-preview',
+    relatedTools: ['markdown-to-html', 'html-to-markdown', 'word-counter', 'text-diff'],
   },
   {
     id: 'jwt-decoder',
@@ -120,6 +128,7 @@ export const tools: Tool[] = [
     category: 'encoder',
     keywords: ['jwt', 'json web token', 'decode', 'header', 'payload', 'auth'],
     path: '/tools/jwt-decoder',
+    relatedTools: ['jwt-token-decoder', 'jwt-parser', 'jwt-validator', 'base64-decoder'],
   },
   {
     id: 'qrcode-generator',
@@ -129,6 +138,7 @@ export const tools: Tool[] = [
     category: 'generator',
     keywords: ['qr', 'qrcode', 'barcode', 'generate', 'scan'],
     path: '/tools/qrcode-generator',
+    relatedTools: ['favicon-generator', 'placeholder-image', 'slug-generator', 'meta-tag-generator'],
   },
   {
     id: 'lorem-ipsum',
@@ -138,6 +148,7 @@ export const tools: Tool[] = [
     category: 'generator',
     keywords: ['lorem', 'ipsum', 'placeholder', 'text', 'dummy', 'filler'],
     path: '/tools/lorem-ipsum',
+    relatedTools: ['fake-data', 'word-counter', 'text-repeater', 'ascii-art'],
   },
   {
     id: 'html-entity',
@@ -147,6 +158,7 @@ export const tools: Tool[] = [
     category: 'encoder',
     keywords: ['html', 'entity', 'encode', 'decode', 'escape', 'special characters'],
     path: '/tools/html-entity',
+    relatedTools: ['escape-unescape', 'url-encoder', 'html-to-jsx', 'percent-encoding-tool'],
   },
   {
     id: 'css-minifier',
@@ -156,6 +168,7 @@ export const tools: Tool[] = [
     category: 'css',
     keywords: ['css', 'minify', 'beautify', 'compress', 'format', 'style'],
     path: '/tools/css-minifier',
+    relatedTools: ['js-html-formatter', 'css-to-tailwind', 'css-gradient', 'css-to-js'],
   },
   {
     id: 'number-base',
@@ -165,6 +178,7 @@ export const tools: Tool[] = [
     category: 'converter',
     keywords: ['binary', 'octal', 'decimal', 'hex', 'convert', 'base', 'number'],
     path: '/tools/number-base',
+    relatedTools: ['hex-to-decimal', 'hex-to-binary', 'octal-decimal-converter', 'binary-text'],
   },
   {
     id: 'text-diff',
@@ -174,6 +188,7 @@ export const tools: Tool[] = [
     category: 'text',
     keywords: ['diff', 'compare', 'difference', 'text', 'merge'],
     path: '/tools/text-diff',
+    relatedTools: ['word-counter', 'line-sorter', 'string-case', 'markdown-preview'],
   },
   {
     id: 'word-counter',
@@ -183,6 +198,7 @@ export const tools: Tool[] = [
     category: 'text',
     keywords: ['word', 'count', 'character', 'sentence', 'paragraph', 'length'],
     path: '/tools/word-counter',
+    relatedTools: ['text-diff', 'lorem-ipsum', 'text-repeater', 'line-sorter'],
   },
   {
     id: 'password-generator',
@@ -192,6 +208,7 @@ export const tools: Tool[] = [
     category: 'generator',
     keywords: ['password', 'generate', 'random', 'secure', 'strong'],
     path: '/tools/password-generator',
+    relatedTools: ['bcrypt-generator', 'hash-generator', 'uuid-generator', 'fake-data'],
   },
   {
     id: 'sql-formatter',
@@ -201,6 +218,7 @@ export const tools: Tool[] = [
     category: 'formatter',
     keywords: ['sql', 'format', 'beautify', 'query', 'database'],
     path: '/tools/sql-formatter',
+    relatedTools: ['sql-to-prisma', 'json-formatter', 'xml-formatter', 'csv-json'],
   },
   {
     id: 'cron-parser',
@@ -210,6 +228,7 @@ export const tools: Tool[] = [
     category: 'web',
     keywords: ['cron', 'schedule', 'parse', 'expression', 'time', 'job'],
     path: '/tools/cron-parser',
+    relatedTools: ['cron-generator', 'crontab-generator', 'cron-job-scheduler', 'cron-expression-parser'],
   },
   {
     id: 'json-yaml',
@@ -219,6 +238,7 @@ export const tools: Tool[] = [
     category: 'converter',
     keywords: ['json', 'yaml', 'yml', 'convert', 'config', 'configuration', 'json to yaml', 'yaml to json', 'json to yaml converter', 'yaml to json converter', 'convert json to yaml', 'convert yaml to json'],
     path: '/tools/json-yaml',
+    relatedTools: ['yaml-json-converter', 'yaml-validator', 'json-formatter', 'toml-yaml'],
   },
   {
     id: 'string-case',
@@ -228,6 +248,7 @@ export const tools: Tool[] = [
     category: 'text',
     keywords: ['case', 'camel', 'snake', 'kebab', 'pascal', 'convert', 'string', 'naming'],
     path: '/tools/string-case',
+    relatedTools: ['slug-generator', 'word-counter', 'text-repeater', 'line-sorter'],
   },
   {
     id: 'slug-generator',
@@ -237,6 +258,7 @@ export const tools: Tool[] = [
     category: 'web',
     keywords: ['slug', 'url', 'seo', 'permalink', 'friendly', 'generate'],
     path: '/tools/slug-generator',
+    relatedTools: ['url-encoder', 'string-case', 'meta-tag-generator', 'url-parser'],
   },
   {
     id: 'line-sorter',
@@ -246,6 +268,7 @@ export const tools: Tool[] = [
     category: 'text',
     keywords: ['sort', 'lines', 'deduplicate', 'unique', 'reverse', 'shuffle', 'alphabetical'],
     path: '/tools/line-sorter',
+    relatedTools: ['text-diff', 'word-counter', 'string-case', 'lorem-ipsum'],
   },
   {
     id: 'js-html-formatter',
@@ -255,6 +278,7 @@ export const tools: Tool[] = [
     category: 'formatter',
     keywords: ['javascript', 'html', 'minify', 'beautify', 'compress', 'format', 'uglify'],
     path: '/tools/js-html-formatter',
+    relatedTools: ['css-minifier', 'json-formatter', 'html-to-jsx', 'xml-formatter'],
   },
   {
     id: 'image-base64',
@@ -264,6 +288,7 @@ export const tools: Tool[] = [
     category: 'encoder',
     keywords: ['image', 'base64', 'convert', 'data uri', 'encode', 'decode', 'png', 'jpg', 'svg'],
     path: '/tools/image-base64',
+    relatedTools: ['base64', 'base64-encoder', 'svg-optimizer', 'placeholder-image'],
   },
   {
     id: 'git-command-generator',
@@ -273,6 +298,7 @@ export const tools: Tool[] = [
     category: 'web',
     keywords: ['git', 'command', 'generator', 'branch', 'merge', 'rebase', 'commit', 'push', 'pull', 'stash'],
     path: '/tools/git-command-generator',
+    relatedTools: ['gitignore-generator', 'slug-generator', 'cron-parser', 'docker-compose-generator'],
   },
   {
     id: 'xml-formatter',
@@ -282,6 +308,7 @@ export const tools: Tool[] = [
     category: 'formatter',
     keywords: ['xml', 'format', 'minify', 'validate', 'beautify', 'pretty print'],
     path: '/tools/xml-formatter',
+    relatedTools: ['xml-to-json', 'json-formatter', 'html-entity', 'json-yaml'],
   },
   {
     id: 'csv-json',
@@ -291,6 +318,7 @@ export const tools: Tool[] = [
     category: 'converter',
     keywords: ['csv', 'json', 'convert', 'spreadsheet', 'data', 'export', 'json to csv', 'csv to json', 'json to csv converter', 'csv to json converter', 'convert json to csv', 'convert csv to json'],
     path: '/tools/csv-json',
+    relatedTools: ['json-formatter', 'json-to-table', 'html-table', 'xml-to-json'],
   },
   {
     id: 'http-status',
@@ -300,6 +328,7 @@ export const tools: Tool[] = [
     category: 'web',
     keywords: ['http', 'status code', '404', '500', '200', 'reference', 'api'],
     path: '/tools/http-status',
+    relatedTools: ['curl-to-code', 'url-parser', 'csp-generator', 'meta-tag-generator'],
   },
   {
     id: 'mime-types',
@@ -309,6 +338,7 @@ export const tools: Tool[] = [
     category: 'web',
     keywords: ['mime', 'content-type', 'file extension', 'lookup', 'media type'],
     path: '/tools/mime-types',
+    relatedTools: ['http-status', 'url-parser', 'html-entity', 'pem-decoder'],
   },
   {
     id: 'escape-unescape',
@@ -318,6 +348,7 @@ export const tools: Tool[] = [
     category: 'encoder',
     keywords: ['escape', 'unescape', 'html', 'javascript', 'json', 'encode', 'decode'],
     path: '/tools/escape-unescape',
+    relatedTools: ['html-entity', 'url-encoder', 'base64', 'json-formatter'],
   },
   {
     id: 'ip-calculator',
@@ -327,6 +358,7 @@ export const tools: Tool[] = [
     category: 'converter',
     keywords: ['ip', 'subnet', 'calculator', 'cidr', 'network', 'broadcast'],
     path: '/tools/ip-calculator',
+    relatedTools: ['ip-to-binary', 'number-base', 'binary-text', 'hex-to-decimal'],
   },
   {
     id: 'fake-data',
@@ -336,6 +368,7 @@ export const tools: Tool[] = [
     category: 'generator',
     keywords: ['fake', 'test data', 'mock', 'names', 'emails', 'addresses'],
     path: '/tools/fake-data',
+    relatedTools: ['lorem-ipsum', 'uuid-generator', 'password-generator', 'qrcode-generator'],
   },
   {
     id: 'hmac-generator',
@@ -345,6 +378,7 @@ export const tools: Tool[] = [
     category: 'generator',
     keywords: ['hmac', 'sha256', 'sha1', 'signature', 'api', 'webhook'],
     path: '/tools/hmac-generator',
+    relatedTools: ['hash-generator', 'multi-hash-generator', 'bcrypt-generator', 'password-generator'],
   },
   {
     id: 'url-parser',
@@ -354,6 +388,7 @@ export const tools: Tool[] = [
     category: 'web',
     keywords: ['url', 'parse', 'components', 'host', 'path', 'query', 'params'],
     path: '/tools/url-parser',
+    relatedTools: ['url-encoder', 'slug-generator', 'http-status', 'curl-to-code'],
   },
   {
     id: 'binary-text',
@@ -363,6 +398,7 @@ export const tools: Tool[] = [
     category: 'converter',
     keywords: ['binary', 'text', 'convert', 'ascii', 'utf8', 'encoding'],
     path: '/tools/binary-text',
+    relatedTools: ['number-base', 'hex-to-binary', 'ascii-text-converter', 'base64'],
   },
   {
     id: 'pem-decoder',
@@ -372,6 +408,7 @@ export const tools: Tool[] = [
     category: 'encoder',
     keywords: ['pem', 'certificate', 'ssl', 'tls', 'decode', 'x509'],
     path: '/tools/pem-decoder',
+    relatedTools: ['jwt-decoder', 'base64-decoder', 'hash-generator', 'password-generator'],
   },
   {
     id: 'html-table',
@@ -381,6 +418,7 @@ export const tools: Tool[] = [
     category: 'converter',
     keywords: ['html', 'table', 'csv', 'json', 'markup', 'generate'],
     path: '/tools/html-table',
+    relatedTools: ['csv-json', 'json-to-table', 'json-formatter', 'xml-formatter'],
   },
   {
     id: 'bcrypt-generator',
@@ -390,6 +428,7 @@ export const tools: Tool[] = [
     category: 'generator',
     keywords: ['bcrypt', 'hash', 'password', 'generate', 'security'],
     path: '/tools/bcrypt-generator',
+    relatedTools: ['hash-generator', 'multi-hash-generator', 'hmac-generator', 'password-generator'],
   },
   // P0 — Code conversion tools (competing with transform.tools)
   {
@@ -400,7 +439,7 @@ export const tools: Tool[] = [
     category: 'converter',
     keywords: ['json', 'typescript', 'interface', 'type', 'convert', 'ts', 'json to typescript', 'json to ts', 'json to typescript converter', 'convert json to typescript'],
     path: '/tools/json-to-typescript',
-    relatedTools: ['json-formatter', 'json-to-go', 'json-to-java', 'json-to-zod'],
+    relatedTools: ['json-formatter', 'json-to-go', 'json-to-java', 'json-to-zod', 'json-to-json-schema'],
   },
   {
     id: 'html-to-jsx',
@@ -430,7 +469,7 @@ export const tools: Tool[] = [
     category: 'converter',
     keywords: ['svg', 'jsx', 'react', 'component', 'convert', 'icon', 'svg to jsx', 'svg to react', 'svg to jsx converter', 'convert svg to jsx', 'svg to react component', 'svg to jsx online'],
     path: '/tools/svg-to-jsx',
-    relatedTools: ['html-to-jsx', 'image-base64', 'js-html-formatter', 'css-to-tailwind'],
+    relatedTools: ['html-to-jsx', 'css-to-tailwind', 'image-base64', 'js-html-formatter', 'svg-optimizer'],
   },
   {
     id: 'css-to-tailwind',
@@ -450,7 +489,7 @@ export const tools: Tool[] = [
     category: 'converter',
     keywords: ['typescript', 'javascript', 'compile', 'convert', 'ts', 'js', 'typescript to javascript', 'ts to js', 'ts to js converter', 'ts to js online', 'typescript to javascript converter', 'convert typescript to javascript', 'typescript compiler online'],
     path: '/tools/typescript-to-javascript',
-    relatedTools: ['json-to-typescript', 'js-html-formatter', 'html-to-jsx', 'graphql-to-typescript'],
+    relatedTools: ['json-to-typescript', 'js-html-formatter', 'html-to-jsx', 'graphql-to-typescript', 'svg-to-jsx'],
   },
   // P1 tools
   {
@@ -552,7 +591,7 @@ export const tools: Tool[] = [
     category: 'converter',
     keywords: ['json', 'json-schema', 'schema', 'validation', 'convert', 'json to json schema', 'json schema generator', 'create json schema from json', 'generate json schema from json', 'json schema from json', 'json to schema'],
     path: '/tools/json-to-json-schema',
-    relatedTools: ['json-to-zod', 'json-to-typescript', 'json-formatter', 'json-to-graphql'],
+    relatedTools: ['json-to-zod', 'json-to-typescript', 'json-formatter', 'json-validator', 'json-viewer'],
   },
   {
     id: 'css-to-js',
@@ -778,7 +817,7 @@ export const tools: Tool[] = [
     category: 'converter',
     keywords: ['curl', 'curl to python', 'curl to javascript', 'curl to fetch', 'curl to go', 'curl converter', 'http request'],
     path: '/tools/curl-to-code',
-    relatedTools: ['url-parser', 'json-formatter', 'http-status', 'html-entity'],
+    relatedTools: ['url-parser', 'json-formatter', 'http-status', 'url-encoder', 'html-entity'],
   },
   {
     id: 'yaml-validator',

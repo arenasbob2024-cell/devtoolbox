@@ -126,6 +126,9 @@ import UrlEncodingPercentEncodingGuide from '@/data/posts/url-encoding-percent-e
 import CrontabCheatSheetCronExamplesGuide from '@/data/posts/crontab-cheat-sheet-cron-examples-guide';
 import HowToOpenJsonFile from '@/data/posts/how-to-open-json-file';
 import JsonToCsvConversionGuide from '@/data/posts/json-to-csv-conversion-guide';
+import JsonSchemaCompleteGuide from '@/data/posts/json-schema-complete-guide';
+import TypescriptToJavascriptGuide from '@/data/posts/typescript-to-javascript-guide';
+import CurlToCodeGuide from '@/data/posts/curl-to-code-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -242,6 +245,9 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'crontab-cheat-sheet-cron-examples-guide': CrontabCheatSheetCronExamplesGuide,
   'how-to-open-json-file': HowToOpenJsonFile,
   'json-to-csv-conversion-guide': JsonToCsvConversionGuide,
+  'json-schema-complete-guide': JsonSchemaCompleteGuide,
+  'typescript-to-javascript-guide': TypescriptToJavascriptGuide,
+  'curl-to-code-guide': CurlToCodeGuide,
 };
 
 /* i18n for UI strings on this page */
