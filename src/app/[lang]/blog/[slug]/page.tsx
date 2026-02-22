@@ -139,6 +139,11 @@ import RegexCheatSheet2026 from '@/data/posts/regex-cheat-sheet-2026';
 import CssFlexboxCompleteGuide from '@/data/posts/css-flexbox-complete-guide';
 import DockerComposeTutorial from '@/data/posts/docker-compose-tutorial';
 import HttpStatusCodesGuide from '@/data/posts/http-status-codes-guide';
+import TypescriptGenericsGuide from '@/data/posts/typescript-generics-guide';
+import JavascriptArrayMethods from '@/data/posts/javascript-array-methods';
+import CssGridLayoutGuide from '@/data/posts/css-grid-layout-guide';
+import ApiRateLimitingGuide from '@/data/posts/api-rate-limiting-guide';
+import SqlJoinsExplained from '@/data/posts/sql-joins-explained';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -268,6 +273,11 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'css-flexbox-complete-guide': CssFlexboxCompleteGuide,
   'docker-compose-tutorial': DockerComposeTutorial,
   'http-status-codes-guide': HttpStatusCodesGuide,
+  'typescript-generics-guide': TypescriptGenericsGuide,
+  'javascript-array-methods': JavascriptArrayMethods,
+  'css-grid-layout-guide': CssGridLayoutGuide,
+  'api-rate-limiting-guide': ApiRateLimitingGuide,
+  'sql-joins-explained': SqlJoinsExplained,
 };
 
 /* i18n for UI strings on this page */
