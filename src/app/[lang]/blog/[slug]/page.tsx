@@ -136,6 +136,9 @@ import JwtTokenGuide from '@/data/posts/jwt-token-guide';
 import YamlVsJsonGuide from '@/data/posts/yaml-vs-json-guide';
 import CurlCommandGuide from '@/data/posts/curl-command-guide';
 import RegexCheatSheet2026 from '@/data/posts/regex-cheat-sheet-2026';
+import CssFlexboxCompleteGuide from '@/data/posts/css-flexbox-complete-guide';
+import DockerComposeTutorial from '@/data/posts/docker-compose-tutorial';
+import HttpStatusCodesGuide from '@/data/posts/http-status-codes-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -262,6 +265,9 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'yaml-vs-json-guide': YamlVsJsonGuide,
   'curl-command-guide': CurlCommandGuide,
   'regex-cheat-sheet-2026': RegexCheatSheet2026,
+  'css-flexbox-complete-guide': CssFlexboxCompleteGuide,
+  'docker-compose-tutorial': DockerComposeTutorial,
+  'http-status-codes-guide': HttpStatusCodesGuide,
 };
 
 /* i18n for UI strings on this page */
