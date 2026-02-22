@@ -216,6 +216,8 @@ import ApiDesignBestPractices from '@/data/posts/api-design-best-practices';
 import JavascriptArrayMethods from '@/data/posts/javascript-array-methods';
 import TypescriptGenericsGuide from '@/data/posts/typescript-generics-guide';
 import NextjsAppRouterGuide from '@/data/posts/nextjs-app-router-guide';
+import CssFlexboxGuide from '@/data/posts/css-flexbox-guide';
+import ReactHooksCompleteGuide from '@/data/posts/react-hooks-complete-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -422,6 +424,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'javascript-array-methods': JavascriptArrayMethods,
   'typescript-generics-guide': TypescriptGenericsGuide,
   'nextjs-app-router-guide': NextjsAppRouterGuide,
+  'css-flexbox-guide': CssFlexboxGuide,
+  'react-hooks-complete-guide': ReactHooksCompleteGuide,
 };
 
 /* i18n for UI strings on this page */

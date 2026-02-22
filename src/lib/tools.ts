@@ -2122,6 +2122,16 @@ export const tools: Tool[] = [
     path: '/tools/crontab-generator',
     relatedTools: ['cron-expression-generator', 'crontab-guru', 'timestamp-converter'],
   },
+  {
+    id: 'sql-formatter-online',
+    name: 'SQL Formatter Online',
+    description: 'Format and beautify SQL queries online with syntax highlighting, indentation options, and support for multiple SQL dialects.',
+    icon: '📊',
+    category: 'formatter',
+    keywords: ['sql formatter', 'sql beautifier', 'format sql', 'sql formatter online', 'sql pretty print', 'sql indent'],
+    path: '/tools/sql-formatter-online',
+    relatedTools: ['sql-formatter', 'json-formatter', 'xml-formatter'],
+  },
 ];
 
 export function getToolsByCategory(categoryId: string): Tool[] {
