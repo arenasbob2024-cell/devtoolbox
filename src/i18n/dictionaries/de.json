@@ -4076,6 +4076,48 @@
       "description": "JSON einfuegen, Knoten anklicken fuer JSONPath",
       "pageTitle": "JSON-Pfad-Finder - JSONPath Online Kostenlos",
       "pageDescription": "Finden Sie den JSONPath fuer jeden Knoten in Ihrem JSON."
+    },
+    "string-case-converter": {
+      "name": "Groß-/Kleinschreibung Konverter",
+      "description": "Text zwischen 14 Namensformaten konvertieren: camelCase, snake_case, kebab-case, PascalCase und mehr",
+      "pageTitle": "Groß-/Kleinschreibung Konverter Online",
+      "pageDescription": "Konvertieren Sie Text zwischen camelCase, snake_case, kebab-case, PascalCase, CONSTANT_CASE, Title Case und mehr."
+    },
+    "html-entity-encoder": {
+      "name": "HTML-Entitaten Encoder / Decoder",
+      "description": "HTML-Entitaten kodieren und dekodieren mit benannten und numerischen Entitaten",
+      "pageTitle": "HTML-Entitaten Encoder / Decoder",
+      "pageDescription": "HTML-Entitaten online kodieren und dekodieren. Sonderzeichen in benannte oder numerische HTML-Entitaten umwandeln."
+    },
+    "json-to-csv": {
+      "name": "JSON zu CSV Konverter",
+      "description": "JSON-Arrays in CSV-Format konvertieren mit verschachtelter Objekt-Abflachung und CSV-Download",
+      "pageTitle": "JSON zu CSV Konverter Online",
+      "pageDescription": "Konvertieren Sie JSON-Arrays online in CSV-Format. Unterstutzt verschachtelte Objekte und benutzerdefnierte Trennzeichen."
+    },
+    "text-counter": {
+      "name": "Textzhler & Statistiken",
+      "description": "Worter, Zeichen, Satze, Absatze, Zeilen, Bytes, Lesezeit und Sprechzeit zahlen",
+      "pageTitle": "Textzhler & Statistiken",
+      "pageDescription": "Zhlen Sie Worter, Zeichen, Satze, Absatze, Zeilen und Bytes mit Lese-/Sprechzeitschatzung und Zeichenhhufigkeitsanalyse."
+    },
+    "image-to-base64": {
+      "name": "Bild zu Base64 Encoder",
+      "description": "Bilder in Base64-Zeichenfolgen und Data-URIs konvertieren mit Drag-and-Drop",
+      "pageTitle": "Bild zu Base64 Konverter",
+      "pageDescription": "Konvertieren Sie Bilder in Base64-Zeichenfolgen und Data-URIs. Ziehen Sie Bilddateien per Drag-and-Drop."
+    },
+    "text-case-converter": {
+      "name": "Text Case Converter",
+      "description": "Text zwischen camelCase, snake_case, kebab-case, PascalCase, UPPERCASE, lowercase, Title Case, dot.case und mehr umwandeln",
+      "pageTitle": "Text Case Converter Online",
+      "pageDescription": "Text zwischen camelCase, snake_case, kebab-case, PascalCase, UPPERCASE, lowercase, Title Case, dot.case und 14 weiteren Formaten sofort umwandeln."
+    },
+    "image-compressor": {
+      "name": "Bildkomprimierer",
+      "description": "Bilder kostenlos online komprimieren mit einstellbarer Qualitat. JPEG, PNG und WebP Ausgabe",
+      "pageTitle": "Bildkomprimierer Online",
+      "pageDescription": "Bilder kostenlos online komprimieren. Dateigrose mit einstellbarem Qualitatsregler reduzieren. JPEG, PNG und WebP Ausgabe. Verarbeitung im Browser."
     }
   },
   "footer": {

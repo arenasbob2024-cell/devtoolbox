@@ -4076,6 +4076,48 @@
       "description": "JSON을 붙여넣고 노드를 클릭하여 JSONPath 가져오기",
       "pageTitle": "JSON 경로 찾기 - JSONPath 무료 온라인",
       "pageDescription": "무료 온라인 JSON 경로 찾기. JSON을 붙여넣고 트리의 노드를 클릭하여 JSONPath를 가져옵니다."
+    },
+    "string-case-converter": {
+      "name": "문자열 대소문자 변환기",
+      "description": "14가지 명명 형식 간 텍스트 변환: camelCase, snake_case, kebab-case, PascalCase 등",
+      "pageTitle": "문자열 대소문자 온라인 변환기",
+      "pageDescription": "camelCase, snake_case, kebab-case, PascalCase, CONSTANT_CASE, Title Case 등의 명명 규칙 간에 텍스트를 즉시 변환합니다."
+    },
+    "html-entity-encoder": {
+      "name": "HTML 엔티티 인코더/디코더",
+      "description": "명명된 엔티티와 숫자 엔티티를 지원하는 HTML 엔티티 인코딩/디코딩",
+      "pageTitle": "HTML 엔티티 인코더/디코더",
+      "pageDescription": "HTML 엔티티를 온라인으로 인코딩/디코딩합니다. 특수 문자를 명명된 또는 숫자 HTML 엔티티로 변환합니다."
+    },
+    "json-to-csv": {
+      "name": "JSON을 CSV로 변환기",
+      "description": "JSON 배열을 CSV 형식으로 변환, 중첩 객체 평탄화 및 CSV 다운로드 지원",
+      "pageTitle": "JSON을 CSV로 온라인 변환기",
+      "pageDescription": "JSON 배열을 CSV 형식으로 온라인 변환. 중첩 객체를 처리하고 CSV 파일 다운로드를 제공합니다."
+    },
+    "text-counter": {
+      "name": "텍스트 카운터 및 통계",
+      "description": "단어, 문자, 문장, 단락, 줄, 바이트, 읽기 시간 및 말하기 시간 계산",
+      "pageTitle": "텍스트 카운터 및 통계",
+      "pageDescription": "단어, 문자, 문장, 단락, 줄 및 바이트를 세고 읽기/말하기 시간 추정 및 문자 빈도 분석을 제공합니다."
+    },
+    "image-to-base64": {
+      "name": "이미지를 Base64로 인코더",
+      "description": "이미지를 Base64 문자열과 Data URI로 변환, 드래그 앤 드롭 지원",
+      "pageTitle": "이미지를 Base64로 변환기",
+      "pageDescription": "이미지를 Base64 문자열과 Data URI로 변환합니다. 드래그 앤 드롭 또는 이미지 파일을 선택하여 Base64를 얻으세요."
+    },
+    "text-case-converter": {
+      "name": "텍스트 케이스 변환기",
+      "description": "camelCase, snake_case, kebab-case, PascalCase, UPPERCASE, lowercase, Title Case, dot.case 등의 형식 간 텍스트 변환",
+      "pageTitle": "텍스트 케이스 변환기",
+      "pageDescription": "camelCase, snake_case, kebab-case, PascalCase, UPPERCASE, lowercase, Title Case, dot.case 등 14가지 이상의 형식 간 텍스트를 즉시 변환합니다."
+    },
+    "image-compressor": {
+      "name": "이미지 압축기",
+      "description": "조절 가능한 품질로 이미지를 무료로 온라인 압축. JPEG, PNG, WebP 출력 지원",
+      "pageTitle": "이미지 압축기",
+      "pageDescription": "이미지를 무료로 온라인 압축합니다. 품질 슬라이더로 파일 크기를 줄입니다. JPEG, PNG, WebP 출력 지원. 모든 처리는 브라우저에서 완료."
     }
   },
   "footer": {

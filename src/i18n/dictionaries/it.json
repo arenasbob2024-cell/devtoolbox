@@ -4076,6 +4076,48 @@
       "description": "Incolla JSON, clicca un nodo per ottenere il JSONPath",
       "pageTitle": "Trova Percorso JSON - JSONPath Online Gratis",
       "pageDescription": "Trova il percorso JSONPath per qualsiasi nodo nel tuo JSON."
+    },
+    "string-case-converter": {
+      "name": "Convertitore di Maiuscole/Minuscole",
+      "description": "Converti il testo tra 14 formati di denominazione: camelCase, snake_case, kebab-case, PascalCase e altro",
+      "pageTitle": "Convertitore di Maiuscole/Minuscole Online",
+      "pageDescription": "Converti il testo tra camelCase, snake_case, kebab-case, PascalCase, CONSTANT_CASE, Title Case e altre convenzioni."
+    },
+    "html-entity-encoder": {
+      "name": "Codificatore / Decodificatore Entita HTML",
+      "description": "Codifica e decodifica entita HTML con supporto per entita nominate e numeriche",
+      "pageTitle": "Codificatore / Decodificatore Entita HTML",
+      "pageDescription": "Codifica e decodifica entita HTML online. Converti caratteri speciali in entita HTML nominate o numeriche."
+    },
+    "json-to-csv": {
+      "name": "Convertitore JSON in CSV",
+      "description": "Convertire array JSON in formato CSV con appiattimento oggetti annidati e download CSV",
+      "pageTitle": "Convertitore JSON in CSV Online",
+      "pageDescription": "Converti array JSON in formato CSV online. Gestisce oggetti annidati e offre il download del file CSV."
+    },
+    "text-counter": {
+      "name": "Contatore di Testo e Statistiche",
+      "description": "Conta parole, caratteri, frasi, paragrafi, righe, byte, tempo di lettura e di parlata",
+      "pageTitle": "Contatore di Testo e Statistiche",
+      "pageDescription": "Conta parole, caratteri, frasi, paragrafi, righe e byte con stima del tempo di lettura/parlata e analisi della frequenza dei caratteri."
+    },
+    "image-to-base64": {
+      "name": "Codificatore Immagine in Base64",
+      "description": "Convertire immagini in stringhe Base64 e Data URI con drag and drop",
+      "pageTitle": "Convertitore Immagine in Base64",
+      "pageDescription": "Converti immagini in stringhe Base64 e Data URI. Trascina e rilascia file immagine per ottenere Base64."
+    },
+    "text-case-converter": {
+      "name": "Convertitore di Maiuscole/Minuscole",
+      "description": "Converti testo tra camelCase, snake_case, kebab-case, PascalCase, UPPERCASE, lowercase, Title Case, dot.case e altro",
+      "pageTitle": "Convertitore di Maiuscole/Minuscole Online",
+      "pageDescription": "Converti testo tra camelCase, snake_case, kebab-case, PascalCase, UPPERCASE, lowercase, Title Case, dot.case e 14 altri formati istantaneamente."
+    },
+    "image-compressor": {
+      "name": "Compressore di Immagini",
+      "description": "Comprimi immagini online gratuitamente con qualita regolabile. Output JPEG, PNG e WebP",
+      "pageTitle": "Compressore di Immagini Online",
+      "pageDescription": "Comprimi immagini online gratuitamente. Riduci le dimensioni del file con cursore di qualita. Output JPEG, PNG e WebP. Elaborazione nel tuo browser."
     }
   },
   "footer": {

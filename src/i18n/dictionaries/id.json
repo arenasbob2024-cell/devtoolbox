@@ -4076,6 +4076,48 @@
       "description": "Tempel JSON, klik node untuk mendapatkan JSONPath",
       "pageTitle": "JSON Path Finder - JSONPath Online Gratis",
       "pageDescription": "Temukan JSONPath untuk setiap node dalam JSON Anda."
+    },
+    "string-case-converter": {
+      "name": "Konverter Huruf Besar/Kecil",
+      "description": "Konversi teks antara 14 format penamaan: camelCase, snake_case, kebab-case, PascalCase dan lainnya",
+      "pageTitle": "Konverter Huruf Besar/Kecil Online",
+      "pageDescription": "Konversi teks antara camelCase, snake_case, kebab-case, PascalCase, CONSTANT_CASE, Title Case dan lainnya."
+    },
+    "html-entity-encoder": {
+      "name": "Encoder / Decoder Entitas HTML",
+      "description": "Encode dan decode entitas HTML dengan dukungan entitas bernama dan numerik",
+      "pageTitle": "Encoder / Decoder Entitas HTML",
+      "pageDescription": "Encode dan decode entitas HTML online. Konversi karakter khusus ke entitas HTML bernama atau numerik."
+    },
+    "json-to-csv": {
+      "name": "Konverter JSON ke CSV",
+      "description": "Konversi array JSON ke format CSV dengan perataan objek bersarang dan unduh CSV",
+      "pageTitle": "Konverter JSON ke CSV Online",
+      "pageDescription": "Konversi array JSON ke format CSV online. Menangani objek bersarang dan menawarkan unduhan file CSV."
+    },
+    "text-counter": {
+      "name": "Penghitung Teks dan Statistik",
+      "description": "Hitung kata, karakter, kalimat, paragraf, baris, byte, waktu baca dan bicara",
+      "pageTitle": "Penghitung Teks dan Statistik",
+      "pageDescription": "Hitung kata, karakter, kalimat, paragraf, baris dan byte dengan estimasi waktu baca/bicara dan analisis frekuensi karakter."
+    },
+    "image-to-base64": {
+      "name": "Encoder Gambar ke Base64",
+      "description": "Konversi gambar ke string Base64 dan Data URI dengan dukungan seret dan lepas",
+      "pageTitle": "Konverter Gambar ke Base64",
+      "pageDescription": "Konversi gambar ke string Base64 dan Data URI. Seret dan lepas file gambar untuk mendapatkan Base64."
+    },
+    "text-case-converter": {
+      "name": "Pengubah Huruf Besar/Kecil",
+      "description": "Konversi teks antara camelCase, snake_case, kebab-case, PascalCase, UPPERCASE, lowercase, Title Case, dot.case dan lainnya",
+      "pageTitle": "Pengubah Huruf Besar/Kecil Online",
+      "pageDescription": "Konversi teks antara camelCase, snake_case, kebab-case, PascalCase, UPPERCASE, lowercase, Title Case, dot.case dan 14 format lainnya secara instan."
+    },
+    "image-compressor": {
+      "name": "Kompresor Gambar",
+      "description": "Kompres gambar online gratis dengan kualitas yang dapat disesuaikan. Output JPEG, PNG dan WebP",
+      "pageTitle": "Kompresor Gambar Online",
+      "pageDescription": "Kompres gambar online gratis. Kurangi ukuran file dengan pengatur kualitas. Output JPEG, PNG dan WebP. Semua pemrosesan di browser Anda."
     }
   },
   "footer": {

@@ -4076,6 +4076,48 @@
       "description": "Collez du JSON, cliquez pour obtenir le JSONPath",
       "pageTitle": "Chercheur de Chemin JSON - JSONPath en Ligne",
       "pageDescription": "Trouvez le chemin JSONPath de n'importe quel noeud dans votre JSON."
+    },
+    "string-case-converter": {
+      "name": "Convertisseur de Casse",
+      "description": "Convertir du texte entre 14 formats de nommage : camelCase, snake_case, kebab-case, PascalCase et plus",
+      "pageTitle": "Convertisseur de Casse en Ligne",
+      "pageDescription": "Convertissez du texte entre camelCase, snake_case, kebab-case, PascalCase, CONSTANT_CASE, Title Case et plus."
+    },
+    "html-entity-encoder": {
+      "name": "Encodeur / Decodeur Entites HTML",
+      "description": "Encoder et decoder les entites HTML avec support des entites nommees et numeriques",
+      "pageTitle": "Encodeur / Decodeur Entites HTML",
+      "pageDescription": "Encodez et decodez les entites HTML en ligne. Convertissez les caracteres speciaux en entites HTML nommees ou numeriques."
+    },
+    "json-to-csv": {
+      "name": "Convertisseur JSON vers CSV",
+      "description": "Convertir les tableaux JSON en format CSV avec aplatissement des objets imbriques et telechargement CSV",
+      "pageTitle": "Convertisseur JSON vers CSV en Ligne",
+      "pageDescription": "Convertissez des tableaux JSON en format CSV en ligne. Gere les objets imbriques et propose le telechargement CSV."
+    },
+    "text-counter": {
+      "name": "Compteur de Texte et Statistiques",
+      "description": "Compter les mots, caracteres, phrases, paragraphes, lignes, octets, temps de lecture et de parole",
+      "pageTitle": "Compteur de Texte et Statistiques",
+      "pageDescription": "Comptez les mots, caracteres, phrases, paragraphes, lignes et octets avec estimation du temps de lecture/parole."
+    },
+    "image-to-base64": {
+      "name": "Encodeur Image vers Base64",
+      "description": "Convertir des images en chaines Base64 et Data URIs avec glisser-deposer",
+      "pageTitle": "Convertisseur Image vers Base64",
+      "pageDescription": "Convertissez des images en chaines Base64 et Data URIs. Glissez-deposez des fichiers image pour obtenir Base64."
+    },
+    "text-case-converter": {
+      "name": "Convertisseur de Casse",
+      "description": "Convertir du texte entre camelCase, snake_case, kebab-case, PascalCase, UPPERCASE, lowercase, Title Case, dot.case et plus",
+      "pageTitle": "Convertisseur de Casse en Ligne",
+      "pageDescription": "Convertir du texte entre camelCase, snake_case, kebab-case, PascalCase, UPPERCASE, lowercase, Title Case, dot.case et 14 autres formats instantanement."
+    },
+    "image-compressor": {
+      "name": "Compresseur d'Images",
+      "description": "Compresser des images en ligne gratuitement avec qualite ajustable. Sortie JPEG, PNG et WebP",
+      "pageTitle": "Compresseur d'Images en Ligne",
+      "pageDescription": "Compresser des images en ligne gratuitement. Reduire la taille des fichiers avec un curseur de qualite. Sortie JPEG, PNG et WebP. Traitement dans votre navigateur."
     }
   },
   "footer": {

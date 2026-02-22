@@ -149,6 +149,14 @@ import PythonVsJavascript from '@/data/posts/python-vs-javascript';
 import GraphqlVsRestApi from '@/data/posts/graphql-vs-rest-api';
 import WebPerformanceOptimization from '@/data/posts/web-performance-optimization';
 import TypescriptUtilityTypes from '@/data/posts/typescript-utility-types';
+import NextjsAppRouterGuide from '@/data/posts/nextjs-app-router-guide';
+import LinuxCommandCheatSheet from '@/data/posts/linux-command-cheat-sheet';
+import WebSocketTutorial from '@/data/posts/websocket-tutorial';
+import MongodbVsPostgresql from '@/data/posts/mongodb-vs-postgresql';
+import JwtAuthenticationGuide from '@/data/posts/jwt-authentication-guide';
+import NextjsVsRemix from '@/data/posts/nextjs-vs-remix';
+import GitBranchingStrategies from '@/data/posts/git-branching-strategies';
+import LinuxCommandsCheatSheet from '@/data/posts/linux-commands-cheat-sheet';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -288,6 +296,14 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'graphql-vs-rest-api': GraphqlVsRestApi,
   'web-performance-optimization': WebPerformanceOptimization,
   'typescript-utility-types': TypescriptUtilityTypes,
+  'nextjs-app-router-guide': NextjsAppRouterGuide,
+  'linux-command-cheat-sheet': LinuxCommandCheatSheet,
+  'websocket-tutorial': WebSocketTutorial,
+  'mongodb-vs-postgresql': MongodbVsPostgresql,
+  'jwt-authentication-guide': JwtAuthenticationGuide,
+  'nextjs-vs-remix': NextjsVsRemix,
+  'git-branching-strategies': GitBranchingStrategies,
+  'linux-commands-cheat-sheet': LinuxCommandsCheatSheet,
 };
 
 /* i18n for UI strings on this page */

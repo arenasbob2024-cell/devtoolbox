@@ -4076,6 +4076,48 @@
       "description": "วาง JSON คลิกโหนดเพื่อรับ JSONPath",
       "pageTitle": "JSON Path Finder - ค้นหา JSONPath ออนไลน์ฟรี",
       "pageDescription": "ค้นหา JSONPath สำหรับทุกโหนดใน JSON ของคุณ"
+    },
+    "string-case-converter": {
+      "name": "ตัวแปลงตัวพิมพ์เล็ก-ใหญ่",
+      "description": "แปลงข้อความระหว่าง 14 รูปแบบการตั้งชื่อ: camelCase, snake_case, kebab-case, PascalCase และอื่นๆ",
+      "pageTitle": "ตัวแปลงตัวพิมพ์เล็ก-ใหญ่ออนไลน์",
+      "pageDescription": "แปลงข้อความระหว่าง camelCase, snake_case, kebab-case, PascalCase, CONSTANT_CASE, Title Case และอื่นๆ ทันที"
+    },
+    "html-entity-encoder": {
+      "name": "ตัวเข้ารหัส/ถอดรหัส HTML Entity",
+      "description": "เข้ารหัสและถอดรหัส HTML entities รองรับ named และ numeric entities",
+      "pageTitle": "ตัวเข้ารหัส/ถอดรหัส HTML Entity",
+      "pageDescription": "เข้ารหัสและถอดรหัส HTML entities ออนไลน์ แปลงอักขระพิเศษเป็น named หรือ numeric HTML entities"
+    },
+    "json-to-csv": {
+      "name": "ตัวแปลง JSON เป็น CSV",
+      "description": "แปลงอาร์เรย์ JSON เป็นรูปแบบ CSV รองรับ nested objects และดาวน์โหลด CSV",
+      "pageTitle": "ตัวแปลง JSON เป็น CSV ออนไลน์",
+      "pageDescription": "แปลงอาร์เรย์ JSON เป็นรูปแบบ CSV ออนไลน์ จัดการกับ nested objects และดาวน์โหลดไฟล์ CSV ได้"
+    },
+    "text-counter": {
+      "name": "ตัวนับข้อความและสถิติ",
+      "description": "นับคำ ตัวอักษร ประโยค ย่อหน้า บรรทัด ไบต์ เวลาอ่าน และเวลาพูด",
+      "pageTitle": "ตัวนับข้อความและสถิติ",
+      "pageDescription": "นับคำ ตัวอักษร ประโยค ย่อหน้า บรรทัด และไบต์ พร้อมประมาณเวลาอ่าน/พูด และวิเคราะห์ความถี่ตัวอักษร"
+    },
+    "image-to-base64": {
+      "name": "ตัวเข้ารหัสรูปภาพเป็น Base64",
+      "description": "แปลงรูปภาพเป็น Base64 strings และ Data URIs รองรับลากและวาง",
+      "pageTitle": "ตัวแปลงรูปภาพเป็น Base64",
+      "pageDescription": "แปลงรูปภาพเป็น Base64 strings และ Data URIs ลากและวางหรือเลือกไฟล์รูปภาพเพื่อรับ Base64"
+    },
+    "text-case-converter": {
+      "name": "ตัวแปลงตัวพิมพ์ใหญ่/เล็ก",
+      "description": "แปลงข้อความระหว่าง camelCase, snake_case, kebab-case, PascalCase, UPPERCASE, lowercase, Title Case, dot.case และอื่นๆ",
+      "pageTitle": "ตัวแปลงตัวพิมพ์ใหญ่/เล็ก ออนไลน์",
+      "pageDescription": "แปลงข้อความระหว่าง camelCase, snake_case, kebab-case, PascalCase, UPPERCASE, lowercase, Title Case, dot.case และอีก 14 รูปแบบทันที"
+    },
+    "image-compressor": {
+      "name": "ตัวบีบอัดรูปภาพ",
+      "description": "บีบอัดรูปภาพออนไลน์ฟรีพร้อมคุณภาพที่ปรับได้ รองรับ JPEG, PNG และ WebP",
+      "pageTitle": "ตัวบีบอัดรูปภาพ ออนไลน์",
+      "pageDescription": "บีบอัดรูปภาพออนไลน์ฟรี ลดขนาดไฟล์ด้วยตัวควบคุมคุณภาพ รองรับ JPEG, PNG และ WebP ประมวลผลทั้งหมดในเบราว์เซอร์"
     }
   },
   "footer": {

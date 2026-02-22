@@ -4080,6 +4080,48 @@
       "description": "Paste JSON, click any node to get its JSONPath expression",
       "pageTitle": "JSON Path Finder - Find JSONPath Online Free",
       "pageDescription": "Free online JSON Path Finder. Paste JSON, click any node in the interactive tree to get its full JSONPath expression. Copy paths like $.store.books[0].title instantly."
+    },
+    "string-case-converter": {
+      "name": "String Case Converter",
+      "description": "Convert text between 14 naming formats: camelCase, snake_case, kebab-case, PascalCase, and more",
+      "pageTitle": "String Case Converter Online",
+      "pageDescription": "Convert text between camelCase, snake_case, kebab-case, PascalCase, CONSTANT_CASE, Title Case, UPPERCASE, lowercase and more naming conventions instantly."
+    },
+    "html-entity-encoder": {
+      "name": "HTML Entity Encoder / Decoder",
+      "description": "Encode and decode HTML entities with named and numeric entity support and reference table",
+      "pageTitle": "HTML Entity Encoder / Decoder",
+      "pageDescription": "Encode and decode HTML entities online. Convert special characters to named or numeric HTML entities and back with a comprehensive reference table."
+    },
+    "json-to-csv": {
+      "name": "JSON to CSV Converter",
+      "description": "Convert JSON arrays to CSV format with nested object flattening and CSV download",
+      "pageTitle": "JSON to CSV Converter Online",
+      "pageDescription": "Convert JSON arrays to CSV format online. Handles nested objects, supports custom delimiters, and offers CSV file download."
+    },
+    "text-counter": {
+      "name": "Text Counter & Statistics",
+      "description": "Count words, characters, sentences, paragraphs, lines, bytes, reading time, and speaking time",
+      "pageTitle": "Text Counter & Statistics",
+      "pageDescription": "Count words, characters, sentences, paragraphs, lines, and bytes with reading/speaking time estimation and character frequency analysis."
+    },
+    "image-to-base64": {
+      "name": "Image to Base64 Encoder",
+      "description": "Convert images to Base64 strings and data URIs with drag & drop support",
+      "pageTitle": "Image to Base64 Converter",
+      "pageDescription": "Convert images to Base64 strings and data URIs. Drag and drop or select image files to get Base64, CSS background, and HTML img tag output."
+    },
+    "text-case-converter": {
+      "name": "Text Case Converter",
+      "description": "Convert text between camelCase, snake_case, kebab-case, PascalCase, UPPERCASE, lowercase, Title Case, dot.case and more",
+      "pageTitle": "Text Case Converter Online",
+      "pageDescription": "Convert text between camelCase, snake_case, kebab-case, PascalCase, UPPERCASE, lowercase, Title Case, dot.case and 14 more formats instantly."
+    },
+    "image-compressor": {
+      "name": "Image Compressor",
+      "description": "Compress images online for free with adjustable quality. Supports JPEG, PNG, and WebP output",
+      "pageTitle": "Image Compressor Online",
+      "pageDescription": "Compress images online for free. Reduce file size with adjustable quality slider. Supports JPEG, PNG, and WebP output. All processing in your browser."
     }
   },
   "footer": {

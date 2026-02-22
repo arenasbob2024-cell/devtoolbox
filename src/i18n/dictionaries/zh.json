@@ -4076,6 +4076,48 @@
       "description": "粘贴 JSON，点击任意节点获取 JSONPath",
       "pageTitle": "JSON 路径查找器 - 在线免费查找 JSONPath",
       "pageDescription": "免费在线 JSON 路径查找器。粘贴 JSON，点击交互式树中的任何节点获取完整 JSONPath 表达式。"
+    },
+    "string-case-converter": {
+      "name": "字符串大小写转换器",
+      "description": "在14种命名格式之间转换文本：camelCase, snake_case, kebab-case, PascalCase 等",
+      "pageTitle": "字符串大小写在线转换器",
+      "pageDescription": "在 camelCase、snake_case、kebab-case、PascalCase、CONSTANT_CASE、Title Case 等命名约定之间即时转换文本。"
+    },
+    "html-entity-encoder": {
+      "name": "HTML实体编码解码器",
+      "description": "编码和解码HTML实体，支持命名实体和数字实体，附带参考表",
+      "pageTitle": "HTML实体编码解码器",
+      "pageDescription": "在线编码和解码HTML实体。将特殊字符转换为命名或数字HTML实体，并提供完整的参考表。"
+    },
+    "json-to-csv": {
+      "name": "JSON转CSV转换器",
+      "description": "将JSON数组转换为CSV格式，支持嵌套对象展平和CSV下载",
+      "pageTitle": "JSON转CSV在线转换器",
+      "pageDescription": "在线将JSON数组转换为CSV格式。处理嵌套对象，支持自定义分隔符，并提供CSV文件下载。"
+    },
+    "text-counter": {
+      "name": "文本计数器与统计",
+      "description": "统计字数、字符数、句子数、段落数、行数、字节数、阅读时间和说话时间",
+      "pageTitle": "文本计数器与统计",
+      "pageDescription": "统计字数、字符数、句子数、段落数、行数和字节数，并估算阅读/说话时间和字符频率分析。"
+    },
+    "image-to-base64": {
+      "name": "图片转Base64编码器",
+      "description": "将图片转换为Base64字符串和Data URI，支持拖放上传",
+      "pageTitle": "图片转Base64转换器",
+      "pageDescription": "将图片转换为Base64字符串和Data URI。拖放或选择图片文件以获取Base64、CSS背景和HTML img标签输出。"
+    },
+    "text-case-converter": {
+      "name": "文本大小写转换器",
+      "description": "在 camelCase、snake_case、kebab-case、PascalCase、UPPERCASE、lowercase、Title Case、dot.case 等格式之间转换文本",
+      "pageTitle": "文本大小写转换器",
+      "pageDescription": "在 camelCase、snake_case、kebab-case、PascalCase、UPPERCASE、lowercase、Title Case、dot.case 等 14 种格式之间即时转换文本。"
+    },
+    "image-compressor": {
+      "name": "图片压缩器",
+      "description": "免费在线压缩图片，可调节质量。支持 JPEG、PNG 和 WebP 输出",
+      "pageTitle": "图片压缩器",
+      "pageDescription": "免费在线压缩图片。通过质量滑块减小文件大小。支持 JPEG、PNG 和 WebP 输出。所有处理在浏览器中完成。"
     }
   },
   "footer": {

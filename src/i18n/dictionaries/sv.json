@@ -4076,6 +4076,48 @@
       "description": "Klistra in JSON, klicka pa en nod for att fa JSONPath",
       "pageTitle": "JSON-sokvagsfinnare - JSONPath Online Gratis",
       "pageDescription": "Hitta JSONPath for varje nod i din JSON."
+    },
+    "string-case-converter": {
+      "name": "Textfallskonverterare",
+      "description": "Konvertera text mellan 14 namngivningsformat: camelCase, snake_case, kebab-case, PascalCase och fler",
+      "pageTitle": "Textfallskonverterare Online",
+      "pageDescription": "Konvertera text mellan camelCase, snake_case, kebab-case, PascalCase, CONSTANT_CASE, Title Case och fler."
+    },
+    "html-entity-encoder": {
+      "name": "HTML Entitets Kodare / Avkodare",
+      "description": "Koda och avkoda HTML entiteter med namngivna och numeriska entiteter",
+      "pageTitle": "HTML Entitets Kodare / Avkodare",
+      "pageDescription": "Koda och avkoda HTML entiteter online. Konvertera specialtecken till namngivna eller numeriska HTML entiteter."
+    },
+    "json-to-csv": {
+      "name": "JSON till CSV Konverterare",
+      "description": "Konvertera JSON-arrayer till CSV-format med utatning av nestade objekt och CSV-nedladdning",
+      "pageTitle": "JSON till CSV Konverterare Online",
+      "pageDescription": "Konvertera JSON-arrayer till CSV-format online. Hanterar nestade objekt och erbjuder CSV-filnedladdning."
+    },
+    "text-counter": {
+      "name": "Textrknare och Statistik",
+      "description": "Rkna ord, tecken, meningar, stycken, rader, bytes, lsetid och taltid",
+      "pageTitle": "Textrknare och Statistik",
+      "pageDescription": "Rkna ord, tecken, meningar, stycken, rader och bytes med uppskattning av lse-/taltid och teckenfrekvensanalys."
+    },
+    "image-to-base64": {
+      "name": "Bild till Base64 Kodare",
+      "description": "Konvertera bilder till Base64 strangar och Data URIer med dra och slapp",
+      "pageTitle": "Bild till Base64 Konverterare",
+      "pageDescription": "Konvertera bilder till Base64 strangar och Data URIer. Dra och slapp bildfiler for att fa Base64."
+    },
+    "text-case-converter": {
+      "name": "Text Case Converter",
+      "description": "Konvertera text mellan camelCase, snake_case, kebab-case, PascalCase, UPPERCASE, lowercase, Title Case, dot.case och mer",
+      "pageTitle": "Text Case Converter Online",
+      "pageDescription": "Konvertera text mellan camelCase, snake_case, kebab-case, PascalCase, UPPERCASE, lowercase, Title Case, dot.case och 14 fler format direkt."
+    },
+    "image-compressor": {
+      "name": "Bildkomprimerare",
+      "description": "Komprimera bilder online gratis med justerbar kvalitet. JPEG, PNG och WebP utdata",
+      "pageTitle": "Bildkomprimerare Online",
+      "pageDescription": "Komprimera bilder online gratis. Minska filstorlek med kvalitetsreglage. JPEG, PNG och WebP utdata. All bearbetning i din webblasare."
     }
   },
   "footer": {

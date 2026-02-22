@@ -4076,6 +4076,48 @@
       "description": "Plak JSON, klik op een knooppunt voor het JSONPath",
       "pageTitle": "JSON Pad Finder - JSONPath Online Gratis",
       "pageDescription": "Vind het JSONPath voor elk knooppunt in uw JSON."
+    },
+    "string-case-converter": {
+      "name": "Tekst Hoofdletterconverter",
+      "description": "Converteer tekst tussen 14 naamgevingsformaten: camelCase, snake_case, kebab-case, PascalCase en meer",
+      "pageTitle": "Tekst Hoofdletterconverter Online",
+      "pageDescription": "Converteer tekst tussen camelCase, snake_case, kebab-case, PascalCase, CONSTANT_CASE, Title Case en meer."
+    },
+    "html-entity-encoder": {
+      "name": "HTML Entiteiten Encoder / Decoder",
+      "description": "HTML entiteiten coderen en decoderen met benoemde en numerieke entiteiten",
+      "pageTitle": "HTML Entiteiten Encoder / Decoder",
+      "pageDescription": "HTML entiteiten online coderen en decoderen. Converteer speciale tekens naar benoemde of numerieke HTML entiteiten."
+    },
+    "json-to-csv": {
+      "name": "JSON naar CSV Converter",
+      "description": "JSON arrays naar CSV formaat converteren met geneste object afvlakking en CSV download",
+      "pageTitle": "JSON naar CSV Converter Online",
+      "pageDescription": "Converteer JSON arrays naar CSV formaat online. Verwerkt geneste objecten en biedt CSV bestand download."
+    },
+    "text-counter": {
+      "name": "Tekstteller en Statistieken",
+      "description": "Tel woorden, tekens, zinnen, alineas, regels, bytes, leestijd en spreektijd",
+      "pageTitle": "Tekstteller en Statistieken",
+      "pageDescription": "Tel woorden, tekens, zinnen, alineas, regels en bytes met lees-/spreektijdschatting en tekenfrequentieanalyse."
+    },
+    "image-to-base64": {
+      "name": "Afbeelding naar Base64 Encoder",
+      "description": "Afbeeldingen converteren naar Base64 strings en Data URIs met slepen en neerzetten",
+      "pageTitle": "Afbeelding naar Base64 Converter",
+      "pageDescription": "Converteer afbeeldingen naar Base64 strings en Data URIs. Sleep afbeeldingsbestanden om Base64 te krijgen."
+    },
+    "text-case-converter": {
+      "name": "Tekst Case Converter",
+      "description": "Tekst converteren tussen camelCase, snake_case, kebab-case, PascalCase, UPPERCASE, lowercase, Title Case, dot.case en meer",
+      "pageTitle": "Tekst Case Converter Online",
+      "pageDescription": "Tekst converteren tussen camelCase, snake_case, kebab-case, PascalCase, UPPERCASE, lowercase, Title Case, dot.case en 14 andere formaten direct."
+    },
+    "image-compressor": {
+      "name": "Afbeeldingscompressor",
+      "description": "Afbeeldingen gratis online comprimeren met instelbare kwaliteit. JPEG, PNG en WebP uitvoer",
+      "pageTitle": "Afbeeldingscompressor Online",
+      "pageDescription": "Afbeeldingen gratis online comprimeren. Bestandsgrootte verminderen met kwaliteitsschuifregelaar. JPEG, PNG en WebP uitvoer. Verwerking in uw browser."
     }
   },
   "footer": {

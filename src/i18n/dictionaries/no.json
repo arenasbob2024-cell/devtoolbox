@@ -4076,6 +4076,48 @@
       "description": "Lim inn JSON, klikk pa en node for aa faa JSONPath",
       "pageTitle": "JSON Sti Finner - JSONPath Online Gratis",
       "pageDescription": "Finn JSONPath for enhver node i din JSON."
+    },
+    "string-case-converter": {
+      "name": "Tekst Store/Sma Bokstaver Konverter",
+      "description": "Konverter tekst mellom 14 navneformater: camelCase, snake_case, kebab-case, PascalCase og mer",
+      "pageTitle": "Tekst Store/Sma Bokstaver Konverter Online",
+      "pageDescription": "Konverter tekst mellom camelCase, snake_case, kebab-case, PascalCase, CONSTANT_CASE, Title Case og mer."
+    },
+    "html-entity-encoder": {
+      "name": "HTML Entiteter Koder / Dekoder",
+      "description": "Kode og dekode HTML-entiteter med navngitte og numeriske entiteter",
+      "pageTitle": "HTML Entiteter Koder / Dekoder",
+      "pageDescription": "Kod og dekod HTML-entiteter online. Konverter spesialtegn til navngitte eller numeriske HTML-entiteter."
+    },
+    "json-to-csv": {
+      "name": "JSON til CSV Konverter",
+      "description": "Konverter JSON-arrays til CSV-format med utatning av nestede objekter og CSV-nedlasting",
+      "pageTitle": "JSON til CSV Konverter Online",
+      "pageDescription": "Konverter JSON-arrays til CSV-format online. Handterer nestede objekter og tilbyr CSV-filnedlasting."
+    },
+    "text-counter": {
+      "name": "Tekstteller og Statistikk",
+      "description": "Tell ord, tegn, setninger, avsnitt, linjer, bytes, lesetid og taletid",
+      "pageTitle": "Tekstteller og Statistikk",
+      "pageDescription": "Tell ord, tegn, setninger, avsnitt, linjer og bytes med lese-/taletidsestimat og tegnfrekvensanalyse."
+    },
+    "image-to-base64": {
+      "name": "Bilde til Base64 Koder",
+      "description": "Konverter bilder til Base64 strenger og Data URIer med dra og slipp",
+      "pageTitle": "Bilde til Base64 Konverter",
+      "pageDescription": "Konverter bilder til Base64 strenger og Data URIer. Dra og slipp bildefiler for a fa Base64."
+    },
+    "text-case-converter": {
+      "name": "Tekst Case Converter",
+      "description": "Konverter tekst mellom camelCase, snake_case, kebab-case, PascalCase, UPPERCASE, lowercase, Title Case, dot.case og mer",
+      "pageTitle": "Tekst Case Converter Online",
+      "pageDescription": "Konverter tekst mellom camelCase, snake_case, kebab-case, PascalCase, UPPERCASE, lowercase, Title Case, dot.case og 14 flere formater umiddelbart."
+    },
+    "image-compressor": {
+      "name": "Bildekomprimerer",
+      "description": "Komprimer bilder online gratis med justerbar kvalitet. JPEG, PNG og WebP utdata",
+      "pageTitle": "Bildekomprimerer Online",
+      "pageDescription": "Komprimer bilder online gratis. Reduser filstorrelse med kvalitetskontroll. JPEG, PNG og WebP utdata. All behandling i nettleseren din."
     }
   },
   "footer": {

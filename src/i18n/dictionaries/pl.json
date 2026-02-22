@@ -4076,6 +4076,48 @@
       "description": "Wklej JSON, kliknij wezel aby uzyskac JSONPath",
       "pageTitle": "JSON Path Finder - JSONPath Online Za Darmo",
       "pageDescription": "Znajdz sciezke JSONPath dla kazdego wezla w JSON."
+    },
+    "string-case-converter": {
+      "name": "Konwerter Wielkosci Liter",
+      "description": "Konwertuj tekst miedzy 14 formatami nazewnictwa: camelCase, snake_case, kebab-case, PascalCase i inne",
+      "pageTitle": "Konwerter Wielkosci Liter Online",
+      "pageDescription": "Konwertuj tekst miedzy camelCase, snake_case, kebab-case, PascalCase, CONSTANT_CASE, Title Case i innymi."
+    },
+    "html-entity-encoder": {
+      "name": "Koder / Dekoder Encji HTML",
+      "description": "Koduj i dekoduj encje HTML z obsluga encji nazwanych i numerycznych",
+      "pageTitle": "Koder / Dekoder Encji HTML",
+      "pageDescription": "Koduj i dekoduj encje HTML online. Konwertuj znaki specjalne na nazwane lub numeryczne encje HTML."
+    },
+    "json-to-csv": {
+      "name": "Konwerter JSON do CSV",
+      "description": "Konwersja tablic JSON do formatu CSV ze splaszczeniem zagniezdzon obiektow i pobieraniem CSV",
+      "pageTitle": "Konwerter JSON do CSV Online",
+      "pageDescription": "Konwertuj tablice JSON do formatu CSV online. Obsluguje zagniezdzone obiekty i oferuje pobieranie pliku CSV."
+    },
+    "text-counter": {
+      "name": "Licznik Tekstu i Statystyki",
+      "description": "Licz slowa, znaki, zdania, akapity, linie, bajty, czas czytania i mowienia",
+      "pageTitle": "Licznik Tekstu i Statystyki",
+      "pageDescription": "Licz slowa, znaki, zdania, akapity, linie i bajty z oszacowaniem czasu czytania/mowienia i analiza czestotliwosci znakow."
+    },
+    "image-to-base64": {
+      "name": "Koder Obrazu do Base64",
+      "description": "Konwertuj obrazy na ciagi Base64 i Data URI z obsluga przeciagnij i upusc",
+      "pageTitle": "Konwerter Obrazu do Base64",
+      "pageDescription": "Konwertuj obrazy na ciagi Base64 i Data URI. Przeciagnij i upusc pliki obrazow, aby uzyskac Base64."
+    },
+    "text-case-converter": {
+      "name": "Konwerter Wielkosci Liter",
+      "description": "Konwertuj tekst miedzy camelCase, snake_case, kebab-case, PascalCase, UPPERCASE, lowercase, Title Case, dot.case i innymi",
+      "pageTitle": "Konwerter Wielkosci Liter Online",
+      "pageDescription": "Konwertuj tekst miedzy camelCase, snake_case, kebab-case, PascalCase, UPPERCASE, lowercase, Title Case, dot.case i 14 innymi formatami natychmiast."
+    },
+    "image-compressor": {
+      "name": "Kompresor Obrazow",
+      "description": "Kompresuj obrazy online za darmo z regulowana jakoscia. Wyjscie JPEG, PNG i WebP",
+      "pageTitle": "Kompresor Obrazow Online",
+      "pageDescription": "Kompresuj obrazy online za darmo. Zmniejsz rozmiar pliku za pomoca suwaka jakosci. Wyjscie JPEG, PNG i WebP. Przetwarzanie w przegladarce."
     }
   },
   "footer": {

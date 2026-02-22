@@ -4076,6 +4076,48 @@
       "description": "JSONを貼り付け、ノードをクリックしてJSONPathを取得",
       "pageTitle": "JSONパスファインダー - JSONPath 無料オンライン",
       "pageDescription": "無料オンラインJSONパスファインダー。JSONを貼り付け、ノードをクリックしてJSONPathを取得。"
+    },
+    "string-case-converter": {
+      "name": "文字列ケースコンバーター",
+      "description": "14種類の命名形式間でテキストを変換：camelCase、snake_case、kebab-case、PascalCase など",
+      "pageTitle": "文字列ケースコンバーター オンライン",
+      "pageDescription": "camelCase、snake_case、kebab-case、PascalCase、CONSTANT_CASE、Title Case などの命名規則間でテキストを即座に変換。"
+    },
+    "html-entity-encoder": {
+      "name": "HTMLエンティティ エンコーダー/デコーダー",
+      "description": "名前付きおよび数値エンティティのサポートでHTMLエンティティをエンコード/デコード",
+      "pageTitle": "HTMLエンティティ エンコーダー/デコーダー",
+      "pageDescription": "HTMLエンティティをオンラインでエンコード/デコード。特殊文字を名前付きまたは数値HTMLエンティティに変換。"
+    },
+    "json-to-csv": {
+      "name": "JSON→CSV変換ツール",
+      "description": "JSON配列をCSV形式に変換。ネストされたオブジェクトの展開とCSVダウンロードに対応",
+      "pageTitle": "JSON→CSVオンライン変換ツール",
+      "pageDescription": "JSON配列をCSV形式にオンラインで変換。ネストされたオブジェクトを処理し、CSVファイルのダウンロードが可能。"
+    },
+    "text-counter": {
+      "name": "テキストカウンターと統計",
+      "description": "単語数、文字数、文数、段落数、行数、バイト数、読み取り時間、話す時間をカウント",
+      "pageTitle": "テキストカウンターと統計",
+      "pageDescription": "単語数、文字数、文数、段落数、行数、バイト数をカウントし、読み取り/話す時間の推定と文字頻度分析。"
+    },
+    "image-to-base64": {
+      "name": "画像からBase64エンコーダー",
+      "description": "画像をBase64文字列とData URIに変換、ドラッグ&ドロップ対応",
+      "pageTitle": "画像からBase64変換ツール",
+      "pageDescription": "画像をBase64文字列とData URIに変換。ドラッグ&ドロップまたは画像ファイルを選択してBase64を取得。"
+    },
+    "text-case-converter": {
+      "name": "テキストケースコンバーター",
+      "description": "camelCase、snake_case、kebab-case、PascalCase、UPPERCASE、lowercase、Title Case、dot.caseなどの形式間でテキストを変換",
+      "pageTitle": "テキストケースコンバーター",
+      "pageDescription": "camelCase、snake_case、kebab-case、PascalCase、UPPERCASE、lowercase、Title Case、dot.caseなど14種類以上の形式間でテキストを即座に変換。"
+    },
+    "image-compressor": {
+      "name": "画像圧縮ツール",
+      "description": "調整可能な品質で画像を無料でオンライン圧縮。JPEG、PNG、WebP出力対応",
+      "pageTitle": "画像圧縮ツール",
+      "pageDescription": "画像を無料でオンライン圧縮。品質スライダーでファイルサイズを削減。JPEG、PNG、WebP出力対応。すべての処理はブラウザで完結。"
     }
   },
   "footer": {
