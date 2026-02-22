@@ -2132,6 +2132,36 @@ export const tools: Tool[] = [
     path: '/tools/sql-formatter-online',
     relatedTools: ['sql-formatter', 'json-formatter', 'xml-formatter'],
   },
+  {
+    id: 'jwt-debugger',
+    name: 'JWT Debugger',
+    description: 'Decode and inspect JWT tokens. View header, payload, signature, and expiration status.',
+    icon: '🔑',
+    category: 'encoder',
+    keywords: ['jwt', 'jwt debugger', 'jwt decoder', 'json web token', 'jwt inspect', 'jwt verify', 'token decoder'],
+    path: '/tools/jwt-debugger',
+    relatedTools: ['jwt-decoder', 'base64-encoder', 'json-formatter'],
+  },
+  {
+    id: 'xml-to-json-converter',
+    name: 'XML to JSON Converter',
+    description: 'Convert XML data to JSON format online. Fast, free, and easy to use XML to JSON converter.',
+    icon: '🔄',
+    category: 'converter',
+    keywords: ['xml to json', 'xml converter', 'xml to json online', 'convert xml', 'xml parser', 'xml json'],
+    path: '/tools/xml-to-json-converter',
+    relatedTools: ['json-to-xml', 'json-formatter', 'xml-formatter'],
+  },
+  {
+    id: 'string-hash-generator',
+    name: 'String Hash Generator',
+    description: 'Generate MD5, SHA-1, SHA-256, and SHA-512 hashes from any text string using Web Crypto API.',
+    icon: '#️⃣',
+    category: 'encoder',
+    keywords: ['hash generator', 'md5 generator', 'sha256 hash', 'sha512 hash', 'string hash', 'hash online', 'cryptographic hash'],
+    path: '/tools/string-hash-generator',
+    relatedTools: ['hmac-generator', 'bcrypt-generator', 'base64-encoder'],
+  },
 ];
 
 export function getToolsByCategory(categoryId: string): Tool[] {
