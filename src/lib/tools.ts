@@ -1922,6 +1922,26 @@ export const tools: Tool[] = [
     path: '/tools/ts-to-js-converter',
     relatedTools: ['typescript-to-javascript', 'js-to-typescript-converter', 'javascript-minifier'],
   },
+  {
+    id: 'html-minifier-online',
+    name: 'HTML Minifier Online',
+    description: 'Minify HTML code online. Remove comments, collapse whitespace, remove empty attributes, and optimize HTML for production.',
+    icon: 'H↓',
+    category: 'formatter',
+    keywords: ['html minifier', 'html minify', 'minify html online', 'html compressor', 'html minifier online', 'compress html'],
+    path: '/tools/html-minifier-online',
+    relatedTools: ['css-minifier', 'javascript-minifier', 'html-beautifier'],
+  },
+  {
+    id: 'url-shortener-tool',
+    name: 'URL Encoder & Parser Tool',
+    description: 'Encode, decode, and parse URLs online. Supports encodeURI, encodeURIComponent, URL parsing, and query parameter extraction.',
+    icon: 'U🔗',
+    category: 'web',
+    keywords: ['url encoder', 'url decoder', 'url parser', 'url encode online', 'url decode online', 'parse url', 'query string parser'],
+    path: '/tools/url-shortener-tool',
+    relatedTools: ['url-encode-decode', 'url-parser', 'base64'],
+  },
 ];
 
 export function getToolsByCategory(categoryId: string): Tool[] {
