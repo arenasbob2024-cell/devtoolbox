@@ -190,6 +190,10 @@ import DockerNetworkingGuide from '@/data/posts/docker-networking-guide';
 import NginxVsApache2026 from '@/data/posts/nginx-vs-apache-2026';
 import ReactServerComponentsGuide from '@/data/posts/react-server-components-guide';
 import SqlVsNosqlGuide from '@/data/posts/sql-vs-nosql-guide';
+import CssContainerQueriesGuide from '@/data/posts/css-container-queries-guide';
+import NextjsMiddlewareGuide from '@/data/posts/nextjs-middleware-guide';
+import PythonFastapiTutorial from '@/data/posts/python-fastapi-tutorial';
+import TypescriptTypeGuards from '@/data/posts/typescript-type-guards';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -370,6 +374,10 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'nginx-vs-apache-2026': NginxVsApache2026,
   'react-server-components-guide': ReactServerComponentsGuide,
   'sql-vs-nosql-guide': SqlVsNosqlGuide,
+  'css-container-queries-guide': CssContainerQueriesGuide,
+  'nextjs-middleware-guide': NextjsMiddlewareGuide,
+  'python-fastapi-tutorial': PythonFastapiTutorial,
+  'typescript-type-guards': TypescriptTypeGuards,
 };
 
 /* i18n for UI strings on this page */
