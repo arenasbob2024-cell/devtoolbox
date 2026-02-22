@@ -161,6 +161,11 @@ import VscodeShortcutsGuide from '@/data/posts/vscode-shortcuts-guide';
 import CssAnimationsGuide from '@/data/posts/css-animations-guide';
 import KuberneticsBasics from '@/data/posts/kubernetes-basics';
 import KubernetesBeginnerGuide from '@/data/posts/kubernetes-beginners-guide';
+import MicroservicesVsMonolith from '@/data/posts/microservices-vs-monolith';
+import Oauth2AuthenticationGuide from '@/data/posts/oauth2-authentication-guide';
+import CssHasSelectorGuide from '@/data/posts/css-has-selector-guide';
+import RedisCachingPatterns from '@/data/posts/redis-caching-patterns';
+import GithubActionsAdvanced from '@/data/posts/github-actions-advanced';
 import TypescriptVsJavascript from '@/data/posts/typescript-vs-javascript';
 import KubernetesBasicsGuide from '@/data/posts/kubernetes-basics-guide';
 import GithubActionsCiCd from '@/data/posts/github-actions-ci-cd';
@@ -348,6 +353,11 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'typescript-vs-javascript': TypescriptVsJavascript,
   'kubernetes-basics-guide': KubernetesBasicsGuide,
   'kubernetes-beginners-guide': KubernetesBeginnerGuide,
+  'microservices-vs-monolith': MicroservicesVsMonolith,
+  'oauth2-authentication-guide': Oauth2AuthenticationGuide,
+  'css-has-selector-guide': CssHasSelectorGuide,
+  'redis-caching-patterns': RedisCachingPatterns,
+  'github-actions-advanced': GithubActionsAdvanced,
   'github-actions-ci-cd': GithubActionsCiCd,
   'redis-caching-guide': RedisCachingGuide,
   'aws-lambda-serverless': AwsLambdaServerless,
