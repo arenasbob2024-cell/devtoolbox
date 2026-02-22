@@ -226,6 +226,16 @@ import NextjsSeoGuide from '@/data/posts/nextjs-seo-guide';
 import GraphqlVsRestComparison from '@/data/posts/graphql-vs-rest-comparison';
 import LinuxServerHardening from '@/data/posts/linux-server-hardening';
 import MicroservicesPatterns from '@/data/posts/microservices-patterns';
+import VueCompositionApiGuide from '@/data/posts/vue-composition-api-guide';
+import RedisVsMemcached2026 from '@/data/posts/redis-vs-memcached-2026';
+import TerraformInfrastructureAsCode from '@/data/posts/terraform-infrastructure-as-code';
+import WebWorkersGuide from '@/data/posts/web-workers-guide';
+import CssNestingNative2026 from '@/data/posts/css-nesting-native-2026';
+import BunVsNodeDeno2026 from '@/data/posts/bun-vs-node-deno-2026';
+import PnpmWorkspaceMonorepo from '@/data/posts/pnpm-workspace-monorepo';
+import NextjsCachingStrategies from '@/data/posts/nextjs-caching-strategies';
+import Oauth2OpenidConnectGuide from '@/data/posts/oauth2-openid-connect-guide';
+import PlaywrightTestingGuide from '@/data/posts/playwright-testing-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -442,6 +452,16 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'graphql-vs-rest-comparison': GraphqlVsRestComparison,
   'linux-server-hardening': LinuxServerHardening,
   'microservices-patterns': MicroservicesPatterns,
+  'vue-composition-api-guide': VueCompositionApiGuide,
+  'redis-vs-memcached-2026': RedisVsMemcached2026,
+  'terraform-infrastructure-as-code': TerraformInfrastructureAsCode,
+  'web-workers-guide': WebWorkersGuide,
+  'css-nesting-native-2026': CssNestingNative2026,
+  'bun-vs-node-deno-2026': BunVsNodeDeno2026,
+  'pnpm-workspace-monorepo': PnpmWorkspaceMonorepo,
+  'nextjs-caching-strategies': NextjsCachingStrategies,
+  'oauth2-openid-connect-guide': Oauth2OpenidConnectGuide,
+  'playwright-testing-guide': PlaywrightTestingGuide,
 };
 
 /* i18n for UI strings on this page */
