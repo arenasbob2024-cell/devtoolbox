@@ -160,6 +160,7 @@ import LinuxCommandsCheatSheet from '@/data/posts/linux-commands-cheat-sheet';
 import VscodeShortcutsGuide from '@/data/posts/vscode-shortcuts-guide';
 import CssAnimationsGuide from '@/data/posts/css-animations-guide';
 import KuberneticsBasics from '@/data/posts/kubernetes-basics';
+import KubernetesBeginnerGuide from '@/data/posts/kubernetes-beginners-guide';
 import TypescriptVsJavascript from '@/data/posts/typescript-vs-javascript';
 import KubernetesBasicsGuide from '@/data/posts/kubernetes-basics-guide';
 import GithubActionsCiCd from '@/data/posts/github-actions-ci-cd';
@@ -346,6 +347,7 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'kubernetes-basics': KuberneticsBasics,
   'typescript-vs-javascript': TypescriptVsJavascript,
   'kubernetes-basics-guide': KubernetesBasicsGuide,
+  'kubernetes-beginners-guide': KubernetesBeginnerGuide,
   'github-actions-ci-cd': GithubActionsCiCd,
   'redis-caching-guide': RedisCachingGuide,
   'aws-lambda-serverless': AwsLambdaServerless,
