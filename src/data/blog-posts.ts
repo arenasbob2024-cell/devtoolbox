@@ -4608,6 +4608,33 @@ export const blogPosts: BlogPost[] = [
       th: { title: 'Webpack vs Vite 2026: เลือก Build Tool ตัวไหนดี?', description: 'เปรียบเทียบ Webpack และ Vite ปี 2026: ประสิทธิภาพ, ระบบนิเวศ และกลยุทธ์การย้าย', readingTime: '14 นาที', keywords: ['webpack vs vite', 'build tool เปรียบเทียบ'] },
     },
   },
+  {
+    slug: 'git-rebase-vs-merge',
+    title: 'Git Rebase vs Merge: When to Use Each and Why It Matters',
+    description: 'Understand the difference between git rebase and merge. Learn when to use each strategy, with visual examples, team workflow recommendations, and common pitfalls.',
+    date: '2026-02-22',
+    author: 'DevToolBox',
+    readingTime: '12 min read',
+    keywords: ['git rebase vs merge', 'git rebase', 'git merge', 'git workflow', 'rebase or merge'],
+    relatedTools: ['json-formatter', 'diff-checker'],
+    relatedPosts: ['git-rebase-vs-merge-explained', 'git-commands-cheat-sheet', 'git-branching-strategies'],
+    translations: {
+      zh: { title: 'Git Rebase vs Merge：何时使用及为何重要', description: '理解 git rebase 和 merge 的区别。学习何时使用每种策略，包含图解和团队工作流建议。', readingTime: '12 分钟', keywords: ['git rebase vs merge', 'git工作流'] },
+      ja: { title: 'Git Rebase vs Merge：いつ使うべきか', description: 'git rebaseとmergeの違いを理解。ビジュアル例付きで各戦略の使い分けを学ぶ。', readingTime: '12分', keywords: ['git rebase vs merge', 'gitワークフロー'] },
+      ko: { title: 'Git Rebase vs Merge: 언제 어떤 것을 사용해야 할까', description: 'git rebase와 merge의 차이점을 이해하고, 각 전략의 사용 시기와 팀 워크플로우 권장 사항을 학습합니다.', readingTime: '12분', keywords: ['git rebase vs merge', 'git 워크플로우'] },
+      fr: { title: 'Git Rebase vs Merge : Quand utiliser chaque approche', description: 'Comprendre la différence entre git rebase et merge. Quand utiliser chaque stratégie avec des exemples visuels.', readingTime: '12 min', keywords: ['git rebase vs merge', 'workflow git'] },
+      de: { title: 'Git Rebase vs Merge: Wann welche Strategie nutzen', description: 'Den Unterschied zwischen git rebase und merge verstehen. Wann welche Strategie nutzen, mit visuellen Beispielen.', readingTime: '12 Min.', keywords: ['git rebase vs merge', 'git workflow'] },
+      es: { title: 'Git Rebase vs Merge: Cuándo usar cada uno', description: 'Entiende la diferencia entre git rebase y merge. Aprende cuándo usar cada estrategia con ejemplos visuales.', readingTime: '12 min', keywords: ['git rebase vs merge', 'flujo de trabajo git'] },
+      it: { title: 'Git Rebase vs Merge: Quando usare ciascuno', description: 'Comprendi la differenza tra git rebase e merge. Quando usare ciascuna strategia con esempi visivi.', readingTime: '12 min', keywords: ['git rebase vs merge', 'workflow git'] },
+      pt: { title: 'Git Rebase vs Merge: Quando usar cada um', description: 'Entenda a diferença entre git rebase e merge. Quando usar cada estratégia com exemplos visuais.', readingTime: '12 min', keywords: ['git rebase vs merge', 'workflow git'] },
+      nl: { title: 'Git Rebase vs Merge: Wanneer welke gebruiken', description: 'Begrijp het verschil tussen git rebase en merge. Leer wanneer welke strategie te gebruiken.', readingTime: '12 min', keywords: ['git rebase vs merge', 'git workflow'] },
+      pl: { title: 'Git Rebase vs Merge: Kiedy używać każdego', description: 'Zrozum różnicę między git rebase i merge. Naucz się kiedy używać każdej strategii.', readingTime: '12 min', keywords: ['git rebase vs merge', 'git workflow'] },
+      sv: { title: 'Git Rebase vs Merge: När ska du använda vilken', description: 'Förstå skillnaden mellan git rebase och merge. Lär dig när du ska använda varje strategi.', readingTime: '12 min', keywords: ['git rebase vs merge', 'git arbetsflöde'] },
+      no: { title: 'Git Rebase vs Merge: Når skal du bruke hva', description: 'Forstå forskjellen mellom git rebase og merge. Lær når du skal bruke hver strategi.', readingTime: '12 min', keywords: ['git rebase vs merge', 'git arbeidsflyt'] },
+      id: { title: 'Git Rebase vs Merge: Kapan Menggunakan Masing-masing', description: 'Pahami perbedaan git rebase dan merge. Pelajari kapan menggunakan setiap strategi.', readingTime: '12 menit', keywords: ['git rebase vs merge', 'git workflow'] },
+      th: { title: 'Git Rebase vs Merge: เมื่อไหร่ควรใช้อะไร', description: 'เข้าใจความแตกต่างระหว่าง git rebase และ merge เรียนรู้ว่าควรใช้กลยุทธ์ใดเมื่อใด', readingTime: '12 นาที', keywords: ['git rebase vs merge', 'git workflow'] },
+    },
+  },
 ];
 
 /** Get post with localized metadata */
