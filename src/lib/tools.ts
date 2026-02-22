@@ -1682,6 +1682,16 @@ export const tools: Tool[] = [
     path: '/tools/css-flexbox-generator',
     relatedTools: ['css-gradient', 'box-shadow', 'border-radius', 'grid-generator'],
   },
+  {
+    id: 'svg-to-png',
+    name: 'SVG to PNG Converter',
+    description: 'Convert SVG files to PNG images online. Upload or paste SVG, set custom dimensions and background color, then download high-quality PNG',
+    icon: '🖼️',
+    category: 'converter',
+    keywords: ['svg to png', 'convert svg to png', 'svg converter online', 'svg to png converter', 'svg to image', 'svg export png', 'svg to raster'],
+    path: '/tools/svg-to-png',
+    relatedTools: ['svg-optimizer', 'image-compressor', 'image-base64', 'favicon-generator'],
+  },
 ];
 
 export function getToolsByCategory(categoryId: string): Tool[] {
