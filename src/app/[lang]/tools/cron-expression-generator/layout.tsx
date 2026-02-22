@@ -2,21 +2,21 @@ import type { Metadata } from 'next';
 import { i18n, type Locale } from '@/i18n/config';
 
 const meta: Record<string, { title: string; description: string }> = {
-  en: { title: 'Cron Expression Generator - Build Cron Schedules Online Free', description: 'Free online cron expression generator and builder. Create cron schedules visually with presets, human-readable descriptions, and next run time previews.' },
-  fr: { title: 'Generateur d\'Expression Cron - Creer des Planifications Cron en Ligne', description: 'Generateur d\'expressions cron gratuit en ligne. Creez des planifications cron visuellement avec des presets et des descriptions lisibles.' },
-  de: { title: 'Cron-Ausdruck Generator - Cron Zeitplaene Online Erstellen', description: 'Kostenloser Online Cron-Ausdruck Generator. Erstellen Sie Cron-Zeitplaene visuell mit Presets und lesbaren Beschreibungen.' },
-  it: { title: 'Generatore Espressioni Cron - Crea Pianificazioni Cron Online', description: 'Generatore di espressioni cron gratuito online. Crea pianificazioni cron visivamente con preset e descrizioni leggibili.' },
-  es: { title: 'Generador de Expresiones Cron - Crear Programaciones Cron en Linea', description: 'Generador de expresiones cron gratuito en linea. Crea programaciones cron visualmente con presets y descripciones legibles.' },
-  pt: { title: 'Gerador de Expressoes Cron - Criar Agendamentos Cron Online', description: 'Gerador de expressoes cron gratuito online. Crie agendamentos cron visualmente com presets e descricoes legiveis.' },
-  nl: { title: 'Cron Expressie Generator - Cron Schema\'s Online Maken', description: 'Gratis online cron expressie generator. Maak cron schema\'s visueel met presets en leesbare beschrijvingen.' },
-  pl: { title: 'Generator Wyrazen Cron - Tworzenie Harmonogramow Cron Online', description: 'Darmowy generator wyrazen cron online. Tworzenie harmonogramow cron wizualnie z presetami i czytelnymi opisami.' },
-  sv: { title: 'Cron-uttryck Generator - Skapa Cron-scheman Online Gratis', description: 'Gratis online cron-uttryck generator. Skapa cron-scheman visuellt med presets och lasbara beskrivningar.' },
-  no: { title: 'Cron-uttrykk Generator - Lag Cron-planer Online Gratis', description: 'Gratis online cron-uttrykk generator. Lag cron-planer visuelt med presets og lesbare beskrivelser.' },
-  zh: { title: 'Cron 表达式生成器 - 免费在线构建 Cron 调度', description: '免费在线 Cron 表达式生成器。可视化构建 Cron 调度，提供常用预设、可读描述和下次执行时间预览。' },
-  ja: { title: 'Cron 式ジェネレーター - 無料オンライン Cron スケジュール構築', description: '無料オンライン Cron 式ジェネレーター。プリセット、読みやすい説明、次回実行時間プレビュー付きで Cron スケジュールを構築。' },
-  ko: { title: 'Cron 표현식 생성기 - 무료 온라인 Cron 스케줄 구축', description: '무료 온라인 Cron 표현식 생성기. 프리셋, 읽기 쉬운 설명, 다음 실행 시간 미리보기로 Cron 스케줄을 시각적으로 구축.' },
-  id: { title: 'Generator Ekspresi Cron - Buat Jadwal Cron Online Gratis', description: 'Generator ekspresi cron online gratis. Buat jadwal cron secara visual dengan preset dan deskripsi yang mudah dibaca.' },
-  th: { title: 'ตัวสร้าง Cron Expression - สร้างตาราง Cron ออนไลน์ฟรี', description: 'ตัวสร้าง cron expression ออนไลน์ฟรี สร้างตาราง cron ด้วยภาพพร้อมพรีเซ็ตและคำอธิบายที่อ่านง่าย' },
+  en: { title: 'Cron Expression Generator - Visual Cron Job Builder', description: 'Build cron expressions visually with live preview of next 5 run times. Free online cron job scheduler and expression parser.' },
+  fr: { title: 'Generateur d\'Expressions Cron - Constructeur Visuel', description: 'Construisez des expressions cron visuellement avec apercu des 5 prochaines executions.' },
+  de: { title: 'Cron Ausdruck Generator - Visueller Cron Builder', description: 'Erstellen Sie Cron-Ausdruecke visuell mit Live-Vorschau der naechsten 5 Ausfuehrungen.' },
+  it: { title: 'Generatore Espressioni Cron - Builder Visuale', description: 'Costruisci espressioni cron visivamente con anteprima delle prossime 5 esecuzioni.' },
+  es: { title: 'Generador de Expresiones Cron - Constructor Visual', description: 'Construya expresiones cron visualmente con vista previa de las proximas 5 ejecuciones.' },
+  pt: { title: 'Gerador de Expressoes Cron - Construtor Visual', description: 'Construa expressoes cron visualmente com previa das proximas 5 execucoes.' },
+  nl: { title: 'Cron Expressie Generator - Visuele Cron Builder', description: 'Bouw cron-expressies visueel met live voorbeeld van de volgende 5 uitvoeringen.' },
+  pl: { title: 'Generator Wyrazen Cron - Wizualny Kreator', description: 'Buduj wyrazenia cron wizualnie z podgladem nastepnych 5 uruchomien.' },
+  sv: { title: 'Cron Uttryck Generator - Visuell Cron Byggare', description: 'Bygg cron-uttryck visuellt med foerhandsvisning av naesta 5 koerningar.' },
+  no: { title: 'Cron Uttrykk Generator - Visuell Cron Bygger', description: 'Bygg cron-uttrykk visuelt med foerhandsvisning av neste 5 kjoringer.' },
+  zh: { title: 'Cron 表达式生成器 - 可视化构建器', description: '可视化构建 cron 表达式，实时预览接下来 5 次运行时间。免费在线 cron 任务调度器。' },
+  ja: { title: 'Cron 式ジェネレーター - ビジュアル Cron ビルダー', description: 'ビジュアルで cron 式を構築。次の 5 回の実行時刻をライブプレビュー。' },
+  ko: { title: 'Cron 표현식 생성기 - 비주얼 Cron 빌더', description: '비주얼로 cron 표현식을 구축하고 다음 5회 실행 시간을 미리봅니다.' },
+  id: { title: 'Generator Ekspresi Cron - Builder Visual', description: 'Bangun ekspresi cron secara visual dengan pratinjau 5 waktu eksekusi berikutnya.' },
+  th: { title: 'ตัวสร้างนิพจน์ Cron - ตัวสร้างแบบเห็นภาพ', description: 'สร้างนิพจน์ cron แบบเห็นภาพพร้อมแสดงตัวอย่าง 5 เวลาทำงานถัดไป' },
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -25,17 +25,10 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const t = meta[lang] || meta.en;
   const url = `https://viadreams.cc/${lang}/tools/cron-expression-generator`;
   return {
-    title: t.title,
-    description: t.description,
-    openGraph: {
-      title: `${t.title} | DevToolBox`, description: t.description, url, type: 'website',
-      siteName: 'DevToolBox', images: [{ url: 'https://viadreams.cc/og-image.png', width: 1200, height: 630 }],
-    },
+    title: t.title, description: t.description,
+    openGraph: { title: `${t.title} | DevToolBox`, description: t.description, url, type: 'website', siteName: 'DevToolBox', images: [{ url: 'https://viadreams.cc/og-image.png', width: 1200, height: 630 }] },
     twitter: { card: 'summary_large_image', title: `${t.title} | DevToolBox`, description: t.description, images: ['https://viadreams.cc/og-image.png'] },
-    alternates: {
-      canonical: url,
-      languages: { ...Object.fromEntries(i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/cron-expression-generator`])), 'x-default': `https://viadreams.cc/en/tools/cron-expression-generator` },
-    },
+    alternates: { canonical: url, languages: { ...Object.fromEntries(i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/cron-expression-generator`])), 'x-default': `https://viadreams.cc/en/tools/cron-expression-generator` } },
   };
 }
 
