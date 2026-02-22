@@ -484,7 +484,7 @@ export const tools: Tool[] = [
   {
     id: 'typescript-to-javascript',
     name: 'TypeScript to JavaScript',
-    description: 'Compile TypeScript code to plain JavaScript',
+    description: 'Convert TypeScript to JavaScript online. Free TS to JS converter that strips types, interfaces, and generics instantly.',
     icon: 'JS',
     category: 'converter',
     keywords: ['typescript', 'javascript', 'compile', 'convert', 'ts', 'js', 'typescript to javascript', 'ts to js', 'ts to js converter', 'ts to js online', 'typescript to javascript converter', 'convert typescript to javascript', 'typescript compiler online'],
@@ -515,10 +515,10 @@ export const tools: Tool[] = [
   {
     id: 'json-to-kotlin',
     name: 'JSON to Kotlin',
-    description: 'Convert JSON data to Kotlin data classes',
+    description: 'Convert JSON to Kotlin data classes online. Free JSON to Kotlin converter with nullable types, annotations, and Android support.',
     icon: 'KT',
     category: 'converter',
-    keywords: ['json', 'kotlin', 'data class', 'convert', 'android', 'json to kotlin', 'json to kotlin data class', 'json to kotlin converter', 'convert json to kotlin'],
+    keywords: ['json to kotlin', 'json to kotlin data class', 'json to kotlin converter', 'convert json to kotlin', 'kotlin data class generator', 'json to kotlin online', 'android json to kotlin'],
     path: '/tools/json-to-kotlin',
     relatedTools: ['json-to-java', 'json-to-typescript', 'json-to-python', 'json-to-go'],
   },
@@ -2161,6 +2161,16 @@ export const tools: Tool[] = [
     keywords: ['hash generator', 'md5 generator', 'sha256 hash', 'sha512 hash', 'string hash', 'hash online', 'cryptographic hash'],
     path: '/tools/string-hash-generator',
     relatedTools: ['hmac-generator', 'bcrypt-generator', 'base64-encoder'],
+  },
+  {
+    id: 'css-specificity-calculator',
+    name: 'CSS Specificity Calculator',
+    description: 'Calculate CSS selector specificity scores online. Understand which styles take priority with this visual specificity calculator.',
+    icon: '🎯',
+    category: 'css',
+    keywords: ['css specificity', 'specificity calculator', 'css selector priority', 'css specificity score', 'selector weight', 'css cascade'],
+    path: '/tools/css-specificity-calculator',
+    relatedTools: ['css-minifier', 'css-formatter', 'tailwind-to-css'],
   },
 ];
 

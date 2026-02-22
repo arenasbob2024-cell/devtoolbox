@@ -219,6 +219,13 @@ import ReactStateManagement2026 from '@/data/posts/react-state-management-2026';
 import WebAccessibilityChecklist from '@/data/posts/web-accessibility-checklist';
 import AwsLambdaBestPractices from '@/data/posts/aws-lambda-best-practices';
 import MonorepoGuide2026 from '@/data/posts/monorepo-guide-2026';
+import TailwindCssTips2026 from '@/data/posts/tailwind-css-tips-2026';
+import GithubActionsGuide from '@/data/posts/github-actions-guide';
+import DockerComposeProduction from '@/data/posts/docker-compose-production';
+import NextjsSeoGuide from '@/data/posts/nextjs-seo-guide';
+import GraphqlVsRestComparison from '@/data/posts/graphql-vs-rest-comparison';
+import LinuxServerHardening from '@/data/posts/linux-server-hardening';
+import MicroservicesPatterns from '@/data/posts/microservices-patterns';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -428,6 +435,13 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'web-accessibility-checklist': WebAccessibilityChecklist,
   'aws-lambda-best-practices': AwsLambdaBestPractices,
   'monorepo-guide-2026': MonorepoGuide2026,
+  'tailwind-css-tips-2026': TailwindCssTips2026,
+  'github-actions-guide': GithubActionsGuide,
+  'docker-compose-production': DockerComposeProduction,
+  'nextjs-seo-guide': NextjsSeoGuide,
+  'graphql-vs-rest-comparison': GraphqlVsRestComparison,
+  'linux-server-hardening': LinuxServerHardening,
+  'microservices-patterns': MicroservicesPatterns,
 };
 
 /* i18n for UI strings on this page */
