@@ -1822,6 +1822,36 @@ export const tools: Tool[] = [
     path: '/tools/text-to-binary',
     relatedTools: ['binary-text', 'ascii-to-hex', 'base64', 'url-encode-decode'],
   },
+  {
+    id: 'color-picker-online',
+    name: 'Color Picker Online',
+    description: 'Pick colors from a palette, convert between HEX, RGB, HSL, and CMYK formats with a visual color picker.',
+    icon: '🎨',
+    category: 'css',
+    keywords: ['color picker', 'color picker online', 'hex color picker', 'rgb to hex', 'color converter online', 'pick color'],
+    path: '/tools/color-picker-online',
+    relatedTools: ['color-converter', 'rgb-to-hex', 'css-gradient-generator'],
+  },
+  {
+    id: 'lorem-ipsum-generator',
+    name: 'Lorem Ipsum Generator',
+    description: 'Generate placeholder text in paragraphs, sentences, or words. Customize length and format for your designs.',
+    icon: 'Aa',
+    category: 'generator',
+    keywords: ['lorem ipsum', 'lorem ipsum generator', 'placeholder text', 'dummy text', 'lorem ipsum online', 'filler text'],
+    path: '/tools/lorem-ipsum-generator',
+    relatedTools: ['fake-data', 'text-case-converter', 'word-counter'],
+  },
+  {
+    id: 'uuid-generator-online',
+    name: 'UUID Generator Online',
+    description: 'Generate UUIDs (v1, v4, v7) online instantly. Copy bulk UUIDs with one click for your applications.',
+    icon: 'ID',
+    category: 'generator',
+    keywords: ['uuid generator', 'uuid generator online', 'uuid v4', 'uuid v7', 'generate uuid', 'uuid online'],
+    path: '/tools/uuid-generator-online',
+    relatedTools: ['uuid-generator', 'password-generator', 'hash-generator'],
+  },
 ];
 
 export function getToolsByCategory(categoryId: string): Tool[] {
