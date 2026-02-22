@@ -171,6 +171,11 @@ import ReactVsVue2026 from '@/data/posts/react-vs-vue-2026';
 import GithubActionsTutorial from '@/data/posts/github-actions-tutorial';
 import DnsExplained from '@/data/posts/dns-explained';
 import SvgOptimizationGuide from '@/data/posts/svg-optimization-guide';
+import DockerVsKubernetes from '@/data/posts/docker-vs-kubernetes';
+import GraphqlApolloTutorial from '@/data/posts/graphql-apollo-tutorial';
+import TailwindVsCssModules from '@/data/posts/tailwind-vs-css-modules';
+import GitWorkflowStrategies from '@/data/posts/git-workflow-strategies';
+import PrismaVsDrizzleVsTypeorm from '@/data/posts/prisma-vs-drizzle-vs-typeorm';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -332,6 +337,11 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'github-actions-tutorial': GithubActionsTutorial,
   'dns-explained': DnsExplained,
   'svg-optimization-guide': SvgOptimizationGuide,
+  'docker-vs-kubernetes': DockerVsKubernetes,
+  'graphql-apollo-tutorial': GraphqlApolloTutorial,
+  'tailwind-vs-css-modules': TailwindVsCssModules,
+  'git-workflow-strategies': GitWorkflowStrategies,
+  'prisma-vs-drizzle-vs-typeorm': PrismaVsDrizzleVsTypeorm,
 };
 
 /* i18n for UI strings on this page */
