@@ -1942,6 +1942,16 @@ export const tools: Tool[] = [
     path: '/tools/url-shortener-tool',
     relatedTools: ['url-encode-decode', 'url-parser', 'base64'],
   },
+  {
+    id: 'css-gradient-generator',
+    name: 'CSS Gradient Generator',
+    description: 'Create beautiful CSS gradients with a visual editor. Linear, radial, and conic gradients with live preview and code output.',
+    icon: '🌈',
+    category: 'css',
+    keywords: ['css gradient', 'gradient generator', 'css gradient generator', 'linear gradient', 'radial gradient', 'conic gradient', 'gradient css'],
+    path: '/tools/css-gradient-generator',
+    relatedTools: ['css-gradient', 'color-converter', 'color-palette', 'tailwind-colors'],
+  },
 ];
 
 export function getToolsByCategory(categoryId: string): Tool[] {
