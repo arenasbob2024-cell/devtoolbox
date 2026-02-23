@@ -4149,6 +4149,48 @@
       "onlySvg": "Nur SVG-Dateien werden akzeptiert",
       "seoTitle": "Was ist der SVG zu PNG Konverter?",
       "seoContent": "SVG-Dateien eignen sich hervorragend fuer aufloesungsunabhaengige Grafiken, aber manchmal braucht man ein PNG-Rasterbild. Dieses Tool konvertiert SVG zu PNG vollstaendig im Browser ohne Upload auf einen Server."
+    },
+    "css-beautifier": {
+      "name": "CSS Beautifier",
+      "description": "CSS formatieren",
+      "pageTitle": "CSS Beautifier & Formatierer",
+      "pageDescription": "CSS-Code online formatieren und verschönern."
+    },
+    "http-header-checker": {
+      "name": "HTTP Header Prüfer",
+      "description": "HTTP-Header prüfen",
+      "pageTitle": "HTTP Header Prüfer",
+      "pageDescription": "HTTP-Antwort-Header für eine beliebige URL prüfen."
+    },
+    "ip-lookup-tool": {
+      "name": "IP-Adresse nachschlagen",
+      "description": "IP-Adresse suchen",
+      "pageTitle": "IP-Adresse Nachschlage-Tool",
+      "pageDescription": "Geolokalisierung und Details für eine IP-Adresse abrufen."
+    },
+    "color-blindness-simulator": {
+      "name": "Farbenblindheit Simulator",
+      "description": "Farbenblindheit simulieren",
+      "pageTitle": "Farbenblindheit Simulator",
+      "pageDescription": "Vorschau auf Farben mit verschiedenen Arten von Farbenblindheit."
+    },
+    "cron-to-human": {
+      "name": "Cron zu Deutsch",
+      "description": "Cron-Ausdrücke übersetzen",
+      "pageTitle": "Cron-Ausdruck zu verständlichem Text",
+      "pageDescription": "Cron-Ausdrücke in einfaches Deutsch umwandeln."
+    },
+    "text-diff-tool": {
+      "name": "Text Diff Tool",
+      "description": "Texte vergleichen",
+      "pageTitle": "Text Diff Tool",
+      "pageDescription": "Zwei Texte nebeneinander vergleichen mit hervorgehobenen Unterschieden."
+    },
+    "sql-query-formatter": {
+      "name": "SQL Formatierer",
+      "description": "SQL formatieren",
+      "pageTitle": "SQL Abfrage-Formatierer",
+      "pageDescription": "SQL-Abfragen online formatieren und verschönern."
     }
   },
   "footer": {

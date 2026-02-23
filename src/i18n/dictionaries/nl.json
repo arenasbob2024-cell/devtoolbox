@@ -4149,6 +4149,48 @@
       "onlySvg": "Alleen SVG-bestanden worden geaccepteerd",
       "seoTitle": "Wat is de SVG naar PNG Converter?",
       "seoContent": "SVG-bestanden zijn ideaal voor resolutie-onafhankelijke afbeeldingen, maar soms is een PNG-rasterafbeelding nodig. Deze tool converteert SVG naar PNG volledig in uw browser zonder upload naar een server."
+    },
+    "css-beautifier": {
+      "name": "CSS Beautifier",
+      "description": "Format and beautify CSS code online",
+      "pageTitle": "CSS Beautifier & Formatter",
+      "pageDescription": "Format, beautify, and minify CSS code online. Auto-indent and clean up your CSS instantly."
+    },
+    "http-header-checker": {
+      "name": "HTTP Header Checker",
+      "description": "Check HTTP response headers for any URL",
+      "pageTitle": "HTTP Header Checker",
+      "pageDescription": "Check HTTP response headers for any URL. Inspect security headers, CORS, cache control, and more."
+    },
+    "ip-lookup-tool": {
+      "name": "IP Address Lookup",
+      "description": "Look up geolocation and details for any IP address",
+      "pageTitle": "IP Address Lookup Tool",
+      "pageDescription": "Look up geolocation, ISP, ASN, and details for any IP address. Free IP lookup tool."
+    },
+    "color-blindness-simulator": {
+      "name": "Color Blindness Simulator",
+      "description": "Simulate how colors appear with different types of color blindness",
+      "pageTitle": "Color Blindness Simulator",
+      "pageDescription": "Simulate how colors appear to people with different types of color blindness. Test your UI accessibility."
+    },
+    "cron-to-human": {
+      "name": "Cron to Human Readable",
+      "description": "Convert cron expressions to plain English",
+      "pageTitle": "Cron Expression to Human Readable",
+      "pageDescription": "Convert cron expressions to plain English. Understand when your cron jobs will run and preview next execution times."
+    },
+    "text-diff-tool": {
+      "name": "Text Diff Tool",
+      "description": "Compare two texts side by side with highlighted differences",
+      "pageTitle": "Text Diff Tool - Compare Text Online",
+      "pageDescription": "Compare two texts side by side. Highlight additions, deletions and changes line by line."
+    },
+    "sql-query-formatter": {
+      "name": "SQL Query Formatter",
+      "description": "Format and indent SQL queries online",
+      "pageTitle": "SQL Query Formatter & Beautifier",
+      "pageDescription": "Format and beautify SQL queries online. Auto-indent keywords, normalize whitespace, and minify SQL."
     }
   },
   "footer": {

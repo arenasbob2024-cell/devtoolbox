@@ -4149,6 +4149,48 @@
       "onlySvg": "SVGファイルのみ受け付けます",
       "seoTitle": "SVG to PNG変換ツールとは？",
       "seoContent": "SVGファイルは解像度に依存しないグラフィックに最適ですが、ラスターPNG画像が必要な場合もあります。このツールはブラウザ内で完全にSVGをPNGに変換し、サーバーへのアップロードは不要です。"
+    },
+    "css-beautifier": {
+      "name": "CSS Beautifier",
+      "description": "CSSコードを整形",
+      "pageTitle": "CSS Beautifier & フォーマッター",
+      "pageDescription": "CSSコードをオンラインでフォーマット・整形します。"
+    },
+    "http-header-checker": {
+      "name": "HTTPヘッダーチェッカー",
+      "description": "HTTPヘッダーを確認",
+      "pageTitle": "HTTPヘッダーチェッカー",
+      "pageDescription": "任意のURLのHTTPレスポンスヘッダーを確認します。"
+    },
+    "ip-lookup-tool": {
+      "name": "IPアドレス検索",
+      "description": "IPアドレスを検索",
+      "pageTitle": "IPアドレス検索ツール",
+      "pageDescription": "任意のIPアドレスの地理情報、ISP、ASNを検索します。"
+    },
+    "color-blindness-simulator": {
+      "name": "色覚シミュレーター",
+      "description": "色覚異常をシミュレート",
+      "pageTitle": "色覚異常シミュレーター",
+      "pageDescription": "様々な色覚異常で色がどう見えるかをシミュレートします。"
+    },
+    "cron-to-human": {
+      "name": "Cron式変換",
+      "description": "Cron式を日本語に変換",
+      "pageTitle": "Cron式を人間が読める形式に変換",
+      "pageDescription": "cron式をわかりやすい日本語の説明に変換します。"
+    },
+    "text-diff-tool": {
+      "name": "テキスト差分ツール",
+      "description": "テキストを比較",
+      "pageTitle": "テキスト差分ツール",
+      "pageDescription": "2つのテキストを並べて比較し、追加・削除・変更をハイライトします。"
+    },
+    "sql-query-formatter": {
+      "name": "SQL フォーマッター",
+      "description": "SQLクエリを整形",
+      "pageTitle": "SQL クエリ フォーマッター",
+      "pageDescription": "SQLクエリをオンラインでフォーマット・整形します。"
     }
   },
   "footer": {

@@ -4149,6 +4149,48 @@
       "onlySvg": "Seuls les fichiers SVG sont acceptes",
       "seoTitle": "Qu'est-ce que le convertisseur SVG en PNG ?",
       "seoContent": "Les fichiers SVG sont ideaux pour les graphiques independants de la resolution, mais parfois un PNG raster est necessaire. Cet outil convertit SVG en PNG directement dans votre navigateur sans telecharger vers un serveur."
+    },
+    "css-beautifier": {
+      "name": "Embellisseur CSS",
+      "description": "Formater et embellir le CSS",
+      "pageTitle": "Embellisseur & Formateur CSS",
+      "pageDescription": "Formatez et embellissez le code CSS en ligne."
+    },
+    "http-header-checker": {
+      "name": "Vérificateur d'en-têtes HTTP",
+      "description": "Vérifier les en-têtes HTTP",
+      "pageTitle": "Vérificateur d'en-têtes HTTP",
+      "pageDescription": "Vérifiez les en-têtes de réponse HTTP pour n'importe quelle URL."
+    },
+    "ip-lookup-tool": {
+      "name": "Recherche d'adresse IP",
+      "description": "Rechercher une adresse IP",
+      "pageTitle": "Outil de recherche d'adresse IP",
+      "pageDescription": "Recherchez la géolocalisation et les détails d'une adresse IP."
+    },
+    "color-blindness-simulator": {
+      "name": "Simulateur de Daltonisme",
+      "description": "Simuler le daltonisme",
+      "pageTitle": "Simulateur de Daltonisme",
+      "pageDescription": "Prévisualisez comment les couleurs apparaissent avec différents types de daltonisme."
+    },
+    "cron-to-human": {
+      "name": "Cron Lisible",
+      "description": "Convertir les expressions cron",
+      "pageTitle": "Expression Cron en Langage Naturel",
+      "pageDescription": "Convertissez les expressions cron en langage naturel."
+    },
+    "text-diff-tool": {
+      "name": "Outil Diff Texte",
+      "description": "Comparer deux textes",
+      "pageTitle": "Outil de Diff Texte",
+      "pageDescription": "Comparez deux textes côte à côte avec les différences mises en évidence."
+    },
+    "sql-query-formatter": {
+      "name": "Formateur SQL",
+      "description": "Formater les requêtes SQL",
+      "pageTitle": "Formateur de Requêtes SQL",
+      "pageDescription": "Formatez et embellissez les requêtes SQL en ligne."
     }
   },
   "footer": {

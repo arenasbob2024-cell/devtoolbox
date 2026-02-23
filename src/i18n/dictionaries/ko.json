@@ -4149,6 +4149,48 @@
       "onlySvg": "SVG 파일만 허용됩니다",
       "seoTitle": "SVG to PNG 변환기란?",
       "seoContent": "SVG 파일은 해상도 독립적인 그래픽에 적합하지만 때때로 래스터 PNG 이미지가 필요합니다. 이 도구는 브라우저에서 완전히 SVG를 PNG로 변환하며 서버에 업로드하지 않습니다."
+    },
+    "css-beautifier": {
+      "name": "CSS Beautifier",
+      "description": "CSS 코드 정리",
+      "pageTitle": "CSS Beautifier & 포맷터",
+      "pageDescription": "CSS 코드를 온라인으로 포맷하고 정리합니다."
+    },
+    "http-header-checker": {
+      "name": "HTTP 헤더 검사기",
+      "description": "HTTP 헤더 확인",
+      "pageTitle": "HTTP 헤더 검사기",
+      "pageDescription": "모든 URL의 HTTP 응답 헤더를 확인합니다."
+    },
+    "ip-lookup-tool": {
+      "name": "IP 주소 조회",
+      "description": "IP 주소 정보 조회",
+      "pageTitle": "IP 주소 조회 도구",
+      "pageDescription": "모든 IP 주소의 지리 정보, ISP, ASN을 조회합니다."
+    },
+    "color-blindness-simulator": {
+      "name": "색맹 시뮬레이터",
+      "description": "색맹 시각 효과 시뮬레이션",
+      "pageTitle": "색맹 시뮬레이터",
+      "pageDescription": "다양한 색맹 유형에서 색상이 어떻게 보이는지 미리보기합니다."
+    },
+    "cron-to-human": {
+      "name": "Cron 변환기",
+      "description": "Cron 표현식을 한국어로",
+      "pageTitle": "Cron 표현식 변환기",
+      "pageDescription": "cron 표현식을 이해하기 쉬운 한국어로 변환합니다."
+    },
+    "text-diff-tool": {
+      "name": "텍스트 Diff 도구",
+      "description": "텍스트 비교",
+      "pageTitle": "텍스트 Diff 도구",
+      "pageDescription": "두 텍스트를 나란히 비교하고 변경 사항을 강조 표시합니다."
+    },
+    "sql-query-formatter": {
+      "name": "SQL 포맷터",
+      "description": "SQL 쿼리 정리",
+      "pageTitle": "SQL 쿼리 포맷터",
+      "pageDescription": "SQL 쿼리를 온라인으로 포맷하고 정리합니다."
     }
   },
   "footer": {
