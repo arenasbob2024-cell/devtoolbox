@@ -250,6 +250,11 @@ import PythonTypeHintsGuide from '@/data/posts/python-type-hints-guide';
 import GithubActionsSecretsGuide from '@/data/posts/github-actions-secrets-guide';
 import NginxReverseProxyConfig from '@/data/posts/nginx-reverse-proxy-config';
 import PostgresqlJsonbGuide from '@/data/posts/postgresql-jsonb-guide';
+import ApiVersioningStrategies from '@/data/posts/api-versioning-strategies';
+import CssLogicalPropertiesGuide from '@/data/posts/css-logical-properties-guide';
+import DockerMultiStageBuilds from '@/data/posts/docker-multi-stage-builds';
+import JavascriptClosuresGuide from '@/data/posts/javascript-closures-guide';
+import RedisDataStructuresGuide from '@/data/posts/redis-data-structures-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -490,6 +495,11 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'github-actions-secrets-guide': GithubActionsSecretsGuide,
   'nginx-reverse-proxy-config': NginxReverseProxyConfig,
   'postgresql-jsonb-guide': PostgresqlJsonbGuide,
+  'api-versioning-strategies': ApiVersioningStrategies,
+  'css-logical-properties-guide': CssLogicalPropertiesGuide,
+  'docker-multi-stage-builds': DockerMultiStageBuilds,
+  'javascript-closures-guide': JavascriptClosuresGuide,
+  'redis-data-structures-guide': RedisDataStructuresGuide,
 };
 
 /* i18n for UI strings on this page */
