@@ -245,6 +245,11 @@ import TypeScript5Features from '@/data/posts/typescript-5-features';
 import CloudflareWorkersGuide from '@/data/posts/cloudflare-workers-guide';
 import ZodValidationGuide from '@/data/posts/zod-validation-guide';
 import GithubCopilotTips from '@/data/posts/github-copilot-tips';
+import VueVsReact2026 from '@/data/posts/vue-vs-react-2026';
+import PythonTypeHintsGuide from '@/data/posts/python-type-hints-guide';
+import GithubActionsSecretsGuide from '@/data/posts/github-actions-secrets-guide';
+import NginxReverseProxyConfig from '@/data/posts/nginx-reverse-proxy-config';
+import PostgresqlJsonbGuide from '@/data/posts/postgresql-jsonb-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -480,6 +485,11 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'cloudflare-workers-guide': CloudflareWorkersGuide,
   'zod-validation-guide': ZodValidationGuide,
   'github-copilot-tips': GithubCopilotTips,
+  'vue-vs-react-2026': VueVsReact2026,
+  'python-type-hints-guide': PythonTypeHintsGuide,
+  'github-actions-secrets-guide': GithubActionsSecretsGuide,
+  'nginx-reverse-proxy-config': NginxReverseProxyConfig,
+  'postgresql-jsonb-guide': PostgresqlJsonbGuide,
 };
 
 /* i18n for UI strings on this page */

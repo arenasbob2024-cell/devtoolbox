@@ -2724,6 +2724,26 @@ export const tools: Tool[] = [
     path: '/tools/typescript-playground',
     relatedTools: ['typescript-to-javascript-converter', 'typescript-to-javascript', 'json-to-typescript-online'],
   },
+  {
+    id: 'ascii-table-generator',
+    name: 'ASCII Table Generator',
+    description: 'Generate ASCII art tables from data online. Create plain text tables for documentation, README files, and terminal output.',
+    icon: '📋',
+    category: 'converter',
+    keywords: ['ascii table generator', 'text table generator', 'ascii art table', 'plain text table', 'markdown table generator'],
+    path: '/tools/ascii-table-generator',
+    relatedTools: ['markdown-table-generator', 'json-to-csv-converter', 'json-formatter'],
+  },
+  {
+    id: 'number-base-converter',
+    name: 'Number Base Converter',
+    description: 'Convert numbers between bases online: binary, octal, decimal, hexadecimal, and custom bases. Multi-base conversion tool.',
+    icon: '🔢',
+    category: 'converter',
+    keywords: ['number base converter', 'binary to decimal', 'hex to decimal', 'octal converter', 'base conversion'],
+    path: '/tools/number-base-converter',
+    relatedTools: ['hex-to-decimal', 'binary-text', 'octal-decimal-converter'],
+  },
 ];
 
 export function getToolsByCategory(categoryId: string): Tool[] {
