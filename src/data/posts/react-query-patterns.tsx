@@ -17,9 +17,9 @@ const queryClient = new QueryClient({
 
 function App() {
     return (
-        \u003cQueryClientProvider client={queryClient}\u003e
-            \u003cMyApp /\u003e
-        \u003c/QueryClientProvider\u003e
+        <QueryClientProvider client={queryClient}>
+            <MyApp />
+        </QueryClientProvider>
     );
 }
 
@@ -31,7 +31,7 @@ interface User {
 }
 
 function useUser(userId: number) {
-    return useQuery\u003cUser\u003e({
+    return useQuery<User>({
         queryKey: ['user', userId],      // cache key — must be unique
         queryFn: async () => {
             const res = await fetch(\`/api/users/\${userId}\`);
@@ -46,10 +46,10 @@ function useUser(userId: number) {
 function UserProfile({ userId }: { userId: number }) {
     const { data, isLoading, isError, error } = useUser(userId);
 
-    if (isLoading) return \u003cdiv\u003eLoading...\u003c/div\u003e;
-    if (isError) return \u003cdiv\u003eError: {error.message}\u003c/div\u003e;
+    if (isLoading) return <div>Loading...</div>;
+    if (isError) return <div>Error: {error.message}</div>;
 
-    return \u003cdiv\u003e{data.name} — {data.email}\u003c/div\u003e;
+    return <div>{data.name} — {data.email}</div>;
 }`;
 
 const codeUseMutation = `import { useMutation, useQueryClient } from '@tanstack/react-query';
@@ -94,13 +94,13 @@ function CreatePostForm() {
     };
 
     return (
-        \u003cform onSubmit={handleSubmit}\u003e
-            \u003cbutton type="submit" disabled={mutation.isPending}\u003e
+        <form onSubmit={handleSubmit}>
+            <button type="submit" disabled={mutation.isPending}>
                 {mutation.isPending ? 'Creating...' : 'Create Post'}
-            \u003c/button\u003e
-            {mutation.isError && \u003cp\u003eError: {mutation.error.message}\u003c/p\u003e}
-            {mutation.isSuccess && \u003cp\u003ePost created!\u003c/p\u003e}
-        \u003c/form\u003e
+            </button>
+            {mutation.isError && <p>Error: {mutation.error.message}</p>}
+            {mutation.isSuccess && <p>Post created!</p>}
+        </form>
     );
 }`;
 
@@ -129,10 +129,10 @@ function useToggleTodo() {
             await queryClient.cancelQueries({ queryKey: ['todos'] });
 
             // Snapshot current data for rollback
-            const previousTodos = queryClient.getQueryData\u003cTodo[]\u003e(['todos']);
+            const previousTodos = queryClient.getQueryData<Todo[]>(['todos']);
 
             // Optimistically update the cache
-            queryClient.setQueryData\u003cTodo[]\u003e(['todos'], (old) =>
+            queryClient.setQueryData<Todo[]>(['todos'], (old) =>
                 old?.map(todo =>
                     todo.id === updatedTodo.id
                         ? { ...todo, completed: !todo.completed }
@@ -165,7 +165,7 @@ interface Page {
 }
 
 function useInfinitePosts() {
-    return useInfiniteQuery\u003cPage\u003e({
+    return useInfiniteQuery<Page>({
         queryKey: ['posts', 'infinite'],
         queryFn: async ({ pageParam }) => {
             const url = pageParam
@@ -187,16 +187,16 @@ function InfinitePostList() {
     } = useInfinitePosts();
 
     return (
-        \u003cdiv\u003e
+        <div>
             {data?.pages.flatMap(page => page.items).map(post => (
-                \u003cdiv key={post.id}\u003e{post.title}\u003c/div\u003e
+                <div key={post.id}>{post.title}</div>
             ))}
             {hasNextPage && (
-                \u003cbutton onClick={() => fetchNextPage()} disabled={isFetchingNextPage}\u003e
+                <button onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
                     {isFetchingNextPage ? 'Loading...' : 'Load more'}
-                \u003c/button\u003e
+                </button>
             )}
-        \u003c/div\u003e
+        </div>
     );
 }`;
 
@@ -228,9 +228,9 @@ async function prefetchUser(userId: number) {
 }
 
 // On hover: prefetch before click
-\u003clink onMouseEnter={() => prefetchUser(userId)} href={\`/users/\${userId}\`}\u003e
+<link onMouseEnter={() => prefetchUser(userId)} href={\`/users/\${userId}\`}>
     View Profile
-\u003c/link\u003e`;
+</link>`;
 
 const translations: Record<string, Record<string, string>> = {
   en: {

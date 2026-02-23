@@ -655,110 +655,110 @@ export default function LinuxCommandLineTools({ lang }: { lang: string }) {
   };
 
   return (
-    \u003cdiv className="max-w-4xl mx-auto px-4 py-8 text-gray-800"\u003e
-      \u003cscript
+    <div className="max-w-4xl mx-auto px-4 py-8 text-gray-800">
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      /\u003e
+      />
 
-      \u003ch1 className="text-3xl font-bold mb-4 text-gray-900"\u003e{t.title}\u003c/h1\u003e
-      \u003cp className="text-lg text-gray-600 mb-8 leading-relaxed"\u003e{t.intro}\u003c/p\u003e
+      <h1 className="text-3xl font-bold mb-4 text-gray-900">{t.title}</h1>
+      <p className="text-lg text-gray-600 mb-8 leading-relaxed">{t.intro}</p>
 
-      \u003csection className="mb-10"\u003e
-        \u003ch2 className="text-2xl font-semibold mb-3 text-gray-800"\u003e{t.fdTitle}\u003c/h2\u003e
-        \u003cp className="text-gray-600 mb-3"\u003e{t.fdDesc}\u003c/p\u003e
-        \u003cpre style={preStyle}\u003e\u003ccode\u003e{codeFdRipgrep}\u003c/code\u003e\u003c/pre\u003e
-      \u003c/section\u003e
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold mb-3 text-gray-800">{t.fdTitle}</h2>
+        <p className="text-gray-600 mb-3">{t.fdDesc}</p>
+        <pre style={preStyle}><code>{codeFdRipgrep}</code></pre>
+      </section>
 
-      \u003csection className="mb-10"\u003e
-        \u003ch2 className="text-2xl font-semibold mb-3 text-gray-800"\u003e{t.batTitle}\u003c/h2\u003e
-        \u003cp className="text-gray-600 mb-3"\u003e{t.batDesc}\u003c/p\u003e
-        \u003cpre style={preStyle}\u003e\u003ccode\u003e{codeBatEza}\u003c/code\u003e\u003c/pre\u003e
-      \u003c/section\u003e
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold mb-3 text-gray-800">{t.batTitle}</h2>
+        <p className="text-gray-600 mb-3">{t.batDesc}</p>
+        <pre style={preStyle}><code>{codeBatEza}</code></pre>
+      </section>
 
-      \u003csection className="mb-10"\u003e
-        \u003ch2 className="text-2xl font-semibold mb-3 text-gray-800"\u003e{t.deltaTitle}\u003c/h2\u003e
-        \u003cp className="text-gray-600 mb-3"\u003e{t.deltaDesc}\u003c/p\u003e
-        \u003cpre style={preStyle}\u003e\u003ccode\u003e{codeDeltaZoxide}\u003c/code\u003e\u003c/pre\u003e
-      \u003c/section\u003e
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold mb-3 text-gray-800">{t.deltaTitle}</h2>
+        <p className="text-gray-600 mb-3">{t.deltaDesc}</p>
+        <pre style={preStyle}><code>{codeDeltaZoxide}</code></pre>
+      </section>
 
-      \u003csection className="mb-10"\u003e
-        \u003ch2 className="text-2xl font-semibold mb-3 text-gray-800"\u003e{t.fzfTitle}\u003c/h2\u003e
-        \u003cp className="text-gray-600 mb-3"\u003e{t.fzfDesc}\u003c/p\u003e
-        \u003cpre style={preStyle}\u003e\u003ccode\u003e{codeFzfJq}\u003c/code\u003e\u003c/pre\u003e
-      \u003c/section\u003e
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold mb-3 text-gray-800">{t.fzfTitle}</h2>
+        <p className="text-gray-600 mb-3">{t.fzfDesc}</p>
+        <pre style={preStyle}><code>{codeFzfJq}</code></pre>
+      </section>
 
-      \u003csection className="mb-10"\u003e
-        \u003ch2 className="text-2xl font-semibold mb-3 text-gray-800"\u003e{t.httpTitle}\u003c/h2\u003e
-        \u003cp className="text-gray-600 mb-3"\u003e{t.httpDesc}\u003c/p\u003e
-        \u003cpre style={preStyle}\u003e\u003ccode\u003e{codeHttpieXh}\u003c/code\u003e\u003c/pre\u003e
-      \u003c/section\u003e
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold mb-3 text-gray-800">{t.httpTitle}</h2>
+        <p className="text-gray-600 mb-3">{t.httpDesc}</p>
+        <pre style={preStyle}><code>{codeHttpieXh}</code></pre>
+      </section>
 
-      \u003csection className="mb-10"\u003e
-        \u003ch2 className="text-2xl font-semibold mb-3 text-gray-800"\u003e{t.aliasTitle}\u003c/h2\u003e
-        \u003cp className="text-gray-600 mb-3"\u003e{t.aliasDesc}\u003c/p\u003e
-        \u003cpre style={preStyle}\u003e\u003ccode\u003e{codeShellAliases}\u003c/code\u003e\u003c/pre\u003e
-      \u003c/section\u003e
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold mb-3 text-gray-800">{t.aliasTitle}</h2>
+        <p className="text-gray-600 mb-3">{t.aliasDesc}</p>
+        <pre style={preStyle}><code>{codeShellAliases}</code></pre>
+      </section>
 
-      \u003csection className="mb-10"\u003e
-        \u003ch2 className="text-2xl font-semibold mb-4 text-gray-800"\u003e{t.comparisonTitle}\u003c/h2\u003e
-        \u003cdiv className="overflow-x-auto"\u003e
-          \u003ctable className="w-full border-collapse text-sm"\u003e
-            \u003cthead\u003e
-              \u003ctr className="bg-green-50"\u003e
-                \u003cth className="border border-gray-200 px-4 py-2 text-left font-semibold"\u003eClassic\u003c/th\u003e
-                \u003cth className="border border-gray-200 px-4 py-2 text-left font-semibold"\u003eModern\u003c/th\u003e
-                \u003cth className="border border-gray-200 px-4 py-2 text-left font-semibold"\u003eLanguage\u003c/th\u003e
-                \u003cth className="border border-gray-200 px-4 py-2 text-left font-semibold"\u003eKey Improvements\u003c/th\u003e
-              \u003c/tr\u003e
-            \u003c/thead\u003e
-            \u003ctbody\u003e
-              {toolRows.map((row, i) =\u003e (
-                \u003ctr key={row.classic} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}\u003e
-                  \u003ctd className="border border-gray-200 px-4 py-2 font-mono text-gray-600"\u003e{row.classic}\u003c/td\u003e
-                  \u003ctd className="border border-gray-200 px-4 py-2 font-mono font-medium text-green-700"\u003e{row.modern}\u003c/td\u003e
-                  \u003ctd className="border border-gray-200 px-4 py-2"\u003e
-                    \u003cspan className="inline-block bg-blue-100 text-blue-700 px-2 py-0.5 rounded text-xs"\u003e{row.lang}\u003c/span\u003e
-                  \u003c/td\u003e
-                  \u003ctd className="border border-gray-200 px-4 py-2 text-gray-600"\u003e{row.keyDiff}\u003c/td\u003e
-                \u003c/tr\u003e
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold mb-4 text-gray-800">{t.comparisonTitle}</h2>
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="bg-green-50">
+                <th className="border border-gray-200 px-4 py-2 text-left font-semibold">Classic</th>
+                <th className="border border-gray-200 px-4 py-2 text-left font-semibold">Modern</th>
+                <th className="border border-gray-200 px-4 py-2 text-left font-semibold">Language</th>
+                <th className="border border-gray-200 px-4 py-2 text-left font-semibold">Key Improvements</th>
+              </tr>
+            </thead>
+            <tbody>
+              {toolRows.map((row, i) => (
+                <tr key={row.classic} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                  <td className="border border-gray-200 px-4 py-2 font-mono text-gray-600">{row.classic}</td>
+                  <td className="border border-gray-200 px-4 py-2 font-mono font-medium text-green-700">{row.modern}</td>
+                  <td className="border border-gray-200 px-4 py-2">
+                    <span className="inline-block bg-blue-100 text-blue-700 px-2 py-0.5 rounded text-xs">{row.lang}</span>
+                  </td>
+                  <td className="border border-gray-200 px-4 py-2 text-gray-600">{row.keyDiff}</td>
+                </tr>
               ))}
-            \u003c/tbody\u003e
-          \u003c/table\u003e
-        \u003c/div\u003e
-      \u003c/section\u003e
+            </tbody>
+          </table>
+        </div>
+      </section>
 
-      \u003csection className="mb-10"\u003e
-        \u003ch2 className="text-2xl font-semibold mb-4 text-gray-800"\u003e{t.faqTitle}\u003c/h2\u003e
-        \u003cdiv className="space-y-4"\u003e
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold mb-4 text-gray-800">{t.faqTitle}</h2>
+        <div className="space-y-4">
           {[
             { q: t.faqQ1, a: t.faqA1 },
             { q: t.faqQ2, a: t.faqA2 },
             { q: t.faqQ3, a: t.faqA3 },
             { q: t.faqQ4, a: t.faqA4 },
-          ].map(({ q, a }) =\u003e (
-            \u003cdiv key={q} className="border border-gray-200 rounded-lg p-4"\u003e
-              \u003ch3 className="font-semibold text-gray-800 mb-2"\u003e{q}\u003c/h3\u003e
-              \u003cp className="text-gray-600 text-sm leading-relaxed"\u003e{a}\u003c/p\u003e
-            \u003c/div\u003e
+          ].map(({ q, a }) => (
+            <div key={q} className="border border-gray-200 rounded-lg p-4">
+              <h3 className="font-semibold text-gray-800 mb-2">{q}</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">{a}</p>
+            </div>
           ))}
-        \u003c/div\u003e
-      \u003c/section\u003e
+        </div>
+      </section>
 
-      \u003csection\u003e
-        \u003ch2 className="text-xl font-semibold mb-3 text-gray-800"\u003e{t.relatedTools}\u003c/h2\u003e
-        \u003cdiv className="flex flex-wrap gap-2"\u003e
-          {['regex-tester', 'json-formatter', 'url-encoder', 'base64-encoder', 'cron-parser'].map(tool =\u003e (
-            \u003ca
+      <section>
+        <h2 className="text-xl font-semibold mb-3 text-gray-800">{t.relatedTools}</h2>
+        <div className="flex flex-wrap gap-2">
+          {['regex-tester', 'json-formatter', 'url-encoder', 'base64-encoder', 'cron-parser'].map(tool => (
+            <a
               key={tool}
               href={`/${lang}/tools/${tool}`}
               className="inline-block bg-green-50 hover:bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm transition-colors"
-            \u003e
+            >
               {tool}
-            \u003c/a\u003e
+            </a>
           ))}
-        \u003c/div\u003e
-      \u003c/section\u003e
-    \u003c/div\u003e
+        </div>
+      </section>
+    </div>
   );
 }
