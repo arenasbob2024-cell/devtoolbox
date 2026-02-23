@@ -265,6 +265,14 @@ import JavascriptGeneratorsGuide from '@/data/posts/javascript-generators-guide'
 import VitePluginDevelopment from '@/data/posts/vite-plugin-development';
 import SqlQueryOptimization from '@/data/posts/sql-query-optimization';
 import LinuxCommandLineTools from '@/data/posts/linux-command-line-tools';
+import HttpHeadersGuide from '@/data/posts/http-headers-guide';
+import PostgresqlVsMysql from '@/data/posts/postgresql-vs-mysql';
+import PythonVirtualEnvironments from '@/data/posts/python-virtual-environments';
+import JavascriptErrorHandling from '@/data/posts/javascript-error-handling';
+import NodejsPerformanceTips from '@/data/posts/nodejs-performance-tips';
+import AwsS3Guide from '@/data/posts/aws-s3-guide';
+import WebpackConfigGuide from '@/data/posts/webpack-config-guide';
+import CssCustomPropertiesAdvanced from '@/data/posts/css-custom-properties-advanced';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -520,6 +528,14 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'vite-plugin-development': VitePluginDevelopment,
   'sql-query-optimization': SqlQueryOptimization,
   'linux-command-line-tools': LinuxCommandLineTools,
+  'http-headers-guide': HttpHeadersGuide,
+  'postgresql-vs-mysql': PostgresqlVsMysql,
+  'python-virtual-environments': PythonVirtualEnvironments,
+  'javascript-error-handling': JavascriptErrorHandling,
+  'nodejs-performance-tips': NodejsPerformanceTips,
+  'aws-s3-guide': AwsS3Guide,
+  'webpack-config-guide': WebpackConfigGuide,
+  'css-custom-properties-advanced': CssCustomPropertiesAdvanced,
 };
 
 /* i18n for UI strings on this page */

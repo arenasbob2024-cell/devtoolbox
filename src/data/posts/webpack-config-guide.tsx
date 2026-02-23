@@ -109,7 +109,7 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: [
-              ['@babel/preset-env', { targets: '\u003e0.25%, not dead' }],
+              ['@babel/preset-env', { targets: '>0.25%, not dead' }],
               ['@babel/preset-react', { runtime: 'automatic' }],
               '@babel/preset-typescript',
             ],
@@ -148,7 +148,7 @@ module.exports = {
         test: /\\.(png|jpg|jpeg|gif|webp)$/i,
         type: 'asset',  // Auto-chooses between inline and resource
         parser: {
-          dataUrlCondition: { maxSize: 10 * 1024 }, // Inline if \u003c 10KB
+          dataUrlCondition: { maxSize: 10 * 1024 }, // Inline if < 10KB
         },
       },
       {
@@ -176,13 +176,13 @@ const Analytics = lazy(() => import('./pages/Analytics'));
 
 function App() {
   return (
-    \u003cSuspense fallback={\u003cdiv\u003eLoading...\u003c/div\u003e}\u003e
-      \u003cRoutes\u003e
-        \u003cRoute path="/dashboard" element={\u003cDashboard /\u003e} /\u003e
-        \u003cRoute path="/settings" element={\u003cSettings /\u003e} /\u003e
-        \u003cRoute path="/analytics" element={\u003cAnalytics /\u003e} /\u003e
-      \u003c/Routes\u003e
-    \u003c/Suspense\u003e
+    <Suspense fallback={<div>Loading...</div>}>
+      <Routes>
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/settings" element={<Settings />} />
+        <Route path="/analytics" element={<Analytics />} />
+      </Routes>
+    </Suspense>
   );
 }
 

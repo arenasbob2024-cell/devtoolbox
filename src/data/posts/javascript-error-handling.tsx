@@ -66,7 +66,7 @@ try {
 
 // Wrong: setTimeout error is not caught
 try {
-  setTimeout(() =\u003e {
+  setTimeout(() => {
     throw new Error('This is NOT caught by outer try/catch');
   }, 100);
 } catch (e) {
@@ -74,7 +74,7 @@ try {
 }
 
 // Right: wrap async code
-setTimeout(() =\u003e {
+setTimeout(() => {
   try {
     throw new Error('This IS caught');
   } catch (e) {
@@ -131,15 +131,15 @@ async function loadDashboard(userId) {
     posts: posts.status === 'fulfilled' ? posts.value : [],
     stats: stats.status === 'fulfilled' ? stats.value : {},
     errors: [user, posts, stats]
-      .filter(r =\u003e r.status === 'rejected')
-      .map(r =\u003e r.reason),
+      .filter(r => r.status === 'rejected')
+      .map(r => r.reason),
   };
 }
 
 // 3. Async error handling utility
-async function tryCatchAsync\u003cT\u003e(
-  promise: Promise\u003cT\u003e
-): Promise\u003c[T | null, Error | null]\u003e {
+async function tryCatchAsync<T>(
+  promise: Promise<T>
+): Promise<[T | null, Error | null]> {
   try {
     const data = await promise;
     return [data, null];
@@ -186,9 +186,9 @@ class AppError extends Error {
 }
 
 class ValidationError extends AppError {
-  public readonly fields: Record\u003cstring, string[]\u003e;
+  public readonly fields: Record<string, string[]>;
 
-  constructor(message: string, fields: Record\u003cstring, string[]\u003e = {}) {
+  constructor(message: string, fields: Record<string, string[]> = {}) {
     super(message, 'VALIDATION_ERROR', 400);
     this.fields = fields;
   }
@@ -234,21 +234,21 @@ try {
 const globalHandlerCode = `// Global Error Handlers
 
 // Browser: uncaught synchronous errors
-window.onerror = (message, source, lineno, colno, error) =\u003e {
+window.onerror = (message, source, lineno, colno, error) => {
   console.error('Uncaught error:', { message, source, lineno, colno, error });
   reportToSentry(error);
   return true; // Prevents default browser error dialog
 };
 
 // Browser: unhandled promise rejections
-window.addEventListener('unhandledrejection', (event) =\u003e {
+window.addEventListener('unhandledrejection', (event) => {
   console.error('Unhandled promise rejection:', event.reason);
   reportToSentry(event.reason);
   event.preventDefault(); // Prevents console error
 });
 
 // Node.js: uncaught exceptions
-process.on('uncaughtException', (error) =\u003e {
+process.on('uncaughtException', (error) => {
   console.error('Uncaught exception:', error);
   reportToSentry(error);
   // Exit after logging — cannot safely continue after uncaughtException
@@ -256,13 +256,13 @@ process.on('uncaughtException', (error) =\u003e {
 });
 
 // Node.js: unhandled promise rejections
-process.on('unhandledRejection', (reason, promise) =\u003e {
+process.on('unhandledRejection', (reason, promise) => {
   console.error('Unhandled rejection at:', promise, 'reason:', reason);
   reportToSentry(reason instanceof Error ? reason : new Error(String(reason)));
 });
 
 // Express.js: error middleware (must have 4 params)
-app.use((err, req, res, next) =\u003e {
+app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
   const isOperational = err.isOperational || false;
 
