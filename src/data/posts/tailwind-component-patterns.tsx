@@ -32,21 +32,21 @@ const buttonVariants = cva(
 );
 
 interface ButtonProps
-    extends React.ButtonHTMLAttributes\u003cHTMLButtonElement\u003e,
-        VariantProps\u003ctypeof buttonVariants\u003e {}
+    extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+        VariantProps<typeof buttonVariants> {}
 
 export function Button({ className, variant, size, ...props }: ButtonProps) {
     return (
-        \u003cbutton
+        <button
             className={cn(buttonVariants({ variant, size, className }))}
             {...props}
-        /\u003e
+        />
     );
 }
 
 // Usage:
-// \u003cButton variant="outline" size="sm"\u003eClick me\u003c/Button\u003e
-// \u003cButton variant="destructive"\u003eDelete\u003c/Button\u003e`;
+// <Button variant="outline" size="sm">Click me</Button>
+// <Button variant="destructive">Delete</Button>`;
 
 const codeApply = `/* globals.css — using @apply to extract reusable patterns */
 @layer components {
@@ -118,28 +118,28 @@ export function Select() {
     const [selected, setSelected] = useState(people[0]);
 
     return (
-        \u003cListbox value={selected} onChange={setSelected}\u003e
-            \u003cListbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm"\u003e
-                \u003cspan className="block truncate"\u003e{selected.name}\u003c/span\u003e
-                \u003cspan className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2"\u003e
-                    \u003cChevronUpDownIcon className="h-5 w-5 text-gray-400" aria-hidden="true" /\u003e
-                \u003c/span\u003e
-            \u003c/Listbox.Button\u003e
-            \u003cTransition as={Fragment} leave="transition ease-in duration-100" leaveFrom="opacity-100" leaveTo="opacity-0"\u003e
-                \u003cListbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"\u003e
+        <Listbox value={selected} onChange={setSelected}>
+            <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+                <span className="block truncate">{selected.name}</span>
+                <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+                    <ChevronUpDownIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
+                </span>
+            </Listbox.Button>
+            <Transition as={Fragment} leave="transition ease-in duration-100" leaveFrom="opacity-100" leaveTo="opacity-0">
+                <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                     {people.map((person) => (
-                        \u003cListbox.Option key={person.id} value={person} className={({ active }) => cn('relative cursor-default select-none py-2 pl-10 pr-4', active ? 'bg-amber-100 text-amber-900' : 'text-gray-900')}\u003e
+                        <Listbox.Option key={person.id} value={person} className={({ active }) => cn('relative cursor-default select-none py-2 pl-10 pr-4', active ? 'bg-amber-100 text-amber-900' : 'text-gray-900')}>
                             {({ selected }) => (
-                                \u003c\u003e
-                                    \u003cspan className={cn('block truncate', selected ? 'font-medium' : 'font-normal')}\u003e{person.name}\u003c/span\u003e
-                                    {selected ? \u003cspan className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600"\u003e\u003cCheckIcon className="h-5 w-5" /\u003e\u003c/span\u003e : null}
-                                \u003c/\u003e
+                                <>
+                                    <span className={cn('block truncate', selected ? 'font-medium' : 'font-normal')}>{person.name}</span>
+                                    {selected ? <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600"><CheckIcon className="h-5 w-5" /></span> : null}
+                                </>
                             )}
-                        \u003c/Listbox.Option\u003e
+                        </Listbox.Option>
                     ))}
-                \u003c/Listbox.Options\u003e
-            \u003c/Transition\u003e
-        \u003c/Listbox\u003e
+                </Listbox.Options>
+            </Transition>
+        </Listbox>
     );
 }`;
 

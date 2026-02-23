@@ -2864,6 +2864,26 @@ export const tools: Tool[] = [
     path: '/tools/svg-to-png-converter',
     relatedTools: ['image-base64', 'color-palette-generator', 'css-gradient-generator'],
   },
+  {
+    id: 'json-minifier-online',
+    name: 'JSON Minifier Online',
+    description: 'Compress and minify JSON data. Remove whitespace to reduce file size.',
+    icon: '🗜️',
+    category: 'formatter',
+    keywords: ['json minifier', 'compress json', 'minify json', 'json compressor', 'json minify online'],
+    path: '/tools/json-minifier-online',
+    relatedTools: ['json-formatter', 'json-validator', 'json-beautifier-online'],
+  },
+  {
+    id: 'base64-image-encoder',
+    name: 'Base64 Image Encoder',
+    description: 'Convert images to Base64 strings for embedding in HTML, CSS, and JSON.',
+    icon: '🖼️',
+    category: 'encoder',
+    keywords: ['base64 image', 'image to base64', 'encode image base64', 'data url image', 'base64 image online'],
+    path: '/tools/base64-image-encoder',
+    relatedTools: ['base64-encode-online', 'svg-to-png-converter', 'image-compressor'],
+  },
 ];
 
 export function getToolsByCategory(categoryId: string): Tool[] {
