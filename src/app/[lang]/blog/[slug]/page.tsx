@@ -259,6 +259,10 @@ import BunPackageManager from '@/data/posts/bun-package-manager';
 import MonorepoTools2026 from '@/data/posts/monorepo-tools-2026';
 import TailwindComponentPatterns from '@/data/posts/tailwind-component-patterns';
 import WebAssemblyGuide from '@/data/posts/web-assembly-guide';
+import CssGridMastery from '@/data/posts/css-grid-mastery';
+import ReactQueryPatterns from '@/data/posts/react-query-patterns';
+import JavascriptGeneratorsGuide from '@/data/posts/javascript-generators-guide';
+import VitePluginDevelopment from '@/data/posts/vite-plugin-development';
 import SqlQueryOptimization from '@/data/posts/sql-query-optimization';
 import LinuxCommandLineTools from '@/data/posts/linux-command-line-tools';
 
@@ -510,6 +514,10 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'monorepo-tools-2026': MonorepoTools2026,
   'tailwind-component-patterns': TailwindComponentPatterns,
   'web-assembly-guide': WebAssemblyGuide,
+  'css-grid-mastery': CssGridMastery,
+  'react-query-patterns': ReactQueryPatterns,
+  'javascript-generators-guide': JavascriptGeneratorsGuide,
+  'vite-plugin-development': VitePluginDevelopment,
   'sql-query-optimization': SqlQueryOptimization,
   'linux-command-line-tools': LinuxCommandLineTools,
 };
