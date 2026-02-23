@@ -273,6 +273,8 @@ import NodejsPerformanceTips from '@/data/posts/nodejs-performance-tips';
 import AwsS3Guide from '@/data/posts/aws-s3-guide';
 import WebpackConfigGuide from '@/data/posts/webpack-config-guide';
 import CssCustomPropertiesAdvanced from '@/data/posts/css-custom-properties-advanced';
+import GithubActionsDocker from '@/data/posts/github-actions-docker';
+import JsonWebTokensSecurity from '@/data/posts/json-web-tokens-security';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -536,6 +538,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'aws-s3-guide': AwsS3Guide,
   'webpack-config-guide': WebpackConfigGuide,
   'css-custom-properties-advanced': CssCustomPropertiesAdvanced,
+  'github-actions-docker': GithubActionsDocker,
+  'json-web-tokens-security': JsonWebTokensSecurity,
 };
 
 /* i18n for UI strings on this page */

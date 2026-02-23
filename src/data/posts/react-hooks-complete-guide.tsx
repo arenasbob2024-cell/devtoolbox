@@ -1,8 +1,10 @@
+'use client';
+import React from 'react';
 import Link from 'next/link';
 
 const t: Record<string, Record<string, string>> = {
   en: {
-    intro: 'React Hooks revolutionized how we write React components. Since React 16.8, Hooks let you use state, lifecycle methods, context, and more in functional components — no classes needed. This <strong>complete React Hooks guide</strong> covers every built-in Hook with practical examples, common pitfalls, and best practices.',
+    intro: 'React Hooks fundamentally changed how we write React components. Since their introduction in React 16.8, hooks have become the standard way to manage state, side effects, and shared logic in functional components. This complete guide covers every important hook with real-world examples and 2026 best practices.',
     h2_useState: 'useState: Managing Component State',
     useStateDesc: '<code>useState</code> is the most fundamental Hook. It returns a stateful value and a function to update it.',
     h2_useEffect: 'useEffect: Side Effects and Lifecycle',

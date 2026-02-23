@@ -111196,6 +111196,321 @@
     <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/github-actions-ci-cd" />
   </url>
   <url>
+    <loc>https://viadreams.cc/en/blog/github-actions-docker</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/github-actions-docker" />
+  </url>
+  <url>
+    <loc>https://viadreams.cc/fr/blog/github-actions-docker</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/github-actions-docker" />
+  </url>
+  <url>
+    <loc>https://viadreams.cc/de/blog/github-actions-docker</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/github-actions-docker" />
+  </url>
+  <url>
+    <loc>https://viadreams.cc/it/blog/github-actions-docker</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/github-actions-docker" />
+  </url>
+  <url>
+    <loc>https://viadreams.cc/es/blog/github-actions-docker</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/github-actions-docker" />
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pt/blog/github-actions-docker</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/github-actions-docker" />
+  </url>
+  <url>
+    <loc>https://viadreams.cc/nl/blog/github-actions-docker</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/github-actions-docker" />
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pl/blog/github-actions-docker</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/github-actions-docker" />
+  </url>
+  <url>
+    <loc>https://viadreams.cc/sv/blog/github-actions-docker</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/github-actions-docker" />
+  </url>
+  <url>
+    <loc>https://viadreams.cc/no/blog/github-actions-docker</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/github-actions-docker" />
+  </url>
+  <url>
+    <loc>https://viadreams.cc/zh/blog/github-actions-docker</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/github-actions-docker" />
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ja/blog/github-actions-docker</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/github-actions-docker" />
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ko/blog/github-actions-docker</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/github-actions-docker" />
+  </url>
+  <url>
+    <loc>https://viadreams.cc/id/blog/github-actions-docker</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/github-actions-docker" />
+  </url>
+  <url>
+    <loc>https://viadreams.cc/th/blog/github-actions-docker</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/github-actions-docker" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/github-actions-docker" />
+  </url>
+  <url>
     <loc>https://viadreams.cc/en/blog/github-actions-guide</loc>
     <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
@@ -126629,6 +126944,321 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/json-vs-yaml-vs-toml" />
     <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/json-vs-yaml-vs-toml" />
     <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/json-vs-yaml-vs-toml" />
+  </url>
+  <url>
+    <loc>https://viadreams.cc/en/blog/json-web-tokens-security</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/json-web-tokens-security" />
+  </url>
+  <url>
+    <loc>https://viadreams.cc/fr/blog/json-web-tokens-security</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/json-web-tokens-security" />
+  </url>
+  <url>
+    <loc>https://viadreams.cc/de/blog/json-web-tokens-security</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/json-web-tokens-security" />
+  </url>
+  <url>
+    <loc>https://viadreams.cc/it/blog/json-web-tokens-security</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/json-web-tokens-security" />
+  </url>
+  <url>
+    <loc>https://viadreams.cc/es/blog/json-web-tokens-security</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/json-web-tokens-security" />
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pt/blog/json-web-tokens-security</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/json-web-tokens-security" />
+  </url>
+  <url>
+    <loc>https://viadreams.cc/nl/blog/json-web-tokens-security</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/json-web-tokens-security" />
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pl/blog/json-web-tokens-security</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/json-web-tokens-security" />
+  </url>
+  <url>
+    <loc>https://viadreams.cc/sv/blog/json-web-tokens-security</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/json-web-tokens-security" />
+  </url>
+  <url>
+    <loc>https://viadreams.cc/no/blog/json-web-tokens-security</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/json-web-tokens-security" />
+  </url>
+  <url>
+    <loc>https://viadreams.cc/zh/blog/json-web-tokens-security</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/json-web-tokens-security" />
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ja/blog/json-web-tokens-security</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/json-web-tokens-security" />
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ko/blog/json-web-tokens-security</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/json-web-tokens-security" />
+  </url>
+  <url>
+    <loc>https://viadreams.cc/id/blog/json-web-tokens-security</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/json-web-tokens-security" />
+  </url>
+  <url>
+    <loc>https://viadreams.cc/th/blog/json-web-tokens-security</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/json-web-tokens-security" />
+    <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/json-web-tokens-security" />
   </url>
   <url>
     <loc>https://viadreams.cc/en/blog/jwt-authentication-guide</loc>
