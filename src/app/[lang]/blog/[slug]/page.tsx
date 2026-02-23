@@ -255,6 +255,10 @@ import CssLogicalPropertiesGuide from '@/data/posts/css-logical-properties-guide
 import DockerMultiStageBuilds from '@/data/posts/docker-multi-stage-builds';
 import JavascriptClosuresGuide from '@/data/posts/javascript-closures-guide';
 import RedisDataStructuresGuide from '@/data/posts/redis-data-structures-guide';
+import BunPackageManager from '@/data/posts/bun-package-manager';
+import MonorepoTools2026 from '@/data/posts/monorepo-tools-2026';
+import TailwindComponentPatterns from '@/data/posts/tailwind-component-patterns';
+import WebAssemblyGuide from '@/data/posts/web-assembly-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -500,6 +504,10 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'docker-multi-stage-builds': DockerMultiStageBuilds,
   'javascript-closures-guide': JavascriptClosuresGuide,
   'redis-data-structures-guide': RedisDataStructuresGuide,
+  'bun-package-manager': BunPackageManager,
+  'monorepo-tools-2026': MonorepoTools2026,
+  'tailwind-component-patterns': TailwindComponentPatterns,
+  'web-assembly-guide': WebAssemblyGuide,
 };
 
 /* i18n for UI strings on this page */
