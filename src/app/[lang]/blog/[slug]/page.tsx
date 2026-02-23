@@ -205,7 +205,6 @@ import TypescriptBestPractices2026 from '@/data/posts/typescript-best-practices-
 import DockerSecurityBestPractices from '@/data/posts/docker-security-best-practices';
 import GraphqlSubscriptionsRealtime from '@/data/posts/graphql-subscriptions-realtime';
 import TailwindV4NewFeatures from '@/data/posts/tailwind-v4-new-features';
-import RustVsGo2026 from '@/data/posts/rust-vs-go-2026';
 import PostgresqlPerformanceTuning from '@/data/posts/postgresql-performance-tuning';
 import WebAccessibilityWcagGuide from '@/data/posts/web-accessibility-wcag-guide';
 import CiCdPipelineBestPractices from '@/data/posts/ci-cd-pipeline-best-practices';
@@ -236,6 +235,16 @@ import PnpmWorkspaceMonorepo from '@/data/posts/pnpm-workspace-monorepo';
 import NextjsCachingStrategies from '@/data/posts/nextjs-caching-strategies';
 import Oauth2OpenidConnectGuide from '@/data/posts/oauth2-openid-connect-guide';
 import PlaywrightTestingGuide from '@/data/posts/playwright-testing-guide';
+import RustVsGo2026 from '@/data/posts/rust-vs-go-2026';
+import Deno2Guide from '@/data/posts/deno-2-guide';
+import HtmxGuide2026 from '@/data/posts/htmx-guide-2026';
+import TailwindV4Migration from '@/data/posts/tailwind-v4-migration';
+import SqliteForProduction from '@/data/posts/sqlite-for-production';
+import AstroVsNextjs2026 from '@/data/posts/astro-vs-nextjs-2026';
+import TypeScript5Features from '@/data/posts/typescript-5-features';
+import CloudflareWorkersGuide from '@/data/posts/cloudflare-workers-guide';
+import ZodValidationGuide from '@/data/posts/zod-validation-guide';
+import GithubCopilotTips from '@/data/posts/github-copilot-tips';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -431,7 +440,6 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'docker-security-best-practices': DockerSecurityBestPractices,
   'graphql-subscriptions-realtime': GraphqlSubscriptionsRealtime,
   'tailwind-v4-new-features': TailwindV4NewFeatures,
-  'rust-vs-go-2026': RustVsGo2026,
   'postgresql-performance-tuning': PostgresqlPerformanceTuning,
   'web-accessibility-wcag-guide': WebAccessibilityWcagGuide,
   'ci-cd-pipeline-best-practices': CiCdPipelineBestPractices,
@@ -462,6 +470,16 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'nextjs-caching-strategies': NextjsCachingStrategies,
   'oauth2-openid-connect-guide': Oauth2OpenidConnectGuide,
   'playwright-testing-guide': PlaywrightTestingGuide,
+  'rust-vs-go-2026': RustVsGo2026,
+  'deno-2-guide': Deno2Guide,
+  'htmx-guide-2026': HtmxGuide2026,
+  'tailwind-v4-migration': TailwindV4Migration,
+  'sqlite-for-production': SqliteForProduction,
+  'astro-vs-nextjs-2026': AstroVsNextjs2026,
+  'typescript-5-features': TypeScript5Features,
+  'cloudflare-workers-guide': CloudflareWorkersGuide,
+  'zod-validation-guide': ZodValidationGuide,
+  'github-copilot-tips': GithubCopilotTips,
 };
 
 /* i18n for UI strings on this page */

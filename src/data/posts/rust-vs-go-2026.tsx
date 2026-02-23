@@ -1,468 +1,518 @@
 'use client';
+import React from 'react';
 
-import Link from 'next/link';
+const translations: Record<string, Record<string, string>> = {
+  en: {
+    title: 'Rust vs Go in 2026: Performance, Memory Safety, and When to Use Each',
+    intro: 'Rust and Go are two of the most popular systems programming languages in 2026. Both offer strong concurrency support, excellent tooling, and growing ecosystems, but they make fundamentally different trade-offs. Go prioritizes simplicity and fast compilation, while Rust prioritizes zero-cost abstractions and memory safety without a garbage collector. This guide provides an in-depth comparison to help you choose the right language for your next project.',
+    h2Philosophy: 'Language Philosophy',
+    goPhilosophy: 'Go was created at Google in 2009 by Robert Griesemer, Rob Pike, and Ken Thompson. Its design philosophy centers on simplicity, readability, and fast compilation. Go deliberately omits features like inheritance and operator overloading to keep the language small and easy to learn. The mantra is: clear is better than clever.',
+    rustPhilosophy: 'Rust was created at Mozilla and reached 1.0 in 2015. Its design philosophy centers on safety, concurrency, and performance. Rust uses an ownership system with borrowing rules enforced at compile time to guarantee memory safety without a garbage collector. The mantra is: fearless concurrency.',
+    h2Performance: 'Performance Comparison',
+    perfIntro: 'Both languages produce compiled native binaries, but their runtime characteristics differ significantly.',
+    thMetric: 'Metric',
+    thGo: 'Go 1.23',
+    thRust: 'Rust 1.82',
+    metricCompile: 'Compile time (medium project)',
+    metricRuntime: 'Runtime performance',
+    metricMemory: 'Memory usage',
+    metricBinary: 'Binary size (hello world)',
+    metricStartup: 'Startup time',
+    metricGC: 'Garbage collection',
+    valGoCompile: '~2-5 seconds',
+    valRustCompile: '~30-120 seconds',
+    valGoRuntime: 'Good (within 2-5x of C)',
+    valRustRuntime: 'Excellent (on par with C/C++)',
+    valGoMemory: 'Moderate (GC overhead)',
+    valRustMemory: 'Minimal (no GC, zero-cost abstractions)',
+    valGoBinary: '~1.8 MB',
+    valRustBinary: '~300 KB (stripped)',
+    valGoStartup: 'Fast (~5ms)',
+    valRustStartup: 'Very fast (~1ms)',
+    valGoGC: 'Yes (low-latency, concurrent)',
+    valRustGC: 'None (ownership system)',
+    h2MemorySafety: 'Memory Safety',
+    memoryIntro: 'Memory safety is where Rust and Go take radically different approaches, both achieving safety but through completely different mechanisms.',
+    h3GoMemory: 'Go: Garbage Collection',
+    goMemoryDesc: 'Go uses a concurrent, tri-color mark-and-sweep garbage collector. The GC runs concurrently with your program, keeping pause times under 1ms in most cases. You allocate memory freely, and the GC reclaims it when no references remain. This simplifies programming but adds runtime overhead and can cause occasional latency spikes.',
+    h3RustMemory: 'Rust: Ownership and Borrowing',
+    rustMemoryDesc: 'Rust uses an ownership system enforced at compile time. Every value has exactly one owner, and when the owner goes out of scope, the value is dropped. References (borrows) can be either shared (immutable) or exclusive (mutable), but never both simultaneously. This prevents data races, use-after-free, double-free, and null pointer dereferences at compile time with zero runtime cost.',
+    h2Concurrency: 'Concurrency Models',
+    concurrencyIntro: 'Both languages excel at concurrency, but with different paradigms.',
+    h3GoConcurrency: 'Go: Goroutines and Channels',
+    goConcurrencyDesc: 'Go uses goroutines, which are lightweight green threads managed by the Go runtime. You can spawn millions of goroutines with minimal overhead. Communication between goroutines uses channels, following the CSP (Communicating Sequential Processes) model. The select statement enables multiplexing over multiple channels.',
+    h3RustConcurrency: 'Rust: Async/Await and Threads',
+    rustConcurrencyDesc: 'Rust provides both OS threads and async/await for concurrency. The async runtime (typically tokio or async-std) provides a lightweight task system similar to goroutines. The ownership system prevents data races at compile time, making concurrent code safer. The Send and Sync traits enforce thread safety guarantees.',
+    h2ErrorHandling: 'Error Handling',
+    h3GoErrors: 'Go: Multiple Return Values',
+    goErrorsDesc: 'Go uses explicit error returns. Functions that can fail return (value, error) tuples. The caller must check the error explicitly. This is simple and explicit but can lead to verbose error-handling code.',
+    h3RustErrors: 'Rust: Result and Option Types',
+    rustErrorsDesc: 'Rust uses the Result<T, E> and Option<T> types for error handling. The ? operator provides concise error propagation. Pattern matching enforces exhaustive error handling. There are no null values in Rust, eliminating an entire class of bugs.',
+    h2Ecosystem: 'Ecosystem and Tooling',
+    h3GoEcosystem: 'Go Ecosystem',
+    goEcosystemDesc: 'Go has a mature ecosystem with excellent standard library coverage. The go tool provides building, testing, formatting, vetting, and module management in a single binary. Popular frameworks include Gin and Echo for web, gRPC for services, and a strong container ecosystem (Docker and Kubernetes are written in Go).',
+    h3RustEcosystem: 'Rust Ecosystem',
+    rustEcosystemDesc: 'Rust has a rapidly growing ecosystem centered around crates.io and the cargo build system. Cargo handles dependencies, building, testing, documentation generation, and publishing. Popular frameworks include Actix-web and Axum for web, tonic for gRPC, and libraries like serde for serialization.',
+    h2UseCases: 'Use Cases: When to Choose Each',
+    h3ChooseGo: 'Choose Go When:',
+    goUseCases: 'Cloud-native services and microservices|DevOps and infrastructure tooling (CLI tools, Kubernetes operators)|API servers and web backends|Rapid prototyping with team onboarding speed|Network services and proxies|Projects where fast compilation matters',
+    h3ChooseRust: 'Choose Rust When:',
+    rustUseCases: 'Systems programming (OS, drivers, embedded)|Performance-critical applications (game engines, databases)|WebAssembly targets|Command-line tools that need small binaries and fast startup|Security-critical code where memory safety is paramount|Real-time systems where GC pauses are unacceptable',
+    h2Learning: 'Learning Curve',
+    learningIntro: 'The learning curve is one of the biggest differences between Go and Rust.',
+    goLearning: 'Go can be learned productively in a few days to a week. The language spec is small, the standard library is well-documented, and the conventions (gofmt, error handling patterns) are well-established. Most developers coming from Python, Java, or C can be productive quickly.',
+    rustLearning: 'Rust has a steeper learning curve, typically taking weeks to months to become productive. The ownership and borrowing system, lifetimes, trait bounds, and advanced type system features require significant investment. However, once mastered, Rust developers report that the compiler catches entire categories of bugs that would otherwise be found at runtime.',
+    h2Comparison: 'Feature Comparison Table',
+    thFeature: 'Feature',
+    h2Faq: 'Frequently Asked Questions',
+    faq1Q: 'Is Rust faster than Go?',
+    faq1A: 'In most benchmarks, Rust is 2-5x faster than Go for CPU-bound tasks and uses significantly less memory due to the absence of garbage collection. For I/O-bound tasks (web servers, database queries), the difference is smaller because the bottleneck is network or disk, not computation.',
+    faq2Q: 'Can Rust replace Go?',
+    faq2A: 'Not universally. Go excels in scenarios where development speed, team onboarding, and simplicity matter more than raw performance. Rust excels where performance, memory safety without GC, and zero-cost abstractions are critical. Many organizations use both: Go for services and Rust for performance-critical components.',
+    faq3Q: 'Which has better job prospects?',
+    faq3A: 'Go currently has more job listings due to its wider adoption in cloud infrastructure and web backends. Rust jobs are growing rapidly, especially in systems programming, blockchain, security, and companies like Amazon, Microsoft, and Google adopting Rust for critical infrastructure. Both are excellent for career growth.',
+    faq4Q: 'Is Go easier than Rust?',
+    faq4A: 'Yes, significantly. Go was designed for simplicity and can be learned in days. Rust requires understanding ownership, borrowing, lifetimes, and traits, which typically takes weeks to months. However, Rust catches more bugs at compile time, potentially saving debugging time later.',
+    faq5Q: 'Which should I learn first?',
+    faq5A: 'If you are new to systems programming, start with Go. Its simplicity lets you focus on learning concepts like concurrency and static typing without fighting the compiler. If you already know C/C++ or want to deeply understand memory management, Rust is a natural progression that teaches excellent programming habits.',
+  },
+  zh: {
+    title: 'Rust vs Go 2026：性能、内存安全和选择指南',
+    intro: 'Rust 和 Go 是 2026 年最流行的两种系统编程语言。两者都提供强大的并发支持、出色的工具链和不断增长的生态系统，但它们在设计上做出了根本不同的权衡。Go 优先考虑简单性和快速编译，而 Rust 优先考虑零成本抽象和无垃圾回收器的内存安全。',
+    h2Philosophy: '语言哲学',
+    goPhilosophy: 'Go 由 Google 的 Robert Griesemer、Rob Pike 和 Ken Thompson 于 2009 年创建。其设计理念以简单性、可读性和快速编译为中心。Go 有意省略了继承和运算符重载等特性，以保持语言的小巧和易学性。',
+    rustPhilosophy: 'Rust 由 Mozilla 创建，于 2015 年达到 1.0 版本。其设计理念以安全性、并发性和性能为中心。Rust 使用在编译时强制执行的所有权系统和借用规则来保证内存安全，而无需垃圾回收器。',
+    h2Performance: '性能比较',
+    perfIntro: '两种语言都生成编译的原生二进制文件，但它们的运行时特性存在显著差异。',
+    thMetric: '指标',
+    thGo: 'Go 1.23',
+    thRust: 'Rust 1.82',
+    metricCompile: '编译时间（中等项目）',
+    metricRuntime: '运行时性能',
+    metricMemory: '内存使用',
+    metricBinary: '二进制大小（hello world）',
+    metricStartup: '启动时间',
+    metricGC: '垃圾回收',
+    valGoCompile: '约 2-5 秒',
+    valRustCompile: '约 30-120 秒',
+    valGoRuntime: '良好（C 的 2-5 倍内）',
+    valRustRuntime: '优秀（与 C/C++ 持平）',
+    valGoMemory: '中等（GC 开销）',
+    valRustMemory: '极少（无 GC，零成本抽象）',
+    valGoBinary: '约 1.8 MB',
+    valRustBinary: '约 300 KB（stripped）',
+    valGoStartup: '快速（约 5ms）',
+    valRustStartup: '非常快（约 1ms）',
+    valGoGC: '是（低延迟、并发）',
+    valRustGC: '无（所有权系统）',
+    h2MemorySafety: '内存安全',
+    memoryIntro: '内存安全是 Rust 和 Go 采取根本不同方法的领域。',
+    h3GoMemory: 'Go：垃圾回收',
+    goMemoryDesc: 'Go 使用并发的三色标记-清除垃圾回收器。GC 与程序并发运行，在大多数情况下暂停时间低于 1ms。',
+    h3RustMemory: 'Rust：所有权和借用',
+    rustMemoryDesc: 'Rust 使用在编译时强制执行的所有权系统。每个值都有唯一的所有者，当所有者超出作用域时，值被丢弃。引用可以是共享的（不可变）或独占的（可变），但不能同时存在。',
+    h2Concurrency: '并发模型',
+    concurrencyIntro: '两种语言都擅长并发，但使用不同的范式。',
+    h3GoConcurrency: 'Go：Goroutine 和 Channel',
+    goConcurrencyDesc: 'Go 使用 goroutine，这是由 Go 运行时管理的轻量级绿色线程。你可以以极小的开销创建数百万个 goroutine。goroutine 之间使用 channel 通信。',
+    h3RustConcurrency: 'Rust：Async/Await 和线程',
+    rustConcurrencyDesc: 'Rust 同时提供操作系统线程和 async/await 并发机制。异步运行时（通常是 tokio 或 async-std）提供类似 goroutine 的轻量级任务系统。',
+    h2ErrorHandling: '错误处理',
+    h3GoErrors: 'Go：多返回值',
+    goErrorsDesc: 'Go 使用显式错误返回。可能失败的函数返回 (value, error) 元组。调用者必须显式检查错误。',
+    h3RustErrors: 'Rust：Result 和 Option 类型',
+    rustErrorsDesc: 'Rust 使用 Result<T, E> 和 Option<T> 类型进行错误处理。? 运算符提供简洁的错误传播。模式匹配强制执行穷举错误处理。',
+    h2Ecosystem: '生态系统和工具',
+    h3GoEcosystem: 'Go 生态系统',
+    goEcosystemDesc: 'Go 拥有成熟的生态系统和出色的标准库覆盖。go 工具在单个二进制文件中提供构建、测试、格式化和模块管理。',
+    h3RustEcosystem: 'Rust 生态系统',
+    rustEcosystemDesc: 'Rust 拥有以 crates.io 和 cargo 构建系统为中心的快速增长生态系统。cargo 处理依赖、构建、测试和发布。',
+    h2UseCases: '使用场景：何时选择哪个',
+    h3ChooseGo: '选择 Go 的场景：',
+    goUseCases: '云原生服务和微服务|DevOps 和基础设施工具|API 服务器和 Web 后端|快速原型开发|网络服务和代理|需要快速编译的项目',
+    h3ChooseRust: '选择 Rust 的场景：',
+    rustUseCases: '系统编程（操作系统、驱动、嵌入式）|性能关键应用（游戏引擎、数据库）|WebAssembly 目标|需要小二进制和快速启动的 CLI 工具|安全关键代码|实时系统',
+    h2Learning: '学习曲线',
+    learningIntro: '学习曲线是 Go 和 Rust 之间最大的差异之一。',
+    goLearning: 'Go 可以在几天到一周内学会并高效使用。语言规范小、标准库文档完善、约定成熟。',
+    rustLearning: 'Rust 的学习曲线更陡峭，通常需要数周到数月才能高效使用。所有权、借用系统、生命周期和特征约束需要大量投入。',
+    h2Comparison: '功能对比表',
+    thFeature: '功能',
+    h2Faq: '常见问题',
+    faq1Q: 'Rust 比 Go 快吗？',
+    faq1A: '在大多数基准测试中，Rust 在 CPU 密集型任务上比 Go 快 2-5 倍，并且由于没有垃圾回收而使用的内存明显更少。',
+    faq2Q: 'Rust 能取代 Go 吗？',
+    faq2A: '不能普遍取代。Go 在开发速度和简单性比原始性能更重要的场景中表现出色。许多组织同时使用两者。',
+    faq3Q: '哪个就业前景更好？',
+    faq3A: 'Go 目前的职位更多。Rust 的职位增长迅速，尤其是在系统编程和区块链领域。两者都适合职业发展。',
+    faq4Q: 'Go 比 Rust 容易吗？',
+    faq4A: '是的，明显更容易。Go 为简单性而设计，可以在几天内学会。Rust 需要理解所有权、借用、生命周期和特征。',
+    faq5Q: '应该先学哪个？',
+    faq5A: '如果你是系统编程新手，从 Go 开始。如果你已经了解 C/C++ 或想深入理解内存管理，Rust 是自然的进阶选择。',
+  },
+};
 
-export default function RustVsGo2026({ lang }: { lang: string }) {
-  return (
-    <>
-      <h2>Rust vs Go in 2026: A Comprehensive Comparison for Modern Development</h2>
-      <p>
-        Rust and Go have emerged as the two dominant systems programming languages of the modern era, each carving out significant territory in the software landscape. Both languages were designed to address shortcomings in existing languages, but they took fundamentally different approaches. Go prioritizes simplicity, fast compilation, and developer productivity, while Rust focuses on memory safety, zero-cost abstractions, and fine-grained control over system resources. Choosing between them requires understanding the trade-offs each language makes and how those trade-offs align with your project requirements.
-      </p>
-      <p>
-        This comparison examines both languages across performance, safety, concurrency, ecosystem maturity, developer experience, and real-world use cases as they stand in 2026.
-      </p>
-
-      <h2>Performance: Raw Speed and Efficiency</h2>
-      <p>
-        Rust and Go both compile to native machine code, giving them a significant advantage over interpreted languages. However, their runtime performance characteristics differ substantially due to their design choices.
-      </p>
-
-      <h3>Rust Performance</h3>
-      <p>
-        Rust achieves performance comparable to C and C++ through zero-cost abstractions. There is no garbage collector, no runtime overhead, and the compiler aggressively optimizes code. Ownership semantics allow Rust to make memory allocation decisions at compile time, eliminating runtime bookkeeping entirely.
-      </p>
-      <pre><code className="language-rust">{`// Rust: Zero-cost abstraction example
-// This iterator chain compiles to the same machine code as a hand-written loop
-fn sum_of_squares_even(numbers: &[i64]) -> i64 {
-    numbers.iter()
-        .filter(|&&n| n % 2 == 0)
-        .map(|&n| n * n)
-        .sum()
+const goMemoryCode = `// Go: Memory is managed by the garbage collector
+func processData() []byte {
+    data := make([]byte, 1024)  // allocated on heap
+    // ... use data ...
+    return data  // GC will free when no references remain
 }
-
-// Memory layout is predictable and cache-friendly
-#[repr(C)]
-struct Particle {
-    position: [f64; 3],
-    velocity: [f64; 3],
-    mass: f64,
-}
-
-// SIMD-friendly data layout for batch processing
-struct ParticleSystem {
-    positions_x: Vec<f64>,
-    positions_y: Vec<f64>,
-    positions_z: Vec<f64>,
-    velocities_x: Vec<f64>,
-    velocities_y: Vec<f64>,
-    velocities_z: Vec<f64>,
-    masses: Vec<f64>,
-}`}</code></pre>
-
-      <h3>Go Performance</h3>
-      <p>
-        Go delivers excellent performance for a garbage-collected language. The Go runtime includes a concurrent, tri-color mark-and-sweep garbage collector with sub-millisecond pause times. While this introduces some overhead compared to Rust, Go 1.22 and later versions have reduced GC latency significantly.
-      </p>
-      <pre><code className="language-go">{`// Go: High-performance patterns
-package main
-
-import (
-    "sync"
-    "runtime"
-)
-
-// Object pooling to reduce GC pressure
-var bufferPool = sync.Pool{
-    New: func() interface{} {
-        buf := make([]byte, 0, 4096)
-        return &buf
-    },
-}
-
-func processRequest(data []byte) []byte {
-    bufPtr := bufferPool.Get().(*[]byte)
-    buf := (*bufPtr)[:0]
-    defer func() {
-        *bufPtr = buf
-        bufferPool.Put(bufPtr)
-    }()
-
-    // Process using pooled buffer instead of allocating
-    buf = append(buf, data...)
-    // ... transform buf ...
-
-    result := make([]byte, len(buf))
-    copy(result, buf)
-    return result
-}
-
-// GOGC tuning for latency-sensitive applications
-func init() {
-    // Reduce GC frequency at the cost of more memory
-    runtime.SetGCPercent(200)
-    // Or use the newer memory limit approach
-    runtime.SetMemoryLimit(4 << 30) // 4 GB limit
-}`}</code></pre>
-
-      <h3>Performance Benchmarks Summary</h3>
-      <table>
-        <thead>
-          <tr><th>Benchmark</th><th>Rust</th><th>Go</th><th>Difference</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>HTTP server throughput</td><td>~850K req/s</td><td>~620K req/s</td><td>Rust ~37% faster</td></tr>
-          <tr><td>JSON serialization</td><td>~1.2 GB/s</td><td>~650 MB/s</td><td>Rust ~85% faster</td></tr>
-          <tr><td>Memory usage (web service)</td><td>~8 MB</td><td>~25 MB</td><td>Rust uses ~68% less</td></tr>
-          <tr><td>Startup time</td><td>~1 ms</td><td>~5 ms</td><td>Rust ~5x faster</td></tr>
-          <tr><td>GC pause time</td><td>0 (no GC)</td><td>&lt;0.5 ms</td><td>N/A</td></tr>
-          <tr><td>Compile time (medium project)</td><td>~45 seconds</td><td>~3 seconds</td><td>Go ~15x faster</td></tr>
-        </tbody>
-      </table>
-
-      <h2>Memory Safety: Two Different Approaches</h2>
-      <p>
-        Both Rust and Go are memory-safe languages, but they achieve safety through entirely different mechanisms. This distinction has profound implications for the types of bugs each language prevents and the runtime cost of that safety.
-      </p>
-
-      <h3>Rust: Compile-Time Safety via Ownership</h3>
-      <p>
-        Rust enforces memory safety at compile time through its ownership system, borrowing rules, and lifetime annotations. The compiler guarantees that there are no data races, no use-after-free bugs, no null pointer dereferences, and no buffer overflows -- all without any runtime cost.
-      </p>
-      <pre><code className="language-rust">{`// Rust ownership prevents data races at compile time
-use std::thread;
-
-fn main() {
-    let mut data = vec![1, 2, 3];
-
-    // This would NOT compile - data is moved into the closure
-    // let handle = thread::spawn(|| {
-    //     data.push(4);
-    // });
-    // println!("{:?}", data); // Error: value used after move
-
-    // Correct: transfer ownership explicitly
-    let handle = thread::spawn(move || {
-        data.push(4);
-        data  // Return ownership
-    });
-
-    let data = handle.join().unwrap();
-    println!("{:?}", data); // [1, 2, 3, 4]
-}
-
-// Lifetimes ensure references are always valid
-fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
-    if x.len() > y.len() { x } else { y }
-}
-
-// The compiler catches dangling references
-// fn dangling() -> &str {
-//     let s = String::from("hello");
-//     &s  // Error: s is dropped here, reference would dangle
-// }`}</code></pre>
-
-      <h3>Go: Runtime Safety via Garbage Collection</h3>
-      <p>
-        Go achieves memory safety through garbage collection and runtime checks. The GC automatically frees unreachable memory, preventing use-after-free and memory leaks. Go also includes bounds checking on array and slice accesses at runtime, preventing buffer overflows.
-      </p>
-      <pre><code className="language-go">{`// Go uses the race detector for concurrent safety
-// Run with: go run -race main.go
-package main
-
-import (
-    "fmt"
-    "sync"
-)
 
 func main() {
-    // Mutex-based synchronization
-    var mu sync.Mutex
-    counter := 0
-
-    var wg sync.WaitGroup
-    for i := 0; i < 1000; i++ {
-        wg.Add(1)
-        go func() {
-            defer wg.Done()
-            mu.Lock()
-            counter++
-            mu.Unlock()
-        }()
+    for i := 0; i < 1000000; i++ {
+        result := processData()
+        _ = result
+        // GC handles cleanup automatically
     }
-    wg.Wait()
-    fmt.Println(counter) // Always 1000
+}`;
 
-    // Go catches data races at runtime, not compile time
-    // The race detector is a testing tool, not a guarantee
-}`}</code></pre>
+const rustMemoryCode = `// Rust: Ownership system manages memory at compile time
+fn process_data() -> Vec\u003cu8\u003e {
+    let data = vec![0u8; 1024];  // allocated on heap
+    data  // ownership transferred to caller
+}   // if not returned, data is dropped here
 
-      <h2>Concurrency Models</h2>
-      <p>
-        Both languages offer powerful concurrency primitives, but their models reflect different philosophies. Go is built around communicating sequential processes (CSP), while Rust provides low-level concurrency building blocks with compile-time safety guarantees.
-      </p>
+fn main() {
+    let result = process_data();  // result owns the data
+    // result is dropped at end of scope, memory freed
 
-      <h3>Go: Goroutines and Channels</h3>
-      <p>
-        Go's concurrency model is one of its strongest features. Goroutines are lightweight, multiplexed onto OS threads by the Go runtime, and cost only about 2 KB of initial stack space. Channels provide type-safe communication between goroutines, making concurrent programs easy to reason about.
-      </p>
-      <pre><code className="language-go">{`package main
-
-import (
-    "context"
-    "fmt"
-    "time"
-)
-
-// Fan-out / fan-in pattern
-func pipeline(ctx context.Context, urls []string) <-chan Result {
-    results := make(chan Result, len(urls))
-
-    // Fan out: spawn a goroutine per URL
-    var wg sync.WaitGroup
-    for _, url := range urls {
-        wg.Add(1)
-        go func(u string) {
-            defer wg.Done()
-            select {
-            case <-ctx.Done():
-                return
-            case results <- fetch(u):
-            }
-        }(url)
-    }
-
-    // Close results channel when all goroutines complete
-    go func() {
-        wg.Wait()
-        close(results)
-    }()
-
-    return results
+    // Borrowing: share without transferring ownership
+    let data = vec![1, 2, 3];
+    let sum = calculate_sum(&data);  // borrow (immutable ref)
+    println!("Data: {:?}, Sum: {}", data, sum);
 }
 
-// Select enables non-blocking channel operations
-func processWithTimeout(ch <-chan int, timeout time.Duration) {
+fn calculate_sum(data: &[u8]) -> u32 {
+    data.iter().map(|&x| x as u32).sum()
+}`;
+
+const goConcurrencyCode = `// Go: Goroutines and channels
+func main() {
+    ch := make(chan string, 10)
+
+    // Spawn goroutines
+    for i := 0; i < 10; i++ {
+        go func(id int) {
+            result := fmt.Sprintf("Worker %d done", id)
+            ch \u003c- result  // send to channel
+        }(i)
+    }
+
+    // Collect results
+    for i := 0; i < 10; i++ {
+        fmt.Println(\u003c-ch)  // receive from channel
+    }
+}
+
+// Select for multiplexing channels
+func multiplex(ch1, ch2 \u003c-chan string) {
     for {
         select {
-        case val, ok := <-ch:
-            if !ok {
-                return // Channel closed
-            }
-            fmt.Println("Received:", val)
-        case <-time.After(timeout):
-            fmt.Println("Timeout waiting for value")
+        case msg := \u003c-ch1:
+            fmt.Println("ch1:", msg)
+        case msg := \u003c-ch2:
+            fmt.Println("ch2:", msg)
+        case \u003c-time.After(5 * time.Second):
+            fmt.Println("timeout")
             return
         }
     }
-}`}</code></pre>
+}`;
 
-      <h3>Rust: Async/Await and Fearless Concurrency</h3>
-      <p>
-        Rust uses an async/await model powered by the Tokio or async-std runtimes. The compiler enforces thread safety through the Send and Sync traits, making it impossible to accidentally share data unsafely between threads. Rust calls this "fearless concurrency" because the type system prevents entire categories of concurrency bugs.
-      </p>
-      <pre><code className="language-rust">{`use tokio::sync::mpsc;
-use tokio::time::{timeout, Duration};
+const rustConcurrencyCode = `// Rust: Async/await with tokio
+use tokio::sync::mpsc;
 
-// Async pipeline with backpressure
-async fn pipeline(urls: Vec<String>) -> Vec<Result<Response, Error>> {
-    let (tx, mut rx) = mpsc::channel(32); // Bounded channel for backpressure
+#[tokio::main]
+async fn main() {
+    let (tx, mut rx) = mpsc::channel(10);
 
-    // Spawn concurrent tasks
-    for url in urls {
+    for i in 0..10 {
         let tx = tx.clone();
         tokio::spawn(async move {
-            let result = reqwest::get(&url).await;
-            let _ = tx.send(result).await; // Backpressure if channel is full
+            let result = format!("Worker {} done", i);
+            tx.send(result).await.unwrap();
         });
     }
-    drop(tx); // Drop the original sender so rx knows when all senders are done
+    drop(tx);  // close sender
 
-    let mut results = Vec::new();
-    while let Some(result) = rx.recv().await {
-        results.push(result);
+    while let Some(msg) = rx.recv().await {
+        println!("{}", msg);
     }
-    results
 }
 
-// Structured concurrency with JoinSet
-use tokio::task::JoinSet;
+// OS threads with Arc\u003cMutex\u003cT\u003e\u003e for shared state
+use std::sync::{Arc, Mutex};
+use std::thread;
 
-async fn process_batch(items: Vec<Item>) -> Vec<Output> {
-    let mut set = JoinSet::new();
+fn threaded_example() {
+    let counter = Arc::new(Mutex::new(0));
+    let mut handles = vec![];
 
-    for item in items {
-        set.spawn(async move {
-            process_item(item).await
+    for _ in 0..10 {
+        let counter = Arc::clone(&counter);
+        let handle = thread::spawn(move || {
+            let mut num = counter.lock().unwrap();
+            *num += 1;
         });
+        handles.push(handle);
     }
 
-    let mut outputs = Vec::new();
-    while let Some(result) = set.join_next().await {
-        match result {
-            Ok(output) => outputs.push(output),
-            Err(e) => eprintln!("Task failed: {e}"),
-        }
+    for handle in handles {
+        handle.join().unwrap();
     }
-    outputs
-}`}</code></pre>
+}`;
 
-      <h2>Ecosystem and Tooling</h2>
-      <p>
-        Both languages have mature ecosystems in 2026, though their strengths lie in different areas. The package management, tooling quality, and library availability are critical factors for real-world projects.
-      </p>
-
-      <table>
-        <thead>
-          <tr><th>Aspect</th><th>Rust (Cargo / crates.io)</th><th>Go (go mod / pkg.go.dev)</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Package manager</td><td>Cargo (built-in, excellent)</td><td>go mod (built-in, simple)</td></tr>
-          <tr><td>Package count</td><td>~150,000 crates</td><td>~400,000 modules</td></tr>
-          <tr><td>Build system</td><td>Cargo (integrated)</td><td>go build (integrated)</td></tr>
-          <tr><td>Linter</td><td>Clippy (comprehensive)</td><td>golangci-lint (configurable)</td></tr>
-          <tr><td>Formatter</td><td>rustfmt</td><td>gofmt (opinionated)</td></tr>
-          <tr><td>LSP support</td><td>rust-analyzer (excellent)</td><td>gopls (excellent)</td></tr>
-          <tr><td>Testing</td><td>Built-in + criterion</td><td>Built-in testing package</td></tr>
-          <tr><td>Web frameworks</td><td>Axum, Actix Web</td><td>Gin, Echo, Chi, net/http</td></tr>
-          <tr><td>ORM / Database</td><td>SQLx, Diesel, SeaORM</td><td>GORM, sqlc, Ent</td></tr>
-          <tr><td>Cloud SDKs</td><td>AWS SDK, Azure SDK</td><td>AWS SDK, GCP SDK, Azure SDK</td></tr>
-        </tbody>
-      </table>
-
-      <h3>Developer Productivity</h3>
-      <p>
-        Go is designed for fast iteration. Its compilation speed, simple syntax, and the absence of generics complexity (before Go 1.18) created a language where developers could be productive from day one. Go's error handling with explicit if-err checks is verbose but predictable.
-      </p>
-      <p>
-        Rust has a steeper learning curve due to ownership, lifetimes, and its expressive type system. However, once a Rust program compiles, it tends to work correctly. The compiler catches so many bugs at build time that many Rust developers report spending less time debugging runtime issues compared to other languages.
-      </p>
-
-      <h2>Error Handling Philosophies</h2>
-      <p>
-        Error handling reveals a fundamental philosophical difference between the two languages.
-      </p>
-      <pre><code className="language-go">{`// Go: Explicit error checking at every call site
-func readConfig(path string) (*Config, error) {
+const goErrorCode = `// Go: Explicit error returns
+func readFile(path string) ([]byte, error) {
     data, err := os.ReadFile(path)
     if err != nil {
-        return nil, fmt.Errorf("reading config file: %w", err)
+        return nil, fmt.Errorf("reading %s: %w", path, err)
     }
-
-    var config Config
-    if err := json.Unmarshal(data, &config); err != nil {
-        return nil, fmt.Errorf("parsing config: %w", err)
-    }
-
-    if err := config.Validate(); err != nil {
-        return nil, fmt.Errorf("invalid config: %w", err)
-    }
-
-    return &config, nil
-}`}</code></pre>
-
-      <pre><code className="language-rust">{`// Rust: The ? operator chains errors concisely
-use anyhow::{Context, Result};
-
-fn read_config(path: &str) -> Result<Config> {
-    let data = std::fs::read_to_string(path)
-        .context("reading config file")?;
-
-    let config: Config = serde_json::from_str(&data)
-        .context("parsing config")?;
-
-    config.validate()
-        .context("invalid config")?;
-
-    Ok(config)
+    return data, nil
 }
 
-// Custom error types with thiserror
-use thiserror::Error;
+func main() {
+    data, err := readFile("config.json")
+    if err != nil {
+        log.Fatal(err)
+    }
+    fmt.Println(string(data))
+}`;
 
-#[derive(Error, Debug)]
-enum AppError {
-    #[error("database error: {0}")]
-    Database(#[from] sqlx::Error),
+const rustErrorCode = `// Rust: Result type with ? operator
+use std::fs;
+use std::io;
 
-    #[error("authentication failed: {reason}")]
-    Auth { reason: String },
+fn read_file(path: &str) -> Result\u003cString, io::Error\u003e {
+    let data = fs::read_to_string(path)?;  // ? propagates error
+    Ok(data)
+}
 
-    #[error("resource not found: {0}")]
-    NotFound(String),
-}`}</code></pre>
+fn main() -> Result\u003c(), Box\u003cdyn std::error::Error\u003e\u003e {
+    let data = read_file("config.json")?;
+    println!("{}", data);
 
-      <h2>Use Cases: Where Each Language Excels</h2>
-      <h3>Choose Rust When You Need</h3>
-      <ul>
-        <li><strong>Maximum performance</strong>: Game engines, rendering pipelines, HFT systems, database engines (e.g., SurrealDB, TiKV)</li>
-        <li><strong>Memory-constrained environments</strong>: Embedded systems, IoT devices, WebAssembly modules</li>
-        <li><strong>Security-critical software</strong>: Cryptographic libraries, operating system components, browser engines (Servo, Stylo in Firefox)</li>
-        <li><strong>Systems programming</strong>: Device drivers, file systems, networking stacks</li>
-        <li><strong>WebAssembly</strong>: Rust has first-class WASM support and produces compact binaries</li>
-        <li><strong>CLI tools</strong>: ripgrep, fd, bat, delta -- many beloved developer tools are written in Rust</li>
+    // Pattern matching for exhaustive handling
+    match read_file("missing.txt") {
+        Ok(content) => println!("{}", content),
+        Err(e) => eprintln!("Error: {}", e),
+    }
+
+    // Option\u003cT\u003e for nullable values (no null in Rust)
+    let numbers = vec![1, 2, 3];
+    match numbers.get(5) {
+        Some(val) => println!("Found: {}", val),
+        None => println!("Index out of bounds"),
+    }
+
+    Ok(())
+}`;
+
+const goToolchainCode = `# Go toolchain
+go build ./...          # compile
+go test ./...           # test
+go fmt ./...            # format code
+go vet ./...            # static analysis
+go mod tidy             # manage dependencies
+
+# Popular Go projects: Docker, Kubernetes, Terraform, Prometheus
+# Web: Gin, Echo, Fiber, Chi
+# gRPC: google.golang.org/grpc`;
+
+const rustToolchainCode = `# Cargo toolchain
+cargo build             # compile
+cargo test              # test
+cargo fmt               # format code
+cargo clippy            # linting
+cargo doc --open        # generate docs
+cargo bench             # benchmarks
+
+# Popular Rust projects: ripgrep, fd, bat, Deno, Alacritty
+# Web: Actix-web, Axum, Rocket, Warp
+# Async: Tokio, async-std`;
+
+export default function RustVsGo2026({ lang }: { lang: string }) {
+  const t = translations[lang] || translations.en;
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: t.faq1Q, acceptedAnswer: { '@type': 'Answer', text: t.faq1A } },
+      { '@type': 'Question', name: t.faq2Q, acceptedAnswer: { '@type': 'Answer', text: t.faq2A } },
+      { '@type': 'Question', name: t.faq3Q, acceptedAnswer: { '@type': 'Answer', text: t.faq3A } },
+      { '@type': 'Question', name: t.faq4Q, acceptedAnswer: { '@type': 'Answer', text: t.faq4A } },
+      { '@type': 'Question', name: t.faq5Q, acceptedAnswer: { '@type': 'Answer', text: t.faq5A } },
+    ],
+  };
+
+  return (
+    <article style={{ maxWidth: 'none' }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+
+      <p style={{ fontSize: '1.125rem', lineHeight: '1.75', marginBottom: '2rem' }}>{t.intro}</p>
+
+      {/* Language Philosophy */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: 700, marginTop: '2.5rem', marginBottom: '1rem' }}>{t.h2Philosophy}</h2>
+      <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginTop: '2rem', marginBottom: '0.75rem' }}>Go</h3>
+      <p style={{ marginBottom: '1rem' }}>{t.goPhilosophy}</p>
+      <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginTop: '2rem', marginBottom: '0.75rem' }}>Rust</h3>
+      <p style={{ marginBottom: '1rem' }}>{t.rustPhilosophy}</p>
+
+      {/* Performance */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: 700, marginTop: '2.5rem', marginBottom: '1rem' }}>{t.h2Performance}</h2>
+      <p style={{ marginBottom: '1rem' }}>{t.perfIntro}</p>
+      <div style={{ overflowX: 'auto' }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+          <thead style={{ backgroundColor: 'rgba(55,65,81,0.5)' }}>
+            <tr>
+              <th style={{ border: '1px solid #374151', padding: '0.5rem 1rem', textAlign: 'left' }}>{t.thMetric}</th>
+              <th style={{ border: '1px solid #374151', padding: '0.5rem 1rem', textAlign: 'left' }}>{t.thGo}</th>
+              <th style={{ border: '1px solid #374151', padding: '0.5rem 1rem', textAlign: 'left' }}>{t.thRust}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              [t.metricCompile, t.valGoCompile, t.valRustCompile],
+              [t.metricRuntime, t.valGoRuntime, t.valRustRuntime],
+              [t.metricMemory, t.valGoMemory, t.valRustMemory],
+              [t.metricBinary, t.valGoBinary, t.valRustBinary],
+              [t.metricStartup, t.valGoStartup, t.valRustStartup],
+              [t.metricGC, t.valGoGC, t.valRustGC],
+            ].map(([metric, go, rust], i) => (
+              <tr key={i}>
+                <td style={{ border: '1px solid #374151', padding: '0.5rem 1rem' }}>{metric}</td>
+                <td style={{ border: '1px solid #374151', padding: '0.5rem 1rem' }}>{go}</td>
+                <td style={{ border: '1px solid #374151', padding: '0.5rem 1rem' }}>{rust}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Memory Safety */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: 700, marginTop: '2.5rem', marginBottom: '1rem' }}>{t.h2MemorySafety}</h2>
+      <p style={{ marginBottom: '1rem' }}>{t.memoryIntro}</p>
+
+      <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginTop: '2rem', marginBottom: '0.75rem' }}>{t.h3GoMemory}</h3>
+      <p style={{ marginBottom: '1rem' }}>{t.goMemoryDesc}</p>
+      <pre style={{ backgroundColor: '#111827', padding: '1rem', borderRadius: '0.5rem', overflowX: 'auto', fontSize: '0.875rem' }}><code>{goMemoryCode}</code></pre>
+
+      <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginTop: '2rem', marginBottom: '0.75rem' }}>{t.h3RustMemory}</h3>
+      <p style={{ marginBottom: '1rem' }}>{t.rustMemoryDesc}</p>
+      <pre style={{ backgroundColor: '#111827', padding: '1rem', borderRadius: '0.5rem', overflowX: 'auto', fontSize: '0.875rem' }}><code>{rustMemoryCode}</code></pre>
+
+      {/* Concurrency */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: 700, marginTop: '2.5rem', marginBottom: '1rem' }}>{t.h2Concurrency}</h2>
+      <p style={{ marginBottom: '1rem' }}>{t.concurrencyIntro}</p>
+
+      <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginTop: '2rem', marginBottom: '0.75rem' }}>{t.h3GoConcurrency}</h3>
+      <p style={{ marginBottom: '1rem' }}>{t.goConcurrencyDesc}</p>
+      <pre style={{ backgroundColor: '#111827', padding: '1rem', borderRadius: '0.5rem', overflowX: 'auto', fontSize: '0.875rem' }}><code>{goConcurrencyCode}</code></pre>
+
+      <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginTop: '2rem', marginBottom: '0.75rem' }}>{t.h3RustConcurrency}</h3>
+      <p style={{ marginBottom: '1rem' }}>{t.rustConcurrencyDesc}</p>
+      <pre style={{ backgroundColor: '#111827', padding: '1rem', borderRadius: '0.5rem', overflowX: 'auto', fontSize: '0.875rem' }}><code>{rustConcurrencyCode}</code></pre>
+
+      {/* Error Handling */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: 700, marginTop: '2.5rem', marginBottom: '1rem' }}>{t.h2ErrorHandling}</h2>
+
+      <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginTop: '2rem', marginBottom: '0.75rem' }}>{t.h3GoErrors}</h3>
+      <p style={{ marginBottom: '1rem' }}>{t.goErrorsDesc}</p>
+      <pre style={{ backgroundColor: '#111827', padding: '1rem', borderRadius: '0.5rem', overflowX: 'auto', fontSize: '0.875rem' }}><code>{goErrorCode}</code></pre>
+
+      <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginTop: '2rem', marginBottom: '0.75rem' }}>{t.h3RustErrors}</h3>
+      <p style={{ marginBottom: '1rem' }}>{t.rustErrorsDesc}</p>
+      <pre style={{ backgroundColor: '#111827', padding: '1rem', borderRadius: '0.5rem', overflowX: 'auto', fontSize: '0.875rem' }}><code>{rustErrorCode}</code></pre>
+
+      {/* Ecosystem */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: 700, marginTop: '2.5rem', marginBottom: '1rem' }}>{t.h2Ecosystem}</h2>
+      <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginTop: '2rem', marginBottom: '0.75rem' }}>{t.h3GoEcosystem}</h3>
+      <p style={{ marginBottom: '1rem' }}>{t.goEcosystemDesc}</p>
+      <pre style={{ backgroundColor: '#111827', padding: '1rem', borderRadius: '0.5rem', overflowX: 'auto', fontSize: '0.875rem' }}><code>{goToolchainCode}</code></pre>
+
+      <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginTop: '2rem', marginBottom: '0.75rem' }}>{t.h3RustEcosystem}</h3>
+      <p style={{ marginBottom: '1rem' }}>{t.rustEcosystemDesc}</p>
+      <pre style={{ backgroundColor: '#111827', padding: '1rem', borderRadius: '0.5rem', overflowX: 'auto', fontSize: '0.875rem' }}><code>{rustToolchainCode}</code></pre>
+
+      {/* Use Cases */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: 700, marginTop: '2.5rem', marginBottom: '1rem' }}>{t.h2UseCases}</h2>
+
+      <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginTop: '2rem', marginBottom: '0.75rem' }}>{t.h3ChooseGo}</h3>
+      <ul style={{ paddingLeft: '1.5rem', marginBottom: '1rem' }}>
+        {t.goUseCases.split('|').map((item, i) => (
+          <li key={i} style={{ marginBottom: '0.5rem' }}>{item}</li>
+        ))}
       </ul>
 
-      <h3>Choose Go When You Need</h3>
-      <ul>
-        <li><strong>Cloud-native services</strong>: Kubernetes, Docker, Terraform, Prometheus -- the cloud ecosystem is built on Go</li>
-        <li><strong>Rapid API development</strong>: Go excels at building HTTP services with minimal boilerplate</li>
-        <li><strong>Team scalability</strong>: Go's simplicity means new team members become productive quickly</li>
-        <li><strong>DevOps and infrastructure tooling</strong>: CLI tools, automation scripts, monitoring agents</li>
-        <li><strong>Microservices</strong>: Fast startup, small binaries, excellent standard library for networking</li>
-        <li><strong>Prototyping distributed systems</strong>: Goroutines make it natural to express concurrent workflows</li>
+      <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginTop: '2rem', marginBottom: '0.75rem' }}>{t.h3ChooseRust}</h3>
+      <ul style={{ paddingLeft: '1.5rem', marginBottom: '1rem' }}>
+        {t.rustUseCases.split('|').map((item, i) => (
+          <li key={i} style={{ marginBottom: '0.5rem' }}>{item}</li>
+        ))}
       </ul>
 
-      <h2>Cross-Compilation and Deployment</h2>
-      <p>
-        Both languages excel at producing statically linked binaries that can be deployed without runtime dependencies, making them ideal for containerized deployments.
-      </p>
-      <pre><code className="language-bash">{`# Go: Cross-compilation is trivial
-GOOS=linux GOARCH=amd64 go build -o myapp-linux
-GOOS=darwin GOARCH=arm64 go build -o myapp-mac
-GOOS=windows GOARCH=amd64 go build -o myapp.exe
+      {/* Learning Curve */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: 700, marginTop: '2.5rem', marginBottom: '1rem' }}>{t.h2Learning}</h2>
+      <p style={{ marginBottom: '1rem' }}>{t.learningIntro}</p>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
+        <div style={{ backgroundColor: 'rgba(59,130,246,0.1)', border: '1px solid rgba(59,130,246,0.3)', borderRadius: '0.5rem', padding: '1rem' }}>
+          <h4 style={{ fontWeight: 600, marginBottom: '0.5rem', color: '#60a5fa' }}>Go</h4>
+          <p style={{ fontSize: '0.875rem' }}>{t.goLearning}</p>
+        </div>
+        <div style={{ backgroundColor: 'rgba(249,115,22,0.1)', border: '1px solid rgba(249,115,22,0.3)', borderRadius: '0.5rem', padding: '1rem' }}>
+          <h4 style={{ fontWeight: 600, marginBottom: '0.5rem', color: '#fb923c' }}>Rust</h4>
+          <p style={{ fontSize: '0.875rem' }}>{t.rustLearning}</p>
+        </div>
+      </div>
 
-# Rust: Cross-compilation with target triples
-rustup target add x86_64-unknown-linux-musl
-cargo build --release --target x86_64-unknown-linux-musl
+      {/* Feature Comparison */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: 700, marginTop: '2.5rem', marginBottom: '1rem' }}>{t.h2Comparison}</h2>
+      <div style={{ overflowX: 'auto' }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+          <thead style={{ backgroundColor: 'rgba(55,65,81,0.5)' }}>
+            <tr>
+              <th style={{ border: '1px solid #374151', padding: '0.5rem 1rem', textAlign: 'left' }}>{t.thFeature}</th>
+              <th style={{ border: '1px solid #374151', padding: '0.5rem 1rem', textAlign: 'left' }}>Go</th>
+              <th style={{ border: '1px solid #374151', padding: '0.5rem 1rem', textAlign: 'left' }}>Rust</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['Generics', 'Yes (since 1.18)', 'Yes (from day one)'],
+              ['Inheritance', 'No (embedding)', 'No (traits + composition)'],
+              ['Null safety', 'No (nil exists)', 'Yes (Option type)'],
+              ['Pattern matching', 'switch (limited)', 'match (exhaustive)'],
+              ['Macros', 'go generate', 'Declarative + procedural'],
+              ['C interop', 'cgo (overhead)', 'FFI (zero-cost)'],
+              ['Cross-compilation', 'GOOS/GOARCH', 'rustup target add'],
+              ['Package manager', 'go modules', 'cargo + crates.io'],
+              ['Language server', 'gopls', 'rust-analyzer'],
+            ].map(([feat, go, rust], i) => (
+              <tr key={i}>
+                <td style={{ border: '1px solid #374151', padding: '0.5rem 1rem' }}>{feat}</td>
+                <td style={{ border: '1px solid #374151', padding: '0.5rem 1rem' }}>{go}</td>
+                <td style={{ border: '1px solid #374151', padding: '0.5rem 1rem' }}>{rust}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
 
-# Docker: Both produce tiny containers
-# Go
-FROM scratch
-COPY myapp /myapp
-ENTRYPOINT ["/myapp"]
-
-# Rust
-FROM scratch
-COPY --from=builder /app/target/x86_64-unknown-linux-musl/release/myapp /myapp
-ENTRYPOINT ["/myapp"]`}</code></pre>
-
-      <h2>Learning Curve and Team Adoption</h2>
-      <p>
-        Go was specifically designed to be learnable in a weekend. Its specification is short, the language has few keywords, and there is generally one obvious way to do things. This makes Go an excellent choice for large teams where consistency matters more than expressiveness.
-      </p>
-      <p>
-        Rust requires a significant investment to learn effectively. The ownership and borrowing concepts are unlike anything in mainstream languages, and fighting the borrow checker is a common experience for newcomers. However, Rust developers consistently report high satisfaction once they become proficient, and the 2025 Stack Overflow survey ranked Rust as the most admired language for the ninth consecutive year.
-      </p>
-
-      <table>
-        <thead>
-          <tr><th>Factor</th><th>Go</th><th>Rust</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Time to first productive code</td><td>1-2 weeks</td><td>1-3 months</td></tr>
-          <tr><td>Time to proficiency</td><td>1-2 months</td><td>6-12 months</td></tr>
-          <tr><td>Hiring pool size</td><td>Large and growing</td><td>Smaller but passionate</td></tr>
-          <tr><td>Code review complexity</td><td>Low (simple syntax)</td><td>Higher (lifetimes, traits)</td></tr>
-          <tr><td>Onboarding new team members</td><td>Fast</td><td>Requires training</td></tr>
-        </tbody>
-      </table>
-
-      <h2>The Interoperability Option</h2>
-      <p>
-        It is worth noting that Rust and Go are not mutually exclusive. Many organizations use both: Go for their service layer and rapid API development, and Rust for performance-critical components. Rust can expose C-compatible FFI that Go can call via cgo, and both languages can communicate over gRPC or message queues. Using each language where it excels is a pragmatic approach adopted by companies like Dropbox, Discord, and Cloudflare.
-      </p>
-
-      <h2>Conclusion: Making the Right Choice</h2>
-      <p>
-        There is no universally better language between Rust and Go. The right choice depends on your constraints. If your primary concern is development velocity, team scalability, and cloud-native infrastructure, Go is likely the better choice. If you need maximum performance, guaranteed memory safety without a garbage collector, or are building systems-level software, Rust is the stronger option.
-      </p>
-      <p>
-        Both languages continue to evolve rapidly. Go has added generics, improved its garbage collector, and expanded its standard library. Rust has improved compile times, stabilized async traits, and grown its ecosystem of production-ready libraries. In 2026, both are excellent choices for building reliable, performant software -- the question is which set of trade-offs best matches your project.
-      </p>
-      <p>
-        Try converting data structures between languages with our <Link href={`/${lang}/tools/json-to-go`}>JSON to Go Struct Converter</Link> or <Link href={`/${lang}/tools/json-to-rust`}>JSON to Rust Converter</Link>. For more language comparisons, read our <Link href={`/${lang}/blog/typescript-vs-javascript`}>TypeScript vs JavaScript</Link> and <Link href={`/${lang}/blog/python-vs-javascript`}>Python vs JavaScript</Link> guides.
-      </p>
-    </>
+      {/* FAQ */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: 700, marginTop: '2.5rem', marginBottom: '1rem' }}>{t.h2Faq}</h2>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+        {[
+          [t.faq1Q, t.faq1A], [t.faq2Q, t.faq2A], [t.faq3Q, t.faq3A],
+          [t.faq4Q, t.faq4A], [t.faq5Q, t.faq5A],
+        ].map(([q, a], i) => (
+          <div key={i} style={{ border: '1px solid #374151', borderRadius: '0.5rem', padding: '1rem' }}>
+            <h3 style={{ fontSize: '1.125rem', fontWeight: 600, marginBottom: '0.5rem' }}>{q}</h3>
+            <p style={{ color: '#d1d5db' }}>{a}</p>
+          </div>
+        ))}
+      </div>
+    </article>
   );
 }
