@@ -1,418 +1,352 @@
 'use client';
-
+import React from 'react';
 import Link from 'next/link';
 
-export default function TypescriptUtilityTypes({ lang }: { lang: string }) {
-  return (
-    <>
-      <h2>What Are TypeScript Utility Types?</h2>
-      <p>
-        <strong>TypeScript utility types</strong> are built-in generic types that let you transform existing types into new ones without rewriting them. They are essential for writing DRY (Don&apos;t Repeat Yourself), type-safe TypeScript code. Instead of manually defining variations of your types, utility types like <code>Partial</code>, <code>Pick</code>, <code>Omit</code>, and <code>Record</code> let you derive new types from existing ones.
-      </p>
-      <p>
-        This cheat sheet covers every built-in utility type with practical examples, common patterns, and real-world use cases that you can use in your TypeScript projects today.
-      </p>
+const t: Record<string, Record<string, string>> = {
+  en: {
+    title: 'TypeScript Utility Types: Partial, Pick, Omit, Record, and Mapped Types Guide',
+    intro: `TypeScript utility types are built-in generic types that transform existing types into new ones. Instead of rewriting type definitions, you can use Partial, Pick, Omit, Record, Required, Readonly, ReturnType, and more to create precise types with minimal code. This guide explains every essential utility type with real-world examples.`,
+    s1Title: 'Partial, Required, and Readonly',
+    s2Title: 'Pick, Omit, and Extract',
+    s3Title: 'Record and Mapped Types',
+    s4Title: 'ReturnType, Parameters, and Function Utilities',
+    s5Title: 'Conditional Types and Infer',
+    s6Title: 'Combining Utility Types',
+    faqTitle: 'Frequently Asked Questions',
+    conclusionTitle: 'Conclusion',
+    relatedTitle: 'Related Tools',
+  },
+  fr: { title: 'Types utilitaires TypeScript', intro: 'Les types utilitaires TypeScript transforment les types existants en nouveaux types.', s1Title: 'Partial, Required et Readonly', s2Title: 'Pick, Omit et Extract', s3Title: 'Record et types mappés', s4Title: 'ReturnType et utilitaires de fonctions', s5Title: 'Types conditionnels et Infer', s6Title: 'Combiner les types utilitaires', faqTitle: 'Questions fréquentes', conclusionTitle: 'Conclusion', relatedTitle: 'Outils associés' },
+  de: { title: 'TypeScript Utility Types Leitfaden', intro: 'TypeScript Utility Types transformieren bestehende Typen in neue Typen.', s1Title: 'Partial, Required und Readonly', s2Title: 'Pick, Omit und Extract', s3Title: 'Record und Mapped Types', s4Title: 'ReturnType und Funktions-Utilities', s5Title: 'Bedingte Typen und Infer', s6Title: 'Utility Types kombinieren', faqTitle: 'Häufig gestellte Fragen', conclusionTitle: 'Fazit', relatedTitle: 'Verwandte Tools' },
+  es: { title: 'Tipos de utilidad de TypeScript: guía completa', intro: 'Los tipos de utilidad de TypeScript transforman tipos existentes en nuevos tipos.', s1Title: 'Partial, Required y Readonly', s2Title: 'Pick, Omit y Extract', s3Title: 'Record y tipos mapeados', s4Title: 'ReturnType y utilidades de funciones', s5Title: 'Tipos condicionales e Infer', s6Title: 'Combinando tipos de utilidad', faqTitle: 'Preguntas frecuentes', conclusionTitle: 'Conclusión', relatedTitle: 'Herramientas relacionadas' },
+  it: { title: 'Tipi di utilità TypeScript', intro: 'I tipi di utilità TypeScript trasformano i tipi esistenti in nuovi tipi.', s1Title: 'Partial, Required e Readonly', s2Title: 'Pick, Omit ed Extract', s3Title: 'Record e tipi mappati', s4Title: 'ReturnType e utilità per funzioni', s5Title: 'Tipi condizionali e Infer', s6Title: 'Combinare i tipi di utilità', faqTitle: 'Domande frequenti', conclusionTitle: 'Conclusione', relatedTitle: 'Strumenti correlati' },
+  pt: { title: 'Tipos utilitários do TypeScript', intro: 'Os tipos utilitários do TypeScript transformam tipos existentes em novos tipos.', s1Title: 'Partial, Required e Readonly', s2Title: 'Pick, Omit e Extract', s3Title: 'Record e tipos mapeados', s4Title: 'ReturnType e utilitários de função', s5Title: 'Tipos condicionais e Infer', s6Title: 'Combinando tipos utilitários', faqTitle: 'Perguntas frequentes', conclusionTitle: 'Conclusão', relatedTitle: 'Ferramentas relacionadas' },
+  nl: { title: 'TypeScript utility types gids', intro: 'TypeScript utility types transformeren bestaande typen in nieuwe typen.', s1Title: 'Partial, Required en Readonly', s2Title: 'Pick, Omit en Extract', s3Title: 'Record en mapped types', s4Title: 'ReturnType en functie-utilities', s5Title: 'Voorwaardelijke typen en Infer', s6Title: 'Utility types combineren', faqTitle: 'Veelgestelde vragen', conclusionTitle: 'Conclusie', relatedTitle: 'Gerelateerde tools' },
+  pl: { title: 'Typy narzędziowe TypeScript', intro: 'Typy narzędziowe TypeScript przekształcają istniejące typy w nowe typy.', s1Title: 'Partial, Required i Readonly', s2Title: 'Pick, Omit i Extract', s3Title: 'Record i typy mapowane', s4Title: 'ReturnType i narzędzia funkcji', s5Title: 'Typy warunkowe i Infer', s6Title: 'Łączenie typów narzędziowych', faqTitle: 'Często zadawane pytania', conclusionTitle: 'Podsumowanie', relatedTitle: 'Powiązane narzędzia' },
+  sv: { title: 'TypeScript utility types guide', intro: 'TypeScript utility types omvandlar befintliga typer till nya typer.', s1Title: 'Partial, Required och Readonly', s2Title: 'Pick, Omit och Extract', s3Title: 'Record och mappade typer', s4Title: 'ReturnType och funktionsverktyg', s5Title: 'Villkorliga typer och Infer', s6Title: 'Kombinera utility types', faqTitle: 'Vanliga frågor', conclusionTitle: 'Slutsats', relatedTitle: 'Relaterade verktyg' },
+  no: { title: 'TypeScript utility types guide', intro: 'TypeScript utility types transformerer eksisterende typer til nye typer.', s1Title: 'Partial, Required og Readonly', s2Title: 'Pick, Omit og Extract', s3Title: 'Record og kartlagte typer', s4Title: 'ReturnType og funksjonsverktøy', s5Title: 'Betingede typer og Infer', s6Title: 'Kombinere utility types', faqTitle: 'Ofte stilte spørsmål', conclusionTitle: 'Konklusjon', relatedTitle: 'Relaterte verktøy' },
+  zh: { title: 'TypeScript 工具类型完整指南：Partial、Pick、Omit、Record 和映射类型', intro: 'TypeScript 工具类型是内置的泛型类型，可将现有类型转换为新类型。', s1Title: 'Partial、Required 和 Readonly', s2Title: 'Pick、Omit 和 Extract', s3Title: 'Record 和映射类型', s4Title: 'ReturnType、Parameters 和函数工具', s5Title: '条件类型和 Infer', s6Title: '组合工具类型', faqTitle: '常见问题', conclusionTitle: '总结', relatedTitle: '相关工具' },
+  ja: { title: 'TypeScript ユーティリティ型完全ガイド', intro: 'TypeScript ユーティリティ型は、既存の型を新しい型に変換する組み込みのジェネリック型です。', s1Title: 'Partial、Required、Readonly', s2Title: 'Pick、Omit、Extract', s3Title: 'Record とマップ型', s4Title: 'ReturnType と関数ユーティリティ', s5Title: '条件型と Infer', s6Title: 'ユーティリティ型の組み合わせ', faqTitle: 'よくある質問', conclusionTitle: 'まとめ', relatedTitle: '関連ツール' },
+  ko: { title: 'TypeScript 유틸리티 타입 완벽 가이드', intro: 'TypeScript 유틸리티 타입은 기존 타입을 새로운 타입으로 변환하는 내장 제네릭 타입입니다.', s1Title: 'Partial, Required 및 Readonly', s2Title: 'Pick, Omit 및 Extract', s3Title: 'Record 및 매핑된 타입', s4Title: 'ReturnType 및 함수 유틸리티', s5Title: '조건부 타입과 Infer', s6Title: '유틸리티 타입 조합', faqTitle: '자주 묻는 질문', conclusionTitle: '결론', relatedTitle: '관련 도구' },
+  id: { title: 'Panduan Lengkap TypeScript Utility Types', intro: 'Tipe utilitas TypeScript adalah tipe generik bawaan yang mengubah tipe yang ada menjadi tipe baru.', s1Title: 'Partial, Required, dan Readonly', s2Title: 'Pick, Omit, dan Extract', s3Title: 'Record dan Mapped Types', s4Title: 'ReturnType dan Utilitas Fungsi', s5Title: 'Tipe Kondisional dan Infer', s6Title: 'Menggabungkan Utility Types', faqTitle: 'Pertanyaan yang Sering Diajukan', conclusionTitle: 'Kesimpulan', relatedTitle: 'Alat Terkait' },
+  th: { title: 'คู่มือ TypeScript Utility Types ฉบับสมบูรณ์', intro: 'TypeScript utility types เป็นประเภทเจเนอริกในตัวที่แปลงประเภทที่มีอยู่เป็นประเภทใหม่', s1Title: 'Partial, Required และ Readonly', s2Title: 'Pick, Omit และ Extract', s3Title: 'Record และ Mapped Types', s4Title: 'ReturnType และ Function Utilities', s5Title: 'Conditional Types และ Infer', s6Title: 'การรวม Utility Types', faqTitle: 'คำถามที่พบบ่อย', conclusionTitle: 'สรุป', relatedTitle: 'เครื่องมือที่เกี่ยวข้อง' },
+};
 
-      <h2>Partial&lt;T&gt;: Make All Properties Optional</h2>
-      <p>
-        <code>Partial&lt;T&gt;</code> constructs a type with all properties of <code>T</code> set to optional. This is extremely useful for update functions and patch operations.
-      </p>
-      <pre><code className="language-typescript">{`interface User {
-  id: string;
+export default function TypescriptUtilityTypes({ lang = 'en' }: { lang?: string }) {
+  const s = t[lang] || t['en'];
+
+  const partialRequiredReadonly = `interface User {
+  id: number;
   name: string;
   email: string;
   age: number;
-  role: 'admin' | 'user';
 }
 
-// All fields become optional
-type PartialUser = Partial<User>;
-// Equivalent to:
-// {
-//   id?: string;
-//   name?: string;
-//   email?: string;
-//   age?: number;
-//   role?: 'admin' | 'user';
-// }
+// Partial<T> - makes all properties optional
+type UserUpdate = Partial<User>;
+// { id?: number; name?: string; email?: string; age?: number }
 
-// Common use: Update functions (PATCH operations)
-async function updateUser(id: string, updates: Partial<User>): Promise<User> {
-  const user = await db.users.findById(id);
-  return db.users.update(id, { ...user, ...updates });
+function updateUser(id: number, data: Partial<User>): User {
+  return { ...getCurrentUser(id), ...data };
 }
+updateUser(1, { name: 'Alice' }); // OK - only update name
 
-// Usage - only pass the fields you want to update
-await updateUser('123', { name: 'New Name' });
-await updateUser('123', { age: 31, role: 'admin' });`}</code></pre>
-
-      <h2>Required&lt;T&gt;: Make All Properties Required</h2>
-      <p>
-        <code>Required&lt;T&gt;</code> is the opposite of <code>Partial</code>. It makes all properties required, removing optional markers.
-      </p>
-      <pre><code className="language-typescript">{`interface Config {
+// Required<T> - makes all properties required
+interface Config {
   host?: string;
   port?: number;
-  debug?: boolean;
   timeout?: number;
 }
+type StrictConfig = Required<Config>;
+// { host: string; port: number; timeout: number }
 
-// All fields become required
-type RequiredConfig = Required<Config>;
-// {
-//   host: string;
-//   port: number;
-//   debug: boolean;
-//   timeout: number;
-// }
+// Readonly<T> - makes all properties readonly
+type ImmutableUser = Readonly<User>;
+const user: ImmutableUser = { id: 1, name: 'Alice', email: 'a@b.com', age: 30 };
+// user.name = 'Bob'; // Error: Cannot assign to 'name' because it is read-only
 
-// Common use: Merge defaults with user config
-function createServer(userConfig: Config): RequiredConfig {
-  const defaults: RequiredConfig = {
-    host: 'localhost',
-    port: 3000,
-    debug: false,
-    timeout: 30000,
-  };
-  return { ...defaults, ...userConfig };
-}`}</code></pre>
-
-      <h2>Pick&lt;T, K&gt;: Select Specific Properties</h2>
-      <p>
-        <code>Pick&lt;T, K&gt;</code> creates a type by picking a set of properties from <code>T</code>. Use it when you need a subset of an existing type.
-      </p>
-      <pre><code className="language-typescript">{`interface User {
-  id: string;
-  name: string;
-  email: string;
-  password: string;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-// Pick only the fields you need
-type UserPublicProfile = Pick<User, 'id' | 'name' | 'email'>;
-// { id: string; name: string; email: string; }
-
-type UserCredentials = Pick<User, 'email' | 'password'>;
-// { email: string; password: string; }
-
-// Common use: API response types
-function getPublicProfile(userId: string): Promise<UserPublicProfile> {
-  // Only return safe-to-expose fields
-  return db.users.findById(userId, { select: ['id', 'name', 'email'] });
-}
-
-// Common use: Form data types
-type LoginForm = Pick<User, 'email' | 'password'>;
-
-function handleLogin(data: LoginForm) {
-  // data has only email and password
-  return auth.signIn(data.email, data.password);
-}`}</code></pre>
-
-      <h2>Omit&lt;T, K&gt;: Exclude Specific Properties</h2>
-      <p>
-        <code>Omit&lt;T, K&gt;</code> creates a type by removing specified properties from <code>T</code>. It is the inverse of <code>Pick</code>.
-      </p>
-      <pre><code className="language-typescript">{`interface User {
-  id: string;
-  name: string;
-  email: string;
-  password: string;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-// Remove sensitive and auto-generated fields
-type CreateUserInput = Omit<User, 'id' | 'createdAt' | 'updatedAt'>;
-// { name: string; email: string; password: string; }
-
-type UserResponse = Omit<User, 'password'>;
-// { id: string; name: string; email: string; createdAt: Date; updatedAt: Date; }
-
-// Common use: API input types
-async function createUser(input: CreateUserInput): Promise<UserResponse> {
-  const user = await db.users.create({
-    ...input,
-    id: generateId(),
-    createdAt: new Date(),
-    updatedAt: new Date(),
-  });
-  const { password, ...response } = user;
-  return response;
-}
-
-// Combine with Partial for update inputs
-type UpdateUserInput = Partial<Omit<User, 'id' | 'createdAt' | 'updatedAt'>>;
-// All fields optional, excludes id and timestamps`}</code></pre>
-
-      <h2>Record&lt;K, V&gt;: Key-Value Mapping Types</h2>
-      <p>
-        <code>Record&lt;K, V&gt;</code> constructs a type with keys of type <code>K</code> and values of type <code>V</code>. It is perfect for dictionaries, maps, and lookup objects.
-      </p>
-      <pre><code className="language-typescript">{`// Simple key-value mapping
-type StatusMessages = Record<number, string>;
-const httpMessages: StatusMessages = {
-  200: 'OK',
-  404: 'Not Found',
-  500: 'Internal Server Error',
-};
-
-// Union type as keys
-type Theme = 'light' | 'dark' | 'system';
-type ThemeColors = Record<Theme, { bg: string; text: string; accent: string }>;
-
-const themes: ThemeColors = {
-  light: { bg: '#ffffff', text: '#000000', accent: '#3b82f6' },
-  dark:  { bg: '#1a1a1a', text: '#ffffff', accent: '#60a5fa' },
-  system: { bg: '#f5f5f5', text: '#333333', accent: '#2563eb' },
-};
-
-// i18n translations
-type Locale = 'en' | 'fr' | 'de' | 'es' | 'zh' | 'ja';
-type Translations = Record<Locale, Record<string, string>>;
-
-const translations: Translations = {
-  en: { greeting: 'Hello', goodbye: 'Goodbye' },
-  fr: { greeting: 'Bonjour', goodbye: 'Au revoir' },
-  de: { greeting: 'Hallo', goodbye: 'Auf Wiedersehen' },
-  es: { greeting: 'Hola', goodbye: 'Adios' },
-  zh: { greeting: '你好', goodbye: '再见' },
-  ja: { greeting: 'こんにちは', goodbye: 'さようなら' },
-};
-
-// Permission mapping
-type Role = 'admin' | 'editor' | 'viewer';
-type Permission = 'read' | 'write' | 'delete';
-type RolePermissions = Record<Role, Permission[]>;
-
-const permissions: RolePermissions = {
-  admin: ['read', 'write', 'delete'],
-  editor: ['read', 'write'],
-  viewer: ['read'],
-};`}</code></pre>
-
-      <h2>Readonly&lt;T&gt;: Immutable Types</h2>
-      <p>
-        <code>Readonly&lt;T&gt;</code> makes all properties of <code>T</code> read-only, preventing reassignment after creation.
-      </p>
-      <pre><code className="language-typescript">{`interface AppConfig {
-  apiUrl: string;
-  apiKey: string;
-  maxRetries: number;
-  timeout: number;
-}
-
-// All properties become readonly
-type FrozenConfig = Readonly<AppConfig>;
-
-const config: FrozenConfig = {
-  apiUrl: 'https://api.example.com',
-  apiKey: 'sk-...',
-  maxRetries: 3,
-  timeout: 5000,
-};
-
-// config.apiUrl = 'new-url';  // Error: Cannot assign to 'apiUrl'
-
-// Common use: Function parameters that shouldn't be mutated
-function processItems(items: Readonly<string[]>): string[] {
-  // items.push('new');     // Error: push does not exist on readonly
-  // items[0] = 'modified'; // Error: Index signature only permits reading
-  return items.map(item => item.toUpperCase());  // OK: creates new array
-}
-
-// Deep readonly (recursive)
+// Deep Readonly (custom utility)
 type DeepReadonly<T> = {
   readonly [K in keyof T]: T[K] extends object ? DeepReadonly<T[K]> : T[K];
-};`}</code></pre>
+};`;
 
-      <h2>Exclude&lt;T, U&gt; and Extract&lt;T, U&gt;: Filter Union Types</h2>
-      <pre><code className="language-typescript">{`type Status = 'pending' | 'active' | 'suspended' | 'deleted';
+  const pickOmitExtract = `interface Product {
+  id: number;
+  name: string;
+  price: number;
+  stock: number;
+  category: string;
+  description: string;
+}
 
-// Exclude: Remove members from union
-type ActiveStatus = Exclude<Status, 'deleted' | 'suspended'>;
-// 'pending' | 'active'
+// Pick<T, K> - select only the specified keys
+type ProductCard = Pick<Product, 'id' | 'name' | 'price'>;
+// { id: number; name: string; price: number }
 
-// Extract: Keep only matching members
-type InactiveStatus = Extract<Status, 'suspended' | 'deleted'>;
-// 'suspended' | 'deleted'
+// Useful for API response shaping
+function getProductCard(p: Product): ProductCard {
+  return { id: p.id, name: p.name, price: p.price };
+}
 
-// Common use: Filter event types
-type AppEvent =
-  | { type: 'click'; x: number; y: number }
-  | { type: 'keydown'; key: string }
-  | { type: 'scroll'; position: number }
-  | { type: 'resize'; width: number; height: number };
+// Omit<T, K> - remove specified keys
+type ProductForm = Omit<Product, 'id' | 'stock'>;
+// { name: string; price: number; category: string; description: string }
 
-// Extract specific event types
-type MouseEvent = Extract<AppEvent, { type: 'click' }>;
-// { type: 'click'; x: number; y: number }
+// Exclude<T, U> - from union type, exclude assignable to U
+type Direction = 'north' | 'south' | 'east' | 'west';
+type Horizontal = Exclude<Direction, 'north' | 'south'>;
+// 'east' | 'west'
 
-type InputEvent = Extract<AppEvent, { type: 'click' | 'keydown' }>;
-// { type: 'click'; x: number; y: number } | { type: 'keydown'; key: string }
+// Extract<T, U> - from union type, keep only assignable to U
+type Vertical = Extract<Direction, 'north' | 'south'>;
+// 'north' | 'south'
 
-// Exclude specific event types
-type NonMouseEvent = Exclude<AppEvent, { type: 'click' }>;
-// { type: 'keydown'; key: string } | { type: 'scroll'; ... } | { type: 'resize'; ... }`}</code></pre>
-
-      <h2>NonNullable&lt;T&gt;: Remove null and undefined</h2>
-      <pre><code className="language-typescript">{`type MaybeString = string | null | undefined;
-
+// NonNullable<T> - removes null and undefined
+type MaybeString = string | null | undefined;
 type DefiniteString = NonNullable<MaybeString>;
-// string
+// string`;
 
-// Common use: After null checks
-function processUser(user: User | null | undefined) {
-  if (!user) throw new Error('User required');
+  const recordMapped = `// Record<K, V> - create object type with known keys
+type Role = 'admin' | 'user' | 'guest';
+type Permissions = Record<Role, string[]>;
 
-  // user is now NonNullable<User | null | undefined> = User
-  console.log(user.name);
-}
+const permissions: Permissions = {
+  admin: ['read', 'write', 'delete'],
+  user:  ['read', 'write'],
+  guest: ['read'],
+};
 
-// With array filtering
-const items: (string | null | undefined)[] = ['a', null, 'b', undefined, 'c'];
-const filtered: string[] = items.filter(
-  (item): item is NonNullable<typeof item> => item != null
-);
-// ['a', 'b', 'c']`}</code></pre>
+// Record with nested types
+type ApiResponse<T> = Record<string, T>;
+type UserMap = Record<number, User>;
 
-      <h2>ReturnType&lt;T&gt; and Parameters&lt;T&gt;: Function Type Extraction</h2>
-      <pre><code className="language-typescript">{`// ReturnType: Extract the return type of a function
+// Mapped Types - transform every property
+type Nullable<T> = { [K in keyof T]: T[K] | null };
+type Optional<T> = { [K in keyof T]?: T[K] };
+type Stringify<T> = { [K in keyof T]: string };
+
+// Mapped types with modifiers
+type Mutable<T> = { -readonly [K in keyof T]: T[K] }; // remove readonly
+type Complete<T> = { [K in keyof T]-?: T[K] };         // remove optional
+
+// Remapping keys with 'as'
+type Getters<T> = {
+  [K in keyof T as \`get\${Capitalize<string & K>}\`]: () => T[K];
+};
+type UserGetters = Getters<User>;
+// { getId: () => number; getName: () => string; ... }`;
+
+  const functionUtilities = `// ReturnType<T> - extract return type of a function
 function createUser(name: string, email: string) {
-  return {
-    id: generateId(),
-    name,
-    email,
-    createdAt: new Date(),
-  };
+  return { id: Math.random(), name, email, createdAt: new Date() };
 }
+type CreatedUser = ReturnType<typeof createUser>;
+// { id: number; name: string; email: string; createdAt: Date }
 
-type NewUser = ReturnType<typeof createUser>;
-// { id: string; name: string; email: string; createdAt: Date }
-
-// Parameters: Extract parameter types as a tuple
+// Parameters<T> - extract parameter types as tuple
 type CreateUserParams = Parameters<typeof createUser>;
 // [name: string, email: string]
 
-// Common use: Wrapper functions
-function loggedCreateUser(...args: Parameters<typeof createUser>): ReturnType<typeof createUser> {
-  console.log('Creating user with:', args);
-  return createUser(...args);
+// ConstructorParameters<T> - for class constructors
+class Server {
+  constructor(public host: string, public port: number) {}
 }
+type ServerArgs = ConstructorParameters<typeof Server>;
+// [host: string, port: number]
 
-// Awaited: Unwrap Promise types
-async function fetchUser(id: string): Promise<User> {
-  const res = await fetch(\`/api/users/\${id}\`);
-  return res.json();
-}
+// InstanceType<T> - get instance type from constructor
+type ServerInstance = InstanceType<typeof Server>;
+// Server
 
-type FetchedUser = Awaited<ReturnType<typeof fetchUser>>;
-// User (unwrapped from Promise<User>)`}</code></pre>
+// Awaited<T> - unwrap Promise types
+type UserPromise = Promise<User>;
+type ResolvedUser = Awaited<UserPromise>;
+// User
 
-      <h2>Quick Reference: All Built-in Utility Types</h2>
-      <pre><code className="language-text">{`Utility Type              Purpose                        Example
-------------              -------                        -------
-Partial<T>                Make all props optional         Partial<User>
-Required<T>               Make all props required         Required<Config>
-Readonly<T>               Make all props readonly         Readonly<State>
-Pick<T, K>                Select specific props           Pick<User, 'id' | 'name'>
-Omit<T, K>                Remove specific props           Omit<User, 'password'>
-Record<K, V>              Key-value mapping type          Record<string, number>
-Exclude<T, U>             Remove types from union         Exclude<Status, 'deleted'>
-Extract<T, U>             Keep matching union types       Extract<Event, {type: 'click'}>
-NonNullable<T>            Remove null/undefined           NonNullable<string | null>
-ReturnType<T>             Get function return type        ReturnType<typeof fn>
-Parameters<T>             Get function param types        Parameters<typeof fn>
-ConstructorParameters<T>  Get constructor param types     ConstructorParameters<typeof Cls>
-InstanceType<T>           Get class instance type         InstanceType<typeof MyClass>
-ThisParameterType<T>      Get 'this' parameter type       ThisParameterType<typeof fn>
-OmitThisParameter<T>      Remove 'this' from fn type     OmitThisParameter<typeof fn>
-Awaited<T>                Unwrap Promise type             Awaited<Promise<User>>
-Uppercase<S>              Convert string type upper       Uppercase<'hello'>  // 'HELLO'
-Lowercase<S>              Convert string type lower       Lowercase<'HELLO'>  // 'hello'
-Capitalize<S>             Capitalize first char           Capitalize<'hello'> // 'Hello'
-Uncapitalize<S>           Lowercase first char            Uncapitalize<'Hello'> // 'hello'`}</code></pre>
+async function fetchUser(): Promise<User> { /* ... */ return {} as User; }
+type FetchResult = Awaited<ReturnType<typeof fetchUser>>;
+// User`;
 
-      <h2>Advanced Patterns: Combining Utility Types</h2>
-      <pre><code className="language-typescript">{`// Pattern 1: API Resource Types
-interface Resource {
-  id: string;
-  createdAt: Date;
-  updatedAt: Date;
-}
+  const conditionalInfer = `// Conditional Types
+type IsArray<T> = T extends any[] ? true : false;
+type CheckString = IsArray<string>;  // false
+type CheckArray  = IsArray<string[]>; // true
 
-interface User extends Resource {
-  name: string;
+// infer - extract type from generic
+type UnpackArray<T> = T extends (infer U)[] ? U : T;
+type StringItem = UnpackArray<string[]>; // string
+type NumberItem  = UnpackArray<number>;  // number
+
+// Extract Promise value
+type UnpackPromise<T> = T extends Promise<infer U> ? U : T;
+type PromiseValue = UnpackPromise<Promise<number>>; // number
+
+// Get first element of tuple
+type First<T extends any[]> = T extends [infer F, ...any[]] ? F : never;
+type Head = First<[string, number, boolean]>; // string
+
+// Distributive conditional types
+type Flatten<T> = T extends Array<infer U> ? U : T;
+type Mixed = Flatten<string[] | number | boolean[]>;
+// string | number | boolean`;
+
+  const combining = `// Real-world example: API layer with combined utility types
+
+interface ApiUser {
+  id: number;
+  username: string;
   email: string;
-  role: 'admin' | 'user';
+  password: string;   // should never leave server
+  createdAt: string;
+  updatedAt: string;
 }
 
-// Create input: no auto-generated fields
-type CreateInput<T extends Resource> = Omit<T, keyof Resource>;
-type CreateUserInput = CreateInput<User>;
-// { name: string; email: string; role: 'admin' | 'user' }
+// Safe user for frontend (strip sensitive fields)
+type SafeUser = Omit<ApiUser, 'password'>;
 
-// Update input: optional fields, no auto-generated
-type UpdateInput<T extends Resource> = Partial<Omit<T, keyof Resource>>;
-type UpdateUserInput = UpdateInput<User>;
-// { name?: string; email?: string; role?: 'admin' | 'user' }
+// User creation form (no server-generated fields)
+type CreateUserDto = Omit<ApiUser, 'id' | 'createdAt' | 'updatedAt'>;
 
-// Pattern 2: Make specific fields optional
-type OptionalFields<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>;
-type UserWithOptionalEmail = OptionalFields<User, 'email'>;
-// { id: string; name: string; role: ...; email?: string; ... }
+// Patch request - all fields optional except id
+type PatchUserDto = Partial<Omit<ApiUser, 'id'>> & Pick<ApiUser, 'id'>;
 
-// Pattern 3: Make specific fields required
-type RequireFields<T, K extends keyof T> = T & Required<Pick<T, K>>;
-type ConfigWithHost = RequireFields<Partial<Config>, 'host'>;
-// { host: string; port?: number; debug?: boolean; timeout?: number }
+// Validation errors map
+type ValidationErrors<T> = Partial<Record<keyof T, string>>;
+type UserErrors = ValidationErrors<CreateUserDto>;
+// { username?: string; email?: string; password?: string }
 
-// Pattern 4: Branded types for type safety
-type Brand<T, B> = T & { __brand: B };
-type UserId = Brand<string, 'UserId'>;
-type PostId = Brand<string, 'PostId'>;
+// Generic API response wrapper
+type ApiResult<T, E = string> =
+  | { success: true; data: T }
+  | { success: false; error: E };
 
-function getUser(id: UserId): Promise<User> { /* ... */ }
-function getPost(id: PostId): Promise<Post> { /* ... */ }
+type UserResult = ApiResult<SafeUser>;`;
 
-const userId = '123' as UserId;
-const postId = '456' as PostId;
+  const faqs = [
+    {
+      q: 'What is the difference between Partial<T> and Optional<T>?',
+      a: 'Partial<T> is a built-in TypeScript utility type that makes all properties of T optional. Optional<T> is not built-in — it\'s a common name for custom mapped types that do the same thing. You should always prefer the built-in Partial<T> over writing your own.'
+    },
+    {
+      q: 'When should I use Pick vs Omit?',
+      a: 'Use Pick when you want to select a small subset of properties from a large type (you know what you WANT). Use Omit when you want most properties but need to exclude a few (you know what you DON\'T WANT). For removing 1-2 properties, Omit is cleaner. For selecting 1-2 properties, Pick is cleaner.'
+    },
+    {
+      q: 'What is the difference between Record<string, T> and { [key: string]: T }?',
+      a: 'They are nearly identical in behavior, but Record<string, T> is more readable and the idiomatic TypeScript style. Record<string, T> also plays better with other utility types. One subtle difference: Record<never, T> produces an empty object type {}, while the index signature always allows any string key.'
+    },
+    {
+      q: 'How do I create a deep Partial type?',
+      a: 'TypeScript\'s built-in Partial<T> is shallow — it only makes the top level optional. For deep partial, create a recursive utility type: type DeepPartial<T> = { [K in keyof T]?: T[K] extends object ? DeepPartial<T[K]> : T[K] }. Libraries like ts-toolbelt provide this and many more deep utility types.'
+    },
+    {
+      q: 'What are template literal types and how do they relate to mapped types?',
+      a: 'Template literal types (introduced in TS 4.1) let you create string types with embedded type expressions: type EventName<T extends string> = `on${Capitalize<T>}`. Combined with mapped types, you can generate entire interfaces of event handlers, getters, setters, etc., from a single source-of-truth type.'
+    },
+    {
+      q: 'Can I use utility types with interfaces and type aliases both?',
+      a: 'Yes. TypeScript utility types work with both interface and type alias definitions interchangeably. Partial<MyInterface> and Partial<MyType> both work the same way. The choice between interface and type alias is mostly stylistic, though interfaces support declaration merging while type aliases do not.'
+    },
+  ];
 
-getUser(userId);   // OK
-// getUser(postId); // Error: PostId is not assignable to UserId`}</code></pre>
+  return (
+    <article className="prose prose-lg max-w-none">
+      <h1 className="text-3xl font-bold mb-4">{s.title}</h1>
+      <p className="text-lg text-gray-700 mb-8">{s.intro}</p>
 
-      <h2>Frequently Asked Questions</h2>
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold mb-4">{s.s1Title}</h2>
+        <p className="mb-4">
+          These three utility types transform the mutability and optionality of every property at once. They are the most commonly used utility types in TypeScript codebases.
+        </p>
+        <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm mb-4">
+          <code>{partialRequiredReadonly}</code>
+        </pre>
+      </section>
 
-      <h3>When should I use Pick vs Omit?</h3>
-      <p>
-        Use <code>Pick</code> when you want a small subset of a large type (e.g., selecting 2-3 fields from a 10-field type). Use <code>Omit</code> when you want most fields but need to exclude a few (e.g., removing a password field from a user type). As a rule of thumb, use whichever requires listing fewer properties.
-      </p>
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold mb-4">{s.s2Title}</h2>
+        <p className="mb-4">
+          Pick and Omit let you create new types by selecting or removing properties. Extract and Exclude operate on union types. These are essential for creating DTOs (Data Transfer Objects) and API shapes.
+        </p>
+        <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm mb-4">
+          <code>{pickOmitExtract}</code>
+        </pre>
+      </section>
 
-      <h3>Does Partial work on nested objects?</h3>
-      <p>
-        No. <code>Partial</code> is shallow -- it only makes the top-level properties optional. Nested object properties remain required. For deep partial behavior, you need a custom recursive type like <code>DeepPartial</code>.
-      </p>
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold mb-4">{s.s3Title}</h2>
+        <p className="mb-4">
+          Record creates object types with a fixed set of keys. Mapped types iterate over union types or object keys to transform every property systematically.
+        </p>
+        <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm mb-4">
+          <code>{recordMapped}</code>
+        </pre>
+      </section>
 
-      <h3>Can I combine multiple utility types?</h3>
-      <p>
-        Yes, utility types can be freely composed. Common combinations include <code>Partial&lt;Omit&lt;T, K&gt;&gt;</code> for update inputs, <code>Required&lt;Pick&lt;T, K&gt;&gt;</code> for mandatory field subsets, and intersection types with <code>&amp;</code> to merge utility type results.
-      </p>
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold mb-4">{s.s4Title}</h2>
+        <p className="mb-4">
+          Function utility types let you extract type information from functions and classes without duplicating type definitions. They're especially useful when working with third-party libraries that don't export their types.
+        </p>
+        <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm mb-4">
+          <code>{functionUtilities}</code>
+        </pre>
+      </section>
 
-      <h3>Do utility types have runtime overhead?</h3>
-      <p>
-        No. TypeScript utility types exist only at compile time and are completely erased during compilation. They have zero runtime cost -- they only affect type checking during development.
-      </p>
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold mb-4">{s.s5Title}</h2>
+        <p className="mb-4">
+          Conditional types express if-else logic at the type level. The <code>infer</code> keyword lets you capture and name types within conditional expressions, enabling powerful type extraction patterns.
+        </p>
+        <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm mb-4">
+          <code>{conditionalInfer}</code>
+        </pre>
+      </section>
 
-      <h2>Related Tools and Guides</h2>
-      <ul>
-        <li><Link href={`/${lang}/tools/json-to-typescript`}>JSON to TypeScript Converter</Link> - Generate TypeScript interfaces from JSON</li>
-        <li><Link href={`/${lang}/tools/json-to-zod`}>JSON to Zod Schema</Link> - Generate runtime validation schemas</li>
-        <li><Link href={`/${lang}/blog/typescript-generics-explained`}>TypeScript Generics Explained</Link> - Master generics in TypeScript</li>
-        <li><Link href={`/${lang}/blog/typescript-vs-javascript-when-to-convert`}>TypeScript vs JavaScript</Link> - When to convert your project</li>
-        <li><Link href={`/${lang}/blog/json-to-typescript-complete-guide`}>JSON to TypeScript Guide</Link> - Convert JSON data to types</li>
-      </ul>
-    </>
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold mb-4">{s.s6Title}</h2>
+        <p className="mb-4">
+          The real power of utility types comes from combining them. Here's a real-world example showing how to build a complete API type system from a single source type:
+        </p>
+        <pre className="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm mb-4">
+          <code>{combining}</code>
+        </pre>
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold mb-4">{s.faqTitle}</h2>
+        <div className="space-y-6">
+          {faqs.map((faq, i) => (
+            <div key={i} className="border border-gray-200 rounded-lg p-5">
+              <h3 className="font-semibold text-gray-900 mb-2">{faq.q}</h3>
+              <p className="text-gray-700">{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mb-10">
+        <h2 className="text-2xl font-semibold mb-4">{s.conclusionTitle}</h2>
+        <p className="mb-4">
+          TypeScript utility types are force multipliers for your type system. Instead of maintaining dozens of similar interfaces that drift out of sync, define one source-of-truth type and derive all variants with Partial, Pick, Omit, and friends. Your codebase becomes easier to maintain and refactor as requirements change.
+        </p>
+        <p>
+          Start by auditing your codebase for interfaces that are near-duplicates of each other — those are prime candidates for utility type refactoring. Tools like the viadreams.cc JSON formatter and diff tool can help you compare complex type structures visually.
+        </p>
+      </section>
+
+      <section className="mb-6">
+        <h2 className="text-2xl font-semibold mb-4">{s.relatedTitle}</h2>
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+          <Link href="/tools/json-formatter" className="block p-3 bg-blue-50 rounded-lg text-blue-700 hover:bg-blue-100 font-medium text-sm">JSON Formatter</Link>
+          <Link href="/tools/json-diff-tool" className="block p-3 bg-blue-50 rounded-lg text-blue-700 hover:bg-blue-100 font-medium text-sm">JSON Diff Tool</Link>
+          <Link href="/tools/yaml-validator" className="block p-3 bg-blue-50 rounded-lg text-blue-700 hover:bg-blue-100 font-medium text-sm">YAML Validator</Link>
+          <Link href="/tools/regex-tester" className="block p-3 bg-blue-50 rounded-lg text-blue-700 hover:bg-blue-100 font-medium text-sm">Regex Tester</Link>
+          <Link href="/tools/jwt-decoder" className="block p-3 bg-blue-50 rounded-lg text-blue-700 hover:bg-blue-100 font-medium text-sm">JWT Decoder</Link>
+          <Link href="/tools/base64-decoder" className="block p-3 bg-blue-50 rounded-lg text-blue-700 hover:bg-blue-100 font-medium text-sm">Base64 Decoder</Link>
+        </div>
+      </section>
+    </article>
   );
 }

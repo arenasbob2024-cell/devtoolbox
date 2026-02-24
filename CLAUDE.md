@@ -11,7 +11,7 @@
 - **线上地址**: https://viadreams.cc
 - **仓库**: devtoolbox（GitHub 已同步）
 - **技术栈**: Next.js 16 (App Router) + TypeScript + Tailwind CSS
-- **部署**: Vercel（`npx vercel --prod --yes`）
+- **部署**: Vultr VPS (137.220.59.5)，通过 PM2 + Nginx 自托管
 
 ---
 
@@ -87,8 +87,16 @@ npm run dev
 # 构建
 npm run build
 
-# 部署到 Vercel 生产环境
-npx vercel --prod --yes
+# 部署到生产环境（服务器上执行）
+# 方式1：使用 deploy.sh
+bash /var/www/devtoolbox/deploy.sh
+
+# 方式2：手动部署
+cd /var/www/devtoolbox
+git pull origin main
+npm install --production=false
+NODE_OPTIONS='--max-old-space-size=4096' npm run build
+pm2 restart devtoolbox
 
 # 修复 zh 编码（如需）
 node scripts/fix-zh-encoding.js
@@ -107,7 +115,44 @@ node scripts/generate-ja-ko.js
 
 ---
 
-## 7. 当前状态
+## 7. 部署架构
+
+| 组件 | 配置 |
+|------|------|
+| **服务器** | Vultr VPS (137.220.59.5) |
+| **域名** | viadreams.cc / www.viadreams.cc |
+| **系统** | Ubuntu 22.04 LTS |
+| **应用运行** | PM2 (进程管理) |
+| **反向代理** | Nginx + Let's Encrypt SSL |
+| **Node.js** | v20.20.0 |
+| **项目路径** | `/var/www/devtoolbox` |
+
+### 部署流程
+1. 代码推送到 GitHub main 分支
+2. SSH 登录服务器执行 `bash /var/www/devtoolbox/deploy.sh`
+3. 脚本自动拉取代码、安装依赖、构建、重启 PM2
+
+### 常用运维命令
+```bash
+# 查看应用状态
+pm2 status
+pm2 logs devtoolbox
+
+# 重启应用
+pm2 restart devtoolbox
+
+# Nginx 操作
+systemctl status nginx
+nginx -t  # 测试配置
+systemctl reload nginx
+
+# 查看 SSL 证书
+ certbot certificates
+```
+
+---
+
+## 8. 当前状态
 
 - 线上站点：https://viadreams.cc，功能正常
 - 15 种语言、88 款工具、93 篇博客已配置
@@ -118,7 +163,7 @@ node scripts/generate-ja-ko.js
 
 ---
 
-## 8. 可选后续方向
+## 9. 可选后续方向
 
 - 新增更多工具
 - 新增更多语言
