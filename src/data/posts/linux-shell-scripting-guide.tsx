@@ -289,10 +289,10 @@ get_disk_usage() {
   usage=\$(df -h "\$path" | awk 'NR==2 {print \$5}' | tr -d '%')
 
   if [[ \$usage -gt \$threshold ]]; then
-    echo "WARNING: Disk usage at {'${usage}'}% (threshold: {'${threshold}'}%)"
+    echo "WARNING: Disk usage at ${usage}'}% (threshold: ${threshold}'}%)"
     return 1
   fi
-  echo "Disk usage OK: {'${usage}'}%"
+  echo "Disk usage OK: ${usage}'}%"
   return 0
 }
 
@@ -445,7 +445,7 @@ EXIT_USAGE=2`;
         </p>
         <h3 className="text-xl font-semibold mb-3">String Operations</h3>
         <p>
-          Bash provides built-in string manipulation: <code>{'${VAR#prefix}'}</code> removes a prefix, <code>{'${VAR%suffix}'}</code> removes a suffix, <code>{'${VAR/old/new}'}</code> replaces the first occurrence, and <code>{'${VAR//old/new}'}</code> replaces all occurrences.
+          Bash provides built-in string manipulation: <code>${VAR#prefix}'}</code> removes a prefix, <code>${VAR%suffix}'}</code> removes a suffix, <code>${VAR/old/new}'}</code> replaces the first occurrence, and <code>${VAR//old/new}'}</code> replaces all occurrences.
         </p>
       </section>
 
