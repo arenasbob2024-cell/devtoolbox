@@ -289,10 +289,10 @@ get_disk_usage() {
   usage=\$(df -h "\$path" | awk 'NR==2 {print \$5}' | tr -d '%')
 
   if [[ \$usage -gt \$threshold ]]; then
-    echo "WARNING: Disk usage at ${usage}'}% (threshold: ${threshold}'}%)"
+    echo "WARNING: Disk usage at \${usage}% (threshold: \${threshold}%)"
     return 1
   fi
-  echo "Disk usage OK: ${usage}'}%"
+  echo "Disk usage OK: \${usage}%"
   return 0
 }
 
