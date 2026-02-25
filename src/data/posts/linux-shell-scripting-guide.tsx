@@ -445,7 +445,7 @@ EXIT_USAGE=2`;
         </p>
         <h3 className="text-xl font-semibold mb-3">String Operations</h3>
         <p>
-          Bash provides built-in string manipulation: <code>${VAR#prefix}'}</code> removes a prefix, <code>${VAR%suffix}'}</code> removes a suffix, <code>${VAR/old/new}'}</code> replaces the first occurrence, and <code>${VAR//old/new}'}</code> replaces all occurrences.
+          Bash provides built-in string manipulation: <code>{'${VAR#prefix}'}</code> removes a prefix, <code>{'${VAR%suffix}'}</code> removes a suffix, <code>{'${VAR/old/new}'}</code> replaces the first occurrence, and <code>{'${VAR//old/new}'}</code> replaces all occurrences.
         </p>
       </section>
 
