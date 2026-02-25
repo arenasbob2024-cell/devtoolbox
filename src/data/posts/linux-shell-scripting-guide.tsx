@@ -232,7 +232,7 @@ CONFIG[host]="localhost"
 CONFIG[port]="5432"
 CONFIG[db]="myapp"
 
-echo "Connecting to {'${CONFIG[host]}'}:\${CONFIG[port]}"
+echo "Connecting to \${CONFIG[host]}:\${CONFIG[port]}"
 
 # Command substitution
 CURRENT_USER=\$(whoami)
