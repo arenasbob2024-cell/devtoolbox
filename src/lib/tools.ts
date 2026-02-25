@@ -203,10 +203,10 @@ export const tools: Tool[] = [
   {
     id: 'password-generator',
     name: 'Password Generator',
-    description: 'Generate secure random passwords with customizable options',
+    description: 'Generate secure random passwords with customizable length and character types',
     icon: '🔑',
     category: 'generator',
-    keywords: ['password', 'generate', 'random', 'secure', 'strong'],
+    keywords: ['password generator', 'random password generator', 'strong password generator', 'secure password generator', 'password maker', 'generate password', 'random password', 'strong password', 'secure password', 'password creator'],
     path: '/tools/password-generator',
     relatedTools: ['bcrypt-generator', 'hash-generator', 'uuid-generator', 'fake-data'],
   },
