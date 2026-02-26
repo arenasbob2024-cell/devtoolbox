@@ -973,7 +973,8 @@ function convertWithCache(markdown: string, cacheDir: string) {
       <p style={{ lineHeight: 1.8, marginBottom: 14, fontSize: 15 }} dangerouslySetInnerHTML={{ __html: t.p_streaming }} />
 
       {/* CTA: Try the Tool (bottom) */}
-      <div style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', borderRadius: 8, padding: '20px 24px', margin: '32px 0', color: '#fff' }}>
+      <p style={{ marginTop: 12, fontSize: 15 }}>{lang === 'zh' ? '另请参阅：' : 'See also: '}<Link href={`/${lang}/blog/text-diff-online-guide`} style={{ color: 'var(--accent)', textDecoration: 'underline' }}>text diff checker</Link></p>
+          <div style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', borderRadius: 8, padding: '20px 24px', margin: '32px 0', color: '#fff' }}>
         <strong style={{ fontSize: 18 }}>{t.tryTool}</strong>
         <p style={{ margin: '6px 0 12px', fontSize: 14, opacity: 0.92 }}>{t.tryToolDesc}</p>
         <Link

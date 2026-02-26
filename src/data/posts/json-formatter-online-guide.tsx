@@ -700,7 +700,8 @@ except ValidationError as e:
       <h2>{s.h2_performance}</h2>
       <p dangerouslySetInnerHTML={{ __html: s.perf_p1 }} />
 
-      <div style={{ overflowX: 'auto', marginBottom: '16px' }}>
+      <p style={{ marginTop: 12, fontSize: 15 }}>{lang === 'zh' ? '另请参阅：' : 'See also: '}<Link href={`/${lang}/blog/json-viewer-online-guide`} style={{ color: 'var(--accent)', textDecoration: 'underline' }}>JSON Viewer</Link></p>
+          <div style={{ overflowX: 'auto', marginBottom: '16px' }}>
         <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px' }}>
           <thead>
             <tr style={{ background: '#f1f5f9' }}>

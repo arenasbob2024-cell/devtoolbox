@@ -781,7 +781,8 @@ const blogPost = {
       <p style={pStyle}>{t.realisticCombineP}</p>
 
       {/* Final CTA */}
-      <div style={{ background: 'linear-gradient(135deg, #2563eb 0%, #7c3aed 100%)', borderRadius: 12, padding: 24, margin: '32px 0', textAlign: 'center' }}>
+      <p style={{ marginTop: 12, fontSize: 15 }}>{lang === 'zh' ? '另请参阅：' : 'See also: '}<Link href={`/${lang}/blog/word-counter-online-guide`} style={{ color: 'var(--accent)', textDecoration: 'underline' }}>word counter</Link></p>
+          <div style={{ background: 'linear-gradient(135deg, #2563eb 0%, #7c3aed 100%)', borderRadius: 12, padding: 24, margin: '32px 0', textAlign: 'center' }}>
         <p style={{ color: '#ffffff', fontSize: 18, fontWeight: 700, marginBottom: 12, marginTop: 0 }}>
           {lang === 'zh' ? '立即生成 Lorem Ipsum' : 'Generate Lorem Ipsum Now'}
         </p>

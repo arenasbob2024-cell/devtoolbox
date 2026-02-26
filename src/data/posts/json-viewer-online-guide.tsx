@@ -422,7 +422,8 @@ export default function JsonViewerOnlineGuide({ lang }: { lang: string }) {
       <p dangerouslySetInnerHTML={{ __html: s.jsonpath_p1 }} />
       <p>{s.jsonpath_p2}</p>
 
-      <div style={{ overflowX: 'auto', marginBottom: 16 }}>
+      <p style={{ marginTop: 12, fontSize: 15 }}>{lang === 'zh' ? '另请参阅：' : 'See also: '}<Link href={`/${lang}/blog/json-formatter-online-guide`} style={{ color: 'var(--accent)', textDecoration: 'underline' }}>JSON Formatter</Link></p>
+          <div style={{ overflowX: 'auto', marginBottom: 16 }}>
         <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
           <thead>
             <tr style={{ background: '#f1f5f9' }}>

@@ -837,7 +837,8 @@ WebUtility.UrlEncode("hello world & goodbye");
         URL encoding bugs are among the hardest to diagnose because the symptoms (broken links, garbled data, 404 errors)
         can have many causes. Here is a systematic approach to debugging:
       </p>
-      <div style={{
+      <p style={{ marginTop: 12, fontSize: 15 }}>{lang === 'zh' ? '另请参阅：' : 'See also: '}<Link href={`/${lang}/blog/base64-online-guide`} style={{ color: 'var(--accent)', textDecoration: 'underline' }}>Base64 encoding guide</Link></p>
+          <div style={{
         background: '#f8fafc',
         borderRadius: 8,
         padding: '16px 20px',

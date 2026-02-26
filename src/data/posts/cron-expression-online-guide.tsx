@@ -1075,7 +1075,8 @@ chown deploy:deploy /home/deploy/.env`}</code></pre>
       </div>
 
       {/* ── CTA again ── */}
-      <div style={ctaBoxStyle}>
+      <p style={{ marginTop: 12, fontSize: 15 }}>{lang === 'zh' ? '另请参阅：' : 'See also: '}<Link href={`/${lang}/blog/timestamp-converter-online-guide`} style={{ color: 'var(--accent)', textDecoration: 'underline' }}>timestamp converter</Link></p>
+          <div style={ctaBoxStyle}>
         <p style={{ fontWeight: 700, fontSize: 17, marginBottom: 12, color: 'var(--text-primary)' }}>{t.tryToolCta}</p>
         <Link href={toolLink} style={{ display: 'inline-block', padding: '10px 28px', background: 'var(--accent-blue)', color: '#fff', borderRadius: 8, fontWeight: 600, textDecoration: 'none', fontSize: 15 }}>
           {t.tryToolButton}

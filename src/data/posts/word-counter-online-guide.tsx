@@ -948,7 +948,8 @@ tr -cs '[:alpha:]' '\\n' < document.txt | \\
       <h3 style={h3Style}>{t.toolsOnlineTitle}</h3>
       <p style={pStyle}>{t.toolsOnlineDesc}</p>
 
-      <div style={{ background: 'linear-gradient(135deg, #2563eb 0%, #7c3aed 100%)', borderRadius: 12, padding: 24, margin: '24px 0', textAlign: 'center' }}>
+      <p style={{ marginTop: 12, fontSize: 15 }}>{lang === 'zh' ? '另请参阅：' : 'See also: '}<Link href={`/${lang}/blog/lorem-ipsum-online-guide`} style={{ color: 'var(--accent)', textDecoration: 'underline' }}>Lorem Ipsum generator</Link></p>
+          <div style={{ background: 'linear-gradient(135deg, #2563eb 0%, #7c3aed 100%)', borderRadius: 12, padding: 24, margin: '24px 0', textAlign: 'center' }}>
         <p style={{ color: '#ffffff', fontSize: 18, fontWeight: 700, marginBottom: 12, marginTop: 0 }}>
           {t.toolsCta}
         </p>

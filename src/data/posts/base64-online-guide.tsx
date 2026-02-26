@@ -705,7 +705,8 @@ echo -n "data" | base64 | tr '+/' '-_' | tr -d '='`}</code></pre>
 
       {/* Section 9: Security */}
       <h2>{s.h2_security}</h2>
-      <div style={{ background: '#fef2f2', border: '1px solid #fecaca', borderRadius: 8, padding: '16px 20px', marginBottom: 16 }}>
+      <p style={{ marginTop: 12, fontSize: 15 }}>{lang === 'zh' ? '另请参阅：' : 'See also: '}<Link href={`/${lang}/blog/url-encoder-online-guide`} style={{ color: 'var(--accent)', textDecoration: 'underline' }}>URL encoding guide</Link></p>
+          <div style={{ background: '#fef2f2', border: '1px solid #fecaca', borderRadius: 8, padding: '16px 20px', marginBottom: 16 }}>
         <p style={{ margin: 0 }} dangerouslySetInnerHTML={{ __html: s.security_p1 }} />
       </div>
       <p>{s.security_p2}</p>
