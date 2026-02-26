@@ -171,34 +171,17 @@ git clone -b develop --single-branch https://github.com/user/repo.git`}</code></
 
       <h3 style={h3Style}>Staging, Committing, and Status</h3>
       <p style={pStyle}>
-        The staging area (also called the index) is Git&#39;s unique middle ground between the working directory and
-        the repository.  Learning to stage selectively is one of the fastest ways to write cleaner history.
+        The staging area (index) is Git&#39;s middle ground between the working directory and the repository.
+        Learning to stage selectively produces cleaner history.
       </p>
-      <pre style={codeBlockStyle}><code>{`# Check working directory status
-git status
-git status -s          # short format
+      <pre style={codeBlockStyle}><code>{`git status                  # check working directory
+git add file.txt src/       # stage specific files
+git add -A                  # stage everything
+git add -p file.txt         # interactive hunk staging
 
-# Stage specific files
-git add file.txt
-git add src/ tests/    # stage entire directories
-
-# Stage all changes (tracked + untracked)
-git add -A
-
-# Interactive staging -- choose hunks within a file
-git add -p file.txt
-
-# Commit with message
 git commit -m "feat: add user authentication"
-
-# Commit all tracked changes (skip staging)
-git commit -am "fix: correct typo in README"
-
-# Amend the last commit (message or content)
-git commit --amend -m "feat: add user authentication with OAuth"
-
-# Amend without changing the message
-git commit --amend --no-edit`}</code></pre>
+git commit -am "fix: typo"  # stage tracked + commit
+git commit --amend --no-edit # amend last commit silently`}</code></pre>
 
       <div style={tipBoxStyle}>
         <strong>Tip:</strong> Use the <Link href={`/${lang}/tools/git-command-generator`} style={linkStyle}>Git Command
@@ -253,26 +236,11 @@ git branch -D feature/login   # force delete
 git checkout --track origin/develop`}</code></pre>
 
       <h3 style={h3Style}>Merging Strategies</h3>
-      <p style={pStyle}>
-        Git offers several merge strategies.  The right one depends on whether you want to preserve full history,
-        create a clean linear history, or squash a feature into a single commit.
-      </p>
-      <pre style={codeBlockStyle}><code>{`# Fast-forward merge (no merge commit if possible)
-git merge feature/login
-
-# Force a merge commit even if fast-forward is possible
-git merge --no-ff feature/login
-
-# Squash all feature commits into one
-git merge --squash feature/login
-git commit -m "feat: implement login flow"
-
-# Abort a merge in progress
-git merge --abort
-
-# Use ours/theirs strategy for conflict resolution
-git merge -X ours feature/login
-git merge -X theirs feature/login`}</code></pre>
+      <pre style={codeBlockStyle}><code>{`git merge feature/login              # fast-forward if possible
+git merge --no-ff feature/login      # always create merge commit
+git merge --squash feature/login     # squash into one commit
+git merge --abort                    # cancel merge in progress
+git merge -X theirs feature/login    # auto-resolve with theirs`}</code></pre>
 
       <div style={tipBoxStyle}>
         <strong>Best practice:</strong> Use <span style={inlineCodeStyle}>--no-ff</span> merges on shared branches
@@ -363,19 +331,6 @@ git cherry-pick --abort
 # Continue after resolving conflicts
 git cherry-pick --continue`}</code></pre>
 
-      <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 24 }}>
-        <thead>
-          <tr>
-            <th style={thStyle}>Scenario</th>
-            <th style={thStyle}>Command</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td style={tdStyle}>Backport a hotfix to release branch</td><td style={tdStyle}><code style={inlineCodeStyle}>git cherry-pick &lt;hotfix-sha&gt;</code></td></tr>
-          <tr><td style={tdStyle}>Pull single feature commit to main</td><td style={tdStyle}><code style={inlineCodeStyle}>git cherry-pick --no-commit &lt;sha&gt;</code></td></tr>
-          <tr><td style={tdStyle}>Apply a range of commits</td><td style={tdStyle}><code style={inlineCodeStyle}>git cherry-pick A..B</code></td></tr>
-        </tbody>
-      </table>
 
       {/* ================================================================== */}
       {/*  Section 5 -- Stash                                                 */}
@@ -591,24 +546,12 @@ git rm libs/shared`}</code></pre>
         commit messages before code reaches the remote.
       </p>
 
-      <h3 style={h3Style}>Common Client-Side Hooks</h3>
-      <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 24 }}>
-        <thead>
-          <tr>
-            <th style={thStyle}>Hook</th>
-            <th style={thStyle}>When It Runs</th>
-            <th style={thStyle}>Common Use</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td style={tdStyle}><code style={inlineCodeStyle}>pre-commit</code></td><td style={tdStyle}>Before commit is created</td><td style={tdStyle}>Lint, format, type-check</td></tr>
-          <tr><td style={tdStyle}><code style={inlineCodeStyle}>prepare-commit-msg</code></td><td style={tdStyle}>After default message generated</td><td style={tdStyle}>Auto-add ticket number</td></tr>
-          <tr><td style={tdStyle}><code style={inlineCodeStyle}>commit-msg</code></td><td style={tdStyle}>After user enters message</td><td style={tdStyle}>Validate Conventional Commits</td></tr>
-          <tr><td style={tdStyle}><code style={inlineCodeStyle}>pre-push</code></td><td style={tdStyle}>Before push to remote</td><td style={tdStyle}>Run test suite</td></tr>
-          <tr><td style={tdStyle}><code style={inlineCodeStyle}>post-merge</code></td><td style={tdStyle}>After a merge completes</td><td style={tdStyle}>Auto-install dependencies</td></tr>
-          <tr><td style={tdStyle}><code style={inlineCodeStyle}>post-checkout</code></td><td style={tdStyle}>After checkout / switch</td><td style={tdStyle}>Environment setup</td></tr>
-        </tbody>
-      </table>
+      <p style={pStyle}>
+        Key hooks: <span style={inlineCodeStyle}>pre-commit</span> (lint/format before commit),
+        <span style={inlineCodeStyle}> commit-msg</span> (validate commit messages),
+        <span style={inlineCodeStyle}> pre-push</span> (run tests before push),
+        <span style={inlineCodeStyle}> post-merge</span> (auto-install dependencies).
+      </p>
 
       <h3 style={h3Style}>Example: pre-commit Hook with Husky</h3>
       <pre style={codeBlockStyle}><code>{`# Install Husky for shareable hooks
@@ -632,23 +575,14 @@ npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'`}</code></p
 
       <h3 style={h3Style}>1. Feature Branch Workflow</h3>
       <p style={pStyle}>
-        Every feature or bug fix gets its own branch created from <span style={inlineCodeStyle}>main</span>.
-        When the work is complete, a pull request is opened, reviewed, and merged.
+        Every feature or bug fix gets its own branch from <span style={inlineCodeStyle}>main</span>.
+        A pull request is opened, reviewed, and merged.
       </p>
-      <pre style={codeBlockStyle}><code>{`# Create feature branch
-git switch -c feature/user-profile
-
-# Work, commit, push
-git add .
-git commit -m "feat: add user profile page"
+      <pre style={codeBlockStyle}><code>{`git switch -c feature/user-profile
+git add . && git commit -m "feat: add user profile page"
 git push -u origin feature/user-profile
-
-# After PR approval, merge
-git switch main
-git pull origin main
-git merge --no-ff feature/user-profile
-git push origin main
-git branch -d feature/user-profile`}</code></pre>
+# After PR approval:
+git switch main && git merge --no-ff feature/user-profile`}</code></pre>
 
       <h3 style={h3Style}>2. Trunk-Based Development</h3>
       <p style={pStyle}>
@@ -818,20 +752,9 @@ git clean -fdX  # also remove ignored files`}</code></pre>
 
       <h2 style={h2Style}>Using the Git Command Generator Tool</h2>
       <p style={pStyle}>
-        Remembering flags and syntax for every git operation is unrealistic.  The
-        <Link href={`/${lang}/tools/git-command-generator`} style={linkStyle}> Git Command Generator</Link> on
-        DevToolBox solves this by providing a visual interface:
-      </p>
-      <ul style={ulStyle}>
-        <li><strong>Select an operation</strong> -- commit, branch, merge, rebase, stash, cherry-pick, reset, revert, log, tag, remote, and more.</li>
-        <li><strong>Configure flags</strong> -- toggle checkboxes and fill in inputs instead of remembering flag names.</li>
-        <li><strong>Copy the result</strong> -- the generated command updates in real time.  Click copy and paste it into your terminal.</li>
-        <li><strong>Learn while building</strong> -- each flag includes a short description, so you learn Git syntax naturally.</li>
-      </ul>
-      <p style={pStyle}>
-        Whether you are constructing an interactive rebase, formatting a custom log output, or building a
-        <span style={inlineCodeStyle}> cherry-pick</span> range, the generator handles the syntax so you can focus
-        on the task.
+        The <Link href={`/${lang}/tools/git-command-generator`} style={linkStyle}>Git Command Generator</Link> lets
+        you select an operation, toggle flags visually, and copy the resulting command.  Each flag includes a
+        description so you learn Git syntax naturally -- no memorization required.
       </p>
 
       {/* ================================================================== */}
@@ -961,14 +884,6 @@ git clean -fdX  # also remove ignored files`}</code></pre>
                 acceptedAnswer: {
                   '@type': 'Answer',
                   text: 'git reflog is a local log of every position HEAD has pointed to. Even after a hard reset, force push, or bad rebase, you can find the SHA of the state you want and check it out. It records actions that git log does not track, like branch deletions and rebases.',
-                },
-              },
-              {
-                '@type': 'Question',
-                name: 'Can I use the Git Command Generator offline?',
-                acceptedAnswer: {
-                  '@type': 'Answer',
-                  text: 'The Git Command Generator runs entirely in your browser with no server-side processing. Once the page is loaded, you can use it without an active internet connection.',
                 },
               },
             ],

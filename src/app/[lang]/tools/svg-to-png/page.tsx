@@ -6,7 +6,7 @@ import { useLang } from '@/i18n/LangContext';
 
 export default function SvgToPng() {
   const { dict } = useLang();
-  const t = dict.tools['svg-to-png'] as Record<string, string>;
+  const t = dict.tools['svg-to-png'] as unknown as Record<string, string>;
 
   const [svgInput, setSvgInput] = useState('');
   const [width, setWidth] = useState(512);

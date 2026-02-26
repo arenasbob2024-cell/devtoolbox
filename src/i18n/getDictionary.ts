@@ -21,5 +21,6 @@ const dictionaries = {
 export type Dictionary = Awaited<ReturnType<(typeof dictionaries)['en']>>;
 
 export const getDictionary = async (locale: Locale): Promise<Dictionary> => {
-  return dictionaries[locale]();
+  // Other locales may not have all fields that en.json has (e.g., faqs)
+  return dictionaries[locale]() as unknown as Promise<Dictionary>;
 };

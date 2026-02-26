@@ -17,7 +17,8 @@ const NOTABLE_TIMESTAMPS = [
   { name: 'Year 2050', timestamp: 2524608000, date: '2050-01-01 00:00:00 UTC' },
 ];
 
-function getRelativeTime(d: Date, t: Record<string, string>): string {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function getRelativeTime(d: Date, t: Record<string, any>): string {
   const diff = Date.now() - d.getTime();
   const abs = Math.abs(diff);
   const suffix = diff > 0 ? t.ago : t.fromNow;

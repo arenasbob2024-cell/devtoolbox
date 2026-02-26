@@ -298,6 +298,9 @@ import CssFlexboxGeneratorOnlineGuide from '@/data/posts/css-flexbox-generator-o
 import TimestampConverterOnlineGuide from '@/data/posts/timestamp-converter-online-guide';
 import Base64OnlineGuide from '@/data/posts/base64-online-guide';
 import TextDiffOnlineGuide from '@/data/posts/text-diff-online-guide';
+import UrlEncoderOnlineGuide from '@/data/posts/url-encoder-online-guide';
+import WordCounterOnlineGuide from '@/data/posts/word-counter-online-guide';
+import JsonYamlConverterOnlineGuide from '@/data/posts/json-yaml-converter-online-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -586,6 +589,9 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'timestamp-converter-online-guide': TimestampConverterOnlineGuide,
   'base64-online-guide': Base64OnlineGuide,
   'text-diff-online-guide': TextDiffOnlineGuide,
+  'url-encoder-online-guide': UrlEncoderOnlineGuide,
+  'word-counter-online-guide': WordCounterOnlineGuide,
+  'json-yaml-converter-online-guide': JsonYamlConverterOnlineGuide,
 };
 
 /* i18n for UI strings on this page */
