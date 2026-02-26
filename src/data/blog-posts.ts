@@ -7373,6 +7373,25 @@ export const blogPosts: BlogPost[] = [
       es: { title: 'Formateador JSON: Guia completa para formatear y embellecer JSON (2026)', description: 'Aprende a formatear JSON en linea, en VS Code, en la linea de comandos y en JavaScript/Python. Validacion, minificacion, visor y errores comunes.', readingTime: '14 min de lectura', keywords: ['formateador json', 'json beautifier', 'formateador json online', 'formatear json', 'validador json', 'json pretty print'] },
     },
   },
+  {
+    slug: 'regex-tester-online-guide',
+    title: 'Regex Tester Online: Test, Debug & Validate Regular Expressions (2026 Guide)',
+    description: 'Use our free online regex tester to test regular expressions in real time. Covers JavaScript, Python, and Go regex syntax, 10 must-know patterns, common mistakes, performance tips, and when to skip regex.',
+    date: '2026-02-27',
+    author: 'DevToolBox',
+    readingTime: '15 min read',
+    keywords: ['regex tester', 'regex tester online', 'test regex online', 'regular expression tester', 'regex checker', 'regex validator', 'regex online', 'regex debugger', 'javascript regex', 'python regex'],
+    relatedTools: ['regex-tester', 'regex-generator', 'regex-cheatsheet'],
+    relatedPosts: ['regex-cheat-sheet', 'regex-patterns-copy-paste-ready', 'regex-match-email-phone-url-patterns'],
+    translations: {
+      zh: { title: '在线正则表达式测试器：实时测试、调试和验证正则（2026 指南）', description: '使用免费的在线正则测试工具实时测试正则表达式。涵盖 JavaScript、Python、Go 的正则语法、10 个必知模式、常见错误和性能优化技巧。', readingTime: '15 分钟阅读', keywords: ['正则表达式测试', '在线正则测试', '正则测试工具', '正则表达式验证', '正则调试器'] },
+      ja: { title: 'オンライン正規表現テスター：リアルタイムでテスト・デバッグ・検証（2026年版ガイド）', description: '無料のオンライン正規表現テスターでリアルタイムにテスト。JavaScript、Python、Goの正規表現構文、10の必須パターン、よくある間違い、パフォーマンスのコツを解説。', readingTime: '15分', keywords: ['正規表現テスター', 'オンライン正規表現テスト', '正規表現チェッカー', '正規表現デバッガー', 'JavaScript正規表現'] },
+      ko: { title: '온라인 정규식 테스터: 정규 표현식 실시간 테스트, 디버그 & 검증 (2026 가이드)', description: '무료 온라인 정규식 테스터로 실시간 정규 표현식 테스트. JavaScript, Python, Go 정규식 문법, 필수 패턴 10가지, 흔한 실수, 성능 팁 포함.', readingTime: '15분 읽기', keywords: ['정규식 테스터', '온라인 정규식 테스트', '정규 표현식 테스터', '정규식 검증', '정규식 디버거'] },
+      fr: { title: 'Testeur de Regex en Ligne : Tester, Debugger et Valider les Expressions Regulieres (Guide 2026)', description: 'Utilisez notre testeur de regex en ligne gratuit pour tester les expressions regulieres en temps reel. Syntaxe JavaScript, Python, Go, 10 patterns essentiels, erreurs courantes et astuces de performance.', readingTime: '15 min de lecture', keywords: ['testeur regex', 'testeur regex en ligne', 'tester regex en ligne', 'testeur expression reguliere', 'verificateur regex'] },
+      de: { title: 'Online Regex Tester: Regulare Ausdrucke Testen, Debuggen & Validieren (2026 Guide)', description: 'Testen Sie regulare Ausdrucke in Echtzeit mit unserem kostenlosen Online-Regex-Tester. JavaScript, Python, Go Syntax, 10 wichtige Muster, haufige Fehler und Performance-Tipps.', readingTime: '15 Min. Lesezeit', keywords: ['regex tester', 'regex tester online', 'regularer ausdruck tester', 'regex prufer', 'regex validator'] },
+      es: { title: 'Probador de Regex Online: Testear, Depurar y Validar Expresiones Regulares (Guia 2026)', description: 'Usa nuestro probador de regex en linea gratuito para probar expresiones regulares en tiempo real. Sintaxis JavaScript, Python, Go, 10 patrones esenciales, errores comunes y consejos de rendimiento.', readingTime: '15 min de lectura', keywords: ['probador regex', 'probador regex online', 'testear regex online', 'tester expresion regular', 'verificador regex'] },
+    },
+  },
 ];
 
 /** Get post with localized metadata */

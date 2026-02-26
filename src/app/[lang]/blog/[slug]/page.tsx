@@ -281,6 +281,8 @@ import JsonToZodSchemaGuide from '@/data/posts/json-to-zod-schema-guide';
 import JsonToJsonSchemaConverterGuide from '@/data/posts/json-to-json-schema-converter-guide';
 import TypescriptToJavascriptConversionGuide from '@/data/posts/typescript-to-javascript-conversion-guide';
 import Base64EncodeDecodeCompleteGuide from '@/data/posts/base64-encode-decode-complete-guide';
+import JsonFormatterBeautifierGuide from '@/data/posts/json-formatter-beautifier-guide';
+import RegexTesterOnlineGuide from '@/data/posts/regex-tester-online-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -552,6 +554,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'json-to-json-schema-converter-guide': JsonToJsonSchemaConverterGuide,
   'typescript-to-javascript-conversion-guide': TypescriptToJavascriptConversionGuide,
   'base64-encode-decode-complete-guide': Base64EncodeDecodeCompleteGuide,
+  'json-formatter-beautifier-guide': JsonFormatterBeautifierGuide,
+  'regex-tester-online-guide': RegexTesterOnlineGuide,
 };
 
 /* i18n for UI strings on this page */
