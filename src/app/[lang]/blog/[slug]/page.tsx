@@ -283,6 +283,8 @@ import TypescriptToJavascriptConversionGuide from '@/data/posts/typescript-to-ja
 import Base64EncodeDecodeCompleteGuide from '@/data/posts/base64-encode-decode-complete-guide';
 import JsonFormatterBeautifierGuide from '@/data/posts/json-formatter-beautifier-guide';
 import RegexTesterOnlineGuide from '@/data/posts/regex-tester-online-guide';
+import JwtDecoderOnlineGuide from '@/data/posts/jwt-decoder-online-guide';
+import UuidGeneratorGuide from '@/data/posts/uuid-generator-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -556,6 +558,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'base64-encode-decode-complete-guide': Base64EncodeDecodeCompleteGuide,
   'json-formatter-beautifier-guide': JsonFormatterBeautifierGuide,
   'regex-tester-online-guide': RegexTesterOnlineGuide,
+  'jwt-decoder-online-guide': JwtDecoderOnlineGuide,
+  'uuid-generator-guide': UuidGeneratorGuide,
 };
 
 /* i18n for UI strings on this page */
