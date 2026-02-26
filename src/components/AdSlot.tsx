@@ -1,4 +1,5 @@
 // AdSense removed - account disabled
-export default function AdSlot() {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function AdSlot(_props: any) {
   return null;
 }
