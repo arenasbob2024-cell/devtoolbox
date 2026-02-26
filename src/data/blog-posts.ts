@@ -159,7 +159,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '12 min read',
     keywords: ['json to typescript', 'json to ts interface', 'convert json typescript', 'typescript interface generator', 'json to type'],
     relatedTools: ['json-to-typescript', 'json-formatter', 'json-to-go', 'json-to-zod'],
-    relatedPosts: ['json-to-go-struct-guide', 'typescript-vs-javascript-when-to-convert', 'json-schema-validation-guide'],
+    relatedPosts: ['json-to-go-struct-guide', 'typescript-vs-javascript-when-to-convert', 'json-schema-validation-guide', 'json-to-java-class-converter-guide', 'json-to-zod-schema-guide'],
     translations: {
       fr: { title: 'JSON vers TypeScript : Guide complet avec exemples', description: 'Apprenez à convertir automatiquement des données JSON en interfaces TypeScript. Objets imbriqués, tableaux, champs optionnels et bonnes pratiques.', readingTime: '12 min de lecture', keywords: ['json vers typescript', 'json en interface ts', 'convertir json typescript', 'générateur interface typescript', 'json to type'] },
       de: { title: 'JSON zu TypeScript: Vollständiger Leitfaden mit Beispielen', description: 'Erfahren Sie, wie Sie JSON-Daten automatisch in TypeScript-Interfaces konvertieren. Verschachtelte Objekte, Arrays, optionale Felder und Best Practices.', readingTime: '12 Min. Lesezeit', keywords: ['json zu typescript', 'json in ts interface', 'json typescript konvertieren', 'typescript interface generator', 'json to type'] },
@@ -186,7 +186,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '10 min read',
     keywords: ['html to jsx', 'html to react', 'convert html jsx', 'react migration guide', 'jsx syntax'],
     relatedTools: ['html-to-jsx', 'svg-to-jsx', 'css-to-tailwind', 'js-html-formatter'],
-    relatedPosts: ['svg-optimization-react', 'css-to-tailwind-migration'],
+    relatedPosts: ['svg-optimization-react', 'css-to-tailwind-migration', 'svg-to-jsx-react-guide'],
     translations: {
       fr: { title: 'HTML vers JSX : Tout ce qu\'il faut savoir pour migrer vers React', description: 'Guide complet pour convertir du HTML en JSX pour React. className, objets style, balises auto-fermantes, gestionnaires d\'événements et pièges courants.', readingTime: '10 min de lecture', keywords: ['html vers jsx', 'html vers react', 'convertir html jsx', 'guide migration react', 'syntaxe jsx'] },
       de: { title: 'HTML zu JSX: Alles was Sie für die React-Migration brauchen', description: 'Umfassender Leitfaden zur Konvertierung von HTML zu JSX für React. className, Style-Objekte, selbstschließende Tags, Event-Handler und häufige Stolperfallen.', readingTime: '10 Min. Lesezeit', keywords: ['html zu jsx', 'html zu react', 'html jsx konvertieren', 'react migration leitfaden', 'jsx syntax'] },
@@ -213,7 +213,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '11 min read',
     keywords: ['json to go struct', 'go struct tags', 'golang json mapping', 'json unmarshal go', 'go struct from json'],
     relatedTools: ['json-to-go', 'json-formatter', 'json-to-typescript', 'json-to-rust'],
-    relatedPosts: ['json-to-typescript-complete-guide', 'json-to-kotlin-data-class-guide'],
+    relatedPosts: ['json-to-typescript-complete-guide', 'json-to-kotlin-data-class-guide', 'json-to-java-class-converter-guide'],
     translations: {
       fr: { title: 'JSON vers Go Struct : Stratégies de mapping et bonnes pratiques', description: 'Maîtrisez la conversion JSON en struct Go. Tags de struct, types imbriqués, omitempty, marshaling personnalisé et patterns réels.', readingTime: '11 min de lecture', keywords: ['json vers go struct', 'go struct tags', 'golang mapping json', 'json unmarshal go', 'go struct depuis json'] },
       de: { title: 'JSON zu Go Struct: Mapping-Strategien und Best Practices', description: 'Meistern Sie die Konvertierung von JSON zu Go-Structs. Struct-Tags, verschachtelte Typen, omitempty, benutzerdefiniertes Marshaling und Praxismuster.', readingTime: '11 Min. Lesezeit', keywords: ['json zu go struct', 'go struct tags', 'golang json mapping', 'json unmarshal go', 'go struct aus json'] },
@@ -267,7 +267,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '10 min read',
     keywords: ['svg to jsx', 'svg to react', 'convert svg to jsx', 'svg to jsx converter', 'svg react component', 'react svg optimization', 'svgo react', 'svg accessibility'],
     relatedTools: ['svg-to-jsx', 'svg-optimizer', 'html-to-jsx', 'image-base64'],
-    relatedPosts: ['html-to-jsx-react-migration', 'svg-viewbox-width-height-explained'],
+    relatedPosts: ['html-to-jsx-react-migration', 'svg-viewbox-width-height-explained', 'svg-to-jsx-react-guide'],
     translations: {
       fr: { title: 'SVG dans React : Du SVG brut aux composants optimisés', description: 'Apprenez à transformer du SVG brut en composants React performants. Optimisation SVGO, accessibilité, animations et props TypeScript.', readingTime: '10 min de lecture', keywords: ['composant svg react', 'svg vers jsx', 'optimisation svg react', 'svgo react', 'accessibilité svg'] },
       de: { title: 'SVG in React: Vom rohen SVG zu optimierten Komponenten', description: 'Lernen Sie, rohes SVG in effiziente React-Komponenten umzuwandeln. SVGO-Optimierung, Barrierefreiheit, Animationen und TypeScript-Props.', readingTime: '10 Min. Lesezeit', keywords: ['svg react komponente', 'svg zu jsx', 'react svg optimierung', 'svgo react', 'svg barrierefreiheit'] },
@@ -348,7 +348,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '12 min read',
     keywords: ['graphql typescript codegen', 'graphql type generation', 'graphql to typescript', 'graphql codegen', 'graphql types'],
     relatedTools: ['graphql-to-typescript', 'json-to-graphql', 'json-to-typescript'],
-    relatedPosts: ['json-to-typescript-complete-guide', 'rest-api-best-practices-guide'],
+    relatedPosts: ['json-to-typescript-complete-guide', 'rest-api-best-practices-guide', 'graphql-to-typescript-codegen-guide'],
     translations: {
       fr: { title: 'Génération de types GraphQL : Automatisez vos types TypeScript', description: 'Automatisez la génération de types TypeScript à partir de schémas GraphQL. Outils de codegen, types de résolveurs, types de fragments et intégration CI/CD.', readingTime: '12 min de lecture', keywords: ['graphql typescript codegen', 'génération types graphql', 'graphql vers typescript', 'graphql codegen', 'types graphql'] },
       de: { title: 'GraphQL-Typgenerierung: Automatisieren Sie Ihre TypeScript-Typen', description: 'Automatisieren Sie die TypeScript-Typgenerierung aus GraphQL-Schemas. Codegen-Tools, Resolver-Typen, Fragment-Typen und CI/CD-Integration.', readingTime: '12 Min. Lesezeit', keywords: ['graphql typescript codegen', 'graphql typgenerierung', 'graphql zu typescript', 'graphql codegen', 'graphql typen'] },
@@ -538,7 +538,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8 min read',
     keywords: ['cron expression generator', 'cron expression examples', 'crontab schedule', 'cron syntax', 'cron job daily', 'generate cron expression'],
     relatedTools: ['cron-parser', 'cron-generator', 'crontab-generator', 'cron-expression-parser'],
-    relatedPosts: ['chmod-permissions-explained', 'cron-schedule-serverless-github-actions-vercel-cloudflare'],
+    relatedPosts: ['chmod-permissions-explained', 'cron-schedule-serverless-github-actions-vercel-cloudflare', 'cron-expression-generator-guide'],
     translations: {
       fr: { title: 'Exemples d\'expressions Cron : toutes les 5 minutes, quotidien, hebdomadaire', description: 'Maîtrisez les expressions cron avec des exemples pratiques.', readingTime: '8 min de lecture', keywords: ['expression cron toutes les 5 minutes', 'exemples cron', 'crontab planning', 'syntaxe cron'] },
       de: { title: 'Cron-Ausdrücke Beispiele: Alle 5 Minuten, täglich, wöchentlich', description: 'Cron-Ausdrücke mit praktischen Beispielen meistern.', readingTime: '8 Min. Lesezeit', keywords: ['cron ausdruck alle 5 minuten', 'cron beispiele', 'crontab zeitplan', 'cron syntax'] },
@@ -862,7 +862,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '14 min read',
     keywords: ['typescript generics', 'typescript generics explained', 'typescript generics examples', 'generic types typescript', 'typescript advanced types'],
     relatedTools: ['json-to-typescript', 'typescript-to-javascript', 'graphql-to-typescript'],
-    relatedPosts: ['json-to-typescript-complete-guide', 'typescript-vs-javascript-when-to-convert'],
+    relatedPosts: ['json-to-typescript-complete-guide', 'typescript-vs-javascript-when-to-convert', 'json-to-zod-schema-guide', 'graphql-to-typescript-codegen-guide'],
     translations: {
       fr: { title: 'Les Génériques TypeScript expliqués : Guide pratique avec exemples', description: 'Maîtrisez les génériques TypeScript des bases aux patterns avancés. Fonctions, interfaces, contraintes et types conditionnels.', readingTime: '14 min de lecture', keywords: ['génériques typescript', 'typescript generics expliqués', 'exemples generics typescript'] },
       de: { title: 'TypeScript Generics erklärt: Praktischer Leitfaden mit Beispielen', description: 'TypeScript Generics von den Grundlagen bis zu fortgeschrittenen Mustern meistern.', readingTime: '14 Min. Lesezeit', keywords: ['typescript generics', 'typescript generics erklärt', 'typescript generics beispiele'] },
@@ -6264,8 +6264,8 @@ export const blogPosts: BlogPost[] = [
     author: 'DevToolBox',
     readingTime: '12 min read',
     keywords: ['zod validation', 'zod schema', 'zod typescript', 'zod trpc', 'schema validation', 'zod transforms'],
-    relatedTools: ['json-to-typescript-online', 'json-formatter', 'yaml-to-json'],
-    relatedPosts: ['typescript-5-features', 'typescript-type-guards', 'graphql-vs-rest-api'],
+    relatedTools: ['json-to-zod', 'json-to-typescript-online', 'json-formatter', 'yaml-to-json'],
+    relatedPosts: ['typescript-5-features', 'typescript-type-guards', 'graphql-vs-rest-api', 'json-to-zod-schema-guide'],
     translations: {
       fr: { title: 'Guide Zod : Schemas, Transformations, Refinements et Integration tRPC', description: 'Maitriser la validation Zod en TypeScript : schemas, transformations, refinements et tRPC.', readingTime: '12 min', keywords: ['zod validation', 'zod schema', 'zod trpc'] },
       de: { title: 'Zod Validierungs-Guide: Schemas, Transforms, Refinements und tRPC', description: 'Zod Schema-Validierung in TypeScript meistern: Schemas, Transforms, Refinements und tRPC.', readingTime: '12 Min.', keywords: ['zod validierung', 'zod schema', 'zod trpc'] },
