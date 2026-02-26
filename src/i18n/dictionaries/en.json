@@ -117,8 +117,8 @@
     "base64": {
       "name": "Base64 Encoder/Decoder",
       "description": "Encode text to Base64 or decode Base64 back to text",
-      "pageTitle": "Base64 Encoder / Decoder",
-      "pageDescription": "Encode text to Base64 or decode Base64 strings back to plain text. Supports UTF-8.",
+      "pageTitle": "Base64 Encode & Decode Online Free — Text, URL, File | DevToolBox",
+      "pageDescription": "Encode or decode Base64 strings online for free. Supports UTF-8 text, URLs, and binary data. Instant conversion with no data sent to servers.",
       "plainText": "Plain Text",
       "base64String": "Base64 String",
       "inputPlaceholder": "Enter text to encode...",
@@ -751,8 +751,8 @@
     "text-diff": {
       "name": "Text Diff Checker",
       "description": "Compare two texts and highlight the differences",
-      "pageTitle": "Text Diff Checker",
-      "pageDescription": "Compare two texts side by side and highlight the differences between them.",
+      "pageTitle": "Text Diff Checker Online Free — Compare Text & Find Differences | DevToolBox",
+      "pageDescription": "Compare two texts side by side and instantly highlight differences. Free online diff tool for code, documents, and configuration files.",
       "originalText": "Original Text",
       "modifiedText": "Modified Text",
       "originalPlaceholder": "Paste original text here...",
@@ -884,8 +884,8 @@
     "sql-formatter": {
       "name": "SQL Formatter",
       "description": "Format and beautify SQL queries for better readability",
-      "pageTitle": "SQL Formatter",
-      "pageDescription": "Format and beautify SQL queries for better readability. Supports common SQL dialects.",
+      "pageTitle": "SQL Formatter Online Free — Beautify & Indent SQL Queries | DevToolBox",
+      "pageDescription": "Format SQL queries online for free. Beautify, indent, and clean up messy SQL. Supports MySQL, PostgreSQL, SQLite, and SQL Server dialects.",
       "formatSql": "Format SQL",
       "inputSql": "Input SQL",
       "formattedOutput": "Formatted Output",
@@ -926,8 +926,8 @@
     "cron-parser": {
       "name": "Cron Expression Parser",
       "description": "Parse and explain cron expressions with next run times",
-      "pageTitle": "Cron Expression Parser",
-      "pageDescription": "Parse cron expressions to human-readable descriptions with next scheduled run times.",
+      "pageTitle": "Cron Expression Parser & Generator Online Free | DevToolBox",
+      "pageDescription": "Parse cron expressions to human-readable schedules and see next run times. Free online cron parser for crontab, Kubernetes, GitHub Actions, and AWS.",
       "cronExpression": "Cron Expression",
       "placeholder": "* * * * * (min hour day month weekday)",
       "minute": "Minute (0-59)",
@@ -1160,6 +1160,71 @@
         "Troubleshooting 'permission denied' errors"
       ]
     },
+    "text-to-pdf": {
+      "name": "Text to PDF Converter",
+      "description": "Convert plain text to PDF documents with custom formatting options",
+      "pageTitle": "Text to PDF Converter - Convert TXT to PDF Online Free",
+      "pageDescription": "Free online text to PDF converter. Convert plain text, TXT files to PDF with custom page size, margins, and font options. Instant browser-based conversion.",
+      "inputText": "Input Text",
+      "inputPlaceholder": "Enter or paste your text here...\n\nYour text will be converted to a PDF document.",
+      "pdfPreview": "PDF Preview",
+      "previewPlaceholder": "PDF preview will appear here",
+      "pageSize": "Page Size",
+      "margin": "Margin",
+      "fontSize": "Font Size",
+      "lineHeight": "Line Height",
+      "inputMode": "Input Mode",
+      "plainText": "Plain Text",
+      "orientation": "Orientation",
+      "portrait": "Portrait",
+      "landscape": "Landscape",
+      "small": "Small (10mm)",
+      "medium": "Medium (20mm)",
+      "large": "Large (30mm)",
+      "preview": "Preview",
+      "textPlaceholder": "Enter your text here...",
+      "markdownPlaceholder": "# Enter your markdown here...",
+      "generating": "Generating...",
+      "sampleText": "This is a sample text for PDF conversion.\n\nYou can customize the page size, margins, and font size before downloading your PDF document.\n\nFeatures:\n• Multiple page sizes (A4, Letter, Legal)\n• Adjustable margins\n• Custom font sizes\n• Real-time preview",
+      "seoTitle": "About Text to PDF Conversion",
+      "seoContent": "Converting text to PDF creates a portable, universally readable document that preserves formatting across all devices and platforms. PDF (Portable Document Format) is the standard for document sharing because it maintains consistent layout regardless of the viewer's system. Our text to PDF converter runs entirely in your browser — no files are uploaded to any server.",
+      "featuresTitle": "Key Features",
+      "features": [
+        "Multiple page sizes: A4, Letter, and Legal",
+        "Adjustable margins from 10mm to 40mm",
+        "Font sizes from 8pt to 24pt",
+        "Customizable line spacing",
+        "Real-time PDF preview before download",
+        "100% client-side processing — your text never leaves your browser"
+      ],
+      "faqTitle": "Frequently Asked Questions",
+      "faqs": [
+        {
+          "q": "Is this text to PDF converter free?",
+          "a": "Yes, completely free. No registration, no limits, no watermarks."
+        },
+        {
+          "q": "Is my text data secure?",
+          "a": "Absolutely. All processing happens in your browser using JavaScript. Your text is never sent to any server or stored anywhere."
+        },
+        {
+          "q": "What page sizes are supported?",
+          "a": "We support A4 (210×297mm), Letter (8.5×11in), and Legal (8.5×14in) page sizes."
+        },
+        {
+          "q": "Can I convert long documents?",
+          "a": "Yes, the converter handles multi-page documents automatically. Just paste your text and it will be split across pages as needed."
+        }
+      ],
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Enter or paste your text in the input area",
+        "Select your preferred page size (A4, Letter, or Legal)",
+        "Adjust margins, font size, and line spacing as needed",
+        "Preview the PDF in real-time",
+        "Click Download to save your PDF file"
+      ]
+    },
     "line-sorter": {
       "name": "Line Sort & Dedup",
       "description": "Sort lines, remove duplicates, reverse, shuffle, and more",
@@ -1338,8 +1403,8 @@
     "xml-formatter": {
       "name": "XML Formatter",
       "description": "Format, minify, and validate XML with syntax highlighting",
-      "pageTitle": "XML Formatter & Validator",
-      "pageDescription": "Format, minify, and validate XML online. Beautify or compress XML for production.",
+      "pageTitle": "XML Formatter & Validator Online Free — Beautify, Minify XML | DevToolBox",
+      "pageDescription": "Format, beautify, minify, and validate XML online for free. Pretty-print XML with syntax highlighting or compress for production.",
       "seoTitle": "About XML Formatting",
       "seoContent": "XML (Extensible Markup Language) is widely used for data exchange, configuration files, and web services like SOAP APIs. Properly formatted XML improves readability and helps identify structural errors quickly. This tool formats, minifies, and validates XML documents in your browser. It supports large XML files, preserves CDATA sections and comments, and highlights syntax for easier inspection. Whether you are debugging API responses or cleaning up configuration files, this formatter handles it all without sending your data to any server.",
       "faqTitle": "Frequently Asked Questions",
@@ -2397,8 +2462,8 @@
     "json-to-zod": {
       "name": "JSON to Zod Schema",
       "description": "Convert JSON data to Zod validation schemas",
-      "pageTitle": "JSON to Zod Schema Converter",
-      "pageDescription": "Convert JSON to Zod validation schemas online. Generate type-safe Zod schemas from JSON data. Free, fast, and works in your browser.",
+      "pageTitle": "JSON to Zod Schema Converter Online Free — Generate Type-Safe Schemas | DevToolBox",
+      "pageDescription": "Convert JSON to Zod validation schemas instantly. Generate type-safe Zod schemas from JSON data for runtime validation in TypeScript. Free online tool.",
       "seoTitle": "About JSON to Zod Conversion",
       "seoContent": "Zod is a TypeScript-first schema validation library that lets you define schemas and validate data at runtime. When building TypeScript applications, Zod schemas provide both runtime validation and compile-time type inference. This tool analyzes your JSON data and generates corresponding Zod schemas with proper type mappings: strings become z.string(), numbers become z.number(), booleans become z.boolean(), arrays become z.array(), and nested objects become z.object(). The generated schemas can be used directly in your TypeScript project for form validation, API response validation, and more. All processing happens locally in your browser.",
       "faqTitle": "Frequently Asked Questions",
@@ -2520,8 +2585,8 @@
     "graphql-to-typescript": {
       "name": "GraphQL to TypeScript",
       "description": "Convert GraphQL schema to TypeScript types",
-      "pageTitle": "GraphQL to TypeScript Converter",
-      "pageDescription": "Convert GraphQL schema to TypeScript types online. Generate TypeScript interfaces from GraphQL type definitions. Free and instant.",
+      "pageTitle": "GraphQL to TypeScript Converter Online Free — Schema to Types | DevToolBox",
+      "pageDescription": "Convert GraphQL schema to TypeScript types and interfaces online for free. Supports queries, mutations, enums, unions, and input types.",
       "seoTitle": "About GraphQL to TypeScript Conversion",
       "seoContent": "GraphQL schemas define the shape of data in your API using SDL (Schema Definition Language). When building TypeScript clients or servers, you need TypeScript types that match your GraphQL schema for type safety. This tool converts GraphQL type definitions to TypeScript interfaces. It handles scalar types (String, Int, Float, Boolean, ID), object types, input types, enums, unions, and list types. Non-null types (!) become required fields, while nullable types become optional. All processing happens locally in your browser.",
       "faqTitle": "Frequently Asked Questions",
@@ -3640,29 +3705,6 @@
       "faq5q": "What timezone does cron use?",
       "faq5a": "Cron uses the system local timezone by default. Some systems allow specifying TZ variable or using UTC. Always check your system documentation.",
       "relatedTitle": "Related Tools"
-    },
-    "text-to-pdf": {
-      "name": "Text to PDF Converter",
-      "description": "Convert plain text to PDF documents with custom formatting options",
-      "pageTitle": "Text to PDF Converter - Convert Text to PDF Online",
-      "pageDescription": "Free online text to PDF converter. Convert plain text files to PDF with custom font size, page size, margins, and line spacing. No signup required.",
-      "fontSize": "Font Size (pt)",
-      "pageSize": "Page Size",
-      "a4": "A4",
-      "letter": "Letter",
-      "legal": "Legal",
-      "margins": "Margins",
-      "normal": "Normal",
-      "narrow": "Narrow",
-      "wide": "Wide",
-      "lineSpacing": "Line Spacing",
-      "characters": "Characters",
-      "words": "Words",
-      "lines": "Lines",
-      "placeholder": "Paste or type your text here to convert to PDF...",
-      "convertToPdf": "Convert to PDF",
-      "seoTitle": "Convert Text to PDF Online",
-      "seoContent": "This text to PDF converter tool allows you to transform plain text files into professionally formatted PDF documents. Choose your preferred font size (8-24pt), page size (A4, Letter, or Legal), margins (Normal, Narrow, or Wide), and line spacing (1.0 to 2.0) to customize the output. All processing happens in your browser — your text never leaves your device. Perfect for creating quick documents, formatting notes, or exporting text content."
     },
     "yaml-json-converter": {
       "name": "YAML ↔ JSON Converter",
