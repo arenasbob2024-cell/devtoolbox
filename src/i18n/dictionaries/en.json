@@ -316,8 +316,8 @@
     "timestamp-converter": {
       "name": "Unix Timestamp Converter",
       "description": "Convert between Unix timestamps and human-readable dates",
-      "pageTitle": "Unix Timestamp Converter - Convert Timestamp to Date & DateTime Online",
-      "pageDescription": "Free online Unix timestamp converter. Convert Unix timestamp to date, datetime, and human-readable format. Convert date to Unix timestamp instantly. Supports epoch time conversion.",
+      "pageTitle": "Unix Timestamp Converter Online Free — Epoch to Date & Date to Timestamp | DevToolBox",
+      "pageDescription": "Free Unix timestamp converter. Convert epoch timestamp to human-readable date and vice versa. Supports milliseconds, seconds, ISO 8601. Live current timestamp display.",
       "currentTimestamp": "Current Unix Timestamp",
       "timestampToDate": "Timestamp → Date",
       "dateToTimestamp": "Date → Timestamp",
@@ -369,8 +369,8 @@
     "color-converter": {
       "name": "Color Converter",
       "description": "Convert colors between HEX, RGB, HSL formats with preview",
-      "pageTitle": "Color Converter - HEX to RGB, Pantone, CMYK Color Conversion Online",
-      "pageDescription": "Free online color converter tool. Convert between HEX, RGB, HSL, CMYK and Pantone color formats. Hexadecimal to RGB color converter with live preview and color picker.",
+      "pageTitle": "Color Converter Online Free — HEX to RGB, HSL, CMYK with Live Preview | DevToolBox",
+      "pageDescription": "Free color converter. Convert between HEX, RGB, HSL, and CMYK formats with live color preview and picker. Copy CSS values instantly. No signup required.",
       "randomColor": "🎲 Random Color",
       "colorPicker": "Color Picker",
       "emptyState": "Enter a color value and click Convert",
@@ -459,8 +459,8 @@
     "markdown-preview": {
       "name": "Markdown Preview",
       "description": "Write Markdown and see the rendered preview side by side",
-      "pageTitle": "Markdown Preview",
-      "pageDescription": "Write Markdown and preview the rendered HTML in real time. Side-by-side editor and preview.",
+      "pageTitle": "Markdown Preview & Editor Online Free — Live Side-by-Side Rendering | DevToolBox",
+      "pageDescription": "Free online Markdown editor with live preview. Write Markdown and see rendered HTML side by side in real time. Supports GFM tables, code blocks, and math. No signup.",
       "markdown": "MARKDOWN",
       "preview": "PREVIEW",
       "copyHtml": "Copy HTML",
@@ -544,8 +544,8 @@
     "qrcode-generator": {
       "name": "QR Code Generator",
       "description": "Generate QR codes from text, URLs, or any data",
-      "pageTitle": "QR Code Generator",
-      "pageDescription": "Generate QR codes from text, URLs, or any data. Download as PNG image.",
+      "pageTitle": "QR Code Generator Online Free — Create QR Codes from Text, URL, WiFi | DevToolBox",
+      "pageDescription": "Free QR code generator. Create QR codes from text, URLs, WiFi credentials, or any data. Download as PNG. Customizable size and error correction. No signup required.",
       "content": "Content",
       "size": "Size:",
       "generateQr": "Generate QR Code",
@@ -792,8 +792,8 @@
     "word-counter": {
       "name": "Word Counter",
       "description": "Count words, characters, sentences, and paragraphs in text",
-      "pageTitle": "Word Counter",
-      "pageDescription": "Count words, characters, sentences, paragraphs, and estimate reading time.",
+      "pageTitle": "Word Counter Online Free — Count Words, Characters, Sentences & Reading Time | DevToolBox",
+      "pageDescription": "Free word counter tool. Count words, characters (with/without spaces), sentences, paragraphs, and estimate reading time. Perfect for essays, blog posts, and SEO.",
       "noSpaces": "No Spaces",
       "lines": "Lines",
       "topWords": "Top Words",
@@ -2339,8 +2339,8 @@
     "markdown-to-html": {
       "name": "Markdown to HTML",
       "description": "Convert Markdown text to HTML markup",
-      "pageTitle": "Markdown to HTML Converter",
-      "pageDescription": "Convert Markdown to HTML online. Supports headers, bold, italic, code blocks, links, images, lists, and blockquotes. Free and instant.",
+      "pageTitle": "Markdown to HTML Converter Online Free — Convert MD to HTML Instantly | DevToolBox",
+      "pageDescription": "Free Markdown to HTML converter. Convert MD syntax to clean HTML with support for GFM tables, code blocks, task lists, and math. Instant conversion, no signup.",
       "seoTitle": "About Markdown to HTML Conversion",
       "seoContent": "Markdown is a lightweight markup language widely used for documentation, README files, and content creation. Converting Markdown to HTML is essential for rendering content in web pages, email templates, and CMS systems. This tool converts Markdown syntax to clean HTML markup, supporting headers (h1-h6), bold and italic text, inline code and fenced code blocks, links, images, ordered and unordered lists, blockquotes, and horizontal rules. The output is clean, semantic HTML ready for use in any web project. All processing happens locally in your browser.",
       "faqTitle": "Frequently Asked Questions",
@@ -3454,8 +3454,8 @@
     "nginx-config": {
       "name": "Nginx Config Generator",
       "description": "Generate Nginx configuration for reverse proxy, SSL, and more",
-      "pageTitle": "Nginx Config Generator — Reverse Proxy, SSL, Static Sites",
-      "pageDescription": "Generate production-ready Nginx configuration for reverse proxy, SSL/HTTPS, static sites, PHP-FPM, Node.js, and load balancing.",
+      "pageTitle": "Nginx Config Generator Online Free — Reverse Proxy, SSL, Load Balancing | DevToolBox",
+      "pageDescription": "Free Nginx configuration generator. Create production-ready configs for reverse proxy, SSL/HTTPS, static sites, PHP-FPM, Node.js, and load balancing. Copy and deploy.",
       "seoTitle": "What is an Nginx Config Generator?",
       "seoContent": "An Nginx config generator creates production-ready server configuration files with proper security headers, SSL, and reverse proxy settings.",
       "howToUseTitle": "How to Use",
@@ -3520,8 +3520,8 @@
     "docker-compose-generator": {
       "name": "Docker Compose Generator",
       "description": "Build docker-compose.yml visually with service presets",
-      "pageTitle": "Docker Compose Generator — Visual YAML Builder",
-      "pageDescription": "Build docker-compose.yml files visually. Add services from presets (PostgreSQL, Redis, MongoDB, Nginx, Node.js) with volumes, networks, and environment variables.",
+      "pageTitle": "Docker Compose Generator Online Free — Visual YAML Builder with Presets | DevToolBox",
+      "pageDescription": "Free Docker Compose generator. Build docker-compose.yml visually with service presets for PostgreSQL, Redis, MongoDB, Nginx, Node.js. Add volumes, networks, env vars.",
       "seoTitle": "What is a Docker Compose Generator?",
       "seoContent": "A Docker Compose generator helps you build docker-compose.yml files visually by selecting pre-configured service templates and customizing settings.",
       "howToUseTitle": "How to Use",
@@ -4202,8 +4202,8 @@
     "image-compressor": {
       "name": "Image Compressor",
       "description": "Compress images online for free with adjustable quality. Supports JPEG, PNG, and WebP output",
-      "pageTitle": "Image Compressor Online",
-      "pageDescription": "Compress images online for free. Reduce file size with adjustable quality slider. Supports JPEG, PNG, and WebP output. All processing in your browser."
+      "pageTitle": "Image Compressor Online Free — Compress JPEG, PNG, WebP Without Quality Loss | DevToolBox",
+      "pageDescription": "Free online image compressor. Reduce image file size up to 90% with adjustable quality. Supports JPEG, PNG, and WebP. All processing in your browser — no upload needed."
     },
     "svg-to-png": {
       "name": "SVG to PNG Converter",
