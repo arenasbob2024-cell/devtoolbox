@@ -3722,7 +3722,21 @@
       "dayOfWeek": "Day (Week)",
       "nextRunsTitle": "Next 5 Scheduled Runs",
       "seoTitle": "What is a Cron Expression?",
-      "seoContent": "A cron expression is a string of five fields representing a schedule for automated tasks in Unix-like systems. The five fields are: minute (0-59), hour (0-23), day of month (1-31), month (1-12), and day of week (0-6, where 0 is Sunday). Special characters include * (any value), / (step values), - (ranges), and , (lists). Cron expressions are widely used in Linux crontab, Kubernetes CronJobs, AWS CloudWatch Events, GitHub Actions, and many other scheduling systems. Our free online cron expression generator helps you build, validate, and understand cron schedules visually."
+      "seoContent": "A cron expression is a string of five fields representing a schedule for automated tasks in Unix-like systems. The five fields are: minute (0-59), hour (0-23), day of month (1-31), month (1-12), and day of week (0-6, where 0 is Sunday). Special characters include * (any value), / (step values), - (ranges), and , (lists). Cron expressions are widely used in Linux crontab, Kubernetes CronJobs, AWS CloudWatch Events, GitHub Actions, and many other scheduling systems. Our free online cron expression generator helps you build, validate, and understand cron schedules visually.",
+      "faqs": [
+        {
+          "q": "What is a cron expression?",
+          "a": "A cron expression defines a schedule using 5 fields: minute (0-59), hour (0-23), day of month (1-31), month (1-12), and day of week (0-7). Example: '0 9 * * 1-5' runs at 9:00 AM on weekdays."
+        },
+        {
+          "q": "How do I write a cron expression for every 5 minutes?",
+          "a": "Use */5 * * * * — the */5 in the minute field means 'every 5th minute'. Similarly: */15 for every 15 minutes, */2 in the hour field for every 2 hours."
+        },
+        {
+          "q": "What is the difference between * and */n in cron?",
+          "a": "Asterisk (*) means 'every possible value'. */n means 'every nth value'. So * in the hour field = every hour, */2 in the hour field = every 2nd hour (0, 2, 4, 6...)."
+        }
+      ]
     },
     "cron-expression-generator": {
       "name": "Cron Expression Generator",
@@ -4020,7 +4034,21 @@
       "commonSizes": "Common File Sizes",
       "invalidValue": "Please enter a valid number",
       "seoTitle": "Byte Converter - File Size Unit Converter",
-      "seoContent": "This byte converter tool lets you quickly convert between file size units including bits, bytes, kilobytes, megabytes, gigabytes, terabytes, and petabytes. Supports both binary (base-1024: KiB, MiB, GiB) and decimal (base-1000: KB, MB, GB) standards. Useful for calculating storage, bandwidth, and file sizes. All processing happens in your browser — your data never leaves your device."
+      "seoContent": "This byte converter tool lets you quickly convert between file size units including bits, bytes, kilobytes, megabytes, gigabytes, terabytes, and petabytes. Supports both binary (base-1024: KiB, MiB, GiB) and decimal (base-1000: KB, MB, GB) standards. Useful for calculating storage, bandwidth, and file sizes. All processing happens in your browser — your data never leaves your device.",
+      "faqs": [
+        {
+          "q": "How do I convert bytes to kilobytes?",
+          "a": "Divide by 1024 for binary (KiB) or 1000 for decimal (KB). 1 KiB = 1024 bytes, 1 KB = 1000 bytes. The tool handles both systems and converts between bytes, KB, MB, GB, TB, and PB."
+        },
+        {
+          "q": "What is the difference between KB and KiB?",
+          "a": "KB (kilobyte) = 1000 bytes (decimal/SI system, used by storage manufacturers). KiB (kibibyte) = 1024 bytes (binary system, used by operating systems). A 500 GB drive shows as ~465 GiB in your OS."
+        },
+        {
+          "q": "How do I convert file sizes between units?",
+          "a": "Enter any value with its unit (bytes, KB, MB, GB, TB) and the converter instantly shows the equivalent in all other units. Supports both binary (power of 1024) and decimal (power of 1000) systems."
+        }
+      ]
     },
     "ascii-text-converter": {
       "name": "ASCII Text Converter",
@@ -4049,7 +4077,21 @@
       "printable": "Printable Characters",
       "control": "Control Characters",
       "seoTitle": "ASCII to Text Converter Online",
-      "seoContent": "This ASCII to text converter tool lets you convert between ASCII codes and text characters instantly. Enter text to see the ASCII decimal, hexadecimal, binary, and octal values for each character. Or enter ASCII codes to decode them back to text. Includes a comprehensive ASCII reference table with all 128 characters. Useful for programming, data encoding, and character analysis. All processing happens in your browser — your data never leaves your device."
+      "seoContent": "This ASCII to text converter tool lets you convert between ASCII codes and text characters instantly. Enter text to see the ASCII decimal, hexadecimal, binary, and octal values for each character. Or enter ASCII codes to decode them back to text. Includes a comprehensive ASCII reference table with all 128 characters. Useful for programming, data encoding, and character analysis. All processing happens in your browser — your data never leaves your device.",
+      "faqs": [
+        {
+          "q": "What is ASCII and how does it work?",
+          "a": "ASCII (American Standard Code for Information Interchange) maps 128 characters to numbers 0-127. For example, 'A' = 65, 'a' = 97, '0' = 48. It is the foundation of text encoding in computing."
+        },
+        {
+          "q": "How do I convert text to ASCII codes?",
+          "a": "Enter text in the input field and the tool shows the ASCII value for each character. Supports decimal, hexadecimal, octal, and binary representations. Non-ASCII characters use extended encodings like UTF-8."
+        },
+        {
+          "q": "What is the difference between ASCII and Unicode?",
+          "a": "ASCII covers 128 characters (English letters, digits, symbols). Unicode covers 150,000+ characters from all writing systems worldwide. UTF-8, the most common Unicode encoding, is backwards-compatible with ASCII."
+        }
+      ]
     },
     "hex-to-binary": {
       "name": "Hex to Binary Converter",
@@ -4071,7 +4113,21 @@
       "invalidBinary": "Invalid binary value (0 and 1 only)",
       "commonValues": "Common Hex-Binary Values",
       "seoTitle": "Hex to Binary Converter Online",
-      "seoContent": "This hex to binary converter tool lets you instantly convert between hexadecimal (base-16) and binary (base-2) number systems. Enter a hex value to see its binary, decimal, and octal equivalents. Features include grouped 4-bit binary display, bidirectional conversion, and a reference table. Useful for programming, digital electronics, and computer science. All processing happens in your browser — your data never leaves your device."
+      "seoContent": "This hex to binary converter tool lets you instantly convert between hexadecimal (base-16) and binary (base-2) number systems. Enter a hex value to see its binary, decimal, and octal equivalents. Features include grouped 4-bit binary display, bidirectional conversion, and a reference table. Useful for programming, digital electronics, and computer science. All processing happens in your browser — your data never leaves your device.",
+      "faqs": [
+        {
+          "q": "How do I convert hexadecimal to binary?",
+          "a": "Each hex digit maps to exactly 4 binary bits. F=1111, A=1010, 5=0101, 0=0000. So hex 'FA' = binary '11111010'. Just convert each digit independently and concatenate."
+        },
+        {
+          "q": "Why is hexadecimal used in programming?",
+          "a": "Hex is compact notation for binary data. One hex digit = 4 bits, two hex digits = 1 byte. This makes it perfect for memory addresses (0x7FFF), color codes (#FF0000), and byte values (0x41 = 'A')."
+        },
+        {
+          "q": "What does 0x mean before a number?",
+          "a": "0x is a prefix indicating hexadecimal (base-16) notation in most programming languages. 0xFF = 255 decimal = 11111111 binary. Other prefixes: 0b for binary, 0o for octal."
+        }
+      ]
     },
     "fraction-decimal-converter": {
       "name": "Fraction Decimal Converter",
@@ -4095,7 +4151,21 @@
       "invalidDecimal": "Invalid decimal value",
       "commonFractions": "Common Fractions",
       "seoTitle": "Fraction to Decimal Converter Online",
-      "seoContent": "This fraction to decimal converter tool lets you instantly convert between fractions and decimal numbers. Enter a fraction to see its decimal equivalent, or enter a decimal to find its fraction representation. Features include automatic fraction simplification, percentage conversion, and a common fractions reference table. Useful for math, engineering, and everyday calculations. All processing happens in your browser — your data never leaves your device."
+      "seoContent": "This fraction to decimal converter tool lets you instantly convert between fractions and decimal numbers. Enter a fraction to see its decimal equivalent, or enter a decimal to find its fraction representation. Features include automatic fraction simplification, percentage conversion, and a common fractions reference table. Useful for math, engineering, and everyday calculations. All processing happens in your browser — your data never leaves your device.",
+      "faqs": [
+        {
+          "q": "How do I convert a fraction to a decimal?",
+          "a": "Divide the numerator by the denominator. For example, 3/4 = 3 divided by 4 = 0.75. Some fractions produce repeating decimals: 1/3 = 0.333... The tool handles both terminating and repeating decimals."
+        },
+        {
+          "q": "How do I convert a decimal to a fraction?",
+          "a": "For terminating decimals: count decimal places, use as denominator power of 10, then simplify. 0.75 = 75/100 = 3/4. For repeating decimals, algebraic methods are needed. The tool does this automatically."
+        },
+        {
+          "q": "Which fractions produce repeating decimals?",
+          "a": "A fraction produces a terminating decimal only if the denominator's prime factors are only 2 and/or 5. All other fractions repeat. Examples: 1/4 = 0.25 (terminates), 1/3 = 0.333... (repeats), 1/7 = 0.142857... (repeats)."
+        }
+      ]
     },
     "scientific-notation-converter": {
       "name": "Scientific Notation Converter",
@@ -4118,7 +4188,21 @@
       "invalidScientific": "Invalid scientific notation",
       "examples": "Example Values",
       "seoTitle": "Scientific Notation Converter Online",
-      "seoContent": "This scientific notation converter tool lets you convert between scientific notation and standard numbers instantly. Enter any number to see its scientific notation, E notation, and engineering notation. Or enter a scientific notation value to convert it to standard form. Supports very large and very small numbers. Useful for science, engineering, and mathematics. All processing happens in your browser — your data never leaves your device."
+      "seoContent": "This scientific notation converter tool lets you convert between scientific notation and standard numbers instantly. Enter any number to see its scientific notation, E notation, and engineering notation. Or enter a scientific notation value to convert it to standard form. Supports very large and very small numbers. Useful for science, engineering, and mathematics. All processing happens in your browser — your data never leaves your device.",
+      "faqs": [
+        {
+          "q": "What is scientific notation?",
+          "a": "Scientific notation expresses numbers as a coefficient (1-9.99) multiplied by a power of 10. Examples: 1,500,000 = 1.5 x 10^6, 0.00042 = 4.2 x 10^-4. It makes very large and very small numbers manageable."
+        },
+        {
+          "q": "How do I convert to scientific notation?",
+          "a": "Move the decimal point until you have a number between 1 and 10. Count the positions moved: right = negative exponent, left = positive. Example: 123,456 → 1.23456, moved 5 left → 1.23456 x 10^5."
+        },
+        {
+          "q": "Where is scientific notation used in programming?",
+          "a": "JavaScript: 1.5e6 = 1,500,000. Python: 4.2e-4 = 0.00042. Used in floating-point numbers, physical constants, large data sizes, and any context where numbers span many orders of magnitude."
+        }
+      ]
     },
     "color-name-to-hex": {
       "name": "Color Name to Hex Converter",
@@ -4145,7 +4229,21 @@
       "noResults": "No colors found",
       "totalColors": "CSS Named Colors",
       "seoTitle": "Color Name to Hex Converter Online",
-      "seoContent": "This color name to hex converter tool lets you browse all 148 CSS named colors with their hex codes, RGB values, and HSL equivalents. Search by color name, filter by category (reds, blues, greens, etc.), and copy any value with one click. Perfect for web designers and front-end developers working with CSS colors. All processing happens in your browser — your data never leaves your device."
+      "seoContent": "This color name to hex converter tool lets you browse all 148 CSS named colors with their hex codes, RGB values, and HSL equivalents. Search by color name, filter by category (reds, blues, greens, etc.), and copy any value with one click. Perfect for web designers and front-end developers working with CSS colors. All processing happens in your browser — your data never leaves your device.",
+      "faqs": [
+        {
+          "q": "How do I convert a color name to hex?",
+          "a": "Enter a CSS color name (e.g., 'coral', 'steelblue', 'tomato') and the tool returns the hex code (#FF7F50, #4682B4, #FF6347). All 147 CSS named colors are supported."
+        },
+        {
+          "q": "How many CSS named colors are there?",
+          "a": "There are 147 CSS named colors defined in the CSS specification, from common ones (red, blue, green) to specific shades (cornflowerblue, darkolivegreen, peachpuff). Plus transparent and currentColor keywords."
+        },
+        {
+          "q": "Should I use color names or hex codes in CSS?",
+          "a": "Hex codes are recommended for production CSS — they are precise, universal, and don't require memorizing names. Named colors are useful for prototyping, teaching, and code readability."
+        }
+      ]
     },
     "text-repeater": {
       "name": "Text Repeater",
@@ -4170,7 +4268,21 @@
       "lineCount": "Lines",
       "presets": "Quick Presets",
       "seoTitle": "Text Repeater - Repeat Text Online",
-      "seoContent": "This text repeater tool lets you repeat any text, word, or character multiple times instantly. Choose from separator options including new line, space, comma, or custom separator. See character and line counts in real-time. Useful for generating test data, creating patterns, and preparing text content. All processing happens in your browser — your data never leaves your device."
+      "seoContent": "This text repeater tool lets you repeat any text, word, or character multiple times instantly. Choose from separator options including new line, space, comma, or custom separator. See character and line counts in real-time. Useful for generating test data, creating patterns, and preparing text content. All processing happens in your browser — your data never leaves your device.",
+      "faqs": [
+        {
+          "q": "What is a text repeater tool?",
+          "a": "A text repeater duplicates a text string a specified number of times. Useful for generating test data, creating CSS patterns, filling mock content, or testing text processing functions with large inputs."
+        },
+        {
+          "q": "How do I repeat text in JavaScript?",
+          "a": "Use String.prototype.repeat(): 'hello '.repeat(3) returns 'hello hello hello '. In Python: 'hello ' * 3. The tool provides a visual interface for quick text repetition without coding."
+        },
+        {
+          "q": "What are common uses for text repeaters?",
+          "a": "Testing input validation (long strings), generating sample data, creating CSS content patterns, stress testing text fields, building placeholder content, and creating decorative text separators."
+        }
+      ]
     },
     "em-px-converter": {
       "name": "Em/Px Converter",
@@ -4193,7 +4305,21 @@
       "relativeTo": "Relative To",
       "useCase": "Use Case",
       "seoTitle": "Em to Px Converter - CSS Unit Converter",
-      "seoContent": "This em to px converter tool lets you convert between CSS units including em, rem, px, pt, percent, and viewport units. Set a custom base font size to see accurate conversions. Includes a CSS unit reference table explaining when to use each unit. Perfect for responsive web design and CSS development. All processing happens in your browser — your data never leaves your device."
+      "seoContent": "This em to px converter tool lets you convert between CSS units including em, rem, px, pt, percent, and viewport units. Set a custom base font size to see accurate conversions. Includes a CSS unit reference table explaining when to use each unit. Perfect for responsive web design and CSS development. All processing happens in your browser — your data never leaves your device.",
+      "faqs": [
+        {
+          "q": "How do I convert em to px?",
+          "a": "Multiply the em value by the parent element's font size. If the parent is 16px (browser default): 1.5em = 1.5 x 16 = 24px. The converter lets you set the base font size and converts in both directions."
+        },
+        {
+          "q": "What is the difference between em and rem?",
+          "a": "em is relative to the parent element's font size, making it compound when nested. rem is relative to the root (html) element's font size, making it more predictable. Most developers prefer rem for consistency."
+        },
+        {
+          "q": "What is the default browser font size?",
+          "a": "16px in all major browsers. This means 1em = 1rem = 16px by default. You can change the root size with html { font-size: 62.5%; } to make 1rem = 10px for easier calculations."
+        }
+      ]
     },
     "ip-to-binary": {
       "name": "IP to Binary Converter",
@@ -4225,7 +4351,21 @@
       "binary": "Binary",
       "cidr": "CIDR",
       "seoTitle": "IP to Binary Converter Online",
-      "seoContent": "This IP to binary converter tool lets you convert IPv4 addresses to binary format and back. Enter any IP address to see its full binary representation, dotted binary, hexadecimal, and decimal equivalents. Features include octet breakdown, common IP address references, and subnet mask conversions. Useful for networking, CCNA studies, and system administration. All processing happens in your browser — your data never leaves your device."
+      "seoContent": "This IP to binary converter tool lets you convert IPv4 addresses to binary format and back. Enter any IP address to see its full binary representation, dotted binary, hexadecimal, and decimal equivalents. Features include octet breakdown, common IP address references, and subnet mask conversions. Useful for networking, CCNA studies, and system administration. All processing happens in your browser — your data never leaves your device.",
+      "faqs": [
+        {
+          "q": "How do I convert an IP address to binary?",
+          "a": "Convert each octet (number between dots) to 8-bit binary. Example: 192.168.1.1 → 11000000.10101000.00000001.00000001. Each octet ranges from 0 (00000000) to 255 (11111111)."
+        },
+        {
+          "q": "Why convert IP addresses to binary?",
+          "a": "Understanding binary IP is essential for subnetting, CIDR notation, network masks, and troubleshooting. Subnet masks work by AND-ing binary IP addresses, and CIDR /24 means the first 24 bits are the network portion."
+        },
+        {
+          "q": "How does subnetting work with binary IPs?",
+          "a": "A subnet mask like 255.255.255.0 (/24) in binary is 24 ones followed by 8 zeros. AND-ing an IP with its mask gives the network address. The remaining bits identify individual hosts on that network."
+        }
+      ]
     },
     "unix-timestamp-converter": {
       "name": "Unix Timestamp Converter",
@@ -4437,7 +4577,21 @@
       "name": "JSON Path Finder",
       "description": "Paste JSON, click any node to get its JSONPath expression",
       "pageTitle": "JSON Path Finder - Find JSONPath Online Free",
-      "pageDescription": "Free online JSON Path Finder. Paste JSON, click any node in the interactive tree to get its full JSONPath expression. Copy paths like $.store.books[0].title instantly."
+      "pageDescription": "Free online JSON Path Finder. Paste JSON, click any node in the interactive tree to get its full JSONPath expression. Copy paths like $.store.books[0].title instantly.",
+      "faqs": [
+        {
+          "q": "What is JSONPath?",
+          "a": "JSONPath is a query language for navigating JSON documents, similar to XPath for XML. It uses dot notation ($.store.book[0].title) or bracket notation ($['store']['book'][0]['title']) to reference specific values in JSON data."
+        },
+        {
+          "q": "How do I find a path in JSON?",
+          "a": "Paste your JSON in the viewer, then click any value in the tree. The tool instantly shows the full JSONPath expression needed to access that value, which you can copy and use in your code."
+        },
+        {
+          "q": "Where is JSONPath used?",
+          "a": "JSONPath is used in API testing tools (Postman), data transformation (jq), configuration (Kubernetes JSONPath), logging queries (Elasticsearch), and programming libraries (JsonPath for Java, jsonpath-ng for Python)."
+        }
+      ]
     },
     "string-case-converter": {
       "name": "String Case Converter",
@@ -4563,7 +4717,21 @@
       "name": "Text Case Converter",
       "description": "Convert text between camelCase, snake_case, kebab-case, PascalCase, UPPERCASE, lowercase, Title Case, dot.case and more",
       "pageTitle": "Text Case Converter Online",
-      "pageDescription": "Convert text between camelCase, snake_case, kebab-case, PascalCase, UPPERCASE, lowercase, Title Case, dot.case and 14 more formats instantly."
+      "pageDescription": "Convert text between camelCase, snake_case, kebab-case, PascalCase, UPPERCASE, lowercase, Title Case, dot.case and 14 more formats instantly.",
+      "faqs": [
+        {
+          "q": "How do I convert text between cases?",
+          "a": "Paste your text and select the target format. Supported formats include camelCase, PascalCase, snake_case, CONSTANT_CASE, kebab-case, Title Case, UPPERCASE, lowercase, and more."
+        },
+        {
+          "q": "What naming convention should I use?",
+          "a": "camelCase for JavaScript/Java variables, PascalCase for classes and React components, snake_case for Python and database columns, kebab-case for CSS and URLs, CONSTANT_CASE for constants."
+        },
+        {
+          "q": "Can I batch convert multiple names?",
+          "a": "Yes, paste multiple words or names (one per line) and they are all converted at once. This is useful for refactoring code when switching between naming conventions."
+        }
+      ]
     },
     "image-compressor": {
       "name": "Image Compressor",
@@ -4666,7 +4834,21 @@
       "name": "HTTP Header Checker",
       "description": "Check HTTP response headers for any URL",
       "pageTitle": "HTTP Header Checker",
-      "pageDescription": "Check HTTP response headers for any URL. Inspect security headers, CORS, cache control, and more."
+      "pageDescription": "Check HTTP response headers for any URL. Inspect security headers, CORS, cache control, and more.",
+      "faqs": [
+        {
+          "q": "What are HTTP headers?",
+          "a": "HTTP headers are metadata sent between client and server with every request and response. They control caching (Cache-Control), security (Content-Security-Policy), content type (Content-Type), authentication (Authorization), and more."
+        },
+        {
+          "q": "How do I check HTTP headers for a website?",
+          "a": "Enter a URL and the tool sends a request and displays all response headers including status code, content type, cache control, security headers, cookies, and server information."
+        },
+        {
+          "q": "What security headers should my site have?",
+          "a": "Essential security headers: Content-Security-Policy (XSS protection), Strict-Transport-Security (HTTPS enforcement), X-Content-Type-Options (MIME sniffing prevention), X-Frame-Options (clickjacking prevention), and Referrer-Policy."
+        }
+      ]
     },
     "ip-lookup-tool": {
       "name": "IP Address Lookup",
