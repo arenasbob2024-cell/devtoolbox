@@ -159,8 +159,8 @@
     "url-encoder": {
       "name": "URL Encoder/Decoder",
       "description": "Encode or decode URL components and query parameters",
-      "pageTitle": "URL Encoder / Decoder",
-      "pageDescription": "Encode or decode URLs and URI components. Supports encodeURIComponent and encodeURI.",
+      "pageTitle": "URL Encoder / Decoder Online Free — Encode & Decode URLs Instantly | DevToolBox",
+      "pageDescription": "Free online URL encoder and decoder. Encode special characters for query strings or decode percent-encoded URLs. Supports encodeURIComponent and encodeURI modes.",
       "uriComponent": "URI Component",
       "fullUri": "Full URI",
       "seoTitle": "About URL Encoding",
@@ -587,7 +587,7 @@
     "lorem-ipsum": {
       "name": "Lorem Ipsum Generator",
       "description": "Generate placeholder text in paragraphs, sentences, or words",
-      "pageTitle": "Lorem Ipsum Generator",
+      "pageTitle": "Lorem Ipsum Generator Online Free — Generate Placeholder Text | DevToolBox",
       "pageDescription": "Generate placeholder text in paragraphs, sentences, or words for design and development.",
       "paragraphs": "Paragraphs",
       "sentences": "Sentences",
@@ -628,7 +628,7 @@
     "html-entity": {
       "name": "HTML Entity Encoder",
       "description": "Encode and decode HTML entities and special characters",
-      "pageTitle": "HTML Entity Encoder / Decoder",
+      "pageTitle": "HTML Entity Encoder / Decoder Online Free — Escape HTML Characters | DevToolBox",
       "pageDescription": "Encode special characters to HTML entities or decode entities back to characters.",
       "encodeSpecial": "Encode (special chars only)",
       "encodeAll": "Encode All (including Unicode)",
@@ -667,7 +667,7 @@
     "css-minifier": {
       "name": "CSS Minifier / Beautifier",
       "description": "Minify or beautify CSS code for production or readability",
-      "pageTitle": "CSS Minifier / Beautifier",
+      "pageTitle": "CSS Minifier & Beautifier Online Free — Compress or Format CSS | DevToolBox",
       "pageDescription": "Minify CSS for production or beautify it for readability. Removes comments and extra whitespace.",
       "inputCss": "Input CSS",
       "placeholder": "Paste your CSS here...",
@@ -706,7 +706,7 @@
     "number-base": {
       "name": "Number Base Converter",
       "description": "Convert numbers between binary, octal, decimal, and hexadecimal",
-      "pageTitle": "Number Base Converter",
+      "pageTitle": "Number Base Converter Online Free — Binary, Octal, Decimal, Hex | DevToolBox",
       "pageDescription": "Convert numbers between decimal, binary, octal, and hexadecimal instantly.",
       "decimal": "Decimal (Base 10)",
       "binary": "Binary (Base 2)",
@@ -1025,7 +1025,7 @@
     "string-case": {
       "name": "String Case Converter",
       "description": "Convert text between camelCase, snake_case, kebab-case, and more",
-      "pageTitle": "String Case Converter",
+      "pageTitle": "String Case Converter Online Free — camelCase, snake_case, UPPER | DevToolBox",
       "pageDescription": "Convert text between camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE, and more naming conventions.",
       "inputLabel": "Input Text",
       "inputPlaceholder": "Enter text, variable name, or sentence...\n\ne.g. my variable name",
@@ -1063,7 +1063,7 @@
     "slug-generator": {
       "name": "URL Slug Generator",
       "description": "Convert text to SEO-friendly URL slugs",
-      "pageTitle": "URL Slug Generator",
+      "pageTitle": "URL Slug Generator Online Free — Create SEO-Friendly URL Slugs | DevToolBox",
       "pageDescription": "Convert any text to clean, SEO-friendly URL slugs. Customizable separators, stop word removal, and length limits.",
       "inputLabel": "Input Text",
       "inputPlaceholder": "Enter a title or text to convert to a slug...",
@@ -1109,7 +1109,7 @@
     "chmod-calculator": {
       "name": "Chmod Calculator",
       "description": "Calculate Linux file permissions with interactive checkboxes",
-      "pageTitle": "Linux Chmod Calculator",
+      "pageTitle": "Linux Chmod Calculator Online Free — File Permission Calculator | DevToolBox",
       "pageDescription": "Interactive chmod permission calculator. Convert between numeric (755) and symbolic (rwxr-xr-x) Linux file permissions.",
       "numericLabel": "Numeric",
       "symbolicLabel": "Symbolic",
@@ -1228,7 +1228,7 @@
     "line-sorter": {
       "name": "Line Sort & Dedup",
       "description": "Sort lines, remove duplicates, reverse, shuffle, and more",
-      "pageTitle": "Line Sort & Dedup Tool",
+      "pageTitle": "Line Sort & Dedup Tool Online Free — Sort, Remove Duplicates | DevToolBox",
       "pageDescription": "Sort lines alphabetically, numerically, remove duplicates, reverse, shuffle, and more. Free online text line sorting tool.",
       "sortAsc": "Sort A→Z",
       "sortDesc": "Sort Z→A",
@@ -1276,7 +1276,7 @@
     "js-html-formatter": {
       "name": "JS/HTML Formatter",
       "description": "Minify or beautify JavaScript and HTML code",
-      "pageTitle": "JavaScript & HTML Minifier / Beautifier",
+      "pageTitle": "JavaScript & HTML Minifier / Beautifier Online Free — Compress JS & HTML | DevToolBox",
       "pageDescription": "Minify or beautify JavaScript and HTML code online. Remove comments, compress whitespace, or format for readability.",
       "inputLabel": "Input Code",
       "jsPlaceholder": "Paste your JavaScript code here...",
@@ -1316,7 +1316,7 @@
     "image-base64": {
       "name": "Image Base64 Converter",
       "description": "Convert images to Base64 strings and data URIs with drag & drop",
-      "pageTitle": "Image to Base64 Converter",
+      "pageTitle": "Image to Base64 Converter Online Free — Convert PNG, JPG to Data URI | DevToolBox",
       "pageDescription": "Convert images to Base64 encoded strings and data URIs. Supports PNG, JPG, GIF, SVG, WebP. Drag & drop upload.",
       "encodeTab": "Image → Base64",
       "decodeTab": "Base64 → Image",
@@ -1366,7 +1366,7 @@
     "git-command-generator": {
       "name": "Git Command Generator",
       "description": "Visual Git command builder — select an action, fill in parameters, copy the command",
-      "pageTitle": "Git Command Generator",
+      "pageTitle": "Git Command Generator Online Free — Build Git Commands Visually | DevToolBox",
       "pageDescription": "Visual Git command builder. Select an operation, customize parameters, and copy the ready-to-use command. Covers init, branch, commit, merge, rebase, stash, and more.",
       "seoTitle": "About Git Commands",
       "seoContent": "Git is the most widely used version control system in the world. While powerful, its command-line interface has a steep learning curve. This tool helps you build Git commands visually — select the operation you need, fill in parameters like branch names or commit messages, and copy the complete command. Covers 40+ common Git operations organized by category.",
@@ -1477,7 +1477,7 @@
     "http-status": {
       "name": "HTTP Status Code Reference",
       "description": "Lookup HTTP status codes with meanings and use cases",
-      "pageTitle": "HTTP Status Code Reference",
+      "pageTitle": "HTTP Status Code Reference Online Free — 1xx to 5xx Lookup | DevToolBox",
       "pageDescription": "Lookup HTTP status codes: 1xx, 2xx, 3xx, 4xx, 5xx with descriptions and when to use them.",
       "seoTitle": "About HTTP Status Codes",
       "seoContent": "HTTP status codes are three-digit numbers returned by servers to indicate the result of a client request. They are grouped into five classes: 1xx (informational), 2xx (success), 3xx (redirection), 4xx (client errors), and 5xx (server errors). Understanding these codes is essential for API development, debugging network issues, and building robust web applications. This reference tool lets you quickly look up any status code, understand its meaning, and learn when to use it in your own APIs. It covers all standard codes defined in RFC 7231 and common extensions.",
@@ -1514,7 +1514,7 @@
     "mime-types": {
       "name": "MIME Type Lookup",
       "description": "Find MIME types by file extension or content type",
-      "pageTitle": "MIME Type Lookup",
+      "pageTitle": "MIME Type Lookup Online Free — Find Content-Type for Any File | DevToolBox",
       "pageDescription": "Find MIME types by file extension. Browse common content types for web development.",
       "seoTitle": "About MIME Types",
       "seoContent": "MIME types (Multipurpose Internet Mail Extensions) define the nature and format of a document or file. Web servers use MIME types in Content-Type headers to tell browsers how to handle files. Getting the MIME type wrong can cause browsers to download files instead of displaying them, or break file uploads. This tool lets you look up the correct MIME type for any file extension, or find which extensions correspond to a given content type. It includes hundreds of MIME types covering images, audio, video, documents, fonts, and application-specific formats.",
@@ -1551,7 +1551,7 @@
     "escape-unescape": {
       "name": "Escape / Unescape",
       "description": "Escape or unescape HTML, JavaScript, and JSON strings",
-      "pageTitle": "Escape Unescape Tool",
+      "pageTitle": "Escape / Unescape Tool Online Free — JSON, HTML, URL, SQL Escape | DevToolBox",
       "pageDescription": "Escape special characters for HTML, JavaScript, or JSON. Unescape encoded strings.",
       "seoTitle": "About Escaping and Unescaping",
       "seoContent": "Character escaping converts special characters into safe representations to prevent injection attacks and parsing errors. HTML escaping converts characters like < > & into entities (&lt; &gt; &amp;). JavaScript escaping handles quotes and backslashes in strings. JSON escaping ensures strings are valid within JSON documents. This tool supports all three escaping modes and their reverse operations. It is essential for security-conscious developers who need to sanitize user input, build safe HTML output, or debug encoded strings in logs and API responses.",
@@ -1588,7 +1588,7 @@
     "ip-calculator": {
       "name": "IP Subnet Calculator",
       "description": "Calculate subnet mask, network, broadcast, and host range",
-      "pageTitle": "IP Subnet Calculator",
+      "pageTitle": "IP Subnet Calculator Online Free — CIDR, Netmask & Subnetting | DevToolBox",
       "pageDescription": "Calculate subnet mask, network address, broadcast address, and host range from IP and CIDR.",
       "seoTitle": "About IP Subnetting",
       "seoContent": "IP subnetting divides a network into smaller subnetworks to improve performance and security. Understanding subnets is critical for network administrators, DevOps engineers, and anyone configuring cloud infrastructure. This calculator takes an IP address with a CIDR prefix (e.g., 192.168.1.0/24) and instantly computes the subnet mask, network address, broadcast address, first and last usable host, and total number of hosts. It supports both IPv4 addresses and various CIDR notations from /8 to /30. All calculations are done locally in your browser.",
@@ -1625,7 +1625,7 @@
     "fake-data": {
       "name": "Fake Data Generator",
       "description": "Generate fake names, emails, addresses for testing",
-      "pageTitle": "Fake Data Generator",
+      "pageTitle": "Fake Data Generator Online Free — Names, Emails, Addresses, JSON | DevToolBox",
       "pageDescription": "Generate fake names, emails, phone numbers, and addresses for testing and development.",
       "seoTitle": "About Fake Data Generation",
       "seoContent": "Generating realistic test data is essential for software development, QA testing, and database seeding. Using real personal data for testing creates privacy risks and compliance issues with regulations like GDPR. This tool generates fake but realistic names, email addresses, phone numbers, physical addresses, and other data types. All data is generated randomly in your browser using established patterns — no real personal information is used. You can generate single records or bulk data sets, and copy the results in various formats for use in your applications.",
@@ -1662,7 +1662,7 @@
     "hmac-generator": {
       "name": "HMAC Generator",
       "description": "Generate HMAC-SHA256, HMAC-SHA1 from message and secret key",
-      "pageTitle": "HMAC Generator",
+      "pageTitle": "HMAC Generator Online Free — SHA-256, SHA-512 HMAC Calculator | DevToolBox",
       "pageDescription": "Generate HMAC signatures with SHA-256 or SHA-1 for API verification and webhooks.",
       "seoTitle": "About HMAC Signatures",
       "seoContent": "HMAC (Hash-based Message Authentication Code) combines a cryptographic hash function with a secret key to verify both data integrity and authenticity. Unlike simple hashing, HMAC requires the secret key to generate and verify signatures, making it resistant to tampering. HMAC-SHA256 is the most commonly used variant and is required by many APIs and webhook systems (Stripe, GitHub, Shopify). This tool generates HMAC signatures using SHA-1, SHA-256, or SHA-512 algorithms. Enter your message and secret key, and get the signature in hexadecimal or Base64 format. All computation happens locally.",
@@ -1699,7 +1699,7 @@
     "url-parser": {
       "name": "URL Parser",
       "description": "Parse URL into components: protocol, host, path, query params",
-      "pageTitle": "URL Parser",
+      "pageTitle": "URL Parser Online Free — Extract Protocol, Host, Path, Params | DevToolBox",
       "pageDescription": "Parse URLs into protocol, host, pathname, query parameters, and hash. Extract URL components.",
       "seoTitle": "About URL Parsing",
       "seoContent": "URLs (Uniform Resource Locators) contain multiple components: protocol (https), hostname, port, pathname, query parameters, and fragment hash. Understanding URL structure is essential for web development, API design, and debugging network requests. This tool breaks any URL into its individual components for easy inspection. It decodes percent-encoded characters, parses query strings into key-value pairs, and validates URL format. Useful for debugging redirect chains, analyzing tracking parameters, and understanding complex API endpoints.",
@@ -1736,7 +1736,7 @@
     "binary-text": {
       "name": "Text ↔ Binary Converter",
       "description": "Convert text to binary and binary to text",
-      "pageTitle": "Text to Binary Converter",
+      "pageTitle": "Text to Binary Converter Online Free — Convert Text to Binary Code | DevToolBox",
       "pageDescription": "Convert text to binary (0s and 1s) and binary back to text. Supports UTF-8.",
       "seoTitle": "About Text and Binary Conversion",
       "seoContent": "Binary representation is the foundation of all digital computing. Every character you see on screen is stored as a sequence of 0s and 1s. This tool converts text to its binary representation and back. Each character is converted to its UTF-8 binary encoding, displayed as 8-bit groups. It supports all Unicode characters including emoji and characters from non-Latin scripts. The tool is useful for learning about character encoding, debugging encoding issues, and understanding how computers store text data at the lowest level.",
@@ -1773,7 +1773,7 @@
     "pem-decoder": {
       "name": "PEM / Certificate Decoder",
       "description": "Decode PEM certificates and view certificate details",
-      "pageTitle": "PEM Certificate Decoder",
+      "pageTitle": "PEM Certificate Decoder Online Free — View SSL/TLS Certificate Details | DevToolBox",
       "pageDescription": "Decode PEM format certificates and view X.509 certificate details.",
       "seoTitle": "About PEM Certificate Decoding",
       "seoContent": "PEM (Privacy Enhanced Mail) is the most common format for SSL/TLS certificates, private keys, and certificate chains. PEM files are Base64-encoded with header and footer lines like -----BEGIN CERTIFICATE-----. This tool decodes PEM-formatted certificates and displays all X.509 fields: subject, issuer, validity dates, serial number, signature algorithm, public key details, and extensions like Subject Alternative Names (SANs). It is essential for DevOps engineers managing SSL certificates, debugging TLS handshake failures, and verifying certificate chains.",
@@ -1810,7 +1810,7 @@
     "html-table": {
       "name": "HTML Table Generator",
       "description": "Convert CSV or JSON to HTML table markup",
-      "pageTitle": "HTML Table Generator",
+      "pageTitle": "HTML Table Generator Online Free — Create Responsive Tables | DevToolBox",
       "pageDescription": "Convert CSV or JSON data to HTML table markup. Customize headers and styling.",
       "seoTitle": "About HTML Table Generation",
       "seoContent": "HTML tables remain the correct semantic element for displaying tabular data on the web. This tool converts CSV or JSON data into clean, well-structured HTML table markup. It automatically generates thead with header rows and tbody with data rows, applies optional CSS classes for styling, and produces valid HTML5 markup. You can customize the table with classes for popular CSS frameworks like Bootstrap or Tailwind. The generated markup is ready to copy and paste into your web project, documentation, or email templates.",
@@ -1847,7 +1847,7 @@
     "bcrypt-generator": {
       "name": "Bcrypt Hash Generator",
       "description": "Generate bcrypt password hashes with configurable cost",
-      "pageTitle": "Bcrypt Hash Generator",
+      "pageTitle": "Bcrypt Hash Generator Online Free — Hash & Verify Passwords | DevToolBox",
       "pageDescription": "Generate bcrypt password hashes with configurable cost factor for secure password storage.",
       "seoTitle": "About Bcrypt Hashing",
       "seoContent": "Bcrypt is a password hashing function designed to be slow and computationally expensive, making brute-force attacks impractical. Unlike fast hashes like MD5 or SHA-256, bcrypt incorporates a configurable cost factor that controls how many iterations are performed. Each increase in cost doubles the computation time. Bcrypt also automatically generates and embeds a random salt, preventing rainbow table attacks. This tool generates bcrypt hashes from passwords with your chosen cost factor (typically 10-12 for web applications). It can also verify if a password matches a given bcrypt hash. All processing happens locally.",
@@ -2052,7 +2052,7 @@
     "css-to-tailwind": {
       "name": "CSS to Tailwind",
       "description": "Convert CSS styles to Tailwind CSS utility classes",
-      "pageTitle": "CSS to Tailwind Converter",
+      "pageTitle": "CSS to Tailwind Converter Online Free — Convert CSS to Tailwind Classes | DevToolBox",
       "pageDescription": "Convert CSS to Tailwind CSS utility classes online. Maps common CSS properties to Tailwind classes. Free tool for migration.",
       "seoTitle": "About CSS to Tailwind Conversion",
       "seoContent": "Tailwind CSS is a utility-first CSS framework that uses predefined classes instead of custom CSS. Migrating from traditional CSS to Tailwind involves mapping CSS properties to their equivalent utility classes. This tool automates the conversion for common CSS properties including display, position, flexbox, grid, spacing, typography, colors, borders, and more. For properties without exact Tailwind equivalents, it generates arbitrary value classes using Tailwind's bracket notation (e.g., bg-[#custom]). The converter handles both individual declarations and complete CSS rulesets with selectors. While not every CSS property has a 1:1 Tailwind equivalent, this tool covers the most frequently used properties to accelerate your migration.",
@@ -2146,7 +2146,7 @@
     "json-to-graphql": {
       "name": "JSON to GraphQL",
       "description": "Convert JSON data to GraphQL schema definitions",
-      "pageTitle": "JSON to GraphQL Schema Converter",
+      "pageTitle": "JSON to GraphQL Schema Converter Online Free — Generate Types | DevToolBox",
       "pageDescription": "Convert JSON to GraphQL type definitions online. Generate accurate GraphQL schemas from JSON data with nested types and arrays. Free and instant.",
       "seoTitle": "About JSON to GraphQL Conversion",
       "seoContent": "GraphQL uses a strongly-typed schema to define the shape of data available through an API. When designing a GraphQL API, you often start with sample JSON data from an existing REST endpoint or database. This tool analyzes your JSON structure and generates the corresponding GraphQL type definitions. It maps JavaScript types to GraphQL scalars (String, Int, Float, Boolean), creates separate type blocks for nested objects, and handles arrays as list types. The generated schema can serve as a starting point for your GraphQL server implementation. All processing happens locally in your browser.",
@@ -2406,7 +2406,7 @@
     "html-to-markdown": {
       "name": "HTML to Markdown",
       "description": "Convert HTML markup to Markdown text",
-      "pageTitle": "HTML to Markdown Converter",
+      "pageTitle": "HTML to Markdown Converter Online Free — Convert HTML to MD | DevToolBox",
       "pageDescription": "Convert HTML to Markdown online. Transform HTML tags to Markdown syntax including headers, links, images, lists, and code blocks. Free and instant.",
       "seoTitle": "About HTML to Markdown Conversion",
       "seoContent": "Converting HTML to Markdown is useful when migrating content from web pages to Markdown-based systems like GitHub, Notion, or static site generators. This tool transforms HTML tags into equivalent Markdown syntax: h1-h6 become # headers, strong/b become **bold**, a tags become [links](url), img tags become ![images](src), lists become - or 1. items, and code blocks become fenced ```blocks```. It also decodes common HTML entities and cleans up excess whitespace. All processing happens locally in your browser.",
@@ -2447,7 +2447,7 @@
     "toml-yaml": {
       "name": "TOML to YAML / YAML to TOML",
       "description": "Convert between TOML and YAML configuration formats",
-      "pageTitle": "TOML ↔ YAML Converter",
+      "pageTitle": "TOML to YAML Converter Online Free — Convert Between TOML & YAML | DevToolBox",
       "pageDescription": "Convert between TOML and YAML formats online. Bidirectional conversion for configuration files. Free, fast, and works in your browser.",
       "seoTitle": "About TOML and YAML Conversion",
       "seoContent": "TOML and YAML are popular configuration file formats used in modern development. TOML (Tom's Obvious Minimal Language) is used by Rust's Cargo, Python's pyproject.toml, and Hugo. YAML is used by Docker Compose, Kubernetes, GitHub Actions, and many CI/CD tools. Converting between these formats is common when migrating projects or adapting configurations. This tool provides bidirectional conversion: TOML to YAML and YAML to TOML. It handles sections, nested tables, arrays, strings, numbers, and booleans. All processing happens locally in your browser.",
@@ -2584,7 +2584,7 @@
     "css-to-js": {
       "name": "CSS to JS Object",
       "description": "Convert CSS styles to JavaScript style objects",
-      "pageTitle": "CSS to JavaScript Object Converter",
+      "pageTitle": "CSS to JavaScript Object Converter Online Free — CSS to JS Style | DevToolBox",
       "pageDescription": "Convert CSS to JavaScript style objects online. Transform CSS properties to camelCase JS objects for React and CSS-in-JS. Free and instant.",
       "seoTitle": "About CSS to JavaScript Conversion",
       "seoContent": "CSS-in-JS is a popular approach in modern frontend development, especially with React. Libraries like styled-components, Emotion, and React's inline styles use JavaScript objects instead of CSS strings. Converting CSS to JS objects requires changing property names from kebab-case to camelCase (font-size becomes fontSize), wrapping string values in quotes, and converting pixel values to numbers where appropriate. This tool automates the conversion process, handling selectors, property names, and values. All processing happens locally in your browser.",
@@ -2748,7 +2748,7 @@
     "css-gradient": {
       "name": "CSS Gradient Generator",
       "description": "Create beautiful CSS gradients with a visual editor",
-      "pageTitle": "CSS Gradient Generator",
+      "pageTitle": "CSS Gradient Generator Online Free — Linear & Radial Gradients | DevToolBox",
       "pageDescription": "Create beautiful CSS linear, radial, and conic gradients with a visual editor. Copy CSS code instantly.",
       "seoTitle": "What is CSS Gradient Generator?",
       "seoContent": "CSS gradients let you display smooth transitions between two or more colors. This visual generator helps you create linear-gradient, radial-gradient, and conic-gradient CSS code with an interactive editor.",
@@ -2786,7 +2786,7 @@
     "box-shadow": {
       "name": "Box Shadow Generator",
       "description": "Design CSS box shadows visually with real-time preview",
-      "pageTitle": "CSS Box Shadow Generator",
+      "pageTitle": "CSS Box Shadow Generator Online Free — Visual Shadow Builder | DevToolBox",
       "pageDescription": "Design CSS box shadows visually with controls for offset, blur, spread, color, and inset. Copy CSS code instantly.",
       "seoTitle": "What is CSS Box Shadow Generator?",
       "seoContent": "The CSS box-shadow property adds shadow effects around elements. This visual generator lets you adjust offset, blur, spread, color, and inset with real-time preview.",
@@ -2824,7 +2824,7 @@
     "meta-tag-generator": {
       "name": "Meta Tag Generator",
       "description": "Generate HTML meta tags, Open Graph, and Twitter Card tags for SEO",
-      "pageTitle": "Meta Tag Generator",
+      "pageTitle": "Meta Tag Generator Online Free — SEO & Open Graph Tags | DevToolBox",
       "pageDescription": "Generate HTML meta tags, Open Graph tags, and Twitter Card tags for better SEO and social media sharing.",
       "seoTitle": "What is Meta Tag Generator?",
       "seoContent": "Meta tags help search engines understand your content and control how your page appears in search results and social media.",
@@ -2862,7 +2862,7 @@
     "schema-generator": {
       "name": "Schema Markup Generator",
       "description": "Generate JSON-LD structured data for rich snippets in search results",
-      "pageTitle": "Schema Markup Generator (JSON-LD)",
+      "pageTitle": "Schema Markup Generator Online Free — JSON-LD Structured Data | DevToolBox",
       "pageDescription": "Generate JSON-LD structured data for Article, FAQ, HowTo, Product, and more. Boost SEO with rich snippets.",
       "seoTitle": "What is Schema Markup?",
       "seoContent": "Schema markup helps search engines understand your content and display rich results like FAQ dropdowns and product ratings.",
@@ -2900,7 +2900,7 @@
     "robots-generator": {
       "name": "Robots.txt Generator",
       "description": "Generate robots.txt files with crawler rules and sitemap directives",
-      "pageTitle": "Robots.txt Generator",
+      "pageTitle": "Robots.txt Generator Online Free — Create & Validate robots.txt | DevToolBox",
       "pageDescription": "Generate robots.txt files with user-agent rules, allow/disallow paths, and sitemap directives.",
       "seoTitle": "What is Robots.txt?",
       "seoContent": "The robots.txt file tells search engine crawlers which pages they can or cannot access on your site.",
@@ -2938,7 +2938,7 @@
     "json-viewer": {
       "name": "JSON Viewer / Tree",
       "description": "View JSON data as an interactive collapsible tree",
-      "pageTitle": "JSON Viewer & Tree Visualizer",
+      "pageTitle": "JSON Viewer & Tree Visualizer Online Free — Explore JSON Data | DevToolBox",
       "pageDescription": "View and explore JSON data as an interactive collapsible tree with search and JSONPath display.",
       "seoTitle": "What is JSON Viewer?",
       "seoContent": "JSON Viewer displays JSON data in a visual tree structure for easy exploration of complex nested data.",
@@ -2976,7 +2976,7 @@
     "favicon-generator": {
       "name": "Favicon Generator",
       "description": "Create favicons from text or emoji with custom colors and sizes",
-      "pageTitle": "Favicon Generator",
+      "pageTitle": "Favicon Generator Online Free — Create ICO, PNG Favicons | DevToolBox",
       "pageDescription": "Create favicons from text or emoji with custom colors, sizes, and border radius. Download as PNG.",
       "seoTitle": "What is Favicon Generator?",
       "seoContent": "A favicon is the small icon in browser tabs. This tool generates favicons from text or emoji with customizable colors and sizes.",
@@ -3014,7 +3014,7 @@
     "ascii-art": {
       "name": "ASCII Art Generator",
       "description": "Convert text to ASCII art with multiple font styles",
-      "pageTitle": "ASCII Art Generator",
+      "pageTitle": "ASCII Art Generator Online Free — Convert Text to ASCII Art | DevToolBox",
       "pageDescription": "Convert text to ASCII art with multiple font styles for terminals, comments, and README files.",
       "seoTitle": "What is ASCII Art?",
       "seoContent": "ASCII art uses printable characters to create visual designs and text banners for terminals, code comments, and README headers.",
@@ -3051,7 +3051,7 @@
     "svg-optimizer": {
       "name": "SVG Optimizer",
       "description": "Optimize and minify SVG files to reduce file size",
-      "pageTitle": "SVG Optimizer & Minifier",
+      "pageTitle": "SVG Optimizer & Minifier Online Free — Reduce SVG File Size | DevToolBox",
       "pageDescription": "Optimize and minify SVG files online. Remove metadata, comments, and unnecessary attributes.",
       "seoTitle": "What is SVG Optimizer?",
       "seoContent": "SVG files often contain unnecessary metadata and attributes. This optimizer cleans SVG files, typically reducing size by 20-60%.",
@@ -3089,7 +3089,7 @@
     "placeholder-image": {
       "name": "Placeholder Image Generator",
       "description": "Generate placeholder images with custom dimensions, colors, and text",
-      "pageTitle": "Placeholder Image Generator",
+      "pageTitle": "Placeholder Image Generator Online Free — Custom Size & Color | DevToolBox",
       "pageDescription": "Generate placeholder images with custom dimensions, colors, and text. Download as PNG or Data URI.",
       "seoTitle": "What is Placeholder Image?",
       "seoContent": "Placeholder images are used during development to represent future content. Generate custom images with specified dimensions and colors.",
@@ -4212,7 +4212,7 @@
     "html-entity-encoder": {
       "name": "HTML Entity Encoder / Decoder",
       "description": "Encode and decode HTML entities with named and numeric entity support and reference table",
-      "pageTitle": "HTML Entity Encoder / Decoder",
+      "pageTitle": "HTML Entity Encoder & Decoder Online Free — Named & Numeric Entities | DevToolBox",
       "pageDescription": "Encode and decode HTML entities online. Convert special characters to named or numeric HTML entities and back with a comprehensive reference table."
     },
     "json-to-csv": {
@@ -4230,7 +4230,7 @@
     "image-to-base64": {
       "name": "Image to Base64 Encoder",
       "description": "Convert images to Base64 strings and data URIs with drag & drop support",
-      "pageTitle": "Image to Base64 Converter",
+      "pageTitle": "Image to Base64 Encoder Online Free — Upload & Convert to Base64 | DevToolBox",
       "pageDescription": "Convert images to Base64 strings and data URIs. Drag and drop or select image files to get Base64, CSS background, and HTML img tag output."
     },
     "text-case-converter": {
