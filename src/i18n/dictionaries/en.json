@@ -1929,8 +1929,8 @@
     "html-to-jsx": {
       "name": "HTML to JSX",
       "description": "Convert HTML markup to JSX for React components",
-      "pageTitle": "HTML to JSX Converter",
-      "pageDescription": "Convert HTML to JSX for React online. Transforms class to className, style strings to objects, self-closing tags, and more. Free and instant.",
+      "pageTitle": "HTML to JSX Converter Online Free — Convert HTML to React JSX Instantly | DevToolBox",
+      "pageDescription": "Free HTML to JSX converter. Transforms class to className, inline styles to objects, self-closing tags, event handlers. Paste HTML, get React JSX. No signup.",
       "seoTitle": "About HTML to JSX Conversion",
       "seoContent": "JSX is React's syntax extension that looks like HTML but has important differences. When migrating HTML templates to React components, you need to convert class to className, for to htmlFor, inline style strings to JavaScript objects, and ensure all tags are properly closed. Event handlers also need conversion from lowercase (onclick) to camelCase (onClick). This tool automates all of these transformations. Paste any HTML snippet and get valid JSX output instantly. It handles self-closing void elements (br, hr, img, input), converts HTML comments to JSX comments, and transforms common HTML attributes to their JSX equivalents. Perfect for migrating static HTML sites to React or converting HTML templates from design tools.",
       "faqTitle": "Frequently Asked Questions",
@@ -1970,8 +1970,8 @@
     "json-to-go": {
       "name": "JSON to Go Struct",
       "description": "Convert JSON data to Go struct definitions",
-      "pageTitle": "JSON to Go Struct Converter - Convert JSON to Golang Online Free | DevToolBox",
-      "pageDescription": "Convert JSON to Go struct definitions online free. Generate proper Go types with json tags, nested structs & arrays. Instant JSON to Go struct conversion in your browser.",
+      "pageTitle": "JSON to Go Struct Converter Online Free — Generate Golang Types with Tags | DevToolBox",
+      "pageDescription": "Free JSON to Go struct converter. Generate Go types with json tags, nested structs, arrays & custom names. Paste JSON, get Go struct instantly. No signup required.",
       "seoTitle": "About JSON to Go Struct Conversion",
       "seoContent": "Go's strict type system requires defining structs before unmarshaling JSON data. Writing Go structs manually for complex JSON APIs is time-consuming and error-prone. This tool analyzes your JSON and generates idiomatic Go struct definitions with proper field names (PascalCase), correct Go types (string, int, float64, bool), and json struct tags for serialization. Nested objects become separate named structs, arrays are typed by their element type, and null values map to interface{}. You can customize the root struct name, add omitempty tags for optional fields, and choose between separate or inline struct definitions. All processing is done in your browser.",
       "faqTitle": "Frequently Asked Questions",
@@ -2216,8 +2216,8 @@
     "json-to-kotlin": {
       "name": "JSON to Kotlin",
       "description": "Convert JSON data to Kotlin data classes",
-      "pageTitle": "JSON to Kotlin Data Class Converter - Online Free | DevToolBox",
-      "pageDescription": "Free JSON to Kotlin converter. Generate Kotlin data classes from JSON instantly with null safety, @SerialName annotations, and proper type inference. Works with kotlinx.serialization, Moshi, and Gson.",
+      "pageTitle": "JSON to Kotlin Data Class Converter Online Free — Null-Safe with Annotations | DevToolBox",
+      "pageDescription": "Free JSON to Kotlin data class converter. Generate null-safe Kotlin classes with @SerialName annotations. Supports kotlinx.serialization, Moshi, and Gson. Instant conversion.",
       "seoTitle": "About JSON to Kotlin Conversion",
       "seoContent": "Kotlin data classes provide a concise way to define typed data models. When working with JSON APIs in Kotlin (especially on Android), you need data classes that match the JSON structure. This tool analyzes your JSON and generates idiomatic Kotlin data classes with proper type inference. It handles nullable types for null values, uses List<Type> for arrays, and creates separate data classes for nested objects. The generated code works seamlessly with Kotlinx.serialization, Moshi, or Gson. All processing happens locally in your browser.",
       "faqTitle": "Frequently Asked Questions",
@@ -2298,8 +2298,8 @@
     "json-to-csharp": {
       "name": "JSON to C#",
       "description": "Convert JSON data to C# class definitions",
-      "pageTitle": "JSON to C# Class Converter - Convert JSON to C# Online Free | DevToolBox",
-      "pageDescription": "Convert JSON to C# classes online free. Generate C# class definitions with proper types and optional namespace. Instant JSON to C# conversion in your browser.",
+      "pageTitle": "JSON to C# Class Converter Online Free — Generate POCO Classes from JSON | DevToolBox",
+      "pageDescription": "Free JSON to C# converter. Generate POCO classes with proper types, nullable annotations, and System.Text.Json attributes. Paste JSON, get C# classes instantly.",
       "seoTitle": "About JSON to C# Conversion",
       "seoContent": "C#'s strong type system is central to .NET development. When working with JSON APIs, you need class definitions that match the JSON structure for proper deserialization with System.Text.Json or Newtonsoft.Json. This tool analyzes your JSON data and generates C# class definitions with correct property types (string, int, double, bool, List<T>), PascalCase naming, and optional namespace wrapping. Nested objects become separate classes, and nullable types are used for null values. All processing happens locally in your browser.",
       "faqTitle": "Frequently Asked Questions",
@@ -3421,8 +3421,8 @@
     "json-to-dart": {
       "name": "JSON to Dart",
       "description": "Convert JSON to Dart classes with fromJson/toJson for Flutter",
-      "pageTitle": "JSON to Dart Converter - Flutter Class Generator Online Free | DevToolBox",
-      "pageDescription": "Convert JSON to Dart classes with fromJson() and toJson() methods online free. Generate null-safe Flutter models instantly in your browser.",
+      "pageTitle": "JSON to Dart Converter Online Free — Flutter Class Generator with fromJson/toJson | DevToolBox",
+      "pageDescription": "Free JSON to Dart converter for Flutter. Generate null-safe Dart classes with fromJson() and toJson() methods. Supports json_serializable, freezed. Instant conversion.",
       "seoTitle": "What is JSON to Dart?",
       "seoContent": "JSON to Dart converts JSON API responses into Dart model classes with serialization methods, making Flutter development faster and type-safe.",
       "howToUseTitle": "How to Use",
@@ -4178,8 +4178,8 @@
     "json-to-csv": {
       "name": "JSON to CSV Converter",
       "description": "Convert JSON arrays to CSV format with nested object flattening and CSV download",
-      "pageTitle": "JSON to CSV Converter Online",
-      "pageDescription": "Convert JSON arrays to CSV format online. Handles nested objects, supports custom delimiters, and offers CSV file download."
+      "pageTitle": "JSON to CSV Converter Online Free — Flatten Nested JSON to CSV | DevToolBox",
+      "pageDescription": "Free JSON to CSV converter. Convert JSON arrays to CSV with nested object flattening, custom delimiters, and instant CSV download. Runs locally in your browser."
     },
     "text-counter": {
       "name": "Text Counter & Statistics",
