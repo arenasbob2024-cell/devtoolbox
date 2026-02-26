@@ -295,6 +295,9 @@ import QrCodeGeneratorOnlineGuide from '@/data/posts/qr-code-generator-online-gu
 import GitCommandGeneratorOnlineGuide from '@/data/posts/git-command-generator-online-guide';
 import SqlFormatterOnlineGuide from '@/data/posts/sql-formatter-online-guide';
 import CssFlexboxGeneratorOnlineGuide from '@/data/posts/css-flexbox-generator-online-guide';
+import TimestampConverterOnlineGuide from '@/data/posts/timestamp-converter-online-guide';
+import Base64OnlineGuide from '@/data/posts/base64-online-guide';
+import TextDiffOnlineGuide from '@/data/posts/text-diff-online-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -580,6 +583,9 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'git-command-generator-online-guide': GitCommandGeneratorOnlineGuide,
   'sql-formatter-online-guide': SqlFormatterOnlineGuide,
   'css-flexbox-generator-online-guide': CssFlexboxGeneratorOnlineGuide,
+  'timestamp-converter-online-guide': TimestampConverterOnlineGuide,
+  'base64-online-guide': Base64OnlineGuide,
+  'text-diff-online-guide': TextDiffOnlineGuide,
 };
 
 /* i18n for UI strings on this page */
