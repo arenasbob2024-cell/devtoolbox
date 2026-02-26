@@ -168,9 +168,9 @@ export default function Top10DeveloperTools({ lang }: { lang: string }) {
           <div key={i} style={{ padding: 20, background: 'var(--bg-input)', borderRadius: 8, border: '1px solid var(--border-color)' }}>
             <h3 style={{ fontSize: 17, fontWeight: 700, marginBottom: 8, color: 'var(--text-primary)' }}>
               <Link href={`/${lang}/tools/${tool.link}`} style={{ color: 'var(--accent-blue)', textDecoration: 'none' }}>
-                {tool.title.split(':')[0]}
+                {(tool.title as string).split(':')[0]}
               </Link>
-              <span style={{ color: 'var(--text-primary)' }}>: {tool.title.split(':')[1]}</span>
+              <span style={{ color: 'var(--text-primary)' }}>: {(tool.title as string).split(':')[1]}</span>
             </h3>
             <p style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: 8 }}>{tool.desc}</p>
             <p style={{ fontSize: 13, color: 'var(--text-tertiary)', lineHeight: 1.6, margin: 0, fontStyle: 'italic' }}>{tool.use}</p>
