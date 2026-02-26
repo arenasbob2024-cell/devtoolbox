@@ -5,6 +5,26 @@ import Link from 'next/link';
 export default function JsonSchemaValidationGuide({ lang }: { lang: string }) {
   return (
     <>
+      {/* TL;DR Box for featured snippets */}
+      <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: '8px', padding: '16px 20px', marginBottom: '24px' }}>
+        <p style={{ fontWeight: 700, marginBottom: '8px', fontSize: '1.05em' }}>TL;DR</p>
+        <p style={{ margin: 0 }}>
+          <strong>JSON Schema</strong> defines the structure and validation rules for JSON data. You can <Link href={`/${lang}/tools/json-to-json-schema`}>generate JSON Schema from any JSON automatically</Link> using our free tool, or write one manually. This guide covers every feature from basic types to advanced patterns like <code>$ref</code>, <code>if/then/else</code>, and <code>allOf/oneOf</code>, with real validation code for Node.js (Ajv) and Python (jsonschema).
+        </p>
+      </div>
+
+      {/* Key Takeaways */}
+      <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '16px 20px', marginBottom: '24px' }}>
+        <p style={{ fontWeight: 700, marginBottom: '8px', fontSize: '1.05em' }}>Key Takeaways</p>
+        <ul style={{ margin: 0, paddingLeft: '20px' }}>
+          <li>JSON Schema validates JSON structure, types, and constraints using JSON itself</li>
+          <li>Use <strong>Draft 2020-12</strong> for new projects (latest standard)</li>
+          <li>Core types: <code>string</code>, <code>number</code>, <code>integer</code>, <code>boolean</code>, <code>null</code>, <code>object</code>, <code>array</code></li>
+          <li>Use <code>$ref</code> and <code>$defs</code> to keep schemas DRY and reusable</li>
+          <li>Ajv (JavaScript) and jsonschema (Python) are the most popular validators</li>
+        </ul>
+      </div>
+
       <h2>What Is JSON Schema?</h2>
       <p>
         <strong>JSON Schema</strong> is a vocabulary that allows you to annotate and validate JSON documents. It describes the structure, data types, and constraints of your JSON data using JSON itself. Think of it as a contract or blueprint that defines what valid JSON data should look like.
