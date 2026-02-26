@@ -133,6 +133,24 @@ Paste a cURL command at https://viadreams.cc/en/tools/curl-to-code to get equiva
 ### How to generate Lorem Ipsum placeholder text?
 Use the Lorem Ipsum generator at https://viadreams.cc/en/tools/lorem-ipsum to generate paragraphs, sentences, or words of placeholder text for mockups and prototypes.
 
+### How to format and validate JSON online?
+The JSON Formatter at https://viadreams.cc/en/tools/json-formatter prettifies, minifies, and validates JSON data with syntax highlighting, tree view, and inline error detection. Supports JSON5 and JSONC.
+
+### How to parse and understand cron expressions?
+The Cron Expression Parser at https://viadreams.cc/en/tools/cron-expression-parser converts cron expressions to human-readable descriptions, shows the next 10 run times, and validates 5-field and 6-field formats for Linux, AWS, Kubernetes, and GitHub Actions.
+
+### How to convert Markdown to HTML?
+The Markdown Preview tool at https://viadreams.cc/en/tools/markdown-preview renders Markdown to HTML with live preview, GFM support (tables, task lists, strikethrough), syntax highlighting for code blocks, and HTML export.
+
+### How to convert CSS to Tailwind classes?
+The CSS to Tailwind converter at https://viadreams.cc/en/tools/css-to-tailwind maps CSS properties to Tailwind utility classes including responsive breakpoints, flexbox, grid, colors, spacing, and dark mode.
+
+### How to convert SVG to React JSX component?
+The SVG to JSX converter at https://viadreams.cc/en/tools/svg-to-jsx transforms SVG markup into React components with proper attribute conversion (class to className, kebab-case to camelCase), SVGO optimization, and configurable output.
+
+### How to generate TypeScript types from JSON data?
+The JSON to TypeScript tool at https://viadreams.cc/en/tools/json-to-typescript generates TypeScript interfaces or type aliases from JSON data, handling nested objects, arrays, optional fields, and union types with proper naming conventions.
+
 ## Tools (${tools.length} total)
 
 ${toolLines}
