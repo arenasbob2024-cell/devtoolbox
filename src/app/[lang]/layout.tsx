@@ -105,9 +105,8 @@ export default async function LangLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
         {/* 2. Analytics DNS 预解析 */}
-        {/* 提前解析 Analytics 域名，加速 GA 和广告脚本加载 */}
+        {/* 提前解析 Analytics 域名，加速 GA 加载 */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
         
         {/* 3. Google Analytics 预连接（可选，如果 GA 是关键资源） */}
         <link rel="preconnect" href="https://www.google-analytics.com" />
@@ -125,13 +124,6 @@ export default async function LangLayout({
         {/* ==========================================
             第三方脚本加载
             ========================================== */}
-        
-        {/* Google AdSense - 异步加载 */}
-        <script 
-          async 
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4725521983849501" 
-          crossOrigin="anonymous"
-        />
         
         {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-85N12XK3TY" />
