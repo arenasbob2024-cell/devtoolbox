@@ -78,7 +78,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '8 min read',
     keywords: ['base64 encoding use cases', 'why use base64', 'base64 real world examples', 'base64 kubernetes secrets', 'data uri base64'],
     relatedTools: ['base64', 'jwt-decoder', 'image-base64', 'base64-encoder'],
-    relatedPosts: ['uuid-v4-vs-v7-vs-ulid-vs-nanoid', 'base64-encode-decode-command-line'],
+    relatedPosts: ['uuid-v4-vs-v7-vs-ulid-vs-nanoid', 'base64-encode-decode-command-line', 'base64-encode-decode-complete-guide'],
     translations: {
       fr: { title: 'Encodage Base64 en pratique : 7 utilisations que tout développeur devrait connaître', description: 'Découvrez 7 utilisations pratiques de l\'encodage Base64 : images intégrées, secrets Kubernetes, tokens JWT et URIs de données.', readingTime: '8 min de lecture', keywords: ['encodage base64 cas d\'utilisation', 'pourquoi utiliser base64', 'exemples base64', 'base64 kubernetes secrets', 'data uri base64'] },
       de: { title: 'Base64-Kodierung in der Praxis: 7 Anwendungsfälle, die jeder Entwickler kennen sollte', description: 'Entdecken Sie 7 praktische Anwendungen der Base64-Kodierung: eingebettete Bilder, Kubernetes-Secrets, JWT-Tokens und Data-URIs.', readingTime: '8 Min. Lesezeit', keywords: ['base64 kodierung anwendungsfälle', 'warum base64 verwenden', 'base64 beispiele', 'base64 kubernetes secrets', 'data uri base64'] },
@@ -294,7 +294,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '14 min read',
     keywords: ['create json schema from json', 'json to json schema', 'json schema generator', 'json schema validation', 'json schema from json', 'generate json schema', 'json schema types', 'json schema tools', 'validate json schema', 'json schema best practices', 'json to schema', 'json schema example', 'json schema online', 'json schema draft 2020-12'],
     relatedTools: ['json-to-json-schema', 'json-to-zod', 'json-formatter', 'json-validator'],
-    relatedPosts: ['json-to-typescript-complete-guide', 'json-formatter-validator-guide'],
+    relatedPosts: ['json-to-typescript-complete-guide', 'json-formatter-validator-guide', 'json-to-json-schema-converter-guide'],
     translations: {
       fr: { title: 'Validation JSON Schema : Types, outils et bonnes pratiques', description: 'Tout sur la validation JSON Schema : des types de base aux patterns avancés, bibliothèques de validation et intégration avec TypeScript et les API.', readingTime: '14 min de lecture', keywords: ['validation json schema', 'types json schema', 'outils json schema', 'valider json schema', 'bonnes pratiques json schema'] },
       de: { title: 'JSON Schema Validierung: Typen, Tools und Best Practices', description: 'Alles über JSON Schema Validierung: von Basistypen über erweiterte Muster, Validierungsbibliotheken bis zur Integration mit TypeScript und APIs.', readingTime: '14 Min. Lesezeit', keywords: ['json schema validierung', 'json schema typen', 'json schema tools', 'json schema validieren', 'json schema best practices'] },
@@ -321,7 +321,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '11 min read',
     keywords: ['ts to js converter', 'convert ts to js online', 'typescript to javascript', 'typescript to javascript converter', 'ts to js', 'typescript vs javascript', 'convert typescript javascript', 'typescript migration', 'javascript to typescript'],
     relatedTools: ['typescript-to-javascript', 'json-to-typescript', 'graphql-to-typescript'],
-    relatedPosts: ['json-to-typescript-complete-guide', 'typescript-generics-explained'],
+    relatedPosts: ['json-to-typescript-complete-guide', 'typescript-generics-explained', 'typescript-to-javascript-conversion-guide'],
     translations: {
       fr: { title: 'TypeScript vs JavaScript : Quand et comment convertir', description: 'Guide pratique pour savoir quand convertir TypeScript en JavaScript et inversement. Stratégies de migration, outillage, impact sur la taille du bundle et considérations d\'équipe.', readingTime: '11 min de lecture', keywords: ['typescript vs javascript', 'convertir typescript javascript', 'ts vers js', 'migration typescript', 'javascript vers typescript'] },
       de: { title: 'TypeScript vs JavaScript: Wann und wie man konvertiert', description: 'Praktischer Leitfaden, wann man TypeScript in JavaScript konvertiert und umgekehrt. Migrationsstrategien, Tooling, Bundle-Größe und Teamüberlegungen.', readingTime: '11 Min. Lesezeit', keywords: ['typescript vs javascript', 'typescript javascript konvertieren', 'ts zu js', 'typescript migration', 'javascript zu typescript'] },
@@ -1375,7 +1375,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '6 min read',
     keywords: ['base64 command line', 'base64 encode terminal', 'base64 decode linux', 'openssl base64', 'powershell base64'],
     relatedTools: ['base64', 'binary-text', 'base64-encoder', 'base64-decoder'],
-    relatedPosts: ['base64-encoding-real-world-uses', 'base64-image-embed-html-css'],
+    relatedPosts: ['base64-encoding-real-world-uses', 'base64-image-embed-html-css', 'base64-encode-decode-complete-guide'],
     translations: {
       zh: { title: '命令行 Base64 编解码（Linux、Mac、Windows）', description: '学习如何在任何操作系统的终端中编码和解码 Base64 字符串。涵盖 Linux base64 命令、macOS openssl 和 Windows PowerShell 示例。', readingTime: '6 分钟阅读', keywords: ['base64 命令行', 'base64 终端编码', 'base64 解码 linux', 'openssl base64', 'powershell base64'] },
       ja: { title: 'コマンドラインでBase64エンコード＆デコード（Linux・Mac・Windows）', description: 'あらゆるOSのターミナルでBase64文字列をエンコード・デコードする方法。Linux base64コマンド、macOS openssl、Windows PowerShellの例。', readingTime: '6分', keywords: ['base64 コマンドライン', 'base64 エンコード ターミナル', 'base64 デコード linux', 'openssl base64', 'powershell base64'] },
@@ -7352,6 +7352,25 @@ export const blogPosts: BlogPost[] = [
       fr: { title: 'Encodage et decodage Base64 : Le guide complet (2026)', description: 'Apprenez a encoder et decoder en Base64 : JavaScript, Python, ligne de commande, encodage URL-safe, et bonnes pratiques.', readingTime: '14 min de lecture', keywords: ['base64 encoder', 'base64 decoder', 'base64 en ligne', 'encodage base64'] },
       de: { title: 'Base64 Kodieren & Dekodieren: Der komplette Leitfaden (2026)', description: 'Lernen Sie Base64-Kodierung und -Dekodierung: JavaScript, Python, Kommandozeile, URL-sichere Kodierung und Best Practices.', readingTime: '14 Min. Lesezeit', keywords: ['base64 kodieren', 'base64 dekodieren', 'base64 online', 'base64 encoder'] },
       es: { title: 'Codificar y decodificar Base64: La guia completa (2026)', description: 'Aprende a codificar y decodificar Base64: JavaScript, Python, linea de comandos, codificacion URL-safe y buenas practicas.', readingTime: '14 min de lectura', keywords: ['base64 codificar', 'base64 decodificar', 'base64 online', 'codificacion base64'] },
+    },
+  },
+  {
+    slug: 'json-formatter-beautifier-guide',
+    title: 'JSON Formatter & Beautifier: The Complete Guide to Pretty-Printing JSON (2026)',
+    description: 'Learn how to format, beautify, and pretty-print JSON online, in VS Code, on the command line, and in JavaScript/Python. Covers validation, minification, viewers, and common errors.',
+    date: '2026-02-27',
+    author: 'DevToolBox',
+    readingTime: '14 min read',
+    keywords: ['json formatter', 'json beautifier', 'json formatter online', 'format json', 'json validator', 'json prettifier', 'json pretty print', 'json viewer'],
+    relatedTools: ['json-formatter', 'json-validator', 'json-yaml', 'csv-json', 'json-to-typescript', 'json-to-go'],
+    relatedPosts: ['json-vs-yaml-vs-toml', 'json-parse-error-unexpected-token', 'json-formatter-validator-guide'],
+    translations: {
+      zh: { title: 'JSON 格式化工具完全指南：在线美化、VS Code、命令行与代码中格式化 JSON（2026）', description: '学习如何在线格式化 JSON、在 VS Code 中美化 JSON、用命令行工具 jq 处理 JSON，以及在 JavaScript 和 Python 中进行 JSON 格式化。涵盖验证、压缩、查看器和常见错误。', readingTime: '14 分钟阅读', keywords: ['json 格式化', 'json 美化', 'json 在线格式化', '格式化 json', 'json 验证', 'json 格式化工具'] },
+      ja: { title: 'JSONフォーマッター完全ガイド：オンライン・VS Code・コマンドラインでJSON整形（2026年版）', description: 'JSONの整形・美化方法を完全解説。オンラインツール、VS Code、jqコマンド、JavaScript/Pythonでのフォーマット方法。バリデーション、ミニファイ、ビューアー、よくあるエラーも網羅。', readingTime: '14分', keywords: ['json フォーマッター', 'json 整形', 'json フォーマット オンライン', 'json 美化', 'json バリデーター', 'json プリティプリント'] },
+      ko: { title: 'JSON 포맷터 & 뷰티파이어: JSON 포맷팅 완전 가이드 (2026)', description: 'JSON을 온라인, VS Code, 커맨드라인, JavaScript/Python에서 포맷하고 뷰티파이하는 방법을 배우세요. 유효성 검사, 최소화, 뷰어, 일반적인 오류까지 다룹니다.', readingTime: '14분 읽기', keywords: ['json 포맷터', 'json 뷰티파이어', 'json 포맷터 온라인', 'json 포맷', 'json 유효성 검사', 'json 프리티 프린트'] },
+      fr: { title: 'Formateur JSON : Guide complet pour formater et embellir du JSON (2026)', description: 'Apprenez a formater du JSON en ligne, dans VS Code, en ligne de commande et en JavaScript/Python. Validation, minification, visualiseur et erreurs courantes.', readingTime: '14 min de lecture', keywords: ['formateur json', 'json beautifier', 'formateur json en ligne', 'formater json', 'validateur json', 'json pretty print'] },
+      de: { title: 'JSON Formatter: Der komplette Leitfaden zum Formatieren und Verschoenern von JSON (2026)', description: 'Lernen Sie JSON online, in VS Code, auf der Kommandozeile und in JavaScript/Python zu formatieren. Validierung, Minifizierung, Viewer und haeufige Fehler.', readingTime: '14 Min. Lesezeit', keywords: ['json formatter', 'json beautifier', 'json formatter online', 'json formatieren', 'json validator', 'json pretty print'] },
+      es: { title: 'Formateador JSON: Guia completa para formatear y embellecer JSON (2026)', description: 'Aprende a formatear JSON en linea, en VS Code, en la linea de comandos y en JavaScript/Python. Validacion, minificacion, visor y errores comunes.', readingTime: '14 min de lectura', keywords: ['formateador json', 'json beautifier', 'formateador json online', 'formatear json', 'validador json', 'json pretty print'] },
     },
   },
 ];
