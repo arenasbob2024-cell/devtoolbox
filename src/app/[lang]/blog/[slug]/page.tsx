@@ -301,6 +301,8 @@ import TextDiffOnlineGuide from '@/data/posts/text-diff-online-guide';
 import UrlEncoderOnlineGuide from '@/data/posts/url-encoder-online-guide';
 import WordCounterOnlineGuide from '@/data/posts/word-counter-online-guide';
 import JsonYamlConverterOnlineGuide from '@/data/posts/json-yaml-converter-online-guide';
+import JsonViewerOnlineGuide from '@/data/posts/json-viewer-online-guide';
+import LoremIpsumOnlineGuide from '@/data/posts/lorem-ipsum-online-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -592,6 +594,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'url-encoder-online-guide': UrlEncoderOnlineGuide,
   'word-counter-online-guide': WordCounterOnlineGuide,
   'json-yaml-converter-online-guide': JsonYamlConverterOnlineGuide,
+  'json-viewer-online-guide': JsonViewerOnlineGuide,
+  'lorem-ipsum-online-guide': LoremIpsumOnlineGuide,
 };
 
 /* i18n for UI strings on this page */
