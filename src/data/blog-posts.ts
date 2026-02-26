@@ -700,7 +700,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '11 min read',
     keywords: ['nginx config example', 'nginx reverse proxy', 'nginx ssl configuration', 'nginx static site', 'nginx security headers'],
     relatedTools: ['nginx-config', 'htaccess-generator', 'csp-generator'],
-    relatedPosts: ['docker-compose-cheat-sheet', 'htaccess-redirect-cheat-sheet-examples'],
+    relatedPosts: ['docker-compose-cheat-sheet', 'htaccess-redirect-cheat-sheet-examples', 'nginx-config-generator-online-guide'],
     translations: {
       fr: { title: 'Exemples de configuration Nginx : Reverse Proxy, SSL et sites statiques', description: 'Configurations Nginx prêtes pour la production : reverse proxy, SSL/TLS, fichiers statiques, load balancing.', readingTime: '11 min de lecture', keywords: ['config nginx exemple', 'nginx reverse proxy', 'nginx ssl configuration'] },
       de: { title: 'Nginx Config Beispiele: Reverse Proxy, SSL und statische Seiten', description: 'Produktionsreife Nginx-Konfigurationen: Reverse Proxy, SSL/TLS, statische Dateien, Load Balancing.', readingTime: '11 Min. Lesezeit', keywords: ['nginx config beispiel', 'nginx reverse proxy', 'nginx ssl konfiguration'] },
@@ -727,7 +727,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '10 min read',
     keywords: ['docker compose cheat sheet', 'docker compose example', 'docker compose volumes', 'docker compose networking', 'docker-compose.yml reference'],
     relatedTools: ['docker-compose-generator', 'yaml-validator', 'json-yaml'],
-    relatedPosts: ['nginx-config-examples', 'docker-compose-yaml-errors'],
+    relatedPosts: ['nginx-config-examples', 'docker-compose-yaml-errors', 'docker-compose-generator-online-guide'],
     translations: {
       fr: { title: 'Aide-mémoire Docker Compose : Services, volumes et réseaux', description: 'Référence Docker Compose : définitions de services, volumes, réseaux, variables d\'environnement et exemples de stacks.', readingTime: '10 min de lecture', keywords: ['aide-mémoire docker compose', 'exemple docker compose', 'volumes docker compose'] },
       de: { title: 'Docker Compose Spickzettel: Services, Volumes und Netzwerke', description: 'Docker Compose Referenz: Service-Definitionen, Volumes, Netzwerke, Umgebungsvariablen und Stack-Beispiele.', readingTime: '10 Min. Lesezeit', keywords: ['docker compose spickzettel', 'docker compose beispiel', 'docker compose volumes'] },
@@ -1240,7 +1240,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '10 min read',
     keywords: ['bcrypt vs argon2', 'password hashing best practices', 'argon2 vs scrypt', 'bcrypt vs argon2 vs scrypt', 'which password hash'],
     relatedTools: ['bcrypt-generator', 'hash-generator', 'hmac-generator', 'password-generator'],
-    relatedPosts: ['jwt-token-explained', 'password-strength-requirements-2025'],
+    relatedPosts: ['jwt-token-explained', 'password-strength-requirements-2025', 'hash-generator-online-guide', 'password-generator-online-guide'],
     translations: {
       zh: { title: 'bcrypt vs Argon2 vs scrypt：2026 密码哈希对比', description: '对比 bcrypt、Argon2id 和 scrypt 密码哈希。基准测试、安全分析、5 种语言代码示例和 OWASP 推荐。', readingTime: '10 分钟阅读', keywords: ['bcrypt vs argon2', '密码哈希最佳实践', '密码加密对比'] },
       ja: { title: 'bcrypt vs Argon2 vs scrypt：2026年パスワードハッシュ比較', description: 'bcrypt、Argon2id、scryptを比較。ベンチマーク、セキュリティ分析、5言語のコード例。', readingTime: '10分', keywords: ['bcrypt vs argon2', 'パスワードハッシュ', 'パスワード暗号化'] },
@@ -3508,7 +3508,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '16 min read',
     keywords: ['docker compose', 'docker compose tutorial', 'docker-compose.yml', 'docker compose example', 'docker compose volumes', 'docker compose network', 'docker compose postgres', 'docker compose node'],
     relatedTools: ['docker-compose-generator', 'yaml-json-converter'],
-    relatedPosts: ['docker-compose-cheat-sheet', 'docker-compose-yaml-errors', 'docker-compose-secrets-environment-variables-guide'],
+    relatedPosts: ['docker-compose-cheat-sheet', 'docker-compose-yaml-errors', 'docker-compose-secrets-environment-variables-guide', 'docker-compose-generator-online-guide'],
     translations: {
       zh: { title: 'Docker Compose 教程：从基础到生产就绪的技术栈', description: '完整的 Docker Compose 教程：docker-compose.yml 语法、服务、网络、卷、环境变量、健康检查，以及 Node.js、Python、WordPress 的实际案例。', readingTime: '16 分钟阅读', keywords: ['docker compose', 'docker compose 教程', 'docker-compose.yml', 'docker compose 示例', 'docker compose 卷'] },
       ja: { title: 'Docker Composeチュートリアル：基本から本番対応スタックまで', description: 'Docker Compose完全チュートリアル：docker-compose.yml構文、サービス、ネットワーク、ボリューム、環境変数、ヘルスチェック、Node.js/Python/WordPressの実例。', readingTime: '16分', keywords: ['docker compose', 'docker compose チュートリアル', 'docker-compose.yml', 'docker compose 例'] },
@@ -4292,7 +4292,7 @@ export const blogPosts: BlogPost[] = [
     readingTime: '14 min read',
     keywords: ['nginx configuration', 'nginx reverse proxy', 'nginx ssl', 'nginx server block', 'nginx load balancing', 'nginx caching', 'nginx security'],
     relatedTools: ['url-parser', 'http-status', 'csp-evaluator'],
-    relatedPosts: ['api-rate-limiting-guide', 'web-performance-optimization', 'docker-compose-tutorial'],
+    relatedPosts: ['api-rate-limiting-guide', 'web-performance-optimization', 'docker-compose-tutorial', 'nginx-config-generator-online-guide'],
     translations: {
       zh: { title: 'Nginx 配置指南：从基础设置到生产部署', description: 'Nginx 完整配置指南。学习 server block、反向代理、SSL/TLS、负载均衡、缓存和安全头部配置。', readingTime: '14 分钟', keywords: ['nginx 配置', 'nginx 反向代理'] },
       ja: { title: 'Nginx設定ガイド：基本セットアップから本番環境まで', description: 'Nginx完全設定ガイド。サーバーブロック、リバースプロキシ、SSL/TLS、ロードバランシング、キャッシュを解説。', readingTime: '14分', keywords: ['nginx 設定', 'nginx リバースプロキシ'] },
