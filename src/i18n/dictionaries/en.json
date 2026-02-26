@@ -269,6 +269,24 @@
         "SHA-256 — 256-bit hash; recommended for security",
         "SHA-384 — 384-bit hash; part of SHA-2 family",
         "SHA-512 — 512-bit hash; highest security of the set"
+      ],
+      "faqs": [
+        {
+          "q": "What is a multi hash generator?",
+          "a": "A multi hash generator computes multiple hash algorithms simultaneously from a single input. Enter text or upload a file to get MD5, SHA-1, SHA-256, SHA-512, and other hash digests at once."
+        },
+        {
+          "q": "Which hash algorithm should I use?",
+          "a": "SHA-256 for general-purpose hashing, SHA-512 for maximum security, MD5 only for checksums (not security). For passwords, use bcrypt or Argon2 instead — they are designed to be intentionally slow."
+        },
+        {
+          "q": "Why do I get different hashes for the same text?",
+          "a": "Different algorithms produce different output sizes and values. Also, whitespace, encoding (UTF-8 vs ASCII), and line endings (LF vs CRLF) can change the hash. Ensure your input is exactly identical."
+        },
+        {
+          "q": "Can I reverse a hash to get the original text?",
+          "a": "No, cryptographic hash functions are one-way by design. You cannot mathematically reverse a hash. However, weak hashes of common passwords can be found in rainbow tables — this is why we use salted hashing for passwords."
+        }
       ]
     },
     "uuid-generator": {
@@ -3744,7 +3762,29 @@
       "faq4a": "Yes. Use commas to separate values (e.g., 0 9,17 * * * runs at 9 AM and 5 PM daily). Use hyphens for ranges (e.g., 1-5 for Monday through Friday).",
       "faq5q": "What timezone does cron use?",
       "faq5a": "Cron uses the system local timezone by default. Some systems allow specifying TZ variable or using UTC. Always check your system documentation.",
-      "relatedTitle": "Related Tools"
+      "relatedTitle": "Related Tools",
+      "faqs": [
+        {
+          "q": "How do I create a cron expression?",
+          "a": "Use the visual builder to select minute, hour, day of month, month, and day of week values. The tool generates the 5-field cron expression and shows a human-readable description plus the next scheduled execution times."
+        },
+        {
+          "q": "What does * mean in a cron expression?",
+          "a": "The asterisk (*) means 'every' — it matches all possible values for that field. For example, * in the hour field means 'every hour', and * in the day field means 'every day'."
+        },
+        {
+          "q": "What is the difference between cron and crontab?",
+          "a": "Cron is the scheduling daemon that runs tasks at specified times. Crontab (cron table) is the file where you define the schedule and commands. You edit it with 'crontab -e' on Linux/macOS."
+        },
+        {
+          "q": "How do I schedule a cron job every 5 minutes?",
+          "a": "Use the expression */5 * * * * — the */5 in the minute field means 'every 5th minute'. Similarly, */15 runs every 15 minutes, and */2 in the hour field runs every 2 hours."
+        },
+        {
+          "q": "Can I use cron expressions in Docker and Kubernetes?",
+          "a": "Yes. Docker uses cron in container health checks and scheduled tasks. Kubernetes CronJobs use the same 5-field cron syntax to schedule pod execution. Both support standard cron expressions."
+        }
+      ]
     },
     "yaml-json-converter": {
       "name": "YAML ↔ JSON Converter",
@@ -3792,7 +3832,25 @@
       "hexToDecimal": "Hex → Decimal",
       "decimalToHex": "Decimal → Hex",
       "seoTitle": "Hex to Decimal Converter Online",
-      "seoContent": "This hex to decimal converter tool allows you to easily convert between hexadecimal (base-16), decimal (base-10), binary (base-2), and octal (base-8) number systems. Simply enter a hex value to see its decimal, binary, and octal equivalents instantly. The tool also features a color preview for valid 6-digit hex color codes and a reference table of common hex values. All processing happens in your browser — your data never leaves your device."
+      "seoContent": "This hex to decimal converter tool allows you to easily convert between hexadecimal (base-16), decimal (base-10), binary (base-2), and octal (base-8) number systems. Simply enter a hex value to see its decimal, binary, and octal equivalents instantly. The tool also features a color preview for valid 6-digit hex color codes and a reference table of common hex values. All processing happens in your browser — your data never leaves your device.",
+      "faqs": [
+        {
+          "q": "How do I convert hex to decimal?",
+          "a": "Enter a hexadecimal number (e.g., FF, 1A3F, 0x2B) in the input. The tool instantly converts it to decimal. Each hex digit represents a power of 16: FF = 15*16 + 15 = 255."
+        },
+        {
+          "q": "What is hexadecimal used for in programming?",
+          "a": "Hexadecimal (base-16) is used for memory addresses, color codes (#FF0000), byte values (0x7F), Unicode code points (U+0041), and binary data representation because each hex digit maps to exactly 4 binary bits."
+        },
+        {
+          "q": "How do I convert decimal to hexadecimal?",
+          "a": "Divide the decimal number by 16 repeatedly, recording remainders. Read remainders bottom-to-top. Example: 255 / 16 = 15 remainder 15. In hex, 15 = F, so 255 decimal = FF hex."
+        },
+        {
+          "q": "What does 0x mean before a number?",
+          "a": "The 0x prefix indicates a hexadecimal number in most programming languages (JavaScript, Python, C, Java). For example, 0xFF equals 255 in decimal. Some languages use # (CSS colors) or $ (assembly)."
+        }
+      ]
     },
     "hex-to-rgb": {
       "name": "Hex to RGB Converter",
@@ -3816,7 +3874,25 @@
       "invalidHex": "Invalid hex color",
       "invalidRgb": "Invalid RGB value (0-255)",
       "seoTitle": "Hex to RGB Color Converter Online",
-      "seoContent": "This hex to RGB converter tool allows you to easily convert between hexadecimal color codes and RGB (Red, Green, Blue) values. Enter a hex color code to see its RGB breakdown, HSL equivalent, and CSS rgb() string. You can also input individual R, G, B values to generate the corresponding hex code. Features include a live color preview, common color reference table, and one-click copy for all values. All processing happens in your browser — your data never leaves your device."
+      "seoContent": "This hex to RGB converter tool allows you to easily convert between hexadecimal color codes and RGB (Red, Green, Blue) values. Enter a hex color code to see its RGB breakdown, HSL equivalent, and CSS rgb() string. You can also input individual R, G, B values to generate the corresponding hex code. Features include a live color preview, common color reference table, and one-click copy for all values. All processing happens in your browser — your data never leaves your device.",
+      "faqs": [
+        {
+          "q": "How do I convert hex to RGB?",
+          "a": "Enter a hex color code (e.g., #FF6B35) in the input field. The converter instantly shows the RGB values (255, 107, 53), along with HSL and CSS color function formats."
+        },
+        {
+          "q": "What is the formula for hex to RGB conversion?",
+          "a": "Split the 6-digit hex code into 3 pairs (RR, GG, BB). Convert each pair from hexadecimal to decimal: R = parseInt('FF', 16) = 255, G = parseInt('6B', 16) = 107, B = parseInt('35', 16) = 53."
+        },
+        {
+          "q": "Can I convert RGB back to hex?",
+          "a": "Yes, enter RGB values (0-255 for each channel) and the tool generates the hex code. The formula converts each decimal to a 2-digit hex value and concatenates them with a # prefix."
+        },
+        {
+          "q": "What is the difference between HEX, RGB, and HSL?",
+          "a": "HEX uses hexadecimal notation (#RRGGBB), RGB specifies red/green/blue intensities (0-255), and HSL uses hue (0-360), saturation (0-100%), lightness (0-100%). HSL is most intuitive for creating color variations."
+        }
+      ]
     },
     "octal-decimal-converter": {
       "name": "Octal Decimal Converter",
@@ -4129,7 +4205,29 @@
       "fromNow": "from now",
       "notableDates": "Notable Timestamps",
       "seoTitle": "Unix Timestamp Converter Online",
-      "seoContent": "This Unix timestamp converter tool lets you convert between Unix epoch timestamps and human-readable dates. Enter a timestamp to see the local time, UTC, and ISO 8601 format. Or pick a date to get the Unix timestamp. Supports both seconds and milliseconds. Features include current timestamp display, relative time, and notable timestamp references. Useful for debugging, logging, and API development. All processing happens in your browser — your data never leaves your device."
+      "seoContent": "This Unix timestamp converter tool lets you convert between Unix epoch timestamps and human-readable dates. Enter a timestamp to see the local time, UTC, and ISO 8601 format. Or pick a date to get the Unix timestamp. Supports both seconds and milliseconds. Features include current timestamp display, relative time, and notable timestamp references. Useful for debugging, logging, and API development. All processing happens in your browser — your data never leaves your device.",
+      "faqs": [
+        {
+          "q": "What is a Unix timestamp?",
+          "a": "A Unix timestamp (also called epoch time) is the number of seconds that have elapsed since January 1, 1970, 00:00:00 UTC. For example, timestamp 1709078400 represents February 28, 2024."
+        },
+        {
+          "q": "How do I convert a Unix timestamp to a date?",
+          "a": "Enter the timestamp number in the input field. The tool instantly converts it to a human-readable date in your local timezone and UTC, showing the full date, time, and ISO 8601 format."
+        },
+        {
+          "q": "What is the difference between seconds and milliseconds timestamps?",
+          "a": "Unix timestamps in seconds are 10 digits (e.g., 1709078400). JavaScript's Date.now() returns milliseconds — 13 digits (e.g., 1709078400000). The tool auto-detects and handles both formats."
+        },
+        {
+          "q": "What is the Year 2038 problem?",
+          "a": "32-bit systems store timestamps as signed integers, which overflow on January 19, 2038. After this date, timestamps wrap to negative values. Most modern 64-bit systems are unaffected."
+        },
+        {
+          "q": "Why does my date show January 1, 1970?",
+          "a": "A date showing 1970-01-01 means the timestamp value is 0 or null. This is the Unix epoch — the starting point for Unix time. Check if your timestamp variable is properly initialized."
+        }
+      ]
     },
     "json-to-table": {
       "name": "JSON to Table",
@@ -4177,25 +4275,109 @@
       "name": "Base64 Image Converter",
       "description": "Convert images to Base64 strings and Base64 back to images with drag & drop",
       "pageTitle": "Base64 Image Converter - Convert Image to Base64 Online Free | DevToolBox",
-      "pageDescription": "Free online Base64 image converter. Convert images to Base64 strings and Base64 to images. Supports PNG, JPG, GIF, SVG, WebP."
+      "pageDescription": "Free online Base64 image converter. Convert images to Base64 strings and Base64 to images. Supports PNG, JPG, GIF, SVG, WebP.",
+      "faqs": [
+        {
+          "q": "How do I convert an image to Base64 online?",
+          "a": "Upload or drag-and-drop your image file (PNG, JPG, SVG, GIF, WebP). The tool instantly generates the Base64 string, data URI, CSS background-image code, and HTML img tag — all without uploading to any server."
+        },
+        {
+          "q": "What is a Base64 data URI for images?",
+          "a": "A data URI embeds image data directly in HTML or CSS using the format data:image/png;base64,... This eliminates an extra HTTP request but increases HTML size by ~33%. Best for small icons under 10KB."
+        },
+        {
+          "q": "Should I use Base64 images in production?",
+          "a": "For small images (under 5-10KB like icons), Base64 data URIs reduce HTTP requests and can improve performance. For larger images, use regular file references — Base64 adds 33% size overhead and prevents browser caching."
+        },
+        {
+          "q": "How do I convert Base64 back to an image?",
+          "a": "Paste the Base64 string (with or without the data:image/... prefix) into the decoder. The tool reconstructs the original image file which you can preview and download."
+        },
+        {
+          "q": "What image formats support Base64 encoding?",
+          "a": "All image formats can be Base64-encoded: PNG, JPEG, GIF, SVG, WebP, ICO, BMP, and TIFF. The MIME type in the data URI (e.g., image/png) tells the browser how to interpret the data."
+        }
+      ]
     },
     "jwt-decoder-online": {
       "name": "JWT Decoder Online",
       "description": "Decode JWT tokens online for free. View header, payload, claims, and expiration instantly",
       "pageTitle": "JWT Decoder Online - Decode JWT Token Free | DevToolBox",
-      "pageDescription": "Decode JWT tokens online for free. View header, payload, claims, and expiration instantly. Secure client-side JWT decoder tool."
+      "pageDescription": "Decode JWT tokens online for free. View header, payload, claims, and expiration instantly. Secure client-side JWT decoder tool.",
+      "faqs": [
+        {
+          "q": "How do I decode a JWT token online?",
+          "a": "Paste your JWT token into the input field. The decoder instantly splits it into header, payload, and signature sections, showing all claims including expiration time, issuer, and custom data."
+        },
+        {
+          "q": "Is it safe to decode JWT tokens in an online tool?",
+          "a": "Yes, when the tool processes data entirely in your browser. DevToolBox never sends your JWT to any server — all decoding happens client-side using JavaScript."
+        },
+        {
+          "q": "What information is inside a JWT token?",
+          "a": "A JWT contains three parts: the header (algorithm and type), the payload (claims like user ID, roles, expiration), and the signature (verification hash). The header and payload are Base64URL-encoded, not encrypted."
+        },
+        {
+          "q": "Can I verify a JWT signature online?",
+          "a": "You can decode and inspect JWT tokens without the secret key. However, signature verification requires the signing key (for HMAC) or public key (for RSA/ECDSA), which should never be shared in online tools."
+        },
+        {
+          "q": "Why does my JWT show as expired?",
+          "a": "The 'exp' claim in the payload is a Unix timestamp. If the current time exceeds this value, the token is expired. Check the decoded expiration date and compare it with the current UTC time."
+        }
+      ]
     },
     "regex-tester-online": {
       "name": "Regex Tester Online",
       "description": "Test regular expressions online with real-time matching, highlighting, and capture groups",
       "pageTitle": "Regex Tester Online - Test Regular Expressions Free | DevToolBox",
-      "pageDescription": "Free online regex tester with real-time matching and highlighting. Test JavaScript and Python regular expressions instantly."
+      "pageDescription": "Free online regex tester with real-time matching and highlighting. Test JavaScript and Python regular expressions instantly.",
+      "faqs": [
+        {
+          "q": "How do I test regex online?",
+          "a": "Enter your regular expression pattern in the regex field, then type or paste test text below. Matches are highlighted in real-time as you type, showing capture groups and match positions."
+        },
+        {
+          "q": "What regex flavors are supported?",
+          "a": "This tool supports JavaScript (ES2024), Python, and Go regex flavors. Each has slightly different syntax for features like lookaheads, named groups, and Unicode properties."
+        },
+        {
+          "q": "How do I use capture groups in regex?",
+          "a": "Wrap parts of your pattern in parentheses to create capture groups. Use (?:...) for non-capturing groups and (?<name>...) for named groups. The tester shows each group's match separately."
+        },
+        {
+          "q": "What does the g, i, m flag mean in regex?",
+          "a": "g (global) finds all matches, i (case-insensitive) ignores letter case, m (multiline) makes ^ and $ match line starts/ends instead of string starts/ends. s (dotAll) makes . match newlines."
+        },
+        {
+          "q": "Why is my regex not matching?",
+          "a": "Common issues: forgetting to escape special characters (. * + ? etc.), missing flags (especially g for multiple matches), or using syntax from a different regex flavor. Try simplifying your pattern and testing piece by piece."
+        }
+      ]
     },
     "javascript-minifier": {
       "name": "JavaScript Minifier",
       "description": "Minify JavaScript code by removing comments, whitespace, and newlines with size comparison",
       "pageTitle": "JavaScript Minifier - Minify JS Online Free",
-      "pageDescription": "Free online JavaScript minifier. Minify JS code by removing comments, whitespace, and newlines. Compare original vs minified size."
+      "pageDescription": "Free online JavaScript minifier. Minify JS code by removing comments, whitespace, and newlines. Compare original vs minified size.",
+      "faqs": [
+        {
+          "q": "How do I minify JavaScript online?",
+          "a": "Paste your JavaScript code in the input panel and click Minify. The tool removes comments, whitespace, and newlines while preserving functionality. Copy the minified output or compare sizes."
+        },
+        {
+          "q": "Does minification break JavaScript code?",
+          "a": "Proper minification preserves all functionality. It only removes whitespace, comments, and shortens variable names. Always test minified code before deploying to production."
+        },
+        {
+          "q": "How much does JavaScript minification reduce file size?",
+          "a": "Typically 30-60% reduction depending on code style. Well-commented code with long variable names sees the largest reduction. Combined with gzip compression, total savings can reach 70-80%."
+        },
+        {
+          "q": "Should I minify JavaScript for production?",
+          "a": "Yes, always minify production JavaScript. Smaller files mean faster downloads, quicker parsing, and better Core Web Vitals scores. Use build tools like Vite, webpack, or esbuild for automated minification."
+        }
+      ]
     },
     "json-path-finder": {
       "name": "JSON Path Finder",
@@ -4207,7 +4389,25 @@
       "name": "String Case Converter",
       "description": "Convert text between 14 naming formats: camelCase, snake_case, kebab-case, PascalCase, and more",
       "pageTitle": "String Case Converter Online",
-      "pageDescription": "Convert text between camelCase, snake_case, kebab-case, PascalCase, CONSTANT_CASE, Title Case, UPPERCASE, lowercase and more naming conventions instantly."
+      "pageDescription": "Convert text between camelCase, snake_case, kebab-case, PascalCase, CONSTANT_CASE, Title Case, UPPERCASE, lowercase and more naming conventions instantly.",
+      "faqs": [
+        {
+          "q": "What string case formats are supported?",
+          "a": "14 formats: camelCase, PascalCase, snake_case, CONSTANT_CASE, kebab-case, dot.case, path/case, UPPERCASE, lowercase, Title Case, Sentence case, Header-Case, no case, and swap case."
+        },
+        {
+          "q": "How do I convert camelCase to snake_case?",
+          "a": "Paste your camelCase text (e.g., 'myVariableName') and select snake_case output. The tool splits words at uppercase boundaries and joins them with underscores: 'my_variable_name'."
+        },
+        {
+          "q": "When should I use each naming convention?",
+          "a": "camelCase: JavaScript/Java variables. PascalCase: classes and React components. snake_case: Python, Ruby, database columns. kebab-case: CSS, URLs, file names. CONSTANT_CASE: constants and environment variables."
+        },
+        {
+          "q": "Can I convert between naming conventions for code refactoring?",
+          "a": "Yes, paste variable names, function names, or entire code snippets. The tool intelligently splits words regardless of the input format and converts to your target convention."
+        }
+      ]
     },
     "html-entity-encoder": {
       "name": "HTML Entity Encoder / Decoder",
@@ -4219,19 +4419,73 @@
       "name": "JSON to CSV Converter",
       "description": "Convert JSON arrays to CSV format with nested object flattening and CSV download",
       "pageTitle": "JSON to CSV Converter Online Free — Flatten Nested JSON to CSV | DevToolBox",
-      "pageDescription": "Free JSON to CSV converter. Convert JSON arrays to CSV with nested object flattening, custom delimiters, and instant CSV download. Runs locally in your browser."
+      "pageDescription": "Free JSON to CSV converter. Convert JSON arrays to CSV with nested object flattening, custom delimiters, and instant CSV download. Runs locally in your browser.",
+      "faqs": [
+        {
+          "q": "How do I convert JSON to CSV online?",
+          "a": "Paste your JSON array in the input field. The tool automatically detects column headers from object keys, flattens nested objects, and generates a downloadable CSV file with proper quoting and escaping."
+        },
+        {
+          "q": "Can I convert nested JSON to CSV?",
+          "a": "Yes, the converter flattens nested objects using dot notation. For example, {\"user\": {\"name\": \"John\"}} becomes a column named 'user.name' with value 'John'. Arrays are joined with commas."
+        },
+        {
+          "q": "What JSON format does the converter expect?",
+          "a": "The input should be a JSON array of objects, like [{\"name\": \"Alice\", \"age\": 30}, {\"name\": \"Bob\", \"age\": 25}]. Each object becomes a CSV row, and unique keys across all objects become columns."
+        },
+        {
+          "q": "How do I handle special characters in CSV output?",
+          "a": "The tool automatically handles CSV escaping: values containing commas, quotes, or newlines are wrapped in double quotes. Existing double quotes are escaped by doubling them (\"\")."
+        }
+      ]
     },
     "text-counter": {
       "name": "Text Counter & Statistics",
       "description": "Count words, characters, sentences, paragraphs, lines, bytes, reading time, and speaking time",
       "pageTitle": "Text Counter & Statistics",
-      "pageDescription": "Count words, characters, sentences, paragraphs, lines, and bytes with reading/speaking time estimation and character frequency analysis."
+      "pageDescription": "Count words, characters, sentences, paragraphs, lines, and bytes with reading/speaking time estimation and character frequency analysis.",
+      "faqs": [
+        {
+          "q": "How do I count words in text online?",
+          "a": "Paste or type your text in the input area. The counter instantly displays word count, character count (with and without spaces), sentence count, paragraph count, line count, and byte size."
+        },
+        {
+          "q": "How is reading time calculated?",
+          "a": "Reading time is estimated at 200-250 words per minute for average adult reading speed. Speaking time uses 130-150 words per minute. These are industry-standard rates used by Medium and other platforms."
+        },
+        {
+          "q": "Does the counter support Unicode and CJK characters?",
+          "a": "Yes, the tool correctly counts Unicode characters, including Chinese, Japanese, Korean (CJK) characters, emoji, and special symbols. Each CJK character is counted as one character."
+        },
+        {
+          "q": "Can I check character limits for social media?",
+          "a": "Yes, use the character count to stay within platform limits: Twitter/X (280 chars), Instagram bio (150), LinkedIn posts (3000), Meta description (155-160), and title tags (50-60)."
+        }
+      ]
     },
     "image-to-base64": {
       "name": "Image to Base64 Encoder",
       "description": "Convert images to Base64 strings and data URIs with drag & drop support",
       "pageTitle": "Image to Base64 Encoder Online Free — Upload & Convert to Base64 | DevToolBox",
-      "pageDescription": "Convert images to Base64 strings and data URIs. Drag and drop or select image files to get Base64, CSS background, and HTML img tag output."
+      "pageDescription": "Convert images to Base64 strings and data URIs. Drag and drop or select image files to get Base64, CSS background, and HTML img tag output.",
+      "faqs": [
+        {
+          "q": "How do I convert an image to Base64?",
+          "a": "Upload or drag-and-drop your image file. The tool generates the Base64 string and ready-to-use data URI, CSS background-image, and HTML img tag code. All processing is done locally in your browser."
+        },
+        {
+          "q": "What is the maximum image size for Base64 conversion?",
+          "a": "There is no hard limit since processing happens in your browser. However, Base64 encoding increases data size by 33%. For images over 10KB, consider using regular file references for better performance."
+        },
+        {
+          "q": "When should I use Base64 images vs regular images?",
+          "a": "Use Base64 for small images under 5-10KB (icons, tiny graphics) to reduce HTTP requests. Use regular file references for larger images — they can be cached by browsers and do not bloat your HTML/CSS."
+        },
+        {
+          "q": "What image formats can be converted to Base64?",
+          "a": "All common formats: PNG, JPEG, GIF, SVG, WebP, ICO, BMP, and TIFF. The output includes the correct MIME type in the data URI so browsers know how to render the image."
+        }
+      ]
     },
     "text-case-converter": {
       "name": "Text Case Converter",
@@ -4274,13 +4528,49 @@
       "conversionError": "Conversion failed. SVG may contain external resources.",
       "onlySvg": "Only SVG files are accepted",
       "seoTitle": "What is SVG to PNG Converter?",
-      "seoContent": "SVG (Scalable Vector Graphics) files are great for resolution-independent graphics, but sometimes you need a raster PNG image for social media, app icons, or compatibility. This tool converts SVG to PNG entirely in your browser — no upload to any server. Set custom dimensions, choose a transparent or colored background, and use 2x/3x/4x scale for retina displays."
+      "seoContent": "SVG (Scalable Vector Graphics) files are great for resolution-independent graphics, but sometimes you need a raster PNG image for social media, app icons, or compatibility. This tool converts SVG to PNG entirely in your browser — no upload to any server. Set custom dimensions, choose a transparent or colored background, and use 2x/3x/4x scale for retina displays.",
+      "faqs": [
+        {
+          "q": "How do I convert SVG to PNG online?",
+          "a": "Upload or paste your SVG code. Set the desired output dimensions (width/height) and background color. Click Convert to generate a PNG image that you can preview and download instantly."
+        },
+        {
+          "q": "What resolution should I use for SVG to PNG conversion?",
+          "a": "For web: 1x (72dpi) for standard screens, 2x for retina/HiDPI displays. For print: use 300dpi. SVG is resolution-independent, so you can export at any size without quality loss."
+        },
+        {
+          "q": "Why convert SVG to PNG?",
+          "a": "Some platforms and applications do not support SVG (older email clients, social media uploads, favicon fallbacks). PNG provides universal compatibility while preserving transparency and quality at the exported size."
+        },
+        {
+          "q": "Can I batch convert multiple SVGs to PNG?",
+          "a": "This tool handles one SVG at a time for maximum control over dimensions and quality. For batch conversion, consider using command-line tools like Inkscape, Sharp (Node.js), or CairoSVG (Python)."
+        }
+      ]
     },
     "css-beautifier": {
       "name": "CSS Beautifier",
       "description": "Format and beautify CSS code online",
       "pageTitle": "CSS Beautifier & Formatter",
-      "pageDescription": "Format, beautify, and minify CSS code online. Auto-indent and clean up your CSS instantly."
+      "pageDescription": "Format, beautify, and minify CSS code online. Auto-indent and clean up your CSS instantly.",
+      "faqs": [
+        {
+          "q": "How do I beautify CSS online?",
+          "a": "Paste minified or messy CSS in the input. The beautifier formats it with proper indentation, one property per line, consistent spacing around colons and semicolons, and organized selector blocks."
+        },
+        {
+          "q": "What is the difference between CSS beautify and minify?",
+          "a": "Beautifying adds whitespace and indentation for readability (development). Minifying removes all whitespace for smaller file sizes (production). Both preserve the exact same styling behavior."
+        },
+        {
+          "q": "Should I beautify CSS before committing to git?",
+          "a": "Yes, use consistent formatting in source files for readable diffs and easier code review. Set up Prettier or Stylelint in your project to auto-format CSS on save or pre-commit."
+        },
+        {
+          "q": "Does CSS formatting affect page performance?",
+          "a": "Source CSS formatting has no impact if you use a build pipeline that minifies for production. Browsers parse CSS the same regardless of whitespace. Only the minified production bundle size matters."
+        }
+      ]
     },
     "http-header-checker": {
       "name": "HTTP Header Checker",
@@ -4304,19 +4594,73 @@
       "name": "Cron to Human Readable",
       "description": "Convert cron expressions to plain English",
       "pageTitle": "Cron Expression to Human Readable",
-      "pageDescription": "Convert cron expressions to plain English. Understand when your cron jobs will run and preview next execution times."
+      "pageDescription": "Convert cron expressions to plain English. Understand when your cron jobs will run and preview next execution times.",
+      "faqs": [
+        {
+          "q": "How do I read a cron expression?",
+          "a": "A cron expression has 5 fields: minute (0-59), hour (0-23), day of month (1-31), month (1-12), day of week (0-7). For example, '30 9 * * 1-5' means 'At 9:30 AM, Monday through Friday'."
+        },
+        {
+          "q": "What does */5 mean in cron?",
+          "a": "The */5 syntax means 'every 5th unit'. In the minute field, */5 means every 5 minutes (0, 5, 10, 15...). In the hour field, */2 means every 2 hours. It is called a step value."
+        },
+        {
+          "q": "What is the difference between * and ? in cron?",
+          "a": "The asterisk (*) means 'every value'. The question mark (?) is used in some cron implementations (like Quartz) for day-of-month or day-of-week to mean 'no specific value'. Standard cron uses * for both."
+        },
+        {
+          "q": "How do I schedule a job for the first Monday of every month?",
+          "a": "Standard cron cannot directly express this. Use '0 0 1-7 * 1' (runs on Monday when the date is 1-7) or implement the logic in your script to check if today is the first Monday."
+        }
+      ]
     },
     "text-diff-tool": {
       "name": "Text Diff Tool",
       "description": "Compare two texts side by side with highlighted differences",
       "pageTitle": "Text Diff Tool - Compare Text Online",
-      "pageDescription": "Compare two texts side by side. Highlight additions, deletions and changes line by line."
+      "pageDescription": "Compare two texts side by side. Highlight additions, deletions and changes line by line.",
+      "faqs": [
+        {
+          "q": "How do I compare two texts online?",
+          "a": "Paste the original text on the left and the modified text on the right. Click Compare to see additions (green), deletions (red), and unchanged text. The diff highlights exactly what changed between versions."
+        },
+        {
+          "q": "What diff algorithm does this tool use?",
+          "a": "The tool uses a character-level and line-level diff algorithm similar to git diff. It finds the minimum set of changes needed to transform the original text into the modified version."
+        },
+        {
+          "q": "Can I compare code files with this tool?",
+          "a": "Yes, paste any text including source code, configuration files, JSON, or documentation. The diff viewer preserves formatting and shows precise changes — useful for code review and debugging."
+        },
+        {
+          "q": "What is the difference between unified and side-by-side diff?",
+          "a": "Unified diff shows changes inline with +/- markers (like git diff). Side-by-side diff shows the original and modified versions in parallel columns, making it easier to visually compare long documents."
+        }
+      ]
     },
     "sql-query-formatter": {
       "name": "SQL Query Formatter",
       "description": "Format and indent SQL queries online",
       "pageTitle": "SQL Query Formatter & Beautifier",
-      "pageDescription": "Format and beautify SQL queries online. Auto-indent keywords, normalize whitespace, and minify SQL."
+      "pageDescription": "Format and beautify SQL queries online. Auto-indent keywords, normalize whitespace, and minify SQL.",
+      "faqs": [
+        {
+          "q": "How do I format SQL queries online?",
+          "a": "Paste your SQL query in the input panel. The formatter automatically uppercases keywords (SELECT, FROM, WHERE), adds proper indentation, and places each clause on its own line for maximum readability."
+        },
+        {
+          "q": "What SQL dialects are supported?",
+          "a": "Standard SQL, PostgreSQL, MySQL, SQLite, SQL Server (T-SQL), and Oracle SQL. Each dialect has specific syntax like LIMIT vs TOP, string concatenation operators, and data type differences."
+        },
+        {
+          "q": "Does formatting change how my SQL query executes?",
+          "a": "No, formatting only changes whitespace and letter casing. The query logic, performance, and results remain identical. Well-formatted SQL is easier to read, debug, and maintain."
+        },
+        {
+          "q": "How should I format SQL JOINs?",
+          "a": "Place each JOIN on its own line, indent the ON clause, and align conditions vertically. For multi-condition JOINs, put each condition on a separate indented line with AND/OR at the start."
+        }
+      ]
     }
   },
   "footer": {
