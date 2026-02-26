@@ -3810,7 +3810,25 @@
       "yamlPlaceholder": "Paste your YAML here...",
       "jsonPlaceholder": "Paste your JSON here...",
       "seoTitle": "YAML to JSON Converter Online",
-      "seoContent": "This YAML to JSON converter tool allows you to easily convert between YAML and JSON formats. Simply paste your YAML or JSON data, and the tool will convert it to the other format instantly. Features include bidirectional conversion, customizable JSON indentation (2 or 4 spaces), sample data loading, and clear error messages for invalid input. All processing happens in your browser — your data never leaves your device."
+      "seoContent": "This YAML to JSON converter tool allows you to easily convert between YAML and JSON formats. Simply paste your YAML or JSON data, and the tool will convert it to the other format instantly. Features include bidirectional conversion, customizable JSON indentation (2 or 4 spaces), sample data loading, and clear error messages for invalid input. All processing happens in your browser — your data never leaves your device.",
+      "faqs": [
+        {
+          "q": "How do I convert YAML to JSON?",
+          "a": "Paste your YAML content in the input panel and click Convert. The tool parses YAML syntax (indentation, arrays, nested objects) and outputs properly formatted JSON with correct types, arrays, and nested structures."
+        },
+        {
+          "q": "What are the differences between YAML and JSON?",
+          "a": "YAML supports comments, uses indentation for nesting, allows multi-line strings, and has aliases/anchors. JSON uses braces and brackets, has no comments, and is more strict. JSON is better for APIs; YAML is better for config files."
+        },
+        {
+          "q": "Can YAML represent everything JSON can?",
+          "a": "Yes, YAML is a superset of JSON. Any valid JSON is also valid YAML. YAML additionally supports comments, anchors/aliases, multi-line strings, and more data types. Converting YAML to JSON may lose comments and anchors."
+        },
+        {
+          "q": "Why do Kubernetes and Docker use YAML?",
+          "a": "YAML is more human-readable for configuration files. Comments help document settings. The indentation-based structure is cleaner for deeply nested configs. YAML support for multi-line strings is essential for embedding scripts and templates."
+        }
+      ]
     },
     "hex-to-decimal": {
       "name": "Hex to Decimal Converter",
@@ -3913,7 +3931,25 @@
       "invalidDecimal": "Invalid decimal value",
       "commonValues": "Common Octal Values",
       "seoTitle": "Octal to Decimal Converter Online",
-      "seoContent": "This octal to decimal converter tool allows you to easily convert between octal (base-8) and decimal (base-10) number systems. Enter an octal value to see its decimal, hexadecimal, and binary equivalents instantly. The tool supports bidirectional conversion and includes a reference table of common octal values. Useful for Unix file permissions, programming, and computer science. All processing happens in your browser — your data never leaves your device."
+      "seoContent": "This octal to decimal converter tool allows you to easily convert between octal (base-8) and decimal (base-10) number systems. Enter an octal value to see its decimal, hexadecimal, and binary equivalents instantly. The tool supports bidirectional conversion and includes a reference table of common octal values. Useful for Unix file permissions, programming, and computer science. All processing happens in your browser — your data never leaves your device.",
+      "faqs": [
+        {
+          "q": "What is the octal number system?",
+          "a": "Octal (base-8) uses digits 0-7. Each octal digit represents exactly 3 binary bits. It was historically important in computing and is still used in Unix file permissions (chmod 755), some programming languages (0o777), and legacy systems."
+        },
+        {
+          "q": "How do I convert octal to decimal?",
+          "a": "Multiply each digit by its positional power of 8. For example, 755 in octal = 7*64 + 5*8 + 5*1 = 448 + 40 + 5 = 493 in decimal. The tool does this calculation instantly."
+        },
+        {
+          "q": "Where is octal used in programming?",
+          "a": "Primarily in Unix/Linux file permissions (chmod 755 = rwxr-xr-x), some C/C++ literals (0755), Python (0o755), and legacy mainframe systems. Octal was more common when computer word sizes were multiples of 3 bits."
+        },
+        {
+          "q": "What is chmod 755 in decimal?",
+          "a": "chmod 755 in octal equals 493 in decimal. Each digit represents permissions for owner (7=rwx), group (5=r-x), and others (5=r-x). The octal notation maps directly to the 3-bit permission groups (read=4, write=2, execute=1)."
+        }
+      ]
     },
     "roman-numeral-converter": {
       "name": "Roman Numeral Converter",
@@ -3938,7 +3974,25 @@
       "number": "Number",
       "romanNumeral": "Roman Numeral",
       "seoTitle": "Roman Numeral Converter Online",
-      "seoContent": "This Roman numeral converter tool allows you to easily convert between standard numbers and Roman numerals. Enter any number from 1 to 3999 to see its Roman numeral representation, or enter a Roman numeral to convert it back to a number. Features include a date converter for converting birthdays and special dates to Roman numerals, a comprehensive reference table, and instant bidirectional conversion. All processing happens in your browser — your data never leaves your device."
+      "seoContent": "This Roman numeral converter tool allows you to easily convert between standard numbers and Roman numerals. Enter any number from 1 to 3999 to see its Roman numeral representation, or enter a Roman numeral to convert it back to a number. Features include a date converter for converting birthdays and special dates to Roman numerals, a comprehensive reference table, and instant bidirectional conversion. All processing happens in your browser — your data never leaves your device.",
+      "faqs": [
+        {
+          "q": "How do Roman numerals work?",
+          "a": "Roman numerals use letters: I=1, V=5, X=10, L=50, C=100, D=500, M=1000. Numbers are formed by addition (VII=7) and subtraction (IV=4, IX=9). Subtraction is used when a smaller numeral precedes a larger one."
+        },
+        {
+          "q": "What is the largest Roman numeral?",
+          "a": "Standard Roman numerals go up to 3,999 (MMMCMXCIX). For larger numbers, a vinculum (overline) multiplies by 1000. In practice, most modern uses are limited to dates, chapter numbers, and clock faces."
+        },
+        {
+          "q": "Why are Roman numerals still used?",
+          "a": "They appear in: movie copyright years (MMXXVI = 2026), clock faces, book chapters, Super Bowl numbering, royal names (Queen Elizabeth II), building cornerstones, and outline formatting (I, II, III)."
+        },
+        {
+          "q": "How do I convert Arabic numbers to Roman numerals?",
+          "a": "Break the number into thousands, hundreds, tens, and ones. Convert each group: 2026 = MM (2000) + no hundreds + XX (20) + VI (6) = MMXXVI. The converter handles this instantly for any number up to 3,999."
+        }
+      ]
     },
     "byte-converter": {
       "name": "Byte Converter",
@@ -4413,7 +4467,25 @@
       "name": "HTML Entity Encoder / Decoder",
       "description": "Encode and decode HTML entities with named and numeric entity support and reference table",
       "pageTitle": "HTML Entity Encoder & Decoder Online Free — Named & Numeric Entities | DevToolBox",
-      "pageDescription": "Encode and decode HTML entities online. Convert special characters to named or numeric HTML entities and back with a comprehensive reference table."
+      "pageDescription": "Encode and decode HTML entities online. Convert special characters to named or numeric HTML entities and back with a comprehensive reference table.",
+      "faqs": [
+        {
+          "q": "What are HTML entities?",
+          "a": "HTML entities are special codes that represent characters which have special meaning in HTML (like < > & \") or characters that cannot be typed on a standard keyboard. They start with & and end with ; (e.g., &amp; for &, &lt; for <)."
+        },
+        {
+          "q": "Why do I need to encode HTML entities?",
+          "a": "Encoding prevents XSS (cross-site scripting) attacks and ensures special characters display correctly. Without encoding, characters like < and > are interpreted as HTML tags, potentially breaking your page or creating security vulnerabilities."
+        },
+        {
+          "q": "What is the difference between named and numeric entities?",
+          "a": "Named entities use descriptive names (e.g., &amp; &lt; &copy;). Numeric entities use character codes (e.g., &#38; &#60; &#169;). Named entities are more readable but not all characters have names. Numeric entities work for any Unicode character."
+        },
+        {
+          "q": "When should I use HTML entities vs UTF-8?",
+          "a": "With UTF-8 encoding (recommended for all modern websites), you only need to encode &, <, >, and \" in HTML context. Special characters like accented letters can be typed directly. Use entities only for these 4 HTML-special characters and for invisible characters."
+        }
+      ]
     },
     "json-to-csv": {
       "name": "JSON to CSV Converter",
@@ -4497,7 +4569,25 @@
       "name": "Image Compressor",
       "description": "Compress images online for free with adjustable quality. Supports JPEG, PNG, and WebP output",
       "pageTitle": "Image Compressor Online Free — Compress JPEG, PNG, WebP Without Quality Loss | DevToolBox",
-      "pageDescription": "Free online image compressor. Reduce image file size up to 90% with adjustable quality. Supports JPEG, PNG, and WebP. All processing in your browser — no upload needed."
+      "pageDescription": "Free online image compressor. Reduce image file size up to 90% with adjustable quality. Supports JPEG, PNG, and WebP. All processing in your browser — no upload needed.",
+      "faqs": [
+        {
+          "q": "How much can images be compressed?",
+          "a": "Typically 50-80% size reduction without visible quality loss. A 2MB JPEG can often be reduced to 200-500KB. The actual reduction depends on the image content, original quality settings, and target format."
+        },
+        {
+          "q": "Does image compression reduce quality?",
+          "a": "Lossy compression (JPEG, WebP) removes some data and reduces quality slightly. At 80-85% quality settings, the difference is imperceptible to the human eye. Lossless compression (PNG optimization) reduces size without any quality loss."
+        },
+        {
+          "q": "What image format is best for web?",
+          "a": "WebP offers the best size-to-quality ratio for most web images. Use JPEG for photographs, PNG for images requiring transparency or sharp edges (logos, icons), SVG for simple graphics and icons, and AVIF for cutting-edge browsers."
+        },
+        {
+          "q": "How does image compression improve website performance?",
+          "a": "Smaller images load faster, improving Core Web Vitals scores (especially Largest Contentful Paint). Google uses page speed as a ranking factor. Compressed images reduce bandwidth costs and improve user experience on slow connections."
+        }
+      ]
     },
     "svg-to-png": {
       "name": "SVG to PNG Converter",
@@ -4582,13 +4672,49 @@
       "name": "IP Address Lookup",
       "description": "Look up geolocation and details for any IP address",
       "pageTitle": "IP Address Lookup Tool",
-      "pageDescription": "Look up geolocation, ISP, ASN, and details for any IP address. Free IP lookup tool."
+      "pageDescription": "Look up geolocation, ISP, ASN, and details for any IP address. Free IP lookup tool.",
+      "faqs": [
+        {
+          "q": "How does IP address lookup work?",
+          "a": "IP lookup queries geolocation databases that map IP address ranges to physical locations. These databases are compiled from ISP registrations, routing data, and other sources. Accuracy varies: country is 95-99% accurate, city is 50-80% accurate."
+        },
+        {
+          "q": "Is IP geolocation always accurate?",
+          "a": "No. IP geolocation is approximate. It is accurate for country (95-99%) but less so for city (50-80%). VPN users, mobile networks, and corporate proxies can show incorrect locations. Never rely on IP location for critical decisions."
+        },
+        {
+          "q": "Can I find someone's exact address from their IP?",
+          "a": "No. IP addresses do not reveal exact addresses. At best, you can determine the city or region. Only the Internet Service Provider (ISP) can map an IP to a specific subscriber, and they only share this with law enforcement via legal process."
+        },
+        {
+          "q": "What information can I get from an IP address?",
+          "a": "Approximate geographic location (country, region, city), ISP name, organization name, timezone, AS number, and whether it is a known VPN/proxy/Tor exit node. You cannot get personal information like name or street address."
+        }
+      ]
     },
     "color-blindness-simulator": {
       "name": "Color Blindness Simulator",
       "description": "Simulate how colors appear with different types of color blindness",
       "pageTitle": "Color Blindness Simulator",
-      "pageDescription": "Simulate how colors appear to people with different types of color blindness. Test your UI accessibility."
+      "pageDescription": "Simulate how colors appear to people with different types of color blindness. Test your UI accessibility.",
+      "faqs": [
+        {
+          "q": "What is color blindness simulation?",
+          "a": "Color blindness simulation shows how your design appears to people with different types of color vision deficiency. It helps identify problematic color combinations where important distinctions may be invisible to colorblind users."
+        },
+        {
+          "q": "How many people are color blind?",
+          "a": "Approximately 8% of men and 0.5% of women have some form of color vision deficiency. The most common type is red-green color blindness (deuteranopia/protanopia), affecting about 6% of men. This means roughly 1 in 12 male users."
+        },
+        {
+          "q": "How do I design for colorblind users?",
+          "a": "Never rely solely on color to convey information. Use patterns, labels, icons, or underlines alongside color. Ensure sufficient contrast ratios (WCAG AA: 4.5:1). Test with simulation tools. Avoid problematic pairs like red/green or blue/purple."
+        },
+        {
+          "q": "What are the types of color blindness?",
+          "a": "Protanopia (no red cones), deuteranopia (no green cones), tritanopia (no blue cones), and achromatopsia (total color blindness). Red-green deficiency (protanopia + deuteranopia) is by far the most common, affecting ~6% of males."
+        }
+      ]
     },
     "cron-to-human": {
       "name": "Cron to Human Readable",
