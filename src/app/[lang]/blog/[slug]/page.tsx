@@ -292,6 +292,9 @@ import PasswordGeneratorOnlineGuide from '@/data/posts/password-generator-online
 import DockerComposeGeneratorOnlineGuide from '@/data/posts/docker-compose-generator-online-guide';
 import NginxConfigGeneratorOnlineGuide from '@/data/posts/nginx-config-generator-online-guide';
 import QrCodeGeneratorOnlineGuide from '@/data/posts/qr-code-generator-online-guide';
+import GitCommandGeneratorOnlineGuide from '@/data/posts/git-command-generator-online-guide';
+import SqlFormatterOnlineGuide from '@/data/posts/sql-formatter-online-guide';
+import CssFlexboxGeneratorOnlineGuide from '@/data/posts/css-flexbox-generator-online-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -574,6 +577,9 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'docker-compose-generator-online-guide': DockerComposeGeneratorOnlineGuide,
   'nginx-config-generator-online-guide': NginxConfigGeneratorOnlineGuide,
   'qr-code-generator-online-guide': QrCodeGeneratorOnlineGuide,
+  'git-command-generator-online-guide': GitCommandGeneratorOnlineGuide,
+  'sql-formatter-online-guide': SqlFormatterOnlineGuide,
+  'css-flexbox-generator-online-guide': CssFlexboxGeneratorOnlineGuide,
 };
 
 /* i18n for UI strings on this page */
