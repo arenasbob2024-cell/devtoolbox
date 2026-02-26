@@ -285,6 +285,10 @@ import JsonFormatterBeautifierGuide from '@/data/posts/json-formatter-beautifier
 import RegexTesterOnlineGuide from '@/data/posts/regex-tester-online-guide';
 import JwtDecoderOnlineGuide from '@/data/posts/jwt-decoder-online-guide';
 import UuidGeneratorGuide from '@/data/posts/uuid-generator-guide';
+import HashGeneratorOnlineGuide from '@/data/posts/hash-generator-online-guide';
+import CronExpressionGeneratorGuide from '@/data/posts/cron-expression-generator-guide';
+import ColorConverterOnlineGuide from '@/data/posts/color-converter-online-guide';
+import PasswordGeneratorOnlineGuide from '@/data/posts/password-generator-online-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -560,6 +564,10 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'regex-tester-online-guide': RegexTesterOnlineGuide,
   'jwt-decoder-online-guide': JwtDecoderOnlineGuide,
   'uuid-generator-guide': UuidGeneratorGuide,
+  'hash-generator-online-guide': HashGeneratorOnlineGuide,
+  'cron-expression-generator-guide': CronExpressionGeneratorGuide,
+  'color-converter-online-guide': ColorConverterOnlineGuide,
+  'password-generator-online-guide': PasswordGeneratorOnlineGuide,
 };
 
 /* i18n for UI strings on this page */
