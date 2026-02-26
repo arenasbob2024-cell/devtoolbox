@@ -2114,6 +2114,18 @@
         {
           "q": "Does it downlevel modern JavaScript features?",
           "a": "No. This tool only strips TypeScript-specific syntax. Modern JS features (async/await, optional chaining, etc.) are preserved as-is. For downleveling, use the TypeScript compiler with a target setting."
+        },
+        {
+          "q": "How do I convert TS to JS online?",
+          "a": "Paste your TypeScript code in the input panel and click Convert. The tool instantly removes all type annotations, interfaces, and TypeScript-specific syntax, giving you clean JavaScript output you can copy with one click."
+        },
+        {
+          "q": "Can I convert an entire TypeScript file to JavaScript?",
+          "a": "Yes. Paste the full contents of your .ts or .tsx file into the input. The converter handles imports, exports, classes, functions, and all TypeScript syntax in a single pass."
+        },
+        {
+          "q": "Is this the same as running tsc?",
+          "a": "This tool performs type erasure similar to tsc with --isolatedModules. For complex projects with path aliases, decorators, or project references, use the TypeScript compiler directly."
         }
       ],
       "howToUseTitle": "How to Use",
@@ -2196,13 +2208,25 @@
         {
           "q": "Can I use the generated classes directly?",
           "a": "Yes. The output is valid Java code ready to use with Jackson, Gson, or any JSON library. Just copy into .java files."
+        },
+        {
+          "q": "Does it support Java Records?",
+          "a": "Yes. Enable the Records option to generate Java 16+ record classes instead of traditional POJOs. Records are immutable and automatically generate equals(), hashCode(), and toString()."
+        },
+        {
+          "q": "How are nested JSON objects converted?",
+          "a": "Each nested JSON object becomes a separate Java class. For example, a JSON with an address object generates both a Root class and an Address class with proper type references."
+        },
+        {
+          "q": "Can I generate Jackson annotations?",
+          "a": "Yes. Enable the Jackson option to add @JsonProperty annotations to each field, ensuring correct JSON serialization/deserialization in Spring Boot and other Jackson-based frameworks."
         }
       ],
       "howToUseTitle": "How to Use",
       "howToUseSteps": [
         "Paste your JSON data into the input panel",
         "Set the root class name (default: Root)",
-        "Toggle Lombok support if desired",
+        "Toggle Lombok, Records, or Jackson annotations",
         "Copy the generated Java classes into your project"
       ],
       "useCasesTitle": "Common Use Cases",
@@ -2210,7 +2234,9 @@
         "Creating Java POJOs from REST API responses",
         "Generating model classes for Spring Boot applications",
         "Building typed data models for Android apps",
-        "Quickly scaffolding Java classes from sample data"
+        "Quickly scaffolding Java classes from sample data",
+        "Converting API documentation JSON to Java DTOs",
+        "Generating domain models for microservices"
       ]
     },
     "json-to-kotlin": {
@@ -2524,21 +2550,35 @@
         {
           "q": "Can I use this with OpenAPI/Swagger?",
           "a": "Yes. The generated JSON Schema is compatible with OpenAPI specifications. You can paste the schema into your API documentation."
+        },
+        {
+          "q": "How do I create JSON Schema from JSON?",
+          "a": "Paste your sample JSON data into the input panel and click Convert. The tool automatically detects types (string, number, boolean, array, object), marks all fields as required, and generates a complete JSON Schema definition."
+        },
+        {
+          "q": "What is JSON Schema used for?",
+          "a": "JSON Schema defines the structure and validation rules for JSON data. It's used for API request/response validation, form generation, configuration file validation, and data documentation in OpenAPI/Swagger specs."
+        },
+        {
+          "q": "Does it support arrays of objects?",
+          "a": "Yes. Arrays containing objects generate an 'items' schema with the object's properties defined. Mixed-type arrays use 'anyOf' to describe all possible item types."
         }
       ],
       "howToUseTitle": "How to Use",
       "howToUseSteps": [
         "Paste your JSON data into the input panel",
-        "Set the schema title",
+        "Set the schema title and description (optional)",
         "Click Convert to generate the JSON Schema",
-        "Copy the schema for use with validators or API docs"
+        "Copy the schema for use with validators, OpenAPI, or Ajv"
       ],
       "useCasesTitle": "Common Use Cases",
       "useCases": [
         "Creating JSON Schema for OpenAPI/Swagger documentation",
         "Generating validation schemas for REST APIs",
         "Building configuration file validators",
-        "Documenting data structures for team collaboration"
+        "Documenting data structures for team collaboration",
+        "Generating Ajv validators for Node.js applications",
+        "Creating form validation rules from sample data"
       ]
     },
     "css-to-js": {
