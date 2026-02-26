@@ -307,6 +307,8 @@ import CurlToCodeOnlineGuide from '@/data/posts/curl-to-code-online-guide';
 import JsonFormatterOnlineGuide from '@/data/posts/json-formatter-online-guide';
 import CronExpressionOnlineGuide from '@/data/posts/cron-expression-online-guide';
 import MarkdownToHtmlOnlineGuide from '@/data/posts/markdown-to-html-online-guide';
+import SvgToReactOnlineGuide from '@/data/posts/svg-to-react-online-guide';
+import JsonToTypescriptOnlineGuide from '@/data/posts/json-to-typescript-online-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -604,6 +606,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'json-formatter-online-guide': JsonFormatterOnlineGuide,
   'cron-expression-online-guide': CronExpressionOnlineGuide,
   'markdown-to-html-online-guide': MarkdownToHtmlOnlineGuide,
+  'svg-to-react-online-guide': SvgToReactOnlineGuide,
+  'json-to-typescript-online-guide': JsonToTypescriptOnlineGuide,
 };
 
 /* i18n for UI strings on this page */
