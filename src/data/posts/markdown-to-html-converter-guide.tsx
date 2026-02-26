@@ -143,6 +143,14 @@ const t: Record<string, Record<string, string>> = {
     faq2_a: '最佳库取决于你的使用场景。JavaScript 中 markdown-it 最受欢迎，因其速度快、符合 CommonMark 规范且有丰富的插件生态。React 应用中 react-markdown 是标准选择。Python 中 mistune 是最快的解析器。如需通用命令行工具，pandoc 支持数十种格式之间的转换。',
     faq3_q: 'GFM 和 CommonMark 有什么区别？',
     faq3_a: 'CommonMark 是原始 Markdown 语法的严格、无歧义规范。GFM 是 CommonMark 的超集，添加了软件开发中常用的扩展：表格、任务列表、删除线、自动链接等。大多数现代 Markdown 解析器同时支持 CommonMark 和 GFM，通常通过配置标志启用 GFM 扩展。',
+    faq4_q: '能在 React 和 Next.js 中使用 Markdown 吗？',
+    faq4_a: '可以。最流行的方法是使用 react-markdown 包，它将 Markdown 渲染为 React 组件。MDX 允许在 Markdown 中嵌入 JSX 组件。Next.js 中可使用 @next/mdx 或在构建时用 remark 和 rehype 插件处理 Markdown。unified 生态系统提供与 React 服务端组件无缝集成的 AST 转换。',
+    faq5_q: '如何为 Markdown 代码块添加语法高亮？',
+    faq5_a: '语法高亮需要两个步骤：解析器保留代码围栏的语言标识符，然后高亮库处理代码。常用选项包括 Prism.js、Shiki 和 highlight.js。在服务端渲染中，推荐使用 Shiki，因为它生成内联样式，无需客户端 JavaScript。',
+    faq6_q: 'Markdown 是否安全，能防止 XSS 攻击吗？',
+    faq6_a: '原始的 Markdown 转 HTML 可能存在 XSS 漏洞。大多数解析器默认允许原始 HTML。为防止 XSS，请使用 DOMPurify 等清理库，或配置解析器禁用原始 HTML。GFM 默认禁止某些危险的 HTML 标签。始终在浏览器渲染前对用户生成的 Markdown 进行清理。',
+    faq7_q: '如何为 Markdown 生成的 HTML 添加样式？',
+    faq7_a: '最佳方法是将渲染的 HTML 包裹在容器元素中，使用 CSS 为子元素添加样式。Tailwind CSS 的 @tailwindcss/typography 插件提供 prose 类。GitHub 提供开源的 github-markdown-css 样式表。React 应用中可使用 react-markdown 的自定义渲染器组件。',
     conclusion: 'Markdown 转 HTML 是每个 Web 开发者和技术作者的基础技能。从理解解析管道到为你的技术栈选择合适的库，掌握 Markdown 转 HTML 工作流使你能够构建文档站点、博客和内容丰富的应用。收藏本指南以备参考，并使用我们的免费在线工具进行即时转换。',
     linkToolBottom: '使用我们的免费在线工具即时将 Markdown 转换为 HTML。',
   },
@@ -207,6 +215,14 @@ const t: Record<string, Record<string, string>> = {
     faq2_a: 'markdown-it est le choix le plus populaire en JavaScript pour sa vitesse et son ecosysteme de plugins. react-markdown est le standard pour React. En Python, mistune est le plus rapide. pandoc est l\'outil universel en ligne de commande.',
     faq3_q: 'Quelle est la difference entre GFM et CommonMark ?',
     faq3_a: 'CommonMark est une specification stricte de la syntaxe Markdown originale. GFM est un surensemble ajoutant tableaux, listes de taches, texte barre et liens automatiques. La plupart des parseurs modernes supportent les deux.',
+    faq4_q: 'Peut-on utiliser Markdown dans React et Next.js ?',
+    faq4_a: 'Oui. L\'approche la plus populaire est react-markdown. MDX permet d\'integrer des composants JSX dans Markdown. Next.js supporte @next/mdx et les plugins remark/rehype pour le traitement au build.',
+    faq5_q: 'Comment ajouter la coloration syntaxique aux blocs de code Markdown ?',
+    faq5_a: 'Utilisez Prism.js (rehype-prism), Shiki ou highlight.js. Le parseur doit preserver l\'identifiant de langage, puis la bibliotheque de coloration traite le code.',
+    faq6_q: 'Markdown est-il protege contre les attaques XSS ?',
+    faq6_a: 'La conversion brute peut etre vulnerable au XSS. Utilisez DOMPurify ou configurez le parseur pour desactiver le HTML brut. Sanitisez toujours le Markdown genere par les utilisateurs.',
+    faq7_q: 'Comment styler la sortie HTML generee depuis Markdown ?',
+    faq7_a: 'Utilisez la classe prose de Tailwind CSS (@tailwindcss/typography), github-markdown-css, ou des composants de rendu personnalises avec react-markdown.',
     conclusion: 'La conversion Markdown vers HTML est une competence fondamentale. Utilisez notre outil gratuit pour une conversion instantanee.',
     linkToolBottom: 'Convertissez Markdown en HTML instantanement avec notre outil gratuit.',
   },
@@ -271,6 +287,14 @@ const t: Record<string, Record<string, string>> = {
     faq2_a: 'markdown-it ist die beliebteste Wahl in JavaScript wegen Geschwindigkeit und Plugin-Okosystem. react-markdown ist Standard fur React. In Python ist mistune am schnellsten. pandoc ist das universelle Kommandozeilen-Tool.',
     faq3_q: 'Was ist der Unterschied zwischen GFM und CommonMark?',
     faq3_a: 'CommonMark ist eine strenge Spezifikation der originalen Markdown-Syntax. GFM ist eine Obermenge mit Tabellen, Aufgabenlisten, Durchstreichen und automatischen Links. Die meisten modernen Parser unterstutzen beide.',
+    faq4_q: 'Kann man Markdown in React und Next.js verwenden?',
+    faq4_a: 'Ja. Der beliebteste Ansatz ist react-markdown. MDX ermoglicht das Einbetten von JSX-Komponenten in Markdown. Next.js unterstutzt @next/mdx und remark/rehype-Plugins.',
+    faq5_q: 'Wie fugt man Syntax-Highlighting zu Markdown-Codeblocken hinzu?',
+    faq5_a: 'Verwenden Sie Prism.js (rehype-prism), Shiki oder highlight.js. Der Parser muss den Sprachbezeichner beibehalten, dann verarbeitet die Highlighting-Bibliothek den Code.',
+    faq6_q: 'Ist Markdown vor XSS-Angriffen geschutzt?',
+    faq6_a: 'Rohe Konvertierung kann anfallig fur XSS sein. Verwenden Sie DOMPurify oder konfigurieren Sie den Parser, um rohes HTML zu deaktivieren. Sanitisieren Sie immer benutzergeneriertes Markdown.',
+    faq7_q: 'Wie stylt man HTML-Ausgabe von Markdown?',
+    faq7_a: 'Verwenden Sie die prose-Klasse von Tailwind CSS (@tailwindcss/typography), github-markdown-css oder benutzerdefinierte Renderer-Komponenten mit react-markdown.',
     conclusion: 'Markdown-zu-HTML-Konvertierung ist eine grundlegende Fahigkeit. Nutzen Sie unser kostenloses Tool fur sofortige Konvertierung.',
     linkToolBottom: 'Konvertieren Sie Markdown sofort zu HTML mit unserem kostenlosen Online-Tool.',
   },
@@ -335,6 +359,14 @@ const t: Record<string, Record<string, string>> = {
     faq2_a: 'markdown-it es la opcion mas popular en JavaScript por su velocidad y ecosistema de plugins. react-markdown es el estandar para React. En Python, mistune es el mas rapido. pandoc es la herramienta universal de linea de comandos.',
     faq3_q: 'Cual es la diferencia entre GFM y CommonMark?',
     faq3_a: 'CommonMark es una especificacion estricta de la sintaxis Markdown original. GFM es un superconjunto que agrega tablas, listas de tareas, tachado y enlaces automaticos. La mayoria de los parsers modernos soportan ambos.',
+    faq4_q: 'Se puede usar Markdown en React y Next.js?',
+    faq4_a: 'Si. El enfoque mas popular es react-markdown. MDX permite incrustar componentes JSX en Markdown. Next.js soporta @next/mdx y plugins remark/rehype para procesamiento en build.',
+    faq5_q: 'Como agregar resaltado de sintaxis a bloques de codigo Markdown?',
+    faq5_a: 'Use Prism.js (rehype-prism), Shiki o highlight.js. El parser debe preservar el identificador de lenguaje, luego la biblioteca de resaltado procesa el codigo.',
+    faq6_q: 'Es Markdown seguro contra ataques XSS?',
+    faq6_a: 'La conversion cruda puede ser vulnerable a XSS. Use DOMPurify o configure el parser para deshabilitar HTML crudo. Siempre sanitice el Markdown generado por usuarios.',
+    faq7_q: 'Como dar estilo a la salida HTML generada desde Markdown?',
+    faq7_a: 'Use la clase prose de Tailwind CSS (@tailwindcss/typography), github-markdown-css, o componentes de renderizado personalizados con react-markdown.',
     conclusion: 'La conversion de Markdown a HTML es una habilidad fundamental. Use nuestra herramienta gratuita para conversion instantanea.',
     linkToolBottom: 'Convierte Markdown a HTML instantaneamente con nuestra herramienta gratuita en linea.',
   },
@@ -399,6 +431,14 @@ const t: Record<string, Record<string, string>> = {
     faq2_a: 'JavaScriptではmarkdown-itが速度とプラグインエコシステムで最も人気。Reactではreact-markdownが標準。Pythonではmistuneが最速。pandocは万能なコマンドラインツールです。',
     faq3_q: 'GFMとCommonMarkの違いは？',
     faq3_a: 'CommonMarkはオリジナルのMarkdown構文の厳密な仕様です。GFMはテーブル、タスクリスト、取り消し線、オートリンクを追加したスーパーセットです。ほとんどのモダンパーサーが両方をサポートしています。',
+    faq4_q: 'ReactやNext.jsでMarkdownを使えますか？',
+    faq4_a: 'はい。最も人気のあるアプローチはreact-markdownです。MDXではMarkdown内にJSXコンポーネントを埋め込めます。Next.jsは@next/mdxやremark/rehypeプラグインをサポートしています。',
+    faq5_q: 'Markdownコードブロックにシンタックスハイライトを追加するには？',
+    faq5_a: 'Prism.js（rehype-prism）、Shiki、highlight.jsを使用します。パーサーが言語識別子を保持し、ハイライトライブラリがコードを処理します。',
+    faq6_q: 'MarkdownはXSS攻撃から安全ですか？',
+    faq6_a: '生のMarkdown変換はXSSに脆弱な場合があります。DOMPurifyを使用するか、パーサーで生HTMLを無効にしてください。ユーザー生成のMarkdownは常にサニタイズしてください。',
+    faq7_q: 'Markdownから生成されたHTMLにスタイルを適用するには？',
+    faq7_a: 'Tailwind CSSの@tailwindcss/typographyプラグインのproseクラス、github-markdown-css、またはreact-markdownのカスタムレンダラーコンポーネントを使用します。',
     conclusion: 'MarkdownからHTMLへの変換はすべてのWeb開発者にとって基本的なスキルです。無料オンラインツールで即座に変換できます。',
     linkToolBottom: '無料オンラインツールでMarkdownをHTMLに即座に変換。',
   },
@@ -463,6 +503,14 @@ const t: Record<string, Record<string, string>> = {
     faq2_a: 'JavaScript에서는 markdown-it이 속도와 플러그인 에코시스템으로 가장 인기. React에서는 react-markdown이 표준. Python에서는 mistune이 가장 빠름. pandoc은 만능 커맨드라인 도구입니다.',
     faq3_q: 'GFM과 CommonMark의 차이점은?',
     faq3_a: 'CommonMark은 원래 Markdown 구문의 엄격한 사양입니다. GFM은 테이블, 작업 목록, 취소선, 자동 링크를 추가한 상위 집합입니다. 대부분의 최신 파서가 둘 다 지원합니다.',
+    faq4_q: 'React와 Next.js에서 Markdown을 사용할 수 있나요?',
+    faq4_a: '네. 가장 인기 있는 접근법은 react-markdown입니다. MDX는 Markdown 안에 JSX 컴포넌트를 삽입할 수 있습니다. Next.js는 @next/mdx와 remark/rehype 플러그인을 지원합니다.',
+    faq5_q: 'Markdown 코드 블록에 구문 강조를 추가하려면?',
+    faq5_a: 'Prism.js(rehype-prism), Shiki, highlight.js를 사용합니다. 파서가 언어 식별자를 보존하고, 하이라이팅 라이브러리가 코드를 처리합니다.',
+    faq6_q: 'Markdown은 XSS 공격으로부터 안전한가요?',
+    faq6_a: '원시 Markdown 변환은 XSS에 취약할 수 있습니다. DOMPurify를 사용하거나 파서에서 원시 HTML을 비활성화하세요. 사용자가 생성한 Markdown은 항상 정화하세요.',
+    faq7_q: 'Markdown에서 생성된 HTML에 스타일을 적용하려면?',
+    faq7_a: 'Tailwind CSS의 @tailwindcss/typography 플러그인 prose 클래스, github-markdown-css, 또는 react-markdown의 커스텀 렌더러 컴포넌트를 사용합니다.',
     conclusion: 'Markdown에서 HTML로의 변환은 모든 웹 개발자에게 필수적인 기술입니다. 무료 온라인 도구로 즉시 변환하세요.',
     linkToolBottom: '무료 온라인 도구로 Markdown을 HTML로 즉시 변환하세요.',
   },
@@ -478,6 +526,10 @@ export default function MarkdownToHtmlConverterGuide({ lang }: { lang: string })
       { '@type': 'Question', name: s.faq1_q, acceptedAnswer: { '@type': 'Answer', text: s.faq1_a } },
       { '@type': 'Question', name: s.faq2_q, acceptedAnswer: { '@type': 'Answer', text: s.faq2_a } },
       { '@type': 'Question', name: s.faq3_q, acceptedAnswer: { '@type': 'Answer', text: s.faq3_a } },
+      { '@type': 'Question', name: s.faq4_q, acceptedAnswer: { '@type': 'Answer', text: s.faq4_a } },
+      { '@type': 'Question', name: s.faq5_q, acceptedAnswer: { '@type': 'Answer', text: s.faq5_a } },
+      { '@type': 'Question', name: s.faq6_q, acceptedAnswer: { '@type': 'Answer', text: s.faq6_a } },
+      { '@type': 'Question', name: s.faq7_q, acceptedAnswer: { '@type': 'Answer', text: s.faq7_a } },
     ],
   };
 
@@ -487,6 +539,36 @@ export default function MarkdownToHtmlConverterGuide({ lang }: { lang: string })
 
       <p dangerouslySetInnerHTML={{ __html: s.intro }} />
       <p><Link href={`/${lang}/tools/markdown-to-html`} style={{ fontWeight: 600 }}>{s.linkTool}</Link></p>
+
+      {/* TL;DR Box */}
+      <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: 8, padding: '16px 20px', margin: '24px 0' }}>
+        <p style={{ fontWeight: 700, marginBottom: 8, fontSize: 15 }}>
+          {lang === 'zh' ? 'TL;DR (太长不看)' : lang === 'ja' ? 'TL;DR (要約)' : lang === 'ko' ? 'TL;DR (요약)' : lang === 'fr' ? 'TL;DR (En bref)' : lang === 'de' ? 'TL;DR (Kurzfassung)' : lang === 'es' ? 'TL;DR (En resumen)' : 'TL;DR'}
+        </p>
+        <p style={{ margin: 0, lineHeight: 1.7 }}>
+          {lang === 'zh' ? 'Markdown 是一种轻量级纯文本格式化语言，可转换为 HTML。JavaScript 中推荐 markdown-it（可扩展、符合 CommonMark）或 marked（轻量快速）。Python 中使用 mistune（最快）或 markdown 库。命令行使用 pandoc。React 项目用 react-markdown 或 MDX。GFM（GitHub Flavored Markdown）添加了表格、任务列表和删除线。始终对用户输入的 Markdown 进行 XSS 清理。使用 @tailwindcss/typography 的 prose 类为输出添加样式。' :
+           lang === 'ja' ? 'Markdownは軽量なプレーンテキスト書式言語で、HTMLに変換できます。JavaScriptではmarkdown-it（拡張性・CommonMark準拠）またはmarked（軽量高速）を推奨。Pythonではmistune（最速）またはmarkdownライブラリ。CLIではpandoc。ReactプロジェクトではReact-markdownまたはMDX。GFMはテーブル、タスクリスト、取り消し線を追加。ユーザー入力のXSSサニタイズは必須。@tailwindcss/typographyのproseクラスでスタイリング。' :
+           lang === 'ko' ? 'Markdown은 HTML로 변환 가능한 경량 일반 텍스트 서식 언어입니다. JavaScript에서는 markdown-it(확장 가능, CommonMark 호환) 또는 marked(경량 고속)를 추천합니다. Python에서는 mistune(최빠름) 또는 markdown 라이브러리. CLI에서는 pandoc. React 프로젝트에서는 react-markdown 또는 MDX. GFM은 테이블, 작업 목록, 취소선을 추가합니다. 사용자 입력 Markdown은 항상 XSS 정화하세요. @tailwindcss/typography의 prose 클래스로 스타일링.' :
+           lang === 'fr' ? 'Markdown est un langage de formatage en texte brut convertible en HTML. En JavaScript, utilisez markdown-it (extensible, CommonMark) ou marked (leger et rapide). En Python, mistune (le plus rapide) ou la biblioteque markdown. En CLI, pandoc. Pour React, react-markdown ou MDX. GFM ajoute tableaux, listes de taches et texte barre. Sanitisez toujours le Markdown utilisateur contre le XSS. Utilisez prose de @tailwindcss/typography pour le style.' :
+           lang === 'de' ? 'Markdown ist eine leichtgewichtige Klartext-Formatierungssprache, die in HTML konvertiert werden kann. In JavaScript verwenden Sie markdown-it (erweiterbar, CommonMark-kompatibel) oder marked (leicht und schnell). In Python mistune (schnellster) oder die markdown-Bibliothek. CLI: pandoc. React: react-markdown oder MDX. GFM fugt Tabellen, Aufgabenlisten und Durchstreichen hinzu. Sanitisieren Sie Benutzer-Markdown immer gegen XSS. Verwenden Sie prose von @tailwindcss/typography fur Styling.' :
+           lang === 'es' ? 'Markdown es un lenguaje de formato de texto plano convertible a HTML. En JavaScript, use markdown-it (extensible, CommonMark) o marked (ligero y rapido). En Python, mistune (el mas rapido) o la biblioteca markdown. CLI: pandoc. React: react-markdown o MDX. GFM agrega tablas, listas de tareas y tachado. Siempre sanitice el Markdown del usuario contra XSS. Use prose de @tailwindcss/typography para estilos.' :
+           'Markdown is a lightweight plain-text formatting language that converts to HTML. In JavaScript, use markdown-it (extensible, CommonMark-compliant) or marked (lightweight and fast). In Python, use mistune (fastest) or the markdown library. For CLI, use pandoc. In React projects, use react-markdown or MDX. GFM (GitHub Flavored Markdown) adds tables, task lists, and strikethrough. Always sanitize user-input Markdown against XSS. Use @tailwindcss/typography prose class to style output.'}
+        </p>
+      </div>
+
+      {/* Key Takeaways Box */}
+      <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 8, padding: '16px 20px', margin: '24px 0' }}>
+        <p style={{ fontWeight: 700, marginBottom: 12, fontSize: 15 }}>
+          {lang === 'zh' ? '核心要点' : lang === 'ja' ? '重要ポイント' : lang === 'ko' ? '핵심 요약' : lang === 'fr' ? 'Points cles' : lang === 'de' ? 'Wichtige Erkenntnisse' : lang === 'es' ? 'Puntos clave' : 'Key Takeaways'}
+        </p>
+        <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.8 }}>
+          <li>{lang === 'zh' ? 'Markdown 通过三阶段管道（词法分析、AST 构建、HTML 渲染）转换为 HTML' : lang === 'ja' ? 'Markdownは3段階パイプライン（トークン化、AST構築、HTMLレンダリング）でHTMLに変換' : lang === 'ko' ? 'Markdown은 3단계 파이프라인(토큰화, AST 구축, HTML 렌더링)으로 HTML로 변환' : lang === 'fr' ? 'Markdown se convertit en HTML via un pipeline en 3 etapes (tokenisation, AST, rendu)' : lang === 'de' ? 'Markdown wird uber eine 3-Phasen-Pipeline in HTML konvertiert (Tokenisierung, AST, Rendering)' : lang === 'es' ? 'Markdown se convierte a HTML mediante un pipeline de 3 fases (tokenizacion, AST, renderizado)' : 'Markdown converts to HTML through a 3-phase pipeline: tokenization, AST construction, and HTML rendering'}</li>
+          <li>{lang === 'zh' ? 'CommonMark 是基础规范，GFM 添加了表格、任务列表、删除线等扩展' : lang === 'ja' ? 'CommonMarkが基本仕様で、GFMがテーブル、タスクリスト、取り消し線などを追加' : lang === 'ko' ? 'CommonMark이 기본 사양이고, GFM이 테이블, 작업 목록, 취소선 등을 추가' : lang === 'fr' ? 'CommonMark est la spec de base, GFM ajoute tableaux, listes de taches, barre' : lang === 'de' ? 'CommonMark ist die Basisspezifikation, GFM fugt Tabellen, Aufgabenlisten, Durchstreichen hinzu' : lang === 'es' ? 'CommonMark es la especificacion base, GFM agrega tablas, listas de tareas, tachado' : 'CommonMark is the base specification; GFM adds tables, task lists, strikethrough, and autolinks'}</li>
+          <li>{lang === 'zh' ? '主流库对比：marked（快速轻量）、markdown-it（可扩展）、remark（AST 驱动）、Goldmark（Go 语言）' : lang === 'ja' ? '主要ライブラリ比較：marked（高速軽量）、markdown-it（拡張可能）、remark（AST駆動）、Goldmark（Go言語）' : lang === 'ko' ? '주요 라이브러리 비교: marked(빠르고 가벼움), markdown-it(확장 가능), remark(AST 기반), Goldmark(Go 언어)' : lang === 'fr' ? 'Comparaison : marked (rapide), markdown-it (extensible), remark (AST), Goldmark (Go)' : lang === 'de' ? 'Bibliotheksvergleich: marked (schnell), markdown-it (erweiterbar), remark (AST), Goldmark (Go)' : lang === 'es' ? 'Comparacion: marked (rapido), markdown-it (extensible), remark (AST), Goldmark (Go)' : 'Library comparison: marked (fast, lightweight), markdown-it (extensible), remark (AST-driven), Goldmark (Go)'}</li>
+          <li>{lang === 'zh' ? '安全第一：始终对用户生成的 Markdown 使用 DOMPurify 等工具清理 XSS' : lang === 'ja' ? 'セキュリティ第一：ユーザー入力のMarkdownは必ずDOMPurifyでXSSサニタイズ' : lang === 'ko' ? '보안 우선: 사용자 생성 Markdown은 항상 DOMPurify로 XSS 정화' : lang === 'fr' ? 'Securite : sanitisez toujours le Markdown utilisateur avec DOMPurify' : lang === 'de' ? 'Sicherheit: Benutzer-Markdown immer mit DOMPurify gegen XSS sanitisieren' : lang === 'es' ? 'Seguridad: siempre sanitice Markdown del usuario con DOMPurify contra XSS' : 'Security first: always sanitize user-generated Markdown with DOMPurify or similar to prevent XSS'}</li>
+          <li>{lang === 'zh' ? '高级扩展包括数学公式（KaTeX）、Mermaid 图表、Front Matter 和目录生成' : lang === 'ja' ? '高度な拡張：数式（KaTeX）、Mermaidダイアグラム、フロントマター、目次生成' : lang === 'ko' ? '고급 확장: 수학(KaTeX), Mermaid 다이어그램, 프론트 매터, 목차 생성' : lang === 'fr' ? 'Extensions avancees : maths (KaTeX), diagrammes Mermaid, front matter, TOC' : lang === 'de' ? 'Erweiterte Features: Mathematik (KaTeX), Mermaid-Diagramme, Front Matter, TOC' : lang === 'es' ? 'Extensiones avanzadas: matematicas (KaTeX), diagramas Mermaid, front matter, TOC' : 'Advanced extensions include math (KaTeX), Mermaid diagrams, YAML front matter, and auto-generated TOC'}</li>
+        </ul>
+      </div>
 
       {/* Section 1: What is Markdown? */}
       <h2>{s.h2_what}</h2>
@@ -894,6 +976,14 @@ Content starts here...
       <p>{s.faq2_a}</p>
       <h3>{s.faq3_q}</h3>
       <p>{s.faq3_a}</p>
+      <h3>{s.faq4_q}</h3>
+      <p>{s.faq4_a}</p>
+      <h3>{s.faq5_q}</h3>
+      <p>{s.faq5_a}</p>
+      <h3>{s.faq6_q}</h3>
+      <p>{s.faq6_a}</p>
+      <h3>{s.faq7_q}</h3>
+      <p>{s.faq7_a}</p>
 
       <h2>{lang === 'en' ? 'Conclusion' : lang === 'zh' ? '总结' : lang === 'fr' ? 'Conclusion' : lang === 'de' ? 'Fazit' : lang === 'es' ? 'Conclusion' : lang === 'ja' ? 'まとめ' : '결론'}</h2>
       <p dangerouslySetInnerHTML={{ __html: s.conclusion }} />
