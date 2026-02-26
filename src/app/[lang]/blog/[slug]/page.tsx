@@ -289,6 +289,9 @@ import HashGeneratorOnlineGuide from '@/data/posts/hash-generator-online-guide';
 import CronExpressionGeneratorGuide from '@/data/posts/cron-expression-generator-guide';
 import ColorConverterOnlineGuide from '@/data/posts/color-converter-online-guide';
 import PasswordGeneratorOnlineGuide from '@/data/posts/password-generator-online-guide';
+import DockerComposeGeneratorOnlineGuide from '@/data/posts/docker-compose-generator-online-guide';
+import NginxConfigGeneratorOnlineGuide from '@/data/posts/nginx-config-generator-online-guide';
+import QrCodeGeneratorOnlineGuide from '@/data/posts/qr-code-generator-online-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -568,6 +571,9 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'cron-expression-generator-guide': CronExpressionGeneratorGuide,
   'color-converter-online-guide': ColorConverterOnlineGuide,
   'password-generator-online-guide': PasswordGeneratorOnlineGuide,
+  'docker-compose-generator-online-guide': DockerComposeGeneratorOnlineGuide,
+  'nginx-config-generator-online-guide': NginxConfigGeneratorOnlineGuide,
+  'qr-code-generator-online-guide': QrCodeGeneratorOnlineGuide,
 };
 
 /* i18n for UI strings on this page */
