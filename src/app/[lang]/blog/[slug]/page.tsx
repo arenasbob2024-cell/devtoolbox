@@ -278,6 +278,9 @@ import CssCustomPropertiesAdvanced from '@/data/posts/css-custom-properties-adva
 import GithubActionsDocker from '@/data/posts/github-actions-docker';
 import JsonWebTokensSecurity from '@/data/posts/json-web-tokens-security';
 import JsonToZodSchemaGuide from '@/data/posts/json-to-zod-schema-guide';
+import JsonToJsonSchemaConverterGuide from '@/data/posts/json-to-json-schema-converter-guide';
+import TypescriptToJavascriptConversionGuide from '@/data/posts/typescript-to-javascript-conversion-guide';
+import Base64EncodeDecodeCompleteGuide from '@/data/posts/base64-encode-decode-complete-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -546,6 +549,9 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'github-actions-docker': GithubActionsDocker,
   'json-web-tokens-security': JsonWebTokensSecurity,
   'json-to-zod-schema-guide': JsonToZodSchemaGuide,
+  'json-to-json-schema-converter-guide': JsonToJsonSchemaConverterGuide,
+  'typescript-to-javascript-conversion-guide': TypescriptToJavascriptConversionGuide,
+  'base64-encode-decode-complete-guide': Base64EncodeDecodeCompleteGuide,
 };
 
 /* i18n for UI strings on this page */
