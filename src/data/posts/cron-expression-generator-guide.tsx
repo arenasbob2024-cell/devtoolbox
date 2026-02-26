@@ -212,12 +212,12 @@ export default function CronExpressionGeneratorGuide({ lang }: { lang: string })
       <p style={{ lineHeight: 1.8, color: 'var(--text-secondary)', marginBottom: 16 }}>{t.syntaxDesc}</p>
       
       <ul style={{ lineHeight: 2.2, color: 'var(--text-secondary)', paddingLeft: 20, marginBottom: 24 }}>
-        <li dangerouslySetInnerHTML={{ __html: t.syntaxStar }} />
-        <li dangerouslySetInnerHTML={{ __html: t.syntaxComma }} />
-        <li dangerouslySetInnerHTML={{ __html: t.syntaxDash }} />
-        <li dangerouslySetInnerHTML={{ __html: t.syntaxSlash }} />
-        <li dangerouslySetInnerHTML={{ __html: t.syntaxL }} />
-        <li dangerouslySetInnerHTML={{ __html: t.syntaxHash }} />
+        <li dangerouslySetInnerHTML={{ __html: t.syntaxStar as string }} />
+        <li dangerouslySetInnerHTML={{ __html: t.syntaxComma as string }} />
+        <li dangerouslySetInnerHTML={{ __html: t.syntaxDash as string }} />
+        <li dangerouslySetInnerHTML={{ __html: t.syntaxSlash as string }} />
+        <li dangerouslySetInnerHTML={{ __html: t.syntaxL as string }} />
+        <li dangerouslySetInnerHTML={{ __html: t.syntaxHash as string }} />
       </ul>
 
       <h2 style={h2Style}>{t.h2_examples}</h2>
