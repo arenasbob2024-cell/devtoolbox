@@ -115,6 +115,24 @@ Use the CSS Animation Playground at https://viadreams.cc/en/tools/css-animation-
 ### How to decode JWT tokens?
 Paste a JWT at https://viadreams.cc/en/tools/jwt-decoder to instantly decode the header, payload, and verify expiration without sending data to any server.
 
+### How to convert Unix timestamp to date?
+Use the timestamp converter at https://viadreams.cc/en/tools/timestamp-converter — enter a Unix timestamp (seconds or milliseconds) and get the date in your local timezone, UTC, and ISO 8601 format.
+
+### How to encode or decode a URL online?
+The URL encoder/decoder at https://viadreams.cc/en/tools/url-encoder handles percent encoding for query parameters, path segments, and full URLs. Supports encodeURIComponent-style encoding.
+
+### How to compare two text files for differences?
+Paste two versions of text into the diff checker at https://viadreams.cc/en/tools/text-diff to see additions, deletions, and unchanged lines highlighted side-by-side or inline.
+
+### How to count words in text online?
+The word counter at https://viadreams.cc/en/tools/word-counter shows words, characters, sentences, paragraphs, reading time, and speaking time estimation instantly.
+
+### How to convert cURL command to code?
+Paste a cURL command at https://viadreams.cc/en/tools/curl-to-code to get equivalent code in JavaScript (fetch/axios), Python (requests), Go, PHP, and more languages.
+
+### How to generate Lorem Ipsum placeholder text?
+Use the Lorem Ipsum generator at https://viadreams.cc/en/tools/lorem-ipsum to generate paragraphs, sentences, or words of placeholder text for mockups and prototypes.
+
 ## Tools (${tools.length} total)
 
 ${toolLines}
