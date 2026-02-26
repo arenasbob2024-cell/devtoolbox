@@ -1125,6 +1125,62 @@
         "Troubleshooting 'permission denied' errors"
       ]
     },
+    "text-to-pdf": {
+      "name": "Text till PDF Konverterare",
+      "description": "Konvertera vanlig text till PDF-dokument med anpassade formateringsalternativ",
+      "pageTitle": "Text till PDF Konverterare - Gratis Online TXT till PDF",
+      "pageDescription": "Gratis online text till PDF konverterare. Konvertera vanlig text och TXT-filer till PDF med anpassade sidstorlekar, marginaler och typsnittsalternativ.",
+      "inputText": "Inmatningstext",
+      "inputPlaceholder": "Ange eller klistra in din text här...",
+      "pdfPreview": "PDF-förhandsvisning",
+      "previewPlaceholder": "PDF-förhandsvisning visas här",
+      "pageSize": "Sidstorlek",
+      "margin": "Marginal",
+      "fontSize": "Teckenstorlek",
+      "lineHeight": "Radhöjd",
+      "generating": "Genererar...",
+      "sampleText": "Detta är en exempeltext för PDF-konvertering.\n\nDu kan anpassa sidstorlek, marginaler och teckenstorlek.",
+      "seoTitle": "Om Text till PDF-konvertering",
+      "seoContent": "Att konvertera text till PDF skapar ett portabelt, universellt läsbart dokument. All bearbetning sker i din webbläsare.",
+      "featuresTitle": "Huvudfunktioner",
+      "features": [
+        "Flera sidstorlekar: A4, Letter och Legal",
+        "Justerbara marginaler från 10mm till 40mm",
+        "Teckenstorlekar från 8pt till 24pt",
+        "Realtids PDF-förhandsvisning",
+        "100% klientsidan bearbetning"
+      ],
+      "faqTitle": "Vanliga frågor",
+      "faqs": [
+        {
+          "q": "Är denna konverterare gratis?",
+          "a": "Ja, helt gratis. Ingen registrering, inga begränsningar, inga vattenstämplar."
+        },
+        {
+          "q": "Är mina data säkra?",
+          "a": "Absolut. All bearbetning sker i din webbläsare. Din text skickas aldrig till någon server."
+        }
+      ],
+      "howToUseTitle": "Hur man använder",
+      "howToUseSteps": [
+        "Ange eller klistra in din text i inmatningsfältet",
+        "Välj önskad sidstorlek",
+        "Justera marginaler och teckenstorlek",
+        "Förhandsvisa i realtid",
+        "Ladda ner din PDF-fil"
+      ],
+      "inputMode": "Inmatningsläge",
+      "plainText": "Vanlig text",
+      "orientation": "Orientering",
+      "portrait": "Stående",
+      "landscape": "Liggande",
+      "small": "Liten (10mm)",
+      "medium": "Medel (20mm)",
+      "large": "Stor (30mm)",
+      "preview": "Förhandsvisning",
+      "textPlaceholder": "Ange din text här...",
+      "markdownPlaceholder": "# Ange din markdown här..."
+    },
     "line-sorter": {
       "name": "Line Sort & Dedup",
       "description": "Sort lines, remove duplicates, reverse, shuffle, and more",
@@ -3561,29 +3617,6 @@
       "nextRunsTitle": "Nästa 5 Schemalagda Körningar",
       "seoTitle": "Vad är ett Cron-uttryck?",
       "seoContent": "Ett cron-uttryck är en sträng av fem fält som representerar ett schema för automatiserade uppgifter i Unix-liknande system. De fem fälten är: minut (0-59), timme (0-23), dag i månaden (1-31), månad (1-12) och dag i veckan (0-6, där 0 är söndag). Specialtecken inkluderar * (vilket värde som helst), / (stegvärden), - (intervall) och , (listor). Cron-uttryck används ofta i Linux crontab, Kubernetes CronJobs, AWS CloudWatch Events, GitHub Actions och många andra schemaläggningssystem. Vår gratis online cron-uttrycksgenerator hjälper dig att skapa, validera och visuellt förstå cron-scheman."
-    },
-    "text-to-pdf": {
-      "name": "Text till PDF-konverterare",
-      "description": "Konvertera vanlig text till PDF-dokument med anpassade formateringsalternativ",
-      "pageTitle": "Text till PDF Konverterare - Konvertera Text till PDF Online",
-      "pageDescription": "Gratis online text till PDF-konverterare. Konvertera textfiler till PDF med anpassningsbar teckenstorlek, sidstorlek, marginaler och radavstånd.",
-      "fontSize": "Teckenstorlek (pt)",
-      "pageSize": "Sidstorlek",
-      "a4": "A4",
-      "letter": "Letter",
-      "legal": "Legal",
-      "margins": "Marginaler",
-      "normal": "Normal",
-      "narrow": "Smal",
-      "wide": "Bred",
-      "lineSpacing": "Radavstånd",
-      "characters": "Tecken",
-      "words": "Ord",
-      "lines": "Rader",
-      "placeholder": "Klistra in eller skriv din text här för att konvertera till PDF...",
-      "convertToPdf": "Konvertera till PDF",
-      "seoTitle": "Konvertera Text till PDF Online",
-      "seoContent": "Denna text till PDF-konverterare låter dig omvandla textfiler till professionellt formaterade PDF-dokument. Välj teckenstorlek, sidstorlek, marginaler och radavstånd. All bearbetning sker i din webbläsare."
     },
     "multi-hash-generator": {
       "name": "Multi-Hash-generator",

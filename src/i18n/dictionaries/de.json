@@ -1125,6 +1125,62 @@
         "Troubleshooting 'permission denied' errors"
       ]
     },
+    "text-to-pdf": {
+      "name": "Text zu PDF Konverter",
+      "description": "Konvertieren Sie reinen Text in PDF-Dokumente mit benutzerdefinierten Formatierungsoptionen",
+      "pageTitle": "Text zu PDF Konverter - Kostenlos Online TXT zu PDF",
+      "pageDescription": "Kostenloser Online-Text-zu-PDF-Konverter. Konvertieren Sie reinen Text und TXT-Dateien in PDF mit benutzerdefinierten Seitengrößen, Rändern und Schriftartoptionen.",
+      "inputText": "Eingabetext",
+      "inputPlaceholder": "Geben Sie hier Ihren Text ein oder fügen Sie ihn ein...",
+      "pdfPreview": "PDF-Vorschau",
+      "previewPlaceholder": "PDF-Vorschau wird hier angezeigt",
+      "pageSize": "Seitengröße",
+      "margin": "Rand",
+      "fontSize": "Schriftgröße",
+      "lineHeight": "Zeilenhöhe",
+      "generating": "Generiere...",
+      "sampleText": "Dies ist ein Beispieltext für die PDF-Konvertierung.\n\nSie können Seitengröße, Ränder und Schriftgröße anpassen.",
+      "seoTitle": "Über Text-zu-PDF-Konvertierung",
+      "seoContent": "Die Konvertierung von Text in PDF erstellt ein portables, universell lesbares Dokument. Alle Verarbeitung erfolgt in Ihrem Browser.",
+      "featuresTitle": "Hauptfunktionen",
+      "features": [
+        "Mehrere Seitengrößen: A4, Letter und Legal",
+        "Einstellbare Ränder von 10mm bis 40mm",
+        "Schriftgrößen von 8pt bis 24pt",
+        "Echtzeit-PDF-Vorschau",
+        "100% clientseitige Verarbeitung"
+      ],
+      "faqTitle": "Häufig gestellte Fragen",
+      "faqs": [
+        {
+          "q": "Ist dieser Konverter kostenlos?",
+          "a": "Ja, völlig kostenlos. Keine Registrierung, keine Limits, keine Wasserzeichen."
+        },
+        {
+          "q": "Sind meine Daten sicher?",
+          "a": "Absolut. Alle Verarbeitung erfolgt in Ihrem Browser. Ihr Text wird nie an einen Server gesendet."
+        }
+      ],
+      "howToUseTitle": "Verwendung",
+      "howToUseSteps": [
+        "Geben Sie Ihren Text im Eingabebereich ein",
+        "Wählen Sie die Seitengröße",
+        "Passen Sie Ränder und Schriftgröße an",
+        "Vorschau anzeigen",
+        "PDF herunterladen"
+      ],
+      "inputMode": "Eingabemodus",
+      "plainText": "Klartext",
+      "orientation": "Ausrichtung",
+      "portrait": "Hochformat",
+      "landscape": "Querformat",
+      "small": "Klein (10mm)",
+      "medium": "Mittel (20mm)",
+      "large": "Groß (30mm)",
+      "preview": "Vorschau",
+      "textPlaceholder": "Geben Sie hier Ihren Text ein...",
+      "markdownPlaceholder": "# Geben Sie hier Ihr Markdown ein..."
+    },
     "line-sorter": {
       "name": "Zeilensortierung & Deduplizierung",
       "description": "Zeilen sortieren, Duplikate entfernen, umkehren, mischen und mehr",
@@ -3561,29 +3617,6 @@
       "nextRunsTitle": "Nächste 5 geplanten Ausführungen",
       "seoTitle": "Was ist ein Cron-Ausdruck?",
       "seoContent": "Ein Cron-Ausdruck ist eine Zeichenkette mit fünf Feldern, die einen Zeitplan für automatisierte Aufgaben in Unix-ähnlichen Systemen darstellt. Die fünf Felder sind: Minute (0-59), Stunde (0-23), Tag des Monats (1-31), Monat (1-12) und Tag der Woche (0-6, wobei 0 Sonntag ist). Spezielle Zeichen sind * (beliebiger Wert), / (Schrittweite), - (Bereiche) und , (Listen). Cron-Ausdrücke werden häufig in Linux crontab, Kubernetes CronJobs, AWS CloudWatch Events, GitHub Actions und vielen anderen Planungssystemen verwendet. Unser kostenloser Online Cron-Ausdruck-Generator hilft Ihnen, Cron-Zeitpläne visuell zu erstellen, zu validieren und zu verstehen."
-    },
-    "text-to-pdf": {
-      "name": "Text-zu-PDF-Konverter",
-      "description": "Klartext in PDF-Dokumente mit benutzerdefinierten Formatierungsoptionen konvertieren",
-      "pageTitle": "Text zu PDF Konverter - Text Online in PDF Umwandeln",
-      "pageDescription": "Kostenloser Online Text-zu-PDF-Konverter. Konvertieren Sie Textdateien in PDF mit anpassbarer Schriftgröße, Seitengröße, Rändern und Zeilenabstand.",
-      "fontSize": "Schriftgröße (pt)",
-      "pageSize": "Seitengröße",
-      "a4": "A4",
-      "letter": "Letter",
-      "legal": "Legal",
-      "margins": "Ränder",
-      "normal": "Normal",
-      "narrow": "Schmal",
-      "wide": "Breit",
-      "lineSpacing": "Zeilenabstand",
-      "characters": "Zeichen",
-      "words": "Wörter",
-      "lines": "Zeilen",
-      "placeholder": "Fügen Sie Ihren Text hier ein oder tippen Sie ihn, um ihn in PDF zu konvertieren...",
-      "convertToPdf": "In PDF konvertieren",
-      "seoTitle": "Text Online in PDF Konvertieren",
-      "seoContent": "Dieser Text-zu-PDF-Konverter ermöglicht es Ihnen, Textdateien in professionell formatierte PDF-Dokumente umzuwandeln. Wählen Sie Schriftgröße, Seitengröße, Ränder und Zeilenabstand. Die gesamte Verarbeitung erfolgt in Ihrem Browser."
     },
     "multi-hash-generator": {
       "name": "Multi-Hash-Generator",

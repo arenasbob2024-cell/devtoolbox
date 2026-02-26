@@ -1125,6 +1125,62 @@
         "Troubleshooting 'permission denied' errors"
       ]
     },
+    "text-to-pdf": {
+      "name": "Convertisseur Texte vers PDF",
+      "description": "Convertissez du texte brut en documents PDF avec des options de formatage personnalisées",
+      "pageTitle": "Convertisseur Texte vers PDF - Gratuit en ligne TXT vers PDF",
+      "pageDescription": "Convertisseur gratuit de texte vers PDF en ligne. Convertissez du texte brut et des fichiers TXT en PDF avec des tailles de page, marges et options de police personnalisées.",
+      "inputText": "Texte d'entrée",
+      "inputPlaceholder": "Entrez ou collez votre texte ici...",
+      "pdfPreview": "Aperçu PDF",
+      "previewPlaceholder": "L'aperçu PDF apparaîtra ici",
+      "pageSize": "Taille de page",
+      "margin": "Marge",
+      "fontSize": "Taille de police",
+      "lineHeight": "Hauteur de ligne",
+      "generating": "Génération...",
+      "sampleText": "Voici un texte d'exemple pour la conversion PDF.\n\nVous pouvez personnaliser la taille de page, les marges et la taille de police.",
+      "seoTitle": "À propos de la conversion Texte vers PDF",
+      "seoContent": "La conversion de texte en PDF crée un document portable et universellement lisible. Tout le traitement se fait dans votre navigateur.",
+      "featuresTitle": "Caractéristiques principales",
+      "features": [
+        "Plusieurs tailles de page : A4, Letter et Legal",
+        "Marges ajustables de 10mm à 40mm",
+        "Tailles de police de 8pt à 24pt",
+        "Aperçu PDF en temps réel",
+        "Traitement 100% côté client"
+      ],
+      "faqTitle": "Questions fréquemment posées",
+      "faqs": [
+        {
+          "q": "Ce convertisseur est-il gratuit ?",
+          "a": "Oui, complètement gratuit. Pas d'inscription, pas de limites, pas de filigranes."
+        },
+        {
+          "q": "Mes données sont-elles sécurisées ?",
+          "a": "Absolument. Tout le traitement se fait dans votre navigateur. Votre texte n'est jamais envoyé à un serveur."
+        }
+      ],
+      "howToUseTitle": "Comment utiliser",
+      "howToUseSteps": [
+        "Entrez ou collez votre texte dans la zone de saisie",
+        "Sélectionnez la taille de page souhaitée",
+        "Ajustez les marges et la taille de police",
+        "Prévisualisez en temps réel",
+        "Téléchargez votre fichier PDF"
+      ],
+      "inputMode": "Mode d'entrée",
+      "plainText": "Texte brut",
+      "orientation": "Orientation",
+      "portrait": "Portrait",
+      "landscape": "Paysage",
+      "small": "Petit (10mm)",
+      "medium": "Moyen (20mm)",
+      "large": "Grand (30mm)",
+      "preview": "Aperçu",
+      "textPlaceholder": "Entrez votre texte ici...",
+      "markdownPlaceholder": "# Entrez votre markdown ici..."
+    },
     "line-sorter": {
       "name": "Tri et Dédoublonnage de lignes",
       "description": "Trier les lignes, supprimer les doublons, inverser, mélanger et plus",
@@ -3561,29 +3617,6 @@
       "nextRunsTitle": "5 Prochaines Exécutions Planifiées",
       "seoTitle": "Qu'est-ce qu'une Expression Cron?",
       "seoContent": "Une expression cron est une chaîne de cinq champs représentant un calendrier pour les tâches automatisées dans les systèmes de type Unix. Les cinq champs sont: minute (0-59), heure (0-23), jour du mois (1-31), mois (1-12), et jour de la semaine (0-6, où 0 est dimanche). Les caractères spéciaux incluent * (toute valeur), / (valeurs de pas), - (plages), et , (listes). Les expressions cron sont largement utilisées dans crontab Linux, Kubernetes CronJobs, AWS CloudWatch Events, GitHub Actions, et de nombreux autres systèmes de planification. Notre générateur d'expressions cron gratuit en ligne vous aide à créer, valider et comprendre les calendriers cron visuellement."
-    },
-    "text-to-pdf": {
-      "name": "Convertisseur Texte en PDF",
-      "description": "Convertir du texte brut en documents PDF avec des options de formatage personnalisées",
-      "pageTitle": "Convertisseur Texte en PDF - Convertir du Texte en PDF en Ligne",
-      "pageDescription": "Convertisseur gratuit de texte en PDF en ligne. Convertissez vos fichiers texte en PDF avec taille de police, format de page, marges et interligne personnalisables.",
-      "fontSize": "Taille de police (pt)",
-      "pageSize": "Format de page",
-      "a4": "A4",
-      "letter": "Letter",
-      "legal": "Legal",
-      "margins": "Marges",
-      "normal": "Normal",
-      "narrow": "Étroit",
-      "wide": "Large",
-      "lineSpacing": "Interligne",
-      "characters": "Caractères",
-      "words": "Mots",
-      "lines": "Lignes",
-      "placeholder": "Collez ou tapez votre texte ici pour le convertir en PDF...",
-      "convertToPdf": "Convertir en PDF",
-      "seoTitle": "Convertir du Texte en PDF en Ligne",
-      "seoContent": "Cet outil de conversion texte en PDF vous permet de transformer des fichiers texte en documents PDF formatés. Choisissez la taille de police, le format de page, les marges et l'interligne. Tout le traitement se fait dans votre navigateur."
     },
     "multi-hash-generator": {
       "name": "Générateur Multi-Hash",

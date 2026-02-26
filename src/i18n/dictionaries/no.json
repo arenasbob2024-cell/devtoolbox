@@ -1125,6 +1125,62 @@
         "Troubleshooting 'permission denied' errors"
       ]
     },
+    "text-to-pdf": {
+      "name": "Tekst til PDF Konverterer",
+      "description": "Konverter ren tekst til PDF-dokumenter med tilpassede formateringsalternativer",
+      "pageTitle": "Tekst til PDF Konverterer - Gratis Online TXT til PDF",
+      "pageDescription": "Gratis online tekst til PDF konverterer. Konverter ren tekst og TXT-filer til PDF med tilpassede sidestørrelser, marger og skriftalternativer.",
+      "inputText": "Inndata Tekst",
+      "inputPlaceholder": "Skriv inn eller lim inn teksten din her...",
+      "pdfPreview": "PDF-forhåndsvisning",
+      "previewPlaceholder": "PDF-forhåndsvisning vises her",
+      "pageSize": "Sidestørrelse",
+      "margin": "Marg",
+      "fontSize": "Skriftstørrelse",
+      "lineHeight": "Linjehøyde",
+      "generating": "Genererer...",
+      "sampleText": "Dette er en eksempeltekst for PDF-konvertering.\n\nDu kan tilpasse sidestørrelse, marger og skriftstørrelse.",
+      "seoTitle": "Om Tekst til PDF-konvertering",
+      "seoContent": "Å konvertere tekst til PDF skaper et bærbart, universelt lesbart dokument. All prosessering skjer i nettleseren din.",
+      "featuresTitle": "Hovedfunksjoner",
+      "features": [
+        "Flere sidestørrelser: A4, Letter og Legal",
+        "Justerbare marger fra 10mm til 40mm",
+        "Skriftstørrelser fra 8pt til 24pt",
+        "Sanntids PDF-forhåndsvisning",
+        "100% klientside prosessering"
+      ],
+      "faqTitle": "Ofte stilte spørsmål",
+      "faqs": [
+        {
+          "q": "Er denne konvertereren gratis?",
+          "a": "Ja, helt gratis. Ingen registrering, ingen begrensninger, ingen vannmerker."
+        },
+        {
+          "q": "Er dataene mine sikre?",
+          "a": "Absolutt. All prosessering skjer i nettleseren din. Teksten din sendes aldri til noen server."
+        }
+      ],
+      "howToUseTitle": "Hvordan bruke",
+      "howToUseSteps": [
+        "Skriv inn eller lim inn tekst i inndatafeltet",
+        "Velg ønsket sidestørrelse",
+        "Juster marger og skriftstørrelse",
+        "Forhåndsvis i sanntid",
+        "Last ned PDF-filen din"
+      ],
+      "inputMode": "Inndata-modus",
+      "plainText": "Ren tekst",
+      "orientation": "Orientering",
+      "portrait": "Stående",
+      "landscape": "Liggende",
+      "small": "Liten (10mm)",
+      "medium": "Middels (20mm)",
+      "large": "Stor (30mm)",
+      "preview": "Forhåndsvisning",
+      "textPlaceholder": "Skriv inn teksten din her...",
+      "markdownPlaceholder": "# Skriv inn markdown her..."
+    },
     "line-sorter": {
       "name": "Line Sort & Dedup",
       "description": "Sort lines, remove duplicates, reverse, shuffle, and more",
@@ -3596,29 +3652,6 @@
         "SHA-384 — 384-bit hash; del av SHA-2-familien",
         "SHA-512 — 512-bit hash; høyeste sikkerhet i settet"
       ]
-    },
-    "text-to-pdf": {
-      "name": "Tekst til PDF-konverterer",
-      "description": "Konverter ren tekst til PDF-dokumenter med tilpassede formateringsalternativer",
-      "pageTitle": "Tekst til PDF-konverterer - Konverter tekst til PDF online",
-      "pageDescription": "Gratis online tekst til PDF-konverterer. Konverter rene tekstfiler til PDF med tilpasset skriftstørrelse, sidestørrelse, marger og linjeavstand. Ingen registrering nødvendig.",
-      "fontSize": "Skriftstørrelse (pt)",
-      "pageSize": "Sidestørrelse",
-      "a4": "A4",
-      "letter": "Letter",
-      "legal": "Legal",
-      "margins": "Marger",
-      "normal": "Normal",
-      "narrow": "Smal",
-      "wide": "Bred",
-      "lineSpacing": "Linjeavstand",
-      "characters": "Tegn",
-      "words": "Ord",
-      "lines": "Linjer",
-      "placeholder": "Lim inn eller skriv teksten din her for å konvertere til PDF...",
-      "convertToPdf": "Konverter til PDF",
-      "seoTitle": "Konverter tekst til PDF online",
-      "seoContent": "Dette tekst til PDF-verktøyet lar deg transformere rene tekstfiler til profesjonelt formaterte PDF-dokumenter. Velg foretrukket skriftstørrelse (8-24pt), sidestørrelse (A4, Letter eller Legal), marger (Normal, Smal eller Bred) og linjeavstand (1.0 til 2.0) for å tilpasse utdataene. All behandling skjer i nettleseren din — teksten din forlater aldri enheten din. Perfekt for å opprette raske dokumenter, formatere notater eller eksportere tekstinnhold."
     },
     "yaml-json-converter": {
       "name": "YAML ↔ JSON-konverterer",

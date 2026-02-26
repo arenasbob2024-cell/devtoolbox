@@ -1125,6 +1125,62 @@
         "Troubleshooting 'permission denied' errors"
       ]
     },
+    "text-to-pdf": {
+      "name": "텍스트를 PDF로 변환",
+      "description": "사용자 지정 서식 옵션으로 일반 텍스트를 PDF 문서로 변환",
+      "pageTitle": "텍스트를 PDF로 변환 - 묣료 온라인 TXT에서 PDF로",
+      "pageDescription": "묣료 온라인 텍스트에서 PDF 변환기입니다. 사용자 지정 페이지 크기, 여백 및 글꼴 옵션으로 일반 텍스트 및 TXT 파일을 PDF로 변환합니다.",
+      "inputText": "입력 텍스트",
+      "inputPlaceholder": "여기에 텍스트를 입력하거나 붙여넣으세요...",
+      "pdfPreview": "PDF 미리보기",
+      "previewPlaceholder": "PDF 미리보기가 여기에 표시됩니다",
+      "pageSize": "페이지 크기",
+      "margin": "여백",
+      "fontSize": "글꼴 크기",
+      "lineHeight": "줄 높이",
+      "generating": "생성 중...",
+      "sampleText": "이것은 PDF 변환을 위한 샘플 텍스트입니다.\n\n페이지 크기, 여백 및 글꼴 크기를 사용자 지정할 수 있습니다.",
+      "seoTitle": "텍스트를 PDF로 변환 정보",
+      "seoContent": "텍스트를 PDF로 변환하면 휴대용이며 보편적으로 읽을 수 있는 문서가 생성됩니다. 모든 처리는 브라우저에서 발생합니다.",
+      "featuresTitle": "주요 기능",
+      "features": [
+        "여러 페이지 크기: A4, Letter, Legal",
+        "10mm에서 40mm까지 조절 가능한 여백",
+        "8pt에서 24pt까지 글꼴 크기",
+        "실시간 PDF 미리보기",
+        "100% 클라이언트 측 처리"
+      ],
+      "faqTitle": "자주 묻는 질문",
+      "faqs": [
+        {
+          "q": "이 변환기는 묣료인가요?",
+          "a": "네, 완전히 묣료입니다. 등록 없음, 제한 없음, 워터마크 없음."
+        },
+        {
+          "q": "데이터가 안전한가요?",
+          "a": "절대적으로 안전합니다. 모든 처리는 브라우저에서 발생합니다. 텍스트는 서버로 전송되지 않습니다."
+        }
+      ],
+      "howToUseTitle": "사용 방법",
+      "howToUseSteps": [
+        "입력 영역에 텍스트 입력 또는 붙여넣기",
+        "원하는 페이지 크기 선택",
+        "여백 및 글꼴 크기 조정",
+        "실시간으로 미리보기",
+        "PDF 파일 다운로드"
+      ],
+      "inputMode": "입력 모드",
+      "plainText": "일반 텍스트",
+      "orientation": "방향",
+      "portrait": "세로",
+      "landscape": "가로",
+      "small": "작음 (10mm)",
+      "medium": "중간 (20mm)",
+      "large": "큼 (30mm)",
+      "preview": "미리보기",
+      "textPlaceholder": "여기에 텍스트를 입력하세요...",
+      "markdownPlaceholder": "# 여기에 마크다운을 입력하세요..."
+    },
     "line-sorter": {
       "name": "행 정렬 및 중복 제거",
       "description": "행 정렬, 중복 제거, 역순, 셔플 등",
@@ -3596,29 +3652,6 @@
         "SHA-384 — 384비트 해시; SHA-2 계열",
         "SHA-512 — 512비트 해시; 가장 높은 보안 수준"
       ]
-    },
-    "text-to-pdf": {
-      "name": "텍스트 PDF 변환기",
-      "description": "사용자 지정 서식 옵션으로 일반 텍스트를 PDF 문서로 변환",
-      "pageTitle": "텍스트 PDF 변환 - 온라인에서 텍스트를 PDF로 변환",
-      "pageDescription": "무료 온라인 텍스트 PDF 변환기. 일반 텍스트 파일을 PDF로 변환하고 글꼴 크기, 페이지 크기, 여백, 줄 간격을 맞춤 설정하세요. 가입 불필요.",
-      "fontSize": "글꼴 크기 (pt)",
-      "pageSize": "페이지 크기",
-      "a4": "A4",
-      "letter": "Letter",
-      "legal": "Legal",
-      "margins": "여백",
-      "normal": "표준",
-      "narrow": "좁게",
-      "wide": "넓게",
-      "lineSpacing": "줄 간격",
-      "characters": "문자 수",
-      "words": "단어 수",
-      "lines": "줄 수",
-      "placeholder": "여기에 PDF로 변환할 텍스트를 붙여넣거나 입력하세요...",
-      "convertToPdf": "PDF로 변환",
-      "seoTitle": "온라인 텍스트 PDF 변환",
-      "seoContent": "이 텍스트 PDF 변환 도구를 사용하면 일반 텍스트 파일을 전문적으로 서식이 지정된 PDF 문서로 변환할 수 있습니다. 글꼴 크기(8-24pt), 페이지 크기(A4, Letter, Legal), 여백(표준, 좁게, 넓게), 줄 간격(1.0~2.0)을 선택하여 출력을 맞춤 설정할 수 있습니다. 모든 처리는 브라우저에서 이루어집니다 — 텍스트가 기기를 벗어나지 않습니다. 빠른 문서 작성, 메모 서식 지정, 텍스트 콘텐츠 내보내기에 적합합니다."
     },
     "yaml-json-converter": {
       "name": "YAML ↔ JSON 변환기",

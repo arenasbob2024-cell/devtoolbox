@@ -1125,6 +1125,62 @@
         "Troubleshooting 'permission denied' errors"
       ]
     },
+    "text-to-pdf": {
+      "name": "Convertidor de Texto a PDF",
+      "description": "Convierte texto plano a documentos PDF con opciones de formato personalizadas",
+      "pageTitle": "Convertidor de Texto a PDF - Gratis Online TXT a PDF",
+      "pageDescription": "Convertidor gratuito de texto a PDF en línea. Convierte texto plano y archivos TXT a PDF con tamaños de página, márgenes y opciones de fuente personalizadas.",
+      "inputText": "Texto de entrada",
+      "inputPlaceholder": "Ingresa o pega tu texto aquí...",
+      "pdfPreview": "Vista previa PDF",
+      "previewPlaceholder": "La vista previa del PDF aparecerá aquí",
+      "pageSize": "Tamaño de página",
+      "margin": "Margen",
+      "fontSize": "Tamaño de fuente",
+      "lineHeight": "Altura de línea",
+      "generating": "Generando...",
+      "sampleText": "Este es un texto de ejemplo para conversión a PDF.\n\nPuedes personalizar el tamaño de página, márgenes y tamaño de fuente.",
+      "seoTitle": "Sobre la conversión de Texto a PDF",
+      "seoContent": "Convertir texto a PDF crea un documento portable y universalmente legible. Todo el procesamiento ocurre en tu navegador.",
+      "featuresTitle": "Características principales",
+      "features": [
+        "Múltiples tamaños de página: A4, Carta y Legal",
+        "Márgenes ajustables de 10mm a 40mm",
+        "Tamaños de fuente de 8pt a 24pt",
+        "Vista previa de PDF en tiempo real",
+        "Procesamiento 100% del lado del cliente"
+      ],
+      "faqTitle": "Preguntas frecuentes",
+      "faqs": [
+        {
+          "q": "¿Este convertidor es gratuito?",
+          "a": "Sí, completamente gratuito. Sin registro, sin límites, sin marcas de agua."
+        },
+        {
+          "q": "¿Mis datos están seguros?",
+          "a": "Absolutamente. Todo el procesamiento ocurre en tu navegador. Tu texto nunca se envía a ningún servidor."
+        }
+      ],
+      "howToUseTitle": "Cómo usar",
+      "howToUseSteps": [
+        "Ingresa o pega tu texto en el área de entrada",
+        "Selecciona el tamaño de página preferido",
+        "Ajusta márgenes y tamaño de fuente",
+        "Vista previa en tiempo real",
+        "Descarga tu archivo PDF"
+      ],
+      "inputMode": "Modo de entrada",
+      "plainText": "Texto plano",
+      "orientation": "Orientación",
+      "portrait": "Vertical",
+      "landscape": "Horizontal",
+      "small": "Pequeño (10mm)",
+      "medium": "Medio (20mm)",
+      "large": "Grande (30mm)",
+      "preview": "Vista previa",
+      "textPlaceholder": "Ingrese su texto aquí...",
+      "markdownPlaceholder": "# Ingrese su markdown aquí..."
+    },
     "line-sorter": {
       "name": "Ordenar y Deduplicar Líneas",
       "description": "Ordena líneas, elimina duplicados, invierte, mezcla y más",
@@ -3561,29 +3617,6 @@
       "nextRunsTitle": "Próximas 5 Ejecuciones Programadas",
       "seoTitle": "¿Qué es una Expresión Cron?",
       "seoContent": "Una expresión cron es una cadena de cinco campos que representa un horario para tareas automatizadas en sistemas tipo Unix. Los cinco campos son: minuto (0-59), hora (0-23), día del mes (1-31), mes (1-12) y día de la semana (0-6, donde 0 es domingo). Los caracteres especiales incluyen * (cualquier valor), / (valores de paso), - (intervalos) y , (listas). Las expresiones cron se usan ampliamente en crontab de Linux, Kubernetes CronJobs, AWS CloudWatch Events, GitHub Actions y muchos otros sistemas de programación. Nuestro generador gratuito de expresiones cron en línea le ayuda a crear, validar y comprender visualmente los horarios cron."
-    },
-    "text-to-pdf": {
-      "name": "Convertidor de Texto a PDF",
-      "description": "Convierte texto plano en documentos PDF con opciones de formato personalizadas",
-      "pageTitle": "Convertidor de Texto a PDF - Convertir Texto a PDF Online",
-      "pageDescription": "Convertidor gratuito de texto a PDF en línea. Convierte archivos de texto a PDF con tamaño de fuente, tamaño de página, márgenes y espaciado de línea personalizables.",
-      "fontSize": "Tamaño de fuente (pt)",
-      "pageSize": "Tamaño de página",
-      "a4": "A4",
-      "letter": "Letter",
-      "legal": "Legal",
-      "margins": "Márgenes",
-      "normal": "Normal",
-      "narrow": "Estrecho",
-      "wide": "Ancho",
-      "lineSpacing": "Espaciado de línea",
-      "characters": "Caracteres",
-      "words": "Palabras",
-      "lines": "Líneas",
-      "placeholder": "Pega o escribe tu texto aquí para convertirlo a PDF...",
-      "convertToPdf": "Convertir a PDF",
-      "seoTitle": "Convertir Texto a PDF Online",
-      "seoContent": "Este convertidor de texto a PDF te permite transformar archivos de texto en documentos PDF con formato profesional. Elige el tamaño de fuente, tamaño de página, márgenes y espaciado de línea. Todo el procesamiento ocurre en tu navegador."
     },
     "multi-hash-generator": {
       "name": "Generador Multi-Hash",

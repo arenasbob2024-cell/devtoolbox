@@ -29,7 +29,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     alternates: {
       canonical: url,
       languages: {
-        ...Object.fromEntries(i18n.locales.map(l => [l, `https://viadreams.cc/${l}/tools/multi-hash-generator`])),
+        ...Object.fromEntries(
+          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/multi-hash-generator`])
+        ),
         'x-default': `https://viadreams.cc/en/tools/multi-hash-generator`,
       },
     },

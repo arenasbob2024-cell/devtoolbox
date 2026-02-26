@@ -1125,6 +1125,71 @@
         "Troubleshooting 'permission denied' errors"
       ]
     },
+    "text-to-pdf": {
+      "name": "文本转PDF转换器",
+      "description": "将纯文本转换为PDF文档，支持自定义格式选项",
+      "pageTitle": "文本转PDF转换器 - 免费在线TXT转PDF",
+      "pageDescription": "免费在线文本转PDF转换器。将纯文本、TXT文件转换为PDF，支持自定义页面大小、边距和字体选项。浏览器即时转换。",
+      "inputText": "输入文本",
+      "inputPlaceholder": "在此输入或粘贴你的文本...\n\n你的文本将被转换为PDF文档。",
+      "pdfPreview": "PDF预览",
+      "previewPlaceholder": "PDF预览将在此处显示",
+      "pageSize": "页面大小",
+      "margin": "边距",
+      "fontSize": "字体大小",
+      "lineHeight": "行高",
+      "inputMode": "输入模式",
+      "plainText": "纯文本",
+      "orientation": "页面方向",
+      "portrait": "纵向",
+      "landscape": "横向",
+      "small": "小 (10mm)",
+      "medium": "中 (20mm)",
+      "large": "大 (30mm)",
+      "preview": "预览",
+      "textPlaceholder": "在此输入你的文本...",
+      "markdownPlaceholder": "# 在此输入你的 Markdown...",
+      "generating": "生成中...",
+      "sampleText": "这是用于PDF转换的示例文本。\n\n你可以在下载PDF文档之前自定义页面大小、边距和字体大小。\n\n功能特点：\n• 多种页面尺寸（A4、Letter、Legal）\n• 可调边距\n• 自定义字体大小\n• 实时预览",
+      "seoTitle": "关于文本转PDF转换",
+      "seoContent": "将文本转换为PDF可以创建可移植、普遍可读的文档，在所有设备和平台上保持一致的格式。PDF（便携式文档格式）是文档共享的标准格式，因为它无论在何种查看系统上都能保持一致的布局。我们的文本转PDF转换器完全在浏览器中运行——不会将任何文件上传到服务器。",
+      "featuresTitle": "主要功能",
+      "features": [
+        "多种页面尺寸：A4、Letter和Legal",
+        "可调边距，范围从10mm到40mm",
+        "字体大小从8pt到24pt",
+        "可自定义行间距",
+        "下载前实时PDF预览",
+        "100%客户端处理——你的文本绝不会离开浏览器"
+      ],
+      "faqTitle": "常见问题",
+      "faqs": [
+        {
+          "q": "这个文本转PDF转换器是免费的吗？",
+          "a": "是的，完全免费。无需注册，没有限制，没有水印。"
+        },
+        {
+          "q": "我的文本数据安全吗？",
+          "a": "绝对安全。所有处理都使用JavaScript在你的浏览器中进行。你的文本绝不会发送到任何服务器或存储在任何地方。"
+        },
+        {
+          "q": "支持哪些页面大小？",
+          "a": "我们支持A4（210×297mm）、Letter（8.5×11英寸）和Legal（8.5×14英寸）页面尺寸。"
+        },
+        {
+          "q": "可以转换长文档吗？",
+          "a": "可以，转换器会自动处理多页文档。只需粘贴你的文本，它会根据需要自动分页。"
+        }
+      ],
+      "howToUseTitle": "使用方法",
+      "howToUseSteps": [
+        "在输入区域输入或粘贴你的文本",
+        "选择你喜欢的页面大小（A4、Letter或Legal）",
+        "根据需要调整边距、字体大小和行间距",
+        "实时预览PDF效果",
+        "点击下载按钮保存你的PDF文件"
+      ]
+    },
     "line-sorter": {
       "name": "行排序与去重",
       "description": "排序行、去重、反转、打乱等",
@@ -3636,29 +3701,6 @@
         "SHA-384 — 384 位哈希，属于 SHA-2 系列",
         "SHA-512 — 512 位哈希，本组中安全性最高"
       ]
-    },
-    "text-to-pdf": {
-      "name": "文本转 PDF",
-      "description": "将纯文本转换为 PDF 文档，支持自定义格式选项",
-      "pageTitle": "文本转 PDF - 在线免费将文本转换为 PDF",
-      "pageDescription": "免费在线文本转 PDF 工具。将纯文本文件转换为 PDF，可自定义字号、页面大小、边距和行距。无需注册。",
-      "fontSize": "字号 (pt)",
-      "pageSize": "页面大小",
-      "a4": "A4",
-      "letter": "Letter",
-      "legal": "Legal",
-      "margins": "边距",
-      "normal": "标准",
-      "narrow": "窄边距",
-      "wide": "宽边距",
-      "lineSpacing": "行距",
-      "characters": "字符",
-      "words": "词数",
-      "lines": "行数",
-      "placeholder": "在此粘贴或输入要转换为 PDF 的文本...",
-      "convertToPdf": "转换为 PDF",
-      "seoTitle": "在线文本转 PDF",
-      "seoContent": "此文本转 PDF 工具可以将纯文本文件转换为专业排版的 PDF 文档。您可以选择偏好的字号（8-24pt）、页面大小（A4、Letter 或 Legal）、边距（标准、窄或宽）和行距（1.0 到 2.0）来自定义输出。所有处理在浏览器本地完成——您的文本绝不会离开您的设备。适合快速创建文档、格式化笔记或导出文本内容。"
     },
     "yaml-json-converter": {
       "name": "YAML ↔ JSON 转换器",

@@ -1125,6 +1125,62 @@
         "Troubleshooting 'permission denied' errors"
       ]
     },
+    "text-to-pdf": {
+      "name": "Konwerter Tekstu na PDF",
+      "description": "Konwertuj zwykły tekst na dokumenty PDF z niestandardowymi opcjami formatowania",
+      "pageTitle": "Konwerter Tekstu na PDF - Darmowy Online TXT do PDF",
+      "pageDescription": "Darmowy internetowy konwerter tekstu na PDF. Konwertuj zwykły tekst i pliki TXT na PDF z niestandardowymi rozmiarami strony, marginesami i opcjami czcionki.",
+      "inputText": "Tekst wejściowy",
+      "inputPlaceholder": "Wprowadź lub wklej tutaj swój tekst...",
+      "pdfPreview": "Podgląd PDF",
+      "previewPlaceholder": "Podgląd PDF pojawi się tutaj",
+      "pageSize": "Rozmiar strony",
+      "margin": "Margines",
+      "fontSize": "Rozmiar czcionki",
+      "lineHeight": "Wysokość linii",
+      "generating": "Generowanie...",
+      "sampleText": "To jest przykładowy tekst do konwersji PDF.\n\nMożesz dostosować rozmiar strony, marginesy i rozmiar czcionki.",
+      "seoTitle": "O konwersji Tekstu na PDF",
+      "seoContent": "Konwersja tekstu na PDF tworzy przenośny, uniwersalnie czytelny dokument. Całe przetwarzanie odbywa się w przeglądarce.",
+      "featuresTitle": "Główne funkcje",
+      "features": [
+        "Wiele rozmiarów strony: A4, Letter i Legal",
+        "Regulowane marginesy od 10mm do 40mm",
+        "Rozmiary czcionki od 8pt do 24pt",
+        "Podgląd PDF w czasie rzeczywistym",
+        "100% przetwarzanie po stronie klienta"
+      ],
+      "faqTitle": "Często zadawane pytania",
+      "faqs": [
+        {
+          "q": "Czy ten konwerter jest darmowy?",
+          "a": "Tak, całkowicie darmowy. Bez rejestracji, bez limitów, bez znaków wodnych."
+        },
+        {
+          "q": "Czy moje dane są bezpieczne?",
+          "a": "Absolutnie. Całe przetwarzanie odbywa się w przeglądarce. Twój tekst nigdy nie jest wysyłany na serwer."
+        }
+      ],
+      "howToUseTitle": "Jak używać",
+      "howToUseSteps": [
+        "Wprowadź lub wklej tekst w polu wprowadzania",
+        "Wybierz preferowany rozmiar strony",
+        "Dostosuj marginesy i rozmiar czcionki",
+        "Podgląd w czasie rzeczywistym",
+        "Pobierz plik PDF"
+      ],
+      "inputMode": "Tryb wprowadzania",
+      "plainText": "Zwykły tekst",
+      "orientation": "Orientacja",
+      "portrait": "Pionowa",
+      "landscape": "Pozioma",
+      "small": "Mały (10mm)",
+      "medium": "Średni (20mm)",
+      "large": "Duży (30mm)",
+      "preview": "Podgląd",
+      "textPlaceholder": "Wprowadź swój tekst tutaj...",
+      "markdownPlaceholder": "# Wprowadź swój markdown tutaj..."
+    },
     "line-sorter": {
       "name": "Line Sort & Dedup",
       "description": "Sort lines, remove duplicates, reverse, shuffle, and more",
@@ -3561,29 +3617,6 @@
       "nextRunsTitle": "Następne 5 Zaplanowanych Uruchomień",
       "seoTitle": "Co to jest wyrażenie Cron?",
       "seoContent": "Wyrażenie cron to ciąg pięciu pól reprezentujących harmonogram dla zadań automatycznych w systemach typu Unix. Pięć pól to: minuta (0-59), godzina (0-23), dzień miesiąca (1-31), miesiąc (1-12) i dzień tygodnia (0-6, gdzie 0 to niedziela). Znaki specjalne obejmują * (dowolna wartość), / (wartości kroku), - (zakresy) i , (listy). Wyrażenia cron są szeroko stosowane w crontab Linuksa, Kubernetes CronJobs, AWS CloudWatch Events, GitHub Actions i wielu innych systemach planowania. Nasz darmowy generator wyrażeń cron online pomaga tworzyć, walidować i wizualnie zrozumieć harmonogramy cron."
-    },
-    "text-to-pdf": {
-      "name": "Konwerter Tekstu na PDF",
-      "description": "Konwertuj zwykły tekst na dokumenty PDF z niestandardowymi opcjami formatowania",
-      "pageTitle": "Konwerter Tekstu na PDF - Konwertuj Tekst na PDF Online",
-      "pageDescription": "Darmowy konwerter tekstu na PDF online. Konwertuj pliki tekstowe na PDF z dostosowywalnym rozmiarem czcionki, rozmiarem strony, marginesami i odstępami między wierszami.",
-      "fontSize": "Rozmiar czcionki (pt)",
-      "pageSize": "Rozmiar strony",
-      "a4": "A4",
-      "letter": "Letter",
-      "legal": "Legal",
-      "margins": "Marginesy",
-      "normal": "Normalny",
-      "narrow": "Wąski",
-      "wide": "Szeroki",
-      "lineSpacing": "Odstęp między wierszami",
-      "characters": "Znaki",
-      "words": "Słowa",
-      "lines": "Wiersze",
-      "placeholder": "Wklej lub wpisz tekst tutaj, aby przekonwertować na PDF...",
-      "convertToPdf": "Konwertuj na PDF",
-      "seoTitle": "Konwertuj Tekst na PDF Online",
-      "seoContent": "Ten konwerter tekstu na PDF pozwala przekształcić pliki tekstowe w profesjonalnie sformatowane dokumenty PDF. Wybierz rozmiar czcionki, rozmiar strony, marginesy i odstępy między wierszami. Całe przetwarzanie odbywa się w przeglądarce."
     },
     "multi-hash-generator": {
       "name": "Generator Multi-Hash",

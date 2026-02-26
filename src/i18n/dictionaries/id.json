@@ -1125,6 +1125,62 @@
         "Troubleshooting 'permission denied' errors"
       ]
     },
+    "text-to-pdf": {
+      "name": "Konverter Teks ke PDF",
+      "description": "Konversi teks biasa ke dokumen PDF dengan opsi format kustom",
+      "pageTitle": "Konverter Teks ke PDF - Gratis Online TXT ke PDF",
+      "pageDescription": "Konverter teks ke PDF online gratis. Konversi teks biasa dan file TXT ke PDF dengan ukuran halaman, margin, dan opsi font kustom.",
+      "inputText": "Teks Masukan",
+      "inputPlaceholder": "Masukkan atau tempel teks Anda di sini...",
+      "pdfPreview": "Pratinjau PDF",
+      "previewPlaceholder": "Pratinjau PDF akan muncul di sini",
+      "pageSize": "Ukuran Halaman",
+      "margin": "Margin",
+      "fontSize": "Ukuran Font",
+      "lineHeight": "Tinggi Baris",
+      "generating": "Menghasilkan...",
+      "sampleText": "Ini adalah contoh teks untuk konversi PDF.\n\nAnda dapat menyesuaikan ukuran halaman, margin, dan ukuran font.",
+      "seoTitle": "Tentang Konversi Teks ke PDF",
+      "seoContent": "Mengkonversi teks ke PDF membuat dokumen yang portabel dan dapat dibaca secara universal. Semua pemrosesan terjadi di browser Anda.",
+      "featuresTitle": "Fitur Utama",
+      "features": [
+        "Berbagai ukuran halaman: A4, Letter, dan Legal",
+        "Margin yang dapat disesuaikan dari 10mm hingga 40mm",
+        "Ukuran font dari 8pt hingga 24pt",
+        "Pratinjau PDF real-time",
+        "Pemrosesan 100% sisi klien"
+      ],
+      "faqTitle": "Pertanyaan yang Sering Diajukan",
+      "faqs": [
+        {
+          "q": "Apakah konverter ini gratis?",
+          "a": "Ya, sepenuhnya gratis. Tanpa pendaftaran, tanpa batasan, tanpa watermark."
+        },
+        {
+          "q": "Apakah data saya aman?",
+          "a": "Sangat aman. Semua pemrosesan terjadi di browser Anda. Teks Anda tidak pernah dikirim ke server mana pun."
+        }
+      ],
+      "howToUseTitle": "Cara Menggunakan",
+      "howToUseSteps": [
+        "Masukkan atau tempel teks di area input",
+        "Pilih ukuran halaman yang diinginkan",
+        "Sesuaikan margin dan ukuran font",
+        "Pratinjau secara real-time",
+        "Unduh file PDF Anda"
+      ],
+      "inputMode": "Mode Masukan",
+      "plainText": "Teks Biasa",
+      "orientation": "Orientasi",
+      "portrait": "Potret",
+      "landscape": "Lanskap",
+      "small": "Kecil (10mm)",
+      "medium": "Sedang (20mm)",
+      "large": "Besar (30mm)",
+      "preview": "Pratinjau",
+      "textPlaceholder": "Masukkan teks Anda di sini...",
+      "markdownPlaceholder": "# Masukkan markdown Anda di sini..."
+    },
     "line-sorter": {
       "name": "Pengurutan & Deduplikasi Baris",
       "description": "Urutkan baris, hapus duplikat, balik, acak, dan lainnya",
@@ -3596,29 +3652,6 @@
         "SHA-384 — Hash 384-bit; bagian dari keluarga SHA-2",
         "SHA-512 — Hash 512-bit; keamanan tertinggi dalam set ini"
       ]
-    },
-    "text-to-pdf": {
-      "name": "Konverter Teks ke PDF",
-      "description": "Konversi teks biasa ke dokumen PDF dengan opsi format kustom",
-      "pageTitle": "Konverter Teks ke PDF - Konversi Teks ke PDF Online",
-      "pageDescription": "Konverter teks ke PDF online gratis. Konversi file teks biasa ke PDF dengan ukuran font, ukuran halaman, margin, dan spasi baris kustom. Tanpa perlu daftar akun.",
-      "fontSize": "Ukuran Font (pt)",
-      "pageSize": "Ukuran Halaman",
-      "a4": "A4",
-      "letter": "Letter",
-      "legal": "Legal",
-      "margins": "Margin",
-      "normal": "Normal",
-      "narrow": "Sempit",
-      "wide": "Lebar",
-      "lineSpacing": "Spasi Baris",
-      "characters": "Karakter",
-      "words": "Kata",
-      "lines": "Baris",
-      "placeholder": "Tempel atau ketik teks Anda di sini untuk dikonversi ke PDF...",
-      "convertToPdf": "Konversi ke PDF",
-      "seoTitle": "Konversi Teks ke PDF Online",
-      "seoContent": "Alat konverter teks ke PDF ini memungkinkan Anda mengubah file teks biasa menjadi dokumen PDF yang diformat secara profesional. Pilih ukuran font pilihan (8-24pt), ukuran halaman (A4, Letter, atau Legal), margin (Normal, Sempit, atau Lebar), dan spasi baris (1.0 hingga 2.0) untuk menyesuaikan output. Semua pemrosesan dilakukan di browser Anda — teks Anda tidak pernah keluar dari perangkat Anda. Sempurna untuk membuat dokumen cepat, memformat catatan, atau mengekspor konten teks."
     },
     "yaml-json-converter": {
       "name": "Konverter YAML ↔ JSON",

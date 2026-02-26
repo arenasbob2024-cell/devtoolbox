@@ -116,6 +116,8 @@ import YamlToJsonConverterGuide from '@/data/posts/yaml-to-json-converter-guide'
 import MarkdownToHtmlConverterGuide from '@/data/posts/markdown-to-html-converter-guide';
 import ColorConverterRgbHexHslGuide from '@/data/posts/color-converter-rgb-hex-hsl-guide';
 import JsonToJavaClassConverterGuide from '@/data/posts/json-to-java-class-converter-guide';
+import SvgToJsxReactGuide from '@/data/posts/svg-to-jsx-react-guide';
+import GraphqlToTypescriptCodegenGuide from '@/data/posts/graphql-to-typescript-codegen-guide';
 import XmlToJsonConverterGuide from '@/data/posts/xml-to-json-converter-guide';
 import CronExpressionGeneratorParserGuide from '@/data/posts/cron-expression-generator-parser-guide';
 import JsonToKotlinDataClassGuide from '@/data/posts/json-to-kotlin-data-class-guide';
@@ -275,6 +277,7 @@ import WebpackConfigGuide from '@/data/posts/webpack-config-guide';
 import CssCustomPropertiesAdvanced from '@/data/posts/css-custom-properties-advanced';
 import GithubActionsDocker from '@/data/posts/github-actions-docker';
 import JsonWebTokensSecurity from '@/data/posts/json-web-tokens-security';
+import JsonToZodSchemaGuide from '@/data/posts/json-to-zod-schema-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -381,6 +384,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'markdown-to-html-converter-guide': MarkdownToHtmlConverterGuide,
   'color-converter-rgb-hex-hsl-guide': ColorConverterRgbHexHslGuide,
   'json-to-java-class-converter-guide': JsonToJavaClassConverterGuide,
+  'svg-to-jsx-react-guide': SvgToJsxReactGuide,
+  'graphql-to-typescript-codegen-guide': GraphqlToTypescriptCodegenGuide,
   'xml-to-json-converter-guide': XmlToJsonConverterGuide,
   'cron-expression-generator-parser-guide': CronExpressionGeneratorParserGuide,
   'json-to-kotlin-data-class-guide': JsonToKotlinDataClassGuide,
@@ -540,6 +545,7 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'css-custom-properties-advanced': CssCustomPropertiesAdvanced,
   'github-actions-docker': GithubActionsDocker,
   'json-web-tokens-security': JsonWebTokensSecurity,
+  'json-to-zod-schema-guide': JsonToZodSchemaGuide,
 };
 
 /* i18n for UI strings on this page */
