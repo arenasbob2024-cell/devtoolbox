@@ -100,7 +100,7 @@ function getNextRuns(parts: string[], count: number = 5): string[] {
 
 export default function CronGenerator() {
   const { dict } = useLang();
-  const t = dict.tools['cron-generator'] || {} as Record<string, string>;
+  const t = dict.tools['cron-generator'] || {} as unknown as Record<string, string>;
   const [minute, setMinute] = useState('*');
   const [hour, setHour] = useState('*');
   const [dom, setDom] = useState('*');

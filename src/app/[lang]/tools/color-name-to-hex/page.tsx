@@ -216,7 +216,7 @@ export default function ColorNameToHex() {
 
   const getCategoryLabel = (cat: string): string => {
     if (cat === 'all') return t.allColors;
-    return (t as Record<string, string>)[cat] || cat;
+    return (t as unknown as Record<string, string>)[cat] || cat;
   };
 
   const cardStyle: React.CSSProperties = {

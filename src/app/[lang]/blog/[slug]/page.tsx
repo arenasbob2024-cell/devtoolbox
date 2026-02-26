@@ -303,6 +303,10 @@ import WordCounterOnlineGuide from '@/data/posts/word-counter-online-guide';
 import JsonYamlConverterOnlineGuide from '@/data/posts/json-yaml-converter-online-guide';
 import JsonViewerOnlineGuide from '@/data/posts/json-viewer-online-guide';
 import LoremIpsumOnlineGuide from '@/data/posts/lorem-ipsum-online-guide';
+import CurlToCodeOnlineGuide from '@/data/posts/curl-to-code-online-guide';
+import JsonFormatterOnlineGuide from '@/data/posts/json-formatter-online-guide';
+import CronExpressionOnlineGuide from '@/data/posts/cron-expression-online-guide';
+import MarkdownToHtmlOnlineGuide from '@/data/posts/markdown-to-html-online-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -596,6 +600,10 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'json-yaml-converter-online-guide': JsonYamlConverterOnlineGuide,
   'json-viewer-online-guide': JsonViewerOnlineGuide,
   'lorem-ipsum-online-guide': LoremIpsumOnlineGuide,
+  'curl-to-code-online-guide': CurlToCodeOnlineGuide,
+  'json-formatter-online-guide': JsonFormatterOnlineGuide,
+  'cron-expression-online-guide': CronExpressionOnlineGuide,
+  'markdown-to-html-online-guide': MarkdownToHtmlOnlineGuide,
 };
 
 /* i18n for UI strings on this page */

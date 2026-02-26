@@ -175,7 +175,7 @@ export default function AsciiTextConverter() {
                   onClick={() => { setOutputFormat(fmt); convertTextToAscii(textInput, fmt); }}
                   style={toggleBtnStyle(outputFormat === fmt)}
                 >
-                  {(t as Record<string, string>)[fmt] || fmt}
+                  {(t as unknown as Record<string, string>)[fmt] || fmt}
                 </button>
               ))}
             </div>

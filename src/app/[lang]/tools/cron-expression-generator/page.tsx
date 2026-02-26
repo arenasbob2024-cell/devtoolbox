@@ -621,7 +621,7 @@ export default function CronExpressionGenerator() {
               className="btn btn-secondary"
               style={{ fontSize: 12, padding: '6px 12px' }}
             >
-              {(t as Record<string, string>)[preset.label] || preset.label}
+              {(t as unknown as Record<string, string>)[preset.label] || preset.label}
             </button>
           ))}
         </div>

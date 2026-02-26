@@ -156,7 +156,7 @@ export default function ByteConverter() {
             style={selectStyle}
           >
             {UNITS.map(u => (
-              <option key={u.key} value={u.key}>{(t as Record<string, string>)[u.key] || u.symbol}</option>
+              <option key={u.key} value={u.key}>{(t as unknown as Record<string, string>)[u.key] || u.symbol}</option>
             ))}
           </select>
         </div>
@@ -181,7 +181,7 @@ export default function ByteConverter() {
               <tbody>
                 {conversions.map(c => (
                   <tr key={c.key}>
-                    <td style={{ ...cellStyle, fontWeight: 600, color: 'var(--accent)' }}>{(t as Record<string, string>)[c.key] || c.symbol}</td>
+                    <td style={{ ...cellStyle, fontWeight: 600, color: 'var(--accent)' }}>{(t as unknown as Record<string, string>)[c.key] || c.symbol}</td>
                     <td style={{ ...cellStyle, fontFamily: 'monospace', fontSize: 14 }}>{c.value} {c.symbol}</td>
                     <td style={{ ...cellStyle, textAlign: 'right' as const }}>
                       <CopyButton text={`${c.value} ${c.symbol}`} />
