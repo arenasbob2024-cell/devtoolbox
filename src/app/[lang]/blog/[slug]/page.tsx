@@ -309,6 +309,7 @@ import CronExpressionOnlineGuide from '@/data/posts/cron-expression-online-guide
 import MarkdownToHtmlOnlineGuide from '@/data/posts/markdown-to-html-online-guide';
 import SvgToReactOnlineGuide from '@/data/posts/svg-to-react-online-guide';
 import JsonToTypescriptOnlineGuide from '@/data/posts/json-to-typescript-online-guide';
+import CssToTailwindOnlineGuide from '@/data/posts/css-to-tailwind-online-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -608,6 +609,7 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'markdown-to-html-online-guide': MarkdownToHtmlOnlineGuide,
   'svg-to-react-online-guide': SvgToReactOnlineGuide,
   'json-to-typescript-online-guide': JsonToTypescriptOnlineGuide,
+  'css-to-tailwind-online-guide': CssToTailwindOnlineGuide,
 };
 
 /* i18n for UI strings on this page */
