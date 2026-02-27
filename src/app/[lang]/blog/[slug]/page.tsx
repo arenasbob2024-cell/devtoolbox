@@ -395,6 +395,8 @@ import ReactTestingGuide from '@/data/posts/react-testing-guide';
 import TypescriptAdvancedGuide from '@/data/posts/typescript-advanced-guide';
 import NodePerformanceGuide from '@/data/posts/node-performance-guide';
 import CssArchitectureGuide from '@/data/posts/css-architecture-guide';
+import PythonWebGuide from '@/data/posts/python-web-guide';
+import GitAdvancedGuide from '@/data/posts/git-advanced-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -780,6 +782,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'typescript-advanced-guide': TypescriptAdvancedGuide,
   'node-performance-guide': NodePerformanceGuide,
   'css-architecture-guide': CssArchitectureGuide,
+  'python-web-guide': PythonWebGuide,
+  'git-advanced-guide': GitAdvancedGuide,
 };
 
 /* i18n for UI strings on this page */
