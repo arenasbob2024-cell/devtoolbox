@@ -339,6 +339,8 @@ import StringCaseConverterOnlineGuide from '@/data/posts/string-case-converter-o
 import NumberBaseConverterOnlineGuide from '@/data/posts/number-base-converter-online-guide';
 import CorsTesterOnlineGuide from '@/data/posts/cors-tester-online-guide';
 import FakeDataGeneratorOnlineGuide from '@/data/posts/fake-data-generator-online-guide';
+import EscapeUnescapeOnlineGuide from '@/data/posts/escape-unescape-online-guide';
+import PemDecoderOnlineGuide from '@/data/posts/pem-decoder-online-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -668,6 +670,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'number-base-converter-online-guide': NumberBaseConverterOnlineGuide,
   'cors-tester-online-guide': CorsTesterOnlineGuide,
   'fake-data-generator-online-guide': FakeDataGeneratorOnlineGuide,
+  'escape-unescape-online-guide': EscapeUnescapeOnlineGuide,
+  'pem-decoder-online-guide': PemDecoderOnlineGuide,
 };
 
 /* i18n for UI strings on this page */
