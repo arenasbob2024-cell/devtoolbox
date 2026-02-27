@@ -406,6 +406,8 @@ import MonitoringObservabilityGuide from '@/data/posts/monitoring-observability-
 import AiEngineeringGuide from '@/data/posts/ai-engineering-guide';
 import DataStructuresGuide from '@/data/posts/data-structures-guide';
 import DesignPatternsGuide from '@/data/posts/design-patterns-guide';
+import TestingStrategiesGuide from '@/data/posts/testing-strategies-guide';
+import LinuxGuide from '@/data/posts/linux-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -802,6 +804,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'ai-engineering-guide': AiEngineeringGuide,
   'data-structures-guide': DataStructuresGuide,
   'design-patterns-guide': DesignPatternsGuide,
+  'testing-strategies-guide': TestingStrategiesGuide,
+  'linux-guide': LinuxGuide,
 };
 
 /* i18n for UI strings on this page */
