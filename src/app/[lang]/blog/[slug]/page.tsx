@@ -350,6 +350,7 @@ import SshKeyGeneratorOnlineGuide from '@/data/posts/ssh-key-generator-online-gu
 import ApiTestingGuide from '@/data/posts/api-testing-guide';
 import WebsocketGuide from '@/data/posts/websocket-guide';
 import DockerCommandsGuide from '@/data/posts/docker-commands-guide';
+import RedisGuide from '@/data/posts/redis-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -690,6 +691,7 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'api-testing-guide': ApiTestingGuide,
   'websocket-guide': WebsocketGuide,
   'docker-commands-guide': DockerCommandsGuide,
+  'redis-guide': RedisGuide,
 };
 
 /* i18n for UI strings on this page */

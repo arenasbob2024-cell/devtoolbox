@@ -8921,6 +8921,25 @@ export const blogPosts: BlogPost[] = [
       ko: { title: 'Docker 명령어: 기초부터 프로덕션까지 완전 가이드', description: 'Docker를 마스터하세요. docker run/build/push, Dockerfile, 멀티스테이지 빌드, 볼륨, 네트워킹, Docker Compose, 보안, 레지스트리, 프로덕션 배포 완전 가이드.', readingTime: '13분 읽기', keywords: ['docker 명령어', 'dockerfile', 'docker compose', 'docker 네트워킹', 'docker 볼륨', '멀티스테이지 빌드', 'docker 레지스트리', 'docker 보안'] },
     },
   },
+  {
+    slug: 'redis-guide',
+    title: 'Redis Complete Guide: Caching, Pub/Sub, Streams, and Production Patterns',
+    description: 'Master Redis with this complete guide. Covers data types, Node.js ioredis, caching patterns, session storage, Pub/Sub, Streams, Python redis-py, rate limiting, transactions, and production setup.',
+    date: '2026-02-27',
+    author: 'DevToolBox',
+    readingTime: '13 min read',
+    keywords: ['redis', 'redis caching', 'redis pub/sub', 'redis streams', 'ioredis', 'redis rate limiting', 'redis sessions', 'redis transactions', 'python redis-py', 'redis production'],
+    relatedTools: ['json-formatter', 'hash-generator', 'uuid-generator'],
+    relatedPosts: ['docker-commands-guide', 'websocket-guide', 'api-testing-guide'],
+    translations: {
+      zh: { title: 'Redis完整指南：缓存、发布订阅、流和生产模式', description: '掌握Redis的完整指南。含数据类型、Node.js ioredis、缓存模式、会话存储、发布订阅、流、Python redis-py、速率限制、事务和生产环境配置。', readingTime: '13 分钟阅读', keywords: ['redis', 'redis缓存', 'redis发布订阅', 'redis流', 'ioredis', 'redis速率限制', 'redis会话', 'redis事务', 'python redis-py', 'redis生产'] },
+      fr: { title: 'Guide Redis Complet: Cache, Pub/Sub, Streams et Production', description: 'Maîtrisez Redis. Guide avec types de données, ioredis, patterns de cache, stockage de sessions, Pub/Sub, Streams, Python redis-py, limitation de débit et transactions.', readingTime: '13 min de lecture', keywords: ['redis', 'cache redis', 'redis pub/sub', 'redis streams', 'ioredis', 'limitation débit redis', 'sessions redis', 'transactions redis', 'python redis-py'] },
+      de: { title: 'Redis Kompletter Leitfaden: Caching, Pub/Sub, Streams und Produktion', description: 'Redis meistern. Anleitung mit Datentypen, ioredis, Caching-Patterns, Session-Speicherung, Pub/Sub, Streams, Python redis-py, Rate Limiting und Transaktionen.', readingTime: '13 Min. Lesezeit', keywords: ['redis', 'redis caching', 'redis pub/sub', 'redis streams', 'ioredis', 'redis rate limiting', 'redis sessions', 'redis transaktionen', 'python redis-py'] },
+      es: { title: 'Guía Completa de Redis: Caché, Pub/Sub, Streams y Producción', description: 'Domina Redis. Guía con tipos de datos, ioredis, patrones de caché, almacenamiento de sesiones, Pub/Sub, Streams, Python redis-py, limitación de velocidad y transacciones.', readingTime: '13 min de lectura', keywords: ['redis', 'caché redis', 'redis pub/sub', 'redis streams', 'ioredis', 'limitación velocidad redis', 'sesiones redis', 'transacciones redis', 'python redis-py'] },
+      ja: { title: 'Redisガイド：キャッシュ、Pub/Sub、ストリーム、本番パターン完全ガイド', description: 'Redisをマスター。データ型、ioredis、キャッシュパターン、セッションストレージ、Pub/Sub、ストリーム、Python redis-py、レート制限、トランザクション、本番設定の完全ガイド。', readingTime: '13分', keywords: ['redis', 'redisキャッシュ', 'redis pub/sub', 'redisストリーム', 'ioredis', 'redisレート制限', 'redisセッション', 'redisトランザクション', 'python redis-py'] },
+      ko: { title: 'Redis 완전 가이드: 캐싱, Pub/Sub, 스트림, 프로덕션 패턴', description: 'Redis를 마스터하세요. 데이터 타입, ioredis, 캐싱 패턴, 세션 저장소, Pub/Sub, 스트림, Python redis-py, 속도 제한, 트랜잭션, 프로덕션 설정 완전 가이드.', readingTime: '13분 읽기', keywords: ['redis', 'redis 캐싱', 'redis pub/sub', 'redis 스트림', 'ioredis', 'redis 속도 제한', 'redis 세션', 'redis 트랜잭션', 'python redis-py'] },
+    },
+  },
 ];
 
 /** Get post with localized metadata */
