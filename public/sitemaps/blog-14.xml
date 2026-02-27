@@ -2971,4 +2971,664 @@
       <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/drizzle-orm-guide"/>
       <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/drizzle-orm-guide"/>
   </url>
+  <url>
+    <loc>https://viadreams.cc/en/blog/vitest-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/vitest-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/fr/blog/vitest-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/vitest-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/de/blog/vitest-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/vitest-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/it/blog/vitest-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/vitest-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/es/blog/vitest-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/vitest-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pt/blog/vitest-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/vitest-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/nl/blog/vitest-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/vitest-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pl/blog/vitest-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/vitest-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/sv/blog/vitest-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/vitest-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/no/blog/vitest-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/vitest-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/zh/blog/vitest-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/vitest-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ja/blog/vitest-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/vitest-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ko/blog/vitest-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/vitest-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/id/blog/vitest-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/vitest-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/th/blog/vitest-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/vitest-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/vitest-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/en/blog/zustand-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/zustand-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/fr/blog/zustand-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/zustand-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/de/blog/zustand-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/zustand-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/it/blog/zustand-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/zustand-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/es/blog/zustand-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/zustand-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pt/blog/zustand-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/zustand-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/nl/blog/zustand-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/zustand-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pl/blog/zustand-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/zustand-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/sv/blog/zustand-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/zustand-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/no/blog/zustand-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/zustand-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/zh/blog/zustand-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/zustand-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ja/blog/zustand-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/zustand-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ko/blog/zustand-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/zustand-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/id/blog/zustand-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/zustand-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/th/blog/zustand-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/zustand-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/zustand-guide"/>
+  </url>
 </urlset>
