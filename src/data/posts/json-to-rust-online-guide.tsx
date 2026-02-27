@@ -1,196 +1,223 @@
 'use client';
-import React from 'react';
-import Link from 'next/link';
 
-/* ------------------------------------------------------------------ */
-/*  JSON to Rust Struct Online Guide                                    */
-/* ------------------------------------------------------------------ */
+/* -----------------------------------------------------------------------
+   JSON to Rust Struct: Complete Guide with Serde and serde_json
+   Canonical: https://viadreams.cc/en/blog/json-to-rust-online-guide
+----------------------------------------------------------------------- */
+
+const translations = {
+  en: {
+    title: 'JSON to Rust Struct: Complete Guide with Serde and serde_json',
+    description:
+      'Convert JSON to Rust structs with Serde derive macros, custom attributes, and type-safe deserialization. Complete guide for Rust developers.',
+  },
+  zh: {
+    title: 'JSON 转 Rust 结构体：Serde 完整指南',
+    description:
+      '使用 Serde derive 宏、自定义属性和类型安全反序列化将 JSON 转换为 Rust 结构体。',
+  },
+  ja: {
+    title: 'JSONをRust構造体に変換：Serdeを使った完全ガイド',
+    description:
+      'Serdeのderiveマクロ、カスタム属性、型安全なデシリアライゼーションを使用してJSONをRust構造体に変換します。',
+  },
+  ko: {
+    title: 'JSON을 Rust 구조체로 변환: Serde 완전 가이드',
+    description:
+      'Serde derive 매크로, 커스텀 속성, 타입 안전 역직렬화로 JSON을 Rust 구조체로 변환합니다.',
+  },
+  de: {
+    title: 'JSON zu Rust Struct: Vollständiger Leitfaden mit Serde',
+    description:
+      'Konvertieren Sie JSON in Rust-Structs mit Serde-Derive-Makros, benutzerdefinierten Attributen und typsicherer Deserialisierung.',
+  },
+  fr: {
+    title: 'JSON vers Struct Rust : Guide Complet avec Serde',
+    description:
+      'Convertissez JSON en structs Rust avec les macros derive Serde, attributs personnalisés et désérialisation type-safe.',
+  },
+  es: {
+    title: 'JSON a Rust Struct: Guía Completa con Serde',
+    description:
+      'Convierte JSON a structs Rust con macros derive de Serde, atributos personalizados y deserialización con tipos seguros.',
+  },
+  it: {
+    title: 'Da JSON a Rust Struct: Guida Completa con Serde',
+    description:
+      'Converti JSON in structs Rust con macro derive Serde, attributi personalizzati e deserializzazione type-safe.',
+  },
+  pt: {
+    title: 'JSON para Rust Struct: Guia Completo com Serde',
+    description:
+      'Converta JSON em structs Rust com macros derive Serde, atributos personalizados e desserialização com segurança de tipos.',
+  },
+  nl: {
+    title: 'JSON naar Rust Struct: Complete Gids met Serde',
+    description:
+      "Converteer JSON naar Rust-structs met Serde derive-macro's, aangepaste attributen en type-veilige deserialisatie.",
+  },
+  pl: {
+    title: 'JSON do Rust Struct: Kompletny Przewodnik z Serde',
+    description:
+      'Konwertuj JSON na structs Rust za pomocą makr derive Serde, niestandardowych atrybutów i bezpiecznej deserializacji.',
+  },
+  sv: {
+    title: 'JSON till Rust Struct: Komplett Guide med Serde',
+    description:
+      'Konvertera JSON till Rust-structs med Serde derive-makron, anpassade attribut och typsäker deserialisering.',
+  },
+  no: {
+    title: 'JSON til Rust Struct: Komplett Guide med Serde',
+    description:
+      'Konverter JSON til Rust-structs med Serde derive-makroer, egendefinerte attributter og typesikker deserialisering.',
+  },
+  id: {
+    title: 'JSON ke Rust Struct: Panduan Lengkap dengan Serde',
+    description:
+      'Konversi JSON ke structs Rust dengan macro derive Serde, atribut kustom, dan deserialisasi yang aman tipe.',
+  },
+  th: {
+    title: 'JSON เป็น Rust Struct: คู่มือสมบูรณ์กับ Serde',
+    description:
+      'แปลง JSON เป็น Rust structs ด้วย Serde derive macros, custom attributes และการแปลงที่ปลอดภัยด้านประเภท',
+  },
+};
+
+const faqData = [
+  {
+    q: 'What is Serde and why is it used for JSON in Rust?',
+    a: 'Serde is Rust\'s de-facto serialization/deserialization framework. It provides generic Serialize and Deserialize traits. serde_json is the concrete implementation for JSON. Using #[derive(Serialize, Deserialize)] on your structs, Serde generates all the parsing and serialization code at compile time with zero runtime overhead.',
+  },
+  {
+    q: 'How do I add Serde to my Rust project?',
+    a: 'Add to Cargo.toml: serde = { version = "1", features = ["derive"] } and serde_json = "1". The "derive" feature enables the #[derive(Serialize, Deserialize)] macros. Then import with: use serde::{Deserialize, Serialize}; in each file that uses it.',
+  },
+  {
+    q: 'How do I handle camelCase JSON keys with snake_case Rust fields?',
+    a: 'Use #[serde(rename_all = "camelCase")] on the struct. This converts all field names automatically: user_name becomes "userName", created_at becomes "createdAt". For a single field use #[serde(rename = "specificKey")]. Supported strategies include camelCase, PascalCase, snake_case, SCREAMING_SNAKE_CASE, and kebab-case.',
+  },
+  {
+    q: 'How does Option<T> work with serde_json for nullable fields?',
+    a: 'Option<T> maps naturally: None serializes as null, absent keys deserialize as None. Use #[serde(skip_serializing_if = "Option::is_none")] to omit None fields from output. Use #[serde(default)] to treat absent keys as None. For fields that can be both absent and null, use Option<Option<T>>.',
+  },
+  {
+    q: 'How do I deserialize JSON arrays in Rust?',
+    a: 'Use Vec<T> where T implements Deserialize. Serde handles it automatically: let items: Vec<Item> = serde_json::from_str(json)?; In a struct field, declare tags: Vec<Tag>. For optional arrays use Option<Vec<T>>. For heterogeneous arrays use Vec<serde_json::Value>.',
+  },
+  {
+    q: 'What are the different enum tagging strategies in Serde?',
+    a: 'Serde supports four enum representations: External tagging (default) wraps data in the variant name key. Internal tagging (#[serde(tag = "type")]) adds a discriminant field inside the object. Adjacent tagging (#[serde(tag = "type", content = "data")]) keeps type and data separate. Untagged (#[serde(untagged)]) tries each variant in order — useful for union types.',
+  },
+  {
+    q: 'When should I use serde_json::Value instead of a struct?',
+    a: 'Use serde_json::Value when the JSON structure is unknown at compile time, for truly dynamic data, or when you need to inspect/modify JSON before converting. Value has variants: Null, Bool, Number, String, Array(Vec<Value>), Object(Map<String, Value>). Access with v["key"] and cast with v.as_str(), v.as_i64(), v.as_f64().',
+  },
+  {
+    q: 'How do I integrate serde_json with Axum or Actix-web?',
+    a: 'In Axum, use the Json extractor: async fn handler(Json(body): Json<MyRequest>) -> Json<MyResponse>. Axum automatically deserializes requests and serializes responses using serde_json. In Actix-web, use web::Json<T>: async fn handler(body: web::Json<MyRequest>) -> impl Responder. Both frameworks return 422 Unprocessable Entity on deserialization failure.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqData.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: { '@type': 'Answer', text: item.a },
+  })),
+};
 
 export default function JsonToRustOnlineGuide({ lang }: { lang: string }) {
-  const l = lang || 'en';
-  const toolLink = `/${l}/tools/json-to-rust`;
+  const t = translations[lang as keyof typeof translations] || translations.en;
 
-  /* ---------- translations ---------- */
-  const translations: Record<string, {
-    tldr: string;
-    whyTitle: string;
-    takeawaysTitle: string;
-    tryTool: string;
-    faqTitle: string;
-  }> = {
-    zh: {
-      tldr: '使用 serde_json 和 #[derive(Serialize, Deserialize)] 将 JSON 转换为 Rust 结构体。添加 #[serde(rename_all = \'camelCase\')] 处理 JavaScript API，用 Option<T> 处理可空字段，用自定义实现处理特殊类型。',
-      whyTitle: '为什么使用 Rust 结构体处理 JSON？',
-      takeawaysTitle: '核心要点',
-      tryTool: '立即使用免费的 JSON 转 Rust 工具 \u2192',
-      faqTitle: '常见问题',
-    },
-    en: {
-      tldr: 'Convert JSON to Rust structs using serde_json with #[derive(Serialize, Deserialize)]. Add #[serde(rename_all = \'camelCase\')] for JavaScript APIs, Option<T> for nullable fields, and custom de/serialize implementations for special types.',
-      whyTitle: 'Why Use Rust Structs for JSON?',
-      takeawaysTitle: 'Key Takeaways',
-      tryTool: 'Try our free JSON to Rust Struct tool \u2192',
-      faqTitle: 'Frequently Asked Questions',
-    },
-    ja: {
-      tldr: 'serde_jsonと#[derive(Serialize, Deserialize)]を使用してJSONをRust構造体に変換します。JavaScript APIには#[serde(rename_all = \'camelCase\')]、nullable フィールドにはOption<T>、特殊型にはカスタム実装を追加します。',
-      whyTitle: 'RustでJSONに構造体を使う理由',
-      takeawaysTitle: '重要なポイント',
-      tryTool: '無料のJSON to Rustツールを試す \u2192',
-      faqTitle: 'よくある質問',
-    },
-    ko: {
-      tldr: 'serde_json과 #[derive(Serialize, Deserialize)]를 사용하여 JSON을 Rust 구조체로 변환하세요. JavaScript API에는 #[serde(rename_all = \'camelCase\')], nullable 필드에는 Option<T>를 사용하세요.',
-      whyTitle: 'JSON에 Rust 구조체를 사용하는 이유',
-      takeawaysTitle: '핵심 요점',
-      tryTool: '무료 JSON to Rust 도구 사용하기 \u2192',
-      faqTitle: '자주 묻는 질문',
-    },
-    fr: {
-      tldr: 'Convertissez JSON en structs Rust avec serde_json et #[derive(Serialize, Deserialize)]. Ajoutez #[serde(rename_all = \'camelCase\')] pour les API JavaScript et Option<T> pour les champs nullable.',
-      whyTitle: 'Pourquoi utiliser des structs Rust pour JSON ?',
-      takeawaysTitle: 'Points cl\u00e9s',
-      tryTool: 'Essayez notre outil JSON to Rust gratuit \u2192',
-      faqTitle: 'Questions fr\u00e9quemment pos\u00e9es',
-    },
-    de: {
-      tldr: 'Konvertieren Sie JSON in Rust-Structs mit serde_json und #[derive(Serialize, Deserialize)]. F\u00fcgen Sie #[serde(rename_all = \'camelCase\')] f\u00fcr JavaScript-APIs und Option<T> f\u00fcr nullable Felder hinzu.',
-      whyTitle: 'Warum Rust-Structs f\u00fcr JSON verwenden?',
-      takeawaysTitle: 'Wichtige Erkenntnisse',
-      tryTool: 'Kostenloses JSON to Rust Tool ausprobieren \u2192',
-      faqTitle: 'H\u00e4ufig gestellte Fragen',
-    },
-    es: {
-      tldr: 'Convierte JSON en structs de Rust usando serde_json con #[derive(Serialize, Deserialize)]. A\u00f1ade #[serde(rename_all = \'camelCase\')] para APIs JavaScript y Option<T> para campos nullable.',
-      whyTitle: '\u00bfPor qu\u00e9 usar structs Rust para JSON?',
-      takeawaysTitle: 'Puntos clave',
-      tryTool: 'Prueba nuestra herramienta JSON to Rust gratuita \u2192',
-      faqTitle: 'Preguntas frecuentes',
-    },
-    it: {
-      tldr: 'Converti JSON in struct Rust con serde_json e #[derive(Serialize, Deserialize)]. Aggiungi #[serde(rename_all = \'camelCase\')] per le API JavaScript e Option<T> per i campi nullable.',
-      whyTitle: 'Perch\u00e9 usare struct Rust per JSON?',
-      takeawaysTitle: 'Punti chiave',
-      tryTool: 'Prova il nostro strumento JSON to Rust gratuito \u2192',
-      faqTitle: 'Domande frequenti',
-    },
-    pt: {
-      tldr: 'Converta JSON em structs Rust usando serde_json com #[derive(Serialize, Deserialize)]. Adicione #[serde(rename_all = \'camelCase\')] para APIs JavaScript e Option<T> para campos nullable.',
-      whyTitle: 'Por que usar structs Rust para JSON?',
-      takeawaysTitle: 'Pontos-chave',
-      tryTool: 'Experimente nossa ferramenta JSON to Rust gratuita \u2192',
-      faqTitle: 'Perguntas frequentes',
-    },
-    nl: {
-      tldr: 'Converteer JSON naar Rust structs met serde_json en #[derive(Serialize, Deserialize)]. Voeg #[serde(rename_all = \'camelCase\')] toe voor JavaScript API\'s en Option<T> voor nullable velden.',
-      whyTitle: 'Waarom Rust structs gebruiken voor JSON?',
-      takeawaysTitle: 'Belangrijkste punten',
-      tryTool: 'Probeer onze gratis JSON to Rust tool \u2192',
-      faqTitle: 'Veelgestelde vragen',
-    },
-    pl: {
-      tldr: 'Konwertuj JSON na Rust structs za pomoc\u0105 serde_json i #[derive(Serialize, Deserialize)]. Dodaj #[serde(rename_all = \'camelCase\')] dla API JavaScript i Option<T> dla p\u00f3l nullable.',
-      whyTitle: 'Dlaczego u\u017cywa\u0107 Rust structs dla JSON?',
-      takeawaysTitle: 'Kluczowe wnioski',
-      tryTool: 'Wypr\u00f3buj nasze darmowe narz\u0119dzie JSON to Rust \u2192',
-      faqTitle: 'Cz\u0119sto zadawane pytania',
-    },
-    sv: {
-      tldr: 'Konvertera JSON till Rust structs med serde_json och #[derive(Serialize, Deserialize)]. L\u00e4gg till #[serde(rename_all = \'camelCase\')] f\u00f6r JavaScript API:er och Option<T> f\u00f6r nullable f\u00e4lt.',
-      whyTitle: 'Varf\u00f6r anv\u00e4nda Rust structs f\u00f6r JSON?',
-      takeawaysTitle: 'Viktiga l\u00e4rdomar',
-      tryTool: 'Prova v\u00e5rt gratis JSON to Rust-verktyg \u2192',
-      faqTitle: 'Vanliga fr\u00e5gor',
-    },
-    no: {
-      tldr: 'Konverter JSON til Rust structs med serde_json og #[derive(Serialize, Deserialize)]. Legg til #[serde(rename_all = \'camelCase\')] for JavaScript API-er og Option<T> for nullable felt.',
-      whyTitle: 'Hvorfor bruke Rust structs for JSON?',
-      takeawaysTitle: 'N\u00f8kkelpunkter',
-      tryTool: 'Pr\u00f8v v\u00e5rt gratis JSON to Rust-verkt\u00f8y \u2192',
-      faqTitle: 'Vanlige sp\u00f8rsm\u00e5l',
-    },
-    id: {
-      tldr: 'Konversi JSON ke Rust struct menggunakan serde_json dengan #[derive(Serialize, Deserialize)]. Tambahkan #[serde(rename_all = \'camelCase\')] untuk API JavaScript dan Option<T> untuk field nullable.',
-      whyTitle: 'Mengapa menggunakan Rust struct untuk JSON?',
-      takeawaysTitle: 'Poin-poin utama',
-      tryTool: 'Coba alat JSON to Rust gratis kami \u2192',
-      faqTitle: 'Pertanyaan yang sering diajukan',
-    },
-    th: {
-      tldr: 'แปลง JSON เป็น Rust structs โดยใช้ serde_json ด้วย #[derive(Serialize, Deserialize)] เพิ่ม #[serde(rename_all = \'camelCase\')] สำหรับ JavaScript API และ Option<T> สำหรับ nullable fields',
-      whyTitle: 'ทำไมต้องใช้ Rust Structs สำหรับ JSON?',
-      takeawaysTitle: 'ประเด็นสำคัญ',
-      tryTool: 'ลองใช้เครื่องมือ JSON to Rust ฟรีของเรา \u2192',
-      faqTitle: 'คำถามที่พบบ่อย',
-    },
-  };
+  return (
+    <article style={{ maxWidth: '860px', margin: '0 auto', padding: '0 1rem', color: '#334155', lineHeight: 1.7, fontFamily: 'system-ui, sans-serif' }}>
+      {/* SEO: canonical + JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
 
-  const tx = translations[l] || translations['en'];
+      <h1 style={{ fontSize: '2rem', fontWeight: '800', color: '#0f172a', marginBottom: '0.5rem', lineHeight: 1.3 }}>
+        {t.title}
+      </h1>
+      <p style={{ color: '#64748b', marginBottom: '1.5rem', fontSize: '1rem' }}>
+        {t.description}
+      </p>
 
-  /* ---------- FAQ items ---------- */
-  const faqItems = [
-    {
-      q: 'What is serde in Rust?',
-      a: 'serde is Rust\'s de facto serialization framework. It provides generic Serialize and Deserialize traits that any type can implement, and serde_json is the concrete implementation for JSON. You derive these traits automatically on your structs using #[derive(Serialize, Deserialize)] — no manual implementation required for most cases.',
-    },
-    {
-      q: 'How do I handle snake_case Rust fields with camelCase JSON?',
-      a: 'Use #[serde(rename_all = "camelCase")] on the struct level. This automatically converts all field names: user_name becomes "userName" in JSON. You can also rename a single field with #[serde(rename = "specificKey")]. Available rename_all strategies include: camelCase, snake_case, PascalCase, SCREAMING_SNAKE_CASE, and kebab-case.',
-    },
-    {
-      q: 'How does Option<T> work with serde_json?',
-      a: 'Option::None serializes as null by default, and absent fields deserialize as None. To omit None fields from serialized output entirely, use #[serde(skip_serializing_if = "Option::is_none")]. To provide a default when a field is absent, combine with #[serde(default)]. Note: there is a difference between null (Some(None)) and absent — use Option<Option<T>> for fully nullable semantics.',
-    },
-    {
-      q: 'How do I deserialize a JSON array in Rust?',
-      a: 'Use Vec<T> — serde_json handles it automatically: let items: Vec<Item> = serde_json::from_str(json)?; In a struct, declare the field as items: Vec<Item>. For optional arrays that may be null, use Option<Vec<Item>>. Nested arrays become Vec<Vec<T>>, and heterogeneous arrays can use Vec<serde_json::Value>.',
-    },
-    {
-      q: 'How do Rust enums map to JSON?',
-      a: 'By default, enum variants are externally tagged: {"VariantName": {...data}}. Use #[serde(tag = "type")] for internal tagging like {"type": "Circle", "radius": 1.0}. Use #[serde(tag = "type", content = "data")] for adjacent tagging: {"type": "Circle", "data": {"radius": 1.0}}. Use #[serde(untagged)] for untagged — serde tries each variant in order.',
-    },
-    {
-      q: 'What is serde_json::Value?',
-      a: 'serde_json::Value is a dynamic JSON value enum with variants: Null, Bool, Number, String, Array(Vec<Value>), Object(Map<String, Value>). It is useful when JSON structure is unknown at compile time, for heterogeneous data, or for partial typed deserialization. Access values with v["key"] or v.get("key"), and cast with v.as_str(), v.as_i64(), etc.',
-    },
-    {
-      q: 'How do I add default values for missing JSON fields?',
-      a: 'Use #[serde(default)] on a field to call Default::default() when the field is absent from JSON. For custom defaults, use #[serde(default = "my_fn")] where my_fn is a function returning the desired default value. Example: #[serde(default = "default_page_size")] fn default_page_size() -> usize { 20 }',
-    },
-    {
-      q: 'How does serde work with Axum?',
-      a: 'Axum\'s Json extractor automatically deserializes request bodies using serde_json. Add the Json<T> extractor to your handler: async fn create_user(Json(payload): Json<CreateUserRequest>) -> Json<User>. Axum also serializes response types into JSON automatically when you return Json(value). For error handling, implement IntoResponse or use axum::response::Json with a result type.',
-    },
-  ];
+      {/* TL;DR Box */}
+      <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: '8px', padding: '1rem', marginBottom: '1.5rem' }}>
+        <strong style={{ color: '#0369a1' }}>TL;DR</strong>
+        <p style={{ margin: '0.5rem 0 0', color: '#0c4a6e' }}>
+          Add <code style={{ background: '#e0f2fe', padding: '2px 6px', borderRadius: '4px' }}>serde = {'{ version: "1", features: ["derive"] }'}</code> and{' '}
+          <code style={{ background: '#e0f2fe', padding: '2px 6px', borderRadius: '4px' }}>serde_json = "1"</code> to Cargo.toml.
+          Annotate your structs with <code style={{ background: '#e0f2fe', padding: '2px 6px', borderRadius: '4px' }}>#[derive(Serialize, Deserialize)]</code>.
+          Use <code style={{ background: '#e0f2fe', padding: '2px 6px', borderRadius: '4px' }}>#[serde(rename_all = "camelCase")]</code> for JavaScript APIs,{' '}
+          <code style={{ background: '#e0f2fe', padding: '2px 6px', borderRadius: '4px' }}>Option{'<T>'}</code> for nullable fields, and{' '}
+          <code style={{ background: '#e0f2fe', padding: '2px 6px', borderRadius: '4px' }}>serde_json::Value</code> for fully dynamic JSON.
+        </p>
+      </div>
 
-  /* ---------- FAQ JSON-LD ---------- */
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqItems.map(item => ({
-      '@type': 'Question',
-      name: item.q,
-      acceptedAnswer: { '@type': 'Answer', text: item.a },
-    })),
-  };
+      {/* Section 1: Why Serde */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: '700', marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
+        1. Why Use Serde for JSON in Rust
+      </h2>
+      <p>
+        Rust has several JSON libraries, but Serde with serde_json is the ecosystem standard. Here is how the main options compare:
+      </p>
+      <div style={{ overflowX: 'auto', marginBottom: '1.5rem' }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem' }}>
+          <thead>
+            <tr style={{ background: '#1e293b', color: '#f8fafc' }}>
+              <th style={{ padding: '10px 14px', textAlign: 'left', border: '1px solid #334155' }}>Crate</th>
+              <th style={{ padding: '10px 14px', textAlign: 'left', border: '1px solid #334155' }}>Performance</th>
+              <th style={{ padding: '10px 14px', textAlign: 'left', border: '1px solid #334155' }}>Ease of Use</th>
+              <th style={{ padding: '10px 14px', textAlign: 'left', border: '1px solid #334155' }}>Features</th>
+              <th style={{ padding: '10px 14px', textAlign: 'left', border: '1px solid #334155' }}>Ecosystem Support</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style={{ background: '#ffffff' }}>
+              <td style={{ padding: '9px 14px', border: '1px solid #e2e8f0', fontWeight: '700', color: '#0f172a' }}>serde_json</td>
+              <td style={{ padding: '9px 14px', border: '1px solid #e2e8f0' }}>Very fast</td>
+              <td style={{ padding: '9px 14px', border: '1px solid #e2e8f0' }}>Excellent (derive)</td>
+              <td style={{ padding: '9px 14px', border: '1px solid #e2e8f0' }}>Full: rename, skip, flatten, tag</td>
+              <td style={{ padding: '9px 14px', border: '1px solid #e2e8f0' }}>Dominant standard</td>
+            </tr>
+            <tr style={{ background: '#f8fafc' }}>
+              <td style={{ padding: '9px 14px', border: '1px solid #e2e8f0', fontWeight: '700', color: '#0f172a' }}>json crate</td>
+              <td style={{ padding: '9px 14px', border: '1px solid #e2e8f0' }}>Moderate</td>
+              <td style={{ padding: '9px 14px', border: '1px solid #e2e8f0' }}>Good (no derive)</td>
+              <td style={{ padding: '9px 14px', border: '1px solid #e2e8f0' }}>Basic value parsing</td>
+              <td style={{ padding: '9px 14px', border: '1px solid #e2e8f0' }}>Minimal, niche use</td>
+            </tr>
+            <tr style={{ background: '#ffffff' }}>
+              <td style={{ padding: '9px 14px', border: '1px solid #e2e8f0', fontWeight: '700', color: '#0f172a' }}>simd-json</td>
+              <td style={{ padding: '9px 14px', border: '1px solid #e2e8f0' }}>Fastest (SIMD)</td>
+              <td style={{ padding: '9px 14px', border: '1px solid #e2e8f0' }}>Good (serde compat)</td>
+              <td style={{ padding: '9px 14px', border: '1px solid #e2e8f0' }}>Mostly serde_json API</td>
+              <td style={{ padding: '9px 14px', border: '1px solid #e2e8f0' }}>Growing, x86/x64 only</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        For most Rust projects, <strong>serde_json</strong> is the right choice. It integrates with the entire Rust ecosystem — Axum, Actix-web, Reqwest, SQLx, and hundreds of other crates all use Serde as their serialization layer.
+      </p>
 
-  /* ---------- Key Takeaways ---------- */
-  const takeaways = [
-    'Add serde = { version = "1", features = ["derive"] } and serde_json to Cargo.toml',
-    '#[derive(Serialize, Deserialize)] enables automatic JSON conversion for structs',
-    '#[serde(rename = "field_name")] maps JSON keys to Rust field names',
-    '#[serde(rename_all = "camelCase")] converts all fields to/from camelCase automatically',
-    'Option<T> handles null/missing JSON fields — None serializes as null with #[serde(skip_serializing_if = "Option::is_none")]',
-    'Enums with #[serde(tag = "type")] create internally tagged JSON discriminated unions',
-    'serde_json::Value handles completely dynamic or unknown JSON structure',
-  ];
-
-  /* ---------- Code snippets ---------- */
-  const cargoTomlCode = `[dependencies]
+      {/* Section 2: Basic Serde Setup */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: '700', marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
+        2. Basic Serde Setup
+      </h2>
+      <p>Start by adding the dependencies to your <code>Cargo.toml</code>:</p>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`[dependencies]
 serde = { version = "1", features = ["derive"] }
-serde_json = "1"`;
-
-  const basicStructCode = `use serde::{Deserialize, Serialize};
+serde_json = "1"`}</code></pre>
+      <p style={{ marginTop: '1rem' }}>
+        The <code>features = ["derive"]</code> flag enables the procedural macros. Now define a struct and derive both traits:
+      </p>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Serialize, Deserialize)]
 struct User {
@@ -198,30 +225,44 @@ struct User {
     name: String,
     email: String,
     age: u32,
+    active: bool,
 }
 
 fn main() -> Result<(), serde_json::Error> {
+    // Deserialize: JSON string -> Rust struct
     let json = r#"{
         "id": 1,
         "name": "Alice",
         "email": "alice@example.com",
-        "age": 30
+        "age": 30,
+        "active": true
     }"#;
 
-    // Deserialize: JSON -> Rust struct
     let user: User = serde_json::from_str(json)?;
-    println!("{:?}", user);
+    println!("Name: {}", user.name);
 
-    // Serialize: Rust struct -> JSON
+    // Serialize: Rust struct -> JSON string
     let json_out = serde_json::to_string_pretty(&user)?;
     println!("{}", json_out);
 
+    // from_slice works on bytes instead of &str
+    let bytes = json.as_bytes();
+    let user2: User = serde_json::from_slice(bytes)?;
+    println!("Age: {}", user2.age);
+
     Ok(())
-}`;
+}`}</code></pre>
 
-  const renameCode = `use serde::{Deserialize, Serialize};
+      {/* Section 3: Field Renaming and Attributes */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: '700', marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
+        3. Field Renaming and Attributes
+      </h2>
+      <p>
+        Serde provides a rich set of field-level and struct-level attributes for controlling serialization behavior:
+      </p>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`use serde::{Deserialize, Serialize};
 
-// rename_all converts every field to camelCase
+// rename_all: convert all fields to camelCase
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 struct ApiResponse {
@@ -231,47 +272,97 @@ struct ApiResponse {
     created_at: String, // JSON key: "createdAt"
 }
 
-// Individual field renaming
 #[derive(Debug, Serialize, Deserialize)]
 struct Product {
+    // Rename a single field
     #[serde(rename = "product_id")]
     id: u64,
 
-    #[serde(rename = "product_name")]
-    name: String,
-}`;
+    // Skip this field entirely (not serialized or deserialized)
+    #[serde(skip)]
+    internal_cache: Option<String>,
 
-  const optionCode = `use serde::{Deserialize, Serialize};
+    // Use Default::default() when field is absent from JSON
+    #[serde(default)]
+    discount: f64,
+
+    // Skip serializing if the value is None
+    #[serde(skip_serializing_if = "Option::is_none")]
+    coupon_code: Option<String>,
+
+    // Skip serializing if condition is met
+    #[serde(skip_serializing_if = "Vec::is_empty")]
+    tags: Vec<String>,
+}
+
+// Supported rename_all strategies:
+// "camelCase"          → userId
+// "PascalCase"         → UserId
+// "snake_case"         → user_id
+// "SCREAMING_SNAKE_CASE" → USER_ID
+// "kebab-case"         → user-id
+// "SCREAMING-KEBAB-CASE" → USER-ID`}</code></pre>
+
+      {/* Section 4: Optional and Default Fields */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: '700', marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
+        4. Optional and Default Fields
+      </h2>
+      <p>
+        Handling nullable and missing fields is one of the most common JSON parsing challenges. Serde provides several tools:
+      </p>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`use serde::{Deserialize, Serialize};
+
+fn default_page_size() -> usize { 20 }
+fn default_active() -> bool { true }
 
 #[derive(Debug, Serialize, Deserialize)]
 struct UserProfile {
     id: u64,
     name: String,
 
-    // None if field is absent or null
-    bio: Option<String>,
-
-    // Omit from output when None
-    #[serde(skip_serializing_if = "Option::is_none")]
+    // Nullable: field can be null or a string
+    // None serializes as JSON null
     avatar_url: Option<String>,
 
-    // Default to None if field absent
+    // Missing field → uses Default::default() → 0
     #[serde(default)]
-    phone: Option<String>,
+    login_count: u32,
+
+    // Missing field → calls default_page_size() → 20
+    #[serde(default = "default_page_size")]
+    page_size: usize,
+
+    // Missing or null → true
+    #[serde(default = "default_active")]
+    is_active: bool,
+
+    // Omit from serialized output when None
+    #[serde(skip_serializing_if = "Option::is_none")]
+    bio: Option<String>,
 }
 
-fn main() -> Result<(), serde_json::Error> {
-    let json = r#"{"id": 1, "name": "Alice", "bio": null}"#;
-    let profile: UserProfile = serde_json::from_str(json)?;
+// Difference: null vs absent
+// Option<T>: field present as null → Some? NO → None
+//            field absent          → None
+//            field present as value → Some(value)
+//
+// For truly three-state (absent / null / value):
+#[derive(Debug, Serialize, Deserialize)]
+struct Patch {
+    // None = absent (not updated), Some(None) = set to null, Some(Some(v)) = set value
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    email: Option<Option<String>>,
+}`}</code></pre>
 
-    assert!(profile.bio.is_none());       // null -> None
-    assert!(profile.avatar_url.is_none()); // absent -> None
-    assert!(profile.phone.is_none());      // default -> None
-
-    Ok(())
-}`;
-
-  const nestedCode = `use serde::{Deserialize, Serialize};
+      {/* Section 5: Nested Structs and Arrays */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: '700', marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
+        5. Nested Structs and Arrays
+      </h2>
+      <p>
+        Serde handles nested structures and arrays automatically through Rust&apos;s type system:
+      </p>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`use serde::{Deserialize, Serialize};
+use std::collections::HashMap;
 
 #[derive(Debug, Serialize, Deserialize)]
 struct Address {
@@ -292,10 +383,12 @@ struct Tag {
 struct BlogPost {
     id: u64,
     title: String,
-    author: Author,        // nested struct
-    tags: Vec<Tag>,        // array of structs
-    images: Vec<String>,   // array of strings
-    metadata: Option<PostMeta>, // optional nested
+    author: Author,               // nested struct
+    tags: Vec<Tag>,               // array of structs
+    images: Vec<String>,          // array of strings
+    metadata: Option<PostMeta>,   // optional nested
+    // HashMap for dynamic keys: {"en": "Hello", "es": "Hola"}
+    translations: HashMap<String, String>,
 }
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -309,12 +402,31 @@ struct Author {
 struct PostMeta {
     views: u64,
     likes: u32,
-}`;
+}
 
-  const enumCode = `use serde::{Deserialize, Serialize};
+// Nested arrays
+#[derive(Debug, Serialize, Deserialize)]
+struct Matrix {
+    data: Vec<Vec<f64>>,           // [[1.0, 2.0], [3.0, 4.0]]
+}
 
-// Default: externally tagged
-// JSON: {"Circle": {"radius": 1.0}}
+// HashMap with struct values for dynamic objects
+#[derive(Debug, Serialize, Deserialize)]
+struct Config {
+    settings: HashMap<String, serde_json::Value>,  // arbitrary values
+}`}</code></pre>
+
+      {/* Section 6: Enums with Serde */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: '700', marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
+        6. Enums with Serde
+      </h2>
+      <p>
+        Serde supports four enum representation modes, giving you full control over how discriminated unions appear in JSON:
+      </p>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`use serde::{Deserialize, Serialize};
+
+// 1. External tagging (default)
+// {"Circle": {"radius": 1.0}}
 #[derive(Debug, Serialize, Deserialize)]
 enum Shape {
     Circle { radius: f64 },
@@ -322,16 +434,16 @@ enum Shape {
     Point,
 }
 
-// Internally tagged: {"type": "Circle", "radius": 1.0}
+// 2. Internal tagging: {"type": "Login", "user_id": 42}
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(tag = "type")]
 enum Event {
     Login { user_id: u64, timestamp: String },
     Logout { user_id: u64 },
-    Purchase { user_id: u64, amount: f64, item_id: u64 },
+    Purchase { user_id: u64, amount: f64 },
 }
 
-// Adjacently tagged: {"type": "Login", "data": {...}}
+// 3. Adjacent tagging: {"type": "Email", "data": {...}}
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(tag = "type", content = "data")]
 enum Notification {
@@ -339,127 +451,164 @@ enum Notification {
     Push { device_token: String, message: String },
 }
 
-// Untagged: tries each variant in order
+// 4. Untagged: tries each variant in order
+// Useful for union types from external APIs
 #[derive(Debug, Serialize, Deserialize)]
 #[serde(untagged)]
 enum StringOrNumber {
-    Str(String),
-    Num(f64),
-}`;
+    Text(String),
+    Integer(i64),
+    Float(f64),
+}
 
-  const customSerdeCode = `use serde::{Deserialize, Deserializer, Serialize, Serializer};
+// Simple string enums map to JSON strings
+#[derive(Debug, Serialize, Deserialize)]
+#[serde(rename_all = "lowercase")]
+enum Status {
+    Active,    // "active"
+    Inactive,  // "inactive"
+    Pending,   // "pending"
+}`}</code></pre>
+
+      {/* Section 7: Custom Deserialize */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: '700', marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
+        7. Custom Deserialize with deserialize_with
+      </h2>
+      <p>
+        For special types like dates, use <code>deserialize_with</code> and <code>serialize_with</code> to plug in custom functions:
+      </p>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`use serde::{Deserialize, Deserializer, Serialize, Serializer};
+use serde::de::Error;
+
+// Custom date handling with chrono
+// Cargo.toml: chrono = { version = "0.4", features = ["serde"] }
+use chrono::{DateTime, Utc, NaiveDate};
+
+fn deserialize_date<'de, D>(deserializer: D) -> Result<NaiveDate, D::Error>
+where
+    D: Deserializer<'de>,
+{
+    let s = String::deserialize(deserializer)?;
+    NaiveDate::parse_from_str(&s, "%Y-%m-%d").map_err(D::Error::custom)
+}
+
+fn serialize_date<S>(date: &NaiveDate, serializer: S) -> Result<S::Ok, S::Error>
+where
+    S: Serializer,
+{
+    serializer.serialize_str(&date.format("%Y-%m-%d").to_string())
+}
+
+#[derive(Debug, Serialize, Deserialize)]
+struct Event {
+    name: String,
+
+    #[serde(
+        deserialize_with = "deserialize_date",
+        serialize_with = "serialize_date"
+    )]
+    date: NaiveDate,
+
+    // chrono's built-in serde support handles RFC 3339
+    created_at: DateTime<Utc>,
+}
+
+// Implementing Deserialize manually for complex cases
+use serde::de::{self, Visitor, MapAccess};
 use std::fmt;
 
-// Custom serialize for a type that represents millisecond timestamps
-#[derive(Debug)]
-struct Timestamp(u64);
+struct PointVisitor;
 
-impl Serialize for Timestamp {
-    fn serialize<S: Serializer>(&self, s: S) -> Result<S::Ok, S::Error> {
-        s.serialize_u64(self.0)
-    }
-}
+impl<'de> Visitor<'de> for PointVisitor {
+    type Value = (f64, f64);
 
-impl<'de> Deserialize<'de> for Timestamp {
-    fn deserialize<D: Deserializer<'de>>(d: D) -> Result<Self, D::Error> {
-        let ms = u64::deserialize(d)?;
-        Ok(Timestamp(ms))
-    }
-}
-
-// Using #[serde(with = "...")] for inline custom logic
-mod unix_ms {
-    use serde::{Deserializer, Serializer};
-
-    pub fn serialize<S: Serializer>(ts: &u64, s: S) -> Result<S::Ok, S::Error> {
-        s.serialize_u64(*ts)
+    fn expecting(&self, formatter: &mut fmt::Formatter) -> fmt::Result {
+        formatter.write_str("an array [x, y] or object {x, y}")
     }
 
-    pub fn deserialize<'de, D: Deserializer<'de>>(d: D) -> Result<u64, D::Error> {
-        use serde::Deserialize;
-        u64::deserialize(d)
+    fn visit_seq<A>(self, mut seq: A) -> Result<Self::Value, A::Error>
+    where
+        A: serde::de::SeqAccess<'de>,
+    {
+        let x = seq.next_element()?.ok_or_else(|| de::Error::invalid_length(0, &self))?;
+        let y = seq.next_element()?.ok_or_else(|| de::Error::invalid_length(1, &self))?;
+        Ok((x, y))
     }
-}
+}`}</code></pre>
 
-#[derive(Serialize, Deserialize)]
-struct Event {
-    #[serde(with = "unix_ms")]
-    timestamp: u64,
-    name: String,
-}`;
+      {/* Section 8: serde_json::Value */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: '700', marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
+        8. serde_json::Value for Dynamic JSON
+      </h2>
+      <p>
+        When the JSON structure is unknown at compile time, use <code>serde_json::Value</code>:
+      </p>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`use serde_json::{Value, json};
 
-  const flattenCode = `use serde::{Deserialize, Serialize};
-use serde_json::Value;
-use std::collections::HashMap;
+fn process_dynamic_json(json_str: &str) -> Result<(), serde_json::Error> {
+    let v: Value = serde_json::from_str(json_str)?;
 
-// #[serde(flatten)] inlines the nested struct fields
-#[derive(Debug, Serialize, Deserialize)]
-struct Pagination {
-    page: u32,
-    per_page: u32,
-    total: u64,
-}
+    // Navigate with bracket indexing (returns &Value::Null if missing)
+    let name = &v["user"]["name"];
+    println!("{}", name); // "Alice" or null
 
-#[derive(Debug, Serialize, Deserialize)]
-struct UsersResponse {
-    users: Vec<User>,
+    // Type-safe access with as_ methods
+    if let Some(id) = v["user"]["id"].as_i64() {
+        println!("ID: {}", id);
+    }
+    if let Some(email) = v["user"]["email"].as_str() {
+        println!("Email: {}", email);
+    }
+    if let Some(active) = v["user"]["active"].as_bool() {
+        println!("Active: {}", active);
+    }
 
-    // Inlines: {"page": 1, "per_page": 20, "total": 100, "users": [...]}
-    #[serde(flatten)]
-    pagination: Pagination,
-}
+    // Safer access with get()
+    if let Some(user) = v.get("user") {
+        if let Some(tags) = user.get("tags") {
+            if let Some(arr) = tags.as_array() {
+                for tag in arr {
+                    println!("Tag: {}", tag.as_str().unwrap_or("unknown"));
+                }
+            }
+        }
+    }
 
-// Capture unknown extra fields
-#[derive(Debug, Serialize, Deserialize)]
-struct ExtensibleConfig {
-    name: String,
-    version: u32,
+    // Build JSON with the json! macro
+    let response = json!({
+        "status": "ok",
+        "count": 42,
+        "items": ["a", "b", "c"],
+        "meta": {
+            "page": 1,
+            "per_page": 20
+        }
+    });
+    println!("{}", serde_json::to_string_pretty(&response)?);
 
-    // All unrecognized fields go here
-    #[serde(flatten)]
-    extra: HashMap<String, Value>,
-}
-
-#[derive(Debug, Serialize, Deserialize)]
-struct User {
-    id: u64,
-    name: String,
-}`;
-
-  const defaultCode = `use serde::{Deserialize, Serialize};
-
-fn default_page_size() -> usize { 20 }
-fn default_enabled() -> bool { true }
-fn default_role() -> String { "viewer".to_string() }
-
-#[derive(Debug, Deserialize)]
-struct QueryParams {
-    // Uses Default::default() (0 for numbers)
-    #[serde(default)]
-    page: usize,
-
-    // Uses custom default function
-    #[serde(default = "default_page_size")]
-    per_page: usize,
-
-    #[serde(default = "default_enabled")]
-    enabled: bool,
-
-    #[serde(default = "default_role")]
-    role: String,
-}
-
-fn main() -> Result<(), serde_json::Error> {
-    // {} — all fields missing, defaults apply
-    let params: QueryParams = serde_json::from_str("{}")?;
-    assert_eq!(params.page, 0);
-    assert_eq!(params.per_page, 20);
-    assert_eq!(params.enabled, true);
-    assert_eq!(params.role, "viewer");
     Ok(())
-}`;
+}
 
-  const errorHandlingCode = `use serde::Deserialize;
+// Mix: typed struct with a dynamic field
+use serde::{Deserialize, Serialize};
+
+#[derive(Debug, Serialize, Deserialize)]
+struct ApiResponse {
+    status: String,
+    code: u32,
+    // This field can be any JSON value
+    data: Value,
+}`}</code></pre>
+
+      {/* Section 9: Error Handling */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: '700', marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
+        9. Error Handling
+      </h2>
+      <p>
+        serde_json returns a <code>serde_json::Error</code> which tells you what went wrong and where:
+      </p>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`use serde::{Deserialize, Serialize};
+use serde_json::Error;
 
 #[derive(Debug, Deserialize)]
 struct Config {
@@ -468,33 +617,110 @@ struct Config {
     debug: bool,
 }
 
-fn load_config(json: &str) -> Result<Config, serde_json::Error> {
-    serde_json::from_str(json)
+fn parse_config(input: &str) -> Result<Config, Error> {
+    // from_str: parse &str
+    serde_json::from_str(input)
+}
+
+fn parse_config_bytes(input: &[u8]) -> Result<Config, Error> {
+    // from_slice: parse &[u8] (avoids UTF-8 validation overhead)
+    serde_json::from_slice(input)
+}
+
+fn parse_config_reader<R: std::io::Read>(reader: R) -> Result<Config, Error> {
+    // from_reader: streaming parse (ideal for files/network)
+    serde_json::from_reader(reader)
 }
 
 fn main() {
-    match load_config(r#"{"host": "localhost", "port": 8080, "debug": true}"#) {
-        Ok(config) => println!("Config loaded: {:?}", config),
+    let bad_json = r#"{"host": "localhost", "port": "not-a-number"}"#;
+
+    match serde_json::from_str::<Config>(bad_json) {
+        Ok(config) => println!("Parsed: {:?}", config),
         Err(e) => {
             eprintln!("Parse error: {}", e);
-            // e.classify() -> Category::Data | Syntax | Io | Eof
-            // e.line() / e.column() for position in input
-            eprintln!("Error category: {:?}", e.classify());
+            eprintln!("Line: {}, Column: {}", e.line(), e.column());
+            // Check error category
+            if e.is_data() {
+                eprintln!("Type mismatch or constraint violation");
+            } else if e.is_syntax() {
+                eprintln!("Invalid JSON syntax");
+            } else if e.is_eof() {
+                eprintln!("Unexpected end of input");
+            }
         }
     }
 
-    // Type mismatch error
-    match load_config(r#"{"host": 123, "port": 8080, "debug": true}"#) {
-        Ok(_) => unreachable!(),
-        Err(e) => eprintln!("Type error at line {}: {}", e.line(), e),
-    }
-}`;
+    // Use anyhow or thiserror in production for better error propagation
+    // anyhow::Result<Config> = serde_json::from_str(json).context("parsing config")?;
+}`}</code></pre>
 
-  const axumCode = `use axum::{
+      {/* Section 10: Performance Tips */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: '700', marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
+        10. Performance Tips
+      </h2>
+      <p>
+        Serde is already very fast, but these techniques maximize throughput for performance-critical paths:
+      </p>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// 1. Use from_reader for large files — avoids loading everything into memory
+use std::fs::File;
+use std::io::BufReader;
+
+fn load_large_json<T: serde::de::DeserializeOwned>(path: &str) -> serde_json::Result<T> {
+    let file = File::open(path)?;
+    let reader = BufReader::new(file);  // BufReader is crucial for performance
+    serde_json::from_reader(reader)
+}
+
+// 2. simd-json for maximum throughput (x86/ARM SIMD acceleration)
+// Cargo.toml: simd-json = { version = "0.13", features = ["serde_impl"] }
+// simd-json requires &mut [u8] (modifies buffer in place)
+// use simd_json;
+// let mut buffer = json_bytes.to_vec();
+// let value: MyStruct = simd_json::from_slice(&mut buffer)?;
+
+// 3. Avoid serde_json::Value when struct type is known
+// Value allocates a heap Map<String, Value> — much slower than typed parsing
+// BAD:
+// let v: Value = serde_json::from_str(json)?;
+// let name = v["name"].as_str();
+// GOOD:
+// let user: User = serde_json::from_str(json)?;
+// let name = &user.name;
+
+// 4. Use &str instead of String for zero-copy deserialization
+// The lifetime is tied to the input JSON string
+use serde::Deserialize;
+
+#[derive(Debug, Deserialize)]
+struct ZeroCopy<'a> {
+    #[serde(borrow)]
+    name: &'a str,    // No allocation — borrows from input
+    #[serde(borrow)]
+    email: &'a str,
+}
+
+// 5. Serialize to writer directly instead of String
+fn write_json_to_writer<W: std::io::Write>(
+    value: &impl serde::Serialize,
+    writer: W,
+) -> serde_json::Result<()> {
+    serde_json::to_writer(writer, value)
+    // or serde_json::to_writer_pretty(writer, value)
+}`}</code></pre>
+
+      {/* Section 11: Axum/Actix Integration */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: '700', marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
+        11. Axum and Actix-web Integration
+      </h2>
+      <p>
+        Both major Rust web frameworks use serde_json under the hood, making JSON handling seamless:
+      </p>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// === Axum ===
+// Cargo.toml: axum = { version = "0.7", features = ["json"] }
+use axum::{
     extract::Json,
-    http::StatusCode,
-    response::IntoResponse,
-    routing::post,
+    routing::{get, post},
     Router,
 };
 use serde::{Deserialize, Serialize};
@@ -503,499 +729,178 @@ use serde::{Deserialize, Serialize};
 struct CreateUserRequest {
     name: String,
     email: String,
-    role: Option<String>,
 }
 
 #[derive(Debug, Serialize)]
-struct CreateUserResponse {
+struct UserResponse {
     id: u64,
     name: String,
     email: String,
+    created_at: String,
 }
 
+// Json extractor deserializes body; Json return serializes response
 async fn create_user(
     Json(payload): Json<CreateUserRequest>,
-) -> impl IntoResponse {
-    // serde_json automatically parsed the request body
-    println!("Creating user: {:?}", payload);
-
-    let response = CreateUserResponse {
-        id: 42,
+) -> Json<UserResponse> {
+    Json(UserResponse {
+        id: 1,
         name: payload.name,
         email: payload.email,
-    };
-
-    // Json() serializes the struct to JSON response
-    (StatusCode::CREATED, Json(response))
-}
-
-#[tokio::main]
-async fn main() {
-    let app = Router::new().route("/users", post(create_user));
-    let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();
-    axum::serve(listener, app).await.unwrap();
-}`;
-
-  const actixCode = `use actix_web::{post, web, App, HttpResponse, HttpServer, Responder};
-use serde::{Deserialize, Serialize};
-
-#[derive(Debug, Deserialize)]
-struct LoginRequest {
-    username: String,
-    password: String,
-}
-
-#[derive(Debug, Serialize)]
-struct LoginResponse {
-    token: String,
-    expires_in: u64,
-}
-
-#[post("/login")]
-async fn login(req: web::Json<LoginRequest>) -> impl Responder {
-    println!("Login attempt: {}", req.username);
-
-    HttpResponse::Ok().json(LoginResponse {
-        token: "jwt_token_here".to_string(),
-        expires_in: 3600,
+        created_at: "2026-02-27T00:00:00Z".to_string(),
     })
 }
 
-#[actix_web::main]
-async fn main() -> std::io::Result<()> {
-    HttpServer::new(|| App::new().service(login))
-        .bind("127.0.0.1:8080")?
-        .run()
-        .await
-}`;
+// Error handling with axum
+use axum::http::StatusCode;
+use axum::response::{IntoResponse, Response};
 
-  const dynamicValueCode = `use serde_json::{json, Value};
-
-fn main() -> Result<(), serde_json::Error> {
-    // Construct JSON dynamically
-    let v: Value = json!({
-        "name": "Alice",
-        "scores": [98, 95, 100],
-        "metadata": null
-    });
-
-    // Access fields
-    println!("{}", v["name"].as_str().unwrap_or(""));
-    println!("{}", v["scores"][0].as_i64().unwrap_or(0));
-
-    // Check type
-    if v["metadata"].is_null() {
-        println!("metadata is null");
+async fn safe_create_user(
+    Json(payload): Json<CreateUserRequest>,
+) -> Result<Json<UserResponse>, (StatusCode, String)> {
+    if payload.email.is_empty() {
+        return Err((StatusCode::BAD_REQUEST, "Email is required".into()));
     }
-
-    // Iterate an object
-    if let Some(obj) = v.as_object() {
-        for (key, val) in obj {
-            println!("{}: {}", key, val);
-        }
-    }
-
-    // Parse unknown JSON
-    let raw = r#"{"type": "unknown", "payload": [1, 2, 3]}"#;
-    let parsed: Value = serde_json::from_str(raw)?;
-    println!("{:?}", parsed);
-
-    Ok(())
-}`;
-
-  const pitfallsCode = `// Pitfall 1: Integer overflow — JSON numbers can be very large
-// Use i64/u64 instead of i32/u32 for unknown data
-#[derive(Deserialize)]
-struct BadStruct {
-    // id: i32, // WRONG: may overflow for large IDs
-    id: i64,    // CORRECT: handles any safe integer
-
-    // count: u32, // WRONG: if JSON sends -1 or large number
-    count: i64,   // CORRECT: handles negative and large values
+    Ok(Json(UserResponse {
+        id: 42,
+        name: payload.name,
+        email: payload.email,
+        created_at: "2026-02-27T00:00:00Z".to_string(),
+    }))
 }
 
-// Pitfall 2: Float precision — JSON numbers are IEEE 754
-// Use f64 (not f32) and be careful with financial data
-#[derive(Deserialize)]
-struct PriceWrong {
-    // price: f32, // WRONG: precision loss
-    price: f64,   // BETTER: still imprecise for money
-    // For financial data, deserialize as String then use Decimal crate
+// === Actix-web ===
+// Cargo.toml: actix-web = "4"
+use actix_web::{web, App, HttpResponse, HttpServer, Responder};
+
+async fn actix_create_user(body: web::Json<CreateUserRequest>) -> impl Responder {
+    let response = UserResponse {
+        id: 1,
+        name: body.name.clone(),
+        email: body.email.clone(),
+        created_at: "2026-02-27T00:00:00Z".to_string(),
+    };
+    HttpResponse::Created().json(response)
 }
 
-// Pitfall 3: camelCase vs snake_case mismatch
-// JSON API returns "firstName" but Rust field is "first_name"
-#[derive(Deserialize)]
-// Missing: #[serde(rename_all = "camelCase")]
-struct WontParse {
-    first_name: String, // Won't match "firstName" without rename_all
+// Actix-web: query parameters from JSON-like structs
+use actix_web::web::Query;
+
+#[derive(Debug, Deserialize)]
+struct PaginationQuery {
+    page: Option<u32>,
+    per_page: Option<u32>,
 }
 
-// Pitfall 4: Unknown variant causes error by default
-#[derive(Deserialize)]
-enum Status { Active, Inactive }
-// If JSON sends "Pending" -> error!
-// Fix: #[serde(other)] on a catch-all variant
-#[derive(Deserialize)]
-enum StatusFixed {
-    Active,
-    Inactive,
-    #[serde(other)]
-    Unknown,
-}`;
+async fn list_users(query: Query<PaginationQuery>) -> impl Responder {
+    let page = query.page.unwrap_or(1);
+    let per_page = query.per_page.unwrap_or(20);
+    HttpResponse::Ok().json(serde_json::json!({
+        "page": page,
+        "per_page": per_page,
+        "data": []
+    }))
+}`}</code></pre>
 
-  return (
-    <article style={{ maxWidth: '860px', margin: '0 auto', padding: '0 16px', fontFamily: 'system-ui, -apple-system, sans-serif', color: '#1e293b', lineHeight: 1.7 }}>
+      {/* Section 12: Common Pitfalls */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: '700', marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
+        12. Common Pitfalls
+      </h2>
+      <p>Watch out for these issues when working with serde_json:</p>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`use serde::{Deserialize, Serialize};
+use std::borrow::Cow;
 
-      {/* JSON-LD FAQ Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+// PITFALL 1: Ownership vs borrowing — &str in structs requires lifetime
+// This will NOT compile without a lifetime:
+// struct Bad { name: &str }  // error: missing lifetime specifier
 
-      {/* Title */}
-      <h1 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '12px', color: '#0f172a', lineHeight: 1.25 }}>
-        JSON to Rust Struct: Complete Guide with serde_json and serde Derive
-      </h1>
-      <p style={{ color: '#64748b', fontSize: '0.95rem', marginBottom: '28px' }}>
-        Updated February 2026 &mdash; covers serde 1.x, serde_json 1.x, Axum 0.7, and Actix-Web 4
-      </p>
+// Use String (owned) for most cases:
+#[derive(Debug, Deserialize)]
+struct OwnedVersion {
+    name: String,  // Always works
+}
 
-      {/* TL;DR */}
-      <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: '10px', padding: '20px 24px', marginBottom: '32px' }}>
-        <strong style={{ color: '#0369a1', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>TL;DR</strong>
-        <p style={{ margin: '8px 0 0', color: '#0c4a6e', fontSize: '1rem' }}>{tx.tldr}</p>
-      </div>
+// Use &str with lifetime for zero-copy (advanced):
+#[derive(Debug, Deserialize)]
+struct BorrowedVersion<'a> {
+    #[serde(borrow)]
+    name: &'a str,  // Borrows from input, input must outlive struct
+}
+
+// PITFALL 2: Cow<str> — flexible owned or borrowed
+#[derive(Debug, Deserialize, Serialize)]
+struct FlexibleStruct<'a> {
+    #[serde(borrow)]
+    name: Cow<'a, str>,  // Borrows if possible, owns if needed
+}
+
+// PITFALL 3: Integer overflow from JSON numbers
+// JSON has no integer size constraints; Rust types do
+// This panics on overflow in debug mode:
+#[derive(Debug, Deserialize)]
+struct OverflowRisk {
+    count: u8,  // Fails if JSON has count: 300
+}
+
+// Use larger types or validate:
+#[derive(Debug, Deserialize)]
+struct SafeCount {
+    count: u64,  // Safe for all positive JSON integers
+}
+
+// PITFALL 4: Recursive types must use Box<T>
+// This will NOT compile (infinite size):
+// struct Node { children: Vec<Node> }
+
+// Correct: use Box for recursion
+#[derive(Debug, Serialize, Deserialize)]
+struct TreeNode {
+    value: i32,
+    children: Vec<Box<TreeNode>>,  // Box breaks infinite size
+}
+
+// PITFALL 5: Missing serde import causes cryptic errors
+// Every file using #[derive(Serialize, Deserialize)] needs:
+use serde::{Serialize as _Serialize, Deserialize as _Deserialize};
+// Or: use serde::*; (less idiomatic but explicit)
+
+// PITFALL 6: f64 precision for large integers
+// JSON: {"id": 9007199254740993}
+// f64 cannot represent this exactly — use i64 or u64
+#[derive(Debug, Deserialize)]
+struct Precise {
+    id: u64,      // Correct: exact integer
+    score: f64,   // OK: floating-point precision is expected
+}`}</code></pre>
 
       {/* Key Takeaways */}
-      <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '10px', padding: '20px 24px', marginBottom: '36px' }}>
-        <strong style={{ color: '#334155', fontSize: '1rem' }}>{tx.takeawaysTitle}</strong>
-        <ul style={{ margin: '12px 0 0', paddingLeft: '20px', color: '#475569' }}>
-          {takeaways.map((item, i) => (
-            <li key={i} style={{ marginBottom: '6px' }}>{item}</li>
-          ))}
+      <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '1rem', marginTop: '2rem' }}>
+        <h2 style={{ fontSize: '1.25rem', fontWeight: '700', marginTop: '0', marginBottom: '0.75rem', color: '#1e293b' }}>
+          Key Takeaways
+        </h2>
+        <ul style={{ margin: '0', paddingLeft: '1.25rem', color: '#475569' }}>
+          <li style={{ marginBottom: '0.5rem' }}>Add <code>serde = {'{ version: "1", features: ["derive"] }'}</code> and <code>serde_json = "1"</code> to Cargo.toml</li>
+          <li style={{ marginBottom: '0.5rem' }}><code>#[derive(Serialize, Deserialize)]</code> generates all JSON parsing/writing code at compile time</li>
+          <li style={{ marginBottom: '0.5rem' }}><code>#[serde(rename_all = "camelCase")]</code> maps all snake_case Rust fields to camelCase JSON keys</li>
+          <li style={{ marginBottom: '0.5rem' }}><code>Option{'<T>'}</code> handles null/missing fields — <code>#[serde(skip_serializing_if = "Option::is_none")]</code> omits None in output</li>
+          <li style={{ marginBottom: '0.5rem' }}>Use <code>#[serde(tag = "type")]</code> for internally tagged enums (discriminated unions)</li>
+          <li style={{ marginBottom: '0.5rem' }}><code>serde_json::Value</code> handles fully dynamic JSON at the cost of heap allocations</li>
+          <li style={{ marginBottom: '0.5rem' }}>Use <code>Box{'<T>'}</code> for recursive struct types and <code>BufReader</code> + <code>from_reader</code> for large files</li>
+          <li style={{ marginBottom: '0' }}>Axum&apos;s <code>Json{'<T>'}</code> extractor and Actix-web&apos;s <code>web::Json{'<T>'}</code> both use serde_json transparently</li>
         </ul>
       </div>
 
-      {/* Try Tool CTA */}
-      <p style={{ marginBottom: '36px' }}>
-        <Link href={toolLink} style={{ display: 'inline-block', background: '#0ea5e9', color: '#fff', padding: '10px 22px', borderRadius: '8px', textDecoration: 'none', fontWeight: 600, fontSize: '0.97rem' }}>
-          {tx.tryTool}
-        </Link>
-      </p>
-
-      {/* Section 1: Why Rust Structs for JSON */}
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0f172a', marginTop: '40px', marginBottom: '16px', borderBottom: '2px solid #e2e8f0', paddingBottom: '8px' }}>
-        {tx.whyTitle}
-      </h2>
-      <p>Rust is a statically typed systems language — working with untyped <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>serde_json::Value</code> for every JSON field leads to verbose runtime checks and potential panics. Generating typed structs from JSON gives you compile-time safety, IDE autocomplete, zero-cost abstractions, and significantly cleaner code.</p>
-      <p>The <strong>serde</strong> ecosystem is Rust&apos;s gold standard for serialization. It works through Rust&apos;s procedural macro system — <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>#[derive(Serialize, Deserialize)]</code> generates all the boilerplate at compile time, producing zero-overhead serialization code. No reflection, no runtime type lookup — just fast, safe, idiomatic Rust.</p>
-      <p>Key advantages of typed Rust structs over dynamic <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>Value</code>:</p>
-      <ul style={{ paddingLeft: '24px', color: '#334155' }}>
-        <li style={{ marginBottom: '8px' }}><strong>Compile-time safety</strong> — missing or wrongly typed fields are caught before runtime</li>
-        <li style={{ marginBottom: '8px' }}><strong>IDE support</strong> — full autocomplete, go-to-definition, and rename refactoring</li>
-        <li style={{ marginBottom: '8px' }}><strong>Performance</strong> — no HashMap allocation, no runtime type matching</li>
-        <li style={{ marginBottom: '8px' }}><strong>Self-documenting</strong> — struct definitions serve as living documentation of the API shape</li>
-        <li style={{ marginBottom: '8px' }}><strong>Exhaustive pattern matching</strong> — enums with serde give you type-safe discriminated unions</li>
-      </ul>
-
-      {/* Section 2: Cargo.toml Setup */}
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0f172a', marginTop: '40px', marginBottom: '16px', borderBottom: '2px solid #e2e8f0', paddingBottom: '8px' }}>
-        Cargo.toml Setup: serde and serde_json
-      </h2>
-      <p>Add serde and serde_json to your <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>Cargo.toml</code>. The critical detail is enabling the <strong>derive</strong> feature for serde — this unlocks the proc-macro derive attributes:</p>
-      <pre style={{ background: '#0f172a', color: '#e2e8f0', padding: '20px', borderRadius: '10px', overflowX: 'auto', fontSize: '0.87rem', lineHeight: 1.6, marginBottom: '20px' }}>
-        <code>{cargoTomlCode}</code>
-      </pre>
-      <p>You can also add these optional but widely used companion crates:</p>
-      <pre style={{ background: '#0f172a', color: '#e2e8f0', padding: '20px', borderRadius: '10px', overflowX: 'auto', fontSize: '0.87rem', lineHeight: 1.6, marginBottom: '20px' }}>
-        <code>{`[dependencies]
-serde = { version = "1", features = ["derive"] }
-serde_json = "1"
-
-# For date/time serialization
-chrono = { version = "0.4", features = ["serde"] }
-
-# For decimal/financial values
-rust_decimal = { version = "1", features = ["serde"] }
-
-# For UUID serialization
-uuid = { version = "1", features = ["serde", "v4"] }`}</code>
-      </pre>
-
-      {/* Section 3: Basic Struct with serde */}
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0f172a', marginTop: '40px', marginBottom: '16px', borderBottom: '2px solid #e2e8f0', paddingBottom: '8px' }}>
-        Basic Struct with serde Derive
-      </h2>
-      <p>The simplest usage: annotate your struct with <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>#[derive(Serialize, Deserialize)]</code> and serde handles the rest. JSON field names must match Rust field names exactly (both snake_case by default):</p>
-      <pre style={{ background: '#0f172a', color: '#e2e8f0', padding: '20px', borderRadius: '10px', overflowX: 'auto', fontSize: '0.87rem', lineHeight: 1.6, marginBottom: '20px' }}>
-        <code>{basicStructCode}</code>
-      </pre>
-      <p>Key functions:</p>
-      <ul style={{ paddingLeft: '24px', color: '#334155' }}>
-        <li style={{ marginBottom: '6px' }}><code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>serde_json::from_str(&amp;str)</code> — deserialize JSON string to Rust type</li>
-        <li style={{ marginBottom: '6px' }}><code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>serde_json::from_slice(&amp;[u8])</code> — deserialize from byte slice</li>
-        <li style={{ marginBottom: '6px' }}><code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>serde_json::from_reader(R)</code> — deserialize from any Read implementor</li>
-        <li style={{ marginBottom: '6px' }}><code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>serde_json::to_string(&amp;T)</code> — serialize to compact JSON string</li>
-        <li style={{ marginBottom: '6px' }}><code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>serde_json::to_string_pretty(&amp;T)</code> — serialize to indented JSON string</li>
-        <li style={{ marginBottom: '6px' }}><code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>serde_json::to_vec(&amp;T)</code> — serialize to byte vector</li>
-      </ul>
-
-      {/* Section 4: Field Renaming */}
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0f172a', marginTop: '40px', marginBottom: '16px', borderBottom: '2px solid #e2e8f0', paddingBottom: '8px' }}>
-        Field Renaming: #[serde(rename)] and rename_all
-      </h2>
-      <p>Rust conventionally uses <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>snake_case</code> for struct fields, but JavaScript APIs typically use <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>camelCase</code>. serde provides two mechanisms to bridge this gap:</p>
-      <pre style={{ background: '#0f172a', color: '#e2e8f0', padding: '20px', borderRadius: '10px', overflowX: 'auto', fontSize: '0.87rem', lineHeight: 1.6, marginBottom: '20px' }}>
-        <code>{renameCode}</code>
-      </pre>
-      <p>Available <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>rename_all</code> strategies:</p>
-      <div style={{ overflowX: 'auto', marginBottom: '20px' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem' }}>
-          <thead>
-            <tr style={{ background: '#f1f5f9' }}>
-              <th style={{ padding: '10px 14px', textAlign: 'left', border: '1px solid #e2e8f0' }}>Strategy</th>
-              <th style={{ padding: '10px 14px', textAlign: 'left', border: '1px solid #e2e8f0' }}>Rust field</th>
-              <th style={{ padding: '10px 14px', textAlign: 'left', border: '1px solid #e2e8f0' }}>JSON key</th>
-            </tr>
-          </thead>
-          <tbody>
-            {[
-              { s: 'camelCase', r: 'first_name', j: 'firstName' },
-              { s: 'PascalCase', r: 'first_name', j: 'FirstName' },
-              { s: 'snake_case', r: 'firstName', j: 'first_name' },
-              { s: 'SCREAMING_SNAKE_CASE', r: 'first_name', j: 'FIRST_NAME' },
-              { s: 'kebab-case', r: 'first_name', j: 'first-name' },
-            ].map(({ s, r, j }) => (
-              <tr key={s}>
-                <td style={{ padding: '10px 14px', border: '1px solid #e2e8f0' }}><code style={{ background: '#f1f5f9', padding: '2px 5px', borderRadius: '3px', fontSize: '0.85em' }}>{s}</code></td>
-                <td style={{ padding: '10px 14px', border: '1px solid #e2e8f0', fontFamily: 'monospace', fontSize: '0.87em' }}>{r}</td>
-                <td style={{ padding: '10px 14px', border: '1px solid #e2e8f0', fontFamily: 'monospace', fontSize: '0.87em' }}>&quot;{j}&quot;</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      {/* Section 5: Option<T> */}
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0f172a', marginTop: '40px', marginBottom: '16px', borderBottom: '2px solid #e2e8f0', paddingBottom: '8px' }}>
-        Optional and Nullable Fields with Option&lt;T&gt;
-      </h2>
-      <p>In Rust, <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>Option&lt;T&gt;</code> is the idiomatic way to handle nullable or absent JSON fields. serde maps <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>null</code> and missing fields to <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>None</code> by default:</p>
-      <pre style={{ background: '#0f172a', color: '#e2e8f0', padding: '20px', borderRadius: '10px', overflowX: 'auto', fontSize: '0.87rem', lineHeight: 1.6, marginBottom: '20px' }}>
-        <code>{optionCode}</code>
-      </pre>
-      <div style={{ background: '#fffbeb', border: '1px solid #fde68a', borderRadius: '8px', padding: '14px 18px', marginBottom: '20px', fontSize: '0.92rem', color: '#78350f' }}>
-        <strong>Note:</strong> By default, serde treats both <code style={{ background: '#fef3c7', padding: '2px 5px', borderRadius: '3px' }}>null</code> and absent fields as <code style={{ background: '#fef3c7', padding: '2px 5px', borderRadius: '3px' }}>None</code>. If you need to distinguish between null and absent, use <code style={{ background: '#fef3c7', padding: '2px 5px', borderRadius: '3px' }}>Option&lt;Option&lt;T&gt;&gt;</code> — outer <code>None</code> means absent, inner <code>None</code> means explicit null.
-      </div>
-
-      {/* Section 6: Nested Structs and Vectors */}
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0f172a', marginTop: '40px', marginBottom: '16px', borderBottom: '2px solid #e2e8f0', paddingBottom: '8px' }}>
-        Nested Structs and Vectors
-      </h2>
-      <p>serde handles arbitrary nesting automatically. Define separate struct types for nested objects and use <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>Vec&lt;T&gt;</code> for JSON arrays:</p>
-      <pre style={{ background: '#0f172a', color: '#e2e8f0', padding: '20px', borderRadius: '10px', overflowX: 'auto', fontSize: '0.87rem', lineHeight: 1.6, marginBottom: '20px' }}>
-        <code>{nestedCode}</code>
-      </pre>
-      <p>Type mappings for common JSON patterns:</p>
-      <ul style={{ paddingLeft: '24px', color: '#334155' }}>
-        <li style={{ marginBottom: '6px' }}>JSON object &#8594; Rust struct or <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>HashMap&lt;String, T&gt;</code></li>
-        <li style={{ marginBottom: '6px' }}>JSON array &#8594; <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>Vec&lt;T&gt;</code></li>
-        <li style={{ marginBottom: '6px' }}>JSON string &#8594; <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>String</code> or <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>&amp;str</code></li>
-        <li style={{ marginBottom: '6px' }}>JSON number (integer) &#8594; <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>i64</code>, <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>u64</code>, <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>u32</code>, etc.</li>
-        <li style={{ marginBottom: '6px' }}>JSON number (float) &#8594; <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>f64</code></li>
-        <li style={{ marginBottom: '6px' }}>JSON boolean &#8594; <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>bool</code></li>
-        <li style={{ marginBottom: '6px' }}>JSON null &#8594; <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>Option&lt;T&gt;</code> as <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>None</code></li>
-      </ul>
-
-      {/* Section 7: Enums */}
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0f172a', marginTop: '40px', marginBottom: '16px', borderBottom: '2px solid #e2e8f0', paddingBottom: '8px' }}>
-        Enums with serde: Tagged, Untagged, and Adjacently Tagged
-      </h2>
-      <p>Rust enums are perfect for discriminated unions — a powerful pattern for representing different shapes of JSON based on a type field. serde supports four tagging strategies:</p>
-      <pre style={{ background: '#0f172a', color: '#e2e8f0', padding: '20px', borderRadius: '10px', overflowX: 'auto', fontSize: '0.87rem', lineHeight: 1.6, marginBottom: '20px' }}>
-        <code>{enumCode}</code>
-      </pre>
-      <div style={{ overflowX: 'auto', marginBottom: '20px' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem' }}>
-          <thead>
-            <tr style={{ background: '#f1f5f9' }}>
-              <th style={{ padding: '10px 14px', textAlign: 'left', border: '1px solid #e2e8f0' }}>Strategy</th>
-              <th style={{ padding: '10px 14px', textAlign: 'left', border: '1px solid #e2e8f0' }}>Attribute</th>
-              <th style={{ padding: '10px 14px', textAlign: 'left', border: '1px solid #e2e8f0' }}>JSON Shape</th>
-            </tr>
-          </thead>
-          <tbody>
-            {[
-              { s: 'External', a: '(default)', j: '{"Circle": {"radius": 1.0}}' },
-              { s: 'Internal', a: '#[serde(tag = "type")]', j: '{"type": "Circle", "radius": 1.0}' },
-              { s: 'Adjacent', a: '#[serde(tag = "type", content = "data")]', j: '{"type": "Circle", "data": {"radius": 1.0}}' },
-              { s: 'Untagged', a: '#[serde(untagged)]', j: '{"radius": 1.0} (tries each variant)' },
-            ].map(({ s, a, j }) => (
-              <tr key={s}>
-                <td style={{ padding: '10px 14px', border: '1px solid #e2e8f0', fontWeight: 600 }}>{s}</td>
-                <td style={{ padding: '10px 14px', border: '1px solid #e2e8f0', fontFamily: 'monospace', fontSize: '0.82em' }}>{a}</td>
-                <td style={{ padding: '10px 14px', border: '1px solid #e2e8f0', fontFamily: 'monospace', fontSize: '0.82em' }}>{j}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      {/* Section 8: Custom Serialization */}
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0f172a', marginTop: '40px', marginBottom: '16px', borderBottom: '2px solid #e2e8f0', paddingBottom: '8px' }}>
-        Custom Serialization and Deserialization
-      </h2>
-      <p>When the default derive behavior is not sufficient — for example, custom date formats, encoded values, or special number handling — you can implement <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>Serialize</code>/<code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>Deserialize</code> manually or use the <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>#[serde(with)]</code> attribute for per-field customization:</p>
-      <pre style={{ background: '#0f172a', color: '#e2e8f0', padding: '20px', borderRadius: '10px', overflowX: 'auto', fontSize: '0.87rem', lineHeight: 1.6, marginBottom: '20px' }}>
-        <code>{customSerdeCode}</code>
-      </pre>
-      <p>The <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>#[serde(with = "module")]</code> approach is the cleanest for reusable field-level customization. serde also provides built-in modules:</p>
-      <ul style={{ paddingLeft: '24px', color: '#334155' }}>
-        <li style={{ marginBottom: '6px' }}><code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>serde::de::IgnoredAny</code> — skip/ignore a field value</li>
-        <li style={{ marginBottom: '6px' }}><code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>serde_json::RawValue</code> — capture raw JSON as a string</li>
-        <li style={{ marginBottom: '6px' }}><code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>chrono::serde</code> — date/time serialization (with chrono crate)</li>
-      </ul>
-
-      {/* Section 9: Flatten and Unknown Fields */}
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0f172a', marginTop: '40px', marginBottom: '16px', borderBottom: '2px solid #e2e8f0', paddingBottom: '8px' }}>
-        Handling Unknown Fields: #[serde(flatten)] and Value
-      </h2>
-      <p>When working with APIs that may return additional fields you haven&apos;t typed, or when you want to inline nested struct fields at the parent level, <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>#[serde(flatten)]</code> is the solution:</p>
-      <pre style={{ background: '#0f172a', color: '#e2e8f0', padding: '20px', borderRadius: '10px', overflowX: 'auto', fontSize: '0.87rem', lineHeight: 1.6, marginBottom: '20px' }}>
-        <code>{flattenCode}</code>
-      </pre>
-      <p>Two common patterns for unknown fields:</p>
-      <ul style={{ paddingLeft: '24px', color: '#334155' }}>
-        <li style={{ marginBottom: '8px' }}><strong>Capture with HashMap</strong> — use <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>#[serde(flatten)] extra: HashMap&lt;String, Value&gt;</code> to collect all unknown fields</li>
-        <li style={{ marginBottom: '8px' }}><strong>Ignore silently</strong> — by default serde_json ignores unknown fields; add <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>#[serde(deny_unknown_fields)]</code> on the struct to make unknown fields an error</li>
-      </ul>
-
-      {/* Section 10: Default Values */}
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0f172a', marginTop: '40px', marginBottom: '16px', borderBottom: '2px solid #e2e8f0', paddingBottom: '8px' }}>
-        Default Values with #[serde(default)]
-      </h2>
-      <p>When a JSON field is absent (not null — absent), <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>#[serde(default)]</code> provides a fallback value rather than returning an error:</p>
-      <pre style={{ background: '#0f172a', color: '#e2e8f0', padding: '20px', borderRadius: '10px', overflowX: 'auto', fontSize: '0.87rem', lineHeight: 1.6, marginBottom: '20px' }}>
-        <code>{defaultCode}</code>
-      </pre>
-      <p>You can also apply <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>#[serde(default)]</code> at the struct level to make all fields use their <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>Default::default()</code> when absent. This is useful for configuration structs where partial JSON is common.</p>
-
-      {/* Section 11: Error Handling */}
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0f172a', marginTop: '40px', marginBottom: '16px', borderBottom: '2px solid #e2e8f0', paddingBottom: '8px' }}>
-        Error Handling with serde_json::Error
-      </h2>
-      <p><code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>serde_json::Error</code> provides rich error information including line/column position and error category. Use the <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>?</code> operator to propagate errors up, or match on them for specific handling:</p>
-      <pre style={{ background: '#0f172a', color: '#e2e8f0', padding: '20px', borderRadius: '10px', overflowX: 'auto', fontSize: '0.87rem', lineHeight: 1.6, marginBottom: '20px' }}>
-        <code>{errorHandlingCode}</code>
-      </pre>
-      <p>Error categories from <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>e.classify()</code>:</p>
-      <ul style={{ paddingLeft: '24px', color: '#334155' }}>
-        <li style={{ marginBottom: '6px' }}><code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>Category::Data</code> — valid JSON but wrong type/structure (e.g., expected string, got number)</li>
-        <li style={{ marginBottom: '6px' }}><code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>Category::Syntax</code> — malformed JSON (unclosed brackets, invalid characters)</li>
-        <li style={{ marginBottom: '6px' }}><code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>Category::Eof</code> — JSON ended unexpectedly (truncated data)</li>
-        <li style={{ marginBottom: '6px' }}><code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>Category::Io</code> — underlying I/O error when reading from a stream</li>
-      </ul>
-      <p>For production applications, consider wrapping <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>serde_json::Error</code> in your own error type using <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>thiserror</code> or <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>anyhow</code> for ergonomic error propagation.</p>
-
-      {/* Section 12: Axum / Actix-Web */}
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0f172a', marginTop: '40px', marginBottom: '16px', borderBottom: '2px solid #e2e8f0', paddingBottom: '8px' }}>
-        Web Framework Integration: Axum and Actix-Web
-      </h2>
-      <p>Both major Rust web frameworks use serde_json under the hood for JSON request/response handling. The integration is seamless — just derive the traits and let the framework handle the rest.</p>
-
-      <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#1e293b', marginTop: '28px', marginBottom: '12px' }}>Axum</h3>
-      <p>Axum&apos;s <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>Json&lt;T&gt;</code> extractor deserializes request bodies, and returning <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>Json(value)</code> serializes responses:</p>
-      <pre style={{ background: '#0f172a', color: '#e2e8f0', padding: '20px', borderRadius: '10px', overflowX: 'auto', fontSize: '0.87rem', lineHeight: 1.6, marginBottom: '20px' }}>
-        <code>{axumCode}</code>
-      </pre>
-
-      <h3 style={{ fontSize: '1.2rem', fontWeight: 700, color: '#1e293b', marginTop: '28px', marginBottom: '12px' }}>Actix-Web</h3>
-      <p>Actix-Web uses <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>web::Json&lt;T&gt;</code> for JSON extraction and <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>HttpResponse::Ok().json()</code> for serialization:</p>
-      <pre style={{ background: '#0f172a', color: '#e2e8f0', padding: '20px', borderRadius: '10px', overflowX: 'auto', fontSize: '0.87rem', lineHeight: 1.6, marginBottom: '20px' }}>
-        <code>{actixCode}</code>
-      </pre>
-
-      {/* Section 13: serde_json::Value / Dynamic */}
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0f172a', marginTop: '40px', marginBottom: '16px', borderBottom: '2px solid #e2e8f0', paddingBottom: '8px' }}>
-        Dynamic JSON with serde_json::Value
-      </h2>
-      <p>For truly dynamic JSON where the structure is unknown at compile time, or for building JSON programmatically, use <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>serde_json::Value</code> and the <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>json!</code> macro:</p>
-      <pre style={{ background: '#0f172a', color: '#e2e8f0', padding: '20px', borderRadius: '10px', overflowX: 'auto', fontSize: '0.87rem', lineHeight: 1.6, marginBottom: '20px' }}>
-        <code>{dynamicValueCode}</code>
-      </pre>
-      <p><code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>serde_json::Value</code> variants:</p>
-      <ul style={{ paddingLeft: '24px', color: '#334155' }}>
-        <li style={{ marginBottom: '6px' }}><code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>Value::Null</code> — JSON null</li>
-        <li style={{ marginBottom: '6px' }}><code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>Value::Bool(bool)</code> — JSON boolean</li>
-        <li style={{ marginBottom: '6px' }}><code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>Value::Number(Number)</code> — JSON number (integer or float)</li>
-        <li style={{ marginBottom: '6px' }}><code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>Value::String(String)</code> — JSON string</li>
-        <li style={{ marginBottom: '6px' }}><code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>Value::Array(Vec&lt;Value&gt;)</code> — JSON array</li>
-        <li style={{ marginBottom: '6px' }}><code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>Value::Object(Map&lt;String, Value&gt;)</code> — JSON object</li>
-      </ul>
-
-      {/* Section 14: Tools */}
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0f172a', marginTop: '40px', marginBottom: '16px', borderBottom: '2px solid #e2e8f0', paddingBottom: '8px' }}>
-        Tools for JSON to Rust Conversion
-      </h2>
-      <p>Manually writing serde structs for complex JSON is tedious and error-prone. These tools automate the process:</p>
-      <ul style={{ paddingLeft: '24px', color: '#334155' }}>
-        <li style={{ marginBottom: '10px' }}>
-          <strong><Link href="https://viadreams.cc/en/tools/json-to-rust" style={{ color: '#0ea5e9', textDecoration: 'none' }}>DevToolBox JSON to Rust</Link></strong> — paste any JSON and get complete serde-annotated Rust structs. Handles nested objects, arrays, optional fields, and applies proper naming conventions automatically.
-        </li>
-        <li style={{ marginBottom: '10px' }}>
-          <strong>transform.tools</strong> — online JSON to Rust converter with multiple output format options
-        </li>
-        <li style={{ marginBottom: '10px' }}>
-          <strong>json_typegen CLI</strong> — generates Rust types from JSON samples with cargo integration
-        </li>
-        <li style={{ marginBottom: '10px' }}>
-          <strong>quicktype</strong> — generates Rust structs from JSON, JSON Schema, or TypeScript types
-        </li>
-      </ul>
-      <p style={{ marginTop: '16px' }}>
-        <Link href={toolLink} style={{ display: 'inline-block', background: '#0ea5e9', color: '#fff', padding: '10px 22px', borderRadius: '8px', textDecoration: 'none', fontWeight: 600, fontSize: '0.97rem' }}>
-          {tx.tryTool}
-        </Link>
-      </p>
-
-      {/* Section 15: Common Pitfalls */}
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0f172a', marginTop: '40px', marginBottom: '16px', borderBottom: '2px solid #e2e8f0', paddingBottom: '8px' }}>
-        Common Pitfalls
-      </h2>
-      <p>Avoid these common mistakes when working with serde_json in Rust:</p>
-      <pre style={{ background: '#0f172a', color: '#e2e8f0', padding: '20px', borderRadius: '10px', overflowX: 'auto', fontSize: '0.87rem', lineHeight: 1.6, marginBottom: '20px' }}>
-        <code>{pitfallsCode}</code>
-      </pre>
-      <p>Additional pitfalls to watch for:</p>
-      <ul style={{ paddingLeft: '24px', color: '#334155' }}>
-        <li style={{ marginBottom: '8px' }}><strong>Lifetime issues with &amp;str</strong> — you can deserialize into <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>&amp;str</code> for zero-copy parsing, but the struct lifetime must be tied to the input. Use <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>String</code> when the lifetime is unclear.</li>
-        <li style={{ marginBottom: '8px' }}><strong>Large number precision</strong> — JSON numbers like <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>9999999999999999</code> exceed f64 precision. Enable the <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>arbitrary_precision</code> feature in serde_json for exact handling.</li>
-        <li style={{ marginBottom: '8px' }}><strong>Missing derive import</strong> — ensure <code style={{ background: '#f1f5f9', padding: '2px 6px', borderRadius: '4px', fontSize: '0.9em' }}>use serde::{'{'}Serialize, Deserialize{'}'};</code> is imported in every file where you use the derives.</li>
-        <li style={{ marginBottom: '8px' }}><strong>Untagged enum performance</strong> — untagged enums try each variant in order, which can be slow with many variants and complex data. Prefer tagged enums when possible.</li>
-      </ul>
-
       {/* FAQ Section */}
-      <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0f172a', marginTop: '48px', marginBottom: '20px', borderBottom: '2px solid #e2e8f0', paddingBottom: '8px' }}>
-        {tx.faqTitle}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: '700', marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
+        Frequently Asked Questions
       </h2>
       <div>
-        {faqItems.map((item, i) => (
-          <div key={i} style={{ marginBottom: '20px', background: '#f8fafc', borderRadius: '10px', padding: '18px 22px', border: '1px solid #e2e8f0' }}>
-            <p style={{ fontWeight: 700, color: '#0f172a', margin: '0 0 8px' }}>{item.q}</p>
-            <p style={{ margin: 0, color: '#475569', lineHeight: 1.65 }}>{item.a}</p>
+        {faqData.map((item, i) => (
+          <div key={i} style={{ marginBottom: '1rem', background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '1rem' }}>
+            <p style={{ fontWeight: '700', color: '#0f172a', margin: '0 0 0.5rem' }}>Q: {item.q}</p>
+            <p style={{ margin: '0', color: '#475569', lineHeight: '1.65' }}>{item.a}</p>
           </div>
         ))}
-      </div>
-
-      {/* Conclusion CTA */}
-      <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: '10px', padding: '24px', marginTop: '48px', textAlign: 'center' }}>
-        <p style={{ margin: '0 0 16px', fontSize: '1.05rem', fontWeight: 600, color: '#0c4a6e' }}>
-          Ready to convert your JSON to Rust structs automatically?
-        </p>
-        <Link href={toolLink} style={{ display: 'inline-block', background: '#0ea5e9', color: '#fff', padding: '12px 28px', borderRadius: '8px', textDecoration: 'none', fontWeight: 700, fontSize: '1rem' }}>
-          {tx.tryTool}
-        </Link>
       </div>
     </article>
   );

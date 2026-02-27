@@ -1,188 +1,228 @@
 'use client';
-import React from 'react';
-import Link from 'next/link';
 
-const t: Record<string, Record<string, string>> = {
+/* ------------------------------------------------------------------ */
+/*  JSON to Go Struct: Complete Guide with encoding/json and Struct Tags */
+/* ------------------------------------------------------------------ */
+
+const translations = {
   en: {
-    tldr_title: 'TL;DR',
-    tldr: 'Convert JSON to Go structs using json tags, pointers for nullable fields, and encoding/json for serialization. Use json-to-go tools for automatic generation, and json.Decoder for streaming large payloads.',
-    takeaways_title: 'Key Takeaways',
-    takeaway1: 'Go struct fields must be exported (uppercase) to be visible to encoding/json',
-    takeaway2: 'Use json tags to map struct fields to JSON keys: `json:"field_name"`',
-    takeaway3: 'Pointers (*string, *int) represent nullable/optional JSON fields',
-    takeaway4: 'omitempty skips zero-value fields during marshaling',
-    takeaway5: 'json.Decoder is more efficient than json.Unmarshal for HTTP response bodies',
-    takeaway6: 'map[string]interface{} handles dynamic or unknown JSON structure',
-    takeaway7: 'Custom MarshalJSON/UnmarshalJSON implement special serialization logic',
-    link_tool: 'Try the JSON to Go Converter →',
-
-    h2_why: 'Why Convert JSON to Go Structs?',
-    why_p1: 'Go is a statically typed language — working with untyped interface{} for JSON leads to verbose type assertions and runtime panics. Generating typed structs from JSON gives you compile-time safety, IDE autocomplete, and clearer code.',
-    why_p2: 'The standard library\'s encoding/json package is powerful but requires proper struct definitions to work correctly. This guide covers everything from basic struct generation to advanced patterns.',
-    h2_basic: 'Basic Struct Generation',
-    basic_p1: 'For a typical API response JSON, here\'s how the Go struct looks:',
-    h2_tags: 'JSON Tags Explained',
-    tags_p1: 'JSON tags control how struct fields map to JSON keys:',
-    h2_nested: 'Nested Objects and Arrays',
-    nested_p1: 'For nested JSON objects, create separate struct types. For arrays, use slices.',
-    h2_nullable: 'Nullable and Optional Fields',
-    nullable_p1: 'In Go, use pointer types to represent nullable/optional JSON fields. A nil pointer serializes to null:',
-    h2_decode: 'Decoding JSON',
-    decode_p1: 'Two main approaches for decoding JSON in Go:',
-    h2_encode: 'Encoding JSON',
-    encode_p1: 'Marshal Go structs back to JSON:',
-    h2_dynamic: 'Dynamic JSON with map[string]interface{}',
-    dynamic_p1: 'When the JSON structure is unknown at compile time:',
-    h2_custom: 'Custom Marshaling',
-    custom_p1: 'Implement MarshalJSON/UnmarshalJSON for special handling:',
-    h2_time: 'Date and Time Handling',
-    time_p1: 'time.Time marshals to RFC3339 format by default. For custom formats, implement a custom type:',
-    h2_tools: 'Tools for JSON to Go Conversion',
-    tools_p1: 'Several tools automate Go struct generation from JSON:',
-    h2_pitfalls: 'Common Pitfalls',
-    pitfalls_p1: 'Avoid these common mistakes when working with JSON in Go:',
-    h2_faq: 'Frequently Asked Questions',
-    faq1_q: 'How do I convert JSON to Go struct online?',
-    faq1_a: 'Use DevToolBox\'s JSON to Go converter — paste your JSON and get idiomatic Go struct definitions with json tags, pointer types for nullable fields, and proper naming conventions.',
-    faq2_q: 'Should I use json.Unmarshal or json.Decoder?',
-    faq2_a: 'Use json.NewDecoder(r.Body).Decode(&v) for HTTP response bodies (streaming, no need to read all bytes first). Use json.Unmarshal(data, &v) when you already have the bytes in memory.',
-    faq3_q: 'How do I handle nullable JSON fields in Go?',
-    faq3_a: 'Use pointer types: *string, *int, *bool. A nil pointer marshals to JSON null. Check for nil before dereferencing: if user.Bio != nil { ... }',
-    faq4_q: 'What does omitempty do in Go JSON tags?',
-    faq4_a: 'omitempty omits the field from JSON output if it has a zero value: 0 for numbers, "" for strings, false for booleans, nil for pointers/slices/maps. Combine with pointer: *string `json:"bio,omitempty"` to omit absent fields.',
-    faq5_q: 'How do I handle unknown JSON fields in Go?',
-    faq5_a: 'encoding/json silently ignores unknown fields by default. To capture them, use json.RawMessage or embed a map: use struct with specific fields + additional map[string]interface{} with json:",squash" (via mapstructure) or just accept the defaults.',
-    faq6_q: 'How do I marshal Go time.Time to a custom date format?',
-    faq6_a: 'Create a custom type that wraps time.Time and implements MarshalJSON/UnmarshalJSON methods using your desired format string with time.Parse and time.Time.Format.',
-    faq7_q: 'Why are my struct fields missing from the JSON output?',
-    faq7_a: 'Fields must be exported (start with uppercase) to be visible to encoding/json. Unexported (lowercase) fields are always ignored. Also check that you haven\'t used json:"-" which explicitly excludes a field.',
-    faq8_q: 'How do I convert JSON arrays to Go slices?',
-    faq8_a: 'JSON arrays map to Go slices: []string, []int, []MyStruct. The field tag works the same: Tags []string `json:"tags"`. A JSON null for an array will set the slice to nil.',
-    conclusion: 'Try the free JSON to Go converter →',
+    title: 'JSON to Go Struct: Complete Guide with encoding/json and Struct Tags',
+    description: 'Convert JSON to Go structs with encoding/json, custom tags, and type-safe parsing. Complete guide for Go developers.',
   },
   zh: {
-    tldr_title: 'TL;DR',
-    tldr: '使用 json 标签、指针表示可空字段和 encoding/json 进行序列化将 JSON 转换为 Go 结构体。使用 json-to-go 工具自动生成，并使用 json.Decoder 处理流式大负载。',
-    takeaways_title: '关键要点',
-    takeaway1: 'Go 结构体字段必须是导出的（大写开头）才能被 encoding/json 处理',
-    takeaway2: '使用 json 标签将结构体字段映射到 JSON 键：`json:"field_name"`',
-    takeaway3: '指针（*string、*int）表示 JSON 中的可空/可选字段',
-    takeaway4: 'omitempty 在序列化时跳过零值字段',
-    takeaway5: '对于 HTTP 响应体，json.Decoder 比 json.Unmarshal 更高效',
-    takeaway6: 'map[string]interface{} 处理动态或未知的 JSON 结构',
-    takeaway7: '自定义 MarshalJSON/UnmarshalJSON 实现特殊序列化逻辑',
-    link_tool: '试用 JSON 转 Go 工具 →',
-
-    h2_why: '为什么要将 JSON 转换为 Go 结构体？',
-    why_p1: 'Go 是静态类型语言——使用无类型的 interface{} 处理 JSON 会导致繁琐的类型断言和运行时恐慌。从 JSON 生成类型化结构体可以获得编译时安全性、IDE 自动补全和更清晰的代码。',
-    why_p2: '标准库的 encoding/json 包功能强大，但需要正确的结构体定义才能正常工作。本指南涵盖从基本结构体生成到高级模式的所有内容。',
-    h2_basic: '基本结构体生成',
-    basic_p1: '对于典型的 API 响应 JSON，Go 结构体如下所示：',
-    h2_tags: 'JSON 标签说明',
-    tags_p1: 'JSON 标签控制结构体字段如何映射到 JSON 键：',
-    h2_nested: '嵌套对象和数组',
-    nested_p1: '对于嵌套的 JSON 对象，创建独立的结构体类型。对于数组，使用切片。',
-    h2_nullable: '可空和可选字段',
-    nullable_p1: '在 Go 中，使用指针类型表示 JSON 中的可空/可选字段。nil 指针序列化为 null：',
-    h2_decode: '解码 JSON',
-    decode_p1: 'Go 中解码 JSON 的两种主要方式：',
-    h2_encode: '编码 JSON',
-    encode_p1: '将 Go 结构体序列化回 JSON：',
-    h2_dynamic: '使用 map[string]interface{} 处理动态 JSON',
-    dynamic_p1: '当编译时 JSON 结构未知时：',
-    h2_custom: '自定义序列化',
-    custom_p1: '实现 MarshalJSON/UnmarshalJSON 进行特殊处理：',
-    h2_time: '日期和时间处理',
-    time_p1: 'time.Time 默认序列化为 RFC3339 格式。自定义格式需实现自定义类型：',
-    h2_tools: 'JSON 转 Go 的工具',
-    tools_p1: '多种工具可以自动从 JSON 生成 Go 结构体：',
-    h2_pitfalls: '常见陷阱',
-    pitfalls_p1: '处理 Go 中的 JSON 时避免以下常见错误：',
-    h2_faq: '常见问题',
-    faq1_q: '如何在线将 JSON 转换为 Go 结构体？',
-    faq1_a: '使用 DevToolBox 的 JSON 转 Go 工具——粘贴 JSON 即可获得带有 json 标签、可空字段指针类型和正确命名规范的惯用 Go 结构体定义。',
-    faq2_q: '应该使用 json.Unmarshal 还是 json.Decoder？',
-    faq2_a: '对 HTTP 响应体使用 json.NewDecoder(r.Body).Decode(&v)（流式，不需要先读取所有字节）。当内存中已有字节时使用 json.Unmarshal(data, &v)。',
-    faq3_q: '如何处理 Go 中 JSON 的可空字段？',
-    faq3_a: '使用指针类型：*string、*int、*bool。nil 指针序列化为 JSON null。在解引用前检查是否为 nil：if user.Bio != nil { ... }',
-    faq4_q: 'Go JSON 标签中的 omitempty 有什么作用？',
-    faq4_a: 'omitempty 在字段具有零值时从 JSON 输出中省略该字段：数字为 0，字符串为 ""，布尔值为 false，指针/切片/映射为 nil。与指针结合使用：*string `json:"bio,omitempty"` 可省略缺失字段。',
-    faq5_q: '如何处理 Go 中的未知 JSON 字段？',
-    faq5_a: 'encoding/json 默认静默忽略未知字段。要捕获它们，可使用 json.RawMessage 或嵌入 map[string]interface{}。',
-    faq6_q: '如何将 Go 的 time.Time 序列化为自定义日期格式？',
-    faq6_a: '创建一个包装 time.Time 的自定义类型，并使用所需格式字符串实现 MarshalJSON/UnmarshalJSON 方法。',
-    faq7_q: '为什么我的结构体字段在 JSON 输出中丢失了？',
-    faq7_a: '字段必须是导出的（大写开头）才能被 encoding/json 处理。未导出的（小写）字段始终被忽略。还要检查是否使用了 json:"-" 标签（显式排除字段）。',
-    faq8_q: '如何将 JSON 数组转换为 Go 切片？',
-    faq8_a: 'JSON 数组映射到 Go 切片：[]string、[]int、[]MyStruct。字段标签的使用方式相同：Tags []string `json:"tags"`。JSON null 数组会将切片设为 nil。',
-    conclusion: '试用免费 JSON 转 Go 工具 →',
+    title: 'JSON 转 Go 结构体：完整指南',
+    description: '使用 encoding/json、自定义标签和类型安全解析将 JSON 转换为 Go 结构体。',
   },
 };
 
 export default function JsonToGoOnlineGuide({ lang }: { lang: string }) {
-  const s = t[lang] || t['en'];
+  const t = translations[lang as keyof typeof translations] || translations.en;
+  void t; // used for potential meta — content below is inline
 
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
-      { '@type': 'Question', name: s.faq1_q, acceptedAnswer: { '@type': 'Answer', text: s.faq1_a } },
-      { '@type': 'Question', name: s.faq2_q, acceptedAnswer: { '@type': 'Answer', text: s.faq2_a } },
-      { '@type': 'Question', name: s.faq3_q, acceptedAnswer: { '@type': 'Answer', text: s.faq3_a } },
-      { '@type': 'Question', name: s.faq4_q, acceptedAnswer: { '@type': 'Answer', text: s.faq4_a } },
-      { '@type': 'Question', name: s.faq5_q, acceptedAnswer: { '@type': 'Answer', text: s.faq5_a } },
-      { '@type': 'Question', name: s.faq6_q, acceptedAnswer: { '@type': 'Answer', text: s.faq6_a } },
-      { '@type': 'Question', name: s.faq7_q, acceptedAnswer: { '@type': 'Answer', text: s.faq7_a } },
-      { '@type': 'Question', name: s.faq8_q, acceptedAnswer: { '@type': 'Answer', text: s.faq8_a } },
+      {
+        '@type': 'Question',
+        name: 'How do I convert JSON to Go struct online?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Use DevToolBox\'s JSON to Go converter — paste your JSON and get idiomatic Go struct definitions with json tags, pointer types for nullable fields, and proper Go naming conventions instantly.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Should I use json.Unmarshal or json.NewDecoder for HTTP responses?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Use json.NewDecoder(resp.Body).Decode(&v) for HTTP response bodies — it streams data without reading all bytes into memory first. Use json.Unmarshal(data, &v) when you already have a []byte in memory.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How do I handle nullable JSON fields in Go?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Use pointer types: *string, *int, *bool. A nil pointer marshals to JSON null. Always check for nil before dereferencing: if user.Bio != nil { use *user.Bio }.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What does omitempty do in a Go JSON struct tag?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'omitempty omits the field from JSON output when it has a zero value — 0 for numbers, "" for strings, false for booleans, nil for pointers/slices/maps. Combine with a pointer type like *string `json:"bio,omitempty"` to omit absent fields.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Why are my struct fields missing from Go JSON output?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Fields must be exported (start with uppercase) to be marshaled/unmarshaled by encoding/json. Unexported (lowercase) fields are always silently ignored. Also check you have not used `json:"-"` which explicitly excludes a field.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How do I implement a custom date format in Go JSON?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Create a custom type embedding time.Time and implement MarshalJSON/UnmarshalJSON. Use time.Parse("2006-01-02", s) and t.Format("2006-01-02") with Go\'s reference time layout.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How do I handle unknown JSON fields with DisallowUnknownFields?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Call dec := json.NewDecoder(r); dec.DisallowUnknownFields(); dec.Decode(&v). This returns an error if the JSON contains keys not present in your struct, useful for strict API validation.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is the difference between encoding/json, easyjson, jsoniter, and sonic?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'encoding/json is the standard library, safe and correct. easyjson generates code at compile time for maximum speed. jsoniter is a drop-in replacement that is ~3x faster. sonic (ByteDance) uses SIMD instructions for ~6-10x speed on amd64. Use encoding/json unless performance is a bottleneck.',
+        },
+      },
     ],
   };
 
+  const codeStyle = {
+    background: '#1e293b',
+    color: '#e2e8f0',
+    padding: '1rem',
+    borderRadius: '6px',
+    overflowX: 'auto' as const,
+    fontSize: '0.875rem',
+    lineHeight: '1.6',
+    margin: '0.75rem 0 1.25rem 0',
+  };
+
+  const h2Style = {
+    fontSize: '1.5rem',
+    fontWeight: '700' as const,
+    marginTop: '2rem',
+    marginBottom: '1rem',
+    color: '#1e293b',
+  };
+
+  const h3Style = {
+    fontSize: '1.15rem',
+    fontWeight: '600' as const,
+    marginTop: '1.25rem',
+    marginBottom: '0.5rem',
+    color: '#1e293b',
+  };
+
+  const tableStyle = {
+    width: '100%',
+    borderCollapse: 'collapse' as const,
+    fontSize: '0.9rem',
+    margin: '1rem 0 1.5rem 0',
+  };
+
+  const thStyle = {
+    background: '#f1f5f9',
+    border: '1px solid #e2e8f0',
+    padding: '0.5rem 0.75rem',
+    textAlign: 'left' as const,
+    fontWeight: '600' as const,
+    color: '#1e293b',
+  };
+
+  const tdStyle = {
+    border: '1px solid #e2e8f0',
+    padding: '0.5rem 0.75rem',
+    verticalAlign: 'top' as const,
+    color: '#334155',
+  };
+
   return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+    <article style={{ maxWidth: '820px', lineHeight: '1.75', color: '#334155' }}>
+      {/* FAQPage JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      {/* Canonical link hint (meta handled by parent layout) */}
+      {/* https://viadreams.cc/en/blog/json-to-go-online-guide */}
 
       {/* TL;DR Box */}
-      <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: 8, padding: '16px 20px', marginBottom: 24 }}>
-        <strong style={{ fontSize: 16 }}>{s.tldr_title}</strong>
-        <p style={{ margin: '8px 0 0 0', lineHeight: 1.7 }}>{s.tldr}</p>
+      <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: '8px', padding: '1rem', marginBottom: '1.5rem' }}>
+        <strong style={{ display: 'block', marginBottom: '0.4rem', color: '#0369a1' }}>TL;DR</strong>
+        <p style={{ margin: 0 }}>
+          Convert JSON to Go structs using <code>encoding/json</code> struct tags, pointer types for nullable fields,
+          and <code>json.Decoder</code> for HTTP streaming. Define exported fields with <code>`json:"name"`</code> tags,
+          use <code>*T</code> for optional values, and implement <code>UnmarshalJSON</code> for custom types like dates.
+          For high-throughput services, replace <code>encoding/json</code> with <strong>jsoniter</strong> or <strong>sonic</strong> with zero code changes.
+        </p>
       </div>
 
-      {/* Key Takeaways */}
-      <div style={{ background: '#f8fafc', borderRadius: 8, padding: '16px 20px', marginBottom: 24 }}>
-        <strong style={{ fontSize: 16 }}>{s.takeaways_title}</strong>
-        <ul style={{ margin: '8px 0 0 0', paddingLeft: 20, lineHeight: 1.8 }}>
-          <li>{s.takeaway1}</li>
-          <li>{s.takeaway2}</li>
-          <li>{s.takeaway3}</li>
-          <li>{s.takeaway4}</li>
-          <li>{s.takeaway5}</li>
-          <li>{s.takeaway6}</li>
-          <li>{s.takeaway7}</li>
-        </ul>
-      </div>
+      {/* ── Section 1: Why Use Go Structs ── */}
+      <h2 style={h2Style}>1. Why Use Go Structs for JSON?</h2>
+      <p>
+        Go is statically typed. When you reach for <code>map[string]interface{'{}'}</code> to handle JSON you trade
+        compile-time safety for tedious type assertions and runtime panics. Proper struct definitions give you IDE
+        autocompletion, exhaustive refactoring, and zero-overhead marshaling via reflection cache.
+      </p>
 
-      <p><Link href={`/${lang}/tools/json-to-go`} style={{ fontWeight: 600, color: '#2563eb' }}>{s.link_tool}</Link></p>
+      <table style={tableStyle}>
+        <thead>
+          <tr>
+            <th style={thStyle}>Approach</th>
+            <th style={thStyle}>Type Safety</th>
+            <th style={thStyle}>IDE Support</th>
+            <th style={thStyle}>Performance</th>
+            <th style={thStyle}>Maintainability</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style={tdStyle}><strong>Go Struct</strong></td>
+            <td style={{ ...tdStyle, color: '#16a34a' }}>Compile-time</td>
+            <td style={{ ...tdStyle, color: '#16a34a' }}>Full autocomplete</td>
+            <td style={{ ...tdStyle, color: '#16a34a' }}>Fast (cached reflection)</td>
+            <td style={{ ...tdStyle, color: '#16a34a' }}>High — refactor-safe</td>
+          </tr>
+          <tr>
+            <td style={tdStyle}><code>map[string]interface{'{}'}</code></td>
+            <td style={{ ...tdStyle, color: '#dc2626' }}>None — panics at runtime</td>
+            <td style={{ ...tdStyle, color: '#dc2626' }}>No completion</td>
+            <td style={{ ...tdStyle, color: '#ca8a04' }}>Moderate</td>
+            <td style={{ ...tdStyle, color: '#dc2626' }}>Low — string keys</td>
+          </tr>
+          <tr>
+            <td style={tdStyle}><code>json.RawMessage</code></td>
+            <td style={{ ...tdStyle, color: '#ca8a04' }}>Deferred only</td>
+            <td style={{ ...tdStyle, color: '#ca8a04' }}>Partial</td>
+            <td style={{ ...tdStyle, color: '#16a34a' }}>Fastest (skip parse)</td>
+            <td style={{ ...tdStyle, color: '#ca8a04' }}>Medium — delayed decode</td>
+          </tr>
+        </tbody>
+      </table>
 
-      <h2>{s.h2_why}</h2>
-      <p>{s.why_p1}</p>
-      <p>{s.why_p2}</p>
+      {/* ── Section 2: Basic json.Unmarshal ── */}
+      <h2 style={h2Style}>2. Basic json.Unmarshal and json.Marshal</h2>
+      <p>
+        The <code>encoding/json</code> package is in the Go standard library — no dependencies needed.
+        Struct fields must be <strong>exported</strong> (uppercase) and annotated with a <code>`json:"..."`</code> tag.
+      </p>
 
-      <h2>{s.h2_basic}</h2>
-      <p>{s.basic_p1}</p>
-      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: 16, borderRadius: 8, overflowX: 'auto', fontSize: 13, lineHeight: 1.5 }}><code>{`// Input JSON:
-// {
-//   "id": 1,
-//   "name": "Alice",
-//   "email": "alice@example.com",
-//   "active": true,
-//   "score": 98.5,
-//   "created_at": "2026-01-01T00:00:00Z"
-// }
+      <h3 style={h3Style}>Defining the struct and unmarshaling</h3>
+      <pre style={codeStyle}><code>{`package main
 
-package main
+import (
+    "encoding/json"
+    "fmt"
+    "log"
+    "time"
+)
 
-import "time"
-
+// Exported fields + json tags are required for encoding/json to see them.
 type User struct {
     ID        int       \`json:"id"\`
     Name      string    \`json:"name"\`
@@ -190,38 +230,142 @@ type User struct {
     Active    bool      \`json:"active"\`
     Score     float64   \`json:"score"\`
     CreatedAt time.Time \`json:"created_at"\`
+}
+
+func main() {
+    data := []byte(\`{
+        "id": 42,
+        "name": "Alice",
+        "email": "alice@example.com",
+        "active": true,
+        "score": 98.6,
+        "created_at": "2026-01-15T09:00:00Z"
+    }\`)
+
+    var user User
+    if err := json.Unmarshal(data, &user); err != nil {
+        log.Fatal(err)
+    }
+    fmt.Printf("User: %s (%.1f)\\n", user.Name, user.Score)
+    // User: Alice (98.6)
 }`}</code></pre>
 
-      <h2>{s.h2_tags}</h2>
-      <p>{s.tags_p1}</p>
-      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: 16, borderRadius: 8, overflowX: 'auto', fontSize: 13, lineHeight: 1.5 }}><code>{`type Product struct {
-    // Map CamelCase Go name to snake_case JSON key
+      <h3 style={h3Style}>Encoding (Marshal) back to JSON</h3>
+      <pre style={codeStyle}><code>{`// Compact JSON
+out, err := json.Marshal(user)
+// {"id":42,"name":"Alice","email":"alice@example.com","active":true,"score":98.6,"created_at":"2026-01-15T09:00:00Z"}
+
+// Pretty-printed JSON
+out, err = json.MarshalIndent(user, "", "  ")
+// {
+//   "id": 42,
+//   "name": "Alice",
+//   ...
+// }
+
+// Write JSON directly to an http.ResponseWriter (no intermediate buffer)
+func writeJSON(w http.ResponseWriter, v any) error {
+    w.Header().Set("Content-Type", "application/json")
+    return json.NewEncoder(w).Encode(v)
+}`}</code></pre>
+
+      <h3 style={h3Style}>Error handling best practice</h3>
+      <pre style={codeStyle}><code>{`func parseUser(data []byte) (*User, error) {
+    var u User
+    if err := json.Unmarshal(data, &u); err != nil {
+        return nil, fmt.Errorf("parseUser: %w", err)
+    }
+    if u.Name == "" {
+        return nil, fmt.Errorf("parseUser: name is required")
+    }
+    return &u, nil
+}`}</code></pre>
+
+      {/* ── Section 3: JSON Tags ── */}
+      <h2 style={h2Style}>3. JSON Struct Tags</h2>
+      <p>
+        Tags are raw string literals of the form <code>`json:"key,options"`</code>.
+        They sit after the field type, surrounded by backticks.
+      </p>
+
+      <pre style={codeStyle}><code>{`type Product struct {
+    // Map Go CamelCase to JSON snake_case
     ProductID   int     \`json:"product_id"\`
 
-    // omitempty: skip field if zero value ("", 0, false, nil)
+    // omitempty: skip field in output when zero-value ("", 0, false, nil)
     Description string  \`json:"description,omitempty"\`
 
-    // "-": always exclude from JSON (for passwords, internal fields)
-    Password    string  \`json:"-"\`
+    // "-": always exclude this field from JSON (passwords, internals)
+    InternalRef string  \`json:"-"\`
 
-    // "string": marshal number as JSON string (for JS Number precision)
-    Price       float64 \`json:"price,string"\`
+    // "string": encode number as a quoted JSON string
+    // Useful for JavaScript Number precision (int64 > 2^53)
+    BigID       int64   \`json:"big_id,string"\`
 
-    // No tag: uses field name as-is (Go's default)
-    Type        string  // marshals as "Type"
+    // No tag: uses the exact Go field name ("Type")
+    Type        string
+}
+
+// Combined options: snake_case key + omitempty
+type Event struct {
+    StartedAt *time.Time \`json:"started_at,omitempty"\` // null or absent → omit
+    EndedAt   *time.Time \`json:"ended_at,omitempty"\`
 }`}</code></pre>
 
-      <h2>{s.h2_nested}</h2>
-      <p>{s.nested_p1}</p>
-      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: 16, borderRadius: 8, overflowX: 'auto', fontSize: 13, lineHeight: 1.5 }}><code>{`// Nested JSON:
-// { "id": 1, "customer": {"name": "Alice", "address": {"city": "NYC"}},
-//   "items": [{"sku": "ABC", "qty": 2}], "tags": ["urgent", "vip"] }
+      <table style={tableStyle}>
+        <thead>
+          <tr>
+            <th style={thStyle}>Tag Option</th>
+            <th style={thStyle}>Effect on Marshal</th>
+            <th style={thStyle}>Effect on Unmarshal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style={tdStyle}><code>`json:"key"`</code></td>
+            <td style={tdStyle}>Output key is <em>key</em></td>
+            <td style={tdStyle}>Reads from JSON field <em>key</em></td>
+          </tr>
+          <tr>
+            <td style={tdStyle}><code>`,omitempty`</code></td>
+            <td style={tdStyle}>Skip if zero-value</td>
+            <td style={tdStyle}>No effect</td>
+          </tr>
+          <tr>
+            <td style={tdStyle}><code>`json:"-"`</code></td>
+            <td style={tdStyle}>Always excluded</td>
+            <td style={tdStyle}>Always ignored</td>
+          </tr>
+          <tr>
+            <td style={tdStyle}><code>`,string`</code></td>
+            <td style={tdStyle}>Number as quoted string</td>
+            <td style={tdStyle}>Expects quoted string</td>
+          </tr>
+        </tbody>
+      </table>
+
+      {/* ── Section 4: Nested Structs and Arrays ── */}
+      <h2 style={h2Style}>4. Nested Structs, Arrays, and Maps</h2>
+      <p>
+        Nest structs for JSON objects, use slices for JSON arrays, and maps for
+        dictionary-like objects with dynamic keys.
+      </p>
+
+      <pre style={codeStyle}><code>{`// JSON:
+// {
+//   "id": 1,
+//   "customer": { "name": "Alice", "address": { "city": "NYC", "zip": "10001" } },
+//   "items": [{ "sku": "ABC", "qty": 2, "price": 9.99 }],
+//   "tags": ["urgent", "vip"],
+//   "meta": { "source": "web", "campaign": "summer" }
+// }
 
 type Order struct {
-    ID       int      \`json:"id"\`
-    Customer Customer \`json:"customer"\`  // nested struct
-    Items    []Item   \`json:"items"\`     // slice of structs
-    Tags     []string \`json:"tags"\`      // slice of primitives
+    ID       int               \`json:"id"\`
+    Customer Customer          \`json:"customer"\`       // nested struct
+    Items    []LineItem        \`json:"items"\`          // slice of structs
+    Tags     []string          \`json:"tags"\`           // slice of primitives
+    Meta     map[string]string \`json:"meta,omitempty"\` // map with string values
 }
 
 type Customer struct {
@@ -235,283 +379,613 @@ type Address struct {
     Zip    string \`json:"zip,omitempty"\`
 }
 
-type Item struct {
+type LineItem struct {
     SKU      string  \`json:"sku"\`
     Quantity int     \`json:"qty"\`
-    Price    float64 \`json:"price,omitempty"\`
-}`}</code></pre>
-
-      <h2>{s.h2_nullable}</h2>
-      <p>{s.nullable_p1}</p>
-      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: 16, borderRadius: 8, overflowX: 'auto', fontSize: 13, lineHeight: 1.5 }}><code>{`// JSON: { "id": 1, "name": "Alice", "bio": null, "avatar": null }
-// OR:   { "id": 2, "name": "Bob",   "bio": "Gopher", "avatar": "/img.png" }
-
-type UserProfile struct {
-    ID     int     \`json:"id"\`
-    Name   string  \`json:"name"\`
-    Bio    *string \`json:"bio"\`              // null → nil pointer
-    Avatar *string \`json:"avatar,omitempty"\` // null or absent → nil, omit in output
+    Price    float64 \`json:"price"\`
 }
 
-// Check before dereferencing
+// Decode the whole nested tree at once:
+var order Order
+json.Unmarshal(data, &order)
+fmt.Println(order.Customer.Address.City) // NYC
+fmt.Println(order.Items[0].SKU)          // ABC`}</code></pre>
+
+      <h3 style={h3Style}>Pointer fields for optional nested objects</h3>
+      <pre style={codeStyle}><code>{`// If "shipping" may be absent from JSON:
+type Order struct {
+    ID       int       \`json:"id"\`
+    Shipping *Address  \`json:"shipping,omitempty"\` // nil if absent/null
+}
+
+// Check before access:
+if order.Shipping != nil {
+    fmt.Println(order.Shipping.City)
+}`}</code></pre>
+
+      {/* ── Section 5: Optional Fields with Pointers ── */}
+      <h2 style={h2Style}>5. Optional Fields with Pointer Types</h2>
+      <p>
+        In Go there is no concept of &quot;undefined&quot;. A <code>string</code> field missing from JSON
+        gets the zero value <code>""</code> — indistinguishable from an empty string that was explicitly set.
+        Use <code>*string</code>, <code>*int</code>, etc. to distinguish <em>absent</em> from <em>zero</em>.
+      </p>
+
+      <pre style={codeStyle}><code>{`// JSON variants:
+// { "id": 1, "name": "Alice", "bio": null }  → bio is explicitly null
+// { "id": 2, "name": "Bob" }                 → bio is absent
+// { "id": 3, "name": "Carol", "bio": "Dev" } → bio has a value
+
+type UserProfile struct {
+    ID   int     \`json:"id"\`
+    Name string  \`json:"name"\`
+    Bio  *string \`json:"bio"\`              // nil for both null and absent
+    Age  *int    \`json:"age,omitempty"\`    // omit entirely when nil
+}
+
+// Safe access pattern:
 func displayBio(u UserProfile) string {
     if u.Bio != nil {
         return *u.Bio
     }
-    return "No bio provided"
+    return "(no bio)"
 }
 
-// Create with nullable field
-bio := "Software Engineer"
-user := UserProfile{ID: 1, Name: "Alice", Bio: &bio}`}</code></pre>
+// Setting a pointer field:
+bio := "Senior Gopher"
+u := UserProfile{ID: 1, Name: "Alice", Bio: &bio}
 
-      <h2>{s.h2_decode}</h2>
-      <p>{s.decode_p1}</p>
-      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: 16, borderRadius: 8, overflowX: 'auto', fontSize: 13, lineHeight: 1.5 }}><code>{`import (
-    "encoding/json"
-    "fmt"
-    "net/http"
-)
+// Helper to get a pointer to any value (Go 1.18+ generic):
+func ptr[T any](v T) *T { return &v }
 
-// --- Option 1: json.Unmarshal (when you have []byte) ---
-data := []byte(\`{"id": 1, "name": "Alice"}\`)
-var user User
-if err := json.Unmarshal(data, &user); err != nil {
-    return fmt.Errorf("unmarshal user: %w", err)
-}
-fmt.Println(user.Name) // Alice
+u2 := UserProfile{ID: 2, Name: "Bob", Bio: ptr("Backend Dev"), Age: ptr(30)}`}</code></pre>
 
-// --- Option 2: json.Decoder (for io.Reader, HTTP bodies) ---
-resp, err := http.Get("https://api.example.com/users/1")
-if err != nil { /* handle */ }
-defer resp.Body.Close()
+      {/* ── Section 6: Custom UnmarshalJSON ── */}
+      <h2 style={h2Style}>6. Custom UnmarshalJSON — Parsing Dates and Mixed Types</h2>
+      <p>
+        Implement the <code>json.Unmarshaler</code> interface (<code>UnmarshalJSON([]byte) error</code>) to
+        control how a type is decoded. The reciprocal <code>json.Marshaler</code> interface controls encoding.
+      </p>
 
-var user User
-if err := json.NewDecoder(resp.Body).Decode(&user); err != nil {
-    return fmt.Errorf("decode user: %w", err)
-}
+      <h3 style={h3Style}>Custom date format (YYYY-MM-DD)</h3>
+      <pre style={codeStyle}><code>{`// time.Time uses RFC3339 by default ("2006-01-02T15:04:05Z07:00")
+// To parse plain dates like "2006-01-02":
 
-// --- Decode JSON array ---
-var users []User
-json.NewDecoder(resp.Body).Decode(&users)
+type Date struct{ time.Time }
 
-// --- Decode into map (unknown structure) ---
-var result map[string]interface{}
-json.Unmarshal(data, &result)`}</code></pre>
-
-      <h2>{s.h2_encode}</h2>
-      <p>{s.encode_p1}</p>
-      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: 16, borderRadius: 8, overflowX: 'auto', fontSize: 13, lineHeight: 1.5 }}><code>{`import (
-    "encoding/json"
-    "net/http"
-)
-
-user := User{ID: 1, Name: "Alice", Email: "alice@example.com"}
-
-// To []byte (compact)
-data, err := json.Marshal(user)
-// {"id":1,"name":"Alice","email":"alice@example.com"}
-
-// To []byte (pretty-printed)
-data, err := json.MarshalIndent(user, "", "  ")
-
-// To http.ResponseWriter
-func handleUser(w http.ResponseWriter, r *http.Request) {
-    w.Header().Set("Content-Type", "application/json")
-    json.NewEncoder(w).Encode(user) // more efficient for large payloads
-}`}</code></pre>
-
-      <h2>{s.h2_dynamic}</h2>
-      <p>{s.dynamic_p1}</p>
-      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: 16, borderRadius: 8, overflowX: 'auto', fontSize: 13, lineHeight: 1.5 }}><code>{`// Decode into map when structure is unknown
-var result map[string]interface{}
-json.Unmarshal(data, &result)
-
-// Type assertions needed for nested access
-if name, ok := result["name"].(string); ok {
-    fmt.Println("Name:", name)
-}
-if age, ok := result["age"].(float64); ok { // JSON numbers → float64
-    fmt.Printf("Age: %d\\n", int(age))
-}
-
-// json.RawMessage: delay decoding based on discriminator field
-type Response struct {
-    Type string          \`json:"type"\`
-    Data json.RawMessage \`json:"data"\` // decode later
-}
-
-var resp Response
-json.Unmarshal(data, &resp)
-
-switch resp.Type {
-case "user":
-    var u User
-    json.Unmarshal(resp.Data, &u)
-case "product":
-    var p Product
-    json.Unmarshal(resp.Data, &p)
-}`}</code></pre>
-
-      <h2>{s.h2_custom}</h2>
-      <p>{s.custom_p1}</p>
-      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: 16, borderRadius: 8, overflowX: 'auto', fontSize: 13, lineHeight: 1.5 }}><code>{`// Custom time format (default is RFC3339)
-type CustomDate struct {
-    time.Time
-}
-
-func (d CustomDate) MarshalJSON() ([]byte, error) {
-    return json.Marshal(d.Format("2006-01-02"))
-}
-
-func (d *CustomDate) UnmarshalJSON(data []byte) error {
+func (d *Date) UnmarshalJSON(b []byte) error {
     var s string
-    if err := json.Unmarshal(data, &s); err != nil {
+    if err := json.Unmarshal(b, &s); err != nil {
         return err
     }
     t, err := time.Parse("2006-01-02", s)
     if err != nil {
-        return err
+        return fmt.Errorf("Date.UnmarshalJSON: %w", err)
     }
     d.Time = t
     return nil
 }
 
-// Usage:
-type Event struct {
-    Name      string     \`json:"name"\`
-    StartDate CustomDate \`json:"start_date"\` // "2026-01-15" format
+func (d Date) MarshalJSON() ([]byte, error) {
+    return json.Marshal(d.Format("2006-01-02"))
 }
 
-// Custom enum handling
-type Status int
-
-const (
-    StatusActive  Status = iota
-    StatusInactive
-)
-
-func (s Status) MarshalJSON() ([]byte, error) {
-    switch s {
-    case StatusActive:
-        return json.Marshal("active")
-    case StatusInactive:
-        return json.Marshal("inactive")
-    }
-    return nil, fmt.Errorf("unknown status: %d", s)
-}
-
-func (s *Status) UnmarshalJSON(data []byte) error {
-    var str string
-    if err := json.Unmarshal(data, &str); err != nil {
-        return err
-    }
-    switch str {
-    case "active":
-        *s = StatusActive
-    case "inactive":
-        *s = StatusInactive
-    default:
-        return fmt.Errorf("unknown status: %s", str)
-    }
-    return nil
+type Subscription struct {
+    UserID    int  \`json:"user_id"\`
+    StartDate Date \`json:"start_date"\` // parses "2026-01-15"
+    EndDate   Date \`json:"end_date"\`
 }`}</code></pre>
 
-      <h2>{s.h2_tools}</h2>
-      <p>{s.tools_p1}</p>
-      <ul style={{ lineHeight: 1.8, paddingLeft: 20 }}>
-        <li><strong><Link href={`/${lang}/tools/json-to-go`} style={{ color: '#2563eb' }}>DevToolBox JSON to Go Converter</Link></strong> — paste JSON, get idiomatic Go struct instantly. Handles nested objects, arrays, nullable fields, and proper Go naming conventions.</li>
-        <li><strong>quicktype CLI</strong>: <code>npm install -g quicktype && quicktype --lang go --out types.go data.json</code> — supports unions, optional fields, and multiple languages</li>
-        <li><strong>json-to-go.com</strong> — the original web-based json-to-go tool by mholt</li>
-        <li><strong>GoLand/VS Code</strong> — paste JSON and use code actions to generate struct definitions inline</li>
-      </ul>
+      <h3 style={h3Style}>Mixed-type / discriminated union fields</h3>
+      <pre style={codeStyle}><code>{`// JSON: { "type": "user", "data": { "name": "Alice" } }
+//   or: { "type": "product", "data": { "sku": "ABC" } }
 
-      <h2>{s.h2_pitfalls}</h2>
-      <p>{s.pitfalls_p1}</p>
-      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: 16, borderRadius: 8, overflowX: 'auto', fontSize: 13, lineHeight: 1.5 }}><code>{`// ❌ 1. Unexported fields ignored by encoding/json
-type user struct {
-    id   int    // IGNORED - must be Id or ID
-    name string // IGNORED
+type Envelope struct {
+    Type string          \`json:"type"\`
+    Data json.RawMessage \`json:"data"\` // delay decode until type is known
 }
 
-// ✅ Use exported fields
-type User struct {
+func (e *Envelope) Decode() (any, error) {
+    switch e.Type {
+    case "user":
+        var u User
+        return &u, json.Unmarshal(e.Data, &u)
+    case "product":
+        var p Product
+        return &p, json.Unmarshal(e.Data, &p)
+    default:
+        return nil, fmt.Errorf("unknown type: %s", e.Type)
+    }
+}`}</code></pre>
+
+      {/* ── Section 7: json.Decoder for Streaming ── */}
+      <h2 style={h2Style}>7. json.Decoder for Streaming Large JSON</h2>
+      <p>
+        <code>json.NewDecoder</code> wraps any <code>io.Reader</code> and streams data
+        without loading everything into memory. This is the idiomatic approach for HTTP handlers.
+      </p>
+
+      <h3 style={h3Style}>Decode a single object from HTTP body</h3>
+      <pre style={codeStyle}><code>{`func createUser(w http.ResponseWriter, r *http.Request) {
+    dec := json.NewDecoder(r.Body)
+    dec.DisallowUnknownFields() // reject unexpected keys
+
+    var u User
+    if err := dec.Decode(&u); err != nil {
+        http.Error(w, err.Error(), http.StatusBadRequest)
+        return
+    }
+    // u is now populated
+    w.WriteHeader(http.StatusCreated)
+    json.NewEncoder(w).Encode(u)
+}`}</code></pre>
+
+      <h3 style={h3Style}>Stream a large JSON array line by line</h3>
+      <pre style={codeStyle}><code>{`// Process millions of JSON objects from a file without loading all into memory:
+func streamUsers(r io.Reader) error {
+    dec := json.NewDecoder(r)
+
+    // Read opening '['
+    if _, err := dec.Token(); err != nil {
+        return err
+    }
+
+    for dec.More() {
+        var u User
+        if err := dec.Decode(&u); err != nil {
+            return err
+        }
+        process(u) // handle each user without keeping all in memory
+    }
+
+    // Read closing ']'
+    _, err := dec.Token()
+    return err
+}`}</code></pre>
+
+      <h3 style={h3Style}>DisallowUnknownFields for strict validation</h3>
+      <pre style={codeStyle}><code>{`// By default, extra JSON keys are silently ignored.
+// Use DisallowUnknownFields to error on unexpected keys:
+
+dec := json.NewDecoder(r.Body)
+dec.DisallowUnknownFields()
+
+var payload CreateUserRequest
+if err := dec.Decode(&payload); err != nil {
+    // err will mention "unknown field \\"extraKey\\"" if present
+    http.Error(w, "invalid request: "+err.Error(), http.StatusBadRequest)
+    return
+}`}</code></pre>
+
+      {/* ── Section 8: Struct Tags with Validation ── */}
+      <h2 style={h2Style}>8. Struct Tags with go-playground/validator</h2>
+      <p>
+        Combine <code>json</code> tags with <code>validate</code> tags from the popular
+        <code> github.com/go-playground/validator/v10</code> library to add input validation without
+        separate validation logic.
+      </p>
+
+      <pre style={codeStyle}><code>{`// go get github.com/go-playground/validator/v10
+
+import "github.com/go-playground/validator/v10"
+
+type CreateUserRequest struct {
+    Name     string \`json:"name"     validate:"required,min=2,max=100"\`
+    Email    string \`json:"email"    validate:"required,email"\`
+    Age      int    \`json:"age"      validate:"gte=0,lte=130"\`
+    Role     string \`json:"role"     validate:"oneof=admin user viewer"\`
+    Password string \`json:"password" validate:"required,min=8"\`
+}
+
+var validate = validator.New()
+
+func createUserHandler(w http.ResponseWriter, r *http.Request) {
+    var req CreateUserRequest
+    if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+        http.Error(w, "bad JSON: "+err.Error(), http.StatusBadRequest)
+        return
+    }
+
+    if err := validate.Struct(req); err != nil {
+        // Returns structured validation errors
+        errs := err.(validator.ValidationErrors)
+        http.Error(w, errs.Error(), http.StatusUnprocessableEntity)
+        return
+    }
+
+    // req is valid, proceed
+}`}</code></pre>
+
+      <h3 style={h3Style}>Common validator tags</h3>
+      <pre style={codeStyle}><code>{`Name     string \`validate:"required,min=2,max=100"\`     // non-empty, length 2-100
+Email    string \`validate:"required,email"\`              // RFC 5322 email format
+Age      int    \`validate:"gte=0,lte=130"\`               // 0 ≤ age ≤ 130
+URL      string \`validate:"url"\`                         // valid URL
+UUID     string \`validate:"uuid4"\`                       // UUID v4 format
+OneOf    string \`validate:"oneof=red green blue"\`        // enum check
+Nested   *Inner \`validate:"required"\`                    // non-nil pointer`}</code></pre>
+
+      {/* ── Section 9: Go 1.21+ encoding/json/v2 ── */}
+      <h2 style={h2Style}>9. Go 1.21+ and the Upcoming encoding/json/v2</h2>
+      <p>
+        The Go team is developing <code>encoding/json/v2</code> (tracked in
+        <code> golang.org/x/exp/jsonv2</code>) with several long-requested improvements.
+        It is not yet stable but worth knowing about.
+      </p>
+
+      <pre style={codeStyle}><code>{`// Key improvements in encoding/json/v2 (experimental as of 2026):
+//
+// 1. omitzero: omit fields when they are the zero value of their type
+//    (different from omitempty which uses interface-based zero check)
+type Config struct {
+    Timeout int \`json:",omitzero"\` // omit when Timeout == 0
+}
+//
+// 2. Better error messages with field path info:
+//    json: cannot unmarshal string into Go struct field User.age of type int
+//    (previously just "cannot unmarshal")
+//
+// 3. Strict mode: unknown fields are errors by default
+//    (flip of current behavior)
+//
+// 4. Deterministic map ordering (sorted keys)
+//
+// 5. Support for encoding.TextMarshaler on map keys
+//
+// Migration: the v2 API is largely compatible with v1.
+// Change the import path and fix any breaking changes.`}</code></pre>
+
+      {/* ── Section 10: Popular Libraries Comparison ── */}
+      <h2 style={h2Style}>10. Popular JSON Libraries Comparison</h2>
+      <p>
+        <code>encoding/json</code> is correct and battle-tested. Switch to a faster library only when
+        JSON parsing is a proven bottleneck in your profiler.
+      </p>
+
+      <table style={tableStyle}>
+        <thead>
+          <tr>
+            <th style={thStyle}>Library</th>
+            <th style={thStyle}>Speed vs std</th>
+            <th style={thStyle}>Key Feature</th>
+            <th style={thStyle}>Best Use Case</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style={tdStyle}><strong>encoding/json</strong></td>
+            <td style={tdStyle}>Baseline (1x)</td>
+            <td style={tdStyle}>Zero dependencies, stdlib</td>
+            <td style={tdStyle}>Default for all Go projects</td>
+          </tr>
+          <tr>
+            <td style={tdStyle}><strong>easyjson</strong></td>
+            <td style={tdStyle}>~3–5x faster</td>
+            <td style={tdStyle}>Code generation (no reflection)</td>
+            <td style={tdStyle}>High-throughput APIs, fixed schemas</td>
+          </tr>
+          <tr>
+            <td style={tdStyle}><strong>jsoniter</strong></td>
+            <td style={tdStyle}>~2–3x faster</td>
+            <td style={tdStyle}>Drop-in replacement (<code>import jsoniter "github.com/json-iterator/go"</code>)</td>
+            <td style={tdStyle}>Performance upgrade with no refactoring</td>
+          </tr>
+          <tr>
+            <td style={tdStyle}><strong>sonic</strong></td>
+            <td style={tdStyle}>~6–10x faster</td>
+            <td style={tdStyle}>SIMD JIT (amd64 only)</td>
+            <td style={tdStyle}>Ultra-high throughput, Bytedance-scale</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <pre style={codeStyle}><code>{`// Drop-in replacement with jsoniter (same API as encoding/json):
+import jsoniter "github.com/json-iterator/go"
+
+var json = jsoniter.ConfigCompatibleWithStandardLibrary
+
+// Now use json.Marshal / json.Unmarshal / json.NewDecoder as before.
+// No other code changes needed.`}</code></pre>
+
+      {/* ── Section 11: HTTP API with JSON ── */}
+      <h2 style={h2Style}>11. HTTP API with JSON — Full Pattern</h2>
+      <p>
+        The idiomatic Go pattern for JSON APIs uses <code>json.NewDecoder</code> for reading
+        request bodies and <code>json.NewEncoder</code> for writing responses — both streaming
+        without intermediate byte slices.
+      </p>
+
+      <h3 style={h3Style}>GET — fetch and decode JSON</h3>
+      <pre style={codeStyle}><code>{`package main
+
+import (
+    "encoding/json"
+    "fmt"
+    "net/http"
+    "time"
+)
+
+type GitHubUser struct {
+    Login     string    \`json:"login"\`
+    ID        int       \`json:"id"\`
+    Name      string    \`json:"name"\`
+    CreatedAt time.Time \`json:"created_at"\`
+}
+
+func fetchGitHubUser(username string) (*GitHubUser, error) {
+    url := "https://api.github.com/users/" + username
+    resp, err := http.Get(url)
+    if err != nil {
+        return nil, fmt.Errorf("GET %s: %w", url, err)
+    }
+    defer resp.Body.Close()
+
+    if resp.StatusCode != http.StatusOK {
+        return nil, fmt.Errorf("unexpected status: %d", resp.StatusCode)
+    }
+
+    var user GitHubUser
+    if err := json.NewDecoder(resp.Body).Decode(&user); err != nil {
+        return nil, fmt.Errorf("decode response: %w", err)
+    }
+    return &user, nil
+}`}</code></pre>
+
+      <h3 style={h3Style}>POST — encode and send JSON</h3>
+      <pre style={codeStyle}><code>{`import (
+    "bytes"
+    "encoding/json"
+    "fmt"
+    "net/http"
+)
+
+type CreateUserReq struct {
+    Name  string \`json:"name"\`
+    Email string \`json:"email"\`
+}
+
+type CreateUserResp struct {
     ID   int    \`json:"id"\`
     Name string \`json:"name"\`
 }
 
-// ❌ 2. JSON numbers decode as float64 in interface{}
-var data map[string]interface{}
-json.Unmarshal([]byte(\`{"count": 42}\`), &data)
-count := data["count"].(int) // PANICS: it's float64!
+func createUser(baseURL string, req CreateUserReq) (*CreateUserResp, error) {
+    var buf bytes.Buffer
+    if err := json.NewEncoder(&buf).Encode(req); err != nil {
+        return nil, err
+    }
 
-// ✅ Proper type assertion
-count := int(data["count"].(float64)) // correct
+    resp, err := http.Post(baseURL+"/users", "application/json", &buf)
+    if err != nil {
+        return nil, err
+    }
+    defer resp.Body.Close()
 
-// ❌ 3. Nil pointer dereference
-var user *User
-fmt.Println(user.Name) // PANICS
+    var result CreateUserResp
+    if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
+        return nil, fmt.Errorf("decode response: %w", err)
+    }
+    return &result, nil
+}`}</code></pre>
 
-// ✅ Check for nil
-if user != nil {
-    fmt.Println(user.Name)
+      <h3 style={h3Style}>Full HTTP handler with validation</h3>
+      <pre style={codeStyle}><code>{`// GET /users/:id — respond with JSON
+func getUser(w http.ResponseWriter, r *http.Request) {
+    id := r.PathValue("id") // Go 1.22+
+
+    user, err := db.FindUser(id)
+    if err != nil {
+        writeError(w, http.StatusNotFound, "user not found")
+        return
+    }
+
+    w.Header().Set("Content-Type", "application/json")
+    json.NewEncoder(w).Encode(user)
 }
 
-// ❌ 4. Using json.Unmarshal for HTTP bodies (reads all into memory first)
-body, _ := io.ReadAll(resp.Body)
-json.Unmarshal(body, &user)
+// POST /users — accept JSON body
+func postUser(w http.ResponseWriter, r *http.Request) {
+    if r.Header.Get("Content-Type") != "application/json" {
+        writeError(w, http.StatusUnsupportedMediaType, "Content-Type must be application/json")
+        return
+    }
 
-// ✅ Use json.Decoder for streaming
-json.NewDecoder(resp.Body).Decode(&user)
+    dec := json.NewDecoder(r.Body)
+    dec.DisallowUnknownFields()
 
-// ❌ 5. Null/nil slice marshals as null
-var items []Item // nil slice
-json.Marshal(items) // {"items": null}
+    var req CreateUserReq
+    if err := dec.Decode(&req); err != nil {
+        writeError(w, http.StatusBadRequest, err.Error())
+        return
+    }
 
-// ✅ Initialize with make for empty array
-items := make([]Item, 0)
-json.Marshal(items) // {"items": []}`}</code></pre>
+    user, err := db.CreateUser(req)
+    if err != nil {
+        writeError(w, http.StatusInternalServerError, "could not create user")
+        return
+    }
 
-      <h2>{s.h2_faq}</h2>
-      <div style={{ marginBottom: 24 }}>
-        <h3 style={{ marginBottom: 8 }}>{s.faq1_q}</h3>
-        <p style={{ margin: 0 }}>{s.faq1_a}</p>
-      </div>
-      <div style={{ marginBottom: 24 }}>
-        <h3 style={{ marginBottom: 8 }}>{s.faq2_q}</h3>
-        <p style={{ margin: 0 }}>{s.faq2_a}</p>
-      </div>
-      <div style={{ marginBottom: 24 }}>
-        <h3 style={{ marginBottom: 8 }}>{s.faq3_q}</h3>
-        <p style={{ margin: 0 }}>{s.faq3_a}</p>
-      </div>
-      <div style={{ marginBottom: 24 }}>
-        <h3 style={{ marginBottom: 8 }}>{s.faq4_q}</h3>
-        <p style={{ margin: 0 }}>{s.faq4_a}</p>
-      </div>
-      <div style={{ marginBottom: 24 }}>
-        <h3 style={{ marginBottom: 8 }}>{s.faq5_q}</h3>
-        <p style={{ margin: 0 }}>{s.faq5_a}</p>
-      </div>
-      <div style={{ marginBottom: 24 }}>
-        <h3 style={{ marginBottom: 8 }}>{s.faq6_q}</h3>
-        <p style={{ margin: 0 }}>{s.faq6_a}</p>
-      </div>
-      <div style={{ marginBottom: 24 }}>
-        <h3 style={{ marginBottom: 8 }}>{s.faq7_q}</h3>
-        <p style={{ margin: 0 }}>{s.faq7_a}</p>
-      </div>
-      <div style={{ marginBottom: 24 }}>
-        <h3 style={{ marginBottom: 8 }}>{s.faq8_q}</h3>
-        <p style={{ margin: 0 }}>{s.faq8_a}</p>
-      </div>
+    w.Header().Set("Content-Type", "application/json")
+    w.WriteHeader(http.StatusCreated)
+    json.NewEncoder(w).Encode(user)
+}
 
-      <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: 8, padding: '16px 20px', marginTop: 32 }}>
-        <p style={{ margin: 0, fontWeight: 600 }}>
-          <Link href={`/${lang}/tools/json-to-go`} style={{ color: '#2563eb' }}>{s.conclusion}</Link>
-          {' '}— paste JSON, get idiomatic Go structs with proper json tags, pointer types, and Go naming conventions.
+func writeError(w http.ResponseWriter, code int, msg string) {
+    w.Header().Set("Content-Type", "application/json")
+    w.WriteHeader(code)
+    json.NewEncoder(w).Encode(map[string]string{"error": msg})
+}`}</code></pre>
+
+      {/* ── Section 12: Common Pitfalls ── */}
+      <h2 style={h2Style}>12. Common Pitfalls</h2>
+
+      <h3 style={h3Style}>1. Unexported fields are silently ignored</h3>
+      <pre style={codeStyle}><code>{`// ❌ Wrong — fields start with lowercase, invisible to encoding/json
+type user struct {
+    id   int
+    name string
+}
+data, _ := json.Marshal(user{id: 1, name: "Alice"})
+// Output: {}  ← empty!
+
+// ✅ Correct — exported fields with json tags
+type User struct {
+    ID   int    \`json:"id"\`
+    Name string \`json:"name"\`
+}
+data, _ = json.Marshal(User{ID: 1, Name: "Alice"})
+// Output: {"id":1,"name":"Alice"}`}</code></pre>
+
+      <h3 style={h3Style}>2. JSON numbers become float64 in interface{'{}'}</h3>
+      <pre style={codeStyle}><code>{`var m map[string]interface{}
+json.Unmarshal([]byte(\`{"count": 42}\`), &m)
+
+// ❌ Panics — it's float64, not int!
+count := m["count"].(int)
+
+// ✅ Correct type assertion
+count := int(m["count"].(float64))
+
+// ✅ Better: use json.Number to preserve original representation
+dec := json.NewDecoder(strings.NewReader(\`{"count": 42}\`))
+dec.UseNumber()
+dec.Decode(&m)
+n, _ := m["count"].(json.Number).Int64() // 42 exactly`}</code></pre>
+
+      <h3 style={h3Style}>3. Date format gotchas</h3>
+      <pre style={codeStyle}><code>{`// ❌ time.Time only parses RFC3339 by default
+// JSON: { "date": "2026-01-15" }  ← no time component
+var s struct{ Date time.Time \`json:"date"\` }
+json.Unmarshal(data, &s) // ERROR: cannot parse "2026-01-15" as RFC3339
+
+// ✅ Use a custom Date type (see Section 6)
+// OR use a string and parse manually:
+var s2 struct{ Date string \`json:"date"\` }
+json.Unmarshal(data, &s2)
+t, _ := time.Parse("2006-01-02", s2.Date)`}</code></pre>
+
+      <h3 style={h3Style}>4. Nil slice vs empty array</h3>
+      <pre style={codeStyle}><code>{`// nil slice marshals as JSON null
+var items []string         // nil
+json.Marshal(items)        // null
+
+// Initialized empty slice marshals as []
+items = make([]string, 0)
+json.Marshal(items)        // []
+
+// This matters when your frontend expects an array, not null:
+type Response struct {
+    Items []string \`json:"items"\`
+}
+// Always initialize: Items: make([]string, 0)`}</code></pre>
+
+      <h3 style={h3Style}>5. Circular references cause infinite loop</h3>
+      <pre style={codeStyle}><code>{`// ❌ Circular reference — json.Marshal will panic with stack overflow
+type Node struct {
+    Value    int
+    Children []*Node \`json:"children"\`
+    Parent   *Node   \`json:"parent"\` // points back → cycle!
+}
+
+// ✅ Exclude back-references with json:"-"
+type Node struct {
+    Value    int
+    Children []*Node \`json:"children"\`
+    Parent   *Node   \`json:"-"\`        // excluded from JSON
+}`}</code></pre>
+
+      {/* ── FAQ ── */}
+      <h2 style={h2Style}>Frequently Asked Questions</h2>
+
+      <div style={{ marginBottom: '1.25rem' }}>
+        <h3 style={h3Style}>How do I convert JSON to Go struct online?</h3>
+        <p style={{ margin: 0 }}>
+          Use DevToolBox&apos;s JSON to Go converter — paste your JSON and get idiomatic Go struct definitions
+          with json tags, pointer types for nullable fields, and proper Go naming conventions instantly.
+          It handles nested objects, arrays, and mixed types automatically.
         </p>
       </div>
-    </>
+
+      <div style={{ marginBottom: '1.25rem' }}>
+        <h3 style={h3Style}>Should I use json.Unmarshal or json.NewDecoder?</h3>
+        <p style={{ margin: 0 }}>
+          Use <code>json.NewDecoder(r.Body).Decode(&amp;v)</code> for HTTP request/response bodies — it streams
+          without buffering all bytes. Use <code>json.Unmarshal(data, &amp;v)</code> when you already have
+          a <code>[]byte</code> in memory (e.g. from a database or file).
+        </p>
+      </div>
+
+      <div style={{ marginBottom: '1.25rem' }}>
+        <h3 style={h3Style}>How do I handle nullable JSON fields in Go?</h3>
+        <p style={{ margin: 0 }}>
+          Use pointer types: <code>*string</code>, <code>*int</code>, <code>*bool</code>. A nil pointer
+          marshals to JSON <code>null</code>. Always check for nil before dereferencing:
+          <code> if u.Bio != nil {'{'} use *u.Bio {'}'}</code>.
+        </p>
+      </div>
+
+      <div style={{ marginBottom: '1.25rem' }}>
+        <h3 style={h3Style}>What does omitempty do in a Go json tag?</h3>
+        <p style={{ margin: 0 }}>
+          <code>omitempty</code> omits the field from JSON output when it has its zero value — <code>""</code> for strings,
+          <code> 0</code> for numbers, <code>false</code> for booleans, <code>nil</code> for pointers/slices/maps.
+          Combine with a pointer: <code>*string `json:&quot;bio,omitempty&quot;`</code> to also omit null values.
+        </p>
+      </div>
+
+      <div style={{ marginBottom: '1.25rem' }}>
+        <h3 style={h3Style}>Why are struct fields missing from JSON output?</h3>
+        <p style={{ margin: 0 }}>
+          Fields must start with an uppercase letter to be exported. Lowercase (unexported) fields are
+          silently ignored by <code>encoding/json</code>. Also verify you have not accidentally used
+          the <code>`json:"-"`</code> tag which always excludes a field.
+        </p>
+      </div>
+
+      <div style={{ marginBottom: '1.25rem' }}>
+        <h3 style={h3Style}>How do I parse custom date formats in Go?</h3>
+        <p style={{ margin: 0 }}>
+          Create a custom type that embeds <code>time.Time</code> and implement <code>UnmarshalJSON</code>
+          using <code>time.Parse(&quot;2006-01-02&quot;, s)</code>. Go&apos;s reference time is
+          <code> Mon Jan 2 15:04:05 MST 2006</code> — use those exact values in your format string.
+        </p>
+      </div>
+
+      <div style={{ marginBottom: '1.25rem' }}>
+        <h3 style={h3Style}>How do I reject unknown JSON fields?</h3>
+        <p style={{ margin: 0 }}>
+          Use <code>dec.DisallowUnknownFields()</code> on a <code>json.Decoder</code>. By default,
+          <code> encoding/json</code> silently ignores extra keys. Strict mode is useful for API handlers
+          where unexpected fields may indicate a client bug or schema mismatch.
+        </p>
+      </div>
+
+      <div style={{ marginBottom: '1.25rem' }}>
+        <h3 style={h3Style}>Which JSON library is fastest in Go?</h3>
+        <p style={{ margin: 0 }}>
+          For amd64 workloads: <strong>sonic</strong> (ByteDance) is ~6-10x faster using SIMD JIT.
+          <strong> jsoniter</strong> is a safe 2-3x improvement with zero code changes — just replace
+          the import. <code>encoding/json</code> remains the best default unless JSON is a proven bottleneck.
+        </p>
+      </div>
+
+      {/* Key Takeaways */}
+      <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '1rem', marginTop: '2rem' }}>
+        <strong style={{ display: 'block', marginBottom: '0.5rem', color: '#1e293b' }}>Key Takeaways</strong>
+        <ul style={{ margin: 0, paddingLeft: '1.25rem', lineHeight: '1.9' }}>
+          <li>Go struct fields must be <strong>exported</strong> (uppercase) to be visible to <code>encoding/json</code></li>
+          <li>Use <code>`json:"field_name"`</code> tags to map Go names to JSON keys</li>
+          <li>Use <code>`,omitempty`</code> to skip zero-value fields in JSON output</li>
+          <li>Use <code>`json:"-"`</code> to permanently exclude sensitive fields</li>
+          <li>Pointer types (<code>*string</code>, <code>*int</code>) model nullable / optional JSON fields</li>
+          <li>Use <code>json.NewDecoder(r.Body)</code> for HTTP streams; <code>json.Unmarshal</code> for <code>[]byte</code></li>
+          <li>Call <code>dec.DisallowUnknownFields()</code> for strict API validation</li>
+          <li>Implement <code>UnmarshalJSON</code> / <code>MarshalJSON</code> for custom date formats and enums</li>
+          <li>JSON numbers decode as <code>float64</code> into <code>interface{'{}'}</code> — use typed structs or <code>dec.UseNumber()</code></li>
+          <li>Initialize slices with <code>make([]T, 0)</code> when the API must return <code>[]</code> not <code>null</code></li>
+          <li>For high-throughput APIs, replace <code>encoding/json</code> with <strong>jsoniter</strong> or <strong>sonic</strong></li>
+        </ul>
+      </div>
+    </article>
   );
 }
