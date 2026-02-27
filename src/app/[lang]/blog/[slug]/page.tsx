@@ -431,6 +431,8 @@ import GitWorkflowGuide from '@/data/posts/git-workflow-guide';
 import VueCompositionGuide from '@/data/posts/vue-composition-guide';
 import GraphqlClientGuide from '@/data/posts/graphql-client-guide';
 import TailwindAdvancedGuide from '@/data/posts/tailwind-advanced-guide';
+import NextjsAdvancedGuide from '@/data/posts/nextjs-advanced-guide';
+import OauthAuthenticationGuide from '@/data/posts/oauth-authentication-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -852,6 +854,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'vue-composition-guide': VueCompositionGuide,
   'graphql-client-guide': GraphqlClientGuide,
   'tailwind-advanced-guide': TailwindAdvancedGuide,
+  'nextjs-advanced-guide': NextjsAdvancedGuide,
+  'oauth-authentication-guide': OauthAuthenticationGuide,
 };
 
 /* i18n for UI strings on this page */
