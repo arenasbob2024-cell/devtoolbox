@@ -9111,6 +9111,25 @@ export const blogPosts: BlogPost[] = [
       ko: { title: 'CSS Grid 가이드: Flexbox 비교가 포함된 완전한 레이아웃 튜토리얼', description: 'CSS Grid를 마스터하세요. grid-template, fr 단위, auto-fill/auto-fit, 명명된 영역, 서브그리드, 반응형 패턴, CSS Grid vs Flexbox 비교 완전 가이드.', readingTime: '13분 읽기', keywords: ['css grid', 'css grid 튜토리얼', 'css grid 레이아웃', 'grid-template-columns', 'fr 단위', 'auto-fill auto-fit', 'css grid vs flexbox', 'css subgrid'] },
     },
   },
+  {
+    slug: 'node-js-guide',
+    title: 'Node.js Guide: Complete Tutorial for Backend Development',
+    description: 'Master Node.js backend development. Covers event loop, Express.js, REST APIs, authentication with JWT, database integration, testing with Jest, PM2 deployment, and Node.js vs Deno vs Bun comparison.',
+    date: '2026-02-27',
+    author: 'DevToolBox',
+    readingTime: '14 min read',
+    keywords: ['node.js tutorial', 'node.js backend', 'express.js guide', 'node.js rest api', 'node.js jwt auth', 'node.js testing jest', 'pm2 node.js', 'node.js vs deno', 'node.js event loop', 'node.js deployment'],
+    relatedTools: ['json-formatter', 'base64-encoder', 'url-encoder'],
+    relatedPosts: ['api-testing-guide', 'websocket-guide', 'postgresql-guide'],
+    translations: {
+      zh: { title: 'Node.js指南：后端开发完整教程', description: '掌握Node.js后端开发。涵盖事件循环、Express.js、REST API、JWT认证、数据库集成、Jest测试、PM2部署和Node.js vs Deno vs Bun对比。', readingTime: '14 分钟阅读', keywords: ['node.js教程', 'node.js后端', 'express.js指南', 'node.js rest api', 'node.js jwt认证', 'node.js jest测试', 'pm2 node.js', 'node.js vs deno', 'node.js事件循环', 'node.js部署'] },
+      fr: { title: 'Guide Node.js: Tutoriel Complet pour le Développement Backend', description: 'Maîtrisez Node.js backend. Guide avec event loop, Express.js, REST API, JWT, intégration BDD, tests Jest, déploiement PM2 et comparaison Node.js vs Deno vs Bun.', readingTime: '14 min de lecture', keywords: ['tutoriel node.js', 'backend node.js', 'guide express.js', 'api rest node.js', 'jwt node.js', 'tests jest node.js', 'pm2 node.js', 'node.js vs deno'] },
+      de: { title: 'Node.js Leitfaden: Vollständiges Tutorial für Backend-Entwicklung', description: 'Node.js Backend meistern. Anleitung mit Event Loop, Express.js, REST APIs, JWT-Auth, DB-Integration, Jest-Tests, PM2-Deployment und Node.js vs Deno vs Bun Vergleich.', readingTime: '14 Min. Lesezeit', keywords: ['node.js tutorial', 'node.js backend', 'express.js leitfaden', 'node.js rest api', 'node.js jwt', 'node.js jest tests', 'pm2 node.js', 'node.js vs deno'] },
+      es: { title: 'Guía Node.js: Tutorial Completo para Desarrollo Backend', description: 'Domina Node.js backend. Guía con event loop, Express.js, REST APIs, JWT, integración BD, pruebas Jest, despliegue PM2 y comparación Node.js vs Deno vs Bun.', readingTime: '14 min de lectura', keywords: ['tutorial node.js', 'backend node.js', 'guía express.js', 'api rest node.js', 'jwt node.js', 'pruebas jest node.js', 'pm2 node.js', 'node.js vs deno'] },
+      ja: { title: 'Node.jsガイド：バックエンド開発完全チュートリアル', description: 'Node.jsバックエンド開発をマスター。イベントループ、Express.js、REST API、JWT認証、DB統合、Jestテスト、PM2デプロイ、Node.js vs Deno vs Bun比較の完全ガイド。', readingTime: '14分', keywords: ['node.jsチュートリアル', 'node.jsバックエンド', 'express.jsガイド', 'node.js rest api', 'node.js jwt', 'node.js jestテスト', 'pm2 node.js', 'node.js vs deno'] },
+      ko: { title: 'Node.js 가이드: 백엔드 개발을 위한 완전한 튜토리얼', description: 'Node.js 백엔드 개발을 마스터하세요. 이벤트 루프, Express.js, REST API, JWT 인증, DB 통합, Jest 테스트, PM2 배포, Node.js vs Deno vs Bun 비교 완전 가이드.', readingTime: '14분 읽기', keywords: ['node.js 튜토리얼', 'node.js 백엔드', 'express.js 가이드', 'node.js rest api', 'node.js jwt', 'node.js jest 테스트', 'pm2 node.js', 'node.js vs deno'] },
+    },
+  },
 ];
 
 /** Get post with localized metadata */
