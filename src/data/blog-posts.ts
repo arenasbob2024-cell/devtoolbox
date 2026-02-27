@@ -8864,6 +8864,25 @@ export const blogPosts: BlogPost[] = [
       ko: { title: 'SSH 키 생성기: SSH 키 생성 및 관리 — 완전 가이드', description: 'SSH 키 생성 및 관리를 마스터하세요. ssh-keygen, Ed25519/RSA 비교, SSH 설정, node-forge, Python paramiko, Git SSH 설정, 터널링, 인증서 기반 SSH 완전 가이드.', readingTime: '13분 읽기', keywords: ['ssh 키 생성기', 'ssh-keygen', 'ed25519', 'rsa 키', 'ssh 설정', 'node-forge', 'python paramiko', 'git ssh', 'ssh 터널', 'ssh 인증서'] },
     },
   },
+  {
+    slug: 'api-testing-guide',
+    title: 'API Testing: Complete Guide with cURL, Supertest, and k6',
+    description: 'Master API testing with this complete guide. Covers HTTP methods, cURL, fetch/axios, Postman/Newman, supertest, Python httpx, mock servers, contract testing, k6 load testing, and OpenAPI documentation.',
+    date: '2026-02-27',
+    author: 'DevToolBox',
+    readingTime: '13 min read',
+    keywords: ['api testing', 'curl api', 'supertest', 'k6 load testing', 'postman', 'httpx pytest', 'mock server', 'openapi', 'pact contract testing', 'newman cli'],
+    relatedTools: ['curl-to-code', 'json-formatter', 'cors-tester', 'http-status-codes'],
+    relatedPosts: ['jwt-authentication-guide', 'cors-tester-online-guide', 'rest-api-best-practices-guide'],
+    translations: {
+      zh: { title: 'API测试：cURL、Supertest和k6完整指南', description: '掌握API测试的完整指南。含HTTP方法、cURL、fetch/axios、Postman/Newman、supertest、Python httpx、Mock服务器、契约测试、k6负载测试和OpenAPI文档。', readingTime: '13 分钟阅读', keywords: ['api测试', 'curl api', 'supertest', 'k6负载测试', 'postman', 'httpx pytest', 'mock服务器', 'openapi', 'pact契约测试', 'newman cli'] },
+      fr: { title: 'Test d\'API: Guide Complet avec cURL, Supertest et k6', description: 'Maîtrisez les tests d\'API. Guide avec méthodes HTTP, cURL, fetch/axios, Postman/Newman, supertest, Python httpx, serveurs mock, tests de contrat et k6.', readingTime: '13 min de lecture', keywords: ['test api', 'curl api', 'supertest', 'k6 test charge', 'postman', 'httpx pytest', 'serveur mock', 'openapi', 'pact test contrat', 'newman cli'] },
+      de: { title: 'API-Tests: Kompletter Leitfaden mit cURL, Supertest und k6', description: 'API-Tests meistern. Anleitung mit HTTP-Methoden, cURL, fetch/axios, Postman/Newman, supertest, Python httpx, Mock-Servern, Contract Testing und k6.', readingTime: '13 Min. Lesezeit', keywords: ['api tests', 'curl api', 'supertest', 'k6 lasttests', 'postman', 'httpx pytest', 'mock server', 'openapi', 'pact contract testing', 'newman cli'] },
+      es: { title: 'Pruebas de API: Guía Completa con cURL, Supertest y k6', description: 'Domina las pruebas de API. Guía con métodos HTTP, cURL, fetch/axios, Postman/Newman, supertest, Python httpx, servidores mock, pruebas de contrato y k6.', readingTime: '13 min de lectura', keywords: ['pruebas api', 'curl api', 'supertest', 'k6 pruebas carga', 'postman', 'httpx pytest', 'servidor mock', 'openapi', 'pact pruebas contrato', 'newman cli'] },
+      ja: { title: 'APIテスト：cURL、Supertest、k6の完全ガイド', description: 'APIテストをマスター。HTTPメソッド、cURL、fetch/axios、Postman/Newman、supertest、Python httpx、Mockサーバー、契約テスト、k6負荷テスト、OpenAPIドキュメントの完全ガイド。', readingTime: '13分', keywords: ['apiテスト', 'curl api', 'supertest', 'k6負荷テスト', 'postman', 'httpx pytest', 'mockサーバー', 'openapi', 'pact契約テスト', 'newman cli'] },
+      ko: { title: 'API 테스트: cURL, Supertest, k6 완전 가이드', description: 'API 테스트를 마스터하세요. HTTP 메서드, cURL, fetch/axios, Postman/Newman, supertest, Python httpx, Mock 서버, 계약 테스트, k6 부하 테스트, OpenAPI 문서 완전 가이드.', readingTime: '13분 읽기', keywords: ['api 테스트', 'curl api', 'supertest', 'k6 부하 테스트', 'postman', 'httpx pytest', 'mock 서버', 'openapi', 'pact 계약 테스트', 'newman cli'] },
+    },
+  },
 ];
 
 /** Get post with localized metadata */

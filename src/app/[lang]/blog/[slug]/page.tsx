@@ -347,6 +347,7 @@ import CronJobSchedulerOnlineGuide from '@/data/posts/cron-job-scheduler-online-
 import ColorPaletteGeneratorOnlineGuide from '@/data/posts/color-palette-generator-online-guide';
 import MarkdownEditorOnlineGuide from '@/data/posts/markdown-editor-online-guide';
 import SshKeyGeneratorOnlineGuide from '@/data/posts/ssh-key-generator-online-guide';
+import ApiTestingGuide from '@/data/posts/api-testing-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -684,6 +685,7 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'color-palette-generator-online-guide': ColorPaletteGeneratorOnlineGuide,
   'markdown-editor-online-guide': MarkdownEditorOnlineGuide,
   'ssh-key-generator-online-guide': SshKeyGeneratorOnlineGuide,
+  'api-testing-guide': ApiTestingGuide,
 };
 
 /* i18n for UI strings on this page */
