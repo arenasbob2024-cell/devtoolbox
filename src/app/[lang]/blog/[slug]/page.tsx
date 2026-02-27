@@ -351,6 +351,8 @@ import ApiTestingGuide from '@/data/posts/api-testing-guide';
 import WebsocketGuide from '@/data/posts/websocket-guide';
 import DockerCommandsGuide from '@/data/posts/docker-commands-guide';
 import RedisGuide from '@/data/posts/redis-guide';
+import PostgresqlGuide from '@/data/posts/postgresql-guide';
+import GraphqlGuide from '@/data/posts/graphql-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -692,6 +694,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'websocket-guide': WebsocketGuide,
   'docker-commands-guide': DockerCommandsGuide,
   'redis-guide': RedisGuide,
+  'postgresql-guide': PostgresqlGuide,
+  'graphql-guide': GraphqlGuide,
 };
 
 /* i18n for UI strings on this page */
