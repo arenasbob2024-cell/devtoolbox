@@ -429,6 +429,8 @@ import SqlOptimizationGuide from '@/data/posts/sql-optimization-guide';
 import ReactDesignPatternsGuide from '@/data/posts/react-design-patterns-guide';
 import GitWorkflowGuide from '@/data/posts/git-workflow-guide';
 import VueCompositionGuide from '@/data/posts/vue-composition-guide';
+import GraphqlClientGuide from '@/data/posts/graphql-client-guide';
+import TailwindAdvancedGuide from '@/data/posts/tailwind-advanced-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -848,6 +850,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'react-design-patterns-guide': ReactDesignPatternsGuide,
   'git-workflow-guide': GitWorkflowGuide,
   'vue-composition-guide': VueCompositionGuide,
+  'graphql-client-guide': GraphqlClientGuide,
+  'tailwind-advanced-guide': TailwindAdvancedGuide,
 };
 
 /* i18n for UI strings on this page */
