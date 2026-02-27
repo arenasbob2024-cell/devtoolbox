@@ -8541,6 +8541,25 @@ export const blogPosts: BlogPost[] = [
       th: { title: 'Unix Timestamp Converter: แปลงเป็นวันที่ออนไลน์', description: 'แปลง Unix timestamps เป็นวันที่ คู่มือสมบูรณ์สำหรับ JavaScript, Python, Go และฐานข้อมูล', readingTime: '8 นาทีในการอ่าน', keywords: ['unix timestamp', 'timestamp เป็นวันที่', 'ตัวแปลง timestamp', 'javascript timestamp', 'python timestamp'] },
     },
   },
+  {
+    slug: 'qr-code-online-guide',
+    title: 'QR Code Generator: Create QR Codes Online — Complete Guide',
+    description: 'Complete guide to QR code generation: structure (finder patterns, timing, data modules), error correction levels L/M/Q/H, JavaScript qrcode library, Node.js file output, Python qrcode library, logo overlay, styling, SVG vs PNG, WiFi QR format, vCard QR codes, capacity limits, and common use cases.',
+    date: '2026-02-27',
+    author: 'DevToolBox',
+    readingTime: '18 min read',
+    keywords: ['qr code generator', 'qr code generator online', 'create qr code online', 'qr code structure', 'qr code error correction', 'qr code javascript', 'qr code python', 'wifi qr code', 'vcard qr code', 'qr code logo', 'svg qr code', 'qr code capacity'],
+    relatedTools: ['qr-code-generator', 'base64-encoder', 'url-encoder-decoder'],
+    relatedPosts: ['qr-code-generator-online-guide', 'qr-code-size-format-best-practices', 'base64-encoding-real-world-uses'],
+    translations: {
+      zh: { title: 'QR 码生成器：在线创建二维码 — 完整指南', description: '二维码生成完整指南：结构（寻像图案、时序图案、数据模块）、纠错等级 L/M/Q/H、JavaScript qrcode 库、Node.js 文件输出、Python qrcode 库、Logo 嵌入、样式定制、SVG 与 PNG 对比、WiFi 二维码格式、vCard 二维码、容量限制和常见用途。', readingTime: '18 分钟阅读', keywords: ['二维码生成器', '在线生成二维码', '创建二维码', '二维码结构', '二维码纠错等级', '二维码 javascript', '二维码 python', 'wifi 二维码', 'vcard 二维码', '带 logo 二维码', 'svg 二维码', '二维码容量'] },
+      ja: { title: 'QRコードジェネレーター：オンラインでQRコード作成 — 完全ガイド', description: 'QRコード生成の完全ガイド：構造（ファインダーパターン、タイミング、データモジュール）、誤り訂正レベル L/M/Q/H、JavaScript qrcode ライブラリ、Node.js ファイル出力、Python qrcode ライブラリ、ロゴ埋め込み、スタイリング、SVG vs PNG、WiFi QR フォーマット、vCard QR コード、容量制限と一般的なユースケース。', readingTime: '18分', keywords: ['QRコードジェネレーター', 'オンラインQRコード生成', 'QRコード作成', 'QRコード構造', 'QRコード誤り訂正', 'QRコード javascript', 'QRコード python', 'WiFi QRコード', 'vCard QRコード', 'ロゴ付きQRコード', 'SVG QRコード', 'QRコード容量'] },
+      ko: { title: 'QR 코드 생성기: 온라인 QR 코드 만들기 — 완전 가이드', description: 'QR 코드 생성 완전 가이드: 구조(파인더 패턴, 타이밍, 데이터 모듈), 오류 수정 레벨 L/M/Q/H, JavaScript qrcode 라이브러리, Node.js 파일 출력, Python qrcode 라이브러리, 로고 삽입, 스타일링, SVG vs PNG, WiFi QR 형식, vCard QR 코드, 용량 제한과 일반적인 활용 사례.', readingTime: '18분 읽기', keywords: ['QR 코드 생성기', '온라인 QR 코드 만들기', 'QR 코드 생성', 'QR 코드 구조', 'QR 코드 오류 수정', 'QR 코드 자바스크립트', 'QR 코드 파이썬', 'WiFi QR 코드', 'vCard QR 코드', '로고 QR 코드', 'SVG QR 코드', 'QR 코드 용량'] },
+      fr: { title: 'Generateur de QR Code: Creer des QR Codes en Ligne — Guide Complet', description: 'Guide complet de la generation de QR codes: structure (motifs localisateurs, synchronisation, modules de donnees), niveaux de correction L/M/Q/H, bibliotheque JavaScript qrcode, sortie fichier Node.js, bibliotheque Python qrcode, superposition de logo, style, SVG vs PNG, format QR WiFi, QR codes vCard, limites de capacite et cas d\'utilisation courants.', readingTime: '18 min de lecture', keywords: ['generateur qr code', 'creer qr code en ligne', 'qr code en ligne', 'structure qr code', 'correction erreur qr code', 'qr code javascript', 'qr code python', 'qr code wifi', 'qr code vcard', 'qr code avec logo', 'qr code svg', 'capacite qr code'] },
+      de: { title: 'QR-Code-Generator: QR-Codes Online Erstellen — Vollstaendiger Leitfaden', description: 'Vollstaendiger Leitfaden zur QR-Code-Generierung: Struktur (Suchmuster, Timing, Datenmodule), Fehlerkorrekturebenen L/M/Q/H, JavaScript qrcode-Bibliothek, Node.js-Dateiausgabe, Python qrcode-Bibliothek, Logo-Overlay, Styling, SVG vs PNG, WiFi-QR-Format, vCard-QR-Codes, Kapazitaetsgrenzen und gaengige Anwendungsfaelle.', readingTime: '18 Min. Lesezeit', keywords: ['QR-Code Generator', 'QR-Code online erstellen', 'QR-Code generieren', 'QR-Code Struktur', 'QR-Code Fehlerkorrektur', 'QR-Code JavaScript', 'QR-Code Python', 'WiFi QR-Code', 'vCard QR-Code', 'QR-Code mit Logo', 'SVG QR-Code', 'QR-Code Kapazitaet'] },
+      es: { title: 'Generador de Codigo QR: Crear Codigos QR Online — Guia Completa', description: 'Guia completa de generacion de codigos QR: estructura (patrones de busqueda, sincronizacion, modulos de datos), niveles de correccion L/M/Q/H, libreria JavaScript qrcode, salida de archivos Node.js, libreria Python qrcode, superposicion de logo, estilos, SVG vs PNG, formato QR WiFi, codigos QR vCard, limites de capacidad y casos de uso comunes.', readingTime: '18 min de lectura', keywords: ['generador codigo qr', 'crear codigo qr online', 'codigo qr online', 'estructura codigo qr', 'correccion errores qr', 'codigo qr javascript', 'codigo qr python', 'qr wifi', 'qr vcard', 'codigo qr con logo', 'qr svg', 'capacidad codigo qr'] },
+    },
+  },
 ];
 
 /** Get post with localized metadata */
