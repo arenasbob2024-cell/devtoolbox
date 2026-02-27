@@ -8479,6 +8479,33 @@ export const blogPosts: BlogPost[] = [
       th: { title: 'YAML เป็น JSON: แปลงออนไลน์ด้วย JavaScript, Python และ CLI', description: 'แปลง YAML เป็น JSON ออนไลน์และด้วยโค้ด คู่มือสมบูรณ์สำหรับ JavaScript, Python, Go และเครื่องมือบรรทัดคำสั่ง', readingTime: '7 นาทีในการอ่าน', keywords: ['yaml เป็น json', 'แปลง yaml json', 'yaml parser', 'js-yaml', 'pyyaml'] },
     },
   },
+  {
+    slug: 'base64-encoder-online-guide',
+    title: 'Base64 Encoder/Decoder: Encode and Decode Online — Complete Guide',
+    description: 'Encode and decode Base64 online with JavaScript, Python, Go, and Node.js. Complete guide covering Base64URL, images, JWT, and common pitfalls.',
+    date: '2026-02-27',
+    author: 'DevToolBox',
+    readingTime: '8 min read',
+    keywords: ['base64 encoder', 'base64 decoder', 'base64 encode online', 'base64 decode online', 'base64url', 'javascript base64', 'python base64', 'node.js base64', 'go base64', 'rust base64', 'jwt base64'],
+    relatedTools: ['base64', 'base64-encoder', 'image-base64', 'jwt-decoder'],
+    relatedPosts: ['base64-encoding-real-world-uses', 'base64-encode-decode-command-line', 'base64-online-guide'],
+    translations: {
+      fr: { title: 'Encodeur/Décodeur Base64 : Encoder et Décoder en Ligne', description: 'Encodez et décodez Base64 en ligne avec JavaScript, Python, Go. Guide complet sur Base64URL, images et JWT.', readingTime: '8 min de lecture', keywords: ['base64 encodeur', 'base64 décodeur', 'base64 en ligne', 'base64 javascript', 'base64 python'] },
+      de: { title: 'Base64 Encoder/Decoder: Online Kodieren und Dekodieren', description: 'Base64 online kodieren und dekodieren mit JavaScript, Python, Go. Vollständiger Leitfaden zu Base64URL, Bildern und JWT.', readingTime: '8 Min. Lesezeit', keywords: ['base64 encoder', 'base64 decoder', 'base64 online', 'base64 javascript', 'base64 python'] },
+      it: { title: 'Encoder/Decoder Base64: Codificare e Decodificare Online', description: 'Codifica e decodifica Base64 online con JavaScript, Python, Go. Guida completa su Base64URL, immagini e JWT.', readingTime: '8 min di lettura', keywords: ['base64 encoder', 'base64 decoder', 'base64 online', 'base64 javascript', 'base64 python'] },
+      es: { title: 'Codificador/Decodificador Base64: Codificar y Decodificar Online', description: 'Codifica y decodifica Base64 en línea con JavaScript, Python, Go. Guía completa sobre Base64URL, imágenes y JWT.', readingTime: '8 min de lectura', keywords: ['base64 codificador', 'base64 decodificador', 'base64 en línea', 'base64 javascript', 'base64 python'] },
+      pt: { title: 'Codificador/Decodificador Base64: Codificar e Decodificar Online', description: 'Codifique e decodifique Base64 online com JavaScript, Python, Go. Guia completo sobre Base64URL, imagens e JWT.', readingTime: '8 min de leitura', keywords: ['base64 codificador', 'base64 decodificador', 'base64 online', 'base64 javascript', 'base64 python'] },
+      nl: { title: 'Base64 Encoder/Decoder: Online Coderen en Decoderen', description: 'Codeer en decodeer Base64 online met JavaScript, Python, Go. Complete gids over Base64URL, afbeeldingen en JWT.', readingTime: '8 min lezen', keywords: ['base64 encoder', 'base64 decoder', 'base64 online', 'base64 javascript', 'base64 python'] },
+      pl: { title: 'Koder/Dekoder Base64: Koduj i Dekoduj Online', description: 'Koduj i dekoduj Base64 online z JavaScript, Python, Go. Kompletny przewodnik po Base64URL, obrazach i JWT.', readingTime: '8 min czytania', keywords: ['base64 koder', 'base64 dekoder', 'base64 online', 'base64 javascript', 'base64 python'] },
+      sv: { title: 'Base64 Encoder/Decoder: Koda och Avkoda Online', description: 'Koda och avkoda Base64 online med JavaScript, Python, Go. Komplett guide om Base64URL, bilder och JWT.', readingTime: '8 min läsning', keywords: ['base64 encoder', 'base64 decoder', 'base64 online', 'base64 javascript', 'base64 python'] },
+      no: { title: 'Base64 Encoder/Decoder: Kode og Dekode Online', description: 'Kod og dekod Base64 online med JavaScript, Python, Go. Komplett guide om Base64URL, bilder og JWT.', readingTime: '8 min lesning', keywords: ['base64 encoder', 'base64 decoder', 'base64 online', 'base64 javascript', 'base64 python'] },
+      zh: { title: 'Base64 编码/解码器：在线编解码完整指南', description: '使用 JavaScript、Python、Go 在线 Base64 编解码。涵盖 Base64URL、图片嵌入、JWT 和常见陷阱的完整指南。', readingTime: '8 分钟阅读', keywords: ['base64 编码器', 'base64 解码器', 'base64 在线', 'base64 javascript', 'base64 python'] },
+      ja: { title: 'Base64エンコーダー/デコーダー：オンラインエンコード・デコード完全ガイド', description: 'JavaScript、Python、GoでBase64をオンラインエンコード・デコードします。Base64URL、画像、JWTの完全ガイド。', readingTime: '8分', keywords: ['base64 エンコーダー', 'base64 デコーダー', 'base64 オンライン', 'base64 javascript', 'base64 python'] },
+      ko: { title: 'Base64 인코더/디코더: 온라인으로 인코딩 및 디코딩하는 완전 가이드', description: 'JavaScript, Python, Go로 Base64를 온라인 인코딩/디코딩합니다. Base64URL, 이미지, JWT 완전 가이드.', readingTime: '8분 읽기', keywords: ['base64 인코더', 'base64 디코더', 'base64 온라인', 'base64 javascript', 'base64 python'] },
+      id: { title: 'Encoder/Decoder Base64: Encode dan Decode Online — Panduan Lengkap', description: 'Encode dan decode Base64 online dengan JavaScript, Python, Go. Panduan lengkap tentang Base64URL, gambar, dan JWT.', readingTime: '8 menit baca', keywords: ['base64 encoder', 'base64 decoder', 'base64 online', 'base64 javascript', 'base64 python'] },
+      th: { title: 'Base64 Encoder/Decoder: เข้ารหัสและถอดรหัสออนไลน์', description: 'เข้ารหัสและถอดรหัส Base64 ออนไลน์ด้วย JavaScript, Python, Go คู่มือสมบูรณ์เกี่ยวกับ Base64URL, รูปภาพ และ JWT', readingTime: '8 นาทีในการอ่าน', keywords: ['base64 encoder', 'base64 decoder', 'base64 ออนไลน์', 'base64 javascript', 'base64 python'] },
+    },
+  },
 ];
 
 /** Get post with localized metadata */

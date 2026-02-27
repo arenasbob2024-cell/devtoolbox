@@ -328,6 +328,7 @@ import GraphqlToTypescriptOnlineGuide from '@/data/posts/graphql-to-typescript-o
 import JsonToSwiftOnlineGuide from '@/data/posts/json-to-swift-online-guide';
 import JsonToPhpOnlineGuide from '@/data/posts/json-to-php-online-guide';
 import YamlToJsonOnlineGuide from '@/data/posts/yaml-to-json-online-guide';
+import Base64EncoderOnlineGuide from '@/data/posts/base64-encoder-online-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -646,6 +647,7 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'json-to-swift-online-guide': JsonToSwiftOnlineGuide,
   'json-to-php-online-guide': JsonToPhpOnlineGuide,
   'yaml-to-json-online-guide': YamlToJsonOnlineGuide,
+  'base64-encoder-online-guide': Base64EncoderOnlineGuide,
 };
 
 /* i18n for UI strings on this page */

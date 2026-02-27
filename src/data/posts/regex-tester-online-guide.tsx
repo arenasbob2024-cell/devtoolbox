@@ -2,416 +2,839 @@
 
 import Link from 'next/link';
 
+const translations = {
+  en: {
+    title: 'Regex Tester: Test and Debug Regular Expressions Online — Complete Guide',
+    description:
+      'Test regular expressions online with instant feedback. Complete guide for JavaScript, Python, Go regex syntax, named groups, lookahead, and common patterns.',
+  },
+  zh: {
+    title: '正则表达式测试器：在线测试和调试正则表达式完整指南',
+    description:
+      '在线实时测试正则表达式。JavaScript、Python、Go 正则语法、命名分组、前瞻断言和常用模式完整指南。',
+  },
+  ja: {
+    title: 'Regexテスター：正規表現をオンラインでテスト・デバッグする完全ガイド',
+    description:
+      'リアルタイムフィードバックで正規表現をオンラインテスト。JavaScript、Python、Goの正規表現構文完全ガイド。',
+  },
+  ko: {
+    title: 'Regex 테스터: 정규식을 온라인으로 테스트하고 디버깅하는 완전 가이드',
+    description:
+      '즉각적인 피드백으로 정규식을 온라인으로 테스트합니다. JavaScript, Python, Go 정규식 구문 완전 가이드.',
+  },
+  fr: {
+    title: 'Testeur Regex : Tester et Déboguer les Expressions Régulières en Ligne',
+    description:
+      'Testez les expressions régulières en ligne avec un retour instantané. Guide complet pour JavaScript, Python, Go.',
+  },
+  de: {
+    title: 'Regex Tester: Reguläre Ausdrücke Online Testen und Debuggen',
+    description:
+      'Testen Sie reguläre Ausdrücke online mit sofortigem Feedback. Vollständiger Leitfaden für JavaScript, Python und Go.',
+  },
+  es: {
+    title: 'Probador Regex: Probar y Depurar Expresiones Regulares Online',
+    description:
+      'Prueba expresiones regulares online con retroalimentación instantánea. Guía completa para JavaScript, Python, Go.',
+  },
+  pt: {
+    title: 'Testador Regex: Testar e Depurar Expressões Regulares Online',
+    description:
+      'Teste expressões regulares online com feedback instantâneo. Guia completo para JavaScript, Python, Go.',
+  },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is an online regex tester?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'An online regex tester is a web tool that lets you write a regular expression pattern and test it against sample text in real time, showing matches, capture groups, and substitution results without writing any boilerplate code.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I test a regex pattern in JavaScript?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'In JavaScript you can test a regex with RegExp.prototype.test() which returns a boolean, or use String.prototype.match() to get all matches. Example: /\\d+/.test("abc123") returns true. An online regex tester shows you the same result instantly.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What are named capture groups in regex?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Named capture groups let you assign a label to a group using (?<name>...) syntax. In JavaScript you access them via match.groups.name, and in Python via match.group("name") or (?P<name>...) syntax. They make patterns more readable than numbered groups.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is the difference between lookahead and lookbehind in regex?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Lookahead (?=...) asserts that the pattern ahead must match without consuming characters. Lookbehind (?<=...) asserts the pattern behind must match. Negative versions (?!...) and (?<!...) assert the pattern must NOT match. They are zero-width assertions.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Why does my JavaScript regex only match the first occurrence?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Without the g (global) flag, JavaScript regex methods like match() and replace() only operate on the first occurrence. Add the g flag to your pattern (e.g. /pattern/g) or use matchAll() with the g flag to find all matches.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is catastrophic backtracking in regex?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Catastrophic backtracking occurs when a regex engine tries exponentially many paths to match a pattern that ultimately fails. Patterns like (a+)+ on a string like "aaaaaab" can cause this. Always avoid nested quantifiers on overlapping patterns and anchor your patterns.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I match multiline strings with regex?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Use the m (multiline) flag so that ^ and $ match the start and end of each line rather than the whole string. In JavaScript: /^pattern$/m. In Python: re.compile("^pattern$", re.MULTILINE). The s (dotall) flag makes the dot . match newlines too.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is regex the same in Python and JavaScript?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The core syntax is similar but there are differences. Python uses (?P<name>...) for named groups while JavaScript uses (?<name>...). Python supports lookbehind with variable-length patterns in newer versions, while JavaScript requires fixed-length lookbehinds. Go uses RE2 syntax which does not support lookahead/lookbehind at all.',
+      },
+    },
+  ],
+};
+
 export default function RegexTesterOnlineGuide({ lang }: { lang: string }) {
+  const t = translations[lang as keyof typeof translations] || translations.en;
+
   return (
-    <>
+    <article>
+      {/* FAQPage JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      {/* Canonical / SEO meta — rendered as comment for reference */}
+      {/* canonical: https://viadreams.cc/en/blog/regex-tester-online-guide */}
+
       {/* TL;DR Box */}
-      <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: '8px', padding: '16px 20px', marginBottom: '24px' }}>
-        <p style={{ fontWeight: 700, marginBottom: '8px', fontSize: '1.05em' }}>TL;DR</p>
+      <div
+        style={{
+          background: '#f0f9ff',
+          border: '1px solid #bae6fd',
+          borderRadius: '8px',
+          padding: '1rem',
+          marginBottom: '1.5rem',
+        }}
+      >
+        <p style={{ fontWeight: 700, marginBottom: '0.5rem', fontSize: '1.05em' }}>TL;DR</p>
         <p style={{ margin: 0 }}>
-          A <strong>regex tester</strong> lets you write, debug, and validate regular expressions against sample text in real time. Instead of guessing whether your pattern works, you get instant visual feedback showing every match, capture group, and substitution. Our free <Link href={`/${lang}/tools/regex-tester`}>online regex tester</Link> supports JavaScript, Python, and Go flavors with live highlighting, flag toggles, and a built-in cheat sheet. This guide covers regex syntax fundamentals, the 10 most useful patterns, language-specific APIs, common mistakes, performance tips, and when to skip regex entirely.
+          A <strong>regex tester</strong> lets you write, debug, and validate regular expressions
+          against sample text in real time. Use our free{' '}
+          <Link href={`/${lang}/tools/regex-tester`}>online regex tester</Link> to get instant match
+          highlighting, capture group extraction, and substitution previews for JavaScript, Python,
+          and Go. This guide covers the full regex syntax — character classes, quantifiers, anchors,
+          named groups, lookahead/lookbehind — plus language-specific APIs, multiline mode,
+          performance pitfalls, and 8 copy-paste patterns for email, URL, IP, phone, date, hex
+          color, passwords, and slugs.
         </p>
       </div>
 
-      {/* Key Takeaways */}
-      <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '16px 20px', marginBottom: '24px' }}>
-        <p style={{ fontWeight: 700, marginBottom: '8px', fontSize: '1.05em' }}>Key Takeaways</p>
-        <ul style={{ margin: 0, paddingLeft: '20px' }}>
-          <li>An online <strong>regex tester</strong> provides instant match highlighting, group extraction, and error feedback without writing boilerplate code.</li>
-          <li>Regex flavors differ across languages: JavaScript uses <code>/pattern/flags</code>, Python uses <code>re.compile()</code>, Go uses <code>regexp.MustCompile()</code> with RE2 syntax.</li>
-          <li>The 10 most common regex patterns (email, URL, IP, phone, date, etc.) cover the vast majority of real-world validation tasks.</li>
-          <li>Catastrophic backtracking is the number one regex performance pitfall; use atomic groups, possessive quantifiers, or rewrite nested quantifiers.</li>
-          <li>For simple substring checks, <code>string.includes()</code>, <code>startsWith()</code>, or <code>indexOf()</code> outperform regex in both speed and readability.</li>
-          <li>Always test edge cases: empty strings, Unicode input, extremely long input, and boundary conditions.</li>
-        </ul>
+      {/* Intro */}
+      <p>
+        Regular expressions are one of the most powerful text-processing tools available to
+        developers, yet they are notoriously easy to get wrong. A single missing escape character or
+        a misplaced quantifier can silently match the wrong data or cause a server to hang. An{' '}
+        <strong>online regex tester</strong> eliminates the guesswork by giving you instant visual
+        feedback before you ever deploy code.
+      </p>
+      <p>
+        This guide is organized into twelve sections. Whether you need a quick syntax reference, a
+        production-ready email pattern, or an explanation of catastrophic backtracking, you can jump
+        directly to the section you need.
+      </p>
+
+      {/* 1. Regex Syntax Quick Reference */}
+      <h2
+        style={{
+          fontSize: '1.5rem',
+          fontWeight: '700',
+          marginTop: '2rem',
+          marginBottom: '1rem',
+          color: '#1e293b',
+        }}
+      >
+        1. Regex Syntax Quick Reference
+      </h2>
+      <p>
+        The table below summarises the most commonly used regex building blocks. All examples use
+        standard PCRE-compatible syntax supported by JavaScript, Python, and most other languages.
+      </p>
+
+      {/* Character Classes */}
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.75rem', color: '#1e293b' }}>
+        Character Classes
+      </h3>
+      <div style={{ overflowX: 'auto' }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem' }}>
+          <thead>
+            <tr style={{ background: '#f1f5f9' }}>
+              <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Pattern</th>
+              <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Matches</th>
+              <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['.', 'Any character except newline', '/./ matches "a", "9", "!"'],
+              ['\\d', 'Digit [0-9]', '/\\d+/ matches "42" in "foo42bar"'],
+              ['\\D', 'Non-digit', '/\\D+/ matches "foo" in "foo42bar"'],
+              ['\\w', 'Word char [a-zA-Z0-9_]', '/\\w+/ matches "hello_42"'],
+              ['\\W', 'Non-word char', '/\\W/ matches " " and "-"'],
+              ['\\s', 'Whitespace (space, tab, newline)', '/\\s+/ matches "  \\t"'],
+              ['\\S', 'Non-whitespace', '/\\S+/ matches "hello"'],
+              ['[a-z]', 'Any lowercase letter', '/[a-z]+/ matches "abc"'],
+              ['[A-Z]', 'Any uppercase letter', '/[A-Z]+/ matches "ABC"'],
+              ['[0-9]', 'Any digit (same as \\d)', '/[0-9]+/ matches "123"'],
+              ['[abc]', 'Any of a, b, or c', '/[abc]/ matches "b" in "bat"'],
+              ['[^abc]', 'Any char NOT a, b, or c', '/[^abc]+/ matches "xyz"'],
+              ['[a-zA-Z]', 'Any letter', '/[a-zA-Z]+/ matches "Hello"'],
+            ].map(([pat, desc, ex], i) => (
+              <tr key={i} style={{ background: i % 2 === 0 ? '#fff' : '#f8fafc' }}>
+                <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px', fontFamily: 'monospace' }}>{pat}</td>
+                <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>{desc}</td>
+                <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px', fontFamily: 'monospace', fontSize: '0.82rem' }}>{ex}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
 
-      <h2>What Is a Regex Tester and Why Use One?</h2>
+      {/* Quantifiers */}
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.75rem', color: '#1e293b' }}>
+        Quantifiers
+      </h3>
+      <div style={{ overflowX: 'auto' }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem' }}>
+          <thead>
+            <tr style={{ background: '#f1f5f9' }}>
+              <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Quantifier</th>
+              <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Meaning</th>
+              <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Lazy version</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['*', 'Zero or more (greedy)', '*?'],
+              ['+', 'One or more (greedy)', '+?'],
+              ['?', 'Zero or one', '??'],
+              ['{n}', 'Exactly n times', '{n}? (no effect)'],
+              ['{n,}', 'n or more', '{n,}?'],
+              ['{n,m}', 'Between n and m', '{n,m}?'],
+            ].map(([q, meaning, lazy], i) => (
+              <tr key={i} style={{ background: i % 2 === 0 ? '#fff' : '#f8fafc' }}>
+                <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px', fontFamily: 'monospace' }}>{q}</td>
+                <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>{meaning}</td>
+                <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px', fontFamily: 'monospace' }}>{lazy}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Anchors */}
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.75rem', color: '#1e293b' }}>
+        Anchors
+      </h3>
+      <div style={{ overflowX: 'auto' }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem' }}>
+          <thead>
+            <tr style={{ background: '#f1f5f9' }}>
+              <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Anchor</th>
+              <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Matches</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['^', 'Start of string (or line in multiline mode)'],
+              ['$', 'End of string (or line in multiline mode)'],
+              ['\\b', 'Word boundary (between \\w and \\W)'],
+              ['\\B', 'Non-word boundary'],
+              ['\\A', 'Start of entire string (Python only)'],
+              ['\\Z', 'End of entire string (Python only)'],
+            ].map(([anchor, desc], i) => (
+              <tr key={i} style={{ background: i % 2 === 0 ? '#fff' : '#f8fafc' }}>
+                <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px', fontFamily: 'monospace' }}>{anchor}</td>
+                <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>{desc}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Groups */}
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.75rem', color: '#1e293b' }}>
+        Groups and Alternation
+      </h3>
+      <div style={{ overflowX: 'auto' }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem' }}>
+          <thead>
+            <tr style={{ background: '#f1f5f9' }}>
+              <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Syntax</th>
+              <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Meaning</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['(abc)', 'Capturing group — captures "abc" as group 1'],
+              ['(?:abc)', 'Non-capturing group — groups without capturing'],
+              ['(?<name>abc)', 'Named capturing group (JS/Python) — access via groups.name'],
+              ['(?P<name>abc)', 'Named capturing group (Python alternative syntax)'],
+              ['(?=abc)', 'Positive lookahead — must be followed by "abc"'],
+              ['(?!abc)', 'Negative lookahead — must NOT be followed by "abc"'],
+              ['(?<=abc)', 'Positive lookbehind — must be preceded by "abc"'],
+              ['(?<!abc)', 'Negative lookbehind — must NOT be preceded by "abc"'],
+              ['a|b', 'Alternation — matches "a" or "b"'],
+            ].map(([syn, desc], i) => (
+              <tr key={i} style={{ background: i % 2 === 0 ? '#fff' : '#f8fafc' }}>
+                <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px', fontFamily: 'monospace' }}>{syn}</td>
+                <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>{desc}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Special characters */}
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.75rem', color: '#1e293b' }}>
+        Special Characters
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`\\.   Literal dot (escape . to match it literally)
+\\n   Newline character
+\\r   Carriage return
+\\t   Tab character
+\\0   Null character
+\\\\  Literal backslash
+\\(   Literal opening parenthesis (escape special chars)
+\\[   Literal opening bracket`}</code></pre>
+
+      {/* 2. Common Regex Patterns */}
+      <h2
+        style={{
+          fontSize: '1.5rem',
+          fontWeight: '700',
+          marginTop: '2rem',
+          marginBottom: '1rem',
+          color: '#1e293b',
+        }}
+      >
+        2. Common Regex Patterns (Copy-Paste Ready)
+      </h2>
       <p>
-        A <strong>regular expression tester</strong> (regex tester) is a tool that lets you type a regex pattern and a test string, then instantly see which parts of the string match. It highlights matches in real time, shows numbered capture groups, reports syntax errors, and often lets you toggle flags like case-insensitive (<code>i</code>), global (<code>g</code>), or multiline (<code>m</code>) with a single click.
-      </p>
-      <p>
-        Without a <strong>regex tester online</strong>, developers typically write a small script, run it, inspect the output, tweak the pattern, and repeat. That feedback loop is slow and error-prone. A dedicated tester tool collapses that cycle into a single screen where every keystroke updates the results instantly. This is especially valuable when you are learning regex for the first time, debugging a complex pattern that handles nested groups, or validating a pattern against dozens of edge-case inputs simultaneously.
-      </p>
-      <p>
-        There are several categories of regex testers available: browser-based tools like the one at DevToolBox, IDE plugins (VS Code Regex Previewer), command-line utilities (<code>grep -P</code>, <code>ripgrep</code>), and language REPLs. Browser-based testers are the most accessible because they require zero setup and work on any operating system. They also tend to offer the best visual feedback: color-coded matches, hover tooltips for groups, and side-by-side substitution previews.
-      </p>
-      <p>
-        Key features to look for in a <strong>regex checker</strong> include: support for multiple regex flavors (PCRE, JavaScript, Python, Go RE2), real-time match highlighting, capture group numbering, substitution preview, a shareable URL so you can send your pattern to a colleague, and a built-in syntax reference. The DevToolBox <Link href={`/${lang}/tools/regex-tester`}>regex tester</Link> provides all of these features for free, with no account required.
+        The patterns below are production-tested and cover the most common validation and extraction
+        tasks. Test them instantly in our{' '}
+        <Link href={`/${lang}/tools/regex-tester`}>free regex tester</Link>.
       </p>
 
-      <h2>DevToolBox Regex Tester &mdash; Test Patterns Instantly</h2>
-      <p>
-        The <Link href={`/${lang}/tools/regex-tester`}>DevToolBox Regex Tester</Link> is a free, privacy-friendly tool that runs entirely in your browser. No data is sent to any server. Here is what you get:
-      </p>
-      <ul>
-        <li><strong>Live match highlighting</strong> &mdash; matches light up as you type the pattern or the test string.</li>
-        <li><strong>Flag toggles</strong> &mdash; enable or disable <code>g</code>, <code>i</code>, <code>m</code>, <code>s</code>, <code>u</code>, and <code>y</code> flags with a single click.</li>
-        <li><strong>Capture group table</strong> &mdash; see every numbered and named group extracted from each match.</li>
-        <li><strong>Replace mode</strong> &mdash; preview substitution results (<code>$1</code>, <code>$&amp;</code>, named backreferences) alongside the original text.</li>
-        <li><strong>Quick reference</strong> &mdash; a collapsible cheat sheet of metacharacters, quantifiers, anchors, and character classes.</li>
-        <li><strong>Shareable URL</strong> &mdash; the pattern and test string are encoded in the URL hash so you can bookmark or share them.</li>
-      </ul>
-      <p>
-        To get started, open the <Link href={`/${lang}/tools/regex-tester`}>regex tester</Link>, paste your pattern, paste your test string, and watch the matches appear. Try adjusting flags, adding capture groups, or switching to replace mode to see substitution results in real time.
-      </p>
-      <p>
-        Below is an example workflow. Suppose you need to extract all email addresses from a log file. You would enter the pattern and test input like this:
-      </p>
-      <pre><code className="language-text">{`Pattern: [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}
-Flags:   g
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        Email Address
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/
 
-Test string:
-Contact alice@example.com or bob.jones@company.co.uk for details.
-Invalid: @missing.com, noatsign.com, hello@.com
+// Matches: user@example.com, first.last+tag@sub.domain.io
+// Misses intentionally: IP-address emails, quoted local parts`}</code></pre>
 
-Matches found:
-  1. alice@example.com
-  2. bob.jones@company.co.uk`}</code></pre>
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        URL
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`/(https?:\\/\\/)?([\\/\\da-z.-]+)\\.([a-z.]{2,6})([/\\w .-]*)*\\/?/i
 
-      <h2>Regex Syntax Quick Reference</h2>
+// Matches: http://example.com, https://sub.domain.co.uk/path?q=1
+// Use URL constructor for strict validation in production`}</code></pre>
+
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        IPv4 Address
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`/^(\\d{1,3}\\.){3}\\d{1,3}$/
+
+// Fast syntax check only — does not validate range (0-255)
+// For strict validation add: each octet (?:25[0-5]|2[0-4]\\d|[01]?\\d\\d?)
+const ipStrict = /^(?:25[0-5]|2[0-4]\\d|[01]?\\d\\d?)(?:\\.(?:25[0-5]|2[0-4]\\d|[01]?\\d\\d?)){3}$/;`}</code></pre>
+
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        US Phone Number
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`/^\\+?1?\\s?\\(?\\d{3}\\)?[-.\\s]?\\d{3}[-.\\s]?\\d{4}$/
+
+// Matches: (555) 123-4567, +1 555.123.4567, 5551234567
+// Does not match international formats outside North America`}</code></pre>
+
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        ISO 8601 Date (YYYY-MM-DD)
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`/^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$/
+
+// Matches: 2026-02-27, 2000-12-31
+// Does not validate month/day combinations (Feb 30 would pass syntax check)`}</code></pre>
+
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        Hex Color
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`/^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/
+
+// Matches: #fff, #FFF, #1a2b3c
+// Extend to support 4/8 digit forms: {3,4}|{6,8}`}</code></pre>
+
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        Strong Password
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`/^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$/
+
+// Requires: 8+ chars, at least one lowercase, one uppercase,
+// one digit, and one special character (@$!%*?&)
+// Uses four lookaheads — each checked independently`}</code></pre>
+
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        URL Slug
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`/^[a-z0-9]+(?:-[a-z0-9]+)*$/
+
+// Matches: hello-world, my-blog-post-2026
+// Rejects: -leading-dash, double--dash, UPPERCASE`}</code></pre>
+
+      {/* 3. JavaScript Regex */}
+      <h2
+        style={{
+          fontSize: '1.5rem',
+          fontWeight: '700',
+          marginTop: '2rem',
+          marginBottom: '1rem',
+          color: '#1e293b',
+        }}
+      >
+        3. JavaScript Regex API
+      </h2>
       <p>
-        The table below summarizes the most important regex metacharacters, quantifiers, and assertions. Bookmark this page or keep the <Link href={`/${lang}/tools/regex-tester`}>regex tester</Link> cheat sheet open while you work.
-      </p>
-      <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '16px' }}>
-        <thead>
-          <tr style={{ background: '#f1f5f9' }}>
-            <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Symbol</th>
-            <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Name</th>
-            <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Description</th>
-            <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Example</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>.</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Dot</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Any character except newline</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>a.c</code> matches <code>abc</code>, <code>a1c</code></td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>^</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Caret</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Start of string (or line in multiline mode)</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>^Hello</code></td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>$</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Dollar</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>End of string (or line in multiline mode)</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>world$</code></td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>*</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Star</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>0 or more of previous token</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>ab*c</code> matches <code>ac</code>, <code>abc</code>, <code>abbc</code></td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>+</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Plus</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>1 or more of previous token</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>ab+c</code> matches <code>abc</code>, <code>abbc</code></td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>?</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Question</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>0 or 1 of previous token (optional)</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>colou?r</code> matches <code>color</code> and <code>colour</code></td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>{'{n,m}'}</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Quantifier</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Between n and m of previous token</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>{'a{2,4}'}</code> matches <code>aa</code>, <code>aaa</code>, <code>aaaa</code></td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>[abc]</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Character class</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Any one of the listed characters</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>[aeiou]</code> matches any vowel</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>[^abc]</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Negated class</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Any character NOT in the class</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>[^0-9]</code> matches non-digits</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>\d</code>, <code>\w</code>, <code>\s</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Shorthand classes</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Digit, word char, whitespace</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>\d+</code> matches <code>42</code>, <code>100</code></td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>()</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Capture group</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Groups and captures matched text</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>(\d+)-(\d+)</code></td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>{'(?<name>)'}</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Named group</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Capture with a name instead of a number</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>{'(?<year>\\d{4})'}</code></td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>(?:)</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Non-capturing group</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Groups without capturing</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>(?:http|https)://</code></td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>\b</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Word boundary</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Position between a word char and a non-word char</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>\bcat\b</code> matches &quot;cat&quot; but not &quot;catch&quot;</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>(?=)</code>, <code>(?!)</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Lookahead</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Positive/negative lookahead assertion</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>\d+(?= USD)</code></td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>{'(?<=)'}</code>, <code>{'(?<!)'}</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Lookbehind</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Positive/negative lookbehind assertion</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>{'(?<=\\$)\\d+'}</code></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h2>10 Most Useful Regex Patterns</h2>
-      <p>
-        The following patterns cover the most common validation and extraction tasks developers encounter daily. Copy them directly into the <Link href={`/${lang}/tools/regex-tester`}>regex tester</Link> to experiment.
+        JavaScript has first-class regex support built into the language. Patterns can be written as
+        literals or constructed dynamically.
       </p>
 
-      <h3>1. Email Address</h3>
-      <pre><code className="language-regex">{`^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$`}</code></pre>
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        Literal vs Constructor
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// Literal — compiled once at parse time, preferred for static patterns
+const re = /\\d+/g;
+
+// Constructor — use when the pattern is dynamic (user input, config)
+const pattern = '\\\\d+';
+const re2 = new RegExp(pattern, 'g'); // note: double-escape in strings`}</code></pre>
+
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        Core Methods
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`const str = 'Order: 42 items, total: 189';
+
+// .test() — returns boolean, fastest for existence check
+/\\d+/.test(str);                  // true
+
+// .exec() — returns first match array with groups, or null
+/\\d+/g.exec(str);                 // ['42', index: 7, ...]
+
+// str.match() — without g: first match + groups; with g: all matches (no groups)
+str.match(/\\d+/);                 // ['42', index: 7, ...]
+str.match(/\\d+/g);                // ['42', '189']
+
+// str.matchAll() — iterator of all matches with groups (requires g flag)
+const matches = [...str.matchAll(/\\d+/g)];
+// [['42', index:7], ['189', index:24]]
+
+// str.replace() — replace first match (no g) or all (with g)
+str.replace(/\\d+/, 'N');          // 'Order: N items, total: 189'
+str.replace(/\\d+/g, 'N');         // 'Order: N items, total: N'
+
+// str.replaceAll() — replaces all occurrences; pattern must have g flag if regex
+str.replaceAll(/\\d+/g, 'N');      // 'Order: N items, total: N'
+
+// str.split() — split on regex delimiter
+'a1b2c3'.split(/\\d/);             // ['a', 'b', 'c', '']`}</code></pre>
+
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        Flags Reference
+      </h3>
+      <div style={{ overflowX: 'auto' }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem' }}>
+          <thead>
+            <tr style={{ background: '#f1f5f9' }}>
+              <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Flag</th>
+              <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Name</th>
+              <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Effect</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['g', 'global', 'Find all matches, not just the first'],
+              ['i', 'ignoreCase', 'Case-insensitive matching'],
+              ['m', 'multiline', '^ and $ match line start/end'],
+              ['s', 'dotAll', '. matches newlines too'],
+              ['u', 'unicode', 'Enable full Unicode support'],
+              ['d', 'hasIndices', 'Add .indices to match results (ES2022)'],
+              ['v', 'unicodeSets', 'Enhanced Unicode sets (ES2024)'],
+            ].map(([flag, name, effect], i) => (
+              <tr key={i} style={{ background: i % 2 === 0 ? '#fff' : '#f8fafc' }}>
+                <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px', fontFamily: 'monospace' }}>{flag}</td>
+                <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px', fontFamily: 'monospace' }}>{name}</td>
+                <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>{effect}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* 4. Named Capture Groups */}
+      <h2
+        style={{
+          fontSize: '1.5rem',
+          fontWeight: '700',
+          marginTop: '2rem',
+          marginBottom: '1rem',
+          color: '#1e293b',
+        }}
+      >
+        4. Named Capture Groups
+      </h2>
       <p>
-        Matches standard email addresses like <code>user@example.com</code>. This pattern validates the local part (letters, digits, dots, hyphens, underscores), the <code>@</code> symbol, the domain, and a TLD of at least two characters. For production email validation, consider using a dedicated library since RFC 5322 email addresses can be far more complex than this pattern handles.
+        Named capture groups were introduced in ES2018 for JavaScript and have long been available
+        in Python. They make patterns self-documenting and protect against index-shifting when you
+        add or remove groups later.
       </p>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// Pattern with three named groups
+const dateRe = /(?<year>\\d{4})-(?<month>0[1-9]|1[0-2])-(?<day>0[1-9]|[12]\\d|3[01])/;
 
-      <h3>2. URL (HTTP/HTTPS)</h3>
-      <pre><code className="language-regex">{`https?:\\/\\/[\\w\\-]+(\\.[\\w\\-]+)+[\\/\\w\\-.~:?#\\[\\]@!$&'()*+,;=%]*`}</code></pre>
-      <p>
-        Matches HTTP and HTTPS URLs with optional paths, query strings, and fragments. The <code>s?</code> makes the &quot;s&quot; in &quot;https&quot; optional. Use this when you need to extract links from plain text.
-      </p>
-
-      <h3>3. IPv4 Address</h3>
-      <pre><code className="language-regex">{`^(?:(?:25[0-5]|2[0-4]\\d|[01]?\\d\\d?)\\.){3}(?:25[0-5]|2[0-4]\\d|[01]?\\d\\d?)$`}</code></pre>
-      <p>
-        Validates IPv4 addresses like <code>192.168.1.1</code>. Each octet is constrained to the 0-255 range using alternation. A simpler pattern like <code>\d+\.\d+\.\d+\.\d+</code> would match invalid values like <code>999.999.999.999</code>.
-      </p>
-
-      <h3>4. Phone Number (International)</h3>
-      <pre><code className="language-regex">{`^\\+?[1-9]\\d{0,2}[\\s.-]?\\(?\\d{1,4}\\)?[\\s.-]?\\d{1,4}[\\s.-]?\\d{1,9}$`}</code></pre>
-      <p>
-        A flexible pattern that matches international phone numbers with optional country code, area code, and various separators (spaces, dots, hyphens). For strict validation of specific country formats, use more specific patterns or a phone number library.
-      </p>
-
-      <h3>5. Date (YYYY-MM-DD)</h3>
-      <pre><code className="language-regex">{`^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$`}</code></pre>
-      <p>
-        Matches ISO 8601 dates like <code>2026-02-27</code>. The month is constrained to 01-12 and the day to 01-31. Note that this does not validate calendar correctness (e.g., February 30 would still match), so combine with date parsing for full validation.
-      </p>
-
-      <h3>6. Hex Color Code</h3>
-      <pre><code className="language-regex">{`^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$`}</code></pre>
-      <p>
-        Matches CSS hex colors in 3-digit (<code>#fff</code>), 6-digit (<code>#ff00aa</code>), and 8-digit (<code>#ff00aa80</code>) formats. The <code>#</code> prefix is required.
-      </p>
-
-      <h3>7. Strong Password</h3>
-      <pre><code className="language-regex">{`^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$`}</code></pre>
-      <p>
-        Enforces at least 8 characters with one lowercase letter, one uppercase letter, one digit, and one special character. Uses lookahead assertions to check each requirement independently.
-      </p>
-
-      <h3>8. Slug (URL-Friendly String)</h3>
-      <pre><code className="language-regex">{`^[a-z0-9]+(?:-[a-z0-9]+)*$`}</code></pre>
-      <p>
-        Matches URL slugs like <code>my-blog-post</code> or <code>regex-tester-online-guide</code>. Only lowercase letters, digits, and hyphens are allowed, and hyphens cannot appear at the start or end.
-      </p>
-
-      <h3>9. HTML Tag</h3>
-      <pre><code className="language-regex">{`<([a-zA-Z][a-zA-Z0-9]*)\\b[^>]*>(.*?)<\\/\\1>`}</code></pre>
-      <p>
-        Matches an opening HTML tag, its content, and the matching closing tag using a backreference (<code>\1</code>). This is useful for quick extraction but should not replace a proper HTML parser for production use.
-      </p>
-
-      <h3>10. UUID v4</h3>
-      <pre><code className="language-regex">{`^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$`}</code></pre>
-      <p>
-        Validates UUID version 4 format. The third group always starts with <code>4</code> (version), and the fourth group starts with <code>8</code>, <code>9</code>, <code>a</code>, or <code>b</code> (variant).
-      </p>
-
-      <h2>JavaScript Regex: RegExp Methods and Flags</h2>
-      <p>
-        JavaScript provides two ways to create regular expressions: the literal syntax <code>/pattern/flags</code> and the constructor <code>new RegExp(pattern, flags)</code>. The literal syntax is preferred when the pattern is known at compile time; the constructor is used when the pattern is dynamic (e.g., built from user input).
-      </p>
-
-      <h3>Core Methods</h3>
-      <pre><code className="language-javascript">{`// test() — returns true/false
-const emailRegex = /^[\\w.+-]+@[\\w-]+\\.[a-zA-Z]{2,}$/;
-emailRegex.test('user@example.com'); // true
-
-// match() — returns matches array or null
-const text = 'Call 555-1234 or 555-5678';
-text.match(/\\d{3}-\\d{4}/g);
-// ['555-1234', '555-5678']
-
-// matchAll() — returns iterator of detailed matches (ES2020)
-const dates = '2026-01-15 and 2026-02-27';
-const dateRegex = /(?<year>\\d{4})-(?<month>\\d{2})-(?<day>\\d{2})/g;
-for (const m of dates.matchAll(dateRegex)) {
-  console.log(m.groups);
-  // { year: '2026', month: '01', day: '15' }
-  // { year: '2026', month: '02', day: '27' }
+const m = '2026-02-27'.match(dateRe);
+if (m) {
+  const { year, month, day } = m.groups;
+  console.log(year, month, day); // '2026', '02', '27'
 }
 
-// replace() — substitute matches
-'hello world'.replace(/(\\w+)/, (match) => match.toUpperCase());
-// 'HELLO world'
+// Using named groups in replaceAll (reference with $<name>)
+const reformat = (iso) =>
+  iso.replace(
+    /(?<year>\\d{4})-(?<month>\\d{2})-(?<day>\\d{2})/,
+    '$<day>/$<month>/$<year>'   // rearrange to DD/MM/YYYY
+  );
+console.log(reformat('2026-02-27')); // '27/02/2026'
 
-// replaceAll() — substitute all matches (ES2021)
-'aabbcc'.replaceAll(/[bc]/g, 'X');
-// 'aaXXXX'
+// Using a function in replace for complex transformations
+const result = '2026-02-27'.replace(
+  /(?<year>\\d{4})-(?<month>\\d{2})-(?<day>\\d{2})/,
+  (_, year, month, day, offset, input, groups) =>
+    \`\${groups.day} \${groups.month} \${groups.year}\`
+);
+console.log(result); // '27 02 2026'`}</code></pre>
 
-// split() — split string by pattern
-'one, two,  three'.split(/,\\s*/);
-// ['one', 'two', 'three']
-
-// exec() — stateful iteration with RegExp object
-const re = /\\d+/g;
-let m;
-while ((m = re.exec('a1b22c333')) !== null) {
-  console.log(m[0], m.index);
-  // '1' 1, '22' 3, '333' 6
+      <p>
+        <strong>Tip:</strong> Named groups are also available in <code>matchAll()</code> — each
+        iteration object exposes a <code>groups</code> property.
+      </p>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`const text = 'Dates: 2026-01-01 and 2026-06-15';
+for (const match of text.matchAll(/(?<year>\\d{4})-(?<month>\\d{2})-(?<day>\\d{2})/g)) {
+  console.log(match.groups); // { year: '2026', month: '01', day: '01' } ...
 }`}</code></pre>
 
-      <h3>JavaScript Regex Flags</h3>
-      <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '16px' }}>
-        <thead>
-          <tr style={{ background: '#f1f5f9' }}>
-            <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Flag</th>
-            <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Name</th>
-            <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Effect</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>g</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Global</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Find all matches, not just the first</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>i</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Case-insensitive</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Ignore letter case when matching</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>m</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Multiline</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>^</code> and <code>$</code> match line boundaries</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>s</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>DotAll</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>.</code> matches newlines too</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>u</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Unicode</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Enable full Unicode matching and <code>\p{'{...}'}</code> escapes</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>v</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>UnicodeSets</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Extended Unicode sets syntax (ES2024)</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>y</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Sticky</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Match only at <code>lastIndex</code> position</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>d</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>HasIndices</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Generate indices for group matches (ES2022)</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h2>Python Regex: re Module Guide</h2>
+      {/* 5. Lookahead and Lookbehind */}
+      <h2
+        style={{
+          fontSize: '1.5rem',
+          fontWeight: '700',
+          marginTop: '2rem',
+          marginBottom: '1rem',
+          color: '#1e293b',
+        }}
+      >
+        5. Lookahead and Lookbehind
+      </h2>
       <p>
-        Python&apos;s <code>re</code> module provides a comprehensive set of functions for working with regular expressions. Python uses PCRE-like syntax with a few differences from JavaScript.
+        Lookahead and lookbehind are <strong>zero-width assertions</strong> — they check surrounding
+        context without consuming characters. This makes them ideal for conditional matching.
       </p>
-      <pre><code className="language-python">{`import re
 
-# re.search() — find first match anywhere in string
-match = re.search(r'(\\d{4})-(\\d{2})-(\\d{2})', 'Date: 2026-02-27')
-if match:
-    print(match.group(0))  # '2026-02-27'
-    print(match.group(1))  # '2026'
-    print(match.groups())  # ('2026', '02', '27')
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        Positive Lookahead — (?=...)
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// Match "foo" only when followed by "bar"
+/foo(?=bar)/.test('foobar'); // true
+/foo(?=bar)/.test('foobaz'); // false
 
-# re.match() — match at the BEGINNING of string only
-m = re.match(r'\\d+', '42 is the answer')
-print(m.group())  # '42'
+// Password: must contain at least one digit (lookahead doesn't consume)
+/^(?=.*\\d).{8,}$/.test('password1'); // true
+/^(?=.*\\d).{8,}$/.test('password');  // false`}</code></pre>
+
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        Negative Lookahead — (?!...)
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// Match "foo" NOT followed by "bar"
+/foo(?!bar)/.test('foobaz'); // true
+/foo(?!bar)/.test('foobar'); // false
+
+// Match any word not followed by a digit
+/\\b\\w+(?!\\d)\\b/g`}</code></pre>
+
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        Positive Lookbehind — (?&lt;=...)
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// Match digits preceded by "$"
+const prices = 'Price: $42 and $189';
+const nums = prices.match(/(?<=\\$)\\d+/g);
+console.log(nums); // ['42', '189']
+
+// Extract value after "key:" in a config string
+const val = 'port: 3000'.match(/(?<=port: )\\d+/)?.[0];
+console.log(val); // '3000'`}</code></pre>
+
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        Negative Lookbehind — (?&lt;!...)
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// Match digits NOT preceded by "$"
+'Price: $42 count: 7'.match(/(?<!\\$)\\d+/g); // ['7']
+
+// Strong password: ensure the string doesn't START with a digit
+// (negative lookbehind at position 0)
+/^(?<!\\d)(?=.*[A-Z])(?=.*\\d).{8,}$/.test('Pass1word'); // true
+/^(?<!\\d)(?=.*[A-Z])(?=.*\\d).{8,}$/.test('1Password'); // false`}</code></pre>
+
+      <p>
+        <strong>Browser support note:</strong> Lookbehind is supported in all modern browsers
+        (Chrome 62+, Firefox 78+, Safari 16.4+). Go&apos;s RE2 engine does NOT support any form of
+        lookbehind.
+      </p>
+
+      {/* 6. Python Regex */}
+      <h2
+        style={{
+          fontSize: '1.5rem',
+          fontWeight: '700',
+          marginTop: '2rem',
+          marginBottom: '1rem',
+          color: '#1e293b',
+        }}
+      >
+        6. Python Regex with the re Module
+      </h2>
+      <p>
+        Python&apos;s built-in <code>re</code> module provides a complete regex API. The main
+        difference from JavaScript is that Python uses string flags and slightly different named
+        group syntax.
+      </p>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`import re
+
+text = "Order: 42 items, total: 189"
+
+# re.search() — find FIRST match anywhere in string
+m = re.search(r'\\d+', text)
+print(m.group())     # '42'
+print(m.start())     # 7
+
+# re.match() — match at START of string only
+m = re.match(r'Order', text)
+print(bool(m))       # True
 
 # re.fullmatch() — entire string must match
-re.fullmatch(r'\\d+', '42')      # Match
-re.fullmatch(r'\\d+', '42abc')   # None
+re.fullmatch(r'\\d+', '12345')  # Match object
+re.fullmatch(r'\\d+', '123x')   # None
 
-# re.findall() — return all matches as a list
-text = 'alice@a.com, bob@b.org, charlie@c.net'
-emails = re.findall(r'[\\w.+-]+@[\\w-]+\\.[a-zA-Z]{2,}', text)
-# ['alice@a.com', 'bob@b.org', 'charlie@c.net']
+# re.findall() — return list of all matches
+re.findall(r'\\d+', text)        # ['42', '189']
 
-# re.finditer() — return an iterator of Match objects
-for m in re.finditer(r'\\b\\w{5}\\b', 'Hello world regex match'):
-    print(m.group(), m.span())
+# re.finditer() — iterator of match objects (more info than findall)
+for m in re.finditer(r'\\d+', text):
+    print(m.group(), m.start(), m.end())
 
-# re.sub() — search and replace
-result = re.sub(r'(\\w+)@(\\w+)', r'\\1 [at] \\2', 'user@host')
-print(result)  # 'user [at] host'
+# re.sub() — replace matches
+re.sub(r'\\d+', 'N', text)       # 'Order: N items, total: N'
 
-# Named groups
-pattern = r'(?P<year>\\d{4})-(?P<month>\\d{2})-(?P<day>\\d{2})'
-m = re.search(pattern, '2026-02-27')
-print(m.group('year'))   # '2026'
-print(m.groupdict())     # {'year': '2026', 'month': '02', 'day': '27'}
+# re.compile() — compile for reuse (significant speedup in loops)
+pattern = re.compile(r'\\d+', re.IGNORECASE)
+pattern.findall(text)`}</code></pre>
 
-# Compile for repeated use
-email_re = re.compile(r'^[\\w.+-]+@[\\w-]+\\.[a-zA-Z]{2,}$')
-email_re.match('user@example.com')  # Match
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        Python Flags
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`re.IGNORECASE  (re.I)   # Case-insensitive
+re.MULTILINE   (re.M)   # ^ and $ match line boundaries
+re.DOTALL      (re.S)   # . matches newlines
+re.VERBOSE     (re.X)   # Allow whitespace and comments in pattern
+re.UNICODE     (re.U)   # Default in Python 3, enables \\w to match Unicode
+re.ASCII       (re.A)   # Restrict \\w, \\d etc. to ASCII range
 
-# Flags
-re.search(r'hello', 'HELLO', re.IGNORECASE)     # Match
-re.findall(r'^\\w+', 'one\\ntwo', re.MULTILINE)   # ['one', 'two']
-re.search(r'a.b', 'a\\nb', re.DOTALL)             # Match
+# Combine flags with |
+re.compile(r'pattern', re.I | re.M)`}</code></pre>
 
-# Verbose mode for readable patterns
-phone_re = re.compile(r"""
-    ^\\+?          # optional country code
-    (\\d{1,3})     # area code
-    [\\s.-]?       # optional separator
-    (\\d{3,4})     # first part
-    [\\s.-]?       # optional separator
-    (\\d{4})       # second part
-    $
-""", re.VERBOSE)`}</code></pre>
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        Named Groups in Python
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`# Python uses (?P<name>...) syntax
+date_re = re.compile(r'(?P<year>\\d{4})-(?P<month>\\d{2})-(?P<day>\\d{2})')
+m = date_re.search('Today is 2026-02-27')
+if m:
+    print(m.group('year'))   # '2026'
+    print(m.groupdict())     # {'year': '2026', 'month': '02', 'day': '27'}
+
+# Use in re.sub with \\g<name> back-reference
+date_re.sub(r'\\g<day>/\\g<month>/\\g<year>', '2026-02-27')
+# Returns '27/02/2026'`}</code></pre>
+
+      {/* 7. Multiline Mode */}
+      <h2
+        style={{
+          fontSize: '1.5rem',
+          fontWeight: '700',
+          marginTop: '2rem',
+          marginBottom: '1rem',
+          color: '#1e293b',
+        }}
+      >
+        7. Multiline Mode
+      </h2>
       <p>
-        The key difference from JavaScript: Python uses raw strings (<code>r&apos;...&apos;</code>) to avoid double-escaping backslashes. Always use raw strings for regex patterns in Python. Also note that <code>re.match()</code> only matches at the start of the string, whereas <code>re.search()</code> scans the entire string.
+        By default, <code>^</code> matches the start of the entire string and <code>$</code> matches
+        the end. In <strong>multiline mode</strong>, they match the start and end of each line. This
+        is essential for processing files, logs, and config blocks.
+      </p>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// JavaScript — m flag
+const log = \`[INFO] Server started
+[ERROR] Connection refused
+[INFO] Retry attempt 1\`;
+
+// Without m flag — ^ only matches very start of string
+log.match(/^\\[ERROR\\].*/)    // null (doesn't start at position 0)
+
+// With m flag — ^ matches after each newline
+log.match(/^\\[ERROR\\].*/m)   // ['[ERROR] Connection refused']
+log.match(/^\\[ERROR\\].*/mg)  // all ERROR lines`}</code></pre>
+
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`# Python — re.MULTILINE
+import re
+
+log = """[INFO] Server started
+[ERROR] Connection refused
+[INFO] Retry attempt 1"""
+
+errors = re.findall(r'^\\[ERROR\\].*', log, re.MULTILINE)
+print(errors)  # ['[ERROR] Connection refused']
+
+# Combining MULTILINE and DOTALL
+# re.MULTILINE: ^ and $ per line
+# re.DOTALL: . matches \\n
+# These are independent — use both when needed
+block_re = re.compile(r'^START.*?END$', re.MULTILINE | re.DOTALL)`}</code></pre>
+
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        Practical: Extract Log Entries
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// Extract all timestamps and levels from an access log
+const logPattern = /^(?<timestamp>\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}) (?<level>INFO|WARN|ERROR) (?<message>.+)$/mg;
+
+const entries = [...log.matchAll(logPattern)].map(m => ({
+  timestamp: m.groups.timestamp,
+  level: m.groups.level,
+  message: m.groups.message,
+}));`}</code></pre>
+
+      {/* 8. Performance Tips */}
+      <h2
+        style={{
+          fontSize: '1.5rem',
+          fontWeight: '700',
+          marginTop: '2rem',
+          marginBottom: '1rem',
+          color: '#1e293b',
+        }}
+      >
+        8. Performance Tips and Avoiding Catastrophic Backtracking
+      </h2>
+      <p>
+        A poorly written regex can take exponential time to evaluate, effectively hanging your
+        application. This is called <strong>catastrophic backtracking</strong> or{' '}
+        <strong>ReDoS</strong> (Regular Expression Denial of Service).
       </p>
 
-      <h2>Go Regex: regexp Package</h2>
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        The Danger Pattern: Nested Quantifiers
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// DANGEROUS — exponential backtracking on 'aaaaaab'
+/(a+)+$/.test('aaaaaab')   // hangs on long non-matching strings
+
+// Why: the outer + and inner + both expand 'a' differently
+// For 'aaaa', the engine tries: (aaaa), (aaa)(a), (aa)(aa), (a)(aaa)... etc.
+
+// SAFE alternative — use an anchor to prevent backtracking space
+/^a+$/.test('aaaaaab')     // false, fast (fails at 'b' immediately)`}</code></pre>
+
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        Performance Best Practices
+      </h3>
+      <div style={{ overflowX: 'auto' }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem' }}>
+          <thead>
+            <tr style={{ background: '#f1f5f9' }}>
+              <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Rule</th>
+              <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Why</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['Anchor your patterns with ^ and $', 'Prevents the engine from trying every position in the string'],
+              ['Prefer specific character classes over .', '/[a-z]+/ is faster than /.+/ for letter-only data'],
+              ['Use lazy quantifiers (*?, +?) only when needed', 'Greedy is often faster when anchored correctly'],
+              ['Avoid nested quantifiers on overlapping patterns', '(a+)+ on non-matching input causes exponential time'],
+              ['Compile patterns outside loops', 're.compile() in Python, const re = /pattern/ at module level in JS'],
+              ['Test with ReDoS checkers', 'Tools like vuln-regex-detector or regex101 flag catastrophic patterns'],
+              ['Use atomic groups (?>...) in PHP/PCRE', 'Prevents backtracking into the group once it matches'],
+              ['Use possessive quantifiers in Java/Perl', '/a++/ prevents backtracking into the quantifier'],
+            ].map(([rule, why], i) => (
+              <tr key={i} style={{ background: i % 2 === 0 ? '#fff' : '#f8fafc' }}>
+                <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px', fontWeight: '500' }}>{rule}</td>
+                <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>{why}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* 9. Regex in Other Languages */}
+      <h2
+        style={{
+          fontSize: '1.5rem',
+          fontWeight: '700',
+          marginTop: '2rem',
+          marginBottom: '1rem',
+          color: '#1e293b',
+        }}
+      >
+        9. Regex in Other Languages
+      </h2>
+
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        Go — regexp Package (RE2 Engine)
+      </h3>
       <p>
-        Go&apos;s <code>regexp</code> package implements the RE2 syntax, which guarantees linear-time execution by excluding features like backreferences and lookahead/lookbehind assertions. This makes Go regex predictable in performance but slightly less expressive than PCRE.
+        Go uses the RE2 engine, which guarantees linear time matching but does NOT support
+        lookahead, lookbehind, or backreferences. This is a deliberate safety tradeoff.
       </p>
-      <pre><code className="language-go">{`package main
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`package main
 
 import (
     "fmt"
@@ -419,308 +842,426 @@ import (
 )
 
 func main() {
-    // Compile — returns error if pattern is invalid
-    re, err := regexp.Compile(\`\\d{4}-\\d{2}-\\d{2}\`)
-    if err != nil {
-        panic(err)
-    }
+    // Compile — panics on invalid pattern, use MustCompile for static patterns
+    re := regexp.MustCompile(\`\\d+\`)
 
-    // MustCompile — panics on invalid pattern (use for constants)
-    emailRe := regexp.MustCompile(
-        \`^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$\`,
-    )
+    // Compile with error handling for dynamic patterns
+    re2, err := regexp.Compile(\`\\d+\`)
+    if err != nil { /* handle */ }
+    _ = re2
 
-    // MatchString — test if pattern matches
-    fmt.Println(emailRe.MatchString("user@example.com")) // true
-    fmt.Println(emailRe.MatchString("invalid"))           // false
+    text := "Order: 42 items, total: 189"
 
-    // FindString — return first match
-    text := "Date: 2026-02-27, Updated: 2026-03-15"
-    fmt.Println(re.FindString(text)) // "2026-02-27"
+    // MatchString — equivalent to test()
+    fmt.Println(re.MatchString(text))         // true
 
-    // FindAllString — return all matches
-    dates := re.FindAllString(text, -1)
-    fmt.Println(dates) // ["2026-02-27", "2026-03-15"]
+    // FindString — first match
+    fmt.Println(re.FindString(text))           // "42"
 
-    // FindStringSubmatch — return match with capture groups
-    dateRe := regexp.MustCompile(\`(\\d{4})-(\\d{2})-(\\d{2})\`)
-    groups := dateRe.FindStringSubmatch("2026-02-27")
-    fmt.Println(groups) // ["2026-02-27", "2026", "02", "27"]
+    // FindAllString — all matches
+    fmt.Println(re.FindAllString(text, -1))    // ["42", "189"]
 
-    // Named capture groups
-    namedRe := regexp.MustCompile(
-        \`(?P<year>\\d{4})-(?P<month>\\d{2})-(?P<day>\\d{2})\`,
-    )
-    match := namedRe.FindStringSubmatch("2026-02-27")
-    for i, name := range namedRe.SubexpNames() {
-        if name != "" {
+    // FindStringSubmatch — first match + groups
+    re3 := regexp.MustCompile(\`(\\d+)-(\\d+)\`)
+    m := re3.FindStringSubmatch("Range: 10-99")
+    fmt.Println(m) // ["10-99", "10", "99"]
+
+    // Named groups — use (?P<name>...)
+    re4 := regexp.MustCompile(\`(?P<year>\\d{4})-(?P<month>\\d{2})\`)
+    match := re4.FindStringSubmatch("2026-02")
+    names := re4.SubexpNames()
+    for i, name := range names {
+        if name != "" && i < len(match) {
             fmt.Printf("%s: %s\\n", name, match[i])
         }
     }
 
-    // ReplaceAllString — substitution
-    result := dateRe.ReplaceAllString(
-        "Date: 2026-02-27",
-        "\${1}/\${2}/\${3}",
-    )
-    fmt.Println(result) // "Date: 2026/02/27"
-
-    // Split
-    csvRe := regexp.MustCompile(\`,\\s*\`)
-    parts := csvRe.Split("a, b,  c,d", -1)
-    fmt.Println(parts) // ["a", "b", "c", "d"]
+    // ReplaceAllString
+    result := re.ReplaceAllString(text, "N")
+    fmt.Println(result) // "Order: N items, total: N"
 }`}</code></pre>
+
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        Rust — regex Crate
+      </h3>
       <p>
-        Important Go regex considerations: the <code>regexp</code> package does not support lookahead (<code>(?=...)</code>), lookbehind (<code>{'(?<=...)'}</code>), or backreferences (<code>\1</code>). If you need these features, consider the <code>regexp2</code> third-party package which implements full .NET-compatible regex. Always use raw string literals (backticks) to avoid escaping issues.
+        The Rust <code>regex</code> crate also uses RE2 semantics (no lookahead/lookbehind) for
+        guaranteed linear-time matching.
+      </p>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`use regex::Regex;
+
+fn main() {
+    let re = Regex::new(r"\\d+").unwrap();
+
+    // is_match — boolean test
+    println!("{}", re.is_match("foo42"));     // true
+
+    // find — first match with position
+    if let Some(m) = re.find("foo42bar") {
+        println!("{}", m.as_str());           // "42"
+        println!("{}", m.start());            // 3
+    }
+
+    // find_iter — iterator of all matches
+    for mat in re.find_iter("42 items and 189 units") {
+        println!("{}", mat.as_str());
+    }
+
+    // captures — first match with groups
+    let date_re = Regex::new(r"(?P<year>\\d{4})-(?P<month>\\d{2})-(?P<day>\\d{2})").unwrap();
+    if let Some(caps) = date_re.captures("Date: 2026-02-27") {
+        println!("{}", &caps["year"]);        // 2026
+        println!("{}", &caps["month"]);       // 02
+    }
+
+    // replace / replace_all
+    let result = re.replace_all("42 and 189", "N");
+    println!("{}", result);                   // "N and N"
+}`}</code></pre>
+
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        Java — java.util.regex
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`import java.util.regex.*;
+
+public class RegexDemo {
+    public static void main(String[] args) {
+        String text = "Order: 42 items, total: 189";
+
+        // Quick match check
+        System.out.println(text.matches(".*\\\\d+.*")); // true
+        // .matches() tests the ENTIRE string
+
+        // Pattern + Matcher for more control
+        Pattern p = Pattern.compile("\\\\d+");
+        Matcher m = p.matcher(text);
+
+        // find() moves to next match, group() returns it
+        while (m.find()) {
+            System.out.println(m.group() + " at " + m.start());
+        }
+
+        // Named groups (Java 7+)
+        Pattern dp = Pattern.compile("(?<year>\\\\d{4})-(?<month>\\\\d{2})-(?<day>\\\\d{2})");
+        Matcher dm = dp.matcher("2026-02-27");
+        if (dm.matches()) {
+            System.out.println(dm.group("year")); // 2026
+        }
+
+        // replaceAll
+        System.out.println(text.replaceAll("\\\\d+", "N"));
+    }
+}`}</code></pre>
+
+      {/* 10. Regex for Text Processing */}
+      <h2
+        style={{
+          fontSize: '1.5rem',
+          fontWeight: '700',
+          marginTop: '2rem',
+          marginBottom: '1rem',
+          color: '#1e293b',
+        }}
+      >
+        10. Regex for Text Processing Tasks
+      </h2>
+
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        Log File Parsing
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// Apache/Nginx combined log format
+const apacheLogRe = /^(?<ip>[\\d.]+) \\S+ \\S+ \\[(?<time>[^\\]]+)\\] "(?<method>\\w+) (?<path>[^ "]+)[^"]*" (?<status>\\d{3}) (?<size>\\d+|-)/mg;
+
+const entries = [...log.matchAll(apacheLogRe)].map(m => m.groups);
+const errors = entries.filter(e => e.status.startsWith('5'));`}</code></pre>
+
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        Markdown Link Extraction
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// Extract [text](url) markdown links
+const mdLinkRe = /\\[(?<text>[^\\]]+)\\]\\((?<url>[^)]+)\\)/g;
+
+const markdown = 'See [DevToolBox](https://viadreams.cc) and [docs](https://docs.example.com)';
+const links = [...markdown.matchAll(mdLinkRe)].map(m => ({
+  text: m.groups.text,
+  url: m.groups.url,
+}));
+// [{text:'DevToolBox', url:'https://viadreams.cc'}, ...]`}</code></pre>
+
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        HTML Attribute Extraction (with Caveats)
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// Extract href values — works for simple, well-formed HTML only
+const hrefRe = /href=["'](?<url>[^"']+)["']/gi;
+
+// WARNING: Regex is NOT a substitute for a proper HTML parser.
+// Nested quotes, CDATA sections, comments, and malformed HTML
+// will all break simple regex approaches.
+// Use DOMParser, cheerio, or htmlparser2 for production HTML parsing.
+
+// Safe use case: extracting from KNOWN, CONTROLLED template output
+const template = '<a href="/about">About</a>';
+const href = template.match(/href="([^"]+)"/)?.[1]; // '/about'`}</code></pre>
+
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        Code Comment Removal
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// Remove single-line // comments (naive — breaks on // inside strings)
+code.replace(/\\/\\/.*$/mg, '');
+
+// Remove /* block */ comments (non-greedy to avoid over-matching)
+code.replace(/\\/\\*[\\s\\S]*?\\*\\//g, '');
+
+// NOTE: For production code stripping, use a proper AST parser
+// (Babel, esprima, acorn) — regex cannot handle all edge cases
+// like // inside string literals or nested block comments.`}</code></pre>
+
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        CSV Parsing Pitfalls
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// Simple CSV split — FAILS on quoted fields containing commas
+'a,b,c'.split(','); // ['a', 'b', 'c'] ✓
+
+// Quoted field with comma — simple split fails
+'"hello, world",foo,bar'.split(','); // ['"hello', ' world"', 'foo', 'bar'] ✗
+
+// Better regex for quoted CSV fields
+const csvFieldRe = /(?:^|,)(?:"([^"]*(?:""[^"]*)*)"|([^,]*))/g;
+// Still not RFC 4180 compliant — use Papa Parse or csv-parse for production`}</code></pre>
+
+      {/* 11. Testing Strategies */}
+      <h2
+        style={{
+          fontSize: '1.5rem',
+          fontWeight: '700',
+          marginTop: '2rem',
+          marginBottom: '1rem',
+          color: '#1e293b',
+        }}
+      >
+        11. Testing Strategies for Regex Patterns
+      </h2>
+      <p>
+        A regex that works on your test case may fail on edge cases in production. Use our{' '}
+        <Link href={`/${lang}/tools/regex-tester`}>online regex tester</Link> to systematically test
+        all of the following categories.
       </p>
 
-      <h2>Common Regex Mistakes and How to Fix Them</h2>
-      <p>
-        Even experienced developers make regex mistakes. Here are the most common pitfalls and their solutions:
-      </p>
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        Email Regex Test Cases
+      </h3>
+      <div style={{ overflowX: 'auto' }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.85rem' }}>
+          <thead>
+            <tr style={{ background: '#f1f5f9' }}>
+              <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Input</th>
+              <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Expected</th>
+              <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['user@example.com', 'MATCH', 'Standard email'],
+              ['first.last@domain.co.uk', 'MATCH', 'Subdomain + country TLD'],
+              ['user+tag@example.org', 'MATCH', 'Plus-addressing'],
+              ['user@subdomain.example.com', 'MATCH', 'Subdomain'],
+              ['@example.com', 'NO MATCH', 'Missing local part'],
+              ['user@', 'NO MATCH', 'Missing domain'],
+              ['user@.com', 'NO MATCH', 'Domain starts with dot'],
+              ['user@example', 'NO MATCH', 'No TLD'],
+              ['user @example.com', 'NO MATCH', 'Space in local part'],
+              ['"user@name"@example.com', 'DEPENDS', 'Quoted local parts — RFC allows, most regex reject'],
+              ['user@[192.168.1.1]', 'DEPENDS', 'IP address domain — technically valid per RFC'],
+              ['', 'NO MATCH', 'Empty string'],
+              ['a'.repeat(255) + '@example.com', 'DEPENDS', 'Very long local part'],
+            ].map(([input, expected, notes], i) => (
+              <tr key={i} style={{ background: i % 2 === 0 ? '#fff' : '#f8fafc' }}>
+                <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px', fontFamily: 'monospace', fontSize: '0.8rem', wordBreak: 'break-all' }}>{input}</td>
+                <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px', color: expected === 'MATCH' ? '#16a34a' : expected === 'NO MATCH' ? '#dc2626' : '#d97706', fontWeight: '600' }}>{expected}</td>
+                <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px', fontSize: '0.82rem' }}>{notes}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
 
-      <h3>1. Forgetting to Escape Special Characters</h3>
-      <pre><code className="language-javascript">{`// WRONG: . matches ANY character
-/192.168.1.1/.test('192X168Y1Z1'); // true!
-
-// CORRECT: escape the dots
-/192\\.168\\.1\\.1/.test('192X168Y1Z1'); // false
-/192\\.168\\.1\\.1/.test('192.168.1.1'); // true`}</code></pre>
-
-      <h3>2. Greedy vs. Lazy Quantifiers</h3>
-      <pre><code className="language-javascript">{`const html = '<b>bold</b> and <i>italic</i>';
-
-// GREEDY: .* matches as much as possible
-html.match(/<.*>/);
-// ['<b>bold</b> and <i>italic</i>'] — captured everything!
-
-// LAZY: .*? matches as little as possible
-html.match(/<.*?>/g);
-// ['<b>', '</b>', '<i>', '</i>'] — individual tags`}</code></pre>
-
-      <h3>3. Not Anchoring the Pattern</h3>
-      <pre><code className="language-javascript">{`// WRONG: partial match passes validation
-/\\d{3}/.test('abc123def'); // true — found "123" inside
-
-// CORRECT: anchor to match full string
-/^\\d{3}$/.test('abc123def'); // false
-/^\\d{3}$/.test('123');       // true`}</code></pre>
-
-      <h3>4. Using Capture Groups When You Don&apos;t Need Them</h3>
-      <pre><code className="language-javascript">{`// UNNECESSARY captures — adds overhead
-/(http|https):\\/\\/(www\\.)?(.+)/
-
-// BETTER: non-capturing groups
-/(?:https?):\\/\\/(?:www\\.)?(.+)/
-// Only $1 (the domain+path) is captured`}</code></pre>
-
-      <h3>5. Not Handling Unicode Properly</h3>
-      <pre><code className="language-javascript">{`// WRONG: \\w doesn't match Unicode letters by default
-/^\\w+$/.test('cafe'); // true (ASCII only)
-
-// In JavaScript, use the u flag for Unicode
-/^[\\p{L}\\p{N}_]+$/u.test('cafe'); // true — matches Unicode letters`}</code></pre>
-
-      <h3>6. Nested Quantifiers Causing Catastrophic Backtracking</h3>
-      <pre><code className="language-javascript">{`// DANGEROUS: nested quantifiers
-/(a+)+b/.test('aaaaaaaaaaaaaaaaac');
-// Exponential backtracking! Can freeze your browser.
-
-// SAFE: flatten the pattern
-/a+b/.test('aaaaaaaaaaaaaaaaac');
-// Linear time, same logical result`}</code></pre>
-
-      <h2>Regex Performance: When Patterns Become Slow</h2>
-      <p>
-        Regex engines in most languages (JavaScript, Python, Java, .NET) use backtracking algorithms (NFA-based). This means certain patterns can exhibit exponential time complexity on specific inputs. Go&apos;s <code>regexp</code> package is a notable exception: it uses RE2 (DFA-based), which guarantees linear-time matching but sacrifices some advanced features.
-      </p>
-      <p>
-        The most common performance problem is <strong>catastrophic backtracking</strong>, which occurs when a pattern has ambiguous quantifiers that can match the same input in multiple ways. When the overall match fails, the engine tries every possible permutation before giving up.
-      </p>
-
-      <h3>Patterns That Trigger Backtracking</h3>
-      <pre><code className="language-text">{`# Dangerous patterns (avoid these):
-(a+)+          # Nested quantifiers
-(a|a)+         # Overlapping alternation
-(.*)(.*)(.*) # Multiple greedy wildcards with backrefs
-
-# Safe alternatives:
-a+             # Flattened quantifier
-a+             # Remove redundant alternation
-(.+?)          # Lazy quantifier where appropriate`}</code></pre>
-
-      <h3>Performance Tips</h3>
-      <ul>
-        <li><strong>Be specific</strong> &mdash; use <code>[a-z0-9]</code> instead of <code>.</code> when you know the character set.</li>
-        <li><strong>Anchor patterns</strong> &mdash; <code>^pattern$</code> fails faster on non-matching input.</li>
-        <li><strong>Avoid nested quantifiers</strong> &mdash; <code>(a+)+</code> is almost always a bug.</li>
-        <li><strong>Use non-capturing groups</strong> &mdash; <code>(?:...)</code> is slightly faster than <code>(...)</code> when you don&apos;t need the capture.</li>
-        <li><strong>Compile once, use many</strong> &mdash; in Python use <code>re.compile()</code>, in Go use <code>regexp.MustCompile()</code>, in JavaScript assign to a <code>const</code>.</li>
-        <li><strong>Test with pathological input</strong> &mdash; paste very long strings and edge cases into the <Link href={`/${lang}/tools/regex-tester`}>regex tester</Link> to check for slowdowns.</li>
-        <li><strong>Set timeouts</strong> &mdash; .NET and some other engines support regex timeouts; use them for untrusted patterns.</li>
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        General Testing Checklist
+      </h3>
+      <ul style={{ paddingLeft: '1.5rem', lineHeight: '1.8' }}>
+        <li><strong>Empty string:</strong> Does your pattern handle <code>""</code> correctly?</li>
+        <li><strong>Minimum valid input:</strong> Single character, shortest possible match.</li>
+        <li><strong>Maximum valid input:</strong> Very long strings — check performance.</li>
+        <li><strong>Boundary conditions:</strong> Exactly at min/max length limits.</li>
+        <li><strong>Unicode:</strong> Emojis, accented characters, CJK — does <code>\w</code> behave as expected?</li>
+        <li><strong>Newlines:</strong> Does <code>.</code> match <code>\n</code>? Do you need the <code>s</code> flag?</li>
+        <li><strong>Non-matching input:</strong> Confirm false positives don&apos;t sneak through.</li>
+        <li><strong>Anchoring:</strong> Test <code>"xpatternx"</code> to confirm anchors prevent partial matches.</li>
       </ul>
 
-      <h3>Benchmarking Regex vs Alternatives</h3>
-      <pre><code className="language-javascript">{`// Benchmark: regex vs includes() for simple substring check
-const text = 'The quick brown fox jumps over the lazy dog';
+      {/* 12. Common Mistakes */}
+      <h2
+        style={{
+          fontSize: '1.5rem',
+          fontWeight: '700',
+          marginTop: '2rem',
+          marginBottom: '1rem',
+          color: '#1e293b',
+        }}
+      >
+        12. Common Regex Mistakes and How to Fix Them
+      </h2>
 
-// Regex approach (~0.15 microseconds)
-/fox/.test(text);
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        Mistake 1: Forgetting to Escape the Dot
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// WRONG — matches "3.14" but also "3X14", "3914"
+/3.14/.test('3X14'); // true (. matches any char)
 
-// String method approach (~0.03 microseconds)
-text.includes('fox');
+// RIGHT
+/3\\.14/.test('3X14'); // false
+/3\\.14/.test('3.14'); // true`}</code></pre>
 
-// For simple substring checks, string methods are ~5x faster.
-// Use regex only when you need pattern matching capabilities.`}</code></pre>
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        Mistake 2: Greedy When You Need Lazy
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`const html = '<b>bold</b> and <i>italic</i>';
 
-      <h2>Regex vs String Methods: When You Don&apos;t Need Regex</h2>
-      <p>
-        Regex is powerful, but it is not always the right tool. Using regex for tasks that built-in string methods handle natively makes code harder to read, slower to execute, and more prone to bugs. Here is a comparison:
-      </p>
-      <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '16px' }}>
-        <thead>
-          <tr style={{ background: '#f1f5f9' }}>
-            <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Task</th>
-            <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Regex Approach</th>
-            <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>String Method</th>
-            <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Prefer</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Check if string contains &quot;foo&quot;</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>/foo/.test(s)</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>s.includes(&apos;foo&apos;)</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>String method</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Check if string starts with &quot;http&quot;</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>/^http/.test(s)</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>s.startsWith(&apos;http&apos;)</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>String method</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Replace first occurrence</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>s.replace(/foo/, &apos;bar&apos;)</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>s.replace(&apos;foo&apos;, &apos;bar&apos;)</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>String method</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Replace all occurrences</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>s.replace(/foo/g, &apos;bar&apos;)</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>s.replaceAll(&apos;foo&apos;, &apos;bar&apos;)</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>String method</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Trim whitespace</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>s.replace(/^\s+|\s+$/g, &apos;&apos;)</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>s.trim()</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>String method</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Split by comma</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>s.split(/,/)</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>s.split(&apos;,&apos;)</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>String method</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Extract all numbers</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>s.match(/\d+/g)</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>No clean alternative</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Regex</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Validate email format</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>emailRegex.test(s)</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>No clean alternative</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Regex</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Complex pattern matching</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Regex</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Not feasible</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Regex</td>
-          </tr>
-        </tbody>
-      </table>
-      <p>
-        <strong>Rule of thumb:</strong> if you are matching a fixed string (no wildcards, no quantifiers, no character classes), use string methods. If you need pattern matching, use regex. When in doubt, open the <Link href={`/${lang}/tools/regex-tester`}>regex tester</Link> to verify your pattern is correct before putting it in production code.
-      </p>
+// WRONG — greedy .* matches as much as possible
+html.match(/<.+>/)?.[0];   // '<b>bold</b> and <i>italic</i>'
 
-      <h2>Frequently Asked Questions</h2>
-      <div itemScope itemType="https://schema.org/FAQPage">
-        <div itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
-          <h3 itemProp="name">What is a regex tester?</h3>
-          <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-            <p itemProp="text">
-              A regex tester is an online tool that lets you write a regular expression pattern and test it against sample text in real time. It shows you exactly which parts of your text match the pattern, highlights capture groups, and helps you debug syntax errors. The <Link href={`/${lang}/tools/regex-tester`}>DevToolBox Regex Tester</Link> runs entirely in your browser with support for JavaScript, Python, and Go flavors.
-            </p>
-          </div>
-        </div>
+// RIGHT — lazy .*? stops at first >
+html.match(/<.+?>/)?.[0];  // '<b>'
+html.match(/<.+?>/g);      // ['<b>', '</b>', '<i>', '</i>']`}</code></pre>
 
-        <div itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
-          <h3 itemProp="name">How do I test a regex online?</h3>
-          <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-            <p itemProp="text">
-              Open an online regex tester like <Link href={`/${lang}/tools/regex-tester`}>DevToolBox&apos;s Regex Tester</Link>, type or paste your regular expression pattern in the pattern field, enter your test string in the text area, and toggle the flags you need (global, case-insensitive, multiline, etc.). Matches are highlighted instantly as you type. You can also use the replace mode to preview substitution results.
-            </p>
-          </div>
-        </div>
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        Mistake 3: Not Anchoring Validation Patterns
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// WRONG — passes "abc123xyz" because \\d+ matches "123" anywhere
+/\\d+/.test('abc123xyz'); // true — not a validation pattern!
 
-        <div itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
-          <h3 itemProp="name">What is the difference between regex flavors (JavaScript, Python, PCRE)?</h3>
-          <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-            <p itemProp="text">
-              Regex flavors differ in which features they support and how they handle edge cases. JavaScript regex supports lookahead, lookbehind (ES2018+), and named groups but lacks atomic groups and possessive quantifiers. Python&apos;s <code>re</code> module uses PCRE-like syntax with features like verbose mode (<code>re.VERBOSE</code>) and conditional patterns. Go&apos;s <code>regexp</code> package uses RE2 syntax, which guarantees linear-time execution but does not support lookahead, lookbehind, or backreferences.
-            </p>
-          </div>
-        </div>
+// RIGHT — validate the ENTIRE input
+/^\\d+$/.test('abc123xyz'); // false
+/^\\d+$/.test('123');       // true`}</code></pre>
 
-        <div itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
-          <h3 itemProp="name">What does the g flag do in regex?</h3>
-          <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-            <p itemProp="text">
-              The <code>g</code> (global) flag tells the regex engine to find all matches in the input string instead of stopping after the first match. Without the <code>g</code> flag, methods like <code>match()</code> in JavaScript return only the first occurrence. With the <code>g</code> flag, they return an array of all matches.
-            </p>
-          </div>
-        </div>
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        Mistake 4: Forgetting the g Flag in JavaScript
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`const text = 'foo bar baz';
 
-        <div itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
-          <h3 itemProp="name">How do I match an email address with regex?</h3>
-          <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-            <p itemProp="text">
-              A commonly used pattern is <code>{'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$'}</code>. This validates the local part (before @), the domain, and ensures a TLD of at least two characters. For real-world applications, consider that RFC 5322 allows many edge cases this pattern misses; using a dedicated email validation library alongside regex is recommended for production systems.
-            </p>
-          </div>
-        </div>
+// WRONG — only replaces first match
+text.replace(/\\b\\w+\\b/, 'X');   // 'X bar baz'
 
-        <div itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
-          <h3 itemProp="name">What is catastrophic backtracking in regex?</h3>
-          <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-            <p itemProp="text">
-              Catastrophic backtracking occurs when a regex engine tries exponentially many ways to match a pattern against input that ultimately does not match. It is caused by nested quantifiers like <code>(a+)+</code> or overlapping alternation like <code>(a|a)+</code>. The engine keeps trying different combinations before concluding there is no match, which can freeze your application. The fix is to rewrite the pattern to remove ambiguity, use atomic groups or possessive quantifiers where supported, or switch to a linear-time engine like Go&apos;s RE2.
-            </p>
-          </div>
-        </div>
+// RIGHT — global flag replaces all
+text.replace(/\\b\\w+\\b/g, 'X');  // 'X X X'
 
-        <div itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
-          <h3 itemProp="name">Can I use regex to parse HTML?</h3>
-          <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-            <p itemProp="text">
-              Regex can extract simple patterns from HTML (like matching a specific tag), but it cannot reliably parse arbitrary HTML because HTML is not a regular language. Nested tags, attributes with special characters, and malformed markup will break regex-based parsers. For production HTML processing, use a proper parser like DOMParser in the browser, BeautifulSoup in Python, or goquery in Go. Use regex only for quick, one-off extraction from known, simple HTML structures.
-            </p>
-          </div>
-        </div>
+// Also affects match() — without g, returns match object
+text.match(/\\w+/);    // ['foo', index: 0, ...]
+text.match(/\\w+/g);   // ['foo', 'bar', 'baz']`}</code></pre>
 
-        <div itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
-          <h3 itemProp="name">Is the DevToolBox regex tester free?</h3>
-          <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-            <p itemProp="text">
-              Yes. The <Link href={`/${lang}/tools/regex-tester`}>DevToolBox Regex Tester</Link> is completely free, requires no signup, and runs entirely in your browser. Your patterns and test strings are never sent to any server, making it safe for testing patterns against sensitive data.
-            </p>
-          </div>
-        </div>
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        Mistake 5: Catastrophic Backtracking with (a+)+
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// DANGEROUS — exponential time on non-matching input
+const evil = /(a+)+b/;
+
+// Test with progressively longer strings to see performance degrade:
+evil.test('aaab');          // fast
+evil.test('aaaaaaaaaab');   // slower
+evil.test('aaaaaaaaaaaaaaaaaaaab'); // very slow
+evil.test('aaaaaaaaaaaaaaaaaaaac'); // HANGS — no 'b' to end the match
+
+// FIX: Rewrite to eliminate ambiguity
+// Option 1: atomic group (not in JS/Python)
+// Option 2: possessive quantifier (not in JS/Python)
+// Option 3: restructure to remove nested quantifiers
+/a+b/.test('aaab'); // works correctly, no ambiguity`}</code></pre>
+
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.5rem', color: '#1e293b' }}>
+        Mistake 6: Unicode Issues with \\w and \\d
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// In JavaScript (without u flag), \\w = [a-zA-Z0-9_] — ASCII only
+/^\\w+$/.test('café');    // false — accented char not in \\w
+/^\\w+$/.test('hello');   // true
+
+// The u flag enables Unicode matching for some features but \\w is still ASCII in JS
+// Use explicit ranges for Unicode letter matching:
+/^[\\p{L}\\p{N}]+$/u.test('café'); // true (with u flag and \\p Unicode category)
+
+// Python with re.UNICODE (default in Python 3):
+// \\w matches all Unicode word characters including accented letters
+import re
+bool(re.match(r'^\\w+$', 'café'))  # True in Python 3`}</code></pre>
+
+      {/* Key Takeaways */}
+      <div
+        style={{
+          background: '#f8fafc',
+          border: '1px solid #e2e8f0',
+          borderRadius: '8px',
+          padding: '1rem',
+          marginTop: '2rem',
+        }}
+      >
+        <p style={{ fontWeight: 700, marginBottom: '0.5rem', fontSize: '1.05em' }}>Key Takeaways</p>
+        <ul style={{ margin: 0, paddingLeft: '1.5rem', lineHeight: '1.8' }}>
+          <li>
+            Use an <strong>online regex tester</strong> to get instant visual feedback before adding
+            patterns to your codebase.
+          </li>
+          <li>
+            Always <strong>anchor validation patterns</strong> with <code>^</code> and <code>$</code> to
+            prevent partial matches.
+          </li>
+          <li>
+            <strong>Named capture groups</strong> (<code>{'(?<name>...)'}</code>) make patterns
+            self-documenting and protect against index shifts.
+          </li>
+          <li>
+            <strong>Lookahead/lookbehind</strong> are zero-width assertions — they check context
+            without consuming characters, perfect for password validation.
+          </li>
+          <li>
+            <strong>Avoid nested quantifiers</strong> on overlapping patterns like <code>(a+)+</code> —
+            they cause catastrophic backtracking on non-matching input.
+          </li>
+          <li>
+            <strong>Go uses RE2</strong> (no lookahead/lookbehind); JavaScript and Python support
+            full PCRE-compatible features.
+          </li>
+          <li>
+            <strong>Compile patterns outside loops</strong> with <code>re.compile()</code> (Python)
+            or module-level literals (JavaScript) for maximum performance.
+          </li>
+          <li>
+            Always add the <strong>g flag</strong> in JavaScript when you want to replace or match
+            all occurrences, not just the first.
+          </li>
+        </ul>
       </div>
-    </>
+
+      {/* CTA */}
+      <div
+        style={{
+          background: '#f0f9ff',
+          border: '1px solid #bae6fd',
+          borderRadius: '8px',
+          padding: '1rem',
+          marginTop: '1.5rem',
+          textAlign: 'center',
+        }}
+      >
+        <p style={{ margin: 0 }}>
+          Ready to build and test your own patterns?{' '}
+          <Link
+            href={`/${lang}/tools/regex-tester`}
+            style={{ fontWeight: 700, color: '#0369a1' }}
+          >
+            Open the free Regex Tester
+          </Link>{' '}
+          — no signup required, instant match highlighting, and a built-in cheat sheet.
+        </p>
+      </div>
+    </article>
   );
 }
