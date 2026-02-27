@@ -451,6 +451,8 @@ import StorybookGuide from '@/data/posts/storybook-guide';
 import EslintGuide from '@/data/posts/eslint-guide';
 import CypressGuide from '@/data/posts/cypress-guide';
 import PrettierGuide from '@/data/posts/prettier-guide';
+import RollupGuide from '@/data/posts/rollup-guide';
+import EsbuildGuide from '@/data/posts/esbuild-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -892,6 +894,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'eslint-guide': EslintGuide,
   'cypress-guide': CypressGuide,
   'prettier-guide': PrettierGuide,
+  'rollup-guide': RollupGuide,
+  'esbuild-guide': EsbuildGuide,
 };
 
 /* i18n for UI strings on this page */
