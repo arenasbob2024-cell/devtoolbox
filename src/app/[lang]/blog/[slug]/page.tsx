@@ -370,6 +370,8 @@ import GraphqlSubscriptionsGuide from '@/data/posts/graphql-subscriptions-guide'
 import RustBasicsGuide from '@/data/posts/rust-basics-guide';
 import GolangGuide from '@/data/posts/golang-guide';
 import PerformanceOptimizationGuide from '@/data/posts/performance-optimization-guide';
+import ExpressJsGuide from '@/data/posts/express-js-guide';
+import DjangoGuide from '@/data/posts/django-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -730,6 +732,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'rust-basics-guide': RustBasicsGuide,
   'golang-guide': GolangGuide,
   'performance-optimization-guide': PerformanceOptimizationGuide,
+  'express-js-guide': ExpressJsGuide,
+  'django-guide': DjangoGuide,
 };
 
 /* i18n for UI strings on this page */
