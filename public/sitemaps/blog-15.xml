@@ -991,4 +991,664 @@
       <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/hono-guide"/>
       <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/hono-guide"/>
   </url>
+  <url>
+    <loc>https://viadreams.cc/en/blog/fastify-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/fastify-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/fr/blog/fastify-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/fastify-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/de/blog/fastify-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/fastify-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/it/blog/fastify-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/fastify-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/es/blog/fastify-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/fastify-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pt/blog/fastify-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/fastify-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/nl/blog/fastify-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/fastify-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pl/blog/fastify-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/fastify-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/sv/blog/fastify-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/fastify-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/no/blog/fastify-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/fastify-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/zh/blog/fastify-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/fastify-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ja/blog/fastify-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/fastify-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ko/blog/fastify-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/fastify-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/id/blog/fastify-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/fastify-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/th/blog/fastify-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/fastify-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/fastify-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/en/blog/shadcn-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/shadcn-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/fr/blog/shadcn-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/shadcn-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/de/blog/shadcn-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/shadcn-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/it/blog/shadcn-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/shadcn-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/es/blog/shadcn-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/shadcn-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pt/blog/shadcn-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/shadcn-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/nl/blog/shadcn-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/shadcn-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pl/blog/shadcn-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/shadcn-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/sv/blog/shadcn-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/shadcn-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/no/blog/shadcn-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/shadcn-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/zh/blog/shadcn-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/shadcn-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ja/blog/shadcn-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/shadcn-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ko/blog/shadcn-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/shadcn-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/id/blog/shadcn-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/shadcn-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/th/blog/shadcn-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/shadcn-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/shadcn-guide"/>
+  </url>
 </urlset>

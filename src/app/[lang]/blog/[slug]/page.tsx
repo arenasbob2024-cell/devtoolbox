@@ -461,6 +461,8 @@ import NuxtGuide from '@/data/posts/nuxt-guide';
 import GatsbyGuide from '@/data/posts/gatsby-guide';
 import TrpcGuide from '@/data/posts/trpc-guide';
 import HonoGuide from '@/data/posts/hono-guide';
+import FastifyGuide from '@/data/posts/fastify-guide';
+import ShadcnGuide from '@/data/posts/shadcn-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -912,6 +914,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'gatsby-guide': GatsbyGuide,
   'trpc-guide': TrpcGuide,
   'hono-guide': HonoGuide,
+  'fastify-guide': FastifyGuide,
+  'shadcn-guide': ShadcnGuide,
 };
 
 /* i18n for UI strings on this page */
