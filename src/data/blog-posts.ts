@@ -9130,6 +9130,25 @@ export const blogPosts: BlogPost[] = [
       ko: { title: 'Node.js 가이드: 백엔드 개발을 위한 완전한 튜토리얼', description: 'Node.js 백엔드 개발을 마스터하세요. 이벤트 루프, Express.js, REST API, JWT 인증, DB 통합, Jest 테스트, PM2 배포, Node.js vs Deno vs Bun 비교 완전 가이드.', readingTime: '14분 읽기', keywords: ['node.js 튜토리얼', 'node.js 백엔드', 'express.js 가이드', 'node.js rest api', 'node.js jwt', 'node.js jest 테스트', 'pm2 node.js', 'node.js vs deno'] },
     },
   },
+  {
+    slug: 'mongodb-guide',
+    title: 'MongoDB Guide: Complete NoSQL Database Tutorial for Developers',
+    description: 'Master MongoDB NoSQL database. Covers CRUD, aggregation pipeline, indexes, data modeling, Mongoose ODM, transactions, Atlas setup, and MongoDB vs PostgreSQL comparison.',
+    date: '2026-02-27',
+    author: 'DevToolBox',
+    readingTime: '14 min read',
+    keywords: ['mongodb tutorial', 'mongodb crud', 'mongodb aggregation', 'mongodb indexes', 'mongoose odm', 'mongodb atlas', 'mongodb transactions', 'nosql database', 'mongodb vs postgresql', 'mongodb data modeling'],
+    relatedTools: ['json-formatter', 'base64-encoder', 'hash-generator'],
+    relatedPosts: ['postgresql-guide', 'redis-guide', 'node-js-guide'],
+    translations: {
+      zh: { title: 'MongoDB指南：开发者完整NoSQL数据库教程', description: '掌握MongoDB NoSQL数据库。涵盖CRUD、聚合管道、索引、数据建模、Mongoose ODM、事务、Atlas设置和MongoDB vs PostgreSQL对比。', readingTime: '14 分钟阅读', keywords: ['mongodb教程', 'mongodb crud', 'mongodb聚合', 'mongodb索引', 'mongoose odm', 'mongodb atlas', 'mongodb事务', 'nosql数据库', 'mongodb对比postgresql', 'mongodb数据建模'] },
+      fr: { title: 'Guide MongoDB: Tutoriel Complet Base de Données NoSQL', description: 'Maîtrisez MongoDB. Guide avec CRUD, pipeline d\'agrégation, index, modélisation, Mongoose, transactions, Atlas et comparaison MongoDB vs PostgreSQL.', readingTime: '14 min de lecture', keywords: ['tutoriel mongodb', 'crud mongodb', 'agrégation mongodb', 'index mongodb', 'mongoose odm', 'mongodb atlas', 'transactions mongodb', 'base de données nosql'] },
+      de: { title: 'MongoDB Leitfaden: Vollständiges NoSQL-Datenbank-Tutorial', description: 'MongoDB meistern. Anleitung mit CRUD, Aggregation Pipeline, Indexes, Datenmodellierung, Mongoose ODM, Transaktionen, Atlas und MongoDB vs PostgreSQL Vergleich.', readingTime: '14 Min. Lesezeit', keywords: ['mongodb tutorial', 'mongodb crud', 'mongodb aggregation', 'mongodb indexes', 'mongoose odm', 'mongodb atlas', 'mongodb transaktionen', 'nosql datenbank'] },
+      es: { title: 'Guía MongoDB: Tutorial Completo de Base de Datos NoSQL', description: 'Domina MongoDB. Guía con CRUD, pipeline de agregación, índices, modelado de datos, Mongoose ODM, transacciones, Atlas y comparación MongoDB vs PostgreSQL.', readingTime: '14 min de lectura', keywords: ['tutorial mongodb', 'crud mongodb', 'agregación mongodb', 'índices mongodb', 'mongoose odm', 'mongodb atlas', 'transacciones mongodb', 'base de datos nosql'] },
+      ja: { title: 'MongoDBガイド：開発者のための完全NoSQLデータベースチュートリアル', description: 'MongoDBをマスター。CRUD、アグリゲーションパイプライン、インデックス、データモデリング、Mongoose ODM、トランザクション、Atlas、MongoDB vs PostgreSQL比較の完全ガイド。', readingTime: '14分', keywords: ['mongodbチュートリアル', 'mongodb crud', 'mongodbアグリゲーション', 'mongodbインデックス', 'mongoose odm', 'mongodb atlas', 'mongodbトランザクション', 'nosqlデータベース'] },
+      ko: { title: 'MongoDB 가이드: 개발자를 위한 완전한 NoSQL 데이터베이스 튜토리얼', description: 'MongoDB를 마스터하세요. CRUD, 집계 파이프라인, 인덱스, 데이터 모델링, Mongoose ODM, 트랜잭션, Atlas 설정, MongoDB vs PostgreSQL 비교 완전 가이드.', readingTime: '14분 읽기', keywords: ['mongodb 튜토리얼', 'mongodb crud', 'mongodb 집계', 'mongodb 인덱스', 'mongoose odm', 'mongodb atlas', 'mongodb 트랜잭션', 'nosql 데이터베이스'] },
+    },
+  },
 ];
 
 /** Get post with localized metadata */

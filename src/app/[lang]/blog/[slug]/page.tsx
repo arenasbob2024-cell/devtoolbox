@@ -361,6 +361,7 @@ import LinuxCommandsGuide from '@/data/posts/linux-commands-guide';
 import VimGuide from '@/data/posts/vim-guide';
 import CssGridGuide from '@/data/posts/css-grid-guide';
 import NodeJsGuide from '@/data/posts/node-js-guide';
+import MongoDBGuide from '@/data/posts/mongodb-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -712,6 +713,7 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'vim-guide': VimGuide,
   'css-grid-guide': CssGridGuide,
   'node-js-guide': NodeJsGuide,
+  'mongodb-guide': MongoDBGuide,
 };
 
 /* i18n for UI strings on this page */
