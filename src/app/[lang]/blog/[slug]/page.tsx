@@ -331,6 +331,8 @@ import YamlToJsonOnlineGuide from '@/data/posts/yaml-to-json-online-guide';
 import Base64EncoderOnlineGuide from '@/data/posts/base64-encoder-online-guide';
 import UnixTimestampOnlineGuide from '@/data/posts/unix-timestamp-online-guide';
 import QrCodeOnlineGuide from '@/data/posts/qr-code-online-guide';
+import DockerComposeOnlineGuide from '@/data/posts/docker-compose-online-guide';
+import NginxConfigOnlineGuide from '@/data/posts/nginx-config-online-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -652,6 +654,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'base64-encoder-online-guide': Base64EncoderOnlineGuide,
   'unix-timestamp-online-guide': UnixTimestampOnlineGuide,
   'qr-code-online-guide': QrCodeOnlineGuide,
+  'docker-compose-online-guide': DockerComposeOnlineGuide,
+  'nginx-config-online-guide': NginxConfigOnlineGuide,
 };
 
 /* i18n for UI strings on this page */
