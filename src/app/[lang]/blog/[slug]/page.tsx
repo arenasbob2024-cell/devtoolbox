@@ -463,6 +463,8 @@ import TrpcGuide from '@/data/posts/trpc-guide';
 import HonoGuide from '@/data/posts/hono-guide';
 import FastifyGuide from '@/data/posts/fastify-guide';
 import ShadcnGuide from '@/data/posts/shadcn-guide';
+import PocketbaseGuide from '@/data/posts/pocketbase-guide';
+import RxjsGuide from '@/data/posts/rxjs-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -916,6 +918,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'hono-guide': HonoGuide,
   'fastify-guide': FastifyGuide,
   'shadcn-guide': ShadcnGuide,
+  'pocketbase-guide': PocketbaseGuide,
+  'rxjs-guide': RxjsGuide,
 };
 
 /* i18n for UI strings on this page */
