@@ -337,6 +337,8 @@ import HmacGeneratorOnlineGuide from '@/data/posts/hmac-generator-online-guide';
 import XmlFormatterOnlineGuide from '@/data/posts/xml-formatter-online-guide';
 import StringCaseConverterOnlineGuide from '@/data/posts/string-case-converter-online-guide';
 import NumberBaseConverterOnlineGuide from '@/data/posts/number-base-converter-online-guide';
+import CorsTesterOnlineGuide from '@/data/posts/cors-tester-online-guide';
+import FakeDataGeneratorOnlineGuide from '@/data/posts/fake-data-generator-online-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -664,6 +666,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'xml-formatter-online-guide': XmlFormatterOnlineGuide,
   'string-case-converter-online-guide': StringCaseConverterOnlineGuide,
   'number-base-converter-online-guide': NumberBaseConverterOnlineGuide,
+  'cors-tester-online-guide': CorsTesterOnlineGuide,
+  'fake-data-generator-online-guide': FakeDataGeneratorOnlineGuide,
 };
 
 /* i18n for UI strings on this page */
