@@ -383,6 +383,8 @@ import TailwindCssGuide from '@/data/posts/tailwind-css-guide';
 import JestTestingGuide from '@/data/posts/jest-testing-guide';
 import WebpackGuide from '@/data/posts/webpack-guide';
 import PythonDataScienceGuide from '@/data/posts/python-data-science-guide';
+import DevopsGuide from '@/data/posts/devops-guide';
+import ApiDesignGuide from '@/data/posts/api-design-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -756,6 +758,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'jest-testing-guide': JestTestingGuide,
   'webpack-guide': WebpackGuide,
   'python-data-science-guide': PythonDataScienceGuide,
+  'devops-guide': DevopsGuide,
+  'api-design-guide': ApiDesignGuide,
 };
 
 /* i18n for UI strings on this page */
