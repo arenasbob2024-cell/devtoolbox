@@ -2,25 +2,38 @@
 
 import Link from 'next/link';
 
+const translations = {
+  en: {
+    title: 'Hash Generator: Generate SHA-256, MD5, and HMAC Online — Complete Guide',
+    description: 'Generate cryptographic hashes online with SHA-256, MD5, HMAC. Complete guide for JavaScript, Python, Go, password hashing, and file integrity checking.',
+  },
+  zh: {
+    title: '哈希生成器：在线生成 SHA-256、MD5 和 HMAC 完整指南',
+    description: '在线使用 SHA-256、MD5、HMAC 生成密码哈希。JavaScript、Python、Go、密码哈希和文件完整性验证完整指南。',
+  },
+};
+
 export default function HashGeneratorOnlineGuide({ lang }: { lang: string }) {
+  const t = translations[lang as keyof typeof translations] || translations.en;
+
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'What is a hash generator and how does it work?',
+        name: 'What is a hash function and how does it work?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'A hash generator is a tool that takes any input data (text, file, or binary) and produces a fixed-size output called a hash digest using a mathematical algorithm. The process is one-way, meaning you cannot reverse the hash to recover the original input. Hash generators typically support algorithms like MD5 (128-bit output), SHA-1 (160-bit), SHA-256 (256-bit), and SHA-512 (512-bit). The same input always produces the same hash, but even a tiny change in the input produces a completely different output (the avalanche effect).',
+          text: 'A hash function takes any input data (text, file, binary) and produces a fixed-size output called a hash digest using a mathematical algorithm. The process is deterministic (same input always produces same output), one-way (you cannot reverse the hash to recover the original input), and exhibits the avalanche effect (even a single bit change produces a completely different output). Common algorithms include MD5 (128-bit), SHA-1 (160-bit), SHA-256 (256-bit), SHA-512 (512-bit), SHA-3, and BLAKE3.',
         },
       },
       {
         '@type': 'Question',
-        name: 'What is the difference between MD5, SHA-256, and SHA-512?',
+        name: 'What is the difference between MD5, SHA-256, SHA-512, and BLAKE3?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'MD5 produces a 128-bit (32 hex character) hash and is very fast, but it has been cryptographically broken since 2004. SHA-256 produces a 256-bit (64 hex character) hash and is part of the SHA-2 family; it remains secure with no known practical attacks and is the most widely recommended algorithm for security applications. SHA-512 produces a 512-bit (128 hex character) hash, offers a larger security margin, and can be faster than SHA-256 on 64-bit processors. For security-critical applications, use SHA-256 or SHA-512. MD5 should only be used for non-security purposes like checksums and cache keys.',
+          text: 'MD5 produces a 128-bit hash and is cryptographically broken since 2004 — only safe for non-security checksums. SHA-1 (160-bit) was broken in 2017 with the SHAttered attack. SHA-256 (256-bit, SHA-2 family) is the current industry standard with no known practical attacks. SHA-512 (512-bit) offers a larger security margin and can be faster than SHA-256 on 64-bit processors. SHA-3 uses a completely different sponge construction and is immune to length extension attacks. BLAKE3 is extremely fast (up to 15x faster than SHA-256 on modern CPUs with SIMD) while maintaining 128-bit security.',
         },
       },
       {
@@ -28,7 +41,7 @@ export default function HashGeneratorOnlineGuide({ lang }: { lang: string }) {
         name: 'Can a hash be reversed or decrypted?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'No. Cryptographic hash functions are designed to be one-way functions (preimage resistant). Given a hash output, it is computationally infeasible to determine the original input. However, weak or short inputs (like common passwords) can be "cracked" by trying all possible inputs and comparing hashes (brute-force) or by using precomputed lookup tables (rainbow tables). This is why passwords must always be hashed with slow, salted, memory-hard algorithms like bcrypt, scrypt, or Argon2 rather than general-purpose hash functions.',
+          text: 'No. Cryptographic hash functions are designed to be one-way (preimage resistant). It is computationally infeasible to determine the original input from a hash output. However, weak or short inputs like common passwords can be "cracked" using brute-force attacks or rainbow tables. This is why passwords must use slow, salted, memory-hard algorithms like bcrypt, scrypt, or Argon2 — never plain SHA-256 or MD5.',
         },
       },
       {
@@ -36,7 +49,7 @@ export default function HashGeneratorOnlineGuide({ lang }: { lang: string }) {
         name: 'Is MD5 still safe to use in 2026?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'MD5 is NOT safe for any cryptographic or security purpose. Practical collision attacks can be performed in under a second on a modern laptop. MD5 should never be used for digital signatures, certificate validation, password hashing, or any context where an adversary could craft collisions. However, MD5 remains acceptable for non-security use cases: file checksums to detect accidental corruption (not malicious tampering), cache key generation, content deduplication in storage systems, ETag generation in HTTP caching, and hash table distribution. If there is any possibility of adversarial manipulation, choose SHA-256 instead.',
+          text: 'MD5 is NOT safe for any security purpose. Practical collision attacks can be performed in under a second on modern hardware. Never use MD5 for digital signatures, certificate validation, password hashing, or any context with adversarial risk. However, MD5 remains acceptable for non-security use cases: detecting accidental file corruption, cache key generation, content deduplication, ETag generation, and hash table distribution. When adversarial manipulation is possible, use SHA-256 instead.',
         },
       },
       {
@@ -44,7 +57,7 @@ export default function HashGeneratorOnlineGuide({ lang }: { lang: string }) {
         name: 'What is HMAC and when should I use it instead of a plain hash?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'HMAC (Hash-based Message Authentication Code) combines a secret key with a hash function to produce an authentication code that verifies both the integrity and authenticity of a message. Use HMAC whenever you need to prove that a message was not tampered with AND that it was sent by someone who possesses the secret key. Common use cases include API request signing (used by AWS, Stripe, GitHub webhooks), JWT signature verification, cookie and session token validation, and webhook payload verification. Never use a plain hash like SHA-256(secret + message) for authentication because it is vulnerable to length extension attacks. HMAC-SHA256 is the industry standard.',
+          text: 'HMAC (Hash-based Message Authentication Code) combines a secret key with a hash function to produce an authentication code that verifies both integrity AND authenticity of a message. Use HMAC when you need to prove a message was not tampered with AND was sent by someone with the secret key. Common use cases: API request signing (AWS, Stripe, GitHub webhooks), JWT signature verification, cookie/session token validation, and webhook payload verification. Never use a plain hash like SHA-256(secret + message) for authentication — it is vulnerable to length extension attacks. HMAC-SHA256 is the industry standard.',
         },
       },
       {
@@ -52,7 +65,7 @@ export default function HashGeneratorOnlineGuide({ lang }: { lang: string }) {
         name: 'Why should I use bcrypt or Argon2 instead of SHA-256 for password hashing?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'SHA-256 is designed to be extremely fast, which is the opposite of what you want for password hashing. An attacker with a modern GPU can compute billions of SHA-256 hashes per second, making brute-force attacks on passwords practical. bcrypt, scrypt, and Argon2 are purpose-built password hashing functions that are intentionally slow and computationally expensive. bcrypt includes a configurable work factor that can be increased over time. scrypt adds memory-hardness to resist GPU attacks. Argon2 (winner of the 2015 Password Hashing Competition) provides configurable time cost, memory cost, and parallelism, making it resistant to both GPU and ASIC attacks. All three automatically handle salting.',
+          text: 'SHA-256 is designed to be extremely fast — the opposite of what you want for password hashing. An attacker with a modern GPU can compute billions of SHA-256 hashes per second, making brute-force attacks practical. bcrypt, scrypt, and Argon2 are intentionally slow and computationally expensive. bcrypt has a configurable work factor. Argon2 (winner of the 2015 Password Hashing Competition) provides configurable time cost, memory cost, and parallelism, resisting both GPU and ASIC attacks. All three automatically handle salting. Never store passwords as MD5 or plain SHA-256.',
         },
       },
       {
@@ -60,389 +73,383 @@ export default function HashGeneratorOnlineGuide({ lang }: { lang: string }) {
         name: 'How do I verify file integrity using hash checksums?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'To verify file integrity: (1) Download the file and its published hash checksum (usually SHA-256) from the official source. (2) Compute the hash of the downloaded file using a hash generator tool or command line (sha256sum on Linux, shasum -a 256 on macOS, Get-FileHash on Windows). (3) Compare the computed hash with the published hash. If they match exactly, the file has not been corrupted or tampered with during transit. Many Linux distributions, software packages, and ISO images publish SHA-256 checksums for this purpose.',
+          text: 'To verify file integrity: (1) Download the file and its published SHA-256 checksum from the official source. (2) Compute the hash of your downloaded file using sha256sum on Linux, shasum -a 256 on macOS, or certutil -hashfile on Windows. (3) Compare your computed hash with the published value — if they match exactly, the file is intact. Many Linux distributions, software packages, and security-critical downloads publish SHA-256 checksums for this purpose.',
         },
       },
       {
         '@type': 'Question',
-        name: 'What hash algorithm does Bitcoin and blockchain use?',
+        name: 'What hash algorithm does Git, Docker, and IPFS use?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Bitcoin uses double SHA-256 (SHA-256 applied twice: SHA-256(SHA-256(data))) for block header hashing, transaction verification, and its proof-of-work mining algorithm. Miners must find a nonce value that, when combined with the block data and hashed with double SHA-256, produces a hash below a target threshold. Ethereum originally used Keccak-256 (a SHA-3 variant, not identical to the NIST SHA-3 standard) for its hashing. Other blockchains use different algorithms: Litecoin uses scrypt, Monero uses RandomX, and newer chains may use BLAKE2b or BLAKE3.',
+          text: 'Git traditionally uses SHA-1 to identify commits, trees, blobs, and tags (transitioning to SHA-256 via object-format=sha256). Docker uses SHA-256 for image layer digests (e.g., sha256:abc123...) enabling content-addressable layer sharing. IPFS uses CIDs (Content Identifiers) based on multihash, typically SHA-256 or SHA3-256, creating self-describing content addresses. Webpack uses content hashes ([contenthash]) for cache-busting filenames. Bitcoin uses double SHA-256 for block headers and Merkle trees.',
         },
       },
     ],
   };
 
   return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+    <article style={{ lineHeight: '1.7', color: '#334155' }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      {/* Canonical meta */}
+      <link rel="canonical" href="https://viadreams.cc/en/blog/hash-generator-online-guide" />
 
       {/* TL;DR Box */}
-      <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: '8px', padding: '16px 20px', marginBottom: '24px' }}>
-        <p style={{ fontWeight: 700, marginBottom: '8px', fontSize: '1.05em' }}>TL;DR</p>
+      <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: '8px', padding: '1rem', marginBottom: '1.5rem' }}>
+        <p style={{ fontWeight: 700, marginBottom: '0.5rem', color: '#0369a1' }}>TL;DR</p>
         <p style={{ margin: 0 }}>
-          A <strong>hash generator</strong> converts any input into a fixed-size cryptographic fingerprint using algorithms like MD5, SHA-1, SHA-256, or SHA-512.
-          Use <strong>SHA-256</strong> for security-critical applications (digital signatures, blockchain, file verification).
-          Use <strong>bcrypt or Argon2</strong> for password hashing (never plain SHA-256).
-          Use <strong>HMAC-SHA256</strong> for API authentication and message signing.
-          MD5 is broken for security but acceptable for non-adversarial checksums.
-          You can <Link href={`/${lang}/tools/hash-generator`}>generate hashes online</Link> instantly with our free tool, or use built-in libraries in JavaScript, Python, and Go.
+          A <strong>hash generator</strong> converts any input into a fixed-size cryptographic fingerprint. Use <strong>SHA-256</strong> for
+          security-critical applications (file verification, digital signatures, blockchain). Use <strong>bcrypt or Argon2</strong> for
+          password hashing — never plain SHA-256 or MD5. Use <strong>HMAC-SHA256</strong> for API authentication and webhook verification.
+          MD5 is broken for security but acceptable for non-adversarial checksums. Try our free{' '}
+          <Link href={`/${lang}/tools/hash-generator`} style={{ color: '#0284c7' }}>online hash generator</Link> for instant results,
+          or follow the code examples below for JavaScript, Python, Go, and Rust.
         </p>
       </div>
 
-      {/* Key Takeaways */}
-      <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '16px 20px', marginBottom: '24px' }}>
-        <p style={{ fontWeight: 700, marginBottom: '8px', fontSize: '1.05em' }}>Key Takeaways</p>
-        <ul style={{ margin: 0, paddingLeft: '20px' }}>
-          <li><strong>SHA-256</strong> is the gold standard for general-purpose cryptographic hashing with a 256-bit output and no known practical attacks.</li>
-          <li><strong>SHA-512</strong> provides a larger 512-bit output and can outperform SHA-256 on 64-bit processors due to its native 64-bit word size.</li>
-          <li><strong>MD5</strong> (128-bit) and <strong>SHA-1</strong> (160-bit) are cryptographically broken and must not be used for security purposes.</li>
-          <li>For <strong>password hashing</strong>, always use bcrypt, scrypt, or Argon2 instead of general-purpose hash functions.</li>
-          <li>Use <strong>HMAC</strong> (Hash-based Message Authentication Code) for API signing and webhook verification instead of plain hashing.</li>
-          <li><strong>File integrity</strong> verification relies on comparing computed hash checksums against published values.</li>
-          <li><strong>Blockchain</strong> technology is built on SHA-256 hashing for proof-of-work, block validation, and transaction Merkle trees.</li>
-          <li>All major languages provide built-in hash libraries: Web Crypto API and <code>crypto</code> in JavaScript, <code>hashlib</code> in Python, <code>crypto/sha256</code> in Go.</li>
-        </ul>
-      </div>
+      {/* Section 1: Hashing Overview */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: '700', marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
+        What Is a Hash Function? Core Properties Explained
+      </h2>
+      <p>
+        A <strong>hash function</strong> is a mathematical algorithm that accepts an input of arbitrary size and produces a
+        fixed-size output called a <strong>hash digest</strong>. The output is typically represented as a hexadecimal string.
+        For example, SHA-256(&ldquo;hello&rdquo;) always equals{' '}
+        <code>2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824</code>, regardless of when or where you compute it.
+      </p>
+      <p>Hash functions have five critical properties that make them essential across modern computing:</p>
+      <ul>
+        <li><strong>Deterministic</strong>: The same input always yields the same output.</li>
+        <li><strong>Fixed-length output</strong>: Regardless of input size, the output is always the same length (e.g., 64 hex chars for SHA-256).</li>
+        <li><strong>One-way (preimage resistant)</strong>: Given a hash, it is computationally infeasible to recover the original input.</li>
+        <li><strong>Avalanche effect</strong>: Changing even a single bit in the input drastically alters the output.</li>
+        <li><strong>Collision resistant</strong>: Computationally infeasible to find two different inputs producing the same hash.</li>
+      </ul>
 
-      <h2>What Are Hash Functions? A Developer Primer</h2>
-      <p>
-        A <strong>hash function</strong> is a mathematical algorithm that accepts an input of arbitrary size and produces a fixed-size output called a <strong>hash value</strong>, <strong>hash digest</strong>, or simply a <strong>hash</strong>. The output is typically represented as a hexadecimal string. For instance, the SHA-256 hash of the word &quot;hello&quot; is always the 64-character hex string <code>2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824</code>, no matter when or where you compute it.
-      </p>
-      <p>
-        Hash functions possess five critical properties that make them indispensable across computing. First, they are <strong>deterministic</strong>: the same input always yields the same output. Second, they produce a <strong>fixed-length output</strong> regardless of input size. Third, they are <strong>one-way</strong> (preimage resistant): given a hash, it is computationally infeasible to recover the original input. Fourth, they exhibit the <strong>avalanche effect</strong>: changing even a single bit in the input drastically alters the output. Fifth, strong hash functions are <strong>collision resistant</strong>: it is computationally infeasible to find two different inputs that produce the same hash.
-      </p>
-      <p>
-        These properties enable a wide range of applications, from verifying downloaded files to securing passwords, signing digital certificates, powering blockchain consensus, and authenticating API requests. Understanding hash functions deeply is essential knowledge for every software developer, DevOps engineer, and security professional.
-      </p>
-      <p>
-        If you need to quickly compute a hash, try our free <Link href={`/${lang}/tools/hash-generator`}>Hash Generator Online</Link> tool that supports MD5, SHA-1, SHA-256, SHA-384, and SHA-512.
-      </p>
-
-      <h2>Hash Algorithms Compared: MD5 vs SHA-1 vs SHA-256 vs SHA-512</h2>
-      <p>
-        Not all hash algorithms are created equal. Each has different output sizes, security guarantees, and performance characteristics. Choosing the right algorithm depends on your use case and threat model. Here is a detailed comparison of the four most widely used hash algorithms:
-      </p>
-      <div style={{ overflowX: 'auto', marginBottom: '16px' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.95em' }}>
+      <h3 style={{ fontSize: '1.2rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.75rem', color: '#1e293b' }}>
+        Algorithm Comparison Table
+      </h3>
+      <div style={{ overflowX: 'auto', marginBottom: '1rem' }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem' }}>
           <thead>
             <tr style={{ background: '#f1f5f9' }}>
               <th style={{ padding: '10px 12px', textAlign: 'left', borderBottom: '2px solid #e2e8f0' }}>Algorithm</th>
-              <th style={{ padding: '10px 12px', textAlign: 'left', borderBottom: '2px solid #e2e8f0' }}>Output Size</th>
-              <th style={{ padding: '10px 12px', textAlign: 'left', borderBottom: '2px solid #e2e8f0' }}>Hex Chars</th>
+              <th style={{ padding: '10px 12px', textAlign: 'left', borderBottom: '2px solid #e2e8f0' }}>Output Bits</th>
+              <th style={{ padding: '10px 12px', textAlign: 'left', borderBottom: '2px solid #e2e8f0' }}>Speed</th>
               <th style={{ padding: '10px 12px', textAlign: 'left', borderBottom: '2px solid #e2e8f0' }}>Security Status</th>
-              <th style={{ padding: '10px 12px', textAlign: 'left', borderBottom: '2px solid #e2e8f0' }}>Relative Speed</th>
-              <th style={{ padding: '10px 12px', textAlign: 'left', borderBottom: '2px solid #e2e8f0' }}>Primary Use Cases</th>
+              <th style={{ padding: '10px 12px', textAlign: 'left', borderBottom: '2px solid #e2e8f0' }}>Primary Use Case</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0' }}><strong>MD5</strong></td>
-              <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0' }}>128 bits</td>
-              <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0' }}>32</td>
-              <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0', color: '#dc2626' }}>Broken (2004)</td>
+              <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0' }}>128</td>
               <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0' }}>Very Fast</td>
+              <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0', color: '#dc2626' }}>Broken (2004)</td>
               <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0' }}>Legacy checksums, cache keys, ETags</td>
             </tr>
             <tr style={{ background: '#fafafa' }}>
               <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0' }}><strong>SHA-1</strong></td>
-              <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0' }}>160 bits</td>
-              <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0' }}>40</td>
-              <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0', color: '#dc2626' }}>Broken (2017)</td>
+              <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0' }}>160</td>
               <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0' }}>Fast</td>
+              <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0', color: '#dc2626' }}>Broken (2017)</td>
               <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0' }}>Git (legacy), TOTP, fingerprints</td>
             </tr>
             <tr>
               <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0' }}><strong>SHA-256</strong></td>
-              <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0' }}>256 bits</td>
-              <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0' }}>64</td>
-              <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0', color: '#16a34a' }}>Secure</td>
+              <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0' }}>256</td>
               <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0' }}>Moderate</td>
+              <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0', color: '#16a34a' }}>Secure</td>
               <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0' }}>Digital signatures, blockchain, TLS, file verification</td>
             </tr>
             <tr style={{ background: '#fafafa' }}>
               <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0' }}><strong>SHA-512</strong></td>
-              <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0' }}>512 bits</td>
-              <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0' }}>128</td>
+              <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0' }}>512</td>
+              <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0' }}>Fast on 64-bit</td>
               <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0', color: '#16a34a' }}>Secure</td>
-              <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0' }}>Moderate (fast on 64-bit)</td>
               <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0' }}>High-security apps, Ed25519 signatures</td>
+            </tr>
+            <tr>
+              <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0' }}><strong>SHA-3</strong></td>
+              <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0' }}>224–512</td>
+              <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0' }}>Moderate</td>
+              <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0', color: '#16a34a' }}>Secure (sponge)</td>
+              <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0' }}>SHA-2 fallback, Ethereum (Keccak)</td>
+            </tr>
+            <tr style={{ background: '#fafafa' }}>
+              <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0' }}><strong>BLAKE3</strong></td>
+              <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0' }}>256 (default)</td>
+              <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0', color: '#16a34a' }}>Extremely Fast</td>
+              <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0', color: '#16a34a' }}>Secure</td>
+              <td style={{ padding: '10px 12px', borderBottom: '1px solid #e2e8f0' }}>Build tools, content addressing, high-throughput</td>
             </tr>
           </tbody>
         </table>
       </div>
-
-      <h3>MD5 (Message Digest Algorithm 5)</h3>
       <p>
-        MD5 was designed by Ronald Rivest in 1991 and produces a 128-bit (32 hex character) hash. It was the de facto standard for file checksums and digital signatures for over a decade. However, in 2004, Xiaoyun Wang and her team demonstrated practical collision attacks against MD5, finding two different inputs that produce the same hash. By 2008, researchers used MD5 collisions to create a rogue Certificate Authority certificate, and in 2012, the Flame malware exploited MD5 weaknesses in the Windows Update signing process. Today, MD5 collisions can be generated in under a second on commodity hardware. MD5 should never be used for any security purpose.
-      </p>
-      <p>
-        Despite its cryptographic weakness, MD5 remains widely used for non-security purposes. It serves as a fast checksum for detecting accidental data corruption (not intentional tampering), as a cache key generator, for content-addressable storage deduplication, and for ETag generation in HTTP caching. In these contexts, the ability to craft collisions is not a meaningful threat because attackers have no incentive to create collisions against non-security checksums.
+        MD5 and SHA-1 are <strong>broken for security</strong> purposes but remain acceptable for non-adversarial checksums,
+        cache keys, and legacy compatibility. SHA-256 is the recommended default for all new security-critical applications.
       </p>
 
-      <h3>SHA-1 (Secure Hash Algorithm 1)</h3>
+      {/* Section 2: JavaScript Web Crypto API */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: '700', marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
+        JavaScript — Web Crypto API (Browser and Node.js 18+)
+      </h2>
       <p>
-        SHA-1 was designed by the NSA and published by NIST in 1995. It produces a 160-bit (40 hex character) hash. SHA-1 was widely adopted in SSL/TLS certificates, Git version control, and software signing. However, theoretical weaknesses were identified as early as 2005, and in 2017, Google and CWI Amsterdam published the SHAttered attack, demonstrating the first practical SHA-1 collision by creating two different PDF files with the same SHA-1 hash. Major browsers deprecated SHA-1 certificates in 2017.
+        The <strong>Web Crypto API</strong> is available natively in all modern browsers and in Node.js 18+ via the global{' '}
+        <code>crypto.subtle</code> object. It supports SHA-1, SHA-256, SHA-384, and SHA-512 (not MD5). Use{' '}
+        <code>TextEncoder</code> to convert strings to bytes before hashing.
       </p>
-      <p>
-        Git still uses SHA-1 as its object identifier by default, though it is transitioning to SHA-256 via the <code>object-format</code> option. TOTP (Time-based One-Time Passwords) in RFC 6238 defaults to HMAC-SHA1 for compatibility, though HMAC-SHA256 is recommended for new implementations. For any new project, avoid SHA-1 in favor of SHA-256 or SHA-512.
-      </p>
-
-      <h3>SHA-256 (SHA-2 Family, 256-bit)</h3>
-      <p>
-        SHA-256 is part of the SHA-2 family, designed by the NSA and published by NIST in 2001. It produces a 256-bit (64 hex character) hash. SHA-256 has no known practical attacks. Its collision resistance provides a 128-bit security level, meaning an attacker would need approximately 2^128 operations to find a collision (far beyond the capability of any foreseeable technology). SHA-256 is used in TLS/SSL certificates, Bitcoin mining, digital signatures, code signing, HMAC-SHA256 for API authentication, and compliance frameworks like FIPS 140-2, PCI-DSS, and HIPAA. It is the recommended default choice for virtually all hashing needs.
-      </p>
-
-      <h3>SHA-512 (SHA-2 Family, 512-bit)</h3>
-      <p>
-        SHA-512 produces a 512-bit (128 hex character) hash and operates on 64-bit words internally. This means SHA-512 can actually be faster than SHA-256 on 64-bit processors because it processes data in larger chunks. SHA-512 provides a 256-bit security level against collision attacks, offering a larger safety margin than SHA-256. It is used in Ed25519 digital signatures, high-security government applications, and situations where the extra security margin is desired. For most applications, SHA-256 provides sufficient security, but SHA-512 is the stronger choice when performance on 64-bit systems is not a concern or when maximum security is required.
-      </p>
-
-      <h3>Beyond SHA-2: SHA-3 and BLAKE3</h3>
-      <p>
-        <strong>SHA-3 (Keccak)</strong> was standardized by NIST in 2015 as a completely different design from SHA-2, using a sponge construction instead of Merkle-Damgard. SHA-3 is immune to length extension attacks by design and serves as a fallback if SHA-2 is ever compromised. <strong>BLAKE3</strong> is a recent (2020) hash function that is dramatically faster than SHA-256 (up to 15x on modern CPUs using SIMD) while providing 128-bit security against collisions. BLAKE3 is gaining adoption in build tools, content addressing, and high-throughput applications. Neither SHA-3 nor BLAKE3 are as widely supported in standard libraries as SHA-256, but both are excellent choices for new applications.
-      </p>
-
-      <h2>How Hash Functions Work Under the Hood</h2>
-      <p>
-        Understanding the internal mechanics of hash functions helps explain why they are so effective and what makes one algorithm more secure than another. Most widely used hash functions (MD5, SHA-1, SHA-256) follow the <strong>Merkle-Damgard construction</strong>, which processes data in three stages:
-      </p>
-
-      <h3>Step 1: Message Padding</h3>
-      <p>
-        The input message is padded so that its total length is a multiple of the block size. For SHA-256, the block size is 512 bits (64 bytes). Padding appends a <code>1</code> bit, then enough <code>0</code> bits, and finally a 64-bit representation of the original message length. This ensures that every input, regardless of size, is processed uniformly and that the padding itself does not create ambiguity between different inputs.
-      </p>
-
-      <h3>Step 2: Block Processing (Compression Function)</h3>
-      <p>
-        The padded message is divided into fixed-size blocks (512 bits for SHA-256, 1024 bits for SHA-512). Each block is processed through a <strong>compression function</strong> that combines the block data with the output from the previous block (called the <strong>chaining value</strong>). The first block uses a predefined <strong>initialization vector (IV)</strong>. The compression function applies multiple rounds of bitwise operations (AND, OR, XOR, NOT), modular addition, and bit rotations that thoroughly mix the data. SHA-256 uses 64 rounds per block. Each round uses a different round constant derived from the fractional parts of cube roots of the first 64 prime numbers, ensuring no regularities exist in the transformation.
-      </p>
-
-      <h3>Step 3: Final Hash Output</h3>
-      <p>
-        After all blocks have been processed, the final chaining value is the hash digest. For SHA-256, this is a 256-bit value (eight 32-bit words) typically displayed as a 64-character hexadecimal string. The entire process is deterministic, yet the cascading mixing makes it computationally infeasible to reverse-engineer the input or find collisions.
-      </p>
-
-      <h3>The Avalanche Effect in Practice</h3>
-      <p>
-        The avalanche effect is one of the most important properties of a good hash function. Even a single-bit change in the input produces a wildly different output. For example, consider the SHA-256 hashes of two nearly identical strings:
-      </p>
-      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '16px', borderRadius: '8px', overflowX: 'auto', fontSize: '0.9em' }}><code>{`SHA-256("hello")  = 2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824
-SHA-256("Hello")  = 185f8db32271fe25f561a6fc938b2e264306ec304eda518007d1764826381969
-SHA-256("hello!") = ce06092fb948d9ffac7d1a376f7b656b7c35146188ee37c37a2b4e1b3b8b4140`}</code></pre>
-      <p>
-        Despite differing by only one character (capitalization or an added exclamation mark), every character of the 64-hex-digit output is completely different. This makes it impossible to infer anything about the input from the output or to predict how a change in the input will affect the hash.
-      </p>
-
-      <h2>Practical Use Cases for Hash Functions</h2>
-      <p>
-        Hash functions are used extensively across modern computing. Here are the most important real-world applications that every developer encounters:
-      </p>
-
-      <h3>1. File Integrity Verification (Checksums)</h3>
-      <p>
-        When you download software, the provider typically publishes a hash checksum (usually SHA-256) alongside the download link. After downloading, you compute the hash of the file and compare it with the published value. If they match, the file has not been corrupted during transit or tampered with at the distribution server. Linux distributions, ISO images, package managers (npm, pip, cargo), and security-critical software all use SHA-256 checksums. For example, verifying a downloaded file on Linux:
-      </p>
-      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '16px', borderRadius: '8px', overflowX: 'auto', fontSize: '0.9em' }}><code>{`# Download the file and its published checksum
-wget https://example.com/software-v2.0.tar.gz
-wget https://example.com/software-v2.0.tar.gz.sha256
-
-# Verify the hash matches
-sha256sum -c software-v2.0.tar.gz.sha256
-# software-v2.0.tar.gz: OK`}</code></pre>
-
-      <h3>2. Password Hashing and Storage</h3>
-      <p>
-        Responsible applications never store passwords in plain text. Instead, the password is processed through a hashing algorithm and only the hash is stored. When a user logs in, the application hashes the submitted password and compares it with the stored hash. However, using a general-purpose hash function like SHA-256 directly is insufficient because SHA-256 is designed to be fast. Attackers can compute billions of SHA-256 hashes per second on modern GPUs. Modern password hashing requires:
-      </p>
-      <ul>
-        <li><strong>Salting</strong>: A unique random value (salt) is generated for each user and prepended to the password before hashing. This prevents rainbow table attacks and ensures identical passwords produce different hashes.</li>
-        <li><strong>Slow algorithms</strong>: Purpose-built password hashing functions like <strong>bcrypt</strong>, <strong>scrypt</strong>, and <strong>Argon2</strong> are intentionally slow and memory-intensive to make brute-force attacks impractical.</li>
-        <li><strong>Configurable cost</strong>: These algorithms allow you to increase the computational cost over time as hardware improves, keeping the hashing slow enough to deter attacks.</li>
-      </ul>
-
-      <h3>3. HMAC for API Authentication and Webhooks</h3>
-      <p>
-        <strong>HMAC (Hash-based Message Authentication Code)</strong> combines a secret key with a hash function to produce a code that verifies both the integrity and authenticity of a message. The construction is: <code>HMAC(K, m) = H((K XOR opad) || H((K XOR ipad) || m))</code>. HMAC is used by virtually every major API platform:
-      </p>
-      <ul>
-        <li><strong>AWS Signature V4</strong>: Signs every API request with HMAC-SHA256</li>
-        <li><strong>Stripe webhooks</strong>: Verifies webhook payloads using HMAC-SHA256</li>
-        <li><strong>GitHub webhooks</strong>: Signs payloads with HMAC-SHA256 using a webhook secret</li>
-        <li><strong>JWT tokens</strong>: Uses HMAC-SHA256 (HS256) for symmetric signing</li>
-      </ul>
-      <p>
-        HMAC is essential because a plain hash like <code>SHA-256(secret + message)</code> is vulnerable to <strong>length extension attacks</strong> with Merkle-Damgard hash functions. An attacker who knows <code>SHA-256(secret + message)</code> can compute <code>SHA-256(secret + message + padding + attacker_data)</code> without knowing the secret. HMAC prevents this by design.
-      </p>
-
-      <h3>4. Digital Signatures and Certificates</h3>
-      <p>
-        Hash functions are the core of digital signature schemes. When signing a document, the signer first computes a hash of the document content, then encrypts that hash with their private key. The recipient decrypts with the public key and compares hashes to verify the signature. This approach is used in TLS/SSL certificates that secure HTTPS, code signing certificates for software distribution, email signing with S/MIME and PGP, PDF document signing, and Git commit signing with GPG keys.
-      </p>
-
-      <h3>5. Git Version Control</h3>
-      <p>
-        Git identifies every object (commit, tree, blob, tag) with a SHA-1 hash. Each commit ID is the SHA-1 hash of the commit content, parent hashes, author info, and timestamp. This creates a tamper-evident chain: modifying any past commit changes its hash and invalidates all subsequent commit hashes. Git is actively transitioning to SHA-256 as the default object format.
-      </p>
-
-      <h3>6. Blockchain and Cryptocurrency</h3>
-      <p>
-        Bitcoin uses <strong>double SHA-256</strong> (applying SHA-256 twice) for block header hashing and building Merkle trees of transactions. The proof-of-work mining algorithm requires finding a nonce that, when included in the block header and double-hashed, produces a value below a difficulty target. This process consumes enormous computational resources and secures the network. Ethereum uses Keccak-256 (a SHA-3 variant). Newer blockchains experiment with BLAKE2b, BLAKE3, and other modern hash functions for improved performance.
-      </p>
-
-      <h3>7. Data Deduplication and Content Addressing</h3>
-      <p>
-        Cloud storage systems (AWS S3, Google Cloud Storage), version control systems, and backup tools use hash functions to detect duplicate data without byte-by-byte comparison. Content-addressable storage (CAS) systems like IPFS use the hash of content as its address, meaning identical content always resolves to the same address. Docker uses SHA-256 digests to identify image layers, enabling efficient layer sharing across images.
-      </p>
-
-      <h2>Hash Generator Code Examples</h2>
-      <p>
-        Below are production-ready code examples for generating hashes in JavaScript, Python, and Go. Each example covers string hashing, file hashing, and HMAC generation.
-      </p>
-
-      <h3>JavaScript / Node.js Hash Generation</h3>
-      <p>
-        In the browser, use the <strong>Web Crypto API</strong>. In Node.js, use the built-in <code>crypto</code> module. Both support SHA-1, SHA-256, SHA-384, and SHA-512. The Node.js <code>crypto</code> module also supports MD5.
-      </p>
-      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '16px', borderRadius: '8px', overflowX: 'auto', fontSize: '0.9em' }}><code>{`// ========== Browser: Web Crypto API ==========
-
-async function hashText(message, algorithm = 'SHA-256') {
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// Web Crypto API — works in browsers and Node.js 18+
+async function sha256(text: string): Promise<string> {
   const encoder = new TextEncoder();
-  const data = encoder.encode(message);
-  const hashBuffer = await crypto.subtle.digest(algorithm, data);
+  const data = encoder.encode(text);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
   const hashArray = Array.from(new Uint8Array(hashBuffer));
   return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
 // Usage
-await hashText('hello', 'SHA-256');
-// "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824"
+const hash = await sha256('hello');
+// => "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824"
 
-await hashText('hello', 'SHA-512');
-// "9b71d224bd62f3785d96d46ad3ea3d73319bfbc2890caadae2..."
+// SHA-512 — same pattern, different algorithm string
+async function sha512(text: string): Promise<string> {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(text);
+  const hashBuffer = await crypto.subtle.digest('SHA-512', data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+}
 
-// ========== Node.js: crypto module ==========
+// Supported algorithms: 'SHA-1' | 'SHA-256' | 'SHA-384' | 'SHA-512'
+// Note: MD5 is NOT supported by Web Crypto API (use Node.js crypto module)`}</code></pre>
+      <p>
+        The Web Crypto API is asynchronous by design (returning Promises). The <code>TextEncoder</code> converts a UTF-8 string
+        into a <code>Uint8Array</code>, which is what <code>crypto.subtle.digest</code> expects. The hex conversion maps each
+        byte to a two-character hex string with leading zero padding.
+      </p>
 
-const crypto = require('crypto');
+      {/* Section 3: Node.js crypto module */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: '700', marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
+        JavaScript — Node.js crypto Module
+      </h2>
+      <p>
+        The built-in <code>crypto</code> module in Node.js provides synchronous and streaming hash generation. It supports
+        MD5, SHA-1, SHA-256, SHA-512, and many other algorithms via <code>crypto.getHashes()</code>.
+      </p>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`import crypto from 'crypto';
+import { createReadStream } from 'fs';
 
-// String hashing (supports md5, sha1, sha256, sha512)
-function hashString(input, algorithm = 'sha256') {
-  return crypto.createHash(algorithm).update(input).digest('hex');
+// String hashing — synchronous
+function hashString(input: string, algorithm = 'sha256'): string {
+  return crypto.createHash(algorithm).update(input, 'utf8').digest('hex');
 }
 
 console.log(hashString('hello', 'md5'));
-// "5d41402abc4b2a76b9719d911017c592"
+// => "5d41402abc4b2a76b9719d911017c592"
 
 console.log(hashString('hello', 'sha256'));
-// "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824"
+// => "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824"
 
-// File hashing (streaming, memory-efficient)
-const fs = require('fs');
-function hashFile(filePath, algorithm = 'sha256') {
+// Base64 output instead of hex
+function hashBase64(input: string): string {
+  return crypto.createHash('sha256').update(input).digest('base64');
+}
+
+// File hashing — streaming (memory-efficient for large files)
+function hashFile(filePath: string, algorithm = 'sha256'): Promise<string> {
   return new Promise((resolve, reject) => {
     const hash = crypto.createHash(algorithm);
-    const stream = fs.createReadStream(filePath);
-    stream.on('data', data => hash.update(data));
+    const stream = createReadStream(filePath);
+    stream.on('data', (chunk) => hash.update(chunk));
     stream.on('end', () => resolve(hash.digest('hex')));
     stream.on('error', reject);
   });
 }
 
-const fileHash = await hashFile('./package.json');
+// Usage
+const fileHash = await hashFile('./package.json', 'sha256');
+console.log(\`SHA-256: \${fileHash}\`);
 
-// HMAC-SHA256 for API signing
-function hmacSign(message, secretKey) {
-  return crypto.createHmac('sha256', secretKey)
-    .update(message)
-    .digest('hex');
+// List all supported algorithms
+console.log(crypto.getHashes());
+// [ 'md5', 'sha1', 'sha256', 'sha512', 'sha3-256', 'blake2b512', ... ]`}</code></pre>
+
+      {/* Section 4: HMAC */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: '700', marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
+        HMAC — Message Authentication Code
+      </h2>
+      <p>
+        <strong>HMAC (Hash-based Message Authentication Code)</strong> is a keyed-hash construction that verifies both the{' '}
+        <em>integrity</em> and <em>authenticity</em> of a message. Unlike a plain hash which anyone can compute,
+        HMAC requires knowledge of a secret key. Never use <code>SHA-256(secret + message)</code> — it is vulnerable to
+        length extension attacks with Merkle-Damgard hash functions. HMAC prevents this by design.
+      </p>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`import crypto from 'crypto';
+
+// Node.js HMAC — used in API signing, webhooks, JWT
+function hmacSha256(secret: string, message: string): string {
+  return crypto.createHmac('sha256', secret).update(message).digest('hex');
 }
 
-const signature = hmacSign('payload-data', 'my-secret-key');
+const signature = hmacSha256('my-secret-key', 'payload data');
+// => "a6b4f7c9d2e1..." (32-byte / 64-char hex)
 
-// Constant-time comparison (prevents timing attacks)
-function verifyHmac(received, expected) {
-  const a = Buffer.from(received, 'hex');
-  const b = Buffer.from(expected, 'hex');
-  return a.length === b.length && crypto.timingSafeEqual(a, b);
-}`}</code></pre>
+// GitHub webhook verification example
+function verifyGithubWebhook(secret: string, payload: string, signature: string): boolean {
+  const expected = 'sha256=' + hmacSha256(secret, payload);
+  return crypto.timingSafeEqual(Buffer.from(signature), Buffer.from(expected));
+}
 
-      <h3>Python Hash Generation (hashlib, hmac)</h3>
+// Web Crypto API HMAC (browser)
+async function hmacSha256Browser(secret: string, message: string): Promise<string> {
+  const encoder = new TextEncoder();
+  const keyData = encoder.encode(secret);
+  const key = await crypto.subtle.importKey(
+    'raw', keyData, { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']
+  );
+  const signature = await crypto.subtle.sign('HMAC', key, encoder.encode(message));
+  return Array.from(new Uint8Array(signature))
+    .map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+// When to use HMAC vs plain hash:
+// - Plain hash: file integrity where no adversary can modify the file
+// - HMAC: API authentication, webhooks, JWT signing, session tokens`}</code></pre>
+
+      {/* Section 5: Python hashlib */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: '700', marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
+        Python — hashlib
+      </h2>
       <p>
-        Python provides the <code>hashlib</code> module for all common hash algorithms and the <code>hmac</code> module for HMAC generation. Both are part of the standard library.
+        Python&apos;s built-in <code>hashlib</code> module provides access to all major hash algorithms including MD5,
+        SHA-1, SHA-256, SHA-512, SHA-3 variants, and BLAKE2. It also includes <code>pbkdf2_hmac</code> for key derivation.
       </p>
-      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '16px', borderRadius: '8px', overflowX: 'auto', fontSize: '0.9em' }}><code>{`import hashlib
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`import hashlib
 import hmac
+import os
 
-# ========== String Hashing ==========
+# Basic string hashing — always encode to bytes first
 text = "hello"
 
-md5_hash    = hashlib.md5(text.encode()).hexdigest()
-sha1_hash   = hashlib.sha1(text.encode()).hexdigest()
-sha256_hash = hashlib.sha256(text.encode()).hexdigest()
-sha512_hash = hashlib.sha512(text.encode()).hexdigest()
+sha256_hash = hashlib.sha256(text.encode('utf-8')).hexdigest()
+print(sha256_hash)
+# => "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824"
 
-print(f"MD5:    {md5_hash}")
-# "5d41402abc4b2a76b9719d911017c592"
-print(f"SHA-1:  {sha1_hash}")
-# "aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d"
-print(f"SHA-256: {sha256_hash}")
-# "2cf24dba5fb0a30e26e83b2ac5b9e29e..."
-print(f"SHA-512: {sha512_hash}")
-# "9b71d224bd62f3785d96d46ad3ea3d73..."
+md5_hash = hashlib.md5(text.encode()).hexdigest()
+print(md5_hash)
+# => "5d41402abc4b2a76b9719d911017c592"
 
-# ========== File Hashing (memory-efficient) ==========
-def hash_file(filepath, algorithm='sha256'):
+# SHA-3 (different from SHA-2, sponge construction)
+sha3_hash = hashlib.sha3_256(text.encode()).hexdigest()
+print(sha3_hash)
+
+# BLAKE2b — fast, secure, variable output
+blake2b_hash = hashlib.blake2b(text.encode(), digest_size=32).hexdigest()
+
+# File hashing with streaming (memory-efficient for large files)
+def hash_file(filepath: str, algorithm: str = 'sha256') -> str:
     h = hashlib.new(algorithm)
     with open(filepath, 'rb') as f:
-        for chunk in iter(lambda: f.read(8192), b''):
+        while chunk := f.read(8192):
             h.update(chunk)
     return h.hexdigest()
 
-checksum = hash_file('document.pdf', 'sha256')
-print(f"File SHA-256: {checksum}")
+file_hash = hash_file('/path/to/largefile.iso', 'sha256')
+print(f"SHA-256: {file_hash}")
 
-# Verify file integrity
-def verify_file(filepath, expected_hash, algorithm='sha256'):
-    actual = hash_file(filepath, algorithm)
-    return hmac.compare_digest(actual, expected_hash)
+# PBKDF2 for key derivation (not for passwords — use bcrypt/argon2 instead)
+password = b"my-password"
+salt = os.urandom(16)
+key = hashlib.pbkdf2_hmac('sha256', password, salt, iterations=600000)
+# Use argon2-cffi for password hashing in production
 
-# ========== HMAC-SHA256 ==========
-secret_key = b'my-secret-key'
-message = b'payload-data'
+# List all supported algorithms
+print(hashlib.algorithms_guaranteed)
+# {'sha256', 'sha512', 'sha3_256', 'blake2b', 'md5', ...}`}</code></pre>
 
-mac = hmac.new(secret_key, message, hashlib.sha256).hexdigest()
-print(f"HMAC-SHA256: {mac}")
-
-# Constant-time comparison (prevents timing attacks)
-def verify_hmac(received_mac, expected_mac):
-    return hmac.compare_digest(received_mac, expected_mac)
-
-# ========== Password Hashing with bcrypt ==========
-# pip install bcrypt
+      {/* Section 6: Password Hashing */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: '700', marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
+        Password Hashing — bcrypt and Argon2
+      </h2>
+      <p>
+        <strong>SHA-256 is completely wrong for passwords.</strong> SHA-256 is designed to be fast — an attacker with
+        a modern GPU can compute 10+ billion SHA-256 hashes per second, making brute-force attacks against password
+        databases trivially easy. Proper password hashing uses intentionally slow, memory-hard algorithms.
+      </p>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`# Python: bcrypt (install: pip install bcrypt)
 import bcrypt
 
-password = b"my-secure-password"
-salt = bcrypt.gensalt(rounds=12)
-hashed = bcrypt.hashpw(password, salt)
+def hash_password(password: str) -> bytes:
+    salt = bcrypt.gensalt(rounds=12)  # work factor 12 (~250ms on modern hardware)
+    return bcrypt.hashpw(password.encode('utf-8'), salt)
 
-# Verify password
-is_valid = bcrypt.checkpw(password, hashed)
-print(f"Password valid: {is_valid}")
+def verify_password(password: str, hashed: bytes) -> bool:
+    return bcrypt.checkpw(password.encode('utf-8'), hashed)
 
-# List available algorithms
-print(hashlib.algorithms_available)`}</code></pre>
+hashed = hash_password("correct-horse-battery-staple")
+print(hashed)
+# => b'$2b$12$...' (60-char bcrypt hash with embedded salt and cost)
 
-      <h3>Go Hash Generation (crypto packages)</h3>
+is_valid = verify_password("correct-horse-battery-staple", hashed)
+print(is_valid)  # => True
+
+# Python: argon2-cffi (install: pip install argon2-cffi)
+from argon2 import PasswordHasher
+from argon2.exceptions import VerifyMismatchError
+
+ph = PasswordHasher(
+    time_cost=3,       # number of iterations
+    memory_cost=65536, # 64 MB memory
+    parallelism=4,     # threads
+)
+
+hashed_pw = ph.hash("my-password")
+# => "$argon2id$v=19$m=65536,t=3,p=4$..."
+
+try:
+    ph.verify(hashed_pw, "my-password")  # raises on failure
+    print("Valid!")
+except VerifyMismatchError:
+    print("Invalid password")`}</code></pre>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// Node.js: bcryptjs (pure JS, no native deps)
+import bcrypt from 'bcryptjs';
+
+async function hashPassword(password: string): Promise<string> {
+  const saltRounds = 12; // work factor — increase every few years
+  return bcrypt.hash(password, saltRounds);
+}
+
+async function verifyPassword(password: string, hash: string): Promise<boolean> {
+  return bcrypt.compare(password, hash);
+}
+
+const hash = await hashPassword('my-secure-password');
+// => "$2a$12$..." (60-char bcrypt string)
+
+const isValid = await verifyPassword('my-secure-password', hash);
+// => true
+
+// RULE: Never store plain passwords or MD5/SHA-256 password hashes
+// RULE: The work factor should be tuned so hashing takes ~250-500ms
+// RULE: bcrypt has a 72-byte input limit — use Argon2 for longer inputs`}</code></pre>
+
+      {/* Section 7: Go */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: '700', marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
+        Go — crypto Package
+      </h2>
       <p>
-        Go provides hash support through the <code>crypto</code> standard library packages: <code>crypto/md5</code>, <code>crypto/sha1</code>, <code>crypto/sha256</code>, <code>crypto/sha512</code>, and <code>crypto/hmac</code>.
+        Go&apos;s standard library provides <code>crypto/sha256</code>, <code>crypto/sha512</code>, <code>crypto/sha1</code>,
+        <code>crypto/md5</code>, and <code>crypto/hmac</code>. Use <code>fmt.Sprintf(&quot;%x&quot;, hash)</code> for hex encoding.
       </p>
-      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '16px', borderRadius: '8px', overflowX: 'auto', fontSize: '0.9em' }}><code>{`package main
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`package main
 
 import (
     "crypto/hmac"
-    "crypto/md5"
-    "crypto/sha1"
     "crypto/sha256"
     "crypto/sha512"
     "encoding/hex"
@@ -451,257 +458,340 @@ import (
     "os"
 )
 
-// ========== String Hashing ==========
-func hashMD5(input string) string {
-    h := md5.Sum([]byte(input))
-    return hex.EncodeToString(h[:])
+// SHA-256 of a string — one-shot
+func hashStringSHA256(s string) string {
+    h := sha256.Sum256([]byte(s))
+    return fmt.Sprintf("%x", h)
 }
 
-func hashSHA1(input string) string {
-    h := sha1.Sum([]byte(input))
-    return hex.EncodeToString(h[:])
-}
-
-func hashSHA256(input string) string {
-    h := sha256.Sum256([]byte(input))
-    return hex.EncodeToString(h[:])
-}
-
-func hashSHA512(input string) string {
-    h := sha512.Sum512([]byte(input))
-    return hex.EncodeToString(h[:])
-}
-
-// ========== File Hashing (streaming) ==========
-func hashFileSHA256(filepath string) (string, error) {
-    f, err := os.Open(filepath)
-    if err != nil {
-        return "", err
-    }
-    defer f.Close()
-
+// SHA-256 streaming — for large data
+func hashStreamSHA256(r io.Reader) (string, error) {
     h := sha256.New()
-    if _, err := io.Copy(h, f); err != nil {
+    if _, err := io.Copy(h, r); err != nil {
         return "", err
     }
     return hex.EncodeToString(h.Sum(nil)), nil
 }
 
-// ========== HMAC-SHA256 ==========
-func hmacSHA256(message, secret string) string {
-    mac := hmac.New(sha256.New, []byte(secret))
-    mac.Write([]byte(message))
+// File integrity check
+func hashFile(path string) (string, error) {
+    f, err := os.Open(path)
+    if err != nil {
+        return "", err
+    }
+    defer f.Close()
+    return hashStreamSHA256(f)
+}
+
+// HMAC-SHA256 for API signing
+func hmacSHA256(key, message []byte) string {
+    mac := hmac.New(sha256.New, key)
+    mac.Write(message)
     return hex.EncodeToString(mac.Sum(nil))
 }
 
-// Constant-time HMAC comparison
-func verifyHMAC(message, receivedMAC, secret string) bool {
-    expectedMAC := hmacSHA256(message, secret)
-    return hmac.Equal(
-        []byte(receivedMAC),
-        []byte(expectedMAC),
-    )
-}
-
 func main() {
-    text := "hello"
-    fmt.Println("MD5:    ", hashMD5(text))
-    fmt.Println("SHA-1:  ", hashSHA1(text))
-    fmt.Println("SHA-256:", hashSHA256(text))
-    fmt.Println("SHA-512:", hashSHA512(text))
+    fmt.Println(hashStringSHA256("hello"))
+    // => 2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824
 
-    // File hash
-    hash, _ := hashFileSHA256("go.mod")
-    fmt.Println("File SHA-256:", hash)
+    // SHA-512
+    h512 := sha512.Sum512([]byte("hello"))
+    fmt.Printf("%x\\n", h512)
 
     // HMAC
-    sig := hmacSHA256("payload", "secret-key")
-    fmt.Println("HMAC-SHA256:", sig)
+    sig := hmacSHA256([]byte("secret"), []byte("payload"))
+    fmt.Println(sig)
 }`}</code></pre>
 
-      <h2>Password Hashing: bcrypt, scrypt, and Argon2</h2>
+      {/* Section 8: File Integrity Checking */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: '700', marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
+        File Integrity Checking — Command Line
+      </h2>
       <p>
-        General-purpose hash functions like SHA-256 are designed to be fast, which is precisely the wrong property for password hashing. A fast hash enables attackers to try billions of password guesses per second. Purpose-built password hashing functions address this by being intentionally slow and resource-intensive.
+        Every major operating system provides command-line tools for computing file checksums. These are essential for
+        verifying downloaded software, ISO images, and release artifacts.
+      </p>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`# Linux — sha256sum (coreutils)
+sha256sum file.txt
+# => 2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824  file.txt
+
+# Verify against a published checksum file
+sha256sum -c SHA256SUMS
+# => ubuntu-24.04.iso: OK
+
+# Compute multiple algorithms at once
+sha1sum file.txt    # SHA-1 (160-bit)
+md5sum file.txt     # MD5 (128-bit, not for security)
+
+# macOS — shasum
+shasum -a 256 file.txt           # SHA-256
+shasum -a 512 file.txt           # SHA-512
+shasum -a 256 -c SHA256SUMS      # verify
+
+# Windows PowerShell
+Get-FileHash file.txt -Algorithm SHA256
+Get-FileHash file.txt -Algorithm MD5
+
+# Windows Command Prompt (certutil)
+certutil -hashfile file.txt SHA256
+certutil -hashfile file.txt MD5
+
+# Verify a download — compare these two values:
+shasum -a 256 ubuntu-24.04.iso
+# vs the value published at https://releases.ubuntu.com/24.04/SHA256SUMS`}</code></pre>
+
+      {/* Section 9: Content Addressing */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: '700', marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
+        Content Addressing — Git, IPFS, Docker, Webpack
+      </h2>
+      <p>
+        Content-addressable systems use hash digests as identifiers, making it impossible for content to be silently
+        replaced without changing its address.
+      </p>
+      <ul>
+        <li>
+          <strong>Git</strong>: Each commit, tree, and blob is identified by its SHA-1 hash (SHA-256 via{' '}
+          <code>git init --object-format=sha256</code> in newer versions). The commit hash is the SHA-1 of the commit
+          content plus parent hashes, making the entire history tamper-evident.
+        </li>
+        <li>
+          <strong>IPFS</strong>: Files are addressed by CID (Content Identifier) based on multihash (typically SHA-256 or
+          SHA3-256). The same content always resolves to the same CID globally, enabling deduplication across nodes.
+        </li>
+        <li>
+          <strong>Docker</strong>: Image layers are identified by their SHA-256 digest (e.g.,{' '}
+          <code>sha256:abc123def456...</code>). The same layer can be shared between images, saving storage and bandwidth.
+        </li>
+        <li>
+          <strong>Webpack / build tools</strong>: The <code>[contenthash]</code> placeholder generates a short hash
+          of file content for cache-busting filenames (e.g., <code>main.a3f7b2.js</code>). Browsers cache files
+          indefinitely, and the hash changes only when content changes.
+        </li>
+      </ul>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`# Git — view the hash of a commit or file
+git log --oneline -5
+# a3f7b2c Fix authentication bug
+# 8e1d9f2 Add password hashing
+
+git cat-file -t a3f7b2c    # => commit
+git cat-file -p a3f7b2c    # => show commit content
+
+# Docker — pull by digest (pinned, immutable)
+docker pull nginx@sha256:abc123def456...
+docker inspect nginx:latest | jq '.[0].RepoDigests'
+
+# Webpack config — content hashing for cache busting
+// webpack.config.js
+module.exports = {
+  output: {
+    filename: '[name].[contenthash:8].js',
+    chunkFilename: '[name].[contenthash:8].chunk.js',
+  }
+};
+// => main.a3f7b2c8.js (8-char truncated SHA-256)`}</code></pre>
+
+      {/* Section 10: Hash Collisions and Security */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: '700', marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
+        Hash Collisions and Security — What You Need to Know
+      </h2>
+      <p>
+        A <strong>collision</strong> occurs when two different inputs produce the same hash output. Collision resistance
+        is a fundamental security requirement for hash functions used in digital signatures, certificates, and code signing.
+      </p>
+      <ul>
+        <li>
+          <strong>MD5 (2004)</strong>: Xiaoyun Wang demonstrated practical collision attacks. By 2008, MD5 collisions
+          were used to forge a rogue Certificate Authority certificate. In 2012, the Flame malware exploited MD5
+          weaknesses in Windows Update. MD5 collisions can now be generated in under a second on commodity hardware.
+        </li>
+        <li>
+          <strong>SHA-1 SHAttered (2017)</strong>: Google and CWI Amsterdam published the first practical SHA-1
+          collision, creating two different PDF files with the same SHA-1 hash. The attack cost approximately{' '}
+          $110,000 in cloud computing. Major browsers deprecated SHA-1 certificates in 2017.
+        </li>
+        <li>
+          <strong>What &ldquo;collision-resistant&rdquo; means</strong>: SHA-256 provides 128-bit collision resistance,
+          meaning an attacker needs ~2^128 operations to find a collision — far beyond the capability of all current and
+          foreseeable computing resources. SHA-512 provides 256-bit resistance.
+        </li>
+        <li>
+          <strong>Why it matters</strong>: If an attacker can create a collision, they can craft a malicious document
+          with the same hash as a legitimate one, bypassing digital signature verification. This has real consequences
+          for code signing certificates, software distribution, and document authentication.
+        </li>
+      </ul>
+      <p>
+        <strong>Recommended algorithms today</strong>: SHA-256 (widely supported, secure), SHA-512 (larger security margin),
+        SHA-3 (sponge construction, no length extension attacks), BLAKE3 (fastest, excellent for high-throughput).
+        Avoid MD5 and SHA-1 for any security purpose.
       </p>
 
-      <h3>bcrypt</h3>
+      {/* Section 11: Rust */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: '700', marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
+        Rust — sha2 and blake3 Crates
+      </h2>
       <p>
-        Based on the Blowfish cipher, bcrypt has been the go-to password hashing algorithm since 1999. It uses a configurable <strong>work factor</strong> (cost parameter) that doubles the computation time with each increment. A work factor of 12 takes roughly 250ms on modern hardware, making brute-force attacks impractical. bcrypt automatically generates and stores a 128-bit salt, produces a 184-bit hash, and encodes everything in a single portable string. It is supported by virtually every programming language and framework. The main limitation of bcrypt is a 72-byte password length limit and its vulnerability to GPU acceleration (though much less than SHA-256).
+        Rust has excellent cryptographic library support via the <code>sha2</code>, <code>blake3</code>, and{' '}
+        <code>hmac</code> crates from the RustCrypto project. BLAKE3 is particularly popular in Rust because the
+        official <code>blake3</code> crate is authored by the BLAKE3 designers.
       </p>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`# Cargo.toml
+[dependencies]
+sha2 = "0.10"
+sha3 = "0.10"
+blake3 = "1"
+hmac = "0.12"
+hex = "0.4"
+digest = "0.10"`}</code></pre>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`use sha2::{Sha256, Sha512, Digest};
+use sha3::Sha3_256;
+use hmac::{Hmac, Mac};
+use sha2::Sha256 as HmacSha256;
 
-      <h3>scrypt</h3>
-      <p>
-        Designed by Colin Percival in 2009, scrypt adds <strong>memory-hardness</strong> to the cost model. It requires a configurable amount of RAM to compute, making it expensive to parallelize on GPUs and ASICs, which have limited per-core memory. scrypt has three parameters: N (CPU/memory cost), r (block size), and p (parallelization). It is used as the proof-of-work algorithm in Litecoin and several other cryptocurrencies.
-      </p>
+fn main() {
+    // SHA-256 one-shot
+    let hash = Sha256::digest(b"hello");
+    println!("{:x}", hash);
+    // => 2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824
 
-      <h3>Argon2 (Recommended)</h3>
-      <p>
-        <strong>Argon2</strong> won the Password Hashing Competition in 2015 and is the current best practice for new applications. It provides three configurable dimensions: <strong>time cost</strong> (number of iterations), <strong>memory cost</strong> (kilobytes of RAM required), and <strong>parallelism</strong> (number of threads). Argon2 comes in three variants: <strong>Argon2d</strong> (data-dependent, highest GPU resistance), <strong>Argon2i</strong> (data-independent, resistant to side-channel attacks), and <strong>Argon2id</strong> (hybrid, recommended default). Argon2 handles salting automatically.
-      </p>
-      <div style={{ background: '#fffbeb', border: '1px solid #fcd34d', borderRadius: '8px', padding: '16px 20px', marginBottom: '16px' }}>
-        <p style={{ fontWeight: 700, marginBottom: '8px', color: '#92400e' }}>Important Security Rule</p>
-        <p style={{ margin: 0 }}>
-          Never hash passwords with plain MD5, SHA-1, or SHA-256. Always use bcrypt (work factor 12+), scrypt, or Argon2id with appropriate cost parameters. These algorithms handle salting automatically. See our <Link href={`/${lang}/tools/bcrypt-generator`}>bcrypt Generator</Link> tool to experiment with different work factors.
-        </p>
-      </div>
+    // SHA-256 streaming (for large inputs)
+    let mut hasher = Sha256::new();
+    hasher.update(b"first chunk");
+    hasher.update(b"second chunk");
+    let result = hasher.finalize();
+    println!("{:x}", result);
 
-      <h2>HMAC: Hash-Based Message Authentication</h2>
-      <p>
-        HMAC (Hash-based Message Authentication Code), defined in RFC 2104, combines a secret key with a hash function to create a message authentication code. Unlike a plain hash, HMAC proves that the message was created by someone who knows the secret key and has not been altered in transit. The construction prevents length extension attacks that affect naive <code>hash(key + message)</code> schemes.
-      </p>
-      <p>
-        <strong>HMAC-SHA256</strong> is the industry standard for API authentication and webhook verification. Here is how major platforms use HMAC:
-      </p>
-      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '16px', borderRadius: '8px', overflowX: 'auto', fontSize: '0.9em' }}><code>{`// Verifying a GitHub webhook signature (Node.js)
-const crypto = require('crypto');
+    // SHA-512
+    let hash512 = Sha512::digest(b"hello");
+    println!("{:x}", hash512);
 
-function verifyGitHubWebhook(payload, signature, secret) {
-  const expectedSig = 'sha256=' + crypto
-    .createHmac('sha256', secret)
-    .update(payload, 'utf8')
-    .digest('hex');
+    // SHA-3 (Keccak-based, sponge construction)
+    let sha3 = Sha3_256::digest(b"hello");
+    println!("{:x}", sha3);
 
-  // CRITICAL: Use constant-time comparison
-  return crypto.timingSafeEqual(
-    Buffer.from(signature),
-    Buffer.from(expectedSig)
-  );
+    // BLAKE3 — extremely fast
+    let b3 = blake3::hash(b"hello");
+    println!("{}", b3.to_hex());
+
+    // HMAC-SHA256
+    type HmacSha256Type = Hmac<HmacSha256>;
+    let mut mac = HmacSha256Type::new_from_slice(b"my-secret-key")
+        .expect("HMAC accepts any key length");
+    mac.update(b"payload data");
+    let signature = mac.finalize().into_bytes();
+    println!("{}", hex::encode(signature));
+}`}</code></pre>
+
+      {/* Section 12: Practical Use Cases */}
+      <h2 style={{ fontSize: '1.5rem', fontWeight: '700', marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
+        Practical Use Cases — Patterns Every Developer Should Know
+      </h2>
+
+      <h3 style={{ fontSize: '1.2rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.75rem', color: '#1e293b' }}>
+        API Request Signing
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// API request signing — include signature in header
+import crypto from 'crypto';
+
+function signRequest(
+  method: string,
+  path: string,
+  body: string,
+  secret: string,
+  timestamp: string
+): string {
+  const payload = \`\${method}\\n\${path}\\n\${timestamp}\\n\${body}\`;
+  return crypto.createHmac('sha256', secret).update(payload).digest('hex');
 }
 
-// Verifying a Stripe webhook signature
-function verifyStripeWebhook(payload, header, secret) {
-  const [timestamp, sig] = parseStripeHeader(header);
-  const signedPayload = timestamp + '.' + payload;
-  const expected = crypto
-    .createHmac('sha256', secret)
-    .update(signedPayload)
-    .digest('hex');
-  return crypto.timingSafeEqual(
-    Buffer.from(sig),
-    Buffer.from(expected)
-  );
+// Client sends:
+const timestamp = Date.now().toString();
+const signature = signRequest('POST', '/api/orders', '{"qty":1}', apiSecret, timestamp);
+// Headers: { 'X-Timestamp': timestamp, 'X-Signature': signature }
+
+// Server verifies:
+function verifyRequest(receivedSig: string, ...args: Parameters<typeof signRequest>): boolean {
+  const expected = signRequest(...args);
+  return crypto.timingSafeEqual(Buffer.from(receivedSig), Buffer.from(expected));
+  // Use timingSafeEqual to prevent timing attacks
 }`}</code></pre>
-      <p>
-        Try our <Link href={`/${lang}/tools/hmac-generator`}>HMAC Generator</Link> tool to experiment with different algorithms and keys.
-      </p>
 
-      <h2>Hashing in Blockchain Technology</h2>
-      <p>
-        Blockchain technology is fundamentally built on cryptographic hash functions. Understanding how hashing works in blockchain illuminates why hash functions are so important for distributed trust.
-      </p>
+      <h3 style={{ fontSize: '1.2rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.75rem', color: '#1e293b' }}>
+        Content Deduplication and Cache Keys
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`import crypto from 'crypto';
 
-      <h3>Block Hashing and Chain Integrity</h3>
-      <p>
-        Each block in a blockchain contains the hash of the previous block, creating a cryptographic chain. If anyone modifies the data in a historical block, its hash changes, which invalidates every subsequent block in the chain. This makes the blockchain tamper-evident. Bitcoin uses double SHA-256 for block headers, meaning the header is hashed with SHA-256, and then the result is hashed again with SHA-256.
-      </p>
+// Content deduplication — detect duplicates without full comparison
+function contentKey(content: string | Buffer): string {
+  return crypto.createHash('sha256').update(content).digest('hex');
+}
 
-      <h3>Merkle Trees</h3>
-      <p>
-        Transactions within a block are organized in a <strong>Merkle tree</strong> (hash tree). Each leaf node is the hash of a transaction. Each parent node is the hash of its two children concatenated. The root of the tree (the Merkle root) is included in the block header. This structure enables efficient verification: you can prove a transaction is in a block by providing only log(N) hashes (a Merkle proof) instead of all N transactions.
-      </p>
+const files = new Map<string, string>(); // hash -> filename
+async function deduplicatedUpload(filename: string, content: Buffer) {
+  const hash = contentKey(content);
+  if (files.has(hash)) {
+    console.log(\`Duplicate detected: \${filename} = \${files.get(hash)}\`);
+    return; // skip upload
+  }
+  files.set(hash, filename);
+  // await s3.upload(hash, content);
+}
 
-      <h3>Proof-of-Work Mining</h3>
-      <p>
-        Bitcoin mining involves finding a nonce value such that <code>SHA-256(SHA-256(block_header + nonce))</code> produces a hash with a specific number of leading zero bits. The number of required leading zeros determines the mining difficulty, which adjusts approximately every two weeks to maintain a 10-minute average block time. This process is computationally intensive by design, providing Sybil resistance and economic security.
-      </p>
+// Cache key generation — short MD5 for non-security use
+function cacheKey(params: Record<string, unknown>): string {
+  const normalized = JSON.stringify(params, Object.keys(params).sort());
+  return crypto.createHash('md5').update(normalized).digest('hex').slice(0, 12);
+  // e.g. "a3f7b2c8d1e4" (12-char is plenty for cache keys)
+}
 
-      <h2>Hash Security Best Practices for Developers</h2>
-      <p>
-        Knowing which algorithm to use is only half the battle. Applying hash functions correctly is equally critical. Here are essential best practices:
-      </p>
+// File change detection — hash before and after
+async function hasFileChanged(path: string, previousHash: string): Promise<boolean> {
+  const current = await hashFile(path);
+  return current !== previousHash;
+}`}</code></pre>
 
-      <h3>1. Choose the Right Algorithm for the Job</h3>
-      <ul>
-        <li><strong>File checksums (no adversary)</strong>: MD5 or SHA-256</li>
-        <li><strong>File integrity (adversarial)</strong>: SHA-256 or SHA-512</li>
-        <li><strong>Password hashing</strong>: bcrypt, scrypt, or Argon2id (never plain SHA-256)</li>
-        <li><strong>API authentication</strong>: HMAC-SHA256</li>
-        <li><strong>Digital signatures</strong>: SHA-256 or SHA-512 (with RSA, ECDSA, or Ed25519)</li>
-        <li><strong>Content addressing</strong>: SHA-256 or BLAKE3</li>
-        <li><strong>High-performance hashing</strong>: BLAKE3 or xxHash (non-cryptographic)</li>
-      </ul>
+      <h3 style={{ fontSize: '1.2rem', fontWeight: '700', marginTop: '1.5rem', marginBottom: '0.75rem', color: '#1e293b' }}>
+        URL-Safe IDs and Random Tokens
+      </h3>
+      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '1rem', borderRadius: '6px', overflowX: 'auto', fontSize: '0.875rem' }}><code>{`import crypto from 'crypto';
 
-      <h3>2. Always Use Constant-Time Comparison</h3>
-      <p>
-        When comparing hash values or HMAC signatures in code, never use <code>===</code> or <code>==</code> for string comparison. A naive comparison leaks information through timing: if the first character differs, it returns faster than if the first 30 characters match. An attacker can use this timing side-channel to reconstruct the expected hash byte by byte. Always use constant-time comparison functions:
-      </p>
-      <pre style={{ background: '#1e293b', color: '#e2e8f0', padding: '16px', borderRadius: '8px', overflowX: 'auto', fontSize: '0.9em' }}><code>{`// Node.js - constant time comparison
-crypto.timingSafeEqual(Buffer.from(a), Buffer.from(b));
+// Cryptographically secure random token (for password reset links, API keys)
+function generateToken(bytes = 32): string {
+  return crypto.randomBytes(bytes).toString('hex');
+  // 32 bytes => 64-char hex token with 256 bits of entropy
+}
 
-# Python - constant time comparison
-import hmac
-hmac.compare_digest(a, b)
+// URL-safe base64 token
+function generateUrlSafeToken(bytes = 32): string {
+  return crypto.randomBytes(bytes).toString('base64url');
+  // e.g. "xK7mZp2QrNvBwLfAeHqIuT..."
+}
 
-// Go - constant time comparison
-import "crypto/subtle"
-subtle.ConstantTimeCompare([]byte(a), []byte(b))`}</code></pre>
+// Deterministic ID from content (content-addressable)
+function contentId(data: string): string {
+  return crypto.createHash('sha256').update(data).digest('hex').slice(0, 16);
+  // 16-char hex (64 bits) — safe for millions of items
+}
 
-      <h3>3. Never Use Hash(secret + message) for Authentication</h3>
-      <p>
-        The naive construction <code>SHA-256(secret + message)</code> is vulnerable to <strong>length extension attacks</strong>. An attacker who knows the hash output (but not the secret) can compute <code>SHA-256(secret + message + padding + attacker_data)</code>. Always use HMAC instead. Note that SHA-3 (Keccak) is immune to length extension attacks by design, but HMAC is still the standard practice for interoperability.
-      </p>
+// UUID v4 is fine for most cases (not hash-based)
+const uuid = crypto.randomUUID();
+// => "550e8400-e29b-41d4-a716-446655440000"`}</code></pre>
 
-      <h3>4. Use Salts for All Password Hashing</h3>
-      <p>
-        A <strong>salt</strong> is a unique random value generated for each password hash. It is prepended (or appended) to the password before hashing and stored alongside the hash. Salting defeats rainbow table attacks (precomputed hash-to-password lookup tables) and ensures that two users with identical passwords have different stored hashes. bcrypt, scrypt, and Argon2 handle salting automatically.
-      </p>
-
-      <h3>5. Increase Work Factors Over Time</h3>
-      <p>
-        As hardware gets faster, password hashing work factors must increase. bcrypt work factor 10 was reasonable in 2010; today, work factor 12 or higher is recommended. Schedule periodic reviews (annually) to evaluate whether your password hashing parameters still provide adequate protection. When upgrading, rehash passwords on the next successful login.
-      </p>
-
-      <h2>Frequently Asked Questions</h2>
-
-      <h3>What is a hash generator and how does it work?</h3>
-      <p>
-        A hash generator takes any input data and produces a fixed-size output called a hash digest. The process uses a mathematical algorithm (like SHA-256) that is deterministic (same input always gives the same output), one-way (cannot reverse the hash to get the input), and exhibits the avalanche effect (tiny input changes produce completely different outputs). Our <Link href={`/${lang}/tools/hash-generator`}>online hash generator</Link> supports MD5, SHA-1, SHA-256, SHA-384, and SHA-512.
-      </p>
-
-      <h3>What is the difference between MD5, SHA-256, and SHA-512?</h3>
-      <p>
-        MD5 produces a 128-bit hash and is cryptographically broken since 2004 (collisions can be generated in under a second). SHA-256 produces a 256-bit hash with no known practical attacks and is the recommended standard for security. SHA-512 produces a 512-bit hash, provides a larger security margin, and can be faster on 64-bit processors. For security applications, always use SHA-256 or SHA-512.
-      </p>
-
-      <h3>Can a hash be reversed or decrypted?</h3>
-      <p>
-        No. Cryptographic hash functions are one-way by design. However, short or weak inputs (like common passwords) can be found through brute-force attacks or rainbow table lookups. This is why passwords must be hashed with slow, salted algorithms like bcrypt or Argon2 rather than fast hash functions.
-      </p>
-
-      <h3>Is MD5 still safe to use in 2026?</h3>
-      <p>
-        MD5 is not safe for any cryptographic or security purpose. It is only acceptable for non-adversarial use cases like checksums for detecting accidental corruption, cache key generation, content deduplication, and ETag headers. If there is any chance of adversarial manipulation, use SHA-256 instead.
-      </p>
-
-      <h3>What is HMAC and when should I use it?</h3>
-      <p>
-        HMAC (Hash-based Message Authentication Code) combines a secret key with a hash function to verify both integrity and authenticity of a message. Use HMAC for API request signing, webhook payload verification, JWT token signing, and any scenario where you need to prove that data came from a trusted source and has not been modified. HMAC-SHA256 is the industry standard.
-      </p>
-
-      <h3>Why should I use bcrypt or Argon2 instead of SHA-256 for passwords?</h3>
-      <p>
-        SHA-256 is designed to be fast, enabling attackers to try billions of guesses per second on GPUs. bcrypt, scrypt, and Argon2 are intentionally slow and memory-intensive, making brute-force attacks impractical. Argon2id is the current recommendation for new applications. Try our <Link href={`/${lang}/tools/bcrypt-generator`}>bcrypt Generator</Link> to see the difference.
-      </p>
-
-      <h3>How do I verify file integrity using hash checksums?</h3>
-      <p>
-        Download the file and its published SHA-256 checksum. On Linux, run <code>sha256sum filename</code>. On macOS, use <code>shasum -a 256 filename</code>. On Windows, use <code>Get-FileHash filename</code> in PowerShell. Compare the output with the published checksum. If they match, the file is intact.
-      </p>
-
-      <h3>What hash algorithm does Bitcoin use?</h3>
-      <p>
-        Bitcoin uses double SHA-256 (applying SHA-256 twice) for block header hashing, proof-of-work mining, and Merkle tree construction. Ethereum uses Keccak-256. Litecoin uses scrypt. Different blockchains choose different hash functions based on their security and performance requirements.
-      </p>
-
-      <h2>Conclusion</h2>
-      <p>
-        Hash functions are a foundational pillar of modern computing and cybersecurity. From verifying downloaded files with SHA-256 checksums to securing passwords with Argon2, authenticating API requests with HMAC-SHA256, and powering blockchain consensus, understanding how to generate and apply hashes correctly is essential knowledge for every developer. Always use SHA-256 or stronger for security contexts, purpose-built algorithms for password hashing, HMAC for message authentication, and constant-time comparison to prevent timing attacks. Bookmark this guide for reference, and use our free online tools to generate hashes instantly.
-      </p>
-      <p>
-        <Link href={`/${lang}/tools/hash-generator`} style={{ fontWeight: 600 }}>
-          Generate MD5, SHA-1, SHA-256, SHA-384, and SHA-512 hashes instantly with our free Hash Generator Online tool.
-        </Link>
-      </p>
-    </>
+      {/* Key Takeaways */}
+      <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '1rem', marginTop: '2rem' }}>
+        <p style={{ fontWeight: 700, marginBottom: '0.5rem', color: '#1e293b' }}>Key Takeaways</p>
+        <ul style={{ margin: 0, paddingLeft: '1.25rem', lineHeight: '1.8' }}>
+          <li><strong>SHA-256</strong> is the industry-standard choice for general-purpose cryptographic hashing with no known practical attacks.</li>
+          <li><strong>MD5 and SHA-1</strong> are cryptographically broken — never use them for security, signatures, or certificates.</li>
+          <li>Use <strong>bcrypt or Argon2</strong> (never SHA-256) for password hashing — they are intentionally slow and memory-hard.</li>
+          <li>Use <strong>HMAC-SHA256</strong> (not plain SHA-256) for API request signing and webhook verification to prevent length extension attacks.</li>
+          <li>The <strong>Web Crypto API</strong> works natively in browsers and Node.js 18+ without any dependencies.</li>
+          <li><strong>Python hashlib</strong>, <strong>Go crypto package</strong>, and <strong>Rust sha2 crate</strong> all provide high-quality hash implementations.</li>
+          <li>Content-addressable systems (Git, Docker, IPFS, Webpack) use SHA-256 digests as tamper-evident identifiers.</li>
+          <li><strong>BLAKE3</strong> is the fastest modern hash function — ideal for high-throughput use cases where SHA-256 is a bottleneck.</li>
+          <li>Use <code>crypto.timingSafeEqual()</code> when comparing HMAC signatures to prevent timing-based side-channel attacks.</li>
+        </ul>
+      </div>
+    </article>
   );
 }
