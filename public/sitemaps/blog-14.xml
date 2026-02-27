@@ -4951,4 +4951,664 @@
       <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/tauri-guide"/>
       <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/tauri-guide"/>
   </url>
+  <url>
+    <loc>https://viadreams.cc/en/blog/turborepo-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/turborepo-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/fr/blog/turborepo-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/turborepo-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/de/blog/turborepo-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/turborepo-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/it/blog/turborepo-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/turborepo-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/es/blog/turborepo-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/turborepo-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pt/blog/turborepo-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/turborepo-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/nl/blog/turborepo-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/turborepo-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pl/blog/turborepo-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/turborepo-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/sv/blog/turborepo-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/turborepo-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/no/blog/turborepo-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/turborepo-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/zh/blog/turborepo-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/turborepo-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ja/blog/turborepo-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/turborepo-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ko/blog/turborepo-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/turborepo-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/id/blog/turborepo-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/turborepo-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/th/blog/turborepo-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/turborepo-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/turborepo-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/en/blog/pnpm-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/pnpm-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/fr/blog/pnpm-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/pnpm-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/de/blog/pnpm-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/pnpm-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/it/blog/pnpm-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/pnpm-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/es/blog/pnpm-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/pnpm-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pt/blog/pnpm-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/pnpm-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/nl/blog/pnpm-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/pnpm-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pl/blog/pnpm-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/pnpm-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/sv/blog/pnpm-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/pnpm-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/no/blog/pnpm-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/pnpm-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/zh/blog/pnpm-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/pnpm-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ja/blog/pnpm-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/pnpm-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ko/blog/pnpm-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/pnpm-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/id/blog/pnpm-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/pnpm-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/th/blog/pnpm-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/pnpm-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/pnpm-guide"/>
+  </url>
 </urlset>
