@@ -455,6 +455,8 @@ import RollupGuide from '@/data/posts/rollup-guide';
 import EsbuildGuide from '@/data/posts/esbuild-guide';
 import SwcGuide from '@/data/posts/swc-guide';
 import BiomeGuide from '@/data/posts/biome-guide';
+import DenoGuide from '@/data/posts/deno-guide';
+import BunGuide from '@/data/posts/bun-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -900,6 +902,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'esbuild-guide': EsbuildGuide,
   'swc-guide': SwcGuide,
   'biome-guide': BiomeGuide,
+  'deno-guide': DenoGuide,
+  'bun-guide': BunGuide,
 };
 
 /* i18n for UI strings on this page */
