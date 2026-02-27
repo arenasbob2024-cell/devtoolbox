@@ -372,6 +372,8 @@ import GolangGuide from '@/data/posts/golang-guide';
 import PerformanceOptimizationGuide from '@/data/posts/performance-optimization-guide';
 import ExpressJsGuide from '@/data/posts/express-js-guide';
 import DjangoGuide from '@/data/posts/django-guide';
+import FlaskGuide from '@/data/posts/flask-guide';
+import AngularGuide from '@/data/posts/angular-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -734,6 +736,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'performance-optimization-guide': PerformanceOptimizationGuide,
   'express-js-guide': ExpressJsGuide,
   'django-guide': DjangoGuide,
+  'flask-guide': FlaskGuide,
+  'angular-guide': AngularGuide,
 };
 
 /* i18n for UI strings on this page */
