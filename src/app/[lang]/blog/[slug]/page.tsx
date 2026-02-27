@@ -423,6 +423,8 @@ import EventDrivenArchitectureGuide from '@/data/posts/event-driven-architecture
 import KafkaGuide from '@/data/posts/kafka-guide';
 import AwsLambdaGuide from '@/data/posts/aws-lambda-guide';
 import LinuxCommandGuide from '@/data/posts/linux-command-guide';
+import GoAdvancedGuide from '@/data/posts/go-advanced-guide';
+import RustBeginnerGuide from '@/data/posts/rust-beginner-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -836,6 +838,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'kafka-guide': KafkaGuide,
   'aws-lambda-guide': AwsLambdaGuide,
   'linux-command-guide': LinuxCommandGuide,
+  'go-advanced-guide': GoAdvancedGuide,
+  'rust-beginner-guide': RustBeginnerGuide,
 };
 
 /* i18n for UI strings on this page */
