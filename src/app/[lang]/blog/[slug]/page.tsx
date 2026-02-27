@@ -439,6 +439,8 @@ import AstroGuide from '@/data/posts/astro-guide';
 import DrizzleOrmGuide from '@/data/posts/drizzle-orm-guide';
 import VitestGuide from '@/data/posts/vitest-guide';
 import ZustandGuide from '@/data/posts/zustand-guide';
+import RemixGuide from '@/data/posts/remix-guide';
+import SolidGuide from '@/data/posts/solid-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -868,6 +870,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'drizzle-orm-guide': DrizzleOrmGuide,
   'vitest-guide': VitestGuide,
   'zustand-guide': ZustandGuide,
+  'remix-guide': RemixGuide,
+  'solid-guide': SolidGuide,
 };
 
 /* i18n for UI strings on this page */
