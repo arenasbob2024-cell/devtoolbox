@@ -410,6 +410,8 @@ import TestingStrategiesGuide from '@/data/posts/testing-strategies-guide';
 import LinuxGuide from '@/data/posts/linux-guide';
 import NginxGuide from '@/data/posts/nginx-guide';
 import AwsServicesGuide from '@/data/posts/aws-services-guide';
+import SecurityGuide from '@/data/posts/security-guide';
+import FunctionalProgrammingGuide from '@/data/posts/functional-programming-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -810,6 +812,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'linux-guide': LinuxGuide,
   'nginx-guide': NginxGuide,
   'aws-services-guide': AwsServicesGuide,
+  'security-guide': SecurityGuide,
+  'functional-programming-guide': FunctionalProgrammingGuide,
 };
 
 /* i18n for UI strings on this page */
