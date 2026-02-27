@@ -9493,6 +9493,25 @@ export const blogPosts: BlogPost[] = [
       ko: { title: 'Tailwind CSS 가이드: 유틸리티 클래스, 다크 모드, v4, React/Next.js 통합', description: 'Tailwind CSS를 마스터하세요. 유틸리티 퍼스트 접근법, 반응형 디자인, flexbox/grid, 다크 모드, 커스텀 설정, Tailwind v4, React/Next.js + shadcn/ui 통합, Tailwind vs Bootstrap 비교.', readingTime: '13분 읽기', keywords: ['tailwind css 튜토리얼', 'tailwind css v4', 'tailwind 다크 모드', 'tailwind 설정', 'tailwind react', 'tailwind nextjs', 'shadcn ui', 'tailwind vs bootstrap', '유틸리티 css'] },
     },
   },
+  {
+    slug: 'jest-testing-guide',
+    title: 'Jest Testing Guide: Mocking, React Testing Library, Snapshots, and Code Coverage',
+    description: 'Master Jest for JavaScript testing. Covers unit testing with describe/it/expect, mocking with jest.fn() and jest.mock(), React Testing Library, async testing, snapshot testing, code coverage, and Jest vs Vitest vs Mocha comparison.',
+    date: '2026-02-27',
+    author: 'DevToolBox',
+    readingTime: '14 min read',
+    keywords: ['jest tutorial', 'jest mocking', 'react testing library', 'jest snapshot testing', 'jest code coverage', 'jest async testing', 'jest vs vitest', 'javascript unit testing', 'jest spyon', 'testing react components'],
+    relatedTools: ['json-formatter', 'regex-tester', 'base64-encoder'],
+    relatedPosts: ['typescript-generics-guide', 'react-hooks-guide', 'node-js-guide'],
+    translations: {
+      zh: { title: 'Jest测试指南：模拟、React Testing Library、快照和代码覆盖率', description: '掌握Jest JavaScript测试。涵盖describe/it/expect单元测试、jest.fn()和jest.mock()模拟、React Testing Library、异步测试、快照测试、代码覆盖率以及Jest vs Vitest vs Mocha对比。', readingTime: '14 分钟阅读', keywords: ['jest教程', 'jest模拟', 'react testing library', 'jest快照测试', 'jest代码覆盖率', 'jest异步测试', 'jest vs vitest', 'javascript单元测试', 'jest spyon', '测试react组件'] },
+      fr: { title: 'Guide Jest: Mocks, React Testing Library, Snapshots et Couverture de Code', description: 'Maîtrisez Jest pour tester JavaScript. Tests unitaires describe/it/expect, mocks avec jest.fn() et jest.mock(), React Testing Library, tests async, snapshots, couverture de code et Jest vs Vitest vs Mocha.', readingTime: '14 min de lecture', keywords: ['tutoriel jest', 'mocks jest', 'react testing library', 'snapshots jest', 'couverture code jest', 'tests async jest', 'jest vs vitest', 'tests unitaires javascript', 'jest spyon'] },
+      de: { title: 'Jest Testing Leitfaden: Mocking, React Testing Library, Snapshots und Code Coverage', description: 'Jest für JavaScript-Tests meistern. Unit-Tests mit describe/it/expect, Mocking mit jest.fn() und jest.mock(), React Testing Library, async Tests, Snapshot-Tests, Code Coverage und Jest vs Vitest vs Mocha.', readingTime: '14 Min. Lesezeit', keywords: ['jest tutorial', 'jest mocking', 'react testing library', 'jest snapshots', 'jest code coverage', 'jest async tests', 'jest vs vitest', 'javascript unit tests', 'jest spyon'] },
+      es: { title: 'Guía Jest Testing: Mocks, React Testing Library, Snapshots y Cobertura de Código', description: 'Domina Jest para testing JavaScript. Tests unitarios describe/it/expect, mocks con jest.fn() y jest.mock(), React Testing Library, tests async, snapshots, cobertura de código y Jest vs Vitest vs Mocha.', readingTime: '14 min de lectura', keywords: ['tutorial jest', 'mocks jest', 'react testing library', 'snapshots jest', 'cobertura código jest', 'tests async jest', 'jest vs vitest', 'tests unitarios javascript', 'jest spyon'] },
+      ja: { title: 'Jestテストガイド：モック、React Testing Library、スナップショット、コードカバレッジ', description: 'JavaScript テスト用Jestをマスター。describe/it/expectユニットテスト、jest.fn()とjest.mock()モック、React Testing Library、非同期テスト、スナップショット、コードカバレッジ、Jest vs Vitest vs Mocha比較。', readingTime: '14分', keywords: ['jestチュートリアル', 'jestモック', 'react testing library', 'jestスナップショット', 'jestコードカバレッジ', 'jest非同期テスト', 'jest vs vitest', 'javascript ユニットテスト', 'jest spyon'] },
+      ko: { title: 'Jest 테스팅 가이드: 모킹, React Testing Library, 스냅샷, 코드 커버리지', description: 'JavaScript 테스팅을 위한 Jest를 마스터하세요. describe/it/expect 유닛 테스트, jest.fn()과 jest.mock() 모킹, React Testing Library, 비동기 테스트, 스냅샷, 코드 커버리지, Jest vs Vitest vs Mocha 비교.', readingTime: '14분 읽기', keywords: ['jest 튜토리얼', 'jest 모킹', 'react testing library', 'jest 스냅샷', 'jest 코드 커버리지', 'jest 비동기 테스트', 'jest vs vitest', 'javascript 유닛 테스트', 'jest spyon'] },
+    },
+  },
 ];
 
 /** Get post with localized metadata */

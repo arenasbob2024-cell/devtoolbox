@@ -380,6 +380,7 @@ import VueGuide from '@/data/posts/vue-guide';
 import ReactNativeGuide from '@/data/posts/react-native-guide';
 import FlutterGuide from '@/data/posts/flutter-guide';
 import TailwindCssGuide from '@/data/posts/tailwind-css-guide';
+import JestTestingGuide from '@/data/posts/jest-testing-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -750,6 +751,7 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'react-native-guide': ReactNativeGuide,
   'flutter-guide': FlutterGuide,
   'tailwind-css-guide': TailwindCssGuide,
+  'jest-testing-guide': JestTestingGuide,
 };
 
 /* i18n for UI strings on this page */
