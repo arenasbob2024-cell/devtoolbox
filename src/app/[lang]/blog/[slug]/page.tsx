@@ -343,6 +343,8 @@ import EscapeUnescapeOnlineGuide from '@/data/posts/escape-unescape-online-guide
 import PemDecoderOnlineGuide from '@/data/posts/pem-decoder-online-guide';
 import IpSubnetCalculatorOnlineGuide from '@/data/posts/ip-subnet-calculator-online-guide';
 import SlugGeneratorOnlineGuide from '@/data/posts/slug-generator-online-guide';
+import CronJobSchedulerOnlineGuide from '@/data/posts/cron-job-scheduler-online-guide';
+import ColorPaletteGeneratorOnlineGuide from '@/data/posts/color-palette-generator-online-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -676,6 +678,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'pem-decoder-online-guide': PemDecoderOnlineGuide,
   'ip-subnet-calculator-online-guide': IpSubnetCalculatorOnlineGuide,
   'slug-generator-online-guide': SlugGeneratorOnlineGuide,
+  'cron-job-scheduler-online-guide': CronJobSchedulerOnlineGuide,
+  'color-palette-generator-online-guide': ColorPaletteGeneratorOnlineGuide,
 };
 
 /* i18n for UI strings on this page */
