@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import React from 'react'
 
@@ -88,7 +88,7 @@ const faqSchema = {
   ]
 }
 
-export default function CICDGuide({ lang = 'en' }: { lang?: string }) {
+export default function CicdGuide({ lang = 'en' }: { lang?: string }) {
   const t = translations[lang as keyof typeof translations] || translations.en
   const isZh = lang === 'zh'
 
@@ -101,7 +101,7 @@ export default function CICDGuide({ lang = 'en' }: { lang?: string }) {
       />
 
       {/* TL;DR Box */}
-      <div style={{ background: '#f0f9ff', border: '1px solid #0ea5e9', borderRadius: '8px', padding: '1.25rem 1.5rem', margin: '1.5rem 0' }}>
+      <div style={{ background: '#f0f9ff', borderLeft: '4px solid #0ea5e9', padding: '16px', margin: '24px 0', borderRadius: '4px' }}>
         <strong style={{ color: '#0369a1', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>TL;DR</strong>
         <ul style={{ margin: '0.5rem 0 0', paddingLeft: '1.25rem', color: '#0c4a6e' }}>
           <li>CI builds and tests every commit; CD automates deployment to staging or production</li>
@@ -114,7 +114,7 @@ export default function CICDGuide({ lang = 'en' }: { lang?: string }) {
       </div>
 
       {/* Key Takeaways */}
-      <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '1.25rem 1.5rem', margin: '1.5rem 0' }}>
+      <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', padding: '20px', borderRadius: '8px', margin: '24px 0' }}>
         <strong style={{ color: '#475569', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Key Takeaways</strong>
         <ul style={{ margin: '0.5rem 0 0', paddingLeft: '1.25rem', color: '#334155' }}>
           <li>A failing pipeline is not a problem — it is a fast feedback loop that prevents broken code from reaching users</li>

@@ -390,6 +390,7 @@ import DatabaseDesignGuide from '@/data/posts/database-design-guide';
 import SpringBootGuide from '@/data/posts/spring-boot-guide';
 import ElasticsearchGuide from '@/data/posts/elasticsearch-guide';
 import OauthGuide from '@/data/posts/oauth-guide';
+import SystemDesignGuide from '@/data/posts/system-design-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -770,6 +771,7 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'spring-boot-guide': SpringBootGuide,
   'elasticsearch-guide': ElasticsearchGuide,
   'oauth-guide': OauthGuide,
+  'system-design-guide': SystemDesignGuide,
 };
 
 /* i18n for UI strings on this page */

@@ -9683,6 +9683,25 @@ export const blogPosts: BlogPost[] = [
       ko: { title: 'OAuth 2.0 완전 가이드: 인증 코드, PKCE, OpenID Connect, JWT, 보안 모범 사례', description: 'OAuth 2.0과 OpenID Connect를 마스터하세요. PKCE를 사용한 인증 코드 흐름, 클라이언트 자격 증명, 액세스/갱신/ID 토큰, JWT 검증, 소셜 로그인, Node.js/Python 구현.', readingTime: '14분 읽기', keywords: ['oauth 2.0 튜토리얼', 'oauth 인증 코드 흐름', 'pkce oauth', 'openid connect', 'jwt oauth', '소셜 로그인', 'oauth 보안', 'oauth vs saml'] },
     },
   },
+  {
+    slug: 'system-design-guide',
+    title: 'System Design Guide: Scalability, Load Balancers, Caching, CAP Theorem, and Interview Prep',
+    description: 'Master system design for interviews and real-world applications. Covers horizontal/vertical scaling, load balancers, caching (CDN, Redis), database sharding, CAP theorem, message queues, rate limiting, URL shortener design, social media feed, and back-of-envelope calculations.',
+    date: '2026-02-27',
+    author: 'DevToolBox',
+    readingTime: '20 min read',
+    keywords: ['system design interview', 'system design scalability', 'load balancer design', 'caching strategy redis', 'cap theorem', 'database sharding', 'rate limiting algorithms', 'url shortener design', 'social media feed design', 'back of envelope calculation'],
+    relatedTools: ['json-formatter', 'regex-tester', 'base64-encoder'],
+    relatedPosts: ['microservices-guide', 'database-design-guide', 'api-design-guide'],
+    translations: {
+      zh: { title: '系统设计指南：可扩展性、负载均衡、缓存、CAP定理和面试准备', description: '掌握系统设计面试和实际应用。涵盖水平/垂直扩展、负载均衡、缓存（CDN、Redis）、数据库分片、CAP定理、消息队列、速率限制、URL短链接设计、社交媒体信息流以及估算计算。', readingTime: '20 分钟阅读', keywords: ['系统设计面试', '系统设计可扩展性', '负载均衡设计', '缓存策略redis', 'cap定理', '数据库分片', '速率限制算法', 'url短链接设计', '社交媒体信息流设计', '估算计算'] },
+      fr: { title: 'Guide Conception Système: Scalabilité, Load Balancers, Cache, Théorème CAP et Entretiens', description: 'Maîtrisez la conception de systèmes pour les entretiens et applications réelles. Scalabilité, load balancers, cache (CDN, Redis), sharding, théorème CAP, files de messages, rate limiting, design URL shortener.', readingTime: '20 min de lecture', keywords: ['entretien conception système', 'scalabilité système', 'design load balancer', 'stratégie cache redis', 'théorème cap', 'sharding base de données', 'algorithmes rate limiting'] },
+      de: { title: 'System Design Leitfaden: Skalierbarkeit, Load Balancer, Caching, CAP-Theorem und Interviews', description: 'System Design für Interviews und reale Anwendungen meistern. Horizontale/vertikale Skalierung, Load Balancer, Caching (CDN, Redis), Datenbanksharding, CAP-Theorem, Nachrichtenwarteschlangen, Rate Limiting.', readingTime: '20 Min. Lesezeit', keywords: ['system design interview', 'system design skalierbarkeit', 'load balancer design', 'caching strategie redis', 'cap theorem', 'datenbanksharding', 'rate limiting algorithmen'] },
+      es: { title: 'Guía Diseño de Sistemas: Escalabilidad, Load Balancers, Caché, Teorema CAP y Entrevistas', description: 'Domina el diseño de sistemas para entrevistas y aplicaciones reales. Escalado horizontal/vertical, balanceadores de carga, caché (CDN, Redis), sharding, teorema CAP, colas de mensajes, rate limiting.', readingTime: '20 min de lectura', keywords: ['entrevista diseño sistemas', 'escalabilidad sistema', 'diseño load balancer', 'estrategia caché redis', 'teorema cap', 'sharding base de datos', 'algoritmos rate limiting'] },
+      ja: { title: 'システム設計ガイド：スケーラビリティ、ロードバランサー、キャッシュ、CAP定理、面接対策', description: 'システム設計の面接と実際のアプリケーションをマスター。水平/垂直スケーリング、ロードバランサー、キャッシュ（CDN、Redis）、データベースシャーディング、CAP定理、メッセージキュー、レート制限。', readingTime: '20分', keywords: ['システム設計面接', 'システム設計スケーラビリティ', 'ロードバランサー設計', 'キャッシュ戦略redis', 'cap定理', 'データベースシャーディング', 'レート制限アルゴリズム'] },
+      ko: { title: '시스템 설계 가이드: 확장성, 로드 밸런서, 캐싱, CAP 정리, 인터뷰 준비', description: '시스템 설계 인터뷰와 실제 애플리케이션을 마스터하세요. 수평/수직 확장, 로드 밸런서, 캐싱(CDN, Redis), 데이터베이스 샤딩, CAP 정리, 메시지 큐, 속도 제한 알고리즘.', readingTime: '20분 읽기', keywords: ['시스템 설계 인터뷰', '시스템 설계 확장성', '로드 밸런서 설계', '캐싱 전략 redis', 'cap 정리', '데이터베이스 샤딩', '속도 제한 알고리즘'] },
+    },
+  },
 ];
 
 /** Get post with localized metadata */
