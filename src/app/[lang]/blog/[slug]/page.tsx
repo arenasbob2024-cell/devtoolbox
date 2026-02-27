@@ -414,6 +414,7 @@ import SecurityGuide from '@/data/posts/security-guide';
 import FunctionalProgrammingGuide from '@/data/posts/functional-programming-guide';
 import CleanCodeGuide from '@/data/posts/clean-code-guide';
 import DatabaseOptimizationGuide from '@/data/posts/database-optimization-guide';
+import MobileDevelopmentGuide from '@/data/posts/mobile-development-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -818,6 +819,7 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'functional-programming-guide': FunctionalProgrammingGuide,
   'clean-code-guide': CleanCodeGuide,
   'database-optimization-guide': DatabaseOptimizationGuide,
+  'mobile-development-guide': MobileDevelopmentGuide,
 };
 
 /* i18n for UI strings on this page */

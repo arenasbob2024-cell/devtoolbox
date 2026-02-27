@@ -10139,6 +10139,25 @@ export const blogPosts: BlogPost[] = [
       ko: { title: '데이터베이스 최적화 가이드: 인덱싱 전략, 쿼리 튜닝, 스키마 설계 & 대규모 성능', description: '종합 데이터베이스 최적화 가이드: 인덱싱 전략, EXPLAIN 쿼리 최적화, 스키마 설계, 커넥션 풀링, Redis 캐싱, PostgreSQL/MySQL/MongoDB 튜닝.', readingTime: '22분 읽기', keywords: ['데이터베이스 최적화 가이드', '인덱싱 전략', '쿼리 최적화', 'redis 캐싱', 'postgresql 튜닝'] },
     },
   },
+  {
+    slug: 'mobile-development-guide',
+    title: 'Mobile Development Guide: React Native, Flutter, Swift, Kotlin & Cross-Platform Strategies',
+    description: 'Comprehensive mobile development guide covering React Native, Flutter, Swift/SwiftUI, Kotlin/Jetpack Compose, cross-platform comparison, performance optimization, state management, testing, CI/CD, push notifications, and offline-first architecture.',
+    date: '2026-02-28',
+    author: 'DevToolBox Team',
+    readingTime: '26 min read',
+    keywords: ['mobile development guide', 'react native tutorial', 'flutter vs react native', 'swiftui guide', 'jetpack compose', 'cross platform mobile', 'mobile app performance', 'mobile ci cd fastlane', 'push notifications', 'offline first architecture'],
+    relatedTools: ['json-formatter', 'typescript-to-javascript', 'json-to-dart'],
+    relatedPosts: ['design-patterns-guide', 'testing-strategies-guide', 'clean-code-guide'],
+    translations: {
+      zh: { title: '移动开发指南：React Native、Flutter、Swift、Kotlin 与跨平台策略', description: '全面的移动开发指南，涵盖 React Native、Flutter、Swift/SwiftUI、Kotlin/Jetpack Compose、跨平台对比、性能优化、状态管理、测试、CI/CD、推送通知和离线优先架构。', readingTime: '26 分钟阅读', keywords: ['移动开发指南', 'react native教程', 'flutter vs react native', 'swiftui指南', 'jetpack compose', '跨平台移动开发'] },
+      fr: { title: 'Guide Développement Mobile: React Native, Flutter, Swift, Kotlin & Stratégies Cross-Platform', description: 'Guide complet de développement mobile: React Native, Flutter, Swift/SwiftUI, Kotlin/Jetpack Compose, comparaison cross-platform, optimisation des performances.', readingTime: '26 min de lecture', keywords: ['guide développement mobile', 'react native tutoriel', 'flutter vs react native', 'développement cross-platform'] },
+      de: { title: 'Mobile Entwicklung Leitfaden: React Native, Flutter, Swift, Kotlin & Cross-Platform-Strategien', description: 'Umfassender Mobile-Entwicklungsleitfaden: React Native, Flutter, Swift/SwiftUI, Kotlin/Jetpack Compose, Cross-Platform-Vergleich, Performance-Optimierung.', readingTime: '26 Min. Lesezeit', keywords: ['mobile entwicklung leitfaden', 'react native tutorial', 'flutter vs react native', 'cross-platform entwicklung'] },
+      es: { title: 'Guía de Desarrollo Móvil: React Native, Flutter, Swift, Kotlin y Estrategias Cross-Platform', description: 'Guía completa de desarrollo móvil: React Native, Flutter, Swift/SwiftUI, Kotlin/Jetpack Compose, comparación cross-platform, optimización de rendimiento.', readingTime: '26 min de lectura', keywords: ['guía desarrollo móvil', 'react native tutorial', 'flutter vs react native', 'desarrollo cross-platform'] },
+      ja: { title: 'モバイル開発ガイド：React Native、Flutter、Swift、Kotlin＆クロスプラットフォーム戦略', description: '包括的なモバイル開発ガイド：React Native、Flutter、Swift/SwiftUI、Kotlin/Jetpack Compose、クロスプラットフォーム比較、パフォーマンス最適化。', readingTime: '26分', keywords: ['モバイル開発ガイド', 'react nativeチュートリアル', 'flutter vs react native', 'クロスプラットフォーム開発'] },
+      ko: { title: '모바일 개발 가이드: React Native, Flutter, Swift, Kotlin & 크로스 플랫폼 전략', description: '종합 모바일 개발 가이드: React Native, Flutter, Swift/SwiftUI, Kotlin/Jetpack Compose, 크로스 플랫폼 비교, 성능 최적화.', readingTime: '26분 읽기', keywords: ['모바일 개발 가이드', 'react native 튜토리얼', 'flutter vs react native', '크로스 플랫폼 개발'] },
+    },
+  },
 ];
 
 /** Get post with localized metadata */
