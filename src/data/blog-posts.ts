@@ -9092,6 +9092,25 @@ export const blogPosts: BlogPost[] = [
       ko: { title: 'Vim 가이드: 개발자를 위한 완전한 Vim/Neovim 튜토리얼', description: 'Vim과 Neovim을 마스터하세요. 모드, 탐색, 편집, 텍스트 오브젝트, 매크로, 레지스터, 분할, 탭, .vimrc, init.lua, telescope/coc.nvim 플러그인 완전 튜토리얼.', readingTime: '13분 읽기', keywords: ['vim 튜토리얼', 'vim 명령어', 'neovim 가이드', 'vim 모드', 'vim 매크로', 'vimrc 설정', 'neovim init.lua', 'vim 텍스트 오브젝트', 'vim 플러그인'] },
     },
   },
+  {
+    slug: 'css-grid-guide',
+    title: 'CSS Grid Guide: Complete Layout Tutorial with Flexbox Comparison',
+    description: 'Master CSS Grid layout with this complete tutorial. Covers grid-template, fr units, auto-fill/auto-fit, named areas, subgrid, responsive patterns, and a full CSS Grid vs Flexbox comparison.',
+    date: '2026-02-27',
+    author: 'DevToolBox',
+    readingTime: '13 min read',
+    keywords: ['css grid', 'css grid tutorial', 'css grid layout', 'grid template columns', 'fr unit css', 'auto-fill auto-fit', 'css grid vs flexbox', 'css subgrid', 'responsive css grid', 'named grid areas'],
+    relatedTools: ['css-gradient-generator', 'color-converter', 'markdown-to-html'],
+    relatedPosts: ['react-hooks-guide', 'nextjs-performance-guide', 'web-performance-optimization'],
+    translations: {
+      zh: { title: 'CSS Grid指南：含Flexbox对比的完整布局教程', description: '掌握CSS Grid布局。涵盖grid-template、fr单位、auto-fill/auto-fit、命名区域、subgrid、响应式模式和完整CSS Grid vs Flexbox对比教程。', readingTime: '13 分钟阅读', keywords: ['css grid', 'css grid教程', 'css grid布局', 'grid-template-columns', 'fr单位', 'auto-fill auto-fit', 'css grid对比flexbox', 'css subgrid', '响应式css grid', '命名网格区域'] },
+      fr: { title: 'Guide CSS Grid: Tutoriel Complet avec Comparaison Flexbox', description: 'Maîtrisez CSS Grid. Guide avec grid-template, unités fr, auto-fill/auto-fit, zones nommées, subgrid, patterns responsives et comparaison CSS Grid vs Flexbox.', readingTime: '13 min de lecture', keywords: ['css grid', 'tutoriel css grid', 'mise en page css grid', 'grid-template-columns', 'unité fr css', 'auto-fill auto-fit', 'css grid vs flexbox', 'css subgrid'] },
+      de: { title: 'CSS Grid Leitfaden: Vollständiges Layout-Tutorial mit Flexbox-Vergleich', description: 'CSS Grid meistern. Anleitung mit grid-template, fr-Einheiten, auto-fill/auto-fit, benannten Bereichen, Subgrid, responsiven Mustern und CSS Grid vs Flexbox Vergleich.', readingTime: '13 Min. Lesezeit', keywords: ['css grid', 'css grid tutorial', 'css grid layout', 'grid-template-columns', 'fr einheit', 'auto-fill auto-fit', 'css grid vs flexbox', 'css subgrid'] },
+      es: { title: 'Guía CSS Grid: Tutorial Completo con Comparación Flexbox', description: 'Domina CSS Grid. Guía con grid-template, unidades fr, auto-fill/auto-fit, áreas nombradas, subgrid, patrones responsivos y comparación CSS Grid vs Flexbox.', readingTime: '13 min de lectura', keywords: ['css grid', 'tutorial css grid', 'diseño css grid', 'grid-template-columns', 'unidad fr css', 'auto-fill auto-fit', 'css grid vs flexbox', 'css subgrid'] },
+      ja: { title: 'CSS Gridガイド：Flexbox比較付き完全レイアウトチュートリアル', description: 'CSS Gridをマスター。grid-template、fr単位、auto-fill/auto-fit、名前付きエリア、サブグリッド、レスポンシブパターン、CSS Grid vs Flexbox比較の完全ガイド。', readingTime: '13分', keywords: ['css grid', 'css gridチュートリアル', 'css gridレイアウト', 'grid-template-columns', 'fr単位', 'auto-fill auto-fit', 'css grid vs flexbox', 'css subgrid'] },
+      ko: { title: 'CSS Grid 가이드: Flexbox 비교가 포함된 완전한 레이아웃 튜토리얼', description: 'CSS Grid를 마스터하세요. grid-template, fr 단위, auto-fill/auto-fit, 명명된 영역, 서브그리드, 반응형 패턴, CSS Grid vs Flexbox 비교 완전 가이드.', readingTime: '13분 읽기', keywords: ['css grid', 'css grid 튜토리얼', 'css grid 레이아웃', 'grid-template-columns', 'fr 단위', 'auto-fill auto-fit', 'css grid vs flexbox', 'css subgrid'] },
+    },
+  },
 ];
 
 /** Get post with localized metadata */

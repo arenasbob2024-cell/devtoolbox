@@ -359,6 +359,7 @@ import TerraformGuide from '@/data/posts/terraform-guide';
 import PythonAsyncGuide from '@/data/posts/python-async-guide';
 import LinuxCommandsGuide from '@/data/posts/linux-commands-guide';
 import VimGuide from '@/data/posts/vim-guide';
+import CssGridGuide from '@/data/posts/css-grid-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -708,6 +709,7 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'python-async-guide': PythonAsyncGuide,
   'linux-commands-guide': LinuxCommandsGuide,
   'vim-guide': VimGuide,
+  'css-grid-guide': CssGridGuide,
 };
 
 /* i18n for UI strings on this page */
