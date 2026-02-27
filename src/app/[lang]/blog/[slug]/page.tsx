@@ -445,6 +445,8 @@ import ElectronGuide from '@/data/posts/electron-guide';
 import TauriGuide from '@/data/posts/tauri-guide';
 import TurborepoGuide from '@/data/posts/turborepo-guide';
 import PnpmGuide from '@/data/posts/pnpm-guide';
+import SwrGuide from '@/data/posts/swr-guide';
+import TanstackRouterGuide from '@/data/posts/tanstack-router-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -880,6 +882,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'tauri-guide': TauriGuide,
   'turborepo-guide': TurborepoGuide,
   'pnpm-guide': PnpmGuide,
+  'swr-guide': SwrGuide,
+  'tanstack-router-guide': TanstackRouterGuide,
 };
 
 /* i18n for UI strings on this page */
