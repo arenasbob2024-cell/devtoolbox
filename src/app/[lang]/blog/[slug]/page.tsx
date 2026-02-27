@@ -348,6 +348,8 @@ import ColorPaletteGeneratorOnlineGuide from '@/data/posts/color-palette-generat
 import MarkdownEditorOnlineGuide from '@/data/posts/markdown-editor-online-guide';
 import SshKeyGeneratorOnlineGuide from '@/data/posts/ssh-key-generator-online-guide';
 import ApiTestingGuide from '@/data/posts/api-testing-guide';
+import WebsocketGuide from '@/data/posts/websocket-guide';
+import DockerCommandsGuide from '@/data/posts/docker-commands-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -686,6 +688,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'markdown-editor-online-guide': MarkdownEditorOnlineGuide,
   'ssh-key-generator-online-guide': SshKeyGeneratorOnlineGuide,
   'api-testing-guide': ApiTestingGuide,
+  'websocket-guide': WebsocketGuide,
+  'docker-commands-guide': DockerCommandsGuide,
 };
 
 /* i18n for UI strings on this page */
