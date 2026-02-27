@@ -412,6 +412,8 @@ import NginxGuide from '@/data/posts/nginx-guide';
 import AwsServicesGuide from '@/data/posts/aws-services-guide';
 import SecurityGuide from '@/data/posts/security-guide';
 import FunctionalProgrammingGuide from '@/data/posts/functional-programming-guide';
+import CleanCodeGuide from '@/data/posts/clean-code-guide';
+import DatabaseOptimizationGuide from '@/data/posts/database-optimization-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -814,6 +816,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'aws-services-guide': AwsServicesGuide,
   'security-guide': SecurityGuide,
   'functional-programming-guide': FunctionalProgrammingGuide,
+  'clean-code-guide': CleanCodeGuide,
+  'database-optimization-guide': DatabaseOptimizationGuide,
 };
 
 /* i18n for UI strings on this page */
