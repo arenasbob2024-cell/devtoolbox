@@ -419,6 +419,8 @@ import GraphqlAdvancedGuide from '@/data/posts/graphql-advanced-guide';
 import DevopsPipelineGuide from '@/data/posts/devops-pipeline-guide';
 import MicroservicesPatternsGuide from '@/data/posts/microservices-patterns-guide';
 import PythonAdvancedGuide from '@/data/posts/python-advanced-guide';
+import EventDrivenArchitectureGuide from '@/data/posts/event-driven-architecture-guide';
+import KafkaGuide from '@/data/posts/kafka-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -828,6 +830,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'devops-pipeline-guide': DevopsPipelineGuide,
   'microservices-patterns-guide': MicroservicesPatternsGuide,
   'python-advanced-guide': PythonAdvancedGuide,
+  'event-driven-architecture-guide': EventDrivenArchitectureGuide,
+  'kafka-guide': KafkaGuide,
 };
 
 /* i18n for UI strings on this page */
