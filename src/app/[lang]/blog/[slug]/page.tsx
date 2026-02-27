@@ -335,6 +335,8 @@ import DockerComposeOnlineGuide from '@/data/posts/docker-compose-online-guide';
 import NginxConfigOnlineGuide from '@/data/posts/nginx-config-online-guide';
 import HmacGeneratorOnlineGuide from '@/data/posts/hmac-generator-online-guide';
 import XmlFormatterOnlineGuide from '@/data/posts/xml-formatter-online-guide';
+import StringCaseConverterOnlineGuide from '@/data/posts/string-case-converter-online-guide';
+import NumberBaseConverterOnlineGuide from '@/data/posts/number-base-converter-online-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -660,6 +662,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'nginx-config-online-guide': NginxConfigOnlineGuide,
   'hmac-generator-online-guide': HmacGeneratorOnlineGuide,
   'xml-formatter-online-guide': XmlFormatterOnlineGuide,
+  'string-case-converter-online-guide': StringCaseConverterOnlineGuide,
+  'number-base-converter-online-guide': NumberBaseConverterOnlineGuide,
 };
 
 /* i18n for UI strings on this page */
