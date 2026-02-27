@@ -341,6 +341,8 @@ import CorsTesterOnlineGuide from '@/data/posts/cors-tester-online-guide';
 import FakeDataGeneratorOnlineGuide from '@/data/posts/fake-data-generator-online-guide';
 import EscapeUnescapeOnlineGuide from '@/data/posts/escape-unescape-online-guide';
 import PemDecoderOnlineGuide from '@/data/posts/pem-decoder-online-guide';
+import IpSubnetCalculatorOnlineGuide from '@/data/posts/ip-subnet-calculator-online-guide';
+import SlugGeneratorOnlineGuide from '@/data/posts/slug-generator-online-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -672,6 +674,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'fake-data-generator-online-guide': FakeDataGeneratorOnlineGuide,
   'escape-unescape-online-guide': EscapeUnescapeOnlineGuide,
   'pem-decoder-online-guide': PemDecoderOnlineGuide,
+  'ip-subnet-calculator-online-guide': IpSubnetCalculatorOnlineGuide,
+  'slug-generator-online-guide': SlugGeneratorOnlineGuide,
 };
 
 /* i18n for UI strings on this page */
