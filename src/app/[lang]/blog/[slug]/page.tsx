@@ -399,6 +399,8 @@ import PythonWebGuide from '@/data/posts/python-web-guide';
 import GitAdvancedGuide from '@/data/posts/git-advanced-guide';
 import RustGuide from '@/data/posts/rust-guide';
 import GolangAdvancedGuide from '@/data/posts/golang-advanced-guide';
+import ServerlessGuide from '@/data/posts/serverless-guide';
+import WebAccessibilityGuide from '@/data/posts/web-accessibility-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -788,6 +790,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'git-advanced-guide': GitAdvancedGuide,
   'rust-guide': RustGuide,
   'golang-advanced-guide': GolangAdvancedGuide,
+  'serverless-guide': ServerlessGuide,
+  'web-accessibility-guide': WebAccessibilityGuide,
 };
 
 /* i18n for UI strings on this page */
