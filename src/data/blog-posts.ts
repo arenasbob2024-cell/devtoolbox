@@ -8452,6 +8452,33 @@ export const blogPosts: BlogPost[] = [
       th: { title: 'JSON to PHP Class: Complete Guide with Constructor Promotion and Typed Properties', description: 'Learn to convert JSON to PHP classes with typed properties, constructor promotion, and readonly classes.', readingTime: '11 minutes', keywords: ['json to php class', 'php json_decode', 'php typed properties'] },
     },
   },
+  {
+    slug: 'yaml-to-json-online-guide',
+    title: 'YAML to JSON: Convert Online with JavaScript, Python, and CLI Tools',
+    description: 'Convert YAML to JSON online and with code. Complete guide for JavaScript, Python, Go, and command-line YAML-to-JSON conversion.',
+    date: '2026-02-27',
+    author: 'DevToolBox',
+    readingTime: '7 min read',
+    keywords: ['yaml to json', 'yaml to json online', 'convert yaml to json', 'yaml parser', 'js-yaml', 'pyyaml', 'yq command', 'yaml json conversion'],
+    relatedTools: ['yaml-to-json', 'json-formatter', 'json-validator'],
+    relatedPosts: ['yaml-to-json-converter-guide', 'yaml-vs-json-guide', 'json-yaml-converter-online-guide'],
+    translations: {
+      fr: { title: 'YAML vers JSON : Convertir en Ligne avec JavaScript et Python', description: 'Convertissez YAML en JSON en ligne et avec du code. Guide complet pour JavaScript, Python, Go et les outils en ligne de commande.', readingTime: '7 min de lecture', keywords: ['yaml vers json', 'convertir yaml json', 'yaml parser', 'js-yaml', 'pyyaml'] },
+      de: { title: 'YAML zu JSON: Online Konvertieren mit JavaScript und Python', description: 'Konvertieren Sie YAML zu JSON online und mit Code. Vollständiger Leitfaden für JavaScript, Python, Go und Kommandozeilen-Tools.', readingTime: '7 Min. Lesezeit', keywords: ['yaml zu json', 'yaml json konvertieren', 'yaml parser', 'js-yaml', 'pyyaml'] },
+      it: { title: 'Da YAML a JSON: Convertire Online con JavaScript e Python', description: 'Converti YAML in JSON online e con codice. Guida completa per JavaScript, Python, Go e strumenti a riga di comando.', readingTime: '7 min di lettura', keywords: ['yaml a json', 'convertire yaml json', 'yaml parser', 'js-yaml', 'pyyaml'] },
+      es: { title: 'YAML a JSON: Convertir Online con JavaScript y Python', description: 'Convierte YAML a JSON en línea y con código. Guía completa para JavaScript, Python, Go y herramientas de línea de comandos.', readingTime: '7 min de lectura', keywords: ['yaml a json', 'convertir yaml json', 'yaml parser', 'js-yaml', 'pyyaml'] },
+      pt: { title: 'YAML para JSON: Converter Online com JavaScript e Python', description: 'Converta YAML para JSON online e com código. Guia completo para JavaScript, Python, Go e ferramentas de linha de comando.', readingTime: '7 min de leitura', keywords: ['yaml para json', 'converter yaml json', 'yaml parser', 'js-yaml', 'pyyaml'] },
+      nl: { title: 'YAML naar JSON: Online Converteren met JavaScript en Python', description: 'Converteer YAML naar JSON online en met code. Complete gids voor JavaScript, Python, Go en opdrachtregeltools.', readingTime: '7 min lezen', keywords: ['yaml naar json', 'yaml json converteren', 'yaml parser', 'js-yaml', 'pyyaml'] },
+      pl: { title: 'YAML do JSON: Konwertuj Online z JavaScript i Python', description: 'Konwertuj YAML na JSON online i z kodem. Kompletny przewodnik dla JavaScript, Python, Go i narzędzi wiersza poleceń.', readingTime: '7 min czytania', keywords: ['yaml do json', 'konwertuj yaml json', 'yaml parser', 'js-yaml', 'pyyaml'] },
+      sv: { title: 'YAML till JSON: Konvertera Online med JavaScript och Python', description: 'Konvertera YAML till JSON online och med kod. Komplett guide för JavaScript, Python, Go och kommandoradsverktyg.', readingTime: '7 min läsning', keywords: ['yaml till json', 'konvertera yaml json', 'yaml parser', 'js-yaml', 'pyyaml'] },
+      no: { title: 'YAML til JSON: Konverter Online med JavaScript og Python', description: 'Konverter YAML til JSON online og med kode. Komplett guide for JavaScript, Python, Go og kommandolinjeverktøy.', readingTime: '7 min lesning', keywords: ['yaml til json', 'konverter yaml json', 'yaml parser', 'js-yaml', 'pyyaml'] },
+      zh: { title: 'YAML 转 JSON：在线转换与 JavaScript、Python、CLI 工具指南', description: '在线及编程方式将 YAML 转换为 JSON。JavaScript、Python、Go 和命令行 YAML 转 JSON 完整指南。', readingTime: '7 分钟阅读', keywords: ['yaml转json', 'yaml json转换', 'yaml解析器', 'js-yaml', 'pyyaml'] },
+      ja: { title: 'YAMLからJSONへ：JavaScript・Python・CLIツールでオンライン変換', description: 'YAMLをJSONにオンラインおよびコードで変換します。JavaScript、Python、Go、コマンドラインツールの完全ガイド。', readingTime: '7分', keywords: ['yaml json 変換', 'yaml parser', 'js-yaml', 'pyyaml', 'yq コマンド'] },
+      ko: { title: 'YAML을 JSON으로: JavaScript, Python, CLI 도구로 온라인 변환', description: 'YAML을 JSON으로 온라인 및 코드로 변환합니다. JavaScript, Python, Go, 명령줄 도구 완전 가이드.', readingTime: '7분 읽기', keywords: ['yaml json 변환', 'yaml 파서', 'js-yaml', 'pyyaml', 'yq 명령'] },
+      id: { title: 'YAML ke JSON: Konversi Online dengan JavaScript, Python, dan CLI', description: 'Konversi YAML ke JSON online dan dengan kode. Panduan lengkap untuk JavaScript, Python, Go, dan alat baris perintah.', readingTime: '7 menit baca', keywords: ['yaml ke json', 'konversi yaml json', 'yaml parser', 'js-yaml', 'pyyaml'] },
+      th: { title: 'YAML เป็น JSON: แปลงออนไลน์ด้วย JavaScript, Python และ CLI', description: 'แปลง YAML เป็น JSON ออนไลน์และด้วยโค้ด คู่มือสมบูรณ์สำหรับ JavaScript, Python, Go และเครื่องมือบรรทัดคำสั่ง', readingTime: '7 นาทีในการอ่าน', keywords: ['yaml เป็น json', 'แปลง yaml json', 'yaml parser', 'js-yaml', 'pyyaml'] },
+    },
+  },
 ];
 
 /** Get post with localized metadata */

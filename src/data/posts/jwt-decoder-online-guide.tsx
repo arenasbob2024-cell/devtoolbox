@@ -1,704 +1,1565 @@
 'use client';
 
-import Link from 'next/link';
+const translations = {
+  en: {
+    title: 'JWT Decoder: Decode and Debug JWTs Online — Complete Guide',
+    description:
+      'Decode, verify, and debug JWT tokens online. Complete guide covering JWT structure, JavaScript, Python, security best practices, and common errors.',
+  },
+  zh: {
+    title: 'JWT 解码器：在线解码和调试 JWT 完整指南',
+    description:
+      '在线解码、验证和调试 JWT token。涵盖 JWT 结构、JavaScript、Python、安全最佳实践的完整指南。',
+  },
+  fr: {
+    title: 'Décodeur JWT : Décoder et Déboguer les JWT en Ligne',
+    description:
+      'Décodez, vérifiez et déboguez les tokens JWT en ligne. Guide complet couvrant la structure JWT, JavaScript, Python, bonnes pratiques de sécurité.',
+  },
+  de: {
+    title: 'JWT Decoder: JWTs Online Dekodieren und Debuggen',
+    description:
+      'JWT-Tokens online dekodieren, verifizieren und debuggen. Vollständiger Leitfaden zu JWT-Struktur, JavaScript, Python und Sicherheit.',
+  },
+  es: {
+    title: 'Decodificador JWT: Decodificar y Depurar JWTs Online',
+    description:
+      'Decodifica, verifica y depura tokens JWT online. Guía completa sobre estructura JWT, JavaScript, Python y buenas prácticas de seguridad.',
+  },
+  ja: {
+    title: 'JWTデコーダー：JWTをオンラインでデコード・デバッグする完全ガイド',
+    description:
+      'JWTトークンをオンラインでデコード、検証、デバッグします。JWT構造、JavaScript、Python、セキュリティのベストプラクティスを網羅した完全ガイド。',
+  },
+  ko: {
+    title: 'JWT 디코더: JWT를 온라인으로 디코딩 및 디버깅하는 완전 가이드',
+    description:
+      'JWT 토큰을 온라인으로 디코딩, 검증, 디버깅합니다. JWT 구조, JavaScript, Python, 보안 모범 사례를 다루는 완전 가이드.',
+  },
+};
 
 export default function JwtDecoderOnlineGuide({ lang }: { lang: string }) {
+  const t = translations[lang as keyof typeof translations] || translations.en;
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What is a JWT token?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'A JWT (JSON Web Token) is a compact, URL-safe token format defined in RFC 7519. It consists of three Base64URL-encoded parts separated by dots: Header (algorithm and token type), Payload (claims/data), and Signature (cryptographic proof of authenticity). JWTs are widely used for authentication and authorization in web applications.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How do I decode a JWT token online?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'To decode a JWT online, paste the token into the DevToolBox JWT Decoder tool at viadreams.cc. The tool instantly splits the token into its three parts, Base64URL-decodes the header and payload, and displays the JSON claims — no secret key required. Note: decoding only reads the content; it does not verify the signature.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is the difference between decoding and verifying a JWT?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: "Decoding a JWT means Base64URL-decoding the header and payload to read the JSON claims. Anyone can decode a JWT without any key. Verifying a JWT means checking the cryptographic signature using the secret key (HS256) or public key (RS256/ES256) to confirm the token was issued by a trusted party and has not been tampered with. Never trust a decoded-but-unverified JWT for authorization decisions.",
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What are the standard JWT claims?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Standard JWT claims include: iss (issuer — who issued the token), sub (subject — who the token is about), aud (audience — who it is intended for), exp (expiration time — Unix timestamp after which the token is invalid), iat (issued at — when it was created), nbf (not before — earliest valid time), and jti (JWT ID — unique identifier to prevent replay attacks). Custom claims can be added for application-specific data.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Is it safe to decode a JWT in a browser?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Decoding a JWT in a browser is safe for inspection purposes because decoding only reads the Base64URL-encoded data. However, avoid pasting production JWTs containing sensitive user data into third-party online tools. Our DevToolBox JWT Decoder processes tokens entirely client-side in your browser — no tokens are sent to our servers.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Why does JWT verification fail with "invalid signature"?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'JWT signature verification fails for several reasons: (1) wrong secret or key used for verification, (2) the token was modified after signing, (3) algorithm mismatch (e.g., token signed with RS256 but verified with HS256), (4) encoding issues with the key (e.g., the key was not properly base64-decoded). Check that your verification code uses the exact same algorithm and key that was used to sign the token.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is the "alg: none" JWT vulnerability?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'The "alg: none" attack is a critical JWT vulnerability where an attacker changes the algorithm in the JWT header to "none" and removes the signature. Vulnerable libraries would then accept the token as valid without any signature check. Always explicitly specify allowed algorithms in your JWT library (e.g., algorithms=["HS256"]) and never accept "none" as a valid algorithm.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Should I store JWTs in localStorage or httpOnly cookies?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Storing JWTs in httpOnly cookies is generally more secure because JavaScript cannot access them, protecting against XSS attacks. localStorage is accessible to JavaScript, making tokens vulnerable if your site has an XSS vulnerability. However, httpOnly cookies require CSRF protection. For high-security applications, use httpOnly, Secure, SameSite=Strict cookies with short-lived access tokens and refresh token rotation.',
+        },
+      },
+    ],
+  };
+
   return (
-    <>
+    <article style={{ maxWidth: '860px', margin: '0 auto', lineHeight: '1.7', color: '#374151' }}>
+      {/* FAQPage JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      {/* Canonical / SEO meta — handled by page.tsx, but include og description */}
+      <meta
+        name="description"
+        content={t.description}
+      />
+
       {/* TL;DR Box */}
-      <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: '8px', padding: '16px 20px', marginBottom: '24px' }}>
-        <p style={{ fontWeight: 700, marginBottom: '8px', fontSize: '1.05em' }}>TL;DR</p>
+      <div
+        style={{
+          background: '#f0f9ff',
+          border: '1px solid #bae6fd',
+          borderRadius: '8px',
+          padding: '1rem',
+          marginBottom: '1.5rem',
+        }}
+      >
+        <p style={{ fontWeight: 700, marginBottom: '0.5rem', color: '#0369a1' }}>TL;DR</p>
         <p style={{ margin: 0 }}>
-          A JWT (JSON Web Token) is a compact, URL-safe token format used for authentication, authorization, and information exchange. You can decode any JWT to inspect its header and payload without a secret key. Use our <Link href={`/${lang}/tools/jwt-decoder`}>free JWT decoder online</Link> to paste a token and instantly see every claim. This guide explains JWT structure, standard claims, decoding in JavaScript, Python, Go, and Java, signing algorithms, security best practices, and common mistakes.
+          A JWT is a three-part token (<strong>Header.Payload.Signature</strong>) encoded in Base64URL.
+          You can <strong>decode</strong> any JWT without a key to read its claims. Use the{' '}
+          <a href="/en/tools/jwt-decoder" style={{ color: '#0369a1' }}>
+            DevToolBox JWT Decoder
+          </a>{' '}
+          to inspect tokens instantly. Always <strong>verify</strong> the signature server-side before
+          trusting any claim for authorization. This guide covers JWT anatomy, decoding vs verifying,
+          JavaScript (manual + jsonwebtoken + jose), Python (PyJWT), claims reference, algorithms,
+          security best practices, debugging, and real-world patterns.
         </p>
       </div>
 
-      {/* Key Takeaways */}
-      <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '16px 20px', marginBottom: '24px' }}>
-        <p style={{ fontWeight: 700, marginBottom: '8px', fontSize: '1.05em' }}>Key Takeaways</p>
-        <ul style={{ margin: 0, paddingLeft: '20px' }}>
-          <li>A JWT consists of three Base64URL-encoded parts: <strong>Header</strong>, <strong>Payload</strong>, and <strong>Signature</strong>, separated by dots.</li>
-          <li>Decoding a JWT only reveals the header and payload. It does <strong>not</strong> verify the signature. Verification requires the signing key.</li>
-          <li>Standard claims like <code>exp</code>, <code>iss</code>, <code>sub</code>, and <code>aud</code> control token expiration, issuer, subject, and audience.</li>
-          <li>Never store sensitive data (passwords, credit card numbers) in JWT payloads because anyone can decode them.</li>
-          <li>Use asymmetric algorithms (RS256, ES256, EdDSA) for distributed systems and HS256 only when the signer and verifier are the same service.</li>
-          <li>Always validate the <code>exp</code> claim server-side and reject expired tokens.</li>
-        </ul>
+      {/* Section 1 — What is a JWT? */}
+      <h2
+        style={{
+          fontSize: '1.5rem',
+          fontWeight: '700',
+          marginTop: '2rem',
+          marginBottom: '1rem',
+          color: '#1e293b',
+        }}
+      >
+        1. What Is a JWT? Anatomy of a JSON Web Token
+      </h2>
+      <p>
+        A <strong>JSON Web Token (JWT)</strong>, standardized in{' '}
+        <a
+          href="https://datatracker.ietf.org/doc/html/rfc7519"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: '#0369a1' }}
+        >
+          RFC 7519
+        </a>
+        , is a compact, self-contained token for securely transmitting information as a JSON object.
+        JWTs are used for authentication (OAuth 2.0, OpenID Connect), API authorization (Bearer
+        tokens), and SSO. A JWT looks like three Base64URL-encoded strings separated by dots:
+      </p>
+      <pre
+        style={{
+          background: '#1e293b',
+          color: '#e2e8f0',
+          padding: '1rem',
+          borderRadius: '6px',
+          overflowX: 'auto',
+          fontSize: '0.875rem',
+        }}
+      >
+        <code>{`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+.eyJzdWIiOiJ1c2VyXzEyMyIsIm5hbWUiOiJBbGljZSIsImlhdCI6MTcwMDAwMDAwMCwiZXhwIjoxNzAwMDAzNjAwfQ
+.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c`}</code>
+      </pre>
+
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '600', marginTop: '1.5rem', color: '#1e293b' }}>
+        The Three Parts
+      </h3>
+      <p>
+        <strong>Header</strong> — Base64URL-decoded, the header is a JSON object specifying the
+        algorithm and token type:
+      </p>
+      <pre
+        style={{
+          background: '#1e293b',
+          color: '#e2e8f0',
+          padding: '1rem',
+          borderRadius: '6px',
+          overflowX: 'auto',
+          fontSize: '0.875rem',
+        }}
+      >
+        <code>{`{
+  "alg": "HS256",   // Algorithm: HS256, RS256, ES256, etc.
+  "typ": "JWT"      // Token type
+}`}</code>
+      </pre>
+      <p>
+        <strong>Payload</strong> — Contains the <em>claims</em>: assertions about the user and
+        additional metadata:
+      </p>
+      <pre
+        style={{
+          background: '#1e293b',
+          color: '#e2e8f0',
+          padding: '1rem',
+          borderRadius: '6px',
+          overflowX: 'auto',
+          fontSize: '0.875rem',
+        }}
+      >
+        <code>{`{
+  "sub": "user_123",           // Subject: who this token is about
+  "name": "Alice",             // Custom claim
+  "iat": 1700000000,           // Issued At (Unix timestamp)
+  "exp": 1700003600,           // Expiration (1 hour later)
+  "iss": "https://auth.example.com",
+  "aud": "https://api.example.com"
+}`}</code>
+      </pre>
+      <p>
+        <strong>Signature</strong> — Created by the issuer using their secret/private key. For HS256:
+      </p>
+      <pre
+        style={{
+          background: '#1e293b',
+          color: '#e2e8f0',
+          padding: '1rem',
+          borderRadius: '6px',
+          overflowX: 'auto',
+          fontSize: '0.875rem',
+        }}
+      >
+        <code>{`HMACSHA256(
+  base64url(header) + "." + base64url(payload),
+  secret
+)`}</code>
+      </pre>
+
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '600', marginTop: '1.5rem', color: '#1e293b' }}>
+        JWT vs Session Tokens vs API Keys
+      </h3>
+      <div style={{ overflowX: 'auto' }}>
+        <table
+          style={{
+            width: '100%',
+            borderCollapse: 'collapse',
+            fontSize: '0.9rem',
+            marginBottom: '1rem',
+          }}
+        >
+          <thead>
+            <tr style={{ background: '#f1f5f9' }}>
+              <th style={{ padding: '0.75rem', textAlign: 'left', border: '1px solid #e2e8f0' }}>
+                Property
+              </th>
+              <th style={{ padding: '0.75rem', textAlign: 'left', border: '1px solid #e2e8f0' }}>
+                JWT
+              </th>
+              <th style={{ padding: '0.75rem', textAlign: 'left', border: '1px solid #e2e8f0' }}>
+                Session Token
+              </th>
+              <th style={{ padding: '0.75rem', textAlign: 'left', border: '1px solid #e2e8f0' }}>
+                API Key
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['Stateless', 'Yes', 'No (server stores session)', 'No (server stores key)'],
+              ['Built-in Expiry', 'Yes (exp claim)', 'Server-side controlled', 'Usually no'],
+              ['Self-contained', 'Yes (claims in token)', 'No (data in DB)', 'No (opaque)'],
+              ['Revocation Support', 'Hard (needs blocklist)', 'Easy (delete session)', 'Easy (delete key)'],
+              ['Payload Size', 'Medium (grows with claims)', 'Tiny (just an ID)', 'Tiny'],
+              ['Use Case', 'Auth, SSO, microservices', 'Traditional web apps', 'Server-to-server'],
+            ].map(([prop, jwt, session, apikey]) => (
+              <tr key={prop}>
+                <td style={{ padding: '0.65rem', border: '1px solid #e2e8f0', fontWeight: 600 }}>
+                  {prop}
+                </td>
+                <td style={{ padding: '0.65rem', border: '1px solid #e2e8f0' }}>{jwt}</td>
+                <td style={{ padding: '0.65rem', border: '1px solid #e2e8f0' }}>{session}</td>
+                <td style={{ padding: '0.65rem', border: '1px solid #e2e8f0' }}>{apikey}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
 
-      <h2>What Is a JWT and Why Decode It?</h2>
+      {/* Section 2 — Decoding vs Verifying */}
+      <h2
+        style={{
+          fontSize: '1.5rem',
+          fontWeight: '700',
+          marginTop: '2rem',
+          marginBottom: '1rem',
+          color: '#1e293b',
+        }}
+      >
+        2. Decoding vs Verifying — A Critical Distinction
+      </h2>
       <p>
-        A <strong>JSON Web Token (JWT)</strong>, defined in <a href="https://datatracker.ietf.org/doc/html/rfc7519" target="_blank" rel="noopener noreferrer">RFC 7519</a>, is a compact, self-contained token format for securely transmitting information between parties as a JSON object. JWTs are widely used in modern web applications for authentication (OAuth 2.0, OpenID Connect), API authorization (bearer tokens), single sign-on (SSO), and information exchange between microservices.
+        Many developers confuse <em>decoding</em> and <em>verifying</em> a JWT. Understanding the
+        difference is essential for building secure applications.
+      </p>
+      <div style={{ overflowX: 'auto' }}>
+        <table
+          style={{
+            width: '100%',
+            borderCollapse: 'collapse',
+            fontSize: '0.9rem',
+            marginBottom: '1rem',
+          }}
+        >
+          <thead>
+            <tr style={{ background: '#f1f5f9' }}>
+              <th style={{ padding: '0.75rem', textAlign: 'left', border: '1px solid #e2e8f0' }}>
+                Action
+              </th>
+              <th style={{ padding: '0.75rem', textAlign: 'left', border: '1px solid #e2e8f0' }}>
+                What It Does
+              </th>
+              <th style={{ padding: '0.75rem', textAlign: 'left', border: '1px solid #e2e8f0' }}>
+                Key Required?
+              </th>
+              <th style={{ padding: '0.75rem', textAlign: 'left', border: '1px solid #e2e8f0' }}>
+                Safe for AuthZ?
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style={{ padding: '0.65rem', border: '1px solid #e2e8f0', fontWeight: 600 }}>
+                Decode
+              </td>
+              <td style={{ padding: '0.65rem', border: '1px solid #e2e8f0' }}>
+                Base64URL-decodes header + payload to read JSON
+              </td>
+              <td style={{ padding: '0.65rem', border: '1px solid #e2e8f0' }}>No</td>
+              <td
+                style={{
+                  padding: '0.65rem',
+                  border: '1px solid #e2e8f0',
+                  color: '#dc2626',
+                  fontWeight: 600,
+                }}
+              >
+                NEVER
+              </td>
+            </tr>
+            <tr>
+              <td style={{ padding: '0.65rem', border: '1px solid #e2e8f0', fontWeight: 600 }}>
+                Verify
+              </td>
+              <td style={{ padding: '0.65rem', border: '1px solid #e2e8f0' }}>
+                Validates signature + checks exp, iss, aud claims
+              </td>
+              <td style={{ padding: '0.65rem', border: '1px solid #e2e8f0' }}>Yes</td>
+              <td
+                style={{
+                  padding: '0.65rem',
+                  border: '1px solid #e2e8f0',
+                  color: '#16a34a',
+                  fontWeight: 600,
+                }}
+              >
+                YES
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        <strong>When to decode only:</strong> Debugging, logging, displaying user info in a UI after
+        the token has already been verified server-side, reading non-security-sensitive metadata.
       </p>
       <p>
-        When you work with JWTs, you frequently need to <strong>decode</strong> them to inspect the claims inside. Common scenarios include debugging authentication failures, verifying token expiration, checking issued-at timestamps, confirming audience and issuer values, and understanding what permissions or scopes a token carries. A <strong>JWT decoder</strong> parses the Base64URL-encoded header and payload without verifying the cryptographic signature, giving you instant visibility into the token contents.
+        <strong>When to verify:</strong> Any time you make an authorization decision based on a JWT
+        claim. If you call <code>jwt.decode()</code> instead of <code>jwt.verify()</code> in your
+        authorization middleware, an attacker can craft a token with arbitrary claims and bypass
+        security entirely.
       </p>
-      <p>
-        While libraries exist for every programming language, an <strong>online JWT decoder</strong> provides instant results without writing code. Paste your token, see the decoded header and payload, and identify issues in seconds. Try our <Link href={`/${lang}/tools/jwt-decoder`}>JWT decoder tool</Link> to get started.
-      </p>
+      <div
+        style={{
+          background: '#fef2f2',
+          border: '1px solid #fecaca',
+          borderRadius: '6px',
+          padding: '0.75rem 1rem',
+          margin: '1rem 0',
+        }}
+      >
+        <strong style={{ color: '#dc2626' }}>Security Warning:</strong> Never use decoded-only JWT
+        data for authorization. Always verify the signature server-side with a trusted library before
+        granting access.
+      </div>
 
-      <h2>JWT Decoder Online &mdash; Inspect Tokens Instantly</h2>
+      {/* Section 3 — Decode Online */}
+      <h2
+        style={{
+          fontSize: '1.5rem',
+          fontWeight: '700',
+          marginTop: '2rem',
+          marginBottom: '1rem',
+          color: '#1e293b',
+        }}
+      >
+        3. Decode JWT Online with DevToolBox
+      </h2>
       <p>
-        Our <Link href={`/${lang}/tools/jwt-decoder`}>free JWT decoder online tool</Link> lets you paste any JWT and immediately see:
+        The{' '}
+        <a href="/en/tools/jwt-decoder" style={{ color: '#0369a1' }}>
+          DevToolBox JWT Decoder
+        </a>{' '}
+        is a free, client-side tool that lets you paste any JWT and instantly see:
       </p>
       <ul>
-        <li><strong>Header</strong>: The algorithm (<code>alg</code>) and token type (<code>typ</code>).</li>
-        <li><strong>Payload</strong>: All claims including <code>sub</code>, <code>iss</code>, <code>aud</code>, <code>exp</code>, <code>iat</code>, <code>nbf</code>, custom claims, and more.</li>
-        <li><strong>Signature</strong>: The raw signature bytes (displayed but not verified without a key).</li>
-        <li><strong>Expiration status</strong>: Whether the token is expired based on the <code>exp</code> claim.</li>
+        <li>
+          <strong>Header</strong> — algorithm (<code>alg</code>), token type (<code>typ</code>), key
+          ID (<code>kid</code>)
+        </li>
+        <li>
+          <strong>Payload</strong> — all claims with human-readable timestamps for{' '}
+          <code>exp</code>, <code>iat</code>, <code>nbf</code>
+        </li>
+        <li>
+          <strong>Signature</strong> — raw signature bytes (for visual inspection)
+        </li>
+        <li>
+          <strong>Expiration status</strong> — whether the token is currently valid, expired, or not
+          yet active
+        </li>
       </ul>
       <p>
-        The tool runs entirely in your browser. No tokens are sent to any server. This makes it safe for inspecting production tokens during debugging. It works as a <strong>JWT debugger</strong>, <strong>JWT token decoder</strong>, and <strong>JWT inspector</strong> all in one.
-      </p>
-      <p>
-        Here is an example JWT you can paste into the decoder:
-      </p>
-      <pre><code>{`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c`}</code></pre>
-      <p>
-        Decoded, the header reveals <code>{`{"alg":"HS256","typ":"JWT"}`}</code> and the payload contains <code>sub</code>, <code>name</code>, and <code>iat</code> claims.
+        All processing happens in your browser — tokens are never sent to any server. This makes it
+        safe for inspecting tokens in development and staging environments.
       </p>
 
-      <h2>JWT Structure Deep Dive</h2>
+      {/* Section 4 — Decode Without Library */}
+      <h2
+        style={{
+          fontSize: '1.5rem',
+          fontWeight: '700',
+          marginTop: '2rem',
+          marginBottom: '1rem',
+          color: '#1e293b',
+        }}
+      >
+        4. JavaScript — Decode a JWT Without a Library
+      </h2>
       <p>
-        Every JWT is a string of three Base64URL-encoded segments separated by periods (<code>.</code>):
+        Since a JWT is just Base64URL-encoded JSON, you can decode the header and payload with
+        standard built-in functions — no library needed. Base64URL differs from Base64 by using{' '}
+        <code>-</code> instead of <code>+</code> and <code>_</code> instead of <code>/</code>, with
+        no padding.
       </p>
-      <pre><code>{`<Header>.<Payload>.<Signature>`}</code></pre>
-      <p>
-        Each segment serves a distinct purpose:
-      </p>
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '600', marginTop: '1.5rem', color: '#1e293b' }}>
+        Browser (using atob)
+      </h3>
+      <pre
+        style={{
+          background: '#1e293b',
+          color: '#e2e8f0',
+          padding: '1rem',
+          borderRadius: '6px',
+          overflowX: 'auto',
+          fontSize: '0.875rem',
+        }}
+      >
+        <code>{`function decodeJWT(token) {
+  const [headerB64, payloadB64, signature] = token.split('.');
 
-      <h3>1. Header</h3>
-      <p>
-        The header is a JSON object that describes the token type and the signing algorithm. It is Base64URL-encoded to form the first segment.
-      </p>
-      <pre><code className="language-json">{`{
-  "alg": "RS256",
-  "typ": "JWT",
-  "kid": "my-key-id-2026"
-}`}</code></pre>
-      <p>
-        The <code>alg</code> field specifies the algorithm used to sign the token (e.g., HS256, RS256, ES256, EdDSA). The optional <code>kid</code> (Key ID) field helps the verifier select the correct public key from a JWKS (JSON Web Key Set) endpoint, which is essential in key rotation scenarios.
-      </p>
-
-      <h3>2. Payload</h3>
-      <p>
-        The payload contains the <strong>claims</strong> &mdash; statements about the user and additional metadata. Claims are categorized as registered (standardized by RFC 7519), public (collision-resistant names), and private (custom claims agreed upon between parties).
-      </p>
-      <pre><code className="language-json">{`{
-  "sub": "user-42",
-  "iss": "https://auth.example.com",
-  "aud": "https://api.example.com",
-  "exp": 1735689600,
-  "iat": 1735686000,
-  "nbf": 1735686000,
-  "jti": "unique-token-id-abc123",
-  "roles": ["admin", "editor"],
-  "email": "user@example.com"
-}`}</code></pre>
-
-      <h3>3. Signature</h3>
-      <p>
-        The signature ensures the token has not been tampered with. For HMAC-based algorithms, the signature is computed as:
-      </p>
-      <pre><code>{`HMACSHA256(
-  base64UrlEncode(header) + "." + base64UrlEncode(payload),
-  secret
-)`}</code></pre>
-      <p>
-        For RSA or ECDSA algorithms, the private key signs the data and the corresponding public key verifies it. The <strong>JWT decoder</strong> only decodes the first two parts; it does not verify the signature. To verify, you need the secret (symmetric) or public key (asymmetric).
-      </p>
-
-      <h2>Standard JWT Claims Explained</h2>
-      <p>
-        RFC 7519 defines seven registered claim names. Understanding these is critical for implementing JWT-based authentication correctly:
-      </p>
-      <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '16px' }}>
-        <thead>
-          <tr style={{ background: '#f1f5f9' }}>
-            <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Claim</th>
-            <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Full Name</th>
-            <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Type</th>
-            <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>iss</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Issuer</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>String</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Identifies the principal that issued the JWT. Typically a URL like <code>https://auth.example.com</code>.</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>sub</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Subject</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>String</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>The subject of the token, usually a user ID or username.</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>aud</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Audience</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>String or Array</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>The intended recipients. A token with <code>aud: "https://api.example.com"</code> should only be accepted by that API.</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>exp</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Expiration Time</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Number (Unix timestamp)</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>The time after which the token must not be accepted. Always validate this server-side.</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>nbf</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Not Before</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Number (Unix timestamp)</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>The time before which the token must not be accepted. Useful for delayed activation.</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>iat</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Issued At</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Number (Unix timestamp)</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>When the token was created. Useful for determining token age.</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><code>jti</code></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>JWT ID</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>String</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>A unique identifier for the token. Prevents replay attacks when tracked server-side.</td>
-          </tr>
-        </tbody>
-      </table>
-      <p>
-        When you <strong>decode a JWT</strong> with our <Link href={`/${lang}/tools/jwt-decoder`}>online tool</Link>, all of these claims are displayed with human-readable timestamps for <code>exp</code>, <code>nbf</code>, and <code>iat</code>.
-      </p>
-
-      <h2>Decoding JWTs in JavaScript</h2>
-      <p>
-        In browser or Node.js environments, you can decode a JWT without any library using the built-in <code>atob</code> function (or <code>Buffer</code> in Node.js). Remember: decoding is not verification.
-      </p>
-      <h3>Method 1: Using atob (Browser)</h3>
-      <pre><code className="language-javascript">{`function decodeJwt(token) {
-  const parts = token.split('.');
-  if (parts.length !== 3) {
-    throw new Error('Invalid JWT: expected 3 parts');
+  function base64UrlDecode(str) {
+    // Replace URL-safe chars, add padding
+    const base64 = str
+      .replace(/-/g, '+')
+      .replace(/_/g, '/')
+      .padEnd(str.length + (4 - (str.length % 4)) % 4, '=');
+    return JSON.parse(atob(base64));
   }
 
-  // Base64URL to Base64 conversion
-  const base64Url = parts[1];
-  const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+  return {
+    header: base64UrlDecode(headerB64),
+    payload: base64UrlDecode(payloadB64),
+    signature,
+  };
+}
 
-  // Decode and parse
-  const payload = JSON.parse(atob(base64));
-  return payload;
+const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyXzEyMyIsImV4cCI6MTcwMDAwMzYwMH0.abc';
+const decoded = decodeJWT(token);
+console.log(decoded.header);   // { alg: 'HS256', typ: 'JWT' }
+console.log(decoded.payload);  // { sub: 'user_123', exp: 1700003600 }
+
+// Check expiration
+const isExpired = decoded.payload.exp * 1000 < Date.now();
+console.log('Expired:', isExpired);`}</code>
+      </pre>
+
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '600', marginTop: '1.5rem', color: '#1e293b' }}>
+        Node.js (using Buffer)
+      </h3>
+      <pre
+        style={{
+          background: '#1e293b',
+          color: '#e2e8f0',
+          padding: '1rem',
+          borderRadius: '6px',
+          overflowX: 'auto',
+          fontSize: '0.875rem',
+        }}
+      >
+        <code>{`function decodeJWTNode(token) {
+  const [headerB64, payloadB64, signature] = token.split('.');
+
+  function base64UrlDecode(str) {
+    // Buffer.from handles base64url directly in Node.js
+    return JSON.parse(Buffer.from(str, 'base64url').toString('utf8'));
+  }
+
+  return {
+    header: base64UrlDecode(headerB64),
+    payload: base64UrlDecode(payloadB64),
+    signature,
+  };
 }
 
 // Usage
-const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyLTQyIiwiZXhwIjoxNzM1Njg5NjAwfQ.signature';
-const claims = decodeJwt(token);
-console.log(claims.sub); // "user-42"
-console.log(new Date(claims.exp * 1000)); // Expiration date`}</code></pre>
+const { header, payload } = decodeJWTNode(token);
+console.log(header);   // { alg: 'HS256', typ: 'JWT' }
+console.log(payload);  // { sub: 'user_123', iat: 1700000000, exp: 1700003600 }
 
-      <h3>Method 2: Using jose Library (Recommended for Production)</h3>
+// Human-readable expiration
+const expDate = new Date(payload.exp * 1000);
+console.log('Expires:', expDate.toISOString());`}</code>
+      </pre>
+
+      {/* Section 5 — jsonwebtoken */}
+      <h2
+        style={{
+          fontSize: '1.5rem',
+          fontWeight: '700',
+          marginTop: '2rem',
+          marginBottom: '1rem',
+          color: '#1e293b',
+        }}
+      >
+        5. JavaScript — The jsonwebtoken Library
+      </h2>
       <p>
-        The <code>jose</code> library provides type-safe JWT handling with full verification support. Install it with <code>npm install jose</code>:
+        The <strong>jsonwebtoken</strong> package is the most popular JWT library for Node.js with
+        millions of weekly downloads. Install it with <code>npm install jsonwebtoken</code>.
       </p>
-      <pre><code className="language-javascript">{`import { decodeJwt, jwtVerify } from 'jose';
+      <pre
+        style={{
+          background: '#1e293b',
+          color: '#e2e8f0',
+          padding: '1rem',
+          borderRadius: '6px',
+          overflowX: 'auto',
+          fontSize: '0.875rem',
+        }}
+      >
+        <code>{`const jwt = require('jsonwebtoken');
+// ESM: import jwt from 'jsonwebtoken';
 
-// Decode only (no verification)
-const claims = decodeJwt(token);
-console.log(claims);
+const SECRET = process.env.JWT_SECRET; // Never hardcode in production
 
-// Full verification with a secret
-const secret = new TextEncoder().encode('your-256-bit-secret');
+// --- SIGN a token ---
+const payload = {
+  sub: 'user_123',
+  name: 'Alice',
+  role: 'admin',
+};
+
+const token = jwt.sign(payload, SECRET, {
+  algorithm: 'HS256',
+  expiresIn: '1h',      // or 3600 (seconds)
+  issuer: 'https://auth.example.com',
+  audience: 'https://api.example.com',
+});
+
+// --- VERIFY a token (validates signature + claims) ---
+try {
+  const verified = jwt.verify(token, SECRET, {
+    algorithms: ['HS256'],      // Explicitly whitelist algorithms!
+    issuer: 'https://auth.example.com',
+    audience: 'https://api.example.com',
+  });
+  console.log('Valid token. Subject:', verified.sub);
+} catch (err) {
+  if (err.name === 'TokenExpiredError') {
+    console.error('Token has expired at:', err.expiredAt);
+  } else if (err.name === 'JsonWebTokenError') {
+    console.error('Invalid token:', err.message);
+  } else if (err.name === 'NotBeforeError') {
+    console.error('Token not active yet:', err.date);
+  }
+}
+
+// --- DECODE only (no verification — for inspection/logging) ---
+const decoded = jwt.decode(token, { complete: true });
+console.log(decoded.header);  // { alg: 'HS256', typ: 'JWT' }
+console.log(decoded.payload); // { sub: 'user_123', iat: ..., exp: ... }
+// WARNING: jwt.decode() is NOT safe for authorization!`}</code>
+      </pre>
+
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '600', marginTop: '1.5rem', color: '#1e293b' }}>
+        Async Callback Style
+      </h3>
+      <pre
+        style={{
+          background: '#1e293b',
+          color: '#e2e8f0',
+          padding: '1rem',
+          borderRadius: '6px',
+          overflowX: 'auto',
+          fontSize: '0.875rem',
+        }}
+      >
+        <code>{`// Promisified verify
+const verifyAsync = (token, secret, options) =>
+  new Promise((resolve, reject) => {
+    jwt.verify(token, secret, options, (err, decoded) => {
+      if (err) reject(err);
+      else resolve(decoded);
+    });
+  });
+
+// Usage with async/await
+async function authenticate(token) {
+  const payload = await verifyAsync(token, SECRET, {
+    algorithms: ['HS256'],
+  });
+  return payload;
+}`}</code>
+      </pre>
+
+      {/* Section 6 — jose Library */}
+      <h2
+        style={{
+          fontSize: '1.5rem',
+          fontWeight: '700',
+          marginTop: '2rem',
+          marginBottom: '1rem',
+          color: '#1e293b',
+        }}
+      >
+        6. JavaScript — The jose Library (Modern, Edge-Compatible)
+      </h2>
+      <p>
+        The <strong>jose</strong> library is a modern, dependency-free JWT library that runs in
+        Node.js, browser, Deno, Cloudflare Workers, and other edge runtimes. It supports all JWA
+        algorithms and is ideal for RS256/ES256 with JWKS. Install with{' '}
+        <code>npm install jose</code>.
+      </p>
+      <pre
+        style={{
+          background: '#1e293b',
+          color: '#e2e8f0',
+          padding: '1rem',
+          borderRadius: '6px',
+          overflowX: 'auto',
+          fontSize: '0.875rem',
+        }}
+      >
+        <code>{`import { jwtVerify, SignJWT, createRemoteJWKSet, decodeJwt } from 'jose';
+
+// --- SIGN with HS256 ---
+const secret = new TextEncoder().encode(process.env.JWT_SECRET);
+
+const token = await new SignJWT({ sub: 'user_123', role: 'admin' })
+  .setProtectedHeader({ alg: 'HS256' })
+  .setIssuedAt()
+  .setExpirationTime('1h')
+  .setIssuer('https://auth.example.com')
+  .setAudience('https://api.example.com')
+  .sign(secret);
+
+// --- VERIFY with HS256 ---
 const { payload, protectedHeader } = await jwtVerify(token, secret, {
   issuer: 'https://auth.example.com',
   audience: 'https://api.example.com',
 });
-console.log(payload.sub);       // "user-42"
-console.log(protectedHeader.alg); // "HS256"`}</code></pre>
+console.log(payload.sub); // 'user_123'
 
-      <h3>Method 3: Using Node.js Buffer</h3>
-      <pre><code className="language-javascript">{`function decodeJwtNode(token) {
-  const payload = token.split('.')[1];
-  const decoded = Buffer.from(payload, 'base64url').toString('utf8');
-  return JSON.parse(decoded);
+// --- VERIFY with RS256/ES256 using JWKS endpoint ---
+// Ideal for OAuth 2.0 / OpenID Connect
+const JWKS = createRemoteJWKSet(
+  new URL('https://auth.example.com/.well-known/jwks.json')
+);
+
+const { payload: oauthPayload } = await jwtVerify(accessToken, JWKS, {
+  issuer: 'https://auth.example.com',
+  audience: 'your-client-id',
+  algorithms: ['RS256'],
+});
+
+// --- DECODE only (no verification) ---
+const claims = decodeJwt(token);
+console.log(claims.exp); // Expiration timestamp`}</code>
+      </pre>
+
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '600', marginTop: '1.5rem', color: '#1e293b' }}>
+        Next.js Middleware with jose
+      </h3>
+      <pre
+        style={{
+          background: '#1e293b',
+          color: '#e2e8f0',
+          padding: '1rem',
+          borderRadius: '6px',
+          overflowX: 'auto',
+          fontSize: '0.875rem',
+        }}
+      >
+        <code>{`// middleware.ts (runs at the Edge)
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
+import { jwtVerify } from 'jose';
+
+const secret = new TextEncoder().encode(process.env.JWT_SECRET);
+
+export async function middleware(req: NextRequest) {
+  const token = req.cookies.get('access_token')?.value;
+  if (!token) return NextResponse.redirect(new URL('/login', req.url));
+
+  try {
+    const { payload } = await jwtVerify(token, secret);
+    // Attach user info to headers for downstream handlers
+    const headers = new Headers(req.headers);
+    headers.set('x-user-id', payload.sub as string);
+    return NextResponse.next({ request: { headers } });
+  } catch {
+    return NextResponse.redirect(new URL('/login', req.url));
+  }
 }
 
-const claims = decodeJwtNode(token);
-console.log(claims);`}</code></pre>
+export const config = {
+  matcher: ['/dashboard/:path*', '/api/protected/:path*'],
+};`}</code>
+      </pre>
 
-      <h2>Decoding JWTs in Python</h2>
+      {/* Section 7 — Python PyJWT */}
+      <h2
+        style={{
+          fontSize: '1.5rem',
+          fontWeight: '700',
+          marginTop: '2rem',
+          marginBottom: '1rem',
+          color: '#1e293b',
+        }}
+      >
+        7. Python — PyJWT
+      </h2>
       <p>
-        Python developers typically use the <code>PyJWT</code> library (<code>pip install pyjwt</code>) for both decoding and verification:
+        <strong>PyJWT</strong> is the standard JWT library for Python. Install it with{' '}
+        <code>pip install PyJWT</code>. For RS256/ES256, also install{' '}
+        <code>pip install cryptography</code>.
       </p>
-      <pre><code className="language-python">{`import jwt
-import json
-import base64
+      <pre
+        style={{
+          background: '#1e293b',
+          color: '#e2e8f0',
+          padding: '1rem',
+          borderRadius: '6px',
+          overflowX: 'auto',
+          fontSize: '0.875rem',
+        }}
+      >
+        <code>{`import jwt
+import os
+from datetime import datetime, timedelta, timezone
 
-# Method 1: Using PyJWT (recommended)
-# Decode without verification
-claims = jwt.decode(token, options={"verify_signature": False})
-print(claims["sub"])  # "user-42"
-print(claims["exp"])  # 1735689600
+SECRET = os.environ["JWT_SECRET"]
 
-# Decode WITH verification
-claims = jwt.decode(
+# --- ENCODE (sign) a token ---
+payload = {
+    "sub": "user_123",
+    "name": "Alice",
+    "iat": datetime.now(tz=timezone.utc),
+    "exp": datetime.now(tz=timezone.utc) + timedelta(hours=1),
+    "iss": "https://auth.example.com",
+    "aud": "https://api.example.com",
+}
+token = jwt.encode(payload, SECRET, algorithm="HS256")
+print(token)  # "eyJhbGci..."
+
+# --- DECODE and VERIFY ---
+try:
+    decoded = jwt.decode(
+        token,
+        SECRET,
+        algorithms=["HS256"],       # Explicitly whitelist!
+        audience="https://api.example.com",
+        issuer="https://auth.example.com",
+    )
+    print("Subject:", decoded["sub"])
+except jwt.ExpiredSignatureError:
+    print("Token has expired")
+except jwt.InvalidAudienceError:
+    print("Audience mismatch")
+except jwt.InvalidIssuerError:
+    print("Issuer mismatch")
+except jwt.InvalidTokenError as e:
+    print("Invalid token:", e)
+
+# --- DECODE only (no verification) ---
+# options={"verify_signature": False} disables sig check
+unverified = jwt.decode(
     token,
-    key="your-secret-key",
+    options={"verify_signature": False},
     algorithms=["HS256"],
-    audience="https://api.example.com",
-    issuer="https://auth.example.com",
 )
+print("Unverified payload:", unverified)
+# WARNING: Only use this for inspection/debugging!`}</code>
+      </pre>
 
-# Method 2: Manual decoding (no dependencies)
-def decode_jwt_manual(token: str) -> dict:
-    """Decode a JWT payload without verification."""
-    parts = token.split(".")
-    if len(parts) != 3:
-        raise ValueError("Invalid JWT format")
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '600', marginTop: '1.5rem', color: '#1e293b' }}>
+        Python — RS256 with a Public Key
+      </h3>
+      <pre
+        style={{
+          background: '#1e293b',
+          color: '#e2e8f0',
+          padding: '1rem',
+          borderRadius: '6px',
+          overflowX: 'auto',
+          fontSize: '0.875rem',
+        }}
+      >
+        <code>{`from cryptography.hazmat.primitives import serialization
 
-    payload = parts[1]
-    # Add padding if necessary
-    padding = 4 - len(payload) % 4
-    if padding != 4:
-        payload += "=" * padding
+# Load RSA public key (for verification only)
+with open("public_key.pem", "rb") as f:
+    public_key = serialization.load_pem_public_key(f.read())
 
-    decoded = base64.urlsafe_b64decode(payload)
-    return json.loads(decoded)
-
-claims = decode_jwt_manual(token)
-print(claims)`}</code></pre>
-      <p>
-        For RSA-signed tokens, pass the public key instead of a shared secret:
-      </p>
-      <pre><code className="language-python">{`from jwt import PyJWKClient
-
-# Fetch public keys from JWKS endpoint
-jwks_client = PyJWKClient("https://auth.example.com/.well-known/jwks.json")
-signing_key = jwks_client.get_signing_key_from_jwt(token)
-
-claims = jwt.decode(
+decoded = jwt.decode(
     token,
-    key=signing_key.key,
+    public_key,
     algorithms=["RS256"],
     audience="https://api.example.com",
-)`}</code></pre>
-
-      <h2>Decoding JWTs in Go and Java</h2>
-
-      <h3>Go: Using golang-jwt</h3>
-      <p>
-        The <code>golang-jwt/jwt/v5</code> package is the standard Go library for JWT handling:
-      </p>
-      <pre><code className="language-go">{`package main
-
-import (
-    "encoding/base64"
-    "encoding/json"
-    "fmt"
-    "strings"
-
-    "github.com/golang-jwt/jwt/v5"
 )
 
-// Method 1: Decode without verification
-func decodeJWT(tokenString string) (jwt.MapClaims, error) {
-    parts := strings.Split(tokenString, ".")
-    if len(parts) != 3 {
-        return nil, fmt.Errorf("invalid JWT: expected 3 parts")
+# Load RSA private key (for signing)
+with open("private_key.pem", "rb") as f:
+    private_key = serialization.load_pem_private_key(f.read(), password=None)
+
+token = jwt.encode(payload, private_key, algorithm="RS256")`}</code>
+      </pre>
+
+      {/* Section 8 — JWT Claims Reference */}
+      <h2
+        style={{
+          fontSize: '1.5rem',
+          fontWeight: '700',
+          marginTop: '2rem',
+          marginBottom: '1rem',
+          color: '#1e293b',
+        }}
+      >
+        8. JWT Claims Reference
+      </h2>
+      <p>
+        The JWT specification defines a set of <em>registered claim names</em> with well-known
+        meanings. All timestamps are Unix timestamps (seconds since epoch, not milliseconds).
+      </p>
+      <div style={{ overflowX: 'auto' }}>
+        <table
+          style={{
+            width: '100%',
+            borderCollapse: 'collapse',
+            fontSize: '0.9rem',
+            marginBottom: '1rem',
+          }}
+        >
+          <thead>
+            <tr style={{ background: '#f1f5f9' }}>
+              <th style={{ padding: '0.75rem', textAlign: 'left', border: '1px solid #e2e8f0' }}>
+                Claim
+              </th>
+              <th style={{ padding: '0.75rem', textAlign: 'left', border: '1px solid #e2e8f0' }}>
+                Full Name
+              </th>
+              <th style={{ padding: '0.75rem', textAlign: 'left', border: '1px solid #e2e8f0' }}>
+                Description
+              </th>
+              <th style={{ padding: '0.75rem', textAlign: 'left', border: '1px solid #e2e8f0' }}>
+                Type
+              </th>
+              <th style={{ padding: '0.75rem', textAlign: 'left', border: '1px solid #e2e8f0' }}>
+                Required?
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['iss', 'Issuer', 'Who issued the token (URL or identifier)', 'String', 'Recommended'],
+              ['sub', 'Subject', 'Who the token is about (user ID)', 'String', 'Recommended'],
+              ['aud', 'Audience', 'Intended recipient(s) of the token', 'String/Array', 'Recommended'],
+              ['exp', 'Expiration', 'When the token expires (Unix timestamp)', 'Number', 'Strongly recommended'],
+              ['iat', 'Issued At', 'When the token was created', 'Number', 'Recommended'],
+              ['nbf', 'Not Before', 'Token not valid before this time', 'Number', 'Optional'],
+              ['jti', 'JWT ID', 'Unique identifier (prevents replay attacks)', 'String', 'Optional'],
+            ].map(([claim, name, desc, type, req]) => (
+              <tr key={claim}>
+                <td
+                  style={{
+                    padding: '0.65rem',
+                    border: '1px solid #e2e8f0',
+                    fontFamily: 'monospace',
+                    fontWeight: 600,
+                  }}
+                >
+                  {claim}
+                </td>
+                <td style={{ padding: '0.65rem', border: '1px solid #e2e8f0' }}>{name}</td>
+                <td style={{ padding: '0.65rem', border: '1px solid #e2e8f0' }}>{desc}</td>
+                <td
+                  style={{
+                    padding: '0.65rem',
+                    border: '1px solid #e2e8f0',
+                    fontFamily: 'monospace',
+                  }}
+                >
+                  {type}
+                </td>
+                <td style={{ padding: '0.65rem', border: '1px solid #e2e8f0' }}>{req}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '600', marginTop: '1.5rem', color: '#1e293b' }}>
+        Validating Claims Manually (JavaScript)
+      </h3>
+      <pre
+        style={{
+          background: '#1e293b',
+          color: '#e2e8f0',
+          padding: '1rem',
+          borderRadius: '6px',
+          overflowX: 'auto',
+          fontSize: '0.875rem',
+        }}
+      >
+        <code>{`function validateClaims(payload, options = {}) {
+  const now = Math.floor(Date.now() / 1000); // Current Unix timestamp
+
+  // Check expiration (exp)
+  if (payload.exp && payload.exp < now) {
+    throw new Error(\`Token expired at \${new Date(payload.exp * 1000).toISOString()}\`);
+  }
+
+  // Check not-before (nbf)
+  if (payload.nbf && payload.nbf > now) {
+    throw new Error(\`Token not yet valid until \${new Date(payload.nbf * 1000).toISOString()}\`);
+  }
+
+  // Check issuer (iss)
+  if (options.issuer && payload.iss !== options.issuer) {
+    throw new Error(\`Invalid issuer: expected \${options.issuer}, got \${payload.iss}\`);
+  }
+
+  // Check audience (aud)
+  if (options.audience) {
+    const aud = Array.isArray(payload.aud) ? payload.aud : [payload.aud];
+    if (!aud.includes(options.audience)) {
+      throw new Error(\`Invalid audience: \${payload.aud}\`);
     }
+  }
 
-    payload, err := base64.RawURLEncoding.DecodeString(parts[1])
-    if err != nil {
-        return nil, err
-    }
+  return true;
+}`}</code>
+      </pre>
 
-    var claims jwt.MapClaims
-    if err := json.Unmarshal(payload, &claims); err != nil {
-        return nil, err
-    }
-    return claims, nil
-}
-
-// Method 2: Parse and verify
-func verifyJWT(tokenString string, secret []byte) (*jwt.Token, error) {
-    return jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
-        if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
-            return nil, fmt.Errorf("unexpected signing method: %v",
-                token.Header["alg"])
-        }
-        return secret, nil
-    })
-}
-
-func main() {
-    tokenString := "eyJhbGciOiJIUzI1NiJ9..."
-    claims, _ := decodeJWT(tokenString)
-    fmt.Println("Subject:", claims["sub"])
-}`}</code></pre>
-
-      <h3>Java: Using java-jwt and jjwt</h3>
+      {/* Section 9 — Algorithms */}
+      <h2
+        style={{
+          fontSize: '1.5rem',
+          fontWeight: '700',
+          marginTop: '2rem',
+          marginBottom: '1rem',
+          color: '#1e293b',
+        }}
+      >
+        9. JWT Signing Algorithms Compared
+      </h2>
+      <div style={{ overflowX: 'auto' }}>
+        <table
+          style={{
+            width: '100%',
+            borderCollapse: 'collapse',
+            fontSize: '0.9rem',
+            marginBottom: '1rem',
+          }}
+        >
+          <thead>
+            <tr style={{ background: '#f1f5f9' }}>
+              <th style={{ padding: '0.75rem', textAlign: 'left', border: '1px solid #e2e8f0' }}>
+                Algorithm
+              </th>
+              <th style={{ padding: '0.75rem', textAlign: 'left', border: '1px solid #e2e8f0' }}>
+                Type
+              </th>
+              <th style={{ padding: '0.75rem', textAlign: 'left', border: '1px solid #e2e8f0' }}>
+                Key Type
+              </th>
+              <th style={{ padding: '0.75rem', textAlign: 'left', border: '1px solid #e2e8f0' }}>
+                Best For
+              </th>
+              <th style={{ padding: '0.75rem', textAlign: 'left', border: '1px solid #e2e8f0' }}>
+                Security Level
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['HS256', 'Symmetric (HMAC)', 'Shared secret', 'Single service (same signer + verifier)', 'Good (if secret is strong)'],
+              ['HS384', 'Symmetric (HMAC)', 'Shared secret', 'Same as HS256, larger digest', 'Good'],
+              ['HS512', 'Symmetric (HMAC)', 'Shared secret', 'Same as HS256, largest digest', 'Good'],
+              ['RS256', 'Asymmetric (RSA)', 'Private + Public key', 'Microservices, OAuth 2.0, OIDC', 'Strong'],
+              ['RS384', 'Asymmetric (RSA)', 'Private + Public key', 'Higher security RSA', 'Strong'],
+              ['ES256', 'Asymmetric (ECDSA)', 'EC Private + Public key', 'Mobile, IoT, performance-critical', 'Very Strong'],
+              ['EdDSA', 'Asymmetric (Ed25519)', 'Ed25519 key pair', 'Modern systems, small tokens', 'Very Strong'],
+              ['none', 'No signature', 'None', 'NEVER use in production', 'None (dangerous)'],
+            ].map(([alg, type, key, use, level]) => (
+              <tr
+                key={alg}
+                style={{ background: alg === 'none' ? '#fef2f2' : undefined }}
+              >
+                <td
+                  style={{
+                    padding: '0.65rem',
+                    border: '1px solid #e2e8f0',
+                    fontFamily: 'monospace',
+                    fontWeight: 600,
+                    color: alg === 'none' ? '#dc2626' : undefined,
+                  }}
+                >
+                  {alg}
+                </td>
+                <td style={{ padding: '0.65rem', border: '1px solid #e2e8f0' }}>{type}</td>
+                <td style={{ padding: '0.65rem', border: '1px solid #e2e8f0' }}>{key}</td>
+                <td style={{ padding: '0.65rem', border: '1px solid #e2e8f0' }}>{use}</td>
+                <td
+                  style={{
+                    padding: '0.65rem',
+                    border: '1px solid #e2e8f0',
+                    color: alg === 'none' ? '#dc2626' : undefined,
+                  }}
+                >
+                  {level}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
       <p>
-        Java has two popular JWT libraries. Here are examples for both:
+        <strong>When to use HS256:</strong> When both the issuer and verifier are the same service
+        and you can securely share a secret. Simple, fast, no key infrastructure needed.
       </p>
-      <pre><code className="language-java">{`// Using auth0/java-jwt
-import com.auth0.jwt.JWT;
-import com.auth0.jwt.interfaces.DecodedJWT;
-
-DecodedJWT decoded = JWT.decode(tokenString);
-System.out.println("Subject: " + decoded.getSubject());
-System.out.println("Issuer: " + decoded.getIssuer());
-System.out.println("Expires: " + decoded.getExpiresAt());
-System.out.println("Algorithm: " + decoded.getAlgorithm());
-
-// Access custom claims
-String role = decoded.getClaim("role").asString();
-List<String> scopes = decoded.getClaim("scopes").asList(String.class);
-
-// Using io.jsonwebtoken/jjwt (verification included)
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.Claims;
-
-Claims claims = Jwts.parserBuilder()
-    .setSigningKey(secretKey)
-    .requireIssuer("https://auth.example.com")
-    .requireAudience("https://api.example.com")
-    .build()
-    .parseClaimsJws(tokenString)
-    .getBody();
-
-System.out.println("Subject: " + claims.getSubject());
-System.out.println("Expiration: " + claims.getExpiration());`}</code></pre>
-
-      <h2>JWT Signing Algorithms Compared</h2>
       <p>
-        Choosing the right signing algorithm is one of the most important JWT decisions. The algorithm determines both security and architecture:
+        <strong>When to use RS256/ES256:</strong> In distributed systems where multiple services need
+        to verify tokens but only one service should sign them. The auth server holds the private key;
+        all other services use the public key (often fetched from a JWKS endpoint).
       </p>
-      <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '16px' }}>
-        <thead>
-          <tr style={{ background: '#f1f5f9' }}>
-            <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Algorithm</th>
-            <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Type</th>
-            <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Key Size</th>
-            <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Best For</th>
-            <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Performance</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><strong>HS256</strong></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Symmetric (HMAC)</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>256-bit secret</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Single-service apps where signer and verifier share the same secret</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Fastest</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><strong>RS256</strong></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Asymmetric (RSA)</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>2048+ bit key pair</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Distributed systems, JWKS, third-party verification</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Slower signing, fast verification</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><strong>ES256</strong></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Asymmetric (ECDSA)</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>P-256 curve</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Mobile apps, smaller token sizes, modern systems</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Fast, compact signatures</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><strong>EdDSA</strong></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Asymmetric (Ed25519)</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Ed25519 curve</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Highest security, new projects, post-quantum readiness</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Fastest asymmetric</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}><strong>PS256</strong></td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Asymmetric (RSA-PSS)</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>2048+ bit key pair</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Financial systems, compliance-heavy environments</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Similar to RS256</td>
-          </tr>
-        </tbody>
-      </table>
-      <p>
-        <strong>Recommendation:</strong> For new projects, use <strong>ES256</strong> or <strong>EdDSA</strong>. They provide strong security with compact signatures and fast performance. Use RS256 if you need broad library compatibility. Avoid HS256 in distributed systems because sharing secrets across services increases attack surface.
-      </p>
-
-      <h2>JWT Security Best Practices</h2>
-      <p>
-        JWTs are powerful but can introduce serious vulnerabilities if misused. Follow these best practices to keep your authentication secure:
-      </p>
-      <ol>
-        <li>
-          <strong>Always validate the signature server-side.</strong> Never trust a JWT just because it decodes successfully. Decoding reveals the claims, but verification confirms the token was issued by your trusted authority and has not been tampered with.
-        </li>
-        <li>
-          <strong>Check the <code>exp</code> claim on every request.</strong> Tokens should have short lifetimes (15 minutes for access tokens, hours to days for refresh tokens). Reject expired tokens immediately.
-        </li>
-        <li>
-          <strong>Validate <code>iss</code> and <code>aud</code> claims.</strong> Ensure the token was issued by your auth server and is intended for your API. This prevents tokens issued for one service from being used on another.
-        </li>
-        <li>
-          <strong>Never put sensitive data in the payload.</strong> The payload is only Base64URL-encoded, not encrypted. Anyone who intercepts the token can decode it. Never include passwords, credit card numbers, or PII beyond what is necessary.
-        </li>
-        <li>
-          <strong>Use HTTPS everywhere.</strong> JWTs transmitted over unencrypted connections can be intercepted. Always use TLS/HTTPS for API calls carrying bearer tokens.
-        </li>
-        <li>
-          <strong>Implement token revocation.</strong> Since JWTs are stateless, you cannot invalidate them by default. Maintain a server-side blocklist for critical scenarios (user logout, password change, account compromise).
-        </li>
-        <li>
-          <strong>Rotate signing keys regularly.</strong> Use the <code>kid</code> header claim with a JWKS endpoint to support key rotation without downtime.
-        </li>
-        <li>
-          <strong>Set the <code>alg</code> allowlist on the verifier.</strong> Never allow <code>{'"alg":"none"'}</code>. Explicitly specify which algorithms your verifier accepts to prevent algorithm confusion attacks.
-        </li>
-        <li>
-          <strong>Store tokens securely on the client.</strong> In browsers, use HttpOnly, Secure, SameSite cookies rather than localStorage. In mobile apps, use the platform keychain or secure storage.
-        </li>
-        <li>
-          <strong>Use refresh token rotation.</strong> Issue a new refresh token with each access token refresh and invalidate the old one. This limits the damage if a refresh token is compromised.
-        </li>
-      </ol>
-
-      <h2>Common JWT Mistakes and How to Fix Them</h2>
-      <p>
-        These are the most frequent JWT-related bugs and security issues developers encounter:
-      </p>
-
-      <h3>Mistake 1: Not Validating the Signature</h3>
-      <p>
-        Decoding a JWT is not the same as verifying it. If your server only decodes the token and reads the claims without verifying the signature, an attacker can forge tokens with any claims they want.
-      </p>
-      <pre><code className="language-javascript">{`// WRONG: Only decoding, not verifying
-const claims = JSON.parse(atob(token.split('.')[1]));
-if (claims.role === 'admin') { /* grant access */ }
-
-// CORRECT: Verify signature first
-const { payload } = await jwtVerify(token, publicKey, {
-  algorithms: ['RS256'],
-  issuer: 'https://auth.example.com',
-});
-if (payload.role === 'admin') { /* grant access */ }`}</code></pre>
-
-      <h3>Mistake 2: Accepting Expired Tokens</h3>
-      <p>
-        Always check the <code>exp</code> claim. Most JWT libraries do this by default, but custom implementations often skip it.
-      </p>
-      <pre><code className="language-python">{`# WRONG: Ignoring expiration
-claims = jwt.decode(token, options={"verify_exp": False})
-
-# CORRECT: Let the library reject expired tokens (default behavior)
-claims = jwt.decode(token, key=secret, algorithms=["HS256"])`}</code></pre>
-
-      <h3>Mistake 3: Using alg: none</h3>
-      <p>
-        The <code>none</code> algorithm means the token has no signature. If your verifier accepts <code>none</code>, anyone can create valid tokens. Always specify an explicit algorithm allowlist.
-      </p>
-
-      <h3>Mistake 4: Storing Tokens in localStorage</h3>
-      <p>
-        Tokens in localStorage are accessible to any JavaScript running on the page, making them vulnerable to XSS attacks. Use HttpOnly cookies instead, which cannot be accessed by JavaScript.
-      </p>
-
-      <h3>Mistake 5: Token Lifetime Too Long</h3>
-      <p>
-        Tokens with long lifetimes (days or weeks) give attackers a large window to exploit stolen tokens. Use short-lived access tokens (5-15 minutes) with refresh tokens for long sessions.
-      </p>
-
-      <h3>Mistake 6: Confusing Encoding with Encryption</h3>
-      <p>
-        Base64URL encoding is <strong>not</strong> encryption. Anyone can decode a JWT payload. If you need encrypted tokens, use JWE (JSON Web Encryption, RFC 7516) instead of JWS (JSON Web Signature).
-      </p>
-
-      <h2>JWT vs Session Tokens vs API Keys</h2>
-      <p>
-        Understanding when to use JWTs versus other authentication mechanisms helps you make the right architectural decision:
-      </p>
-      <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '16px' }}>
-        <thead>
-          <tr style={{ background: '#f1f5f9' }}>
-            <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Feature</th>
-            <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>JWT</th>
-            <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>Session Token</th>
-            <th style={{ border: '1px solid #e2e8f0', padding: '8px 12px', textAlign: 'left' }}>API Key</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>State</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Stateless (self-contained)</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Stateful (server-side store)</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Stateless (lookup required)</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Revocation</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Requires blocklist or short TTL</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Instant (delete from store)</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Instant (delete from database)</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Scalability</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Excellent (no shared state)</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Requires shared session store</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Good (simple DB lookup)</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Payload</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Contains claims (user data)</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Opaque ID only</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Opaque key only</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Best For</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>SPAs, microservices, SSO</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Traditional web apps</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Third-party API access</td>
-          </tr>
-          <tr>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Size</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Larger (claims included)</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Small (just an ID)</td>
-            <td style={{ border: '1px solid #e2e8f0', padding: '8px 12px' }}>Small (just a key)</td>
-          </tr>
-        </tbody>
-      </table>
-      <p>
-        <strong>Use JWTs when</strong> you need stateless authentication across multiple services (microservices, SPAs with separate API backends, SSO). <strong>Use session tokens when</strong> you need instant revocation and your app is a traditional server-rendered website. <strong>Use API keys when</strong> you need to identify third-party applications rather than individual users.
-      </p>
-
-      <h2>Advanced: Creating JWTs with Different Algorithms</h2>
-      <p>
-        Here is a quick reference for creating JWTs in Node.js with different algorithms using the <code>jose</code> library:
-      </p>
-      <pre><code className="language-javascript">{`import { SignJWT, importPKCS8, importSPKI } from 'jose';
-
-// HS256 (symmetric)
-const secret = new TextEncoder().encode('my-256-bit-secret-key-here-min32');
-const hs256Token = await new SignJWT({ sub: 'user-42', role: 'admin' })
-  .setProtectedHeader({ alg: 'HS256' })
-  .setIssuedAt()
-  .setIssuer('https://auth.example.com')
-  .setAudience('https://api.example.com')
-  .setExpirationTime('15m')
-  .sign(secret);
-
-// RS256 (asymmetric - RSA)
-const privateKey = await importPKCS8(rsaPrivateKeyPem, 'RS256');
-const rs256Token = await new SignJWT({ sub: 'user-42' })
-  .setProtectedHeader({ alg: 'RS256', kid: 'rsa-key-2026' })
-  .setIssuedAt()
-  .setExpirationTime('15m')
-  .sign(privateKey);
-
-// ES256 (ECDSA P-256)
-const ecPrivateKey = await importPKCS8(ecPrivateKeyPem, 'ES256');
-const es256Token = await new SignJWT({ sub: 'user-42' })
-  .setProtectedHeader({ alg: 'ES256', kid: 'ec-key-2026' })
-  .setIssuedAt()
-  .setExpirationTime('15m')
-  .sign(ecPrivateKey);`}</code></pre>
-
-      <h2>Debugging JWT Issues: A Troubleshooting Checklist</h2>
-      <p>
-        When authentication fails with JWTs, follow this systematic checklist:
-      </p>
-      <ol>
-        <li><strong>Decode the token</strong> using our <Link href={`/${lang}/tools/jwt-decoder`}>JWT decoder</Link> to inspect the header and payload.</li>
-        <li><strong>Check <code>exp</code></strong>: Is the token expired? Compare the <code>exp</code> Unix timestamp with the current time.</li>
-        <li><strong>Check <code>nbf</code></strong>: Is the token being used before its <code>nbf</code> (not-before) time?</li>
-        <li><strong>Verify <code>iss</code></strong>: Does the issuer match what your API expects?</li>
-        <li><strong>Verify <code>aud</code></strong>: Does the audience match your API identifier?</li>
-        <li><strong>Check <code>alg</code></strong>: Does the algorithm in the header match what your verifier expects?</li>
-        <li><strong>Check for clock skew</strong>: Are server clocks synchronized? A few seconds of drift can cause <code>exp</code>/<code>nbf</code> validation failures. Most libraries support a clock tolerance setting.</li>
-        <li><strong>Verify key matching</strong>: For asymmetric algorithms, ensure the <code>kid</code> in the header matches a key in your JWKS endpoint.</li>
-        <li><strong>Check token transport</strong>: Is the token being sent in the <code>Authorization: Bearer</code> header? Is it URL-encoded correctly?</li>
-        <li><strong>Inspect the full error message</strong>: Library-specific error messages usually indicate exactly which validation step failed.</li>
-      </ol>
-
-      <h2>Frequently Asked Questions</h2>
-
-      <div itemScope itemType="https://schema.org/FAQPage">
-        <div itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
-          <h3 itemProp="name">What is a JWT decoder?</h3>
-          <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-            <p itemProp="text">
-              A JWT decoder is a tool that parses the Base64URL-encoded header and payload of a JSON Web Token, displaying the claims in a human-readable format. Decoding does not verify the cryptographic signature. It only reveals the token contents. You can <Link href={`/${lang}/tools/jwt-decoder`}>decode JWTs online here</Link>.
-            </p>
-          </div>
-        </div>
-
-        <div itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
-          <h3 itemProp="name">Is it safe to decode a JWT online?</h3>
-          <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-            <p itemProp="text">
-              Yes, if the tool runs entirely in your browser (client-side). Our JWT decoder processes tokens locally using JavaScript without sending any data to a server. However, avoid pasting production tokens into server-side decoders because the token data would be transmitted over the network.
-            </p>
-          </div>
-        </div>
-
-        <div itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
-          <h3 itemProp="name">What is the difference between decoding and verifying a JWT?</h3>
-          <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-            <p itemProp="text">
-              Decoding extracts the header and payload from the Base64URL-encoded segments. Anyone can decode a JWT. Verifying checks the cryptographic signature using the signing key (shared secret for HMAC, or public key for RSA/ECDSA). A verified JWT proves the token was created by a trusted issuer and has not been modified.
-            </p>
-          </div>
-        </div>
-
-        <div itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
-          <h3 itemProp="name">Can I decode a JWT without the secret key?</h3>
-          <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-            <p itemProp="text">
-              Yes. The header and payload of a JWT are only Base64URL-encoded, not encrypted. You can decode them without any key. The secret or private key is only needed to verify the signature or to create new tokens. This is why you should never store sensitive data like passwords in JWT payloads.
-            </p>
-          </div>
-        </div>
-
-        <div itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
-          <h3 itemProp="name">Why does my JWT have three parts separated by dots?</h3>
-          <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-            <p itemProp="text">
-              A JWT consists of three Base64URL-encoded segments: the header (algorithm and type), the payload (claims), and the signature. They are concatenated with period (dot) separators. This format is defined by RFC 7519 and enables compact, URL-safe token transmission.
-            </p>
-          </div>
-        </div>
-
-        <div itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
-          <h3 itemProp="name">Which JWT signing algorithm should I use?</h3>
-          <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-            <p itemProp="text">
-              For new projects, use ES256 (ECDSA with P-256) or EdDSA (Ed25519) for the best balance of security and performance. Use RS256 when you need maximum library compatibility. Only use HS256 when the same service both signs and verifies tokens. Never use the "none" algorithm in production.
-            </p>
-          </div>
-        </div>
-
-        <div itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
-          <h3 itemProp="name">How long should a JWT access token last?</h3>
-          <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-            <p itemProp="text">
-              Access tokens should have short lifetimes, typically 5 to 15 minutes. This limits the window of exposure if a token is compromised. Use refresh tokens (with longer lifetimes of hours to days) to obtain new access tokens without re-authentication. Implement refresh token rotation for additional security.
-            </p>
-          </div>
-        </div>
-
-        <div itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
-          <h3 itemProp="name">How do I check if a JWT is expired?</h3>
-          <div itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer">
-            <p itemProp="text">
-              Decode the JWT and look at the <code>exp</code> (expiration time) claim, which is a Unix timestamp in seconds. Compare it to the current time: if <code>exp</code> is less than <code>Date.now() / 1000</code>, the token is expired. Our <Link href={`/${lang}/tools/jwt-decoder`}>online decoder</Link> shows expiration status automatically.
-            </p>
-          </div>
-        </div>
+      <div
+        style={{
+          background: '#fef2f2',
+          border: '1px solid #fecaca',
+          borderRadius: '6px',
+          padding: '0.75rem 1rem',
+          margin: '1rem 0',
+        }}
+      >
+        <strong style={{ color: '#dc2626' }}>The alg: none Attack:</strong> Some vulnerable JWT
+        libraries accept tokens with <code>{"alg: 'none'"}</code> and no signature, treating them as
+        valid. Always explicitly whitelist allowed algorithms and reject <code>none</code>. Never
+        accept the algorithm from the token header without cross-checking it against your expected
+        algorithm.
       </div>
 
-      <h2>Conclusion</h2>
-      <p>
-        JWTs are a fundamental building block of modern web authentication and authorization. Whether you are debugging an authentication flow, auditing token claims, or learning how JWTs work, a reliable <strong>JWT decoder</strong> is an essential tool in every developer's toolkit.
-      </p>
-      <p>
-        Key points to remember: always verify signatures server-side, keep access tokens short-lived, never store sensitive data in payloads, validate <code>iss</code>/<code>aud</code>/<code>exp</code> claims, and choose asymmetric algorithms (ES256, EdDSA, RS256) for distributed systems. Use our <Link href={`/${lang}/tools/jwt-decoder`}>free JWT decoder online</Link> to inspect your tokens instantly, and bookmark this guide for reference when implementing JWT-based authentication.
-      </p>
-    </>
+      {/* Section 10 — Security Best Practices */}
+      <h2
+        style={{
+          fontSize: '1.5rem',
+          fontWeight: '700',
+          marginTop: '2rem',
+          marginBottom: '1rem',
+          color: '#1e293b',
+        }}
+      >
+        10. JWT Security Best Practices
+      </h2>
+      <ul>
+        <li>
+          <strong>Always verify the signature</strong> — never use <code>decode()</code> for
+          authorization; always use <code>verify()</code>.
+        </li>
+        <li>
+          <strong>Validate critical claims</strong> — always check <code>exp</code>, <code>iss</code>
+          , and <code>aud</code> during verification.
+        </li>
+        <li>
+          <strong>Whitelist algorithms</strong> — explicitly specify allowed algorithms in your
+          library, e.g., <code>algorithms: [&apos;HS256&apos;]</code>. Never accept{' '}
+          <code>none</code>.
+        </li>
+        <li>
+          <strong>Use HTTPS always</strong> — JWTs sent over HTTP can be intercepted. Always use TLS.
+        </li>
+        <li>
+          <strong>Short-lived access tokens</strong> — keep access token expiry to 15 minutes or 1
+          hour. Use refresh tokens for session persistence.
+        </li>
+        <li>
+          <strong>Rotate refresh tokens</strong> — issue a new refresh token on every use (refresh
+          token rotation) and invalidate the old one.
+        </li>
+        <li>
+          <strong>Store tokens securely</strong> — prefer httpOnly, Secure, SameSite=Strict cookies
+          over localStorage to prevent XSS access.
+        </li>
+        <li>
+          <strong>No sensitive data in payload</strong> — the payload is only Base64URL-encoded, not
+          encrypted. Anyone who obtains the token can decode it. Never put passwords, SSNs, or PII.
+        </li>
+        <li>
+          <strong>Use strong secrets</strong> — for HS256, use at least 256 bits (32 bytes) of random
+          entropy. Never use a dictionary word or short string.
+        </li>
+        <li>
+          <strong>Implement token revocation</strong> — maintain a blocklist (Redis with TTL) for
+          cases where you need to invalidate tokens before expiry (logout, password change).
+        </li>
+        <li>
+          <strong>Clock skew tolerance</strong> — allow a small clock skew (up to 30 seconds) for{' '}
+          <code>nbf</code> and <code>exp</code> validation when services have slightly different
+          system clocks.
+        </li>
+      </ul>
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '600', marginTop: '1.5rem', color: '#1e293b' }}>
+        localStorage vs httpOnly Cookies — Tradeoffs
+      </h3>
+      <div style={{ overflowX: 'auto' }}>
+        <table
+          style={{
+            width: '100%',
+            borderCollapse: 'collapse',
+            fontSize: '0.9rem',
+            marginBottom: '1rem',
+          }}
+        >
+          <thead>
+            <tr style={{ background: '#f1f5f9' }}>
+              <th style={{ padding: '0.75rem', textAlign: 'left', border: '1px solid #e2e8f0' }}>
+                Aspect
+              </th>
+              <th style={{ padding: '0.75rem', textAlign: 'left', border: '1px solid #e2e8f0' }}>
+                localStorage
+              </th>
+              <th style={{ padding: '0.75rem', textAlign: 'left', border: '1px solid #e2e8f0' }}>
+                httpOnly Cookie
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['XSS protection', 'Vulnerable (JS can read it)', 'Protected (JS cannot read it)'],
+              ['CSRF protection', 'Immune (not auto-sent)', 'Requires CSRF token or SameSite'],
+              ['CORS handling', 'Easy', 'Requires credentials: include'],
+              ['Persistence', 'Until cleared', 'Controlled by Max-Age/Expires'],
+              ['Mobile app use', 'Easy', 'Requires custom handling'],
+              ['Recommendation', 'Avoid for sensitive tokens', 'Preferred for web apps'],
+            ].map(([aspect, ls, cookie]) => (
+              <tr key={aspect}>
+                <td style={{ padding: '0.65rem', border: '1px solid #e2e8f0', fontWeight: 600 }}>
+                  {aspect}
+                </td>
+                <td style={{ padding: '0.65rem', border: '1px solid #e2e8f0' }}>{ls}</td>
+                <td style={{ padding: '0.65rem', border: '1px solid #e2e8f0' }}>{cookie}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Section 11 — Debugging Common Errors */}
+      <h2
+        style={{
+          fontSize: '1.5rem',
+          fontWeight: '700',
+          marginTop: '2rem',
+          marginBottom: '1rem',
+          color: '#1e293b',
+        }}
+      >
+        11. Debugging Common JWT Errors
+      </h2>
+      <div style={{ overflowX: 'auto' }}>
+        <table
+          style={{
+            width: '100%',
+            borderCollapse: 'collapse',
+            fontSize: '0.9rem',
+            marginBottom: '1rem',
+          }}
+        >
+          <thead>
+            <tr style={{ background: '#f1f5f9' }}>
+              <th style={{ padding: '0.75rem', textAlign: 'left', border: '1px solid #e2e8f0' }}>
+                Error
+              </th>
+              <th style={{ padding: '0.75rem', textAlign: 'left', border: '1px solid #e2e8f0' }}>
+                Cause
+              </th>
+              <th style={{ padding: '0.75rem', textAlign: 'left', border: '1px solid #e2e8f0' }}>
+                Fix
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              [
+                'TokenExpiredError',
+                'exp claim is in the past',
+                'Refresh the token using a refresh token or re-authenticate',
+              ],
+              [
+                'JsonWebTokenError: invalid signature',
+                'Token tampered with, or wrong key used',
+                'Check that the same key used to sign is used to verify',
+              ],
+              [
+                'JsonWebTokenError: invalid algorithm',
+                'alg in token header does not match expected',
+                'Explicitly set algorithms whitelist; check token header',
+              ],
+              [
+                'NotBeforeError',
+                'nbf claim is in the future',
+                'Allow clock skew tolerance (e.g., clockTolerance: 30)',
+              ],
+              [
+                'Invalid audience',
+                'aud claim does not match expected value',
+                'Ensure aud in token matches the audience you specify during verify',
+              ],
+              [
+                'Malformed JWT',
+                'Token does not have 3 dot-separated parts',
+                'Check token is not truncated; ensure Bearer prefix is stripped',
+              ],
+              [
+                'Invalid issuer',
+                'iss claim does not match expected issuer',
+                'Check issuer URL matches exactly (trailing slash matters)',
+              ],
+              [
+                'Clock skew',
+                'Server clocks out of sync causing exp/nbf issues',
+                'Sync clocks with NTP; add clockTolerance in verification options',
+              ],
+            ].map(([error, cause, fix]) => (
+              <tr key={error}>
+                <td
+                  style={{
+                    padding: '0.65rem',
+                    border: '1px solid #e2e8f0',
+                    fontFamily: 'monospace',
+                    fontSize: '0.8rem',
+                    color: '#dc2626',
+                  }}
+                >
+                  {error}
+                </td>
+                <td style={{ padding: '0.65rem', border: '1px solid #e2e8f0' }}>{cause}</td>
+                <td style={{ padding: '0.65rem', border: '1px solid #e2e8f0' }}>{fix}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '600', marginTop: '1.5rem', color: '#1e293b' }}>
+        Debug Checklist
+      </h3>
+      <pre
+        style={{
+          background: '#1e293b',
+          color: '#e2e8f0',
+          padding: '1rem',
+          borderRadius: '6px',
+          overflowX: 'auto',
+          fontSize: '0.875rem',
+        }}
+      >
+        <code>{`// 1. Decode the token first to inspect claims
+const decoded = jwt.decode(token, { complete: true });
+console.log('Header:', decoded?.header);
+console.log('Payload:', decoded?.payload);
+
+// 2. Check expiration manually
+const now = Math.floor(Date.now() / 1000);
+console.log('Current time:', now);
+console.log('Token exp:', decoded?.payload?.exp);
+console.log('Expired:', decoded?.payload?.exp < now);
+
+// 3. Check issuer and audience
+console.log('iss:', decoded?.payload?.iss);
+console.log('aud:', decoded?.payload?.aud);
+
+// 4. Verify with explicit options to get specific errors
+try {
+  jwt.verify(token, SECRET, {
+    algorithms: ['HS256'],
+    // Comment these out temporarily to isolate issues:
+    // issuer: 'https://auth.example.com',
+    // audience: 'https://api.example.com',
+  });
+} catch (err) {
+  console.error('Verification error name:', err.name);
+  console.error('Verification error message:', err.message);
+}`}</code>
+      </pre>
+
+      {/* Section 12 — Real-World Patterns */}
+      <h2
+        style={{
+          fontSize: '1.5rem',
+          fontWeight: '700',
+          marginTop: '2rem',
+          marginBottom: '1rem',
+          color: '#1e293b',
+        }}
+      >
+        12. Real-World JWT Patterns
+      </h2>
+
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '600', marginTop: '1.5rem', color: '#1e293b' }}>
+        Express.js Auth Middleware
+      </h3>
+      <pre
+        style={{
+          background: '#1e293b',
+          color: '#e2e8f0',
+          padding: '1rem',
+          borderRadius: '6px',
+          overflowX: 'auto',
+          fontSize: '0.875rem',
+        }}
+      >
+        <code>{`// middleware/auth.js
+const jwt = require('jsonwebtoken');
+
+function authenticate(req, res, next) {
+  const authHeader = req.headers.authorization;
+  if (!authHeader?.startsWith('Bearer ')) {
+    return res.status(401).json({ error: 'Missing or invalid Authorization header' });
+  }
+
+  const token = authHeader.slice(7); // Remove "Bearer " prefix
+  try {
+    const payload = jwt.verify(token, process.env.JWT_SECRET, {
+      algorithms: ['HS256'],
+      issuer: process.env.JWT_ISSUER,
+      audience: process.env.JWT_AUDIENCE,
+    });
+    req.user = payload;
+    next();
+  } catch (err) {
+    const status = err.name === 'TokenExpiredError' ? 401 : 403;
+    return res.status(status).json({ error: err.message });
+  }
+}
+
+// Role-based access control
+function authorize(...roles) {
+  return (req, res, next) => {
+    if (!roles.includes(req.user.role)) {
+      return res.status(403).json({ error: 'Insufficient permissions' });
+    }
+    next();
+  };
+}
+
+// Usage
+app.get('/admin', authenticate, authorize('admin'), (req, res) => {
+  res.json({ message: 'Admin area', user: req.user.sub });
+});`}</code>
+      </pre>
+
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '600', marginTop: '1.5rem', color: '#1e293b' }}>
+        Refresh Token Rotation Pattern
+      </h3>
+      <pre
+        style={{
+          background: '#1e293b',
+          color: '#e2e8f0',
+          padding: '1rem',
+          borderRadius: '6px',
+          overflowX: 'auto',
+          fontSize: '0.875rem',
+        }}
+      >
+        <code>{`// POST /auth/refresh
+async function refreshTokens(req, res) {
+  const { refreshToken } = req.cookies; // httpOnly cookie
+  if (!refreshToken) return res.status(401).json({ error: 'No refresh token' });
+
+  // 1. Verify the refresh token
+  let payload;
+  try {
+    payload = jwt.verify(refreshToken, process.env.REFRESH_SECRET, {
+      algorithms: ['HS256'],
+    });
+  } catch {
+    return res.status(401).json({ error: 'Invalid refresh token' });
+  }
+
+  // 2. Check it exists in the database (rotation tracking)
+  const stored = await db.refreshTokens.findOne({ token: refreshToken, userId: payload.sub });
+  if (!stored) return res.status(401).json({ error: 'Refresh token reuse detected' });
+
+  // 3. Delete the used refresh token (invalidate)
+  await db.refreshTokens.deleteOne({ token: refreshToken });
+
+  // 4. Issue new token pair
+  const newAccessToken = jwt.sign(
+    { sub: payload.sub, role: payload.role },
+    process.env.JWT_SECRET,
+    { expiresIn: '15m', algorithms: ['HS256'] }
+  );
+  const newRefreshToken = jwt.sign(
+    { sub: payload.sub },
+    process.env.REFRESH_SECRET,
+    { expiresIn: '7d' }
+  );
+
+  // 5. Store new refresh token
+  await db.refreshTokens.insertOne({ token: newRefreshToken, userId: payload.sub });
+
+  // 6. Set httpOnly cookie + return access token
+  res.cookie('refreshToken', newRefreshToken, {
+    httpOnly: true,
+    secure: true,
+    sameSite: 'strict',
+    maxAge: 7 * 24 * 60 * 60 * 1000,
+  });
+  res.json({ accessToken: newAccessToken });
+}`}</code>
+      </pre>
+
+      <h3 style={{ fontSize: '1.15rem', fontWeight: '600', marginTop: '1.5rem', color: '#1e293b' }}>
+        JWKS Endpoint for Microservices (jose)
+      </h3>
+      <pre
+        style={{
+          background: '#1e293b',
+          color: '#e2e8f0',
+          padding: '1rem',
+          borderRadius: '6px',
+          overflowX: 'auto',
+          fontSize: '0.875rem',
+        }}
+      >
+        <code>{`// In any microservice — verify tokens issued by auth service
+import { createRemoteJWKSet, jwtVerify } from 'jose';
+
+// Fetch public keys from auth server's JWKS endpoint
+// Keys are cached automatically by jose
+const JWKS = createRemoteJWKSet(
+  new URL(\`\${process.env.AUTH_SERVER}/.well-known/jwks.json\`)
+);
+
+async function verifyToken(token) {
+  const { payload } = await jwtVerify(token, JWKS, {
+    issuer: process.env.AUTH_SERVER,
+    audience: process.env.SERVICE_NAME,
+    algorithms: ['RS256'],
+  });
+  return payload;
+}
+
+// Each microservice can verify tokens independently
+// without sharing any secret — only the auth server has the private key`}</code>
+      </pre>
+
+      {/* Key Takeaways */}
+      <div
+        style={{
+          background: '#f8fafc',
+          border: '1px solid #e2e8f0',
+          borderRadius: '8px',
+          padding: '1rem',
+          marginTop: '2rem',
+        }}
+      >
+        <p style={{ fontWeight: 700, marginBottom: '0.75rem', color: '#1e293b' }}>
+          Key Takeaways
+        </p>
+        <ul style={{ margin: 0, paddingLeft: '1.25rem' }}>
+          <li>
+            A JWT has three Base64URL-encoded parts: <strong>Header</strong>,{' '}
+            <strong>Payload</strong>, and <strong>Signature</strong>, joined by dots.
+          </li>
+          <li>
+            <strong>Decoding</strong> reads the claims without verifying authenticity.{' '}
+            <strong>Verifying</strong> validates the cryptographic signature — always do this for
+            authorization.
+          </li>
+          <li>
+            Use the{' '}
+            <a href="/en/tools/jwt-decoder" style={{ color: '#0369a1' }}>
+              DevToolBox JWT Decoder
+            </a>{' '}
+            to inspect tokens instantly — all client-side, nothing sent to servers.
+          </li>
+          <li>
+            In JavaScript, use <strong>jsonwebtoken</strong> for Node.js or <strong>jose</strong>{' '}
+            for edge runtimes. In Python, use <strong>PyJWT</strong>.
+          </li>
+          <li>
+            Standard claims: <code>iss</code>, <code>sub</code>, <code>aud</code>, <code>exp</code>,{' '}
+            <code>iat</code>, <code>nbf</code>, <code>jti</code> — always validate them.
+          </li>
+          <li>
+            Use <strong>HS256</strong> for single-service auth, <strong>RS256/ES256</strong> for
+            distributed/microservice architectures.
+          </li>
+          <li>
+            Never trust <code>alg: none</code>. Always whitelist algorithms explicitly. Never put
+            sensitive data in the payload.
+          </li>
+          <li>
+            Store JWTs in <strong>httpOnly cookies</strong> (not localStorage) to protect against XSS
+            attacks.
+          </li>
+          <li>
+            Use short-lived access tokens (15m–1h) with <strong>refresh token rotation</strong> for
+            long-lived sessions.
+          </li>
+        </ul>
+      </div>
+    </article>
   );
 }
