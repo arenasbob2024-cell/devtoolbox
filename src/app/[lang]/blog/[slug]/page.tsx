@@ -355,6 +355,8 @@ import PostgresqlGuide from '@/data/posts/postgresql-guide';
 import GraphqlGuide from '@/data/posts/graphql-guide';
 import KubernetesGuide from '@/data/posts/kubernetes-guide';
 import NextjsPerformanceGuide from '@/data/posts/nextjs-performance-guide';
+import TerraformGuide from '@/data/posts/terraform-guide';
+import PythonAsyncGuide from '@/data/posts/python-async-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -700,6 +702,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'graphql-guide': GraphqlGuide,
   'kubernetes-guide': KubernetesGuide,
   'nextjs-performance-guide': NextjsPerformanceGuide,
+  'terraform-guide': TerraformGuide,
+  'python-async-guide': PythonAsyncGuide,
 };
 
 /* i18n for UI strings on this page */
