@@ -1,1478 +1,1055 @@
 'use client';
+import React from 'react';
 
-import Link from 'next/link';
-
-const translations = {
+const translations: Record<string, Record<string, string>> = {
   en: {
-    title: 'TypeScript Advanced Guide: Generics, Conditional Types, Mapped Types, Decorators, and Expert Patterns — 2026',
-    description:
-      'Master advanced TypeScript: generic constraints, infer keyword, mapped types, template literal types, discriminated unions, utility types deep dive, decorators (Stage 3 vs experimental), module augmentation, type narrowing, function overloads, covariance/contravariance, satisfies operator, and strict mode settings.',
+    title: 'Advanced TypeScript Guide: Generics, Conditional Types, Template Literals, Decorators & Type-Level Programming',
+    subtitle: 'A comprehensive deep-dive into TypeScript\'s most powerful type system features, from advanced generics to type-level programming patterns.',
+    tldr: 'TypeScript\'s type system is Turing-complete, enabling expressive compile-time guarantees far beyond basic annotations. This guide covers advanced generics (constraints, defaults, variance), conditional types with infer, mapped types and key remapping, template literal types, utility types deep dive, discriminated unions with exhaustive checks, branded/nominal types, declaration merging, module augmentation, Stage 3 decorators, the satisfies operator, const assertions, type narrowing patterns, covariance/contravariance, and recursive types.',
+    takeaway1: 'Generic constraints and defaults make reusable APIs both flexible and type-safe.',
+    takeaway2: 'Conditional types with infer enable powerful type extraction and transformation.',
+    takeaway3: 'Mapped types with key remapping and template literals create derived types automatically.',
+    takeaway4: 'Discriminated unions plus exhaustive checks eliminate entire categories of runtime bugs.',
+    takeaway5: 'Branded types provide nominal typing in a structural type system.',
+    takeaway6: 'The satisfies operator validates types without widening, preserving literal inference.',
+    introTitle: 'Why Advanced TypeScript Matters',
+    introP1: 'Basic TypeScript annotations (string, number, boolean) only scratch the surface. The type system includes generics, conditional types, mapped types, template literal types, and recursive types that let you express complex domain rules at compile time.',
+    introP2: 'Mastering these features reduces runtime errors, improves API design, and enables patterns like type-safe event systems, validated API responses, and fully typed ORM queries. This guide walks through each feature with practical examples.',
+    genericsTitle: '1. Advanced Generics',
+    genericsP1: 'Generics are the foundation of reusable typed code. Beyond basic usage, TypeScript supports generic constraints, default type parameters, and variance annotations that give you fine-grained control.',
+    genericsP2: 'Generic constraints use the extends keyword to limit what types a generic parameter can accept. This ensures the generic works only with types that have the required shape.',
+    genericsP3: 'Default type parameters provide fallback types when the caller does not specify one. This is analogous to default function parameters and reduces boilerplate at call sites.',
+    genericsP4: 'Variance annotations (in and out keywords, added in TypeScript 4.7) explicitly mark whether a generic parameter is covariant (out), contravariant (in), or invariant. This improves type checking correctness and performance.',
+    conditionalTitle: '2. Conditional Types & Infer',
+    conditionalP1: 'Conditional types follow the pattern T extends U ? X : Y. They enable type-level branching, choosing different types based on whether a condition is met.',
+    conditionalP2: 'The infer keyword inside conditional types introduces a type variable that TypeScript infers from the checked type. This is how utility types like ReturnType and Parameters work.',
+    conditionalP3: 'Distributive conditional types automatically distribute over union types. If T is A | B, then T extends U ? X : Y becomes (A extends U ? X : Y) | (B extends U ? X : Y). Wrap T in [T] to prevent distribution.',
+    mappedTitle: '3. Mapped Types & Key Remapping',
+    mappedP1: 'Mapped types iterate over the keys of a type to create new types. The basic form is { [K in keyof T]: NewType }. Combined with conditional types and template literals, mapped types become extremely powerful.',
+    mappedP2: 'Key remapping (as clause, TypeScript 4.1+) lets you transform keys during mapping. You can rename, filter, or generate new keys using template literal types.',
+    mappedP3: 'Template literal types (introduced in TypeScript 4.1) enable string manipulation at the type level. Combined with mapped types, they can generate typed event handlers, API endpoints, or CSS property types.',
+    utilityTitle: '4. Utility Types Deep Dive',
+    utilityP1: 'TypeScript ships with built-in utility types that are implemented using generics, conditional types, and mapped types. Understanding their internals helps you write your own.',
+    utilityP2: 'Partial<T> makes all properties optional. Required<T> makes all required. Pick<T, K> selects specific keys. Omit<T, K> removes keys. Record<K, V> creates object types. These are the most commonly used.',
+    utilityP3: 'Exclude<T, U> removes types from a union. Extract<T, U> keeps matching types. ReturnType<T> extracts the return type of a function. Parameters<T> extracts parameter types as a tuple. NonNullable<T> removes null and undefined.',
+    utilityP4: 'Awaited<T> (TypeScript 4.5+) unwraps Promise types recursively. NoInfer<T> (TypeScript 5.4+) prevents inference at specific positions. These newer utilities solve common pain points.',
+    discriminatedTitle: '5. Discriminated Unions & Exhaustive Checks',
+    discriminatedP1: 'Discriminated unions combine union types with a shared literal property (the discriminant). TypeScript narrows the type based on this discriminant, enabling safe access to variant-specific properties.',
+    discriminatedP2: 'Exhaustive checking ensures every variant is handled. The never type is key: if a switch statement misses a case, the remaining type is not assignable to never, causing a compile error.',
+    discriminatedP3: 'This pattern is ideal for state machines, Redux actions, API responses with different shapes, compiler AST nodes, and any scenario with multiple variants sharing a common interface.',
+    brandedTitle: '6. Branded & Nominal Types',
+    brandedP1: 'TypeScript uses structural typing: two types with the same shape are compatible. Branded types add a phantom property to create nominal-like types that are structurally incompatible even if their runtime values are identical.',
+    brandedP2: 'This is critical for preventing accidental misuse: passing a UserId where an OrderId is expected, or mixing validated and unvalidated strings. The brand exists only at the type level with zero runtime cost.',
+    declarationTitle: '7. Declaration Merging & Module Augmentation',
+    declarationP1: 'Declaration merging automatically combines multiple declarations of the same name. Interfaces merge their members. Namespaces merge with classes, functions, and enums. This is how TypeScript extends built-in types.',
+    declarationP2: 'Module augmentation lets you extend third-party library types without modifying their source. Use declare module to add properties to Express Request, extend Window, or patch library types.',
+    decoratorsTitle: '8. Decorators (Stage 3 / TC39)',
+    decoratorsP1: 'Stage 3 decorators (TypeScript 5.0+) are a standard proposal for modifying classes, methods, properties, and accessors at definition time. They replace the older experimental decorators that required the --experimentalDecorators flag.',
+    decoratorsP2: 'A decorator is a function that receives a target value and a context object. It can return a replacement value or undefined. Class decorators receive the class constructor. Method decorators receive the method function.',
+    decoratorsP3: 'Common use cases include logging, validation, memoization, dependency injection, access control, and serialization metadata. Decorators compose naturally when stacked.',
+    satisfiesTitle: '9. The satisfies Operator',
+    satisfiesP1: 'The satisfies operator (TypeScript 4.9+) validates that an expression matches a type without changing the inferred type. Unlike type annotations (: Type), satisfies preserves literal types and specific union members.',
+    satisfiesP2: 'This solves a long-standing tension: you want type checking for correctness but do not want to lose the specific inferred type. With satisfies, you get both.',
+    constTitle: '10. Const Assertions & Readonly Patterns',
+    constP1: 'The as const assertion (const assertion) converts a value to its most specific literal type. Arrays become readonly tuples, objects get readonly properties with literal types, and string values are narrowed to their exact literal.',
+    constP2: 'Combining as const with generic functions enables powerful patterns like type-safe builders, route definitions, and configuration objects where the exact shape is preserved at the type level.',
+    narrowingTitle: '11. Type Narrowing Patterns',
+    narrowingP1: 'Type narrowing is how TypeScript refines a broad type to a more specific one within a code block. Beyond typeof and instanceof, TypeScript supports custom type guards, assertion functions, and control flow narrowing.',
+    narrowingP2: 'User-defined type guards (is keyword) return a boolean and narrow the parameter type. Assertion functions (asserts keyword) throw if the condition fails and narrow the type after the call.',
+    narrowingP3: 'The in operator, equality checks, truthiness checks, and assignment narrowing all refine types. TypeScript tracks narrowing through if/else branches, switch statements, and short-circuit evaluation.',
+    varianceTitle: '12. Covariance & Contravariance',
+    varianceP1: 'Covariance means a subtype can substitute for a supertype (Cat[] assignable to Animal[]). Contravariance means the opposite direction: a supertype can substitute for a subtype. This matters for function parameters and return types.',
+    varianceP2: 'Function parameters are contravariant (unless --strictFunctionTypes is off). Return types are covariant. Understanding variance prevents subtle bugs when passing callbacks, comparing function types, or using generic containers.',
+    recursiveTitle: '13. Recursive Types',
+    recursiveP1: 'Recursive types reference themselves in their definition. They are essential for modeling tree structures, nested JSON, deeply nested configs, linked lists, and any data with unbounded depth.',
+    recursiveP2: 'TypeScript supports recursive type aliases (since 3.7) and recursive conditional types (since 4.1). These enable powerful utilities like DeepPartial, DeepReadonly, deep path extraction, and JSON type validation.',
+    conclusionTitle: 'Conclusion',
+    conclusionP1: 'TypeScript\'s advanced type features form a complete type-level programming language. By mastering generics, conditional types, mapped types, template literals, and the patterns in this guide, you can build APIs that are self-documenting, impossible to misuse, and catch errors at compile time rather than runtime.',
+    conclusionP2: 'Start with the patterns most relevant to your current codebase. Discriminated unions and exhaustive checks provide immediate value. Branded types and custom utility types become essential as your domain model grows. Advanced patterns like recursive types and template literal types unlock capabilities that were previously impossible in a statically typed language.',
+    faq1Q: 'When should I use generics vs union types?',
+    faq1A: 'Use generics when you need to preserve and propagate a specific type through a function or class. Use union types when you have a known, finite set of possible types. Generics maintain the relationship between input and output types; unions simply allow multiple types at a position.',
+    faq2Q: 'What is the difference between type and interface in TypeScript?',
+    faq2A: 'Interfaces support declaration merging and can be extended with extends. Types support union, intersection, conditional, and mapped types. For object shapes, either works; prefer interface for public APIs (mergeable) and type for complex type operations.',
+    faq3Q: 'How do conditional types with infer work?',
+    faq3A: 'Conditional types use the pattern T extends U ? X : Y. The infer keyword inside the extends clause introduces a type variable that TypeScript infers from T. For example, T extends Promise<infer R> ? R : T extracts the resolved type from a Promise.',
+    faq4Q: 'What are branded types and when should I use them?',
+    faq4A: 'Branded types add a phantom property (existing only at compile time) to create nominal-like types in TypeScript\'s structural system. Use them to prevent mixing semantically different values like UserId vs OrderId, or validated vs unvalidated strings.',
+    faq5Q: 'How does the satisfies operator differ from a type annotation?',
+    faq5A: 'A type annotation (const x: Type) widens the inferred type to match the annotation. The satisfies operator (const x = value satisfies Type) checks the value against the type but preserves the original narrow/literal inference. You get type checking without losing specificity.',
+    faq6Q: 'What are Stage 3 decorators and how do they differ from experimental decorators?',
+    faq6A: 'Stage 3 decorators (TypeScript 5.0+) follow the TC39 standard proposal and do not require --experimentalDecorators. They receive a value and context object instead of target/key/descriptor. They are not backward-compatible with legacy decorators used by older libraries like Angular or MobX.',
+    faq7Q: 'How can I make exhaustive checks in a switch statement?',
+    faq7A: 'After handling all known cases, add a default case that assigns the discriminant to a variable typed as never. If you miss a case, TypeScript will error because the remaining type is not assignable to never. This ensures all variants are handled at compile time.',
+    faq8Q: 'What are recursive types used for?',
+    faq8A: 'Recursive types model self-referencing data like trees, nested JSON, linked lists, and deeply nested configurations. They enable utility types like DeepPartial, DeepReadonly, and deep path extraction that operate on arbitrarily nested structures.',
   },
   zh: {
-    title: 'TypeScript 高级指南：泛型、条件类型、映射类型、装饰器与专家模式 — 2026',
-    description:
-      '深入掌握 TypeScript 高级特性：泛型约束、infer 关键字、映射类型、模板字面量类型、可辨识联合、工具类型详解、装饰器（Stage 3 vs experimental）、模块增强、类型收窄、函数重载、协变/逆变、satisfies 运算符与严格模式配置。',
+    title: '高级 TypeScript 指南：泛型、条件类型、模板字面量、装饰器与类型级编程',
+    subtitle: '深入探讨 TypeScript 最强大的类型系统特性，从高级泛型到类型级编程模式。',
+    tldr: 'TypeScript 的类型系统是图灵完备的，能够在编译时提供远超基本注解的表达性保证。本指南涵盖高级泛型（约束、默认值、变型）、带 infer 的条件类型、映射类型和键重映射、模板字面量类型、内置工具类型深入剖析、可辨识联合与穷举检查、品牌/名义类型、声明合并、模块增强、Stage 3 装饰器、satisfies 运算符、const 断言、类型收窄模式、协变/逆变以及递归类型。',
+    takeaway1: '泛型约束和默认类型使可复用 API 既灵活又类型安全。',
+    takeaway2: '带 infer 的条件类型实现强大的类型提取和转换。',
+    takeaway3: '映射类型配合键重映射和模板字面量自动创建派生类型。',
+    takeaway4: '可辨识联合加穷举检查消除整类运行时错误。',
+    takeaway5: '品牌类型在结构类型系统中提供名义类型化。',
+    takeaway6: 'satisfies 运算符在不拓宽类型的情况下验证类型，保留字面量推断。',
+    introTitle: '为什么高级 TypeScript 很重要',
+    introP1: '基本的 TypeScript 注解（string、number、boolean）只是冰山一角。类型系统包含泛型、条件类型、映射类型、模板字面量类型和递归类型，让你在编译时表达复杂的领域规则。',
+    introP2: '掌握这些特性可以减少运行时错误、改善 API 设计，并实现类型安全的事件系统、经过验证的 API 响应和完全类型化的 ORM 查询等模式。本指南通过实际示例逐一讲解每个特性。',
+    genericsTitle: '1. 高级泛型',
+    genericsP1: '泛型是可复用类型化代码的基础。除了基本用法外，TypeScript 还支持泛型约束、默认类型参数和变型注解，提供细粒度控制。',
+    genericsP2: '泛型约束使用 extends 关键字限制泛型参数可以接受的类型。这确保泛型仅与具有所需结构的类型一起工作。',
+    genericsP3: '默认类型参数在调用者未指定时提供回退类型。这类似于默认函数参数，减少调用端的样板代码。',
+    genericsP4: '变型注解（in 和 out 关键字，TypeScript 4.7 新增）显式标记泛型参数是协变（out）、逆变（in）还是不变的。这提高了类型检查的正确性和性能。',
+    conditionalTitle: '2. 条件类型与 Infer',
+    conditionalP1: '条件类型遵循 T extends U ? X : Y 模式。它们实现类型级分支，根据条件是否满足选择不同类型。',
+    conditionalP2: '条件类型中的 infer 关键字引入一个类型变量，TypeScript 从被检查的类型中推断它。这就是 ReturnType 和 Parameters 等工具类型的工作原理。',
+    conditionalP3: '分布式条件类型自动分布在联合类型上。如果 T 是 A | B，则 T extends U ? X : Y 变为 (A extends U ? X : Y) | (B extends U ? X : Y)。用 [T] 包裹以阻止分布。',
+    mappedTitle: '3. 映射类型与键重映射',
+    mappedP1: '映射类型遍历类型的键来创建新类型。基本形式是 { [K in keyof T]: NewType }。结合条件类型和模板字面量，映射类型变得极其强大。',
+    mappedP2: '键重映射（as 子句，TypeScript 4.1+）允许在映射过程中转换键。你可以使用模板字面量类型重命名、过滤或生成新键。',
+    mappedP3: '模板字面量类型（TypeScript 4.1 引入）在类型级别实现字符串操作。结合映射类型，它们可以生成类型化的事件处理器、API 端点或 CSS 属性类型。',
+    utilityTitle: '4. 工具类型深入剖析',
+    utilityP1: 'TypeScript 内置的工具类型使用泛型、条件类型和映射类型实现。理解其内部原理有助于编写自己的工具类型。',
+    utilityP2: 'Partial<T> 使所有属性可选。Required<T> 使所有属性必需。Pick<T, K> 选择特定键。Omit<T, K> 移除键。Record<K, V> 创建对象类型。这些是最常用的。',
+    utilityP3: 'Exclude<T, U> 从联合中移除类型。Extract<T, U> 保留匹配的类型。ReturnType<T> 提取函数返回类型。Parameters<T> 提取参数类型为元组。NonNullable<T> 移除 null 和 undefined。',
+    utilityP4: 'Awaited<T>（TypeScript 4.5+）递归解包 Promise 类型。NoInfer<T>（TypeScript 5.4+）阻止特定位置的推断。这些较新的工具类型解决常见痛点。',
+    discriminatedTitle: '5. 可辨识联合与穷举检查',
+    discriminatedP1: '可辨识联合将联合类型与共享的字面量属性（辨识符）结合。TypeScript 根据此辨识符收窄类型，实现对变体特定属性的安全访问。',
+    discriminatedP2: '穷举检查确保处理了每个变体。never 类型是关键：如果 switch 语句遗漏了一个 case，剩余类型不能赋值给 never，导致编译错误。',
+    discriminatedP3: '此模式非常适合状态机、Redux action、不同形状的 API 响应、编译器 AST 节点以及任何具有多个变体共享公共接口的场景。',
+    brandedTitle: '6. 品牌类型与名义类型',
+    brandedP1: 'TypeScript 使用结构类型：两个具有相同结构的类型是兼容的。品牌类型添加一个幻影属性来创建名义类型，即使运行时值相同也结构不兼容。',
+    brandedP2: '这对防止意外误用至关重要：在需要 OrderId 的地方传递 UserId，或混淆已验证和未验证的字符串。品牌仅存在于类型级别，零运行时开销。',
+    declarationTitle: '7. 声明合并与模块增强',
+    declarationP1: '声明合并自动组合同名的多个声明。接口合并其成员。命名空间与类、函数和枚举合并。这就是 TypeScript 扩展内置类型的方式。',
+    declarationP2: '模块增强允许在不修改源码的情况下扩展第三方库类型。使用 declare module 为 Express Request 添加属性、扩展 Window 或修补库类型。',
+    decoratorsTitle: '8. 装饰器（Stage 3 / TC39）',
+    decoratorsP1: 'Stage 3 装饰器（TypeScript 5.0+）是用于在定义时修改类、方法、属性和访问器的标准提案。它们替代了需要 --experimentalDecorators 标志的旧实验性装饰器。',
+    decoratorsP2: '装饰器是接收目标值和上下文对象的函数。它可以返回替代值或 undefined。类装饰器接收类构造函数。方法装饰器接收方法函数。',
+    decoratorsP3: '常见用例包括日志记录、验证、记忆化、依赖注入、访问控制和序列化元数据。装饰器在堆叠时自然组合。',
+    satisfiesTitle: '9. satisfies 运算符',
+    satisfiesP1: 'satisfies 运算符（TypeScript 4.9+）验证表达式匹配类型而不改变推断类型。与类型注解（: Type）不同，satisfies 保留字面量类型和特定联合成员。',
+    satisfiesP2: '这解决了长期存在的矛盾：你需要类型检查以确保正确性，但不想丢失特定的推断类型。使用 satisfies，两者兼得。',
+    constTitle: '10. Const 断言与只读模式',
+    constP1: 'as const 断言将值转换为最具体的字面量类型。数组变为只读元组，对象获得只读属性和字面量类型，字符串值被收窄为其精确字面量。',
+    constP2: '将 as const 与泛型函数结合可实现强大的模式，如类型安全的构建器、路由定义和配置对象，其中精确的形状在类型级别得以保留。',
+    narrowingTitle: '11. 类型收窄模式',
+    narrowingP1: '类型收窄是 TypeScript 在代码块中将宽泛类型细化为更具体类型的方式。除了 typeof 和 instanceof，TypeScript 还支持自定义类型守卫、断言函数和控制流收窄。',
+    narrowingP2: '用户定义的类型守卫（is 关键字）返回布尔值并收窄参数类型。断言函数（asserts 关键字）在条件失败时抛出异常，并在调用后收窄类型。',
+    narrowingP3: 'in 运算符、等值检查、真值检查和赋值收窄都能细化类型。TypeScript 通过 if/else 分支、switch 语句和短路求值跟踪收窄。',
+    varianceTitle: '12. 协变与逆变',
+    varianceP1: '协变意味着子类型可以替代超类型（Cat[] 可赋值给 Animal[]）。逆变意味着相反方向：超类型可以替代子类型。这对函数参数和返回类型很重要。',
+    varianceP2: '函数参数是逆变的（除非关闭 --strictFunctionTypes）。返回类型是协变的。理解变型可以防止在传递回调、比较函数类型或使用泛型容器时出现微妙的 bug。',
+    recursiveTitle: '13. 递归类型',
+    recursiveP1: '递归类型在其定义中引用自身。它们对于建模树结构、嵌套 JSON、深层嵌套配置、链表以及任何无限深度的数据至关重要。',
+    recursiveP2: 'TypeScript 支持递归类型别名（3.7 起）和递归条件类型（4.1 起）。这些使得 DeepPartial、DeepReadonly、深层路径提取和 JSON 类型验证等强大工具类型成为可能。',
+    conclusionTitle: '总结',
+    conclusionP1: 'TypeScript 的高级类型特性构成了完整的类型级编程语言。通过掌握泛型、条件类型、映射类型、模板字面量以及本指南中的模式，你可以构建自文档化、不可能误用、在编译时而非运行时捕获错误的 API。',
+    conclusionP2: '从与当前代码库最相关的模式开始。可辨识联合和穷举检查提供即时价值。品牌类型和自定义工具类型随领域模型的增长变得必不可少。递归类型和模板字面量类型等高级模式解锁了以前在静态类型语言中不可能实现的能力。',
+    faq1Q: '何时应该使用泛型而非联合类型？',
+    faq1A: '当需要在函数或类中保留并传播特定类型时使用泛型。当有已知的、有限的可能类型集时使用联合类型。泛型维护输入和输出类型之间的关系；联合只是在一个位置允许多种类型。',
+    faq2Q: 'TypeScript 中 type 和 interface 的区别是什么？',
+    faq2A: '接口支持声明合并，可以用 extends 扩展。类型支持联合、交叉、条件和映射类型。对于对象形状，两者都可以；公共 API 优先用 interface（可合并），复杂类型操作用 type。',
+    faq3Q: '带 infer 的条件类型如何工作？',
+    faq3A: '条件类型使用 T extends U ? X : Y 模式。extends 子句中的 infer 关键字引入一个类型变量，TypeScript 从 T 中推断它。例如，T extends Promise<infer R> ? R : T 从 Promise 中提取解析后的类型。',
+    faq4Q: '什么是品牌类型，何时应该使用？',
+    faq4A: '品牌类型添加一个幻影属性（仅在编译时存在）来在 TypeScript 的结构类型系统中创建类似名义的类型。用它们防止混淆语义不同的值，如 UserId 与 OrderId，或已验证与未验证的字符串。',
+    faq5Q: 'satisfies 运算符与类型注解有什么不同？',
+    faq5A: '类型注解（const x: Type）将推断类型拓宽为匹配注解。satisfies 运算符（const x = value satisfies Type）检查值是否匹配类型但保留原始的窄/字面量推断。你得到类型检查而不失去具体性。',
+    faq6Q: 'Stage 3 装饰器是什么，与实验性装饰器有何不同？',
+    faq6A: 'Stage 3 装饰器（TypeScript 5.0+）遵循 TC39 标准提案，不需要 --experimentalDecorators。它们接收值和上下文对象而非 target/key/descriptor。它们与 Angular 或 MobX 等旧库使用的遗留装饰器不向后兼容。',
+    faq7Q: '如何在 switch 语句中进行穷举检查？',
+    faq7A: '处理所有已知 case 后，添加一个 default case，将辨识符赋值给类型为 never 的变量。如果遗漏了一个 case，TypeScript 会报错，因为剩余类型不能赋值给 never。这确保在编译时处理所有变体。',
+    faq8Q: '递归类型有什么用途？',
+    faq8A: '递归类型建模自引用数据，如树、嵌套 JSON、链表和深层嵌套配置。它们使 DeepPartial、DeepReadonly 和深层路径提取等工具类型能够操作任意嵌套的结构。',
   },
 };
 
-export default function TypescriptAdvancedGuide({ lang = 'en' }: { lang?: string }) {
-  const t = translations[lang as keyof typeof translations] || translations.en;
+const sectionStyle: React.CSSProperties = {
+  marginBottom: '2rem',
+};
+
+const headingStyle: React.CSSProperties = {
+  fontSize: '1.8rem',
+  fontWeight: 700,
+  color: '#1e293b',
+  marginBottom: '1rem',
+  marginTop: '2.5rem',
+  lineHeight: 1.3,
+};
+
+const subHeadingStyle: React.CSSProperties = {
+  fontSize: '1.35rem',
+  fontWeight: 600,
+  color: '#334155',
+  marginBottom: '0.75rem',
+  marginTop: '2rem',
+  lineHeight: 1.4,
+};
+
+const paragraphStyle: React.CSSProperties = {
+  fontSize: '1.05rem',
+  lineHeight: 1.8,
+  color: '#374151',
+  marginBottom: '1rem',
+};
+
+const codeBlockStyle: React.CSSProperties = {
+  background: '#1e293b',
+  color: '#e2e8f0',
+  padding: '1.25rem',
+  borderRadius: '8px',
+  overflowX: 'auto',
+  fontSize: '0.9rem',
+  lineHeight: 1.6,
+  marginBottom: '1.5rem',
+  fontFamily: "'Fira Code', 'Cascadia Code', Consolas, monospace",
+};
+
+const tldrBoxStyle: React.CSSProperties = {
+  background: '#f0f9ff',
+  borderLeft: '4px solid #0ea5e9',
+  padding: '1.25rem 1.5rem',
+  borderRadius: '0 8px 8px 0',
+  marginBottom: '2rem',
+  fontSize: '1.05rem',
+  lineHeight: 1.7,
+  color: '#0c4a6e',
+};
+
+const takeawaysBoxStyle: React.CSSProperties = {
+  background: '#f8fafc',
+  border: '1px solid #e2e8f0',
+  padding: '1.5rem',
+  borderRadius: '8px',
+  marginBottom: '2rem',
+};
+
+const takeawayItemStyle: React.CSSProperties = {
+  fontSize: '1rem',
+  lineHeight: 1.7,
+  color: '#334155',
+  marginBottom: '0.5rem',
+  paddingLeft: '0.5rem',
+};
+
+const tableContainerStyle: React.CSSProperties = {
+  overflowX: 'auto',
+  marginBottom: '2rem',
+};
+
+const tableStyle: React.CSSProperties = {
+  width: '100%',
+  borderCollapse: 'collapse',
+  fontSize: '0.95rem',
+  lineHeight: 1.6,
+};
+
+const thStyle: React.CSSProperties = {
+  background: '#1e293b',
+  color: '#f8fafc',
+  padding: '0.75rem 1rem',
+  textAlign: 'left',
+  fontWeight: 600,
+  borderBottom: '2px solid #334155',
+};
+
+const tdStyle: React.CSSProperties = {
+  padding: '0.75rem 1rem',
+  borderBottom: '1px solid #e2e8f0',
+  color: '#374151',
+};
+
+const tdAltStyle: React.CSSProperties = {
+  ...tdStyle,
+  background: '#f8fafc',
+};
+
+const tipBoxStyle: React.CSSProperties = {
+  background: '#f0fdf4',
+  borderLeft: '4px solid #22c55e',
+  padding: '1rem 1.25rem',
+  borderRadius: '0 8px 8px 0',
+  marginBottom: '1.5rem',
+  fontSize: '0.95rem',
+  lineHeight: 1.7,
+  color: '#14532d',
+};
+
+const warningBoxStyle: React.CSSProperties = {
+  background: '#fffbeb',
+  borderLeft: '4px solid #f59e0b',
+  padding: '1rem 1.25rem',
+  borderRadius: '0 8px 8px 0',
+  marginBottom: '1.5rem',
+  fontSize: '0.95rem',
+  lineHeight: 1.7,
+  color: '#78350f',
+};
+
+const inlineCodeStyle: React.CSSProperties = {
+  background: '#f1f5f9',
+  color: '#dc2626',
+  padding: '0.15rem 0.4rem',
+  borderRadius: '4px',
+  fontSize: '0.9em',
+  fontFamily: "'Fira Code', Consolas, monospace",
+};
+
+export default function TypescriptAdvancedGuide({ lang }: { lang: string }) {
+  const t = translations[lang] || translations['en'];
 
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
-      {
-        '@type': 'Question',
-        name: 'What is the infer keyword in TypeScript conditional types?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'The infer keyword captures a type variable from within a conditional type pattern. It can only appear in the extends clause of a conditional type. For example: type ReturnType<T> = T extends (...args: any[]) => infer R ? R : never extracts R — the actual return type — when T is a function. TypeScript\'s built-in ReturnType, Parameters, InstanceType, and Awaited all use infer internally. When infer appears in covariant positions multiple times, TypeScript infers a union; in contravariant positions (function parameters), it infers an intersection.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'What is the difference between Partial, Required, Pick, Omit, and Record utility types?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Partial<T> makes all properties optional. Required<T> makes all properties required (removes ?). Pick<T, K> creates a type with only the listed keys K from T. Omit<T, K> creates a type without the listed keys K. Record<K, V> creates an object type with keys K and values V. All are implemented as mapped types internally. Partial and Required use modifier syntax: [K in keyof T]?: T[K] and [K in keyof T]-?: T[K] respectively. Combining them covers most API modeling needs: Omit<User, "id"> for create requests, Partial<Omit<User, "id">> for update requests.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'How do template literal types work in TypeScript?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Template literal types (TypeScript 4.1+) construct new string types using backtick syntax at the type level. They distribute over union members automatically: type EventName = `on${Capitalize<"click" | "focus">}` produces "onClick" | "onFocus". Built-in intrinsic string types include Uppercase<S>, Lowercase<S>, Capitalize<S>, and Uncapitalize<S>. Template literal types are used for strongly-typed CSS values, API route patterns, event handler names, and discriminated union string prefixes. They can also extract parts of strings via conditional types with infer.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'What are discriminated unions and exhaustive checks in TypeScript?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'A discriminated union is a union of types that share a common literal property (the discriminant). For example: type Shape = { kind: "circle"; radius: number } | { kind: "square"; side: number }. TypeScript narrows the type automatically when you check the discriminant in a switch/if. Exhaustive checks ensure all union members are handled: add a default case that assigns the value to a never variable — if you miss a case, TypeScript reports an assignment error. The pattern assertNever(x: never): never { throw new Error(...) } is the standard helper.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'What is the difference between TypeScript experimental decorators and TC39 Stage 3 decorators?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Legacy experimentalDecorators (enabled via "experimentalDecorators": true in tsconfig) use an older API: method decorators receive (target, propertyKey, descriptor). TC39 Stage 3 decorators (TypeScript 5.0+, no tsconfig flag needed) use a new API: decorators receive (value, context) where context has kind, name, metadata, and addInitializer. They are incompatible and cannot be mixed in the same file. NestJS and Angular still use legacy decorators; TC39 decorators also introduce the "accessor" keyword for auto-accessor fields. New projects should use TC39 decorators where frameworks permit.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'What is the satisfies operator in TypeScript 4.9+?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'The satisfies operator (TypeScript 4.9) validates that an expression matches a type without widening the inferred type. Syntax: const value = expression satisfies Type. Unlike a type annotation (const value: Type = expression), satisfies keeps the narrow inferred type while still checking compatibility. Example: const palette = { red: [255,0,0], green: "#00ff00" } satisfies Record<string, string | number[]>. With an annotation, palette.red is string | number[]; with satisfies, palette.red remains number[] (the actual inferred type). This is ideal for config objects where you want both validation and precise type inference.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'What is noUncheckedIndexedAccess and why should I enable it?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'noUncheckedIndexedAccess is a TypeScript compiler option that adds undefined to the type of array index access and string index signature access. Without it, items[0] has type string when items is string[], which is wrong if the array is empty. With it, items[0] has type string | undefined, forcing you to handle the undefined case. This catches a large class of runtime errors at compile time. It is not included in strict: true, so you must enable it explicitly. It is one of the most impactful strictness settings available beyond the standard strict bundle.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'How does covariance and contravariance work in TypeScript function types?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Variance describes how subtype relationships flow through generic types. TypeScript function return types are covariant: if Dog extends Animal, then () => Dog is assignable to () => Animal. Function parameter types are contravariant (under strictFunctionTypes): (x: Animal) => void is assignable to (x: Dog) => void, not the other way around. Method syntax (method(x: T)) is bivariant for historical reasons. TypeScript 4.7 introduced explicit variance annotations with in and out: out T marks covariant positions, in T marks contravariant, in out T marks invariant. These annotations improve type-checking accuracy and compiler performance.',
-        },
-      },
+      { '@type': 'Question', name: t.faq1Q, acceptedAnswer: { '@type': 'Answer', text: t.faq1A } },
+      { '@type': 'Question', name: t.faq2Q, acceptedAnswer: { '@type': 'Answer', text: t.faq2A } },
+      { '@type': 'Question', name: t.faq3Q, acceptedAnswer: { '@type': 'Answer', text: t.faq3A } },
+      { '@type': 'Question', name: t.faq4Q, acceptedAnswer: { '@type': 'Answer', text: t.faq4A } },
+      { '@type': 'Question', name: t.faq5Q, acceptedAnswer: { '@type': 'Answer', text: t.faq5A } },
+      { '@type': 'Question', name: t.faq6Q, acceptedAnswer: { '@type': 'Answer', text: t.faq6A } },
+      { '@type': 'Question', name: t.faq7Q, acceptedAnswer: { '@type': 'Answer', text: t.faq7A } },
+      { '@type': 'Question', name: t.faq8Q, acceptedAnswer: { '@type': 'Answer', text: t.faq8A } },
     ],
   };
 
   return (
-    <article style={{ lineHeight: '1.7', color: '#334155' }}>
+    <article style={{ maxWidth: '800px', margin: '0 auto', padding: '2rem 1rem' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <link rel="canonical" href="https://viadreams.cc/en/blog/typescript-advanced-guide" />
+      {/* Title */}
+      <header style={{ marginBottom: '2rem' }}>
+        <h1 style={{ fontSize: '2.2rem', fontWeight: 800, color: '#0f172a', lineHeight: 1.2, marginBottom: '0.75rem' }}>
+          {t.title}
+        </h1>
+        <p style={{ fontSize: '1.15rem', color: '#64748b', lineHeight: 1.6 }}>
+          {t.subtitle}
+        </p>
+      </header>
 
       {/* TL;DR Box */}
-      <div style={{ background: '#f0f9ff', borderLeft: '4px solid #0ea5e9', padding: '16px', margin: '24px 0', borderRadius: '4px' }}>
-        <p style={{ fontWeight: 700, marginBottom: '0.5rem', color: '#0369a1', margin: '0 0 0.5rem 0' }}>TL;DR</p>
-        <p style={{ margin: 0 }}>
-          Advanced TypeScript is a type-level programming language layered on top of JavaScript. Master{' '}
-          <strong>generic constraints</strong> and the <strong>infer keyword</strong> for extracting
-          types; use <strong>mapped types</strong> to transform object shapes; apply{' '}
-          <strong>discriminated unions</strong> for exhaustive domain modeling; leverage the{' '}
-          <strong>satisfies operator</strong> for type validation without widening; enable{' '}
-          <strong>noUncheckedIndexedAccess</strong> and all strict mode settings; understand{' '}
-          <strong>covariance/contravariance</strong> to write correct higher-order function types.
-          Use our{' '}
-          <Link href={'/' + lang + '/tools/typescript-to-javascript'} style={{ color: '#0284c7' }}>
-            TypeScript to JavaScript converter
-          </Link>{' '}
-          to inspect compiled output.
-        </p>
+      <div style={tldrBoxStyle}>
+        <strong style={{ display: 'block', marginBottom: '0.5rem', color: '#0369a1', fontSize: '1.1rem' }}>
+          TL;DR
+        </strong>
+        {t.tldr}
       </div>
 
-      {/* Key Takeaways Box */}
-      <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', padding: '20px', borderRadius: '8px', margin: '24px 0' }}>
-        <p style={{ fontWeight: 700, marginBottom: '0.75rem', color: '#1e293b', margin: '0 0 0.75rem 0' }}>Key Takeaways</p>
-        <ul style={{ margin: 0, paddingLeft: '1.25rem' }}>
-          <li><code>infer</code> captures type variables inside conditional types — the basis of ReturnType, Parameters, Awaited</li>
-          <li>Mapped types with modifier syntax (<code>+?</code>, <code>-?</code>, <code>+readonly</code>) implement Partial, Required, Readonly</li>
-          <li>Template literal types distribute over unions automatically, enabling typed event/route patterns</li>
-          <li>Discriminated unions + exhaustive <code>never</code> checks eliminate unhandled-case bugs at compile time</li>
-          <li>The <code>satisfies</code> operator validates against a type without losing the narrow inferred type</li>
-          <li>TC39 Stage 3 decorators (TS 5.0+) need no flag; legacy <code>experimentalDecorators</code> is still required by NestJS/Angular</li>
-          <li><code>noUncheckedIndexedAccess</code> adds <code>| undefined</code> to array/index-signature access — enable it on every project</li>
-          <li>Function parameters are contravariant; return types are covariant (under <code>strictFunctionTypes</code>)</li>
+      {/* Key Takeaways */}
+      <div style={takeawaysBoxStyle}>
+        <strong style={{ display: 'block', marginBottom: '0.75rem', color: '#1e293b', fontSize: '1.1rem' }}>
+          Key Takeaways
+        </strong>
+        <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+          <li style={takeawayItemStyle}>&#10003; {t.takeaway1}</li>
+          <li style={takeawayItemStyle}>&#10003; {t.takeaway2}</li>
+          <li style={takeawayItemStyle}>&#10003; {t.takeaway3}</li>
+          <li style={takeawayItemStyle}>&#10003; {t.takeaway4}</li>
+          <li style={takeawayItemStyle}>&#10003; {t.takeaway5}</li>
+          <li style={takeawayItemStyle}>&#10003; {t.takeaway6}</li>
         </ul>
       </div>
 
-      {/* Section 1: Generics and Constraints */}
-      <h2 style={{ fontSize: '1.6rem', fontWeight: 700, marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
-        Generic Types and Constraints
-      </h2>
-      <p>
-        Generics are TypeScript&#39;s mechanism for writing reusable, type-safe code that works across multiple
-        types. A generic <em>constraint</em> (<code>T extends Something</code>) restricts which types are valid
-        for a type parameter while granting access to the constrained properties inside the function body.
-      </p>
-      <pre style={{ background: '#1e293b', color: '#e2e8f0', borderRadius: 8, padding: 20, overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// Basic constraint: T must have a .length property
-function logLength<T extends { length: number }>(value: T): T {
-  console.log(value.length);
-  return value;
-}
-logLength('hello');       // string has .length ✓
-logLength([1, 2, 3]);     // array has .length ✓
-logLength({ length: 5 }); // object with length ✓
-// logLength(42);         // number has no .length ✗
-
-// keyof constraint: K must be a key of T
-function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
-  return obj[key];
-}
-const user = { name: 'Alice', age: 30 };
-const name = getProperty(user, 'name'); // string
-const age  = getProperty(user, 'age');  // number
-// getProperty(user, 'email');           // compile error ✗
-
-// Multiple constraints via intersection
-function merge<T extends object, U extends object>(a: T, b: U): T & U {
-  return { ...a, ...b };
-}
-const merged = merge({ id: 1 }, { name: 'Alice' });
-// merged: { id: number } & { name: string }
-
-// Default type parameters (TypeScript 2.3+)
-interface Container<T = string> {
-  value: T;
-  label: string;
-}
-const c1: Container = { value: 'hello', label: 'greeting' }; // T = string
-const c2: Container<number> = { value: 42, label: 'count' }; // T = number
-
-// Conditional default: infer from usage
-function createPair<T, U = T>(first: T, second: U): [T, U] {
-  return [first, second];
-}
-createPair(1, 2);         // [number, number]
-createPair(1, 'hello');   // [number, string]`}</code></pre>
-
-      <h3 style={{ fontSize: '1.2rem', fontWeight: 700, marginTop: '1.5rem', marginBottom: '0.75rem', color: '#1e293b' }}>
-        Variance Annotations: in, out, in out
-      </h3>
-      <p>
-        TypeScript 4.7 introduced explicit variance markers for type parameters. Use <code>out T</code> for
-        covariant positions (producer/return), <code>in T</code> for contravariant positions (consumer/param),
-        and <code>in out T</code> for invariant (read and write). These annotations improve both type-checking
-        accuracy and compiler performance for large codebases.
-      </p>
-      <pre style={{ background: '#1e293b', color: '#e2e8f0', borderRadius: 8, padding: 20, overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// out = covariant (produces T, can be widened)
-interface Producer<out T> {
-  produce(): T;
-}
-
-// in = contravariant (consumes T, can be narrowed)
-interface Consumer<in T> {
-  consume(value: T): void;
-}
-
-// in out = invariant (reads and writes T, no variance)
-interface ReadWrite<in out T> {
-  get(): T;
-  set(value: T): void;
-}
-
-// Practical example
-class Animal { breathe() {} }
-class Dog extends Animal { bark() {} }
-
-const dogProducer: Producer<Dog> = { produce: () => new Dog() };
-const animalProducer: Producer<Animal> = dogProducer; // OK — covariant
-
-const animalConsumer: Consumer<Animal> = { consume: (a) => a.breathe() };
-const dogConsumer: Consumer<Dog> = animalConsumer; // OK — contravariant`}</code></pre>
-
-      {/* Section 2: Conditional Types and infer */}
-      <h2 style={{ fontSize: '1.6rem', fontWeight: 700, marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
-        Conditional Types and the infer Keyword
-      </h2>
-      <p>
-        Conditional types are type-level <code>if/else</code> expressions evaluated at compile time.
-        Syntax: <code>T extends U ? X : Y</code>. When <code>T</code> is a union, conditional types
-        <em>distribute</em> over each union member automatically. The <strong>infer</strong> keyword
-        captures a type variable from within the extends pattern.
-      </p>
-      <pre style={{ background: '#1e293b', color: '#e2e8f0', borderRadius: 8, padding: 20, overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// Basic conditional type
-type IsString<T> = T extends string ? true : false;
-type A = IsString<string>;  // true
-type B = IsString<number>;  // false
-type C = IsString<'hello'>; // true (literal extends string)
-
-// Distribution over unions
-type Distribute<T> = T extends string ? 'S' : 'N';
-type D = Distribute<string | number>; // 'S' | 'N'
-// (string extends string ? 'S' : 'N') | (number extends string ? 'S' : 'N')
-
-// Disable distribution with brackets
-type NoDistribute<T> = [T] extends [string] ? 'S' : 'N';
-type E = NoDistribute<string | number>; // 'N' (the union is not string)
-
-// infer: extract return type
-type MyReturnType<T> = T extends (...args: any[]) => infer R ? R : never;
-type R1 = MyReturnType<() => number>;        // number
-type R2 = MyReturnType<(x: string) => void>; // void
-type R3 = MyReturnType<string>;              // never
-
-// infer: extract parameter types
-type MyParameters<T> = T extends (...args: infer P) => any ? P : never;
-type P1 = MyParameters<(a: string, b: number) => void>; // [string, number]
-
-// infer: extract first parameter
-type FirstParam<T> = T extends (first: infer F, ...rest: any[]) => any ? F : never;
-type FP = FirstParam<(x: number, y: string) => void>; // number
-
-// infer: extract array element type
-type ElementType<T> = T extends (infer E)[] ? E : T;
-type ET1 = ElementType<string[]>;  // string
-type ET2 = ElementType<number>;    // number
-
-// infer: unwrap Promise (like Awaited<T>)
-type Unwrap<T> = T extends Promise<infer U> ? Unwrap<U> : T;
-type W1 = Unwrap<Promise<Promise<number>>>;  // number
-
-// infer: extract object property types
-type ValueOf<T, K extends keyof T = keyof T> =
-  T extends Record<K, infer V> ? V : never;`}</code></pre>
-
-      <h3 style={{ fontSize: '1.2rem', fontWeight: 700, marginTop: '1.5rem', marginBottom: '0.75rem', color: '#1e293b' }}>
-        Built-in Utility Types That Use infer
-      </h3>
-      <pre style={{ background: '#1e293b', color: '#e2e8f0', borderRadius: 8, padding: 20, overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// ReturnType<T>
-type RT = ReturnType<typeof JSON.parse>; // any
-
-// Parameters<T>
-type PT = Parameters<typeof parseInt>; // [string: string, radix?: number]
-
-// ConstructorParameters<T>
-type CP = ConstructorParameters<typeof Date>; // string | number | Date | ...
-
-// InstanceType<T>
-type IT = InstanceType<typeof Map>; // Map<any, any>
-
-// Awaited<T> (TypeScript 4.5+) — recursively unwraps Promises
-type AW = Awaited<Promise<Promise<string>>>;   // string
-type AW2 = Awaited<ReturnType<typeof fetch>>;  // Response
-
-// Combining ReturnType + Awaited for async functions
-async function fetchUser(id: string) {
-  return { id, name: 'Alice' };
-}
-type UserType = Awaited<ReturnType<typeof fetchUser>>; // { id: string; name: string }
-
-// infer in covariant vs contravariant position
-// Covariant (return types) → union of inferred types
-type Covariant<T> = T extends { a: infer U; b: infer U } ? U : never;
-type C1 = Covariant<{ a: string; b: number }>; // string | number
-
-// Contravariant (parameter types) → intersection of inferred types
-type Contravariant<T> = T extends {
-  fn1: (a: infer U) => void;
-  fn2: (a: infer U) => void;
-} ? U : never;
-type C2 = Contravariant<{
-  fn1: (a: string) => void;
-  fn2: (a: number) => void;
-}>; // string & number = never`}</code></pre>
-
-      {/* Section 3: Mapped Types */}
-      <h2 style={{ fontSize: '1.6rem', fontWeight: 700, marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
-        Mapped Types: Partial, Required, Pick, Omit, Record and Beyond
-      </h2>
-      <p>
-        Mapped types iterate over the keys of an existing type and transform each property. The syntax{' '}
-        <code>{'{ [K in keyof T]: NewType }'}</code> creates a new type by mapping over keys. Modifier
-        syntax (<code>+?</code>, <code>-?</code>, <code>+readonly</code>, <code>-readonly</code>) adds or
-        removes optional/readonly modifiers. The <code>as</code> clause (TypeScript 4.1+) enables key
-        remapping and filtering.
-      </p>
-      <pre style={{ background: '#1e293b', color: '#e2e8f0', borderRadius: 8, padding: 20, overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// Understanding the built-in implementations
-type MyPartial<T> = { [K in keyof T]?: T[K] };
-type MyRequired<T> = { [K in keyof T]-?: T[K] };         // -? removes optional
-type MyReadonly<T> = { readonly [K in keyof T]: T[K] };
-type MyMutable<T> = { -readonly [K in keyof T]: T[K] };  // -readonly removes readonly
-
-type MyPick<T, K extends keyof T> = { [P in K]: T[P] };
-type MyOmit<T, K extends keyof T> = MyPick<T, Exclude<keyof T, K>>;
-type MyRecord<K extends keyof any, V> = { [P in K]: V };
-
-// Key remapping with 'as' clause (TypeScript 4.1+)
-// Remove keys where value is never/undefined
-type FilterNever<T> = {
-  [K in keyof T as T[K] extends never ? never : K]: T[K];
-};
-
-// Prefix all keys
-type Prefixed<T, P extends string> = {
-  [K in keyof T as \`\${P}\${string & K}\`]: T[K];
-};
-type PrefixedUser = Prefixed<{ name: string; age: number }, 'user_'>;
-// { user_name: string; user_age: number }
-
-// Create getter/setter pairs from an object type
-type Getters<T> = {
-  [K in keyof T as \`get\${Capitalize<string & K>}\`]: () => T[K];
-};
-type Setters<T> = {
-  [K in keyof T as \`set\${Capitalize<string & K>}\`]: (value: T[K]) => void;
-};
-
-interface UserFields {
-  name: string;
-  age: number;
-  email: string;
-}
-type UserGetters = Getters<UserFields>;
-// { getName: () => string; getAge: () => number; getEmail: () => string }
-
-// Deep variants
-type DeepPartial<T> = {
-  [K in keyof T]?: T[K] extends object
-    ? T[K] extends Array<infer U>
-      ? Array<DeepPartial<U>>
-      : DeepPartial<T[K]>
-    : T[K];
-};
-
-type DeepReadonly<T> = {
-  readonly [K in keyof T]: T[K] extends object
-    ? T[K] extends Function
-      ? T[K]
-      : DeepReadonly<T[K]>
-    : T[K];
-};
-
-// Nullable: make all properties nullable
-type Nullable<T> = { [K in keyof T]: T[K] | null };
-
-// Extract only optional keys
-type OptionalKeys<T> = {
-  [K in keyof T]-?: {} extends Pick<T, K> ? K : never;
-}[keyof T];
-
-// Extract only required keys
-type RequiredKeys<T> = {
-  [K in keyof T]-?: {} extends Pick<T, K> ? never : K;
-}[keyof T];`}</code></pre>
-
-      <h3 style={{ fontSize: '1.2rem', fontWeight: 700, marginTop: '1.5rem', marginBottom: '0.75rem', color: '#1e293b' }}>
-        Mapped Types for API Modeling
-      </h3>
-      <pre style={{ background: '#1e293b', color: '#e2e8f0', borderRadius: 8, padding: 20, overflowX: 'auto', fontSize: '0.875rem' }}><code>{`interface User {
-  id: string;
-  email: string;
-  name: string;
-  role: 'admin' | 'editor' | 'viewer';
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-// Create request: omit server-generated fields
-type CreateUserRequest = Omit<User, 'id' | 'createdAt' | 'updatedAt'>;
-
-// Update request: all editable fields optional, id required
-type UpdateUserRequest = Pick<User, 'id'> &
-  Partial<Omit<User, 'id' | 'createdAt' | 'updatedAt'>>;
-
-// Response: ensure specific fields always present
-type UserResponse = Required<Pick<User, 'id' | 'email' | 'name' | 'role'>>;
-
-// Paginated wrapper
-interface Page<T> {
-  data: T[];
-  total: number;
-  page: number;
-  pageSize: number;
-  hasMore: boolean;
-}
-type UserPage = Page<UserResponse>;
-
-// Make specific keys required in an otherwise optional type
-type RequireKeys<T, K extends keyof T> = T & Required<Pick<T, K>>;
-
-type Config = {
-  apiKey?: string;
-  baseUrl?: string;
-  timeout?: number;
-  retries?: number;
-};
-// Production config requires apiKey and baseUrl
-type ProductionConfig = RequireKeys<Config, 'apiKey' | 'baseUrl'>;`}</code></pre>
-
-      {/* Section 4: Template Literal Types */}
-      <h2 style={{ fontSize: '1.6rem', fontWeight: 700, marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
-        Template Literal Types
-      </h2>
-      <p>
-        Template literal types (TypeScript 4.1) construct new string types using backtick template syntax at
-        the type level. They distribute over union members to produce all combinations. Combined with intrinsic
-        string manipulation types (<code>Uppercase</code>, <code>Lowercase</code>, <code>Capitalize</code>,{' '}
-        <code>Uncapitalize</code>), they enable expressive string-pattern typing.
-      </p>
-      <pre style={{ background: '#1e293b', color: '#e2e8f0', borderRadius: 8, padding: 20, overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// Basic template literal type
-type Greeting = \`Hello, \${string}!\`;
-const g: Greeting = 'Hello, World!'; // OK
-
-// Distribution: produces all combinations
-type Color = 'red' | 'green' | 'blue';
-type Size = 'sm' | 'md' | 'lg';
-type ClassName = \`\${Color}-\${Size}\`;
-// "red-sm" | "red-md" | "red-lg" | "green-sm" | ... (9 types)
-
-// Intrinsic string types
-type Shout = Uppercase<'hello'>;        // "HELLO"
-type Whisper = Lowercase<'WORLD'>;       // "world"
-type TitleCase = Capitalize<'hello'>;    // "Hello"
-type UnCap = Uncapitalize<'Hello'>;      // "hello"
-
-// Event handler naming pattern
-type EventNames = 'click' | 'focus' | 'blur' | 'change';
-type HandlerNames = \`on\${Capitalize<EventNames>}\`;
-// "onClick" | "onFocus" | "onBlur" | "onChange"
-
-// Typed CSS units
-type CSSUnit = 'px' | 'rem' | 'em' | '%' | 'vh' | 'vw';
-type CSSLength = \`\${number}\${CSSUnit}\`;
-function setWidth(el: HTMLElement, width: CSSLength) {
-  el.style.width = width;
-}
-setWidth(document.body, '100%');   // OK
-setWidth(document.body, '1.5rem'); // OK
-// setWidth(document.body, '100'); // Error: no unit
-
-// API route typing
-type HttpMethod = 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
-type ApiRoute = \`/api/\${string}\`;
-type VersionedRoute = \`/api/v\${number}/\${string}\`;
-
-// Extracting parts of string types with infer + template literals
-type GetParam<S extends string> =
-  S extends \`\${string}:\${infer Param}/\${string}\`
-    ? Param
-    : S extends \`\${string}:\${infer Param}\`
-      ? Param
-      : never;
-
-type P1 = GetParam<'/users/:id/posts'>;  // "id"
-type P2 = GetParam<'/users/:userId'>;    // "userId"
-
-// Mapped type + template literal = typed event emitter
-type EventMap = {
-  click: { x: number; y: number };
-  keydown: { key: string; code: string };
-  resize: { width: number; height: number };
-};
-
-type OnHandlers = {
-  [K in keyof EventMap as \`on\${Capitalize<string & K>}\`]: (event: EventMap[K]) => void;
-};
-// { onClick: (e: {x:number;y:number}) => void; onKeydown: ...; onResize: ... }
-
-// Recursive: split a path string into tuple of segments
-type Split<S extends string, D extends string> =
-  S extends \`\${infer Head}\${D}\${infer Tail}\`
-    ? [Head, ...Split<Tail, D>]
-    : [S];
-
-type Parts = Split<'a/b/c', '/'>; // ["a", "b", "c"]`}</code></pre>
-
-      {/* Section 5: Discriminated Unions and Exhaustive Checks */}
-      <h2 style={{ fontSize: '1.6rem', fontWeight: 700, marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
-        Discriminated Unions and Exhaustive Checks
-      </h2>
-      <p>
-        A <strong>discriminated union</strong> is a union of types sharing a common literal-typed property
-        (the <em>discriminant</em>). TypeScript narrows the type automatically when you check the
-        discriminant. Adding an exhaustive check with <code>never</code> guarantees that adding a new
-        union member causes a compile error if you forget to handle it.
-      </p>
-      <pre style={{ background: '#1e293b', color: '#e2e8f0', borderRadius: 8, padding: 20, overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// Shape example — classic discriminated union
-type Circle = { kind: 'circle'; radius: number };
-type Square = { kind: 'square'; side: number };
-type Triangle = { kind: 'triangle'; base: number; height: number };
-type Shape = Circle | Square | Triangle;
-
-// Exhaustive switch — assertNever enforces completeness
-function assertNever(x: never): never {
-  throw new Error('Unhandled case: ' + JSON.stringify(x));
-}
-
-function area(shape: Shape): number {
-  switch (shape.kind) {
-    case 'circle':
-      return Math.PI * shape.radius ** 2;
-    case 'square':
-      return shape.side ** 2;
-    case 'triangle':
-      return (shape.base * shape.height) / 2;
-    default:
-      return assertNever(shape); // If you add a new Shape variant and forget to
-                                 // handle it here, TypeScript reports an error
-  }
-}
-
-// API result modeling
-type ApiResult<T, E = string> =
-  | { status: 'idle' }
-  | { status: 'loading' }
-  | { status: 'success'; data: T; timestamp: number }
-  | { status: 'error'; error: E; code: number };
-
-function handleResult<T>(result: ApiResult<T>): string {
-  switch (result.status) {
-    case 'idle':    return 'Ready';
-    case 'loading': return 'Loading...';
-    case 'success': return 'Got data at ' + result.timestamp;
-    case 'error':   return 'Error ' + result.code + ': ' + result.error;
-    default:        return assertNever(result);
-  }
-}
-
-// Domain event bus with discriminated union
-type DomainEvent =
-  | { type: 'USER_CREATED';  payload: { userId: string; email: string } }
-  | { type: 'USER_UPDATED';  payload: { userId: string; changes: Record<string, unknown> } }
-  | { type: 'USER_DELETED';  payload: { userId: string; deletedAt: Date } }
-  | { type: 'ORDER_PLACED';  payload: { orderId: string; total: number } };
-
-// Extract payload type for a specific event type
-type ExtractPayload<E extends DomainEvent, T extends DomainEvent['type']> =
-  Extract<E, { type: T }>['payload'];
-
-type UserCreatedPayload = ExtractPayload<DomainEvent, 'USER_CREATED'>;
-// { userId: string; email: string }
-
-// Type-safe handler map
-type EventHandlerMap = {
-  [K in DomainEvent['type']]: (
-    payload: ExtractPayload<DomainEvent, K>
-  ) => void;
-};
-
-const handlers: EventHandlerMap = {
-  USER_CREATED:  ({ userId, email }) => console.log('New user', email),
-  USER_UPDATED:  ({ userId, changes }) => console.log('Updated', userId),
-  USER_DELETED:  ({ userId, deletedAt }) => console.log('Deleted', userId),
-  ORDER_PLACED:  ({ orderId, total }) => console.log('Order', orderId, total),
-};`}</code></pre>
-
-      {/* Section 6: Utility Types Deep Dive */}
-      <h2 style={{ fontSize: '1.6rem', fontWeight: 700, marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
-        Utility Types Deep Dive
-      </h2>
-      <p>
-        Beyond the common Partial/Pick/Omit, TypeScript ships a full library of utility types for
-        function introspection, set operations on unions, and object manipulation. Understanding their
-        internals helps you compose custom utilities confidently.
-      </p>
-
-      <h3 style={{ fontSize: '1.2rem', fontWeight: 700, marginTop: '1.5rem', marginBottom: '0.75rem', color: '#1e293b' }}>
-        Comparison Table: Essential Utility Types
-      </h3>
-      <div style={{ overflowX: 'auto', margin: '1rem 0' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem' }}>
-          <thead>
-            <tr style={{ background: '#1e293b', color: '#e2e8f0' }}>
-              <th style={{ padding: '10px 14px', textAlign: 'left' }}>Utility Type</th>
-              <th style={{ padding: '10px 14px', textAlign: 'left' }}>Input</th>
-              <th style={{ padding: '10px 14px', textAlign: 'left' }}>Output</th>
-              <th style={{ padding: '10px 14px', textAlign: 'left' }}>Use Case</th>
-            </tr>
-          </thead>
-          <tbody>
-            {[
-              ['Partial<T>', 'T', 'All properties optional', 'Patch/update requests'],
-              ['Required<T>', 'T', 'All properties required', 'Enforce complete data'],
-              ['Readonly<T>', 'T', 'All properties readonly', 'Immutable snapshots'],
-              ['Pick<T, K>', 'T, keys K', 'Only keys K from T', 'Projection / DTO shaping'],
-              ['Omit<T, K>', 'T, keys K', 'T without keys K', 'Create requests without id'],
-              ['Record<K, V>', 'Keys K, value V', 'Object type with K keys', 'Lookup tables, caches'],
-              ['Exclude<T, U>', 'Union T, type U', 'Members of T not in U', 'Filter union members'],
-              ['Extract<T, U>', 'Union T, type U', 'Members of T assignable to U', 'Narrow union members'],
-              ['NonNullable<T>', 'T', 'T without null/undefined', 'Ensure defined value'],
-              ['ReturnType<F>', 'Function F', 'Return type of F', 'Infer response type'],
-              ['Parameters<F>', 'Function F', 'Tuple of param types', 'Infer arg types'],
-              ['ConstructorParameters<C>', 'Class C', 'Constructor arg tuple', 'Factory helpers'],
-              ['InstanceType<C>', 'Class C', 'Instance type', 'Generic class utils'],
-              ['Awaited<T>', 'T (possibly Promise)', 'Resolved value type', 'Async return types'],
-              ['NoInfer<T>', 'T', 'Prevents type inference at site', 'Prevent widening (TS 5.4+)'],
-            ].map(([util, input, output, use], i) => (
-              <tr key={util} style={{ background: i % 2 === 0 ? '#f8fafc' : '#fff', borderBottom: '1px solid #e2e8f0' }}>
-                <td style={{ padding: '8px 14px' }}><code>{util}</code></td>
-                <td style={{ padding: '8px 14px', color: '#64748b' }}>{input}</td>
-                <td style={{ padding: '8px 14px', color: '#64748b' }}>{output}</td>
-                <td style={{ padding: '8px 14px', color: '#64748b' }}>{use}</td>
+      {/* Introduction */}
+      <section style={sectionStyle}>
+        <h2 style={headingStyle}>{t.introTitle}</h2>
+        <p style={paragraphStyle}>{t.introP1}</p>
+        <p style={paragraphStyle}>{t.introP2}</p>
+      </section>
+
+      {/* 1. Advanced Generics */}
+      <section style={sectionStyle}>
+        <h2 style={headingStyle}>{t.genericsTitle}</h2>
+        <p style={paragraphStyle}>{t.genericsP1}</p>
+
+        <h3 style={subHeadingStyle}>Generic Constraints</h3>
+        <p style={paragraphStyle}>{t.genericsP2}</p>
+        <pre style={codeBlockStyle}><code>{
+          '// Generic constraint: T must have a length property\n'
+          + 'function longest<T extends { length: number }>(a: T, b: T): T {\n'
+          + '  return a.length >= b.length ? a : b;\n'
+          + '}\n\n'
+          + 'longest("hello", "hi");        // OK: string has length\n'
+          + 'longest([1, 2, 3], [1]);       // OK: array has length\n'
+          + '// longest(10, 20);            // Error: number has no length\n\n'
+          + '// Constraint with keyof\n'
+          + 'function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {\n'
+          + '  return obj[key];\n'
+          + '}\n\n'
+          + 'const user = { name: "Alice", age: 30 };\n'
+          + 'getProperty(user, "name");     // type: string\n'
+          + 'getProperty(user, "age");      // type: number\n'
+          + '// getProperty(user, "email"); // Error: "email" not in keyof User'
+        }</code></pre>
+
+        <h3 style={subHeadingStyle}>Default Type Parameters</h3>
+        <p style={paragraphStyle}>{t.genericsP3}</p>
+        <pre style={codeBlockStyle}><code>{
+          '// Default type parameter\n'
+          + 'interface ApiResponse<TData = unknown, TError = Error> {\n'
+          + '  data: TData | null;\n'
+          + '  error: TError | null;\n'
+          + '  status: number;\n'
+          + '}\n\n'
+          + '// Uses defaults: ApiResponse<unknown, Error>\n'
+          + 'const res1: ApiResponse = { data: null, error: null, status: 200 };\n\n'
+          + '// Override only TData\n'
+          + 'const res2: ApiResponse<User[]> = {\n'
+          + '  data: [{ id: 1, name: "Alice" }],\n'
+          + '  error: null,\n'
+          + '  status: 200,\n'
+          + '};'
+        }</code></pre>
+
+        <h3 style={subHeadingStyle}>Variance Annotations</h3>
+        <p style={paragraphStyle}>{t.genericsP4}</p>
+        <pre style={codeBlockStyle}><code>{
+          '// Variance annotations (TypeScript 4.7+)\n'
+          + 'interface Producer<out T> {\n'
+          + '  produce(): T;    // T is in output (covariant) position\n'
+          + '}\n\n'
+          + 'interface Consumer<in T> {\n'
+          + '  consume(value: T): void;  // T is in input (contravariant) position\n'
+          + '}\n\n'
+          + 'interface Transform<in T, out U> {\n'
+          + '  transform(input: T): U;   // T contravariant, U covariant\n'
+          + '}'
+        }</code></pre>
+      </section>
+
+      {/* 2. Conditional Types */}
+      <section style={sectionStyle}>
+        <h2 style={headingStyle}>{t.conditionalTitle}</h2>
+        <p style={paragraphStyle}>{t.conditionalP1}</p>
+        <pre style={codeBlockStyle}><code>{
+          '// Basic conditional type\n'
+          + 'type IsString<T> = T extends string ? true : false;\n\n'
+          + 'type A = IsString<"hello">;   // true\n'
+          + 'type B = IsString<42>;        // false\n'
+          + 'type C = IsString<string>;    // true\n\n'
+          + '// Nested conditional types\n'
+          + 'type TypeName<T> =\n'
+          + '  T extends string ? "string" :\n'
+          + '  T extends number ? "number" :\n'
+          + '  T extends boolean ? "boolean" :\n'
+          + '  T extends undefined ? "undefined" :\n'
+          + '  T extends Function ? "function" :\n'
+          + '  "object";'
+        }</code></pre>
+
+        <h3 style={subHeadingStyle}>The infer Keyword</h3>
+        <p style={paragraphStyle}>{t.conditionalP2}</p>
+        <pre style={codeBlockStyle}><code>{
+          '// Extract return type using infer\n'
+          + 'type MyReturnType<T> = T extends (...args: any[]) => infer R ? R : never;\n\n'
+          + 'type R1 = MyReturnType<() => string>;          // string\n'
+          + 'type R2 = MyReturnType<(x: number) => boolean>; // boolean\n\n'
+          + '// Extract Promise inner type\n'
+          + 'type UnwrapPromise<T> = T extends Promise<infer U> ? U : T;\n\n'
+          + 'type P1 = UnwrapPromise<Promise<string>>;      // string\n'
+          + 'type P2 = UnwrapPromise<Promise<number[]>>;    // number[]\n'
+          + 'type P3 = UnwrapPromise<string>;               // string\n\n'
+          + '// Extract array element type\n'
+          + 'type ElementOf<T> = T extends (infer E)[] ? E : never;\n\n'
+          + 'type E1 = ElementOf<string[]>;    // string\n'
+          + 'type E2 = ElementOf<[1, 2, 3]>;   // 1 | 2 | 3'
+        }</code></pre>
+
+        <h3 style={subHeadingStyle}>Distributive Conditional Types</h3>
+        <p style={paragraphStyle}>{t.conditionalP3}</p>
+        <pre style={codeBlockStyle}><code>{
+          '// Distributive: T distributes over union\n'
+          + 'type ToArray<T> = T extends any ? T[] : never;\n\n'
+          + 'type D1 = ToArray<string | number>;\n'
+          + '// Result: string[] | number[]  (distributed)\n\n'
+          + '// Non-distributive: wrap in tuple\n'
+          + 'type ToArrayND<T> = [T] extends [any] ? T[] : never;\n\n'
+          + 'type D2 = ToArrayND<string | number>;\n'
+          + '// Result: (string | number)[]  (not distributed)'
+        }</code></pre>
+      </section>
+
+      {/* 3. Mapped Types */}
+      <section style={sectionStyle}>
+        <h2 style={headingStyle}>{t.mappedTitle}</h2>
+        <p style={paragraphStyle}>{t.mappedP1}</p>
+        <pre style={codeBlockStyle}><code>{
+          '// Basic mapped type: make all properties optional\n'
+          + 'type MyPartial<T> = {\n'
+          + '  [K in keyof T]?: T[K];\n'
+          + '};\n\n'
+          + '// Make all properties readonly\n'
+          + 'type MyReadonly<T> = {\n'
+          + '  readonly [K in keyof T]: T[K];\n'
+          + '};\n\n'
+          + '// Mapped type with conditional value\n'
+          + 'type NullableProps<T> = {\n'
+          + '  [K in keyof T]: T[K] | null;\n'
+          + '};'
+        }</code></pre>
+
+        <h3 style={subHeadingStyle}>Key Remapping (as clause)</h3>
+        <p style={paragraphStyle}>{t.mappedP2}</p>
+        <pre style={codeBlockStyle}><code>{
+          '// Key remapping with as (TypeScript 4.1+)\n'
+          + 'type Getters<T> = {\n'
+          + '  [K in keyof T as `get\${Capitalize<string & K>}`]: () => T[K];\n'
+          + '};\n\n'
+          + 'interface Person {\n'
+          + '  name: string;\n'
+          + '  age: number;\n'
+          + '}\n\n'
+          + 'type PersonGetters = Getters<Person>;\n'
+          + '// { getName: () => string; getAge: () => number }\n\n'
+          + '// Filter keys: remove methods\n'
+          + 'type DataOnly<T> = {\n'
+          + '  [K in keyof T as T[K] extends Function ? never : K]: T[K];\n'
+          + '};'
+        }</code></pre>
+
+        <h3 style={subHeadingStyle}>Template Literal Types</h3>
+        <p style={paragraphStyle}>{t.mappedP3}</p>
+        <pre style={codeBlockStyle}><code>{
+          '// Template literal types\n'
+          + 'type EventName<T extends string> = `on\${Capitalize<T>}`;\n\n'
+          + 'type ClickEvent = EventName<"click">;     // "onClick"\n'
+          + 'type FocusEvent = EventName<"focus">;     // "onFocus"\n\n'
+          + '// Combining with union types\n'
+          + 'type Color = "red" | "blue" | "green";\n'
+          + 'type Size = "small" | "medium" | "large";\n\n'
+          + 'type ColorSize = `\${Color}-\${Size}`;\n'
+          + '// "red-small" | "red-medium" | "red-large"\n'
+          + '// | "blue-small" | "blue-medium" | ...\n\n'
+          + '// Built-in string manipulation types\n'
+          + 'type U = Uppercase<"hello">;       // "HELLO"\n'
+          + 'type L = Lowercase<"HELLO">;       // "hello"\n'
+          + 'type Cap = Capitalize<"hello">;    // "Hello"\n'
+          + 'type Unc = Uncapitalize<"Hello">;  // "hello"'
+        }</code></pre>
+      </section>
+
+      {/* 4. Utility Types */}
+      <section style={sectionStyle}>
+        <h2 style={headingStyle}>{t.utilityTitle}</h2>
+        <p style={paragraphStyle}>{t.utilityP1}</p>
+
+        <div style={tipBoxStyle}>
+          <strong>Tip: </strong>{t.utilityP2}
+        </div>
+
+        <div style={tableContainerStyle}>
+          <table style={tableStyle}>
+            <thead>
+              <tr>
+                <th style={thStyle}>Utility Type</th>
+                <th style={thStyle}>Implementation</th>
+                <th style={thStyle}>Purpose</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      <pre style={{ background: '#1e293b', color: '#e2e8f0', borderRadius: 8, padding: 20, overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// Exclude and Extract — set operations on unions
-type Primitive = string | number | boolean | null | undefined;
-type NonNullPrimitive = Exclude<Primitive, null | undefined>; // string | number | boolean
-type StringOrNumber = Extract<Primitive, string | number>;    // string | number
-
-// NonNullable<T> = Exclude<T, null | undefined>
-type Safe = NonNullable<string | null | undefined>; // string
-
-// Awaited<T> — recursively unwraps promises
-type A1 = Awaited<Promise<string>>;                     // string
-type A2 = Awaited<Promise<Promise<number>>>;             // number
-type A3 = Awaited<string | Promise<number>>;             // string | number
-
-// Combine Awaited + ReturnType for async functions
-async function loadConfig() {
-  return { debug: true, apiUrl: 'https://api.example.com' };
-}
-type Config = Awaited<ReturnType<typeof loadConfig>>;
-// { debug: boolean; apiUrl: string }
-
-// NoInfer<T> (TypeScript 5.4) — prevent inference widening
-function createStore<T>(initial: T, transform: (val: NoInfer<T>) => NoInfer<T>): T {
-  return transform(initial);
-}
-// Without NoInfer, T would be widened by the 'transform' parameter type
-// With NoInfer, T is solely inferred from 'initial'
-
-// Combining utility types for sophisticated patterns
-interface ApiSchema {
-  users: { id: string; name: string; email: string; role: 'admin' | 'user' };
-  posts: { id: string; title: string; body: string; authorId: string };
-  comments: { id: string; text: string; postId: string; userId: string };
-}
-
-type ApiResource = keyof ApiSchema;
-
-// Create: all fields except id
-type CreatePayload<R extends ApiResource> = Omit<ApiSchema[R], 'id'>;
-
-// Update: id required, all others optional
-type UpdatePayload<R extends ApiResource> =
-  Pick<ApiSchema[R], 'id'> &
-  Partial<Omit<ApiSchema[R], 'id'>>;
-
-type CreateUser = CreatePayload<'users'>;
-// { name: string; email: string; role: 'admin' | 'user' }
-
-type UpdatePost = UpdatePayload<'posts'>;
-// { id: string; title?: string; body?: string; authorId?: string }`}</code></pre>
-
-      {/* Section 7: Decorators */}
-      <h2 style={{ fontSize: '1.6rem', fontWeight: 700, marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
-        Decorators: Experimental vs TC39 Stage 3
-      </h2>
-      <p>
-        TypeScript supports two decorator systems. <strong>Legacy experimental decorators</strong> require{' '}
-        <code>experimentalDecorators: true</code> in tsconfig and are used by NestJS, Angular, and TypeORM.
-        <strong>TC39 Stage 3 decorators</strong> (TypeScript 5.0+) require no flag and implement the
-        finalized ECMAScript proposal. The two systems are <em>incompatible</em> and cannot coexist in
-        the same file.
-      </p>
-
-      <h3 style={{ fontSize: '1.2rem', fontWeight: 700, marginTop: '1.5rem', marginBottom: '0.75rem', color: '#1e293b' }}>
-        Comparison: Legacy vs TC39 Stage 3
-      </h3>
-      <div style={{ overflowX: 'auto', margin: '1rem 0' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem' }}>
-          <thead>
-            <tr style={{ background: '#1e293b', color: '#e2e8f0' }}>
-              <th style={{ padding: '10px 14px', textAlign: 'left' }}>Aspect</th>
-              <th style={{ padding: '10px 14px', textAlign: 'left' }}>Legacy (experimentalDecorators)</th>
-              <th style={{ padding: '10px 14px', textAlign: 'left' }}>TC39 Stage 3 (TS 5.0+)</th>
-            </tr>
-          </thead>
-          <tbody>
-            {[
-              ['tsconfig flag', '"experimentalDecorators": true', 'None required'],
-              ['Method signature', '(target, key, descriptor)', '(value, context)'],
-              ['Context object', 'No context', 'name, kind, metadata, addInitializer'],
-              ['accessor keyword', 'Not supported', 'Supported'],
-              ['Metadata', 'Via reflect-metadata', 'Built-in decorator metadata proposal'],
-              ['Framework support', 'NestJS, Angular, TypeORM, InversifyJS', 'Growing — check framework docs'],
-              ['Stability', 'Stable (frozen API)', 'Finalized ECMAScript proposal'],
-              ['Mixing in same file', 'N/A', 'Cannot mix with legacy'],
-            ].map(([aspect, legacy, tc39], i) => (
-              <tr key={aspect} style={{ background: i % 2 === 0 ? '#f8fafc' : '#fff', borderBottom: '1px solid #e2e8f0' }}>
-                <td style={{ padding: '8px 14px', fontWeight: 600 }}>{aspect}</td>
-                <td style={{ padding: '8px 14px', color: '#64748b' }}>{legacy}</td>
-                <td style={{ padding: '8px 14px', color: '#64748b' }}>{tc39}</td>
+            </thead>
+            <tbody>
+              <tr>
+                <td style={tdStyle}><code style={inlineCodeStyle}>{'Partial<T>'}</code></td>
+                <td style={tdStyle}><code style={inlineCodeStyle}>{'{ [K in keyof T]?: T[K] }'}</code></td>
+                <td style={tdStyle}>All properties optional</td>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      <pre style={{ background: '#1e293b', color: '#e2e8f0', borderRadius: 8, padding: 20, overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// ── TC39 Stage 3 Decorators (TypeScript 5.0+) ──────────────────────────
-
-// Class decorator: replace or augment the class
-function sealed(target: typeof SomeClass, context: ClassDecoratorContext) {
-  context.addInitializer(function(this: typeof SomeClass) {
-    Object.seal(this);
-  });
-}
-
-// Method decorator: wrap the method
-function log(target: Function, context: ClassMethodDecoratorContext) {
-  const name = String(context.name);
-  return function(this: unknown, ...args: unknown[]) {
-    console.log(\`Calling \${name} with\`, args);
-    const result = (target as Function).apply(this, args);
-    console.log(\`\${name} returned\`, result);
-    return result;
-  };
-}
-
-// Field decorator
-function required<T>(target: undefined, context: ClassFieldDecoratorContext<unknown, T>) {
-  return function(this: unknown, value: T) {
-    if (value === undefined || value === null) {
-      throw new Error(\`Field \${String(context.name)} is required\`);
-    }
-    return value;
-  };
-}
-
-// accessor keyword + decorator
-class ReactiveStore {
-  @log
-  accessor count = 0; // auto-generates get count() / set count() backed by #count
-}
-
-// ── Legacy Experimental Decorators ──────────────────────────────────────
-// tsconfig: "experimentalDecorators": true, "emitDecoratorMetadata": true
-
-// Method decorator (legacy API)
-function retry(times: number, delay: number) {
-  return function(target: object, key: string, descriptor: PropertyDescriptor) {
-    const original = descriptor.value;
-    descriptor.value = async function(this: unknown, ...args: unknown[]) {
-      let lastError: unknown;
-      for (let i = 0; i < times; i++) {
-        try {
-          return await original.apply(this, args);
-        } catch (e) {
-          lastError = e;
-          await new Promise(r => setTimeout(r, delay * (i + 1)));
-        }
-      }
-      throw lastError;
-    };
-    return descriptor;
-  };
-}
-
-// Class decorator (legacy API)
-function Injectable(): ClassDecorator {
-  return (target: Function) => {
-    Reflect.defineMetadata('injectable', true, target);
-  };
-}
-
-class UserService {
-  @retry(3, 1000)
-  async fetchUser(id: string) {
-    const res = await fetch(\`/api/users/\${id}\`);
-    return res.json();
-  }
-}
-
-// Decorator composition: applied bottom-to-top
-class ApiController {
-  @log        // executed second (outer)
-  @retry(3, 500) // executed first (inner)
-  async createUser(data: unknown) { /* ... */ }
-}`}</code></pre>
-
-      {/* Section 8: Module Augmentation and Declaration Merging */}
-      <h2 style={{ fontSize: '1.6rem', fontWeight: 700, marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
-        Module Augmentation and Declaration Merging
-      </h2>
-      <p>
-        <strong>Declaration merging</strong> allows multiple declarations of the same name to be combined
-        into a single type definition. <strong>Module augmentation</strong> extends the types of existing
-        modules (including third-party npm packages) without modifying their source. Both are essential for
-        adding properties to express <code>Request</code>, extending Next.js session types, or augmenting
-        global objects.
-      </p>
-      <pre style={{ background: '#1e293b', color: '#e2e8f0', borderRadius: 8, padding: 20, overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// Interface declaration merging
-interface Window {
-  myAnalytics: { track: (event: string) => void };
-}
-
-interface User {
-  id: string;
-  name: string;
-}
-interface User {
-  email: string; // merged with previous declaration
-}
-// Result: User = { id: string; name: string; email: string }
-
-// Namespace merging with a class
-class Album {
-  label: Album.Label = 'unknown';
-}
-namespace Album {
-  export type Label = string;
-  export function create(title: string): Album {
-    return { label: title };
-  }
-}
-
-// Module augmentation: add property to express Request
-// In a types/express/index.d.ts file:
-declare module 'express-serve-static-core' {
-  interface Request {
-    user?: {
-      id: string;
-      role: 'admin' | 'user';
-    };
-  }
-}
-
-// Augment Next.js session (next-auth example)
-declare module 'next-auth' {
-  interface Session {
-    user: {
-      id: string;
-      role: 'admin' | 'user';
-      name?: string | null;
-      email?: string | null;
-    };
-  }
-}
-
-// Global augmentation
-declare global {
-  interface Array<T> {
-    // Add a typed groupBy method to all arrays
-    groupBy<K extends string | number | symbol>(
-      keyFn: (item: T) => K
-    ): Record<K, T[]>;
-  }
-}
-
-// Augment an npm package (e.g., add types to untyped module)
-declare module 'some-untyped-library' {
-  export function doSomething(input: string): Promise<string>;
-  export const VERSION: string;
-  export interface Options {
-    timeout?: number;
-    retries?: number;
-  }
-}
-
-// Selective re-export augmentation pattern
-// Useful for extending a library's public API in a wrapper module
-import type { RequestHandler } from 'express';
-
-declare module 'express' {
-  interface RouterMatcher<T> {
-    // Add custom overload
-    (path: string, ...handlers: RequestHandler[]): T;
-  }
-}`}</code></pre>
-
-      {/* Section 9: Type Narrowing Techniques */}
-      <h2 style={{ fontSize: '1.6rem', fontWeight: 700, marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
-        Type Narrowing Techniques
-      </h2>
-      <p>
-        TypeScript uses <em>control flow analysis</em> to narrow types within blocks. Multiple narrowing
-        techniques exist: <code>typeof</code>, <code>instanceof</code>, <code>in</code>, truthiness checks,
-        equality checks, assignment narrowing, and user-defined <em>type guards</em>. Understanding when
-        each is appropriate prevents unnecessary type assertions (<code>as</code>).
-      </p>
-      <pre style={{ background: '#1e293b', color: '#e2e8f0', borderRadius: 8, padding: 20, overflowX: 'auto', fontSize: '0.875rem' }}><code>{`type StringOrNumber = string | number;
-
-// typeof narrowing
-function double(x: StringOrNumber): StringOrNumber {
-  if (typeof x === 'string') {
-    return x.repeat(2);   // x: string here
-  }
-  return x * 2;           // x: number here
-}
-
-// instanceof narrowing
-function format(err: Error | SyntaxError): string {
-  if (err instanceof SyntaxError) {
-    return 'Syntax error at: ' + err.message; // err: SyntaxError
-  }
-  return err.message; // err: Error
-}
-
-// in narrowing (check property existence)
-type Cat = { meow(): void };
-type Dog = { bark(): void };
-function makeSound(animal: Cat | Dog) {
-  if ('meow' in animal) {
-    animal.meow();  // animal: Cat
-  } else {
-    animal.bark();  // animal: Dog
-  }
-}
-
-// Truthiness narrowing
-function printLength(x: string | null | undefined) {
-  if (x) {
-    console.log(x.length); // x: string (null and undefined are falsy)
-  }
-}
-
-// Equality narrowing
-function compare(a: string | number, b: string | boolean) {
-  if (a === b) {
-    // Both sides must be string (the only type in common)
-    console.log(a.toUpperCase()); // a: string
-    console.log(b.toUpperCase()); // b: string
-  }
-}
-
-// User-defined type guard: is predicate
-function isString(value: unknown): value is string {
-  return typeof value === 'string';
-}
-function isUser(value: unknown): value is { id: string; name: string } {
-  return (
-    typeof value === 'object' &&
-    value !== null &&
-    'id' in value &&
-    'name' in value &&
-    typeof (value as any).id === 'string' &&
-    typeof (value as any).name === 'string'
-  );
-}
-
-// Assertion function: asserts predicate
-function assertDefined<T>(value: T | null | undefined): asserts value is T {
-  if (value === null || value === undefined) {
-    throw new Error('Expected defined value');
-  }
-}
-
-let maybeUser: { name: string } | null = null;
-assertDefined(maybeUser);
-// After assertDefined, maybeUser is narrowed to { name: string }
-console.log(maybeUser.name); // Safe
-
-// Discriminant narrowing (discriminated union pattern)
-type LoadedState = { state: 'loaded'; data: string[] };
-type ErrorState  = { state: 'error';  message: string };
-type AppState = LoadedState | ErrorState | { state: 'idle' };
-
-function render(state: AppState) {
-  if (state.state === 'loaded') {
-    return state.data.join(', ');  // state: LoadedState
-  }
-  if (state.state === 'error') {
-    return 'Error: ' + state.message; // state: ErrorState
-  }
-  return 'Loading...';               // state: { state: 'idle' }
-}
-
-// Control flow with never for exhaustive narrowing
-function exhaustiveCheck(value: never): never {
-  throw new Error('Unexpected value: ' + JSON.stringify(value));
-}`}</code></pre>
-
-      {/* Section 10: Advanced Function Overloads */}
-      <h2 style={{ fontSize: '1.6rem', fontWeight: 700, marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
-        Advanced Function Overloads
-      </h2>
-      <p>
-        Function overloads allow a function to have multiple type signatures. TypeScript matches the call
-        against each overload signature in order. The <em>implementation signature</em> (last, broader
-        signature) is not part of the public API. Overloads provide better autocomplete and narrower return
-        types than a single union signature.
-      </p>
-      <pre style={{ background: '#1e293b', color: '#e2e8f0', borderRadius: 8, padding: 20, overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// Basic function overload
-function createElement(tag: 'canvas'): HTMLCanvasElement;
-function createElement(tag: 'img'):    HTMLImageElement;
-function createElement(tag: 'input'):  HTMLInputElement;
-function createElement(tag: string):   HTMLElement;
-// Implementation (not visible to callers)
-function createElement(tag: string): HTMLElement {
-  return document.createElement(tag);
-}
-
-const canvas = createElement('canvas'); // HTMLCanvasElement — precise type!
-const img    = createElement('img');    // HTMLImageElement
-const generic = createElement('span'); // HTMLElement
-
-// Overload based on argument count
-function buildQuery(table: string): string;
-function buildQuery(table: string, where: string): string;
-function buildQuery(table: string, where: string, limit: number): string;
-function buildQuery(table: string, where?: string, limit?: number): string {
-  let sql = 'SELECT * FROM ' + table;
-  if (where) sql += ' WHERE ' + where;
-  if (limit) sql += ' LIMIT ' + limit;
-  return sql;
-}
-
-// Overload for type-based return discrimination
-function parse(value: string): string[];
-function parse(value: number): number[];
-function parse(value: string | number): string[] | number[] {
-  if (typeof value === 'string') return value.split(',');
-  return [value];
-}
-
-const strResult = parse('a,b,c');  // string[]
-const numResult = parse(42);       // number[]
-
-// Method overloads in classes
-class EventEmitter<Events extends Record<string, unknown>> {
-  private listeners = new Map<string, Function[]>();
-
-  on<K extends keyof Events & string>(
-    event: K,
-    handler: (payload: Events[K]) => void
-  ): this;
-  on(event: string, handler: Function): this;
-  on(event: string, handler: Function): this {
-    const existing = this.listeners.get(event) ?? [];
-    this.listeners.set(event, [...existing, handler]);
-    return this;
-  }
-
-  emit<K extends keyof Events & string>(event: K, payload: Events[K]): void;
-  emit(event: string, payload: unknown): void;
-  emit(event: string, payload: unknown): void {
-    this.listeners.get(event)?.forEach(fn => fn(payload));
-  }
-}
-
-type AppEvents = {
-  login:  { userId: string };
-  logout: { userId: string; reason: string };
-};
-
-const emitter = new EventEmitter<AppEvents>();
-emitter.on('login', ({ userId }) => console.log('Logged in:', userId));
-emitter.emit('login', { userId: 'u1' }); // payload fully typed`}</code></pre>
-
-      {/* Section 11: Covariance and Contravariance */}
-      <h2 style={{ fontSize: '1.6rem', fontWeight: 700, marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
-        Covariance and Contravariance
-      </h2>
-      <p>
-        Variance describes how the subtype relationship flows through generic type constructors. Getting it
-        wrong leads to unsound type assignments that silently corrupt data at runtime. TypeScript is
-        structurally typed, so understanding variance is key to designing correct generic APIs.
-      </p>
-      <pre style={{ background: '#1e293b', color: '#e2e8f0', borderRadius: 8, padding: 20, overflowX: 'auto', fontSize: '0.875rem' }}><code>{`class Animal {
-  breathe() { return 'breathe'; }
-}
-class Dog extends Animal {
-  bark() { return 'woof'; }
-}
-class Cat extends Animal {
-  meow() { return 'meow'; }
-}
-
-// ── Covariance: return types ────────────────────────────────────────────
-// If Dog extends Animal, then () => Dog is assignable to () => Animal
-type AnimalFactory = () => Animal;
-type DogFactory    = () => Dog;
-
-const makeDog: DogFactory = () => new Dog();
-const makeAnimal: AnimalFactory = makeDog; // OK — covariant ✓
-
-// ── Contravariance: parameter types (strictFunctionTypes: true) ─────────
-// If Dog extends Animal, then (x: Animal) => void is assignable to (x: Dog) => void
-type AnimalHandler = (a: Animal) => void;
-type DogHandler    = (d: Dog) => void;
-
-const handleAnimal: AnimalHandler = (a) => a.breathe(); // works on any Animal
-const handleDog: DogHandler = handleAnimal; // OK — contravariant ✓
-// handleAnimal can accept any Animal (including Dog), so it's safe to use
-// wherever a DogHandler is needed.
-
-// The reverse is UNSOUND:
-// const handleAnimalFromDog: AnimalHandler = handleDog; // Error!
-// handleDog might call d.bark() which only exists on Dog, not all Animals
-
-// ── Bivariance: method shorthand (historic exception) ───────────────────
-interface Processor {
-  process(value: string): void;   // method — bivariant (less safe)
-  handle: (value: string) => void; // property — contravariant (safe)
-}
-
-// ── Invariance: read-write containers ──────────────────────────────────
-// Array<T> is effectively invariant (read + write)
-// You cannot safely assign Dog[] to Animal[]
-// because you could then push a Cat into the "Dog" array
-function addCat(animals: Animal[]) {
-  animals.push(new Cat()); // Fine if truly Animal[]
-}
-const dogs: Dog[] = [];
-// addCat(dogs); // Would corrupt dogs — TypeScript correctly errors
-
-// ── Explicit variance annotations (TypeScript 4.7+) ────────────────────
-interface ReadonlyBox<out T> {   // covariant — T only in output position
-  readonly value: T;
-}
-interface WriteOnlyBox<in T> {   // contravariant — T only in input position
-  set(value: T): void;
-}
-interface Box<in out T> {        // invariant — T in both positions
-  get(): T;
-  set(value: T): void;
-}
-
-// TypeScript validates that variance annotations match actual usage
-// Incorrect annotation produces a compile error:
-// interface BadBox<out T> { set(value: T): void; } // Error: T in contravariant position`}</code></pre>
-
-      {/* Section 12: satisfies Operator */}
-      <h2 style={{ fontSize: '1.6rem', fontWeight: 700, marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
-        The satisfies Operator (TypeScript 4.9+)
-      </h2>
-      <p>
-        The <code>satisfies</code> operator validates that an expression matches a type <em>without</em>{' '}
-        widening the inferred type to that of the annotation. This solves the classic tension between
-        type-checking a config object and retaining the precise literal types for downstream use.
-      </p>
-      <pre style={{ background: '#1e293b', color: '#e2e8f0', borderRadius: 8, padding: 20, overflowX: 'auto', fontSize: '0.875rem' }}><code>{`type Color = string | [number, number, number];
-
-// With type annotation: loses narrow type
-const paletteAnnotated: Record<string, Color> = {
-  red:   [255, 0, 0],
-  green: '#00ff00',
-  blue:  [0, 0, 255],
-};
-// paletteAnnotated.red is Color = string | [number, number, number]
-// Can't call .toUpperCase() on paletteAnnotated.green — it might be an array
-
-// With satisfies: keeps narrow inferred type
-const palette = {
-  red:   [255, 0, 0],
-  green: '#00ff00',
-  blue:  [0, 0, 255],
-} satisfies Record<string, Color>;
-
-// TypeScript remembers the narrow types:
-palette.red[0];              // number ✓ (not string | number[])
-palette.green.toUpperCase(); // string ✓ (not string | number[])
-// Also catches errors:
-// const bad = { red: true } satisfies Record<string, Color>; // Error!
-
-// satisfies for route configs
-type HttpMethod = 'GET' | 'POST' | 'PUT' | 'DELETE';
-interface RouteConfig {
-  method: HttpMethod;
-  path: string;
-  auth?: boolean;
-}
-
-const routes = {
-  getUsers:    { method: 'GET',    path: '/users',        auth: true },
-  createUser:  { method: 'POST',   path: '/users',        auth: true },
-  publicHealth:{ method: 'GET',    path: '/health' },
-} satisfies Record<string, RouteConfig>;
-
-// routes.getUsers.method is 'GET' (literal), not HttpMethod (widened)
-// routes.publicHealth.auth is undefined (satisfies allows missing optional)
-
-// satisfies with const enum-like objects
-const COLORS = {
-  PRIMARY:   '#0ea5e9',
-  SECONDARY: '#6366f1',
-  SUCCESS:   '#22c55e',
-  ERROR:     '#ef4444',
-} satisfies Record<string, \`#\${string}\`>;
-
-// COLORS.PRIMARY is '#0ea5e9' not string — template literal preserved
-
-// satisfies + as const: ultimate precision
-const CONFIG = {
-  endpoints: {
-    api:    'https://api.example.com',
-    cdn:    'https://cdn.example.com',
-  },
-  timeouts: { connect: 5_000, read: 30_000 },
-} as const satisfies {
-  endpoints: Record<string, string>;
-  timeouts: Record<string, number>;
-};
-// CONFIG.endpoints.api is 'https://api.example.com' (literal, readonly)
-
-// vs annotation which would produce string (widened)`}</code></pre>
-
-      {/* Section 13: noUncheckedIndexedAccess and Strict Mode */}
-      <h2 style={{ fontSize: '1.6rem', fontWeight: 700, marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
-        noUncheckedIndexedAccess and Strict Mode Settings
-      </h2>
-      <p>
-        TypeScript&#39;s <code>strict: true</code> enables a bundle of checks, but several highly impactful
-        options are <em>not</em> included. Enabling them requires explicit opt-in. Understanding exactly
-        what each option does helps you choose the right level of strictness for your project.
-      </p>
-
-      <h3 style={{ fontSize: '1.2rem', fontWeight: 700, marginTop: '1.5rem', marginBottom: '0.75rem', color: '#1e293b' }}>
-        Strict Mode Options Reference
-      </h3>
-      <div style={{ overflowX: 'auto', margin: '1rem 0' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.85rem' }}>
-          <thead>
-            <tr style={{ background: '#1e293b', color: '#e2e8f0' }}>
-              <th style={{ padding: '10px 14px', textAlign: 'left' }}>Option</th>
-              <th style={{ padding: '10px 14px', textAlign: 'left' }}>In strict?</th>
-              <th style={{ padding: '10px 14px', textAlign: 'left' }}>What It Does</th>
-            </tr>
-          </thead>
-          <tbody>
-            {[
-              ['strictNullChecks', 'Yes', 'null/undefined are not assignable to other types'],
-              ['strictFunctionTypes', 'Yes', 'Function params are checked contravariantly'],
-              ['strictBindCallApply', 'Yes', 'bind/call/apply are type-checked'],
-              ['strictPropertyInitialization', 'Yes', 'Class properties must be initialized in constructor'],
-              ['noImplicitAny', 'Yes', 'Variables without type annotation cannot be inferred as any'],
-              ['noImplicitThis', 'Yes', 'this in functions must have a type annotation'],
-              ['alwaysStrict', 'Yes', 'Emit "use strict" and parse in strict mode'],
-              ['useUnknownInCatchVariables', 'Yes (TS 4.4)', 'catch (e) binds e as unknown instead of any'],
-              ['noUncheckedIndexedAccess', 'No', 'Adds | undefined to array/index-signature access'],
-              ['noPropertyAccessFromIndexSignature', 'No', 'Requires bracket notation for index-sig access'],
-              ['exactOptionalPropertyTypes', 'No', 'Distinguishes missing property from property set to undefined'],
-              ['noFallthroughCasesInSwitch', 'No', 'Prevents case fallthrough in switch statements'],
-              ['noImplicitReturns', 'No', 'All code paths in function must return a value'],
-              ['noUnusedLocals', 'No', 'Reports error on unused local variables'],
-              ['noUnusedParameters', 'No', 'Reports error on unused function parameters'],
-              ['verbatimModuleSyntax', 'No', 'Import/export type syntax must match usage exactly'],
-            ].map(([option, inStrict, desc], i) => (
-              <tr key={option} style={{ background: i % 2 === 0 ? '#f8fafc' : '#fff', borderBottom: '1px solid #e2e8f0' }}>
-                <td style={{ padding: '8px 14px' }}><code style={{ fontSize: '0.8rem' }}>{option}</code></td>
-                <td style={{ padding: '8px 14px', textAlign: 'center', color: inStrict === 'Yes' ? '#15803d' : '#dc2626', fontWeight: 600 }}>{inStrict}</td>
-                <td style={{ padding: '8px 14px', color: '#64748b', fontSize: '0.82rem' }}>{desc}</td>
+              <tr>
+                <td style={tdAltStyle}><code style={inlineCodeStyle}>{'Required<T>'}</code></td>
+                <td style={tdAltStyle}><code style={inlineCodeStyle}>{'{ [K in keyof T]-?: T[K] }'}</code></td>
+                <td style={tdAltStyle}>All properties required</td>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+              <tr>
+                <td style={tdStyle}><code style={inlineCodeStyle}>{'Pick<T, K>'}</code></td>
+                <td style={tdStyle}><code style={inlineCodeStyle}>{'{ [P in K]: T[P] }'}</code></td>
+                <td style={tdStyle}>Select specific keys</td>
+              </tr>
+              <tr>
+                <td style={tdAltStyle}><code style={inlineCodeStyle}>{'Omit<T, K>'}</code></td>
+                <td style={tdAltStyle}><code style={inlineCodeStyle}>{'Pick<T, Exclude<keyof T, K>>'}</code></td>
+                <td style={tdAltStyle}>Remove specific keys</td>
+              </tr>
+              <tr>
+                <td style={tdStyle}><code style={inlineCodeStyle}>{'Record<K, V>'}</code></td>
+                <td style={tdStyle}><code style={inlineCodeStyle}>{'{ [P in K]: V }'}</code></td>
+                <td style={tdStyle}>Object with key type K, value type V</td>
+              </tr>
+              <tr>
+                <td style={tdAltStyle}><code style={inlineCodeStyle}>{'ReturnType<T>'}</code></td>
+                <td style={tdAltStyle}><code style={inlineCodeStyle}>{'T extends (...) => infer R ? R : any'}</code></td>
+                <td style={tdAltStyle}>Extract function return type</td>
+              </tr>
+              <tr>
+                <td style={tdStyle}><code style={inlineCodeStyle}>{'Parameters<T>'}</code></td>
+                <td style={tdStyle}><code style={inlineCodeStyle}>{'T extends (...args: infer P) => any ? P : never'}</code></td>
+                <td style={tdStyle}>Extract parameter types as tuple</td>
+              </tr>
+              <tr>
+                <td style={tdAltStyle}><code style={inlineCodeStyle}>{'Awaited<T>'}</code></td>
+                <td style={tdAltStyle}><code style={inlineCodeStyle}>Recursive Promise unwrap</code></td>
+                <td style={tdAltStyle}>Unwrap nested Promises</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-      <pre style={{ background: '#1e293b', color: '#e2e8f0', borderRadius: 8, padding: 20, overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// Recommended tsconfig.json for new projects (2026)
-{
-  "compilerOptions": {
-    // Strict bundle
-    "strict": true,
+        <p style={paragraphStyle}>{t.utilityP3}</p>
 
-    // Beyond strict — highly recommended
-    "noUncheckedIndexedAccess": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "exactOptionalPropertyTypes": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+        <pre style={codeBlockStyle}><code>{
+          '// Practical utility type compositions\n'
+          + 'type UpdatePayload<T> = Partial<Omit<T, "id" | "createdAt">>;\n\n'
+          + 'interface User {\n'
+          + '  id: string;\n'
+          + '  name: string;\n'
+          + '  email: string;\n'
+          + '  createdAt: Date;\n'
+          + '}\n\n'
+          + 'type UserUpdate = UpdatePayload<User>;\n'
+          + '// { name?: string; email?: string }\n\n'
+          + '// Custom utility: make specific keys required\n'
+          + 'type RequireKeys<T, K extends keyof T> =\n'
+          + '  Omit<T, K> & Required<Pick<T, K>>;\n\n'
+          + 'type UserWithEmail = RequireKeys<Partial<User>, "email">;\n'
+          + '// { id?: string; name?: string; email: string; createdAt?: Date }'
+        }</code></pre>
 
-    // Module discipline (Node.js / modern bundlers)
-    "verbatimModuleSyntax": true,
-    "isolatedModules": true,
-    "moduleDetection": "force",
+        <p style={paragraphStyle}>{t.utilityP4}</p>
+      </section>
 
-    // Modern output
-    "target": "ES2024",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "lib": ["ES2024", "DOM", "DOM.Iterable"],
+      {/* 5. Discriminated Unions */}
+      <section style={sectionStyle}>
+        <h2 style={headingStyle}>{t.discriminatedTitle}</h2>
+        <p style={paragraphStyle}>{t.discriminatedP1}</p>
+        <pre style={codeBlockStyle}><code>{
+          '// Discriminated union with "type" discriminant\n'
+          + 'type Shape =\n'
+          + '  | { type: "circle"; radius: number }\n'
+          + '  | { type: "rectangle"; width: number; height: number }\n'
+          + '  | { type: "triangle"; base: number; height: number };\n\n'
+          + 'function area(shape: Shape): number {\n'
+          + '  switch (shape.type) {\n'
+          + '    case "circle":\n'
+          + '      return Math.PI * shape.radius ** 2;\n'
+          + '    case "rectangle":\n'
+          + '      return shape.width * shape.height;\n'
+          + '    case "triangle":\n'
+          + '      return (shape.base * shape.height) / 2;\n'
+          + '  }\n'
+          + '}'
+        }</code></pre>
 
-    // Path aliases
-    "baseUrl": ".",
-    "paths": { "@/*": ["./src/*"] },
+        <h3 style={subHeadingStyle}>Exhaustive Checking with never</h3>
+        <p style={paragraphStyle}>{t.discriminatedP2}</p>
+        <pre style={codeBlockStyle}><code>{
+          '// Exhaustive check helper\n'
+          + 'function assertNever(x: never): never {\n'
+          + '  throw new Error("Unexpected value: " + x);\n'
+          + '}\n\n'
+          + 'function getShapeColor(shape: Shape): string {\n'
+          + '  switch (shape.type) {\n'
+          + '    case "circle":    return "red";\n'
+          + '    case "rectangle": return "blue";\n'
+          + '    case "triangle":  return "green";\n'
+          + '    default:\n'
+          + '      // If a new variant is added to Shape but not handled,\n'
+          + '      // TypeScript will error here at compile time\n'
+          + '      return assertNever(shape);\n'
+          + '  }\n'
+          + '}'
+        }</code></pre>
 
-    // Build
-    "outDir": "dist",
-    "rootDir": "src",
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
-    "incremental": true
-  }
-}
+        <p style={paragraphStyle}>{t.discriminatedP3}</p>
 
-// ── noUncheckedIndexedAccess in depth ──────────────────────────────────
-const items = ['a', 'b', 'c'];
+        <div style={tipBoxStyle}>
+          <strong>Tip: </strong>Use discriminated unions for Redux actions, API responses, AST nodes, and any domain model with multiple variants. The compiler guarantees every variant is handled.
+        </div>
+      </section>
 
-// Without noUncheckedIndexedAccess:
-const item1 = items[5]; // type: string  ← WRONG, could be undefined at runtime
+      {/* 6. Branded Types */}
+      <section style={sectionStyle}>
+        <h2 style={headingStyle}>{t.brandedTitle}</h2>
+        <p style={paragraphStyle}>{t.brandedP1}</p>
+        <pre style={codeBlockStyle}><code>{
+          '// Branded type pattern\n'
+          + 'type Brand<T, B extends string> = T & { readonly __brand: B };\n\n'
+          + 'type UserId = Brand<string, "UserId">;\n'
+          + 'type OrderId = Brand<string, "OrderId">;\n'
+          + 'type Email = Brand<string, "Email">;\n\n'
+          + '// Constructor functions with validation\n'
+          + 'function createUserId(id: string): UserId {\n'
+          + '  if (!id.startsWith("usr_")) {\n'
+          + '    throw new Error("Invalid user ID format");\n'
+          + '  }\n'
+          + '  return id as UserId;\n'
+          + '}\n\n'
+          + 'function createEmail(value: string): Email {\n'
+          + '  if (!value.includes("@")) {\n'
+          + '    throw new Error("Invalid email");\n'
+          + '  }\n'
+          + '  return value as Email;\n'
+          + '}\n\n'
+          + 'function getUser(id: UserId): void { /* ... */ }\n'
+          + 'function getOrder(id: OrderId): void { /* ... */ }\n\n'
+          + 'const userId = createUserId("usr_123");\n'
+          + 'const orderId = "ord_456" as OrderId;\n\n'
+          + 'getUser(userId);   // OK\n'
+          + '// getUser(orderId); // Error: OrderId not assignable to UserId'
+        }</code></pre>
+        <p style={paragraphStyle}>{t.brandedP2}</p>
 
-// With noUncheckedIndexedAccess:
-const item2 = items[5]; // type: string | undefined  ← CORRECT
+        <div style={warningBoxStyle}>
+          <strong>Warning: </strong>The brand property is purely a compile-time construct. At runtime, branded values are just regular strings/numbers. Never access the __brand property directly.
+        </div>
+      </section>
 
-// Forces you to guard:
-if (item2 !== undefined) {
-  console.log(item2.toUpperCase()); // Safe
-}
+      {/* 7. Declaration Merging */}
+      <section style={sectionStyle}>
+        <h2 style={headingStyle}>{t.declarationTitle}</h2>
+        <p style={paragraphStyle}>{t.declarationP1}</p>
+        <pre style={codeBlockStyle}><code>{
+          '// Interface merging\n'
+          + 'interface Window {\n'
+          + '  analytics: {\n'
+          + '    track(event: string, data?: object): void;\n'
+          + '  };\n'
+          + '}\n\n'
+          + '// Now window.analytics.track() is typed\n'
+          + 'window.analytics.track("page_view", { path: "/" });'
+        }</code></pre>
 
-// Same for Record/index signatures:
-const cache: Record<string, number> = {};
-const val = cache['missing']; // number | undefined with noUncheckedIndexedAccess
+        <h3 style={subHeadingStyle}>Module Augmentation</h3>
+        <p style={paragraphStyle}>{t.declarationP2}</p>
+        <pre style={codeBlockStyle}><code>{
+          '// Augment Express Request type\n'
+          + 'declare module "express" {\n'
+          + '  interface Request {\n'
+          + '    user?: {\n'
+          + '      id: string;\n'
+          + '      role: "admin" | "user";\n'
+          + '    };\n'
+          + '    requestId: string;\n'
+          + '  }\n'
+          + '}\n\n'
+          + '// Augment a CSS module\n'
+          + 'declare module "*.module.css" {\n'
+          + '  const classes: Record<string, string>;\n'
+          + '  export default classes;\n'
+          + '}\n\n'
+          + '// Augment environment variables\n'
+          + 'declare namespace NodeJS {\n'
+          + '  interface ProcessEnv {\n'
+          + '    DATABASE_URL: string;\n'
+          + '    API_KEY: string;\n'
+          + '    NODE_ENV: "development" | "production" | "test";\n'
+          + '  }\n'
+          + '}'
+        }</code></pre>
+      </section>
 
-// exactOptionalPropertyTypes:
-interface Config {
-  timeout?: number; // means 'timeout' may be absent, NOT 'timeout: number | undefined'
-}
-// With exactOptionalPropertyTypes: true
-const bad: Config = { timeout: undefined }; // Error! undefined is not number
-const good: Config = { timeout: 5000 }; // OK
-const alsGood: Config = {}; // OK (absent is fine)
+      {/* 8. Decorators */}
+      <section style={sectionStyle}>
+        <h2 style={headingStyle}>{t.decoratorsTitle}</h2>
+        <p style={paragraphStyle}>{t.decoratorsP1}</p>
+        <p style={paragraphStyle}>{t.decoratorsP2}</p>
+        <pre style={codeBlockStyle}><code>{
+          '// Stage 3 decorator: method logging\n'
+          + 'function log<T extends (...args: any[]) => any>(\n'
+          + '  target: T,\n'
+          + '  context: ClassMethodDecoratorContext\n'
+          + '): T {\n'
+          + '  const methodName = String(context.name);\n'
+          + '  return function (this: any, ...args: any[]) {\n'
+          + '    console.log(`Calling \${methodName} with`, args);\n'
+          + '    const result = target.apply(this, args);\n'
+          + '    console.log(`\${methodName} returned`, result);\n'
+          + '    return result;\n'
+          + '  } as T;\n'
+          + '}\n\n'
+          + '// Class decorator: sealed\n'
+          + 'function sealed<T extends new (...args: any[]) => any>(\n'
+          + '  target: T,\n'
+          + '  _context: ClassDecoratorContext\n'
+          + '): T {\n'
+          + '  Object.seal(target);\n'
+          + '  Object.seal(target.prototype);\n'
+          + '  return target;\n'
+          + '}'
+        }</code></pre>
 
-// Without exactOptionalPropertyTypes (default behavior):
-const also: Config = { timeout: undefined }; // Was OK — confusing!`}</code></pre>
+        <pre style={codeBlockStyle}><code>{
+          '// Using decorators\n'
+          + '@sealed\n'
+          + 'class UserService {\n'
+          + '  @log\n'
+          + '  findById(id: string): User | null {\n'
+          + '    // ... database lookup\n'
+          + '    return null;\n'
+          + '  }\n\n'
+          + '  @log\n'
+          + '  create(data: CreateUserDto): User {\n'
+          + '    // ... insert logic\n'
+          + '    return { id: "1", ...data } as User;\n'
+          + '  }\n'
+          + '}'
+        }</code></pre>
+        <p style={paragraphStyle}>{t.decoratorsP3}</p>
+      </section>
 
-      {/* Section 14: Type Narrowing with Branded Types */}
-      <h2 style={{ fontSize: '1.6rem', fontWeight: 700, marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
-        Advanced Type Narrowing and Branded/Opaque Types
-      </h2>
-      <p>
-        Branded (opaque) types prevent accidentally mixing semantically different but structurally identical
-        types. For example, a <code>UserId</code> and an <code>OrderId</code> are both strings at runtime but
-        should never be interchangeable in function arguments.
-      </p>
-      <pre style={{ background: '#1e293b', color: '#e2e8f0', borderRadius: 8, padding: 20, overflowX: 'auto', fontSize: '0.875rem' }}><code>{`// Nominal typing via brand property
-declare const __brand: unique symbol;
-type Brand<T, B extends string> = T & { readonly [__brand]: B };
+      {/* 9. satisfies */}
+      <section style={sectionStyle}>
+        <h2 style={headingStyle}>{t.satisfiesTitle}</h2>
+        <p style={paragraphStyle}>{t.satisfiesP1}</p>
+        <pre style={codeBlockStyle}><code>{
+          '// Without satisfies: type annotation widens\n'
+          + 'type ColorMap = Record<string, [number, number, number] | string>;\n\n'
+          + 'const colorsAnnotated: ColorMap = {\n'
+          + '  red: [255, 0, 0],\n'
+          + '  green: "#00ff00",\n'
+          + '  blue: [0, 0, 255],\n'
+          + '};\n'
+          + '// colorsAnnotated.red is [number, number, number] | string\n'
+          + '// Cannot call .toUpperCase() even on green!\n\n'
+          + '// With satisfies: preserves literal inference\n'
+          + 'const colors = {\n'
+          + '  red: [255, 0, 0],\n'
+          + '  green: "#00ff00",\n'
+          + '  blue: [0, 0, 255],\n'
+          + '} satisfies ColorMap;\n\n'
+          + 'colors.green.toUpperCase();  // OK! TypeScript knows it is string\n'
+          + 'colors.red[0];              // OK! TypeScript knows it is number'
+        }</code></pre>
+        <p style={paragraphStyle}>{t.satisfiesP2}</p>
 
-type UserId  = Brand<string, 'UserId'>;
-type OrderId = Brand<string, 'OrderId'>;
-type Email   = Brand<string, 'Email'>;
+        <pre style={codeBlockStyle}><code>{
+          '// Route config with satisfies\n'
+          + 'type Route = { path: string; component: string; auth?: boolean };\n\n'
+          + 'const routes = {\n'
+          + '  home:    { path: "/",        component: "HomePage" },\n'
+          + '  profile: { path: "/profile", component: "ProfilePage", auth: true },\n'
+          + '  login:   { path: "/login",   component: "LoginPage" },\n'
+          + '} satisfies Record<string, Route>;\n\n'
+          + '// routes.home.path is "/", not just string!\n'
+          + '// routes.profile.auth is true, not just boolean | undefined!'
+        }</code></pre>
+      </section>
 
-// Factory (cast once at boundary)
-const UserId  = (s: string): UserId  => s as UserId;
-const OrderId = (s: string): OrderId => s as OrderId;
-const Email   = (s: string): Email | null => {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s) ? s as Email : null;
-};
+      {/* 10. Const Assertions */}
+      <section style={sectionStyle}>
+        <h2 style={headingStyle}>{t.constTitle}</h2>
+        <p style={paragraphStyle}>{t.constP1}</p>
+        <pre style={codeBlockStyle}><code>{
+          '// as const narrows to literal types\n'
+          + 'const config = {\n'
+          + '  endpoint: "https://api.example.com",\n'
+          + '  retries: 3,\n'
+          + '  methods: ["GET", "POST"],\n'
+          + '} as const;\n\n'
+          + '// typeof config:\n'
+          + '// {\n'
+          + '//   readonly endpoint: "https://api.example.com";\n'
+          + '//   readonly retries: 3;\n'
+          + '//   readonly methods: readonly ["GET", "POST"];\n'
+          + '// }\n\n'
+          + '// Derive union type from const array\n'
+          + 'const HTTP_METHODS = ["GET", "POST", "PUT", "DELETE"] as const;\n'
+          + 'type HttpMethod = (typeof HTTP_METHODS)[number];\n'
+          + '// "GET" | "POST" | "PUT" | "DELETE"'
+        }</code></pre>
+        <p style={paragraphStyle}>{t.constP2}</p>
 
-function getOrdersByUser(userId: UserId): Promise<Order[]> {
-  return db.query('SELECT * FROM orders WHERE user_id = ?', [userId]);
-}
+        <pre style={codeBlockStyle}><code>{
+          '// Type-safe route builder with as const\n'
+          + 'function defineRoutes<\n'
+          + '  T extends Record<string, { path: string }>\n'
+          + '>(routes: T): T {\n'
+          + '  return routes;\n'
+          + '}\n\n'
+          + 'const appRoutes = defineRoutes({\n'
+          + '  home:    { path: "/" },\n'
+          + '  about:   { path: "/about" },\n'
+          + '  blog:    { path: "/blog" },\n'
+          + '} as const);\n\n'
+          + '// appRoutes.home.path is exactly "/", not string'
+        }</code></pre>
+      </section>
 
-const uid = UserId('user-abc');
-const oid = OrderId('order-xyz');
+      {/* 11. Type Narrowing */}
+      <section style={sectionStyle}>
+        <h2 style={headingStyle}>{t.narrowingTitle}</h2>
+        <p style={paragraphStyle}>{t.narrowingP1}</p>
 
-getOrdersByUser(uid);  // OK
-// getOrdersByUser(oid); // Error: OrderId is not assignable to UserId
+        <h3 style={subHeadingStyle}>User-Defined Type Guards</h3>
+        <p style={paragraphStyle}>{t.narrowingP2}</p>
+        <pre style={codeBlockStyle}><code>{
+          '// Type guard with is keyword\n'
+          + 'interface Fish { swim(): void }\n'
+          + 'interface Bird { fly(): void }\n\n'
+          + 'function isFish(pet: Fish | Bird): pet is Fish {\n'
+          + '  return (pet as Fish).swim !== undefined;\n'
+          + '}\n\n'
+          + 'function move(pet: Fish | Bird) {\n'
+          + '  if (isFish(pet)) {\n'
+          + '    pet.swim();  // TypeScript knows pet is Fish\n'
+          + '  } else {\n'
+          + '    pet.fly();   // TypeScript knows pet is Bird\n'
+          + '  }\n'
+          + '}\n\n'
+          + '// Assertion function (asserts keyword)\n'
+          + 'function assertDefined<T>(\n'
+          + '  value: T | null | undefined,\n'
+          + '  message?: string\n'
+          + '): asserts value is T {\n'
+          + '  if (value == null) {\n'
+          + '    throw new Error(message ?? "Value is null or undefined");\n'
+          + '  }\n'
+          + '}\n\n'
+          + 'function processUser(user: User | null) {\n'
+          + '  assertDefined(user, "User not found");\n'
+          + '  // After this line, user is narrowed to User\n'
+          + '  console.log(user.name);\n'
+          + '}'
+        }</code></pre>
 
-// Combining branded types with type narrowing
-type PositiveNumber = Brand<number, 'Positive'>;
+        <h3 style={subHeadingStyle}>Advanced Narrowing Patterns</h3>
+        <p style={paragraphStyle}>{t.narrowingP3}</p>
+        <pre style={codeBlockStyle}><code>{
+          '// in operator narrowing\n'
+          + 'type Admin = { role: "admin"; permissions: string[] };\n'
+          + 'type Guest = { role: "guest"; visitCount: number };\n\n'
+          + 'function greet(user: Admin | Guest) {\n'
+          + '  if ("permissions" in user) {\n'
+          + '    // user is Admin\n'
+          + '    console.log("Admin with", user.permissions.length, "perms");\n'
+          + '  } else {\n'
+          + '    // user is Guest\n'
+          + '    console.log("Guest visit #", user.visitCount);\n'
+          + '  }\n'
+          + '}'
+        }</code></pre>
+      </section>
 
-function assertPositive(n: number): asserts n is PositiveNumber {
-  if (n <= 0) throw new RangeError('Expected positive number, got ' + n);
-}
+      {/* 12. Covariance & Contravariance */}
+      <section style={sectionStyle}>
+        <h2 style={headingStyle}>{t.varianceTitle}</h2>
+        <p style={paragraphStyle}>{t.varianceP1}</p>
+        <pre style={codeBlockStyle}><code>{
+          '// Covariance: subtype in output position\n'
+          + 'class Animal { name = "animal"; }\n'
+          + 'class Dog extends Animal { breed = "labrador"; }\n\n'
+          + '// Return type is covariant:\n'
+          + '// () => Dog is assignable to () => Animal\n'
+          + 'type AnimalFactory = () => Animal;\n'
+          + 'const dogFactory: AnimalFactory = (): Dog => new Dog();\n\n'
+          + '// Contravariance: supertype in input position\n'
+          + '// (with --strictFunctionTypes)\n'
+          + 'type AnimalHandler = (animal: Animal) => void;\n'
+          + 'type DogHandler = (dog: Dog) => void;\n\n'
+          + '// AnimalHandler is NOT assignable to DogHandler\n'
+          + '// (contravariant: parameter types go in opposite direction)\n'
+          + '// const handler: DogHandler = (a: Animal) => {}; // Error'
+        }</code></pre>
+        <p style={paragraphStyle}>{t.varianceP2}</p>
 
-function divide(numerator: number, denominator: PositiveNumber): number {
-  return numerator / denominator; // Safe: denominator is never 0 or negative
-}
+        <div style={warningBoxStyle}>
+          <strong>Watch out: </strong>Without --strictFunctionTypes, function parameters are bivariant (both co- and contravariant), which is unsound. Always enable strict mode for correct variance checking.
+        </div>
+      </section>
 
-let denom = 5;
-assertPositive(denom);
-divide(100, denom); // OK after assertion
+      {/* 13. Recursive Types */}
+      <section style={sectionStyle}>
+        <h2 style={headingStyle}>{t.recursiveTitle}</h2>
+        <p style={paragraphStyle}>{t.recursiveP1}</p>
+        <pre style={codeBlockStyle}><code>{
+          '// Recursive type: JSON value\n'
+          + 'type JsonValue =\n'
+          + '  | string\n'
+          + '  | number\n'
+          + '  | boolean\n'
+          + '  | null\n'
+          + '  | JsonValue[]\n'
+          + '  | { [key: string]: JsonValue };\n\n'
+          + '// Recursive type: tree structure\n'
+          + 'type TreeNode<T> = {\n'
+          + '  value: T;\n'
+          + '  children: TreeNode<T>[];\n'
+          + '};\n\n'
+          + 'const tree: TreeNode<string> = {\n'
+          + '  value: "root",\n'
+          + '  children: [\n'
+          + '    { value: "child1", children: [] },\n'
+          + '    {\n'
+          + '      value: "child2",\n'
+          + '      children: [\n'
+          + '        { value: "grandchild", children: [] }\n'
+          + '      ],\n'
+          + '    },\n'
+          + '  ],\n'
+          + '};'
+        }</code></pre>
 
-// Opaque type pattern for sensitive data
-type HashedPassword = Brand<string, 'HashedPassword'>;
-type PlainPassword  = Brand<string, 'PlainPassword'>;
+        <p style={paragraphStyle}>{t.recursiveP2}</p>
+        <pre style={codeBlockStyle}><code>{
+          '// DeepPartial: recursively make all properties optional\n'
+          + 'type DeepPartial<T> = {\n'
+          + '  [K in keyof T]?: T[K] extends object\n'
+          + '    ? DeepPartial<T[K]>\n'
+          + '    : T[K];\n'
+          + '};\n\n'
+          + '// DeepReadonly: recursively make all properties readonly\n'
+          + 'type DeepReadonly<T> = {\n'
+          + '  readonly [K in keyof T]: T[K] extends object\n'
+          + '    ? DeepReadonly<T[K]>\n'
+          + '    : T[K];\n'
+          + '};\n\n'
+          + '// Recursive path extraction\n'
+          + 'type Path<T, Prefix extends string = ""> = {\n'
+          + '  [K in keyof T & string]: T[K] extends object\n'
+          + '    ? Path<T[K], `\${Prefix}\${K}.`>\n'
+          + '    : `\${Prefix}\${K}`;\n'
+          + '}[keyof T & string];\n\n'
+          + 'interface Config {\n'
+          + '  db: { host: string; port: number };\n'
+          + '  cache: { ttl: number };\n'
+          + '}\n\n'
+          + 'type ConfigPaths = Path<Config>;\n'
+          + '// "db.host" | "db.port" | "cache.ttl"'
+        }</code></pre>
+      </section>
 
-async function hashPassword(plain: PlainPassword): Promise<HashedPassword> {
-  const hash = await bcrypt.hash(plain, 12);
-  return hash as HashedPassword;
-}
+      {/* Conclusion */}
+      <section style={sectionStyle}>
+        <h2 style={headingStyle}>{t.conclusionTitle}</h2>
+        <p style={paragraphStyle}>{t.conclusionP1}</p>
+        <p style={paragraphStyle}>{t.conclusionP2}</p>
+      </section>
 
-function verifyPassword(plain: PlainPassword, hashed: HashedPassword): Promise<boolean> {
-  return bcrypt.compare(plain, hashed);
-}
+      {/* FAQ */}
+      <section style={sectionStyle}>
+        <h2 style={headingStyle}>FAQ</h2>
 
-// Store plaintext: compile error if you accidentally save plain password
-async function createUser(email: string, rawPassword: string) {
-  const plain = rawPassword as PlainPassword;
-  const hashed = await hashPassword(plain);
-
-  await db.users.create({ email, passwordHash: hashed }); // HashedPassword ✓
-  // await db.users.create({ email, passwordHash: plain }); // Error! ✗
-}`}</code></pre>
-
-      {/* Section 15: Conclusion and Comparison */}
-      <h2 style={{ fontSize: '1.6rem', fontWeight: 700, marginTop: '2rem', marginBottom: '1rem', color: '#1e293b' }}>
-        Putting It All Together: A Practical Checklist
-      </h2>
-      <p>
-        Advanced TypeScript is not about memorizing every edge case in the specification — it&#39;s about
-        choosing the right tool for each problem. Use the checklist below when designing a new module or
-        reviewing an existing one.
-      </p>
-      <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '8px', padding: '20px', margin: '24px 0' }}>
-        <p style={{ fontWeight: 700, color: '#1e293b', margin: '0 0 1rem 0' }}>Advanced TypeScript Checklist</p>
-        <ul style={{ margin: 0, paddingLeft: '1.25rem', lineHeight: '1.9' }}>
-          <li><strong>Generics:</strong> Use constraints (<code>T extends X</code>) instead of <code>any</code>; add variance annotations for generic interfaces</li>
-          <li><strong>Conditional types:</strong> Use <code>infer</code> to extract types rather than writing separate utility types by hand</li>
-          <li><strong>Mapped types:</strong> Build API request/response types from a single source-of-truth interface using Pick, Omit, and custom mapped types</li>
-          <li><strong>Template literals:</strong> Type event names, API routes, and CSS values with template literal types to prevent typos at compile time</li>
-          <li><strong>Discriminated unions:</strong> Model all domain state (loading/success/error, shape variants, event types) as discriminated unions with exhaustive checks</li>
-          <li><strong>Utility types:</strong> Combine ReturnType + Awaited to infer async response shapes; use NoInfer to prevent unwanted widening</li>
-          <li><strong>Decorators:</strong> Prefer TC39 Stage 3 in new code; use legacy only if your framework requires it; never mix both</li>
-          <li><strong>Declaration merging:</strong> Augment third-party modules in <code>*.d.ts</code> files rather than casting with <code>as</code></li>
-          <li><strong>Type guards:</strong> Write <code>value is Type</code> predicates and <code>asserts value is Type</code> functions for runtime validation boundaries</li>
-          <li><strong>Overloads:</strong> Prefer overloads over single union signatures when different input types produce meaningfully different output types</li>
-          <li><strong>satisfies:</strong> Use it for config objects where you want validation without losing literal types; combine with <code>as const</code> for read-only configs</li>
-          <li><strong>Strict mode:</strong> Enable <code>strict: true</code> plus <code>noUncheckedIndexedAccess</code>, <code>exactOptionalPropertyTypes</code>, and <code>noImplicitReturns</code> on every project</li>
-        </ul>
-      </div>
-
-      <p>
-        Explore advanced TypeScript patterns in practice using our{' '}
-        <Link href={'/' + lang + '/tools/typescript-to-javascript'} style={{ color: '#0284c7' }}>
-          TypeScript to JavaScript converter
-        </Link>{' '}
-        to inspect what the compiler emits, or validate JSON API schemas with our{' '}
-        <Link href={'/' + lang + '/tools/json-formatter'} style={{ color: '#0284c7' }}>
-          JSON Formatter
-        </Link>
-        . For more TypeScript depth, see our{' '}
-        <Link href={'/' + lang + '/blog/typescript-generics-guide'} style={{ color: '#0284c7' }}>
-          TypeScript Generics Complete Guide
-        </Link>{' '}
-        and{' '}
-        <Link href={'/' + lang + '/blog/typescript-decorators-guide'} style={{ color: '#0284c7' }}>
-          TypeScript Decorators Guide
-        </Link>
-        .
-      </p>
+        {[
+          { q: t.faq1Q, a: t.faq1A },
+          { q: t.faq2Q, a: t.faq2A },
+          { q: t.faq3Q, a: t.faq3A },
+          { q: t.faq4Q, a: t.faq4A },
+          { q: t.faq5Q, a: t.faq5A },
+          { q: t.faq6Q, a: t.faq6A },
+          { q: t.faq7Q, a: t.faq7A },
+          { q: t.faq8Q, a: t.faq8A },
+        ].map((faq, i) => (
+          <div key={i} style={{ marginBottom: '1.5rem' }}>
+            <h3 style={{ fontSize: '1.15rem', fontWeight: 600, color: '#1e293b', marginBottom: '0.5rem' }}>
+              {faq.q}
+            </h3>
+            <p style={{ fontSize: '1rem', lineHeight: 1.7, color: '#475569' }}>
+              {faq.a}
+            </p>
+          </div>
+        ))}
+      </section>
     </article>
   );
 }

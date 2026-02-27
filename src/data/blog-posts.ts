@@ -10196,6 +10196,25 @@ export const blogPosts: BlogPost[] = [
       ko: { title: 'DevOps 파이프라인 가이드: CI/CD, GitHub Actions, Docker, IaC & 배포 전략', description: '종합 DevOps 파이프라인 가이드: CI/CD, GitHub Actions, GitLab CI, Docker 멀티스테이지, Terraform, Pulumi, 배포 전략, 시크릿 관리, GitOps.', readingTime: '20분 읽기', keywords: ['devops 파이프라인 가이드', 'ci cd 파이프라인', 'github actions', 'terraform', 'gitops'] },
     },
   },
+  {
+    slug: 'microservices-patterns-guide',
+    title: 'Microservices Patterns Guide: Saga, CQRS, Event Sourcing, Service Mesh & Domain-Driven Design',
+    description: 'Complete microservices patterns guide covering Saga pattern, CQRS, event sourcing, service mesh with Istio, API gateway patterns, circuit breaker, distributed tracing, domain-driven design, and microservices testing strategies.',
+    date: '2026-02-28',
+    author: 'DevToolBox Team',
+    readingTime: '22 min read',
+    keywords: ['microservices patterns guide', 'saga pattern', 'cqrs event sourcing', 'service mesh istio', 'api gateway pattern', 'circuit breaker pattern', 'distributed tracing', 'domain driven design microservices', 'microservices testing', 'event driven architecture'],
+    relatedTools: ['json-formatter', 'graphql-to-typescript', 'openapi-to-typescript'],
+    relatedPosts: ['graphql-advanced-guide', 'devops-pipeline-guide', 'system-design-guide'],
+    translations: {
+      zh: { title: '微服务模式指南：Saga、CQRS、事件溯源、服务网格与领域驱动设计', description: '完整的微服务模式指南，涵盖 Saga 模式、CQRS、事件溯源、Istio 服务网格、API 网关模式、断路器、分布式追踪、领域驱动设计和微服务测试策略。', readingTime: '22 分钟阅读', keywords: ['微服务模式指南', 'saga模式', 'cqrs事件溯源', '服务网格istio', 'api网关模式', '断路器模式', '领域驱动设计'] },
+      fr: { title: 'Guide des Patterns Microservices: Saga, CQRS, Event Sourcing, Service Mesh & DDD', description: 'Guide complet des patterns microservices: Saga, CQRS, event sourcing, service mesh Istio, API gateway, circuit breaker, traçage distribué et DDD.', readingTime: '22 min de lecture', keywords: ['guide patterns microservices', 'saga pattern', 'cqrs', 'service mesh', 'ddd'] },
+      de: { title: 'Microservices-Muster Leitfaden: Saga, CQRS, Event Sourcing, Service Mesh & DDD', description: 'Umfassender Microservices-Muster-Leitfaden: Saga, CQRS, Event Sourcing, Istio Service Mesh, API Gateway, Circuit Breaker, verteiltes Tracing und DDD.', readingTime: '22 Min. Lesezeit', keywords: ['microservices muster leitfaden', 'saga pattern', 'cqrs', 'service mesh', 'ddd'] },
+      es: { title: 'Guía de Patrones Microservicios: Saga, CQRS, Event Sourcing, Service Mesh y DDD', description: 'Guía completa de patrones microservicios: Saga, CQRS, event sourcing, Istio service mesh, API gateway, circuit breaker, trazabilidad distribuida y DDD.', readingTime: '22 min de lectura', keywords: ['guía patrones microservicios', 'saga pattern', 'cqrs', 'service mesh', 'ddd'] },
+      ja: { title: 'マイクロサービスパターンガイド：Saga、CQRS、イベントソーシング、サービスメッシュ＆DDD', description: '包括的なマイクロサービスパターンガイド：Saga、CQRS、イベントソーシング、Istioサービスメッシュ、APIゲートウェイ、サーキットブレーカー、分散トレーシング、DDD。', readingTime: '22分', keywords: ['マイクロサービスパターン', 'sagaパターン', 'cqrs', 'サービスメッシュ', 'ddd'] },
+      ko: { title: '마이크로서비스 패턴 가이드: Saga, CQRS, 이벤트 소싱, 서비스 메시 & DDD', description: '종합 마이크로서비스 패턴 가이드: Saga, CQRS, 이벤트 소싱, Istio 서비스 메시, API 게이트웨이, 서킷 브레이커, 분산 추적, DDD.', readingTime: '22분 읽기', keywords: ['마이크로서비스 패턴', 'saga 패턴', 'cqrs', '서비스 메시', 'ddd'] },
+    },
+  },
 ];
 
 /** Get post with localized metadata */

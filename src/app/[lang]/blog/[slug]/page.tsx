@@ -417,6 +417,7 @@ import DatabaseOptimizationGuide from '@/data/posts/database-optimization-guide'
 import MobileDevelopmentGuide from '@/data/posts/mobile-development-guide';
 import GraphqlAdvancedGuide from '@/data/posts/graphql-advanced-guide';
 import DevopsPipelineGuide from '@/data/posts/devops-pipeline-guide';
+import MicroservicesPatternsGuide from '@/data/posts/microservices-patterns-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -824,6 +825,7 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'mobile-development-guide': MobileDevelopmentGuide,
   'graphql-advanced-guide': GraphqlAdvancedGuide,
   'devops-pipeline-guide': DevopsPipelineGuide,
+  'microservices-patterns-guide': MicroservicesPatternsGuide,
 };
 
 /* i18n for UI strings on this page */
