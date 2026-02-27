@@ -441,6 +441,8 @@ import VitestGuide from '@/data/posts/vitest-guide';
 import ZustandGuide from '@/data/posts/zustand-guide';
 import RemixGuide from '@/data/posts/remix-guide';
 import SolidGuide from '@/data/posts/solid-guide';
+import ElectronGuide from '@/data/posts/electron-guide';
+import TauriGuide from '@/data/posts/tauri-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -872,6 +874,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'zustand-guide': ZustandGuide,
   'remix-guide': RemixGuide,
   'solid-guide': SolidGuide,
+  'electron-guide': ElectronGuide,
+  'tauri-guide': TauriGuide,
 };
 
 /* i18n for UI strings on this page */
