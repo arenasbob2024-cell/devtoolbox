@@ -453,6 +453,8 @@ import CypressGuide from '@/data/posts/cypress-guide';
 import PrettierGuide from '@/data/posts/prettier-guide';
 import RollupGuide from '@/data/posts/rollup-guide';
 import EsbuildGuide from '@/data/posts/esbuild-guide';
+import SwcGuide from '@/data/posts/swc-guide';
+import BiomeGuide from '@/data/posts/biome-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -896,6 +898,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'prettier-guide': PrettierGuide,
   'rollup-guide': RollupGuide,
   'esbuild-guide': EsbuildGuide,
+  'swc-guide': SwcGuide,
+  'biome-guide': BiomeGuide,
 };
 
 /* i18n for UI strings on this page */
