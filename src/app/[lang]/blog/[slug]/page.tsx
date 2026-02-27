@@ -421,6 +421,8 @@ import MicroservicesPatternsGuide from '@/data/posts/microservices-patterns-guid
 import PythonAdvancedGuide from '@/data/posts/python-advanced-guide';
 import EventDrivenArchitectureGuide from '@/data/posts/event-driven-architecture-guide';
 import KafkaGuide from '@/data/posts/kafka-guide';
+import AwsLambdaGuide from '@/data/posts/aws-lambda-guide';
+import LinuxCommandGuide from '@/data/posts/linux-command-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -832,6 +834,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'python-advanced-guide': PythonAdvancedGuide,
   'event-driven-architecture-guide': EventDrivenArchitectureGuide,
   'kafka-guide': KafkaGuide,
+  'aws-lambda-guide': AwsLambdaGuide,
+  'linux-command-guide': LinuxCommandGuide,
 };
 
 /* i18n for UI strings on this page */
