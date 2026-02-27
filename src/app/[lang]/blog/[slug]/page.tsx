@@ -404,6 +404,8 @@ import WebAccessibilityGuide from '@/data/posts/web-accessibility-guide';
 import RabbitmqGuide from '@/data/posts/rabbitmq-guide';
 import MonitoringObservabilityGuide from '@/data/posts/monitoring-observability-guide';
 import AiEngineeringGuide from '@/data/posts/ai-engineering-guide';
+import DataStructuresGuide from '@/data/posts/data-structures-guide';
+import DesignPatternsGuide from '@/data/posts/design-patterns-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -798,6 +800,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'rabbitmq-guide': RabbitmqGuide,
   'monitoring-observability-guide': MonitoringObservabilityGuide,
   'ai-engineering-guide': AiEngineeringGuide,
+  'data-structures-guide': DataStructuresGuide,
+  'design-patterns-guide': DesignPatternsGuide,
 };
 
 /* i18n for UI strings on this page */
