@@ -9664,6 +9664,25 @@ export const blogPosts: BlogPost[] = [
       ko: { title: 'Elasticsearch 완전 가이드: Query DSL, 매핑, 집계, ELK 스택, 성능 최적화', description: 'Elasticsearch를 처음부터 마스터하세요. 핵심 개념(인덱스, 샤드, 레플리카), REST API CRUD, Query DSL, 매핑, 전문 검색, Node.js/Python 클라이언트, Kibana/ELK 스택, 성능 튜닝.', readingTime: '18분 읽기', keywords: ['elasticsearch 튜토리얼', 'elasticsearch query dsl', 'elasticsearch 집계', 'elk 스택', 'elasticsearch 매핑', '전문 검색', 'elasticsearch nodejs'] },
     },
   },
+  {
+    slug: 'oauth-guide',
+    title: 'OAuth 2.0 Complete Guide: Authorization Code, PKCE, OpenID Connect, JWT, and Security Best Practices',
+    description: 'Master OAuth 2.0 and OpenID Connect. Covers authorization code flow with PKCE, client credentials, device flow, access/refresh/ID tokens, JWT verification, social login (Google, GitHub), Node.js/Python implementations, OAuth vs SAML vs JWT comparison, and common vulnerabilities.',
+    date: '2026-02-27',
+    author: 'DevToolBox',
+    readingTime: '14 min read',
+    keywords: ['oauth 2.0 tutorial', 'oauth authorization code flow', 'pkce oauth', 'openid connect', 'jwt oauth', 'social login oauth', 'oauth security', 'oauth vs saml', 'refresh token', 'oauth grant types'],
+    relatedTools: ['jwt-decoder', 'base64-encoder', 'hmac-generator'],
+    relatedPosts: ['api-design-guide', 'nestjs-guide', 'web-security-guide'],
+    translations: {
+      zh: { title: 'OAuth 2.0完整指南：授权码、PKCE、OpenID Connect、JWT和安全最佳实践', description: '掌握OAuth 2.0和OpenID Connect。涵盖带PKCE的授权码流、客户端凭证、设备流、访问/刷新/ID令牌、JWT验证、社交登录（Google、GitHub）、Node.js/Python实现以及常见漏洞防范。', readingTime: '14 分钟阅读', keywords: ['oauth 2.0教程', 'oauth授权码流', 'pkce oauth', 'openid connect', 'jwt oauth', '社交登录oauth', 'oauth安全', 'oauth vs saml', '刷新令牌', 'oauth授权类型'] },
+      fr: { title: 'Guide Complet OAuth 2.0: Code d\'Autorisation, PKCE, OpenID Connect, JWT et Sécurité', description: 'Maîtrisez OAuth 2.0 et OpenID Connect. Flux code d\'autorisation avec PKCE, credentials client, tokens access/refresh/ID, JWT, connexion sociale, implémentations Node.js/Python et comparaison OAuth vs SAML.', readingTime: '14 min de lecture', keywords: ['tutoriel oauth 2.0', 'flux code autorisation oauth', 'pkce oauth', 'openid connect', 'jwt oauth', 'connexion sociale', 'sécurité oauth', 'oauth vs saml'] },
+      de: { title: 'OAuth 2.0 Komplett-Leitfaden: Authorization Code, PKCE, OpenID Connect, JWT und Sicherheit', description: 'OAuth 2.0 und OpenID Connect meistern. Authorization Code Flow mit PKCE, Client Credentials, Device Flow, Access/Refresh/ID-Tokens, JWT-Verifizierung, Social Login, Node.js/Python-Implementierungen.', readingTime: '14 Min. Lesezeit', keywords: ['oauth 2.0 tutorial', 'oauth authorization code flow', 'pkce oauth', 'openid connect', 'jwt oauth', 'social login', 'oauth sicherheit', 'oauth vs saml'] },
+      es: { title: 'Guía Completa OAuth 2.0: Código de Autorización, PKCE, OpenID Connect, JWT y Seguridad', description: 'Domina OAuth 2.0 y OpenID Connect. Flujo de código de autorización con PKCE, credenciales de cliente, tokens de acceso/actualización/ID, JWT, inicio de sesión social, implementaciones Node.js/Python.', readingTime: '14 min de lectura', keywords: ['tutorial oauth 2.0', 'flujo código autorización oauth', 'pkce oauth', 'openid connect', 'jwt oauth', 'inicio sesión social', 'seguridad oauth', 'oauth vs saml'] },
+      ja: { title: 'OAuth 2.0完全ガイド：認証コード、PKCE、OpenID Connect、JWT、セキュリティベストプラクティス', description: 'OAuth 2.0とOpenID Connectをマスター。PKCEを使った認証コードフロー、クライアント認証情報、デバイスフロー、アクセス/リフレッシュ/IDトークン、JWT検証、ソーシャルログイン実装。', readingTime: '14分', keywords: ['oauth 2.0チュートリアル', 'oauth認証コードフロー', 'pkce oauth', 'openid connect', 'jwt oauth', 'ソーシャルログイン', 'oauthセキュリティ', 'oauth vs saml'] },
+      ko: { title: 'OAuth 2.0 완전 가이드: 인증 코드, PKCE, OpenID Connect, JWT, 보안 모범 사례', description: 'OAuth 2.0과 OpenID Connect를 마스터하세요. PKCE를 사용한 인증 코드 흐름, 클라이언트 자격 증명, 액세스/갱신/ID 토큰, JWT 검증, 소셜 로그인, Node.js/Python 구현.', readingTime: '14분 읽기', keywords: ['oauth 2.0 튜토리얼', 'oauth 인증 코드 흐름', 'pkce oauth', 'openid connect', 'jwt oauth', '소셜 로그인', 'oauth 보안', 'oauth vs saml'] },
+    },
+  },
 ];
 
 /** Get post with localized metadata */

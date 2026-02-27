@@ -1,1618 +1,1956 @@
 'use client';
-import React from 'react';
 
 const translations: Record<string, Record<string, string>> = {
   en: {
-    title: 'Microservices Guide: Architecture, Communication Patterns, and Best Practices',
-    description: 'A comprehensive guide to microservices architecture covering domain-driven design, service communication (REST, gRPC, message queues), API Gateway patterns, service discovery, distributed tracing, event-driven architecture, CQRS, saga pattern, Docker/Kubernetes, service mesh, observability, and deployment strategies.',
-
-    tldr: 'Microservices decompose a large application into small, independently deployable services. Each service owns its data, communicates via APIs or events, and can be deployed without affecting others. The trade-off: significant operational complexity vs. independent scalability and team autonomy.',
-
-    keyTakeaways: 'Key Takeaways',
-    kt1: 'Design around business domains (DDD bounded contexts), not technical layers.',
-    kt2: 'Use synchronous REST/gRPC for request-response; async messaging (Kafka/RabbitMQ) for decoupling.',
-    kt3: 'Each service owns its own database — never share a DB between services.',
-    kt4: 'Implement the saga pattern for distributed transactions instead of 2PC.',
-    kt5: 'Use an API Gateway for cross-cutting concerns: auth, rate limiting, routing, circuit breaking.',
-    kt6: 'Observability (metrics, logs, traces) is non-negotiable in production microservices.',
-    kt7: 'Start with a modular monolith; extract services only when you have a clear scaling or team need.',
-    kt8: 'Service mesh (Istio/Linkerd) handles mTLS, retries, and traffic shaping at the infrastructure level.',
-
-    introTitle: 'What Are Microservices?',
-    introDesc1: 'Microservices is an architectural style where a single application is built as a suite of small, independently deployable services. Each service runs in its own process, communicates with lightweight mechanisms (typically HTTP/REST or message queues), and is independently deployable and scalable.',
-    introDesc2: 'The term was popularized by Martin Fowler and James Lewis in 2014, though the underlying concepts — single responsibility, separation of concerns, loose coupling — have been core software engineering principles for decades.',
-    introDesc3: 'Organizations like Netflix, Amazon, Uber, and Spotify adopted microservices to enable hundreds of teams to deploy independently, scale bottleneck services without affecting others, and use different technology stacks where appropriate.',
-
-    vsMonolithTitle: 'Microservices vs Monolith vs Modular Monolith',
-    vsMonolithDesc: 'Before adopting microservices, understand the trade-offs. The right architecture depends on your team size, deployment frequency, and scaling needs.',
-
-    dddTitle: 'Domain-Driven Design: The Foundation',
-    dddDesc1: 'Domain-Driven Design (DDD) provides the vocabulary and patterns needed to design effective microservices. Without DDD, teams tend to create chatty, over-coupled services that are worse than the monolith they replaced.',
-    dddBoundedContextTitle: 'Bounded Contexts',
-    dddBoundedContextDesc: 'A bounded context is a clear boundary within which a particular domain model applies. "Order" means different things in the Shipping context (physical item to deliver) vs. the Billing context (invoice to generate). Each microservice should correspond to one bounded context.',
-    dddAggregateTitle: 'Aggregates',
-    dddAggregateDesc: 'An aggregate is a cluster of domain objects that can be treated as a single unit. The aggregate root is the only object that outside objects hold references to. Aggregates define transaction boundaries — you should not have a transaction that spans multiple aggregates (and therefore not multiple services).',
-    dddCode: 'OrderAggregate example (TypeScript)',
-
-    commTitle: 'Service Communication Patterns',
-    commDesc: 'Choosing the right communication pattern is critical. The wrong choice leads to tight coupling, cascading failures, and poor performance.',
-    restTitle: 'REST (HTTP/JSON)',
-    restDesc: 'REST is the most common synchronous communication protocol. It is simple, widely understood, and works with any language. Use REST for external APIs and when simplicity matters more than performance.',
-    grpcTitle: 'gRPC (Protocol Buffers)',
-    grpcDesc: 'gRPC uses Protocol Buffers for serialization, providing 3-10x better performance than REST/JSON. It supports streaming, strong typing through .proto files, and code generation. Use gRPC for internal service-to-service communication where performance is critical.',
-    mqTitle: 'Message Queues (Async)',
-    mqDesc: 'Asynchronous messaging via Kafka, RabbitMQ, or AWS SQS decouples services. The producer does not wait for the consumer to process the message. Use messaging for event-driven workflows, when you need guaranteed delivery, or when the consumer may be temporarily unavailable.',
-    commCompareTitle: 'Communication Pattern Comparison',
-
-    gatewayTitle: 'API Gateway Pattern',
-    gatewayDesc1: 'An API Gateway is the single entry point for all client requests. It handles cross-cutting concerns so individual services do not have to implement them repeatedly.',
-    gatewayDesc2: 'Popular API Gateways include Kong, AWS API Gateway, Nginx with Lua, Traefik, and Envoy. In Kubernetes, Ingress controllers often serve as the API Gateway.',
-    gatewayFeaturesTitle: 'Core API Gateway Responsibilities',
-    gatewayCode: 'Kong API Gateway configuration example',
-
-    discoveryTitle: 'Service Discovery',
-    discoveryDesc1: 'In a dynamic microservices environment, service instances start and stop frequently. Service discovery solves the problem of how services find each other without hardcoded IP addresses.',
-    discoveryClientTitle: 'Client-Side Discovery',
-    discoveryClientDesc: 'The client queries a service registry (Consul, Eureka) to get available instances, then applies load balancing logic itself. Netflix Ribbon is a classic example. More flexible but adds complexity to each client.',
-    discoveryServerTitle: 'Server-Side Discovery',
-    discoveryServerDesc: 'The client makes a request to a load balancer or DNS, which queries the registry and forwards the request. Kubernetes DNS is the canonical example — services are reachable at service-name.namespace.svc.cluster.local. Simpler for clients but requires infrastructure support.',
-    discoveryCode: 'Kubernetes service discovery example',
-
-    tracingTitle: 'Distributed Tracing',
-    tracingDesc1: 'A single user request may touch dozens of services. Distributed tracing tracks the journey of a request across all services, making it possible to identify latency bottlenecks and diagnose failures.',
-    tracingCorrelationTitle: 'Correlation IDs',
-    tracingCorrelationDesc: 'Every request gets a unique trace ID at the entry point (API Gateway). Each service propagates this ID via HTTP headers (X-Trace-Id, X-Span-Id) and includes it in all log entries. This lets you grep all logs for a single request across services.',
-    tracingOpenTelTitle: 'OpenTelemetry',
-    tracingOpenTelDesc: 'OpenTelemetry is the CNCF standard for distributed tracing, metrics, and logs. It provides vendor-neutral SDKs that export to Jaeger, Zipkin, Datadog, or any OpenTelemetry-compatible backend.',
-    tracingCode: 'OpenTelemetry Node.js setup example',
-
-    eventTitle: 'Event-Driven Architecture',
-    eventDesc1: 'Event-driven architecture (EDA) uses events to communicate between services. When something happens in one service, it publishes an event. Other services subscribe to events they care about and react accordingly.',
-    eventKafkaTitle: 'Apache Kafka',
-    eventKafkaDesc: 'Kafka is a distributed event streaming platform. Events are stored in topics and partitioned for scalability. Consumers read events at their own pace, and events can be replayed. Kafka is ideal for high-throughput event streaming, audit logs, and event sourcing.',
-    eventRabbitTitle: 'RabbitMQ',
-    eventRabbitDesc: 'RabbitMQ is a message broker that implements AMQP. It supports complex routing via exchanges and queues. Better for task queues and RPC-style messaging. Messages are typically deleted after consumption (unlike Kafka where they are retained).',
-    eventSourcingTitle: 'Event Sourcing',
-    eventSourcingDesc: 'Instead of storing current state, event sourcing stores the sequence of events that led to the current state. The current state is derived by replaying events. This provides a full audit trail, temporal queries, and the ability to rebuild read models.',
-    eventCode: 'Kafka producer/consumer example in Node.js',
-
-    dataTitle: 'Data Management in Microservices',
-    dataDesc1: 'The hardest part of microservices is data management. The core principle is database-per-service: each service owns its data and no other service can directly query it.',
-    dataCQRSTitle: 'CQRS (Command Query Responsibility Segregation)',
-    dataCQRSDesc: 'CQRS separates read and write operations into different models. The write side handles commands and emits events. The read side maintains denormalized read models (projections) optimized for queries. This allows independent scaling of reads and writes.',
-    dataSagaTitle: 'Saga Pattern for Distributed Transactions',
-    dataSagaDesc: 'When a business operation spans multiple services (e.g., place order → reserve inventory → charge payment), you cannot use a database transaction. The saga pattern orchestrates a series of local transactions with compensating transactions for rollback.',
-    dataSagaChoreTitle: 'Choreography vs Orchestration',
-    dataSagaChoreDesc: 'Choreography: Services react to events without a central coordinator. Decoupled but hard to trace. Orchestration: A central saga orchestrator (a separate service) tells each participant what to do. Easier to understand and debug but adds a central service.',
-    dataCode: 'Saga orchestration example',
-
-    containerTitle: 'Containerization and Orchestration',
-    containerDesc1: 'Docker packages each microservice into a portable, self-contained image. Kubernetes orchestrates these containers across a cluster, handling deployment, scaling, health checks, and service discovery.',
-    dockerfileTitle: 'Production Dockerfile Best Practices',
-    k8sTitle: 'Kubernetes Deployment Patterns',
-    k8sDesc: 'A Kubernetes Deployment manages a ReplicaSet of pods. A Service provides stable network access. A HorizontalPodAutoscaler scales pods based on CPU/memory or custom metrics.',
-    containerCode: 'Multi-stage Dockerfile example',
-    k8sCode: 'Kubernetes Deployment + Service YAML',
-
-    meshTitle: 'Service Mesh',
-    meshDesc1: 'A service mesh is an infrastructure layer that handles service-to-service communication. It provides mTLS, retries, circuit breaking, load balancing, and observability without changing application code.',
-    meshIstioTitle: 'Istio',
-    meshIstioDesc: 'Istio injects a sidecar proxy (Envoy) into each pod. All traffic goes through the proxy, which enforces policies, collects telemetry, and handles failures. Istio provides a control plane (Istiod) that configures all proxies centrally.',
-    meshLinkerdTitle: 'Linkerd',
-    meshLinkerdDesc: 'Linkerd is a lighter-weight alternative to Istio. It uses a Rust-based micro-proxy instead of Envoy. Linkerd is easier to install and has lower resource overhead. It focuses on reliability features (retries, timeouts, circuit breaking) and mTLS.',
-    meshCode: 'Istio VirtualService for canary traffic splitting',
-
-    observabilityTitle: 'Observability: Metrics, Logs, and Traces',
-    observabilityDesc: 'The three pillars of observability — metrics, logs, and traces — are essential for understanding system behavior in production. Without observability, debugging microservices is like flying blind.',
-    metricsTitle: 'Metrics with Prometheus',
-    metricsDesc: 'Prometheus scrapes metrics from services via HTTP. Services expose a /metrics endpoint with counters, gauges, histograms, and summaries. Grafana visualizes Prometheus data. Use the RED method: Rate, Errors, Duration for each service.',
-    logsTitle: 'Structured Logging',
-    logsDesc: 'Log in JSON format to enable machine parsing. Include trace_id, service name, environment, and severity in every log line. Ship logs to a central system (Elasticsearch, Loki, or CloudWatch).',
-    observabilityCode: 'Prometheus metrics in Node.js example',
-
-    testingTitle: 'Testing Strategies',
-    testingDesc: 'Testing microservices requires a layered strategy. The test pyramid still applies, but integration and contract tests become more important.',
-    testContractTitle: 'Contract Testing with Pact',
-    testContractDesc: 'Consumer-driven contract testing ensures that a service (consumer) and its dependencies (providers) agree on the API contract. Pact is the most popular framework. The consumer writes tests that define expectations, generating a "pact" file. The provider verifies it can satisfy the pact.',
-    testE2ETitle: 'End-to-End Testing',
-    testE2EDesc: 'E2E tests for microservices are expensive to maintain. Reserve them for critical user journeys only. Use Docker Compose or Kubernetes to spin up the full stack. Tools: Cypress, Playwright, or REST Assured.',
-    testCode: 'Pact consumer test example (JavaScript)',
-
-    deployTitle: 'Deployment Strategies',
-    deployDesc: 'Zero-downtime deployment is critical in microservices. Kubernetes supports several strategies natively.',
-    deployBlueGreenTitle: 'Blue-Green Deployment',
-    deployBlueGreenDesc: 'Run two identical production environments (blue and green). Deploy new version to green. Test. Switch traffic from blue to green instantly. Green becomes the new production. Blue becomes the staging environment for the next deployment. Rollback is instant: just switch back.',
-    deployCanaryTitle: 'Canary Deployment',
-    deployCanaryDesc: 'Gradually shift traffic to the new version. Start with 5%, monitor error rates and latency, increase to 25%, 50%, 100%. Istio and Argo Rollouts automate canary deployments. If anything goes wrong, traffic shifts back immediately.',
-    deployCode: 'Kubernetes canary deployment with Argo Rollouts',
-
-    faqTitle: 'Frequently Asked Questions',
-    faq1q: 'When should I use microservices instead of a monolith?',
-    faq1a: 'Start with a monolith. Migrate to microservices when you have clear evidence of need: multiple teams stepping on each other, specific components needing independent scaling, or different technology requirements. Conway\'s Law says your architecture mirrors your org structure — you need at least 2-3 independent teams to benefit from microservices.',
-    faq2q: 'How small should a microservice be?',
-    faq2a: 'A microservice should be small enough to be owned and maintained by one team (2-8 engineers), but large enough to justify the operational overhead. A good heuristic: one aggregate per service, or one bounded context per service. If a service needs to call another service synchronously for most of its operations, they might belong together.',
-    faq3q: 'How do I handle distributed transactions?',
-    faq3a: 'Avoid distributed transactions whenever possible by designing service boundaries carefully. When unavoidable, use the Saga pattern with either choreography (events) or orchestration (saga orchestrator service). Never use 2-phase commit (2PC) in microservices — it creates tight coupling and blocking behavior.',
-    faq4q: 'How do services share data without sharing a database?',
-    faq4a: 'Services share data via APIs or events, not by directly querying another service\'s database. For reporting or analytics that needs data from multiple services, use an event-driven approach to build a separate read model (CQRS). For data consistency across services, use eventual consistency with domain events.',
-    faq5q: 'What is the difference between an API Gateway and a service mesh?',
-    faq5a: 'An API Gateway handles north-south traffic (external clients to services): auth, routing, rate limiting, SSL termination. A service mesh handles east-west traffic (service-to-service): mTLS, retries, circuit breaking, observability. They are complementary, not alternatives. You typically need both in a production microservices system.',
-    faq6q: 'How do I avoid the microservices death star (over-connected services)?',
-    faq6a: 'Apply the Single Responsibility Principle at the service level. Use async events instead of synchronous chains. Limit each service to 3-5 direct dependencies max. Regularly draw the service dependency graph — if it looks like a death star, refactor service boundaries. Strong domain modeling (DDD) prevents over-coupling.',
-    faq7q: 'Should I use GraphQL or REST for my API Gateway?',
-    faq7a: 'REST is simpler and better understood. Use REST unless you have specific needs that GraphQL solves: multiple clients with different data needs (mobile vs web), avoiding over-fetching on mobile, or a large surface area where clients need to compose their own queries. GraphQL Federation is gaining traction for microservices but adds complexity.',
-    faq8q: 'How do I migrate from a monolith to microservices?',
-    faq8a: 'Use the Strangler Fig pattern: new features are built as microservices, and the monolith is gradually replaced piece by piece. Start with services that are natural boundaries (e.g., user authentication), have clear interfaces, and can be extracted without touching the rest of the monolith. Never do a big-bang rewrite.',
+    title: 'Microservices Architecture: Complete Guide for 2026',
+    description: 'A comprehensive guide to microservices architecture covering design principles, service communication, API gateways, service discovery, circuit breakers, distributed tracing, data management, Docker, Kubernetes, security, and observability.',
   },
   zh: {
-    title: '微服务指南：架构、通信模式与最佳实践',
-    description: '全面的微服务架构指南，涵盖领域驱动设计、服务通信（REST、gRPC、消息队列）、API网关模式、服务发现、分布式追踪、事件驱动架构、CQRS、Saga模式、Docker/Kubernetes、服务网格、可观测性和部署策略。',
-
-    tldr: '微服务将大型应用拆分为小型、可独立部署的服务。每个服务拥有自己的数据，通过API或事件通信，可独立部署而不影响其他服务。代价是：显著的运维复杂性 vs 独立扩展能力和团队自治。',
-
-    keyTakeaways: '核心要点',
-    kt1: '围绕业务领域（DDD限界上下文）设计，而非技术层次。',
-    kt2: '请求-响应用同步REST/gRPC；解耦用异步消息（Kafka/RabbitMQ）。',
-    kt3: '每个服务拥有自己的数据库 — 永远不要在服务间共享数据库。',
-    kt4: '使用Saga模式处理分布式事务，而非2PC。',
-    kt5: '使用API网关处理横切关注点：认证、限流、路由、熔断。',
-    kt6: '可观测性（指标、日志、追踪）在生产微服务中是必不可少的。',
-    kt7: '从模块化单体开始，只有在有明确扩展或团队需求时才提取服务。',
-    kt8: '服务网格（Istio/Linkerd）在基础设施层处理mTLS、重试和流量整形。',
-
-    introTitle: '什么是微服务？',
-    introDesc1: '微服务是一种架构风格，将单个应用构建为一套小型、可独立部署的服务。每个服务运行在自己的进程中，通过轻量级机制（通常是HTTP/REST或消息队列）通信，可独立部署和扩展。',
-    introDesc2: '该术语由Martin Fowler和James Lewis于2014年推广，尽管其底层概念——单一职责、关注点分离、松耦合——几十年来一直是核心软件工程原则。',
-    introDesc3: 'Netflix、Amazon、Uber和Spotify等组织采用微服务，使数百个团队能够独立部署，扩展瓶颈服务而不影响其他服务，并在适当时使用不同的技术栈。',
-
-    vsMonolithTitle: '微服务 vs 单体 vs 模块化单体',
-    vsMonolithDesc: '在采用微服务之前，了解权衡。正确的架构取决于您的团队规模、部署频率和扩展需求。',
-
-    dddTitle: '领域驱动设计：基础',
-    dddDesc1: '领域驱动设计（DDD）提供了设计有效微服务所需的词汇和模式。没有DDD，团队往往会创建比所替换的单体更糟糕的过度耦合服务。',
-    dddBoundedContextTitle: '限界上下文',
-    dddBoundedContextDesc: '限界上下文是特定领域模型适用的清晰边界。"订单"在配送上下文（要交付的实物）和账单上下文（要生成的发票）中含义不同。每个微服务应对应一个限界上下文。',
-    dddAggregateTitle: '聚合',
-    dddAggregateDesc: '聚合是可作为单一单元处理的领域对象集群。聚合根是外部对象持有引用的唯一对象。聚合定义事务边界——不应有跨越多个聚合（因此也不跨越多个服务）的事务。',
-    dddCode: 'OrderAggregate示例（TypeScript）',
-
-    commTitle: '服务通信模式',
-    commDesc: '选择正确的通信模式至关重要。错误的选择会导致紧耦合、级联故障和性能差。',
-    restTitle: 'REST（HTTP/JSON）',
-    restDesc: 'REST是最常见的同步通信协议。它简单、广为人知，适用于任何语言。REST适用于外部API，以及简单性比性能更重要的场景。',
-    grpcTitle: 'gRPC（协议缓冲区）',
-    grpcDesc: 'gRPC使用协议缓冲区进行序列化，性能比REST/JSON好3-10倍。它通过.proto文件支持流式传输、强类型和代码生成。gRPC适用于性能关键的内部服务间通信。',
-    mqTitle: '消息队列（异步）',
-    mqDesc: '通过Kafka、RabbitMQ或AWS SQS的异步消息传递解耦服务。生产者不等待消费者处理消息。消息传递适用于事件驱动工作流、需要有保证交付时，或消费者可能暂时不可用时。',
-    commCompareTitle: '通信模式比较',
-
-    gatewayTitle: 'API网关模式',
-    gatewayDesc1: 'API网关是所有客户端请求的单一入口点。它处理横切关注点，因此各服务无需重复实现。',
-    gatewayDesc2: '流行的API网关包括Kong、AWS API Gateway、带Lua的Nginx、Traefik和Envoy。在Kubernetes中，Ingress控制器通常充当API网关。',
-    gatewayFeaturesTitle: 'API网关核心职责',
-    gatewayCode: 'Kong API网关配置示例',
-
-    discoveryTitle: '服务发现',
-    discoveryDesc1: '在动态微服务环境中，服务实例频繁启停。服务发现解决了服务如何在没有硬编码IP地址的情况下相互找到的问题。',
-    discoveryClientTitle: '客户端服务发现',
-    discoveryClientDesc: '客户端查询服务注册中心（Consul、Eureka）获取可用实例，然后自己应用负载均衡逻辑。Netflix Ribbon是典型例子。更灵活但增加了每个客户端的复杂性。',
-    discoveryServerTitle: '服务器端服务发现',
-    discoveryServerDesc: '客户端向负载均衡器或DNS发出请求，后者查询注册中心并转发请求。Kubernetes DNS是典型例子——服务可通过service-name.namespace.svc.cluster.local访问。客户端更简单但需要基础设施支持。',
-    discoveryCode: 'Kubernetes服务发现示例',
-
-    tracingTitle: '分布式追踪',
-    tracingDesc1: '单个用户请求可能涉及数十个服务。分布式追踪跟踪请求在所有服务中的旅程，使识别延迟瓶颈和诊断故障成为可能。',
-    tracingCorrelationTitle: '关联ID',
-    tracingCorrelationDesc: '每个请求在入口点（API网关）获得唯一的追踪ID。每个服务通过HTTP头（X-Trace-Id、X-Span-Id）传播此ID，并将其包含在所有日志条目中。这让您可以在所有服务中grep单个请求的所有日志。',
-    tracingOpenTelTitle: 'OpenTelemetry',
-    tracingOpenTelDesc: 'OpenTelemetry是分布式追踪、指标和日志的CNCF标准。它提供供应商中立的SDK，可导出到Jaeger、Zipkin、Datadog或任何兼容OpenTelemetry的后端。',
-    tracingCode: 'OpenTelemetry Node.js设置示例',
-
-    eventTitle: '事件驱动架构',
-    eventDesc1: '事件驱动架构（EDA）使用事件在服务间通信。当一个服务中发生某事时，它发布一个事件。其他服务订阅它们关心的事件并做出相应反应。',
-    eventKafkaTitle: 'Apache Kafka',
-    eventKafkaDesc: 'Kafka是分布式事件流平台。事件存储在主题中并分区以实现可扩展性。消费者按自己的节奏读取事件，事件可以重放。Kafka非常适合高吞吐量事件流、审计日志和事件溯源。',
-    eventRabbitTitle: 'RabbitMQ',
-    eventRabbitDesc: 'RabbitMQ是实现AMQP的消息代理。它通过交换机和队列支持复杂路由。更适合任务队列和RPC风格的消息传递。消息通常在消费后删除（不像Kafka那样保留）。',
-    eventSourcingTitle: '事件溯源',
-    eventSourcingDesc: '事件溯源不存储当前状态，而是存储导致当前状态的事件序列。当前状态通过重放事件派生。这提供了完整的审计跟踪、时间查询和重建读取模型的能力。',
-    eventCode: 'Node.js中的Kafka生产者/消费者示例',
-
-    dataTitle: '微服务中的数据管理',
-    dataDesc1: '微服务中最难的部分是数据管理。核心原则是每服务一数据库：每个服务拥有自己的数据，其他服务不能直接查询它。',
-    dataCQRSTitle: 'CQRS（命令查询职责分离）',
-    dataCQRSDesc: 'CQRS将读写操作分离为不同的模型。写入侧处理命令并发出事件。读取侧维护针对查询优化的非规范化读取模型（投影）。这允许独立扩展读写。',
-    dataSagaTitle: 'Saga模式处理分布式事务',
-    dataSagaDesc: '当业务操作跨越多个服务时（例如：下单→预留库存→扣款），不能使用数据库事务。Saga模式协调一系列本地事务，并为回滚提供补偿事务。',
-    dataSagaChoreTitle: '编排 vs 协调',
-    dataSagaChoreDesc: '编排：服务对事件做出反应，没有中央协调器。解耦但难以追踪。协调：中央Saga协调器（独立服务）告知每个参与者该做什么。更易于理解和调试，但增加了中央服务。',
-    dataCode: 'Saga协调示例',
-
-    containerTitle: '容器化与编排',
-    containerDesc1: 'Docker将每个微服务打包成可移植的自包含镜像。Kubernetes在集群中协调这些容器，处理部署、扩展、健康检查和服务发现。',
-    dockerfileTitle: '生产Dockerfile最佳实践',
-    k8sTitle: 'Kubernetes部署模式',
-    k8sDesc: 'Kubernetes Deployment管理Pod的ReplicaSet。Service提供稳定的网络访问。HorizontalPodAutoscaler根据CPU/内存或自定义指标扩展Pod。',
-    containerCode: '多阶段Dockerfile示例',
-    k8sCode: 'Kubernetes Deployment + Service YAML',
-
-    meshTitle: '服务网格',
-    meshDesc1: '服务网格是处理服务间通信的基础设施层。它提供mTLS、重试、熔断、负载均衡和可观测性，无需修改应用代码。',
-    meshIstioTitle: 'Istio',
-    meshIstioDesc: 'Istio向每个Pod注入边车代理（Envoy）。所有流量都经过代理，代理执行策略、收集遥测数据并处理故障。Istio提供集中配置所有代理的控制平面（Istiod）。',
-    meshLinkerdTitle: 'Linkerd',
-    meshLinkerdDesc: 'Linkerd是Istio的轻量级替代品。它使用基于Rust的微代理代替Envoy。Linkerd更易安装，资源开销更低。它专注于可靠性功能（重试、超时、熔断）和mTLS。',
-    meshCode: 'Istio VirtualService金丝雀流量分割',
-
-    observabilityTitle: '可观测性：指标、日志和追踪',
-    observabilityDesc: '可观测性的三大支柱——指标、日志和追踪——对于理解生产中的系统行为至关重要。没有可观测性，调试微服务就像盲飞。',
-    metricsTitle: '使用Prometheus的指标',
-    metricsDesc: 'Prometheus通过HTTP从服务抓取指标。服务通过/metrics端点暴露计数器、仪表、直方图和摘要。Grafana可视化Prometheus数据。对每个服务使用RED方法：速率、错误、持续时间。',
-    logsTitle: '结构化日志',
-    logsDesc: '以JSON格式记录日志以启用机器解析。在每行日志中包含trace_id、服务名称、环境和严重级别。将日志发送到中央系统（Elasticsearch、Loki或CloudWatch）。',
-    observabilityCode: 'Node.js中Prometheus指标示例',
-
-    testingTitle: '测试策略',
-    testingDesc: '测试微服务需要分层策略。测试金字塔仍然适用，但集成测试和契约测试变得更加重要。',
-    testContractTitle: '使用Pact的契约测试',
-    testContractDesc: '消费者驱动的契约测试确保服务（消费者）及其依赖项（提供者）对API契约达成一致。Pact是最流行的框架。消费者编写定义期望的测试，生成"pact"文件。提供者验证它能满足契约。',
-    testE2ETitle: '端到端测试',
-    testE2EDesc: 'E2E微服务测试维护成本高昂。仅为关键用户旅程保留它们。使用Docker Compose或Kubernetes启动完整堆栈。工具：Cypress、Playwright或REST Assured。',
-    testCode: 'Pact消费者测试示例（JavaScript）',
-
-    deployTitle: '部署策略',
-    deployDesc: '零停机部署在微服务中至关重要。Kubernetes原生支持多种策略。',
-    deployBlueGreenTitle: '蓝绿部署',
-    deployBlueGreenDesc: '运行两个相同的生产环境（蓝色和绿色）。将新版本部署到绿色。测试。立即将流量从蓝色切换到绿色。绿色成为新的生产环境。蓝色成为下次部署的暂存环境。回滚是即时的：只需切回。',
-    deployCanaryTitle: '金丝雀部署',
-    deployCanaryDesc: '逐渐将流量转移到新版本。从5%开始，监控错误率和延迟，增加到25%、50%、100%。Istio和Argo Rollouts自动化金丝雀部署。如果出现问题，流量立即切回。',
-    deployCode: '使用Argo Rollouts的Kubernetes金丝雀部署',
-
-    faqTitle: '常见问题',
-    faq1q: '什么时候应该使用微服务而不是单体？',
-    faq1a: '从单体开始。当您有明确需求时再迁移到微服务：多个团队相互干扰、特定组件需要独立扩展，或技术要求不同。Conway定律说您的架构反映您的组织结构——您需要至少2-3个独立团队才能从微服务中受益。',
-    faq2q: '微服务应该多小？',
-    faq2a: '微服务应该小到可以由一个团队（2-8名工程师）拥有和维护，但足够大以证明运维开销合理。一个好的启发式：每服务一个聚合，或每服务一个限界上下文。如果一个服务大多数操作需要同步调用另一个服务，它们可能应该在一起。',
-    faq3q: '如何处理分布式事务？',
-    faq3a: '通过仔细设计服务边界尽量避免分布式事务。当不可避免时，使用Saga模式，采用编排（事件）或协调（Saga协调器服务）。永远不要在微服务中使用2阶段提交（2PC）——它会造成紧耦合和阻塞行为。',
-    faq4q: '服务如何在不共享数据库的情况下共享数据？',
-    faq4a: '服务通过API或事件共享数据，而不是直接查询另一个服务的数据库。对于需要来自多个服务数据的报告或分析，使用事件驱动方法构建独立的读取模型（CQRS）。对于跨服务的数据一致性，使用带领域事件的最终一致性。',
-    faq5q: 'API网关和服务网格有什么区别？',
-    faq5a: 'API网关处理南北流量（外部客户端到服务）：认证、路由、限流、SSL终止。服务网格处理东西流量（服务间）：mTLS、重试、熔断、可观测性。它们互补，不是替代关系。在生产微服务系统中通常需要两者。',
-    faq6q: '如何避免微服务死星（过度连接的服务）？',
-    faq6a: '在服务级别应用单一职责原则。使用异步事件代替同步链。每个服务最多限制3-5个直接依赖。定期绘制服务依赖图——如果看起来像死星，重构服务边界。强大的领域建模（DDD）可防止过度耦合。',
-    faq7q: '应该为API网关使用GraphQL还是REST？',
-    faq7a: 'REST更简单、更广为人知。除非您有GraphQL解决的特定需求，否则使用REST：多个具有不同数据需求的客户端（移动端vs网页）、避免移动端过度获取，或客户端需要组合自己查询的大型表面积。GraphQL Federation在微服务中越来越受欢迎，但增加了复杂性。',
-    faq8q: '如何从单体迁移到微服务？',
-    faq8a: '使用绞杀者无花果模式：新功能构建为微服务，单体逐步被替换。从自然边界的服务开始（例如用户认证），这些服务具有清晰的接口，可以在不接触单体其余部分的情况下提取。永远不要进行大爆炸式重写。',
+    title: '微服务架构：2026年完整指南',
+    description: '微服务架构综合指南，涵盖设计原则、服务通信、API网关、服务发现、熔断器、分布式追踪、数据管理、Docker、Kubernetes、安全性和可观测性。',
   },
 };
 
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'When should I use microservices instead of a monolith?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Start with a monolith. Migrate to microservices when you have clear evidence of need: multiple teams stepping on each other, specific components needing independent scaling, or different technology requirements. Conway\'s Law says your architecture mirrors your org structure — you need at least 2-3 independent teams to benefit from microservices.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'How small should a microservice be?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'A microservice should be small enough to be owned and maintained by one team (2-8 engineers), but large enough to justify the operational overhead. A good heuristic: one aggregate per service, or one bounded context per service.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'How do I handle distributed transactions in microservices?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Use the Saga pattern with either choreography (events) or orchestration (saga orchestrator service). Never use 2-phase commit (2PC) in microservices — it creates tight coupling and blocking behavior.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'How do services share data without sharing a database?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Services share data via APIs or events, not by directly querying another service\'s database. For reporting, use an event-driven approach to build a separate read model (CQRS). For consistency, use eventual consistency with domain events.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'What is the difference between an API Gateway and a service mesh?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'An API Gateway handles north-south traffic (external clients to services): auth, routing, rate limiting, SSL termination. A service mesh handles east-west traffic (service-to-service): mTLS, retries, circuit breaking, observability. They are complementary.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'How do I avoid the microservices death star (over-connected services)?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Apply the Single Responsibility Principle at the service level. Use async events instead of synchronous chains. Limit each service to 3-5 direct dependencies max. Regularly draw the service dependency graph and refactor if it looks like a death star.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Should I use GraphQL or REST for my API Gateway?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'REST is simpler and better understood. Use REST unless you have specific needs that GraphQL solves: multiple clients with different data needs, avoiding over-fetching on mobile, or clients that need to compose their own queries.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'How do I migrate from a monolith to microservices?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Use the Strangler Fig pattern: new features are built as microservices, and the monolith is gradually replaced piece by piece. Start with services that are natural boundaries, have clear interfaces, and can be extracted without touching the rest of the monolith. Never do a big-bang rewrite.',
-      },
-    },
-  ],
+const codeStyle: React.CSSProperties = {
+  background: 'var(--bg-input)',
+  borderRadius: 8,
+  padding: 16,
+  overflowX: 'auto',
+  fontSize: 13,
+  lineHeight: 1.7,
+  fontFamily: 'monospace',
+  color: 'var(--text-primary)',
+  border: '1px solid var(--border-color)',
+  margin: '12px 0',
+};
+const h2Style: React.CSSProperties = {
+  fontSize: 22,
+  fontWeight: 700,
+  marginTop: 40,
+  marginBottom: 16,
+  color: 'var(--text-primary)',
+};
+const h3Style: React.CSSProperties = {
+  fontSize: 17,
+  fontWeight: 700,
+  marginTop: 24,
+  color: 'var(--text-primary)',
+};
+const pStyle: React.CSSProperties = {
+  color: 'var(--text-secondary)',
+  lineHeight: 1.8,
+  marginBottom: 12,
+};
+const tableStyle: React.CSSProperties = {
+  width: '100%',
+  borderCollapse: 'collapse',
+  fontSize: 14,
+  margin: '16px 0',
+};
+const thStyle: React.CSSProperties = {
+  textAlign: 'left',
+  padding: '10px 12px',
+  borderBottom: '2px solid var(--border-color)',
+  fontWeight: 700,
+  color: 'var(--text-primary)',
+  background: 'var(--bg-input)',
+};
+const tdStyle: React.CSSProperties = {
+  padding: '10px 12px',
+  borderBottom: '1px solid var(--border-color)',
+  color: 'var(--text-secondary)',
 };
 
 export default function MicroservicesGuide({ lang }: { lang: string }) {
   const t = translations[lang] || translations['en'];
+  void t;
 
-  const sectionStyle: React.CSSProperties = {
-    marginBottom: '2.5rem',
-  };
-
-  const h2Style: React.CSSProperties = {
-    fontSize: '1.6rem',
-    fontWeight: 700,
-    color: '#1e293b',
-    marginBottom: '1rem',
-    marginTop: '2.5rem',
-    borderBottom: '2px solid #e2e8f0',
-    paddingBottom: '0.5rem',
-  };
-
-  const h3Style: React.CSSProperties = {
-    fontSize: '1.2rem',
-    fontWeight: 600,
-    color: '#334155',
-    marginBottom: '0.75rem',
-    marginTop: '1.75rem',
-  };
-
-  const pStyle: React.CSSProperties = {
-    lineHeight: '1.75',
-    color: '#475569',
-    marginBottom: '1rem',
-  };
-
-  const codeBlockStyle: React.CSSProperties = {
-    background: '#0f172a',
-    color: '#e2e8f0',
-    padding: '1.25rem 1.5rem',
-    borderRadius: '8px',
-    overflowX: 'auto',
-    fontSize: '0.875rem',
-    lineHeight: '1.6',
-    marginBottom: '1.5rem',
-    fontFamily: '"Fira Code", "Cascadia Code", "Consolas", monospace',
-    whiteSpace: 'pre',
-  };
-
-  const tableStyle: React.CSSProperties = {
-    width: '100%',
-    borderCollapse: 'collapse',
-    marginBottom: '1.5rem',
-    fontSize: '0.9rem',
-  };
-
-  const thStyle: React.CSSProperties = {
-    background: '#1e293b',
-    color: '#f1f5f9',
-    padding: '0.75rem 1rem',
-    textAlign: 'left',
-    fontWeight: 600,
-    borderBottom: '2px solid #334155',
-  };
-
-  const tdStyle: React.CSSProperties = {
-    padding: '0.7rem 1rem',
-    borderBottom: '1px solid #e2e8f0',
-    color: '#475569',
-    verticalAlign: 'top',
-  };
-
-  const tdAltStyle: React.CSSProperties = {
-    ...tdStyle,
-    background: '#f8fafc',
-  };
-
-  const tldrStyle: React.CSSProperties = {
-    background: '#f0f9ff',
-    border: '1px solid #0ea5e9',
-    borderLeft: '4px solid #0ea5e9',
-    borderRadius: '8px',
-    padding: '1.25rem 1.5rem',
-    marginBottom: '2rem',
-  };
-
-  const ktStyle: React.CSSProperties = {
-    background: '#f8fafc',
-    border: '1px solid #e2e8f0',
-    borderRadius: '8px',
-    padding: '1.25rem 1.5rem',
-    marginBottom: '2rem',
-  };
-
-  const badgeStyle = (color: string): React.CSSProperties => ({
-    display: 'inline-block',
-    background: color,
-    color: '#fff',
-    borderRadius: '4px',
-    padding: '2px 8px',
-    fontSize: '0.75rem',
-    fontWeight: 600,
-    marginRight: '6px',
-  });
-
-  const inlineCodeStyle: React.CSSProperties = {
-    background: '#f1f5f9',
-    color: '#0f172a',
-    padding: '1px 6px',
-    borderRadius: '4px',
-    fontFamily: 'monospace',
-    fontSize: '0.875em',
-  };
-
-  const asciiDiagramStyle: React.CSSProperties = {
-    background: '#f8fafc',
-    border: '1px solid #e2e8f0',
-    padding: '1rem 1.5rem',
-    borderRadius: '8px',
-    fontFamily: 'monospace',
-    fontSize: '0.85rem',
-    color: '#334155',
-    lineHeight: '1.5',
-    overflowX: 'auto',
-    whiteSpace: 'pre',
-    marginBottom: '1.5rem',
-  };
-
-  const noteStyle: React.CSSProperties = {
-    background: '#fffbeb',
-    border: '1px solid #fbbf24',
-    borderLeft: '4px solid #f59e0b',
-    borderRadius: '6px',
-    padding: '0.875rem 1.25rem',
-    marginBottom: '1.25rem',
-    color: '#78350f',
-    fontSize: '0.9rem',
-  };
-
-  const tipStyle: React.CSSProperties = {
-    background: '#f0fdf4',
-    border: '1px solid #86efac',
-    borderLeft: '4px solid #22c55e',
-    borderRadius: '6px',
-    padding: '0.875rem 1.25rem',
-    marginBottom: '1.25rem',
-    color: '#14532d',
-    fontSize: '0.9rem',
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What is microservices architecture?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Microservices architecture is a software design approach where an application is built as a collection of small, independently deployable services. Each service owns its own data and can be developed, deployed, and scaled independently.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'When should I use microservices over a monolith?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Use microservices when your team is large enough to work on independent services (typically 3+ teams), when different parts of your system have different scaling requirements, or when you need independent deployment cycles. Start with a monolith for small teams or early-stage products.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is the difference between REST, gRPC, and message queues for service communication?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'REST uses HTTP/JSON for synchronous communication. gRPC uses HTTP/2 and Protocol Buffers for high-performance synchronous calls. Message queues (RabbitMQ, Kafka) enable asynchronous, decoupled communication for event-driven workflows.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is an API Gateway and why do I need one?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'An API Gateway is the single entry point for all client requests. It handles authentication, rate limiting, SSL termination, request routing, and response aggregation. Popular options include Kong, AWS API Gateway, and NGINX.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is the circuit breaker pattern?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'The circuit breaker prevents cascade failures by stopping calls to a failing service after a threshold of errors. It has three states: Closed (normal), Open (rejecting calls), and Half-Open (testing recovery). Resilience4j and opossum are popular implementations.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How do microservices handle data management?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Each service should own its own database (database-per-service pattern). Use CQRS to maintain read models across services, Event Sourcing for audit trails, and Saga patterns for distributed transactions without two-phase commit.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is distributed tracing and how does OpenTelemetry help?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Distributed tracing tracks a request as it flows through multiple services. OpenTelemetry provides vendor-neutral APIs and SDKs to collect traces, metrics, and logs. Jaeger and Zipkin are popular backends for visualizing distributed traces.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How does Istio improve microservices security?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Istio adds an Envoy sidecar proxy to each pod, enabling mTLS for encrypted service-to-service communication, authorization policies, traffic management, and observability without changing application code.',
+        },
+      },
+    ],
   };
 
   return (
-    <article style={{ maxWidth: '860px', margin: '0 auto', padding: '0 1rem', color: '#1e293b', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+    <article style={{ maxWidth: 800, margin: '0 auto', lineHeight: 1.8 }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
       {/* TL;DR Box */}
-      <div style={tldrStyle}>
-        <strong style={{ color: '#0369a1', display: 'block', marginBottom: '0.4rem', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>TL;DR</strong>
-        <p style={{ margin: 0, color: '#0c4a6e', lineHeight: '1.65' }}>{t.tldr}</p>
+      <div style={{ background: '#f0f9ff', borderLeft: '4px solid #0ea5e9', padding: '16px', margin: '24px 0', borderRadius: '4px' }}>
+        <strong style={{ color: '#0369a1', display: 'block', marginBottom: 8 }}>TL;DR</strong>
+        <p style={{ margin: 0, color: '#0c4a6e', lineHeight: 1.7 }}>
+          Microservices decompose a large application into small, independently deployable services. Use REST or gRPC for synchronous calls, Kafka or RabbitMQ for async events. Put an API Gateway at the edge. Use circuit breakers (Resilience4j) to prevent cascades. Give each service its own database. Deploy on Kubernetes, observe with Prometheus and Grafana, trace with Jaeger and OpenTelemetry, and secure service-to-service communication with Istio mTLS.
+        </p>
       </div>
 
-      {/* Key Takeaways */}
-      <div style={ktStyle}>
-        <strong style={{ color: '#334155', display: 'block', marginBottom: '0.75rem', fontSize: '1rem' }}>{t.keyTakeaways}</strong>
-        <ul style={{ margin: 0, paddingLeft: '1.25rem' }}>
-          {[t.kt1, t.kt2, t.kt3, t.kt4, t.kt5, t.kt6, t.kt7, t.kt8].map((item, idx) => (
-            <li key={idx} style={{ color: '#475569', lineHeight: '1.7', marginBottom: '0.35rem' }}>{item}</li>
-          ))}
+      <p style={pStyle}>
+        Microservices architecture has become the dominant pattern for building large-scale, cloud-native applications. Netflix, Amazon, Uber, and Airbnb all migrated from monoliths to microservices to achieve independent scaling, faster deployments, and organizational autonomy. But microservices also introduce significant complexity: distributed tracing, eventual consistency, network latency, and operational overhead. This guide covers every aspect of microservices architecture — from design principles and communication patterns to Kubernetes deployment and security — with practical code examples you can use today.
+      </p>
+
+      {/* Key Takeaways Box */}
+      <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', padding: '20px', borderRadius: '8px', margin: '24px 0' }}>
+        <strong style={{ color: 'var(--text-primary)', display: 'block', marginBottom: 12, fontSize: 16 }}>Key Takeaways</strong>
+        <ul style={{ margin: 0, paddingLeft: 20, color: 'var(--text-secondary)', lineHeight: 2 }}>
+          <li>Start with a monolith; migrate to microservices when team size and complexity justify it</li>
+          <li>Each service should have a single responsibility and own its own database</li>
+          <li>Use gRPC for internal calls, REST for public APIs, and message queues for async workflows</li>
+          <li>API Gateway centralizes auth, routing, rate limiting, and SSL termination</li>
+          <li>Circuit breakers prevent cascade failures across service boundaries</li>
+          <li>Implement distributed tracing with OpenTelemetry from day one</li>
+          <li>CQRS and Event Sourcing solve cross-service data consistency challenges</li>
+          <li>Istio service mesh provides zero-trust security with mTLS between services</li>
         </ul>
       </div>
 
-      {/* Introduction */}
-      <section style={sectionStyle}>
-        <h2 style={h2Style}>{t.introTitle}</h2>
-        <p style={pStyle}>{t.introDesc1}</p>
-        <p style={pStyle}>{t.introDesc2}</p>
-        <p style={pStyle}>{t.introDesc3}</p>
+      {/* Section 1: Monolith vs Microservices */}
+      <h2 style={h2Style}>Monolith vs Microservices: When to Use Which</h2>
+      <p style={pStyle}>
+        The choice between a monolith and microservices is not about which is objectively better — it is about what fits your team, stage, and problem. Many successful companies run monoliths in production. The goal is to match your architecture to your organizational and scaling needs rather than blindly following trends.
+      </p>
 
-        <div style={asciiDiagramStyle}>{
-          'Monolith vs Microservices\n' +
-          '\n' +
-          'MONOLITH                      MICROSERVICES\n' +
-          '+-----------------------+     +-------+  +-------+  +-------+\n' +
-          '|  UI Layer             |     |  UI   |  |  API  |  | Auth  |\n' +
-          '|  Business Logic       |     | Svc   |  | Gtwy  |  |  Svc  |\n' +
-          '|  Data Access          |     +-------+  +-------+  +-------+\n' +
-          '|  All In One Process   |         |          |          |\n' +
-          '+-----------+-----------+     +-------+  +-------+  +-------+\n' +
-          '            |                 | Order |  | Invty |  | Notif |\n' +
-          '    +-------+-------+         |  Svc  |  |  Svc  |  |  Svc  |\n' +
-          '    | Single DB     |         +---+---+  +---+---+  +---+---+\n' +
-          '    +---------------+             |          |          |\n' +
-          '                              +---+---+  +---+---+  +---+---+\n' +
-          '                              | Order |  | Invty |  | Email |\n' +
-          '                              |  DB   |  |  DB   |  |  DB   |\n' +
-          '                              +-------+  +-------+  +-------+'
-        }</div>
-      </section>
+      <h3 style={h3Style}>The Monolith: Benefits and Limitations</h3>
+      <p style={pStyle}>
+        A monolith is a single deployable unit containing all application functionality. All modules share a process, database, and deployment pipeline. Monoliths are simpler to develop, test, and debug at small scale. There is no network overhead between modules, database transactions are straightforward, and local debugging requires no special tooling. The danger arises as the codebase grows: slow builds, tight coupling between teams, inability to scale individual components, and deployment risk where every change deploys everything at once.
+      </p>
+      <pre style={codeStyle}><code>{`# Monolith — all in one deployable
+my-app/
+├── src/
+│   ├── auth/           # Authentication module
+│   ├── orders/         # Order management
+│   ├── payments/       # Payment processing
+│   ├── inventory/      # Inventory tracking
+│   └── notifications/  # Email/SMS
+├── database/           # One shared database schema
+└── Dockerfile          # Single container image
 
-      {/* Monolith vs Microservices Comparison */}
-      <section style={sectionStyle}>
-        <h2 style={h2Style}>{t.vsMonolithTitle}</h2>
-        <p style={pStyle}>{t.vsMonolithDesc}</p>
+# Single deployment — all modules go together
+docker build -t my-app:v1.5.0 .
+docker run -p 8080:8080 my-app:v1.5.0
 
-        <div style={{ overflowX: 'auto' }}>
-          <table style={tableStyle}>
-            <thead>
-              <tr>
-                <th style={thStyle}>Dimension</th>
-                <th style={thStyle}>Monolith</th>
-                <th style={thStyle}>Modular Monolith</th>
-                <th style={thStyle}>Microservices</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style={tdAltStyle}><strong>Deployment</strong></td>
-                <td style={tdAltStyle}>Single artifact</td>
-                <td style={tdAltStyle}>Single artifact, modular internals</td>
-                <td style={tdAltStyle}>Independent per service</td>
-              </tr>
-              <tr>
-                <td style={tdStyle}><strong>Scalability</strong></td>
-                <td style={tdStyle}>Scale entire app</td>
-                <td style={tdStyle}>Scale entire app</td>
-                <td style={tdStyle}>Scale individual services</td>
-              </tr>
-              <tr>
-                <td style={tdAltStyle}><strong>Dev Complexity</strong></td>
-                <td style={tdAltStyle}><span style={badgeStyle('#22c55e')}>Low</span></td>
-                <td style={tdAltStyle}><span style={badgeStyle('#f59e0b')}>Medium</span></td>
-                <td style={tdAltStyle}><span style={badgeStyle('#ef4444')}>High</span></td>
-              </tr>
-              <tr>
-                <td style={tdStyle}><strong>Ops Complexity</strong></td>
-                <td style={tdStyle}><span style={badgeStyle('#22c55e')}>Low</span></td>
-                <td style={tdStyle}><span style={badgeStyle('#22c55e')}>Low</span></td>
-                <td style={tdStyle}><span style={badgeStyle('#ef4444')}>Very High</span></td>
-              </tr>
-              <tr>
-                <td style={tdAltStyle}><strong>Team Autonomy</strong></td>
-                <td style={tdAltStyle}>Shared codebase</td>
-                <td style={tdAltStyle}>Module ownership</td>
-                <td style={tdAltStyle}>Full service ownership</td>
-              </tr>
-              <tr>
-                <td style={tdStyle}><strong>Tech Diversity</strong></td>
-                <td style={tdStyle}>Single stack</td>
-                <td style={tdStyle}>Single stack</td>
-                <td style={tdStyle}>Per-service choice</td>
-              </tr>
-              <tr>
-                <td style={tdAltStyle}><strong>Data Isolation</strong></td>
-                <td style={tdAltStyle}>Shared DB</td>
-                <td style={tdAltStyle}>Shared DB, schema modules</td>
-                <td style={tdAltStyle}>DB per service</td>
-              </tr>
-              <tr>
-                <td style={tdStyle}><strong>Best For</strong></td>
-                <td style={tdStyle}>&lt;10 devs, early-stage</td>
-                <td style={tdStyle}>10-50 devs, clean architecture</td>
-                <td style={tdStyle}>50+ devs, proven domain</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+# Problems at scale:
+# - Slow build times (rebuild everything for any change)
+# - One team's bad deploy breaks everyone
+# - Cannot scale payment service independently of auth service
+# - Tech debt accumulates: impossible to change DB schema safely`}</code></pre>
 
-        <div style={noteStyle}>
-          <strong>Production tip:</strong> Netflix, Amazon, and Uber all started as monoliths. They migrated to microservices only after achieving product-market fit and facing genuine scaling bottlenecks. Premature microservices is a common failure mode.
-        </div>
-      </section>
+      <h3 style={h3Style}>Microservices: Benefits and Trade-offs</h3>
+      <p style={pStyle}>
+        Microservices split the application into independently deployable services, each with a focused responsibility. Benefits include independent scaling (scale only the payment service during peak sales), independent deployment (the notifications team deploys without coordination), technology diversity (use Python for ML, Go for high-throughput APIs), and fault isolation (a crash in the recommendations service does not take down checkout). The trade-offs are real: network latency replaces function calls, distributed transactions are hard, debugging requires tracing across services, and operational complexity multiplies significantly.
+      </p>
+      <pre style={codeStyle}><code>{`# Microservices — independently deployed per service
+services/
+├── auth-service/          # JWT issuance and validation
+│   ├── src/
+│   ├── Dockerfile
+│   └── package.json       # Node.js
+├── order-service/         # Order lifecycle management
+│   ├── src/
+│   ├── Dockerfile
+│   └── go.mod             # Go
+├── payment-service/       # Payment processing (PCI-DSS scope)
+│   ├── src/
+│   ├── Dockerfile
+│   └── pom.xml            # Java/Spring Boot
+├── inventory-service/     # Stock management
+│   ├── src/
+│   ├── Dockerfile
+│   └── requirements.txt   # Python/FastAPI
+├── notification-service/  # Async email/SMS/push
+└── api-gateway/           # Single external entry point
 
-      {/* Domain-Driven Design */}
-      <section style={sectionStyle}>
-        <h2 style={h2Style}>{t.dddTitle}</h2>
-        <p style={pStyle}>{t.dddDesc1}</p>
+# Each service deploys independently — no coordination needed
+cd order-service
+docker build -t order-service:v2.1.0 .
+kubectl set image deployment/order-service order=order-service:v2.1.0
+# payment-service continues running v3.0.0 — unaffected`}</code></pre>
 
-        <h3 style={h3Style}>{t.dddBoundedContextTitle}</h3>
-        <p style={pStyle}>{t.dddBoundedContextDesc}</p>
+      <h3 style={h3Style}>Decision Framework</h3>
+      <table style={tableStyle}>
+        <thead>
+          <tr>
+            <th style={thStyle}>Factor</th>
+            <th style={thStyle}>Choose Monolith</th>
+            <th style={thStyle}>Choose Microservices</th>
+          </tr>
+        </thead>
+        <tbody>
+          {[
+            ['Team size', '1–8 engineers', '10+ engineers, multiple teams'],
+            ['Product stage', 'Early MVP, validating ideas', 'Established product, clear domain boundaries'],
+            ['Scaling needs', 'Uniform scaling requirements', 'Different scaling per component'],
+            ['Deploy frequency', 'Weekly or monthly releases', 'Multiple deploys per day per service'],
+            ['Domain complexity', 'Simple, well-understood domain', 'Complex domain with distinct bounded contexts'],
+            ['Ops maturity', 'Limited DevOps capacity', 'Strong DevOps, Kubernetes expertise'],
+          ].map(([factor, mono, micro], i) => (
+            <tr key={i}>
+              <td style={{ ...tdStyle, fontWeight: 600 }}>{factor}</td>
+              <td style={tdStyle}>{mono}</td>
+              <td style={tdStyle}>{micro}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
 
-        <div style={asciiDiagramStyle}>{
-          'Bounded Contexts Example: E-Commerce\n' +
-          '\n' +
-          '+------------------+   +------------------+   +------------------+\n' +
-          '|  Order Context   |   | Shipping Context |   | Billing Context  |\n' +
-          '|                  |   |                  |   |                  |\n' +
-          '|  Order           |   |  Order           |   |  Order           |\n' +
-          '|   - items[]      |   |   - trackingNo   |   |   - invoiceNo    |\n' +
-          '|   - status       |   |   - weight       |   |   - taxAmount    |\n' +
-          '|   - customerId   |   |   - carrier      |   |   - dueDate      |\n' +
-          '+------------------+   +------------------+   +------------------+\n' +
-          '        ^                       ^                       ^\n' +
-          '        |  Same concept "Order" has different meaning per context\n' +
-          '        |  Each context has its OWN model and OWN database'
-        }</div>
+      {/* Section 2: Design Principles */}
+      <h2 style={h2Style}>Microservices Design Principles</h2>
+      <p style={pStyle}>
+        Well-designed microservices are not just small — they are designed around business domains, maintain clear boundaries, and minimize coupling. The following principles guide good microservice design. Violating any of them tends to produce distributed monoliths: systems with all the complexity of microservices and none of the benefits.
+      </p>
 
-        <h3 style={h3Style}>{t.dddAggregateTitle}</h3>
-        <p style={pStyle}>{t.dddAggregateDesc}</p>
+      <h3 style={h3Style}>Single Responsibility Principle</h3>
+      <p style={pStyle}>
+        Each microservice should do one thing and do it well. The challenge is defining what one thing means. Domain-Driven Design (DDD) provides the concept of a Bounded Context — a logical boundary within which a domain model is consistent and unambiguous. Each bounded context typically maps to one or a small group of microservices. When a service is too large, you find yourself making cross-team changes for a single feature. When it is too small (nano-services), you have excessive network overhead and operational burden.
+      </p>
+      <pre style={codeStyle}><code>{`# Bad: A "user-service" that does too many unrelated things
+user-service:
+  - Manages user profiles
+  - Handles JWT authentication tokens
+  - Sends welcome and transactional emails
+  - Tracks user analytics events
+  - Processes subscription billing
 
-        <p style={{ ...pStyle, fontStyle: 'italic', color: '#64748b' }}>{t.dddCode}:</p>
-        <div style={codeBlockStyle}>{
-          '// Order Aggregate (TypeScript)\n' +
-          'class Order {\n' +
-          '  private id: OrderId;\n' +
-          '  private customerId: CustomerId;\n' +
-          '  private items: OrderItem[] = [];\n' +
-          '  private status: OrderStatus = OrderStatus.PENDING;\n' +
-          '  private events: DomainEvent[] = [];\n' +
-          '\n' +
-          '  // Aggregate Root — all operations go through this object\n' +
-          '  addItem(productId: ProductId, quantity: number, price: Money): void {\n' +
-          '    if (this.status !== OrderStatus.PENDING) {\n' +
-          '      throw new Error("Cannot add items to a non-pending order");\n' +
-          '    }\n' +
-          '    const item = new OrderItem(productId, quantity, price);\n' +
-          '    this.items.push(item);\n' +
-          '    this.events.push(new ItemAddedEvent(this.id, item));\n' +
-          '  }\n' +
-          '\n' +
-          '  confirm(): void {\n' +
-          '    if (this.items.length === 0) {\n' +
-          '      throw new Error("Cannot confirm empty order");\n' +
-          '    }\n' +
-          '    this.status = OrderStatus.CONFIRMED;\n' +
-          '    // Emit domain event — other contexts react to this\n' +
-          '    this.events.push(new OrderConfirmedEvent(this.id, this.customerId));\n' +
-          '  }\n' +
-          '\n' +
-          '  // Transaction boundary: OrderItem CANNOT be modified outside Order\n' +
-          '  // Never hold a direct reference to OrderItem from outside this aggregate\n' +
-          '  getTotal(): Money {\n' +
-          '    return this.items.reduce((sum, item) => sum.add(item.subtotal()), Money.ZERO);\n' +
-          '  }\n' +
-          '\n' +
-          '  pullEvents(): DomainEvent[] {\n' +
-          '    const events = [...this.events];\n' +
-          '    this.events = [];\n' +
-          '    return events;\n' +
-          '  }\n' +
-          '}'
-        }</div>
-      </section>
+# Good: Separate services per bounded context
+auth-service        -> JWT creation, token validation, OAuth2 flows
+profile-service     -> User profile CRUD, preferences, avatar upload
+notification-service -> Email, SMS, push notifications (event-driven)
+analytics-service   -> Event ingestion, user behavior tracking
+billing-service     -> Subscription management, invoice generation
 
-      {/* Service Communication */}
-      <section style={sectionStyle}>
-        <h2 style={h2Style}>{t.commTitle}</h2>
-        <p style={pStyle}>{t.commDesc}</p>
+# Each service can be owned by a separate team
+# and deployed on its own release schedule`}</code></pre>
 
-        <h3 style={h3Style}>{t.restTitle}</h3>
-        <p style={pStyle}>{t.restDesc}</p>
+      <h3 style={h3Style}>Loose Coupling</h3>
+      <p style={pStyle}>
+        Services should be able to change independently without requiring changes in other services. Loose coupling means services interact through well-defined, stable interfaces — APIs or events — and do not share implementation details, internal data structures, or databases. The most common coupling anti-pattern is a shared database: two services reading and writing the same tables creates tight coupling at the data layer, making independent evolution impossible and turning schema migrations into cross-team events.
+      </p>
+      <pre style={codeStyle}><code>{`// Tight coupling anti-pattern — AVOID THIS
+// order-service directly queries payment-service's database
+const payment = await db.query(
+  'SELECT * FROM payment_service.payments WHERE order_id = \$1',
+  [orderId]
+);
+// Problems: schema change in payment-service breaks order-service,
+// payment-service cannot migrate its DB independently
 
-        <h3 style={h3Style}>{t.grpcTitle}</h3>
-        <p style={pStyle}>{t.grpcDesc}</p>
+// Loose coupling — communicate via stable public API
+const response = await fetch(
+  'http://payment-service/api/v1/payments/' + orderId,
+  {
+    headers: { Authorization: 'Bearer ' + await getServiceToken('payment-service') },
+    signal: AbortSignal.timeout(5000),
+  }
+);
+if (!response.ok) throw new PaymentServiceError(response.status);
+const payment = await response.json() as PaymentRecord;
+// payment-service can change its internal DB, rename columns,
+// migrate to a different DB engine — order-service is unaffected`}</code></pre>
 
-        <div style={codeBlockStyle}>{
-          '// order.proto — gRPC service definition\n' +
-          'syntax = "proto3";\n' +
-          'package order;\n' +
-          '\n' +
-          'service OrderService {\n' +
-          '  rpc GetOrder(GetOrderRequest) returns (Order);\n' +
-          '  rpc CreateOrder(CreateOrderRequest) returns (Order);\n' +
-          '  rpc StreamOrders(StreamOrdersRequest) returns (stream Order);\n' +
-          '}\n' +
-          '\n' +
-          'message GetOrderRequest {\n' +
-          '  string order_id = 1;\n' +
-          '}\n' +
-          '\n' +
-          'message Order {\n' +
-          '  string id = 1;\n' +
-          '  string customer_id = 2;\n' +
-          '  repeated OrderItem items = 3;\n' +
-          '  OrderStatus status = 4;\n' +
-          '  int64 created_at = 5;\n' +
-          '}\n' +
-          '\n' +
-          'message OrderItem {\n' +
-          '  string product_id = 1;\n' +
-          '  int32 quantity = 2;\n' +
-          '  int64 price_cents = 3;\n' +
-          '}\n' +
-          '\n' +
-          'enum OrderStatus {\n' +
-          '  PENDING = 0;\n' +
-          '  CONFIRMED = 1;\n' +
-          '  SHIPPED = 2;\n' +
-          '}'
-        }</div>
+      <h3 style={h3Style}>High Cohesion</h3>
+      <p style={pStyle}>
+        Related functionality should live within the same service. If you find yourself frequently making cross-service calls to complete a single operation, your service boundaries may be wrong. A common symptom is the "distributed monolith" where microservices are deployed separately but are so tightly coupled that they must deploy together and share data through shared databases. High cohesion means the data a service needs to do its job lives within its own boundary.
+      </p>
+      <pre style={codeStyle}><code>{`# Checking service cohesion:
+# 1. Does this service have a single, clear purpose?
+# 2. Do most operations complete within this service's boundary?
+# 3. Does the service own all the data it needs?
+# 4. Would a domain expert call this a natural unit of business logic?
 
-        <h3 style={h3Style}>{t.mqTitle}</h3>
-        <p style={pStyle}>{t.mqDesc}</p>
+# Low cohesion warning sign:
+# "Place order" operation requires sequential calls to:
+#   -> inventory-service (check stock)
+#   -> pricing-service (get current price)
+#   -> coupon-service (validate discount)
+#   -> customer-service (verify customer)
+#   -> fraud-service (score order)
+# All synchronous, all required, all blocking
+# Consider: orchestration layer or domain re-design
 
-        <h3 style={h3Style}>{t.commCompareTitle}</h3>
-        <div style={{ overflowX: 'auto' }}>
-          <table style={tableStyle}>
-            <thead>
-              <tr>
-                <th style={thStyle}>Protocol</th>
-                <th style={thStyle}>Type</th>
-                <th style={thStyle}>Latency</th>
-                <th style={thStyle}>Coupling</th>
-                <th style={thStyle}>Best For</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style={tdAltStyle}><strong>REST/HTTP</strong></td>
-                <td style={tdAltStyle}>Synchronous</td>
-                <td style={tdAltStyle}>~1-50ms</td>
-                <td style={tdAltStyle}><span style={badgeStyle('#f59e0b')}>Temporal</span></td>
-                <td style={tdAltStyle}>External APIs, simple services</td>
-              </tr>
-              <tr>
-                <td style={tdStyle}><strong>gRPC</strong></td>
-                <td style={tdStyle}>Synchronous</td>
-                <td style={tdStyle}>~0.1-5ms</td>
-                <td style={tdStyle}><span style={badgeStyle('#f59e0b')}>Temporal</span></td>
-                <td style={tdStyle}>Internal high-perf service calls</td>
-              </tr>
-              <tr>
-                <td style={tdAltStyle}><strong>Kafka</strong></td>
-                <td style={tdAltStyle}>Async / Stream</td>
-                <td style={tdAltStyle}>~5-50ms</td>
-                <td style={tdAltStyle}><span style={badgeStyle('#22c55e')}>Loose</span></td>
-                <td style={tdAltStyle}>Event streaming, audit log, fan-out</td>
-              </tr>
-              <tr>
-                <td style={tdStyle}><strong>RabbitMQ</strong></td>
-                <td style={tdStyle}>Async / Queue</td>
-                <td style={tdStyle}>~1-10ms</td>
-                <td style={tdStyle}><span style={badgeStyle('#22c55e')}>Loose</span></td>
-                <td style={tdStyle}>Task queues, RPC, routing</td>
-              </tr>
-              <tr>
-                <td style={tdAltStyle}><strong>AWS SQS/SNS</strong></td>
-                <td style={tdAltStyle}>Async / Managed</td>
-                <td style={tdAltStyle}>~10-200ms</td>
-                <td style={tdAltStyle}><span style={badgeStyle('#22c55e')}>Loose</span></td>
-                <td style={tdAltStyle}>Managed cloud, fan-out, FIFO</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
+# High cohesion — order-service owns its domain:
+# - orders table (order lifecycle and status)
+# - order_items table (line items with snapshot pricing)
+# - order_history table (state machine transitions)
+# Most operations complete without external calls`}</code></pre>
 
-      {/* API Gateway */}
-      <section style={sectionStyle}>
-        <h2 style={h2Style}>{t.gatewayTitle}</h2>
-        <p style={pStyle}>{t.gatewayDesc1}</p>
-        <p style={pStyle}>{t.gatewayDesc2}</p>
+      <h3 style={h3Style}>Design for Failure</h3>
+      <p style={pStyle}>
+        In a distributed system, failures are not exceptional — they are normal operating conditions. Networks partition, services crash, latency spikes, disks fill up. Every microservice must be designed assuming that its dependencies will sometimes be unavailable. Always implement timeouts on all outbound calls, retry with exponential backoff for transient errors, use circuit breakers to prevent cascades, and define fallback behaviors that degrade gracefully.
+      </p>
+      <pre style={codeStyle}><code>{`// Resilient service call pattern
+async function callInventoryService(productId: string, qty: number) {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 3000); // 3s timeout
 
-        <div style={asciiDiagramStyle}>{
-          'API Gateway Architecture\n' +
-          '\n' +
-          '  Mobile     Web      3rd-Party\n' +
-          '    App      SPA        Client\n' +
-          '     |        |           |\n' +
-          '     +--------+-----------+\n' +
-          '              |\n' +
-          '     +--------v-----------+\n' +
-          '     |    API  GATEWAY    |\n' +
-          '     |  - SSL Termination |\n' +
-          '     |  - Auth / JWT      |\n' +
-          '     |  - Rate Limiting   |\n' +
-          '     |  - Request Routing |\n' +
-          '     |  - Circuit Breaker |\n' +
-          '     |  - Request Logging |\n' +
-          '     |  - Response Cache  |\n' +
-          '     +--+------+------+---+\n' +
-          '        |      |      |\n' +
-          '   +----+  +---+  +--+---+\n' +
-          '   |Order|  |Auth|  |Notif|\n' +
-          '   | Svc |  | Svc|  | Svc |\n' +
-          '   +-----+  +----+  +-----+'
-        }</div>
+  try {
+    const response = await fetch(
+      'http://inventory-service/api/v1/reserve',
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ productId, quantity: qty }),
+        signal: controller.signal,
+      }
+    );
+    clearTimeout(timeoutId);
 
-        <h3 style={h3Style}>{t.gatewayFeaturesTitle}</h3>
-        <p style={{ ...pStyle, fontStyle: 'italic', color: '#64748b' }}>{t.gatewayCode}:</p>
-        <div style={codeBlockStyle}>{
-          '# Kong declarative config (kong.yml)\n' +
-          '_format_version: "3.0"\n' +
-          '\n' +
-          'services:\n' +
-          '  - name: order-service\n' +
-          '    url: http://order-svc:3000\n' +
-          '    routes:\n' +
-          '      - name: order-routes\n' +
-          '        paths:\n' +
-          '          - /api/orders\n' +
-          '        methods:\n' +
-          '          - GET\n' +
-          '          - POST\n' +
-          '    plugins:\n' +
-          '      - name: jwt              # JWT validation\n' +
-          '        config:\n' +
-          '          secret_is_base64: false\n' +
-          '      - name: rate-limiting    # Rate limiting\n' +
-          '        config:\n' +
-          '          minute: 60\n' +
-          '          hour: 1000\n' +
-          '          policy: local\n' +
-          '      - name: circuit-breaker  # Circuit breaker\n' +
-          '        config:\n' +
-          '          timeout: 5000\n' +
-          '          error_threshold: 50\n' +
-          '          volume_threshold: 10\n' +
-          '\n' +
-          '  - name: auth-service\n' +
-          '    url: http://auth-svc:3001\n' +
-          '    routes:\n' +
-          '      - name: auth-routes\n' +
-          '        paths:\n' +
-          '          - /api/auth\n' +
-          '    plugins:\n' +
-          '      - name: cors\n' +
-          '        config:\n' +
-          '          origins:\n' +
-          '            - https://myapp.com\n' +
-          '          methods:\n' +
-          '            - GET\n' +
-          '            - POST\n' +
-          '            - OPTIONS'
-        }</div>
-      </section>
+    if (response.status === 503) {
+      // Service unavailable — use fallback
+      return { reserved: false, fallback: true };
+    }
+    if (!response.ok) {
+      throw new Error('Inventory service error: ' + response.status);
+    }
+    return response.json();
+  } catch (err) {
+    if ((err as Error).name === 'AbortError') {
+      // Timeout — use fallback instead of letting the error propagate
+      return { reserved: false, timeout: true, fallback: true };
+    }
+    throw err; // Re-throw non-timeout errors for circuit breaker tracking
+  } finally {
+    clearTimeout(timeoutId);
+  }
+}`}</code></pre>
 
-      {/* Service Discovery */}
-      <section style={sectionStyle}>
-        <h2 style={h2Style}>{t.discoveryTitle}</h2>
-        <p style={pStyle}>{t.discoveryDesc1}</p>
+      {/* Section 3: Service Communication */}
+      <h2 style={h2Style}>Service Communication: REST vs gRPC vs Message Queues</h2>
+      <p style={pStyle}>
+        How services communicate is one of the most consequential architectural decisions in microservices. There are two fundamental communication styles: synchronous (the caller blocks waiting for a response) and asynchronous (fire-and-forget, event-driven). Each has distinct tools and trade-offs. Most microservices systems use both — synchronous for queries requiring immediate responses, asynchronous for workflows that can tolerate eventual consistency.
+      </p>
 
-        <h3 style={h3Style}>{t.discoveryClientTitle}</h3>
-        <p style={pStyle}>{t.discoveryClientDesc}</p>
+      <h3 style={h3Style}>REST over HTTP/JSON (Synchronous)</h3>
+      <p style={pStyle}>
+        REST is the most widely used inter-service communication protocol. It is human-readable, trivially debuggable with curl, and universally supported across every language and platform. REST is ideal for request-response patterns where the caller needs an immediate result: user authentication, fetching product details, creating a resource. The main drawbacks are payload verbosity compared to binary formats and the CPU cost of JSON serialization and deserialization at high request volumes.
+      </p>
+      <pre style={codeStyle}><code>{`# REST API — order-service calling inventory-service
+# POST /api/v1/inventory/reserve
 
-        <h3 style={h3Style}>{t.discoveryServerTitle}</h3>
-        <p style={pStyle}>{t.discoveryServerDesc}</p>
+curl -X POST https://inventory-service/api/v1/inventory/reserve \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer \${SERVICE_TOKEN}" \
+  -d '{
+    "product_id": "prod_abc123",
+    "quantity": 2,
+    "order_id": "ord_xyz789",
+    "idempotency_key": "ord_xyz789-reserve-attempt-1"
+  }'
 
-        <p style={{ ...pStyle, fontStyle: 'italic', color: '#64748b' }}>{t.discoveryCode}:</p>
-        <div style={codeBlockStyle}>{
-          '# Kubernetes Service + DNS discovery\n' +
-          '\n' +
-          'apiVersion: v1\n' +
-          'kind: Service\n' +
-          'metadata:\n' +
-          '  name: order-service\n' +
-          '  namespace: production\n' +
-          'spec:\n' +
-          '  selector:\n' +
-          '    app: order-api\n' +
-          '  ports:\n' +
-          '    - protocol: TCP\n' +
-          '      port: 80\n' +
-          '      targetPort: 3000\n' +
-          '  type: ClusterIP  # Only accessible within cluster\n' +
-          '\n' +
-          '---\n' +
-          '# Other services reach order-service via DNS:\n' +
-          '# http://order-service.production.svc.cluster.local/orders\n' +
-          '# Short form within same namespace: http://order-service/orders\n' +
-          '\n' +
-          '# Node.js service calling another service via DNS\n' +
-          'const ORDER_SVC = process.env.ORDER_SERVICE_URL ||\n' +
-          '  "http://order-service.production.svc.cluster.local";\n' +
-          '\n' +
-          'async function getOrder(orderId) {\n' +
-          '  const response = await fetch(\n' +
-          '    ORDER_SVC + "/orders/" + orderId,\n' +
-          '    {\n' +
-          '      headers: {\n' +
-          '        "X-Trace-Id": getCurrentTraceId(),\n' +
-          '        "Authorization": "Bearer " + getServiceToken(),\n' +
-          '      },\n' +
-          '      signal: AbortSignal.timeout(5000), // 5s timeout\n' +
-          '    }\n' +
-          '  );\n' +
-          '  if (!response.ok) throw new Error("Order service error: " + response.status);\n' +
-          '  return response.json();\n' +
-          '}'
-        }</div>
-      </section>
+# Response
+{
+  "reserved": true,
+  "reservation_id": "res_def456",
+  "expires_at": "2026-02-27T14:30:00Z",
+  "available_stock": 47
+}
 
-      {/* Distributed Tracing */}
-      <section style={sectionStyle}>
-        <h2 style={h2Style}>{t.tracingTitle}</h2>
-        <p style={pStyle}>{t.tracingDesc1}</p>
+# Node.js — service-to-service REST call with timeout and retry
+async function reserveInventory(productId: string, qty: number, orderId: string) {
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      const res = await fetch('http://inventory-service/api/v1/inventory/reserve', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + await tokenCache.getToken('inventory-service'),
+          'X-Idempotency-Key': orderId + '-reserve-' + attempt,
+        },
+        body: JSON.stringify({ product_id: productId, quantity: qty, order_id: orderId }),
+        signal: AbortSignal.timeout(5000),
+      });
+      if (res.status === 429) {
+        // Rate limited — exponential backoff
+        await sleep(Math.pow(2, attempt) * 100);
+        continue;
+      }
+      return res.json();
+    } catch (err) {
+      if (attempt === 3) throw err;
+      await sleep(Math.pow(2, attempt) * 100);
+    }
+  }
+}`}</code></pre>
 
-        <h3 style={h3Style}>{t.tracingCorrelationTitle}</h3>
-        <p style={pStyle}>{t.tracingCorrelationDesc}</p>
+      <h3 style={h3Style}>gRPC (High-Performance Synchronous)</h3>
+      <p style={pStyle}>
+        gRPC uses HTTP/2 and Protocol Buffers (protobuf) for binary serialization, making it significantly faster and more efficient than REST/JSON — typically 5 to 10 times faster for serialization with considerably smaller payloads. gRPC supports four call patterns: unary (like REST), client streaming, server streaming, and bidirectional streaming. Strong typing via .proto schema files eliminates an entire class of integration bugs. Automatic client code generation in over 10 languages removes boilerplate. gRPC is ideal for internal service-to-service communication where performance matters.
+      </p>
+      <pre style={codeStyle}><code>{`// Step 1: Define the service contract in inventory.proto
+syntax = "proto3";
+package inventory.v1;
 
-        <h3 style={h3Style}>{t.tracingOpenTelTitle}</h3>
-        <p style={pStyle}>{t.tracingOpenTelDesc}</p>
+service InventoryService {
+  rpc CheckStock(StockRequest) returns (StockResponse);
+  rpc ReserveItems(ReserveRequest) returns (ReserveResponse);
+  // Server-streaming: push real-time inventory updates
+  rpc StreamUpdates(StreamRequest) returns (stream InventoryEvent);
+}
 
-        <p style={{ ...pStyle, fontStyle: 'italic', color: '#64748b' }}>{t.tracingCode}:</p>
-        <div style={codeBlockStyle}>{
-          '// OpenTelemetry setup for Node.js microservice\n' +
-          '// tracing.js — load BEFORE any other imports\n' +
-          'const { NodeSDK } = require("@opentelemetry/sdk-node");\n' +
-          'const { OTLPTraceExporter } = require("@opentelemetry/exporter-trace-otlp-http");\n' +
-          'const { Resource } = require("@opentelemetry/resources");\n' +
-          'const { SEMRESATTRS_SERVICE_NAME } = require("@opentelemetry/semantic-conventions");\n' +
-          'const { HttpInstrumentation } = require("@opentelemetry/instrumentation-http");\n' +
-          'const { ExpressInstrumentation } = require("@opentelemetry/instrumentation-express");\n' +
-          '\n' +
-          'const sdk = new NodeSDK({\n' +
-          '  resource: new Resource({\n' +
-          '    [SEMRESATTRS_SERVICE_NAME]: "order-service",\n' +
-          '  }),\n' +
-          '  traceExporter: new OTLPTraceExporter({\n' +
-          '    url: "http://jaeger-collector:4318/v1/traces",\n' +
-          '  }),\n' +
-          '  instrumentations: [\n' +
-          '    new HttpInstrumentation(),    // Auto-instrument HTTP calls\n' +
-          '    new ExpressInstrumentation(), // Auto-instrument Express routes\n' +
-          '  ],\n' +
-          '});\n' +
-          '\n' +
-          'sdk.start();\n' +
-          '\n' +
-          '// Manual span creation for business logic\n' +
-          'const { trace, context } = require("@opentelemetry/api");\n' +
-          'const tracer = trace.getTracer("order-service");\n' +
-          '\n' +
-          'async function processOrder(orderId) {\n' +
-          '  const span = tracer.startSpan("processOrder", {\n' +
-          '    attributes: { "order.id": orderId },\n' +
-          '  });\n' +
-          '  try {\n' +
-          '    const result = await context.with(\n' +
-          '      trace.setSpan(context.active(), span),\n' +
-          '      () => doProcessOrder(orderId)\n' +
-          '    );\n' +
-          '    span.setStatus({ code: 1 }); // OK\n' +
-          '    return result;\n' +
-          '  } catch (err) {\n' +
-          '    span.recordException(err);\n' +
-          '    span.setStatus({ code: 2, message: err.message }); // ERROR\n' +
-          '    throw err;\n' +
-          '  } finally {\n' +
-          '    span.end();\n' +
-          '  }\n' +
-          '}'
-        }</div>
-      </section>
+message StockRequest {
+  string product_id = 1;
+  string warehouse_id = 2;  // optional
+}
 
-      {/* Event-Driven Architecture */}
-      <section style={sectionStyle}>
-        <h2 style={h2Style}>{t.eventTitle}</h2>
-        <p style={pStyle}>{t.eventDesc1}</p>
+message StockResponse {
+  int32 available_quantity = 1;
+  bool  in_stock           = 2;
+  string warehouse_location = 3;
+}
 
-        <h3 style={h3Style}>{t.eventKafkaTitle}</h3>
-        <p style={pStyle}>{t.eventKafkaDesc}</p>
+message ReserveRequest {
+  string product_id      = 1;
+  int32  quantity        = 2;
+  string order_id        = 3;
+  string idempotency_key = 4;
+}
 
-        <h3 style={h3Style}>{t.eventRabbitTitle}</h3>
-        <p style={pStyle}>{t.eventRabbitDesc}</p>
+message ReserveResponse {
+  bool   success        = 1;
+  string reservation_id = 2;
+  string expires_at     = 3;
+  string error_code     = 4;  // non-empty on failure
+}
 
-        <h3 style={h3Style}>{t.eventSourcingTitle}</h3>
-        <p style={pStyle}>{t.eventSourcingDesc}</p>
+// Step 2: Generate Go server stub
+// protoc --go_out=. --go-grpc_out=. inventory.proto
 
-        <p style={{ ...pStyle, fontStyle: 'italic', color: '#64748b' }}>{t.eventCode}:</p>
-        <div style={codeBlockStyle}>{
-          '// Kafka producer/consumer in Node.js (kafkajs)\n' +
-          'const { Kafka } = require("kafkajs");\n' +
-          '\n' +
-          'const kafka = new Kafka({\n' +
-          '  clientId: "order-service",\n' +
-          '  brokers: ["kafka-1:9092", "kafka-2:9092", "kafka-3:9092"],\n' +
-          '  retry: { initialRetryTime: 100, retries: 8 },\n' +
-          '});\n' +
-          '\n' +
-          '// PRODUCER: Publish domain events\n' +
-          'const producer = kafka.producer({ idempotent: true });\n' +
-          '\n' +
-          'async function publishOrderConfirmed(order) {\n' +
-          '  await producer.connect();\n' +
-          '  await producer.send({\n' +
-          '    topic: "order.confirmed",\n' +
-          '    messages: [{\n' +
-          '      key: order.id,                    // Partition by order ID\n' +
-          '      value: JSON.stringify({\n' +
-          '        eventId: crypto.randomUUID(),\n' +
-          '        eventType: "order.confirmed",\n' +
-          '        occurredAt: new Date().toISOString(),\n' +
-          '        data: { orderId: order.id, customerId: order.customerId },\n' +
-          '      }),\n' +
-          '      headers: { "trace-id": getCurrentTraceId() },\n' +
-          '    }],\n' +
-          '  });\n' +
-          '}\n' +
-          '\n' +
-          '// CONSUMER: Inventory service reacts to order.confirmed\n' +
-          'const consumer = kafka.consumer({ groupId: "inventory-service" });\n' +
-          '\n' +
-          'async function startInventoryConsumer() {\n' +
-          '  await consumer.connect();\n' +
-          '  await consumer.subscribe({\n' +
-          '    topic: "order.confirmed",\n' +
-          '    fromBeginning: false,\n' +
-          '  });\n' +
-          '\n' +
-          '  await consumer.run({\n' +
-          '    eachMessage: async ({ topic, partition, message }) => {\n' +
-          '      const event = JSON.parse(message.value.toString());\n' +
-          '      console.log("[inventory] Processing:", event.eventType, event.data.orderId);\n' +
-          '\n' +
-          '      // Idempotency check — Kafka can redeliver on retry\n' +
-          '      const alreadyProcessed = await db.processedEvents.exists(event.eventId);\n' +
-          '      if (alreadyProcessed) return;\n' +
-          '\n' +
-          '      await reserveInventory(event.data);\n' +
-          '      await db.processedEvents.insert(event.eventId);\n' +
-          '    },\n' +
-          '  });\n' +
-          '}'
-        }</div>
-      </section>
+// Step 3: Implement the Go server
+type inventoryServer struct {
+  pb.UnimplementedInventoryServiceServer
+  db *pgxpool.Pool
+}
 
-      {/* Data Management */}
-      <section style={sectionStyle}>
-        <h2 style={h2Style}>{t.dataTitle}</h2>
-        <p style={pStyle}>{t.dataDesc1}</p>
+func (s *inventoryServer) ReserveItems(
+  ctx context.Context, req *pb.ReserveRequest,
+) (*pb.ReserveResponse, error) {
+  if req.Quantity <= 0 {
+    return nil, status.Errorf(codes.InvalidArgument, "quantity must be positive")
+  }
+  reservation, err := s.db.Reserve(ctx, req.ProductId, req.Quantity, req.OrderId)
+  if err != nil {
+    if errors.Is(err, ErrInsufficientStock) {
+      return &pb.ReserveResponse{ErrorCode: "INSUFFICIENT_STOCK"}, nil
+    }
+    return nil, status.Errorf(codes.Internal, "reservation failed: %v", err)
+  }
+  return &pb.ReserveResponse{
+    Success:       true,
+    ReservationId: reservation.ID,
+    ExpiresAt:     reservation.ExpiresAt.Format(time.RFC3339),
+  }, nil
+}
 
-        <h3 style={h3Style}>{t.dataCQRSTitle}</h3>
-        <p style={pStyle}>{t.dataCQRSDesc}</p>
+// Step 4: Call from Node.js client
+// npm install @grpc/grpc-js @grpc/proto-loader
+import * as grpc from '@grpc/grpc-js';
+import * as protoLoader from '@grpc/proto-loader';
 
-        <div style={asciiDiagramStyle}>{
-          'CQRS Architecture\n' +
-          '\n' +
-          '  Client\n' +
-          '    |\n' +
-          '    +--COMMAND--> Command Handler --> Write DB (PostgreSQL)\n' +
-          '    |                                        |\n' +
-          '    |                              Domain Event Published\n' +
-          '    |                                        |\n' +
-          '    |                              Event Handler updates\n' +
-          '    |                              Read Model (Elasticsearch / Redis)\n' +
-          '    |                                        |\n' +
-          '    +---QUERY---> Query Handler  <-- Read DB (Elasticsearch)'
-        }</div>
+const packageDef = protoLoader.loadSync('inventory.proto', { keepCase: true });
+const proto = grpc.loadPackageDefinition(packageDef) as any;
 
-        <h3 style={h3Style}>{t.dataSagaTitle}</h3>
-        <p style={pStyle}>{t.dataSagaDesc}</p>
+const client = new proto.inventory.v1.InventoryService(
+  'inventory-service:50051',
+  grpc.credentials.createSsl(),
+);
 
-        <h3 style={h3Style}>{t.dataSagaChoreTitle}</h3>
-        <p style={pStyle}>{t.dataSagaChoreDesc}</p>
+client.reserveItems(
+  { product_id: 'prod_abc', quantity: 2, order_id: 'ord_xyz', idempotency_key: 'key-1' },
+  (err: Error | null, response: any) => {
+    if (err) throw err;
+    console.log('Reservation:', response.reservation_id);
+  }
+);`}</code></pre>
 
-        <p style={{ ...pStyle, fontStyle: 'italic', color: '#64748b' }}>{t.dataCode}:</p>
-        <div style={codeBlockStyle}>{
-          '// Saga Orchestrator — Place Order Saga\n' +
-          'class PlaceOrderSaga {\n' +
-          '  async execute(command) {\n' +
-          '    const sagaId = crypto.randomUUID();\n' +
-          '    const steps = [];\n' +
-          '\n' +
-          '    try {\n' +
-          '      // Step 1: Create order in PENDING state\n' +
-          '      const order = await this.orderService.create(command);\n' +
-          '      steps.push({ action: "order.created", compensate: () =>\n' +
-          '        this.orderService.cancel(order.id) });\n' +
-          '\n' +
-          '      // Step 2: Reserve inventory\n' +
-          '      const reservation = await this.inventoryService.reserve(\n' +
-          '        order.items\n' +
-          '      );\n' +
-          '      steps.push({ action: "inventory.reserved", compensate: () =>\n' +
-          '        this.inventoryService.release(reservation.id) });\n' +
-          '\n' +
-          '      // Step 3: Charge payment\n' +
-          '      const payment = await this.paymentService.charge({\n' +
-          '        customerId: command.customerId,\n' +
-          '        amount: order.total,\n' +
-          '      });\n' +
-          '      steps.push({ action: "payment.charged", compensate: () =>\n' +
-          '        this.paymentService.refund(payment.id) });\n' +
-          '\n' +
-          '      // Step 4: Confirm order\n' +
-          '      await this.orderService.confirm(order.id);\n' +
-          '\n' +
-          '      return { success: true, orderId: order.id };\n' +
-          '\n' +
-          '    } catch (error) {\n' +
-          '      // COMPENSATE: run in reverse order\n' +
-          '      console.error("Saga failed at step:", steps.length, error.message);\n' +
-          '      for (const step of steps.reverse()) {\n' +
-          '        try {\n' +
-          '          await step.compensate();\n' +
-          '        } catch (compensateError) {\n' +
-          '          // Log compensation failure — requires manual intervention\n' +
-          '          logger.error("Compensation failed", step.action, compensateError);\n' +
-          '        }\n' +
-          '      }\n' +
-          '      throw new SagaFailedError(sagaId, error);\n' +
-          '    }\n' +
-          '  }\n' +
-          '}'
-        }</div>
-      </section>
+      <h3 style={h3Style}>Message Queues: RabbitMQ and Apache Kafka</h3>
+      <p style={pStyle}>
+        Message queues enable asynchronous, event-driven communication. The publisher sends a message and continues immediately without waiting. This decouples services in time: the consumer can be temporarily offline and messages are buffered. RabbitMQ is a traditional message broker with flexible routing, exchange types, and acknowledgment semantics — ideal for task queues and work distribution. Kafka is a distributed commit log designed for high-throughput event streaming, retaining messages for configurable periods — ideal for audit logs, event sourcing, and stream processing pipelines.
+      </p>
+      <pre style={codeStyle}><code>{`# ── RabbitMQ — task queue pattern ──────────────────────────────
+# Publisher: order-service queues a payment task
+import pika, json
 
-      {/* Containerization */}
-      <section style={sectionStyle}>
-        <h2 style={h2Style}>{t.containerTitle}</h2>
-        <p style={pStyle}>{t.containerDesc1}</p>
+connection = pika.BlockingConnection(pika.ConnectionParameters('rabbitmq'))
+channel = connection.channel()
+channel.queue_declare(queue='payment_tasks', durable=True)
 
-        <h3 style={h3Style}>{t.dockerfileTitle}</h3>
-        <p style={{ ...pStyle, fontStyle: 'italic', color: '#64748b' }}>{t.containerCode}:</p>
-        <div style={codeBlockStyle}>{
-          '# Multi-stage Dockerfile for Node.js microservice\n' +
-          'FROM node:20-alpine AS deps\n' +
-          'WORKDIR /app\n' +
-          'COPY package*.json ./\n' +
-          'RUN npm ci --only=production\n' +
-          '\n' +
-          '# Build stage\n' +
-          'FROM node:20-alpine AS builder\n' +
-          'WORKDIR /app\n' +
-          'COPY package*.json ./\n' +
-          'RUN npm ci\n' +
-          'COPY . .\n' +
-          'RUN npm run build\n' +
-          '\n' +
-          '# Production stage — minimal image\n' +
-          'FROM node:20-alpine AS production\n' +
-          'WORKDIR /app\n' +
-          '\n' +
-          '# Security: run as non-root user\n' +
-          'RUN addgroup -S appgroup && adduser -S appuser -G appgroup\n' +
-          '\n' +
-          'COPY --from=deps /app/node_modules ./node_modules\n' +
-          'COPY --from=builder /app/dist ./dist\n' +
-          'COPY --from=builder /app/package.json ./\n' +
-          '\n' +
-          'USER appuser\n' +
-          '\n' +
-          'EXPOSE 3000\n' +
-          '\n' +
-          '# Health check\n' +
-          'HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \\\n' +
-          '  CMD wget -qO- http://localhost:3000/health || exit 1\n' +
-          '\n' +
-          'CMD ["node", "dist/server.js"]'
-        }</div>
+channel.basic_publish(
+    exchange='',
+    routing_key='payment_tasks',
+    body=json.dumps({
+        'order_id':    'ord_xyz789',
+        'amount':      99.99,
+        'currency':    'USD',
+        'customer_id': 'cust_abc123',
+    }),
+    properties=pika.BasicProperties(
+        delivery_mode=2,               # Persistent — survives broker restart
+        content_type='application/json'
+    )
+)
+connection.close()
 
-        <h3 style={h3Style}>{t.k8sTitle}</h3>
-        <p style={pStyle}>{t.k8sDesc}</p>
-        <p style={{ ...pStyle, fontStyle: 'italic', color: '#64748b' }}>{t.k8sCode}:</p>
-        <div style={codeBlockStyle}>{
-          '# kubernetes/order-service.yml\n' +
-          'apiVersion: apps/v1\n' +
-          'kind: Deployment\n' +
-          'metadata:\n' +
-          '  name: order-service\n' +
-          '  namespace: production\n' +
-          'spec:\n' +
-          '  replicas: 3\n' +
-          '  selector:\n' +
-          '    matchLabels:\n' +
-          '      app: order-service\n' +
-          '  template:\n' +
-          '    metadata:\n' +
-          '      labels:\n' +
-          '        app: order-service\n' +
-          '        version: "1.4.2"\n' +
-          '    spec:\n' +
-          '      containers:\n' +
-          '        - name: order-service\n' +
-          '          image: myregistry/order-service:1.4.2\n' +
-          '          ports:\n' +
-          '            - containerPort: 3000\n' +
-          '          env:\n' +
-          '            - name: NODE_ENV\n' +
-          '              value: "production"\n' +
-          '            - name: DB_URL\n' +
-          '              valueFrom:\n' +
-          '                secretKeyRef:\n' +
-          '                  name: order-secrets\n' +
-          '                  key: database-url\n' +
-          '          resources:\n' +
-          '            requests:\n' +
-          '              cpu: "100m"\n' +
-          '              memory: "128Mi"\n' +
-          '            limits:\n' +
-          '              cpu: "500m"\n' +
-          '              memory: "512Mi"\n' +
-          '          readinessProbe:\n' +
-          '            httpGet:\n' +
-          '              path: /health/ready\n' +
-          '              port: 3000\n' +
-          '            initialDelaySeconds: 10\n' +
-          '            periodSeconds: 5\n' +
-          '          livenessProbe:\n' +
-          '            httpGet:\n' +
-          '              path: /health/live\n' +
-          '              port: 3000\n' +
-          '            initialDelaySeconds: 30\n' +
-          '            periodSeconds: 10\n' +
-          '---\n' +
-          'apiVersion: v1\n' +
-          'kind: Service\n' +
-          'metadata:\n' +
-          '  name: order-service\n' +
-          'spec:\n' +
-          '  selector:\n' +
-          '    app: order-service\n' +
-          '  ports:\n' +
-          '    - port: 80\n' +
-          '      targetPort: 3000\n' +
-          '---\n' +
-          'apiVersion: autoscaling/v2\n' +
-          'kind: HorizontalPodAutoscaler\n' +
-          'metadata:\n' +
-          '  name: order-service-hpa\n' +
-          'spec:\n' +
-          '  scaleTargetRef:\n' +
-          '    apiVersion: apps/v1\n' +
-          '    kind: Deployment\n' +
-          '    name: order-service\n' +
-          '  minReplicas: 3\n' +
-          '  maxReplicas: 20\n' +
-          '  metrics:\n' +
-          '    - type: Resource\n' +
-          '      resource:\n' +
-          '        name: cpu\n' +
-          '        target:\n' +
-          '          type: Utilization\n' +
-          '          averageUtilization: 70'
-        }</div>
-      </section>
+# Consumer: payment-service processes tasks
+def process_payment(ch, method, properties, body):
+    payload = json.loads(body)
+    try:
+        charge_card(payload['customer_id'], payload['amount'])
+        publish_event('order-events', 'PAYMENT_COMPLETED', payload['order_id'])
+        ch.basic_ack(delivery_tag=method.delivery_tag)     # Mark as done
+    except CardDeclinedError:
+        publish_event('order-events', 'PAYMENT_FAILED', payload['order_id'])
+        ch.basic_ack(delivery_tag=method.delivery_tag)     # Do not retry
+    except Exception:
+        ch.basic_nack(delivery_tag=method.delivery_tag, requeue=False)  # Dead-letter
 
-      {/* Service Mesh */}
-      <section style={sectionStyle}>
-        <h2 style={h2Style}>{t.meshTitle}</h2>
-        <p style={pStyle}>{t.meshDesc1}</p>
+channel.basic_qos(prefetch_count=1)   # Process one at a time
+channel.basic_consume(queue='payment_tasks', on_message_callback=process_payment)
+channel.start_consuming()
 
-        <h3 style={h3Style}>{t.meshIstioTitle}</h3>
-        <p style={pStyle}>{t.meshIstioDesc}</p>
+# ── Apache Kafka — event streaming pattern ──────────────────────
+# Producer: order-service publishes domain events
+from confluent_kafka import Producer
+producer = Producer({'bootstrap.servers': 'kafka:9092', 'acks': 'all'})
 
-        <h3 style={h3Style}>{t.meshLinkerdTitle}</h3>
-        <p style={pStyle}>{t.meshLinkerdDesc}</p>
+producer.produce(
+    topic='order-events',
+    key=order_id.encode(),         # Ensures same-order events go to same partition
+    value=json.dumps({
+        'event_type':  'ORDER_CREATED',
+        'order_id':    order_id,
+        'customer_id': customer_id,
+        'items':       items,
+        'timestamp':   datetime.utcnow().isoformat(),
+        'schema_version': 'v1',
+    }).encode(),
+    on_delivery=lambda err, msg: print('Delivered' if not err else 'Error: ' + str(err))
+)
+producer.flush()
 
-        <p style={{ ...pStyle, fontStyle: 'italic', color: '#64748b' }}>{t.meshCode}:</p>
-        <div style={codeBlockStyle}>{
-          '# Istio VirtualService — canary traffic splitting\n' +
-          'apiVersion: networking.istio.io/v1alpha3\n' +
-          'kind: VirtualService\n' +
-          'metadata:\n' +
-          '  name: order-service\n' +
-          'spec:\n' +
-          '  hosts:\n' +
-          '    - order-service\n' +
-          '  http:\n' +
-          '    - match:\n' +
-          '        - headers:\n' +
-          '            canary:\n' +
-          '              exact: "true"         # Header-based routing for testing\n' +
-          '      route:\n' +
-          '        - destination:\n' +
-          '            host: order-service\n' +
-          '            subset: v2\n' +
-          '    - route:                        # Default: 90% v1, 10% v2\n' +
-          '        - destination:\n' +
-          '            host: order-service\n' +
-          '            subset: v1\n' +
-          '          weight: 90\n' +
-          '        - destination:\n' +
-          '            host: order-service\n' +
-          '            subset: v2\n' +
-          '          weight: 10\n' +
-          '      retries:\n' +
-          '        attempts: 3\n' +
-          '        perTryTimeout: 5s\n' +
-          '        retryOn: "5xx,connect-failure"\n' +
-          '      timeout: 30s\n' +
-          '---\n' +
-          'apiVersion: networking.istio.io/v1alpha3\n' +
-          'kind: DestinationRule\n' +
-          'metadata:\n' +
-          '  name: order-service\n' +
-          'spec:\n' +
-          '  host: order-service\n' +
-          '  trafficPolicy:\n' +
-          '    tls:\n' +
-          '      mode: ISTIO_MUTUAL  # mTLS between services\n' +
-          '    connectionPool:\n' +
-          '      tcp:\n' +
-          '        maxConnections: 100\n' +
-          '      http:\n' +
-          '        h2UpgradePolicy: UPGRADE\n' +
-          '    outlierDetection:\n' +
-          '      consecutiveGatewayErrors: 5\n' +
-          '      interval: 30s\n' +
-          '      baseEjectionTime: 30s     # Circuit breaker\n' +
-          '  subsets:\n' +
-          '    - name: v1\n' +
-          '      labels:\n' +
-          '        version: v1\n' +
-          '    - name: v2\n' +
-          '      labels:\n' +
-          '        version: v2'
-        }</div>
-      </section>
+# Multiple independent consumers (each in its own consumer group)
+from confluent_kafka import Consumer
 
-      {/* Observability */}
-      <section style={sectionStyle}>
-        <h2 style={h2Style}>{t.observabilityTitle}</h2>
-        <p style={pStyle}>{t.observabilityDesc}</p>
+# inventory-service consumer group
+inventory_consumer = Consumer({
+    'bootstrap.servers': 'kafka:9092',
+    'group.id': 'inventory-service',     # Unique group per service
+    'auto.offset.reset': 'earliest',
+    'enable.auto.commit': False,          # Manual commit for reliability
+})
+inventory_consumer.subscribe(['order-events'])
 
-        <h3 style={h3Style}>{t.metricsTitle}</h3>
-        <p style={pStyle}>{t.metricsDesc}</p>
+while True:
+    msg = inventory_consumer.poll(timeout=1.0)
+    if msg is None or msg.error(): continue
+    event = json.loads(msg.value())
+    if event['event_type'] == 'ORDER_CREATED':
+        reserve_inventory(event['items'])
+        inventory_consumer.commit(msg)`}</code></pre>
 
-        <p style={{ ...pStyle, fontStyle: 'italic', color: '#64748b' }}>{t.observabilityCode}:</p>
-        <div style={codeBlockStyle}>{
-          '// Prometheus metrics in Node.js\n' +
-          'const client = require("prom-client");\n' +
-          '\n' +
-          '// Enable default metrics (CPU, memory, GC, event loop)\n' +
-          'client.collectDefaultMetrics({ prefix: "order_svc_" });\n' +
-          '\n' +
-          '// RED metrics: Rate, Errors, Duration\n' +
-          'const httpRequestTotal = new client.Counter({\n' +
-          '  name: "http_requests_total",\n' +
-          '  help: "Total HTTP requests",\n' +
-          '  labelNames: ["method", "route", "status_code"],\n' +
-          '});\n' +
-          '\n' +
-          'const httpRequestDuration = new client.Histogram({\n' +
-          '  name: "http_request_duration_seconds",\n' +
-          '  help: "HTTP request duration",\n' +
-          '  labelNames: ["method", "route", "status_code"],\n' +
-          '  buckets: [0.01, 0.05, 0.1, 0.25, 0.5, 1, 2.5, 5],\n' +
-          '});\n' +
-          '\n' +
-          'const ordersProcessed = new client.Counter({\n' +
-          '  name: "orders_processed_total",\n' +
-          '  help: "Total orders processed",\n' +
-          '  labelNames: ["status"],\n' +
-          '});\n' +
-          '\n' +
-          '// Express middleware\n' +
-          'app.use((req, res, next) => {\n' +
-          '  const end = httpRequestDuration.startTimer();\n' +
-          '  res.on("finish", () => {\n' +
-          '    const labels = {\n' +
-          '      method: req.method,\n' +
-          '      route: req.route ? req.route.path : req.path,\n' +
-          '      status_code: res.statusCode,\n' +
-          '    };\n' +
-          '    httpRequestTotal.inc(labels);\n' +
-          '    end(labels);\n' +
-          '  });\n' +
-          '  next();\n' +
-          '});\n' +
-          '\n' +
-          '// Metrics endpoint — scraped by Prometheus\n' +
-          'app.get("/metrics", async (req, res) => {\n' +
-          '  res.set("Content-Type", client.register.contentType);\n' +
-          '  res.end(await client.register.metrics());\n' +
-          '});'
-        }</div>
+      <table style={tableStyle}>
+        <thead>
+          <tr>
+            <th style={thStyle}>Protocol</th>
+            <th style={thStyle}>Style</th>
+            <th style={thStyle}>Best For</th>
+            <th style={thStyle}>Payload</th>
+            <th style={thStyle}>Performance</th>
+          </tr>
+        </thead>
+        <tbody>
+          {[
+            ['REST/HTTP', 'Sync', 'Public APIs, CRUD operations', 'JSON (text)', 'Good'],
+            ['gRPC', 'Sync', 'Internal service calls, streaming', 'Protobuf (binary)', 'Excellent'],
+            ['RabbitMQ', 'Async', 'Task queues, work distribution', 'Any (JSON/binary)', 'Very Good'],
+            ['Apache Kafka', 'Async', 'Event streaming, audit logs', 'Any (Avro/JSON)', 'Excellent'],
+          ].map(([proto, style, bestFor, payload, perf], i) => (
+            <tr key={i}>
+              <td style={{ ...tdStyle, fontWeight: 600 }}>{proto}</td>
+              <td style={tdStyle}>{style}</td>
+              <td style={tdStyle}>{bestFor}</td>
+              <td style={tdStyle}>{payload}</td>
+              <td style={tdStyle}>{perf}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
 
-        <h3 style={h3Style}>{t.logsTitle}</h3>
-        <p style={pStyle}>{t.logsDesc}</p>
+      {/* Section 4: API Gateway */}
+      <h2 style={h2Style}>API Gateway Pattern: Kong, AWS API Gateway, NGINX</h2>
+      <p style={pStyle}>
+        The API Gateway is the single entry point for all external client requests. Instead of clients knowing the addresses of dozens of microservices, they send all requests to the gateway, which routes them to the appropriate service. The gateway handles cross-cutting concerns that would otherwise be duplicated in every service: authentication and authorization, rate limiting, SSL/TLS termination, request and response transformation, logging, caching, and request aggregation.
+      </p>
 
-        <div style={tipStyle}>
-          <strong>Production tip:</strong> Use the ELK stack (Elasticsearch + Logstash + Kibana) or Grafana Loki for log aggregation. Always include <code style={inlineCodeStyle}>trace_id</code>, <code style={inlineCodeStyle}>service</code>, and <code style={inlineCodeStyle}>environment</code> fields in every log line for efficient cross-service debugging.
-        </div>
-      </section>
+      <h3 style={h3Style}>Kong API Gateway</h3>
+      <p style={pStyle}>
+        Kong is a high-performance, open-source API gateway built on NGINX. It supports a rich plugin ecosystem for authentication (JWT, OAuth2, API keys, HMAC), rate limiting, request transformation, logging, and observability. Kong can run on Kubernetes as an Ingress Controller, replacing the default NGINX Ingress.
+      </p>
+      <pre style={codeStyle}><code>{`# Kong declarative configuration (deck sync)
+_format_version: "3.0"
+_transform: true
 
-      {/* Testing */}
-      <section style={sectionStyle}>
-        <h2 style={h2Style}>{t.testingTitle}</h2>
-        <p style={pStyle}>{t.testingDesc}</p>
+services:
+  - name: order-service
+    url: http://order-service.production.svc.cluster.local:80
+    connect_timeout: 5000
+    read_timeout: 30000
+    routes:
+      - name: orders-api
+        paths: ["/api/v1/orders"]
+        methods: ["GET", "POST", "PUT", "DELETE", "PATCH"]
+        strip_path: false
+    plugins:
+      - name: jwt
+        config:
+          secret_is_base64: false
+          claims_to_verify: ["exp"]
+      - name: rate-limiting
+        config:
+          minute: 100
+          hour: 3000
+          policy: redis
+          redis_host: redis
+          redis_port: 6379
+      - name: cors
+        config:
+          origins: ["https://app.mycompany.com", "https://www.mycompany.com"]
+          methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"]
+          headers: ["Authorization", "Content-Type", "X-Request-ID"]
+          max_age: 3600
 
-        <h3 style={h3Style}>{t.testContractTitle}</h3>
-        <p style={pStyle}>{t.testContractDesc}</p>
+  - name: product-catalog-service
+    url: http://product-service.production.svc.cluster.local:80
+    routes:
+      - name: products-api
+        paths: ["/api/v1/products"]
+        methods: ["GET"]
+    plugins:
+      - name: proxy-cache
+        config:
+          response_code: [200]
+          request_method: ["GET"]
+          content_type: ["application/json; charset=utf-8"]
+          cache_ttl: 60
+          storage_ttl: 300
 
-        <p style={{ ...pStyle, fontStyle: 'italic', color: '#64748b' }}>{t.testCode}:</p>
-        <div style={codeBlockStyle}>{
-          '// Pact consumer test — OrderService calling InventoryService\n' +
-          'const { Pact } = require("@pact-foundation/pact");\n' +
-          'const { like, eachLike } = require("@pact-foundation/pact").Matchers;\n' +
-          '\n' +
-          'const provider = new Pact({\n' +
-          '  consumer: "OrderService",\n' +
-          '  provider: "InventoryService",\n' +
-          '  port: 4000,\n' +
-          '  dir: "./pacts",\n' +
-          '});\n' +
-          '\n' +
-          'describe("OrderService -> InventoryService contract", () => {\n' +
-          '  before(() => provider.setup());\n' +
-          '  after(() => provider.finalize());\n' +
-          '\n' +
-          '  describe("GET /inventory/:productId", () => {\n' +
-          '    before(() => provider.addInteraction({\n' +
-          '      state: "product SKU-123 exists with stock",\n' +
-          '      uponReceiving: "a request for product inventory",\n' +
-          '      withRequest: {\n' +
-          '        method: "GET",\n' +
-          '        path: "/inventory/SKU-123",\n' +
-          '      },\n' +
-          '      willRespondWith: {\n' +
-          '        status: 200,\n' +
-          '        headers: { "Content-Type": "application/json" },\n' +
-          '        body: {\n' +
-          '          productId: like("SKU-123"),\n' +
-          '          quantity: like(50),\n' +
-          '          available: like(true),\n' +
-          '        },\n' +
-          '      },\n' +
-          '    }));\n' +
-          '\n' +
-          '    it("returns inventory for a product", async () => {\n' +
-          '      const inventory = await inventoryClient.getInventory("SKU-123");\n' +
-          '      expect(inventory.available).to.be.true;\n' +
-          '      expect(inventory.quantity).to.be.a("number");\n' +
-          '    });\n' +
-          '  });\n' +
-          '});'
-        }</div>
+  - name: internal-admin-service
+    url: http://admin-service.production.svc.cluster.local:80
+    routes:
+      - name: admin-api
+        paths: ["/api/v1/admin"]
+    plugins:
+      - name: ip-restriction
+        config:
+          allow: ["10.0.0.0/8", "192.168.0.0/16"]  # Internal only`}</code></pre>
 
-        <h3 style={h3Style}>{t.testE2ETitle}</h3>
-        <p style={pStyle}>{t.testE2EDesc}</p>
+      <h3 style={h3Style}>NGINX as API Gateway</h3>
+      <pre style={codeStyle}><code>{`# nginx.conf — production API gateway configuration
+upstream order_service {
+    least_conn;
+    server order-service-1.production:8080;
+    server order-service-2.production:8080;
+    server order-service-3.production:8080;
+    keepalive 32;
+}
 
-        <div style={{ overflowX: 'auto' }}>
-          <table style={tableStyle}>
-            <thead>
-              <tr>
-                <th style={thStyle}>Test Type</th>
-                <th style={thStyle}>Scope</th>
-                <th style={thStyle}>Speed</th>
-                <th style={thStyle}>Cost</th>
-                <th style={thStyle}>Tools</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style={tdAltStyle}><strong>Unit</strong></td>
-                <td style={tdAltStyle}>Single class / function</td>
-                <td style={tdAltStyle}><span style={badgeStyle('#22c55e')}>Fast</span></td>
-                <td style={tdAltStyle}><span style={badgeStyle('#22c55e')}>Low</span></td>
-                <td style={tdAltStyle}>Jest, Vitest, JUnit</td>
-              </tr>
-              <tr>
-                <td style={tdStyle}><strong>Integration</strong></td>
-                <td style={tdStyle}>Service + DB / external</td>
-                <td style={tdStyle}><span style={badgeStyle('#f59e0b')}>Medium</span></td>
-                <td style={tdStyle}><span style={badgeStyle('#f59e0b')}>Medium</span></td>
-                <td style={tdStyle}>Supertest, Testcontainers</td>
-              </tr>
-              <tr>
-                <td style={tdAltStyle}><strong>Contract</strong></td>
-                <td style={tdAltStyle}>API contract between services</td>
-                <td style={tdAltStyle}><span style={badgeStyle('#f59e0b')}>Medium</span></td>
-                <td style={tdAltStyle}><span style={badgeStyle('#f59e0b')}>Medium</span></td>
-                <td style={tdAltStyle}>Pact, Spring Cloud Contract</td>
-              </tr>
-              <tr>
-                <td style={tdStyle}><strong>E2E</strong></td>
-                <td style={tdStyle}>Full system, UI to DB</td>
-                <td style={tdStyle}><span style={badgeStyle('#ef4444')}>Slow</span></td>
-                <td style={tdStyle}><span style={badgeStyle('#ef4444')}>High</span></td>
-                <td style={tdStyle}>Cypress, Playwright</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
+upstream payment_service {
+    server payment-service.production:8080 max_fails=3 fail_timeout=30s;
+    keepalive 16;
+}
 
-      {/* Deployment */}
-      <section style={sectionStyle}>
-        <h2 style={h2Style}>{t.deployTitle}</h2>
-        <p style={pStyle}>{t.deployDesc}</p>
+limit_req_zone \${binary_remote_addr} zone=api_per_ip:10m rate=100r/m;
+limit_req_zone \${http_authorization} zone=api_per_token:10m rate=1000r/m;
 
-        <h3 style={h3Style}>{t.deployBlueGreenTitle}</h3>
-        <p style={pStyle}>{t.deployBlueGreenDesc}</p>
+server {
+    listen 443 ssl http2;
+    server_name api.myapp.com;
 
-        <h3 style={h3Style}>{t.deployCanaryTitle}</h3>
-        <p style={pStyle}>{t.deployCanaryDesc}</p>
+    ssl_certificate      /etc/ssl/tls.crt;
+    ssl_certificate_key  /etc/ssl/tls.key;
+    ssl_protocols        TLSv1.2 TLSv1.3;
+    ssl_ciphers          ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256;
 
-        <p style={{ ...pStyle, fontStyle: 'italic', color: '#64748b' }}>{t.deployCode}:</p>
-        <div style={codeBlockStyle}>{
-          '# Argo Rollouts — Canary deployment with analysis\n' +
-          'apiVersion: argoproj.io/v1alpha1\n' +
-          'kind: Rollout\n' +
-          'metadata:\n' +
-          '  name: order-service\n' +
-          'spec:\n' +
-          '  replicas: 10\n' +
-          '  selector:\n' +
-          '    matchLabels:\n' +
-          '      app: order-service\n' +
-          '  template:\n' +
-          '    metadata:\n' +
-          '      labels:\n' +
-          '        app: order-service\n' +
-          '  strategy:\n' +
-          '    canary:\n' +
-          '      steps:\n' +
-          '        - setWeight: 10        # 10% canary traffic\n' +
-          '        - pause: { duration: 5m }  # Wait 5 min\n' +
-          '        - analysis:            # Automated analysis\n' +
-          '            templates:\n' +
-          '              - templateName: success-rate\n' +
-          '            args:\n' +
-          '              - name: service-name\n' +
-          '                value: order-service\n' +
-          '        - setWeight: 25\n' +
-          '        - pause: { duration: 10m }\n' +
-          '        - setWeight: 50\n' +
-          '        - pause: { duration: 10m }\n' +
-          '        - setWeight: 100       # Full rollout\n' +
-          '---\n' +
-          'apiVersion: argoproj.io/v1alpha1\n' +
-          'kind: AnalysisTemplate\n' +
-          'metadata:\n' +
-          '  name: success-rate\n' +
-          'spec:\n' +
-          '  metrics:\n' +
-          '    - name: success-rate\n' +
-          '      interval: 1m\n' +
-          '      successCondition: result[0] >= 0.95  # 95% success rate required\n' +
-          '      provider:\n' +
-          '        prometheus:\n' +
-          '          address: http://prometheus:9090\n' +
-          '          query: |\n' +
-          '            sum(rate(http_requests_total{job="{{args.service-name}}",status_code!~"5.."}[5m]))\n' +
-          '            /\n' +
-          '            sum(rate(http_requests_total{job="{{args.service-name}}"}[5m]))'
-        }</div>
-      </section>
+    # Security headers
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+    add_header X-Content-Type-Options nosniff;
+    add_header X-Frame-Options DENY;
 
-      {/* FAQ Section */}
-      <section style={sectionStyle}>
-        <h2 style={h2Style}>{t.faqTitle}</h2>
+    # Rate limiting
+    limit_req zone=api_per_ip  burst=20 nodelay;
+    limit_req zone=api_per_token burst=100 nodelay;
 
-        {[
-          { q: t.faq1q, a: t.faq1a },
-          { q: t.faq2q, a: t.faq2a },
-          { q: t.faq3q, a: t.faq3a },
-          { q: t.faq4q, a: t.faq4a },
-          { q: t.faq5q, a: t.faq5a },
-          { q: t.faq6q, a: t.faq6a },
-          { q: t.faq7q, a: t.faq7a },
-          { q: t.faq8q, a: t.faq8a },
-        ].map((faq, idx) => (
-          <div
-            key={idx}
-            style={{
-              borderBottom: '1px solid #e2e8f0',
-              paddingBottom: '1.25rem',
-              marginBottom: '1.25rem',
-            }}
-          >
-            <h3 style={{ ...h3Style, marginTop: 0, color: '#1e40af' }}>{faq.q}</h3>
-            <p style={{ ...pStyle, marginBottom: 0 }}>{faq.a}</p>
-          </div>
-        ))}
-      </section>
+    # Internal auth validation endpoint
+    location = /_auth/validate {
+        internal;
+        proxy_pass http://auth-service.production:8080/validate;
+        proxy_pass_request_body off;
+        proxy_set_header Content-Length "";
+        proxy_set_header X-Original-URI \${request_uri};
+        proxy_set_header X-Original-Method \${request_method};
+        proxy_cache_valid 200 30s;   # Cache valid tokens for 30s
+    }
+
+    location /api/v1/orders {
+        auth_request /_auth/validate;
+        auth_request_set \${auth_user_id} \${upstream_http_x_user_id};
+
+        proxy_pass http://order_service;
+        proxy_set_header X-User-ID \${auth_user_id};
+        proxy_set_header X-Real-IP \${remote_addr};
+        proxy_set_header X-Request-ID \${request_id};
+        proxy_connect_timeout 5s;
+        proxy_read_timeout    30s;
+    }
+
+    location /api/v1/payments {
+        auth_request /_auth/validate;
+        # Payment endpoint — extra strict rate limiting
+        limit_req zone=api_per_ip burst=5 nodelay;
+        proxy_pass http://payment_service;
+    }
+}`}</code></pre>
+
+      {/* Section 5: Service Discovery */}
+      <h2 style={h2Style}>Service Discovery: Consul, Eureka, and Kubernetes DNS</h2>
+      <p style={pStyle}>
+        In a microservices environment, service instances are dynamic — they scale up and down, crash and restart, move between hosts when Kubernetes reschedules pods. Service discovery solves how services find each other's current network address without hardcoding IPs or requiring manual configuration updates. There are two patterns: client-side discovery (the client queries a registry and load-balances itself) and server-side discovery (the client goes through a load balancer that does the lookup).
+      </p>
+
+      <h3 style={h3Style}>Consul Service Mesh</h3>
+      <pre style={codeStyle}><code>{`# Deploy Consul in Kubernetes
+helm repo add hashicorp https://helm.releases.hashicorp.com
+helm install consul hashicorp/consul \
+  --set global.name=consul \
+  --set server.replicas=3 \
+  --set connectInject.enabled=true  # Enables sidecar injection
+
+# Service registration via Consul API (for non-Kubernetes environments)
+curl -X PUT http://consul:8500/v1/agent/service/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "ID":      "order-service-pod-abc",
+    "Name":    "order-service",
+    "Address": "10.0.1.50",
+    "Port":    8080,
+    "Tags":    ["v2.1", "production"],
+    "Meta": {
+      "version": "2.1.0",
+      "region":  "us-east-1"
+    },
+    "Check": {
+      "HTTP":                          "http://10.0.1.50:8080/health/ready",
+      "Interval":                      "10s",
+      "Timeout":                       "5s",
+      "DeregisterCriticalServiceAfter": "60s"
+    }
+  }'
+
+# Discover healthy instances of order-service
+curl "http://consul:8500/v1/health/service/order-service?passing=true" | jq '
+  .[] | { id: .Service.ID, address: .Service.Address, port: .Service.Port }
+'
+
+# DNS-based discovery — Consul serves DNS on port 8600
+# order-service.service.consul resolves to all healthy instances
+dig @consul -p 8600 order-service.service.consul SRV
+
+# With datacenter targeting
+dig @consul -p 8600 order-service.service.us-east.consul SRV`}</code></pre>
+
+      <h3 style={h3Style}>Kubernetes DNS (Built-in Service Discovery)</h3>
+      <p style={pStyle}>
+        Kubernetes provides built-in service discovery through CoreDNS. Every Kubernetes Service gets a stable DNS entry automatically — no separate registry infrastructure required. Services within the same namespace resolve by short name, cross-namespace by full qualified name. This is the recommended approach for Kubernetes-native microservices.
+      </p>
+      <pre style={codeStyle}><code>{`# Create a Kubernetes Service — auto-registers in CoreDNS
+apiVersion: v1
+kind: Service
+metadata:
+  name: order-service
+  namespace: production
+  labels:
+    app: order-service
+    version: v2.1.0
+spec:
+  selector:
+    app: order-service    # Routes to all pods with this label
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80            # Service port (stable)
+      targetPort: 8080    # Container port
+  type: ClusterIP         # Only accessible within cluster
+
+# DNS entries created automatically:
+# order-service                                       (same namespace)
+# order-service.production                            (namespace-qualified)
+# order-service.production.svc                       (cluster domain)
+# order-service.production.svc.cluster.local         (fully qualified)
+
+# From any pod in the 'production' namespace:
+curl http://order-service/api/v1/orders
+
+# Cross-namespace call (from 'staging' namespace):
+curl http://order-service.production.svc.cluster.local/api/v1/orders
+
+# Headless service — returns individual pod IPs (for stateful sets)
+apiVersion: v1
+kind: Service
+metadata:
+  name: kafka
+  namespace: production
+spec:
+  clusterIP: None   # Headless — DNS returns all pod IPs
+  selector:
+    app: kafka
+  ports:
+    - port: 9092`}</code></pre>
+
+      {/* Section 6: Circuit Breaker */}
+      <h2 style={h2Style}>Circuit Breaker Pattern: Resilience4j and Hystrix</h2>
+      <p style={pStyle}>
+        The circuit breaker pattern prevents cascade failures — where one slow or failing service causes upstream services to exhaust their thread pools waiting for responses, eventually crashing the entire system. Named after electrical circuit breakers, the pattern has three states. Closed is normal operation where all calls pass through. Open is the state where the downstream service is failing and calls are rejected immediately without attempting the network call, returning a fallback response instead. Half-Open means the circuit is testing whether the service has recovered by allowing a limited number of calls through.
+      </p>
+
+      <h3 style={h3Style}>Resilience4j for Java/Spring Boot</h3>
+      <pre style={codeStyle}><code>{`# application.yml — Resilience4j configuration
+resilience4j:
+  circuitbreaker:
+    instances:
+      inventory-service:
+        sliding-window-type: COUNT_BASED
+        sliding-window-size: 10          # Evaluate last 10 calls
+        failure-rate-threshold: 50       # Open circuit if >50% fail
+        wait-duration-in-open-state: 30s # Wait 30s before testing
+        permitted-calls-in-half-open-state: 3
+        automatic-transition-from-open-to-half-open-enabled: true
+        slow-call-duration-threshold: 2s
+        slow-call-rate-threshold: 80     # Open if >80% calls are slow
+        event-consumer-buffer-size: 10
+        record-exceptions:
+          - java.io.IOException
+          - java.util.concurrent.TimeoutException
+          - feign.FeignException.ServiceUnavailable
+  retry:
+    instances:
+      inventory-service:
+        max-attempts: 3
+        wait-duration: 500ms
+        exponential-backoff-multiplier: 2.0  # 500ms → 1s → 2s
+        retry-exceptions:
+          - java.io.IOException
+        ignore-exceptions:
+          - com.example.BusinessException
+  timelimiter:
+    instances:
+      inventory-service:
+        timeout-duration: 3s
+
+// Java service implementation
+@Service
+public class OrderService {
+
+    private final InventoryClient inventoryClient;
+
+    @CircuitBreaker(name = "inventory-service", fallbackMethod = "reserveFallback")
+    @Retry(name = "inventory-service")
+    @TimeLimiter(name = "inventory-service")
+    public CompletableFuture<ReservationResult> reserveInventory(
+        String productId, int quantity, String orderId
+    ) {
+        return CompletableFuture.supplyAsync(() ->
+            inventoryClient.reserve(new ReserveRequest(productId, quantity, orderId))
+        );
+    }
+
+    // Fallback: called when circuit is open or all retries are exhausted
+    public CompletableFuture<ReservationResult> reserveFallback(
+        String productId, int quantity, String orderId, Exception ex
+    ) {
+        log.warn("Circuit open for inventory-service, using fallback. orderId={} error={}",
+            orderId, ex.getMessage());
+        // Allow order to proceed with async reservation (backfill queue)
+        asyncReservationQueue.add(new PendingReservation(orderId, productId, quantity));
+        return CompletableFuture.completedFuture(
+            ReservationResult.pending(orderId, "inventory-service-degraded")
+        );
+    }
+}
+
+// Monitor circuit state events
+@Component
+public class CircuitBreakerMonitor {
+    @EventListener
+    public void onStateTransition(CircuitBreakerOnStateTransitionEvent event) {
+        log.warn("Circuit {} changed: {} -> {}",
+            event.getCircuitBreakerName(),
+            event.getStateTransition().getFromState(),
+            event.getStateTransition().getToState()
+        );
+        metrics.gauge("circuit_breaker_state",
+            event.getStateTransition().getToState().ordinal(),
+            "service", event.getCircuitBreakerName()
+        );
+    }
+}`}</code></pre>
+
+      <h3 style={h3Style}>Circuit Breaker in Node.js with opossum</h3>
+      <pre style={codeStyle}><code>{`import CircuitBreaker from 'opossum';
+import { metrics } from './observability';
+
+// Wrap any async function
+const breaker = new CircuitBreaker(
+  async (productId: string, qty: number, orderId: string) => {
+    return inventoryService.reserve(productId, qty, orderId);
+  },
+  {
+    timeout: 3000,                  // Trigger failure if > 3s
+    errorThresholdPercentage: 50,   // Open if > 50% fail
+    resetTimeout: 30_000,           // Try again after 30s
+    volumeThreshold: 5,             // Minimum calls before calculating
+    rollingCountTimeout: 10_000,    // 10s rolling window
+  }
+);
+
+// Graceful degradation
+breaker.fallback((productId: string, qty: number, orderId: string) => ({
+  reserved: false,
+  pending: true,
+  orderId,
+  message: 'Inventory service temporarily unavailable. Order queued.',
+}));
+
+// Observability hooks
+breaker.on('open',     () => metrics.increment('circuit_breaker.open', { svc: 'inventory' }));
+breaker.on('halfOpen', () => metrics.increment('circuit_breaker.half_open', { svc: 'inventory' }));
+breaker.on('close',    () => metrics.increment('circuit_breaker.close', { svc: 'inventory' }));
+breaker.on('timeout',  () => metrics.increment('circuit_breaker.timeout', { svc: 'inventory' }));
+breaker.on('reject',   () => metrics.increment('circuit_breaker.rejected', { svc: 'inventory' }));
+
+// Expose circuit state in health check
+app.get('/health/ready', (req, res) => {
+  const stats = breaker.stats;
+  res.json({
+    status: 'ok',
+    dependencies: {
+      'inventory-service': {
+        state: breaker.opened ? 'open' : breaker.halfOpen ? 'half-open' : 'closed',
+        successRate: stats.successful / Math.max(stats.calls, 1),
+        latencyMean: stats.latencyMean,
+      },
+    },
+  });
+});
+
+// Usage in business logic
+export async function reserveInventory(productId: string, qty: number, orderId: string) {
+  return breaker.fire(productId, qty, orderId);
+}`}</code></pre>
+
+      {/* Section 7: Distributed Tracing */}
+      <h2 style={h2Style}>Distributed Tracing: Jaeger, Zipkin, and OpenTelemetry</h2>
+      <p style={pStyle}>
+        When a user request flows through 5 microservices and response time is 3 seconds, finding which service is slow without tracing is like debugging production without logs. Distributed tracing assigns a unique trace ID to each incoming request. This ID propagates through every service call via HTTP headers, creating a tree of spans that records what happened, in which service, how long each step took, and what errors occurred. OpenTelemetry (OTel) is now the industry-standard, vendor-neutral framework. Jaeger and Zipkin are popular open-source trace visualization backends.
+      </p>
+      <pre style={codeStyle}><code>{`# 1. Deploy Jaeger — trace collection and visualization
+# docker-compose.yml
+services:
+  jaeger:
+    image: jaegertracing/all-in-one:1.54
+    ports:
+      - "16686:16686"  # Jaeger Web UI
+      - "4317:4317"    # OTLP gRPC receiver
+      - "4318:4318"    # OTLP HTTP receiver
+    environment:
+      COLLECTOR_OTLP_ENABLED: "true"
+      SPAN_STORAGE_TYPE: badger
+      BADGER_EPHEMERAL: "false"
+      BADGER_DIRECTORY_VALUE: /badger/data
+      BADGER_DIRECTORY_KEY: /badger/key
+    volumes:
+      - jaeger-data:/badger
+
+# 2. Instrument Node.js with OpenTelemetry (auto-instrumentation)
+# npm install @opentelemetry/sdk-node @opentelemetry/auto-instrumentations-node
+# npm install @opentelemetry/exporter-trace-otlp-http @opentelemetry/resources
+
+// tracing.ts — MUST be loaded before any other module
+import { NodeSDK } from '@opentelemetry/sdk-node';
+import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-http';
+import { getNodeAutoInstrumentations } from '@opentelemetry/auto-instrumentations-node';
+import { resourceFromAttributes } from '@opentelemetry/resources';
+import { ATTR_SERVICE_NAME, ATTR_SERVICE_VERSION } from '@opentelemetry/semantic-conventions';
+
+const sdk = new NodeSDK({
+  resource: resourceFromAttributes({
+    [ATTR_SERVICE_NAME]: process.env.OTEL_SERVICE_NAME || 'order-service',
+    [ATTR_SERVICE_VERSION]: process.env.APP_VERSION || '0.0.0',
+    'deployment.environment': process.env.NODE_ENV || 'development',
+  }),
+  traceExporter: new OTLPTraceExporter({
+    url: process.env.OTEL_EXPORTER_OTLP_ENDPOINT + '/v1/traces'
+      || 'http://jaeger:4318/v1/traces',
+  }),
+  instrumentations: [
+    getNodeAutoInstrumentations({
+      // Auto-instruments: express, http, pg, redis, mongodb, kafka, grpc
+      '@opentelemetry/instrumentation-http': {
+        enabled: true,
+        ignoreIncomingRequestHook: (req) => req.url === '/health',
+      },
+      '@opentelemetry/instrumentation-express': { enabled: true },
+      '@opentelemetry/instrumentation-pg': { enabled: true },
+      '@opentelemetry/instrumentation-ioredis': { enabled: true },
+    }),
+  ],
+});
+
+sdk.start();
+process.on('SIGTERM', () => sdk.shutdown());
+
+// 3. Add custom business spans
+import { trace, SpanStatusCode, SpanKind, context } from '@opentelemetry/api';
+
+const tracer = trace.getTracer('order-service', '2.1.0');
+
+async function createOrder(input: OrderInput): Promise<Order> {
+  // Start a span for the overall business operation
+  const span = tracer.startSpan('order.create', {
+    kind: SpanKind.INTERNAL,
+    attributes: {
+      'order.customer_id':  input.customerId,
+      'order.item_count':   input.items.length,
+      'order.total_amount': input.totalAmount,
+      'order.currency':     input.currency,
+    },
+  });
+
+  return context.with(trace.setSpan(context.active(), span), async () => {
+    try {
+      // Child spans created automatically by auto-instrumentation
+      const inventory  = await checkInventory(input.items);
+      const payment    = await processPayment(input.payment);
+      const order      = await db.orders.create(input);
+
+      span.setAttributes({ 'order.id': order.id, 'order.status': 'created' });
+      span.setStatus({ code: SpanStatusCode.OK });
+      return order;
+    } catch (err) {
+      span.recordException(err as Error);
+      span.setStatus({ code: SpanStatusCode.ERROR, message: (err as Error).message });
+      throw err;
+    } finally {
+      span.end();
+    }
+  });
+}
+
+# 4. Kubernetes ConfigMap for OTel configuration
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: otel-config
+  namespace: production
+data:
+  OTEL_EXPORTER_OTLP_ENDPOINT: "http://jaeger-collector.observability:4318"
+  OTEL_PROPAGATORS: "tracecontext,baggage"
+  OTEL_TRACES_SAMPLER: "parentbased_traceidratio"
+  OTEL_TRACES_SAMPLER_ARG: "0.1"  # Sample 10% of requests in production`}</code></pre>
+
+      {/* Section 8: Data Management */}
+      <h2 style={h2Style}>Data Management: Database per Service, CQRS, Event Sourcing</h2>
+      <p style={pStyle}>
+        Data management is where microservices architecture gets genuinely complex. The database-per-service pattern mandates that each service owns its data exclusively — no other service can access it directly via SQL or direct connections. This enables true independent evolution but creates challenges: cross-service queries require API calls or denormalized read models, and maintaining consistency across service boundaries without distributed transactions requires careful design using sagas, events, and eventual consistency.
+      </p>
+
+      <h3 style={h3Style}>Database per Service Pattern</h3>
+      <pre style={codeStyle}><code>{`# Each service has its own database — completely isolated
+# docker-compose.yml (or Kubernetes StatefulSets in production)
+
+services:
+  # Order service — PostgreSQL (ACID transactions, relational integrity)
+  order-db:
+    image: postgres:16-alpine
+    volumes:
+      - order-db-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB:       orders
+      POSTGRES_USER:     order_svc
+      POSTGRES_PASSWORD: \${ORDER_DB_PASSWORD}
+    networks:
+      - order-network    # ONLY order-service connects here
+
+  # Product catalog — MongoDB (flexible schema, fast reads, geo-queries)
+  product-db:
+    image: mongo:7
+    volumes:
+      - product-db-data:/data/db
+    networks:
+      - product-network  # Isolated to product-service
+
+  # Auth sessions — Redis (in-memory, TTL-based expiry)
+  auth-cache:
+    image: redis:7-alpine
+    command: redis-server --appendonly yes --requirepass \${REDIS_PASSWORD}
+    networks:
+      - auth-network
+
+  # Search service — Elasticsearch (full-text, faceted search)
+  search-db:
+    image: elasticsearch:8.12.0
+    environment:
+      discovery.type: single-node
+      ELASTIC_PASSWORD: \${ELASTIC_PASSWORD}
+    networks:
+      - search-network
+
+  # Analytics — ClickHouse (columnar, fast aggregations, time-series)
+  analytics-db:
+    image: clickhouse/clickhouse-server:23.12
+    networks:
+      - analytics-network
+
+networks:
+  order-network:     { internal: true }  # No external internet access
+  product-network:   { internal: true }
+  auth-network:      { internal: true }
+  search-network:    { internal: true }
+  analytics-network: { internal: true }`}</code></pre>
+
+      <h3 style={h3Style}>CQRS (Command Query Responsibility Segregation)</h3>
+      <p style={pStyle}>
+        CQRS separates the write model (commands that change state, optimized for consistency) from the read model (queries, optimized for performance and shape). This is powerful in microservices because different services can maintain their own read-optimized projections of data from other services, kept up-to-date by consuming domain events. The order-service owns the authoritative order data; the analytics-service maintains a denormalized ClickHouse projection optimized for reporting; the search-service maintains an Elasticsearch index for full-text search — all updated asynchronously from the same stream of order events.
+      </p>
+      <pre style={codeStyle}><code>{`// CQRS pattern — separating writes and reads
+
+// ─── WRITE SIDE ─────────────────────────────────────────────
+// Commands change state and publish events
+
+interface CreateOrderCommand {
+  customerId: string;
+  items: Array<{ productId: string; quantity: number; unitPrice: number }>;
+  shippingAddress: Address;
+  idempotencyKey: string;
+}
+
+class OrderCommandHandler {
+  async handle(cmd: CreateOrderCommand): Promise<{ orderId: string }> {
+    // 1. Validate business invariants
+    const totalAmount = cmd.items.reduce((s, i) => s + i.unitPrice * i.quantity, 0);
+    if (totalAmount > 10_000) throw new BusinessError('Order exceeds limit');
+
+    // 2. Write to normalized write DB (PostgreSQL)
+    const order = await this.db.transaction(async (trx) => {
+      const o = await trx.orders.insert({
+        customer_id: cmd.customerId,
+        status: 'PENDING',
+        total_amount: totalAmount,
+        idempotency_key: cmd.idempotencyKey,
+      });
+      await trx.order_items.insertMany(
+        cmd.items.map(i => ({ order_id: o.id, ...i }))
+      );
+      return o;
+    });
+
+    // 3. Publish domain event — drives all read-model updates
+    await this.kafka.produce('order-events', {
+      eventType:   'ORDER_CREATED',
+      orderId:     order.id,
+      customerId:  cmd.customerId,
+      items:       cmd.items,
+      totalAmount,
+      occurredAt:  new Date().toISOString(),
+      version:     1,
+    });
+
+    return { orderId: order.id };
+  }
+}
+
+// ─── READ SIDE ───────────────────────────────────────────────
+// Each read model is a projection tailored to query needs
+
+// Elasticsearch projection — powers the order search UI
+class OrderSearchProjection {
+  async onOrderCreated(event: OrderCreatedEvent): Promise<void> {
+    // Fetch denormalized data (acceptable: read-side can call APIs)
+    const [customer, products] = await Promise.all([
+      this.customerApi.get(event.customerId),
+      this.productApi.getBatch(event.items.map(i => i.productId)),
+    ]);
+
+    await this.elasticsearch.index({
+      index: 'orders-v3',
+      id:    event.orderId,
+      body:  {
+        orderId:       event.orderId,
+        customerName:  customer.name,           // Denormalized
+        customerEmail: customer.email,
+        productNames:  products.map(p => p.name),
+        totalAmount:   event.totalAmount,
+        status:        'PENDING',
+        createdAt:     event.occurredAt,
+      },
+    });
+  }
+
+  async onOrderShipped(event: OrderShippedEvent): Promise<void> {
+    await this.elasticsearch.update({
+      index: 'orders-v3',
+      id:    event.orderId,
+      body:  { doc: { status: 'SHIPPED', trackingNumber: event.trackingNumber } },
+    });
+  }
+}
+
+// Dashboard analytics projection — powers the ClickHouse reporting DB
+class OrderAnalyticsProjection {
+  async onOrderCreated(event: OrderCreatedEvent): Promise<void> {
+    await this.clickhouse.insert('order_analytics', [{
+      order_id:    event.orderId,
+      customer_id: event.customerId,
+      item_count:  event.items.length,
+      total_usd:   event.totalAmount,
+      event_date:  event.occurredAt.slice(0, 10),
+      hour:        new Date(event.occurredAt).getUTCHours(),
+    }]);
+  }
+}`}</code></pre>
+
+      <h3 style={h3Style}>Event Sourcing</h3>
+      <p style={pStyle}>
+        Event Sourcing stores the complete history of state changes as an immutable sequence of events rather than the current state. Instead of an UPDATE orders SET status = 'SHIPPED', you append an OrderShipped event. The current state is always derived by replaying all events. Benefits include a complete audit trail, the ability to replay history and rebuild projections, temporal queries, and natural integration with CQRS. The trade-off is query complexity (you need projections for most reads) and storage growth over time (mitigated by snapshots).
+      </p>
+      <pre style={codeStyle}><code>{`// Event Sourcing — Order aggregate
+
+type OrderEvent =
+  | { type: 'ORDER_CREATED';   orderId: string; customerId: string; items: LineItem[] }
+  | { type: 'PAYMENT_RECEIVED'; orderId: string; amount: number;   paymentId: string }
+  | { type: 'ORDER_SHIPPED';   orderId: string; carrier: string;   trackingNumber: string }
+  | { type: 'ORDER_DELIVERED'; orderId: string; deliveredAt: string }
+  | { type: 'ORDER_CANCELLED'; orderId: string; reason: string;    refundId?: string };
+
+interface OrderState {
+  id: string;
+  status: 'PENDING' | 'PAID' | 'SHIPPED' | 'DELIVERED' | 'CANCELLED';
+  customerId: string;
+  items: LineItem[];
+  paymentId?: string;
+  trackingNumber?: string;
+  cancelReason?: string;
+}
+
+// Pure function — derives state from sequence of events
+function applyEvent(state: OrderState, event: OrderEvent): OrderState {
+  switch (event.type) {
+    case 'ORDER_CREATED':
+      return { ...state, status: 'PENDING', customerId: event.customerId, items: event.items };
+    case 'PAYMENT_RECEIVED':
+      return { ...state, status: 'PAID', paymentId: event.paymentId };
+    case 'ORDER_SHIPPED':
+      return { ...state, status: 'SHIPPED', trackingNumber: event.trackingNumber };
+    case 'ORDER_DELIVERED':
+      return { ...state, status: 'DELIVERED' };
+    case 'ORDER_CANCELLED':
+      return { ...state, status: 'CANCELLED', cancelReason: event.reason };
+  }
+}
+
+class EventSourcedOrderRepository {
+  async load(orderId: string): Promise<OrderState> {
+    // Check for a recent snapshot to avoid replaying all events
+    const snapshot = await this.snapshots.latest(orderId);
+    const fromVersion = snapshot?.version ?? 0;
+
+    const events = await this.eventStore.load(
+      'orders',
+      orderId,
+      fromVersion
+    );
+
+    const initialState = snapshot?.state ?? ({ id: orderId } as OrderState);
+    return events.reduce(applyEvent, initialState);
+  }
+
+  async append(orderId: string, events: OrderEvent[], expectedVersion: number): Promise<void> {
+    // Optimistic concurrency — fail if another process wrote first
+    await this.eventStore.appendWithVersion('orders', orderId, events, expectedVersion);
+
+    // Publish to Kafka for projections (eventually consistent)
+    await Promise.all(events.map(e => this.kafka.produce('order-events', e)));
+  }
+}`}</code></pre>
+
+      {/* Section 9: Docker and Kubernetes */}
+      <h2 style={h2Style}>Docker and Kubernetes for Microservices</h2>
+      <p style={pStyle}>
+        Docker provides the packaging format for microservices — each service is a container image with all its dependencies, running identically in development, CI, and production. Kubernetes orchestrates those containers at scale: scheduling pods onto nodes, maintaining desired replica counts, performing rolling updates with zero downtime, self-healing by restarting failed pods, and exposing services via stable DNS and load-balanced ClusterIP services.
+      </p>
+
+      <h3 style={h3Style}>Production Dockerfile</h3>
+      <pre style={codeStyle}><code>{`# Multi-stage Dockerfile for a Node.js/TypeScript microservice
+# Stage 1: Install production dependencies (cached layer)
+FROM node:20-alpine AS deps
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --only=production && npm cache clean --force
+
+# Stage 2: Build TypeScript to JavaScript
+FROM node:20-alpine AS builder
+WORKDIR /app
+COPY package*.json tsconfig.json ./
+RUN npm ci                   # Install dev deps for build
+COPY src/ ./src/
+RUN npm run build            # Emit JS to dist/
+
+# Stage 3: Minimal production image
+FROM node:20-alpine AS runner
+# Security: run as non-root user
+RUN addgroup -g 1001 -S nodejs && adduser -S appuser -u 1001 -G nodejs
+WORKDIR /app
+
+# Only copy what production needs
+COPY --from=deps    --chown=appuser:nodejs /app/node_modules ./node_modules
+COPY --from=builder --chown=appuser:nodejs /app/dist ./dist
+COPY --from=builder --chown=appuser:nodejs /app/package.json .
+
+USER appuser
+EXPOSE 8080
+
+# Health check — Kubernetes will use /health/live and /health/ready
+HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
+  CMD wget -qO- http://localhost:8080/health/live || exit 1
+
+CMD ["node", "dist/server.js"]`}</code></pre>
+
+      <h3 style={h3Style}>Kubernetes Manifests for a Microservice</h3>
+      <pre style={codeStyle}><code>{`# Complete Kubernetes setup for order-service
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order-service
+  namespace: production
+  labels:
+    app: order-service
+    version: v2.1.0
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: order-service
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1         # Spin up 1 extra pod before removing old
+      maxUnavailable: 0   # Never reduce below desired replica count
+  template:
+    metadata:
+      labels:
+        app: order-service
+        version: v2.1.0
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9090"
+        prometheus.io/path: "/metrics"
+    spec:
+      serviceAccountName: order-service-sa
+      containers:
+        - name: order-service
+          image: registry.mycompany.com/order-service:v2.1.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+            - name: metrics
+              containerPort: 9090
+          env:
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: order-service-secrets
+                  key: database-url
+            - name: KAFKA_BROKERS
+              valueFrom:
+                configMapKeyRef:
+                  name: kafka-config
+                  key: brokers
+            - name: OTEL_EXPORTER_OTLP_ENDPOINT
+              value: "http://jaeger-collector.observability.svc:4318"
+            - name: OTEL_SERVICE_NAME
+              value: "order-service"
+            - name: NODE_ENV
+              value: "production"
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+          readinessProbe:
+            httpGet:
+              path: /health/ready
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            failureThreshold: 3
+          livenessProbe:
+            httpGet:
+              path: /health/live
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            failureThreshold: 3
+          startupProbe:
+            httpGet:
+              path: /health/live
+              port: 8080
+            failureThreshold: 30
+            periodSeconds: 2    # Allow up to 60s for startup
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchLabels:
+                  app: order-service
+              topologyKey: kubernetes.io/hostname  # One pod per node
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: order-service
+  namespace: production
+spec:
+  selector:
+    app: order-service
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
+  type: ClusterIP
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: order-service-hpa
+  namespace: production
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: order-service
+  minReplicas: 3
+  maxReplicas: 20
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 70
+    - type: Resource
+      resource:
+        name: memory
+        target:
+          type: Utilization
+          averageUtilization: 80
+  behavior:
+    scaleUp:
+      stabilizationWindowSeconds: 60
+      policies:
+        - type: Pods
+          value: 2
+          periodSeconds: 60
+    scaleDown:
+      stabilizationWindowSeconds: 300   # Wait 5 min before scaling down`}</code></pre>
+
+      {/* Section 10: Security */}
+      <h2 style={h2Style}>Security: Service Mesh, mTLS, and JWT Between Services</h2>
+      <p style={pStyle}>
+        Security in microservices requires a zero-trust model: assume the network is hostile, never trust a caller just because it is inside the cluster, require authentication and authorization for every service-to-service call. A compromised service should not be able to freely call any other service. The combination of a service mesh for transport-level security (mTLS) and application-level authorization (JWT claims, RBAC) provides defense in depth.
+      </p>
+
+      <h3 style={h3Style}>Istio Service Mesh with mTLS</h3>
+      <pre style={codeStyle}><code>{`# Install Istio with production profile
+istioctl install --set profile=production -y
+
+# Enable automatic sidecar injection in the namespace
+kubectl label namespace production istio-injection=enabled
+
+# Enforce strict mTLS cluster-wide — reject all plaintext traffic
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: default
+  namespace: production
+spec:
+  mtls:
+    mode: STRICT   # All service-to-service traffic must use mTLS
+
+---
+# Fine-grained authorization — only order-service can call payment endpoints
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: payment-service-authz
+  namespace: production
+spec:
+  selector:
+    matchLabels:
+      app: payment-service
+  action: ALLOW
+  rules:
+    - from:
+        - source:
+            # Only traffic from order-service's service account is allowed
+            principals:
+              - "cluster.local/ns/production/sa/order-service-sa"
+      to:
+        - operation:
+            methods: ["POST"]
+            paths: ["/api/v1/payments", "/api/v1/payments/*"]
+
+---
+# Default deny — reject all unlisted traffic
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: deny-all
+  namespace: production
+spec:
+  {}   # Empty spec = deny all (explicit allow rules override this)
+
+---
+# Canary deployment with traffic splitting
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: order-service-vs
+  namespace: production
+spec:
+  hosts: [order-service]
+  http:
+    - route:
+        - destination: { host: order-service, subset: stable }
+          weight: 90
+        - destination: { host: order-service, subset: canary }
+          weight: 10
+      timeout: 10s
+      retries:
+        attempts: 3
+        perTryTimeout: 3s
+        retryOn: gateway-error,connect-failure,retriable-4xx
+---
+apiVersion: networking.istio.io/v1beta1
+kind: DestinationRule
+metadata:
+  name: order-service-dr
+  namespace: production
+spec:
+  host: order-service
+  trafficPolicy:
+    connectionPool:
+      http:
+        h2UpgradePolicy: UPGRADE  # Use HTTP/2
+    outlierDetection:
+      consecutive5xxErrors: 5
+      interval: 30s
+      baseEjectionTime: 30s
+      maxEjectionPercent: 50
+  subsets:
+    - name: stable
+      labels: { version: v2.1.0 }
+    - name: canary
+      labels: { version: v2.2.0-rc1 }`}</code></pre>
+
+      <h3 style={h3Style}>Service-to-Service JWT Authentication</h3>
+      <pre style={codeStyle}><code>{`// Pattern: short-lived service tokens issued by a central auth service
+
+// auth-service: issue tokens to other services
+async function issueServiceToken(
+  callerService: string,
+  targetService: string
+): Promise<string> {
+  return jwt.sign(
+    {
+      iss: 'auth-service.production.svc',
+      sub: callerService,          // WHO is calling
+      aud: targetService,          // WHO is being called
+      iat: Math.floor(Date.now() / 1000),
+      exp: Math.floor(Date.now() / 1000) + 300,  // 5-minute lifetime
+      scope: 'service-call',
+    },
+    process.env.SERVICE_SIGNING_KEY!,
+    { algorithm: 'RS256', keyid: currentKeyId }
+  );
+}
+
+// Middleware: validate incoming service tokens (in payment-service)
+import jwksClient from 'jwks-rsa';
+
+const client = jwksClient({
+  jwksUri: 'http://auth-service/.well-known/jwks.json',
+  cache: true,
+  cacheMaxEntries: 10,
+  cacheMaxAge: 600_000,  // Cache JWKS for 10 minutes
+});
+
+async function validateServiceToken(req: Request, res: Response, next: NextFunction) {
+  const authHeader = req.headers.authorization;
+  if (!authHeader?.startsWith('Bearer ')) {
+    return res.status(401).json({ error: 'missing_token' });
+  }
+  const token = authHeader.slice(7);
+
+  try {
+    const decoded = jwt.decode(token, { complete: true }) as any;
+    const key = await client.getSigningKey(decoded?.header?.kid);
+    const publicKey = key.getPublicKey();
+
+    const payload = jwt.verify(token, publicKey, {
+      algorithms: ['RS256'],
+      audience: 'payment-service',       // This service's name
+      issuer: 'auth-service.production.svc',
+    }) as ServiceTokenPayload;
+
+    req.callerService = payload.sub;
+    next();
+  } catch (err) {
+    return res.status(401).json({ error: 'invalid_token', detail: (err as Error).message });
+  }
+}
+
+// Client-side: token caching to avoid auth-service call on every request
+class ServiceTokenManager {
+  private tokens = new Map<string, { value: string; expiresAt: number }>();
+
+  async getToken(targetService: string): Promise<string> {
+    const entry = this.tokens.get(targetService);
+    if (entry && entry.expiresAt - Date.now() > 30_000) {  // 30s buffer
+      return entry.value;
+    }
+    const token = await this.authClient.issueToken(targetService);
+    const payload = jwt.decode(token) as { exp: number };
+    this.tokens.set(targetService, {
+      value: token,
+      expiresAt: payload.exp * 1000,
+    });
+    return token;
+  }
+}`}</code></pre>
+
+      {/* Section 11: Monitoring */}
+      <h2 style={h2Style}>Monitoring and Observability: Prometheus and Grafana</h2>
+      <p style={pStyle}>
+        The three pillars of observability in microservices are metrics, logs, and traces. Metrics (Prometheus) provide aggregate numerical data — request rates, error rates, latency percentiles, resource usage. Logs (Loki, ELK) provide detailed contextual records of individual events. Traces (Jaeger) show request flow across services. Grafana provides unified dashboards and alerting across all three. The four golden signals — latency, traffic, errors, and saturation — should be monitored for every service with automated alerts when thresholds are breached.
+      </p>
+      <pre style={codeStyle}><code>{`# prometheus.yml — Kubernetes service discovery
+global:
+  scrape_interval:     15s
+  evaluation_interval: 15s
+  external_labels:
+    cluster: production-us-east
+    region:  us-east-1
+
+rule_files:
+  - /etc/prometheus/rules/microservices.yml
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: [alertmanager.monitoring:9093]
+
+scrape_configs:
+  - job_name: kubernetes-pods
+    kubernetes_sd_configs:
+      - role: pod
+        namespaces:
+          names: [production, staging]
+    relabel_configs:
+      - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_scrape]
+        action: keep
+        regex: "true"
+      - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_path]
+        target_label: __metrics_path__
+        regex: (.+)
+      - source_labels: [__meta_kubernetes_pod_ip,
+                        __meta_kubernetes_pod_annotation_prometheus_io_port]
+        target_label: __address__
+        regex: (.+);(.+)
+        replacement: "\$1:\$2"
+      - source_labels: [__meta_kubernetes_namespace]
+        target_label: namespace
+      - source_labels: [__meta_kubernetes_pod_label_app]
+        target_label: service`}</code></pre>
+
+      <pre style={codeStyle}><code>{`# Alerting rules — microservices golden signals
+# /etc/prometheus/rules/microservices.yml
+groups:
+  - name: microservices.golden_signals
+    interval: 30s
+    rules:
+      # Error rate > 5% for 2 minutes
+      - alert: HighErrorRate
+        expr: |
+          sum(rate(http_requests_total{status=~"5.."}[5m])) by (service, namespace)
+          /
+          sum(rate(http_requests_total[5m])) by (service, namespace) > 0.05
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "High error rate on {{ \$labels.service }}"
+          description: "Error rate is {{ \$value | humanizePercentage }} (threshold 5%)"
+          runbook: "https://runbooks.mycompany.com/high-error-rate"
+
+      # p99 latency > 1s for 5 minutes
+      - alert: HighLatencyP99
+        expr: |
+          histogram_quantile(0.99,
+            sum(rate(http_request_duration_seconds_bucket[5m])) by (le, service)
+          ) > 1
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High p99 latency on {{ \$labels.service }}"
+          description: "p99 latency is {{ \$value | humanizeDuration }}"
+
+      # Service is completely down
+      - alert: ServiceDown
+        expr: up{job="kubernetes-pods"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          pagerduty: "true"
+        annotations:
+          summary: "Service {{ \$labels.service }} is down"
+
+      # Circuit breaker is open
+      - alert: CircuitBreakerOpen
+        expr: circuit_breaker_state{state="open"} == 1
+        for: 30s
+        labels:
+          severity: warning
+        annotations:
+          summary: "Circuit breaker open: {{ \$labels.service }} -> {{ \$labels.target }}"
+
+# Node.js service exposing Prometheus metrics
+import { Registry, Counter, Histogram, Gauge, Summary } from 'prom-client';
+
+const register = new Registry();
+register.setDefaultLabels({ service: 'order-service', environment: 'production' });
+
+export const httpRequestsTotal = new Counter({
+  name: 'http_requests_total',
+  help: 'Total HTTP requests',
+  labelNames: ['method', 'route', 'status_code'],
+  registers: [register],
+});
+
+export const httpLatency = new Histogram({
+  name: 'http_request_duration_seconds',
+  help: 'HTTP request latency',
+  labelNames: ['method', 'route', 'status_code'],
+  buckets: [0.005, 0.01, 0.025, 0.05, 0.1, 0.25, 0.5, 1, 2.5, 5, 10],
+  registers: [register],
+});
+
+export const ordersTotal = new Counter({
+  name: 'orders_created_total',
+  help: 'Total orders created',
+  labelNames: ['status', 'payment_method', 'region'],
+  registers: [register],
+});
+
+export const activeOrders = new Gauge({
+  name: 'active_orders_gauge',
+  help: 'Currently active (non-terminal) orders',
+  registers: [register],
+});
+
+// Instrument all routes automatically
+app.use((req, res, next) => {
+  const timer = httpLatency.startTimer();
+  res.on('finish', () => {
+    const route = req.route?.path ?? 'unknown';
+    const labels = { method: req.method, route, status_code: String(res.statusCode) };
+    httpRequestsTotal.inc(labels);
+    timer(labels);
+  });
+  next();
+});
+
+app.get('/metrics', async (_req, res) => {
+  res.set('Content-Type', register.contentType);
+  res.end(await register.metrics());
+});`}</code></pre>
+
+      {/* Section 12: Comparison Table */}
+      <h2 style={h2Style}>Architecture Comparison: Monolith vs Microservices vs Serverless</h2>
+      <table style={tableStyle}>
+        <thead>
+          <tr>
+            <th style={thStyle}>Attribute</th>
+            <th style={thStyle}>Monolith</th>
+            <th style={thStyle}>Microservices</th>
+            <th style={thStyle}>Serverless</th>
+          </tr>
+        </thead>
+        <tbody>
+          {[
+            ['Deployment unit', 'Single artifact', 'Per-service containers', 'Individual functions'],
+            ['Scaling', 'Entire app scales together', 'Per-service horizontal scaling', 'Auto-scales to zero'],
+            ['Latency', 'No network overhead', 'Network hops between services', 'Cold start latency (100ms–3s)'],
+            ['Development speed', 'Fast initially, slows with growth', 'Parallel team development', 'Very fast for simple workflows'],
+            ['Operational complexity', 'Low — one process to manage', 'High — many services, k8s, mesh', 'Low ops, high vendor lock-in'],
+            ['Data management', 'Shared relational database', 'Database per service', 'Typically shared or per-function'],
+            ['Technology choice', 'One language and framework', 'Per-service technology freedom', 'Runtime-constrained by provider'],
+            ['Cost model', 'Fixed (servers always running)', 'Fixed (pods always running)', 'Pay-per-invocation (spiky is cheap)'],
+            ['Fault isolation', 'One bug can crash everything', 'Failures are service-scoped', 'Functions are isolated by default'],
+            ['Testing strategy', 'Unit + integration locally', 'Contract testing (Pact) required', 'Mock cloud services (LocalStack)'],
+            ['Observability', 'Simple logging and metrics', 'Distributed tracing essential', 'Cloud vendor tools (CloudWatch, X-Ray)'],
+            ['Best fit', 'Small teams, early product', 'Large teams, complex domain', 'Event-driven, bursty, scheduled tasks'],
+          ].map(([attr, mono, micro, serverless], i) => (
+            <tr key={i}>
+              <td style={{ ...tdStyle, fontWeight: 600 }}>{attr}</td>
+              <td style={tdStyle}>{mono}</td>
+              <td style={tdStyle}>{micro}</td>
+              <td style={tdStyle}>{serverless}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      {/* Conclusion */}
+      <h2 style={h2Style}>Conclusion</h2>
+      <p style={pStyle}>
+        Microservices architecture is a powerful tool for building large-scale, maintainable systems — but it is not a silver bullet and it is not appropriate for every team or every stage of a product. The distributed nature introduces real, unavoidable complexity: network failures, eventual consistency, distributed tracing, and operational overhead that can overwhelm teams without the organizational maturity to manage it.
+      </p>
+      <p style={pStyle}>
+        The key is to adopt microservices patterns incrementally, driven by real organizational and technical needs. Start with a well-structured monolith that follows domain boundaries in its module structure. When team size creates coordination friction or when scaling requirements diverge, extract services — starting with those that change most frequently or have the most distinct scaling needs. Add an API Gateway early to centralize cross-cutting concerns. Instrument everything with OpenTelemetry from day one; debugging distributed systems without tracing is extraordinarily painful. Use circuit breakers on every external call and define fallback behaviors before you need them. Give each service its own database and embrace eventual consistency through well-defined events. Deploy on Kubernetes for resilience, layer Istio for zero-trust security, and monitor with Prometheus and Grafana. When these patterns are applied thoughtfully, microservices enable teams to move fast at scale — independently, safely, and with confidence in each deployment.
+      </p>
+
+      {/* FAQ */}
+      <h2 style={h2Style}>Frequently Asked Questions</h2>
+      {[
+        {
+          q: 'What is microservices architecture?',
+          a: 'Microservices architecture is a software design approach where an application is built as a collection of small, independently deployable services. Each service runs in its own process, owns its own data, communicates via well-defined APIs, and can be developed, deployed, and scaled by an independent team.',
+        },
+        {
+          q: 'When should I use microservices over a monolith?',
+          a: 'Use microservices when your team is large enough to work on independent services (typically 3+ teams), when different parts of your system have divergent scaling requirements, when you need independent deployment cycles, or when you require technology diversity. Start with a monolith for small teams or early-stage products — a well-structured monolith is easier to migrate later than a poorly designed distributed system.',
+        },
+        {
+          q: 'What is the difference between REST, gRPC, and message queues?',
+          a: 'REST uses HTTP/JSON for synchronous request-response communication — human-readable, universally supported, ideal for public APIs. gRPC uses HTTP/2 and Protocol Buffers for high-performance binary synchronous calls with strong typing — ideal for internal service calls. Message queues (RabbitMQ, Kafka) enable asynchronous, decoupled communication — the sender does not wait for a response, suitable for event-driven workflows and eventual consistency.',
+        },
+        {
+          q: 'What is an API Gateway and why do I need one?',
+          a: 'An API Gateway is the single entry point for all external requests to your microservices. It centralizes authentication, rate limiting, SSL termination, request routing, logging, and caching — concerns that would otherwise need to be duplicated in every service. Without it, clients must know the address of every service and each service must implement its own auth and rate limiting.',
+        },
+        {
+          q: 'What is the circuit breaker pattern?',
+          a: 'The circuit breaker prevents cascade failures by stopping outbound calls to a failing service after a failure threshold is reached. In the Open state, calls fail immediately without hitting the network, allowing the downstream service time to recover. After a reset timeout, it enters Half-Open state and tests with a small number of calls. Resilience4j (Java) and opossum (Node.js) are popular implementations.',
+        },
+        {
+          q: 'How do microservices handle data management and cross-service queries?',
+          a: 'Each service owns its own database exclusively (database-per-service pattern). Cross-service queries are handled through CQRS: each service maintains a read-model projection updated by consuming events from other services. Distributed transactions use the Saga pattern — a sequence of local transactions coordinated by events — rather than two-phase commit, which does not scale.',
+        },
+        {
+          q: 'What is distributed tracing and how does OpenTelemetry help?',
+          a: 'Distributed tracing tracks a request as it flows through multiple services, recording timing and context at each step. OpenTelemetry is the vendor-neutral CNCF standard that provides language SDKs, auto-instrumentation, and exporters for traces, metrics, and logs. It sends data to backends like Jaeger (open-source) or commercial vendors (Datadog, New Relic, Grafana Tempo) without vendor lock-in.',
+        },
+        {
+          q: 'How does Istio improve microservices security?',
+          a: 'Istio injects an Envoy sidecar proxy into every pod, handling all network traffic without code changes. It enforces mTLS (mutual TLS) for encrypted, mutually-authenticated service-to-service communication, implements fine-grained authorization policies specifying which services can call which endpoints, provides traffic management for canary deployments, and generates telemetry for all service communication.',
+        },
+      ].map((faq, i) => (
+        <details
+          key={i}
+          style={{
+            marginBottom: 12,
+            padding: '12px 16px',
+            background: 'var(--bg-input)',
+            borderRadius: 8,
+            border: '1px solid var(--border-color)',
+          }}
+        >
+          <summary style={{ fontWeight: 700, cursor: 'pointer', color: 'var(--text-primary)' }}>
+            {faq.q}
+          </summary>
+          <p style={{ marginTop: 8, color: 'var(--text-secondary)', lineHeight: 1.7 }}>
+            {faq.a}
+          </p>
+        </details>
+      ))}
     </article>
   );
 }
