@@ -366,6 +366,8 @@ import AWSGuide from '@/data/posts/aws-guide';
 import WebSecurityGuide from '@/data/posts/web-security-guide';
 import CICDGuide from '@/data/posts/cicd-guide';
 import MicroservicesGuide from '@/data/posts/microservices-guide';
+import GraphqlSubscriptionsGuide from '@/data/posts/graphql-subscriptions-guide';
+import RustBasicsGuide from '@/data/posts/rust-basics-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -722,6 +724,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'web-security-guide': WebSecurityGuide,
   'cicd-guide': CICDGuide,
   'microservices-guide': MicroservicesGuide,
+  'graphql-subscriptions-guide': GraphqlSubscriptionsGuide,
+  'rust-basics-guide': RustBasicsGuide,
 };
 
 /* i18n for UI strings on this page */
