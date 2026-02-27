@@ -385,6 +385,8 @@ import WebpackGuide from '@/data/posts/webpack-guide';
 import PythonDataScienceGuide from '@/data/posts/python-data-science-guide';
 import DevopsGuide from '@/data/posts/devops-guide';
 import ApiDesignGuide from '@/data/posts/api-design-guide';
+import NestjsGuide from '@/data/posts/nestjs-guide';
+import DatabaseDesignGuide from '@/data/posts/database-design-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -760,6 +762,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'python-data-science-guide': PythonDataScienceGuide,
   'devops-guide': DevopsGuide,
   'api-design-guide': ApiDesignGuide,
+  'nestjs-guide': NestjsGuide,
+  'database-design-guide': DatabaseDesignGuide,
 };
 
 /* i18n for UI strings on this page */

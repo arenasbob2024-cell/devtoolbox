@@ -5611,4 +5611,664 @@
       <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/api-design-guide"/>
       <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/api-design-guide"/>
   </url>
+  <url>
+    <loc>https://viadreams.cc/en/blog/nestjs-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/nestjs-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/fr/blog/nestjs-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/nestjs-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/de/blog/nestjs-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/nestjs-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/it/blog/nestjs-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/nestjs-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/es/blog/nestjs-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/nestjs-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pt/blog/nestjs-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/nestjs-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/nl/blog/nestjs-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/nestjs-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pl/blog/nestjs-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/nestjs-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/sv/blog/nestjs-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/nestjs-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/no/blog/nestjs-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/nestjs-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/zh/blog/nestjs-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/nestjs-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ja/blog/nestjs-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/nestjs-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ko/blog/nestjs-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/nestjs-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/id/blog/nestjs-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/nestjs-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/th/blog/nestjs-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/nestjs-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/nestjs-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/en/blog/database-design-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/database-design-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/fr/blog/database-design-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/database-design-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/de/blog/database-design-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/database-design-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/it/blog/database-design-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/database-design-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/es/blog/database-design-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/database-design-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pt/blog/database-design-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/database-design-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/nl/blog/database-design-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/database-design-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pl/blog/database-design-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/database-design-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/sv/blog/database-design-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/database-design-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/no/blog/database-design-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/database-design-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/zh/blog/database-design-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/database-design-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ja/blog/database-design-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/database-design-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ko/blog/database-design-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/database-design-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/id/blog/database-design-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/database-design-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/th/blog/database-design-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/database-design-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/database-design-guide"/>
+  </url>
 </urlset>
