@@ -333,6 +333,8 @@ import UnixTimestampOnlineGuide from '@/data/posts/unix-timestamp-online-guide';
 import QrCodeOnlineGuide from '@/data/posts/qr-code-online-guide';
 import DockerComposeOnlineGuide from '@/data/posts/docker-compose-online-guide';
 import NginxConfigOnlineGuide from '@/data/posts/nginx-config-online-guide';
+import HmacGeneratorOnlineGuide from '@/data/posts/hmac-generator-online-guide';
+import XmlFormatterOnlineGuide from '@/data/posts/xml-formatter-online-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -656,6 +658,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'qr-code-online-guide': QrCodeOnlineGuide,
   'docker-compose-online-guide': DockerComposeOnlineGuide,
   'nginx-config-online-guide': NginxConfigOnlineGuide,
+  'hmac-generator-online-guide': HmacGeneratorOnlineGuide,
+  'xml-formatter-online-guide': XmlFormatterOnlineGuide,
 };
 
 /* i18n for UI strings on this page */
