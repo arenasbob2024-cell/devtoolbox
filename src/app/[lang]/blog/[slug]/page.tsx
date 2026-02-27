@@ -376,6 +376,8 @@ import FlaskGuide from '@/data/posts/flask-guide';
 import AngularGuide from '@/data/posts/angular-guide';
 import NextjsDeepDiveGuide from '@/data/posts/nextjs-deep-dive-guide';
 import SvelteGuide from '@/data/posts/svelte-guide';
+import VueGuide from '@/data/posts/vue-guide';
+import ReactNativeGuide from '@/data/posts/react-native-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -742,6 +744,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'angular-guide': AngularGuide,
   'nextjs-deep-dive-guide': NextjsDeepDiveGuide,
   'svelte-guide': SvelteGuide,
+  'vue-guide': VueGuide,
+  'react-native-guide': ReactNativeGuide,
 };
 
 /* i18n for UI strings on this page */
