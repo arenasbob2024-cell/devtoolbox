@@ -345,6 +345,8 @@ import IpSubnetCalculatorOnlineGuide from '@/data/posts/ip-subnet-calculator-onl
 import SlugGeneratorOnlineGuide from '@/data/posts/slug-generator-online-guide';
 import CronJobSchedulerOnlineGuide from '@/data/posts/cron-job-scheduler-online-guide';
 import ColorPaletteGeneratorOnlineGuide from '@/data/posts/color-palette-generator-online-guide';
+import MarkdownEditorOnlineGuide from '@/data/posts/markdown-editor-online-guide';
+import SshKeyGeneratorOnlineGuide from '@/data/posts/ssh-key-generator-online-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -680,6 +682,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'slug-generator-online-guide': SlugGeneratorOnlineGuide,
   'cron-job-scheduler-online-guide': CronJobSchedulerOnlineGuide,
   'color-palette-generator-online-guide': ColorPaletteGeneratorOnlineGuide,
+  'markdown-editor-online-guide': MarkdownEditorOnlineGuide,
+  'ssh-key-generator-online-guide': SshKeyGeneratorOnlineGuide,
 };
 
 /* i18n for UI strings on this page */
