@@ -8290,6 +8290,33 @@ export const blogPosts: BlogPost[] = [
       th: { title: 'JSON to Python: Complete Guide to Dataclasses, Pydantic and JSON Parsing', description: 'Learn to convert JSON to Python dataclasses and Pydantic models. Covers json.loads, BaseModel, validators, and FastAPI integration.', readingTime: '11 minutes', keywords: ['json to python class', 'pydantic json', 'python json parsing', 'dataclass'] },
     },
   },
+  {
+    slug: 'json-to-rust-online-guide',
+    title: 'JSON to Rust Struct: Complete Guide with serde_json and serde Derive',
+    description: 'Learn how to convert JSON to Rust structs using serde_json. Covers #[derive(Serialize, Deserialize)], serde rename, Option<T> for nullable fields, enums with serde, and Axum/Actix-Web integration.',
+    date: '2026-02-27',
+    author: 'DevToolBox',
+    readingTime: '11 min read',
+    keywords: ['json to rust struct', 'rust json serde', 'serde_json', 'rust json parsing', 'serde deserialize', 'rust json serialize', 'axum json', 'json to rust online'],
+    relatedTools: ['json-to-rust', 'json-formatter', 'json-to-typescript', 'json-validator'],
+    relatedPosts: ['json-to-go-online-guide', 'json-to-typescript-online-guide', 'json-formatter-complete-guide'],
+    translations: {
+      zh: { title: 'JSON 转 Rust 结构体：serde_json 和 serde Derive 完整指南', description: '学习如何使用 serde_json 将 JSON 转换为 Rust 结构体。涵盖 #[derive(Serialize, Deserialize)]、serde rename、Option<T> 可空字段和枚举处理。', readingTime: '11 分钟阅读', keywords: ['json 转 rust 结构体', 'rust serde json', 'serde_json', 'rust json 解析'] },
+      ja: { title: 'JSONからRust構造体へ：serde_jsonとserdeDerive完全ガイド', description: 'serde_jsonを使ってJSONをRust構造体に変換する方法を学びます。#[derive(Serialize, Deserialize)]、serde rename、Option<T>を網羅。', readingTime: '11分', keywords: ['json rust 構造体', 'rust serde json', 'serde_json'] },
+      ko: { title: 'JSON을 Rust 구조체로 변환: serde_json 및 serde Derive 완전 가이드', description: 'serde_json을 사용하여 JSON을 Rust 구조체로 변환하는 방법을 배우세요. #[derive(Serialize, Deserialize)], serde rename, Option<T>를 다룹니다.', readingTime: '11분 읽기', keywords: ['json rust 구조체', 'rust serde json', 'serde_json'] },
+      fr: { title: 'JSON vers Struct Rust: Guide Complet avec serde_json et serde Derive', description: 'Apprenez à convertir JSON en structs Rust avec serde_json.', readingTime: '11 min de lecture', keywords: ['json rust struct', 'rust serde json', 'serde_json'] },
+      de: { title: 'JSON zu Rust Struct: Vollständiger Leitfaden mit serde_json und serde Derive', description: 'Lernen Sie, wie Sie JSON mit serde_json in Rust-Structs konvertieren.', readingTime: '11 Min. Lesezeit', keywords: ['json rust struct', 'rust serde json', 'serde_json'] },
+      es: { title: 'JSON a Struct Rust: Guía Completa con serde_json y serde Derive', description: 'Aprende a convertir JSON en structs de Rust con serde_json.', readingTime: '11 min de lectura', keywords: ['json rust struct', 'rust serde json', 'serde_json'] },
+      it: { title: 'JSON in Struct Rust: Guida Completa con serde_json e serde Derive', description: 'Scopri come convertire JSON in struct Rust con serde_json.', readingTime: '11 min di lettura', keywords: ['json rust struct', 'rust serde json', 'serde_json'] },
+      pt: { title: 'JSON para Struct Rust: Guia Completo com serde_json e serde Derive', description: 'Aprenda a converter JSON em structs Rust com serde_json.', readingTime: '11 min de leitura', keywords: ['json rust struct', 'rust serde json', 'serde_json'] },
+      nl: { title: 'JSON naar Rust Struct: Complete Gids met serde_json en serde Derive', description: 'Leer hoe je JSON converteert naar Rust structs met serde_json.', readingTime: '11 min lezen', keywords: ['json rust struct', 'rust serde json', 'serde_json'] },
+      pl: { title: 'JSON do Rust Struct: Kompletny Przewodnik z serde_json i serde Derive', description: 'Naucz się konwertować JSON do Rust struct z serde_json.', readingTime: '11 min czytania', keywords: ['json rust struct', 'rust serde json', 'serde_json'] },
+      sv: { title: 'JSON till Rust Struct: Komplett Guide med serde_json och serde Derive', description: 'Lär dig konvertera JSON till Rust structs med serde_json.', readingTime: '11 min läsning', keywords: ['json rust struct', 'rust serde json', 'serde_json'] },
+      no: { title: 'JSON til Rust Struct: Komplett Guide med serde_json og serde Derive', description: 'Lær å konvertere JSON til Rust structs med serde_json.', readingTime: '11 min lesning', keywords: ['json rust struct', 'rust serde json', 'serde_json'] },
+      id: { title: 'JSON ke Rust Struct: Panduan Lengkap dengan serde_json dan serde Derive', description: 'Pelajari cara mengkonversi JSON ke Rust struct dengan serde_json.', readingTime: '11 menit baca', keywords: ['json rust struct', 'rust serde json', 'serde_json'] },
+      th: { title: 'JSON to Rust Struct: Complete Guide with serde_json and serde Derive', description: 'Learn to convert JSON to Rust structs with serde_json. Covers #[derive(Serialize, Deserialize)], serde rename, Option<T>, enums, and Axum integration.', readingTime: '11 minutes', keywords: ['json to rust struct', 'rust serde json', 'serde_json deserialize'] },
+    },
+  },
 ];
 
 /** Get post with localized metadata */

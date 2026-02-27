@@ -321,6 +321,7 @@ import JsonToCsharpOnlineGuide from '@/data/posts/json-to-csharp-online-guide';
 import JsonToGoOnlineGuide from '@/data/posts/json-to-go-online-guide';
 import JsonToKotlinOnlineGuide from '@/data/posts/json-to-kotlin-online-guide';
 import JsonToPythonOnlineGuide from '@/data/posts/json-to-python-online-guide';
+import JsonToRustOnlineGuide from '@/data/posts/json-to-rust-online-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -632,6 +633,7 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'json-to-go-online-guide': JsonToGoOnlineGuide,
   'json-to-kotlin-online-guide': JsonToKotlinOnlineGuide,
   'json-to-python-online-guide': JsonToPythonOnlineGuide,
+  'json-to-rust-online-guide': JsonToRustOnlineGuide,
 };
 
 /* i18n for UI strings on this page */
