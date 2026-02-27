@@ -353,6 +353,8 @@ import DockerCommandsGuide from '@/data/posts/docker-commands-guide';
 import RedisGuide from '@/data/posts/redis-guide';
 import PostgresqlGuide from '@/data/posts/postgresql-guide';
 import GraphqlGuide from '@/data/posts/graphql-guide';
+import KubernetesGuide from '@/data/posts/kubernetes-guide';
+import NextjsPerformanceGuide from '@/data/posts/nextjs-performance-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -696,6 +698,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'redis-guide': RedisGuide,
   'postgresql-guide': PostgresqlGuide,
   'graphql-guide': GraphqlGuide,
+  'kubernetes-guide': KubernetesGuide,
+  'nextjs-performance-guide': NextjsPerformanceGuide,
 };
 
 /* i18n for UI strings on this page */
