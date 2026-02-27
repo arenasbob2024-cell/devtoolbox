@@ -435,6 +435,8 @@ import NextjsAdvancedGuide from '@/data/posts/nextjs-advanced-guide';
 import OauthAuthenticationGuide from '@/data/posts/oauth-authentication-guide';
 import SupabaseGuide from '@/data/posts/supabase-guide';
 import GrpcGuide from '@/data/posts/grpc-guide';
+import AstroGuide from '@/data/posts/astro-guide';
+import DrizzleOrmGuide from '@/data/posts/drizzle-orm-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -860,6 +862,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'oauth-authentication-guide': OauthAuthenticationGuide,
   'supabase-guide': SupabaseGuide,
   'grpc-guide': GrpcGuide,
+  'astro-guide': AstroGuide,
+  'drizzle-orm-guide': DrizzleOrmGuide,
 };
 
 /* i18n for UI strings on this page */
