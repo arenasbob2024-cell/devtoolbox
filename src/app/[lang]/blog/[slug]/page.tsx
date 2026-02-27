@@ -357,6 +357,8 @@ import KubernetesGuide from '@/data/posts/kubernetes-guide';
 import NextjsPerformanceGuide from '@/data/posts/nextjs-performance-guide';
 import TerraformGuide from '@/data/posts/terraform-guide';
 import PythonAsyncGuide from '@/data/posts/python-async-guide';
+import LinuxCommandsGuide from '@/data/posts/linux-commands-guide';
+import VimGuide from '@/data/posts/vim-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -704,6 +706,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'nextjs-performance-guide': NextjsPerformanceGuide,
   'terraform-guide': TerraformGuide,
   'python-async-guide': PythonAsyncGuide,
+  'linux-commands-guide': LinuxCommandsGuide,
+  'vim-guide': VimGuide,
 };
 
 /* i18n for UI strings on this page */
