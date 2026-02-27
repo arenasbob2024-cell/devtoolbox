@@ -315,6 +315,10 @@ import ColorConverterOnlineGuideV2 from '@/data/posts/color-converter-online-gui
 import BcryptGeneratorOnlineGuide from '@/data/posts/bcrypt-generator-online-guide';
 import ImageToBase64OnlineGuide from '@/data/posts/image-to-base64-online-guide';
 import HtmlEntityOnlineGuide from '@/data/posts/html-entity-online-guide';
+import JsonToDartOnlineGuide from '@/data/posts/json-to-dart-online-guide';
+import JsonToJavaOnlineGuide from '@/data/posts/json-to-java-online-guide';
+import JsonToCsharpOnlineGuide from '@/data/posts/json-to-csharp-online-guide';
+import JsonToGoOnlineGuide from '@/data/posts/json-to-go-online-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -620,6 +624,10 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'bcrypt-generator-online-guide': BcryptGeneratorOnlineGuide,
   'image-to-base64-online-guide': ImageToBase64OnlineGuide,
   'html-entity-online-guide': HtmlEntityOnlineGuide,
+  'json-to-dart-online-guide': JsonToDartOnlineGuide,
+  'json-to-java-online-guide': JsonToJavaOnlineGuide,
+  'json-to-csharp-online-guide': JsonToCsharpOnlineGuide,
+  'json-to-go-online-guide': JsonToGoOnlineGuide,
 };
 
 /* i18n for UI strings on this page */
