@@ -310,6 +310,11 @@ import MarkdownToHtmlOnlineGuide from '@/data/posts/markdown-to-html-online-guid
 import SvgToReactOnlineGuide from '@/data/posts/svg-to-react-online-guide';
 import JsonToTypescriptOnlineGuide from '@/data/posts/json-to-typescript-online-guide';
 import CssToTailwindOnlineGuide from '@/data/posts/css-to-tailwind-online-guide';
+import ChmodCalculatorOnlineGuide from '@/data/posts/chmod-calculator-online-guide';
+import ColorConverterOnlineGuideV2 from '@/data/posts/color-converter-online-guide-v2';
+import BcryptGeneratorOnlineGuide from '@/data/posts/bcrypt-generator-online-guide';
+import ImageToBase64OnlineGuide from '@/data/posts/image-to-base64-online-guide';
+import HtmlEntityOnlineGuide from '@/data/posts/html-entity-online-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -610,6 +615,11 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'svg-to-react-online-guide': SvgToReactOnlineGuide,
   'json-to-typescript-online-guide': JsonToTypescriptOnlineGuide,
   'css-to-tailwind-online-guide': CssToTailwindOnlineGuide,
+  'chmod-calculator-online-guide': ChmodCalculatorOnlineGuide,
+  'color-converter-complete-guide': ColorConverterOnlineGuideV2,
+  'bcrypt-generator-online-guide': BcryptGeneratorOnlineGuide,
+  'image-to-base64-online-guide': ImageToBase64OnlineGuide,
+  'html-entity-online-guide': HtmlEntityOnlineGuide,
 };
 
 /* i18n for UI strings on this page */
