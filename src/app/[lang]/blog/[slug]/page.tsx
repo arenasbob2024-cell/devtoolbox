@@ -425,6 +425,8 @@ import AwsLambdaGuide from '@/data/posts/aws-lambda-guide';
 import LinuxCommandGuide from '@/data/posts/linux-command-guide';
 import GoAdvancedGuide from '@/data/posts/go-advanced-guide';
 import RustBeginnerGuide from '@/data/posts/rust-beginner-guide';
+import SqlOptimizationGuide from '@/data/posts/sql-optimization-guide';
+import ReactDesignPatternsGuide from '@/data/posts/react-design-patterns-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -840,6 +842,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'linux-command-guide': LinuxCommandGuide,
   'go-advanced-guide': GoAdvancedGuide,
   'rust-beginner-guide': RustBeginnerGuide,
+  'sql-optimization-guide': SqlOptimizationGuide,
+  'react-design-patterns-guide': ReactDesignPatternsGuide,
 };
 
 /* i18n for UI strings on this page */
