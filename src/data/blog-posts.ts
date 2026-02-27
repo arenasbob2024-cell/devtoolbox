@@ -9930,6 +9930,25 @@ export const blogPosts: BlogPost[] = [
       ko: { title: '모니터링 & 관측 가능성 가이드: Prometheus, Grafana, OpenTelemetry, ELK, SLO, APM', description: '프로덕션 시스템의 모니터링과 관측 가능성을 마스터하세요. 3대 축(로그, 메트릭, 트레이스), Prometheus + Grafana, OpenTelemetry, ELK/Loki, 분산 트레이싱, 알림, SLI/SLO/SLA, APM 도구 비교.', readingTime: '20분 읽기', keywords: ['모니터링 관측가능성', 'prometheus grafana', 'opentelemetry', 'elk 스택', '분산 트레이싱 jaeger', 'slo sli 오류 예산', 'datadog vs grafana'] },
     },
   },
+  {
+    slug: 'ai-engineering-guide',
+    title: 'AI Engineering Guide 2026: LLMs, RAG, Prompt Engineering, Fine-Tuning & AI Agents',
+    description: 'Complete AI engineering guide covering prompt engineering, RAG pipelines, embeddings, vector databases, fine-tuning, LLM APIs, AI agents, evaluation frameworks, and production deployment patterns.',
+    date: '2026-02-27',
+    author: 'DevToolBox Team',
+    readingTime: '25 min read',
+    keywords: ['ai engineering guide', 'llm api tutorial', 'rag pipeline architecture', 'prompt engineering techniques', 'vector database comparison', 'fine-tuning vs rag', 'ai agents tool use', 'llm evaluation testing', 'openai vs anthropic vs google', 'embeddings semantic search'],
+    relatedTools: ['json-formatter', 'regex-tester', 'base64-encoder'],
+    relatedPosts: ['python-web-guide', 'api-design-guide', 'typescript-advanced-guide'],
+    translations: {
+      zh: { title: 'AI 工程指南 2026：LLM、RAG、提示工程、微调与 AI Agent', description: '全面的 AI 工程指南，涵盖提示工程、RAG 管线、向量嵌入、向量数据库、微调、LLM API、AI Agent、评估框架与生产部署模式。', readingTime: '25 分钟阅读', keywords: ['ai工程指南', 'llm api教程', 'rag管线架构', '提示工程技巧', '向量数据库对比', '微调vs rag', 'ai智能体工具调用', 'llm评估测试', 'openai vs anthropic vs google', '嵌入向量语义搜索'] },
+      fr: { title: 'Guide Ingénierie IA 2026: LLMs, RAG, Prompt Engineering, Fine-Tuning & Agents IA', description: 'Guide complet d\'ingénierie IA: prompt engineering, pipelines RAG, embeddings, bases de données vectorielles, fine-tuning, APIs LLM, agents IA, frameworks d\'évaluation et déploiement en production.', readingTime: '25 min de lecture', keywords: ['guide ingénierie ia', 'tutoriel api llm', 'architecture pipeline rag', 'techniques prompt engineering', 'comparaison bases vectorielles'] },
+      de: { title: 'KI-Engineering Leitfaden 2026: LLMs, RAG, Prompt Engineering, Fine-Tuning & KI-Agenten', description: 'Umfassender KI-Engineering Leitfaden: Prompt Engineering, RAG-Pipelines, Embeddings, Vektordatenbanken, Fine-Tuning, LLM-APIs, KI-Agenten, Evaluierungs-Frameworks und Produktions-Deployment.', readingTime: '25 Min. Lesezeit', keywords: ['ki engineering leitfaden', 'llm api tutorial', 'rag pipeline architektur', 'prompt engineering techniken', 'vektordatenbank vergleich'] },
+      es: { title: 'Guía Ingeniería IA 2026: LLMs, RAG, Prompt Engineering, Fine-Tuning y Agentes IA', description: 'Guía completa de ingeniería IA: prompt engineering, pipelines RAG, embeddings, bases de datos vectoriales, fine-tuning, APIs LLM, agentes IA, frameworks de evaluación y despliegue en producción.', readingTime: '25 min de lectura', keywords: ['guía ingeniería ia', 'tutorial api llm', 'arquitectura pipeline rag', 'técnicas prompt engineering', 'comparación bases vectoriales'] },
+      ja: { title: 'AIエンジニアリングガイド2026：LLM、RAG、プロンプトエンジニアリング、ファインチューニング＆AIエージェント', description: '包括的なAIエンジニアリングガイド：プロンプトエンジニアリング、RAGパイプライン、エンベディング、ベクトルデータベース、ファインチューニング、LLM API、AIエージェント、評価フレームワーク、本番デプロイ。', readingTime: '25分', keywords: ['aiエンジニアリングガイド', 'llm apiチュートリアル', 'ragパイプライン', 'プロンプトエンジニアリング技術', 'ベクトルデータベース比較'] },
+      ko: { title: 'AI 엔지니어링 가이드 2026: LLM, RAG, 프롬프트 엔지니어링, 파인튜닝 & AI 에이전트', description: '종합 AI 엔지니어링 가이드: 프롬프트 엔지니어링, RAG 파이프라인, 임베딩, 벡터 데이터베이스, 파인튜닝, LLM API, AI 에이전트, 평가 프레임워크, 프로덕션 배포.', readingTime: '25분 읽기', keywords: ['ai 엔지니어링 가이드', 'llm api 튜토리얼', 'rag 파이프라인', '프롬프트 엔지니어링 기술', '벡터 데이터베이스 비교'] },
+    },
+  },
 ];
 
 /** Get post with localized metadata */
