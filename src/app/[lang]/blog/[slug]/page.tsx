@@ -449,6 +449,8 @@ import SwrGuide from '@/data/posts/swr-guide';
 import TanstackRouterGuide from '@/data/posts/tanstack-router-guide';
 import StorybookGuide from '@/data/posts/storybook-guide';
 import EslintGuide from '@/data/posts/eslint-guide';
+import CypressGuide from '@/data/posts/cypress-guide';
+import PrettierGuide from '@/data/posts/prettier-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -888,6 +890,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'tanstack-router-guide': TanstackRouterGuide,
   'storybook-guide': StorybookGuide,
   'eslint-guide': EslintGuide,
+  'cypress-guide': CypressGuide,
+  'prettier-guide': PrettierGuide,
 };
 
 /* i18n for UI strings on this page */
