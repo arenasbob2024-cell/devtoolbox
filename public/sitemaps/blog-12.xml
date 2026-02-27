@@ -6271,4 +6271,664 @@
       <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/database-design-guide"/>
       <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/database-design-guide"/>
   </url>
+  <url>
+    <loc>https://viadreams.cc/en/blog/spring-boot-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/spring-boot-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/fr/blog/spring-boot-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/spring-boot-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/de/blog/spring-boot-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/spring-boot-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/it/blog/spring-boot-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/spring-boot-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/es/blog/spring-boot-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/spring-boot-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pt/blog/spring-boot-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/spring-boot-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/nl/blog/spring-boot-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/spring-boot-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pl/blog/spring-boot-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/spring-boot-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/sv/blog/spring-boot-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/spring-boot-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/no/blog/spring-boot-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/spring-boot-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/zh/blog/spring-boot-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/spring-boot-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ja/blog/spring-boot-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/spring-boot-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ko/blog/spring-boot-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/spring-boot-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/id/blog/spring-boot-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/spring-boot-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/th/blog/spring-boot-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/spring-boot-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/spring-boot-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/en/blog/elasticsearch-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/elasticsearch-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/fr/blog/elasticsearch-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/elasticsearch-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/de/blog/elasticsearch-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/elasticsearch-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/it/blog/elasticsearch-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/elasticsearch-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/es/blog/elasticsearch-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/elasticsearch-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pt/blog/elasticsearch-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/elasticsearch-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/nl/blog/elasticsearch-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/elasticsearch-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pl/blog/elasticsearch-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/elasticsearch-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/sv/blog/elasticsearch-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/elasticsearch-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/no/blog/elasticsearch-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/elasticsearch-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/zh/blog/elasticsearch-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/elasticsearch-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ja/blog/elasticsearch-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/elasticsearch-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ko/blog/elasticsearch-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/elasticsearch-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/id/blog/elasticsearch-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/elasticsearch-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/th/blog/elasticsearch-guide</loc>
+    <lastmod>2026-02-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/blog/elasticsearch-guide"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/blog/elasticsearch-guide"/>
+  </url>
 </urlset>

@@ -387,6 +387,8 @@ import DevopsGuide from '@/data/posts/devops-guide';
 import ApiDesignGuide from '@/data/posts/api-design-guide';
 import NestjsGuide from '@/data/posts/nestjs-guide';
 import DatabaseDesignGuide from '@/data/posts/database-design-guide';
+import SpringBootGuide from '@/data/posts/spring-boot-guide';
+import ElasticsearchGuide from '@/data/posts/elasticsearch-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -764,6 +766,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'api-design-guide': ApiDesignGuide,
   'nestjs-guide': NestjsGuide,
   'database-design-guide': DatabaseDesignGuide,
+  'spring-boot-guide': SpringBootGuide,
+  'elasticsearch-guide': ElasticsearchGuide,
 };
 
 /* i18n for UI strings on this page */
