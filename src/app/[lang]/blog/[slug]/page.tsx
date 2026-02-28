@@ -469,6 +469,8 @@ import D3Guide from '@/data/posts/d3-guide';
 import ThreejsGuide from '@/data/posts/threejs-guide';
 import SocketIoGuide from '@/data/posts/socket-io-guide';
 import FirebaseGuide from '@/data/posts/firebase-guide';
+import AnsibleGuide from '@/data/posts/ansible-guide';
+import PrometheusGuide from '@/data/posts/prometheus-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -928,6 +930,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'threejs-guide': ThreejsGuide,
   'socket-io-guide': SocketIoGuide,
   'firebase-guide': FirebaseGuide,
+  'ansible-guide': AnsibleGuide,
+  'prometheus-guide': PrometheusGuide,
 };
 
 /* i18n for UI strings on this page */
