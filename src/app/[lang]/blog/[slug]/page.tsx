@@ -483,6 +483,8 @@ import CursorVsCopilotGuide from '@/data/posts/cursor-vs-copilot-guide';
 import SupabaseVsFirebaseGuide from '@/data/posts/supabase-vs-firebase-guide';
 import VercelVsNetlifyGuide from '@/data/posts/vercel-vs-netlify-guide';
 import PlaywrightVsCypressGuide from '@/data/posts/playwright-vs-cypress-guide';
+import CoolifyGuide from '@/data/posts/coolify-guide';
+import CaddyServerGuide from '@/data/posts/caddy-server-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -956,6 +958,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'supabase-vs-firebase-guide': SupabaseVsFirebaseGuide,
   'vercel-vs-netlify-guide': VercelVsNetlifyGuide,
   'playwright-vs-cypress-guide': PlaywrightVsCypressGuide,
+  'coolify-guide': CoolifyGuide,
+  'caddy-server-guide': CaddyServerGuide,
 };
 
 /* i18n for UI strings on this page */
