@@ -489,6 +489,8 @@ import TraefikGuide from '@/data/posts/traefik-guide';
 import LazygitGuide from '@/data/posts/lazygit-guide';
 import DevcontainerGuide from '@/data/posts/devcontainer-guide';
 import ConventionalCommitsGuide from '@/data/posts/conventional-commits-guide';
+import StarshipPromptGuide from '@/data/posts/starship-prompt-guide';
+import PodmanGuide from '@/data/posts/podman-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -968,6 +970,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'lazygit-guide': LazygitGuide,
   'devcontainer-guide': DevcontainerGuide,
   'conventional-commits-guide': ConventionalCommitsGuide,
+  'starship-prompt-guide': StarshipPromptGuide,
+  'podman-guide': PodmanGuide,
 };
 
 /* i18n for UI strings on this page */
