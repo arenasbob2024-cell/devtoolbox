@@ -473,6 +473,8 @@ import AnsibleGuide from '@/data/posts/ansible-guide';
 import PrometheusGuide from '@/data/posts/prometheus-guide';
 import GrafanaGuide from '@/data/posts/grafana-guide';
 import HelmGuide from '@/data/posts/helm-guide';
+import OpentelemetryGuide from '@/data/posts/opentelemetry-guide';
+import ArgocdGuide from '@/data/posts/argocd-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -936,6 +938,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'prometheus-guide': PrometheusGuide,
   'grafana-guide': GrafanaGuide,
   'helm-guide': HelmGuide,
+  'opentelemetry-guide': OpentelemetryGuide,
+  'argocd-guide': ArgocdGuide,
 };
 
 /* i18n for UI strings on this page */
