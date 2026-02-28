@@ -475,6 +475,10 @@ import GrafanaGuide from '@/data/posts/grafana-guide';
 import HelmGuide from '@/data/posts/helm-guide';
 import OpentelemetryGuide from '@/data/posts/opentelemetry-guide';
 import ArgocdGuide from '@/data/posts/argocd-guide';
+import OllamaGuide from '@/data/posts/ollama-guide';
+import LangchainGuide from '@/data/posts/langchain-guide';
+import RagGuide from '@/data/posts/rag-guide';
+import VectorDatabaseGuide from '@/data/posts/vector-database-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -940,6 +944,10 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'helm-guide': HelmGuide,
   'opentelemetry-guide': OpentelemetryGuide,
   'argocd-guide': ArgocdGuide,
+  'ollama-guide': OllamaGuide,
+  'langchain-guide': LangchainGuide,
+  'rag-guide': RagGuide,
+  'vector-database-guide': VectorDatabaseGuide,
 };
 
 /* i18n for UI strings on this page */
