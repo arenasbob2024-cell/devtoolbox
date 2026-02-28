@@ -467,6 +467,8 @@ import PocketbaseGuide from '@/data/posts/pocketbase-guide';
 import RxjsGuide from '@/data/posts/rxjs-guide';
 import D3Guide from '@/data/posts/d3-guide';
 import ThreejsGuide from '@/data/posts/threejs-guide';
+import SocketIoGuide from '@/data/posts/socket-io-guide';
+import FirebaseGuide from '@/data/posts/firebase-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -924,6 +926,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'rxjs-guide': RxjsGuide,
   'd3-guide': D3Guide,
   'threejs-guide': ThreejsGuide,
+  'socket-io-guide': SocketIoGuide,
+  'firebase-guide': FirebaseGuide,
 };
 
 /* i18n for UI strings on this page */
