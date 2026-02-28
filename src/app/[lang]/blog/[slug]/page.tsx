@@ -465,6 +465,8 @@ import FastifyGuide from '@/data/posts/fastify-guide';
 import ShadcnGuide from '@/data/posts/shadcn-guide';
 import PocketbaseGuide from '@/data/posts/pocketbase-guide';
 import RxjsGuide from '@/data/posts/rxjs-guide';
+import D3Guide from '@/data/posts/d3-guide';
+import ThreejsGuide from '@/data/posts/threejs-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -920,6 +922,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'shadcn-guide': ShadcnGuide,
   'pocketbase-guide': PocketbaseGuide,
   'rxjs-guide': RxjsGuide,
+  'd3-guide': D3Guide,
+  'threejs-guide': ThreejsGuide,
 };
 
 /* i18n for UI strings on this page */
