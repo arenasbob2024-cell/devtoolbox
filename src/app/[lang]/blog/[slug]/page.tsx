@@ -487,6 +487,8 @@ import CoolifyGuide from '@/data/posts/coolify-guide';
 import CaddyServerGuide from '@/data/posts/caddy-server-guide';
 import TraefikGuide from '@/data/posts/traefik-guide';
 import LazygitGuide from '@/data/posts/lazygit-guide';
+import DevcontainerGuide from '@/data/posts/devcontainer-guide';
+import ConventionalCommitsGuide from '@/data/posts/conventional-commits-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -964,6 +966,8 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'caddy-server-guide': CaddyServerGuide,
   'traefik-guide': TraefikGuide,
   'lazygit-guide': LazygitGuide,
+  'devcontainer-guide': DevcontainerGuide,
+  'conventional-commits-guide': ConventionalCommitsGuide,
 };
 
 /* i18n for UI strings on this page */
