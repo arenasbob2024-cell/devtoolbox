@@ -4041,7 +4041,7 @@
     "json-to-table": {
       "name": "JSON to Table",
       "description": "Convert JSON data to an interactive, sortable HTML table with search, filter, and CSV export",
-      "pageTitle": "JSON to Table Converter - View JSON as Interactive Table | DevToolBox",
+      "pageTitle": "JSON to Table Converter - View JSON as Interactive Table",
       "pageDescription": "Convert JSON data to a sortable, filterable HTML table online. Paste JSON arrays or objects, view as interactive table, search rows, sort columns, and download as CSV. Free, fast, and private.",
       "seoTitle": "About JSON to Table Conversion",
       "seoContent": "JSON (JavaScript Object Notation) is the most common data format for APIs and configuration files. While JSON is great for machines, viewing large JSON arrays as raw text is hard for humans. This JSON to Table converter transforms JSON data into an interactive HTML table with sortable columns, row search and filtering, and CSV export. It handles arrays of objects (the most common API response format), nested objects using dot notation flattening (e.g. address.city), and single objects displayed as one-row tables. All processing happens in your browser — your data never leaves your device.",
@@ -4083,19 +4083,19 @@
     "base64-image-converter": {
       "name": "ตัวแปลงรูปภาพ Base64",
       "description": "แปลงรูปภาพเป็นสตริง Base64 และ Base64 เป็นรูปภาพ",
-      "pageTitle": "ตัวแปลงรูปภาพ Base64 - แปลงรูปภาพเป็น Base64 ออนไลน์ฟรี | DevToolBox",
+      "pageTitle": "ตัวแปลงรูปภาพ Base64 - แปลงรูปภาพเป็น Base64 ออนไลน์ฟรี",
       "pageDescription": "ตัวแปลงรูปภาพ Base64 ออนไลน์ฟรี รองรับ PNG, JPG, GIF, SVG, WebP"
     },
     "jwt-decoder-online": {
       "name": "JWT Decoder ออนไลน์",
       "description": "ถอดรหัส JWT token ออนไลน์ฟรี",
-      "pageTitle": "JWT Decoder ออนไลน์ - ถอดรหัส JWT Token ฟรี | DevToolBox",
+      "pageTitle": "JWT Decoder ออนไลน์ - ถอดรหัส JWT Token ฟรี",
       "pageDescription": "ถอดรหัส JWT token ออนไลน์ฟรี"
     },
     "regex-tester-online": {
       "name": "Regex Tester ออนไลน์",
       "description": "ทดสอบ regular expression ออนไลน์แบบเรียลไทม์",
-      "pageTitle": "Regex Tester ออนไลน์ - ทดสอบ Regular Expression ฟรี | DevToolBox",
+      "pageTitle": "Regex Tester ออนไลน์ - ทดสอบ Regular Expression ฟรี",
       "pageDescription": "เครื่องมือทดสอบ regex ออนไลน์ฟรี พร้อมการจับคู่แบบเรียลไทม์"
     },
     "javascript-minifier": {

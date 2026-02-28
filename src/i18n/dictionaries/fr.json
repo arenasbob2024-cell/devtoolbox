@@ -4041,7 +4041,7 @@
     "json-to-table": {
       "name": "JSON to Table",
       "description": "Convert JSON data to an interactive, sortable HTML table with search, filter, and CSV export",
-      "pageTitle": "JSON to Table Converter - View JSON as Interactive Table | DevToolBox",
+      "pageTitle": "JSON to Table Converter - View JSON as Interactive Table",
       "pageDescription": "Convert JSON data to a sortable, filterable HTML table online. Paste JSON arrays or objects, view as interactive table, search rows, sort columns, and download as CSV. Free, fast, and private.",
       "seoTitle": "About JSON to Table Conversion",
       "seoContent": "JSON (JavaScript Object Notation) is the most common data format for APIs and configuration files. While JSON is great for machines, viewing large JSON arrays as raw text is hard for humans. This JSON to Table converter transforms JSON data into an interactive HTML table with sortable columns, row search and filtering, and CSV export. It handles arrays of objects (the most common API response format), nested objects using dot notation flattening (e.g. address.city), and single objects displayed as one-row tables. All processing happens in your browser — your data never leaves your device.",
@@ -4083,19 +4083,19 @@
     "base64-image-converter": {
       "name": "Convertisseur Image Base64",
       "description": "Convertir des images en chaines Base64 et inversement",
-      "pageTitle": "Convertisseur Image Base64 - Convertir Image en Base64 en Ligne | DevToolBox",
+      "pageTitle": "Convertisseur Image Base64 - Convertir Image en Base64 en Ligne",
       "pageDescription": "Convertisseur image Base64 gratuit en ligne. Supporte PNG, JPG, GIF, SVG, WebP."
     },
     "jwt-decoder-online": {
       "name": "Decodeur JWT en Ligne",
       "description": "Decodez des tokens JWT en ligne gratuitement",
-      "pageTitle": "Decodeur JWT en Ligne - Decoder Token JWT Gratuit | DevToolBox",
+      "pageTitle": "Decodeur JWT en Ligne - Decoder Token JWT Gratuit",
       "pageDescription": "Decodez des tokens JWT en ligne gratuitement."
     },
     "regex-tester-online": {
       "name": "Testeur Regex en Ligne",
       "description": "Testez des expressions regulieres en ligne avec correspondance en temps reel",
-      "pageTitle": "Testeur Regex en Ligne - Tester les Expressions Regulieres | DevToolBox",
+      "pageTitle": "Testeur Regex en Ligne - Tester les Expressions Regulieres",
       "pageDescription": "Testeur regex gratuit en ligne avec correspondance en temps reel."
     },
     "javascript-minifier": {

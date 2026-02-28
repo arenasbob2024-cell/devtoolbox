@@ -4041,7 +4041,7 @@
     "json-to-table": {
       "name": "JSON to Table",
       "description": "Convert JSON data to an interactive, sortable HTML table with search, filter, and CSV export",
-      "pageTitle": "JSON to Table Converter - View JSON as Interactive Table | DevToolBox",
+      "pageTitle": "JSON to Table Converter - View JSON as Interactive Table",
       "pageDescription": "Convert JSON data to a sortable, filterable HTML table online. Paste JSON arrays or objects, view as interactive table, search rows, sort columns, and download as CSV. Free, fast, and private.",
       "seoTitle": "About JSON to Table Conversion",
       "seoContent": "JSON (JavaScript Object Notation) is the most common data format for APIs and configuration files. While JSON is great for machines, viewing large JSON arrays as raw text is hard for humans. This JSON to Table converter transforms JSON data into an interactive HTML table with sortable columns, row search and filtering, and CSV export. It handles arrays of objects (the most common API response format), nested objects using dot notation flattening (e.g. address.city), and single objects displayed as one-row tables. All processing happens in your browser — your data never leaves your device.",
@@ -4083,19 +4083,19 @@
     "base64-image-converter": {
       "name": "Base64 画像変換ツール",
       "description": "画像を Base64 文字列に変換、または Base64 を画像に変換",
-      "pageTitle": "Base64 画像変換ツール - 画像をBase64に無料変換 | DevToolBox",
+      "pageTitle": "Base64 画像変換ツール - 画像をBase64に無料変換",
       "pageDescription": "無料オンライン Base64 画像変換ツール。PNG、JPG、GIF、SVG、WebP 対応。"
     },
     "jwt-decoder-online": {
       "name": "JWT デコーダーオンライン",
       "description": "JWTトークンを無料でオンラインデコード",
-      "pageTitle": "JWT デコーダーオンライン - JWT トークン無料デコード | DevToolBox",
+      "pageTitle": "JWT デコーダーオンライン - JWT トークン無料デコード",
       "pageDescription": "JWTトークンを無料でオンラインデコード。"
     },
     "regex-tester-online": {
       "name": "正規表現テスター オンライン",
       "description": "リアルタイムマッチングで正規表現をオンラインテスト",
-      "pageTitle": "正規表現テスター オンライン - 無料で正規表現をテスト | DevToolBox",
+      "pageTitle": "正規表現テスター オンライン - 無料で正規表現をテスト",
       "pageDescription": "無料オンライン正規表現テスター。リアルタイムマッチング対応。"
     },
     "javascript-minifier": {
