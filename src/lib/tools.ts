@@ -181,6 +181,16 @@ export const tools: Tool[] = [
     relatedTools: ['hex-to-decimal', 'hex-to-binary', 'octal-decimal-converter', 'binary-text'],
   },
   {
+    id: 'text-converter',
+    name: 'Text Converter',
+    description: 'Convert text between different cases and formats - lowercase, uppercase, title case, sentence case, alternating case, and inverse case',
+    icon: 'Aa',
+    category: 'text',
+    keywords: ['text converter', 'case converter', 'text case converter', 'lowercase converter', 'uppercase converter', 'title case converter', 'sentence case converter', 'text transformation', 'text format', 'text case changer', 'case changer', 'online text converter', 'text to lowercase', 'text to uppercase', 'text to title case', 'text to sentence case'],
+    path: '/tools/text-converter',
+    relatedTools: ['text-diff', 'string-case', 'word-counter', 'line-sorter'],
+  },
+  {
     id: 'text-diff',
     name: 'Text Diff Checker',
     description: 'Compare two texts side by side and highlight differences. Free online diff tool for code, config files, and documents.',

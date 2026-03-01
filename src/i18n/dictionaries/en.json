@@ -766,6 +766,30 @@
         "Debugging low-level data formats"
       ]
     },
+    "text-converter": {
+      "name": "Text Converter",
+      "description": "Convert text between different cases and formats - lowercase, uppercase, title case, and more",
+      "pageTitle": "Text Converter Online Free — Change Text Case & Format Instantly",
+      "pageDescription": "Free online text converter. Change text to lowercase, uppercase, title case, sentence case, alternating case, or inverse case. Convert multiple texts at once. No signup required.",
+      "conversionType": "Conversion Type",
+      "lowercase": "lowercase",
+      "uppercase": "UPPERCASE",
+      "titleCase": "Title Case",
+      "sentenceCase": "Sentence case",
+      "alternating": "aLtErNaTiNg CaSe",
+      "inverseCase": "INVERSE CASE",
+      "inputText": "Input Text",
+      "outputText": "Output Text",
+      "inputPlaceholder": "Enter or paste your text here...",
+      "convertButton": "Convert Text",
+      "featuresTitle": "Features",
+      "feature1": "支持6+种文本大小写转换",
+      "feature2": "实时转换，边输入边转换",
+      "feature3": "批量文本处理",
+      "feature4": "100% 客户端处理 - 数据隐私安全",
+      "seoTitle": "About Text Conversion",
+      "seoContent": "Text conversion tools help transform text between different cases and formats. Lowercase converts all letters to small letters. Uppercase converts all letters to capital letters. Title case capitalizes the first letter of each word. Sentence case capitalizes only the first letter of the sentence. Alternating case switches between upper and lower case. Inverse case swaps all uppercase letters to lowercase and vice versa."
+    },
     "text-diff": {
       "name": "Text Diff Checker",
       "description": "Compare two texts and highlight the differences",

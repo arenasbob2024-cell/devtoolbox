@@ -491,6 +491,16 @@ import DevcontainerGuide from '@/data/posts/devcontainer-guide';
 import ConventionalCommitsGuide from '@/data/posts/conventional-commits-guide';
 import StarshipPromptGuide from '@/data/posts/starship-prompt-guide';
 import PodmanGuide from '@/data/posts/podman-guide';
+import ClaudeVsChatgptDeveloperGuide from '@/data/posts/claude-vs-chatgpt-developer-guide';
+import BunVsNodejsPerformance2025 from '@/data/posts/bun-vs-nodejs-performance-2025';
+import HonoVsExpressFrameworkComparison from '@/data/posts/hono-vs-express-framework-comparison';
+import NeonVsSupabasePostgres from '@/data/posts/neon-vs-supabase-postgres';
+import DrizzleVsPrismaOrmComparison from '@/data/posts/drizzle-vs-prisma-orm-comparison';
+import TurborepoVsNxMonorepo from '@/data/posts/turborepo-vs-nx-monorepo';
+import BunVsDenoRuntime from '@/data/posts/bun-vs-deno-runtime';
+import ElysiaVsFastifyPerformance from '@/data/posts/elysia-vs-fastify-performance';
+import ValibotVsZodValidation from '@/data/posts/valibot-vs-zod-validation';
+import MernStack2025Guide from '@/data/posts/mern-stack-2025-guide';
 
 const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'uuid-v4-vs-v7-vs-ulid-vs-nanoid': UuidComparison,
@@ -972,6 +982,16 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'conventional-commits-guide': ConventionalCommitsGuide,
   'starship-prompt-guide': StarshipPromptGuide,
   'podman-guide': PodmanGuide,
+  'claude-vs-chatgpt-developer-guide': ClaudeVsChatgptDeveloperGuide,
+  'bun-vs-nodejs-performance-2025': BunVsNodejsPerformance2025,
+  'hono-vs-express-framework-comparison': HonoVsExpressFrameworkComparison,
+  'neon-vs-supabase-postgres': NeonVsSupabasePostgres,
+  'drizzle-vs-prisma-orm-comparison': DrizzleVsPrismaOrmComparison,
+  'turborepo-vs-nx-monorepo': TurborepoVsNxMonorepo,
+  'bun-vs-deno-runtime': BunVsDenoRuntime,
+  'elysia-vs-fastify-performance': ElysiaVsFastifyPerformance,
+  'valibot-vs-zod-validation': ValibotVsZodValidation,
+  'mern-stack-2025-guide': MernStack2025Guide,
 };
 
 /* i18n for UI strings on this page */
