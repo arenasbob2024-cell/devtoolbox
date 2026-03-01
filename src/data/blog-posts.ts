@@ -11935,6 +11935,76 @@ export const blogPosts: BlogPost[] = [
       zh: { title: 'pnpm vs Yarn vs npm：JavaScript 包管理器对比 2025', description: '对比 pnpm、Yarn 和 npm 包管理器。性能、磁盘空间、安全性和 monorepo 支持。', readingTime: '11 分钟阅读', keywords: ['pnpm vs yarn vs npm', '包管理器对比 2025', 'npm 替代品', 'javascript 包管理器', 'pnpm 性能'] }
     },
   },
+  {
+    slug: 'deno-2-vs-bun',
+    title: 'Deno 2 vs Bun: JavaScript Runtime Comparison 2025',
+    description: 'Compare Deno 2 and Bun JavaScript runtimes. Performance, compatibility, ecosystem, and use cases.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '11 min read',
+    keywords: ['deno 2 vs bun', 'javascript runtime 2025', 'deno vs bun performance', 'nodejs alternative', 'deno 2 features'],
+    relatedTools: ['typescript-to-javascript', 'json-formatter'],
+    relatedPosts: ['bun-vs-nodejs-performance-2025', 'bun-vs-deno-runtime'],
+    translations: {
+      zh: { title: 'Deno 2 vs Bun：JavaScript 运行时对比 2025', description: '对比 Deno 2 和 Bun JavaScript 运行时。性能、兼容性、生态系统和使用场景。', readingTime: '11 分钟阅读', keywords: ['deno 2 vs bun', 'javascript 运行时 2025', 'deno vs bun 性能', 'nodejs 替代品', 'deno 2 功能'] }
+    },
+  },
+  {
+    slug: 'effect-ts-vs-zod',
+    title: 'Effect-TS vs Zod: Functional Programming vs Schema Validation',
+    description: 'Compare Effect-TS and Zod for TypeScript validation. Functional approach vs schema-first design.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '12 min read',
+    keywords: ['effect-ts vs zod', 'typescript validation', 'functional programming typescript', 'schema validation', 'effect ts'],
+    relatedTools: ['json-to-zod', 'json-to-typescript'],
+    relatedPosts: ['valibot-vs-zod-validation', 'zod-validation-guide'],
+    translations: {
+      zh: { title: 'Effect-TS vs Zod：函数式编程 vs Schema 验证', description: '对比 Effect-TS 和 Zod 在 TypeScript 验证中的应用。函数式方法 vs Schema 优先设计。', readingTime: '12 分钟阅读', keywords: ['effect-ts vs zod', 'typescript 验证', '函数式编程 typescript', 'schema 验证', 'effect ts'] }
+    },
+  },
+  {
+    slug: 'solid-start-vs-nextjs',
+    title: 'SolidStart vs Next.js: Full-Stack Framework Comparison 2025',
+    description: 'Compare SolidStart and Next.js full-stack frameworks. Performance, DX, ecosystem, and deployment.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '13 min read',
+    keywords: ['solid-start vs nextjs', 'solidjs framework', 'full-stack framework 2025', 'nextjs alternative', 'solidstart'],
+    relatedTools: ['json-to-typescript', 'typescript-to-javascript'],
+    relatedPosts: ['nextjs-vs-remix', 'react-vs-vue-2026'],
+    translations: {
+      zh: { title: 'SolidStart vs Next.js：全栈框架对比 2025', description: '对比 SolidStart 和 Next.js 全栈框架。性能、开发者体验、生态系统和部署。', readingTime: '13 分钟阅读', keywords: ['solid-start vs nextjs', 'solidjs 框架', '全栈框架 2025', 'nextjs 替代品', 'solidstart'] }
+    },
+  },
+  {
+    slug: 'htmx-vs-react',
+    title: 'HTMX vs React: Hypermedia vs SPA Architecture Comparison',
+    description: 'Compare HTMX and React for building web applications. Hypermedia-driven vs component-based architecture.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '12 min read',
+    keywords: ['htmx vs react', 'hypermedia vs spa', 'htmx tutorial', 'react alternative', 'server-side rendering'],
+    relatedTools: ['html-to-jsx', 'json-formatter'],
+    relatedPosts: ['react-vs-vue-2026', 'nextjs-vs-remix'],
+    translations: {
+      zh: { title: 'HTMX vs React：超媒体 vs SPA 架构对比', description: '对比 HTMX 和 React 构建 Web 应用。超媒体驱动 vs 基于组件的架构。', readingTime: '12 分钟阅读', keywords: ['htmx vs react', '超媒体 vs spa', 'htmx 教程', 'react 替代品', '服务端渲染'] }
+    },
+  },
+  {
+    slug: 'qwik-vs-astro',
+    title: 'Qwik vs Astro: Resumability vs Islands Architecture Comparison',
+    description: 'Compare Qwik and Astro frameworks. Resumability concept vs islands architecture for performance.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '11 min read',
+    keywords: ['qwik vs astro', 'resumability framework', 'islands architecture', 'qwik framework', 'astro comparison'],
+    relatedTools: ['json-to-typescript', 'typescript-to-javascript'],
+    relatedPosts: ['fresh-vs-astro', 'astro-vs-nextjs-2026'],
+    translations: {
+      zh: { title: 'Qwik vs Astro：可恢复性 vs Islands 架构对比', description: '对比 Qwik 和 Astro 框架。可恢复性概念 vs Islands 架构的性能优化。', readingTime: '11 分钟阅读', keywords: ['qwik vs astro', '可恢复性框架', 'islands 架构', 'qwik 框架', 'astro 对比'] }
+    },
+  },
 ];
 
 /** Get post with localized metadata */
