@@ -1,11 +1,49 @@
 import type { Metadata } from 'next';
+import ToolSeoServer from '@/components/ToolSeoServer';
+import { getDictionary } from '@/i18n/getDictionary';
+import { i18n, type Locale } from '@/i18n/config';
 
-export const metadata: Metadata = {
-  title: 'Text Diff Tool Online - DevToolBox',
-  description: 'Compare two texts side-by-side. Free online text difference checker.',
-  keywords: ['text diff tool', 'text compare online', 'diff checker', 'text comparison'],
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang: rawLang } = await params;
+  const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
+  const dict = await getDictionary(lang);
+  const t = dict.tools['text-diff-tool'];
+  const url = `https://viadreams.cc/${lang}/tools/text-diff-tool`;
+  return {
+    title: t.pageTitle,
+    description: t.pageDescription,
+    openGraph: {
+      title: `${t.pageTitle} | DevToolBox`,
+      description: t.pageDescription,
+      url,
+      type: 'website',
+      siteName: 'DevToolBox',
+      images: [{ url: 'https://viadreams.cc/og-image.png', width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${t.pageTitle} | DevToolBox`,
+      description: t.pageDescription,
+      images: ['https://viadreams.cc/og-image.png'],
+    },
+    alternates: {
+      canonical: url,
+      languages: {
+        ...Object.fromEntries(
+          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/text-diff-tool`])
+        ),
+        'x-default': `https://viadreams.cc/en/tools/text-diff-tool`,
+      },
+    },
+  };
+}
 
-export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{}</>;
+export default async function Layout({ children, params }: { children: React.ReactNode; params: Promise<{ lang: string }> }) {
+  const { lang: rawLang } = await params;
+  const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
+  return (
+    <ToolSeoServer toolId="text-diff-tool" lang={lang}>
+      {children}
+    </ToolSeoServer>
+  );
 }

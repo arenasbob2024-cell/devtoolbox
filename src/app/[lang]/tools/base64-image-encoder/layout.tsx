@@ -1,10 +1,49 @@
 import type { Metadata } from 'next';
+import ToolSeoServer from '@/components/ToolSeoServer';
+import { getDictionary } from '@/i18n/getDictionary';
+import { i18n, type Locale } from '@/i18n/config';
 
-export const metadata: Metadata = {
-  title: 'Base64 Image Encoder - Convert Image to Base64 Online',
-  description: 'Convert images to Base64 strings for embedding in HTML, CSS, and JSON.',
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang: rawLang } = await params;
+  const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
+  const dict = await getDictionary(lang);
+  const t = dict.tools['base64-image-encoder'];
+  const url = `https://viadreams.cc/${lang}/tools/base64-image-encoder`;
+  return {
+    title: t.pageTitle,
+    description: t.pageDescription,
+    openGraph: {
+      title: `${t.pageTitle} | DevToolBox`,
+      description: t.pageDescription,
+      url,
+      type: 'website',
+      siteName: 'DevToolBox',
+      images: [{ url: 'https://viadreams.cc/og-image.png', width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${t.pageTitle} | DevToolBox`,
+      description: t.pageDescription,
+      images: ['https://viadreams.cc/og-image.png'],
+    },
+    alternates: {
+      canonical: url,
+      languages: {
+        ...Object.fromEntries(
+          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/base64-image-encoder`])
+        ),
+        'x-default': `https://viadreams.cc/en/tools/base64-image-encoder`,
+      },
+    },
+  };
+}
 
-export default function Layout({ children }: { children: React.ReactNode }) {
-  return children;
+export default async function Layout({ children, params }: { children: React.ReactNode; params: Promise<{ lang: string }> }) {
+  const { lang: rawLang } = await params;
+  const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
+  return (
+    <ToolSeoServer toolId="base64-image-encoder" lang={lang}>
+      {children}
+    </ToolSeoServer>
+  );
 }

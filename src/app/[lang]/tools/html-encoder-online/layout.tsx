@@ -1,16 +1,49 @@
 import type { Metadata } from 'next';
+import ToolSeoServer from '@/components/ToolSeoServer';
+import { getDictionary } from '@/i18n/getDictionary';
+import { i18n, type Locale } from '@/i18n/config';
 
-export const metadata: Metadata = {
-  title: 'HTML Encoder Online - Encode HTML Entities Free',
-  description: 'Free online HTML encoder. Convert special characters to HTML entities (&amp;, &lt;, &gt;, &quot;) instantly in your browser.',
-  keywords: ['html encoder online', 'html entity encoder', 'encode html online', 'html special characters encoder', 'html escape tool'],
-  openGraph: {
-    title: 'HTML Encoder Online - Encode HTML Entities Free',
-    description: 'Encode and decode HTML entities instantly. Convert special characters online for free.',
-    type: 'website',
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang: rawLang } = await params;
+  const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
+  const dict = await getDictionary(lang);
+  const t = dict.tools['html-encoder-online'];
+  const url = `https://viadreams.cc/${lang}/tools/html-encoder-online`;
+  return {
+    title: t.pageTitle,
+    description: t.pageDescription,
+    openGraph: {
+      title: `${t.pageTitle} | DevToolBox`,
+      description: t.pageDescription,
+      url,
+      type: 'website',
+      siteName: 'DevToolBox',
+      images: [{ url: 'https://viadreams.cc/og-image.png', width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${t.pageTitle} | DevToolBox`,
+      description: t.pageDescription,
+      images: ['https://viadreams.cc/og-image.png'],
+    },
+    alternates: {
+      canonical: url,
+      languages: {
+        ...Object.fromEntries(
+          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/html-encoder-online`])
+        ),
+        'x-default': `https://viadreams.cc/en/tools/html-encoder-online`,
+      },
+    },
+  };
+}
 
-export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+export default async function Layout({ children, params }: { children: React.ReactNode; params: Promise<{ lang: string }> }) {
+  const { lang: rawLang } = await params;
+  const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
+  return (
+    <ToolSeoServer toolId="html-encoder-online" lang={lang}>
+      {children}
+    </ToolSeoServer>
+  );
 }
