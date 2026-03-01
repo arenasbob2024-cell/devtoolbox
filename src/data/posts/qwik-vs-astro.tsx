@@ -467,9 +467,9 @@ const staticItems = await loadItems();
   <h1>My Store</h1>
   
   <ul>
-    {staticItems.map(item => (
-      <li>{item.name}: ${item.price}</li>
-    ))}
+    {'{staticItems.map(item => ('}
+      <li>{'{item.name}'}: {'${item.price}'}</li>
+    {'))}'}
   </ul>
   
   <!-- Interactive island - hydrates when visible -->
