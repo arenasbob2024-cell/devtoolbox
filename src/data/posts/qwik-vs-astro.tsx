@@ -565,7 +565,7 @@ export default function Counter() {
           <ul style={{ lineHeight: 2, color: 'var(--text-secondary)', paddingLeft: 20, margin: 0, fontSize: 14 }}>
             <li>{isZh ? '博客/文档网站' : 'Blogs/docs sites'}</li>
             <li>{isZh ? '营销页面' : 'Marketing pages'}</li>
-            <isZh ? <li key="ecom">电商店面</li> : <li key="ecom">E-commerce storefronts</li>}
+            <li>{isZh ? '电商店面' : 'E-commerce storefronts'}</li>
             <li>{isZh ? '内容驱动网站' : 'Content-driven sites'}</li>
             <li>{isZh ? '多框架项目' : 'Multi-framework projects'}</li>
             <li>{isZh ? 'SEO关键页面' : 'SEO-critical pages'}</li>
