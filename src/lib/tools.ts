@@ -3014,6 +3014,37 @@ export const tools: Tool[] = [
     path: '/tools/sql-query-formatter',
     relatedTools: ['sql-formatter', 'json-formatter', 'css-beautifier', 'sql-to-prisma'],
   },
+  // Programmatic SEO — Password Generator variants
+  {
+    id: 'strong-password-generator',
+    name: 'Strong Password Generator',
+    description: 'Generate strong, secure passwords with customizable length and character types. Free online strong password creator.',
+    icon: '🔐',
+    category: 'generator',
+    keywords: ['strong password generator', 'strong password', 'generate strong password', 'strong password creator', 'create strong password', 'secure strong password', 'password strength generator'],
+    path: '/tools/strong-password-generator',
+    relatedTools: ['password-generator', 'secure-password-generator', 'random-password-generator', 'password-strength-checker'],
+  },
+  {
+    id: 'random-password-generator',
+    name: 'Random Password Generator',
+    description: 'Generate random passwords instantly with customizable options. Free online random password maker for secure accounts.',
+    icon: '🎲',
+    category: 'generator',
+    keywords: ['random password generator', 'random password', 'generate random password', 'random password maker', 'create random password', 'random secure password', 'password random generator'],
+    path: '/tools/random-password-generator',
+    relatedTools: ['password-generator', 'strong-password-generator', 'secure-password-generator', 'uuid-generator'],
+  },
+  {
+    id: 'secure-password-generator',
+    name: 'Secure Password Generator',
+    description: 'Generate secure passwords with cryptographically strong random generation. Create hack-proof passwords for maximum security.',
+    icon: '🔒',
+    category: 'generator',
+    keywords: ['secure password generator', 'secure password', 'generate secure password', 'secure password creator', 'create secure password', 'security password generator', 'safe password generator'],
+    path: '/tools/secure-password-generator',
+    relatedTools: ['password-generator', 'strong-password-generator', 'random-password-generator', 'bcrypt-generator'],
+  },
 ];
 
 export function getToolsByCategory(categoryId: string): Tool[] {

@@ -923,6 +923,156 @@
         "Generating secure tokens for applications"
       ]
     },
+    "strong-password-generator": {
+      "name": "Strong Password Generator",
+      "description": "Generate strong, secure passwords with customizable length and character types",
+      "pageTitle": "Strong Password Generator Online Free — Create Hack-Proof Passwords",
+      "pageDescription": "Free online strong password generator. Create ultra-strong passwords with 16+ characters, uppercase, lowercase, numbers & symbols. Generate unbreakable passwords instantly.",
+      "length": "Length",
+      "uppercaseOpt": "Uppercase (A-Z)",
+      "lowercaseOpt": "Lowercase (a-z)",
+      "numbersOpt": "Numbers (0-9)",
+      "symbolsOpt": "Symbols (!@#$...)",
+      "count": "Count:",
+      "strength": "Strength:",
+      "weak": "Weak",
+      "medium": "Medium",
+      "strong": "Strong",
+      "generatePasswords": "Generate Strong Passwords",
+      "emptyState": "Click \"Generate Strong Passwords\" to create secure passwords",
+      "selectAtLeastOne": "Please select at least one character type",
+      "seoTitle": "What Makes a Password Strong?",
+      "seoContent": "A strong password should be at least 16 characters long and include a mix of uppercase letters, lowercase letters, numbers, and special symbols. Strong passwords avoid dictionary words, personal information, and common patterns. This generator uses cryptographically secure random number generation (crypto.getRandomValues) to create truly strong passwords that are resistant to brute-force attacks and password cracking tools.",
+      "faqTitle": "Frequently Asked Questions",
+      "faqs": [
+        {
+          "q": "How long should a strong password be?",
+          "a": "A strong password should be at least 16 characters. Longer passwords are exponentially harder to crack. For maximum security, use 20+ characters."
+        },
+        {
+          "q": "What characters should a strong password include?",
+          "a": "Strong passwords should include uppercase letters (A-Z), lowercase letters (a-z), numbers (0-9), and special symbols (!@#$%^&*). The more variety, the stronger the password."
+        },
+        {
+          "q": "Are these strong passwords really secure?",
+          "a": "Yes. This tool uses the Web Crypto API (crypto.getRandomValues) which provides cryptographically secure random values. Passwords are generated entirely in your browser and never stored or transmitted."
+        }
+      ],
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Set password length to 16 or higher for maximum strength",
+        "Enable all character types: uppercase, lowercase, numbers, and symbols",
+        "Generate multiple passwords and choose the strongest one",
+        "Copy and use immediately — passwords are never stored"
+      ],
+      "useCasesTitle": "Common Use Cases",
+      "useCases": [
+        "Creating passwords for financial accounts",
+        "Securing admin and root accounts",
+        "Generating passwords for password managers",
+        "Creating uncrackable security credentials"
+      ]
+    },
+    "random-password-generator": {
+      "name": "Random Password Generator",
+      "description": "Generate random passwords instantly with customizable options",
+      "pageTitle": "Random Password Generator Online Free — Create Random Secure Passwords",
+      "pageDescription": "Free online random password generator. Create random passwords with custom length (8-64), uppercase, lowercase, numbers & symbols. Generate unlimited random passwords instantly.",
+      "length": "Length",
+      "uppercaseOpt": "Uppercase (A-Z)",
+      "lowercaseOpt": "Lowercase (a-z)",
+      "numbersOpt": "Numbers (0-9)",
+      "symbolsOpt": "Symbols (!@#$...)",
+      "count": "Count:",
+      "strength": "Strength:",
+      "weak": "Weak",
+      "medium": "Medium",
+      "strong": "Strong",
+      "generatePasswords": "Generate Random Passwords",
+      "emptyState": "Click \"Generate Random Passwords\" to create secure passwords",
+      "selectAtLeastOne": "Please select at least one character type",
+      "seoTitle": "Why Use Random Passwords?",
+      "seoContent": "Random passwords are essential for security because they eliminate patterns that hackers can predict. Unlike human-created passwords that often include birthdays, names, or common words, truly random passwords have no predictable patterns. This generator uses cryptographically secure randomness (crypto.getRandomValues) to ensure each password is completely unpredictable and unique.",
+      "faqTitle": "Frequently Asked Questions",
+      "faqs": [
+        {
+          "q": "Are random passwords really random?",
+          "a": "Yes. This tool uses the Web Crypto API (crypto.getRandomValues) which provides cryptographically secure random values, making the passwords truly unpredictable."
+        },
+        {
+          "q": "Why are random passwords more secure?",
+          "a": "Random passwords have no patterns or personal information that can be guessed. They resist dictionary attacks, social engineering, and brute-force methods much better than human-created passwords."
+        },
+        {
+          "q": "Should I use a different random password for each account?",
+          "a": "Yes. Using unique random passwords for each account ensures that if one password is compromised, your other accounts remain secure. Use a password manager to store them safely."
+        }
+      ],
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Choose your desired password length (8-64 characters)",
+        "Select which character types to include",
+        "Click generate to create multiple random passwords",
+        "Copy the password you like best"
+      ],
+      "useCasesTitle": "Common Use Cases",
+      "useCases": [
+        "Creating unique passwords for multiple accounts",
+        "Generating temporary passwords",
+        "Creating API keys and tokens",
+        "Setting up new user accounts"
+      ]
+    },
+    "secure-password-generator": {
+      "name": "Secure Password Generator",
+      "description": "Generate secure passwords with cryptographically strong random generation",
+      "pageTitle": "Secure Password Generator Online Free — Create Hack-Proof Secure Passwords",
+      "pageDescription": "Free online secure password generator. Create hack-proof passwords with military-grade encryption standards. Generate secure passwords with 16+ characters, mixed case, numbers & symbols.",
+      "length": "Length",
+      "uppercaseOpt": "Uppercase (A-Z)",
+      "lowercaseOpt": "Lowercase (a-z)",
+      "numbersOpt": "Numbers (0-9)",
+      "symbolsOpt": "Symbols (!@#$...)",
+      "count": "Count:",
+      "strength": "Strength:",
+      "weak": "Weak",
+      "medium": "Medium",
+      "strong": "Strong",
+      "generatePasswords": "Generate Secure Passwords",
+      "emptyState": "Click \"Generate Secure Passwords\" to create hack-proof passwords",
+      "selectAtLeastOne": "Please select at least one character type",
+      "seoTitle": "What Makes a Password Secure?",
+      "seoContent": "A secure password combines length, complexity, and randomness to resist all common attack methods. Secure passwords are at least 16 characters long, include uppercase and lowercase letters, numbers, and special symbols. They avoid dictionary words, personal information, keyboard patterns, and common substitutions. This generator creates secure passwords using cryptographically strong random number generation.",
+      "faqTitle": "Frequently Asked Questions",
+      "faqs": [
+        {
+          "q": "What makes a password secure?",
+          "a": "A secure password is long (16+ characters), complex (includes multiple character types), and random (no patterns or personal info). It should be unique and not reused across accounts."
+        },
+        {
+          "q": "How do secure passwords prevent hacking?",
+          "a": "Secure passwords resist brute-force attacks (too many combinations), dictionary attacks (no real words), and social engineering (no personal info). The randomness makes them impossible to guess."
+        },
+        {
+          "q": "Is this secure password generator safe to use?",
+          "a": "Yes. Passwords are generated entirely in your browser using the Web Crypto API. Nothing is sent to any server, and passwords are never stored or logged."
+        }
+      ],
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Set length to 16 or more characters for maximum security",
+        "Enable all character types for complexity",
+        "Generate multiple options and pick one",
+        "Store in a password manager immediately"
+      ],
+      "useCasesTitle": "Common Use Cases",
+      "useCases": [
+        "Securing online banking accounts",
+        "Protecting email and communication",
+        "Creating master passwords for password managers",
+        "Setting up two-factor authentication backups"
+      ]
+    },
     "sql-formatter": {
       "name": "SQL Formatter",
       "description": "Format and beautify SQL queries for better readability",
