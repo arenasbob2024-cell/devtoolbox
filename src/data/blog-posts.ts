@@ -11823,6 +11823,118 @@ export const blogPosts: BlogPost[] = [
       zh: { title: 'Biome vs ESLint + Prettier：代码检查和格式化工具对比', description: '对比 Biome 与 ESLint 和 Prettier。性能、功能、配置和迁移指南。', readingTime: '9 分钟阅读', keywords: ['biome vs eslint', 'biome vs prettier', 'javascript linter', '代码格式化', 'rust linter'] }
     },
   },
+  {
+    slug: 'upstash-vs-redis-labs',
+    title: 'Upstash vs Redis Labs: Serverless Redis Comparison 2025',
+    description: 'Compare Upstash and Redis Labs for serverless Redis. Pricing, performance, global distribution, and developer experience.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '10 min read',
+    keywords: ['upstash vs redis labs', 'serverless redis', 'redis cloud', 'edge database', 'upstash pricing'],
+    relatedTools: ['json-formatter', 'yaml-validator'],
+    relatedPosts: ['mongodb-vs-postgresql', 'postgresql-vs-mysql'],
+    translations: {
+      zh: { title: 'Upstash vs Redis Labs：Serverless Redis 对比 2025', description: '对比 Upstash 和 Redis Labs 无服务器 Redis。定价、性能、全球分布和开发者体验。', readingTime: '10 分钟阅读', keywords: ['upstash vs redis labs', '无服务器 redis', 'redis 云', '边缘数据库', 'upstash 定价'] }
+    },
+  },
+  {
+    slug: 'authentication-comparison',
+    title: 'Clerk vs NextAuth vs Supabase Auth: Authentication Solution Comparison',
+    description: 'Compare Clerk, NextAuth, and Supabase Auth for authentication. Features, pricing, ease of use, and security.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '13 min read',
+    keywords: ['clerk vs nextauth', 'supabase auth vs clerk', 'nextjs authentication', 'auth solution comparison', 'oauth integration'],
+    relatedTools: ['jwt-decoder', 'jwt-generator', 'hash-generator'],
+    relatedPosts: ['api-authentication-oauth-jwt-apikey', 'jwt-vs-session'],
+    translations: {
+      zh: { title: 'Clerk vs NextAuth vs Supabase Auth：认证方案对比', description: '对比 Clerk、NextAuth 和 Supabase Auth 认证方案。功能、定价、易用性和安全性。', readingTime: '13 分钟阅读', keywords: ['clerk vs nextauth', 'supabase auth vs clerk', 'nextjs 认证', '认证方案对比', 'oauth 集成'] }
+    },
+  },
+  {
+    slug: 'tailwind-css-v4-vs-v3',
+    title: 'Tailwind CSS v4 vs v3: Migration Guide and Performance Comparison',
+    description: 'Compare Tailwind CSS v4 and v3. New features, performance improvements, breaking changes, and migration guide.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '11 min read',
+    keywords: ['tailwind css v4 vs v3', 'tailwind v4 migration', 'tailwind css performance', 'css framework 2025', 'tailwind upgrade'],
+    relatedTools: ['css-to-tailwind', 'css-formatter', 'css-minifier'],
+    relatedPosts: ['tailwind-css-vs-bootstrap', 'tailwind-vs-css-modules'],
+    translations: {
+      zh: { title: 'Tailwind CSS v4 vs v3：迁移指南与性能对比', description: '对比 Tailwind CSS v4 和 v3。新功能、性能提升、破坏性变更和迁移指南。', readingTime: '11 分钟阅读', keywords: ['tailwind css v4 vs v3', 'tailwind v4 迁移', 'tailwind css 性能', 'css 框架 2025', 'tailwind 升级'] }
+    },
+  },
+  {
+    slug: 'trpc-vs-graphql',
+    title: 'tRPC vs GraphQL: End-to-End Type Safety API Comparison',
+    description: 'Compare tRPC and GraphQL for building type-safe APIs. Performance, developer experience, and use cases.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '12 min read',
+    keywords: ['trpc vs graphql', 'typescript api', 'end-to-end type safety', 'api comparison 2025', 'trpc graphql'],
+    relatedTools: ['json-to-typescript', 'json-formatter', 'graphql-to-typescript'],
+    relatedPosts: ['graphql-vs-rest-api', 'typescript-vs-javascript'],
+    translations: {
+      zh: { title: 'tRPC vs GraphQL：端到端类型安全 API 对比', description: '对比 tRPC 和 GraphQL 构建类型安全 API。性能、开发者体验和使用场景。', readingTime: '12 分钟阅读', keywords: ['trpc vs graphql', 'typescript api', '端到端类型安全', 'api 对比 2025', 'trpc graphql'] }
+    },
+  },
+  {
+    slug: 'tanstack-query-vs-swr-2025',
+    title: 'TanStack Query vs SWR: React Data Fetching Library Comparison 2025',
+    description: 'Compare TanStack Query and SWR for data fetching in React. Features, performance, caching, and developer experience.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '11 min read',
+    keywords: ['tanstack query vs swr', 'react query vs swr 2025', 'data fetching react', 'react data fetching library', 'swr tanstack'],
+    relatedTools: ['json-formatter', 'json-to-typescript'],
+    relatedPosts: ['react-hooks-complete-guide', 'nextjs-vs-remix'],
+    translations: {
+      zh: { title: 'TanStack Query vs SWR：React 数据获取库对比 2025', description: '对比 TanStack Query 和 SWR 在 React 中的数据获取。功能、性能、缓存和开发者体验。', readingTime: '11 分钟阅读', keywords: ['tanstack query vs swr', 'react query vs swr 2025', 'react 数据获取', 'react 数据获取库', 'swr tanstack'] }
+    },
+  },
+  {
+    slug: 'fresh-vs-astro',
+    title: 'Fresh vs Astro: Deno vs Bun Islands Architecture Framework Comparison',
+    description: 'Compare Fresh (Deno) and Astro frameworks. Islands architecture, performance, developer experience, and ecosystem.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '12 min read',
+    keywords: ['fresh vs astro', 'deno fresh', 'islands architecture', 'astro framework', 'fresh framework'],
+    relatedTools: ['json-to-typescript', 'typescript-to-javascript'],
+    relatedPosts: ['astro-vs-nextjs-2026', 'bun-vs-deno-runtime'],
+    translations: {
+      zh: { title: 'Fresh vs Astro：Deno vs Bun Islands 架构框架对比', description: '对比 Fresh (Deno) 和 Astro 框架。Islands 架构、性能、开发者体验和生态系统。', readingTime: '12 分钟阅读', keywords: ['fresh vs astro', 'deno fresh', 'islands 架构', 'astro 框架', 'fresh 框架'] }
+    },
+  },
+  {
+    slug: 'turbopack-vs-vite',
+    title: 'Turbopack vs Vite: Next-Gen Bundler Performance Comparison',
+    description: 'Compare Turbopack and Vite bundlers. Cold start, HMR, production build performance, and ecosystem.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '10 min read',
+    keywords: ['turbopack vs vite', 'rust bundler', 'next.js bundler', 'build tool 2025', 'turbopack performance'],
+    relatedTools: ['json-formatter', 'css-minifier'],
+    relatedPosts: ['rspack-vs-vite-2025', 'webpack-vs-vite-2026'],
+    translations: {
+      zh: { title: 'Turbopack vs Vite：下一代构建工具性能对比', description: '对比 Turbopack 和 Vite 构建工具。冷启动、HMR、生产构建性能和生态系统。', readingTime: '10 分钟阅读', keywords: ['turbopack vs vite', 'rust 构建工具', 'next.js 构建工具', '构建工具 2025', 'turbopack 性能'] }
+    },
+  },
+  {
+    slug: 'pnpm-vs-yarn-vs-npm-2025',
+    title: 'pnpm vs Yarn vs npm: JavaScript Package Manager Comparison 2025',
+    description: 'Compare pnpm, Yarn, and npm package managers. Performance, disk space, security, and monorepo support.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '11 min read',
+    keywords: ['pnpm vs yarn vs npm', 'package manager comparison 2025', 'npm alternative', 'javascript package manager', 'pnpm performance'],
+    relatedTools: ['json-formatter', 'docker-compose-generator'],
+    relatedPosts: ['npm-vs-yarn-vs-pnpm-vs-bun-comparison', 'turborepo-vs-nx-monorepo'],
+    translations: {
+      zh: { title: 'pnpm vs Yarn vs npm：JavaScript 包管理器对比 2025', description: '对比 pnpm、Yarn 和 npm 包管理器。性能、磁盘空间、安全性和 monorepo 支持。', readingTime: '11 分钟阅读', keywords: ['pnpm vs yarn vs npm', '包管理器对比 2025', 'npm 替代品', 'javascript 包管理器', 'pnpm 性能'] }
+    },
+  },
 ];
 
 /** Get post with localized metadata */
