@@ -500,10 +500,10 @@ container: {
 
 /* 5. Plugin API changed */
 /* v3 plugin */
-module.exports = function({ addUtilities, addComponents, e }) {
+module.exports = function(addUtilities, addComponents, e) {
   addUtilities({
-    [`.${e('scroll-snap-none')}`]: {
-      'scroll-snap-type': 'none',
+    ".scroll-snap-none": {
+      "scroll-snap-type": "none",
     },
   })
 }
