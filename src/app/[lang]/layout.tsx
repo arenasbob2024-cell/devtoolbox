@@ -133,6 +133,9 @@ export default async function LangLayout({
           }} 
         />
         
+        {/* Google AdSense */}
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1183198810365600" crossOrigin="anonymous" />
+        
         {/* Organization Schema */}
         <script 
           type="application/ld+json" 
