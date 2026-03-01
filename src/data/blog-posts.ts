@@ -12005,6 +12005,118 @@ export const blogPosts: BlogPost[] = [
       zh: { title: 'Qwik vs Astro：可恢复性 vs Islands 架构对比', description: '对比 Qwik 和 Astro 框架。可恢复性概念 vs Islands 架构的性能优化。', readingTime: '11 分钟阅读', keywords: ['qwik vs astro', '可恢复性框架', 'islands 架构', 'qwik 框架', 'astro 对比'] }
     },
   },
+  {
+    slug: 'expo-vs-react-native-cli',
+    title: 'Expo vs React Native CLI: Mobile Development Comparison 2025',
+    description: 'Compare Expo and React Native CLI for mobile app development. Ease of use, flexibility, and ecosystem.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '12 min read',
+    keywords: ['expo vs react native', 'react native cli', 'mobile development 2025', 'expo managed workflow', 'react native expo'],
+    relatedTools: ['json-to-typescript', 'typescript-to-javascript'],
+    relatedPosts: ['react-vs-vue-2026', 'typescript-vs-javascript'],
+    translations: {
+      zh: { title: 'Expo vs React Native CLI：移动开发对比 2025', description: '对比 Expo 和 React Native CLI 移动应用开发。易用性、灵活性和生态系统。', readingTime: '12 分钟阅读', keywords: ['expo vs react native', 'react native cli', '移动开发 2025', 'expo 托管工作流', 'react native expo'] }
+    },
+  },
+  {
+    slug: 'caprover-vs-dokku',
+    title: 'CapRover vs Dokku: Self-Hosted PaaS Comparison',
+    description: 'Compare CapRover and Dokku self-hosted PaaS platforms. Features, ease of use, and deployment experience.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '11 min read',
+    keywords: ['caprover vs dokku', 'self-hosted paas', 'docker deployment', 'heroku alternative', 'paas comparison'],
+    relatedTools: ['docker-compose-generator', 'yaml-validator'],
+    relatedPosts: ['coolify-guide', 'docker-vs-kubernetes'],
+    translations: {
+      zh: { title: 'CapRover vs Dokku：自托管 PaaS 对比', description: '对比 CapRover 和 Dokku 自托管 PaaS 平台。功能、易用性和部署体验。', readingTime: '11 分钟阅读', keywords: ['caprover vs dokku', '自托管 paas', 'docker 部署', 'heroku 替代品', 'paas 对比'] }
+    },
+  },
+  {
+    slug: 'nuxt-3-vs-nextjs-14',
+    title: 'Nuxt 3 vs Next.js 14: Vue vs React Full-Stack Framework Comparison',
+    description: 'Compare Nuxt 3 and Next.js 14 full-stack frameworks. Performance, DX, and ecosystem.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '13 min read',
+    keywords: ['nuxt 3 vs nextjs 14', 'vue vs react framework', 'full-stack framework 2025', 'nuxt nextjs comparison', 'ssr framework'],
+    relatedTools: ['json-to-typescript', 'html-to-jsx'],
+    relatedPosts: ['nextjs-vs-remix', 'react-vs-vue-2026'],
+    translations: {
+      zh: { title: 'Nuxt 3 vs Next.js 14：Vue vs React 全栈框架对比', description: '对比 Nuxt 3 和 Next.js 14 全栈框架。性能、开发者体验和生态系统。', readingTime: '13 分钟阅读', keywords: ['nuxt 3 vs nextjs 14', 'vue vs react 框架', '全栈框架 2025', 'nuxt nextjs 对比', 'ssr 框架'] }
+    },
+  },
+  {
+    slug: 'drizzle-orm-vs-prisma',
+    title: 'Drizzle ORM vs Prisma: TypeScript ORM Comparison 2025',
+    description: 'Compare Drizzle ORM and Prisma for TypeScript. Performance, bundle size, and developer experience.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '12 min read',
+    keywords: ['drizzle orm vs prisma', 'typescript orm', 'database orm 2025', 'drizzle prisma comparison', 'lightweight orm'],
+    relatedTools: ['json-to-typescript', 'sql-formatter'],
+    relatedPosts: ['drizzle-vs-prisma-orm-comparison', 'postgresql-vs-mysql'],
+    translations: {
+      zh: { title: 'Drizzle ORM vs Prisma：TypeScript ORM 对比 2025', description: '对比 Drizzle ORM 和 Prisma 在 TypeScript 中的应用。性能、包大小和开发者体验。', readingTime: '12 分钟阅读', keywords: ['drizzle orm vs prisma', 'typescript orm', '数据库 orm 2025', 'drizzle prisma 对比', '轻量级 orm'] }
+    },
+  },
+  {
+    slug: 'lexical-vs-tiptap',
+    title: 'Lexical vs Tiptap: Modern Rich Text Editor Comparison',
+    description: 'Compare Lexical and Tiptap rich text editors. Architecture, extensibility, and React integration.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '11 min read',
+    keywords: ['lexical vs tiptap', 'rich text editor', 'wysiwyg editor react', 'lexical editor', 'tiptap vs prosemirror'],
+    relatedTools: ['json-formatter', 'html-to-jsx'],
+    relatedPosts: ['react-hooks-complete-guide', 'typescript-vs-javascript'],
+    translations: {
+      zh: { title: 'Lexical vs Tiptap：现代富文本编辑器对比', description: '对比 Lexical 和 Tiptap 富文本编辑器。架构、可扩展性和 React 集成。', readingTime: '11 分钟阅读', keywords: ['lexical vs tiptap', '富文本编辑器', 'wysiwyg 编辑器 react', 'lexical 编辑器', 'tiptap vs prosemirror'] }
+    },
+  },
+  {
+    slug: 'zustand-vs-jotai',
+    title: 'Zustand vs Jotai: React State Management Comparison 2025',
+    description: 'Compare Zustand and Jotai state management libraries. Performance, API design, and use cases.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '10 min read',
+    keywords: ['zustand vs jotai', 'react state management 2025', 'lightweight state management', 'zustand jotai comparison', 'atomic state'],
+    relatedTools: ['json-to-typescript', 'typescript-to-javascript'],
+    relatedPosts: ['react-hooks-complete-guide', 'tanstack-query-vs-swr-2025'],
+    translations: {
+      zh: { title: 'Zustand vs Jotai：React 状态管理对比 2025', description: '对比 Zustand 和 Jotai 状态管理库。性能、API 设计和使用场景。', readingTime: '10 分钟阅读', keywords: ['zustand vs jotai', 'react 状态管理 2025', '轻量级状态管理', 'zustand jotai 对比', '原子状态'] }
+    },
+  },
+  {
+    slug: 'prisma-vs-drizzle-2025',
+    title: 'Prisma vs Drizzle: Which ORM Should You Choose in 2025?',
+    description: 'Compare Prisma and Drizzle ORMs for Node.js and TypeScript. Schema design, migrations, and query performance.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '12 min read',
+    keywords: ['prisma vs drizzle 2025', 'nodejs orm comparison', 'typescript database orm', 'prisma drizzle', 'best orm 2025'],
+    relatedTools: ['json-to-typescript', 'sql-to-prisma'],
+    relatedPosts: ['drizzle-vs-prisma-orm-comparison', 'postgresql-vs-mysql'],
+    translations: {
+      zh: { title: 'Prisma vs Drizzle：2025 年你应该选择哪个 ORM？', description: '对比 Prisma 和 Drizzle ORM 在 Node.js 和 TypeScript 中的应用。Schema 设计、迁移和查询性能。', readingTime: '12 分钟阅读', keywords: ['prisma vs drizzle 2025', 'nodejs orm 对比', 'typescript 数据库 orm', 'prisma drizzle', '最佳 orm 2025'] }
+    },
+  },
+  {
+    slug: 'tauri-vs-electron-2025',
+    title: 'Tauri vs Electron: Desktop App Framework Comparison 2025',
+    description: 'Compare Tauri and Electron for building desktop applications. Bundle size, performance, and security.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '12 min read',
+    keywords: ['tauri vs electron 2025', 'desktop app framework', 'rust desktop app', 'electron alternative', 'tauri performance'],
+    relatedTools: ['json-to-typescript', 'typescript-to-javascript'],
+    relatedPosts: ['solid-start-vs-nextjs', 'react-vs-vue-2026'],
+    translations: {
+      zh: { title: 'Tauri vs Electron：桌面应用框架对比 2025', description: '对比 Tauri 和 Electron 构建桌面应用。包大小、性能和安全性。', readingTime: '12 分钟阅读', keywords: ['tauri vs electron 2025', '桌面应用框架', 'rust 桌面应用', 'electron 替代品', 'tauri 性能'] }
+    },
+  },
 ];
 
 /** Get post with localized metadata */
