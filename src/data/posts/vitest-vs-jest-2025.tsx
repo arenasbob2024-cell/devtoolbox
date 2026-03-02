@@ -19,7 +19,7 @@ const translations: Record<string, Record<string, string>> = {
     takeaway6: 'Vitest includes built-in coverage via c8/istanbul, benchmarking, and in-source testing',
     
     whatIsVitestTitle: 'What is Vitest?',
-    whatIsVitestContent: 'Vitest is a next-generation testing framework built by the Vue.js team, designed to be fast and integrate seamlessly with Vite. It leverages Vite's transformation pipeline, meaning your tests run with the same configuration as your application. Vitest supports ESM, TypeScript, JSX, and CSS modules out of the box.',
+    whatIsVitestContent: "Vitest is a next-generation testing framework built by the Vue.js team, designed to be fast and integrate seamlessly with Vite. It leverages Vite's transformation pipeline, meaning your tests run with the same configuration as your application. Vitest supports ESM, TypeScript, JSX, and CSS modules out of the box.",
     
     whatIsJestTitle: 'What is Jest?',
     whatIsJestContent: 'Jest, created by Facebook (Meta) in 2013, is the most widely used JavaScript testing framework. It pioneered features like snapshot testing, parallel test execution, and zero-configuration setup. With over 50 million weekly downloads, Jest has become the de facto standard for testing React applications.',
