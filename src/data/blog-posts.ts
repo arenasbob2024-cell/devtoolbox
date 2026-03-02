@@ -12257,6 +12257,48 @@ export const blogPosts: BlogPost[] = [
       zh: { title: 'Storybook vs Ladle：组件开发环境对比', description: '对比 Storybook 和 Ladle 组件开发。功能、性能和包大小。', readingTime: '11 分钟阅读', keywords: ['storybook vs ladle', '组件开发', 'ui 组件库', 'storybook 替代品', 'ladle storybook'] }
     },
   },
+  {
+    slug: 'astro-5-vs-remix',
+    title: 'Astro 5 vs Remix: Full-Stack Framework Comparison 2025',
+    description: 'Compare Astro 5 and Remix full-stack frameworks. Performance, routing, and developer experience.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '13 min read',
+    keywords: ['astro 5 vs remix', 'full-stack framework 2025', 'astro remix comparison', 'islands vs server components', 'modern web framework'],
+    relatedTools: ['json-to-typescript', 'typescript-to-javascript'],
+    relatedPosts: ['fresh-vs-astro', 'nextjs-vs-remix'],
+    translations: {
+      zh: { title: 'Astro 5 vs Remix：全栈框架对比 2025', description: '对比 Astro 5 和 Remix 全栈框架。性能、路由和开发者体验。', readingTime: '13 分钟阅读', keywords: ['astro 5 vs remix', '全栈框架 2025', 'astro remix 对比', 'islands vs 服务端组件', '现代 web 框架'] }
+    },
+  },
+  {
+    slug: 'svelte-kit-vs-nextjs',
+    title: 'SvelteKit vs Next.js: Full-Stack Framework Battle 2025',
+    description: 'Compare SvelteKit and Next.js full-stack frameworks. Performance, DX, and ecosystem.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '14 min read',
+    keywords: ['sveltekit vs nextjs', 'full-stack framework comparison', 'svelte nextjs 2025', 'svelte kit performance', 'nextjs alternative'],
+    relatedTools: ['json-to-typescript', 'typescript-to-javascript'],
+    relatedPosts: ['svelte-5-vs-react-19', 'nextjs-vs-remix'],
+    translations: {
+      zh: { title: 'SvelteKit vs Next.js：全栈框架对决 2025', description: '对比 SvelteKit 和 Next.js 全栈框架。性能、开发者体验和生态系统。', readingTime: '14 分钟阅读', keywords: ['sveltekit vs nextjs', '全栈框架对比', 'svelte nextjs 2025', 'svelte kit 性能', 'nextjs 替代品'] }
+    },
+  },
+  {
+    slug: 'hono-vs-fastify',
+    title: 'Hono vs Fastify: Ultra-Fast Web Framework Comparison',
+    description: 'Compare Hono and Fastify web frameworks. Performance, features, and runtime support.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '11 min read',
+    keywords: ['hono vs fastify', 'fast web framework', 'hono fastify comparison', 'edge computing framework', 'lightweight web framework'],
+    relatedTools: ['json-formatter', 'jwt-decoder'],
+    relatedPosts: ['hono-vs-express-framework-comparison', 'elysia-vs-fastify-performance'],
+    translations: {
+      zh: { title: 'Hono vs Fastify：超快速 Web 框架对比', description: '对比 Hono 和 Fastify Web 框架。性能、功能和运行时支持。', readingTime: '11 分钟阅读', keywords: ['hono vs fastify', '快速 web 框架', 'hono fastify 对比', '边缘计算框架', '轻量级 web 框架'] }
+    },
+  },
 ];
 
 /** Get post with localized metadata */
