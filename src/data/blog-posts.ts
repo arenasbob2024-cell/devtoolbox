@@ -12537,6 +12537,62 @@ export const blogPosts: BlogPost[] = [
       zh: { title: 'Vercel vs Cloudflare Pages：静态托管对比 2025', description: '对比 Vercel 和 Cloudflare Pages 静态网站托管。性能、定价和功能。', readingTime: '12 分钟阅读', keywords: ['vercel vs cloudflare pages', '静态托管 2025', 'vercel cloudflare 对比', 'jamstack 托管', '边缘部署'] }
     },
   },
+  {
+    slug: 'github-copilot-vs-cursor',
+    title: 'GitHub Copilot vs Cursor: AI Coding Assistant Comparison 2025',
+    description: 'Compare GitHub Copilot and Cursor AI coding assistants. Features, pricing, and code quality.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '14 min read',
+    keywords: ['github copilot vs cursor 2025', 'ai coding assistant', 'copilot cursor comparison', 'ai code completion', 'best ai coding tool'],
+    relatedTools: ['json-to-typescript', 'typescript-to-javascript'],
+    relatedPosts: ['cursor-vs-copilot-guide', 'ai-code-generation-tools'],
+    translations: {
+      zh: { title: 'GitHub Copilot vs Cursor：AI 编程助手对比 2025', description: '对比 GitHub Copilot 和 Cursor AI 编程助手。功能、定价和代码质量。', readingTime: '14 分钟阅读', keywords: ['github copilot vs cursor 2025', 'ai 编程助手', 'copilot cursor 对比', 'ai 代码补全', '最佳 ai 编程工具'] }
+    },
+  },
+  {
+    slug: 'supabase-vs-firebase-2025',
+    title: 'Supabase vs Firebase: Backend-as-a-Service Comparison 2025',
+    description: 'Compare Supabase and Firebase for backend services. Database, authentication, and pricing.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '15 min read',
+    keywords: ['supabase vs firebase 2025', 'backend as a service', 'supabase firebase comparison', 'baas platform', 'firebase alternative'],
+    relatedTools: ['json-to-typescript', 'jwt-decoder'],
+    relatedPosts: ['supabase-vs-firebase-guide', 'postgresql-vs-mongodb'],
+    translations: {
+      zh: { title: 'Supabase vs Firebase：后端即服务对比 2025', description: '对比 Supabase 和 Firebase 后端服务。数据库、认证和定价。', readingTime: '15 分钟阅读', keywords: ['supabase vs firebase 2025', '后端即服务', 'supabase firebase 对比', 'baas 平台', 'firebase 替代品'] }
+    },
+  },
+  {
+    slug: 'railway-vs-render-2025',
+    title: 'Railway vs Render: PaaS Platform Comparison 2025',
+    description: 'Compare Railway and Render for application deployment. Pricing, performance, and features.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '12 min read',
+    keywords: ['railway vs render 2025', 'paas platform comparison', 'railway render pricing', 'heroku alternative 2025', 'cloud deployment platform'],
+    relatedTools: ['docker-compose-generator', 'yaml-validator'],
+    relatedPosts: ['fly-io-vs-railway-vs-render', 'vercel-vs-netlify-guide'],
+    translations: {
+      zh: { title: 'Railway vs Render：PaaS 平台对比 2025', description: '对比 Railway 和 Render 应用部署。定价、性能和功能。', readingTime: '12 分钟阅读', keywords: ['railway vs render 2025', 'paas 平台对比', 'railway render 定价', 'heroku 替代品 2025', '云部署平台'] }
+    },
+  },
+  {
+    slug: 'upstash-vs-kv',
+    title: 'Upstash vs Vercel KV: Serverless Redis Comparison 2025',
+    description: 'Compare Upstash and Vercel KV for serverless Redis. Pricing, performance, and global distribution.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '11 min read',
+    keywords: ['upstash vs vercel kv', 'serverless redis 2025', 'upstash kv comparison', 'edge database', 'redis cloud alternative'],
+    relatedTools: ['json-formatter', 'yaml-validator'],
+    relatedPosts: ['upstash-vs-redis-labs', 'cloudflare-workers-vs-vercel-edge'],
+    translations: {
+      zh: { title: 'Upstash vs Vercel KV：Serverless Redis 对比 2025', description: '对比 Upstash 和 Vercel KV 无服务器 Redis。定价、性能和全球分布。', readingTime: '11 分钟阅读', keywords: ['upstash vs vercel kv', '无服务器 redis 2025', 'upstash kv 对比', '边缘数据库', 'redis 云替代品'] }
+    },
+  },
 ];
 
 /** Get post with localized metadata */
