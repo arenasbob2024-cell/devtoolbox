@@ -12439,6 +12439,104 @@ export const blogPosts: BlogPost[] = [
       zh: { title: 'Luxon vs Moment.js：日期库迁移指南 2025', description: '对比 Luxon 和 Moment.js 日期处理。现代 API、不可变性和迁移步骤。', readingTime: '12 分钟阅读', keywords: ['luxon vs moment', 'moment.js 迁移', 'luxon moment 对比', '现代日期库', 'moment.js 替代品'] }
     },
   },
+  {
+    slug: 'vscode-vs-webstorm-2025',
+    title: 'VS Code vs WebStorm: JavaScript IDE Comparison 2025',
+    description: 'Compare VS Code and WebStorm for JavaScript development. Performance, features, and pricing.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '14 min read',
+    keywords: ['vscode vs webstorm 2025', 'javascript ide comparison', 'vscode webstorm', 'best ide for javascript', 'webstorm vs vscode'],
+    relatedTools: ['json-formatter', 'typescript-to-javascript'],
+    relatedPosts: ['typescript-vs-javascript', 'npm-vs-yarn-vs-pnpm-2025'],
+    translations: {
+      zh: { title: 'VS Code vs WebStorm：JavaScript IDE 对比 2025', description: '对比 VS Code 和 WebStorm JavaScript 开发。性能、功能和定价。', readingTime: '14 分钟阅读', keywords: ['vscode vs webstorm 2025', 'javascript ide 对比', 'vscode webstorm', '最佳 javascript ide', 'webstorm vs vscode'] }
+    },
+  },
+  {
+    slug: 'notion-vs-obsidian',
+    title: 'Notion vs Obsidian: Note-Taking App Comparison for Developers',
+    description: 'Compare Notion and Obsidian for developer note-taking. Features, pricing, and offline capabilities.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '12 min read',
+    keywords: ['notion vs obsidian', 'note taking app developers', 'obsidian notion comparison', 'markdown notes', 'knowledge management'],
+    relatedTools: ['markdown-preview', 'markdown-to-html'],
+    relatedPosts: ['markdown-guide', 'documentation-tools'],
+    translations: {
+      zh: { title: 'Notion vs Obsidian：开发者笔记应用对比', description: '对比 Notion 和 Obsidian 开发者笔记。功能、定价和离线能力。', readingTime: '12 分钟阅读', keywords: ['notion vs obsidian', '开发者笔记应用', 'obsidian notion 对比', 'markdown 笔记', '知识管理'] }
+    },
+  },
+  {
+    slug: 'eslint-vs-biome-2025',
+    title: 'ESLint vs Biome: JavaScript Linter Comparison 2025',
+    description: 'Compare ESLint and Biome for JavaScript linting. Performance, rules, and configuration.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '11 min read',
+    keywords: ['eslint vs biome 2025', 'javascript linter', 'biome eslint comparison', 'fast linter', 'rust linter javascript'],
+    relatedTools: ['json-formatter', 'css-formatter'],
+    relatedPosts: ['biome-vs-eslint-vs-prettier', 'typescript-vs-javascript'],
+    translations: {
+      zh: { title: 'ESLint vs Biome：JavaScript Linter 对比 2025', description: '对比 ESLint 和 Biome JavaScript 代码检查。性能、规则和配置。', readingTime: '11 分钟阅读', keywords: ['eslint vs biome 2025', 'javascript linter', 'biome eslint 对比', '快速 linter', 'rust linter javascript'] }
+    },
+  },
+  {
+    slug: 'pnpm-vs-bun-vs-deno',
+    title: 'pnpm vs Bun vs Deno: Package Manager and Runtime Comparison 2025',
+    description: 'Compare pnpm, Bun, and Deno for package management and runtime. Performance and ecosystem.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '13 min read',
+    keywords: ['pnpm vs bun vs deno', 'package manager 2025', 'javascript runtime comparison', 'bun deno pnpm', 'npm alternative 2025'],
+    relatedTools: ['json-formatter', 'docker-compose-generator'],
+    relatedPosts: ['pnpm-vs-yarn-vs-npm-2025', 'bun-vs-nodejs-performance-2025'],
+    translations: {
+      zh: { title: 'pnpm vs Bun vs Deno：包管理器和运行时对比 2025', description: '对比 pnpm、Bun 和 Deno 包管理和运行时。性能和生态系统。', readingTime: '13 分钟阅读', keywords: ['pnpm vs bun vs deno', '包管理器 2025', 'javascript 运行时对比', 'bun deno pnpm', 'npm 替代品 2025'] }
+    },
+  },
+  {
+    slug: 'figma-vs-sketch',
+    title: 'Figma vs Sketch: Design Tool Comparison 2025',
+    description: 'Compare Figma and Sketch for UI/UX design. Collaboration, pricing, and platform support.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '12 min read',
+    keywords: ['figma vs sketch 2025', 'ui design tool', 'figma sketch comparison', 'design software 2025', 'collaborative design tool'],
+    relatedTools: ['color-palette-generator', 'css-gradient-generator'],
+    relatedPosts: ['tailwind-css-vs-bootstrap', 'css-framework-comparison'],
+    translations: {
+      zh: { title: 'Figma vs Sketch：设计工具对比 2025', description: '对比 Figma 和 Sketch UI/UX 设计。协作、定价和平台支持。', readingTime: '12 分钟阅读', keywords: ['figma vs sketch 2025', 'ui 设计工具', 'figma sketch 对比', '设计软件 2025', '协作设计工具'] }
+    },
+  },
+  {
+    slug: 'linear-vs-jira',
+    title: 'Linear vs Jira: Project Management Tool Comparison for Developers',
+    description: 'Compare Linear and Jira for project management. Speed, UX, and developer experience.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '13 min read',
+    keywords: ['linear vs jira', 'project management tool', 'linear jira comparison', 'agile project management', 'jira alternative'],
+    relatedTools: ['json-formatter', 'yaml-validator'],
+    relatedPosts: ['github-actions-guide', 'ci-cd-comparison'],
+    translations: {
+      zh: { title: 'Linear vs Jira：开发者项目管理工具对比', description: '对比 Linear 和 Jira 项目管理。速度、用户体验和开发者体验。', readingTime: '13 分钟阅读', keywords: ['linear vs jira', '项目管理工具', 'linear jira 对比', '敏捷项目管理', 'jira 替代品'] }
+    },
+  },
+  {
+    slug: 'vercel-vs-cloudflare-pages',
+    title: 'Vercel vs Cloudflare Pages: Static Hosting Comparison 2025',
+    description: 'Compare Vercel and Cloudflare Pages for static site hosting. Performance, pricing, and features.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '12 min read',
+    keywords: ['vercel vs cloudflare pages', 'static hosting 2025', 'vercel cloudflare comparison', 'jamstack hosting', 'edge deployment'],
+    relatedTools: ['docker-compose-generator', 'json-formatter'],
+    relatedPosts: ['vercel-vs-netlify-guide', 'cloudflare-workers-vs-vercel-edge'],
+    translations: {
+      zh: { title: 'Vercel vs Cloudflare Pages：静态托管对比 2025', description: '对比 Vercel 和 Cloudflare Pages 静态网站托管。性能、定价和功能。', readingTime: '12 分钟阅读', keywords: ['vercel vs cloudflare pages', '静态托管 2025', 'vercel cloudflare 对比', 'jamstack 托管', '边缘部署'] }
+    },
+  },
 ];
 
 /** Get post with localized metadata */
