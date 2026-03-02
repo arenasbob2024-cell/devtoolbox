@@ -12117,6 +12117,146 @@ export const blogPosts: BlogPost[] = [
       zh: { title: 'Tauri vs Electron：桌面应用框架对比 2025', description: '对比 Tauri 和 Electron 构建桌面应用。包大小、性能和安全性。', readingTime: '12 分钟阅读', keywords: ['tauri vs electron 2025', '桌面应用框架', 'rust 桌面应用', 'electron 替代品', 'tauri 性能'] }
     },
   },
+  {
+    slug: 'docker-compose-vs-kubernetes',
+    title: 'Docker Compose vs Kubernetes: Container Orchestration Comparison',
+    description: 'Compare Docker Compose and Kubernetes for container orchestration. Complexity, scalability, and use cases.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '13 min read',
+    keywords: ['docker compose vs kubernetes', 'container orchestration', 'k8s vs docker compose', 'docker kubernetes comparison', 'container management'],
+    relatedTools: ['docker-compose-generator', 'yaml-validator'],
+    relatedPosts: ['docker-vs-kubernetes', 'coolify-guide'],
+    translations: {
+      zh: { title: 'Docker Compose vs Kubernetes：容器编排对比', description: '对比 Docker Compose 和 Kubernetes 容器编排。复杂度、可扩展性和使用场景。', readingTime: '13 分钟阅读', keywords: ['docker compose vs kubernetes', '容器编排', 'k8s vs docker compose', 'docker kubernetes 对比', '容器管理'] }
+    },
+  },
+  {
+    slug: 'podman-vs-docker-2025',
+    title: 'Podman vs Docker: Container Runtime Comparison 2025',
+    description: 'Compare Podman and Docker container runtimes. Security, architecture, and developer experience.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '12 min read',
+    keywords: ['podman vs docker 2025', 'container runtime', 'docker alternative', 'podman security', 'rootless containers'],
+    relatedTools: ['docker-compose-generator', 'yaml-validator'],
+    relatedPosts: ['docker-vs-kubernetes', 'docker-compose-vs-kubernetes'],
+    translations: {
+      zh: { title: 'Podman vs Docker：容器运行时对比 2025', description: '对比 Podman 和 Docker 容器运行时。安全性、架构和开发者体验。', readingTime: '12 分钟阅读', keywords: ['podman vs docker 2025', '容器运行时', 'docker 替代品', 'podman 安全性', '无根容器'] }
+    },
+  },
+  {
+    slug: 'backstage-vs-mia-platform',
+    title: 'Backstage vs Mia-Platform: Developer Portal Comparison',
+    description: 'Compare Backstage and Mia-Platform for building developer portals. Features, extensibility, and community.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '11 min read',
+    keywords: ['backstage vs mia-platform', 'developer portal', 'idp comparison', 'backstage alternative', 'internal developer platform'],
+    relatedTools: ['json-to-typescript', 'docker-compose-generator'],
+    relatedPosts: ['kubernetes-guide', 'argocd-guide'],
+    translations: {
+      zh: { title: 'Backstage vs Mia-Platform：开发者门户对比', description: '对比 Backstage 和 Mia-Platform 构建开发者门户。功能、可扩展性和社区。', readingTime: '11 分钟阅读', keywords: ['backstage vs mia-platform', '开发者门户', 'idp 对比', 'backstage 替代品', '内部开发者平台'] }
+    },
+  },
+  {
+    slug: 'grafana-vs-datadog',
+    title: 'Grafana vs Datadog: Observability Platform Comparison 2025',
+    description: 'Compare Grafana and Datadog for monitoring and observability. Features, pricing, and integration.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '12 min read',
+    keywords: ['grafana vs datadog', 'observability platform', 'monitoring tools 2025', 'grafana datadog comparison', 'apm tools'],
+    relatedTools: ['json-formatter', 'yaml-validator'],
+    relatedPosts: ['opentelemetry-guide', 'prometheus-guide'],
+    translations: {
+      zh: { title: 'Grafana vs Datadog：可观测性平台对比 2025', description: '对比 Grafana 和 Datadog 监控和可观测性。功能、定价和集成。', readingTime: '12 分钟阅读', keywords: ['grafana vs datadog', '可观测性平台', '监控工具 2025', 'grafana datadog 对比', 'apm 工具'] }
+    },
+  },
+  {
+    slug: 'sentry-vs-rollbar',
+    title: 'Sentry vs Rollbar: Error Monitoring and Tracking Comparison',
+    description: 'Compare Sentry and Rollbar for error monitoring. Features, pricing, and integration options.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '10 min read',
+    keywords: ['sentry vs rollbar', 'error monitoring', 'exception tracking', 'sentry rollbar comparison', 'javascript error tracking'],
+    relatedTools: ['json-formatter', 'jwt-decoder'],
+    relatedPosts: ['grafana-vs-datadog', 'opentelemetry-guide'],
+    translations: {
+      zh: { title: 'Sentry vs Rollbar：错误监控和追踪对比', description: '对比 Sentry 和 Rollbar 错误监控。功能、定价和集成选项。', readingTime: '10 分钟阅读', keywords: ['sentry vs rollbar', '错误监控', '异常追踪', 'sentry rollbar 对比', 'javascript 错误追踪'] }
+    },
+  },
+  {
+    slug: 'vitest-vs-jest-2025',
+    title: 'Vitest vs Jest: Modern Testing Framework Comparison 2025',
+    description: 'Compare Vitest and Jest testing frameworks. Speed, configuration, and ecosystem.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '11 min read',
+    keywords: ['vitest vs jest 2025', 'javascript testing framework', 'vitest jest comparison', 'vite testing', 'modern testing tools'],
+    relatedTools: ['json-to-typescript', 'typescript-to-javascript'],
+    relatedPosts: ['playwright-vs-cypress-2025', 'react-hooks-complete-guide'],
+    translations: {
+      zh: { title: 'Vitest vs Jest：现代测试框架对比 2025', description: '对比 Vitest 和 Jest 测试框架。速度、配置和生态系统。', readingTime: '11 分钟阅读', keywords: ['vitest vs jest 2025', 'javascript 测试框架', 'vitest jest 对比', 'vite 测试', '现代测试工具'] }
+    },
+  },
+  {
+    slug: 'playwright-vs-cypress-2025',
+    title: 'Playwright vs Cypress: E2E Testing Framework Comparison 2025',
+    description: 'Compare Playwright and Cypress for end-to-end testing. Browser support, speed, and features.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '12 min read',
+    keywords: ['playwright vs cypress 2025', 'e2e testing framework', 'playwright cypress comparison', 'browser testing tools', 'automation testing'],
+    relatedTools: ['json-to-typescript', 'typescript-to-javascript'],
+    relatedPosts: ['vitest-vs-jest-2025', 'react-hooks-complete-guide'],
+    translations: {
+      zh: { title: 'Playwright vs Cypress：E2E 测试框架对比 2025', description: '对比 Playwright 和 Cypress 端到端测试。浏览器支持、速度和功能。', readingTime: '12 分钟阅读', keywords: ['playwright vs cypress 2025', 'e2e 测试框架', 'playwright cypress 对比', '浏览器测试工具', '自动化测试'] }
+    },
+  },
+  {
+    slug: 'podman-vs-docker-2025',
+    title: 'Podman vs Docker: Container Runtime Comparison 2025',
+    description: 'Compare Podman and Docker container runtimes. Security, architecture, and developer experience.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '12 min read',
+    keywords: ['podman vs docker 2025', 'container runtime', 'docker alternative', 'podman security', 'rootless containers'],
+    relatedTools: ['docker-compose-generator', 'yaml-validator'],
+    relatedPosts: ['docker-vs-kubernetes', 'docker-compose-vs-kubernetes'],
+    translations: {
+      zh: { title: 'Podman vs Docker：容器运行时对比 2025', description: '对比 Podman 和 Docker 容器运行时。安全性、架构和开发者体验。', readingTime: '12 分钟阅读', keywords: ['podman vs docker 2025', '容器运行时', 'docker 替代品', 'podman 安全性', '无根容器'] }
+    },
+  },
+  {
+    slug: 'bun-test-vs-jest',
+    title: 'Bun Test vs Jest: Native vs Node Testing Framework Comparison',
+    description: 'Compare Bun Test and Jest testing frameworks. Performance, API, and ecosystem.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '10 min read',
+    keywords: ['bun test vs jest', 'bun testing', 'native test runner', 'bun jest comparison', 'fast testing framework'],
+    relatedTools: ['json-to-typescript', 'typescript-to-javascript'],
+    relatedPosts: ['vitest-vs-jest-2025', 'bun-vs-nodejs-performance-2025'],
+    translations: {
+      zh: { title: 'Bun Test vs Jest：原生 vs Node 测试框架对比', description: '对比 Bun Test 和 Jest 测试框架。性能、API 和生态系统。', readingTime: '10 分钟阅读', keywords: ['bun test vs jest', 'bun 测试', '原生测试运行器', 'bun jest 对比', '快速测试框架'] }
+    },
+  },
+  {
+    slug: 'storybook-vs-ladle',
+    title: 'Storybook vs Ladle: Component Development Environment Comparison',
+    description: 'Compare Storybook and Ladle for component development. Features, performance, and bundle size.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '11 min read',
+    keywords: ['storybook vs ladle', 'component development', 'ui component library', 'storybook alternative', 'ladle storybook'],
+    relatedTools: ['json-to-typescript', 'html-to-jsx'],
+    relatedPosts: ['react-hooks-complete-guide', 'vitest-vs-jest-2025'],
+    translations: {
+      zh: { title: 'Storybook vs Ladle：组件开发环境对比', description: '对比 Storybook 和 Ladle 组件开发。功能、性能和包大小。', readingTime: '11 分钟阅读', keywords: ['storybook vs ladle', '组件开发', 'ui 组件库', 'storybook 替代品', 'ladle storybook'] }
+    },
+  },
 ];
 
 /** Get post with localized metadata */
