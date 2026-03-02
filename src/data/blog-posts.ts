@@ -12369,6 +12369,76 @@ export const blogPosts: BlogPost[] = [
       zh: { title: 'Framer Motion vs React Spring：动画库对比', description: '对比 Framer Motion 和 React Spring 在 React 中的动画实现。API 设计、性能和使用场景。', readingTime: '11 分钟阅读', keywords: ['framer motion vs react spring', 'react 动画库', 'framer motion react spring', 'javascript 动画 2025', 'react 动画对比'] }
     },
   },
+  {
+    slug: 'redux-vs-zustand-2025',
+    title: 'Redux vs Zustand: State Management Comparison 2025',
+    description: 'Compare Redux and Zustand for React state management. Boilerplate, performance, and developer experience.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '13 min read',
+    keywords: ['redux vs zustand 2025', 'react state management', 'zustand redux comparison', 'state management library', 'redux alternative 2025'],
+    relatedTools: ['json-to-typescript', 'typescript-to-javascript'],
+    relatedPosts: ['react-hooks-complete-guide', 'mobx-vs-redux'],
+    translations: {
+      zh: { title: 'Redux vs Zustand：状态管理对比 2025', description: '对比 Redux 和 Zustand React 状态管理。样板代码、性能和开发者体验。', readingTime: '13 分钟阅读', keywords: ['redux vs zustand 2025', 'react 状态管理', 'zustand redux 对比', '状态管理库', 'redux 替代品 2025'] }
+    },
+  },
+  {
+    slug: 'valibot-vs-yup',
+    title: 'Valibot vs Yup: Schema Validation Library Comparison',
+    description: 'Compare Valibot and Yup for schema validation. Bundle size, performance, and TypeScript support.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '11 min read',
+    keywords: ['valibot vs yup', 'schema validation', 'typescript validation library', 'yup alternative', 'form validation 2025'],
+    relatedTools: ['json-to-zod', 'json-to-typescript'],
+    relatedPosts: ['zod-vs-yup-vs-joi', 'valibot-vs-zod-validation'],
+    translations: {
+      zh: { title: 'Valibot vs Yup：Schema 验证库对比', description: '对比 Valibot 和 Yup schema 验证。包大小、性能和 TypeScript 支持。', readingTime: '11 分钟阅读', keywords: ['valibot vs yup', 'schema 验证', 'typescript 验证库', 'yup 替代品', '表单验证 2025'] }
+    },
+  },
+  {
+    slug: 'zod-vs-yup-vs-joi',
+    title: 'Zod vs Yup vs Joi: Validation Library Triple Comparison 2025',
+    description: 'Compare Zod, Yup, and Joi for data validation. TypeScript support, bundle size, and features.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '14 min read',
+    keywords: ['zod vs yup vs joi', 'javascript validation library', 'schema validation comparison', 'zod yup joi 2025', 'best validation library'],
+    relatedTools: ['json-to-zod', 'json-to-typescript'],
+    relatedPosts: ['valibot-vs-zod-validation', 'react-hook-form-vs-formik'],
+    translations: {
+      zh: { title: 'Zod vs Yup vs Joi：验证库三重对比 2025', description: '对比 Zod、Yup 和 Joi 数据验证。TypeScript 支持、包大小和功能。', readingTime: '14 分钟阅读', keywords: ['zod vs yup vs joi', 'javascript 验证库', 'schema 验证对比', 'zod yup joi 2025', '最佳验证库'] }
+    },
+  },
+  {
+    slug: 'date-fns-vs-dayjs',
+    title: 'date-fns vs Day.js: Modern Date Library Comparison 2025',
+    description: 'Compare date-fns and Day.js for date manipulation. Bundle size, API style, and tree-shaking.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '12 min read',
+    keywords: ['date-fns vs dayjs', 'javascript date library 2025', 'moment.js alternative', 'date manipulation library', 'lightweight date library'],
+    relatedTools: ['timestamp-converter', 'unix-timestamp-converter'],
+    relatedPosts: ['luxon-vs-moment', 'date-formatting-guide'],
+    translations: {
+      zh: { title: 'date-fns vs Day.js：现代日期库对比 2025', description: '对比 date-fns 和 Day.js 日期操作。包大小、API 风格和 Tree-shaking。', readingTime: '12 分钟阅读', keywords: ['date-fns vs dayjs', 'javascript 日期库 2025', 'moment.js 替代品', '日期操作库', '轻量级日期库'] }
+    },
+  },
+  {
+    slug: 'luxon-vs-moment',
+    title: 'Luxon vs Moment.js: Date Library Migration Guide 2025',
+    description: 'Compare Luxon and Moment.js for date handling. Modern API, immutability, and migration steps.',
+    date: '2026-03-02',
+    author: 'DevToolBox',
+    readingTime: '12 min read',
+    keywords: ['luxon vs moment', 'moment.js migration', 'luxon moment comparison', 'modern date library', 'moment.js replacement'],
+    relatedTools: ['timestamp-converter', 'unix-timestamp-converter'],
+    relatedPosts: ['date-fns-vs-dayjs', 'timezone-handling-guide'],
+    translations: {
+      zh: { title: 'Luxon vs Moment.js：日期库迁移指南 2025', description: '对比 Luxon 和 Moment.js 日期处理。现代 API、不可变性和迁移步骤。', readingTime: '12 分钟阅读', keywords: ['luxon vs moment', 'moment.js 迁移', 'luxon moment 对比', '现代日期库', 'moment.js 替代品'] }
+    },
+  },
 ];
 
 /** Get post with localized metadata */
