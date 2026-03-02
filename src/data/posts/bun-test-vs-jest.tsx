@@ -5,7 +5,7 @@ import React from 'react';
 const translations: Record<string, Record<string, string>> = {
   en: {
     title: 'Bun Test vs Jest: Built-in vs External Test Runner Comparison',
-    intro: 'Bun has entered the testing arena with its built-in test runner, challenging Jest's dominance. This comprehensive comparison examines performance, developer experience, ecosystem compatibility, and real-world use cases to help you decide between a built-in solution and the established Jest ecosystem.',
+    intro: "Bun has entered the testing arena with its built-in test runner, challenging Jest's dominance. This comprehensive comparison examines performance, developer experience, ecosystem compatibility, and real-world use cases to help you decide between a built-in solution and the established Jest ecosystem.",
     
     tldrTitle: 'TL;DR - Quick Summary',
     tldrContent: 'Bun Test offers native integration with the Bun runtime, 3-5x faster execution, and zero configuration. Jest remains the standard for Node.js projects with the largest ecosystem and community support. For new Bun projects, use Bun Test. For existing Node.js projects or teams needing extensive mocking, Jest is still the choice.',
