@@ -327,7 +327,7 @@ import { Geolocation } from '@capacitor/geolocation';
 
 @Component({
   selector: 'app-home',
-  template: `
+  template: \`
     <ion-header>
       <ion-toolbar>
         <ion-title>Ionic Example</ion-title>
@@ -362,7 +362,7 @@ import { Geolocation } from '@capacitor/geolocation';
         </ion-card-content>
       </ion-card>
     </ion-content>
-  `
+  \`
 })
 export class HomePage {
   image: string | null = null;

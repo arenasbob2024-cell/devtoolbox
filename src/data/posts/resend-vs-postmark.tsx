@@ -423,7 +423,7 @@ export function WelcomeEmail({ name }) {
 await client.createTemplate({
   Name: "Welcome Email",
   Subject: "Welcome, {{name}}!",
-  HtmlBody: `
+  HtmlBody: \`
     <html>
       <body>
         <h1>Welcome, {{name}}!</h1>
@@ -431,7 +431,7 @@ await client.createTemplate({
         <a href="{{action_url}}">Get Started</a>
       </body>
     </html>
-  `,
+  \`,
   TextBody: "Welcome, {{name}}! ..."
 });
 

@@ -447,7 +447,7 @@ export default function VSCodeVsWebStorm2025({ lang }: { lang: string }) {
             <li>{isZh ? '免费安装所有扩展' : 'All extensions free'}</li>
           </ul>
         </div>
-        <div style={{ padding: 20, background: 'var(--bg-input)', borderRadius: 8, border: '1px solid var(--border-color)', borderTop: '4px solid '#f59e0b' }}>
+        <div style={{ padding: 20, background: 'var(--bg-input)', borderRadius: 8, border: '1px solid var(--border-color)', borderTop: '4px solid #f59e0b' }}>
           <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12, color: '#f59e0b' }}>WebStorm</h3>
           <ul style={{ lineHeight: 2, color: 'var(--text-secondary)', paddingLeft: 20, margin: 0, fontSize: 14 }}>
             <li>5,000+ {isZh ? '插件' : 'plugins'}</li>
