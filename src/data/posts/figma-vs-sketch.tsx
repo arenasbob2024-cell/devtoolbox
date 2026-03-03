@@ -378,7 +378,7 @@ export default function FigmaVsSketch({ lang }: { lang: string }) {
           <ul style={{ lineHeight: 2, color: 'var(--text-secondary)', paddingLeft: 20, margin: 0, fontSize: 14 }}>
             <li>{isZh ? '符号系统' : 'Symbol system'}</li>
             <li>{isZh ? '覆盖' : 'Overrides'}</li>
-            <isZh ? '嵌套符号' : 'Nested symbols'}</li>
+            <li>{isZh ? '嵌套符号' : 'Nested symbols'}</li>
             <li>{isZh ? '共享样式' : 'Shared styles'}</li>
             <li>{isZh ? '符号库' : 'Symbol libraries'}</li>
             <li>{isZh ? '响应式调整' : 'Responsive resizing'}</li>
