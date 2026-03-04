@@ -12901,6 +12901,258 @@ export const blogPosts: BlogPost[] = [
       zh: { title: 'Sentry vs Datadog：错误监控和 APM 对比', description: '对比 Sentry 和 Datadog 错误监控和 APM。功能、定价和集成。', readingTime: '13 分钟阅读', keywords: ['sentry vs datadog', '错误监控 apm', 'sentry datadog 对比', 'apm 工具 2025', '可观测性平台'] }
     },
   },
+  {
+    slug: 'consul-vs-etcd',
+    title: 'Consul vs etcd: Service Discovery Comparison',
+    description: 'Compare Consul and etcd for service discovery and configuration management. Features, architecture, and use cases.',
+    date: '2026-03-05',
+    author: 'DevToolBox',
+    readingTime: '12 min read',
+    keywords: ['consul vs etcd', 'service discovery', 'consul etcd comparison', 'key-value store', 'kubernetes service discovery'],
+    relatedTools: ['json-formatter', 'yaml-validator'],
+    relatedPosts: ['kubernetes-vs-docker-swarm', 'argocd-vs-flux'],
+    translations: {
+      zh: { title: 'Consul vs etcd：服务发现对比', description: '对比 Consul 和 etcd 服务发现和配置管理。功能、架构和用例。', readingTime: '12 分钟阅读', keywords: ['consul vs etcd', '服务发现', 'consul etcd 对比', '键值存储', 'kubernetes 服务发现'] }
+    },
+  },
+  {
+    slug: 'vault-vs-aws-secrets-manager',
+    title: 'Vault vs AWS Secrets Manager: Secrets Management Comparison',
+    description: 'Compare HashiCorp Vault and AWS Secrets Manager for secrets management. Features, pricing, and security.',
+    date: '2026-03-05',
+    author: 'DevToolBox',
+    readingTime: '13 min read',
+    keywords: ['vault vs aws secrets manager', 'secrets management', 'hashicorp vault aws', 'secret storage', 'security tools'],
+    relatedTools: ['base64-encoder', 'jwt-generator'],
+    relatedPosts: ['argocd-vs-flux', 'kubernetes-vs-docker-swarm'],
+    translations: {
+      zh: { title: 'Vault vs AWS Secrets Manager：密钥管理对比', description: '对比 HashiCorp Vault 和 AWS Secrets Manager 密钥管理。功能、定价和安全性。', readingTime: '13 分钟阅读', keywords: ['vault vs aws secrets manager', '密钥管理', 'hashicorp vault aws', '密钥存储', '安全工具'] }
+    },
+  },
+  {
+    slug: 'nginx-vs-caddy-2025',
+    title: 'Nginx vs Caddy 2025: Web Server Comparison',
+    description: 'Compare Nginx and Caddy web servers. Performance, configuration, HTTPS, and reverse proxy features.',
+    date: '2026-03-05',
+    author: 'DevToolBox',
+    readingTime: '11 min read',
+    keywords: ['nginx vs caddy 2025', 'web server comparison', 'nginx caddy performance', 'reverse proxy', 'https automatic'],
+    relatedTools: ['nginx-config', 'yaml-validator'],
+    relatedPosts: ['traefik-vs-nginx-proxy', 'docker-vs-podman-2025'],
+    translations: {
+      zh: { title: 'Nginx vs Caddy 2025：Web 服务器对比', description: '对比 Nginx 和 Caddy Web 服务器。性能、配置、HTTPS 和反向代理功能。', readingTime: '11 分钟阅读', keywords: ['nginx vs caddy 2025', 'web 服务器对比', 'nginx caddy 性能', '反向代理', 'https 自动'] }
+    },
+  },
+  {
+    slug: 'traefik-vs-nginx-proxy',
+    title: 'Traefik vs Nginx: Reverse Proxy and Load Balancer Comparison',
+    description: 'Compare Traefik and Nginx for reverse proxy and load balancing. Auto-discovery, configuration, and Kubernetes integration.',
+    date: '2026-03-05',
+    author: 'DevToolBox',
+    readingTime: '12 min read',
+    keywords: ['traefik vs nginx', 'reverse proxy comparison', 'load balancer', 'traefik nginx kubernetes', 'ingress controller'],
+    relatedTools: ['docker-compose-generator', 'yaml-validator'],
+    relatedPosts: ['nginx-vs-caddy-2025', 'kubernetes-vs-docker-swarm'],
+    translations: {
+      zh: { title: 'Traefik vs Nginx：反向代理和负载均衡对比', description: '对比 Traefik 和 Nginx 反向代理和负载均衡。自动发现、配置和 Kubernetes 集成。', readingTime: '12 分钟阅读', keywords: ['traefik vs nginx', '反向代理对比', '负载均衡', 'traefik nginx kubernetes', 'ingress 控制器'] }
+    },
+  },
+  {
+    slug: 'cilium-vs-calico',
+    title: 'Cilium vs Calico: Kubernetes Network Plugin Comparison',
+    description: 'Compare Cilium and Calico CNI plugins for Kubernetes networking. Security, performance, and eBPF vs iptables.',
+    date: '2026-03-05',
+    author: 'DevToolBox',
+    readingTime: '14 min read',
+    keywords: ['cilium vs calico', 'kubernetes cni', 'network plugin comparison', 'ebpf networking', 'kubernetes security'],
+    relatedTools: ['yaml-validator', 'docker-compose-generator'],
+    relatedPosts: ['kubernetes-vs-docker-swarm', 'argocd-vs-flux'],
+    translations: {
+      zh: { title: 'Cilium vs Calico：Kubernetes 网络插件对比', description: '对比 Cilium 和 Calico CNI 插件的 Kubernetes 网络。安全性、性能和 eBPF vs iptables。', readingTime: '14 分钟阅读', keywords: ['cilium vs calico', 'kubernetes cni', '网络插件对比', 'ebpf 网络', 'kubernetes 安全'] }
+    },
+  },
+  {
+    slug: 'jaeger-vs-zipkin',
+    title: 'Jaeger vs Zipkin: Distributed Tracing Comparison',
+    description: 'Compare Jaeger and Zipkin for distributed tracing. Features, performance, and OpenTelemetry integration.',
+    date: '2026-03-05',
+    author: 'DevToolBox',
+    readingTime: '11 min read',
+    keywords: ['jaeger vs zipkin', 'distributed tracing', 'tracing comparison', 'opentelemetry tracing', 'apm tools'],
+    relatedTools: ['json-formatter', 'base64-encoder'],
+    relatedPosts: ['prometheus-vs-influxdb', 'grafana-vs-kibana'],
+    translations: {
+      zh: { title: 'Jaeger vs Zipkin：分布式追踪对比', description: '对比 Jaeger 和 Zipkin 分布式追踪。功能、性能和 OpenTelemetry 集成。', readingTime: '11 分钟阅读', keywords: ['jaeger vs zipkin', '分布式追踪', '追踪对比', 'opentelemetry 追踪', 'apm 工具'] }
+    },
+  },
+  {
+    slug: 'open-telemetry-vs-jaeger',
+    title: 'OpenTelemetry vs Jaeger: Observability Framework Comparison',
+    description: 'Compare OpenTelemetry and Jaeger for observability. Tracing, metrics, logs, and integration options.',
+    date: '2026-03-05',
+    author: 'DevToolBox',
+    readingTime: '12 min read',
+    keywords: ['opentelemetry vs jaeger', 'observability framework', 'tracing tools', 'opentelemetry jaeger comparison', 'monitoring 2025'],
+    relatedTools: ['json-formatter', 'yaml-validator'],
+    relatedPosts: ['jaeger-vs-zipkin', 'prometheus-vs-influxdb'],
+    translations: {
+      zh: { title: 'OpenTelemetry vs Jaeger：可观测性框架对比', description: '对比 OpenTelemetry 和 Jaeger 可观测性。追踪、指标、日志和集成选项。', readingTime: '12 分钟阅读', keywords: ['opentelemetry vs jaeger', '可观测性框架', '追踪工具', 'opentelemetry jaeger 对比', '监控 2025'] }
+    },
+  },
+  {
+    slug: 'datadog-vs-new-relic',
+    title: 'Datadog vs New Relic: APM Platform Comparison',
+    description: 'Compare Datadog and New Relic for application performance monitoring. Features, pricing, and integrations.',
+    date: '2026-03-05',
+    author: 'DevToolBox',
+    readingTime: '13 min read',
+    keywords: ['datadog vs new relic', 'apm platform comparison', 'monitoring tools 2025', 'observability platforms', 'application monitoring'],
+    relatedTools: ['json-formatter', 'sql-formatter'],
+    relatedPosts: ['sentry-vs-datadog', 'grafana-vs-datadog'],
+    translations: {
+      zh: { title: 'Datadog vs New Relic：APM 平台对比', description: '对比 Datadog 和 New Relic 应用性能监控。功能、定价和集成。', readingTime: '13 分钟阅读', keywords: ['datadog vs new relic', 'apm 平台对比', '监控工具 2025', '可观测性平台', '应用监控'] }
+    },
+  },
+  {
+    slug: 'pagerduty-vs-opsgenie',
+    title: 'PagerDuty vs Opsgenie: Incident Response Platform Comparison',
+    description: 'Compare PagerDuty and Opsgenie for incident management and on-call scheduling. Features, pricing, and integrations.',
+    date: '2026-03-05',
+    author: 'DevToolBox',
+    readingTime: '11 min read',
+    keywords: ['pagerduty vs opsgenie', 'incident response platform', 'on-call scheduling', 'alerting tools', 'devops incident management'],
+    relatedTools: ['json-formatter', 'cron-generator'],
+    relatedPosts: ['sentry-vs-datadog', 'grafana-vs-datadog'],
+    translations: {
+      zh: { title: 'PagerDuty vs Opsgenie：事件响应平台对比', description: '对比 PagerDuty 和 Opsgenie 事件管理和值班调度。功能、定价和集成。', readingTime: '11 分钟阅读', keywords: ['pagerduty vs opsgenie', '事件响应平台', '值班调度', '告警工具', 'devops 事件管理'] }
+    },
+  },
+  {
+    slug: 'aws-lambda-vs-azure-functions',
+    title: 'AWS Lambda vs Azure Functions: Serverless Compute Comparison',
+    description: 'Compare AWS Lambda and Azure Functions for serverless computing. Performance, pricing, and language support.',
+    date: '2026-03-05',
+    author: 'DevToolBox',
+    readingTime: '13 min read',
+    keywords: ['aws lambda vs azure functions', 'serverless comparison', 'lambda azure functions', 'serverless 2025', 'cloud functions'],
+    relatedTools: ['json-formatter', 'yaml-validator'],
+    relatedPosts: ['aws-lambda-vs-google-cloud-functions', 'serverless-framework-vs-sam-vs-cdk'],
+    translations: {
+      zh: { title: 'AWS Lambda vs Azure Functions：Serverless 计算对比', description: '对比 AWS Lambda 和 Azure Functions 无服务器计算。性能、定价和语言支持。', readingTime: '13 分钟阅读', keywords: ['aws lambda vs azure functions', 'serverless 对比', 'lambda azure functions', 'serverless 2025', '云函数'] }
+    },
+  },
+  {
+    slug: 'aws-lambda-vs-google-cloud-functions',
+    title: 'AWS Lambda vs Google Cloud Functions: Serverless Comparison',
+    description: 'Compare AWS Lambda and Google Cloud Functions for serverless. Performance, cold starts, and pricing.',
+    date: '2026-03-05',
+    author: 'DevToolBox',
+    readingTime: '12 min read',
+    keywords: ['aws lambda vs google cloud functions', 'serverless comparison', 'lambda gcf comparison', 'cloud functions 2025', 'serverless pricing'],
+    relatedTools: ['json-formatter', 'yaml-validator'],
+    relatedPosts: ['aws-lambda-vs-azure-functions', 'serverless-framework-vs-sam-vs-cdk'],
+    translations: {
+      zh: { title: 'AWS Lambda vs Google Cloud Functions：Serverless 对比', description: '对比 AWS Lambda 和 Google Cloud Functions 无服务器。性能、冷启动和定价。', readingTime: '12 分钟阅读', keywords: ['aws lambda vs google cloud functions', 'serverless 对比', 'lambda gcf 对比', '云函数 2025', 'serverless 定价'] }
+    },
+  },
+  {
+    slug: 'serverless-framework-vs-sam-vs-cdk',
+    title: 'Serverless Framework vs SAM vs CDK: IaC for Serverless Comparison',
+    description: 'Compare Serverless Framework, AWS SAM, and CDK for serverless infrastructure as code. Features and learning curve.',
+    date: '2026-03-05',
+    author: 'DevToolBox',
+    readingTime: '14 min read',
+    keywords: ['serverless framework vs sam vs cdk', 'iac comparison', 'serverless iac tools', 'aws sam cdk', 'infrastructure as code'],
+    relatedTools: ['yaml-validator', 'json-formatter'],
+    relatedPosts: ['aws-lambda-vs-azure-functions', 'terraform-vs-pulumi'],
+    translations: {
+      zh: { title: 'Serverless Framework vs SAM vs CDK：Serverless IaC 对比', description: '对比 Serverless Framework、AWS SAM 和 CDK 无服务器基础设施即代码。功能和学习曲线。', readingTime: '14 分钟阅读', keywords: ['serverless framework vs sam vs cdk', 'iac 对比', 'serverless iac 工具', 'aws sam cdk', '基础设施即代码'] }
+    },
+  },
+  {
+    slug: 'vite-vs-webpack-2025',
+    title: 'Vite vs Webpack 2025: Build Tool Comparison',
+    description: 'Compare Vite and Webpack for frontend builds. Performance, configuration, and ecosystem in 2025.',
+    date: '2026-03-05',
+    author: 'DevToolBox',
+    readingTime: '12 min read',
+    keywords: ['vite vs webpack 2025', 'build tool comparison', 'vite webpack performance', 'frontend bundler', 'esbuild'],
+    relatedTools: ['json-formatter', 'typescript-to-javascript'],
+    relatedPosts: ['rspack-vs-vite-2025', 'turbopack-vs-vite'],
+    translations: {
+      zh: { title: 'Vite vs Webpack 2025：构建工具对比', description: '对比 Vite 和 Webpack 前端构建。2025 年的性能、配置和生态系统。', readingTime: '12 分钟阅读', keywords: ['vite vs webpack 2025', '构建工具对比', 'vite webpack 性能', '前端打包器', 'esbuild'] }
+    },
+  },
+  {
+    slug: 'esbuild-vs-swc',
+    title: 'esbuild vs SWC: JavaScript/TypeScript Compiler Comparison',
+    description: 'Compare esbuild and SWC for JavaScript and TypeScript compilation. Performance, features, and ecosystem.',
+    date: '2026-03-05',
+    author: 'DevToolBox',
+    readingTime: '11 min read',
+    keywords: ['esbuild vs swc', 'js ts compiler', 'esbuild swc comparison', 'rust based compiler', 'build performance'],
+    relatedTools: ['json-to-typescript', 'typescript-to-javascript'],
+    relatedPosts: ['vite-vs-webpack-2025', 'rspack-vs-vite-2025'],
+    translations: {
+      zh: { title: 'esbuild vs SWC：JavaScript/TypeScript 编译器对比', description: '对比 esbuild 和 SWC JavaScript 和 TypeScript 编译。性能、功能和生态系统。', readingTime: '11 分钟阅读', keywords: ['esbuild vs swc', 'js ts 编译器', 'esbuild swc 对比', 'rust 编译器', '构建性能'] }
+    },
+  },
+  {
+    slug: 'react-testing-library-vs-enzyme',
+    title: 'React Testing Library vs Enzyme: React Testing Framework Comparison',
+    description: 'Compare React Testing Library and Enzyme for testing React components. Philosophy, API, and best practices.',
+    date: '2026-03-05',
+    author: 'DevToolBox',
+    readingTime: '12 min read',
+    keywords: ['react testing library vs enzyme', 'react testing comparison', 'testing library enzyme', 'react test tools', 'component testing'],
+    relatedTools: ['json-formatter', 'typescript-to-javascript'],
+    relatedPosts: ['vitest-vs-jest-2025', 'playwright-vs-cypress-2025'],
+    translations: {
+      zh: { title: 'React Testing Library vs Enzyme：React 测试框架对比', description: '对比 React Testing Library 和 Enzyme 测试 React 组件。理念、API 和最佳实践。', readingTime: '12 分钟阅读', keywords: ['react testing library vs enzyme', 'react 测试对比', 'testing library enzyme', 'react 测试工具', '组件测试'] }
+    },
+  },
+  {
+    slug: 'mongodb-vs-postgresql-2025',
+    title: 'MongoDB vs PostgreSQL 2025: NoSQL vs SQL Database Comparison',
+    description: 'Compare MongoDB and PostgreSQL databases. Data modeling, performance, and use cases in 2025.',
+    date: '2026-03-05',
+    author: 'DevToolBox',
+    readingTime: '14 min read',
+    keywords: ['mongodb vs postgresql 2025', 'nosql vs sql', 'database comparison', 'mongodb postgresql performance', 'document vs relational'],
+    relatedTools: ['json-formatter', 'sql-formatter'],
+    relatedPosts: ['redis-vs-memcached', 'planetscale-vs-neon-vs-turso'],
+    translations: {
+      zh: { title: 'MongoDB vs PostgreSQL 2025：NoSQL vs SQL 数据库对比', description: '对比 MongoDB 和 PostgreSQL 数据库。2025 年的数据建模、性能和用例。', readingTime: '14 分钟阅读', keywords: ['mongodb vs postgresql 2025', 'nosql vs sql', '数据库对比', 'mongodb postgresql 性能', '文档 vs 关系型'] }
+    },
+  },
+  {
+    slug: 'redis-vs-memcached',
+    title: 'Redis vs Memcached: In-Memory Cache Comparison',
+    description: 'Compare Redis and Memcached for in-memory caching. Features, performance, and use cases.',
+    date: '2026-03-05',
+    author: 'DevToolBox',
+    readingTime: '11 min read',
+    keywords: ['redis vs memcached', 'in-memory cache', 'redis memcached comparison', 'caching strategies', 'cache performance'],
+    relatedTools: ['json-formatter', 'yaml-validator'],
+    relatedPosts: ['mongodb-vs-postgresql-2025', 'upstash-vs-kv'],
+    translations: {
+      zh: { title: 'Redis vs Memcached：内存缓存对比', description: '对比 Redis 和 Memcached 内存缓存。功能、性能和用例。', readingTime: '11 分钟阅读', keywords: ['redis vs memcached', '内存缓存', 'redis memcached 对比', '缓存策略', '缓存性能'] }
+    },
+  },
+  {
+    slug: 'kysely-vs-drizzle',
+    title: 'Kysely vs Drizzle: TypeScript SQL Query Builder Comparison',
+    description: 'Compare Kysely and Drizzle ORM for TypeScript. Type safety, API design, and database support.',
+    date: '2026-03-05',
+    author: 'DevToolBox',
+    readingTime: '12 min read',
+    keywords: ['kysely vs drizzle', 'typescript orm', 'sql query builder', 'kysely drizzle comparison', 'type-safe database'],
+    relatedTools: ['json-to-typescript', 'sql-formatter'],
+    relatedPosts: ['prisma-vs-drizzle-2025', 'prisma-vs-typeorm'],
+    translations: {
+      zh: { title: 'Kysely vs Drizzle：TypeScript SQL 查询构建器对比', description: '对比 Kysely 和 Drizzle ORM TypeScript。类型安全、API 设计和数据库支持。', readingTime: '12 分钟阅读', keywords: ['kysely vs drizzle', 'typescript orm', 'sql 查询构建器', 'kysely drizzle 对比', '类型安全数据库'] }
+    },
+  },
 ];
 
 /** Get post with localized metadata */
