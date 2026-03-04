@@ -13170,7 +13170,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'pinecone-vs-weaviate-vs-milvus',
     title: 'Pinecone vs Weaviate vs Milvus: Vector Database Comparison',
-    description: 'Pinecone, Weaviate, and Milvus are three leading vector databases designed for AI and ML applications. Pinecone is a fully managed cloud service, Weaviate offers both managed and self-hosted options with built-in ML modules, while Milvus is an open-source solution ideal for large-scale deployments. This comparison examines their features, performance, and ideal use cases.
+    description: 'Pinecone, Weaviate, and Milvus are three leading vector databases for AI applications. Compare features, performance, and pricing.',
     date: '2026-03-05',
     author: 'DevToolBox',
     readingTime: '18 min read',
