@@ -13165,6 +13165,7 @@ export const blogPosts: BlogPost[] = [
     relatedPosts: ['pinecone-vs-weaviate-vs-milvus', 'openai-vs-anthropic-api'],
     translations: {
       zh: { title: 'LangChain vs LlamaIndex: LLM 框架对比', description: 'LangChain 和 LlamaIndex 是构建 LLM 应用的两个领先框架。LangChain 专注于链式 LLM 调用和构建智能体,而 LlamaIndex 专注于数据索引和检索增强生成 (RAG)。本比较考察它们的架构、功能和理想用例。', readingTime: '15 分钟阅读', keywords: ['langchain vs llamaindex', 'llm 框架对比', 'rag 框架'] },
+    },
   },
   {
     slug: 'pinecone-vs-weaviate-vs-milvus',
