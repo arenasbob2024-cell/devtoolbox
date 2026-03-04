@@ -13151,7 +13151,72 @@ export const blogPosts: BlogPost[] = [
     relatedPosts: ['prisma-vs-drizzle-2025', 'prisma-vs-typeorm'],
     translations: {
       zh: { title: 'Kysely vs Drizzle：TypeScript SQL 查询构建器对比', description: '对比 Kysely 和 Drizzle ORM TypeScript。类型安全、API 设计和数据库支持。', readingTime: '12 分钟阅读', keywords: ['kysely vs drizzle', 'typescript orm', 'sql 查询构建器', 'kysely drizzle 对比', '类型安全数据库'] }
-    },
+     },
+   },
+  {
+    slug: 'langchain-vs-llamaindex',
+    title: 'LangChain vs LlamaIndex: LLM Framework Comparison',
+    description: 'LangChain and LlamaIndex are two leading frameworks for building LLM-powered applications. LangChain focuses on chaining LLM calls and building agents, while LlamaIndex specializes in data indexing and retrieval-augmented generation (RAG). This comparison examines their architectures, capabilities, and ideal use cases.',
+    date: '2026-03-05',
+    author: 'DevToolBox',
+    readingTime: '15 min read',
+    keywords: ['langchain vs llamaindex', 'llm framework comparison', 'rag framework', 'langchain tutorial', 'llamaindex tutorial'],
+    relatedTools: ['json-formatter', 'regex-tester', 'base64-encoder'],
+    relatedPosts: ['pinecone-vs-weaviate-vs-milvus', 'openai-vs-anthropic-api'],
+    translations: {
+      zh: { title: 'LangChain vs LlamaIndex: LLM 框架对比', description: 'LangChain 和 LlamaIndex 是构建 LLM 应用的两个领先框架。LangChain 专注于链式 LLM 调用和构建智能体,而 LlamaIndex 专注于数据索引和检索增强生成 (RAG)。本比较考察它们的架构、功能和理想用例。', readingTime: '15 分钟阅读', keywords: ['langchain vs llamaindex', 'llm 框架对比', 'rag 框架'] },
+  },
+  {
+    slug: 'pinecone-vs-weaviate-vs-milvus',
+    title: 'Pinecone vs Weaviate vs Milvus: Vector Database Comparison',
+    description: 'Pinecone, Weaviate, and Milvus are three leading vector databases designed for AI and ML applications. Pinecone is a fully managed cloud service, Weaviate offers both managed and self-hosted options with built-in ML modules, while Milvus is an open-source solution ideal for large-scale deployments. This comparison examines their features, performance, and ideal use cases.
+    date: '2026-03-05',
+    author: 'DevToolBox',
+    readingTime: '18 min read',
+    keywords: ['pinecone vs weaviate', 'weaviate vs milvus', 'vector database comparison', 'pinecone tutorial', 'weaviate tutorial'],
+    relatedTools: ['json-formatter', 'regex-tester', 'base64-encoder'],
+    relatedPosts: ['langchain-vs-llamaindex', 'huggingface-vs-replicate'],
+    translations: {
+      zh: { title: 'Pinecone vs Weaviate vs Milvus: 向量数据库对比', description: 'Pinecone、Weaviate 和 Milvus 是三个专为 AI 和 ML 应用设计的领先向量数据库。 Pinecone 是完全托管的云服务, Weaviate 提供托管和自托管选项并内置 ML 模块,而 Milvus 是开源解决方案,适合大规模部署。本比较考察它们的功能、性能和理想用例。', readingTime: '18 分钟阅读', keywords: ['pinecone vs weaviate', 'weaviate vs milvus', '向量数据库对比'] },
+  },
+  {
+    slug: 'openai-vs-anthropic-api',
+    title: 'OpenAI vs Anthropic API: LLM API Comparison',
+    description: 'OpenAI and Anthropic are two leading providers of large language model APIs. OpenAI offers GPT-4, GPT-3.5, and DALL-E models, while Anthropic provides Claude models with a focus on safety and honesty. This comparison examines their APIs, pricing, capabilities, and ideal use cases for developers building AI applications.',
+    date: '2026-03-05',
+    author: 'DevToolBox',
+    readingTime: '16 min read',
+    keywords: ['openai vs anthropic', 'claude api comparison', 'llm api comparison', 'gpt-4 vs claude', 'anthropic api pricing'],
+    relatedTools: ['json-formatter', 'jwt-decoder', 'base64-encoder'],
+    relatedPosts: ['langchain-vs-llamaindex', 'huggingface-vs-replicate'],
+    translations: {
+      zh: { title: 'OpenAI vs Anthropic API: LLM API 对比', description: 'OpenAI 和 Anthropic 是大语言模型 API 的两个领先提供商者: OpenAI 提供 GPT-4、GPT-3.5、 DALL-E 模型,而 Anthropic 提供 Claude 模型,专注于安全性和诚实性。本比较考察它们的 API、定价、功能和开发者构建 AI 应用的理想用例。', readingTime: '16 分钟阅读', keywords: ['openai vs anthropic', 'claude api 对比', 'llm api 对比'] },
+  },
+  {
+    slug: 'huggingface-vs-replicate',
+    title: 'Hugging Face vs Replicate: ML Model Platform Comparison',
+    description: 'Hugging Face and Replicate are two leading platforms for deploying and using machine learning models. Hugging Face focuses on open-source model hosting, datasets, and ML tooling, while Replicate specializes in easy model deployment and API access. This comparison examines their offerings, pricing, and ideal use cases.',
+    date: '2026-03-05',
+    author: 'DevToolBox',
+    readingTime: '14 min read',
+    keywords: ['huggingface vs replicate', 'ml platform comparison', 'hugging face hub', 'replicate api', 'model deployment platform'],
+    relatedTools: ['json-formatter', 'yaml-validator', 'base64-encoder'],
+    relatedPosts: ['pinecone-vs-weaviate-vs-milvus', 'vllm-vs-tgi-vs-ollama'],
+    translations: {
+      zh: { title: 'Hugging Face vs Replicate: ML 模型平台对比', description: 'Hugging Face 和 Replicate 是部署和使用机器学习模型的两个领先平台。 Hugging Face 专注于开源模型托管、数据集和 ML 工具,而 Replicate 专注于简单的模型部署和 API 访问。本比较考察它们的产品、定价和理想用例。', readingTime: '14 分钟阅读', keywords: ['huggingface vs replicate', 'ml 模型平台对比'] }
+  },
+  {
+    slug: 'vllm-vs-tgi-vs-ollama',
+    title: 'vLLM vs TGI vs Ollama: LLM Inceern Engine Comparison',
+    description: 'vLLM, TGI (Text Generation Inference), and Ollama are three popular solutions for running large language models locally or vLLM focuses on high-throughput serving with PagedAttention, TGI is Hugging Face production-ready inference server, while Ollama emphasizes simplicity for local development. This comparison examines their performance, features, and ideal use cases.',
+    date: '2026-03-05',
+    author: 'DevToolBox',
+    readingTime: '17 min read',
+    keywords: ['vllm vs tgi', 'tgi vs ollama', 'llm inference engine', 'local llm', 'ollama tutorial'],
+    relatedTools: ['json-formatter', 'yaml-validator', 'docker-compose-generator'],
+    relatedPosts: ['huggingface-vs-replicate', 'openai-vs-anthropic-api'],
+    translations: {
+      zh: { title: 'vLLM vs TGI vs Ollama: LLM 推理引擎对比', description: 'vLLM、 TGI 和Text Generation Inference) 和 Ollama 是在本地运行大型语言模型的三个流行解决方案: vLLM 专注于高吞吐量服务,使用 PagedAttention,TGI 是 Hugging Face 的生产就绪推理服务器,而 Ollama 强调本地开发的简单性。本比较考察它们的性能、功能和理想用例。', readingTime: '17 分钟阅读', keywords: ['vllm vs tgi', 'tgi vs ollama', 'llm 推理引擎'] }
   },
 ];
 
