@@ -40,7 +40,7 @@ export default function BlogListPage() {
 
       {/* Articles */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: 24, marginTop: 24 }}>
-        {blogPosts.map((rawPost) => {
+        {[...blogPosts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).map((rawPost) => {
           const post = getLocalizedPost(rawPost.slug, lang) || rawPost;
           return (
             <Link
