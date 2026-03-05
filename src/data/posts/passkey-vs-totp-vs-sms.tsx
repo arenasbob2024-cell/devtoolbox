@@ -324,13 +324,13 @@ const authenticateWithPasskey = async () => {
 import * as crypto from \\u0060crypto\\u0060;
 import * as base32 from \\u0060hi-base32\\u0060;
 
-function generateTOTPSecret() {
+function generateTOTPSecret(userEmail: string) {
   const buffer = crypto.randomBytes(20);
   const base32Secret = base32.encode(buffer).replace(/=/g, '');
   
   return {
     secret: base32Secret,
-    qrCodeUrl: \\u0060otpauth://totp/MyApp:${userEmail}?secret=${base32Secret}&issuer=MyApp\\u0060
+    qrCodeUrl: 'otpauth://totp/MyApp:' + userEmail + '?secret=' + base32Secret + '&issuer=MyApp'
   };
 }
 
