@@ -13220,7 +13220,35 @@ export const blogPosts: BlogPost[] = [
     relatedTools: ['json-formatter', 'yaml-validator', 'docker-compose-generator'],
     relatedPosts: ['huggingface-vs-replicate', 'openai-vs-anthropic-api'],
     translations: {
-      zh: { title: 'vLLM vs TGI vs Ollama: LLM 推理引擎对比', description: 'vLLM、TGI 和 Ollama 是在本地运行大型语言模型的三个流行解决方案。本比较考察它们的性能、功能和理想用例。', readingTime: '17 分钟阅读', keywords: ['vllm vs tgi', 'tgi vs ollama', 'llm 推理引擎'] },
+      zh: { title: 'vLLM vs TGI vs Ollama: LLM 推理引擎对比', description: 'vLLM、TGI 和 Ollama 本地 LLM 推理对比。', readingTime: '17 分钟阅读', keywords: ['vllm vs tgi', 'tgi vs ollama', 'llm 推理引擎'] },
+    },
+  },
+  {
+    slug: 'externaldns-vs-coredns',
+    title: 'ExternalDNS vs CoreDNS: Kubernetes DNS Comparison',
+    description: 'Compare ExternalDNS and CoreDNS for Kubernetes DNS management. Auto-discovery, DNS providers, and configuration.',
+    date: '2026-03-05',
+    author: 'DevToolBox',
+    readingTime: '11 min read',
+    keywords: ['externaldns vs coredns', 'kubernetes dns', 'dns management', 'externaldns coredns comparison'],
+    relatedTools: ['yaml-validator', 'json-formatter'],
+    relatedPosts: ['traefik-vs-nginx-proxy', 'nginx-vs-caddy-2025'],
+    translations: {
+      zh: { title: 'ExternalDNS vs CoreDNS: Kubernetes DNS 对比', description: '对比 ExternalDNS 和 CoreDNS Kubernetes DNS 管理。', readingTime: '11 分钟阅读', keywords: ['externaldns vs coredns', 'kubernetes dns', 'dns 管理'] },
+    },
+  },
+  {
+    slug: 'openebs-vs-ceph',
+    title: 'OpenEBS vs Ceph: Kubernetes Storage Comparison',
+    description: 'Compare OpenEBS and Ceph for Kubernetes storage. Performance, complexity, and use cases.',
+    date: '2026-03-05',
+    author: 'DevToolBox',
+    readingTime: '12 min read',
+    keywords: ['openebs vs ceph', 'kubernetes storage', 'storage comparison', 'openebs ceph performance'],
+    relatedTools: ['yaml-validator', 'docker-compose-generator'],
+    relatedPosts: ['cilium-vs-calico', 'kubernetes-vs-docker-swarm'],
+    translations: {
+      zh: { title: 'OpenEBS vs Ceph: Kubernetes 存储对比', description: '对比 OpenEBS 和 Ceph Kubernetes 存储。', readingTime: '12 分钟阅读', keywords: ['openebs vs ceph', 'kubernetes 存储', '存储对比'] },
     },
   },
 ];
