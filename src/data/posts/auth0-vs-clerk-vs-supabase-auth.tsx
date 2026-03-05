@@ -295,9 +295,9 @@ import { getAccessTokenSilently } from \\u0060@auth0/auth0-react\\u0060;
 
 async function callApi() {
   const token = await getAccessTokenSilently();
-  const response = await fetch(\\u0060https://api.example.com/data\\u0060, {
+  const response = await fetch('https://api.example.com/data', {
     headers: {
-      Authorization: \\u0060Bearer \\u0060${token}
+      Authorization: 'Bearer ' + token
     }
   });
   return response.json();
