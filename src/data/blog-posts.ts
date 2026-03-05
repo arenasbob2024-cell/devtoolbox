@@ -13192,7 +13192,8 @@ export const blogPosts: BlogPost[] = [
     relatedTools: ['json-formatter', 'jwt-decoder', 'base64-encoder'],
     relatedPosts: ['langchain-vs-llamaindex', 'huggingface-vs-replicate'],
     translations: {
-      zh: { title: 'OpenAI vs Anthropic API: LLM API 对比', description: 'OpenAI 和 Anthropic 是大语言模型 API 的两个领先提供商者: OpenAI 提供 GPT-4、GPT-3.5、 DALL-E 模型,而 Anthropic 提供 Claude 模型,专注于安全性和诚实性。本比较考察它们的 API、定价、功能和开发者构建 AI 应用的理想用例。', readingTime: '16 分钟阅读', keywords: ['openai vs anthropic', 'claude api 对比', 'llm api 对比'] },
+      zh: { title: 'OpenAI vs Anthropic API: LLM API 对比', description: 'OpenAI 和 Anthropic LLM API 对比。', readingTime: '16 分钟阅读', keywords: ['openai vs anthropic', 'claude api 对比', 'llm api 对比'] },
+    },
   },
   {
     slug: 'huggingface-vs-replicate',
@@ -13205,12 +13206,13 @@ export const blogPosts: BlogPost[] = [
     relatedTools: ['json-formatter', 'yaml-validator', 'base64-encoder'],
     relatedPosts: ['pinecone-vs-weaviate-vs-milvus', 'vllm-vs-tgi-vs-ollama'],
     translations: {
-      zh: { title: 'Hugging Face vs Replicate: ML 模型平台对比', description: 'Hugging Face 和 Replicate 是部署和使用机器学习模型的两个领先平台。 Hugging Face 专注于开源模型托管、数据集和 ML 工具,而 Replicate 专注于简单的模型部署和 API 访问。本比较考察它们的产品、定价和理想用例。', readingTime: '14 分钟阅读', keywords: ['huggingface vs replicate', 'ml 模型平台对比'] }
+      zh: { title: 'Hugging Face vs Replicate: ML 模型平台对比', description: 'Hugging Face 和 Replicate ML 模型平台对比。', readingTime: '14 分钟阅读', keywords: ['huggingface vs replicate', 'ml 模型平台对比'] },
+    },
   },
   {
     slug: 'vllm-vs-tgi-vs-ollama',
     title: 'vLLM vs TGI vs Ollama: LLM Inceern Engine Comparison',
-    description: 'vLLM, TGI (Text Generation Inference), and Ollama are three popular solutions for running large language models locally or vLLM focuses on high-throughput serving with PagedAttention, TGI is Hugging Face production-ready inference server, while Ollama emphasizes simplicity for local development. This comparison examines their performance, features, and ideal use cases.',
+    description: 'vLLM, TGI (Text Generation Inference), and Ollama are three popular solutions for running large language models locally. vLLM focuses on high-throughput serving with PagedAttention, TGI is Hugging Face production-ready inference server, while Ollama emphasizes simplicity for local development. This comparison examines their performance, features, and ideal use cases.',
     date: '2026-03-05',
     author: 'DevToolBox',
     readingTime: '17 min read',
@@ -13218,7 +13220,8 @@ export const blogPosts: BlogPost[] = [
     relatedTools: ['json-formatter', 'yaml-validator', 'docker-compose-generator'],
     relatedPosts: ['huggingface-vs-replicate', 'openai-vs-anthropic-api'],
     translations: {
-      zh: { title: 'vLLM vs TGI vs Ollama: LLM 推理引擎对比', description: 'vLLM、 TGI 和Text Generation Inference) 和 Ollama 是在本地运行大型语言模型的三个流行解决方案: vLLM 专注于高吞吐量服务,使用 PagedAttention,TGI 是 Hugging Face 的生产就绪推理服务器,而 Ollama 强调本地开发的简单性。本比较考察它们的性能、功能和理想用例。', readingTime: '17 分钟阅读', keywords: ['vllm vs tgi', 'tgi vs ollama', 'llm 推理引擎'] }
+      zh: { title: 'vLLM vs TGI vs Ollama: LLM 推理引擎对比', description: 'vLLM、TGI 和 Ollama 是在本地运行大型语言模型的三个流行解决方案。本比较考察它们的性能、功能和理想用例。', readingTime: '17 分钟阅读', keywords: ['vllm vs tgi', 'tgi vs ollama', 'llm 推理引擎'] },
+    },
   },
 ];
 
