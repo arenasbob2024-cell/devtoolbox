@@ -13178,7 +13178,8 @@ export const blogPosts: BlogPost[] = [
     relatedTools: ['json-formatter', 'regex-tester', 'base64-encoder'],
     relatedPosts: ['langchain-vs-llamaindex', 'huggingface-vs-replicate'],
     translations: {
-      zh: { title: 'Pinecone vs Weaviate vs Milvus: 向量数据库对比', description: 'Pinecone、Weaviate 和 Milvus 是三个专为 AI 和 ML 应用设计的领先向量数据库。 Pinecone 是完全托管的云服务, Weaviate 提供托管和自托管选项并内置 ML 模块,而 Milvus 是开源解决方案,适合大规模部署。本比较考察它们的功能、性能和理想用例。', readingTime: '18 分钟阅读', keywords: ['pinecone vs weaviate', 'weaviate vs milvus', '向量数据库对比'] },
+      zh: { title: 'Pinecone vs Weaviate vs Milvus: 向量数据库对比', description: 'Pinecone、Weaviate 和 Milvus 向量数据库对比。', readingTime: '18 分钟阅读', keywords: ['pinecone vs weaviate', 'weaviate vs milvus', '向量数据库对比'] },
+    },
   },
   {
     slug: 'openai-vs-anthropic-api',
