@@ -361,7 +361,7 @@ function verifyTOTP(secret: string, token: string): boolean {
 import QRCode from \\u0060qrcode\\u0060;
 
 async function displayQRCode(secret: string, email: string) {
-  const url = \\u0060otpauth://totp/MyApp:${email}?secret=${secret}&issuer=MyApp\\u0060;
+  const url = 'otpauth://totp/MyApp:' + email + '?secret=' + secret + '&issuer=MyApp';
   const qrDataUrl = await QRCode.toDataURL(url);
   
   return (
