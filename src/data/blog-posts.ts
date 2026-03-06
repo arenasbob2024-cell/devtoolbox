@@ -13465,7 +13465,7 @@ export const blogPosts: BlogPost[] = [
     relatedPosts: ["oauth2-vs-oidc-vs-saml", "jwt-vs-session"],
     translations: { zh: { title: "Passkeys vs TOTP：MFA 对比", description: "对比 Passkeys 和 TOTP 多因素认证。", readingTime: "10 分钟阅读", keywords: ["passkeys vs totp", "mfa 对比"] } },
   },
-
+];
 
 /** Get post with localized metadata */
 export function getLocalizedPost(slug: string, lang: string): BlogPost | undefined {
