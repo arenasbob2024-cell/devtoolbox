@@ -4264,6 +4264,42 @@
       "faq5q": "What timezone does cron use?",
       "faq5a": "Cron uses the system local timezone by default. Some systems allow specifying TZ variable or using UTC. Always check your system documentation.",
       "relatedTitle": "Related Tools"
+    },
+    "saml-decoder": {
+      "name": "Dekoder SAML",
+      "description": "Dekode dan periksa respons dan permintaan SAML",
+      "pageTitle": "Dekoder SAML Online Gratis",
+      "pageDescription": "Dekode respons dan permintaan SAML yang dikodekan Base64 menjadi XML yang dapat dibaca."
+    },
+    "wifi-qr-generator": {
+      "name": "Generator Kode QR WiFi",
+      "description": "Buat kode QR untuk berbagi WiFi",
+      "pageTitle": "Generator Kode QR WiFi — Bagikan WiFi dengan Kode QR",
+      "pageDescription": "Buat kode QR untuk jaringan WiFi Anda. Tamu memindai untuk terhubung secara instan."
+    },
+    "xpath-tester": {
+      "name": "Penguji XPath",
+      "description": "Uji dan evaluasi ekspresi XPath pada XML",
+      "pageTitle": "Penguji XPath Online — Evaluasi ekspresi XPath",
+      "pageDescription": "Uji ekspresi XPath pada data XML Anda secara real-time."
+    },
+    "toml-json": {
+      "name": "Konverter TOML ↔ JSON",
+      "description": "Konversi antara format TOML dan JSON",
+      "pageTitle": "Konverter TOML ke JSON Online Gratis",
+      "pageDescription": "Konversi TOML ke JSON dan JSON ke TOML secara online gratis."
+    },
+    "protobuf-decoder": {
+      "name": "Dekoder Protobuf",
+      "description": "Dekode data biner Protocol Buffers",
+      "pageTitle": "Dekoder Protobuf Online Gratis",
+      "pageDescription": "Dekode data biner Protocol Buffers tanpa file skema .proto."
+    },
+    "ai-token-counter": {
+      "name": "Penghitung Token AI",
+      "description": "Hitung token dan perkirakan biaya API",
+      "pageTitle": "Penghitung Token AI — GPT, Claude, Gemini",
+      "pageDescription": "Hitung token dan perkirakan biaya API untuk GPT-4, Claude, Gemini dan model AI lainnya."
     }
   },
   "footer": {

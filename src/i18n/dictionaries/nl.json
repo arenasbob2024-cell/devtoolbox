@@ -4264,6 +4264,42 @@
       "faq5q": "What timezone does cron use?",
       "faq5a": "Cron uses the system local timezone by default. Some systems allow specifying TZ variable or using UTC. Always check your system documentation.",
       "relatedTitle": "Related Tools"
+    },
+    "saml-decoder": {
+      "name": "SAML Decoder",
+      "description": "SAML-antwoorden en -verzoeken decoderen",
+      "pageTitle": "SAML Decoder Online Gratis",
+      "pageDescription": "Decodeer Base64-gecodeerde SAML-antwoorden en -verzoeken naar leesbare XML."
+    },
+    "wifi-qr-generator": {
+      "name": "WiFi QR-code Generator",
+      "description": "QR-codes genereren voor WiFi-netwerken",
+      "pageTitle": "WiFi QR-code Generator — Deel WiFi met QR-code",
+      "pageDescription": "Genereer een QR-code voor uw WiFi-netwerk. Gasten scannen om direct verbinding te maken."
+    },
+    "xpath-tester": {
+      "name": "XPath Tester",
+      "description": "XPath-expressies testen tegen XML",
+      "pageTitle": "XPath Tester Online — XPath-expressies evalueren",
+      "pageDescription": "Test XPath-expressies tegen uw XML-gegevens in realtime."
+    },
+    "toml-json": {
+      "name": "TOML ↔ JSON Converter",
+      "description": "Converteren tussen TOML en JSON",
+      "pageTitle": "TOML naar JSON Converter Online Gratis",
+      "pageDescription": "Converteer TOML naar JSON en JSON naar TOML online gratis."
+    },
+    "protobuf-decoder": {
+      "name": "Protobuf Decoder",
+      "description": "Protocol Buffers binaire gegevens decoderen",
+      "pageTitle": "Protobuf Decoder Online Gratis",
+      "pageDescription": "Decodeer Protocol Buffers binaire gegevens zonder .proto schema."
+    },
+    "ai-token-counter": {
+      "name": "AI Token Teller",
+      "description": "Tokens tellen en API-kosten schatten",
+      "pageTitle": "AI Token Teller — GPT, Claude, Gemini",
+      "pageDescription": "Tel tokens en schat API-kosten voor GPT-4, Claude, Gemini en andere AI-modellen."
     }
   },
   "footer": {

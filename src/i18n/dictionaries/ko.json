@@ -4264,6 +4264,42 @@
       "faq5q": "What timezone does cron use?",
       "faq5a": "Cron uses the system local timezone by default. Some systems allow specifying TZ variable or using UTC. Always check your system documentation.",
       "relatedTitle": "Related Tools"
+    },
+    "saml-decoder": {
+      "name": "SAML 디코더",
+      "description": "SAML 응답 및 요청 디코딩 및 검사",
+      "pageTitle": "SAML 디코더 온라인 무료 — SAML 응답 및 요청 디코딩",
+      "pageDescription": "Base64로 인코딩된 SAML 응답 및 요청을 읽기 쉬운 XML로 디코딩합니다."
+    },
+    "wifi-qr-generator": {
+      "name": "WiFi QR 코드 생성기",
+      "description": "WiFi 네트워크 공유용 QR 코드 생성",
+      "pageTitle": "WiFi QR 코드 생성기 — QR 코드로 WiFi 공유",
+      "pageDescription": "WiFi 네트워크용 QR 코드를 생성하세요. 게스트가 스캔하여 즉시 연결할 수 있습니다."
+    },
+    "xpath-tester": {
+      "name": "XPath 테스터",
+      "description": "XML에 대한 XPath 식 테스트 및 평가",
+      "pageTitle": "XPath 테스터 온라인 — XPath 식 평가",
+      "pageDescription": "XML 데이터에 대한 XPath 식을 실시간으로 테스트하세요."
+    },
+    "toml-json": {
+      "name": "TOML ↔ JSON 변환기",
+      "description": "TOML과 JSON 형식 간 변환",
+      "pageTitle": "TOML↔JSON 변환기 온라인 무료",
+      "pageDescription": "TOML을 JSON으로, JSON을 TOML로 온라인에서 무료 변환."
+    },
+    "protobuf-decoder": {
+      "name": "Protobuf 디코더",
+      "description": "Protocol Buffers 바이너리 데이터 디코딩",
+      "pageTitle": "Protobuf 디코더 온라인 무료",
+      "pageDescription": ".proto 스키마 없이 Protocol Buffers 바이너리 데이터를 디코딩합니다."
+    },
+    "ai-token-counter": {
+      "name": "AI 토큰 카운터",
+      "description": "토큰 수 계산 및 API 비용 추정",
+      "pageTitle": "AI 토큰 카운터 — GPT, Claude, Gemini",
+      "pageDescription": "GPT-4, Claude, Gemini 등 AI 모델의 토큰 수를 계산하고 API 비용을 추정합니다."
     }
   },
   "footer": {

@@ -4264,6 +4264,42 @@
       "faq5q": "What timezone does cron use?",
       "faq5a": "Cron uses the system local timezone by default. Some systems allow specifying TZ variable or using UTC. Always check your system documentation.",
       "relatedTitle": "Related Tools"
+    },
+    "saml-decoder": {
+      "name": "Décodeur SAML",
+      "description": "Décoder et inspecter les réponses et requêtes SAML",
+      "pageTitle": "Décodeur SAML en ligne gratuit — Décoder réponse et requête SAML",
+      "pageDescription": "Décodez les réponses et requêtes SAML encodées en Base64 en XML lisible. Déboguez les jetons d'authentification SSO."
+    },
+    "wifi-qr-generator": {
+      "name": "Générateur QR Code WiFi",
+      "description": "Générer des codes QR pour partager le WiFi",
+      "pageTitle": "Générateur QR Code WiFi — Partagez votre WiFi gratuitement",
+      "pageDescription": "Générez un code QR pour votre réseau WiFi. Les invités scannent pour se connecter instantanément."
+    },
+    "xpath-tester": {
+      "name": "Testeur XPath",
+      "description": "Tester et évaluer des expressions XPath sur XML",
+      "pageTitle": "Testeur XPath en ligne — Évaluer des expressions XPath",
+      "pageDescription": "Testez des expressions XPath sur vos données XML en temps réel. Évaluateur XPath gratuit en ligne."
+    },
+    "toml-json": {
+      "name": "Convertisseur TOML ↔ JSON",
+      "description": "Convertir entre les formats TOML et JSON",
+      "pageTitle": "Convertisseur TOML vers JSON en ligne gratuit",
+      "pageDescription": "Convertissez TOML en JSON et JSON en TOML en ligne gratuitement."
+    },
+    "protobuf-decoder": {
+      "name": "Décodeur Protobuf",
+      "description": "Décoder les données binaires Protocol Buffers",
+      "pageTitle": "Décodeur Protobuf en ligne gratuit",
+      "pageDescription": "Décodez les données binaires Protocol Buffers sans fichier .proto."
+    },
+    "ai-token-counter": {
+      "name": "Compteur de Tokens IA",
+      "description": "Compter les tokens et estimer les coûts API",
+      "pageTitle": "Compteur de Tokens IA — GPT, Claude, Gemini",
+      "pageDescription": "Comptez les tokens et estimez les coûts API pour GPT-4, Claude, Gemini et d'autres modèles IA."
     }
   },
   "footer": {

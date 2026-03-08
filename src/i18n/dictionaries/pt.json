@@ -4264,6 +4264,42 @@
       "faq5q": "What timezone does cron use?",
       "faq5a": "Cron uses the system local timezone by default. Some systems allow specifying TZ variable or using UTC. Always check your system documentation.",
       "relatedTitle": "Related Tools"
+    },
+    "saml-decoder": {
+      "name": "Decodificador SAML",
+      "description": "Decodificar e inspecionar respostas e pedidos SAML",
+      "pageTitle": "Decodificador SAML Online Grátis",
+      "pageDescription": "Decodifique respostas e pedidos SAML codificados em Base64 para XML legível."
+    },
+    "wifi-qr-generator": {
+      "name": "Gerador de QR Code WiFi",
+      "description": "Gerar códigos QR para partilha de WiFi",
+      "pageTitle": "Gerador de QR Code WiFi — Partilhe WiFi com QR Code",
+      "pageDescription": "Gere um código QR para a sua rede WiFi. Os convidados digitalizam para se ligarem instantaneamente."
+    },
+    "xpath-tester": {
+      "name": "Testador XPath",
+      "description": "Testar e avaliar expressões XPath em XML",
+      "pageTitle": "Testador XPath Online — Avaliar expressões XPath",
+      "pageDescription": "Teste expressões XPath nos seus dados XML em tempo real."
+    },
+    "toml-json": {
+      "name": "Conversor TOML ↔ JSON",
+      "description": "Converter entre formatos TOML e JSON",
+      "pageTitle": "Conversor TOML para JSON Online Grátis",
+      "pageDescription": "Converta TOML para JSON e JSON para TOML online gratuitamente."
+    },
+    "protobuf-decoder": {
+      "name": "Decodificador Protobuf",
+      "description": "Decodificar dados binários Protocol Buffers",
+      "pageTitle": "Decodificador Protobuf Online Grátis",
+      "pageDescription": "Decodifique dados binários Protocol Buffers sem ficheiro .proto."
+    },
+    "ai-token-counter": {
+      "name": "Contador de Tokens IA",
+      "description": "Contar tokens e estimar custos de API",
+      "pageTitle": "Contador de Tokens IA — GPT, Claude, Gemini",
+      "pageDescription": "Conte tokens e estime custos de API para GPT-4, Claude, Gemini e outros modelos IA."
     }
   },
   "footer": {

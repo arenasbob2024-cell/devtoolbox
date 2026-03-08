@@ -4264,6 +4264,42 @@
       "faq5q": "What timezone does cron use?",
       "faq5a": "Cron uses the system local timezone by default. Some systems allow specifying TZ variable or using UTC. Always check your system documentation.",
       "relatedTitle": "Related Tools"
+    },
+    "saml-decoder": {
+      "name": "SAML Decoder",
+      "description": "SAML-Antworten und -Anfragen dekodieren",
+      "pageTitle": "SAML Decoder Online Kostenlos — SAML dekodieren",
+      "pageDescription": "Dekodieren Sie Base64-kodierte SAML-Antworten und -Anfragen in lesbares XML."
+    },
+    "wifi-qr-generator": {
+      "name": "WLAN QR-Code Generator",
+      "description": "QR-Codes für WLAN-Netzwerke generieren",
+      "pageTitle": "WLAN QR-Code Generator — WLAN per QR-Code teilen",
+      "pageDescription": "Generieren Sie einen QR-Code für Ihr WLAN-Netzwerk. Gäste scannen und verbinden sich sofort."
+    },
+    "xpath-tester": {
+      "name": "XPath Tester",
+      "description": "XPath-Ausdrücke gegen XML testen",
+      "pageTitle": "XPath Tester Online — XPath-Ausdrücke auswerten",
+      "pageDescription": "Testen Sie XPath-Ausdrücke gegen Ihre XML-Daten in Echtzeit."
+    },
+    "toml-json": {
+      "name": "TOML ↔ JSON Konverter",
+      "description": "Zwischen TOML und JSON konvertieren",
+      "pageTitle": "TOML zu JSON Konverter Online Kostenlos",
+      "pageDescription": "Konvertieren Sie TOML zu JSON und JSON zu TOML online kostenlos."
+    },
+    "protobuf-decoder": {
+      "name": "Protobuf Decoder",
+      "description": "Protocol Buffers Binärdaten dekodieren",
+      "pageTitle": "Protobuf Decoder Online Kostenlos",
+      "pageDescription": "Dekodieren Sie Protocol Buffers Binärdaten ohne .proto Schema-Datei."
+    },
+    "ai-token-counter": {
+      "name": "KI Token Zähler",
+      "description": "Tokens zählen und API-Kosten schätzen",
+      "pageTitle": "KI Token Zähler — GPT, Claude, Gemini",
+      "pageDescription": "Zählen Sie Tokens und schätzen Sie API-Kosten für GPT-4, Claude, Gemini und andere KI-Modelle."
     }
   },
   "footer": {

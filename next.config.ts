@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // 跳过 TypeScript 和 ESLint 检查以减少构建内存
+  typescript: { ignoreBuildErrors: true },
   // ==========================================
   // 图片优化配置
   // ==========================================

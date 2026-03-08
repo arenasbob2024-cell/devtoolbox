@@ -4264,6 +4264,42 @@
       "faq5q": "What timezone does cron use?",
       "faq5a": "Cron uses the system local timezone by default. Some systems allow specifying TZ variable or using UTC. Always check your system documentation.",
       "relatedTitle": "Related Tools"
+    },
+    "saml-decoder": {
+      "name": "Decodificatore SAML",
+      "description": "Decodifica e ispeziona risposte e richieste SAML",
+      "pageTitle": "Decodificatore SAML Online Gratuito",
+      "pageDescription": "Decodifica le risposte e richieste SAML codificate in Base64 in XML leggibile."
+    },
+    "wifi-qr-generator": {
+      "name": "Generatore QR Code WiFi",
+      "description": "Genera codici QR per la condivisione WiFi",
+      "pageTitle": "Generatore QR Code WiFi — Condividi WiFi con QR Code",
+      "pageDescription": "Genera un codice QR per la tua rete WiFi. Gli ospiti scansionano per connettersi istantaneamente."
+    },
+    "xpath-tester": {
+      "name": "Tester XPath",
+      "description": "Testa e valuta espressioni XPath su XML",
+      "pageTitle": "Tester XPath Online — Valuta espressioni XPath",
+      "pageDescription": "Testa espressioni XPath sui tuoi dati XML in tempo reale."
+    },
+    "toml-json": {
+      "name": "Convertitore TOML ↔ JSON",
+      "description": "Converti tra formati TOML e JSON",
+      "pageTitle": "Convertitore TOML in JSON Online Gratuito",
+      "pageDescription": "Converti TOML in JSON e JSON in TOML online gratuitamente."
+    },
+    "protobuf-decoder": {
+      "name": "Decodificatore Protobuf",
+      "description": "Decodifica dati binari Protocol Buffers",
+      "pageTitle": "Decodificatore Protobuf Online Gratuito",
+      "pageDescription": "Decodifica dati binari Protocol Buffers senza file .proto."
+    },
+    "ai-token-counter": {
+      "name": "Contatore Token IA",
+      "description": "Conta token e stima costi API",
+      "pageTitle": "Contatore Token IA — GPT, Claude, Gemini",
+      "pageDescription": "Conta i token e stima i costi API per GPT-4, Claude, Gemini e altri modelli IA."
     }
   },
   "footer": {

@@ -4264,6 +4264,42 @@
       "faq5q": "What timezone does cron use?",
       "faq5a": "Cron uses the system local timezone by default. Some systems allow specifying TZ variable or using UTC. Always check your system documentation.",
       "relatedTitle": "Related Tools"
+    },
+    "saml-decoder": {
+      "name": "SAML-avkodare",
+      "description": "Avkoda och inspektera SAML-svar och -förfrågningar",
+      "pageTitle": "SAML-avkodare Online Gratis",
+      "pageDescription": "Avkoda Base64-kodade SAML-svar och -förfrågningar till läsbar XML."
+    },
+    "wifi-qr-generator": {
+      "name": "WiFi QR-kodgenerator",
+      "description": "Generera QR-koder för WiFi-nätverk",
+      "pageTitle": "WiFi QR-kodgenerator — Dela WiFi med QR-kod",
+      "pageDescription": "Generera en QR-kod för ditt WiFi-nätverk. Gäster skannar för att ansluta direkt."
+    },
+    "xpath-tester": {
+      "name": "XPath-testare",
+      "description": "Testa och utvärdera XPath-uttryck mot XML",
+      "pageTitle": "XPath-testare Online — Utvärdera XPath-uttryck",
+      "pageDescription": "Testa XPath-uttryck mot dina XML-data i realtid."
+    },
+    "toml-json": {
+      "name": "TOML ↔ JSON Konverterare",
+      "description": "Konvertera mellan TOML och JSON",
+      "pageTitle": "TOML till JSON Konverterare Online Gratis",
+      "pageDescription": "Konvertera TOML till JSON och JSON till TOML online gratis."
+    },
+    "protobuf-decoder": {
+      "name": "Protobuf-avkodare",
+      "description": "Avkoda Protocol Buffers binärdata",
+      "pageTitle": "Protobuf-avkodare Online Gratis",
+      "pageDescription": "Avkoda Protocol Buffers binärdata utan .proto schema."
+    },
+    "ai-token-counter": {
+      "name": "AI Token-räknare",
+      "description": "Räkna tokens och uppskatta API-kostnader",
+      "pageTitle": "AI Token-räknare — GPT, Claude, Gemini",
+      "pageDescription": "Räkna tokens och uppskatta API-kostnader för GPT-4, Claude, Gemini och andra AI-modeller."
     }
   },
   "footer": {

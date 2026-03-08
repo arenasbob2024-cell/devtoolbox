@@ -4264,6 +4264,42 @@
       "faq5q": "What timezone does cron use?",
       "faq5a": "Cron uses the system local timezone by default. Some systems allow specifying TZ variable or using UTC. Always check your system documentation.",
       "relatedTitle": "Related Tools"
+    },
+    "saml-decoder": {
+      "name": "ตัวถอดรหัส SAML",
+      "description": "ถอดรหัสและตรวจสอบการตอบกลับและคำขอ SAML",
+      "pageTitle": "ตัวถอดรหัส SAML ออนไลน์ฟรี",
+      "pageDescription": "ถอดรหัสการตอบกลับและคำขอ SAML ที่เข้ารหัส Base64 เป็น XML ที่อ่านได้"
+    },
+    "wifi-qr-generator": {
+      "name": "เครื่องสร้าง QR Code WiFi",
+      "description": "สร้าง QR Code สำหรับแชร์ WiFi",
+      "pageTitle": "เครื่องสร้าง QR Code WiFi — แชร์ WiFi ด้วย QR Code",
+      "pageDescription": "สร้าง QR Code สำหรับเครือข่าย WiFi ของคุณ แขกสแกนเพื่อเชื่อมต่อทันที"
+    },
+    "xpath-tester": {
+      "name": "ตัวทดสอบ XPath",
+      "description": "ทดสอบและประเมินนิพจน์ XPath บน XML",
+      "pageTitle": "ตัวทดสอบ XPath ออนไลน์ — ประเมินนิพจน์ XPath",
+      "pageDescription": "ทดสอบนิพจน์ XPath กับข้อมูล XML ของคุณแบบเรียลไทม์"
+    },
+    "toml-json": {
+      "name": "ตัวแปลง TOML ↔ JSON",
+      "description": "แปลงระหว่างรูปแบบ TOML และ JSON",
+      "pageTitle": "ตัวแปลง TOML เป็น JSON ออนไลน์ฟรี",
+      "pageDescription": "แปลง TOML เป็น JSON และ JSON เป็น TOML ออนไลน์ฟรี"
+    },
+    "protobuf-decoder": {
+      "name": "ตัวถอดรหัส Protobuf",
+      "description": "ถอดรหัสข้อมูลไบนารี Protocol Buffers",
+      "pageTitle": "ตัวถอดรหัส Protobuf ออนไลน์ฟรี",
+      "pageDescription": "ถอดรหัสข้อมูลไบนารี Protocol Buffers โดยไม่ต้องใช้ไฟล์สคีมา .proto"
+    },
+    "ai-token-counter": {
+      "name": "ตัวนับโทเค็น AI",
+      "description": "นับโทเค็นและประมาณค่าใช้จ่าย API",
+      "pageTitle": "ตัวนับโทเค็น AI — GPT, Claude, Gemini",
+      "pageDescription": "นับโทเค็นและประมาณค่าใช้จ่าย API สำหรับ GPT-4, Claude, Gemini และโมเดล AI อื่นๆ"
     }
   },
   "footer": {

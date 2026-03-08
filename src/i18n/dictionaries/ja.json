@@ -4264,6 +4264,42 @@
       "faq5q": "What timezone does cron use?",
       "faq5a": "Cron uses the system local timezone by default. Some systems allow specifying TZ variable or using UTC. Always check your system documentation.",
       "relatedTitle": "Related Tools"
+    },
+    "saml-decoder": {
+      "name": "SAMLデコーダー",
+      "description": "SAMLレスポンスとリクエストのデコードと検査",
+      "pageTitle": "SAMLデコーダー オンライン無料 — SAMLレスポンス＆リクエストをデコード",
+      "pageDescription": "Base64エンコードされたSAMLレスポンスとリクエストを読みやすいXMLにデコードします。"
+    },
+    "wifi-qr-generator": {
+      "name": "WiFi QRコード生成器",
+      "description": "WiFiネットワーク共有用QRコードを生成",
+      "pageTitle": "WiFi QRコード生成器 — QRコードでWiFiを共有",
+      "pageDescription": "WiFiネットワークのQRコードを生成。ゲストはスキャンして即座に接続できます。"
+    },
+    "xpath-tester": {
+      "name": "XPathテスター",
+      "description": "XMLに対するXPath式のテストと評価",
+      "pageTitle": "XPathテスター オンライン — XPath式を評価",
+      "pageDescription": "XMLデータに対するXPath式をリアルタイムでテスト。無料オンラインXPath評価ツール。"
+    },
+    "toml-json": {
+      "name": "TOML ↔ JSON コンバーター",
+      "description": "TOMLとJSON形式間の変換",
+      "pageTitle": "TOML⇔JSON変換ツール オンライン無料",
+      "pageDescription": "TOMLをJSONに、JSONをTOMLにオンラインで無料変換。"
+    },
+    "protobuf-decoder": {
+      "name": "Protobufデコーダー",
+      "description": "Protocol Buffersバイナリデータのデコード",
+      "pageTitle": "Protobufデコーダー オンライン無料",
+      "pageDescription": ".protoスキーマなしでProtocol Buffersバイナリデータをデコード。"
+    },
+    "ai-token-counter": {
+      "name": "AIトークンカウンター",
+      "description": "トークン数をカウントしAPIコストを見積もり",
+      "pageTitle": "AIトークンカウンター — GPT、Claude、Gemini",
+      "pageDescription": "GPT-4、Claude、Gemini等のAIモデルのトークン数をカウントしAPIコストを見積もります。"
     }
   },
   "footer": {

@@ -4264,6 +4264,42 @@
       "faq5q": "What timezone does cron use?",
       "faq5a": "Cron uses the system local timezone by default. Some systems allow specifying TZ variable or using UTC. Always check your system documentation.",
       "relatedTitle": "Related Tools"
+    },
+    "saml-decoder": {
+      "name": "Dekoder SAML",
+      "description": "Dekoduj i sprawdź odpowiedzi i żądania SAML",
+      "pageTitle": "Dekoder SAML Online Za Darmo",
+      "pageDescription": "Dekoduj odpowiedzi i żądania SAML zakodowane w Base64 do czytelnego XML."
+    },
+    "wifi-qr-generator": {
+      "name": "Generator kodu QR WiFi",
+      "description": "Generuj kody QR do udostępniania WiFi",
+      "pageTitle": "Generator kodu QR WiFi — Udostępnij WiFi kodem QR",
+      "pageDescription": "Wygeneruj kod QR dla swojej sieci WiFi. Goście skanują, aby połączyć się natychmiast."
+    },
+    "xpath-tester": {
+      "name": "Tester XPath",
+      "description": "Testuj i ewaluuj wyrażenia XPath na XML",
+      "pageTitle": "Tester XPath Online — Ewaluuj wyrażenia XPath",
+      "pageDescription": "Testuj wyrażenia XPath na swoich danych XML w czasie rzeczywistym."
+    },
+    "toml-json": {
+      "name": "Konwerter TOML ↔ JSON",
+      "description": "Konwertuj między formatami TOML i JSON",
+      "pageTitle": "Konwerter TOML na JSON Online Za Darmo",
+      "pageDescription": "Konwertuj TOML na JSON i JSON na TOML online za darmo."
+    },
+    "protobuf-decoder": {
+      "name": "Dekoder Protobuf",
+      "description": "Dekoduj dane binarne Protocol Buffers",
+      "pageTitle": "Dekoder Protobuf Online Za Darmo",
+      "pageDescription": "Dekoduj dane binarne Protocol Buffers bez pliku schematu .proto."
+    },
+    "ai-token-counter": {
+      "name": "Licznik tokenów AI",
+      "description": "Licz tokeny i szacuj koszty API",
+      "pageTitle": "Licznik tokenów AI — GPT, Claude, Gemini",
+      "pageDescription": "Licz tokeny i szacuj koszty API dla GPT-4, Claude, Gemini i innych modeli AI."
     }
   },
   "footer": {
