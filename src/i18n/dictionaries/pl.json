@@ -4545,6 +4545,42 @@
           "a": "For favicon.ico use 32x32, for Apple Touch Icon use 180x180, and for PWA manifest icons use 192x192 and 512x512. SVG favicons scale to any size automatically."
         }
       ]
+    },
+    "openapi-validator": {
+      "name": "Walidator OpenAPI",
+      "description": "Walidacja specyfikacji OpenAPI/Swagger",
+      "pageTitle": "Walidator OpenAPI - Bezpłatne narzędzie online",
+      "pageDescription": "Zwaliduj specyfikacje OpenAPI 3.0 i Swagger. Sprawdź błędy składni i problemy ze schematem."
+    },
+    "graphql-playground": {
+      "name": "GraphQL Playground",
+      "description": "Interactive GraphQL query editor and explorer",
+      "pageTitle": "GraphQL Playground Online Tool",
+      "pageDescription": "Test GraphQL queries with syntax highlighting, auto-completion, and real-time validation. Perfect for API development and debugging."
+    },
+    "env-editor": {
+      "name": ".env File Editor",
+      "description": "Edit and validate environment configuration files",
+      "pageTitle": ".env File Editor Online Tool",
+      "pageDescription": "Simple editor for .env files with validation, syntax highlighting, and duplicate key detection for environment variables."
+    },
+    "sql-explainer": {
+      "name": "SQL Query Explainer",
+      "description": "Understand SQL queries with AI-powered explanations",
+      "pageTitle": "SQL Query Explainer Online Tool",
+      "pageDescription": "Paste your SQL and get a clear explanation of what each part does. Great for learning SQL and debugging complex queries."
+    },
+    "tailwind-playground": {
+      "name": "Tailwind CSS Playground",
+      "description": "Live Tailwind CSS class builder and previewer",
+      "pageTitle": "Tailwind CSS Playground Online Tool",
+      "pageDescription": "Build responsive designs with Tailwind. Preview classes in real-time with live HTML rendering and utility documentation."
+    },
+    "oauth-debugger": {
+      "name": "OAuth 2.0 Debugger",
+      "description": "Decode and inspect OAuth tokens and credentials",
+      "pageTitle": "OAuth 2.0 Debugger Online Tool",
+      "pageDescription": "Analyze OAuth 2.0 tokens, JWT payloads, and authorization headers. Verify claims and inspect token contents safely."
     }
   },
   "footer": {
