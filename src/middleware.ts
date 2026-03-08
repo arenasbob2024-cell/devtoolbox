@@ -23,6 +23,7 @@ function getLocale(request: NextRequest): Locale {
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  const host = request.headers.get('host') || '';
 
   // Skip for static files, API routes, Next.js internals
   if (
@@ -32,6 +33,13 @@ export function middleware(request: NextRequest) {
     pathname === '/favicon.ico'
   ) {
     return;
+  }
+
+  // www → non-www redirect (fixes duplicate page issues in Search Console)
+  if (host.startsWith('www.')) {
+    const newUrl = new URL(request.url);
+    newUrl.host = host.replace('www.', '');
+    return NextResponse.redirect(newUrl, 301);
   }
 
   // Check if the pathname already has a locale

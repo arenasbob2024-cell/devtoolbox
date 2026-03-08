@@ -4300,6 +4300,251 @@
       "description": "Conta token e stima costi API",
       "pageTitle": "Contatore Token IA — GPT, Claude, Gemini",
       "pageDescription": "Conta i token e stima i costi API per GPT-4, Claude, Gemini e altri modelli IA."
+    },
+    "certutil-decoder": {
+      "name": "Certutil Base64 Decoder",
+      "description": "Decode certutil Base64 encoded strings and certificates online. Convert Base64 from environment variables, certificates, and command-line output.",
+      "pageTitle": "Certutil Base64 Decoder Online Free — Decode Certificates & Base64 Strings",
+      "pageDescription": "Free online certutil base64 decoder. Decode Base64 from environment variables, certificates, and Windows certutil output instantly. No installation required.",
+      "howToUseTitle": "How to Use",
+      "useCasesTitle": "Use Cases",
+      "howToUseSteps": [
+        "Paste your Base64 encoded string from certutil output or environment variable",
+        "Click \"Decode\" to convert the Base64 content to readable text or binary",
+        "View the decoded certificate details, PEM structure, or text content",
+        "Copy the decoded output or download it as a file"
+      ],
+      "useCases": [
+        "Decoding Base64 certificates from Windows certutil command output",
+        "Converting environment variable Base64 values back to original format",
+        "Decoding PEM-encoded certificates and keys from Base64",
+        "Troubleshooting certificate encoding issues in CI/CD pipelines"
+      ],
+      "faqTitle": "Frequently Asked Questions",
+      "faqs": [
+        {
+          "q": "What is certutil Base64 decoding?",
+          "a": "Certutil is a Windows command-line tool that can encode and decode Base64 data. This online tool replicates the decode functionality without needing Windows or command-line access."
+        },
+        {
+          "q": "Can I decode Base64 from environment variables?",
+          "a": "Yes! Simply paste the Base64 string stored in your environment variable and decode it instantly. This is common in CI/CD pipelines where certificates are stored as Base64 environment variables."
+        },
+        {
+          "q": "Is this tool safe for decoding certificates?",
+          "a": "Absolutely. All decoding happens locally in your browser. No data is sent to any server, making it safe for sensitive certificate data."
+        }
+      ]
+    },
+    "js-to-tsx": {
+      "name": "JS to TSX Converter",
+      "description": "Convert JavaScript and JSX files to TypeScript TSX with automatic type annotations and React type inference.",
+      "pageTitle": "JS to TSX Converter Online Free — Convert JavaScript/JSX to TypeScript React",
+      "pageDescription": "Free online JS to TSX converter. Convert JavaScript and JSX files to TypeScript TSX instantly. Automatic type annotations, React props typing, and interface generation.",
+      "howToUseTitle": "How to Use",
+      "useCasesTitle": "Use Cases",
+      "howToUseSteps": [
+        "Paste your JavaScript or JSX code into the input editor",
+        "Click \"Convert to TSX\" to transform the code",
+        "Review the generated TypeScript types and interfaces",
+        "Copy the converted TSX code to your project"
+      ],
+      "useCases": [
+        "Migrating React projects from JavaScript to TypeScript",
+        "Converting JSX components to typed TSX components",
+        "Adding type safety to existing React JavaScript code",
+        "Learning TypeScript by seeing how JS code translates to TS"
+      ],
+      "faqTitle": "Frequently Asked Questions",
+      "faqs": [
+        {
+          "q": "What is the difference between JSX and TSX?",
+          "a": "JSX is JavaScript XML used in React for component templates. TSX is the TypeScript equivalent, adding static type checking to JSX, which helps catch errors at compile time."
+        },
+        {
+          "q": "Will the converter add proper React types?",
+          "a": "Yes, the converter adds React.FC types for functional components, proper event handler types, and generates interfaces for component props."
+        },
+        {
+          "q": "Can I convert entire files?",
+          "a": "Yes, paste your complete JS/JSX file content and the converter will process the entire file, adding type annotations throughout."
+        }
+      ]
+    },
+    "svg-to-css-converter": {
+      "name": "SVG to CSS Converter",
+      "description": "Convert SVG images to CSS background images using data URIs. Optimize SVGs for CSS usage with encoding and minification.",
+      "pageTitle": "SVG to CSS Converter Online Free — Convert SVG to CSS Background Data URI",
+      "pageDescription": "Free SVG to CSS converter. Transform SVG images into CSS background-image data URIs instantly. Optimize, encode, and embed SVGs directly in your CSS. No server upload.",
+      "howToUseTitle": "How to Use",
+      "useCasesTitle": "Use Cases",
+      "howToUseSteps": [
+        "Paste your SVG code or upload an SVG file",
+        "Choose encoding method: URL-encoded or Base64",
+        "Preview the SVG and the generated CSS code",
+        "Copy the CSS background-image property to use in your stylesheet"
+      ],
+      "useCases": [
+        "Embedding small SVG icons directly in CSS to reduce HTTP requests",
+        "Creating CSS-only decorative elements without external files",
+        "Optimizing SVG icons for use in CSS pseudo-elements (::before, ::after)",
+        "Converting SVG logos for inline CSS backgrounds in email templates"
+      ],
+      "faqTitle": "Frequently Asked Questions",
+      "faqs": [
+        {
+          "q": "Should I use URL encoding or Base64 for SVGs in CSS?",
+          "a": "URL encoding is generally recommended for SVGs in CSS because it produces smaller output than Base64 (about 30% smaller). Base64 is better for binary formats like PNG."
+        },
+        {
+          "q": "Is it better to use inline SVG or SVG in CSS?",
+          "a": "For decorative icons and backgrounds, CSS data URIs keep your HTML cleaner. For interactive or accessible SVGs, inline SVG in HTML is preferred as it supports CSS styling and aria attributes."
+        },
+        {
+          "q": "What is the size limit for SVG data URIs?",
+          "a": "There is no strict size limit, but keeping data URIs under 8-10KB is recommended for performance. Larger SVGs should be served as external files."
+        }
+      ]
+    },
+    "json-to-schema": {
+      "name": "JSON to JSON Schema Generator",
+      "description": "Generate JSON Schema from JSON data automatically. Create Draft-07 compliant schemas with type inference and validation rules.",
+      "pageTitle": "JSON to JSON Schema Generator Online Free — Auto-Generate JSON Schema from Data",
+      "pageDescription": "Free JSON to JSON Schema generator. Automatically create JSON Schema Draft-07 from sample JSON data. Infer types, required fields, patterns, and validation rules instantly.",
+      "howToUseTitle": "How to Use",
+      "useCasesTitle": "Use Cases",
+      "howToUseSteps": [
+        "Paste your sample JSON data into the input editor",
+        "Click \"Generate Schema\" to auto-create JSON Schema",
+        "Review and customize the generated schema properties",
+        "Copy the JSON Schema for use in your API validation or documentation"
+      ],
+      "useCases": [
+        "Creating API request/response validation schemas from example data",
+        "Generating OpenAPI/Swagger schema definitions from JSON payloads",
+        "Building form validation rules from existing data structures",
+        "Documenting data formats for team collaboration"
+      ],
+      "faqTitle": "Frequently Asked Questions",
+      "faqs": [
+        {
+          "q": "What JSON Schema version does this generate?",
+          "a": "This tool generates JSON Schema Draft-07, which is the most widely supported version used by validators, API frameworks, and documentation tools."
+        },
+        {
+          "q": "Does it detect required fields?",
+          "a": "Yes, the generator analyzes your JSON data and marks all present fields as required by default. You can customize which fields are optional after generation."
+        },
+        {
+          "q": "Can I generate schema from nested JSON?",
+          "a": "Absolutely. The tool recursively analyzes nested objects and arrays to create complete, nested schema definitions with proper $ref references when applicable."
+        }
+      ]
+    },
+    "toml-validator": {
+      "name": "TOML Validator & Formatter",
+      "description": "Validate and format TOML configuration files online. Check syntax, find errors, and beautify TOML with instant feedback.",
+      "pageTitle": "TOML Validator & Formatter Online Free — Validate & Beautify TOML Config Files",
+      "pageDescription": "Free online TOML validator and formatter. Check TOML syntax, find errors in Cargo.toml or pyproject.toml files, and beautify TOML configuration. Instant validation.",
+      "howToUseTitle": "How to Use",
+      "useCasesTitle": "Use Cases",
+      "howToUseSteps": [
+        "Paste your TOML content (Cargo.toml, pyproject.toml, etc.) into the editor",
+        "Click \"Validate\" to check for syntax errors",
+        "View detailed error messages with line numbers if any issues are found",
+        "Use \"Format\" to beautify the TOML output with consistent indentation"
+      ],
+      "useCases": [
+        "Validating Cargo.toml files for Rust projects before building",
+        "Checking pyproject.toml syntax for Python packaging",
+        "Verifying configuration files before deploying to production",
+        "Formatting TOML files for consistent team coding standards"
+      ],
+      "faqTitle": "Frequently Asked Questions",
+      "faqs": [
+        {
+          "q": "What is TOML?",
+          "a": "TOML (Tom's Obvious, Minimal Language) is a configuration file format designed to be easy to read. It's used by Rust (Cargo.toml), Python (pyproject.toml), Hugo, and many other tools."
+        },
+        {
+          "q": "How is TOML different from YAML?",
+          "a": "TOML uses explicit syntax with brackets and equals signs, making it less ambiguous than YAML. TOML doesn't rely on indentation and has clearer rules for data types, making it harder to make mistakes."
+        },
+        {
+          "q": "Can I validate Cargo.toml files?",
+          "a": "Yes! Paste your Cargo.toml content and the validator will check for TOML syntax errors. Note that it validates TOML syntax, not Cargo-specific fields."
+        }
+      ]
+    },
+    "css-nesting-converter": {
+      "name": "CSS Nesting Converter",
+      "description": "Convert flat CSS to native CSS nesting syntax and check browser support. Transform SCSS/SASS nesting to native CSS nesting.",
+      "pageTitle": "CSS Nesting Converter Online Free — Convert Flat CSS to Native Nesting Syntax",
+      "pageDescription": "Free CSS nesting converter. Transform flat CSS to native CSS nesting syntax. Convert SCSS nesting to native CSS. Check browser support for CSS nesting in 2026.",
+      "howToUseTitle": "How to Use",
+      "useCasesTitle": "Use Cases",
+      "howToUseSteps": [
+        "Paste your flat CSS or SCSS code into the input editor",
+        "Choose conversion direction: flat to nested or nested to flat",
+        "Click \"Convert\" to transform the CSS",
+        "Copy the converted CSS code and check browser compatibility notes"
+      ],
+      "useCases": [
+        "Migrating from SCSS/SASS to native CSS nesting",
+        "Converting flat CSS to nested syntax for better readability",
+        "Learning native CSS nesting syntax from existing stylesheets",
+        "Checking if your CSS nesting is compatible with target browsers"
+      ],
+      "faqTitle": "Frequently Asked Questions",
+      "faqs": [
+        {
+          "q": "Is CSS nesting supported in all browsers in 2026?",
+          "a": "Yes! As of 2026, native CSS nesting is supported in all major browsers including Chrome 120+, Firefox 117+, Safari 17.2+, and Edge 120+. It's safe to use in production."
+        },
+        {
+          "q": "What is the difference between SCSS and CSS nesting?",
+          "a": "Native CSS nesting requires the & symbol for element selectors (e.g., & span {}), while SCSS allows implicit nesting. The converter handles this difference automatically."
+        },
+        {
+          "q": "Should I still use SCSS?",
+          "a": "Native CSS nesting covers most nesting use cases. However, SCSS still offers variables ($vars), mixins, functions, and loops that native CSS doesn't have (though CSS custom properties replace variables)."
+        }
+      ]
+    },
+    "favicon-checker": {
+      "name": "Favicon Checker & Generator",
+      "description": "Check if a website has proper favicons configured. Generate favicon HTML tags for all platforms including Apple Touch Icon and PWA manifest.",
+      "pageTitle": "Favicon Checker & Generator Online Free — Check & Create Favicons for 2026",
+      "pageDescription": "Free favicon checker and generator. Verify your website favicons are properly configured. Generate HTML tags for favicon.ico, SVG, Apple Touch Icon, and PWA manifest.",
+      "howToUseTitle": "How to Use",
+      "useCasesTitle": "Use Cases",
+      "howToUseSteps": [
+        "Enter your website URL to check existing favicons",
+        "Or upload your icon image to generate all required favicon sizes",
+        "Review the generated HTML tags for head section",
+        "Copy the HTML code and favicon files to your project"
+      ],
+      "useCases": [
+        "Checking if your website has all required favicon formats configured",
+        "Generating complete favicon HTML markup for new web projects",
+        "Ensuring Apple Touch Icon and Android manifest icons are set up",
+        "Auditing favicon configuration during SEO reviews"
+      ],
+      "faqTitle": "Frequently Asked Questions",
+      "faqs": [
+        {
+          "q": "What favicon formats do I need in 2026?",
+          "a": "The modern favicon setup needs: (1) favicon.ico for legacy browsers, (2) favicon.svg for modern browsers with dark mode support, (3) apple-touch-icon.png 180x180 for iOS, (4) web-app-manifest with 192x192 and 512x512 PNG icons."
+        },
+        {
+          "q": "Should I use ICO or SVG for favicons?",
+          "a": "Use both! SVG favicons support dark mode and scale perfectly but aren't supported everywhere. ICO provides universal fallback. Use <link rel=\"icon\" type=\"image/svg+xml\" href=\"/favicon.svg\"> with ICO fallback."
+        },
+        {
+          "q": "What size should a favicon be?",
+          "a": "For favicon.ico use 32x32, for Apple Touch Icon use 180x180, and for PWA manifest icons use 192x192 and 512x512. SVG favicons scale to any size automatically."
+        }
+      ]
     }
   },
   "footer": {

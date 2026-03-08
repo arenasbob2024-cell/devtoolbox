@@ -22,7 +22,7 @@ const translations: Record<string, Record<string, string>> = {
     whatIsGitHubActionsContent: 'GitHub Actions is a CI/CD service integrated directly into GitHub. Released in 2018, it automates software workflows directly from GitHub repositories. Actions uses YAML files to define workflows and provides a marketplace with thousands of pre-built actions. It supports matrix builds, multi-environment deployments, and integrates seamlessly with the GitHub ecosystem.',
     
     whatIsGitLabCITitle: 'What is GitLab CI?',
-    whatIsGitLabCITitle: 'GitLab CI is a continuous integration and delivery tool built into GitLab. Launched in 2015, it provides a complete DevOps lifecycle including planning, creation, verification, packaging, release, configuration, and monitoring. GitLab CI uses YAML configuration and includes features like Auto DevOps, built-in container registry, and security scanning.',
+    whatIsGitLabCIContent: 'GitLab CI is a continuous integration and delivery tool built into GitLab. Launched in 2015, it provides a complete DevOps lifecycle including planning, creation, verification, packaging, release, configuration, and monitoring. GitLab CI uses YAML configuration and includes features like Auto DevOps, built-in container registry, and security scanning.',
     
     performanceTitle: 'Feature Comparison',
     performanceIntro: 'Comparing core CI/CD capabilities:',

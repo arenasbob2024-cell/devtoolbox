@@ -1,0 +1,12 @@
+# DevToolBox - robots.txt
+# https://viadreams.cc
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://viadreams.cc/sitemap.xml
+Sitemap: https://viadreams.cc/sitemap-index.xml
+
+# Canonical host
+Host: https://viadreams.cc
