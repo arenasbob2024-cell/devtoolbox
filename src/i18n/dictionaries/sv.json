@@ -1072,58 +1072,10 @@
       ]
     },
     "chmod-calculator": {
-      "name": "Chmod Calculator",
-      "description": "Calculate Linux file permissions with interactive checkboxes",
-      "pageTitle": "Linux Chmod Calculator",
-      "pageDescription": "Interactive chmod permission calculator. Convert between numeric (755) and symbolic (rwxr-xr-x) Linux file permissions.",
-      "numericLabel": "Numeric",
-      "symbolicLabel": "Symbolic",
-      "commandLabel": "Command",
-      "enterNumeric": "Enter numeric permission:",
-      "owner": "Owner (User)",
-      "group": "Group",
-      "others": "Others",
-      "read": "Read",
-      "write": "Write",
-      "execute": "Execute",
-      "commonTitle": "Common Permissions",
-      "common755": "Directories / Executables",
-      "common644": "Regular Files",
-      "common777": "Full Access (caution)",
-      "common700": "Owner Only",
-      "common600": "Private Files",
-      "common444": "Read Only",
-      "seoTitle": "About Linux File Permissions",
-      "seoContent": "Linux file permissions control who can read (r), write (w), and execute (x) files and directories. Permissions are set for three groups: owner, group, and others. The chmod command uses either numeric (octal) notation like 755 or symbolic notation like rwxr-xr-x. Common values: 755 for directories/scripts, 644 for regular files, 600 for private files.",
-      "faqTitle": "Frequently Asked Questions",
-      "faqs": [
-        {
-          "q": "What is chmod?",
-          "a": "chmod (change mode) is a Unix/Linux command that sets file and directory permissions. It controls who can read, write, and execute files."
-        },
-        {
-          "q": "What does 755 mean?",
-          "a": "755 means: owner can read/write/execute (7), group can read/execute (5), others can read/execute (5). It's the standard permission for directories and scripts."
-        },
-        {
-          "q": "What's the difference between numeric and symbolic notation?",
-          "a": "Numeric uses octal digits (755). Symbolic uses letters (rwxr-xr-x). They represent the same permissions — numeric is more compact, symbolic is more readable."
-        }
-      ],
-      "howToUseTitle": "How to Use",
-      "howToUseSteps": [
-        "Click checkboxes to set read/write/execute permissions for owner, group, and others",
-        "Or type a numeric permission (e.g., 755) to auto-set checkboxes",
-        "View the numeric, symbolic, and command representations",
-        "Click a common permission preset for quick setup"
-      ],
-      "useCasesTitle": "Common Use Cases",
-      "useCases": [
-        "Setting up web server file permissions",
-        "Configuring deployment scripts",
-        "Securing sensitive files (SSH keys, config files)",
-        "Troubleshooting 'permission denied' errors"
-      ]
+      "name": "Chmod-kalkylator",
+      "description": "Beräkna Unix-filbehörigheter i oktal och symbolisk notation",
+      "pageTitle": "Chmod-kalkylator",
+      "pageDescription": "Interaktiv Unix-filbehörighetskalkylator med oktal och symbolisk notationskonvertering."
     },
     "text-to-pdf": {
       "name": "Text till PDF Konverterare",
@@ -4581,6 +4533,36 @@
       "description": "Decode and inspect OAuth tokens and credentials",
       "pageTitle": "OAuth 2.0 Debugger Online Tool",
       "pageDescription": "Analyze OAuth 2.0 tokens, JWT payloads, and authorization headers. Verify claims and inspect token contents safely."
+    },
+    "crontab-generator": {
+      "name": "Crontab-generator",
+      "description": "Bygg cron-uttryck visuellt med läsbar förhandsgranskning",
+      "pageTitle": "Crontab-generator",
+      "pageDescription": "Visuell crontab-uttrycksbyggare med läsbara schemabeskrivningar och vanliga förinställningar."
+    },
+    "docker-compose-validator": {
+      "name": "Docker Compose Validator",
+      "description": "Validera Docker Compose YAML-filer för syntax- och strukturfel",
+      "pageTitle": "Docker Compose Validator",
+      "pageDescription": "Validera dina Docker Compose YAML-filer för syntaxfel och bästa praxis."
+    },
+    "git-command-builder": {
+      "name": "Git-kommandobyggare",
+      "description": "Bygg Git-kommandon interaktivt med ett visuellt gränssnitt",
+      "pageTitle": "Git-kommandobyggare",
+      "pageDescription": "Interaktiv Git-kommandobyggare med kategorier för installation, grunder, förgrening och avancerade operationer."
+    },
+    "nginx-config-generator": {
+      "name": "Nginx-konfigurationsgenerator",
+      "description": "Generera Nginx-konfigurationsfiler för vanliga serverinställningar",
+      "pageTitle": "Nginx-konfigurationsgenerator",
+      "pageDescription": "Generera Nginx-konfigurationer för statiska webbplatser, reverse proxy, SPA och omdirigeringar med valfri SSL."
+    },
+    "ssl-checker": {
+      "name": "SSL-kontroll",
+      "description": "Kontrollera SSL-certifikatdetaljer och giltighet för valfri domän",
+      "pageTitle": "SSL-certifikatkontroll",
+      "pageDescription": "Kontrollera SSL/TLS-certifikatets giltighet, utgångsdatum, utfärdare och protokolldetaljer."
     }
   },
   "footer": {

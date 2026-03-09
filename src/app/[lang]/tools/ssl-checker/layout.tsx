@@ -8,18 +8,18 @@ type Props = { params: Promise<{ lang: Locale }>; children: React.ReactNode };
 export async function generateMetadata({ params }: { params: Promise<{ lang: Locale }> }): Promise<Metadata> {
   const { lang } = await params;
   const dict = await getDictionary(lang);
-  const t = dict.tools?.["crontab-generator"] || {};
-  const title = t.pageTitle || t.name || "crontab-generator";
+  const t = dict.tools?.["ssl-checker"] || {};
+  const title = t.pageTitle || t.name || "ssl-checker";
   const description = t.pageDescription || t.description || "";
   return {
     title,
     description,
-    openGraph: { title, description, type: "website", url: `https://viadreams.cc/${lang}/tools/crontab-generator` },
+    openGraph: { title, description, type: "website", url: `https://viadreams.cc/${lang}/tools/ssl-checker` },
     twitter: { card: "summary_large_image", title, description },
     alternates: {
-      canonical: `https://viadreams.cc/${lang}/tools/crontab-generator`,
+      canonical: `https://viadreams.cc/${lang}/tools/ssl-checker`,
       languages: Object.fromEntries(
-        ["en", "fr", "de", "it", "es", "pt", "nl", "pl", "sv", "no", "zh", "ja", "ko", "id", "th"].map(l => [l, `https://viadreams.cc/${l}/tools/crontab-generator`])
+        ["en", "fr", "de", "it", "es", "pt", "nl", "pl", "sv", "no", "zh", "ja", "ko", "id", "th"].map(l => [l, `https://viadreams.cc/${l}/tools/ssl-checker`])
       ),
     },
   };
@@ -27,5 +27,5 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Loc
 
 export default async function Layout({ params, children }: Props) {
   const { lang } = await params;
-  return <ToolSeoServer toolId="crontab-generator" lang={lang}>{children}</ToolSeoServer>;
+  return <ToolSeoServer toolId="ssl-checker" lang={lang}>{children}</ToolSeoServer>;
 }

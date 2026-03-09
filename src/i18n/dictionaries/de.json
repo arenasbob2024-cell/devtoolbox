@@ -1073,57 +1073,9 @@
     },
     "chmod-calculator": {
       "name": "Chmod-Rechner",
-      "description": "Linux-Dateiberechtigungen mit interaktiven Checkboxen berechnen",
-      "pageTitle": "Linux Chmod-Rechner",
-      "pageDescription": "Interaktiver Chmod-Berechtigungsrechner. Zwischen numerischen (755) und symbolischen (rwxr-xr-x) Berechtigungen konvertieren.",
-      "numericLabel": "Numerisch",
-      "symbolicLabel": "Symbolisch",
-      "commandLabel": "Befehl",
-      "enterNumeric": "Numerische Berechtigung eingeben:",
-      "owner": "Besitzer (Benutzer)",
-      "group": "Gruppe",
-      "others": "Andere",
-      "read": "Lesen",
-      "write": "Schreiben",
-      "execute": "Ausführen",
-      "commonTitle": "Häufige Berechtigungen",
-      "common755": "Verzeichnisse / Ausführbare",
-      "common644": "Reguläre Dateien",
-      "common777": "Voller Zugriff (Vorsicht)",
-      "common700": "Nur Besitzer",
-      "common600": "Private Dateien",
-      "common444": "Nur Lesen",
-      "seoTitle": "Über Linux-Dateiberechtigungen",
-      "seoContent": "Linux-Dateiberechtigungen steuern, wer Dateien und Verzeichnisse lesen (r), schreiben (w) und ausführen (x) kann. Berechtigungen werden für drei Gruppen festgelegt: Besitzer, Gruppe und Andere. Der chmod-Befehl verwendet entweder die numerische (oktale) Notation wie 755 oder die symbolische Notation wie rwxr-xr-x.",
-      "faqTitle": "Häufig gestellte Fragen",
-      "faqs": [
-        {
-          "q": "What is chmod?",
-          "a": "chmod (change mode) is a Unix/Linux command that sets file and directory permissions. It controls who can read, write, and execute files."
-        },
-        {
-          "q": "What does 755 mean?",
-          "a": "755 means: owner can read/write/execute (7), group can read/execute (5), others can read/execute (5). It's the standard permission for directories and scripts."
-        },
-        {
-          "q": "What's the difference between numeric and symbolic notation?",
-          "a": "Numeric uses octal digits (755). Symbolic uses letters (rwxr-xr-x). They represent the same permissions — numeric is more compact, symbolic is more readable."
-        }
-      ],
-      "howToUseTitle": "Anleitung",
-      "howToUseSteps": [
-        "Click checkboxes to set read/write/execute permissions for owner, group, and others",
-        "Or type a numeric permission (e.g., 755) to auto-set checkboxes",
-        "View the numeric, symbolic, and command representations",
-        "Click a common permission preset for quick setup"
-      ],
-      "useCasesTitle": "Anwendungsfälle",
-      "useCases": [
-        "Setting up web server file permissions",
-        "Configuring deployment scripts",
-        "Securing sensitive files (SSH keys, config files)",
-        "Troubleshooting 'permission denied' errors"
-      ]
+      "description": "Berechnen Sie Unix-Dateiberechtigungen in Oktal- und Symbolschreibweise",
+      "pageTitle": "Chmod-Rechner - Unix-Dateiberechtigungen",
+      "pageDescription": "Interaktiver Unix-Dateiberechtigungsrechner mit Oktal- und Symbolschreibweise-Konvertierung."
     },
     "text-to-pdf": {
       "name": "Text zu PDF Konverter",
@@ -4581,6 +4533,36 @@
       "description": "Decode and inspect OAuth tokens and credentials",
       "pageTitle": "OAuth 2.0 Debugger Online Tool",
       "pageDescription": "Analyze OAuth 2.0 tokens, JWT payloads, and authorization headers. Verify claims and inspect token contents safely."
+    },
+    "crontab-generator": {
+      "name": "Crontab-Generator",
+      "description": "Erstellen Sie Cron-Ausdrücke visuell mit lesbarer Vorschau",
+      "pageTitle": "Crontab-Generator - Cron-Ausdrücke erstellen",
+      "pageDescription": "Visueller Crontab-Ausdrucksgenerator mit lesbaren Zeitplanbeschreibungen und gängigen Voreinstellungen."
+    },
+    "docker-compose-validator": {
+      "name": "Docker Compose Validator",
+      "description": "Validieren Sie Docker Compose YAML-Dateien auf Syntax- und Strukturfehler",
+      "pageTitle": "Docker Compose Validator",
+      "pageDescription": "Validieren Sie Ihre Docker Compose YAML-Dateien auf Syntaxfehler und Best Practices."
+    },
+    "git-command-builder": {
+      "name": "Git-Befehlsgenerator",
+      "description": "Erstellen Sie Git-Befehle interaktiv mit einer visuellen Oberfläche",
+      "pageTitle": "Git-Befehlsgenerator",
+      "pageDescription": "Interaktiver Git-Befehlsgenerator mit Kategorien für Setup, Grundlagen, Branching und erweiterte Operationen."
+    },
+    "nginx-config-generator": {
+      "name": "Nginx-Konfigurationsgenerator",
+      "description": "Generieren Sie Nginx-Konfigurationsdateien für gängige Server-Setups",
+      "pageTitle": "Nginx-Konfigurationsgenerator",
+      "pageDescription": "Generieren Sie Nginx-Konfigurationen für statische Seiten, Reverse Proxys, SPAs und Weiterleitungen mit optionalem SSL."
+    },
+    "ssl-checker": {
+      "name": "SSL-Prüfer",
+      "description": "Überprüfen Sie SSL-Zertifikatsdetails und Gültigkeit für jede Domain",
+      "pageTitle": "SSL-Zertifikatsprüfer",
+      "pageDescription": "Überprüfen Sie die SSL/TLS-Zertifikatsgültigkeit, Ablaufdatum, Aussteller und Protokolldetails."
     }
   },
   "footer": {

@@ -1073,57 +1073,9 @@
     },
     "chmod-calculator": {
       "name": "Chmod 计算器",
-      "description": "用交互式复选框计算 Linux 文件权限",
-      "pageTitle": "Linux Chmod 计算器",
-      "pageDescription": "交互式 chmod 权限计算器。在数字 (755) 和符号 (rwxr-xr-x) 之间转换。",
-      "numericLabel": "Numeric",
-      "symbolicLabel": "Symbolic",
-      "commandLabel": "Command",
-      "enterNumeric": "Enter numeric permission:",
-      "owner": "Owner (User)",
-      "group": "Group",
-      "others": "Others",
-      "read": "Read",
-      "write": "Write",
-      "execute": "Execute",
-      "commonTitle": "Common Permissions",
-      "common755": "Directories / Executables",
-      "common644": "Regular Files",
-      "common777": "Full Access (caution)",
-      "common700": "Owner Only",
-      "common600": "Private Files",
-      "common444": "Read Only",
-      "seoTitle": "About Linux File Permissions",
-      "seoContent": "Linux file permissions control who can read (r), write (w), and execute (x) files and directories. Permissions are set for three groups: owner, group, and others. The chmod command uses either numeric (octal) notation like 755 or symbolic notation like rwxr-xr-x. Common values: 755 for directories/scripts, 644 for regular files, 600 for private files.",
-      "faqTitle": "常见问题",
-      "faqs": [
-        {
-          "q": "What is chmod?",
-          "a": "chmod (change mode) is a Unix/Linux command that sets file and directory permissions. It controls who can read, write, and execute files."
-        },
-        {
-          "q": "What does 755 mean?",
-          "a": "755 means: owner can read/write/execute (7), group can read/execute (5), others can read/execute (5). It's the standard permission for directories and scripts."
-        },
-        {
-          "q": "What's the difference between numeric and symbolic notation?",
-          "a": "Numeric uses octal digits (755). Symbolic uses letters (rwxr-xr-x). They represent the same permissions — numeric is more compact, symbolic is more readable."
-        }
-      ],
-      "howToUseTitle": "使用方法",
-      "howToUseSteps": [
-        "Click checkboxes to set read/write/execute permissions for owner, group, and others",
-        "Or type a numeric permission (e.g., 755) to auto-set checkboxes",
-        "View the numeric, symbolic, and command representations",
-        "Click a common permission preset for quick setup"
-      ],
-      "useCasesTitle": "常见用途",
-      "useCases": [
-        "Setting up web server file permissions",
-        "Configuring deployment scripts",
-        "Securing sensitive files (SSH keys, config files)",
-        "Troubleshooting 'permission denied' errors"
-      ]
+      "description": "计算 Unix 文件权限的八进制和符号表示法",
+      "pageTitle": "Chmod 计算器 - Unix 文件权限",
+      "pageDescription": "交互式 Unix 文件权限计算器，支持八进制和符号表示法转换。"
     },
     "text-to-pdf": {
       "name": "文本转PDF转换器",
@@ -4657,6 +4609,36 @@
       "description": "Decode and inspect OAuth tokens and credentials",
       "pageTitle": "OAuth 2.0 Debugger Online Tool",
       "pageDescription": "Analyze OAuth 2.0 tokens, JWT payloads, and authorization headers. Verify claims and inspect token contents safely."
+    },
+    "crontab-generator": {
+      "name": "Crontab 生成器",
+      "description": "可视化构建 cron 表达式，实时预览调度描述",
+      "pageTitle": "Crontab 生成器 - 构建 Cron 表达式",
+      "pageDescription": "可视化 crontab 表达式构建器，带有人类可读的调度描述和常用预设。"
+    },
+    "docker-compose-validator": {
+      "name": "Docker Compose 验证器",
+      "description": "验证 Docker Compose YAML 文件的语法和结构错误",
+      "pageTitle": "Docker Compose 验证器",
+      "pageDescription": "验证您的 Docker Compose YAML 文件，检查语法错误、缺失字段和最佳实践。"
+    },
+    "git-command-builder": {
+      "name": "Git 命令构建器",
+      "description": "通过可视化界面交互式构建 Git 命令",
+      "pageTitle": "Git 命令构建器 - 交互式 Git 助手",
+      "pageDescription": "交互式 Git 命令构建器，涵盖设置、基础、分支和高级操作类别。"
+    },
+    "nginx-config-generator": {
+      "name": "Nginx 配置生成器",
+      "description": "为常见服务器设置生成 Nginx 配置文件",
+      "pageTitle": "Nginx 配置生成器",
+      "pageDescription": "为静态网站、反向代理、SPA 和重定向生成 Nginx 配置，支持可选 SSL。"
+    },
+    "ssl-checker": {
+      "name": "SSL 检查器",
+      "description": "检查任意域名的 SSL 证书详情和有效性",
+      "pageTitle": "SSL 证书检查器",
+      "pageDescription": "检查任意域名的 SSL/TLS 证书有效性、到期日期、颁发者和协议详情。"
     }
   },
   "footer": {

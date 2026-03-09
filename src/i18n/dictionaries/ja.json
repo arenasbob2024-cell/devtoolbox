@@ -1072,58 +1072,10 @@
       ]
     },
     "chmod-calculator": {
-      "name": "Chmod計算",
-      "description": "チェックボックスでLinuxファイル権限を計算",
-      "pageTitle": "Linux Chmod計算",
-      "pageDescription": "chmod権限の計算。数値(755)と記号(rwxr-xr-x)を相互変換。",
-      "numericLabel": "Numeric",
-      "symbolicLabel": "Symbolic",
-      "commandLabel": "Command",
-      "enterNumeric": "Enter numeric permission:",
-      "owner": "Owner (User)",
-      "group": "Group",
-      "others": "Others",
-      "read": "Read",
-      "write": "Write",
-      "execute": "Execute",
-      "commonTitle": "Common Permissions",
-      "common755": "Directories / Executables",
-      "common644": "Regular Files",
-      "common777": "Full Access (caution)",
-      "common700": "Owner Only",
-      "common600": "Private Files",
-      "common444": "Read Only",
-      "seoTitle": "About Linux File Permissions",
-      "seoContent": "Linux file permissions control who can read (r), write (w), and execute (x) files and directories. Permissions are set for three groups: owner, group, and others. The chmod command uses either numeric (octal) notation like 755 or symbolic notation like rwxr-xr-x. Common values: 755 for directories/scripts, 644 for regular files, 600 for private files.",
-      "faqTitle": "Frequently Asked Questions",
-      "faqs": [
-        {
-          "q": "What is chmod?",
-          "a": "chmod (change mode) is a Unix/Linux command that sets file and directory permissions. It controls who can read, write, and execute files."
-        },
-        {
-          "q": "What does 755 mean?",
-          "a": "755 means: owner can read/write/execute (7), group can read/execute (5), others can read/execute (5). It's the standard permission for directories and scripts."
-        },
-        {
-          "q": "What's the difference between numeric and symbolic notation?",
-          "a": "Numeric uses octal digits (755). Symbolic uses letters (rwxr-xr-x). They represent the same permissions — numeric is more compact, symbolic is more readable."
-        }
-      ],
-      "howToUseTitle": "How to Use",
-      "howToUseSteps": [
-        "Click checkboxes to set read/write/execute permissions for owner, group, and others",
-        "Or type a numeric permission (e.g., 755) to auto-set checkboxes",
-        "View the numeric, symbolic, and command representations",
-        "Click a common permission preset for quick setup"
-      ],
-      "useCasesTitle": "Common Use Cases",
-      "useCases": [
-        "Setting up web server file permissions",
-        "Configuring deployment scripts",
-        "Securing sensitive files (SSH keys, config files)",
-        "Troubleshooting 'permission denied' errors"
-      ]
+      "name": "Chmod計算機",
+      "description": "8進数と記号表記でUnixファイルパーミッションを計算",
+      "pageTitle": "Chmod計算機 - Unixファイルパーミッション",
+      "pageDescription": "8進数と記号表記変換を備えたインタラクティブなUnixファイルパーミッション計算機。"
     },
     "text-to-pdf": {
       "name": "テキストからPDF変換",
@@ -4581,6 +4533,36 @@
       "description": "Decode and inspect OAuth tokens and credentials",
       "pageTitle": "OAuth 2.0 Debugger Online Tool",
       "pageDescription": "Analyze OAuth 2.0 tokens, JWT payloads, and authorization headers. Verify claims and inspect token contents safely."
+    },
+    "crontab-generator": {
+      "name": "Crontabジェネレーター",
+      "description": "人間が読めるプレビュー付きでcron式を視覚的に構築",
+      "pageTitle": "Crontabジェネレーター",
+      "pageDescription": "人間が読めるスケジュール説明と一般的なプリセット付きのビジュアルcrontab式ビルダー。"
+    },
+    "docker-compose-validator": {
+      "name": "Docker Composeバリデーター",
+      "description": "Docker Compose YAMLファイルの構文と構造エラーを検証",
+      "pageTitle": "Docker Composeバリデーター",
+      "pageDescription": "Docker Compose YAMLファイルの構文エラーとベストプラクティスを検証します。"
+    },
+    "git-command-builder": {
+      "name": "Gitコマンドビルダー",
+      "description": "ビジュアルインターフェースでGitコマンドをインタラクティブに構築",
+      "pageTitle": "Gitコマンドビルダー",
+      "pageDescription": "セットアップ、基本、ブランチ、高度な操作のカテゴリを備えたインタラクティブなGitコマンドビルダー。"
+    },
+    "nginx-config-generator": {
+      "name": "Nginx設定ジェネレーター",
+      "description": "一般的なサーバー設定用のNginx設定ファイルを生成",
+      "pageTitle": "Nginx設定ジェネレーター",
+      "pageDescription": "静的サイト、リバースプロキシ、SPA、リダイレクト用のNginx設定をオプションSSL付きで生成。"
+    },
+    "ssl-checker": {
+      "name": "SSLチェッカー",
+      "description": "任意のドメインのSSL証明書の詳細と有効性を確認",
+      "pageTitle": "SSL証明書チェッカー",
+      "pageDescription": "任意のドメインのSSL/TLS証明書の有効性、有効期限、発行者、プロトコル詳細を確認。"
     }
   },
   "footer": {
