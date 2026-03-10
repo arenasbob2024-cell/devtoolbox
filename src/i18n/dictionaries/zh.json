@@ -4154,35 +4154,10 @@
       "pageDescription": "免费在线压缩图片。通过质量滑块减小文件大小。支持 JPEG、PNG 和 WebP 输出。所有处理在浏览器中完成。"
     },
     "svg-to-png": {
-      "name": "SVG 转 PNG 转换器",
-      "description": "将 SVG 文件转换为带自定义尺寸和背景的 PNG 图片",
-      "pageTitle": "SVG 转 PNG 转换器 - 免费在线 SVG 转 PNG",
-      "pageDescription": "免费在线将 SVG 转换为 PNG。上传或粘贴 SVG 代码，设置自定义宽高、缩放比例和背景颜色。即时下载高质量 PNG 图片。",
-      "dropZoneTitle": "拖放 SVG 文件到此处或点击上传",
-      "dropZoneSubtitle": "或在下方文本框粘贴 SVG 代码",
-      "svgInput": "SVG 代码",
-      "svgPlaceholder": "在此粘贴 SVG 代码...",
-      "outputSettings": "输出设置",
-      "widthLabel": "宽度 (px)",
-      "heightLabel": "高度 (px)",
-      "scaleLabel": "缩放",
-      "lockAspect": "锁定宽高比",
-      "unlockAspect": "解锁宽高比",
-      "transparentBg": "透明背景",
-      "bgColorLabel": "背景颜色：",
-      "finalSize": "最终尺寸",
-      "convertBtn": "转换为 PNG",
-      "loadSample": "加载示例",
-      "clearBtn": "清除",
-      "downloadPng": "下载 PNG",
-      "svgPreview": "SVG 预览",
-      "pngPreview": "PNG 输出",
-      "presetSizes": "快速预设尺寸",
-      "invalidSvg": "无效的 SVG 输入",
-      "conversionError": "转换失败。SVG 可能包含外部资源。",
-      "onlySvg": "仅接受 SVG 文件",
-      "seoTitle": "什么是 SVG 转 PNG 转换器？",
-      "seoContent": "SVG（可缩放矢量图形）文件适合分辨率无关的图形，但有时你需要光栅化的 PNG 图片用于社交媒体、应用图标或兼容性。本工具完全在浏览器中将 SVG 转换为 PNG，无需上传到任何服务器。设置自定义尺寸，选择透明或彩色背景，并使用 2x/3x/4x 缩放支持高清屏幕。"
+      "name": "SVG转PNG转换器",
+      "description": "将SVG代码转换为PNG图片",
+      "pageTitle": "SVG转PNG转换器",
+      "pageDescription": "将SVG代码转换为高质量PNG图片，支持自定义缩放和背景选项。"
     },
     "css-beautifier": {
       "name": "CSS 美化器",
@@ -4639,6 +4614,36 @@
       "description": "检查任意域名的 SSL 证书详情和有效性",
       "pageTitle": "SSL 证书检查器",
       "pageDescription": "检查任意域名的 SSL/TLS 证书有效性、到期日期、颁发者和协议详情。"
+    },
+    "css-gradient-generator": {
+      "name": "CSS渐变生成器",
+      "description": "创建美观的CSS渐变效果并实时预览",
+      "pageTitle": "CSS渐变生成器 - 创建美观渐变",
+      "pageDescription": "生成线性和径向CSS渐变，支持颜色停止点、角度控制和实时预览。即时复制CSS代码。"
+    },
+    "lorem-ipsum-generator": {
+      "name": "Lorem Ipsum生成器",
+      "description": "为你的设计生成占位文本",
+      "pageTitle": "Lorem Ipsum生成器 - 占位文本工具",
+      "pageDescription": "生成可自定义的Lorem Ipsum占位文本，支持控制段落数、字数和格式。"
+    },
+    "password-strength-checker": {
+      "name": "密码强度检测器",
+      "description": "检查你的密码强度",
+      "pageTitle": "密码强度检测器 - 测试你的密码",
+      "pageDescription": "通过熵计算、字符检查和安全建议分析密码强度。"
+    },
+    "text-diff-checker": {
+      "name": "文本差异对比",
+      "description": "比较两段文本并找出差异",
+      "pageTitle": "文本差异对比工具",
+      "pageDescription": "并排比较两段文本，高亮显示新增、删除和未变内容。"
+    },
+    "color-palette-generator": {
+      "name": "配色方案生成器",
+      "description": "生成和谐的配色方案",
+      "pageTitle": "配色方案生成器 - 创建配色方案",
+      "pageDescription": "使用色彩理论和谐关系生成美观的配色方案，包括互补色、类似色和三色组合。"
     }
   },
   "footer": {

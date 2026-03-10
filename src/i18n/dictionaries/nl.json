@@ -4106,34 +4106,9 @@
     },
     "svg-to-png": {
       "name": "SVG naar PNG Converter",
-      "description": "Converteer SVG-bestanden naar PNG-afbeeldingen met aangepaste afmetingen en achtergrond",
-      "pageTitle": "SVG naar PNG Converter - Converteer SVG naar PNG Online Gratis",
-      "pageDescription": "Converteer SVG naar PNG online gratis. Upload of plak SVG-code, stel breedte, hoogte, schaal en achtergrondkleur in. Download PNG-afbeeldingen van hoge kwaliteit.",
-      "dropZoneTitle": "Sleep een SVG-bestand hierheen of klik om te uploaden",
-      "dropZoneSubtitle": "Of plak SVG-code in het tekstveld hieronder",
-      "svgInput": "SVG-code",
-      "svgPlaceholder": "Plak hier je SVG-code...",
-      "outputSettings": "Uitvoerinstellingen",
-      "widthLabel": "Breedte (px)",
-      "heightLabel": "Hoogte (px)",
-      "scaleLabel": "Schaal",
-      "lockAspect": "Beeldverhouding vergrendelen",
-      "unlockAspect": "Beeldverhouding ontgrendelen",
-      "transparentBg": "Transparante achtergrond",
-      "bgColorLabel": "Achtergrondkleur:",
-      "finalSize": "Uiteindelijke grootte",
-      "convertBtn": "Converteer naar PNG",
-      "loadSample": "Voorbeeld laden",
-      "clearBtn": "Wissen",
-      "downloadPng": "PNG downloaden",
-      "svgPreview": "SVG-voorbeeld",
-      "pngPreview": "PNG-uitvoer",
-      "presetSizes": "Snelle voorinstellingen",
-      "invalidSvg": "Ongeldige SVG-invoer",
-      "conversionError": "Conversie mislukt. SVG bevat mogelijk externe bronnen.",
-      "onlySvg": "Alleen SVG-bestanden worden geaccepteerd",
-      "seoTitle": "Wat is de SVG naar PNG Converter?",
-      "seoContent": "SVG-bestanden zijn ideaal voor resolutie-onafhankelijke afbeeldingen, maar soms is een PNG-rasterafbeelding nodig. Deze tool converteert SVG naar PNG volledig in uw browser zonder upload naar een server."
+      "description": "Converteer SVG-code naar PNG-afbeeldingen",
+      "pageTitle": "SVG naar PNG Converter",
+      "pageDescription": "Converteer SVG-code naar hoogwaardige PNG-afbeeldingen."
     },
     "css-beautifier": {
       "name": "CSS Beautifier",
@@ -4563,6 +4538,36 @@
       "description": "Controleer SSL-certificaatdetails en geldigheid voor elk domein",
       "pageTitle": "SSL Certificaat Checker",
       "pageDescription": "Controleer SSL/TLS-certificaatgeldigheid, vervaldatum, uitgever en protocoldetails."
+    },
+    "css-gradient-generator": {
+      "name": "CSS Gradiënt Generator",
+      "description": "Maak mooie CSS-gradiënten met live voorbeeld",
+      "pageTitle": "CSS Gradiënt Generator",
+      "pageDescription": "Genereer lineaire en radiale CSS-gradiënten met live voorbeeld."
+    },
+    "lorem-ipsum-generator": {
+      "name": "Lorem Ipsum Generator",
+      "description": "Genereer opvultekst voor uw ontwerpen",
+      "pageTitle": "Lorem Ipsum Generator",
+      "pageDescription": "Genereer aanpasbare Lorem Ipsum opvultekst."
+    },
+    "password-strength-checker": {
+      "name": "Wachtwoordsterkte checker",
+      "description": "Controleer hoe sterk uw wachtwoord is",
+      "pageTitle": "Wachtwoordsterkte checker",
+      "pageDescription": "Analyseer de sterkte van uw wachtwoord."
+    },
+    "text-diff-checker": {
+      "name": "Tekst vergelijker",
+      "description": "Vergelijk twee teksten en vind verschillen",
+      "pageTitle": "Tekst vergelijker",
+      "pageDescription": "Vergelijk twee teksten naast elkaar."
+    },
+    "color-palette-generator": {
+      "name": "Kleurpalet Generator",
+      "description": "Genereer harmonieuze kleurpaletten",
+      "pageTitle": "Kleurpalet Generator",
+      "pageDescription": "Genereer mooie kleurpaletten."
     }
   },
   "footer": {

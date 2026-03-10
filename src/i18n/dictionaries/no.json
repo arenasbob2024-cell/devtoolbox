@@ -4105,35 +4105,10 @@
       "pageDescription": "Komprimer bilder online gratis. Reduser filstorrelse med kvalitetskontroll. JPEG, PNG og WebP utdata. All behandling i nettleseren din."
     },
     "svg-to-png": {
-      "name": "SVG til PNG Konverterer",
-      "description": "Konverter SVG-filer til PNG-bilder med egendefinerte dimensjoner og bakgrunn",
-      "pageTitle": "SVG til PNG Konverterer - Konverter SVG til PNG Online Gratis",
-      "pageDescription": "Konverter SVG til PNG online gratis. Last opp eller lim inn SVG-kode, angi bredde, hoyde, skala og bakgrunnsfarge. Last ned PNG-bilder i hoy kvalitet.",
-      "dropZoneTitle": "Slipp en SVG-fil her eller klikk for a laste opp",
-      "dropZoneSubtitle": "Eller lim inn SVG-kode i tekstfeltet nedenfor",
-      "svgInput": "SVG-kode",
-      "svgPlaceholder": "Lim inn SVG-koden din her...",
-      "outputSettings": "Utdatainnstillinger",
-      "widthLabel": "Bredde (px)",
-      "heightLabel": "Hoyde (px)",
-      "scaleLabel": "Skala",
-      "lockAspect": "Las sideforhold",
-      "unlockAspect": "Las opp sideforhold",
-      "transparentBg": "Gjennomsiktig bakgrunn",
-      "bgColorLabel": "Bakgrunnsfarge:",
-      "finalSize": "Endelig storrelse",
-      "convertBtn": "Konverter til PNG",
-      "loadSample": "Last eksempel",
-      "clearBtn": "Fjern",
-      "downloadPng": "Last ned PNG",
-      "svgPreview": "SVG-forhandsvisning",
-      "pngPreview": "PNG-utdata",
-      "presetSizes": "Hurtigstorrelser",
-      "invalidSvg": "Ugyldig SVG-inndata",
-      "conversionError": "Konvertering mislyktes. SVG kan inneholde eksterne ressurser.",
-      "onlySvg": "Kun SVG-filer aksepteres",
-      "seoTitle": "Hva er SVG til PNG Konvertereren?",
-      "seoContent": "SVG-filer er utmerkede for opploesningsuavhengig grafikk, men noen ganger trenger man et PNG-rasterbilde. Dette verktoyet konverterer SVG til PNG helt i nettleseren uten opplasting til noen server."
+      "name": "SVG til PNG-konverterer",
+      "description": "Konverter SVG-kode til PNG-bilder",
+      "pageTitle": "SVG til PNG-konverterer",
+      "pageDescription": "Konverter SVG-kode til høykvalitets PNG-bilder."
     },
     "css-beautifier": {
       "name": "CSS Beautifier",
@@ -4563,6 +4538,36 @@
       "description": "Sjekk SSL-sertifikatdetaljer og gyldighet for ethvert domene",
       "pageTitle": "SSL-sertifikatsjekker",
       "pageDescription": "Sjekk SSL/TLS-sertifikatets gyldighet, utløpsdato, utsteder og protokolldetaljer."
+    },
+    "css-gradient-generator": {
+      "name": "CSS Gradient-generator",
+      "description": "Lag vakre CSS-gradienter med livevisning",
+      "pageTitle": "CSS Gradient-generator",
+      "pageDescription": "Generer lineære og radielle CSS-gradienter med livevisning."
+    },
+    "lorem-ipsum-generator": {
+      "name": "Lorem Ipsum-generator",
+      "description": "Generer plassholdertekst for dine design",
+      "pageTitle": "Lorem Ipsum-generator",
+      "pageDescription": "Generer tilpassbar Lorem Ipsum plassholdertekst."
+    },
+    "password-strength-checker": {
+      "name": "Passordstyrke-sjekker",
+      "description": "Sjekk hvor sterkt passordet ditt er",
+      "pageTitle": "Passordstyrke-sjekker",
+      "pageDescription": "Analyser passordstyrke."
+    },
+    "text-diff-checker": {
+      "name": "Tekstsammenligner",
+      "description": "Sammenlign to tekster og finn forskjeller",
+      "pageTitle": "Tekstsammenligner",
+      "pageDescription": "Sammenlign to tekster side om side."
+    },
+    "color-palette-generator": {
+      "name": "Fargepalett-generator",
+      "description": "Generer harmoniske fargepaletter",
+      "pageTitle": "Fargepalett-generator",
+      "pageDescription": "Generer vakre fargepaletter."
     }
   },
   "footer": {

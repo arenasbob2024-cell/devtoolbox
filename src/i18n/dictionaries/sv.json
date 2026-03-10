@@ -4105,35 +4105,10 @@
       "pageDescription": "Komprimera bilder online gratis. Minska filstorlek med kvalitetsreglage. JPEG, PNG och WebP utdata. All bearbetning i din webblasare."
     },
     "svg-to-png": {
-      "name": "SVG till PNG Konverterare",
-      "description": "Konvertera SVG-filer till PNG-bilder med anpassade dimensioner och bakgrund",
-      "pageTitle": "SVG till PNG Konverterare - Konvertera SVG till PNG Online Gratis",
-      "pageDescription": "Konvertera SVG till PNG online gratis. Ladda upp eller klistra in SVG-kod, stall in bredd, hojd, skala och bakgrundsfarg. Ladda ner PNG-bilder i hog kvalitet.",
-      "dropZoneTitle": "Slapp en SVG-fil har eller klicka for att ladda upp",
-      "dropZoneSubtitle": "Eller klistra in SVG-kod i textrutan nedan",
-      "svgInput": "SVG-kod",
-      "svgPlaceholder": "Klistra in din SVG-kod har...",
-      "outputSettings": "Utdatainstellningar",
-      "widthLabel": "Bredd (px)",
-      "heightLabel": "Hojd (px)",
-      "scaleLabel": "Skala",
-      "lockAspect": "Las bildforhallande",
-      "unlockAspect": "Las upp bildforhallande",
-      "transparentBg": "Transparent bakgrund",
-      "bgColorLabel": "Bakgrundsfarg:",
-      "finalSize": "Slutlig storlek",
-      "convertBtn": "Konvertera till PNG",
-      "loadSample": "Ladda exempel",
-      "clearBtn": "Rensa",
-      "downloadPng": "Ladda ner PNG",
-      "svgPreview": "SVG-forhandsvisning",
-      "pngPreview": "PNG-utdata",
-      "presetSizes": "Snabbstorlekar",
-      "invalidSvg": "Ogiltig SVG-inmatning",
-      "conversionError": "Konvertering misslyckades. SVG kan innehalla externa resurser.",
-      "onlySvg": "Endast SVG-filer accepteras",
-      "seoTitle": "Vad ar SVG till PNG Konverteraren?",
-      "seoContent": "SVG-filer ar utmarkta for upplosningsoberoende grafik, men ibland behovs en PNG-rasterbild. Detta verktyg konverterar SVG till PNG helt i din webblasare utan att ladda upp till nagon server."
+      "name": "SVG till PNG-konverterare",
+      "description": "Konvertera SVG-kod till PNG-bilder",
+      "pageTitle": "SVG till PNG-konverterare",
+      "pageDescription": "Konvertera SVG-kod till högkvalitativa PNG-bilder."
     },
     "css-beautifier": {
       "name": "CSS Beautifier",
@@ -4563,6 +4538,36 @@
       "description": "Kontrollera SSL-certifikatdetaljer och giltighet för valfri domän",
       "pageTitle": "SSL-certifikatkontroll",
       "pageDescription": "Kontrollera SSL/TLS-certifikatets giltighet, utgångsdatum, utfärdare och protokolldetaljer."
+    },
+    "css-gradient-generator": {
+      "name": "CSS Gradient-generator",
+      "description": "Skapa vackra CSS-gradienter med livevisning",
+      "pageTitle": "CSS Gradient-generator",
+      "pageDescription": "Generera linjära och radiella CSS-gradienter med livevisning."
+    },
+    "lorem-ipsum-generator": {
+      "name": "Lorem Ipsum-generator",
+      "description": "Generera platshållartext för dina designs",
+      "pageTitle": "Lorem Ipsum-generator",
+      "pageDescription": "Generera anpassningsbar Lorem Ipsum-platshållartext."
+    },
+    "password-strength-checker": {
+      "name": "Lösenordsstyrka",
+      "description": "Kontrollera hur starkt ditt lösenord är",
+      "pageTitle": "Lösenordsstyrka",
+      "pageDescription": "Analysera lösenordsstyrka."
+    },
+    "text-diff-checker": {
+      "name": "Textjämförare",
+      "description": "Jämför två texter och hitta skillnader",
+      "pageTitle": "Textjämförare",
+      "pageDescription": "Jämför två texter sida vid sida."
+    },
+    "color-palette-generator": {
+      "name": "Färgpalett-generator",
+      "description": "Generera harmoniska färgpaletter",
+      "pageTitle": "Färgpalett-generator",
+      "pageDescription": "Generera vackra färgpaletter."
     }
   },
   "footer": {

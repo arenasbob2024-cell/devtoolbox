@@ -4106,34 +4106,9 @@
     },
     "svg-to-png": {
       "name": "Convertisseur SVG en PNG",
-      "description": "Convertir des fichiers SVG en images PNG avec dimensions et arriere-plan personnalises",
-      "pageTitle": "Convertisseur SVG en PNG - Convertir SVG en PNG en Ligne",
-      "pageDescription": "Convertir SVG en PNG en ligne gratuitement. Importer ou coller du code SVG, definir largeur, hauteur, echelle et couleur de fond. Telecharger des images PNG haute qualite.",
-      "dropZoneTitle": "Deposez un fichier SVG ici ou cliquez pour importer",
-      "dropZoneSubtitle": "Ou collez le code SVG dans la zone ci-dessous",
-      "svgInput": "Code SVG",
-      "svgPlaceholder": "Collez votre code SVG ici...",
-      "outputSettings": "Parametres de sortie",
-      "widthLabel": "Largeur (px)",
-      "heightLabel": "Hauteur (px)",
-      "scaleLabel": "Echelle",
-      "lockAspect": "Verrouiller le ratio",
-      "unlockAspect": "Deverrouiller le ratio",
-      "transparentBg": "Arriere-plan transparent",
-      "bgColorLabel": "Couleur de fond :",
-      "finalSize": "Taille finale",
-      "convertBtn": "Convertir en PNG",
-      "loadSample": "Charger un exemple",
-      "clearBtn": "Effacer",
-      "downloadPng": "Telecharger PNG",
-      "svgPreview": "Apercu SVG",
-      "pngPreview": "Sortie PNG",
-      "presetSizes": "Tailles predefinies",
-      "invalidSvg": "Entree SVG invalide",
-      "conversionError": "Echec de la conversion. Le SVG peut contenir des ressources externes.",
-      "onlySvg": "Seuls les fichiers SVG sont acceptes",
-      "seoTitle": "Qu'est-ce que le convertisseur SVG en PNG ?",
-      "seoContent": "Les fichiers SVG sont ideaux pour les graphiques independants de la resolution, mais parfois un PNG raster est necessaire. Cet outil convertit SVG en PNG directement dans votre navigateur sans telecharger vers un serveur."
+      "description": "Convertir du code SVG en images PNG",
+      "pageTitle": "Convertisseur SVG en PNG",
+      "pageDescription": "Convertissez du code SVG en images PNG de haute qualité."
     },
     "css-beautifier": {
       "name": "Embellisseur CSS",
@@ -4563,6 +4538,36 @@
       "description": "Vérifiez les détails et la validité du certificat SSL pour tout domaine",
       "pageTitle": "Vérificateur de Certificat SSL",
       "pageDescription": "Vérifiez la validité du certificat SSL/TLS, la date d'expiration, l'émetteur et les détails du protocole."
+    },
+    "css-gradient-generator": {
+      "name": "Générateur de dégradés CSS",
+      "description": "Créez de beaux dégradés CSS avec aperçu en direct",
+      "pageTitle": "Générateur de dégradés CSS",
+      "pageDescription": "Générez des dégradés CSS linéaires et radiaux avec aperçu en direct."
+    },
+    "lorem-ipsum-generator": {
+      "name": "Générateur Lorem Ipsum",
+      "description": "Générez du texte de remplissage",
+      "pageTitle": "Générateur Lorem Ipsum",
+      "pageDescription": "Générez du texte Lorem Ipsum personnalisable."
+    },
+    "password-strength-checker": {
+      "name": "Vérificateur de mot de passe",
+      "description": "Vérifiez la force de votre mot de passe",
+      "pageTitle": "Vérificateur de mot de passe",
+      "pageDescription": "Analysez la force de votre mot de passe."
+    },
+    "text-diff-checker": {
+      "name": "Comparateur de texte",
+      "description": "Comparez deux textes et trouvez les différences",
+      "pageTitle": "Comparateur de texte en ligne",
+      "pageDescription": "Comparez deux textes côte à côte."
+    },
+    "color-palette-generator": {
+      "name": "Générateur de palettes",
+      "description": "Générez des palettes de couleurs harmonieuses",
+      "pageTitle": "Générateur de palettes de couleurs",
+      "pageDescription": "Générez de belles palettes de couleurs."
     }
   },
   "footer": {

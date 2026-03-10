@@ -4105,35 +4105,10 @@
       "pageDescription": "画像を無料でオンライン圧縮。品質スライダーでファイルサイズを削減。JPEG、PNG、WebP出力対応。すべての処理はブラウザで完結。"
     },
     "svg-to-png": {
-      "name": "SVG to PNG 変換",
-      "description": "SVGファイルをカスタムサイズと背景のPNG画像に変換",
-      "pageTitle": "SVG to PNG 変換ツール - 無料オンラインSVG PNG変換",
-      "pageDescription": "SVGをPNGにオンラインで無料変換。SVGコードをアップロードまたは貼り付け、幅、高さ、スケール、背景色を設定。高品質なPNG画像をダウンロード。",
-      "dropZoneTitle": "SVGファイルをここにドロップまたはクリックしてアップロード",
-      "dropZoneSubtitle": "または下のテキストエリアにSVGコードを貼り付け",
-      "svgInput": "SVGコード",
-      "svgPlaceholder": "SVGコードをここに貼り付け...",
-      "outputSettings": "出力設定",
-      "widthLabel": "幅 (px)",
-      "heightLabel": "高さ (px)",
-      "scaleLabel": "スケール",
-      "lockAspect": "アスペクト比を固定",
-      "unlockAspect": "アスペクト比を解除",
-      "transparentBg": "透明背景",
-      "bgColorLabel": "背景色：",
-      "finalSize": "最終サイズ",
-      "convertBtn": "PNGに変換",
-      "loadSample": "サンプルを読み込む",
-      "clearBtn": "クリア",
-      "downloadPng": "PNGをダウンロード",
-      "svgPreview": "SVGプレビュー",
-      "pngPreview": "PNG出力",
-      "presetSizes": "クイックプリセットサイズ",
-      "invalidSvg": "無効なSVG入力",
-      "conversionError": "変換に失敗しました。SVGに外部リソースが含まれている可能性があります。",
-      "onlySvg": "SVGファイルのみ受け付けます",
-      "seoTitle": "SVG to PNG変換ツールとは？",
-      "seoContent": "SVGファイルは解像度に依存しないグラフィックに最適ですが、ラスターPNG画像が必要な場合もあります。このツールはブラウザ内で完全にSVGをPNGに変換し、サーバーへのアップロードは不要です。"
+      "name": "SVGからPNGコンバーター",
+      "description": "SVGコードをPNG画像に変換",
+      "pageTitle": "SVGからPNGコンバーター",
+      "pageDescription": "SVGコードを高品質PNG画像に変換。"
     },
     "css-beautifier": {
       "name": "CSS Beautifier",
@@ -4563,6 +4538,36 @@
       "description": "任意のドメインのSSL証明書の詳細と有効性を確認",
       "pageTitle": "SSL証明書チェッカー",
       "pageDescription": "任意のドメインのSSL/TLS証明書の有効性、有効期限、発行者、プロトコル詳細を確認。"
+    },
+    "css-gradient-generator": {
+      "name": "CSSグラデーションジェネレーター",
+      "description": "ライブプレビュー付きの美しいCSSグラデーションを作成",
+      "pageTitle": "CSSグラデーションジェネレーター",
+      "pageDescription": "ライブプレビュー付きの線形および放射状CSSグラデーションを生成。"
+    },
+    "lorem-ipsum-generator": {
+      "name": "Lorem Ipsumジェネレーター",
+      "description": "デザイン用のプレースホルダーテキストを生成",
+      "pageTitle": "Lorem Ipsumジェネレーター",
+      "pageDescription": "カスタマイズ可能なLorem Ipsumプレースホルダーテキストを生成。"
+    },
+    "password-strength-checker": {
+      "name": "パスワード強度チェッカー",
+      "description": "パスワードの強度を確認",
+      "pageTitle": "パスワード強度チェッカー",
+      "pageDescription": "パスワードの強度を分析。"
+    },
+    "text-diff-checker": {
+      "name": "テキスト差分チェッカー",
+      "description": "2つのテキストを比較して違いを見つける",
+      "pageTitle": "テキスト差分チェッカー",
+      "pageDescription": "2つのテキストを並べて比較。"
+    },
+    "color-palette-generator": {
+      "name": "カラーパレットジェネレーター",
+      "description": "調和のとれたカラーパレットを生成",
+      "pageTitle": "カラーパレットジェネレーター",
+      "pageDescription": "美しいカラーパレットを生成。"
     }
   },
   "footer": {

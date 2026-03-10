@@ -4106,34 +4106,9 @@
     },
     "svg-to-png": {
       "name": "Convertidor SVG a PNG",
-      "description": "Convertir archivos SVG a imagenes PNG con dimensiones y fondo personalizados",
-      "pageTitle": "Convertidor SVG a PNG - Convertir SVG a PNG Online Gratis",
-      "pageDescription": "Convertir SVG a PNG en linea gratis. Subir o pegar codigo SVG, establecer ancho, alto, escala y color de fondo. Descargar imagenes PNG de alta calidad.",
-      "dropZoneTitle": "Arrastra un archivo SVG aqui o haz clic para subir",
-      "dropZoneSubtitle": "O pega el codigo SVG en el area de texto",
-      "svgInput": "Codigo SVG",
-      "svgPlaceholder": "Pega tu codigo SVG aqui...",
-      "outputSettings": "Configuracion de salida",
-      "widthLabel": "Ancho (px)",
-      "heightLabel": "Alto (px)",
-      "scaleLabel": "Escala",
-      "lockAspect": "Bloquear proporcion",
-      "unlockAspect": "Desbloquear proporcion",
-      "transparentBg": "Fondo transparente",
-      "bgColorLabel": "Color de fondo:",
-      "finalSize": "Tamano final",
-      "convertBtn": "Convertir a PNG",
-      "loadSample": "Cargar ejemplo",
-      "clearBtn": "Limpiar",
-      "downloadPng": "Descargar PNG",
-      "svgPreview": "Vista previa SVG",
-      "pngPreview": "Salida PNG",
-      "presetSizes": "Tamanos predefinidos",
-      "invalidSvg": "Entrada SVG invalida",
-      "conversionError": "Error en la conversion. El SVG puede contener recursos externos.",
-      "onlySvg": "Solo se aceptan archivos SVG",
-      "seoTitle": "Que es el convertidor SVG a PNG?",
-      "seoContent": "Los archivos SVG son ideales para graficos independientes de la resolucion, pero a veces se necesita una imagen PNG rasterizada. Esta herramienta convierte SVG a PNG completamente en el navegador sin subir a ningun servidor."
+      "description": "Convierte código SVG en imágenes PNG",
+      "pageTitle": "Convertidor SVG a PNG",
+      "pageDescription": "Convierte código SVG en imágenes PNG de alta calidad."
     },
     "css-beautifier": {
       "name": "CSS Beautifier",
@@ -4563,6 +4538,36 @@
       "description": "Verifica los detalles y validez del certificado SSL para cualquier dominio",
       "pageTitle": "Verificador de Certificado SSL",
       "pageDescription": "Verifica la validez del certificado SSL/TLS, fecha de expiración, emisor y detalles del protocolo."
+    },
+    "css-gradient-generator": {
+      "name": "Generador de degradados CSS",
+      "description": "Crea hermosos degradados CSS con vista previa en vivo",
+      "pageTitle": "Generador de degradados CSS",
+      "pageDescription": "Genera degradados CSS lineales y radiales con vista previa en vivo."
+    },
+    "lorem-ipsum-generator": {
+      "name": "Generador Lorem Ipsum",
+      "description": "Genera texto de relleno para tus diseños",
+      "pageTitle": "Generador Lorem Ipsum",
+      "pageDescription": "Genera texto Lorem Ipsum personalizable."
+    },
+    "password-strength-checker": {
+      "name": "Verificador de contraseñas",
+      "description": "Comprueba la fortaleza de tu contraseña",
+      "pageTitle": "Verificador de contraseñas",
+      "pageDescription": "Analiza la fortaleza de tu contraseña."
+    },
+    "text-diff-checker": {
+      "name": "Comparador de textos",
+      "description": "Compara dos textos y encuentra diferencias",
+      "pageTitle": "Comparador de textos en línea",
+      "pageDescription": "Compara dos textos lado a lado."
+    },
+    "color-palette-generator": {
+      "name": "Generador de paletas de colores",
+      "description": "Genera paletas de colores armoniosas",
+      "pageTitle": "Generador de paletas de colores",
+      "pageDescription": "Genera hermosas paletas de colores."
     }
   },
   "footer": {

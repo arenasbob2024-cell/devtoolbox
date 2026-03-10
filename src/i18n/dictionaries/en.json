@@ -4969,52 +4969,9 @@
     },
     "svg-to-png": {
       "name": "SVG to PNG Converter",
-      "description": "Convert SVG files to PNG images with custom dimensions and background",
-      "pageTitle": "SVG to PNG Converter - Convert SVG to PNG Online Free",
-      "pageDescription": "Convert SVG to PNG online for free. Upload or paste SVG code, set custom width, height, scale, and background color. Download high-quality PNG images instantly.",
-      "dropZoneTitle": "Drop an SVG file here or click to upload",
-      "dropZoneSubtitle": "Or paste SVG code in the textarea below",
-      "svgInput": "SVG Code",
-      "svgPlaceholder": "Paste your SVG code here...",
-      "outputSettings": "Output Settings",
-      "widthLabel": "Width (px)",
-      "heightLabel": "Height (px)",
-      "scaleLabel": "Scale",
-      "lockAspect": "Lock aspect ratio",
-      "unlockAspect": "Unlock aspect ratio",
-      "transparentBg": "Transparent background",
-      "bgColorLabel": "Background color:",
-      "finalSize": "Final size",
-      "convertBtn": "Convert to PNG",
-      "loadSample": "Load Sample",
-      "clearBtn": "Clear",
-      "downloadPng": "Download PNG",
-      "svgPreview": "SVG Preview",
-      "pngPreview": "PNG Output",
-      "presetSizes": "Quick Preset Sizes",
-      "invalidSvg": "Invalid SVG input",
-      "conversionError": "Conversion failed. SVG may contain external resources.",
-      "onlySvg": "Only SVG files are accepted",
-      "seoTitle": "What is SVG to PNG Converter?",
-      "seoContent": "SVG (Scalable Vector Graphics) files are great for resolution-independent graphics, but sometimes you need a raster PNG image for social media, app icons, or compatibility. This tool converts SVG to PNG entirely in your browser — no upload to any server. Set custom dimensions, choose a transparent or colored background, and use 2x/3x/4x scale for retina displays.",
-      "faqs": [
-        {
-          "q": "How do I convert SVG to PNG online?",
-          "a": "Upload or paste your SVG code. Set the desired output dimensions (width/height) and background color. Click Convert to generate a PNG image that you can preview and download instantly."
-        },
-        {
-          "q": "What resolution should I use for SVG to PNG conversion?",
-          "a": "For web: 1x (72dpi) for standard screens, 2x for retina/HiDPI displays. For print: use 300dpi. SVG is resolution-independent, so you can export at any size without quality loss."
-        },
-        {
-          "q": "Why convert SVG to PNG?",
-          "a": "Some platforms and applications do not support SVG (older email clients, social media uploads, favicon fallbacks). PNG provides universal compatibility while preserving transparency and quality at the exported size."
-        },
-        {
-          "q": "Can I batch convert multiple SVGs to PNG?",
-          "a": "This tool handles one SVG at a time for maximum control over dimensions and quality. For batch conversion, consider using command-line tools like Inkscape, Sharp (Node.js), or CairoSVG (Python)."
-        }
-      ]
+      "description": "Convert SVG code to PNG images",
+      "pageTitle": "SVG to PNG Converter - Convert Vector to Raster",
+      "pageDescription": "Convert SVG code to high-quality PNG images with custom scale and background options."
     },
     "css-beautifier": {
       "name": "CSS Beautifier",
@@ -5861,38 +5818,9 @@
     },
     "color-palette-generator": {
       "name": "Color Palette Generator",
-      "description": "Generate harmonious color palettes for design projects",
-      "pageTitle": "Generate Color Palettes Online Free — Color Palette Generator | DevToolBox",
-      "pageDescription": "Free online color palette generator. Generate and preview CSS instantly with live editing. No installation required. Try it for free!",
-      "howToUseTitle": "How to Use",
-      "howToUseSteps": [
-        "Enter a base color or use the color picker",
-        "Select a palette type (complementary, analogous, triadic, etc.)",
-        "View generated colors with hex codes",
-        "Export the palette in various formats"
-      ],
-      "useCasesTitle": "Common Use Cases",
-      "useCases": [
-        "Creating website color schemes",
-        "Designing brand identity colors",
-        "Finding harmonious color combinations",
-        "Generating UI theme palettes"
-      ],
-      "faqTitle": "Frequently Asked Questions",
-      "faqs": [
-        {
-          "q": "What palette types are available?",
-          "a": "Complementary, analogous, triadic, tetradic, split-complementary, monochromatic, and custom harmony rules."
-        },
-        {
-          "q": "Can I save my palettes?",
-          "a": "You can copy the hex codes or export as CSS, SCSS, JSON, or image formats for your design tools."
-        },
-        {
-          "q": "How are colors harmonized?",
-          "a": "Colors are generated based on color wheel relationships, ensuring visual harmony and aesthetic appeal."
-        }
-      ]
+      "description": "Generate harmonious color palettes",
+      "pageTitle": "Color Palette Generator - Create Color Schemes",
+      "pageDescription": "Generate beautiful color palettes using color theory harmonies like complementary, analogous, and triadic."
     },
     "color-picker-online": {
       "name": "Color Picker Online",
@@ -6286,36 +6214,10 @@
       ]
     },
     "css-gradient-generator": {
-      "name": "Css Gradient Generator",
-      "description": "Css Gradient Generator - Free online tool for CSS styling and formatting. Fast, secure, and easy to use.",
-      "pageTitle": "Css Gradient Generator Online Free — Developer Tool | DevToolBox",
-      "pageDescription": "Free online css gradient generator tool. Css styling and formatting instantly in browser. No signup, 100% secure. Try now!",
-      "howToUseSteps": [
-        "Enter or paste your data in the input field",
-        "Configure any options if available",
-        "Click the action button to process",
-        "Copy the result to your clipboard"
-      ],
-      "useCases": [
-        "Development and debugging workflows",
-        "Data format conversion",
-        "Code generation and formatting",
-        "Quick calculations and validation"
-      ],
-      "faqs": [
-        {
-          "q": "Is this Css Gradient Generator tool free to use?",
-          "a": "Yes, the Css Gradient Generator tool is completely free. No registration or payment required."
-        },
-        {
-          "q": "Is my data secure?",
-          "a": "Absolutely. All processing happens client-side in your browser. Your data never leaves your device or is sent to any server."
-        },
-        {
-          "q": "What formats does the Css Gradient Generator tool support?",
-          "a": "The tool supports all standard formats for CSS styling and formatting. Check the tool interface for specific format options."
-        }
-      ]
+      "name": "CSS Gradient Generator",
+      "description": "Create beautiful CSS gradients with live preview",
+      "pageTitle": "CSS Gradient Generator - Create Beautiful Gradients",
+      "pageDescription": "Generate linear and radial CSS gradients with color stops, angle control, and live preview. Copy CSS code instantly."
     },
     "css-grid-generator": {
       "name": "Css Grid Generator",
@@ -8207,35 +8109,9 @@
     },
     "lorem-ipsum-generator": {
       "name": "Lorem Ipsum Generator",
-      "description": "Lorem Ipsum Generator - Free online tool for Lorem ipsum generation. Fast, secure, and easy to use.",
-      "pageTitle": "Lorem Ipsum Generator Online Free — Developer Tool | DevToolBox",
-      "pageDescription": "Free online lorem ipsum generator tool. Lorem ipsum generation instantly in your browser. No signup required, 100% secure client-side processing. Try it now!",
-      "howToUseSteps": [
-        "Enter or paste your data in the input field",
-        "Configure any options if available",
-        "Click the action button to process",
-        "Copy the result to your clipboard"
-      ],
-      "useCases": [
-        "Development and debugging workflows",
-        "Data format conversion",
-        "Code generation and formatting",
-        "Quick calculations and validation"
-      ],
-      "faqs": [
-        {
-          "q": "Is this Lorem Ipsum Generator tool free to use?",
-          "a": "Yes, the Lorem Ipsum Generator tool is completely free. No registration or payment required."
-        },
-        {
-          "q": "Is my data secure?",
-          "a": "Absolutely. All processing happens client-side in your browser. Your data never leaves your device or is sent to any server."
-        },
-        {
-          "q": "What formats does the Lorem Ipsum Generator tool support?",
-          "a": "The tool supports all standard formats for Lorem ipsum generation. Check the tool interface for specific format options."
-        }
-      ]
+      "description": "Generate placeholder text for your designs",
+      "pageTitle": "Lorem Ipsum Generator - Placeholder Text Tool",
+      "pageDescription": "Generate customizable Lorem Ipsum placeholder text with control over paragraphs, word count, and formatting."
     },
     "markdown-editor-online": {
       "name": "Markdown Editor",
@@ -8687,35 +8563,9 @@
     },
     "password-strength-checker": {
       "name": "Password Strength Checker",
-      "description": "Password Strength Checker - Free online tool for Password generation. Fast, secure, and easy to use.",
-      "pageTitle": "Password Strength Checker Online Free — Developer Tool | DevToolBox",
-      "pageDescription": "Free online password strength checker tool. Password generation instantly in your browser. No signup required, 100% secure client-side processing. Try it now!",
-      "howToUseSteps": [
-        "Enter or paste your data in the input field",
-        "Configure any options if available",
-        "Click the action button to process",
-        "Copy the result to your clipboard"
-      ],
-      "useCases": [
-        "Development and debugging workflows",
-        "Data format conversion",
-        "Code generation and formatting",
-        "Quick calculations and validation"
-      ],
-      "faqs": [
-        {
-          "q": "Is this Password Strength Checker tool free to use?",
-          "a": "Yes, the Password Strength Checker tool is completely free. No registration or payment required."
-        },
-        {
-          "q": "Is my data secure?",
-          "a": "Absolutely. All processing happens client-side in your browser. Your data never leaves your device or is sent to any server."
-        },
-        {
-          "q": "What formats does the Password Strength Checker tool support?",
-          "a": "The tool supports all standard formats for Password generation. Check the tool interface for specific format options."
-        }
-      ]
+      "description": "Check how strong your password is",
+      "pageTitle": "Password Strength Checker - Test Your Password",
+      "pageDescription": "Analyze password strength with entropy calculation, character checks, and security recommendations."
     },
     "percent-encoding-tool": {
       "name": "Percent Encoding Tool",
@@ -9423,35 +9273,9 @@
     },
     "text-diff-checker": {
       "name": "Text Diff Checker",
-      "description": "Text Diff Checker - Free online tool for Text processing. Fast, secure, and easy to use.",
-      "pageTitle": "Text Diff Checker Online Free — Developer Tool | DevToolBox",
-      "pageDescription": "Free online text diff checker tool. Text processing instantly in your browser. No signup required, 100% secure client-side processing. Try it now!",
-      "howToUseSteps": [
-        "Enter or paste your data in the input field",
-        "Configure any options if available",
-        "Click the action button to process",
-        "Copy the result to your clipboard"
-      ],
-      "useCases": [
-        "Development and debugging workflows",
-        "Data format conversion",
-        "Code generation and formatting",
-        "Quick calculations and validation"
-      ],
-      "faqs": [
-        {
-          "q": "Is this Text Diff Checker tool free to use?",
-          "a": "Yes, the Text Diff Checker tool is completely free. No registration or payment required."
-        },
-        {
-          "q": "Is my data secure?",
-          "a": "Absolutely. All processing happens client-side in your browser. Your data never leaves your device or is sent to any server."
-        },
-        {
-          "q": "What formats does the Text Diff Checker tool support?",
-          "a": "The tool supports all standard formats for Text processing. Check the tool interface for specific format options."
-        }
-      ]
+      "description": "Compare two texts and find differences",
+      "pageTitle": "Text Diff Checker - Compare Texts Online",
+      "pageDescription": "Compare two texts side by side and highlight additions, deletions, and unchanged content."
     },
     "text-to-binary": {
       "name": "Text To Binary",

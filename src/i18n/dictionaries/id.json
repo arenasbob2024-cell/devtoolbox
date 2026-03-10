@@ -4106,34 +4106,9 @@
     },
     "svg-to-png": {
       "name": "Konverter SVG ke PNG",
-      "description": "Konversi file SVG ke gambar PNG dengan dimensi dan latar belakang kustom",
-      "pageTitle": "Konverter SVG ke PNG - Konversi SVG ke PNG Online Gratis",
-      "pageDescription": "Konversi SVG ke PNG online gratis. Unggah atau tempel kode SVG, atur lebar, tinggi, skala, dan warna latar belakang. Unduh gambar PNG berkualitas tinggi.",
-      "dropZoneTitle": "Jatuhkan file SVG di sini atau klik untuk mengunggah",
-      "dropZoneSubtitle": "Atau tempel kode SVG di area teks di bawah",
-      "svgInput": "Kode SVG",
-      "svgPlaceholder": "Tempel kode SVG Anda di sini...",
-      "outputSettings": "Pengaturan Output",
-      "widthLabel": "Lebar (px)",
-      "heightLabel": "Tinggi (px)",
-      "scaleLabel": "Skala",
-      "lockAspect": "Kunci rasio aspek",
-      "unlockAspect": "Buka kunci rasio aspek",
-      "transparentBg": "Latar belakang transparan",
-      "bgColorLabel": "Warna latar belakang:",
-      "finalSize": "Ukuran akhir",
-      "convertBtn": "Konversi ke PNG",
-      "loadSample": "Muat Contoh",
-      "clearBtn": "Hapus",
-      "downloadPng": "Unduh PNG",
-      "svgPreview": "Pratinjau SVG",
-      "pngPreview": "Output PNG",
-      "presetSizes": "Ukuran Preset Cepat",
-      "invalidSvg": "Input SVG tidak valid",
-      "conversionError": "Konversi gagal. SVG mungkin mengandung sumber daya eksternal.",
-      "onlySvg": "Hanya file SVG yang diterima",
-      "seoTitle": "Apa itu Konverter SVG ke PNG?",
-      "seoContent": "File SVG bagus untuk grafik yang tidak bergantung pada resolusi, tetapi kadang Anda membutuhkan gambar PNG raster. Alat ini mengkonversi SVG ke PNG sepenuhnya di browser tanpa mengunggah ke server mana pun."
+      "description": "Konversi kode SVG menjadi gambar PNG",
+      "pageTitle": "Konverter SVG ke PNG",
+      "pageDescription": "Konversi kode SVG menjadi gambar PNG berkualitas tinggi."
     },
     "css-beautifier": {
       "name": "CSS Beautifier",
@@ -4563,6 +4538,36 @@
       "description": "Periksa detail dan validitas sertifikat SSL untuk domain apa pun",
       "pageTitle": "Pemeriksa Sertifikat SSL",
       "pageDescription": "Periksa validitas sertifikat SSL/TLS, tanggal kedaluwarsa, penerbit, dan detail protokol."
+    },
+    "css-gradient-generator": {
+      "name": "Generator Gradien CSS",
+      "description": "Buat gradien CSS yang indah dengan pratinjau langsung",
+      "pageTitle": "Generator Gradien CSS",
+      "pageDescription": "Buat gradien CSS linier dan radial dengan pratinjau langsung."
+    },
+    "lorem-ipsum-generator": {
+      "name": "Generator Lorem Ipsum",
+      "description": "Buat teks placeholder untuk desain Anda",
+      "pageTitle": "Generator Lorem Ipsum",
+      "pageDescription": "Buat teks placeholder Lorem Ipsum yang dapat disesuaikan."
+    },
+    "password-strength-checker": {
+      "name": "Pemeriksa Kekuatan Kata Sandi",
+      "description": "Periksa seberapa kuat kata sandi Anda",
+      "pageTitle": "Pemeriksa Kekuatan Kata Sandi",
+      "pageDescription": "Analisis kekuatan kata sandi."
+    },
+    "text-diff-checker": {
+      "name": "Pemeriksa Perbedaan Teks",
+      "description": "Bandingkan dua teks dan temukan perbedaan",
+      "pageTitle": "Pemeriksa Perbedaan Teks",
+      "pageDescription": "Bandingkan dua teks secara berdampingan."
+    },
+    "color-palette-generator": {
+      "name": "Generator Palet Warna",
+      "description": "Buat palet warna yang harmonis",
+      "pageTitle": "Generator Palet Warna",
+      "pageDescription": "Buat palet warna yang indah."
     }
   },
   "footer": {

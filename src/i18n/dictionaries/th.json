@@ -4105,35 +4105,10 @@
       "pageDescription": "บีบอัดรูปภาพออนไลน์ฟรี ลดขนาดไฟล์ด้วยตัวควบคุมคุณภาพ รองรับ JPEG, PNG และ WebP ประมวลผลทั้งหมดในเบราว์เซอร์"
     },
     "svg-to-png": {
-      "name": "ตัวแปลง SVG เป็น PNG",
-      "description": "แปลงไฟล์ SVG เป็นภาพ PNG พร้อมกำหนดขนาดและพื้นหลังเอง",
-      "pageTitle": "ตัวแปลง SVG เป็น PNG - แปลง SVG เป็น PNG ออนไลน์ฟรี",
-      "pageDescription": "แปลง SVG เป็น PNG ออนไลน์ฟรี อัปโหลดหรือวางโค้ด SVG กำหนดความกว้าง สูง มาตราส่วน และสีพื้นหลัง ดาวน์โหลดภาพ PNG คุณภาพสูง",
-      "dropZoneTitle": "วางไฟล์ SVG ที่นี่หรือคลิกเพื่ออัปโหลด",
-      "dropZoneSubtitle": "หรือวางโค้ด SVG ในช่องข้อความด้านล่าง",
-      "svgInput": "โค้ด SVG",
-      "svgPlaceholder": "วางโค้ด SVG ของคุณที่นี่...",
-      "outputSettings": "การตั้งค่าผลลัพธ์",
-      "widthLabel": "ความกว้าง (px)",
-      "heightLabel": "ความสูง (px)",
-      "scaleLabel": "มาตราส่วน",
-      "lockAspect": "ล็อกอัตราส่วน",
-      "unlockAspect": "ปลดล็อกอัตราส่วน",
-      "transparentBg": "พื้นหลังโปร่งใส",
-      "bgColorLabel": "สีพื้นหลัง:",
-      "finalSize": "ขนาดสุดท้าย",
-      "convertBtn": "แปลงเป็น PNG",
-      "loadSample": "โหลดตัวอย่าง",
-      "clearBtn": "ล้าง",
-      "downloadPng": "ดาวน์โหลด PNG",
-      "svgPreview": "ตัวอย่าง SVG",
-      "pngPreview": "ผลลัพธ์ PNG",
-      "presetSizes": "ขนาดพรีเซ็ตด่วน",
-      "invalidSvg": "ข้อมูล SVG ไม่ถูกต้อง",
-      "conversionError": "การแปลงล้มเหลว SVG อาจมีทรัพยากรภายนอก",
-      "onlySvg": "รับเฉพาะไฟล์ SVG เท่านั้น",
-      "seoTitle": "ตัวแปลง SVG เป็น PNG คืออะไร?",
-      "seoContent": "ไฟล์ SVG เหมาะสำหรับกราฟิกที่ไม่ขึ้นกับความละเอียด แต่บางครั้งคุณต้องการภาพ PNG แรสเตอร์ เครื่องมือนี้แปลง SVG เป็น PNG ทั้งหมดในเบราว์เซอร์โดยไม่ต้องอัปโหลดไปยังเซิร์ฟเวอร์ใดๆ"
+      "name": "แปลง SVG เป็น PNG",
+      "description": "แปลงโค้ด SVG เป็นภาพ PNG",
+      "pageTitle": "แปลง SVG เป็น PNG",
+      "pageDescription": "แปลงโค้ด SVG เป็นภาพ PNG คุณภาพสูง"
     },
     "css-beautifier": {
       "name": "CSS Beautifier",
@@ -4563,6 +4538,36 @@
       "description": "ตรวจสอบรายละเอียดและความถูกต้องของใบรับรอง SSL สำหรับโดเมนใดก็ได้",
       "pageTitle": "ตัวตรวจสอบใบรับรอง SSL",
       "pageDescription": "ตรวจสอบความถูกต้องของใบรับรอง SSL/TLS วันหมดอายุ ผู้ออก และรายละเอียดโปรโตคอล"
+    },
+    "css-gradient-generator": {
+      "name": "เครื่องสร้างไล่เฉดสี CSS",
+      "description": "สร้างไล่เฉดสี CSS ที่สวยงามพร้อมตัวอย่างสด",
+      "pageTitle": "เครื่องสร้างไล่เฉดสี CSS",
+      "pageDescription": "สร้างไล่เฉดสี CSS แบบเส้นตรงและแบบรัศมีพร้อมตัวอย่างสด"
+    },
+    "lorem-ipsum-generator": {
+      "name": "เครื่องสร้าง Lorem Ipsum",
+      "description": "สร้างข้อความตัวอย่างสำหรับงานออกแบบ",
+      "pageTitle": "เครื่องสร้าง Lorem Ipsum",
+      "pageDescription": "สร้างข้อความตัวอย่าง Lorem Ipsum ที่ปรับแต่งได้"
+    },
+    "password-strength-checker": {
+      "name": "ตรวจสอบความแข็งรหัสผ่าน",
+      "description": "ตรวจสอบว่ารหัสผ่านของคุณแข็งแค่ไหน",
+      "pageTitle": "ตรวจสอบความแข็งรหัสผ่าน",
+      "pageDescription": "วิเคราะห์ความแข็งของรหัสผ่าน"
+    },
+    "text-diff-checker": {
+      "name": "เครื่องมือเปรียบเทียบข้อความ",
+      "description": "เปรียบเทียบข้อความสองชิ้นและค้นหาความแตกต่าง",
+      "pageTitle": "เครื่องมือเปรียบเทียบข้อความ",
+      "pageDescription": "เปรียบเทียบข้อความสองชิ้นคู่กัน"
+    },
+    "color-palette-generator": {
+      "name": "เครื่องสร้างพาเลทสี",
+      "description": "สร้างพาเลทสีที่กลมกลืน",
+      "pageTitle": "เครื่องสร้างพาเลทสี",
+      "pageDescription": "สร้างพาเลทสีที่สวยงาม"
     }
   },
   "footer": {

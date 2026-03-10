@@ -3285,6 +3285,48 @@ export const tools: Tool[] = [
     path: '/tools/favicon-checker',
     relatedTools: ['meta-tag-generator', 'og-image-preview', 'robots-generator', 'schema-generator'],
   },
+  {
+    id: 'css-gradient-generator',
+    name: 'CSS Gradient Generator',
+    description: 'Create beautiful CSS gradients with live preview',
+    category: 'css',
+    path: '/tools/css-gradient-generator',
+  },
+  {
+    id: 'lorem-ipsum-generator',
+    name: 'Lorem Ipsum Generator',
+    description: 'Generate placeholder text for your designs',
+    category: 'text',
+    path: '/tools/lorem-ipsum-generator',
+  },
+  {
+    id: 'password-strength-checker',
+    name: 'Password Strength Checker',
+    description: 'Check how strong your password is',
+    category: 'security',
+    path: '/tools/password-strength-checker',
+  },
+  {
+    id: 'text-diff-checker',
+    name: 'Text Diff Checker',
+    description: 'Compare two texts and find differences',
+    category: 'text',
+    path: '/tools/text-diff-checker',
+  },
+  {
+    id: 'svg-to-png',
+    name: 'SVG to PNG Converter',
+    description: 'Convert SVG code to PNG images',
+    category: 'image',
+    path: '/tools/svg-to-png',
+  },
+  {
+    id: 'color-palette-generator',
+    name: 'Color Palette Generator',
+    description: 'Generate harmonious color palettes',
+    category: 'css',
+    path: '/tools/color-palette-generator',
+  },
 ];
 
 export function getToolsByCategory(categoryId: string): Tool[] {

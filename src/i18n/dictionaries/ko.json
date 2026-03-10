@@ -4105,35 +4105,10 @@
       "pageDescription": "이미지를 무료로 온라인 압축합니다. 품질 슬라이더로 파일 크기를 줄입니다. JPEG, PNG, WebP 출력 지원. 모든 처리는 브라우저에서 완료."
     },
     "svg-to-png": {
-      "name": "SVG to PNG 변환기",
-      "description": "SVG 파일을 사용자 지정 크기 및 배경의 PNG 이미지로 변환",
-      "pageTitle": "SVG to PNG 변환기 - 무료 온라인 SVG PNG 변환",
-      "pageDescription": "SVG를 무료로 온라인에서 PNG로 변환합니다. SVG 코드를 업로드하거나 붙여넣고, 너비, 높이, 배율, 배경색을 설정하세요. 고품질 PNG 이미지를 다운로드하세요.",
-      "dropZoneTitle": "SVG 파일을 여기에 드롭하거나 클릭하여 업로드",
-      "dropZoneSubtitle": "또는 아래 텍스트 영역에 SVG 코드를 붙여넣기",
-      "svgInput": "SVG 코드",
-      "svgPlaceholder": "여기에 SVG 코드를 붙여넣으세요...",
-      "outputSettings": "출력 설정",
-      "widthLabel": "너비 (px)",
-      "heightLabel": "높이 (px)",
-      "scaleLabel": "배율",
-      "lockAspect": "비율 잠금",
-      "unlockAspect": "비율 잠금 해제",
-      "transparentBg": "투명 배경",
-      "bgColorLabel": "배경색:",
-      "finalSize": "최종 크기",
-      "convertBtn": "PNG로 변환",
-      "loadSample": "샘플 로드",
-      "clearBtn": "지우기",
-      "downloadPng": "PNG 다운로드",
-      "svgPreview": "SVG 미리보기",
-      "pngPreview": "PNG 출력",
-      "presetSizes": "빠른 프리셋 크기",
-      "invalidSvg": "잘못된 SVG 입력",
-      "conversionError": "변환 실패. SVG에 외부 리소스가 포함되어 있을 수 있습니다.",
-      "onlySvg": "SVG 파일만 허용됩니다",
-      "seoTitle": "SVG to PNG 변환기란?",
-      "seoContent": "SVG 파일은 해상도 독립적인 그래픽에 적합하지만 때때로 래스터 PNG 이미지가 필요합니다. 이 도구는 브라우저에서 완전히 SVG를 PNG로 변환하며 서버에 업로드하지 않습니다."
+      "name": "SVG에서 PNG 변환기",
+      "description": "SVG 코드를 PNG 이미지로 변환",
+      "pageTitle": "SVG에서 PNG 변환기",
+      "pageDescription": "SVG 코드를 고품질 PNG 이미지로 변환합니다."
     },
     "css-beautifier": {
       "name": "CSS Beautifier",
@@ -4563,6 +4538,36 @@
       "description": "모든 도메인의 SSL 인증서 세부 정보 및 유효성 확인",
       "pageTitle": "SSL 인증서 검사기",
       "pageDescription": "모든 도메인의 SSL/TLS 인증서 유효성, 만료일, 발급자, 프로토콜 세부 정보를 확인."
+    },
+    "css-gradient-generator": {
+      "name": "CSS 그라디언트 생성기",
+      "description": "라이브 미리보기로 아름다운 CSS 그라디언트 생성",
+      "pageTitle": "CSS 그라디언트 생성기",
+      "pageDescription": "라이브 미리보기로 선형 및 방사형 CSS 그라디언트를 생성합니다."
+    },
+    "lorem-ipsum-generator": {
+      "name": "Lorem Ipsum 생성기",
+      "description": "디자인을 위한 자리 표시자 텍스트 생성",
+      "pageTitle": "Lorem Ipsum 생성기",
+      "pageDescription": "사용자 정의 가능한 Lorem Ipsum 자리 표시자 텍스트를 생성합니다."
+    },
+    "password-strength-checker": {
+      "name": "비밀번호 강도 검사기",
+      "description": "비밀번호의 강도를 확인",
+      "pageTitle": "비밀번호 강도 검사기",
+      "pageDescription": "비밀번호 강도를 분석합니다."
+    },
+    "text-diff-checker": {
+      "name": "텍스트 비교 도구",
+      "description": "두 텍스트를 비교하고 차이점 찾기",
+      "pageTitle": "텍스트 비교 도구",
+      "pageDescription": "두 텍스트를 나란히 비교합니다."
+    },
+    "color-palette-generator": {
+      "name": "색상 팔레트 생성기",
+      "description": "조화로운 색상 팔레트 생성",
+      "pageTitle": "색상 팔레트 생성기",
+      "pageDescription": "아름다운 색상 팔레트를 생성합니다."
     }
   },
   "footer": {
