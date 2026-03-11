@@ -1300,9 +1300,57 @@
     },
     "chmod-calculator": {
       "name": "Chmod Calculator",
-      "description": "Calculate Unix file permissions in octal and symbolic notation",
-      "pageTitle": "Chmod Calculator - Unix File Permissions",
-      "pageDescription": "Interactive Unix file permission calculator with octal and symbolic notation conversion."
+      "description": "Calculate Linux file permissions with interactive checkboxes",
+      "pageTitle": "Linux Chmod Calculator Online Free — File Permission Calculator",
+      "pageDescription": "Interactive chmod permission calculator. Convert between numeric (755) and symbolic (rwxr-xr-x) Linux file permissions.",
+      "numericLabel": "Numeric",
+      "symbolicLabel": "Symbolic",
+      "commandLabel": "Command",
+      "enterNumeric": "Enter numeric permission:",
+      "owner": "Owner (User)",
+      "group": "Group",
+      "others": "Others",
+      "read": "Read",
+      "write": "Write",
+      "execute": "Execute",
+      "commonTitle": "Common Permissions",
+      "common755": "Directories / Executables",
+      "common644": "Regular Files",
+      "common777": "Full Access (caution)",
+      "common700": "Owner Only",
+      "common600": "Private Files",
+      "common444": "Read Only",
+      "seoTitle": "About Linux File Permissions",
+      "seoContent": "Linux file permissions control who can read (r), write (w), and execute (x) files and directories. Permissions are set for three groups: owner, group, and others. The chmod command uses either numeric (octal) notation like 755 or symbolic notation like rwxr-xr-x. Common values: 755 for directories/scripts, 644 for regular files, 600 for private files.",
+      "faqTitle": "Frequently Asked Questions",
+      "faqs": [
+        {
+          "q": "What is chmod?",
+          "a": "chmod (change mode) is a Unix/Linux command that sets file and directory permissions. It controls who can read, write, and execute files."
+        },
+        {
+          "q": "What does 755 mean?",
+          "a": "755 means: owner can read/write/execute (7), group can read/execute (5), others can read/execute (5). It's the standard permission for directories and scripts."
+        },
+        {
+          "q": "What's the difference between numeric and symbolic notation?",
+          "a": "Numeric uses octal digits (755). Symbolic uses letters (rwxr-xr-x). They represent the same permissions — numeric is more compact, symbolic is more readable."
+        }
+      ],
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Click checkboxes to set read/write/execute permissions for owner, group, and others",
+        "Or type a numeric permission (e.g., 755) to auto-set checkboxes",
+        "View the numeric, symbolic, and command representations",
+        "Click a common permission preset for quick setup"
+      ],
+      "useCasesTitle": "Common Use Cases",
+      "useCases": [
+        "Setting up web server file permissions",
+        "Configuring deployment scripts",
+        "Securing sensitive files (SSH keys, config files)",
+        "Troubleshooting 'permission denied' errors"
+      ]
     },
     "text-to-pdf": {
       "name": "Text to PDF Converter",
@@ -4969,9 +5017,52 @@
     },
     "svg-to-png": {
       "name": "SVG to PNG Converter",
-      "description": "Convert SVG code to PNG images",
-      "pageTitle": "SVG to PNG Converter - Convert Vector to Raster",
-      "pageDescription": "Convert SVG code to high-quality PNG images with custom scale and background options."
+      "description": "Convert SVG files to PNG images with custom dimensions and background",
+      "pageTitle": "SVG to PNG Converter - Convert SVG to PNG Online Free",
+      "pageDescription": "Convert SVG to PNG online for free. Upload or paste SVG code, set custom width, height, scale, and background color. Download high-quality PNG images instantly.",
+      "dropZoneTitle": "Drop an SVG file here or click to upload",
+      "dropZoneSubtitle": "Or paste SVG code in the textarea below",
+      "svgInput": "SVG Code",
+      "svgPlaceholder": "Paste your SVG code here...",
+      "outputSettings": "Output Settings",
+      "widthLabel": "Width (px)",
+      "heightLabel": "Height (px)",
+      "scaleLabel": "Scale",
+      "lockAspect": "Lock aspect ratio",
+      "unlockAspect": "Unlock aspect ratio",
+      "transparentBg": "Transparent background",
+      "bgColorLabel": "Background color:",
+      "finalSize": "Final size",
+      "convertBtn": "Convert to PNG",
+      "loadSample": "Load Sample",
+      "clearBtn": "Clear",
+      "downloadPng": "Download PNG",
+      "svgPreview": "SVG Preview",
+      "pngPreview": "PNG Output",
+      "presetSizes": "Quick Preset Sizes",
+      "invalidSvg": "Invalid SVG input",
+      "conversionError": "Conversion failed. SVG may contain external resources.",
+      "onlySvg": "Only SVG files are accepted",
+      "seoTitle": "What is SVG to PNG Converter?",
+      "seoContent": "SVG (Scalable Vector Graphics) files are great for resolution-independent graphics, but sometimes you need a raster PNG image for social media, app icons, or compatibility. This tool converts SVG to PNG entirely in your browser — no upload to any server. Set custom dimensions, choose a transparent or colored background, and use 2x/3x/4x scale for retina displays.",
+      "faqs": [
+        {
+          "q": "How do I convert SVG to PNG online?",
+          "a": "Upload or paste your SVG code. Set the desired output dimensions (width/height) and background color. Click Convert to generate a PNG image that you can preview and download instantly."
+        },
+        {
+          "q": "What resolution should I use for SVG to PNG conversion?",
+          "a": "For web: 1x (72dpi) for standard screens, 2x for retina/HiDPI displays. For print: use 300dpi. SVG is resolution-independent, so you can export at any size without quality loss."
+        },
+        {
+          "q": "Why convert SVG to PNG?",
+          "a": "Some platforms and applications do not support SVG (older email clients, social media uploads, favicon fallbacks). PNG provides universal compatibility while preserving transparency and quality at the exported size."
+        },
+        {
+          "q": "Can I batch convert multiple SVGs to PNG?",
+          "a": "This tool handles one SVG at a time for maximum control over dimensions and quality. For batch conversion, consider using command-line tools like Inkscape, Sharp (Node.js), or CairoSVG (Python)."
+        }
+      ]
     },
     "css-beautifier": {
       "name": "CSS Beautifier",
@@ -5818,9 +5909,38 @@
     },
     "color-palette-generator": {
       "name": "Color Palette Generator",
-      "description": "Generate harmonious color palettes",
-      "pageTitle": "Color Palette Generator - Create Color Schemes",
-      "pageDescription": "Generate beautiful color palettes using color theory harmonies like complementary, analogous, and triadic."
+      "description": "Generate harmonious color palettes for design projects",
+      "pageTitle": "Generate Color Palettes Online Free — Color Palette Generator | DevToolBox",
+      "pageDescription": "Free online color palette generator. Generate and preview CSS instantly with live editing. No installation required. Try it for free!",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Enter a base color or use the color picker",
+        "Select a palette type (complementary, analogous, triadic, etc.)",
+        "View generated colors with hex codes",
+        "Export the palette in various formats"
+      ],
+      "useCasesTitle": "Common Use Cases",
+      "useCases": [
+        "Creating website color schemes",
+        "Designing brand identity colors",
+        "Finding harmonious color combinations",
+        "Generating UI theme palettes"
+      ],
+      "faqTitle": "Frequently Asked Questions",
+      "faqs": [
+        {
+          "q": "What palette types are available?",
+          "a": "Complementary, analogous, triadic, tetradic, split-complementary, monochromatic, and custom harmony rules."
+        },
+        {
+          "q": "Can I save my palettes?",
+          "a": "You can copy the hex codes or export as CSS, SCSS, JSON, or image formats for your design tools."
+        },
+        {
+          "q": "How are colors harmonized?",
+          "a": "Colors are generated based on color wheel relationships, ensuring visual harmony and aesthetic appeal."
+        }
+      ]
     },
     "color-picker-online": {
       "name": "Color Picker Online",
@@ -5964,9 +6084,38 @@
     },
     "crontab-generator": {
       "name": "Crontab Generator",
-      "description": "Build cron expressions visually with a human-readable preview",
-      "pageTitle": "Crontab Generator - Build Cron Expressions",
-      "pageDescription": "Visual crontab expression builder with human-readable schedule descriptions and common presets."
+      "description": "Generate crontab entries with visual schedule builder",
+      "pageTitle": "Generate Crontab Entries Online Free — Crontab Generator | DevToolBox",
+      "pageDescription": "Free online crontab generator. Test and validate in your browser with instant results. No signup, 100% free. Start using it now!",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Select when you want the job to run",
+        "Enter the command to execute",
+        "Preview the generated crontab line",
+        "Copy to your crontab file"
+      ],
+      "useCasesTitle": "Common Use Cases",
+      "useCases": [
+        "Creating crontab entries without syntax errors",
+        "Visual schedule building",
+        "Generating cron lines for common tasks",
+        "Learning crontab syntax"
+      ],
+      "faqTitle": "Frequently Asked Questions",
+      "faqs": [
+        {
+          "q": "Where do I put the generated crontab line?",
+          "a": "Add it to your crontab file using 'crontab -e' command, or place it in /etc/cron.d/ for system-wide jobs."
+        },
+        {
+          "q": "Can I specify which user runs the job?",
+          "a": "Yes. System crontabs include a user field. User crontabs run as that user automatically."
+        },
+        {
+          "q": "How do I view my current crontab?",
+          "a": "Use the 'crontab -l' command to list your current cron jobs."
+        }
+      ]
     },
     "crontab-guru": {
       "name": "Crontab Guru",
@@ -6214,10 +6363,36 @@
       ]
     },
     "css-gradient-generator": {
-      "name": "CSS Gradient Generator",
-      "description": "Create beautiful CSS gradients with live preview",
-      "pageTitle": "CSS Gradient Generator - Create Beautiful Gradients",
-      "pageDescription": "Generate linear and radial CSS gradients with color stops, angle control, and live preview. Copy CSS code instantly."
+      "name": "Css Gradient Generator",
+      "description": "Css Gradient Generator - Free online tool for CSS styling and formatting. Fast, secure, and easy to use.",
+      "pageTitle": "Css Gradient Generator Online Free — Developer Tool | DevToolBox",
+      "pageDescription": "Free online css gradient generator tool. Css styling and formatting instantly in browser. No signup, 100% secure. Try now!",
+      "howToUseSteps": [
+        "Enter or paste your data in the input field",
+        "Configure any options if available",
+        "Click the action button to process",
+        "Copy the result to your clipboard"
+      ],
+      "useCases": [
+        "Development and debugging workflows",
+        "Data format conversion",
+        "Code generation and formatting",
+        "Quick calculations and validation"
+      ],
+      "faqs": [
+        {
+          "q": "Is this Css Gradient Generator tool free to use?",
+          "a": "Yes, the Css Gradient Generator tool is completely free. No registration or payment required."
+        },
+        {
+          "q": "Is my data secure?",
+          "a": "Absolutely. All processing happens client-side in your browser. Your data never leaves your device or is sent to any server."
+        },
+        {
+          "q": "What formats does the Css Gradient Generator tool support?",
+          "a": "The tool supports all standard formats for CSS styling and formatting. Check the tool interface for specific format options."
+        }
+      ]
     },
     "css-grid-generator": {
       "name": "Css Grid Generator",
@@ -8109,9 +8284,35 @@
     },
     "lorem-ipsum-generator": {
       "name": "Lorem Ipsum Generator",
-      "description": "Generate placeholder text for your designs",
-      "pageTitle": "Lorem Ipsum Generator - Placeholder Text Tool",
-      "pageDescription": "Generate customizable Lorem Ipsum placeholder text with control over paragraphs, word count, and formatting."
+      "description": "Lorem Ipsum Generator - Free online tool for Lorem ipsum generation. Fast, secure, and easy to use.",
+      "pageTitle": "Lorem Ipsum Generator Online Free — Developer Tool | DevToolBox",
+      "pageDescription": "Free online lorem ipsum generator tool. Lorem ipsum generation instantly in your browser. No signup required, 100% secure client-side processing. Try it now!",
+      "howToUseSteps": [
+        "Enter or paste your data in the input field",
+        "Configure any options if available",
+        "Click the action button to process",
+        "Copy the result to your clipboard"
+      ],
+      "useCases": [
+        "Development and debugging workflows",
+        "Data format conversion",
+        "Code generation and formatting",
+        "Quick calculations and validation"
+      ],
+      "faqs": [
+        {
+          "q": "Is this Lorem Ipsum Generator tool free to use?",
+          "a": "Yes, the Lorem Ipsum Generator tool is completely free. No registration or payment required."
+        },
+        {
+          "q": "Is my data secure?",
+          "a": "Absolutely. All processing happens client-side in your browser. Your data never leaves your device or is sent to any server."
+        },
+        {
+          "q": "What formats does the Lorem Ipsum Generator tool support?",
+          "a": "The tool supports all standard formats for Lorem ipsum generation. Check the tool interface for specific format options."
+        }
+      ]
     },
     "markdown-editor-online": {
       "name": "Markdown Editor",
@@ -8563,9 +8764,35 @@
     },
     "password-strength-checker": {
       "name": "Password Strength Checker",
-      "description": "Check how strong your password is",
-      "pageTitle": "Password Strength Checker - Test Your Password",
-      "pageDescription": "Analyze password strength with entropy calculation, character checks, and security recommendations."
+      "description": "Password Strength Checker - Free online tool for Password generation. Fast, secure, and easy to use.",
+      "pageTitle": "Password Strength Checker Online Free — Developer Tool | DevToolBox",
+      "pageDescription": "Free online password strength checker tool. Password generation instantly in your browser. No signup required, 100% secure client-side processing. Try it now!",
+      "howToUseSteps": [
+        "Enter or paste your data in the input field",
+        "Configure any options if available",
+        "Click the action button to process",
+        "Copy the result to your clipboard"
+      ],
+      "useCases": [
+        "Development and debugging workflows",
+        "Data format conversion",
+        "Code generation and formatting",
+        "Quick calculations and validation"
+      ],
+      "faqs": [
+        {
+          "q": "Is this Password Strength Checker tool free to use?",
+          "a": "Yes, the Password Strength Checker tool is completely free. No registration or payment required."
+        },
+        {
+          "q": "Is my data secure?",
+          "a": "Absolutely. All processing happens client-side in your browser. Your data never leaves your device or is sent to any server."
+        },
+        {
+          "q": "What formats does the Password Strength Checker tool support?",
+          "a": "The tool supports all standard formats for Password generation. Check the tool interface for specific format options."
+        }
+      ]
     },
     "percent-encoding-tool": {
       "name": "Percent Encoding Tool",
@@ -9273,9 +9500,35 @@
     },
     "text-diff-checker": {
       "name": "Text Diff Checker",
-      "description": "Compare two texts and find differences",
-      "pageTitle": "Text Diff Checker - Compare Texts Online",
-      "pageDescription": "Compare two texts side by side and highlight additions, deletions, and unchanged content."
+      "description": "Text Diff Checker - Free online tool for Text processing. Fast, secure, and easy to use.",
+      "pageTitle": "Text Diff Checker Online Free — Developer Tool | DevToolBox",
+      "pageDescription": "Free online text diff checker tool. Text processing instantly in your browser. No signup required, 100% secure client-side processing. Try it now!",
+      "howToUseSteps": [
+        "Enter or paste your data in the input field",
+        "Configure any options if available",
+        "Click the action button to process",
+        "Copy the result to your clipboard"
+      ],
+      "useCases": [
+        "Development and debugging workflows",
+        "Data format conversion",
+        "Code generation and formatting",
+        "Quick calculations and validation"
+      ],
+      "faqs": [
+        {
+          "q": "Is this Text Diff Checker tool free to use?",
+          "a": "Yes, the Text Diff Checker tool is completely free. No registration or payment required."
+        },
+        {
+          "q": "Is my data secure?",
+          "a": "Absolutely. All processing happens client-side in your browser. Your data never leaves your device or is sent to any server."
+        },
+        {
+          "q": "What formats does the Text Diff Checker tool support?",
+          "a": "The tool supports all standard formats for Text processing. Check the tool interface for specific format options."
+        }
+      ]
     },
     "text-to-binary": {
       "name": "Text To Binary",
@@ -10166,65 +10419,36 @@
         }
       ]
     },
-    "openapi-validator": {
-      "name": "OpenAPI Validator",
-      "description": "Validate OpenAPI/Swagger specifications",
-      "pageTitle": "OpenAPI Validator - Free Online API Spec Validator",
-      "pageDescription": "Validate OpenAPI 3.0 and Swagger specifications. Check for syntax errors, schema validation, and API compliance issues."
+    "json-schema-validator": {
+      "name": "JSON Schema Validator",
+      "description": "Validate JSON data against JSON Schema specifications",
+      "pageTitle": "JSON Schema Validator Online Free - Validate JSON Data",
+      "pageDescription": "Free online JSON Schema validator. Validate JSON data against JSON Schema definitions instantly. Check required properties, types, patterns, and constraints. No signup needed.",
+      "validateBtn": "Validate",
+      "jsonDataLabel": "JSON Data",
+      "jsonDataPlaceholder": "Paste your JSON data here...",
+      "schemaLabel": "JSON Schema",
+      "schemaPlaceholder": "Paste your JSON Schema (Draft 7) here...",
+      "seoTitle": "What is JSON Schema Validation?",
+      "seoContent": "JSON Schema is a vocabulary for validating JSON documents. It defines what a valid JSON object should look like, including required properties, data types, patterns, and constraints. This validator checks if your JSON data conforms to a given schema and provides detailed error messages if it doesn't. JSON Schema is widely used in APIs for input validation, in microservices for data contracts, and in applications for configuration validation.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Validate JSON against JSON Schema (Draft 7 compatible)",
+      "seoFeature2": "Support for type checking, required properties, patterns, min/max values",
+      "seoFeature3": "Detailed validation error messages with property paths",
+      "seoFeature4": "100% client-side validation — your data never leaves your browser"
     },
-    "graphql-playground": {
-      "name": "GraphQL Playground",
-      "description": "Interactive GraphQL query editor and explorer",
-      "pageTitle": "GraphQL Playground Online Tool",
-      "pageDescription": "Test GraphQL queries with syntax highlighting, auto-completion, and real-time validation. Perfect for API development and debugging."
-    },
-    "env-editor": {
-      "name": ".env File Editor",
-      "description": "Edit and validate environment configuration files",
-      "pageTitle": ".env File Editor Online Tool",
-      "pageDescription": "Simple editor for .env files with validation, syntax highlighting, and duplicate key detection for environment variables."
-    },
-    "sql-explainer": {
-      "name": "SQL Query Explainer",
-      "description": "Understand SQL queries with AI-powered explanations",
-      "pageTitle": "SQL Query Explainer Online Tool",
-      "pageDescription": "Paste your SQL and get a clear explanation of what each part does. Great for learning SQL and debugging complex queries."
-    },
-    "tailwind-playground": {
-      "name": "Tailwind CSS Playground",
-      "description": "Live Tailwind CSS class builder and previewer",
-      "pageTitle": "Tailwind CSS Playground Online Tool",
-      "pageDescription": "Build responsive designs with Tailwind. Preview classes in real-time with live HTML rendering and utility documentation."
-    },
-    "oauth-debugger": {
-      "name": "OAuth 2.0 Debugger",
-      "description": "Decode and inspect OAuth tokens and credentials",
-      "pageTitle": "OAuth 2.0 Debugger Online Tool",
-      "pageDescription": "Analyze OAuth 2.0 tokens, JWT payloads, and authorization headers. Verify claims and inspect token contents safely."
-    },
-    "docker-compose-validator": {
-      "name": "Docker Compose Validator",
-      "description": "Validate Docker Compose YAML files for syntax and structure errors",
-      "pageTitle": "Docker Compose Validator",
-      "pageDescription": "Validate your Docker Compose YAML files for syntax errors, missing fields, and best practices."
-    },
-    "git-command-builder": {
-      "name": "Git Command Builder",
-      "description": "Build Git commands interactively with a visual interface",
-      "pageTitle": "Git Command Builder - Interactive Git Helper",
-      "pageDescription": "Interactive Git command builder with categories for setup, basics, branching, and advanced operations."
-    },
-    "nginx-config-generator": {
-      "name": "Nginx Config Generator",
-      "description": "Generate Nginx configuration files for common server setups",
-      "pageTitle": "Nginx Config Generator",
-      "pageDescription": "Generate Nginx configuration for static sites, reverse proxies, SPAs, and redirects with optional SSL."
-    },
-    "ssl-checker": {
-      "name": "SSL Checker",
-      "description": "Check SSL certificate details and validity for any domain",
-      "pageTitle": "SSL Certificate Checker",
-      "pageDescription": "Check SSL/TLS certificate validity, expiration date, issuer, and protocol details for any domain."
+    "http-status-lookup": {
+      "name": "HTTP Status Code Lookup",
+      "description": "Search and reference all HTTP status codes with detailed explanations",
+      "pageTitle": "HTTP Status Code Lookup - Complete Reference 1xx-5xx",
+      "pageDescription": "Complete HTTP status code reference. Look up any HTTP status code (1xx-5xx) with detailed explanations, examples, and solutions. Free tool for developers.",
+      "seoTitle": "HTTP Status Codes Reference",
+      "seoContent": "HTTP status codes are three-digit responses from a web server indicating the outcome of an HTTP request. They are grouped into five classes: 1xx (Informational), 2xx (Success), 3xx (Redirection), 4xx (Client Error), and 5xx (Server Error). Understanding these codes is essential for debugging web applications and APIs. This reference provides detailed explanations, real-world examples, and solutions for each status code.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Complete reference of all HTTP status codes from 1xx to 5xx",
+      "seoFeature2": "Detailed explanations, examples, and common use cases for each code",
+      "seoFeature3": "Solutions and troubleshooting tips for error status codes",
+      "seoFeature4": "Search and filter by status code, name, or description"
     }
   },
   "footer": {

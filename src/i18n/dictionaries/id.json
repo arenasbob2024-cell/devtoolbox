@@ -1073,9 +1073,57 @@
     },
     "chmod-calculator": {
       "name": "Kalkulator Chmod",
-      "description": "Hitung izin file Unix dalam notasi oktal dan simbolik",
-      "pageTitle": "Kalkulator Chmod",
-      "pageDescription": "Kalkulator izin file Unix interaktif dengan konversi notasi oktal dan simbolik."
+      "description": "Hitung izin file Linux dengan kotak centang interaktif",
+      "pageTitle": "Kalkulator Chmod Linux",
+      "pageDescription": "Kalkulator izin chmod interaktif. Konversi antara izin numerik (755) dan simbolik (rwxr-xr-x).",
+      "numericLabel": "Numerik",
+      "symbolicLabel": "Simbolik",
+      "commandLabel": "Perintah",
+      "enterNumeric": "Masukkan izin numerik:",
+      "owner": "Pemilik (Pengguna)",
+      "group": "Grup",
+      "others": "Lainnya",
+      "read": "Baca",
+      "write": "Tulis",
+      "execute": "Eksekusi",
+      "commonTitle": "Izin Umum",
+      "common755": "Direktori / Eksekusi",
+      "common644": "File Reguler",
+      "common777": "Akses Penuh (hati-hati)",
+      "common700": "Hanya Pemilik",
+      "common600": "File Pribadi",
+      "common444": "Hanya Baca",
+      "seoTitle": "Tentang Izin File Linux",
+      "seoContent": "Izin file Linux mengontrol siapa yang dapat membaca (r), menulis (w), dan mengeksekusi (x) file dan direktori. Izin ditetapkan untuk tiga grup: pemilik, grup, dan lainnya. Perintah chmod menggunakan notasi numerik (oktal) seperti 755 atau notasi simbolik seperti rwxr-xr-x.",
+      "faqTitle": "Pertanyaan Umum",
+      "faqs": [
+        {
+          "q": "What is chmod?",
+          "a": "chmod (change mode) is a Unix/Linux command that sets file and directory permissions. It controls who can read, write, and execute files."
+        },
+        {
+          "q": "What does 755 mean?",
+          "a": "755 means: owner can read/write/execute (7), group can read/execute (5), others can read/execute (5). It's the standard permission for directories and scripts."
+        },
+        {
+          "q": "What's the difference between numeric and symbolic notation?",
+          "a": "Numeric uses octal digits (755). Symbolic uses letters (rwxr-xr-x). They represent the same permissions — numeric is more compact, symbolic is more readable."
+        }
+      ],
+      "howToUseTitle": "Cara Penggunaan",
+      "howToUseSteps": [
+        "Click checkboxes to set read/write/execute permissions for owner, group, and others",
+        "Or type a numeric permission (e.g., 755) to auto-set checkboxes",
+        "View the numeric, symbolic, and command representations",
+        "Click a common permission preset for quick setup"
+      ],
+      "useCasesTitle": "Kasus Penggunaan",
+      "useCases": [
+        "Setting up web server file permissions",
+        "Configuring deployment scripts",
+        "Securing sensitive files (SSH keys, config files)",
+        "Troubleshooting 'permission denied' errors"
+      ]
     },
     "text-to-pdf": {
       "name": "Konverter Teks ke PDF",
@@ -4106,9 +4154,34 @@
     },
     "svg-to-png": {
       "name": "Konverter SVG ke PNG",
-      "description": "Konversi kode SVG menjadi gambar PNG",
-      "pageTitle": "Konverter SVG ke PNG",
-      "pageDescription": "Konversi kode SVG menjadi gambar PNG berkualitas tinggi."
+      "description": "Konversi file SVG ke gambar PNG dengan dimensi dan latar belakang kustom",
+      "pageTitle": "Konverter SVG ke PNG - Konversi SVG ke PNG Online Gratis",
+      "pageDescription": "Konversi SVG ke PNG online gratis. Unggah atau tempel kode SVG, atur lebar, tinggi, skala, dan warna latar belakang. Unduh gambar PNG berkualitas tinggi.",
+      "dropZoneTitle": "Jatuhkan file SVG di sini atau klik untuk mengunggah",
+      "dropZoneSubtitle": "Atau tempel kode SVG di area teks di bawah",
+      "svgInput": "Kode SVG",
+      "svgPlaceholder": "Tempel kode SVG Anda di sini...",
+      "outputSettings": "Pengaturan Output",
+      "widthLabel": "Lebar (px)",
+      "heightLabel": "Tinggi (px)",
+      "scaleLabel": "Skala",
+      "lockAspect": "Kunci rasio aspek",
+      "unlockAspect": "Buka kunci rasio aspek",
+      "transparentBg": "Latar belakang transparan",
+      "bgColorLabel": "Warna latar belakang:",
+      "finalSize": "Ukuran akhir",
+      "convertBtn": "Konversi ke PNG",
+      "loadSample": "Muat Contoh",
+      "clearBtn": "Hapus",
+      "downloadPng": "Unduh PNG",
+      "svgPreview": "Pratinjau SVG",
+      "pngPreview": "Output PNG",
+      "presetSizes": "Ukuran Preset Cepat",
+      "invalidSvg": "Input SVG tidak valid",
+      "conversionError": "Konversi gagal. SVG mungkin mengandung sumber daya eksternal.",
+      "onlySvg": "Hanya file SVG yang diterima",
+      "seoTitle": "Apa itu Konverter SVG ke PNG?",
+      "seoContent": "File SVG bagus untuk grafik yang tidak bergantung pada resolusi, tetapi kadang Anda membutuhkan gambar PNG raster. Alat ini mengkonversi SVG ke PNG sepenuhnya di browser tanpa mengunggah ke server mana pun."
     },
     "css-beautifier": {
       "name": "CSS Beautifier",
@@ -4473,101 +4546,17 @@
         }
       ]
     },
-    "openapi-validator": {
-      "name": "Validator OpenAPI",
-      "description": "Validasi spesifikasi OpenAPI/Swagger",
-      "pageTitle": "Validator OpenAPI - Alat online gratis",
-      "pageDescription": "Validasi spesifikasi OpenAPI 3.0 dan Swagger. Periksa kesalahan sintaks dan masalah skema API."
+    "json-schema-validator": {
+      "name": "Validator JSON Schema",
+      "description": "Validasi data JSON dengan JSON Schema. Pemeriksaan tipe, field wajib, pola, dan lainnya",
+      "pageTitle": "Validator JSON Schema - Validasi Online",
+      "pageDescription": "Alat validasi JSON Schema online gratis. Validasi data JSON sesuai spesifikasi JSON Schema. Pemrosesan di browser."
     },
-    "graphql-playground": {
-      "name": "GraphQL Playground",
-      "description": "Interactive GraphQL query editor and explorer",
-      "pageTitle": "GraphQL Playground Online Tool",
-      "pageDescription": "Test GraphQL queries with syntax highlighting, auto-completion, and real-time validation. Perfect for API development and debugging."
-    },
-    "env-editor": {
-      "name": ".env File Editor",
-      "description": "Edit and validate environment configuration files",
-      "pageTitle": ".env File Editor Online Tool",
-      "pageDescription": "Simple editor for .env files with validation, syntax highlighting, and duplicate key detection for environment variables."
-    },
-    "sql-explainer": {
-      "name": "SQL Query Explainer",
-      "description": "Understand SQL queries with AI-powered explanations",
-      "pageTitle": "SQL Query Explainer Online Tool",
-      "pageDescription": "Paste your SQL and get a clear explanation of what each part does. Great for learning SQL and debugging complex queries."
-    },
-    "tailwind-playground": {
-      "name": "Tailwind CSS Playground",
-      "description": "Live Tailwind CSS class builder and previewer",
-      "pageTitle": "Tailwind CSS Playground Online Tool",
-      "pageDescription": "Build responsive designs with Tailwind. Preview classes in real-time with live HTML rendering and utility documentation."
-    },
-    "oauth-debugger": {
-      "name": "OAuth 2.0 Debugger",
-      "description": "Decode and inspect OAuth tokens and credentials",
-      "pageTitle": "OAuth 2.0 Debugger Online Tool",
-      "pageDescription": "Analyze OAuth 2.0 tokens, JWT payloads, and authorization headers. Verify claims and inspect token contents safely."
-    },
-    "crontab-generator": {
-      "name": "Generator Crontab",
-      "description": "Bangun ekspresi cron secara visual dengan pratinjau yang mudah dibaca",
-      "pageTitle": "Generator Crontab",
-      "pageDescription": "Pembuat ekspresi crontab visual dengan deskripsi jadwal yang mudah dibaca dan preset umum."
-    },
-    "docker-compose-validator": {
-      "name": "Validator Docker Compose",
-      "description": "Validasi file YAML Docker Compose untuk kesalahan sintaks dan struktur",
-      "pageTitle": "Validator Docker Compose",
-      "pageDescription": "Validasi file YAML Docker Compose Anda untuk kesalahan sintaks dan praktik terbaik."
-    },
-    "git-command-builder": {
-      "name": "Pembuat Perintah Git",
-      "description": "Bangun perintah Git secara interaktif dengan antarmuka visual",
-      "pageTitle": "Pembuat Perintah Git",
-      "pageDescription": "Pembuat perintah Git interaktif dengan kategori untuk pengaturan, dasar, percabangan, dan operasi lanjutan."
-    },
-    "nginx-config-generator": {
-      "name": "Generator Konfigurasi Nginx",
-      "description": "Hasilkan file konfigurasi Nginx untuk pengaturan server umum",
-      "pageTitle": "Generator Konfigurasi Nginx",
-      "pageDescription": "Hasilkan konfigurasi Nginx untuk situs statis, reverse proxy, SPA, dan redirect dengan SSL opsional."
-    },
-    "ssl-checker": {
-      "name": "Pemeriksa SSL",
-      "description": "Periksa detail dan validitas sertifikat SSL untuk domain apa pun",
-      "pageTitle": "Pemeriksa Sertifikat SSL",
-      "pageDescription": "Periksa validitas sertifikat SSL/TLS, tanggal kedaluwarsa, penerbit, dan detail protokol."
-    },
-    "css-gradient-generator": {
-      "name": "Generator Gradien CSS",
-      "description": "Buat gradien CSS yang indah dengan pratinjau langsung",
-      "pageTitle": "Generator Gradien CSS",
-      "pageDescription": "Buat gradien CSS linier dan radial dengan pratinjau langsung."
-    },
-    "lorem-ipsum-generator": {
-      "name": "Generator Lorem Ipsum",
-      "description": "Buat teks placeholder untuk desain Anda",
-      "pageTitle": "Generator Lorem Ipsum",
-      "pageDescription": "Buat teks placeholder Lorem Ipsum yang dapat disesuaikan."
-    },
-    "password-strength-checker": {
-      "name": "Pemeriksa Kekuatan Kata Sandi",
-      "description": "Periksa seberapa kuat kata sandi Anda",
-      "pageTitle": "Pemeriksa Kekuatan Kata Sandi",
-      "pageDescription": "Analisis kekuatan kata sandi."
-    },
-    "text-diff-checker": {
-      "name": "Pemeriksa Perbedaan Teks",
-      "description": "Bandingkan dua teks dan temukan perbedaan",
-      "pageTitle": "Pemeriksa Perbedaan Teks",
-      "pageDescription": "Bandingkan dua teks secara berdampingan."
-    },
-    "color-palette-generator": {
-      "name": "Generator Palet Warna",
-      "description": "Buat palet warna yang harmonis",
-      "pageTitle": "Generator Palet Warna",
-      "pageDescription": "Buat palet warna yang indah."
+    "http-status-lookup": {
+      "name": "Pencarian Kode Status HTTP",
+      "description": "Cari dan jelajahi semua kode status HTTP (1xx-5xx) dengan deskripsi dan kasus penggunaan",
+      "pageTitle": "Pencarian Kode Status HTTP - Panduan Referensi",
+      "pageDescription": "Alat pencarian kode status HTTP online gratis. Jelajahi semua kode HTTP (100-599) dengan deskripsi detail dan solusi."
     }
   },
   "footer": {

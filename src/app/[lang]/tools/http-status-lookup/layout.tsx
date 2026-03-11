@@ -7,8 +7,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   const dict = await getDictionary(lang);
-  const t = dict.tools['markdown-to-html-online'];
-  const url = `https://viadreams.cc/${lang}/tools/markdown-to-html-online`;
+  const t = dict.tools['http-status-lookup'];
+  const url = `https://viadreams.cc/${lang}/tools/http-status-lookup`;
   return {
     title: t.pageTitle,
     description: t.pageDescription,
@@ -30,9 +30,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: url,
       languages: {
         ...Object.fromEntries(
-          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/markdown-to-html-online`])
+          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/http-status-lookup`])
         ),
-        'x-default': `https://viadreams.cc/en/tools/markdown-to-html-online`,
+        'x-default': `https://viadreams.cc/en/tools/http-status-lookup`,
       },
     },
   };
@@ -42,7 +42,7 @@ export default async function Layout({ children, params }: { children: React.Rea
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   return (
-    <ToolSeoServer toolId="markdown-to-html-online" lang={lang}>
+    <ToolSeoServer toolId="http-status-lookup" lang={lang}>
       {children}
     </ToolSeoServer>
   );

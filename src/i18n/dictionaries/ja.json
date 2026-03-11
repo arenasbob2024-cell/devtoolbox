@@ -1072,10 +1072,58 @@
       ]
     },
     "chmod-calculator": {
-      "name": "Chmod計算機",
-      "description": "8進数と記号表記でUnixファイルパーミッションを計算",
-      "pageTitle": "Chmod計算機 - Unixファイルパーミッション",
-      "pageDescription": "8進数と記号表記変換を備えたインタラクティブなUnixファイルパーミッション計算機。"
+      "name": "Chmod計算",
+      "description": "チェックボックスでLinuxファイル権限を計算",
+      "pageTitle": "Linux Chmod計算",
+      "pageDescription": "chmod権限の計算。数値(755)と記号(rwxr-xr-x)を相互変換。",
+      "numericLabel": "Numeric",
+      "symbolicLabel": "Symbolic",
+      "commandLabel": "Command",
+      "enterNumeric": "Enter numeric permission:",
+      "owner": "Owner (User)",
+      "group": "Group",
+      "others": "Others",
+      "read": "Read",
+      "write": "Write",
+      "execute": "Execute",
+      "commonTitle": "Common Permissions",
+      "common755": "Directories / Executables",
+      "common644": "Regular Files",
+      "common777": "Full Access (caution)",
+      "common700": "Owner Only",
+      "common600": "Private Files",
+      "common444": "Read Only",
+      "seoTitle": "About Linux File Permissions",
+      "seoContent": "Linux file permissions control who can read (r), write (w), and execute (x) files and directories. Permissions are set for three groups: owner, group, and others. The chmod command uses either numeric (octal) notation like 755 or symbolic notation like rwxr-xr-x. Common values: 755 for directories/scripts, 644 for regular files, 600 for private files.",
+      "faqTitle": "Frequently Asked Questions",
+      "faqs": [
+        {
+          "q": "What is chmod?",
+          "a": "chmod (change mode) is a Unix/Linux command that sets file and directory permissions. It controls who can read, write, and execute files."
+        },
+        {
+          "q": "What does 755 mean?",
+          "a": "755 means: owner can read/write/execute (7), group can read/execute (5), others can read/execute (5). It's the standard permission for directories and scripts."
+        },
+        {
+          "q": "What's the difference between numeric and symbolic notation?",
+          "a": "Numeric uses octal digits (755). Symbolic uses letters (rwxr-xr-x). They represent the same permissions — numeric is more compact, symbolic is more readable."
+        }
+      ],
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Click checkboxes to set read/write/execute permissions for owner, group, and others",
+        "Or type a numeric permission (e.g., 755) to auto-set checkboxes",
+        "View the numeric, symbolic, and command representations",
+        "Click a common permission preset for quick setup"
+      ],
+      "useCasesTitle": "Common Use Cases",
+      "useCases": [
+        "Setting up web server file permissions",
+        "Configuring deployment scripts",
+        "Securing sensitive files (SSH keys, config files)",
+        "Troubleshooting 'permission denied' errors"
+      ]
     },
     "text-to-pdf": {
       "name": "テキストからPDF変換",
@@ -4105,10 +4153,35 @@
       "pageDescription": "画像を無料でオンライン圧縮。品質スライダーでファイルサイズを削減。JPEG、PNG、WebP出力対応。すべての処理はブラウザで完結。"
     },
     "svg-to-png": {
-      "name": "SVGからPNGコンバーター",
-      "description": "SVGコードをPNG画像に変換",
-      "pageTitle": "SVGからPNGコンバーター",
-      "pageDescription": "SVGコードを高品質PNG画像に変換。"
+      "name": "SVG to PNG 変換",
+      "description": "SVGファイルをカスタムサイズと背景のPNG画像に変換",
+      "pageTitle": "SVG to PNG 変換ツール - 無料オンラインSVG PNG変換",
+      "pageDescription": "SVGをPNGにオンラインで無料変換。SVGコードをアップロードまたは貼り付け、幅、高さ、スケール、背景色を設定。高品質なPNG画像をダウンロード。",
+      "dropZoneTitle": "SVGファイルをここにドロップまたはクリックしてアップロード",
+      "dropZoneSubtitle": "または下のテキストエリアにSVGコードを貼り付け",
+      "svgInput": "SVGコード",
+      "svgPlaceholder": "SVGコードをここに貼り付け...",
+      "outputSettings": "出力設定",
+      "widthLabel": "幅 (px)",
+      "heightLabel": "高さ (px)",
+      "scaleLabel": "スケール",
+      "lockAspect": "アスペクト比を固定",
+      "unlockAspect": "アスペクト比を解除",
+      "transparentBg": "透明背景",
+      "bgColorLabel": "背景色：",
+      "finalSize": "最終サイズ",
+      "convertBtn": "PNGに変換",
+      "loadSample": "サンプルを読み込む",
+      "clearBtn": "クリア",
+      "downloadPng": "PNGをダウンロード",
+      "svgPreview": "SVGプレビュー",
+      "pngPreview": "PNG出力",
+      "presetSizes": "クイックプリセットサイズ",
+      "invalidSvg": "無効なSVG入力",
+      "conversionError": "変換に失敗しました。SVGに外部リソースが含まれている可能性があります。",
+      "onlySvg": "SVGファイルのみ受け付けます",
+      "seoTitle": "SVG to PNG変換ツールとは？",
+      "seoContent": "SVGファイルは解像度に依存しないグラフィックに最適ですが、ラスターPNG画像が必要な場合もあります。このツールはブラウザ内で完全にSVGをPNGに変換し、サーバーへのアップロードは不要です。"
     },
     "css-beautifier": {
       "name": "CSS Beautifier",
@@ -4473,101 +4546,17 @@
         }
       ]
     },
-    "openapi-validator": {
-      "name": "OpenAPI バリデータ",
-      "description": "OpenAPI/Swagger 仕様を検証",
-      "pageTitle": "OpenAPI バリデータ - 無料オンラインツール",
-      "pageDescription": "OpenAPI 3.0 および Swagger 仕様を検証します。構文エラーと API スキーマの問題をチェック。"
+    "json-schema-validator": {
+      "name": "JSON Schema バリデーター",
+      "description": "JSON Schemaを使用してJSONデータを検証。型チェック、必須フィールド、パターンマッチングなど",
+      "pageTitle": "JSON Schema バリデーター - オンライン検証ツール",
+      "pageDescription": "無料のオンラインJSON Schema検証ツール。JSON Schema仕様に基づいてJSONデータを検証。ブラウザ側で処理、データのアップロード不要。"
     },
-    "graphql-playground": {
-      "name": "GraphQL Playground",
-      "description": "Interactive GraphQL query editor and explorer",
-      "pageTitle": "GraphQL Playground Online Tool",
-      "pageDescription": "Test GraphQL queries with syntax highlighting, auto-completion, and real-time validation. Perfect for API development and debugging."
-    },
-    "env-editor": {
-      "name": ".env File Editor",
-      "description": "Edit and validate environment configuration files",
-      "pageTitle": ".env File Editor Online Tool",
-      "pageDescription": "Simple editor for .env files with validation, syntax highlighting, and duplicate key detection for environment variables."
-    },
-    "sql-explainer": {
-      "name": "SQL Query Explainer",
-      "description": "Understand SQL queries with AI-powered explanations",
-      "pageTitle": "SQL Query Explainer Online Tool",
-      "pageDescription": "Paste your SQL and get a clear explanation of what each part does. Great for learning SQL and debugging complex queries."
-    },
-    "tailwind-playground": {
-      "name": "Tailwind CSS Playground",
-      "description": "Live Tailwind CSS class builder and previewer",
-      "pageTitle": "Tailwind CSS Playground Online Tool",
-      "pageDescription": "Build responsive designs with Tailwind. Preview classes in real-time with live HTML rendering and utility documentation."
-    },
-    "oauth-debugger": {
-      "name": "OAuth 2.0 Debugger",
-      "description": "Decode and inspect OAuth tokens and credentials",
-      "pageTitle": "OAuth 2.0 Debugger Online Tool",
-      "pageDescription": "Analyze OAuth 2.0 tokens, JWT payloads, and authorization headers. Verify claims and inspect token contents safely."
-    },
-    "crontab-generator": {
-      "name": "Crontabジェネレーター",
-      "description": "人間が読めるプレビュー付きでcron式を視覚的に構築",
-      "pageTitle": "Crontabジェネレーター",
-      "pageDescription": "人間が読めるスケジュール説明と一般的なプリセット付きのビジュアルcrontab式ビルダー。"
-    },
-    "docker-compose-validator": {
-      "name": "Docker Composeバリデーター",
-      "description": "Docker Compose YAMLファイルの構文と構造エラーを検証",
-      "pageTitle": "Docker Composeバリデーター",
-      "pageDescription": "Docker Compose YAMLファイルの構文エラーとベストプラクティスを検証します。"
-    },
-    "git-command-builder": {
-      "name": "Gitコマンドビルダー",
-      "description": "ビジュアルインターフェースでGitコマンドをインタラクティブに構築",
-      "pageTitle": "Gitコマンドビルダー",
-      "pageDescription": "セットアップ、基本、ブランチ、高度な操作のカテゴリを備えたインタラクティブなGitコマンドビルダー。"
-    },
-    "nginx-config-generator": {
-      "name": "Nginx設定ジェネレーター",
-      "description": "一般的なサーバー設定用のNginx設定ファイルを生成",
-      "pageTitle": "Nginx設定ジェネレーター",
-      "pageDescription": "静的サイト、リバースプロキシ、SPA、リダイレクト用のNginx設定をオプションSSL付きで生成。"
-    },
-    "ssl-checker": {
-      "name": "SSLチェッカー",
-      "description": "任意のドメインのSSL証明書の詳細と有効性を確認",
-      "pageTitle": "SSL証明書チェッカー",
-      "pageDescription": "任意のドメインのSSL/TLS証明書の有効性、有効期限、発行者、プロトコル詳細を確認。"
-    },
-    "css-gradient-generator": {
-      "name": "CSSグラデーションジェネレーター",
-      "description": "ライブプレビュー付きの美しいCSSグラデーションを作成",
-      "pageTitle": "CSSグラデーションジェネレーター",
-      "pageDescription": "ライブプレビュー付きの線形および放射状CSSグラデーションを生成。"
-    },
-    "lorem-ipsum-generator": {
-      "name": "Lorem Ipsumジェネレーター",
-      "description": "デザイン用のプレースホルダーテキストを生成",
-      "pageTitle": "Lorem Ipsumジェネレーター",
-      "pageDescription": "カスタマイズ可能なLorem Ipsumプレースホルダーテキストを生成。"
-    },
-    "password-strength-checker": {
-      "name": "パスワード強度チェッカー",
-      "description": "パスワードの強度を確認",
-      "pageTitle": "パスワード強度チェッカー",
-      "pageDescription": "パスワードの強度を分析。"
-    },
-    "text-diff-checker": {
-      "name": "テキスト差分チェッカー",
-      "description": "2つのテキストを比較して違いを見つける",
-      "pageTitle": "テキスト差分チェッカー",
-      "pageDescription": "2つのテキストを並べて比較。"
-    },
-    "color-palette-generator": {
-      "name": "カラーパレットジェネレーター",
-      "description": "調和のとれたカラーパレットを生成",
-      "pageTitle": "カラーパレットジェネレーター",
-      "pageDescription": "美しいカラーパレットを生成。"
+    "http-status-lookup": {
+      "name": "HTTPステータスコード検索",
+      "description": "すべてのHTTPステータスコード（1xx-5xx）を検索・閲覧。詳細な説明、使用例、解決策を含む",
+      "pageTitle": "HTTPステータスコード検索 - 完全リファレンスガイド",
+      "pageDescription": "無料のオンラインHTTPステータスコード検索ツール。すべてのHTTPコード（100-599）を詳細な説明と解決策付きで閲覧。"
     }
   },
   "footer": {

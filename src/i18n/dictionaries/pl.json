@@ -1072,10 +1072,58 @@
       ]
     },
     "chmod-calculator": {
-      "name": "Kalkulator Chmod",
-      "description": "Oblicz uprawnienia plików Unix w notacji ósemkowej i symbolicznej",
-      "pageTitle": "Kalkulator Chmod",
-      "pageDescription": "Interaktywny kalkulator uprawnień plików Unix z konwersją notacji ósemkowej i symbolicznej."
+      "name": "Chmod Calculator",
+      "description": "Calculate Linux file permissions with interactive checkboxes",
+      "pageTitle": "Linux Chmod Calculator",
+      "pageDescription": "Interactive chmod permission calculator. Convert between numeric (755) and symbolic (rwxr-xr-x) Linux file permissions.",
+      "numericLabel": "Numeric",
+      "symbolicLabel": "Symbolic",
+      "commandLabel": "Command",
+      "enterNumeric": "Enter numeric permission:",
+      "owner": "Owner (User)",
+      "group": "Group",
+      "others": "Others",
+      "read": "Read",
+      "write": "Write",
+      "execute": "Execute",
+      "commonTitle": "Common Permissions",
+      "common755": "Directories / Executables",
+      "common644": "Regular Files",
+      "common777": "Full Access (caution)",
+      "common700": "Owner Only",
+      "common600": "Private Files",
+      "common444": "Read Only",
+      "seoTitle": "About Linux File Permissions",
+      "seoContent": "Linux file permissions control who can read (r), write (w), and execute (x) files and directories. Permissions are set for three groups: owner, group, and others. The chmod command uses either numeric (octal) notation like 755 or symbolic notation like rwxr-xr-x. Common values: 755 for directories/scripts, 644 for regular files, 600 for private files.",
+      "faqTitle": "Frequently Asked Questions",
+      "faqs": [
+        {
+          "q": "What is chmod?",
+          "a": "chmod (change mode) is a Unix/Linux command that sets file and directory permissions. It controls who can read, write, and execute files."
+        },
+        {
+          "q": "What does 755 mean?",
+          "a": "755 means: owner can read/write/execute (7), group can read/execute (5), others can read/execute (5). It's the standard permission for directories and scripts."
+        },
+        {
+          "q": "What's the difference between numeric and symbolic notation?",
+          "a": "Numeric uses octal digits (755). Symbolic uses letters (rwxr-xr-x). They represent the same permissions — numeric is more compact, symbolic is more readable."
+        }
+      ],
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Click checkboxes to set read/write/execute permissions for owner, group, and others",
+        "Or type a numeric permission (e.g., 755) to auto-set checkboxes",
+        "View the numeric, symbolic, and command representations",
+        "Click a common permission preset for quick setup"
+      ],
+      "useCasesTitle": "Common Use Cases",
+      "useCases": [
+        "Setting up web server file permissions",
+        "Configuring deployment scripts",
+        "Securing sensitive files (SSH keys, config files)",
+        "Troubleshooting 'permission denied' errors"
+      ]
     },
     "text-to-pdf": {
       "name": "Konwerter Tekstu na PDF",
@@ -4105,10 +4153,35 @@
       "pageDescription": "Kompresuj obrazy online za darmo. Zmniejsz rozmiar pliku za pomoca suwaka jakosci. Wyjscie JPEG, PNG i WebP. Przetwarzanie w przegladarce."
     },
     "svg-to-png": {
-      "name": "Konwerter SVG na PNG",
-      "description": "Konwertuj kod SVG na obrazy PNG",
-      "pageTitle": "Konwerter SVG na PNG",
-      "pageDescription": "Konwertuj kod SVG na wysokiej jakości obrazy PNG."
+      "name": "Konwerter SVG do PNG",
+      "description": "Konwertuj pliki SVG na obrazy PNG z niestandardowymi wymiarami i tlem",
+      "pageTitle": "Konwerter SVG do PNG - Konwertuj SVG na PNG Online Za Darmo",
+      "pageDescription": "Konwertuj SVG na PNG online za darmo. Przeslij lub wklej kod SVG, ustaw szerokosc, wysokosc, skale i kolor tla. Pobierz wysokiej jakosci obrazy PNG.",
+      "dropZoneTitle": "Upusc plik SVG tutaj lub kliknij aby przeslac",
+      "dropZoneSubtitle": "Lub wklej kod SVG w pole tekstowe ponizej",
+      "svgInput": "Kod SVG",
+      "svgPlaceholder": "Wklej tutaj kod SVG...",
+      "outputSettings": "Ustawienia wyjscia",
+      "widthLabel": "Szerokosc (px)",
+      "heightLabel": "Wysokosc (px)",
+      "scaleLabel": "Skala",
+      "lockAspect": "Zablokuj proporcje",
+      "unlockAspect": "Odblokuj proporcje",
+      "transparentBg": "Przezroczyste tlo",
+      "bgColorLabel": "Kolor tla:",
+      "finalSize": "Rozmiar koncowy",
+      "convertBtn": "Konwertuj na PNG",
+      "loadSample": "Zaladuj przyklad",
+      "clearBtn": "Wyczysc",
+      "downloadPng": "Pobierz PNG",
+      "svgPreview": "Podglad SVG",
+      "pngPreview": "Wyjscie PNG",
+      "presetSizes": "Szybkie ustawienia rozmiaru",
+      "invalidSvg": "Nieprawidlowe dane SVG",
+      "conversionError": "Konwersja nie powiodla sie. SVG moze zawierac zasoby zewnetrzne.",
+      "onlySvg": "Akceptowane sa tylko pliki SVG",
+      "seoTitle": "Czym jest konwerter SVG do PNG?",
+      "seoContent": "Pliki SVG sa idealne dla grafiki niezaleznej od rozdzielczosci, ale czasem potrzebny jest obraz rastrowy PNG. To narzedzie konwertuje SVG na PNG calkowicie w przegladarce bez przesylania na serwer."
     },
     "css-beautifier": {
       "name": "CSS Beautifier",
@@ -4473,101 +4546,17 @@
         }
       ]
     },
-    "openapi-validator": {
-      "name": "Walidator OpenAPI",
-      "description": "Walidacja specyfikacji OpenAPI/Swagger",
-      "pageTitle": "Walidator OpenAPI - Bezpłatne narzędzie online",
-      "pageDescription": "Zwaliduj specyfikacje OpenAPI 3.0 i Swagger. Sprawdź błędy składni i problemy ze schematem."
+    "json-schema-validator": {
+      "name": "Walidator JSON Schema",
+      "description": "Waliduj dane JSON za pomocą JSON Schema. Sprawdzanie typów, wymaganych pól, wzorców i więcej",
+      "pageTitle": "Walidator JSON Schema - Walidacja online",
+      "pageDescription": "Darmowe narzędzie do walidacji JSON Schema online. Waliduj dane JSON zgodnie ze specyfikacją JSON Schema. Przetwarzanie w przeglądarce."
     },
-    "graphql-playground": {
-      "name": "GraphQL Playground",
-      "description": "Interactive GraphQL query editor and explorer",
-      "pageTitle": "GraphQL Playground Online Tool",
-      "pageDescription": "Test GraphQL queries with syntax highlighting, auto-completion, and real-time validation. Perfect for API development and debugging."
-    },
-    "env-editor": {
-      "name": ".env File Editor",
-      "description": "Edit and validate environment configuration files",
-      "pageTitle": ".env File Editor Online Tool",
-      "pageDescription": "Simple editor for .env files with validation, syntax highlighting, and duplicate key detection for environment variables."
-    },
-    "sql-explainer": {
-      "name": "SQL Query Explainer",
-      "description": "Understand SQL queries with AI-powered explanations",
-      "pageTitle": "SQL Query Explainer Online Tool",
-      "pageDescription": "Paste your SQL and get a clear explanation of what each part does. Great for learning SQL and debugging complex queries."
-    },
-    "tailwind-playground": {
-      "name": "Tailwind CSS Playground",
-      "description": "Live Tailwind CSS class builder and previewer",
-      "pageTitle": "Tailwind CSS Playground Online Tool",
-      "pageDescription": "Build responsive designs with Tailwind. Preview classes in real-time with live HTML rendering and utility documentation."
-    },
-    "oauth-debugger": {
-      "name": "OAuth 2.0 Debugger",
-      "description": "Decode and inspect OAuth tokens and credentials",
-      "pageTitle": "OAuth 2.0 Debugger Online Tool",
-      "pageDescription": "Analyze OAuth 2.0 tokens, JWT payloads, and authorization headers. Verify claims and inspect token contents safely."
-    },
-    "crontab-generator": {
-      "name": "Generator Crontab",
-      "description": "Twórz wyrażenia cron wizualnie z czytelnym podglądem",
-      "pageTitle": "Generator Crontab",
-      "pageDescription": "Wizualny kreator wyrażeń crontab z czytelnymi opisami harmonogramu i popularnymi presetami."
-    },
-    "docker-compose-validator": {
-      "name": "Walidator Docker Compose",
-      "description": "Waliduj pliki YAML Docker Compose pod kątem błędów składni",
-      "pageTitle": "Walidator Docker Compose",
-      "pageDescription": "Waliduj pliki YAML Docker Compose pod kątem błędów składni i najlepszych praktyk."
-    },
-    "git-command-builder": {
-      "name": "Kreator Poleceń Git",
-      "description": "Twórz polecenia Git interaktywnie z interfejsem wizualnym",
-      "pageTitle": "Kreator Poleceń Git",
-      "pageDescription": "Interaktywny kreator poleceń Git z kategoriami dla konfiguracji, podstaw, gałęzi i zaawansowanych operacji."
-    },
-    "nginx-config-generator": {
-      "name": "Generator Konfiguracji Nginx",
-      "description": "Generuj pliki konfiguracji Nginx dla typowych konfiguracji serwerów",
-      "pageTitle": "Generator Konfiguracji Nginx",
-      "pageDescription": "Generuj konfiguracje Nginx dla stron statycznych, reverse proxy, SPA i przekierowań z opcjonalnym SSL."
-    },
-    "ssl-checker": {
-      "name": "Sprawdzacz SSL",
-      "description": "Sprawdź szczegóły i ważność certyfikatu SSL dla dowolnej domeny",
-      "pageTitle": "Sprawdzacz Certyfikatu SSL",
-      "pageDescription": "Sprawdź ważność certyfikatu SSL/TLS, datę wygaśnięcia, wystawcę i szczegóły protokołu."
-    },
-    "css-gradient-generator": {
-      "name": "Generator gradientów CSS",
-      "description": "Twórz piękne gradienty CSS z podglądem na żywo",
-      "pageTitle": "Generator gradientów CSS",
-      "pageDescription": "Generuj liniowe i radialne gradienty CSS z podglądem na żywo."
-    },
-    "lorem-ipsum-generator": {
-      "name": "Generator Lorem Ipsum",
-      "description": "Generuj tekst zastępczy dla swoich projektów",
-      "pageTitle": "Generator Lorem Ipsum",
-      "pageDescription": "Generuj dostosowywalny tekst zastępczy Lorem Ipsum."
-    },
-    "password-strength-checker": {
-      "name": "Sprawdzanie siły hasła",
-      "description": "Sprawdź siłę swojego hasła",
-      "pageTitle": "Sprawdzanie siły hasła",
-      "pageDescription": "Analizuj siłę hasła."
-    },
-    "text-diff-checker": {
-      "name": "Porównywarka tekstów",
-      "description": "Porównaj dwa teksty i znajdź różnice",
-      "pageTitle": "Porównywarka tekstów",
-      "pageDescription": "Porównaj dwa teksty obok siebie."
-    },
-    "color-palette-generator": {
-      "name": "Generator palet kolorów",
-      "description": "Generuj harmonijne palety kolorów",
-      "pageTitle": "Generator palet kolorów",
-      "pageDescription": "Generuj piękne palety kolorów."
+    "http-status-lookup": {
+      "name": "Wyszukiwarka kodów HTTP",
+      "description": "Wyszukuj i przeglądaj wszystkie kody statusu HTTP (1xx-5xx) z opisami i przypadkami użycia",
+      "pageTitle": "Wyszukiwarka kodów HTTP - Przewodnik referencyjny",
+      "pageDescription": "Darmowe narzędzie do wyszukiwania kodów statusu HTTP. Przeglądaj wszystkie kody HTTP (100-599) ze szczegółowymi opisami i rozwiązaniami."
     }
   },
   "footer": {

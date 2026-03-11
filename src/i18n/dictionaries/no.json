@@ -1072,10 +1072,58 @@
       ]
     },
     "chmod-calculator": {
-      "name": "Chmod-kalkulator",
-      "description": "Beregn Unix-filtillatelser i oktal og symbolsk notasjon",
-      "pageTitle": "Chmod-kalkulator",
-      "pageDescription": "Interaktiv Unix-filtillatelseskalkulator med oktal og symbolsk notasjonskonvertering."
+      "name": "Chmod Calculator",
+      "description": "Calculate Linux file permissions with interactive checkboxes",
+      "pageTitle": "Linux Chmod Calculator",
+      "pageDescription": "Interactive chmod permission calculator. Convert between numeric (755) and symbolic (rwxr-xr-x) Linux file permissions.",
+      "numericLabel": "Numeric",
+      "symbolicLabel": "Symbolic",
+      "commandLabel": "Command",
+      "enterNumeric": "Enter numeric permission:",
+      "owner": "Owner (User)",
+      "group": "Group",
+      "others": "Others",
+      "read": "Read",
+      "write": "Write",
+      "execute": "Execute",
+      "commonTitle": "Common Permissions",
+      "common755": "Directories / Executables",
+      "common644": "Regular Files",
+      "common777": "Full Access (caution)",
+      "common700": "Owner Only",
+      "common600": "Private Files",
+      "common444": "Read Only",
+      "seoTitle": "About Linux File Permissions",
+      "seoContent": "Linux file permissions control who can read (r), write (w), and execute (x) files and directories. Permissions are set for three groups: owner, group, and others. The chmod command uses either numeric (octal) notation like 755 or symbolic notation like rwxr-xr-x. Common values: 755 for directories/scripts, 644 for regular files, 600 for private files.",
+      "faqTitle": "Frequently Asked Questions",
+      "faqs": [
+        {
+          "q": "What is chmod?",
+          "a": "chmod (change mode) is a Unix/Linux command that sets file and directory permissions. It controls who can read, write, and execute files."
+        },
+        {
+          "q": "What does 755 mean?",
+          "a": "755 means: owner can read/write/execute (7), group can read/execute (5), others can read/execute (5). It's the standard permission for directories and scripts."
+        },
+        {
+          "q": "What's the difference between numeric and symbolic notation?",
+          "a": "Numeric uses octal digits (755). Symbolic uses letters (rwxr-xr-x). They represent the same permissions — numeric is more compact, symbolic is more readable."
+        }
+      ],
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Click checkboxes to set read/write/execute permissions for owner, group, and others",
+        "Or type a numeric permission (e.g., 755) to auto-set checkboxes",
+        "View the numeric, symbolic, and command representations",
+        "Click a common permission preset for quick setup"
+      ],
+      "useCasesTitle": "Common Use Cases",
+      "useCases": [
+        "Setting up web server file permissions",
+        "Configuring deployment scripts",
+        "Securing sensitive files (SSH keys, config files)",
+        "Troubleshooting 'permission denied' errors"
+      ]
     },
     "text-to-pdf": {
       "name": "Tekst til PDF Konverterer",
@@ -4105,10 +4153,35 @@
       "pageDescription": "Komprimer bilder online gratis. Reduser filstorrelse med kvalitetskontroll. JPEG, PNG og WebP utdata. All behandling i nettleseren din."
     },
     "svg-to-png": {
-      "name": "SVG til PNG-konverterer",
-      "description": "Konverter SVG-kode til PNG-bilder",
-      "pageTitle": "SVG til PNG-konverterer",
-      "pageDescription": "Konverter SVG-kode til høykvalitets PNG-bilder."
+      "name": "SVG til PNG Konverterer",
+      "description": "Konverter SVG-filer til PNG-bilder med egendefinerte dimensjoner og bakgrunn",
+      "pageTitle": "SVG til PNG Konverterer - Konverter SVG til PNG Online Gratis",
+      "pageDescription": "Konverter SVG til PNG online gratis. Last opp eller lim inn SVG-kode, angi bredde, hoyde, skala og bakgrunnsfarge. Last ned PNG-bilder i hoy kvalitet.",
+      "dropZoneTitle": "Slipp en SVG-fil her eller klikk for a laste opp",
+      "dropZoneSubtitle": "Eller lim inn SVG-kode i tekstfeltet nedenfor",
+      "svgInput": "SVG-kode",
+      "svgPlaceholder": "Lim inn SVG-koden din her...",
+      "outputSettings": "Utdatainnstillinger",
+      "widthLabel": "Bredde (px)",
+      "heightLabel": "Hoyde (px)",
+      "scaleLabel": "Skala",
+      "lockAspect": "Las sideforhold",
+      "unlockAspect": "Las opp sideforhold",
+      "transparentBg": "Gjennomsiktig bakgrunn",
+      "bgColorLabel": "Bakgrunnsfarge:",
+      "finalSize": "Endelig storrelse",
+      "convertBtn": "Konverter til PNG",
+      "loadSample": "Last eksempel",
+      "clearBtn": "Fjern",
+      "downloadPng": "Last ned PNG",
+      "svgPreview": "SVG-forhandsvisning",
+      "pngPreview": "PNG-utdata",
+      "presetSizes": "Hurtigstorrelser",
+      "invalidSvg": "Ugyldig SVG-inndata",
+      "conversionError": "Konvertering mislyktes. SVG kan inneholde eksterne ressurser.",
+      "onlySvg": "Kun SVG-filer aksepteres",
+      "seoTitle": "Hva er SVG til PNG Konvertereren?",
+      "seoContent": "SVG-filer er utmerkede for opploesningsuavhengig grafikk, men noen ganger trenger man et PNG-rasterbilde. Dette verktoyet konverterer SVG til PNG helt i nettleseren uten opplasting til noen server."
     },
     "css-beautifier": {
       "name": "CSS Beautifier",
@@ -4473,101 +4546,17 @@
         }
       ]
     },
-    "openapi-validator": {
-      "name": "OpenAPI-validator",
-      "description": "Valider OpenAPI/Swagger-spesifikasjoner",
-      "pageTitle": "OpenAPI-validator - Gratis onlineverktøy",
-      "pageDescription": "Valider OpenAPI 3.0 og Swagger-spesifikasjoner. Sjekk syntaksfeil og skjemaproblemer."
+    "json-schema-validator": {
+      "name": "JSON Schema Validator",
+      "description": "Valider JSON-data med JSON Schema. Typekontroll, påkrevde felt, mønstre og mer",
+      "pageTitle": "JSON Schema Validator - Online-validering",
+      "pageDescription": "Gratis online JSON Schema valideringsverktøy. Valider JSON-data i henhold til JSON Schema spesifikasjoner. Behandling i nettleseren."
     },
-    "graphql-playground": {
-      "name": "GraphQL Playground",
-      "description": "Interactive GraphQL query editor and explorer",
-      "pageTitle": "GraphQL Playground Online Tool",
-      "pageDescription": "Test GraphQL queries with syntax highlighting, auto-completion, and real-time validation. Perfect for API development and debugging."
-    },
-    "env-editor": {
-      "name": ".env File Editor",
-      "description": "Edit and validate environment configuration files",
-      "pageTitle": ".env File Editor Online Tool",
-      "pageDescription": "Simple editor for .env files with validation, syntax highlighting, and duplicate key detection for environment variables."
-    },
-    "sql-explainer": {
-      "name": "SQL Query Explainer",
-      "description": "Understand SQL queries with AI-powered explanations",
-      "pageTitle": "SQL Query Explainer Online Tool",
-      "pageDescription": "Paste your SQL and get a clear explanation of what each part does. Great for learning SQL and debugging complex queries."
-    },
-    "tailwind-playground": {
-      "name": "Tailwind CSS Playground",
-      "description": "Live Tailwind CSS class builder and previewer",
-      "pageTitle": "Tailwind CSS Playground Online Tool",
-      "pageDescription": "Build responsive designs with Tailwind. Preview classes in real-time with live HTML rendering and utility documentation."
-    },
-    "oauth-debugger": {
-      "name": "OAuth 2.0 Debugger",
-      "description": "Decode and inspect OAuth tokens and credentials",
-      "pageTitle": "OAuth 2.0 Debugger Online Tool",
-      "pageDescription": "Analyze OAuth 2.0 tokens, JWT payloads, and authorization headers. Verify claims and inspect token contents safely."
-    },
-    "crontab-generator": {
-      "name": "Crontab-generator",
-      "description": "Bygg cron-uttrykk visuelt med lesbar forhåndsvisning",
-      "pageTitle": "Crontab-generator",
-      "pageDescription": "Visuell crontab-uttrykksbygger med lesbare tidsplanbeskrivelser og vanlige forhåndsinnstillinger."
-    },
-    "docker-compose-validator": {
-      "name": "Docker Compose Validator",
-      "description": "Valider Docker Compose YAML-filer for syntaks- og strukturfeil",
-      "pageTitle": "Docker Compose Validator",
-      "pageDescription": "Valider Docker Compose YAML-filene dine for syntaksfeil og beste praksis."
-    },
-    "git-command-builder": {
-      "name": "Git-kommandobygger",
-      "description": "Bygg Git-kommandoer interaktivt med et visuelt grensesnitt",
-      "pageTitle": "Git-kommandobygger",
-      "pageDescription": "Interaktiv Git-kommandobygger med kategorier for oppsett, grunnleggende, forgrening og avanserte operasjoner."
-    },
-    "nginx-config-generator": {
-      "name": "Nginx-konfigurasjonsgenerator",
-      "description": "Generer Nginx-konfigurasjonsfiler for vanlige serveroppsett",
-      "pageTitle": "Nginx-konfigurasjonsgenerator",
-      "pageDescription": "Generer Nginx-konfigurasjoner for statiske nettsteder, reverse proxy, SPA og omdirigeringer med valgfri SSL."
-    },
-    "ssl-checker": {
-      "name": "SSL-sjekker",
-      "description": "Sjekk SSL-sertifikatdetaljer og gyldighet for ethvert domene",
-      "pageTitle": "SSL-sertifikatsjekker",
-      "pageDescription": "Sjekk SSL/TLS-sertifikatets gyldighet, utløpsdato, utsteder og protokolldetaljer."
-    },
-    "css-gradient-generator": {
-      "name": "CSS Gradient-generator",
-      "description": "Lag vakre CSS-gradienter med livevisning",
-      "pageTitle": "CSS Gradient-generator",
-      "pageDescription": "Generer lineære og radielle CSS-gradienter med livevisning."
-    },
-    "lorem-ipsum-generator": {
-      "name": "Lorem Ipsum-generator",
-      "description": "Generer plassholdertekst for dine design",
-      "pageTitle": "Lorem Ipsum-generator",
-      "pageDescription": "Generer tilpassbar Lorem Ipsum plassholdertekst."
-    },
-    "password-strength-checker": {
-      "name": "Passordstyrke-sjekker",
-      "description": "Sjekk hvor sterkt passordet ditt er",
-      "pageTitle": "Passordstyrke-sjekker",
-      "pageDescription": "Analyser passordstyrke."
-    },
-    "text-diff-checker": {
-      "name": "Tekstsammenligner",
-      "description": "Sammenlign to tekster og finn forskjeller",
-      "pageTitle": "Tekstsammenligner",
-      "pageDescription": "Sammenlign to tekster side om side."
-    },
-    "color-palette-generator": {
-      "name": "Fargepalett-generator",
-      "description": "Generer harmoniske fargepaletter",
-      "pageTitle": "Fargepalett-generator",
-      "pageDescription": "Generer vakre fargepaletter."
+    "http-status-lookup": {
+      "name": "HTTP-statuskode søk",
+      "description": "Søk og bla gjennom alle HTTP-statuskoder (1xx-5xx) med beskrivelser og brukstilfeller",
+      "pageTitle": "HTTP-statuskode søk - Referanseguide",
+      "pageDescription": "Gratis online HTTP-statuskode søkeverktøy. Bla gjennom alle HTTP-koder (100-599) med detaljerte beskrivelser og løsninger."
     }
   },
   "footer": {

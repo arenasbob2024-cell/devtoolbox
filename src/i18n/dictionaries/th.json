@@ -1073,9 +1073,57 @@
     },
     "chmod-calculator": {
       "name": "เครื่องคำนวณ Chmod",
-      "description": "คำนวณสิทธิ์ไฟล์ Unix ในรูปแบบฐานแปดและสัญลักษณ์",
-      "pageTitle": "เครื่องคำนวณ Chmod",
-      "pageDescription": "เครื่องคำนวณสิทธิ์ไฟล์ Unix แบบโต้ตอบพร้อมการแปลงรูปแบบฐานแปดและสัญลักษณ์"
+      "description": "คำนวณสิทธิ์ไฟล์ Linux ด้วยช่องทำเครื่องหมายแบบโต้ตอบ",
+      "pageTitle": "เครื่องคำนวณ Chmod Linux",
+      "pageDescription": "เครื่องคำนวณสิทธิ์ chmod แบบโต้ตอบ แปลงระหว่างสิทธิ์ตัวเลข (755) และสัญลักษณ์ (rwxr-xr-x)",
+      "numericLabel": "ตัวเลข",
+      "symbolicLabel": "สัญลักษณ์",
+      "commandLabel": "คำสั่ง",
+      "enterNumeric": "ป้อนสิทธิ์ตัวเลข:",
+      "owner": "เจ้าของ (ผู้ใช้)",
+      "group": "กลุ่ม",
+      "others": "อื่นๆ",
+      "read": "อ่าน",
+      "write": "เขียน",
+      "execute": "ดำเนินการ",
+      "commonTitle": "สิทธิ์ที่ใช้บ่อย",
+      "common755": "ไดเรกทอรี / ไฟล์ปฏิบัติการ",
+      "common644": "ไฟล์ทั่วไป",
+      "common777": "เข้าถึงเต็มที่ (ระวัง)",
+      "common700": "เจ้าของเท่านั้น",
+      "common600": "ไฟล์ส่วนตัว",
+      "common444": "อ่านอย่างเดียว",
+      "seoTitle": "เกี่ยวกับสิทธิ์ไฟล์ Linux",
+      "seoContent": "สิทธิ์ไฟล์ Linux ควบคุมว่าใครสามารถอ่าน (r) เขียน (w) และดำเนินการ (x) ไฟล์และไดเรกทอรี สิทธิ์ถูกตั้งค่าสำหรับสามกลุ่ม: เจ้าของ กลุ่ม และอื่นๆ คำสั่ง chmod ใช้เลขฐานแปด เช่น 755 หรือสัญลักษณ์ เช่น rwxr-xr-x",
+      "faqTitle": "คำถามที่พบบ่อย",
+      "faqs": [
+        {
+          "q": "What is chmod?",
+          "a": "chmod (change mode) is a Unix/Linux command that sets file and directory permissions. It controls who can read, write, and execute files."
+        },
+        {
+          "q": "What does 755 mean?",
+          "a": "755 means: owner can read/write/execute (7), group can read/execute (5), others can read/execute (5). It's the standard permission for directories and scripts."
+        },
+        {
+          "q": "What's the difference between numeric and symbolic notation?",
+          "a": "Numeric uses octal digits (755). Symbolic uses letters (rwxr-xr-x). They represent the same permissions — numeric is more compact, symbolic is more readable."
+        }
+      ],
+      "howToUseTitle": "วิธีใช้งาน",
+      "howToUseSteps": [
+        "Click checkboxes to set read/write/execute permissions for owner, group, and others",
+        "Or type a numeric permission (e.g., 755) to auto-set checkboxes",
+        "View the numeric, symbolic, and command representations",
+        "Click a common permission preset for quick setup"
+      ],
+      "useCasesTitle": "กรณีการใช้งาน",
+      "useCases": [
+        "Setting up web server file permissions",
+        "Configuring deployment scripts",
+        "Securing sensitive files (SSH keys, config files)",
+        "Troubleshooting 'permission denied' errors"
+      ]
     },
     "text-to-pdf": {
       "name": "เครื่องมือแปลงข้อความเป็น PDF",
@@ -4105,10 +4153,35 @@
       "pageDescription": "บีบอัดรูปภาพออนไลน์ฟรี ลดขนาดไฟล์ด้วยตัวควบคุมคุณภาพ รองรับ JPEG, PNG และ WebP ประมวลผลทั้งหมดในเบราว์เซอร์"
     },
     "svg-to-png": {
-      "name": "แปลง SVG เป็น PNG",
-      "description": "แปลงโค้ด SVG เป็นภาพ PNG",
-      "pageTitle": "แปลง SVG เป็น PNG",
-      "pageDescription": "แปลงโค้ด SVG เป็นภาพ PNG คุณภาพสูง"
+      "name": "ตัวแปลง SVG เป็น PNG",
+      "description": "แปลงไฟล์ SVG เป็นภาพ PNG พร้อมกำหนดขนาดและพื้นหลังเอง",
+      "pageTitle": "ตัวแปลง SVG เป็น PNG - แปลง SVG เป็น PNG ออนไลน์ฟรี",
+      "pageDescription": "แปลง SVG เป็น PNG ออนไลน์ฟรี อัปโหลดหรือวางโค้ด SVG กำหนดความกว้าง สูง มาตราส่วน และสีพื้นหลัง ดาวน์โหลดภาพ PNG คุณภาพสูง",
+      "dropZoneTitle": "วางไฟล์ SVG ที่นี่หรือคลิกเพื่ออัปโหลด",
+      "dropZoneSubtitle": "หรือวางโค้ด SVG ในช่องข้อความด้านล่าง",
+      "svgInput": "โค้ด SVG",
+      "svgPlaceholder": "วางโค้ด SVG ของคุณที่นี่...",
+      "outputSettings": "การตั้งค่าผลลัพธ์",
+      "widthLabel": "ความกว้าง (px)",
+      "heightLabel": "ความสูง (px)",
+      "scaleLabel": "มาตราส่วน",
+      "lockAspect": "ล็อกอัตราส่วน",
+      "unlockAspect": "ปลดล็อกอัตราส่วน",
+      "transparentBg": "พื้นหลังโปร่งใส",
+      "bgColorLabel": "สีพื้นหลัง:",
+      "finalSize": "ขนาดสุดท้าย",
+      "convertBtn": "แปลงเป็น PNG",
+      "loadSample": "โหลดตัวอย่าง",
+      "clearBtn": "ล้าง",
+      "downloadPng": "ดาวน์โหลด PNG",
+      "svgPreview": "ตัวอย่าง SVG",
+      "pngPreview": "ผลลัพธ์ PNG",
+      "presetSizes": "ขนาดพรีเซ็ตด่วน",
+      "invalidSvg": "ข้อมูล SVG ไม่ถูกต้อง",
+      "conversionError": "การแปลงล้มเหลว SVG อาจมีทรัพยากรภายนอก",
+      "onlySvg": "รับเฉพาะไฟล์ SVG เท่านั้น",
+      "seoTitle": "ตัวแปลง SVG เป็น PNG คืออะไร?",
+      "seoContent": "ไฟล์ SVG เหมาะสำหรับกราฟิกที่ไม่ขึ้นกับความละเอียด แต่บางครั้งคุณต้องการภาพ PNG แรสเตอร์ เครื่องมือนี้แปลง SVG เป็น PNG ทั้งหมดในเบราว์เซอร์โดยไม่ต้องอัปโหลดไปยังเซิร์ฟเวอร์ใดๆ"
     },
     "css-beautifier": {
       "name": "CSS Beautifier",
@@ -4473,101 +4546,17 @@
         }
       ]
     },
-    "openapi-validator": {
-      "name": "ตัวตรวจสอบ OpenAPI",
-      "description": "ตรวจสอบข้อกำหนด OpenAPI/Swagger",
-      "pageTitle": "ตัวตรวจสอบ OpenAPI - เครื่องมือออนไลน์ฟรี",
-      "pageDescription": "ตรวจสอบข้อกำหนด OpenAPI 3.0 และ Swagger ค้นหาข้อผิดพลาดของไวยากรณ์และปัญหาสคีมา API"
+    "json-schema-validator": {
+      "name": "ตัวตรวจสอบ JSON Schema",
+      "description": "ตรวจสอบข้อมูล JSON ด้วย JSON Schema รองรับการตรวจสอบประเภท ฟิลด์ที่จำเป็น รูปแบบ และอื่นๆ",
+      "pageTitle": "ตัวตรวจสอบ JSON Schema - ตรวจสอบออนไลน์",
+      "pageDescription": "เครื่องมือตรวจสอบ JSON Schema ออนไลน์ฟรี ตรวจสอบข้อมูล JSON ตามข้อกำหนด JSON Schema ประมวลผลในเบราว์เซอร์"
     },
-    "graphql-playground": {
-      "name": "GraphQL Playground",
-      "description": "Interactive GraphQL query editor and explorer",
-      "pageTitle": "GraphQL Playground Online Tool",
-      "pageDescription": "Test GraphQL queries with syntax highlighting, auto-completion, and real-time validation. Perfect for API development and debugging."
-    },
-    "env-editor": {
-      "name": ".env File Editor",
-      "description": "Edit and validate environment configuration files",
-      "pageTitle": ".env File Editor Online Tool",
-      "pageDescription": "Simple editor for .env files with validation, syntax highlighting, and duplicate key detection for environment variables."
-    },
-    "sql-explainer": {
-      "name": "SQL Query Explainer",
-      "description": "Understand SQL queries with AI-powered explanations",
-      "pageTitle": "SQL Query Explainer Online Tool",
-      "pageDescription": "Paste your SQL and get a clear explanation of what each part does. Great for learning SQL and debugging complex queries."
-    },
-    "tailwind-playground": {
-      "name": "Tailwind CSS Playground",
-      "description": "Live Tailwind CSS class builder and previewer",
-      "pageTitle": "Tailwind CSS Playground Online Tool",
-      "pageDescription": "Build responsive designs with Tailwind. Preview classes in real-time with live HTML rendering and utility documentation."
-    },
-    "oauth-debugger": {
-      "name": "OAuth 2.0 Debugger",
-      "description": "Decode and inspect OAuth tokens and credentials",
-      "pageTitle": "OAuth 2.0 Debugger Online Tool",
-      "pageDescription": "Analyze OAuth 2.0 tokens, JWT payloads, and authorization headers. Verify claims and inspect token contents safely."
-    },
-    "crontab-generator": {
-      "name": "ตัวสร้าง Crontab",
-      "description": "สร้างนิพจน์ cron แบบภาพพร้อมตัวอย่างที่อ่านง่าย",
-      "pageTitle": "ตัวสร้าง Crontab",
-      "pageDescription": "ตัวสร้างนิพจน์ crontab แบบภาพพร้อมคำอธิบายกำหนดการที่อ่านง่ายและพรีเซ็ตทั่วไป"
-    },
-    "docker-compose-validator": {
-      "name": "ตัวตรวจสอบ Docker Compose",
-      "description": "ตรวจสอบไฟล์ YAML Docker Compose สำหรับข้อผิดพลาดทางไวยากรณ์และโครงสร้าง",
-      "pageTitle": "ตัวตรวจสอบ Docker Compose",
-      "pageDescription": "ตรวจสอบไฟล์ YAML Docker Compose ของคุณสำหรับข้อผิดพลาดทางไวยากรณ์และแนวปฏิบัติที่ดี"
-    },
-    "git-command-builder": {
-      "name": "ตัวสร้างคำสั่ง Git",
-      "description": "สร้างคำสั่ง Git แบบโต้ตอบด้วยอินเทอร์เฟซภาพ",
-      "pageTitle": "ตัวสร้างคำสั่ง Git",
-      "pageDescription": "ตัวสร้างคำสั่ง Git แบบโต้ตอบพร้อมหมวดหมู่สำหรับการตั้งค่า พื้นฐาน สาขา และการดำเนินการขั้นสูง"
-    },
-    "nginx-config-generator": {
-      "name": "ตัวสร้างการกำหนดค่า Nginx",
-      "description": "สร้างไฟล์การกำหนดค่า Nginx สำหรับการตั้งค่าเซิร์ฟเวอร์ทั่วไป",
-      "pageTitle": "ตัวสร้างการกำหนดค่า Nginx",
-      "pageDescription": "สร้างการกำหนดค่า Nginx สำหรับเว็บไซต์แบบสถิต รีเวิร์สพร็อกซี SPA และการเปลี่ยนเส้นทางพร้อม SSL ตัวเลือก"
-    },
-    "ssl-checker": {
-      "name": "ตัวตรวจสอบ SSL",
-      "description": "ตรวจสอบรายละเอียดและความถูกต้องของใบรับรอง SSL สำหรับโดเมนใดก็ได้",
-      "pageTitle": "ตัวตรวจสอบใบรับรอง SSL",
-      "pageDescription": "ตรวจสอบความถูกต้องของใบรับรอง SSL/TLS วันหมดอายุ ผู้ออก และรายละเอียดโปรโตคอล"
-    },
-    "css-gradient-generator": {
-      "name": "เครื่องสร้างไล่เฉดสี CSS",
-      "description": "สร้างไล่เฉดสี CSS ที่สวยงามพร้อมตัวอย่างสด",
-      "pageTitle": "เครื่องสร้างไล่เฉดสี CSS",
-      "pageDescription": "สร้างไล่เฉดสี CSS แบบเส้นตรงและแบบรัศมีพร้อมตัวอย่างสด"
-    },
-    "lorem-ipsum-generator": {
-      "name": "เครื่องสร้าง Lorem Ipsum",
-      "description": "สร้างข้อความตัวอย่างสำหรับงานออกแบบ",
-      "pageTitle": "เครื่องสร้าง Lorem Ipsum",
-      "pageDescription": "สร้างข้อความตัวอย่าง Lorem Ipsum ที่ปรับแต่งได้"
-    },
-    "password-strength-checker": {
-      "name": "ตรวจสอบความแข็งรหัสผ่าน",
-      "description": "ตรวจสอบว่ารหัสผ่านของคุณแข็งแค่ไหน",
-      "pageTitle": "ตรวจสอบความแข็งรหัสผ่าน",
-      "pageDescription": "วิเคราะห์ความแข็งของรหัสผ่าน"
-    },
-    "text-diff-checker": {
-      "name": "เครื่องมือเปรียบเทียบข้อความ",
-      "description": "เปรียบเทียบข้อความสองชิ้นและค้นหาความแตกต่าง",
-      "pageTitle": "เครื่องมือเปรียบเทียบข้อความ",
-      "pageDescription": "เปรียบเทียบข้อความสองชิ้นคู่กัน"
-    },
-    "color-palette-generator": {
-      "name": "เครื่องสร้างพาเลทสี",
-      "description": "สร้างพาเลทสีที่กลมกลืน",
-      "pageTitle": "เครื่องสร้างพาเลทสี",
-      "pageDescription": "สร้างพาเลทสีที่สวยงาม"
+    "http-status-lookup": {
+      "name": "ค้นหารหัสสถานะ HTTP",
+      "description": "ค้นหาและเรียกดูรหัสสถานะ HTTP ทั้งหมด (1xx-5xx) พร้อมคำอธิบายและกรณีการใช้งาน",
+      "pageTitle": "ค้นหารหัสสถานะ HTTP - คู่มืออ้างอิง",
+      "pageDescription": "เครื่องมือค้นหารหัสสถานะ HTTP ออนไลน์ฟรี เรียกดูรหัส HTTP ทั้งหมด (100-599) พร้อมคำอธิบายโดยละเอียดและวิธีแก้ปัญหา"
     }
   },
   "footer": {

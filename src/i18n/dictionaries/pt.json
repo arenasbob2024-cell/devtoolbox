@@ -1072,10 +1072,58 @@
       ]
     },
     "chmod-calculator": {
-      "name": "Calculadora Chmod",
-      "description": "Calcule permissões de arquivos Unix em notação octal e simbólica",
-      "pageTitle": "Calculadora Chmod",
-      "pageDescription": "Calculadora interativa de permissões de arquivos Unix com conversão octal e simbólica."
+      "name": "Chmod Calculator",
+      "description": "Calculate Linux file permissions with interactive checkboxes",
+      "pageTitle": "Linux Chmod Calculator",
+      "pageDescription": "Interactive chmod permission calculator. Convert between numeric (755) and symbolic (rwxr-xr-x) Linux file permissions.",
+      "numericLabel": "Numeric",
+      "symbolicLabel": "Symbolic",
+      "commandLabel": "Command",
+      "enterNumeric": "Enter numeric permission:",
+      "owner": "Owner (User)",
+      "group": "Group",
+      "others": "Others",
+      "read": "Read",
+      "write": "Write",
+      "execute": "Execute",
+      "commonTitle": "Common Permissions",
+      "common755": "Directories / Executables",
+      "common644": "Regular Files",
+      "common777": "Full Access (caution)",
+      "common700": "Owner Only",
+      "common600": "Private Files",
+      "common444": "Read Only",
+      "seoTitle": "About Linux File Permissions",
+      "seoContent": "Linux file permissions control who can read (r), write (w), and execute (x) files and directories. Permissions are set for three groups: owner, group, and others. The chmod command uses either numeric (octal) notation like 755 or symbolic notation like rwxr-xr-x. Common values: 755 for directories/scripts, 644 for regular files, 600 for private files.",
+      "faqTitle": "Frequently Asked Questions",
+      "faqs": [
+        {
+          "q": "What is chmod?",
+          "a": "chmod (change mode) is a Unix/Linux command that sets file and directory permissions. It controls who can read, write, and execute files."
+        },
+        {
+          "q": "What does 755 mean?",
+          "a": "755 means: owner can read/write/execute (7), group can read/execute (5), others can read/execute (5). It's the standard permission for directories and scripts."
+        },
+        {
+          "q": "What's the difference between numeric and symbolic notation?",
+          "a": "Numeric uses octal digits (755). Symbolic uses letters (rwxr-xr-x). They represent the same permissions — numeric is more compact, symbolic is more readable."
+        }
+      ],
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Click checkboxes to set read/write/execute permissions for owner, group, and others",
+        "Or type a numeric permission (e.g., 755) to auto-set checkboxes",
+        "View the numeric, symbolic, and command representations",
+        "Click a common permission preset for quick setup"
+      ],
+      "useCasesTitle": "Common Use Cases",
+      "useCases": [
+        "Setting up web server file permissions",
+        "Configuring deployment scripts",
+        "Securing sensitive files (SSH keys, config files)",
+        "Troubleshooting 'permission denied' errors"
+      ]
     },
     "text-to-pdf": {
       "name": "Conversor de Texto para PDF",
@@ -4106,9 +4154,34 @@
     },
     "svg-to-png": {
       "name": "Conversor SVG para PNG",
-      "description": "Converta código SVG em imagens PNG",
-      "pageTitle": "Conversor SVG para PNG",
-      "pageDescription": "Converta código SVG em imagens PNG de alta qualidade."
+      "description": "Converter arquivos SVG em imagens PNG com dimensoes e fundo personalizados",
+      "pageTitle": "Conversor SVG para PNG - Converter SVG para PNG Online Gratis",
+      "pageDescription": "Converter SVG para PNG online gratis. Envie ou cole codigo SVG, defina largura, altura, escala e cor de fundo. Baixe imagens PNG de alta qualidade.",
+      "dropZoneTitle": "Arraste um arquivo SVG aqui ou clique para enviar",
+      "dropZoneSubtitle": "Ou cole o codigo SVG na area de texto abaixo",
+      "svgInput": "Codigo SVG",
+      "svgPlaceholder": "Cole seu codigo SVG aqui...",
+      "outputSettings": "Configuracoes de saida",
+      "widthLabel": "Largura (px)",
+      "heightLabel": "Altura (px)",
+      "scaleLabel": "Escala",
+      "lockAspect": "Bloquear proporcao",
+      "unlockAspect": "Desbloquear proporcao",
+      "transparentBg": "Fundo transparente",
+      "bgColorLabel": "Cor de fundo:",
+      "finalSize": "Tamanho final",
+      "convertBtn": "Converter para PNG",
+      "loadSample": "Carregar exemplo",
+      "clearBtn": "Limpar",
+      "downloadPng": "Baixar PNG",
+      "svgPreview": "Pre-visualizacao SVG",
+      "pngPreview": "Saida PNG",
+      "presetSizes": "Tamanhos predefinidos",
+      "invalidSvg": "Entrada SVG invalida",
+      "conversionError": "Falha na conversao. O SVG pode conter recursos externos.",
+      "onlySvg": "Apenas arquivos SVG sao aceitos",
+      "seoTitle": "O que e o conversor SVG para PNG?",
+      "seoContent": "Arquivos SVG sao otimos para graficos independentes de resolucao, mas as vezes voce precisa de uma imagem PNG rasterizada. Esta ferramenta converte SVG para PNG inteiramente no navegador sem enviar para nenhum servidor."
     },
     "css-beautifier": {
       "name": "CSS Beautifier",
@@ -4473,101 +4546,17 @@
         }
       ]
     },
-    "openapi-validator": {
-      "name": "Validador OpenAPI",
-      "description": "Validar especificações OpenAPI/Swagger",
-      "pageTitle": "Validador OpenAPI - Ferramenta online gratuita",
-      "pageDescription": "Valide especificações OpenAPI 3.0 e Swagger. Detecte erros de sintaxe e problemas de esquema."
+    "json-schema-validator": {
+      "name": "Validador JSON Schema",
+      "description": "Valide dados JSON com JSON Schema. Verificação de tipos, campos obrigatórios, padrões e mais",
+      "pageTitle": "Validador JSON Schema - Validação online",
+      "pageDescription": "Ferramenta gratuita de validação JSON Schema online. Valide dados JSON conforme especificações JSON Schema. Processamento no navegador."
     },
-    "graphql-playground": {
-      "name": "GraphQL Playground",
-      "description": "Interactive GraphQL query editor and explorer",
-      "pageTitle": "GraphQL Playground Online Tool",
-      "pageDescription": "Test GraphQL queries with syntax highlighting, auto-completion, and real-time validation. Perfect for API development and debugging."
-    },
-    "env-editor": {
-      "name": ".env File Editor",
-      "description": "Edit and validate environment configuration files",
-      "pageTitle": ".env File Editor Online Tool",
-      "pageDescription": "Simple editor for .env files with validation, syntax highlighting, and duplicate key detection for environment variables."
-    },
-    "sql-explainer": {
-      "name": "SQL Query Explainer",
-      "description": "Understand SQL queries with AI-powered explanations",
-      "pageTitle": "SQL Query Explainer Online Tool",
-      "pageDescription": "Paste your SQL and get a clear explanation of what each part does. Great for learning SQL and debugging complex queries."
-    },
-    "tailwind-playground": {
-      "name": "Tailwind CSS Playground",
-      "description": "Live Tailwind CSS class builder and previewer",
-      "pageTitle": "Tailwind CSS Playground Online Tool",
-      "pageDescription": "Build responsive designs with Tailwind. Preview classes in real-time with live HTML rendering and utility documentation."
-    },
-    "oauth-debugger": {
-      "name": "OAuth 2.0 Debugger",
-      "description": "Decode and inspect OAuth tokens and credentials",
-      "pageTitle": "OAuth 2.0 Debugger Online Tool",
-      "pageDescription": "Analyze OAuth 2.0 tokens, JWT payloads, and authorization headers. Verify claims and inspect token contents safely."
-    },
-    "crontab-generator": {
-      "name": "Gerador Crontab",
-      "description": "Crie expressões cron visualmente com pré-visualização legível",
-      "pageTitle": "Gerador Crontab",
-      "pageDescription": "Construtor visual de expressões crontab com descrições de agendamento legíveis e predefinições comuns."
-    },
-    "docker-compose-validator": {
-      "name": "Validador Docker Compose",
-      "description": "Valide arquivos YAML Docker Compose para erros de sintaxe",
-      "pageTitle": "Validador Docker Compose",
-      "pageDescription": "Valide seus arquivos YAML Docker Compose para erros de sintaxe e melhores práticas."
-    },
-    "git-command-builder": {
-      "name": "Construtor de Comandos Git",
-      "description": "Construa comandos Git interativamente com uma interface visual",
-      "pageTitle": "Construtor de Comandos Git",
-      "pageDescription": "Construtor interativo de comandos Git com categorias para configuração, básicos, branches e operações avançadas."
-    },
-    "nginx-config-generator": {
-      "name": "Gerador de Config Nginx",
-      "description": "Gere arquivos de configuração Nginx para configurações de servidor comuns",
-      "pageTitle": "Gerador de Configuração Nginx",
-      "pageDescription": "Gere configurações Nginx para sites estáticos, proxy reverso, SPA e redirecionamentos com SSL opcional."
-    },
-    "ssl-checker": {
-      "name": "Verificador SSL",
-      "description": "Verifique os detalhes e validade do certificado SSL para qualquer domínio",
-      "pageTitle": "Verificador de Certificado SSL",
-      "pageDescription": "Verifique a validade do certificado SSL/TLS, data de expiração, emissor e detalhes do protocolo."
-    },
-    "css-gradient-generator": {
-      "name": "Gerador de gradientes CSS",
-      "description": "Crie belos gradientes CSS com visualização ao vivo",
-      "pageTitle": "Gerador de gradientes CSS",
-      "pageDescription": "Gere gradientes CSS lineares e radiais com visualização ao vivo."
-    },
-    "lorem-ipsum-generator": {
-      "name": "Gerador Lorem Ipsum",
-      "description": "Gere texto de preenchimento para seus designs",
-      "pageTitle": "Gerador Lorem Ipsum",
-      "pageDescription": "Gere texto Lorem Ipsum personalizável."
-    },
-    "password-strength-checker": {
-      "name": "Verificador de senha",
-      "description": "Verifique a força da sua senha",
-      "pageTitle": "Verificador de senha",
-      "pageDescription": "Analise a força da sua senha."
-    },
-    "text-diff-checker": {
-      "name": "Comparador de textos",
-      "description": "Compare dois textos e encontre diferenças",
-      "pageTitle": "Comparador de textos online",
-      "pageDescription": "Compare dois textos lado a lado."
-    },
-    "color-palette-generator": {
-      "name": "Gerador de paletas de cores",
-      "description": "Gere paletas de cores harmoniosas",
-      "pageTitle": "Gerador de paletas de cores",
-      "pageDescription": "Gere belas paletas de cores."
+    "http-status-lookup": {
+      "name": "Consulta de códigos HTTP",
+      "description": "Pesquise e navegue por todos os códigos de status HTTP (1xx-5xx) com descrições e casos de uso",
+      "pageTitle": "Consulta de códigos HTTP - Guia de referência",
+      "pageDescription": "Ferramenta gratuita de consulta de códigos de status HTTP. Navegue por todos os códigos HTTP (100-599) com descrições detalhadas e soluções."
     }
   },
   "footer": {
