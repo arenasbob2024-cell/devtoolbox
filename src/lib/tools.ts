@@ -3185,6 +3185,36 @@ export const tools: Tool[] = [
     path: '/tools/http-status-lookup',
     relatedTools: ['http-status', 'curl-to-code', 'url-parser', 'api-response-formatter'],
   },
+  {
+    id: 'qr-code-generator',
+    name: 'QR Code Generator',
+    description: 'Generate QR codes from text, URLs, and data with customizable colors and sizes',
+    icon: '📱',
+    category: 'generators',
+    keywords: ['qr code', 'qr generator', 'qr code generator', 'create qr code', 'qr code maker', 'barcode generator', 'qr code online free'],
+    path: '/tools/qr-code-generator',
+    relatedTools: ['base64', 'url-encoder', 'slug-generator', 'uuid-generator'],
+  },
+  {
+    id: 'markdown-table-generator',
+    name: 'Markdown Table Generator',
+    description: 'Create and format Markdown tables visually with alignment controls and live preview',
+    icon: '📊',
+    category: 'formatters',
+    keywords: ['markdown table', 'markdown table generator', 'md table', 'table generator', 'markdown table maker', 'github markdown table', 'create markdown table'],
+    path: '/tools/markdown-table-generator',
+    relatedTools: ['markdown-preview', 'markdown-editor-online', 'markdown-to-html-converter', 'markdown-link-checker'],
+  },
+  {
+    id: 'border-radius-generator',
+    name: 'CSS Border Radius Generator',
+    description: 'Visual CSS border-radius generator with presets, individual corner control, and live preview',
+    icon: '🔲',
+    category: 'css',
+    keywords: ['border radius', 'css border radius', 'border radius generator', 'rounded corners', 'css rounded corners', 'border radius css generator', 'css border radius tool'],
+    path: '/tools/border-radius-generator',
+    relatedTools: ['css-gradient', 'css-box-model-visualizer', 'css-flexbox-generator', 'css-grid-generator'],
+  },
 ];
 
 export function getToolsByCategory(categoryId: string): Tool[] {

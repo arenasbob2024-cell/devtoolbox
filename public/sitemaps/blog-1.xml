@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://viadreams.cc/en/blog/nginx-config-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/nginx-config-examples"/>
@@ -25,7 +25,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/fr/blog/nginx-config-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/nginx-config-examples"/>
@@ -47,7 +47,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/de/blog/nginx-config-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/nginx-config-examples"/>
@@ -69,7 +69,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/it/blog/nginx-config-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/nginx-config-examples"/>
@@ -91,7 +91,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/es/blog/nginx-config-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/nginx-config-examples"/>
@@ -113,7 +113,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pt/blog/nginx-config-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/nginx-config-examples"/>
@@ -135,7 +135,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/nl/blog/nginx-config-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/nginx-config-examples"/>
@@ -157,7 +157,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pl/blog/nginx-config-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/nginx-config-examples"/>
@@ -179,7 +179,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/sv/blog/nginx-config-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/nginx-config-examples"/>
@@ -201,7 +201,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/no/blog/nginx-config-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/nginx-config-examples"/>
@@ -223,7 +223,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/zh/blog/nginx-config-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/nginx-config-examples"/>
@@ -245,7 +245,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ja/blog/nginx-config-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/nginx-config-examples"/>
@@ -267,7 +267,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ko/blog/nginx-config-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/nginx-config-examples"/>
@@ -289,7 +289,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/id/blog/nginx-config-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/nginx-config-examples"/>
@@ -311,7 +311,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/th/blog/nginx-config-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/nginx-config-examples"/>
@@ -333,7 +333,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/en/blog/docker-compose-cheat-sheet</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/docker-compose-cheat-sheet"/>
@@ -355,7 +355,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/fr/blog/docker-compose-cheat-sheet</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/docker-compose-cheat-sheet"/>
@@ -377,7 +377,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/de/blog/docker-compose-cheat-sheet</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/docker-compose-cheat-sheet"/>
@@ -399,7 +399,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/it/blog/docker-compose-cheat-sheet</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/docker-compose-cheat-sheet"/>
@@ -421,7 +421,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/es/blog/docker-compose-cheat-sheet</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/docker-compose-cheat-sheet"/>
@@ -443,7 +443,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pt/blog/docker-compose-cheat-sheet</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/docker-compose-cheat-sheet"/>
@@ -465,7 +465,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/nl/blog/docker-compose-cheat-sheet</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/docker-compose-cheat-sheet"/>
@@ -487,7 +487,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pl/blog/docker-compose-cheat-sheet</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/docker-compose-cheat-sheet"/>
@@ -509,7 +509,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/sv/blog/docker-compose-cheat-sheet</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/docker-compose-cheat-sheet"/>
@@ -531,7 +531,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/no/blog/docker-compose-cheat-sheet</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/docker-compose-cheat-sheet"/>
@@ -553,7 +553,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/zh/blog/docker-compose-cheat-sheet</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/docker-compose-cheat-sheet"/>
@@ -575,7 +575,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ja/blog/docker-compose-cheat-sheet</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/docker-compose-cheat-sheet"/>
@@ -597,7 +597,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ko/blog/docker-compose-cheat-sheet</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/docker-compose-cheat-sheet"/>
@@ -619,7 +619,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/id/blog/docker-compose-cheat-sheet</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/docker-compose-cheat-sheet"/>
@@ -641,7 +641,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/th/blog/docker-compose-cheat-sheet</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/docker-compose-cheat-sheet"/>
@@ -663,7 +663,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/en/blog/csp-header-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/csp-header-guide"/>
@@ -685,7 +685,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/fr/blog/csp-header-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/csp-header-guide"/>
@@ -707,7 +707,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/de/blog/csp-header-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/csp-header-guide"/>
@@ -729,7 +729,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/it/blog/csp-header-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/csp-header-guide"/>
@@ -751,7 +751,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/es/blog/csp-header-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/csp-header-guide"/>
@@ -773,7 +773,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pt/blog/csp-header-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/csp-header-guide"/>
@@ -795,7 +795,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/nl/blog/csp-header-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/csp-header-guide"/>
@@ -817,7 +817,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pl/blog/csp-header-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/csp-header-guide"/>
@@ -839,7 +839,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/sv/blog/csp-header-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/csp-header-guide"/>
@@ -861,7 +861,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/no/blog/csp-header-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/csp-header-guide"/>
@@ -883,7 +883,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/zh/blog/csp-header-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/csp-header-guide"/>
@@ -905,7 +905,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ja/blog/csp-header-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/csp-header-guide"/>
@@ -927,7 +927,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ko/blog/csp-header-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/csp-header-guide"/>
@@ -949,7 +949,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/id/blog/csp-header-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/csp-header-guide"/>
@@ -971,7 +971,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/th/blog/csp-header-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/csp-header-guide"/>
@@ -993,7 +993,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/en/blog/sql-joins-explained-visual-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/sql-joins-explained-visual-guide"/>
@@ -1015,7 +1015,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/fr/blog/sql-joins-explained-visual-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/sql-joins-explained-visual-guide"/>
@@ -1037,7 +1037,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/de/blog/sql-joins-explained-visual-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/sql-joins-explained-visual-guide"/>
@@ -1059,7 +1059,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/it/blog/sql-joins-explained-visual-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/sql-joins-explained-visual-guide"/>
@@ -1081,7 +1081,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/es/blog/sql-joins-explained-visual-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/sql-joins-explained-visual-guide"/>
@@ -1103,7 +1103,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pt/blog/sql-joins-explained-visual-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/sql-joins-explained-visual-guide"/>
@@ -1125,7 +1125,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/nl/blog/sql-joins-explained-visual-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/sql-joins-explained-visual-guide"/>
@@ -1147,7 +1147,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pl/blog/sql-joins-explained-visual-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/sql-joins-explained-visual-guide"/>
@@ -1169,7 +1169,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/sv/blog/sql-joins-explained-visual-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/sql-joins-explained-visual-guide"/>
@@ -1191,7 +1191,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/no/blog/sql-joins-explained-visual-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/sql-joins-explained-visual-guide"/>
@@ -1213,7 +1213,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/zh/blog/sql-joins-explained-visual-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/sql-joins-explained-visual-guide"/>
@@ -1235,7 +1235,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ja/blog/sql-joins-explained-visual-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/sql-joins-explained-visual-guide"/>
@@ -1257,7 +1257,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ko/blog/sql-joins-explained-visual-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/sql-joins-explained-visual-guide"/>
@@ -1279,7 +1279,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/id/blog/sql-joins-explained-visual-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/sql-joins-explained-visual-guide"/>
@@ -1301,7 +1301,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/th/blog/sql-joins-explained-visual-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/sql-joins-explained-visual-guide"/>
@@ -1323,7 +1323,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/en/blog/git-rebase-vs-merge-explained</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/git-rebase-vs-merge-explained"/>
@@ -1345,7 +1345,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/fr/blog/git-rebase-vs-merge-explained</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/git-rebase-vs-merge-explained"/>
@@ -1367,7 +1367,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/de/blog/git-rebase-vs-merge-explained</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/git-rebase-vs-merge-explained"/>
@@ -1389,7 +1389,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/it/blog/git-rebase-vs-merge-explained</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/git-rebase-vs-merge-explained"/>
@@ -1411,7 +1411,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/es/blog/git-rebase-vs-merge-explained</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/git-rebase-vs-merge-explained"/>
@@ -1433,7 +1433,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pt/blog/git-rebase-vs-merge-explained</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/git-rebase-vs-merge-explained"/>
@@ -1455,7 +1455,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/nl/blog/git-rebase-vs-merge-explained</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/git-rebase-vs-merge-explained"/>
@@ -1477,7 +1477,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pl/blog/git-rebase-vs-merge-explained</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/git-rebase-vs-merge-explained"/>
@@ -1499,7 +1499,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/sv/blog/git-rebase-vs-merge-explained</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/git-rebase-vs-merge-explained"/>
@@ -1521,7 +1521,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/no/blog/git-rebase-vs-merge-explained</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/git-rebase-vs-merge-explained"/>
@@ -1543,7 +1543,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/zh/blog/git-rebase-vs-merge-explained</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/git-rebase-vs-merge-explained"/>
@@ -1565,7 +1565,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ja/blog/git-rebase-vs-merge-explained</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/git-rebase-vs-merge-explained"/>
@@ -1587,7 +1587,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ko/blog/git-rebase-vs-merge-explained</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/git-rebase-vs-merge-explained"/>
@@ -1609,7 +1609,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/id/blog/git-rebase-vs-merge-explained</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/git-rebase-vs-merge-explained"/>
@@ -1631,7 +1631,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/th/blog/git-rebase-vs-merge-explained</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/git-rebase-vs-merge-explained"/>
@@ -1653,7 +1653,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/en/blog/tailwind-css-cheat-sheet</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/tailwind-css-cheat-sheet"/>
@@ -1675,7 +1675,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/fr/blog/tailwind-css-cheat-sheet</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/tailwind-css-cheat-sheet"/>
@@ -1697,7 +1697,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/de/blog/tailwind-css-cheat-sheet</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/tailwind-css-cheat-sheet"/>
@@ -1719,7 +1719,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/it/blog/tailwind-css-cheat-sheet</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/tailwind-css-cheat-sheet"/>
@@ -1741,7 +1741,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/es/blog/tailwind-css-cheat-sheet</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/tailwind-css-cheat-sheet"/>
@@ -1763,7 +1763,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pt/blog/tailwind-css-cheat-sheet</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/tailwind-css-cheat-sheet"/>
@@ -1785,7 +1785,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/nl/blog/tailwind-css-cheat-sheet</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/tailwind-css-cheat-sheet"/>
@@ -1807,7 +1807,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pl/blog/tailwind-css-cheat-sheet</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/tailwind-css-cheat-sheet"/>
@@ -1829,7 +1829,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/sv/blog/tailwind-css-cheat-sheet</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/tailwind-css-cheat-sheet"/>
@@ -1851,7 +1851,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/no/blog/tailwind-css-cheat-sheet</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/tailwind-css-cheat-sheet"/>
@@ -1873,7 +1873,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/zh/blog/tailwind-css-cheat-sheet</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/tailwind-css-cheat-sheet"/>
@@ -1895,7 +1895,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ja/blog/tailwind-css-cheat-sheet</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/tailwind-css-cheat-sheet"/>
@@ -1917,7 +1917,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ko/blog/tailwind-css-cheat-sheet</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/tailwind-css-cheat-sheet"/>
@@ -1939,7 +1939,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/id/blog/tailwind-css-cheat-sheet</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/tailwind-css-cheat-sheet"/>
@@ -1961,7 +1961,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/th/blog/tailwind-css-cheat-sheet</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/tailwind-css-cheat-sheet"/>
@@ -1983,7 +1983,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/en/blog/typescript-generics-explained</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/typescript-generics-explained"/>
@@ -2005,7 +2005,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/fr/blog/typescript-generics-explained</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/typescript-generics-explained"/>
@@ -2027,7 +2027,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/de/blog/typescript-generics-explained</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/typescript-generics-explained"/>
@@ -2049,7 +2049,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/it/blog/typescript-generics-explained</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/typescript-generics-explained"/>
@@ -2071,7 +2071,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/es/blog/typescript-generics-explained</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/typescript-generics-explained"/>
@@ -2093,7 +2093,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pt/blog/typescript-generics-explained</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/typescript-generics-explained"/>
@@ -2115,7 +2115,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/nl/blog/typescript-generics-explained</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/typescript-generics-explained"/>
@@ -2137,7 +2137,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pl/blog/typescript-generics-explained</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/typescript-generics-explained"/>
@@ -2159,7 +2159,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/sv/blog/typescript-generics-explained</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/typescript-generics-explained"/>
@@ -2181,7 +2181,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/no/blog/typescript-generics-explained</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/typescript-generics-explained"/>
@@ -2203,7 +2203,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/zh/blog/typescript-generics-explained</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/typescript-generics-explained"/>
@@ -2225,7 +2225,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ja/blog/typescript-generics-explained</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/typescript-generics-explained"/>
@@ -2247,7 +2247,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ko/blog/typescript-generics-explained</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/typescript-generics-explained"/>
@@ -2269,7 +2269,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/id/blog/typescript-generics-explained</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/typescript-generics-explained"/>
@@ -2291,7 +2291,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/th/blog/typescript-generics-explained</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/typescript-generics-explained"/>
@@ -2313,7 +2313,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/en/blog/rest-api-best-practices-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/rest-api-best-practices-guide"/>
@@ -2335,7 +2335,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/fr/blog/rest-api-best-practices-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/rest-api-best-practices-guide"/>
@@ -2357,7 +2357,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/de/blog/rest-api-best-practices-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/rest-api-best-practices-guide"/>
@@ -2379,7 +2379,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/it/blog/rest-api-best-practices-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/rest-api-best-practices-guide"/>
@@ -2401,7 +2401,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/es/blog/rest-api-best-practices-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/rest-api-best-practices-guide"/>
@@ -2423,7 +2423,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pt/blog/rest-api-best-practices-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/rest-api-best-practices-guide"/>
@@ -2445,7 +2445,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/nl/blog/rest-api-best-practices-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/rest-api-best-practices-guide"/>
@@ -2467,7 +2467,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pl/blog/rest-api-best-practices-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/rest-api-best-practices-guide"/>
@@ -2489,7 +2489,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/sv/blog/rest-api-best-practices-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/rest-api-best-practices-guide"/>
@@ -2511,7 +2511,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/no/blog/rest-api-best-practices-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/rest-api-best-practices-guide"/>
@@ -2533,7 +2533,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/zh/blog/rest-api-best-practices-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/rest-api-best-practices-guide"/>
@@ -2555,7 +2555,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ja/blog/rest-api-best-practices-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/rest-api-best-practices-guide"/>
@@ -2577,7 +2577,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ko/blog/rest-api-best-practices-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/rest-api-best-practices-guide"/>
@@ -2599,7 +2599,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/id/blog/rest-api-best-practices-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/rest-api-best-practices-guide"/>
@@ -2621,7 +2621,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/th/blog/rest-api-best-practices-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/rest-api-best-practices-guide"/>
@@ -2643,7 +2643,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/en/blog/how-to-fix-cors-errors-complete-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/how-to-fix-cors-errors-complete-guide"/>
@@ -2665,7 +2665,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/fr/blog/how-to-fix-cors-errors-complete-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/how-to-fix-cors-errors-complete-guide"/>
@@ -2687,7 +2687,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/de/blog/how-to-fix-cors-errors-complete-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/how-to-fix-cors-errors-complete-guide"/>
@@ -2709,7 +2709,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/it/blog/how-to-fix-cors-errors-complete-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/how-to-fix-cors-errors-complete-guide"/>
@@ -2731,7 +2731,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/es/blog/how-to-fix-cors-errors-complete-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/how-to-fix-cors-errors-complete-guide"/>
@@ -2753,7 +2753,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pt/blog/how-to-fix-cors-errors-complete-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/how-to-fix-cors-errors-complete-guide"/>
@@ -2775,7 +2775,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/nl/blog/how-to-fix-cors-errors-complete-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/how-to-fix-cors-errors-complete-guide"/>
@@ -2797,7 +2797,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pl/blog/how-to-fix-cors-errors-complete-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/how-to-fix-cors-errors-complete-guide"/>
@@ -2819,7 +2819,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/sv/blog/how-to-fix-cors-errors-complete-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/how-to-fix-cors-errors-complete-guide"/>
@@ -2841,7 +2841,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/no/blog/how-to-fix-cors-errors-complete-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/how-to-fix-cors-errors-complete-guide"/>
@@ -2863,7 +2863,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/zh/blog/how-to-fix-cors-errors-complete-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/how-to-fix-cors-errors-complete-guide"/>
@@ -2885,7 +2885,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ja/blog/how-to-fix-cors-errors-complete-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/how-to-fix-cors-errors-complete-guide"/>
@@ -2907,7 +2907,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ko/blog/how-to-fix-cors-errors-complete-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/how-to-fix-cors-errors-complete-guide"/>
@@ -2929,7 +2929,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/id/blog/how-to-fix-cors-errors-complete-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/how-to-fix-cors-errors-complete-guide"/>
@@ -2951,7 +2951,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/th/blog/how-to-fix-cors-errors-complete-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/how-to-fix-cors-errors-complete-guide"/>
@@ -2973,7 +2973,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/en/blog/npm-vs-yarn-vs-pnpm-vs-bun-comparison</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/npm-vs-yarn-vs-pnpm-vs-bun-comparison"/>
@@ -2995,7 +2995,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/fr/blog/npm-vs-yarn-vs-pnpm-vs-bun-comparison</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/npm-vs-yarn-vs-pnpm-vs-bun-comparison"/>
@@ -3017,7 +3017,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/de/blog/npm-vs-yarn-vs-pnpm-vs-bun-comparison</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/npm-vs-yarn-vs-pnpm-vs-bun-comparison"/>
@@ -3039,7 +3039,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/it/blog/npm-vs-yarn-vs-pnpm-vs-bun-comparison</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/npm-vs-yarn-vs-pnpm-vs-bun-comparison"/>
@@ -3061,7 +3061,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/es/blog/npm-vs-yarn-vs-pnpm-vs-bun-comparison</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/npm-vs-yarn-vs-pnpm-vs-bun-comparison"/>
@@ -3083,7 +3083,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pt/blog/npm-vs-yarn-vs-pnpm-vs-bun-comparison</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/npm-vs-yarn-vs-pnpm-vs-bun-comparison"/>
@@ -3105,7 +3105,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/nl/blog/npm-vs-yarn-vs-pnpm-vs-bun-comparison</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/npm-vs-yarn-vs-pnpm-vs-bun-comparison"/>
@@ -3127,7 +3127,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pl/blog/npm-vs-yarn-vs-pnpm-vs-bun-comparison</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/npm-vs-yarn-vs-pnpm-vs-bun-comparison"/>
@@ -3149,7 +3149,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/sv/blog/npm-vs-yarn-vs-pnpm-vs-bun-comparison</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/npm-vs-yarn-vs-pnpm-vs-bun-comparison"/>
@@ -3171,7 +3171,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/no/blog/npm-vs-yarn-vs-pnpm-vs-bun-comparison</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/npm-vs-yarn-vs-pnpm-vs-bun-comparison"/>
@@ -3193,7 +3193,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/zh/blog/npm-vs-yarn-vs-pnpm-vs-bun-comparison</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/npm-vs-yarn-vs-pnpm-vs-bun-comparison"/>
@@ -3215,7 +3215,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ja/blog/npm-vs-yarn-vs-pnpm-vs-bun-comparison</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/npm-vs-yarn-vs-pnpm-vs-bun-comparison"/>
@@ -3237,7 +3237,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ko/blog/npm-vs-yarn-vs-pnpm-vs-bun-comparison</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/npm-vs-yarn-vs-pnpm-vs-bun-comparison"/>
@@ -3259,7 +3259,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/id/blog/npm-vs-yarn-vs-pnpm-vs-bun-comparison</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/npm-vs-yarn-vs-pnpm-vs-bun-comparison"/>
@@ -3281,7 +3281,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/th/blog/npm-vs-yarn-vs-pnpm-vs-bun-comparison</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/npm-vs-yarn-vs-pnpm-vs-bun-comparison"/>
@@ -3303,7 +3303,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/en/blog/dotenv-environment-variables-best-practices</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/dotenv-environment-variables-best-practices"/>
@@ -3325,7 +3325,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/fr/blog/dotenv-environment-variables-best-practices</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/dotenv-environment-variables-best-practices"/>
@@ -3347,7 +3347,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/de/blog/dotenv-environment-variables-best-practices</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/dotenv-environment-variables-best-practices"/>
@@ -3369,7 +3369,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/it/blog/dotenv-environment-variables-best-practices</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/dotenv-environment-variables-best-practices"/>
@@ -3391,7 +3391,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/es/blog/dotenv-environment-variables-best-practices</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/dotenv-environment-variables-best-practices"/>
@@ -3413,7 +3413,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pt/blog/dotenv-environment-variables-best-practices</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/dotenv-environment-variables-best-practices"/>
@@ -3435,7 +3435,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/nl/blog/dotenv-environment-variables-best-practices</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/dotenv-environment-variables-best-practices"/>
@@ -3457,7 +3457,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pl/blog/dotenv-environment-variables-best-practices</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/dotenv-environment-variables-best-practices"/>
@@ -3479,7 +3479,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/sv/blog/dotenv-environment-variables-best-practices</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/dotenv-environment-variables-best-practices"/>
@@ -3501,7 +3501,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/no/blog/dotenv-environment-variables-best-practices</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/dotenv-environment-variables-best-practices"/>
@@ -3523,7 +3523,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/zh/blog/dotenv-environment-variables-best-practices</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/dotenv-environment-variables-best-practices"/>
@@ -3545,7 +3545,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ja/blog/dotenv-environment-variables-best-practices</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/dotenv-environment-variables-best-practices"/>
@@ -3567,7 +3567,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ko/blog/dotenv-environment-variables-best-practices</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/dotenv-environment-variables-best-practices"/>
@@ -3589,7 +3589,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/id/blog/dotenv-environment-variables-best-practices</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/dotenv-environment-variables-best-practices"/>
@@ -3611,7 +3611,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/th/blog/dotenv-environment-variables-best-practices</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/dotenv-environment-variables-best-practices"/>
@@ -3633,7 +3633,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/en/blog/favicon-guide-sizes-formats-generator</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/favicon-guide-sizes-formats-generator"/>
@@ -3655,7 +3655,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/fr/blog/favicon-guide-sizes-formats-generator</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/favicon-guide-sizes-formats-generator"/>
@@ -3677,7 +3677,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/de/blog/favicon-guide-sizes-formats-generator</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/favicon-guide-sizes-formats-generator"/>
@@ -3699,7 +3699,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/it/blog/favicon-guide-sizes-formats-generator</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/favicon-guide-sizes-formats-generator"/>
@@ -3721,7 +3721,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/es/blog/favicon-guide-sizes-formats-generator</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/favicon-guide-sizes-formats-generator"/>
@@ -3743,7 +3743,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pt/blog/favicon-guide-sizes-formats-generator</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/favicon-guide-sizes-formats-generator"/>
@@ -3765,7 +3765,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/nl/blog/favicon-guide-sizes-formats-generator</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/favicon-guide-sizes-formats-generator"/>
@@ -3787,7 +3787,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pl/blog/favicon-guide-sizes-formats-generator</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/favicon-guide-sizes-formats-generator"/>
@@ -3809,7 +3809,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/sv/blog/favicon-guide-sizes-formats-generator</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/favicon-guide-sizes-formats-generator"/>
@@ -3831,7 +3831,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/no/blog/favicon-guide-sizes-formats-generator</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/favicon-guide-sizes-formats-generator"/>
@@ -3853,7 +3853,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/zh/blog/favicon-guide-sizes-formats-generator</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/favicon-guide-sizes-formats-generator"/>
@@ -3875,7 +3875,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ja/blog/favicon-guide-sizes-formats-generator</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/favicon-guide-sizes-formats-generator"/>
@@ -3897,7 +3897,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ko/blog/favicon-guide-sizes-formats-generator</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/favicon-guide-sizes-formats-generator"/>
@@ -3919,7 +3919,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/id/blog/favicon-guide-sizes-formats-generator</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/favicon-guide-sizes-formats-generator"/>
@@ -3941,7 +3941,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/th/blog/favicon-guide-sizes-formats-generator</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/favicon-guide-sizes-formats-generator"/>
@@ -3963,7 +3963,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/en/blog/curl-command-cheat-sheet-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/curl-command-cheat-sheet-examples"/>
@@ -3985,7 +3985,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/fr/blog/curl-command-cheat-sheet-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/curl-command-cheat-sheet-examples"/>
@@ -4007,7 +4007,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/de/blog/curl-command-cheat-sheet-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/curl-command-cheat-sheet-examples"/>
@@ -4029,7 +4029,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/it/blog/curl-command-cheat-sheet-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/curl-command-cheat-sheet-examples"/>
@@ -4051,7 +4051,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/es/blog/curl-command-cheat-sheet-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/curl-command-cheat-sheet-examples"/>
@@ -4073,7 +4073,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pt/blog/curl-command-cheat-sheet-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/curl-command-cheat-sheet-examples"/>
@@ -4095,7 +4095,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/nl/blog/curl-command-cheat-sheet-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/curl-command-cheat-sheet-examples"/>
@@ -4117,7 +4117,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pl/blog/curl-command-cheat-sheet-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/curl-command-cheat-sheet-examples"/>
@@ -4139,7 +4139,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/sv/blog/curl-command-cheat-sheet-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/curl-command-cheat-sheet-examples"/>
@@ -4161,7 +4161,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/no/blog/curl-command-cheat-sheet-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/curl-command-cheat-sheet-examples"/>
@@ -4183,7 +4183,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/zh/blog/curl-command-cheat-sheet-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/curl-command-cheat-sheet-examples"/>
@@ -4205,7 +4205,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ja/blog/curl-command-cheat-sheet-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/curl-command-cheat-sheet-examples"/>
@@ -4227,7 +4227,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ko/blog/curl-command-cheat-sheet-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/curl-command-cheat-sheet-examples"/>
@@ -4249,7 +4249,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/id/blog/curl-command-cheat-sheet-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/curl-command-cheat-sheet-examples"/>
@@ -4271,7 +4271,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/th/blog/curl-command-cheat-sheet-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/curl-command-cheat-sheet-examples"/>
@@ -4293,7 +4293,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/en/blog/curl-to-code-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/curl-to-code-guide"/>
@@ -4315,7 +4315,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/fr/blog/curl-to-code-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/curl-to-code-guide"/>
@@ -4337,7 +4337,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/de/blog/curl-to-code-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/curl-to-code-guide"/>
@@ -4359,7 +4359,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/it/blog/curl-to-code-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/curl-to-code-guide"/>
@@ -4381,7 +4381,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/es/blog/curl-to-code-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/curl-to-code-guide"/>
@@ -4403,7 +4403,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pt/blog/curl-to-code-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/curl-to-code-guide"/>
@@ -4425,7 +4425,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/nl/blog/curl-to-code-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/curl-to-code-guide"/>
@@ -4447,7 +4447,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pl/blog/curl-to-code-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/curl-to-code-guide"/>
@@ -4469,7 +4469,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/sv/blog/curl-to-code-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/curl-to-code-guide"/>
@@ -4491,7 +4491,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/no/blog/curl-to-code-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/curl-to-code-guide"/>
@@ -4513,7 +4513,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/zh/blog/curl-to-code-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/curl-to-code-guide"/>
@@ -4535,7 +4535,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ja/blog/curl-to-code-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/curl-to-code-guide"/>
@@ -4557,7 +4557,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ko/blog/curl-to-code-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/curl-to-code-guide"/>
@@ -4579,7 +4579,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/id/blog/curl-to-code-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/curl-to-code-guide"/>
@@ -4601,7 +4601,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/th/blog/curl-to-code-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/curl-to-code-guide"/>
@@ -4623,7 +4623,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/en/blog/kubernetes-beginners-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/kubernetes-beginners-guide"/>
@@ -4645,7 +4645,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/fr/blog/kubernetes-beginners-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/kubernetes-beginners-guide"/>
@@ -4667,7 +4667,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/de/blog/kubernetes-beginners-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/kubernetes-beginners-guide"/>
@@ -4689,7 +4689,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/it/blog/kubernetes-beginners-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/kubernetes-beginners-guide"/>
@@ -4711,7 +4711,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/es/blog/kubernetes-beginners-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/kubernetes-beginners-guide"/>
@@ -4733,7 +4733,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pt/blog/kubernetes-beginners-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/kubernetes-beginners-guide"/>
@@ -4755,7 +4755,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/nl/blog/kubernetes-beginners-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/kubernetes-beginners-guide"/>
@@ -4777,7 +4777,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pl/blog/kubernetes-beginners-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/kubernetes-beginners-guide"/>
@@ -4799,7 +4799,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/sv/blog/kubernetes-beginners-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/kubernetes-beginners-guide"/>
@@ -4821,7 +4821,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/no/blog/kubernetes-beginners-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/kubernetes-beginners-guide"/>
@@ -4843,7 +4843,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/zh/blog/kubernetes-beginners-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/kubernetes-beginners-guide"/>
@@ -4865,7 +4865,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ja/blog/kubernetes-beginners-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/kubernetes-beginners-guide"/>
@@ -4887,7 +4887,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ko/blog/kubernetes-beginners-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/kubernetes-beginners-guide"/>
@@ -4909,7 +4909,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/id/blog/kubernetes-beginners-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/kubernetes-beginners-guide"/>
@@ -4931,7 +4931,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/th/blog/kubernetes-beginners-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/kubernetes-beginners-guide"/>
@@ -4953,7 +4953,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/en/blog/microservices-vs-monolith</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/microservices-vs-monolith"/>
@@ -4975,7 +4975,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/fr/blog/microservices-vs-monolith</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/microservices-vs-monolith"/>
@@ -4997,7 +4997,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/de/blog/microservices-vs-monolith</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/microservices-vs-monolith"/>
@@ -5019,7 +5019,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/it/blog/microservices-vs-monolith</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/microservices-vs-monolith"/>
@@ -5041,7 +5041,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/es/blog/microservices-vs-monolith</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/microservices-vs-monolith"/>
@@ -5063,7 +5063,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pt/blog/microservices-vs-monolith</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/microservices-vs-monolith"/>
@@ -5085,7 +5085,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/nl/blog/microservices-vs-monolith</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/microservices-vs-monolith"/>
@@ -5107,7 +5107,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pl/blog/microservices-vs-monolith</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/microservices-vs-monolith"/>
@@ -5129,7 +5129,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/sv/blog/microservices-vs-monolith</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/microservices-vs-monolith"/>
@@ -5151,7 +5151,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/no/blog/microservices-vs-monolith</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/microservices-vs-monolith"/>
@@ -5173,7 +5173,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/zh/blog/microservices-vs-monolith</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/microservices-vs-monolith"/>
@@ -5195,7 +5195,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ja/blog/microservices-vs-monolith</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/microservices-vs-monolith"/>
@@ -5217,7 +5217,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ko/blog/microservices-vs-monolith</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/microservices-vs-monolith"/>
@@ -5239,7 +5239,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/id/blog/microservices-vs-monolith</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/microservices-vs-monolith"/>
@@ -5261,7 +5261,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/th/blog/microservices-vs-monolith</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/microservices-vs-monolith"/>
@@ -5283,7 +5283,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/en/blog/oauth2-authentication-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/oauth2-authentication-guide"/>
@@ -5305,7 +5305,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/fr/blog/oauth2-authentication-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/oauth2-authentication-guide"/>
@@ -5327,7 +5327,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/de/blog/oauth2-authentication-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/oauth2-authentication-guide"/>
@@ -5349,7 +5349,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/it/blog/oauth2-authentication-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/oauth2-authentication-guide"/>
@@ -5371,7 +5371,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/es/blog/oauth2-authentication-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/oauth2-authentication-guide"/>
@@ -5393,7 +5393,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pt/blog/oauth2-authentication-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/oauth2-authentication-guide"/>
@@ -5415,7 +5415,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/nl/blog/oauth2-authentication-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/oauth2-authentication-guide"/>
@@ -5437,7 +5437,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pl/blog/oauth2-authentication-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/oauth2-authentication-guide"/>
@@ -5459,7 +5459,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/sv/blog/oauth2-authentication-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/oauth2-authentication-guide"/>
@@ -5481,7 +5481,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/no/blog/oauth2-authentication-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/oauth2-authentication-guide"/>
@@ -5503,7 +5503,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/zh/blog/oauth2-authentication-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/oauth2-authentication-guide"/>
@@ -5525,7 +5525,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ja/blog/oauth2-authentication-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/oauth2-authentication-guide"/>
@@ -5547,7 +5547,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ko/blog/oauth2-authentication-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/oauth2-authentication-guide"/>
@@ -5569,7 +5569,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/id/blog/oauth2-authentication-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/oauth2-authentication-guide"/>
@@ -5591,7 +5591,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/th/blog/oauth2-authentication-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/oauth2-authentication-guide"/>
@@ -5613,7 +5613,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/en/blog/css-has-selector-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/css-has-selector-guide"/>
@@ -5635,7 +5635,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/fr/blog/css-has-selector-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/css-has-selector-guide"/>
@@ -5657,7 +5657,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/de/blog/css-has-selector-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/css-has-selector-guide"/>
@@ -5679,7 +5679,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/it/blog/css-has-selector-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/css-has-selector-guide"/>
@@ -5701,7 +5701,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/es/blog/css-has-selector-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/css-has-selector-guide"/>
@@ -5723,7 +5723,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pt/blog/css-has-selector-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/css-has-selector-guide"/>
@@ -5745,7 +5745,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/nl/blog/css-has-selector-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/css-has-selector-guide"/>
@@ -5767,7 +5767,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pl/blog/css-has-selector-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/css-has-selector-guide"/>
@@ -5789,7 +5789,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/sv/blog/css-has-selector-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/css-has-selector-guide"/>
@@ -5811,7 +5811,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/no/blog/css-has-selector-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/css-has-selector-guide"/>
@@ -5833,7 +5833,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/zh/blog/css-has-selector-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/css-has-selector-guide"/>
@@ -5855,7 +5855,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ja/blog/css-has-selector-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/css-has-selector-guide"/>
@@ -5877,7 +5877,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ko/blog/css-has-selector-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/css-has-selector-guide"/>
@@ -5899,7 +5899,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/id/blog/css-has-selector-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/css-has-selector-guide"/>
@@ -5921,7 +5921,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/th/blog/css-has-selector-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/css-has-selector-guide"/>
@@ -5943,7 +5943,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/en/blog/redis-caching-patterns</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/redis-caching-patterns"/>
@@ -5965,7 +5965,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/fr/blog/redis-caching-patterns</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/redis-caching-patterns"/>
@@ -5987,7 +5987,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/de/blog/redis-caching-patterns</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/redis-caching-patterns"/>
@@ -6009,7 +6009,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/it/blog/redis-caching-patterns</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/redis-caching-patterns"/>
@@ -6031,7 +6031,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/es/blog/redis-caching-patterns</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/redis-caching-patterns"/>
@@ -6053,7 +6053,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pt/blog/redis-caching-patterns</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/redis-caching-patterns"/>
@@ -6075,7 +6075,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/nl/blog/redis-caching-patterns</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/redis-caching-patterns"/>
@@ -6097,7 +6097,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pl/blog/redis-caching-patterns</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/redis-caching-patterns"/>
@@ -6119,7 +6119,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/sv/blog/redis-caching-patterns</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/redis-caching-patterns"/>
@@ -6141,7 +6141,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/no/blog/redis-caching-patterns</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/redis-caching-patterns"/>
@@ -6163,7 +6163,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/zh/blog/redis-caching-patterns</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/redis-caching-patterns"/>
@@ -6185,7 +6185,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ja/blog/redis-caching-patterns</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/redis-caching-patterns"/>
@@ -6207,7 +6207,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ko/blog/redis-caching-patterns</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/redis-caching-patterns"/>
@@ -6229,7 +6229,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/id/blog/redis-caching-patterns</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/redis-caching-patterns"/>
@@ -6251,7 +6251,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/th/blog/redis-caching-patterns</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/redis-caching-patterns"/>
@@ -6273,7 +6273,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/en/blog/github-actions-advanced</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/github-actions-advanced"/>
@@ -6295,7 +6295,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/fr/blog/github-actions-advanced</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/github-actions-advanced"/>
@@ -6317,7 +6317,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/de/blog/github-actions-advanced</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/github-actions-advanced"/>
@@ -6339,7 +6339,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/it/blog/github-actions-advanced</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/github-actions-advanced"/>
@@ -6361,7 +6361,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/es/blog/github-actions-advanced</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/github-actions-advanced"/>
@@ -6383,7 +6383,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pt/blog/github-actions-advanced</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/github-actions-advanced"/>
@@ -6405,7 +6405,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/nl/blog/github-actions-advanced</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/github-actions-advanced"/>
@@ -6427,7 +6427,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pl/blog/github-actions-advanced</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/github-actions-advanced"/>
@@ -6449,7 +6449,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/sv/blog/github-actions-advanced</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/github-actions-advanced"/>
@@ -6471,7 +6471,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/no/blog/github-actions-advanced</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/github-actions-advanced"/>
@@ -6493,7 +6493,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/zh/blog/github-actions-advanced</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/github-actions-advanced"/>
@@ -6515,7 +6515,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ja/blog/github-actions-advanced</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/github-actions-advanced"/>
@@ -6537,7 +6537,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ko/blog/github-actions-advanced</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/github-actions-advanced"/>
@@ -6559,7 +6559,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/id/blog/github-actions-advanced</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/github-actions-advanced"/>
@@ -6581,7 +6581,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/th/blog/github-actions-advanced</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/github-actions-advanced"/>
@@ -6603,7 +6603,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/en/blog/bcrypt-vs-argon2-vs-scrypt-password-hashing</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/bcrypt-vs-argon2-vs-scrypt-password-hashing"/>
@@ -6625,7 +6625,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/fr/blog/bcrypt-vs-argon2-vs-scrypt-password-hashing</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/bcrypt-vs-argon2-vs-scrypt-password-hashing"/>
@@ -6647,7 +6647,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/de/blog/bcrypt-vs-argon2-vs-scrypt-password-hashing</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/bcrypt-vs-argon2-vs-scrypt-password-hashing"/>
@@ -6669,7 +6669,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/it/blog/bcrypt-vs-argon2-vs-scrypt-password-hashing</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/bcrypt-vs-argon2-vs-scrypt-password-hashing"/>
@@ -6691,7 +6691,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/es/blog/bcrypt-vs-argon2-vs-scrypt-password-hashing</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/bcrypt-vs-argon2-vs-scrypt-password-hashing"/>
@@ -6713,7 +6713,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pt/blog/bcrypt-vs-argon2-vs-scrypt-password-hashing</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/bcrypt-vs-argon2-vs-scrypt-password-hashing"/>
@@ -6735,7 +6735,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/nl/blog/bcrypt-vs-argon2-vs-scrypt-password-hashing</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/bcrypt-vs-argon2-vs-scrypt-password-hashing"/>
@@ -6757,7 +6757,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pl/blog/bcrypt-vs-argon2-vs-scrypt-password-hashing</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/bcrypt-vs-argon2-vs-scrypt-password-hashing"/>
@@ -6779,7 +6779,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/sv/blog/bcrypt-vs-argon2-vs-scrypt-password-hashing</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/bcrypt-vs-argon2-vs-scrypt-password-hashing"/>
@@ -6801,7 +6801,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/no/blog/bcrypt-vs-argon2-vs-scrypt-password-hashing</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/bcrypt-vs-argon2-vs-scrypt-password-hashing"/>
@@ -6823,7 +6823,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/zh/blog/bcrypt-vs-argon2-vs-scrypt-password-hashing</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/bcrypt-vs-argon2-vs-scrypt-password-hashing"/>
@@ -6845,7 +6845,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ja/blog/bcrypt-vs-argon2-vs-scrypt-password-hashing</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/bcrypt-vs-argon2-vs-scrypt-password-hashing"/>
@@ -6867,7 +6867,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ko/blog/bcrypt-vs-argon2-vs-scrypt-password-hashing</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/bcrypt-vs-argon2-vs-scrypt-password-hashing"/>
@@ -6889,7 +6889,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/id/blog/bcrypt-vs-argon2-vs-scrypt-password-hashing</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/bcrypt-vs-argon2-vs-scrypt-password-hashing"/>
@@ -6911,7 +6911,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/th/blog/bcrypt-vs-argon2-vs-scrypt-password-hashing</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/bcrypt-vs-argon2-vs-scrypt-password-hashing"/>
@@ -6933,7 +6933,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/en/blog/npm-install-errors-fix-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/npm-install-errors-fix-guide"/>
@@ -6955,7 +6955,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/fr/blog/npm-install-errors-fix-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/npm-install-errors-fix-guide"/>
@@ -6977,7 +6977,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/de/blog/npm-install-errors-fix-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/npm-install-errors-fix-guide"/>
@@ -6999,7 +6999,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/it/blog/npm-install-errors-fix-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/npm-install-errors-fix-guide"/>
@@ -7021,7 +7021,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/es/blog/npm-install-errors-fix-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/npm-install-errors-fix-guide"/>
@@ -7043,7 +7043,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pt/blog/npm-install-errors-fix-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/npm-install-errors-fix-guide"/>
@@ -7065,7 +7065,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/nl/blog/npm-install-errors-fix-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/npm-install-errors-fix-guide"/>
@@ -7087,7 +7087,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pl/blog/npm-install-errors-fix-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/npm-install-errors-fix-guide"/>
@@ -7109,7 +7109,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/sv/blog/npm-install-errors-fix-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/npm-install-errors-fix-guide"/>
@@ -7131,7 +7131,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/no/blog/npm-install-errors-fix-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/npm-install-errors-fix-guide"/>
@@ -7153,7 +7153,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/zh/blog/npm-install-errors-fix-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/npm-install-errors-fix-guide"/>
@@ -7175,7 +7175,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ja/blog/npm-install-errors-fix-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/npm-install-errors-fix-guide"/>
@@ -7197,7 +7197,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ko/blog/npm-install-errors-fix-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/npm-install-errors-fix-guide"/>
@@ -7219,7 +7219,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/id/blog/npm-install-errors-fix-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/npm-install-errors-fix-guide"/>
@@ -7241,7 +7241,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/th/blog/npm-install-errors-fix-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/npm-install-errors-fix-guide"/>
@@ -7263,7 +7263,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/en/blog/htaccess-redirect-cheat-sheet-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/htaccess-redirect-cheat-sheet-examples"/>
@@ -7285,7 +7285,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/fr/blog/htaccess-redirect-cheat-sheet-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/htaccess-redirect-cheat-sheet-examples"/>
@@ -7307,7 +7307,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/de/blog/htaccess-redirect-cheat-sheet-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/htaccess-redirect-cheat-sheet-examples"/>
@@ -7329,7 +7329,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/it/blog/htaccess-redirect-cheat-sheet-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/htaccess-redirect-cheat-sheet-examples"/>
@@ -7351,7 +7351,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/es/blog/htaccess-redirect-cheat-sheet-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/htaccess-redirect-cheat-sheet-examples"/>
@@ -7373,7 +7373,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pt/blog/htaccess-redirect-cheat-sheet-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/htaccess-redirect-cheat-sheet-examples"/>
@@ -7395,7 +7395,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/nl/blog/htaccess-redirect-cheat-sheet-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/htaccess-redirect-cheat-sheet-examples"/>
@@ -7417,7 +7417,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pl/blog/htaccess-redirect-cheat-sheet-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/htaccess-redirect-cheat-sheet-examples"/>
@@ -7439,7 +7439,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/sv/blog/htaccess-redirect-cheat-sheet-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/htaccess-redirect-cheat-sheet-examples"/>
@@ -7461,7 +7461,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/no/blog/htaccess-redirect-cheat-sheet-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/htaccess-redirect-cheat-sheet-examples"/>
@@ -7483,7 +7483,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/zh/blog/htaccess-redirect-cheat-sheet-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/htaccess-redirect-cheat-sheet-examples"/>
@@ -7505,7 +7505,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ja/blog/htaccess-redirect-cheat-sheet-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/htaccess-redirect-cheat-sheet-examples"/>
@@ -7527,7 +7527,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ko/blog/htaccess-redirect-cheat-sheet-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/htaccess-redirect-cheat-sheet-examples"/>
@@ -7549,7 +7549,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/id/blog/htaccess-redirect-cheat-sheet-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/htaccess-redirect-cheat-sheet-examples"/>
@@ -7571,7 +7571,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/th/blog/htaccess-redirect-cheat-sheet-examples</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/htaccess-redirect-cheat-sheet-examples"/>
@@ -7593,7 +7593,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/en/blog/docker-compose-secrets-environment-variables-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/docker-compose-secrets-environment-variables-guide"/>
@@ -7615,7 +7615,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/fr/blog/docker-compose-secrets-environment-variables-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/docker-compose-secrets-environment-variables-guide"/>
@@ -7637,7 +7637,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/de/blog/docker-compose-secrets-environment-variables-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/docker-compose-secrets-environment-variables-guide"/>
@@ -7659,7 +7659,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/it/blog/docker-compose-secrets-environment-variables-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/docker-compose-secrets-environment-variables-guide"/>
@@ -7681,7 +7681,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/es/blog/docker-compose-secrets-environment-variables-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/docker-compose-secrets-environment-variables-guide"/>
@@ -7703,7 +7703,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pt/blog/docker-compose-secrets-environment-variables-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/docker-compose-secrets-environment-variables-guide"/>
@@ -7725,7 +7725,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/nl/blog/docker-compose-secrets-environment-variables-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/docker-compose-secrets-environment-variables-guide"/>
@@ -7747,7 +7747,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pl/blog/docker-compose-secrets-environment-variables-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/docker-compose-secrets-environment-variables-guide"/>
@@ -7769,7 +7769,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/sv/blog/docker-compose-secrets-environment-variables-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/docker-compose-secrets-environment-variables-guide"/>
@@ -7791,7 +7791,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/no/blog/docker-compose-secrets-environment-variables-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/docker-compose-secrets-environment-variables-guide"/>
@@ -7813,7 +7813,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/zh/blog/docker-compose-secrets-environment-variables-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/docker-compose-secrets-environment-variables-guide"/>
@@ -7835,7 +7835,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ja/blog/docker-compose-secrets-environment-variables-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/docker-compose-secrets-environment-variables-guide"/>
@@ -7857,7 +7857,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ko/blog/docker-compose-secrets-environment-variables-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/docker-compose-secrets-environment-variables-guide"/>
@@ -7879,7 +7879,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/id/blog/docker-compose-secrets-environment-variables-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/docker-compose-secrets-environment-variables-guide"/>
@@ -7901,7 +7901,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/th/blog/docker-compose-secrets-environment-variables-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/docker-compose-secrets-environment-variables-guide"/>
@@ -7923,7 +7923,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/en/blog/open-graph-twitter-card-meta-tags-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/open-graph-twitter-card-meta-tags-guide"/>
@@ -7945,7 +7945,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/fr/blog/open-graph-twitter-card-meta-tags-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/open-graph-twitter-card-meta-tags-guide"/>
@@ -7967,7 +7967,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/de/blog/open-graph-twitter-card-meta-tags-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/open-graph-twitter-card-meta-tags-guide"/>
@@ -7989,7 +7989,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/it/blog/open-graph-twitter-card-meta-tags-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/open-graph-twitter-card-meta-tags-guide"/>
@@ -8011,7 +8011,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/es/blog/open-graph-twitter-card-meta-tags-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/open-graph-twitter-card-meta-tags-guide"/>
@@ -8033,7 +8033,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pt/blog/open-graph-twitter-card-meta-tags-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/open-graph-twitter-card-meta-tags-guide"/>
@@ -8055,7 +8055,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/nl/blog/open-graph-twitter-card-meta-tags-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/open-graph-twitter-card-meta-tags-guide"/>
@@ -8077,7 +8077,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pl/blog/open-graph-twitter-card-meta-tags-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/open-graph-twitter-card-meta-tags-guide"/>
@@ -8099,7 +8099,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/sv/blog/open-graph-twitter-card-meta-tags-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/open-graph-twitter-card-meta-tags-guide"/>
@@ -8121,7 +8121,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/no/blog/open-graph-twitter-card-meta-tags-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/open-graph-twitter-card-meta-tags-guide"/>
@@ -8143,7 +8143,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/zh/blog/open-graph-twitter-card-meta-tags-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/open-graph-twitter-card-meta-tags-guide"/>
@@ -8165,7 +8165,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ja/blog/open-graph-twitter-card-meta-tags-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/open-graph-twitter-card-meta-tags-guide"/>
@@ -8187,7 +8187,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ko/blog/open-graph-twitter-card-meta-tags-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/open-graph-twitter-card-meta-tags-guide"/>
@@ -8209,7 +8209,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/id/blog/open-graph-twitter-card-meta-tags-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/open-graph-twitter-card-meta-tags-guide"/>
@@ -8231,7 +8231,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/th/blog/open-graph-twitter-card-meta-tags-guide</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/open-graph-twitter-card-meta-tags-guide"/>
@@ -8253,7 +8253,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/en/blog/base64-encode-decode-command-line</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/base64-encode-decode-command-line"/>
@@ -8275,7 +8275,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/fr/blog/base64-encode-decode-command-line</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/base64-encode-decode-command-line"/>
@@ -8297,7 +8297,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/de/blog/base64-encode-decode-command-line</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/base64-encode-decode-command-line"/>
@@ -8319,7 +8319,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/it/blog/base64-encode-decode-command-line</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/base64-encode-decode-command-line"/>
@@ -8341,7 +8341,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/es/blog/base64-encode-decode-command-line</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/base64-encode-decode-command-line"/>
@@ -8363,7 +8363,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pt/blog/base64-encode-decode-command-line</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/base64-encode-decode-command-line"/>
@@ -8385,7 +8385,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/nl/blog/base64-encode-decode-command-line</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/base64-encode-decode-command-line"/>
@@ -8407,7 +8407,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pl/blog/base64-encode-decode-command-line</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/base64-encode-decode-command-line"/>
@@ -8429,7 +8429,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/sv/blog/base64-encode-decode-command-line</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/base64-encode-decode-command-line"/>
@@ -8451,7 +8451,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/no/blog/base64-encode-decode-command-line</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/base64-encode-decode-command-line"/>
@@ -8473,7 +8473,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/zh/blog/base64-encode-decode-command-line</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/base64-encode-decode-command-line"/>
@@ -8495,7 +8495,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ja/blog/base64-encode-decode-command-line</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/base64-encode-decode-command-line"/>
@@ -8517,7 +8517,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ko/blog/base64-encode-decode-command-line</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/base64-encode-decode-command-line"/>
@@ -8539,7 +8539,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/id/blog/base64-encode-decode-command-line</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/base64-encode-decode-command-line"/>
@@ -8561,7 +8561,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/th/blog/base64-encode-decode-command-line</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/base64-encode-decode-command-line"/>
@@ -8583,7 +8583,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/en/blog/json-parse-error-unexpected-token</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/json-parse-error-unexpected-token"/>
@@ -8605,7 +8605,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/fr/blog/json-parse-error-unexpected-token</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/json-parse-error-unexpected-token"/>
@@ -8627,7 +8627,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/de/blog/json-parse-error-unexpected-token</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/json-parse-error-unexpected-token"/>
@@ -8649,7 +8649,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/it/blog/json-parse-error-unexpected-token</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/json-parse-error-unexpected-token"/>
@@ -8671,7 +8671,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/es/blog/json-parse-error-unexpected-token</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/json-parse-error-unexpected-token"/>
@@ -8693,7 +8693,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pt/blog/json-parse-error-unexpected-token</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/json-parse-error-unexpected-token"/>
@@ -8715,7 +8715,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/nl/blog/json-parse-error-unexpected-token</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/json-parse-error-unexpected-token"/>
@@ -8737,7 +8737,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pl/blog/json-parse-error-unexpected-token</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/json-parse-error-unexpected-token"/>
@@ -8759,7 +8759,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/sv/blog/json-parse-error-unexpected-token</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/json-parse-error-unexpected-token"/>
@@ -8781,7 +8781,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/no/blog/json-parse-error-unexpected-token</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/json-parse-error-unexpected-token"/>
@@ -8803,7 +8803,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/zh/blog/json-parse-error-unexpected-token</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/json-parse-error-unexpected-token"/>
@@ -8825,7 +8825,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ja/blog/json-parse-error-unexpected-token</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/json-parse-error-unexpected-token"/>
@@ -8847,7 +8847,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ko/blog/json-parse-error-unexpected-token</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/json-parse-error-unexpected-token"/>
@@ -8869,7 +8869,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/id/blog/json-parse-error-unexpected-token</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/json-parse-error-unexpected-token"/>
@@ -8891,7 +8891,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/th/blog/json-parse-error-unexpected-token</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/json-parse-error-unexpected-token"/>
@@ -8913,7 +8913,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/en/blog/yaml-multiline-string-block-folded</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/yaml-multiline-string-block-folded"/>
@@ -8935,7 +8935,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/fr/blog/yaml-multiline-string-block-folded</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/yaml-multiline-string-block-folded"/>
@@ -8957,7 +8957,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/de/blog/yaml-multiline-string-block-folded</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/yaml-multiline-string-block-folded"/>
@@ -8979,7 +8979,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/it/blog/yaml-multiline-string-block-folded</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/yaml-multiline-string-block-folded"/>
@@ -9001,7 +9001,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/es/blog/yaml-multiline-string-block-folded</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/yaml-multiline-string-block-folded"/>
@@ -9023,7 +9023,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pt/blog/yaml-multiline-string-block-folded</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/yaml-multiline-string-block-folded"/>
@@ -9045,7 +9045,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/nl/blog/yaml-multiline-string-block-folded</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/yaml-multiline-string-block-folded"/>
@@ -9067,7 +9067,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pl/blog/yaml-multiline-string-block-folded</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/yaml-multiline-string-block-folded"/>
@@ -9089,7 +9089,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/sv/blog/yaml-multiline-string-block-folded</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/yaml-multiline-string-block-folded"/>
@@ -9111,7 +9111,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/no/blog/yaml-multiline-string-block-folded</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/yaml-multiline-string-block-folded"/>
@@ -9133,7 +9133,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/zh/blog/yaml-multiline-string-block-folded</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/yaml-multiline-string-block-folded"/>
@@ -9155,7 +9155,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ja/blog/yaml-multiline-string-block-folded</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/yaml-multiline-string-block-folded"/>
@@ -9177,7 +9177,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ko/blog/yaml-multiline-string-block-folded</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/yaml-multiline-string-block-folded"/>
@@ -9199,7 +9199,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/id/blog/yaml-multiline-string-block-folded</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/yaml-multiline-string-block-folded"/>
@@ -9221,7 +9221,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/th/blog/yaml-multiline-string-block-folded</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/yaml-multiline-string-block-folded"/>
@@ -9243,7 +9243,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/en/blog/git-undo-last-commit-keep-changes</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/git-undo-last-commit-keep-changes"/>
@@ -9265,7 +9265,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/fr/blog/git-undo-last-commit-keep-changes</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/git-undo-last-commit-keep-changes"/>
@@ -9287,7 +9287,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/de/blog/git-undo-last-commit-keep-changes</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/git-undo-last-commit-keep-changes"/>
@@ -9309,7 +9309,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/it/blog/git-undo-last-commit-keep-changes</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/git-undo-last-commit-keep-changes"/>
@@ -9331,7 +9331,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/es/blog/git-undo-last-commit-keep-changes</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/git-undo-last-commit-keep-changes"/>
@@ -9353,7 +9353,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pt/blog/git-undo-last-commit-keep-changes</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/git-undo-last-commit-keep-changes"/>
@@ -9375,7 +9375,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/nl/blog/git-undo-last-commit-keep-changes</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/git-undo-last-commit-keep-changes"/>
@@ -9397,7 +9397,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pl/blog/git-undo-last-commit-keep-changes</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/git-undo-last-commit-keep-changes"/>
@@ -9419,7 +9419,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/sv/blog/git-undo-last-commit-keep-changes</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/git-undo-last-commit-keep-changes"/>
@@ -9441,7 +9441,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/no/blog/git-undo-last-commit-keep-changes</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/git-undo-last-commit-keep-changes"/>
@@ -9463,7 +9463,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/zh/blog/git-undo-last-commit-keep-changes</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/git-undo-last-commit-keep-changes"/>
@@ -9485,7 +9485,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ja/blog/git-undo-last-commit-keep-changes</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/git-undo-last-commit-keep-changes"/>
@@ -9507,7 +9507,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ko/blog/git-undo-last-commit-keep-changes</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/git-undo-last-commit-keep-changes"/>
@@ -9529,7 +9529,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/id/blog/git-undo-last-commit-keep-changes</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/git-undo-last-commit-keep-changes"/>
@@ -9551,7 +9551,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/th/blog/git-undo-last-commit-keep-changes</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/git-undo-last-commit-keep-changes"/>
@@ -9573,7 +9573,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/en/blog/url-encode-special-characters-list</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/url-encode-special-characters-list"/>
@@ -9595,7 +9595,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/fr/blog/url-encode-special-characters-list</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/url-encode-special-characters-list"/>
@@ -9617,7 +9617,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/de/blog/url-encode-special-characters-list</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/url-encode-special-characters-list"/>
@@ -9639,7 +9639,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/it/blog/url-encode-special-characters-list</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/url-encode-special-characters-list"/>
@@ -9661,7 +9661,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/es/blog/url-encode-special-characters-list</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/url-encode-special-characters-list"/>
@@ -9683,7 +9683,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pt/blog/url-encode-special-characters-list</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/url-encode-special-characters-list"/>
@@ -9705,7 +9705,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/nl/blog/url-encode-special-characters-list</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/url-encode-special-characters-list"/>
@@ -9727,7 +9727,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/pl/blog/url-encode-special-characters-list</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/url-encode-special-characters-list"/>
@@ -9749,7 +9749,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/sv/blog/url-encode-special-characters-list</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/url-encode-special-characters-list"/>
@@ -9771,7 +9771,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/no/blog/url-encode-special-characters-list</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/url-encode-special-characters-list"/>
@@ -9793,7 +9793,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/zh/blog/url-encode-special-characters-list</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/url-encode-special-characters-list"/>
@@ -9815,7 +9815,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ja/blog/url-encode-special-characters-list</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/url-encode-special-characters-list"/>
@@ -9837,7 +9837,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/ko/blog/url-encode-special-characters-list</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/url-encode-special-characters-list"/>
@@ -9859,7 +9859,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/id/blog/url-encode-special-characters-list</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/url-encode-special-characters-list"/>
@@ -9881,7 +9881,7 @@
   </url>
   <url>
     <loc>https://viadreams.cc/th/blog/url-encode-special-characters-list</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
       <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/blog/url-encode-special-characters-list"/>
