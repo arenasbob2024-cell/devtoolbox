@@ -4689,6 +4689,19 @@
       "seoFeature2": "8种形状预设",
       "seoFeature3": "实时可视化预览",
       "seoFeature4": "一键复制CSS代码"
+    },
+    "toml-editor": {
+      "name": "TOML 编辑器和验证器",
+      "description": "在线编辑、验证和转换 TOML 文件",
+      "pageTitle": "在线 TOML 编辑器和验证器 - TOML 转 JSON",
+      "pageDescription": "免费在线 TOML 编辑器，支持语法验证和格式转换。轻松编辑 TOML 文件，在 TOML 和 JSON 格式之间即时转换。",
+      "seoTitle": "关于 TOML 编辑器和验证器",
+      "seoContent": "TOML（Tom 的明显最小语言）是一种易于阅读的配置文件格式。我们的在线 TOML 编辑器帮助您轻松编辑、验证和转换 TOML 文件。",
+      "seoFeaturesTitle": "主要功能",
+      "seoFeature1": "实时 TOML 语法验证，提供详细错误信息",
+      "seoFeature2": "TOML 转 JSON 和 JSON 转 TOML 即时转换",
+      "seoFeature3": "支持表格、数组、内联表格和所有 TOML 数据类型",
+      "seoFeature4": "加载示例 Cargo.toml 快速开始"
     }
   },
   "footer": {

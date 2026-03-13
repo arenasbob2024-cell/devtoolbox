@@ -4613,6 +4613,19 @@
       "seoFeature2": "8 shape presets (Rounded, Pill, Circle, Leaf, Drop, etc.)",
       "seoFeature3": "Live visual preview with customizable colors",
       "seoFeature4": "One-click CSS code copy with border and background"
+    },
+    "toml-editor": {
+      "name": "TOML 편집기 & 검증기",
+      "description": "TOML 파일을 온라인으로 편집, 검증, 변환",
+      "pageTitle": "온라인 TOML 편집기 & 검증기 - TOML↔JSON 변환",
+      "pageDescription": "무료 온라인 TOML 편집기. 구문 검증 및 형식 변환 지원. TOML과 JSON 간 즉시 변환.",
+      "seoTitle": "TOML 편집기 & 검증기 소개",
+      "seoContent": "TOML은 읽기 쉬운 구성 파일 형식입니다. 온라인 TOML 편집기로 TOML 파일을 쉽게 편집, 검증, 변환할 수 있습니다.",
+      "seoFeaturesTitle": "주요 기능",
+      "seoFeature1": "실시간 TOML 구문 검증",
+      "seoFeature2": "TOML↔JSON 즉시 변환",
+      "seoFeature3": "테이블, 배열, 인라인 테이블 지원",
+      "seoFeature4": "샘플 Cargo.toml로 빠른 시작"
     }
   },
   "footer": {

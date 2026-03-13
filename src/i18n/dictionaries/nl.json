@@ -4613,6 +4613,19 @@
       "seoFeature2": "8 shape presets (Rounded, Pill, Circle, Leaf, Drop, etc.)",
       "seoFeature3": "Live visual preview with customizable colors",
       "seoFeature4": "One-click CSS code copy with border and background"
+    },
+    "toml-editor": {
+      "name": "TOML-editor & Validator",
+      "description": "Bewerk, valideer en converteer TOML-bestanden online",
+      "pageTitle": "Online TOML-editor & Validator - TOML naar JSON converteren",
+      "pageDescription": "Gratis online TOML-editor met validatie en conversie. Converteer direct tussen TOML en JSON.",
+      "seoTitle": "Over de TOML-editor",
+      "seoContent": "TOML is een eenvoudig te lezen configuratiebestandsformaat.",
+      "seoFeaturesTitle": "Belangrijkste functies",
+      "seoFeature1": "Realtime TOML-syntaxisvalidatie",
+      "seoFeature2": "Directe TOML↔JSON-conversie",
+      "seoFeature3": "Ondersteuning voor tabellen, arrays en inline tabellen",
+      "seoFeature4": "Laad een voorbeeld Cargo.toml om te beginnen"
     }
   },
   "footer": {

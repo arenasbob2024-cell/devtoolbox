@@ -4613,6 +4613,19 @@
       "seoFeature2": "8 shape presets (Rounded, Pill, Circle, Leaf, Drop, etc.)",
       "seoFeature3": "Live visual preview with customizable colors",
       "seoFeature4": "One-click CSS code copy with border and background"
+    },
+    "toml-editor": {
+      "name": "Editor & Validator TOML",
+      "description": "Edit, validasi, dan konversi file TOML secara online",
+      "pageTitle": "Editor & Validator TOML Online - Konversi TOML ke JSON",
+      "pageDescription": "Editor TOML online gratis dengan validasi dan konversi. Konversi antara TOML dan JSON secara instan.",
+      "seoTitle": "Tentang Editor TOML",
+      "seoContent": "TOML adalah format file konfigurasi yang mudah dibaca.",
+      "seoFeaturesTitle": "Fitur utama",
+      "seoFeature1": "Validasi sintaks TOML real-time",
+      "seoFeature2": "Konversi instan TOML↔JSON",
+      "seoFeature3": "Dukungan untuk tabel, array, dan tabel inline",
+      "seoFeature4": "Muat contoh Cargo.toml untuk memulai"
     }
   },
   "footer": {

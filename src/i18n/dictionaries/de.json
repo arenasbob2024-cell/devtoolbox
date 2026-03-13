@@ -4610,6 +4610,19 @@
       "seoFeature2": "8 Formvoreinstellungen",
       "seoFeature3": "Live-Vorschau",
       "seoFeature4": "CSS-Code kopieren"
+    },
+    "toml-editor": {
+      "name": "TOML-Editor & Validator",
+      "description": "TOML-Dateien online bearbeiten, validieren und konvertieren",
+      "pageTitle": "Online TOML-Editor & Validator - TOML zu JSON konvertieren",
+      "pageDescription": "Kostenloser Online-TOML-Editor mit Validierung und Konvertierung. Konvertieren Sie sofort zwischen TOML und JSON.",
+      "seoTitle": "Über den TOML-Editor",
+      "seoContent": "TOML ist ein leicht lesbares Konfigurationsdateiformat. Unser Online-TOML-Editor hilft Ihnen beim Bearbeiten, Validieren und Konvertieren von TOML-Dateien.",
+      "seoFeaturesTitle": "Hauptfunktionen",
+      "seoFeature1": "Echtzeit-TOML-Syntaxvalidierung",
+      "seoFeature2": "Sofortige TOML↔JSON-Konvertierung",
+      "seoFeature3": "Unterstützung für Tabellen, Arrays und Inline-Tabellen",
+      "seoFeature4": "Laden Sie ein Beispiel Cargo.toml zum Starten"
     }
   },
   "footer": {

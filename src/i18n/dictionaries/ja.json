@@ -4613,6 +4613,19 @@
       "seoFeature2": "8 shape presets (Rounded, Pill, Circle, Leaf, Drop, etc.)",
       "seoFeature3": "Live visual preview with customizable colors",
       "seoFeature4": "One-click CSS code copy with border and background"
+    },
+    "toml-editor": {
+      "name": "TOMLエディター＆バリデーター",
+      "description": "TOMLファイルをオンラインで編集、検証、変換",
+      "pageTitle": "オンラインTOMLエディター＆バリデーター - TOML⇔JSON変換",
+      "pageDescription": "無料のオンラインTOMLエディター。構文検証と形式変換をサポート。TOMLとJSON間の即時変換が可能。",
+      "seoTitle": "TOMLエディター＆バリデーターについて",
+      "seoContent": "TOMLは読みやすい設定ファイル形式です。当オンラインTOMLエディターでTOMLファイルの編集、検証、変換が簡単に行えます。",
+      "seoFeaturesTitle": "主な機能",
+      "seoFeature1": "リアルタイムTOML構文検証",
+      "seoFeature2": "TOML⇔JSON即時変換",
+      "seoFeature3": "テーブル、配列、インラインテーブル対応",
+      "seoFeature4": "サンプルCargo.tomlで簡単スタート"
     }
   },
   "footer": {

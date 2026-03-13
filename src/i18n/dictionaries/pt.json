@@ -4613,6 +4613,19 @@
       "seoFeature2": "8 shape presets (Rounded, Pill, Circle, Leaf, Drop, etc.)",
       "seoFeature3": "Live visual preview with customizable colors",
       "seoFeature4": "One-click CSS code copy with border and background"
+    },
+    "toml-editor": {
+      "name": "Editor e Validador TOML",
+      "description": "Edite, valide e converta arquivos TOML online",
+      "pageTitle": "Editor e Validador TOML Online - Converter TOML para JSON",
+      "pageDescription": "Editor TOML online gratuito com validação e conversão. Converta entre TOML e JSON instantaneamente.",
+      "seoTitle": "Sobre o Editor TOML",
+      "seoContent": "TOML é um formato de arquivo de configuração fácil de ler.",
+      "seoFeaturesTitle": "Recursos principais",
+      "seoFeature1": "Validação de sintaxe TOML em tempo real",
+      "seoFeature2": "Conversão instantânea TOML↔JSON",
+      "seoFeature3": "Suporte para tabelas, arrays e tabelas inline",
+      "seoFeature4": "Carregue um exemplo Cargo.toml para começar"
     }
   },
   "footer": {

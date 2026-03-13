@@ -4613,6 +4613,19 @@
       "seoFeature2": "8 shape presets (Rounded, Pill, Circle, Leaf, Drop, etc.)",
       "seoFeature3": "Live visual preview with customizable colors",
       "seoFeature4": "One-click CSS code copy with border and background"
+    },
+    "toml-editor": {
+      "name": "TOML-editor & Validator",
+      "description": "Rediger, valider og konverter TOML-filer online",
+      "pageTitle": "Online TOML-editor & Validator - Konverter TOML til JSON",
+      "pageDescription": "Gratis online TOML-editor med validering og konvertering. Konverter mellom TOML og JSON umiddelbart.",
+      "seoTitle": "Om TOML-editoren",
+      "seoContent": "TOML er et lettlest konfigurasjonsfilformat.",
+      "seoFeaturesTitle": "Nøkkelfunksjoner",
+      "seoFeature1": "Sanntidsvalidering av TOML-syntaks",
+      "seoFeature2": "Umiddelbar TOML↔JSON-konvertering",
+      "seoFeature3": "Støtte for tabeller, arrays og inline-tabeller",
+      "seoFeature4": "Last inn et eksempel Cargo.toml for å komme i gang"
     }
   },
   "footer": {

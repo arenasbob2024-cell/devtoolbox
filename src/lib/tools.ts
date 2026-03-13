@@ -3215,6 +3215,16 @@ export const tools: Tool[] = [
     path: '/tools/border-radius-generator',
     relatedTools: ['css-gradient', 'css-box-model-visualizer', 'css-flexbox-generator', 'css-grid-generator'],
   },
+  {
+    id: 'toml-editor',
+    name: 'TOML Editor & Validator',
+    description: 'Edit, validate, and convert TOML files online. Convert between TOML and JSON formats instantly.',
+    icon: '📄',
+    category: 'formatter',
+    keywords: ['toml', 'toml editor', 'toml validator', 'toml to json', 'json to toml', 'toml converter', 'toml formatter', 'toml online', 'cargo toml', 'config toml', 'toml parser'],
+    path: '/tools/toml-editor',
+    relatedTools: ['json-formatter', 'json-yaml', 'yaml-to-json', 'xml-formatter'],
+  },
 ];
 
 export function getToolsByCategory(categoryId: string): Tool[] {

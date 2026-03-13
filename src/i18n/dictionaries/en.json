@@ -10473,6 +10473,19 @@
       "seoFeature2": "8 shape presets (Rounded, Pill, Circle, Leaf, Drop, etc.)",
       "seoFeature3": "Live visual preview with customizable colors",
       "seoFeature4": "One-click CSS code copy with border and background"
+    },
+    "toml-editor": {
+      "name": "TOML Editor & Validator",
+      "description": "Edit, validate, and convert TOML files online",
+      "pageTitle": "Online TOML Editor & Validator - Convert TOML to JSON",
+      "pageDescription": "Free online TOML editor with validation and conversion. Edit TOML files, validate syntax, convert between TOML and JSON formats instantly.",
+      "seoTitle": "About TOML Editor & Validator",
+      "seoContent": "TOML (Tom's Obvious, Minimal Language) is a configuration file format that is easy to read. Our online TOML editor helps you edit, validate, and convert TOML files with ease. Perfect for Rust Cargo.toml files, Python pyproject.toml, and any TOML configuration.",
+      "seoFeaturesTitle": "Key Features",
+      "seoFeature1": "Real-time TOML syntax validation with detailed error messages",
+      "seoFeature2": "Convert TOML to JSON and JSON to TOML instantly",
+      "seoFeature3": "Support for tables, arrays, inline tables, and all TOML data types",
+      "seoFeature4": "Load sample Cargo.toml to get started quickly"
     }
   },
   "footer": {

@@ -4613,6 +4613,19 @@
       "seoFeature2": "8 shape presets (Rounded, Pill, Circle, Leaf, Drop, etc.)",
       "seoFeature3": "Live visual preview with customizable colors",
       "seoFeature4": "One-click CSS code copy with border and background"
+    },
+    "toml-editor": {
+      "name": "ตัวแก้ไขและตรวจสอบ TOML",
+      "description": "แก้ไข ตรวจสอบ และแปลงไฟล์ TOML ออนไลน์",
+      "pageTitle": "ตัวแก้ไขและตรวจสอบ TOML ออนไลน์ - แปลง TOML เป็น JSON",
+      "pageDescription": "ตัวแก้ไข TOML ออนไลน์ฟรีพร้อมการตรวจสอบและแปลง แปลงระหว่าง TOML และ JSON ทันที",
+      "seoTitle": "เกี่ยวกับตัวแก้ไข TOML",
+      "seoContent": "TOML เป็นรูปแบบไฟล์กำหนดค่าที่อ่านง่าย",
+      "seoFeaturesTitle": "คุณสมบัติหลัก",
+      "seoFeature1": "ตรวจสอบไวยากรณ์ TOML แบบเรียลไทม์",
+      "seoFeature2": "แปลง TOML↔JSON ทันที",
+      "seoFeature3": "รองรับตาราง อาร์เรย์ และตารางอินไลน์",
+      "seoFeature4": "โหลดตัวอย่าง Cargo.toml เพื่อเริ่มต้น"
     }
   },
   "footer": {
