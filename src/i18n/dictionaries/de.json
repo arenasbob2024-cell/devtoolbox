@@ -4991,6 +4991,71 @@
       "seoFeature2": "Audio playback with Web Audio API",
       "seoFeature3": "Adjustable speed and frequency",
       "seoFeature4": "Complete Morse code reference table"
+    },
+    "xml-to-csv": {
+      "name": "XML to CSV",
+      "description": "Convert XML data to CSV format",
+      "pageTitle": "XML to CSV Converter - Convert XML to CSV Online",
+      "pageDescription": "Free online XML to CSV converter. Transform XML data to CSV with nested element flattening and configurable delimiters.",
+      "seoTitle": "XML to CSV Converter Online",
+      "seoContent": "Convert XML data to CSV format with automatic record detection, nested element flattening, and download support.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Automatic XML record detection",
+      "seoFeature2": "Nested element flattening with dot notation",
+      "seoFeature3": "Configurable delimiters and quoting",
+      "seoFeature4": "CSV download support"
+    },
+    "ip-geolocation": {
+      "name": "IP Geolocation",
+      "description": "Look up IP address geographic location",
+      "pageTitle": "IP Geolocation Lookup - Find IP Address Location Online",
+      "pageDescription": "Free online IP geolocation lookup tool. Find the geographic location, country, city, ISP, and timezone of any IP address.",
+      "seoTitle": "IP Geolocation Lookup Tool",
+      "seoContent": "Look up the geographic location of any IP address. Shows country, city, coordinates, timezone, ISP, and organization.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Auto-detect your own IP address",
+      "seoFeature2": "Country, city, and coordinate display",
+      "seoFeature3": "ISP and organization information",
+      "seoFeature4": "Lookup history tracking"
+    },
+    "png-to-jpg": {
+      "name": "PNG to JPG",
+      "description": "Convert images between PNG and JPG",
+      "pageTitle": "PNG to JPG Converter - Convert Images Online Free",
+      "pageDescription": "Free online PNG to JPG converter. Convert images between PNG and JPG formats with quality control, all processed in your browser.",
+      "seoTitle": "PNG to JPG Converter Online",
+      "seoContent": "Convert PNG images to JPG and JPG to PNG directly in your browser. Adjust quality, preview results, and download converted files.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "PNG to JPG and JPG to PNG conversion",
+      "seoFeature2": "Quality slider for JPG output",
+      "seoFeature3": "File size comparison before/after",
+      "seoFeature4": "100% client-side processing"
+    },
+    "base58-encoder": {
+      "name": "Base58 Encoder/Decoder",
+      "description": "Encode and decode Base58 strings",
+      "pageTitle": "Base58 Encoder/Decoder - Bitcoin Base58 Online",
+      "pageDescription": "Free online Base58 encoder and decoder. Uses Bitcoin alphabet with Base58Check support for version bytes and checksums.",
+      "seoTitle": "Base58 Encoder/Decoder Online",
+      "seoContent": "Encode and decode Base58 strings using Bitcoin alphabet. Supports Base58Check encoding with version byte and checksum.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Bitcoin Base58 alphabet",
+      "seoFeature2": "Base58Check support",
+      "seoFeature3": "Encode and decode modes",
+      "seoFeature4": "Version byte configuration"
+    },
+    "css-selector-tester": {
+      "name": "CSS Selector Tester",
+      "description": "Test CSS selectors against HTML",
+      "pageTitle": "CSS Selector Tester - Test Selectors Online",
+      "pageDescription": "Free online CSS selector testing tool. Test CSS selectors against HTML markup and see matched elements.",
+      "seoTitle": "CSS Selector Tester Online",
+      "seoContent": "Test CSS selectors against HTML markup. See matched element count, content preview, and use quick selector examples.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Test any CSS selector against HTML",
+      "seoFeature2": "Matched element count and preview",
+      "seoFeature3": "Quick selector examples",
+      "seoFeature4": "CSS selector reference guide"
     }
   },
   "footer": {

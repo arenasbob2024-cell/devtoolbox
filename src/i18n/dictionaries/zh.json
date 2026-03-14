@@ -5070,6 +5070,71 @@
       "seoFeature2": "Web Audio 音频播放",
       "seoFeature3": "可调速度和频率",
       "seoFeature4": "完整摩尔斯电码参考表"
+    },
+    "xml-to-csv": {
+      "name": "XML 转 CSV",
+      "description": "将 XML 数据转换为 CSV",
+      "pageTitle": "XML 转 CSV 转换器",
+      "pageDescription": "免费在线 XML 转 CSV 转换器。",
+      "seoTitle": "XML 转 CSV",
+      "seoContent": "将 XML 数据转换为 CSV 格式。",
+      "seoFeaturesTitle": "功能",
+      "seoFeature1": "自动检测记录",
+      "seoFeature2": "嵌套元素展平",
+      "seoFeature3": "可配置分隔符",
+      "seoFeature4": "CSV 下载"
+    },
+    "ip-geolocation": {
+      "name": "IP 地理位置",
+      "description": "查询 IP 地址地理位置",
+      "pageTitle": "IP 地理位置查询",
+      "pageDescription": "免费在线 IP 地理位置查询工具。",
+      "seoTitle": "IP 地理位置查询",
+      "seoContent": "查询任何 IP 地址的地理位置。",
+      "seoFeaturesTitle": "功能",
+      "seoFeature1": "自动检测您的 IP",
+      "seoFeature2": "国家、城市和坐标",
+      "seoFeature3": "ISP 信息",
+      "seoFeature4": "查询历史"
+    },
+    "png-to-jpg": {
+      "name": "PNG 转 JPG",
+      "description": "PNG 和 JPG 图片格式互转",
+      "pageTitle": "PNG 转 JPG 转换器 - 免费在线转换图片",
+      "pageDescription": "免费在线 PNG 转 JPG 转换器。在浏览器中转换图片格式。",
+      "seoTitle": "PNG 转 JPG 转换器",
+      "seoContent": "在浏览器中直接转换 PNG 和 JPG 图片。",
+      "seoFeaturesTitle": "功能",
+      "seoFeature1": "PNG 和 JPG 互转",
+      "seoFeature2": "JPG 质量控制",
+      "seoFeature3": "文件大小对比",
+      "seoFeature4": "纯客户端处理"
+    },
+    "base58-encoder": {
+      "name": "Base58 编解码",
+      "description": "编码和解码 Base58 字符串",
+      "pageTitle": "Base58 编码器/解码器",
+      "pageDescription": "免费在线 Base58 编码器和解码器。",
+      "seoTitle": "Base58 编解码器",
+      "seoContent": "使用比特币字母表编码和解码 Base58 字符串。",
+      "seoFeaturesTitle": "功能",
+      "seoFeature1": "比特币 Base58 字母表",
+      "seoFeature2": "Base58Check 支持",
+      "seoFeature3": "编码和解码模式",
+      "seoFeature4": "版本字节配置"
+    },
+    "css-selector-tester": {
+      "name": "CSS 选择器测试",
+      "description": "测试 CSS 选择器",
+      "pageTitle": "CSS 选择器测试器",
+      "pageDescription": "免费在线 CSS 选择器测试工具。",
+      "seoTitle": "CSS 选择器测试器",
+      "seoContent": "针对 HTML 标记测试 CSS 选择器。",
+      "seoFeaturesTitle": "功能",
+      "seoFeature1": "测试任何 CSS 选择器",
+      "seoFeature2": "匹配元素计数和预览",
+      "seoFeature3": "快速选择器示例",
+      "seoFeature4": "CSS 选择器参考"
     }
   },
   "footer": {
