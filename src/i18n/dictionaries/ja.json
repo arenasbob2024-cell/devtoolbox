@@ -3357,37 +3357,17 @@
       ]
     },
     "json-to-dart": {
-      "name": "JSON→Dart変換",
-      "description": "JSONをFlutter用Dartクラスに変換",
-      "pageTitle": "JSON→Dart変換ツール",
-      "pageDescription": "JSONデータをnull安全なDartクラスに変換。",
-      "seoTitle": "What is JSON to Dart?",
-      "seoContent": "JSON to Dart converts JSON API responses into Dart model classes with serialization methods, making Flutter development faster and type-safe.",
-      "howToUseTitle": "How to Use",
-      "howToUseSteps": [
-        "Paste JSON data",
-        "Set root class name",
-        "Choose options (null safety, etc.)",
-        "Copy generated Dart code"
-      ],
-      "useCasesTitle": "Use Cases",
-      "useCases": [
-        "Flutter API integration",
-        "Creating model classes",
-        "Type-safe JSON parsing",
-        "Rapid prototyping"
-      ],
-      "faqTitle": "FAQ",
-      "faqs": [
-        {
-          "q": "Does it support null safety?",
-          "a": "Yes, generated classes use Dart null safety with nullable types where appropriate."
-        },
-        {
-          "q": "Can it handle nested JSON?",
-          "a": "Yes, nested objects generate separate classes with proper references."
-        }
-      ]
+      "name": "JSON to Dart",
+      "description": "Convert JSON to Dart/Flutter classes",
+      "pageTitle": "JSON to Dart Converter Online - Flutter Class Generator",
+      "pageDescription": "Free online JSON to Dart converter. Generate Flutter class definitions with fromJson/toJson methods.",
+      "seoTitle": "JSON to Dart",
+      "seoContent": "Convert JSON to Dart/Flutter classes",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Free online tool",
+      "seoFeature2": "No installation",
+      "seoFeature3": "Real-time preview",
+      "seoFeature4": "One-click copy"
     },
     "nginx-config": {
       "name": "Nginx設定ジェネレーター",
@@ -5380,6 +5360,58 @@
       "seoFeaturesTitle": "Features",
       "seoFeature1": "Free online tool",
       "seoFeature2": "No installation needed",
+      "seoFeature3": "Real-time preview",
+      "seoFeature4": "One-click copy"
+    },
+    "javascript-obfuscator": {
+      "name": "JavaScript Obfuscator",
+      "description": "Obfuscate JS code for protection",
+      "pageTitle": "JavaScript Obfuscator Online - Code Protection Tool",
+      "pageDescription": "Free online JavaScript obfuscator. Protect your code by renaming variables and encoding strings.",
+      "seoTitle": "JavaScript Obfuscator",
+      "seoContent": "Obfuscate JS code for protection",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Free online tool",
+      "seoFeature2": "No installation",
+      "seoFeature3": "Real-time preview",
+      "seoFeature4": "One-click copy"
+    },
+    "css-clip-path-generator": {
+      "name": "CSS Clip Path Generator",
+      "description": "Visual clip-path shape generator",
+      "pageTitle": "CSS Clip-Path Generator Online - Shape Maker",
+      "pageDescription": "Free visual CSS clip-path generator. Create polygon, circle, and ellipse shapes with drag-and-drop.",
+      "seoTitle": "CSS Clip Path Generator",
+      "seoContent": "Visual clip-path shape generator",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Free online tool",
+      "seoFeature2": "No installation",
+      "seoFeature3": "Real-time preview",
+      "seoFeature4": "One-click copy"
+    },
+    "xml-validator": {
+      "name": "XML Validator",
+      "description": "Validate XML syntax",
+      "pageTitle": "XML Validator Online - Check XML Syntax",
+      "pageDescription": "Free online XML validator. Check XML syntax, well-formedness, and get error details with line numbers.",
+      "seoTitle": "XML Validator",
+      "seoContent": "Validate XML syntax",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Free online tool",
+      "seoFeature2": "No installation",
+      "seoFeature3": "Real-time preview",
+      "seoFeature4": "One-click copy"
+    },
+    "csp-header-generator": {
+      "name": "CSP Header Generator",
+      "description": "Build Content Security Policy headers",
+      "pageTitle": "CSP Header Generator Online - Content Security Policy Builder",
+      "pageDescription": "Free online Content Security Policy header generator. Build CSP directives with an intuitive checkbox interface.",
+      "seoTitle": "CSP Header Generator",
+      "seoContent": "Build Content Security Policy headers",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Free online tool",
+      "seoFeature2": "No installation",
       "seoFeature3": "Real-time preview",
       "seoFeature4": "One-click copy"
     }
