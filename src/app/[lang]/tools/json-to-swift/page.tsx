@@ -73,7 +73,10 @@ function jsonToSwift(
       const type = getSwiftType(value, key);
       const optionalType = makeOptional && value !== null ? `${type}?` : type;
 
-      if (useCodingKeys && key !== swiftProperty) {
+      // Check if we need CodingKeys: different name or has special chars that can't be property name
+      const needsMapping = key !== swiftProperty || !/^[a-zA-Z_][a-zA-Z0-9_]*$/.test(key);
+
+      if (useCodingKeys && needsMapping) {
         hasCodingKeys = true;
         codingKeys.push(`case ${swiftProperty} = "${key}"`);
       }
@@ -97,15 +100,15 @@ function jsonToSwift(
   if (Array.isArray(parsed)) {
     if (parsed.length > 0 && typeof parsed[0] === 'object' && parsed[0] !== null) {
       generateStruct(parsed[0] as Record<string, unknown>, rootName);
-      return structs.reverse().join('\n\n') + `\n\ntype ${rootName}Array = [${rootName}]`;
+      return structs.reverse().join('\n\n') + `\n\n// Use: [${rootName}]`;
     }
-    return `type ${rootName} = ${getSwiftType(parsed, rootName)}`;
+    return `let ${rootName}: ${getSwiftType(parsed, rootName)}`;
   } else if (typeof parsed === 'object' && parsed !== null) {
     generateStruct(parsed as Record<string, unknown>, rootName);
     return structs.reverse().join('\n\n');
   }
 
-  return `type ${rootName} = ${typeof parsed}`;
+  return `let ${rootName}: ${typeof parsed}`;
 }
 
 export default function JsonToSwift() {

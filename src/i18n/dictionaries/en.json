@@ -10947,6 +10947,19 @@
       "seoFeature2": "Auto-parse headers, body, auth, and cookies",
       "seoFeature3": "Support for common cURL flags and options",
       "seoFeature4": "One-click code copying"
+    },
+    "json-to-rust-struct": {
+      "name": "JSON to Rust Struct",
+      "description": "Convert JSON data to Rust struct definitions with serde support",
+      "pageTitle": "JSON to Rust Struct Converter Online - Free Tool",
+      "pageDescription": "Convert JSON to Rust struct definitions online. Free JSON to Rust converter with serde derive macros, type inference, and Option<T> support.",
+      "seoTitle": "JSON to Rust Struct Converter",
+      "seoContent": "Convert JSON data to Rust struct definitions instantly. Our free online tool generates type-safe Rust structs with serde serialization support, derive macros, and proper type inference.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Automatic type inference for Rust types (String, i64, f64, bool)",
+      "seoFeature2": "Serde derive macros (Serialize, Deserialize, Debug, Clone)",
+      "seoFeature3": "Configurable field naming strategy (camelCase, snake_case)",
+      "seoFeature4": "Option<T> support for nullable JSON fields"
     }
   },
   "footer": {

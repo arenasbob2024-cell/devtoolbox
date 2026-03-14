@@ -5,290 +5,525 @@ import ToolLayout from '@/components/ToolLayout';
 import CopyButton from '@/components/CopyButton';
 import { useLang } from '@/i18n/LangContext';
 
-interface FlatRow {
-  [key: string]: string | number | boolean | null;
+interface TableColumn {
+  key: string;
+  visible: boolean;
 }
 
-function flattenObject(obj: unknown, prefix = ''): Record<string, unknown> {
-  const result: Record<string, unknown> = {};
-  if (obj === null || obj === undefined || typeof obj !== 'object') {
-    return result;
-  }
-  for (const [key, value] of Object.entries(obj as Record<string, unknown>)) {
-    const newKey = prefix ? `${prefix}.${key}` : key;
-    if (value !== null && typeof value === 'object' && !Array.isArray(value)) {
-      Object.assign(result, flattenObject(value, newKey));
-    } else if (Array.isArray(value)) {
-      // For arrays of primitives, join as string; for arrays of objects, stringify
-      const allPrimitive = value.every(v => v === null || typeof v !== 'object');
-      if (allPrimitive) {
-        result[newKey] = value.join(', ');
-      } else {
-        result[newKey] = JSON.stringify(value);
-      }
-    } else {
-      result[newKey] = value;
-    }
-  }
-  return result;
-}
-
-function jsonToRows(data: unknown): { columns: string[]; rows: FlatRow[] } {
-  let items: unknown[];
-
-  if (Array.isArray(data)) {
-    items = data;
-  } else if (typeof data === 'object' && data !== null) {
-    items = [data];
-  } else {
-    return { columns: [], rows: [] };
-  }
-
-  const columnSet = new Set<string>();
-  const flatRows: FlatRow[] = [];
-
-  for (const item of items) {
-    if (typeof item !== 'object' || item === null) {
-      flatRows.push({ value: item as string | number | boolean | null });
-      columnSet.add('value');
-      continue;
-    }
-    const flat = flattenObject(item);
-    const row: FlatRow = {};
-    for (const [k, v] of Object.entries(flat)) {
-      columnSet.add(k);
-      row[k] = v === null || v === undefined ? null : (typeof v === 'object' ? JSON.stringify(v) : v as string | number | boolean);
-    }
-    flatRows.push(row);
-  }
-
-  return { columns: Array.from(columnSet), rows: flatRows };
-}
-
-function rowsToCsv(columns: string[], rows: FlatRow[]): string {
-  const escape = (val: unknown): string => {
-    const s = val === null || val === undefined ? '' : String(val);
-    if (s.includes(',') || s.includes('"') || s.includes('\n')) {
-      return `"${s.replace(/"/g, '""')}"`;
-    }
-    return s;
-  };
-  const header = columns.map(escape).join(',');
-  const body = rows.map(row => columns.map(col => escape(row[col])).join(',')).join('\n');
-  return `${header}\n${body}`;
-}
+const sampleJSON = JSON.stringify(
+  [
+    {
+      id: 1,
+      name: 'Alice Johnson',
+      email: 'alice@example.com',
+      age: 28,
+      address: {
+        street: '123 Main St',
+        city: 'New York',
+        country: 'USA',
+      },
+    },
+    {
+      id: 2,
+      name: 'Bob Smith',
+      email: 'bob@example.com',
+      age: 35,
+      address: {
+        street: '456 Oak Ave',
+        city: 'San Francisco',
+        country: 'USA',
+      },
+    },
+    {
+      id: 3,
+      name: 'Carol Williams',
+      email: 'carol@example.com',
+      age: 31,
+      address: {
+        street: '789 Pine Rd',
+        city: 'Chicago',
+        country: 'USA',
+      },
+    },
+  ],
+  null,
+  2
+);
 
 type SortDirection = 'asc' | 'desc' | null;
 
 export default function JsonToTable() {
   const { dict } = useLang();
-  const t = dict.tools['json-to-table'] as Record<string, unknown>;
-  const common = dict.common;
+  const t = (dict.tools as unknown as Record<string, Record<string, string>>)['json-to-table'];
 
-  const [input, setInput] = useState('');
-  const [error, setError] = useState('');
-  const [sortCol, setSortCol] = useState<string | null>(null);
-  const [sortDir, setSortDir] = useState<SortDirection>(null);
-  const [search, setSearch] = useState('');
+  const [jsonInput, setJsonInput] = useState(sampleJSON);
+  const [error, setError] = useState<string>('');
+  const [columns, setColumns] = useState<TableColumn[]>([]);
+  const [flattenNested, setFlattenNested] = useState(false);
+  const [sortColumn, setSortColumn] = useState<string | null>(null);
+  const [sortDirection, setSortDirection] = useState<SortDirection>(null);
 
-  const { columns, rows } = useMemo(() => {
-    if (!input.trim()) return { columns: [] as string[], rows: [] as FlatRow[] };
+  // Parse JSON and extract data
+  const { tableData, isArray, singleObject } = useMemo(() => {
     try {
-      const parsed = JSON.parse(input);
       setError('');
-      return jsonToRows(parsed);
-    } catch (e: unknown) {
-      setError(e instanceof Error ? e.message : 'Invalid JSON');
-      return { columns: [] as string[], rows: [] as FlatRow[] };
-    }
-  }, [input]);
+      const parsed = JSON.parse(jsonInput);
 
-  const filteredRows = useMemo(() => {
-    if (!search.trim()) return rows;
-    const q = search.toLowerCase();
-    return rows.filter(row =>
-      columns.some(col => {
-        const val = row[col];
-        return val !== null && val !== undefined && String(val).toLowerCase().includes(q);
-      })
-    );
-  }, [rows, columns, search]);
-
-  const sortedRows = useMemo(() => {
-    if (!sortCol || !sortDir) return filteredRows;
-    return [...filteredRows].sort((a, b) => {
-      const va = a[sortCol];
-      const vb = b[sortCol];
-      if (va === null || va === undefined) return 1;
-      if (vb === null || vb === undefined) return -1;
-      if (typeof va === 'number' && typeof vb === 'number') {
-        return sortDir === 'asc' ? va - vb : vb - va;
+      if (Array.isArray(parsed)) {
+        return { tableData: parsed, isArray: true, singleObject: null };
+      } else if (typeof parsed === 'object' && parsed !== null) {
+        return { tableData: [parsed], isArray: false, singleObject: parsed };
+      } else {
+        setError('JSON must be an object or array');
+        return { tableData: [], isArray: false, singleObject: null };
       }
-      const sa = String(va);
-      const sb = String(vb);
-      return sortDir === 'asc' ? sa.localeCompare(sb) : sb.localeCompare(sa);
-    });
-  }, [filteredRows, sortCol, sortDir]);
-
-  const handleSort = useCallback((col: string) => {
-    if (sortCol === col) {
-      if (sortDir === 'asc') setSortDir('desc');
-      else if (sortDir === 'desc') { setSortCol(null); setSortDir(null); }
-      else setSortDir('asc');
-    } else {
-      setSortCol(col);
-      setSortDir('asc');
+    } catch (e) {
+      setError(`Invalid JSON: ${e instanceof Error ? e.message : 'Unknown error'}`);
+      return { tableData: [], isArray: false, singleObject: null };
     }
-  }, [sortCol, sortDir]);
+  }, [jsonInput]);
 
-  const loadSample = () => {
-    setInput(JSON.stringify([
-      { id: 1, name: "Alice Johnson", email: "alice@example.com", age: 28, role: "Engineer", address: { city: "San Francisco", state: "CA" } },
-      { id: 2, name: "Bob Smith", email: "bob@example.com", age: 34, role: "Designer", address: { city: "New York", state: "NY" } },
-      { id: 3, name: "Carol White", email: "carol@example.com", age: 31, role: "Manager", address: { city: "Chicago", state: "IL" } },
-      { id: 4, name: "David Brown", email: "david@example.com", age: 25, role: "Intern", address: { city: "Austin", state: "TX" } },
-      { id: 5, name: "Eva Green", email: "eva@example.com", age: 29, role: "Engineer", address: { city: "Seattle", state: "WA" } }
-    ], null, 2));
-    setSearch('');
-    setSortCol(null);
-    setSortDir(null);
+  // Extract columns from data
+  useMemo(() => {
+    if (tableData.length === 0) {
+      setColumns([]);
+      return;
+    }
+
+    const allKeys = new Set<string>();
+    tableData.forEach((item: unknown) => {
+      if (typeof item === 'object' && item !== null) {
+        const obj = item as Record<string, unknown>;
+        Object.keys(obj).forEach((key) => allKeys.add(key));
+      }
+    });
+
+    const newColumns: TableColumn[] = Array.from(allKeys).map((key) => ({
+      key,
+      visible: true,
+    }));
+
+    setColumns(newColumns);
+  }, [tableData]);
+
+  // Flatten nested objects if needed
+  const processedData = useMemo(() => {
+    if (!flattenNested) {
+      return tableData;
+    }
+
+    return tableData.map((item: unknown) => {
+      if (typeof item !== 'object' || item === null) return item;
+
+      const obj = item as Record<string, unknown>;
+      const flattened: Record<string, unknown> = {};
+
+      const flatten = (prefix: string, current: unknown) => {
+        if (typeof current === 'object' && current !== null && !Array.isArray(current)) {
+          const nested = current as Record<string, unknown>;
+          Object.entries(nested).forEach(([key, value]) => {
+            const newKey = prefix ? `${prefix}.${key}` : key;
+            flatten(newKey, value);
+          });
+        } else {
+          flattened[prefix] = current;
+        }
+      };
+
+      Object.entries(obj).forEach(([key, value]) => {
+        flatten(key, value);
+      });
+
+      return flattened;
+    });
+  }, [tableData, flattenNested]);
+
+  // Update columns when flattening changes
+  useMemo(() => {
+    if (processedData.length === 0) {
+      setColumns([]);
+      return;
+    }
+
+    const allKeys = new Set<string>();
+    processedData.forEach((item: unknown) => {
+      if (typeof item === 'object' && item !== null) {
+        const obj = item as Record<string, unknown>;
+        Object.keys(obj).forEach((key) => allKeys.add(key));
+      }
+    });
+
+    const newColumns: TableColumn[] = Array.from(allKeys).map((key) => ({
+      key,
+      visible: columns.find((c) => c.key === key)?.visible ?? true,
+    }));
+
+    setColumns(newColumns);
+  }, [processedData]);
+
+  // Sort data
+  const sortedData = useMemo(() => {
+    if (!sortColumn || !sortDirection || processedData.length === 0) {
+      return processedData;
+    }
+
+    const sorted = [...processedData];
+    sorted.sort((a: unknown, b: unknown) => {
+      const aObj = a as Record<string, unknown>;
+      const bObj = b as Record<string, unknown>;
+      const aVal = aObj[sortColumn];
+      const bVal = bObj[sortColumn];
+
+      if (aVal === null || aVal === undefined) return sortDirection === 'asc' ? 1 : -1;
+      if (bVal === null || bVal === undefined) return sortDirection === 'asc' ? -1 : 1;
+
+      if (typeof aVal === 'number' && typeof bVal === 'number') {
+        return sortDirection === 'asc' ? aVal - bVal : bVal - aVal;
+      }
+
+      const aStr = String(aVal).toLowerCase();
+      const bStr = String(bVal).toLowerCase();
+      return sortDirection === 'asc' ? aStr.localeCompare(bStr) : bStr.localeCompare(aStr);
+    });
+
+    return sorted;
+  }, [processedData, sortColumn, sortDirection]);
+
+  const visibleColumns = columns.filter((c) => c.visible);
+
+  const toggleColumn = useCallback((key: string) => {
+    setColumns((prev) =>
+      prev.map((c) => (c.key === key ? { ...c, visible: !c.visible } : c))
+    );
+  }, []);
+
+  const handleSort = useCallback((key: string) => {
+    if (sortColumn === key) {
+      setSortDirection((prev) => {
+        if (prev === 'asc') return 'desc';
+        if (prev === 'desc') return null;
+        return 'asc';
+      });
+    } else {
+      setSortColumn(key);
+      setSortDirection('asc');
+    }
+  }, [sortColumn]);
+
+  const generateCSV = useCallback(() => {
+    if (visibleColumns.length === 0 || sortedData.length === 0) return '';
+
+    const headers = visibleColumns.map((c) => `"${c.key}"`).join(',');
+    const rows = sortedData.map((item: unknown) => {
+      const obj = item as Record<string, unknown>;
+      return visibleColumns
+        .map((col) => {
+          const val = obj[col.key];
+          if (val === null || val === undefined) return '';
+          const str = typeof val === 'object' ? JSON.stringify(val) : String(val);
+          return `"${str.replace(/"/g, '""')}"`;
+        })
+        .join(',');
+    });
+
+    return [headers, ...rows].join('\n');
+  }, [visibleColumns, sortedData]);
+
+  const generateMarkdown = useCallback(() => {
+    if (visibleColumns.length === 0 || sortedData.length === 0) return '';
+
+    const headers = visibleColumns.map((c) => c.key).join(' | ');
+    const divider = visibleColumns.map(() => '---').join(' | ');
+    const rows = sortedData.map((item: unknown) => {
+      const obj = item as Record<string, unknown>;
+      return visibleColumns
+        .map((col) => {
+          const val = obj[col.key];
+          if (val === null || val === undefined) return '';
+          return typeof val === 'object' ? JSON.stringify(val) : String(val);
+        })
+        .join(' | ');
+    });
+
+    return [headers, divider, ...rows].join('\n');
+  }, [visibleColumns, sortedData]);
+
+  const generateHTML = useCallback(() => {
+    if (visibleColumns.length === 0 || sortedData.length === 0) return '';
+
+    let html = '<table border="1" cellpadding="8">\n<thead>\n<tr>\n';
+    visibleColumns.forEach((col) => {
+      html += `  <th>${col.key}</th>\n`;
+    });
+    html += '</tr>\n</thead>\n<tbody>\n';
+
+    sortedData.forEach((item: unknown) => {
+      const obj = item as Record<string, unknown>;
+      html += '<tr>\n';
+      visibleColumns.forEach((col) => {
+        const val = obj[col.key];
+        const content =
+          val === null || val === undefined ? '' : typeof val === 'object' ? JSON.stringify(val) : String(val);
+        html += `  <td>${content}</td>\n`;
+      });
+      html += '</tr>\n';
+    });
+
+    html += '</tbody>\n</table>';
+    return html;
+  }, [visibleColumns, sortedData]);
+
+  const inputStyle: React.CSSProperties = {
+    width: '100%',
+    padding: '12px',
+    fontSize: 13,
+    fontFamily: "'JetBrains Mono', 'Fira Code', monospace",
+    background: 'var(--bg-input)',
+    border: '1px solid var(--border-color)',
+    borderRadius: 6,
+    color: 'var(--text-primary)',
+    outline: 'none',
+    minHeight: 200,
+    resize: 'vertical',
   };
 
-  const handleClear = () => {
-    setInput('');
-    setError('');
-    setSearch('');
-    setSortCol(null);
-    setSortDir(null);
-  };
-
-  const downloadCsv = () => {
-    if (columns.length === 0 || sortedRows.length === 0) return;
-    const csv = rowsToCsv(columns, sortedRows);
-    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'data.csv';
-    a.click();
-    URL.revokeObjectURL(url);
-  };
-
-  const csvText = columns.length > 0 && sortedRows.length > 0 ? rowsToCsv(columns, sortedRows) : '';
-
-  const sortIcon = (col: string) => {
-    if (sortCol !== col) return ' \u2195';
-    return sortDir === 'asc' ? ' \u2191' : ' \u2193';
+  const sectionStyle: React.CSSProperties = {
+    background: 'var(--bg-input)',
+    border: '1px solid var(--border-color)',
+    borderRadius: 10,
+    padding: 16,
+    marginBottom: 16,
   };
 
   return (
-    <ToolLayout title={(t.pageTitle as string) || 'JSON to Table Converter'} description={(t.pageDescription as string) || 'Convert JSON data to an interactive sortable table'} toolId="json-to-table">
-      <div style={{ display: 'flex', gap: 8, marginBottom: 16, flexWrap: 'wrap', alignItems: 'center' }}>
-        <button onClick={loadSample} className="btn btn-secondary">{common.loadSample}</button>
-        <button onClick={handleClear} className="btn btn-secondary">{common.clear}</button>
-        {columns.length > 0 && sortedRows.length > 0 && (
-          <>
-            <button onClick={downloadCsv} className="btn btn-primary">{common.download} CSV</button>
-            <CopyButton text={csvText} label="Copy CSV" />
-          </>
+    <ToolLayout title={t.pageTitle} description={t.pageDescription} toolId="json-to-table">
+      {/* JSON Input */}
+      <div style={sectionStyle}>
+        <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--text-primary)', marginBottom: 10 }}>
+          JSON Input
+        </div>
+        <textarea
+          value={jsonInput}
+          onChange={(e) => setJsonInput(e.target.value)}
+          placeholder="Paste your JSON here..."
+          style={inputStyle}
+        />
+        {error && (
+          <div
+            style={{
+              marginTop: 8,
+              padding: 8,
+              background: '#fee',
+              border: '1px solid #fcc',
+              borderRadius: 4,
+              fontSize: 13,
+              color: '#c00',
+            }}
+          >
+            {error}
+          </div>
         )}
       </div>
 
-      {error && (
-        <div style={{ background: 'rgba(244, 63, 94, 0.1)', border: '1px solid rgba(244, 63, 94, 0.3)', borderRadius: 8, padding: '10px 14px', marginBottom: 16, fontSize: 13, color: 'var(--accent-rose)' }}>
-          {common.error}: {error}
+      {/* Options */}
+      {tableData.length > 0 && (
+        <div style={sectionStyle}>
+          <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--text-primary)', marginBottom: 12 }}>
+            Options
+          </div>
+          <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', alignItems: 'center' }}>
+            <label style={{ display: 'flex', alignItems: 'center', gap: 8, cursor: 'pointer' }}>
+              <input
+                type="checkbox"
+                checked={flattenNested}
+                onChange={(e) => setFlattenNested(e.target.checked)}
+                style={{ cursor: 'pointer' }}
+              />
+              <span style={{ fontSize: 13, fontWeight: 600 }}>Flatten nested objects</span>
+            </label>
+          </div>
         </div>
       )}
 
-      <div style={{ marginBottom: 16 }}>
-        <label style={{ fontSize: 13, fontWeight: 600, marginBottom: 8, display: 'block' }}>JSON Input</label>
-        <textarea
-          value={input}
-          onChange={e => setInput(e.target.value)}
-          placeholder='[{"name": "Alice", "age": 28}, {"name": "Bob", "age": 34}]'
-          style={{ minHeight: 180, fontFamily: 'JetBrains Mono, monospace', width: '100%' }}
-        />
-      </div>
-
-      {columns.length > 0 && rows.length > 0 && (
-        <div>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12, flexWrap: 'wrap', gap: 8 }}>
-            <div style={{ fontSize: 13, color: 'var(--text-secondary)' }}>
-              {sortedRows.length} {sortedRows.length === 1 ? 'row' : 'rows'} {columns.length} {columns.length === 1 ? 'column' : 'columns'}
-              {search && filteredRows.length !== rows.length && ` (filtered from ${rows.length})`}
-            </div>
-            <input
-              type="text"
-              value={search}
-              onChange={e => setSearch(e.target.value)}
-              placeholder="Search / filter rows..."
-              style={{ padding: '6px 12px', fontSize: 13, borderRadius: 6, border: '1px solid var(--border-color)', background: 'var(--bg-secondary)', color: 'var(--text-primary)', minWidth: 200 }}
-            />
+      {/* Column Visibility */}
+      {columns.length > 0 && (
+        <div style={sectionStyle}>
+          <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--text-primary)', marginBottom: 10 }}>
+            Columns
           </div>
-          <div style={{ overflowX: 'auto', borderRadius: 8, border: '1px solid var(--border-color)' }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
+          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
+            {columns.map((col) => (
+              <label
+                key={col.key}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 6,
+                  cursor: 'pointer',
+                  padding: '4px 8px',
+                  borderRadius: 4,
+                  background: col.visible ? 'var(--accent-blue)20' : 'var(--border-color)',
+                  transition: 'all 0.2s',
+                }}
+              >
+                <input
+                  type="checkbox"
+                  checked={col.visible}
+                  onChange={() => toggleColumn(col.key)}
+                  style={{ cursor: 'pointer' }}
+                />
+                <span style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-primary)' }}>
+                  {col.key}
+                </span>
+              </label>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Table Output */}
+      {tableData.length > 0 && visibleColumns.length > 0 && (
+        <div style={sectionStyle}>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              marginBottom: 14,
+            }}
+          >
+            <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--text-primary)' }}>
+              Table ({sortedData.length} rows)
+            </div>
+            <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+              <CopyButton text={generateCSV()} label="Copy CSV" />
+              <CopyButton text={generateMarkdown()} label="Copy Markdown" />
+              <CopyButton text={generateHTML()} label="Copy HTML" />
+            </div>
+          </div>
+
+          <div
+            style={{
+              overflowX: 'auto',
+              borderRadius: 6,
+              border: '1px solid var(--border-color)',
+              background: 'var(--bg-primary)',
+            }}
+          >
+            <table
+              style={{
+                width: '100%',
+                borderCollapse: 'collapse',
+                fontSize: 13,
+                minWidth: '100%',
+              }}
+            >
               <thead>
-                <tr>
-                  <th style={{
-                    padding: '10px 12px', textAlign: 'left', fontWeight: 600, fontSize: 12,
-                    background: 'var(--bg-secondary)', borderBottom: '2px solid var(--border-color)',
-                    color: 'var(--text-secondary)', whiteSpace: 'nowrap', position: 'sticky', top: 0
-                  }}>#</th>
-                  {columns.map(col => (
+                <tr style={{ background: 'var(--bg-secondary)', borderBottom: '2px solid var(--border-color)' }}>
+                  {visibleColumns.map((col) => (
                     <th
-                      key={col}
-                      onClick={() => handleSort(col)}
+                      key={col.key}
+                      onClick={() => handleSort(col.key)}
                       style={{
-                        padding: '10px 12px', textAlign: 'left', fontWeight: 600, fontSize: 12,
-                        background: 'var(--bg-secondary)', borderBottom: '2px solid var(--border-color)',
-                        color: sortCol === col ? 'var(--accent-blue)' : 'var(--text-secondary)',
-                        cursor: 'pointer', whiteSpace: 'nowrap', position: 'sticky', top: 0,
-                        userSelect: 'none'
+                        padding: '12px',
+                        textAlign: 'left',
+                        fontWeight: 700,
+                        color: 'var(--text-primary)',
+                        cursor: 'pointer',
+                        userSelect: 'none',
+                        background:
+                          sortColumn === col.key
+                            ? 'var(--accent-blue)20'
+                            : 'var(--bg-secondary)',
+                        transition: 'background 0.2s',
+                        whiteSpace: 'nowrap',
                       }}
+                      title="Click to sort"
                     >
-                      {col}{sortIcon(col)}
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                        {col.key}
+                        {sortColumn === col.key && (
+                          <span style={{ fontSize: 11, fontWeight: 600 }}>
+                            {sortDirection === 'asc' ? '↑' : '↓'}
+                          </span>
+                        )}
+                      </div>
                     </th>
                   ))}
                 </tr>
               </thead>
               <tbody>
-                {sortedRows.map((row, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid var(--border-color)' }}
-                    onMouseEnter={e => (e.currentTarget.style.background = 'var(--bg-secondary)')}
-                    onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
-                  >
-                    <td style={{ padding: '8px 12px', color: 'var(--text-secondary)', fontSize: 12, whiteSpace: 'nowrap' }}>{i + 1}</td>
-                    {columns.map(col => {
-                      const val = row[col];
-                      const display = val === null || val === undefined ? '' : String(val);
-                      const isNum = typeof val === 'number';
-                      const isBool = typeof val === 'boolean';
-                      return (
-                        <td key={col} style={{
-                          padding: '8px 12px', maxWidth: 300, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
-                          fontFamily: isNum || isBool ? 'JetBrains Mono, monospace' : 'inherit',
-                          color: val === null || val === undefined ? 'var(--text-secondary)' : isBool ? 'var(--accent-blue)' : isNum ? 'var(--accent-rose)' : 'var(--text-primary)'
-                        }}
-                          title={display}
-                        >
-                          {val === null || val === undefined ? 'null' : display}
-                        </td>
-                      );
-                    })}
-                  </tr>
-                ))}
+                {sortedData.map((item: unknown, rowIdx: number) => {
+                  const obj = item as Record<string, unknown>;
+                  return (
+                    <tr
+                      key={rowIdx}
+                      style={{
+                        background:
+                          rowIdx % 2 === 0 ? 'var(--bg-primary)' : 'var(--bg-secondary)',
+                        borderBottom: '1px solid var(--border-color)',
+                        transition: 'background 0.2s',
+                      }}
+                      onMouseEnter={(e) => {
+                        (e.currentTarget as HTMLElement).style.background =
+                          'var(--accent-blue)10';
+                      }}
+                      onMouseLeave={(e) => {
+                        (e.currentTarget as HTMLElement).style.background =
+                          rowIdx % 2 === 0 ? 'var(--bg-primary)' : 'var(--bg-secondary)';
+                      }}
+                    >
+                      {visibleColumns.map((col) => {
+                        const val = obj[col.key];
+                        const display =
+                          val === null || val === undefined
+                            ? '—'
+                            : typeof val === 'object'
+                              ? JSON.stringify(val)
+                              : String(val);
+                        return (
+                          <td
+                            key={`${rowIdx}-${col.key}`}
+                            style={{
+                              padding: '10px 12px',
+                              color: 'var(--text-primary)',
+                              maxWidth: 300,
+                              overflow: 'hidden',
+                              textOverflow: 'ellipsis',
+                              whiteSpace: 'nowrap',
+                            }}
+                            title={display}
+                          >
+                            {display}
+                          </td>
+                        );
+                      })}
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>
         </div>
       )}
 
-      {typeof t.seoTitle === 'string' && (
-        <div style={{ marginTop: 30, paddingTop: 20, borderTop: '1px solid var(--border-color)' }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>{t.seoTitle}</h2>
-          <p style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.7 }}>{t.seoContent as string}</p>
+      {/* SEO Section */}
+      <div style={{ marginTop: 30, paddingTop: 20, borderTop: '1px solid var(--border-color)' }}>
+        <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>{t.seoTitle}</h2>
+        <p style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.7 }}>
+          {t.seoContent}
+        </p>
+        <div style={{ marginTop: 16 }}>
+          <h3 style={{ fontSize: 14, fontWeight: 700, marginBottom: 8 }}>Common Use Cases:</h3>
+          <ul style={{ fontSize: 13, color: 'var(--text-secondary)', lineHeight: 1.8, paddingLeft: 20 }}>
+            <li>Convert API response JSON to readable table format</li>
+            <li>Export database query results as CSV or Markdown</li>
+            <li>Analyze nested JSON data structures visually</li>
+            <li>Create data reports and documentation from JSON</li>
+            <li>Share structured data in multiple formats (CSV, Markdown, HTML)</li>
+          </ul>
         </div>
-      )}
+      </div>
     </ToolLayout>
   );
 }

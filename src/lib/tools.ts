@@ -3545,6 +3545,16 @@ export const tools: Tool[] = [
     path: '/tools/curl-to-code',
     relatedTools: ['http-request-builder', 'json-formatter', 'http-header-analyzer', 'url-encoder', 'base64', 'jwt-decoder'],
   },
+  {
+    id: 'json-to-rust-struct',
+    name: 'JSON to Rust Struct',
+    description: 'Convert JSON to Rust struct definitions with serde support. Free online JSON to Rust converter with derive macros and type inference.',
+    icon: '🦀',
+    category: 'converter',
+    keywords: ['json to rust', 'json to rust struct', 'rust struct generator', 'json to rust converter', 'serde', 'rust serialize', 'rust deserialize', 'convert json to rust'],
+    path: '/tools/json-to-rust-struct',
+    relatedTools: ['json-to-go-struct', 'json-to-typescript', 'json-to-java', 'json-to-csharp'],
+  },
 ];
 
 export function getToolsByCategory(categoryId: string): Tool[] {

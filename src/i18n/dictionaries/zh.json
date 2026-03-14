@@ -5190,6 +5190,19 @@
       "seoFeature2": "匹配元素计数和预览",
       "seoFeature3": "快速选择器示例",
       "seoFeature4": "CSS 选择器参考"
+    },
+    "json-to-rust-struct": {
+      "name": "JSON 转 Rust 结构体",
+      "description": "将 JSON 数据转换为 Rust struct 定义，支持 serde",
+      "pageTitle": "JSON 转 Rust 结构体在线工具 - 免费转换器",
+      "pageDescription": "在线将 JSON 转换为 Rust struct 定义。免费 JSON 转 Rust 工具，支持 serde derive 宏、类型推断和 Option<T>。",
+      "seoTitle": "JSON 转 Rust 结构体转换器",
+      "seoContent": "即时将 JSON 数据转换为 Rust 结构体定义。我们的免费在线工具生成类型安全的 Rust 结构体，支持 serde 序列化。",
+      "seoFeaturesTitle": "功能特性",
+      "seoFeature1": "自动推断 Rust 类型（String、i64、f64、bool）",
+      "seoFeature2": "Serde derive 宏（Serialize、Deserialize、Debug、Clone）",
+      "seoFeature3": "可配置的字段命名策略",
+      "seoFeature4": "支持可空字段的 Option<T>"
     }
   },
   "footer": {

@@ -7,34 +7,14 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   const dict = await getDictionary(lang);
-  const t = dict.tools['json-to-table'];
-  const url = `https://viadreams.cc/${lang}/tools/json-to-table`;
+  const t = dict.tools['json-to-rust-struct'];
+  const url = `https://viadreams.cc/${lang}/tools/json-to-rust-struct`;
   return {
     title: t.pageTitle,
     description: t.pageDescription,
-    openGraph: {
-      title: `${t.pageTitle} | DevToolBox`,
-      description: t.pageDescription,
-      url,
-      type: 'website',
-      siteName: 'DevToolBox',
-      images: [{ url: 'https://viadreams.cc/og-image.png', width: 1200, height: 630 }],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: `${t.pageTitle} | DevToolBox`,
-      description: t.pageDescription,
-      images: ['https://viadreams.cc/og-image.png'],
-    },
-    alternates: {
-      canonical: url,
-      languages: {
-        ...Object.fromEntries(
-          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/json-to-table`])
-        ),
-        'x-default': `https://viadreams.cc/en/tools/json-to-table`,
-      },
-    },
+    openGraph: { title: `${t.pageTitle} | DevToolBox`, description: t.pageDescription, url, type: 'website', siteName: 'DevToolBox', images: [{ url: 'https://viadreams.cc/og-image.png', width: 1200, height: 630 }] },
+    twitter: { card: 'summary_large_image', title: `${t.pageTitle} | DevToolBox`, description: t.pageDescription, images: ['https://viadreams.cc/og-image.png'] },
+    alternates: { canonical: url, languages: { ...Object.fromEntries(i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/json-to-rust-struct`])), 'x-default': `https://viadreams.cc/en/tools/json-to-rust-struct` } },
   };
 }
 
@@ -42,7 +22,7 @@ export default async function Layout({ children, params }: { children: React.Rea
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   return (
-    <ToolSeoServer toolId="json-to-table" lang={lang}>
+    <ToolSeoServer toolId="json-to-rust-struct" lang={lang}>
       {children}
     </ToolSeoServer>
   );
