@@ -131,6 +131,22 @@ export default function CronExpressionCompleteGuide({ lang }: { lang: string }) 
   const pStyle: React.CSSProperties = { lineHeight: 1.8, color: 'var(--text-secondary)', marginBottom: 16 };
   const boxStyle: React.CSSProperties = { padding: 20, background: 'var(--bg-input)', borderRadius: 12, border: '1px solid var(--border-color)', marginBottom: 24 };
 
+  const cronDiagram = isZh
+    ? `┌───────────── 分钟 (0-59)
+│ ┌───────────── 小时 (0-23)
+│ │ ┌───────────── 日期 (1-31)
+│ │ │ ┌───────────── 月份 (1-12)
+│ │ │ │ ┌───────────── 星期 (0-7, 0 和 7 = 周日)
+│ │ │ │ │
+* * * * *`
+    : `┌───────────── minute (0-59)
+│ ┌───────────── hour (0-23)
+│ │ ┌───────────── day of month (1-31)
+│ │ │ ┌───────────── month (1-12)
+│ │ │ │ ┌───────────── day of week (0-7, 0 and 7 = Sunday)
+│ │ │ │ │
+* * * * *`;
+
   return (
     <div>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
@@ -139,13 +155,7 @@ export default function CronExpressionCompleteGuide({ lang }: { lang: string }) 
 
       <h2 style={h2Style}>{ct.basicTitle}</h2>
       <p style={pStyle}>{ct.basicIntro}</p>
-      <pre style={{ ...codeStyle, fontSize: 15, textAlign: 'center', fontWeight: 700 }}><code>{\`┌───────────── ${isZh ? '分钟' : 'minute'} (0-59)
-│ ┌───────────── ${isZh ? '小时' : 'hour'} (0-23)
-│ │ ┌───────────── ${isZh ? '日期' : 'day of month'} (1-31)
-│ │ │ ┌───────────── ${isZh ? '月份' : 'month'} (1-12)
-│ │ │ │ ┌───────────── ${isZh ? '星期' : 'day of week'} (0-7, 0 and 7 = Sunday)
-│ │ │ │ │
-* * * * *\`}</code></pre>
+      <pre style={{ ...codeStyle, fontSize: 15, textAlign: 'center', fontWeight: 700 }}><code>{cronDiagram}</code></pre>
 
       <h2 style={h2Style}>{ct.fieldTitle}</h2>
       <p style={pStyle}>{ct.fieldIntro}</p>
