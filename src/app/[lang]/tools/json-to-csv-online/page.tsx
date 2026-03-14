@@ -5,86 +5,108 @@ import ToolLayout from '@/components/ToolLayout';
 import CopyButton from '@/components/CopyButton';
 import { useLang } from '@/i18n/LangContext';
 
-type ConversionMode = 'array' | 'class' | 'stdclass';
-
-export default function JsonToPhp() {
+export default function JsonToCsvOnline() {
   const { dict } = useLang();
-  const t = dict.tools['json-to-php'];
+  const t = dict.tools['json-to-csv-online'];
   const [input, setInput] = useState('');
   const [output, setOutput] = useState('');
   const [error, setError] = useState('');
-  const [mode, setMode] = useState<ConversionMode>('array');
+  const [delimiter, setDelimiter] = useState(',');
+  const [includeHeaders, setIncludeHeaders] = useState(true);
 
-  const jsonToPhp = (json: unknown, indent: number = 0, mode: ConversionMode = 'array'): string => {
-    const spaces = ' '.repeat(indent);
-    const nextSpaces = ' '.repeat(indent + 2);
+  const flattenObject = (obj: unknown, prefix: string = ''): Record<string, unknown> => {
+    const flat: Record<string, unknown> = {};
 
-    if (json === null) return 'null';
-    if (typeof json === 'boolean') return json ? 'true' : 'false';
-    if (typeof json === 'number') return json.toString();
-    if (typeof json === 'string') return `'${json.replace(/'/g, "\\'")}'`;
-
-    if (Array.isArray(json)) {
-      if (json.length === 0) return '[]';
-      const items = json.map((item) => `${nextSpaces}${jsonToPhp(item, indent + 2, mode)}`).join(",\n");
-      return `[\n${items}\n${spaces}]`;
+    if (obj === null || typeof obj !== 'object') {
+      return { [prefix || 'value']: obj };
     }
 
-    if (typeof json === 'object') {
-      const entries = Object.entries(json);
-      if (entries.length === 0) {
-        return mode === 'array' ? '[]' : mode === 'class' ? 'new stdClass()' : '(object)[]';
-      }
+    if (Array.isArray(obj)) {
+      return { [prefix || 'array']: JSON.stringify(obj) };
+    }
 
-      if (mode === 'array') {
-        const items = entries
-          .map(([key, value]) => `${nextSpaces}'${key}' => ${jsonToPhp(value, indent + 2, mode)}`)
-          .join(",\n");
-        return `[\n${items}\n${spaces}]`;
-      } else if (mode === 'class') {
-        const items = entries
-          .map(([key, value]) => `${nextSpaces}$this->${key} = ${jsonToPhp(value, indent + 2, mode)};`)
-          .join("\n");
-        return `new class {\n${items}\n${spaces}}`;
+    for (const [key, value] of Object.entries(obj)) {
+      const newKey = prefix ? `${prefix}.${key}` : key;
+      if (value === null || typeof value !== 'object') {
+        flat[newKey] = value;
+      } else if (Array.isArray(value)) {
+        flat[newKey] = JSON.stringify(value);
       } else {
-        const items = entries
-          .map(([key, value]) => `${nextSpaces}'${key}' => ${jsonToPhp(value, indent + 2, mode)}`)
-          .join(",\n");
-        return `(object)[\n${items}\n${spaces}]`;
+        Object.assign(flat, flattenObject(value, newKey));
       }
     }
 
-    return 'null';
+    return flat;
+  };
+
+  const escapeValue = (value: unknown): string => {
+    if (value === null || value === undefined) return '';
+    const str = String(value);
+    if (str.includes(delimiter) || str.includes('"') || str.includes('\n')) {
+      return `"${str.replace(/"/g, '""')}"`;
+    }
+    return str;
   };
 
   const convert = () => {
     try {
       const parsed = JSON.parse(input);
-      const php = jsonToPhp(parsed, 0, mode);
-      const wrapped = mode === 'class' ? `<?php\n$obj = ${php};\n` : `<?php\n$data = ${php};\n`;
-      setOutput(wrapped);
+      let rows: Record<string, unknown>[] = [];
+
+      if (Array.isArray(parsed)) {
+        rows = parsed.map((item) => (typeof item === 'object' && item !== null ? flattenObject(item) : { value: item }));
+      } else if (typeof parsed === 'object') {
+        rows = [flattenObject(parsed)];
+      } else {
+        setError(t.invalidInput);
+        return;
+      }
+
+      if (rows.length === 0) {
+        setError(t.emptyArray);
+        return;
+      }
+
+      const headers = Array.from(new Set(rows.flatMap((row) => Object.keys(row))));
+      const csvLines: string[] = [];
+
+      if (includeHeaders) {
+        csvLines.push(headers.map(escapeValue).join(delimiter));
+      }
+
+      for (const row of rows) {
+        const values = headers.map((header) => escapeValue(row[header]));
+        csvLines.push(values.join(delimiter));
+      }
+
+      setOutput(csvLines.join('\n'));
       setError('');
     } catch (e: unknown) {
-      setError(e instanceof Error ? e.message : 'Invalid JSON');
+      setError(e instanceof Error ? e.message : t.conversionError);
       setOutput('');
     }
   };
 
   const loadSample = () => {
-    const sample = {
-      name: 'DevToolBox',
-      version: '1.0.0',
-      features: ['JSON to PHP', 'Type support', 'Multiple formats'],
-      config: {
-        theme: 'dark',
-        notifications: true,
+    const sample = [
+      {
+        id: 1,
+        name: 'DevToolBox',
+        version: '1.0.0',
+        active: true,
       },
-    };
+      {
+        id: 2,
+        name: 'JSON Converter',
+        version: '2.1.0',
+        active: true,
+      },
+    ];
     setInput(JSON.stringify(sample, null, 2));
   };
 
   return (
-    <ToolLayout title={t.pageTitle} description={t.pageDescription} toolId="json-to-php">
+    <ToolLayout title={t.pageTitle} description={t.pageDescription} toolId="json-to-csv-online">
       <div style={{ display: 'flex', gap: 8, marginBottom: 16, flexWrap: 'wrap', alignItems: 'center' }}>
         <button onClick={convert} className="btn btn-primary">
           {t.convertBtn}
@@ -92,17 +114,29 @@ export default function JsonToPhp() {
         <button onClick={loadSample} className="btn btn-secondary">
           {dict.common.loadSample}
         </button>
-        <div style={{ marginLeft: 'auto', display: 'flex', gap: 8, alignItems: 'center' }}>
-          <label style={{ fontSize: 12 }}>{t.modeLabel}:</label>
-          <select
-            value={mode}
-            onChange={(e) => setMode(e.target.value as ConversionMode)}
-            style={{ padding: '4px 8px', fontSize: 12 }}
-          >
-            <option value="array">{t.modeArray}</option>
-            <option value="class">{t.modeClass}</option>
-            <option value="stdclass">{t.modeStdClass}</option>
-          </select>
+        <div style={{ marginLeft: 'auto', display: 'flex', gap: 16, alignItems: 'center' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <label style={{ fontSize: 12, fontWeight: 600 }}>{t.delimiterLabel}:</label>
+            <select
+              value={delimiter}
+              onChange={(e) => setDelimiter(e.target.value)}
+              style={{ padding: '4px 8px', fontSize: 12 }}
+            >
+              <option value=",">Comma (,)</option>
+              <option value=";">Semicolon (;)</option>
+              <option value="|">Pipe (|)</option>
+              <option value="\t">Tab</option>
+            </select>
+          </div>
+          <label style={{ fontSize: 12, display: 'flex', alignItems: 'center', gap: 6 }}>
+            <input
+              type="checkbox"
+              checked={includeHeaders}
+              onChange={(e) => setIncludeHeaders(e.target.checked)}
+              style={{ cursor: 'pointer' }}
+            />
+            {t.headerLabel}
+          </label>
         </div>
       </div>
 

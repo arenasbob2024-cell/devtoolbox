@@ -7,8 +7,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   const dict = await getDictionary(lang);
-  const t = dict.tools['json-to-php'];
-  const url = `https://viadreams.cc/${lang}/tools/json-to-php`;
+  const t = dict.tools['css-flexbox-playground'];
+  const url = `https://viadreams.cc/${lang}/tools/css-flexbox-playground`;
   return {
     title: t.pageTitle,
     description: t.pageDescription,
@@ -30,9 +30,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: url,
       languages: {
         ...Object.fromEntries(
-          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/json-to-php`])
+          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/css-flexbox-playground`])
         ),
-        'x-default': `https://viadreams.cc/en/tools/json-to-php`,
+        'x-default': `https://viadreams.cc/en/tools/css-flexbox-playground`,
       },
     },
   };
@@ -42,7 +42,7 @@ export default async function Layout({ children, params }: { children: React.Rea
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   return (
-    <ToolSeoServer toolId="json-to-php" lang={lang}>
+    <ToolSeoServer toolId="css-flexbox-playground" lang={lang}>
       {children}
     </ToolSeoServer>
   );

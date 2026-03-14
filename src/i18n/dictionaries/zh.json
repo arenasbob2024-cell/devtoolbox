@@ -3385,37 +3385,17 @@
       "seoFeature4": "Copy output"
     },
     "docker-compose-generator": {
-      "name": "Docker Compose 生成器",
-      "description": "可视化构建 docker-compose.yml",
-      "pageTitle": "Docker Compose 生成器 — 可视化 YAML 构建",
-      "pageDescription": "可视化构建 docker-compose.yml，包含 PostgreSQL、Redis、MongoDB 等预设服务。",
-      "seoTitle": "What is a Docker Compose Generator?",
-      "seoContent": "A Docker Compose generator helps you build docker-compose.yml files visually by selecting pre-configured service templates and customizing settings.",
-      "howToUseTitle": "How to Use",
-      "howToUseSteps": [
-        "Add services from presets",
-        "Configure ports and volumes",
-        "Set environment variables",
-        "Copy the docker-compose.yml"
-      ],
-      "useCasesTitle": "Use Cases",
-      "useCases": [
-        "Setting up development environments",
-        "Creating multi-container apps",
-        "Learning Docker Compose",
-        "Quick stack prototyping"
-      ],
-      "faqTitle": "FAQ",
-      "faqs": [
-        {
-          "q": "What service presets are available?",
-          "a": "PostgreSQL, MySQL, MongoDB, Redis, Nginx, Node.js, Python, and more."
-        },
-        {
-          "q": "Does it generate valid YAML?",
-          "a": "Yes, the output is valid docker-compose.yml that can be used directly."
-        }
-      ]
+      "name": "Docker Compose Generator",
+      "description": "Visual docker-compose.yml builder",
+      "pageTitle": "Docker Compose Generator Online - Visual YAML Builder",
+      "pageDescription": "Free online Docker Compose file generator. Create docker-compose.yml with templates for MySQL, Redis, PostgreSQL.",
+      "seoTitle": "Docker Compose Generator",
+      "seoContent": "Visual docker-compose.yml builder",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Free online",
+      "seoFeature2": "No install",
+      "seoFeature3": "Live preview",
+      "seoFeature4": "Copy output"
     },
     "json-to-protobuf": {
       "name": "JSON to Protobuf",
@@ -4659,17 +4639,17 @@
       "seoFeature4": "字段按字母排序"
     },
     "json-to-php": {
-      "name": "JSON 转 PHP",
-      "description": "将 JSON 转换为 PHP 数组和类",
-      "pageTitle": "JSON 转 PHP 转换器 - 在线生成 PHP 数组和类",
-      "pageDescription": "免费在线 JSON 转 PHP 转换器。将 JSON 数据转换为 PHP 关联数组、类型化类或 stdClass 对象。",
-      "seoTitle": "JSON 转 PHP 转换器",
-      "seoContent": "即时将 JSON 数据转换为 PHP 代码。生成关联数组、带构造函数和 getter 的类型化类或 stdClass 对象。",
-      "seoFeaturesTitle": "功能特点",
-      "seoFeature1": "三种输出模式：数组、类和 stdClass",
-      "seoFeature2": "支持 PHP 7.4+ 类型化属性",
-      "seoFeature3": "自动生成构造函数和 getter 方法",
-      "seoFeature4": "嵌套对象和数组处理"
+      "name": "JSON to PHP",
+      "description": "Convert JSON to PHP arrays/classes",
+      "pageTitle": "JSON to PHP Converter Online",
+      "pageDescription": "Free online JSON to PHP converter. Generate PHP arrays, classes, and typed properties from JSON.",
+      "seoTitle": "JSON to PHP",
+      "seoContent": "Convert JSON to PHP arrays/classes",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Free online",
+      "seoFeature2": "No install",
+      "seoFeature3": "Live preview",
+      "seoFeature4": "Copy output"
     },
     "html-to-pug": {
       "name": "HTML 转 Pug",
@@ -5464,6 +5444,32 @@
       "pageDescription": "Free online HTML entity encoder and decoder. Convert between HTML entities and special characters.",
       "seoTitle": "HTML Entity Decoder",
       "seoContent": "Encode/decode HTML entities",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Free online",
+      "seoFeature2": "No install",
+      "seoFeature3": "Live preview",
+      "seoFeature4": "Copy output"
+    },
+    "css-flexbox-playground": {
+      "name": "CSS Flexbox Playground",
+      "description": "Interactive flexbox layout builder",
+      "pageTitle": "CSS Flexbox Playground Online - Interactive Layout Tool",
+      "pageDescription": "Free interactive CSS flexbox playground. Visualize and learn flexbox properties with live preview.",
+      "seoTitle": "CSS Flexbox Playground",
+      "seoContent": "Interactive flexbox layout builder",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Free online",
+      "seoFeature2": "No install",
+      "seoFeature3": "Live preview",
+      "seoFeature4": "Copy output"
+    },
+    "json-to-csv-online": {
+      "name": "JSON to CSV Online",
+      "description": "Convert JSON to CSV format",
+      "pageTitle": "JSON to CSV Converter Online",
+      "pageDescription": "Free online JSON to CSV converter. Convert JSON arrays to CSV with custom delimiters and nested object flattening.",
+      "seoTitle": "JSON to CSV Online",
+      "seoContent": "Convert JSON to CSV format",
       "seoFeaturesTitle": "Features",
       "seoFeature1": "Free online",
       "seoFeature2": "No install",

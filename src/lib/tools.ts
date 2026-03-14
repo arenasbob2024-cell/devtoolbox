@@ -3540,6 +3540,26 @@ export const tools: Tool[] = [
     path: '/tools/html-entity-decoder',
     relatedTools: ['html-entity-encoder', 'url-encoder', 'base64'],
   },
+  {
+    id: 'css-flexbox-playground',
+    name: 'CSS Flexbox Playground',
+    description: 'Interactive CSS flexbox visual playground',
+    icon: '📐',
+    category: 'css',
+    keywords: ['css', 'flexbox', 'playground', 'visual', 'layout', 'interactive'],
+    path: '/tools/css-flexbox-playground',
+    relatedTools: ['css-flexbox-generator', 'css-grid-generator', 'css-shadow-generator'],
+  },
+  {
+    id: 'json-to-csv-online',
+    name: 'JSON to CSV Online',
+    description: 'Convert JSON arrays to CSV format',
+    icon: '📊',
+    category: 'json',
+    keywords: ['json', 'csv', 'converter', 'export', 'table', 'data'],
+    path: '/tools/json-to-csv-online',
+    relatedTools: ['json-to-csv', 'csv-to-json-converter', 'json-formatter'],
+  },
 ];
 
 export function getToolsByCategory(categoryId: string): Tool[] {
