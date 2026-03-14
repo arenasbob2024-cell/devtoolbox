@@ -2664,16 +2664,7 @@ export const tools: Tool[] = [
     path: '/tools/image-to-base64',
     relatedTools: ['base64-encoder-decoder', 'svg-to-css-converter', 'base64-decode'],
   },
-  {
-    id: 'jwt-generator',
-    name: 'JWT Generator & Decoder',
-    description: 'Generate and decode JWT tokens online. Supports HS256/384/512, custom claims, and signature verification.',
-    icon: '🔐',
-    category: 'encoder',
-    keywords: ['jwt generator', 'jwt decoder', 'jwt token generator', 'create jwt token', 'jwt online'],
-    path: '/tools/jwt-generator',
-    relatedTools: ['jwt-decode', 'base64-encoder-decoder', 'hmac-generator'],
-  },
+
   {
     id: 'dns-record-checker',
     name: 'DNS Record Checker',
@@ -3645,36 +3636,7 @@ export const tools: Tool[] = [
     path: '/tools/xml-to-csv',
     relatedTools: ['xml-formatter', 'csv-to-json-converter', 'json-to-csv', 'xml-to-json-converter'],
   },
-  {
-    id: 'color-contrast-checker',
-    name: 'Color Contrast Checker',
-    description: 'Check color contrast ratio for WCAG accessibility compliance. Test foreground and background colors for AA and AAA standards.',
-    icon: '🎨',
-    category: 'css',
-    keywords: ['color contrast', 'wcag', 'accessibility', 'contrast ratio', 'color checker', 'contrast checker', 'wcag aa', 'wcag aaa', 'a11y'],
-    path: '/tools/color-contrast-checker',
-    relatedTools: ['color-converter', 'color-picker-online', 'hex-color-picker', 'color-palette-generator'],
-  },
-  {
-    id: 'jwt-generator',
-    name: 'JWT Generator',
-    description: 'Generate and sign JSON Web Tokens (JWT) with HS256. Create custom headers, payloads, and view decoded parts.',
-    icon: '🔐',
-    category: 'generator',
-    keywords: ['jwt generator', 'jwt token', 'json web token', 'hs256', 'jwt creator', 'jwt builder', 'token generator', 'authentication', 'jwt online'],
-    path: '/tools/jwt-generator',
-    relatedTools: ['jwt-decoder', 'jwt-validator', 'jwt-parser', 'hash-generator', 'base64'],
-  },
-  {
-    id: 'env-to-json',
-    name: '.env to JSON Converter',
-    description: 'Convert environment variable (.env) files to JSON format. Parse KEY=VALUE pairs with support for comments and multiline values.',
-    icon: '⚙️',
-    category: 'converter',
-    keywords: ['env to json', 'environment variables', 'dotenv', '.env converter', 'json converter', 'configuration', 'env file parser', 'environment config'],
-    path: '/tools/env-to-json',
-    relatedTools: ['json-formatter', 'yaml-to-json', 'csv-to-json-converter', 'json-to-yaml'],
-  },
+
 ];
 
 export function getToolsByCategory(categoryId: string): Tool[] {

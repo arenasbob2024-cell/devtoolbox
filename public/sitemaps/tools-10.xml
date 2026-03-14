@@ -3962,336 +3962,6 @@
       <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/image-to-base64"/>
   </url>
   <url>
-    <loc>https://viadreams.cc/en/tools/jwt-generator</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/jwt-generator"/>
-  </url>
-  <url>
-    <loc>https://viadreams.cc/fr/tools/jwt-generator</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/jwt-generator"/>
-  </url>
-  <url>
-    <loc>https://viadreams.cc/de/tools/jwt-generator</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/jwt-generator"/>
-  </url>
-  <url>
-    <loc>https://viadreams.cc/it/tools/jwt-generator</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/jwt-generator"/>
-  </url>
-  <url>
-    <loc>https://viadreams.cc/es/tools/jwt-generator</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/jwt-generator"/>
-  </url>
-  <url>
-    <loc>https://viadreams.cc/pt/tools/jwt-generator</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/jwt-generator"/>
-  </url>
-  <url>
-    <loc>https://viadreams.cc/nl/tools/jwt-generator</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/jwt-generator"/>
-  </url>
-  <url>
-    <loc>https://viadreams.cc/pl/tools/jwt-generator</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/jwt-generator"/>
-  </url>
-  <url>
-    <loc>https://viadreams.cc/sv/tools/jwt-generator</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/jwt-generator"/>
-  </url>
-  <url>
-    <loc>https://viadreams.cc/no/tools/jwt-generator</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/jwt-generator"/>
-  </url>
-  <url>
-    <loc>https://viadreams.cc/zh/tools/jwt-generator</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/jwt-generator"/>
-  </url>
-  <url>
-    <loc>https://viadreams.cc/ja/tools/jwt-generator</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/jwt-generator"/>
-  </url>
-  <url>
-    <loc>https://viadreams.cc/ko/tools/jwt-generator</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/jwt-generator"/>
-  </url>
-  <url>
-    <loc>https://viadreams.cc/id/tools/jwt-generator</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/jwt-generator"/>
-  </url>
-  <url>
-    <loc>https://viadreams.cc/th/tools/jwt-generator</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/jwt-generator"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/jwt-generator"/>
-  </url>
-  <url>
     <loc>https://viadreams.cc/en/tools/dns-record-checker</loc>
     <lastmod>2026-03-14</lastmod>
     <changefreq>monthly</changefreq>
@@ -8250,5 +7920,335 @@
       <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/http-headers-guide"/>
       <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/http-headers-guide"/>
       <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/http-headers-guide"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/en/tools/string-utilities</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/string-utilities"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/fr/tools/string-utilities</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/string-utilities"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/de/tools/string-utilities</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/string-utilities"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/it/tools/string-utilities</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/string-utilities"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/es/tools/string-utilities</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/string-utilities"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pt/tools/string-utilities</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/string-utilities"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/nl/tools/string-utilities</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/string-utilities"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pl/tools/string-utilities</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/string-utilities"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/sv/tools/string-utilities</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/string-utilities"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/no/tools/string-utilities</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/string-utilities"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/zh/tools/string-utilities</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/string-utilities"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ja/tools/string-utilities</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/string-utilities"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ko/tools/string-utilities</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/string-utilities"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/id/tools/string-utilities</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/string-utilities"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/th/tools/string-utilities</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/string-utilities"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/string-utilities"/>
   </url>
 </urlset>

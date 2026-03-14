@@ -6,7 +6,7 @@ import CopyButton from '@/components/CopyButton';
 import { useLang } from '@/i18n/LangContext';
 
 export default function ColorContrastCheckerPage() {
-  const dict = useLang();
+  const { dict } = useLang();
   const t = dict.tools['color-contrast-checker'];
   const [fgColor, setFgColor] = useState('#000000');
   const [bgColor, setBgColor] = useState('#FFFFFF');

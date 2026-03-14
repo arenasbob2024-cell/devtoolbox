@@ -6,7 +6,7 @@ import CopyButton from '@/components/CopyButton';
 import { useLang } from '@/i18n/LangContext';
 
 export default function EnvToJsonPage() {
-  const dict = useLang();
+  const { dict } = useLang();
   const t = dict.tools['env-to-json'];
   const [input, setInput] = useState('');
   const [output, setOutput] = useState('');

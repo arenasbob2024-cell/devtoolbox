@@ -5878,38 +5878,25 @@
     },
     "color-contrast-checker": {
       "name": "Color Contrast Checker",
-      "description": "Check WCAG color contrast ratios for accessibility",
-      "pageTitle": "Check Color Contrast Online Free — Color Contrast Checker | DevToolBox",
-      "pageDescription": "Free online color contrast checker. Generate and preview CSS instantly with live editing. No installation required. Try it for free!",
-      "howToUseTitle": "How to Use",
-      "howToUseSteps": [
-        "Select foreground and background colors",
-        "View the contrast ratio calculation",
-        "Check WCAG AA and AAA compliance levels",
-        "Adjust colors until they pass accessibility standards"
-      ],
-      "useCasesTitle": "Common Use Cases",
-      "useCases": [
-        "Ensuring text accessibility compliance",
-        "Designing accessible websites",
-        "Meeting WCAG 2.1 requirements",
-        "Choosing readable color combinations"
-      ],
-      "faqTitle": "Frequently Asked Questions",
-      "faqs": [
-        {
-          "q": "What is WCAG contrast ratio?",
-          "a": "WCAG recommends a minimum contrast ratio of 4.5:1 for normal text and 3:1 for large text (AA level). AAA requires 7:1 for normal text."
-        },
-        {
-          "q": "What does AA and AAA mean?",
-          "a": "AA is the minimum accessibility standard. AAA is the highest level, providing enhanced accessibility for users with vision impairments."
-        },
-        {
-          "q": "Can I check colors from my website?",
-          "a": "Yes. Use the color picker or enter hex/RGB values to check any color combination you're using."
-        }
-      ]
+      "description": "Check color contrast ratio for WCAG accessibility",
+      "pageTitle": "Color Contrast Checker - WCAG AA/AAA Compliance Online Free",
+      "pageDescription": "Check color contrast ratio between foreground and background colors. Ensure WCAG AA and AAA compliance for web accessibility. Free online tool with real-time preview.",
+      "fgColor": "Foreground Color",
+      "bgColor": "Background Color",
+      "preview": "Preview",
+      "checkBtn": "Check Contrast",
+      "contrastRatio": "Contrast Ratio",
+      "wcagAA": "WCAG AA",
+      "wcagAAA": "WCAG AAA",
+      "normal": "Normal text",
+      "largeText": "Large text",
+      "seoTitle": "What is Color Contrast Checker?",
+      "seoContent": "Check the color contrast ratio between foreground and background colors to ensure WCAG accessibility compliance. This tool calculates the luminance ratio and determines if your colors meet WCAG AA and AAA standards for both normal and large text.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Calculate contrast ratio between two colors",
+      "seoFeature2": "Check WCAG AA and AAA compliance",
+      "seoFeature3": "Real-time preview of color combinations",
+      "seoFeature4": "100% client-side processing — your data never leaves your browser"
     },
     "color-palette-generator": {
       "name": "Color Palette Generator",
@@ -8108,36 +8095,28 @@
       ]
     },
     "jwt-generator": {
-      "name": "Jwt Generator",
-      "description": "Jwt Generator - Free online tool for JWT token decoding. Fast, secure, and easy to use.",
-      "pageTitle": "Jwt Generator Online Free — Developer Tool | DevToolBox",
-      "pageDescription": "Free online jwt generator tool. Jwt token decoding instantly in your browser. No signup required, 100% secure client-side processing. Try it now!",
-      "howToUseSteps": [
-        "Enter or paste your data in the input field",
-        "Configure any options if available",
-        "Click the action button to process",
-        "Copy the result to your clipboard"
-      ],
-      "useCases": [
-        "Development and debugging workflows",
-        "Data format conversion",
-        "Code generation and formatting",
-        "Quick calculations and validation"
-      ],
-      "faqs": [
-        {
-          "q": "Is this Jwt Generator tool free to use?",
-          "a": "Yes, the Jwt Generator tool is completely free. No registration or payment required."
-        },
-        {
-          "q": "Is my data secure?",
-          "a": "Absolutely. All processing happens client-side in your browser. Your data never leaves your device or is sent to any server."
-        },
-        {
-          "q": "What formats does the Jwt Generator tool support?",
-          "a": "The tool supports all standard formats for JWT token decoding. Check the tool interface for specific format options."
-        }
-      ]
+      "name": "JWT Generator",
+      "description": "Generate and sign JSON Web Tokens with HS256",
+      "pageTitle": "JWT Generator Online Free - Create Signed JWT Tokens",
+      "pageDescription": "Free online JWT generator. Create and sign JSON Web Tokens with HS256 algorithm. Customize headers, payloads, and view decoded parts instantly.",
+      "headerLabel": "Header (JSON)",
+      "headerPlaceholder": "Enter header JSON...",
+      "payloadLabel": "Payload (JSON)",
+      "payloadPlaceholder": "Enter payload JSON...",
+      "secretLabel": "Secret Key",
+      "secretPlaceholder": "Enter secret key...",
+      "generateBtn": "Generate JWT",
+      "addTimeClaim": "Add Time Claims",
+      "outputLabel": "Generated JWT",
+      "decodedHeader": "Decoded Header",
+      "decodedPayload": "Decoded Payload",
+      "seoTitle": "What is JWT Generator?",
+      "seoContent": "Generate and sign JSON Web Tokens (JWT) with HS256 algorithm. Create custom headers and payloads, specify your secret key, and get a signed JWT token instantly. Perfect for API authentication and session management testing.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Generate JWT with custom headers and payloads",
+      "seoFeature2": "HS256 (HMAC SHA-256) signing algorithm",
+      "seoFeature3": "View decoded JWT parts for verification",
+      "seoFeature4": "100% client-side processing — your data never leaves your browser"
     },
     "jwt-parser": {
       "name": "Jwt Parser",
@@ -10604,17 +10583,20 @@
       "seoFeature4": "JavaScript and JSON output formats"
     },
     "env-to-json": {
-      "name": ".env to JSON",
-      "description": "Convert between .env and JSON formats",
-      "pageTitle": ".env to JSON Converter - Parse Environment Variables Online",
-      "pageDescription": "Free online .env to JSON converter. Bidirectional conversion between dotenv files and JSON objects with support for comments, quotes, and multiline values.",
-      "seoTitle": ".env to JSON Converter Online",
-      "seoContent": "Convert between .env environment variable files and JSON format. Parse dotenv files, handle quoted values, skip comments, and sort keys.",
+      "name": ".env to JSON Converter",
+      "description": "Convert environment variable files to JSON format",
+      "pageTitle": ".env to JSON Converter Online Free - Parse Environment Files",
+      "pageDescription": "Free online .env to JSON converter. Convert environment variable files to JSON format with support for comments, quotes, and multiline values.",
+      "inputLabel": "Input .env",
+      "inputPlaceholder": "Paste your .env content here...\n\nKEY=value\nAPI_KEY=secret123",
+      "outputLabel": "Output JSON",
+      "seoTitle": "What is .env to JSON Converter?",
+      "seoContent": "Convert environment variable files (.env) to JSON format instantly. Parse KEY=VALUE pairs, handle comments, quoted values, and multiline strings. Perfect for configuration management and environment setup documentation.",
       "seoFeaturesTitle": "Features",
-      "seoFeature1": "Bidirectional .env ↔ JSON conversion",
-      "seoFeature2": "Handle quoted values and comments",
-      "seoFeature3": "Sort keys and configurable quote styles",
-      "seoFeature4": "Multiline value support"
+      "seoFeature1": "Parse .env format to JSON objects",
+      "seoFeature2": "Support for comments, quoted strings, and multiline values",
+      "seoFeature3": "Format output as beautified or minified JSON",
+      "seoFeature4": "100% client-side processing — your data never leaves your browser"
     },
     "regex-to-english": {
       "name": "Regex to English",
@@ -11045,68 +11027,6 @@
           "a": "Yes. Click the Validate button to check if your YAML is syntactically correct. The tool will show detailed error messages if any issues are found."
         }
       ]
-    },
-    "color-contrast-checker": {
-      "name": "Color Contrast Checker",
-      "description": "Check color contrast ratio for WCAG accessibility",
-      "pageTitle": "Color Contrast Checker - WCAG AA/AAA Compliance Online Free",
-      "pageDescription": "Check color contrast ratio between foreground and background colors. Ensure WCAG AA and AAA compliance for web accessibility. Free online tool with real-time preview.",
-      "fgColor": "Foreground Color",
-      "bgColor": "Background Color",
-      "preview": "Preview",
-      "checkBtn": "Check Contrast",
-      "contrastRatio": "Contrast Ratio",
-      "wcagAA": "WCAG AA",
-      "wcagAAA": "WCAG AAA",
-      "normal": "Normal text",
-      "largeText": "Large text",
-      "seoTitle": "What is Color Contrast Checker?",
-      "seoContent": "Check the color contrast ratio between foreground and background colors to ensure WCAG accessibility compliance. This tool calculates the luminance ratio and determines if your colors meet WCAG AA and AAA standards for both normal and large text.",
-      "seoFeaturesTitle": "Features",
-      "seoFeature1": "Calculate contrast ratio between two colors",
-      "seoFeature2": "Check WCAG AA and AAA compliance",
-      "seoFeature3": "Real-time preview of color combinations",
-      "seoFeature4": "100% client-side processing — your data never leaves your browser"
-    },
-    "jwt-generator": {
-      "name": "JWT Generator",
-      "description": "Generate and sign JSON Web Tokens with HS256",
-      "pageTitle": "JWT Generator Online Free - Create Signed JWT Tokens",
-      "pageDescription": "Free online JWT generator. Create and sign JSON Web Tokens with HS256 algorithm. Customize headers, payloads, and view decoded parts instantly.",
-      "headerLabel": "Header (JSON)",
-      "headerPlaceholder": "Enter header JSON...",
-      "payloadLabel": "Payload (JSON)",
-      "payloadPlaceholder": "Enter payload JSON...",
-      "secretLabel": "Secret Key",
-      "secretPlaceholder": "Enter secret key...",
-      "generateBtn": "Generate JWT",
-      "addTimeClaim": "Add Time Claims",
-      "outputLabel": "Generated JWT",
-      "decodedHeader": "Decoded Header",
-      "decodedPayload": "Decoded Payload",
-      "seoTitle": "What is JWT Generator?",
-      "seoContent": "Generate and sign JSON Web Tokens (JWT) with HS256 algorithm. Create custom headers and payloads, specify your secret key, and get a signed JWT token instantly. Perfect for API authentication and session management testing.",
-      "seoFeaturesTitle": "Features",
-      "seoFeature1": "Generate JWT with custom headers and payloads",
-      "seoFeature2": "HS256 (HMAC SHA-256) signing algorithm",
-      "seoFeature3": "View decoded JWT parts for verification",
-      "seoFeature4": "100% client-side processing — your data never leaves your browser"
-    },
-    "env-to-json": {
-      "name": ".env to JSON Converter",
-      "description": "Convert environment variable files to JSON format",
-      "pageTitle": ".env to JSON Converter Online Free - Parse Environment Files",
-      "pageDescription": "Free online .env to JSON converter. Convert environment variable files to JSON format with support for comments, quotes, and multiline values.",
-      "inputLabel": "Input .env",
-      "inputPlaceholder": "Paste your .env content here...\n\nKEY=value\nAPI_KEY=secret123",
-      "outputLabel": "Output JSON",
-      "seoTitle": "What is .env to JSON Converter?",
-      "seoContent": "Convert environment variable files (.env) to JSON format instantly. Parse KEY=VALUE pairs, handle comments, quoted values, and multiline strings. Perfect for configuration management and environment setup documentation.",
-      "seoFeaturesTitle": "Features",
-      "seoFeature1": "Parse .env format to JSON objects",
-      "seoFeature2": "Support for comments, quoted strings, and multiline values",
-      "seoFeature3": "Format output as beautified or minified JSON",
-      "seoFeature4": "100% client-side processing — your data never leaves your browser"
     }
   },
   "footer": {

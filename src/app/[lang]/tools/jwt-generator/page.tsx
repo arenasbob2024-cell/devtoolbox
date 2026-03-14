@@ -17,7 +17,7 @@ const hmacSha256 = async (message: string, secret: string): Promise<string> => {
 };
 
 export default function JwtGeneratorPage() {
-  const dict = useLang();
+  const { dict } = useLang();
   const t = dict.tools['jwt-generator'];
   const [headerJson, setHeaderJson] = useState('{"alg":"HS256","typ":"JWT"}');
   const [payloadJson, setPayloadJson] = useState('{"sub":"1234567890","name":"John Doe","iat":1516239022}');
