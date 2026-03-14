@@ -199,7 +199,7 @@ export default function CronParser() {
             question: t.faqs[1].q,
             answer: (
               <>
-                {t.faqs[1].a} Use the presets below for quick common schedules, or consult the{{' '}}
+                {t.faqs[1].a} Use the presets below for quick common schedules, or consult the{' '}
                 <a href={`/${lang}/tools/crontab-guru`} style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>
                   Crontab Reference
                 </a>{' '}
@@ -211,7 +211,7 @@ export default function CronParser() {
             question: t.faqs[2].q,
             answer: (
               <>
-                {t.faqs[2].a} You can also convert Unix timestamps using our{{' '}}
+                {t.faqs[2].a} You can also convert Unix timestamps using our{' '}
                 <a href={`/${lang}/tools/timestamp-converter`} style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>
                   Timestamp Converter
                 </a>{' '}
@@ -223,10 +223,10 @@ export default function CronParser() {
             question: 'How can I debug a failing cron job?',
             answer: (
               <>
-                First, verify your expression syntax with this parser. Then check your cron logs (usually in /var/log/syslog on Linux). Make sure your script path is absolute and executable. Use our{{' '}}
+                First, verify your expression syntax with this parser. Then check your cron logs (usually in /var/log/syslog on Linux). Make sure your script path is absolute and executable. Use our{' '}
                 <a href={`/${lang}/tools/regex-tester`} style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>
                   Regex Tester
-                </a>{' '}}
+                </a>{' '}
                 if you need to validate patterns in your scripts.
               </>
             ),

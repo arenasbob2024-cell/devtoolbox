@@ -88,7 +88,7 @@ export default function UrlEncoder() {
             question: t.faqs[0].q,
             answer: (
               <>
-                {t.faqs[0].a} Safe URL transmission is essential for APIs. Learn more with our{{' '}}
+                {t.faqs[0].a} Safe URL transmission is essential for APIs. Learn more with our{' '}
                 <a href={`/${lang}/tools/http-request-builder`} style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>
                   HTTP Request Builder
                 </a>
@@ -100,10 +100,10 @@ export default function UrlEncoder() {
             question: t.faqs[1].q,
             answer: (
               <>
-                {t.faqs[1].a} For example, encodeURIComponent("hello&world") includes the &, while encodeURI preserves it. Try our{{' '}}
+                {t.faqs[1].a} For example, encodeURIComponent("hello&world") includes the &, while encodeURI preserves it. Try our{' '}
                 <a href={`/${lang}/tools/base64`} style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>
                   Base64 Encoder
-                </a>{' '}}
+                </a>{' '}
                 for another encoding method.
               </>
             ),
@@ -116,10 +116,10 @@ export default function UrlEncoder() {
             question: 'What about query string encoding?',
             answer: (
               <>
-                Always use encodeURIComponent for query string values. Need to validate your URLs afterward? Try our{{' '}}
+                Always use encodeURIComponent for query string values. Need to validate your URLs afterward? Try our{' '}
                 <a href={`/${lang}/tools/url-parser`} style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>
                   URL Parser
-                </a>{' '}}
+                </a>{' '}
                 to break down URLs into components.
               </>
             ),

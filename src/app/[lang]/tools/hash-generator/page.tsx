@@ -104,11 +104,11 @@ export default function HashGenerator() {
             question: t.faqs[0].q,
             answer: (
               <>
-                {t.faqs[0].a} Try our{{' '}}
+                {t.faqs[0].a} Try our{' '}
                 <a href={`/${lang}/tools/multi-hash-generator`} style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>
                   Multi Hash Generator
-                </a>{' '}}
-                to generate all hash types simultaneously, or create HMAC signatures with our{{' '}}
+                </a>{' '}
+                to generate all hash types simultaneously, or create HMAC signatures with our{' '}
                 <a href={`/${lang}/tools/hmac-generator`} style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>
                   HMAC Generator
                 </a>
@@ -120,10 +120,10 @@ export default function HashGenerator() {
             question: t.faqs[1].q,
             answer: (
               <>
-                {t.faqs[1].a} For password security, use our{{' '}}
+                {t.faqs[1].a} For password security, use our{' '}
                 <a href={`/${lang}/tools/password-generator-online`} style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>
                   Password Generator
-                </a>{' '}}
+                </a>{' '}
                 to create strong passwords, then hash them with SHA-256 or bcrypt.
               </>
             ),
@@ -132,10 +132,10 @@ export default function HashGenerator() {
             question: 'Can I verify file integrity with hashing?',
             answer: (
               <>
-                Yes. Hash your file and compare it with a known hash to verify the file hasn't been modified. Use our{{' '}}
+                Yes. Hash your file and compare it with a known hash to verify the file hasn't been modified. Use our{' '}
                 <a href={`/${lang}/tools/multi-hash-generator`} style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>
                   Multi Hash Generator
-                </a>{' '}}
+                </a>{' '}
                 if you need to generate multiple hashes at once for file verification.
               </>
             ),
@@ -144,10 +144,10 @@ export default function HashGenerator() {
             question: 'Is there a relationship between base64 and hashing?',
             answer: (
               <>
-                No. Base64 is encoding (reversible), while hashing is cryptographic (irreversible). You might base64-encode a hash for transport, but they serve different purposes. Check our{{' '}}
+                No. Base64 is encoding (reversible), while hashing is cryptographic (irreversible). You might base64-encode a hash for transport, but they serve different purposes. Check our{' '}
                 <a href={`/${lang}/tools/base64`} style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>
                   Base64 Tool
-                </a>{' '}}
+                </a>{' '}
                 to learn more about encoding.
               </>
             ),
