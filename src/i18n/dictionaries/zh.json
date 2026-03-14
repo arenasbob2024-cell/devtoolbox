@@ -4940,6 +4940,71 @@
       "seoFeature2": "CREATE TABLE 生成",
       "seoFeature3": "批量 INSERT",
       "seoFeature4": "自动类型推断"
+    },
+    "scss-to-css": {
+      "name": "SCSS 转 CSS",
+      "description": "将 SCSS/Sass 转换为纯 CSS",
+      "pageTitle": "SCSS 转 CSS 转换器 - 在线编译 Sass",
+      "pageDescription": "免费在线 SCSS 转 CSS 转换器。编译 Sass/SCSS 代码为纯 CSS。",
+      "seoTitle": "SCSS 转 CSS 转换器",
+      "seoContent": "即时将 SCSS/Sass 代码转换为纯 CSS。",
+      "seoFeaturesTitle": "功能",
+      "seoFeature1": "SCSS 变量解析",
+      "seoFeature2": "嵌套和父选择器支持",
+      "seoFeature3": "Mixin 处理",
+      "seoFeature4": "嵌套媒体查询"
+    },
+    "diff-viewer": {
+      "name": "差异查看器",
+      "description": "可视化比较文本差异",
+      "pageTitle": "差异查看器 - 在线比较文本和代码",
+      "pageDescription": "免费在线差异查看器。逐行比较两段文本的差异。",
+      "seoTitle": "在线差异查看器",
+      "seoContent": "并排比较文本和代码，可视化显示差异。",
+      "seoFeaturesTitle": "功能",
+      "seoFeature1": "逐行差异颜色标记",
+      "seoFeature2": "忽略空格和大小写选项",
+      "seoFeature3": "差异统计",
+      "seoFeature4": "LCS 精确差异算法"
+    },
+    "api-tester": {
+      "name": "API 测试器",
+      "description": "在浏览器中测试 REST API",
+      "pageTitle": "API 测试器 - 在线测试 REST API 端点",
+      "pageDescription": "免费在线 REST API 测试工具。发送 HTTP 请求并查看响应。",
+      "seoTitle": "在线 REST API 测试器",
+      "seoContent": "直接在浏览器中测试 REST API 端点。",
+      "seoFeaturesTitle": "功能",
+      "seoFeature1": "支持 GET/POST/PUT/PATCH/DELETE",
+      "seoFeature2": "自定义请求头和 JSON Body",
+      "seoFeature3": "响应格式化显示",
+      "seoFeature4": "请求历史记录"
+    },
+    "hex-to-text": {
+      "name": "十六进制转文本",
+      "description": "十六进制字符串和文本互转",
+      "pageTitle": "十六进制转文本转换器",
+      "pageDescription": "免费在线十六进制转文本转换器。",
+      "seoTitle": "十六进制转文本",
+      "seoContent": "在十六进制字符串和可读文本之间转换。",
+      "seoFeaturesTitle": "功能",
+      "seoFeature1": "双向转换",
+      "seoFeature2": "多种格式支持",
+      "seoFeature3": "UTF-8 编码",
+      "seoFeature4": "分隔符配置"
+    },
+    "color-gradient-generator": {
+      "name": "CSS 渐变生成器",
+      "description": "可视化创建 CSS 渐变",
+      "pageTitle": "CSS 渐变生成器 - 在线创建渐变",
+      "pageDescription": "免费在线 CSS 渐变生成器。创建线性、径向和锥形渐变。",
+      "seoTitle": "CSS 渐变生成器",
+      "seoContent": "使用可视化编辑器创建 CSS 渐变。",
+      "seoFeaturesTitle": "功能",
+      "seoFeature1": "线性、径向和锥形渐变",
+      "seoFeature2": "多个颜色停止点",
+      "seoFeature3": "实时渐变预览",
+      "seoFeature4": "预设渐变模板"
     }
   },
   "footer": {

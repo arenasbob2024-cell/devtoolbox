@@ -4864,6 +4864,71 @@
       "seoFeature2": "CREATE TABLE statement generation",
       "seoFeature3": "Batch INSERT with multiple VALUES",
       "seoFeature4": "Automatic type inference"
+    },
+    "scss-to-css": {
+      "name": "SCSS to CSS",
+      "description": "Convert SCSS/Sass to plain CSS",
+      "pageTitle": "SCSS to CSS Converter - Compile Sass Online",
+      "pageDescription": "Free online SCSS to CSS converter. Compile Sass/SCSS code to plain CSS with variable resolution, nesting, and mixin support.",
+      "seoTitle": "SCSS to CSS Converter Online",
+      "seoContent": "Convert SCSS/Sass code to plain CSS instantly. Handles variables, nesting, parent selectors, mixins, and media queries.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "SCSS variable resolution",
+      "seoFeature2": "Nesting and parent selector (&) support",
+      "seoFeature3": "Basic mixin and include handling",
+      "seoFeature4": "Nested media query support"
+    },
+    "diff-viewer": {
+      "name": "Diff Viewer",
+      "description": "Compare text with visual diff highlighting",
+      "pageTitle": "Diff Viewer - Compare Text & Code Online",
+      "pageDescription": "Free online diff viewer. Compare two text blocks with line-by-line diff highlighting showing additions, deletions, and unchanged lines.",
+      "seoTitle": "Online Diff Viewer & Text Compare Tool",
+      "seoContent": "Compare text and code side by side with visual diff highlighting. Shows line-by-line additions, deletions, and unchanged content with statistics.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Line-by-line diff with color coding",
+      "seoFeature2": "Ignore whitespace and case options",
+      "seoFeature3": "Diff statistics (added/removed/unchanged)",
+      "seoFeature4": "LCS-based accurate diff algorithm"
+    },
+    "api-tester": {
+      "name": "API Tester",
+      "description": "Test REST API endpoints in your browser",
+      "pageTitle": "API Tester - Test REST API Endpoints Online",
+      "pageDescription": "Free online REST API testing tool. Send HTTP requests with custom headers and body, view responses with formatting.",
+      "seoTitle": "Online REST API Tester",
+      "seoContent": "Test REST API endpoints directly from your browser. Send GET, POST, PUT, PATCH, DELETE requests with custom headers, JSON body, and view formatted responses.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Support for GET, POST, PUT, PATCH, DELETE methods",
+      "seoFeature2": "Custom headers and JSON body editor",
+      "seoFeature3": "Response formatting with status code and timing",
+      "seoFeature4": "Request history tracking"
+    },
+    "hex-to-text": {
+      "name": "Hex to Text",
+      "description": "Convert between hex strings and text",
+      "pageTitle": "Hex to Text Converter - Convert Hexadecimal Online",
+      "pageDescription": "Free online hex to text converter. Convert hexadecimal strings to readable text and text to hex with multiple format support.",
+      "seoTitle": "Hex to Text Converter Online",
+      "seoContent": "Convert between hexadecimal strings and readable text. Supports multiple hex formats, UTF-8 encoding, and configurable separators.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Bidirectional hex ↔ text conversion",
+      "seoFeature2": "Multiple hex format support (spaced, 0x prefix)",
+      "seoFeature3": "UTF-8 character encoding",
+      "seoFeature4": "Configurable separator and case options"
+    },
+    "color-gradient-generator": {
+      "name": "CSS Gradient Generator",
+      "description": "Create CSS gradients visually",
+      "pageTitle": "CSS Gradient Generator - Create Beautiful Gradients Online",
+      "pageDescription": "Free online CSS gradient generator. Build linear, radial, and conic gradients with multiple color stops and live preview.",
+      "seoTitle": "CSS Gradient Generator Online",
+      "seoContent": "Create beautiful CSS gradients with a visual editor. Build linear, radial, and conic gradients with multiple color stops, angle control, and preset templates.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Linear, radial, and conic gradient types",
+      "seoFeature2": "Multiple color stops with visual editing",
+      "seoFeature3": "Live gradient preview",
+      "seoFeature4": "Preset gradient templates"
     }
   },
   "footer": {
