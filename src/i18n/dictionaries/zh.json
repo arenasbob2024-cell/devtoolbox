@@ -5203,6 +5203,19 @@
       "seoFeature2": "Serde derive 宏（Serialize、Deserialize、Debug、Clone）",
       "seoFeature3": "可配置的字段命名策略",
       "seoFeature4": "支持可空字段的 Option<T>"
+    },
+    "toml-to-yaml": {
+      "name": "TOML to YAML Converter",
+      "description": "Convert TOML configuration files to YAML format",
+      "pageTitle": "TOML to YAML Converter Online - Free Tool",
+      "pageDescription": "Convert TOML to YAML format online. Free TOML to YAML converter with proper type handling, tables, arrays, and nested structures support.",
+      "seoTitle": "TOML to YAML Converter",
+      "seoContent": "Convert TOML configuration files to YAML format instantly with our free online tool. Perfect for migrating between configuration formats.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Full TOML parsing support including tables and arrays",
+      "seoFeature2": "Proper YAML output with configurable indentation",
+      "seoFeature3": "Handles nested structures and inline tables",
+      "seoFeature4": "Real-time conversion with error handling"
     }
   },
   "footer": {

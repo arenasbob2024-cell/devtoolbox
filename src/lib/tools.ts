@@ -3554,6 +3554,15 @@ export const tools: Tool[] = [
     keywords: ['json to rust', 'json to rust struct', 'rust struct generator', 'json to rust converter', 'serde', 'rust serialize', 'rust deserialize', 'convert json to rust'],
     path: '/tools/json-to-rust-struct',
     relatedTools: ['json-to-go-struct', 'json-to-typescript', 'json-to-java', 'json-to-csharp'],
+  {
+    id: 'toml-to-yaml',
+    name: 'TOML to YAML Converter',
+    description: 'Convert TOML configuration files to YAML format online. Free TOML to YAML converter with proper type handling.',
+    icon: '🔄',
+    category: 'converter',
+    keywords: ['toml to yaml', 'toml converter', 'yaml converter', 'toml to yaml online', 'convert toml to yaml', 'configuration converter', 'cargo toml to yaml'],
+    path: '/tools/toml-to-yaml',
+    relatedTools: ['yaml-to-toml', 'yaml-to-json', 'json-to-yaml', 'yaml-validator'],
   },
 ];
 

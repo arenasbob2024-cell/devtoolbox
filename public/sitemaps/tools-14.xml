@@ -331,4 +331,334 @@
       <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/json-to-rust-struct"/>
       <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/json-to-rust-struct"/>
   </url>
+  <url>
+    <loc>https://viadreams.cc/en/tools/toml-to-yaml</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/toml-to-yaml"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/fr/tools/toml-to-yaml</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/toml-to-yaml"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/de/tools/toml-to-yaml</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/toml-to-yaml"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/it/tools/toml-to-yaml</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/toml-to-yaml"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/es/tools/toml-to-yaml</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/toml-to-yaml"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pt/tools/toml-to-yaml</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/toml-to-yaml"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/nl/tools/toml-to-yaml</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/toml-to-yaml"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pl/tools/toml-to-yaml</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/toml-to-yaml"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/sv/tools/toml-to-yaml</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/toml-to-yaml"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/no/tools/toml-to-yaml</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/toml-to-yaml"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/zh/tools/toml-to-yaml</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/toml-to-yaml"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ja/tools/toml-to-yaml</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/toml-to-yaml"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ko/tools/toml-to-yaml</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/toml-to-yaml"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/id/tools/toml-to-yaml</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/toml-to-yaml"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/th/tools/toml-to-yaml</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/toml-to-yaml"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/toml-to-yaml"/>
+  </url>
 </urlset>
