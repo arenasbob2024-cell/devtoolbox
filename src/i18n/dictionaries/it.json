@@ -4669,6 +4669,71 @@
       "seoFeature2": "Converti qualsiasi data in epoch Unix (secondi e millisecondi)",
       "seoFeature3": "Rilevamento automatico del formato di input - identifica correttamente secondi vs millisecondi",
       "seoFeature4": "Visualizza i risultati in piu formati: ISO 8601, UTC, ora locale, tempo relativo, fuso orario e giorno della settimana"
+    },
+    "json-to-swift": {
+      "name": "JSON a Swift",
+      "description": "Converti JSON in strutture Swift Codable",
+      "pageTitle": "Convertitore JSON a Swift - Genera Struct Codable Online",
+      "pageDescription": "Convertitore JSON a Swift gratuito online. Genera strutture Codable con CodingKeys e proprietà opzionali.",
+      "seoTitle": "Convertitore JSON a Swift",
+      "seoContent": "Converti istantaneamente i dati JSON in strutture Swift Codable con il nostro strumento online gratuito.",
+      "seoFeaturesTitle": "Funzionalità",
+      "seoFeature1": "Inferenza automatica dei tipi Swift",
+      "seoFeature2": "Generazione di CodingKeys",
+      "seoFeature3": "Supporto strutture annidate",
+      "seoFeature4": "Supporto proprietà opzionali"
+    },
+    "graphql-formatter": {
+      "name": "Formattatore GraphQL",
+      "description": "Formatta e abbellisci query GraphQL",
+      "pageTitle": "Formattatore GraphQL - Formatta query online",
+      "pageDescription": "Formattatore GraphQL gratuito online. Formatta e minifica query, mutazioni e sottoscrizioni GraphQL.",
+      "seoTitle": "Formattatore GraphQL Online",
+      "seoContent": "Formatta e abbellisci le tue query GraphQL con il nostro strumento gratuito online.",
+      "seoFeaturesTitle": "Funzionalità",
+      "seoFeature1": "Formatta query, mutazioni e sottoscrizioni",
+      "seoFeature2": "Minifica GraphQL per la produzione",
+      "seoFeature3": "Indentazione configurabile",
+      "seoFeature4": "Ordina campi alfabeticamente"
+    },
+    "json-to-php": {
+      "name": "JSON a PHP",
+      "description": "Converti JSON in array e classi PHP",
+      "pageTitle": "Convertitore JSON a PHP - Genera array e classi PHP online",
+      "pageDescription": "Convertitore JSON a PHP gratuito. Converti JSON in array associativi, classi tipizzate o oggetti stdClass.",
+      "seoTitle": "Convertitore JSON a PHP",
+      "seoContent": "Converti istantaneamente i dati JSON in codice PHP con il nostro strumento gratuito.",
+      "seoFeaturesTitle": "Funzionalità",
+      "seoFeature1": "Tre modalità: Array, Classe e stdClass",
+      "seoFeature2": "Proprietà tipizzate PHP 7.4+",
+      "seoFeature3": "Costruttori e getter auto-generati",
+      "seoFeature4": "Gestione oggetti annidati"
+    },
+    "html-to-pug": {
+      "name": "HTML a Pug",
+      "description": "Converti HTML in template Pug (Jade)",
+      "pageTitle": "Convertitore HTML a Pug - Converti HTML in Jade online",
+      "pageDescription": "Convertitore HTML a Pug (Jade) gratuito. Trasforma HTML in sintassi Pug con scorciatoie per classi e indentazione.",
+      "seoTitle": "Convertitore HTML a Pug",
+      "seoContent": "Converti HTML in sintassi Pug (Jade) istantaneamente. Scorciatoie div, notazione abbreviata per classi e ID.",
+      "seoFeaturesTitle": "Funzionalità",
+      "seoFeature1": "Scorciatoia div automatica",
+      "seoFeature2": "Notazione abbreviata per classi e ID",
+      "seoFeature3": "Indentazione configurabile",
+      "seoFeature4": "Rilevamento tag auto-chiudenti"
+    },
+    "yaml-to-toml": {
+      "name": "YAML a TOML",
+      "description": "Converti tra YAML e TOML",
+      "pageTitle": "Convertitore YAML a TOML - Converti file di configurazione online",
+      "pageDescription": "Convertitore YAML a TOML gratuito. Conversione bidirezionale tra YAML e TOML con sezioni e array.",
+      "seoTitle": "Convertitore YAML a TOML",
+      "seoContent": "Converti tra YAML e TOML istantaneamente. Conversione bidirezionale con sezioni e array TOML.",
+      "seoFeaturesTitle": "Funzionalità",
+      "seoFeature1": "Conversione bidirezionale YAML ↔ TOML",
+      "seoFeature2": "Sintassi TOML [section] e [[array]]",
+      "seoFeature3": "Oggetti annidati e array di tabelle",
+      "seoFeature4": "Template di configurazione inclusi"
     }
   },
   "footer": {

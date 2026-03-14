@@ -4666,6 +4666,71 @@
       "seoFeature2": "Konvertieren Sie jedes Datum in Unix-Epoch (Sekunden und Millisekunden)",
       "seoFeature3": "Automatische Eingabeformaterkennung - unterscheiden Sie korrekt zwischen Sekunden und Millisekunden",
       "seoFeature4": "Zeigen Sie Ergebnisse in mehreren Formaten an: ISO 8601, UTC, Ortszeit, relative Zeit, Zeitzone und Wochentag"
+    },
+    "json-to-swift": {
+      "name": "JSON zu Swift",
+      "description": "JSON in Swift Codable Structs konvertieren",
+      "pageTitle": "JSON zu Swift Konverter - Codable Structs online generieren",
+      "pageDescription": "Kostenloser Online JSON zu Swift Konverter. Generieren Sie typsichere Codable Structs aus JSON-Daten.",
+      "seoTitle": "JSON zu Swift Konverter",
+      "seoContent": "Konvertieren Sie JSON-Daten sofort in Swift Codable Structs mit unserem kostenlosen Online-Tool.",
+      "seoFeaturesTitle": "Funktionen",
+      "seoFeature1": "Automatische Swift-Typinferenz",
+      "seoFeature2": "CodingKeys-Generierung",
+      "seoFeature3": "Unterstützung verschachtelter Structs",
+      "seoFeature4": "Unterstützung optionaler Eigenschaften"
+    },
+    "graphql-formatter": {
+      "name": "GraphQL Formatierer",
+      "description": "GraphQL-Abfragen formatieren und verschönern",
+      "pageTitle": "GraphQL Formatierer - Abfragen online formatieren",
+      "pageDescription": "Kostenloser Online GraphQL Formatierer. Formatieren und minifizieren Sie GraphQL-Abfragen, Mutationen und Abonnements.",
+      "seoTitle": "GraphQL Formatierer Online",
+      "seoContent": "Formatieren und verschönern Sie Ihre GraphQL-Abfragen mit unserem kostenlosen Online-Tool.",
+      "seoFeaturesTitle": "Funktionen",
+      "seoFeature1": "Abfragen, Mutationen und Abonnements formatieren",
+      "seoFeature2": "GraphQL für Produktion minifizieren",
+      "seoFeature3": "Konfigurierbare Einrückung",
+      "seoFeature4": "Felder alphabetisch sortieren"
+    },
+    "json-to-php": {
+      "name": "JSON zu PHP",
+      "description": "JSON in PHP-Arrays und Klassen konvertieren",
+      "pageTitle": "JSON zu PHP Konverter - PHP-Arrays und Klassen online generieren",
+      "pageDescription": "Kostenloser JSON zu PHP Konverter. Konvertieren Sie JSON in assoziative Arrays, typisierte Klassen oder stdClass-Objekte.",
+      "seoTitle": "JSON zu PHP Konverter",
+      "seoContent": "Konvertieren Sie JSON-Daten sofort in PHP-Code mit unserem kostenlosen Tool.",
+      "seoFeaturesTitle": "Funktionen",
+      "seoFeature1": "Drei Modi: Array, Klasse und stdClass",
+      "seoFeature2": "PHP 7.4+ typisierte Eigenschaften",
+      "seoFeature3": "Auto-generierte Konstruktoren und Getter",
+      "seoFeature4": "Verschachtelte Objekte und Arrays"
+    },
+    "html-to-pug": {
+      "name": "HTML zu Pug",
+      "description": "HTML in Pug (Jade) Templates konvertieren",
+      "pageTitle": "HTML zu Pug Konverter - HTML in Jade Template online konvertieren",
+      "pageDescription": "Kostenloser HTML zu Pug (Jade) Konverter. Transformieren Sie HTML in saubere Pug-Template-Syntax.",
+      "seoTitle": "HTML zu Pug Konverter",
+      "seoContent": "Konvertieren Sie HTML sofort in Pug-Template-Syntax. Div-Shortcuts, Klassen- und ID-Kurzschreibweise.",
+      "seoFeaturesTitle": "Funktionen",
+      "seoFeature1": "Automatischer div-Shortcut",
+      "seoFeature2": "Klassen- und ID-Kurzschreibweise",
+      "seoFeature3": "Konfigurierbare Einrückung",
+      "seoFeature4": "Erkennung selbstschließender Tags"
+    },
+    "yaml-to-toml": {
+      "name": "YAML zu TOML",
+      "description": "Zwischen YAML und TOML konvertieren",
+      "pageTitle": "YAML zu TOML Konverter - Konfigurationsdateien online konvertieren",
+      "pageDescription": "Kostenloser YAML zu TOML Konverter. Bidirektionale Konvertierung zwischen YAML und TOML.",
+      "seoTitle": "YAML zu TOML Konverter",
+      "seoContent": "Konvertieren Sie sofort zwischen YAML und TOML. Bidirektionale Konvertierung mit TOML-Abschnitten.",
+      "seoFeaturesTitle": "Funktionen",
+      "seoFeature1": "Bidirektionale YAML ↔ TOML Konvertierung",
+      "seoFeature2": "TOML [section] und [[array]] Syntax",
+      "seoFeature3": "Verschachtelte Objekte und Tabellen-Arrays",
+      "seoFeature4": "Beispielkonfigurationen enthalten"
     }
   },
   "footer": {

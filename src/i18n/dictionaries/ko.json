@@ -4669,6 +4669,71 @@
       "seoFeature2": "모든 날짜를 Unix 에포크(초 및 밀리초)로 변환",
       "seoFeature3": "입력 형식 자동 감지 - 초와 밀리초를 올바르게 식별",
       "seoFeature4": "여러 형식으로 결과 표시: ISO 8601, UTC, 현지 시간, 상대 시간, 시간대 및 요일"
+    },
+    "json-to-swift": {
+      "name": "JSON to Swift 변환",
+      "description": "JSON을 Swift Codable 구조체로 변환",
+      "pageTitle": "JSON to Swift 변환기 - 온라인 Codable 구조체 생성",
+      "pageDescription": "무료 온라인 JSON to Swift 변환기. JSON 데이터에서 타입 안전한 Codable 구조체를 생성합니다.",
+      "seoTitle": "JSON to Swift 변환기",
+      "seoContent": "JSON 데이터를 Swift Codable 구조체로 즉시 변환하는 무료 온라인 도구입니다.",
+      "seoFeaturesTitle": "기능",
+      "seoFeature1": "자동 Swift 타입 추론",
+      "seoFeature2": "CodingKeys 자동 생성",
+      "seoFeature3": "중첩 구조체 지원",
+      "seoFeature4": "옵셔널 프로퍼티 지원"
+    },
+    "graphql-formatter": {
+      "name": "GraphQL 포맷터",
+      "description": "GraphQL 쿼리 포맷 및 정리",
+      "pageTitle": "GraphQL 포맷터 - 온라인 쿼리 정리",
+      "pageDescription": "무료 온라인 GraphQL 포맷터. GraphQL 쿼리, 뮤테이션, 구독을 포맷, 정리, 압축합니다.",
+      "seoTitle": "GraphQL 포맷터",
+      "seoContent": "무료 온라인 GraphQL 포맷터로 쿼리를 포맷하고 정리하세요.",
+      "seoFeaturesTitle": "기능",
+      "seoFeature1": "쿼리, 뮤테이션, 구독 포맷",
+      "seoFeature2": "프로덕션용 GraphQL 압축",
+      "seoFeature3": "들여쓰기 설정 가능",
+      "seoFeature4": "필드 알파벳 순 정렬"
+    },
+    "json-to-php": {
+      "name": "JSON to PHP",
+      "description": "JSON을 PHP 배열과 클래스로 변환",
+      "pageTitle": "JSON to PHP 변환기 - PHP 배열과 클래스 온라인 생성",
+      "pageDescription": "무료 온라인 JSON to PHP 변환기. JSON 데이터를 PHP 연관 배열, 타입 클래스, stdClass 객체로 변환합니다.",
+      "seoTitle": "JSON to PHP 변환기",
+      "seoContent": "JSON 데이터를 PHP 코드로 즉시 변환하세요. 연관 배열, 타입 클래스, stdClass 객체를 생성합니다.",
+      "seoFeaturesTitle": "기능",
+      "seoFeature1": "3가지 출력 모드: 배열, 클래스, stdClass",
+      "seoFeature2": "PHP 7.4+ 타입 프로퍼티 지원",
+      "seoFeature3": "생성자와 getter 자동 생성",
+      "seoFeature4": "중첩 객체와 배열 처리"
+    },
+    "html-to-pug": {
+      "name": "HTML to Pug",
+      "description": "HTML을 Pug (Jade) 템플릿으로 변환",
+      "pageTitle": "HTML to Pug 변환기 - HTML을 Jade 템플릿으로 온라인 변환",
+      "pageDescription": "무료 온라인 HTML to Pug 변환기. HTML 마크업을 깔끔한 Pug 템플릿 구문으로 변환합니다.",
+      "seoTitle": "HTML to Pug 변환기",
+      "seoContent": "HTML 마크업을 Pug 템플릿 구문으로 즉시 변환하세요.",
+      "seoFeaturesTitle": "기능",
+      "seoFeature1": "자동 div 단축키",
+      "seoFeature2": "클래스와 ID 단축 표기법",
+      "seoFeature3": "들여쓰기 설정 가능",
+      "seoFeature4": "자체 닫기 태그 감지"
+    },
+    "yaml-to-toml": {
+      "name": "YAML to TOML",
+      "description": "YAML과 TOML 형식 간 변환",
+      "pageTitle": "YAML to TOML 변환기 - 설정 파일 온라인 변환",
+      "pageDescription": "무료 온라인 YAML to TOML 변환기. YAML과 TOML 설정 형식 간의 양방향 변환을 지원합니다.",
+      "seoTitle": "YAML to TOML 변환기",
+      "seoContent": "YAML과 TOML 설정 형식 간을 즉시 변환하세요. 양방향 변환 지원.",
+      "seoFeaturesTitle": "기능",
+      "seoFeature1": "양방향 YAML ↔ TOML 변환",
+      "seoFeature2": "TOML [section]과 [[array]] 구문",
+      "seoFeature3": "중첩 객체와 테이블 배열 처리",
+      "seoFeature4": "샘플 설정 템플릿 포함"
     }
   },
   "footer": {

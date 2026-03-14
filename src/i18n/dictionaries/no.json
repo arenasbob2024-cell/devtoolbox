@@ -4669,6 +4669,71 @@
       "seoFeature2": "Konverter enhver dato til Unix epoch (sekunder og millisekunder)",
       "seoFeature3": "Automatisk gjenkjenning av inndata-format - identifiser korrekt sekunder vs millisekunder",
       "seoFeature4": "Vis resultater i flere formater: ISO 8601, UTC, lokal tid, relativ tid, tidssone og ukedag"
+    },
+    "json-to-swift": {
+      "name": "JSON til Swift",
+      "description": "Konverter JSON til Swift Codable structs",
+      "pageTitle": "JSON til Swift Konverter - Generer Codable Structs Online",
+      "pageDescription": "Gratis online JSON til Swift konverter. Generer typesikre Codable structs fra JSON-data.",
+      "seoTitle": "JSON til Swift Konverter",
+      "seoContent": "Konverter JSON-data direkte til Swift Codable structs med vårt gratis onlineverktøy.",
+      "seoFeaturesTitle": "Funksjoner",
+      "seoFeature1": "Automatisk Swift-typeinferens",
+      "seoFeature2": "CodingKeys-generering",
+      "seoFeature3": "Støtte for nestede structs",
+      "seoFeature4": "Støtte for valgfrie egenskaper"
+    },
+    "graphql-formatter": {
+      "name": "GraphQL Formatterer",
+      "description": "Formater og forskjønn GraphQL-spørringer",
+      "pageTitle": "GraphQL Formatterer - Formater spørringer online",
+      "pageDescription": "Gratis online GraphQL formatterer. Formater og minifiser GraphQL-spørringer, mutasjoner og abonnementer.",
+      "seoTitle": "GraphQL Formatterer Online",
+      "seoContent": "Formater og forskjønn GraphQL-spørringene dine med vårt gratis onlineverktøy.",
+      "seoFeaturesTitle": "Funksjoner",
+      "seoFeature1": "Formater spørringer, mutasjoner og abonnementer",
+      "seoFeature2": "Minifiser GraphQL for produksjon",
+      "seoFeature3": "Konfigurerbar innrykk",
+      "seoFeature4": "Sorter felt alfabetisk"
+    },
+    "json-to-php": {
+      "name": "JSON til PHP",
+      "description": "Konverter JSON til PHP-arrays og klasser",
+      "pageTitle": "JSON til PHP Konverter - Generer PHP-arrays og klasser online",
+      "pageDescription": "Gratis JSON til PHP konverter. Konverter JSON til assosiative arrays, typede klasser eller stdClass-objekter.",
+      "seoTitle": "JSON til PHP Konverter",
+      "seoContent": "Konverter JSON-data direkte til PHP-kode med vårt gratis verktøy.",
+      "seoFeaturesTitle": "Funksjoner",
+      "seoFeature1": "Tre moduser: Array, Klasse og stdClass",
+      "seoFeature2": "PHP 7.4+ typede egenskaper",
+      "seoFeature3": "Auto-genererte konstruktører og getters",
+      "seoFeature4": "Nestede objekter og arrays"
+    },
+    "html-to-pug": {
+      "name": "HTML til Pug",
+      "description": "Konverter HTML til Pug (Jade) maler",
+      "pageTitle": "HTML til Pug Konverter - Konverter HTML til Jade online",
+      "pageDescription": "Gratis HTML til Pug (Jade) konverter. Transformer HTML til Pug-syntaks med klassesnarveier og innrykk.",
+      "seoTitle": "HTML til Pug Konverter",
+      "seoContent": "Konverter HTML direkte til Pug-template-syntaks. Div-snarveier, forkortet klasse- og ID-notasjon.",
+      "seoFeaturesTitle": "Funksjoner",
+      "seoFeature1": "Automatisk div-snarvei",
+      "seoFeature2": "Forkortet klasse- og ID-notasjon",
+      "seoFeature3": "Konfigurerbar innrykk",
+      "seoFeature4": "Oppdaging av selvlukkende tagger"
+    },
+    "yaml-to-toml": {
+      "name": "YAML til TOML",
+      "description": "Konverter mellom YAML og TOML",
+      "pageTitle": "YAML til TOML Konverter - Konverter konfigurasjonsfiler online",
+      "pageDescription": "Gratis YAML til TOML konverter. Toveis konvertering mellom YAML og TOML.",
+      "seoTitle": "YAML til TOML Konverter",
+      "seoContent": "Konverter direkte mellom YAML og TOML. Toveis konvertering med TOML-seksjoner og arrays.",
+      "seoFeaturesTitle": "Funksjoner",
+      "seoFeature1": "Toveis YAML ↔ TOML konvertering",
+      "seoFeature2": "TOML [section] og [[array]] syntaks",
+      "seoFeature3": "Nestede objekter og tabell-arrays",
+      "seoFeature4": "Eksempelkonfigurasjoner inkludert"
     }
   },
   "footer": {

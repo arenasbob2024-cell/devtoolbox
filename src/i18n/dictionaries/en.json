@@ -10529,6 +10529,71 @@
       "seoFeature2": "Convert any date to Unix epoch (both seconds and milliseconds)",
       "seoFeature3": "Auto-detect input format - correctly identify seconds vs milliseconds",
       "seoFeature4": "Display results in multiple formats: ISO 8601, UTC, local time, relative time, timezone, and day of week"
+    },
+    "json-to-swift": {
+      "name": "JSON to Swift",
+      "description": "Convert JSON to Swift Codable structs",
+      "pageTitle": "JSON to Swift Converter - Generate Codable Structs Online",
+      "pageDescription": "Free online JSON to Swift converter. Generate type-safe Codable structs from JSON data with CodingKeys, optional properties, and nested type support.",
+      "seoTitle": "JSON to Swift Converter - Online Codable Struct Generator",
+      "seoContent": "Convert JSON data to Swift Codable structs instantly with our free online converter. Generate type-safe Swift models with proper CodingKeys, optional properties, and nested object support. Perfect for iOS, macOS, and Swift server-side development.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Automatic Swift type inference (String, Int, Double, Bool)",
+      "seoFeature2": "CodingKeys generation for JSON key to property name mapping",
+      "seoFeature3": "Nested struct generation for complex JSON objects",
+      "seoFeature4": "Support for optional properties and let/var declarations"
+    },
+    "graphql-formatter": {
+      "name": "GraphQL Formatter",
+      "description": "Format and beautify GraphQL queries",
+      "pageTitle": "GraphQL Formatter & Beautifier - Format Queries Online",
+      "pageDescription": "Free online GraphQL formatter and beautifier. Format, prettify, and minify GraphQL queries, mutations, and subscriptions with proper indentation.",
+      "seoTitle": "GraphQL Formatter & Beautifier Online",
+      "seoContent": "Format and beautify your GraphQL queries, mutations, and subscriptions with our free online GraphQL formatter. Supports proper indentation, minification, and field sorting.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Format queries, mutations, and subscriptions",
+      "seoFeature2": "Minify GraphQL for production use",
+      "seoFeature3": "Configurable indentation (2 or 4 spaces)",
+      "seoFeature4": "Sort fields alphabetically"
+    },
+    "json-to-php": {
+      "name": "JSON to PHP",
+      "description": "Convert JSON to PHP arrays and classes",
+      "pageTitle": "JSON to PHP Converter - Generate PHP Arrays & Classes Online",
+      "pageDescription": "Free online JSON to PHP converter. Convert JSON data to PHP associative arrays, typed classes, or stdClass objects with constructors and getters.",
+      "seoTitle": "JSON to PHP Converter Online",
+      "seoContent": "Convert JSON data to PHP code instantly. Generate associative arrays, typed classes with constructors and getters, or stdClass objects. Supports nested objects and PHP 7.4+ typed properties.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Three output modes: Array, Class, and stdClass",
+      "seoFeature2": "PHP 7.4+ typed properties support",
+      "seoFeature3": "Auto-generated constructors and getter methods",
+      "seoFeature4": "Nested object and array handling"
+    },
+    "html-to-pug": {
+      "name": "HTML to Pug",
+      "description": "Convert HTML to Pug (Jade) templates",
+      "pageTitle": "HTML to Pug Converter - Convert HTML to Jade Template Online",
+      "pageDescription": "Free online HTML to Pug (Jade) converter. Transform HTML markup into clean Pug template syntax with class shortcuts, ID shorthand, and proper indentation.",
+      "seoTitle": "HTML to Pug (Jade) Converter Online",
+      "seoContent": "Convert HTML markup to clean Pug (Jade) template syntax instantly. Supports div shortcuts, class and ID shorthand notation, proper indentation, and attribute handling.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Automatic div shortcut (.class instead of div.class)",
+      "seoFeature2": "Class and ID shorthand notation",
+      "seoFeature3": "Configurable indentation (2 or 4 spaces)",
+      "seoFeature4": "Self-closing tag detection and handling"
+    },
+    "yaml-to-toml": {
+      "name": "YAML to TOML",
+      "description": "Convert between YAML and TOML formats",
+      "pageTitle": "YAML to TOML Converter - Convert Config Files Online",
+      "pageDescription": "Free online YAML to TOML converter. Bidirectional conversion between YAML and TOML configuration formats with proper section and array handling.",
+      "seoTitle": "YAML to TOML Converter Online",
+      "seoContent": "Convert between YAML and TOML configuration formats instantly. Bidirectional conversion with proper TOML section headers, array of tables, and nested object support.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Bidirectional YAML ↔ TOML conversion",
+      "seoFeature2": "Proper TOML [section] and [[array]] syntax",
+      "seoFeature3": "Handles nested objects and arrays of tables",
+      "seoFeature4": "Sample configuration templates included"
     }
   },
   "footer": {

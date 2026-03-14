@@ -4669,6 +4669,71 @@
       "seoFeature2": "Konwertuj dowolna date na epoch Unix (sekundy i milisekundy)",
       "seoFeature3": "Automatyczne wykrywanie formatu wejscia - prawidlowo zidentyfikuj sekundy vs milisekundy",
       "seoFeature4": "Wyswietl wyniki w wielu formatach: ISO 8601, UTC, czas lokalny, czas wzgledny, strefa czasowa i dzien tygodnia"
+    },
+    "json-to-swift": {
+      "name": "JSON do Swift",
+      "description": "Konwertuj JSON na struktury Swift Codable",
+      "pageTitle": "Konwerter JSON do Swift - Generuj Struktury Codable Online",
+      "pageDescription": "Darmowy konwerter JSON do Swift online. Generuj bezpieczne typowo struktury Codable z danych JSON.",
+      "seoTitle": "Konwerter JSON do Swift",
+      "seoContent": "Konwertuj dane JSON na struktury Swift Codable natychmiast za pomocą naszego darmowego narzędzia online.",
+      "seoFeaturesTitle": "Funkcje",
+      "seoFeature1": "Automatyczne wnioskowanie typów Swift",
+      "seoFeature2": "Generowanie CodingKeys",
+      "seoFeature3": "Obsługa zagnieżdżonych struktur",
+      "seoFeature4": "Obsługa opcjonalnych właściwości"
+    },
+    "graphql-formatter": {
+      "name": "Formater GraphQL",
+      "description": "Formatuj i upiększaj zapytania GraphQL",
+      "pageTitle": "Formater GraphQL - Formatuj zapytania online",
+      "pageDescription": "Darmowy formater GraphQL online. Formatuj i minifikuj zapytania, mutacje i subskrypcje GraphQL.",
+      "seoTitle": "Formater GraphQL Online",
+      "seoContent": "Formatuj i upiększaj zapytania GraphQL za pomocą naszego darmowego narzędzia online.",
+      "seoFeaturesTitle": "Funkcje",
+      "seoFeature1": "Formatuj zapytania, mutacje i subskrypcje",
+      "seoFeature2": "Minifikuj GraphQL do produkcji",
+      "seoFeature3": "Konfigurowalne wcięcia",
+      "seoFeature4": "Sortuj pola alfabetycznie"
+    },
+    "json-to-php": {
+      "name": "JSON do PHP",
+      "description": "Konwertuj JSON na tablice i klasy PHP",
+      "pageTitle": "Konwerter JSON do PHP - Generuj tablice i klasy PHP online",
+      "pageDescription": "Darmowy konwerter JSON do PHP. Konwertuj JSON na tablice asocjacyjne, klasy typowane lub obiekty stdClass.",
+      "seoTitle": "Konwerter JSON do PHP",
+      "seoContent": "Konwertuj dane JSON na kod PHP natychmiast za pomocą naszego darmowego narzędzia.",
+      "seoFeaturesTitle": "Funkcje",
+      "seoFeature1": "Trzy tryby: Tablica, Klasa i stdClass",
+      "seoFeature2": "Właściwości typowane PHP 7.4+",
+      "seoFeature3": "Auto-generowane konstruktory i gettery",
+      "seoFeature4": "Obsługa zagnieżdżonych obiektów"
+    },
+    "html-to-pug": {
+      "name": "HTML do Pug",
+      "description": "Konwertuj HTML na szablony Pug (Jade)",
+      "pageTitle": "Konwerter HTML do Pug - Konwertuj HTML na Jade online",
+      "pageDescription": "Darmowy konwerter HTML do Pug (Jade). Przekształć HTML w składnię Pug ze skrótami klas i wcięciami.",
+      "seoTitle": "Konwerter HTML do Pug",
+      "seoContent": "Konwertuj HTML na składnię Pug (Jade) natychmiast. Skróty div, skrócona notacja dla klas i ID.",
+      "seoFeaturesTitle": "Funkcje",
+      "seoFeature1": "Automatyczny skrót div",
+      "seoFeature2": "Skrócona notacja dla klas i ID",
+      "seoFeature3": "Konfigurowalne wcięcia",
+      "seoFeature4": "Wykrywanie samozamykających tagów"
+    },
+    "yaml-to-toml": {
+      "name": "YAML do TOML",
+      "description": "Konwertuj między YAML a TOML",
+      "pageTitle": "Konwerter YAML do TOML - Konwertuj pliki konfiguracyjne online",
+      "pageDescription": "Darmowy konwerter YAML do TOML. Dwukierunkowa konwersja między YAML i TOML z sekcjami i tablicami.",
+      "seoTitle": "Konwerter YAML do TOML",
+      "seoContent": "Konwertuj między YAML i TOML natychmiast. Dwukierunkowa konwersja z sekcjami i tablicami TOML.",
+      "seoFeaturesTitle": "Funkcje",
+      "seoFeature1": "Dwukierunkowa konwersja YAML ↔ TOML",
+      "seoFeature2": "Składnia TOML [section] i [[array]]",
+      "seoFeature3": "Zagnieżdżone obiekty i tablice",
+      "seoFeature4": "Szablony konfiguracji w zestawie"
     }
   },
   "footer": {

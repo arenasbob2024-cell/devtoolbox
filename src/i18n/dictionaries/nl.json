@@ -4669,6 +4669,71 @@
       "seoFeature2": "Zet elke datum om naar Unix epoch (seconden en milliseconden)",
       "seoFeature3": "Automatische detectie van invoerformat - identificeer correct seconden versus milliseconden",
       "seoFeature4": "Toon resultaten in meerdere formaten: ISO 8601, UTC, lokale tijd, relatieve tijd, tijdzone en dag van de week"
+    },
+    "json-to-swift": {
+      "name": "JSON naar Swift",
+      "description": "Converteer JSON naar Swift Codable structs",
+      "pageTitle": "JSON naar Swift Converter - Genereer Codable Structs Online",
+      "pageDescription": "Gratis online JSON naar Swift converter. Genereer typeveilige Codable structs uit JSON-gegevens.",
+      "seoTitle": "JSON naar Swift Converter",
+      "seoContent": "Converteer JSON-gegevens direct naar Swift Codable structs met onze gratis online tool.",
+      "seoFeaturesTitle": "Functies",
+      "seoFeature1": "Automatische Swift type-inferentie",
+      "seoFeature2": "CodingKeys generatie",
+      "seoFeature3": "Ondersteuning voor geneste structs",
+      "seoFeature4": "Ondersteuning voor optionele eigenschappen"
+    },
+    "graphql-formatter": {
+      "name": "GraphQL Formatter",
+      "description": "GraphQL-query's formatteren en verfijnen",
+      "pageTitle": "GraphQL Formatter - Query's online formatteren",
+      "pageDescription": "Gratis online GraphQL formatter. Formatteer en minificeer GraphQL-query's, mutaties en subscripties.",
+      "seoTitle": "GraphQL Formatter Online",
+      "seoContent": "Formatteer en verfijn uw GraphQL-query's met onze gratis online tool.",
+      "seoFeaturesTitle": "Functies",
+      "seoFeature1": "Query's, mutaties en subscripties formatteren",
+      "seoFeature2": "GraphQL minificeren voor productie",
+      "seoFeature3": "Configureerbare inspringing",
+      "seoFeature4": "Velden alfabetisch sorteren"
+    },
+    "json-to-php": {
+      "name": "JSON naar PHP",
+      "description": "Converteer JSON naar PHP-arrays en klassen",
+      "pageTitle": "JSON naar PHP Converter - Genereer PHP-arrays en klassen online",
+      "pageDescription": "Gratis JSON naar PHP converter. Converteer JSON naar associatieve arrays, getypeerde klassen of stdClass-objecten.",
+      "seoTitle": "JSON naar PHP Converter",
+      "seoContent": "Converteer JSON-gegevens direct naar PHP-code met onze gratis tool.",
+      "seoFeaturesTitle": "Functies",
+      "seoFeature1": "Drie modi: Array, Klasse en stdClass",
+      "seoFeature2": "PHP 7.4+ getypeerde eigenschappen",
+      "seoFeature3": "Auto-gegenereerde constructors en getters",
+      "seoFeature4": "Geneste objecten en arrays"
+    },
+    "html-to-pug": {
+      "name": "HTML naar Pug",
+      "description": "Converteer HTML naar Pug (Jade) templates",
+      "pageTitle": "HTML naar Pug Converter - HTML naar Jade online converteren",
+      "pageDescription": "Gratis HTML naar Pug (Jade) converter. Transformeer HTML naar Pug-syntax met klasse-shortcuts en indentatie.",
+      "seoTitle": "HTML naar Pug Converter",
+      "seoContent": "Converteer HTML direct naar Pug-template-syntax. Div-shortcuts, klasse- en ID-verkorte notatie.",
+      "seoFeaturesTitle": "Functies",
+      "seoFeature1": "Automatische div-shortcut",
+      "seoFeature2": "Klasse- en ID-verkorte notatie",
+      "seoFeature3": "Configureerbare inspringing",
+      "seoFeature4": "Detectie van zelfsluitende tags"
+    },
+    "yaml-to-toml": {
+      "name": "YAML naar TOML",
+      "description": "Converteer tussen YAML en TOML",
+      "pageTitle": "YAML naar TOML Converter - Configuratiebestanden online converteren",
+      "pageDescription": "Gratis YAML naar TOML converter. Bidirectionele conversie tussen YAML en TOML met secties en arrays.",
+      "seoTitle": "YAML naar TOML Converter",
+      "seoContent": "Converteer direct tussen YAML en TOML. Bidirectionele conversie met TOML-secties en arrays.",
+      "seoFeaturesTitle": "Functies",
+      "seoFeature1": "Bidirectionele YAML ↔ TOML conversie",
+      "seoFeature2": "TOML [section] en [[array]] syntax",
+      "seoFeature3": "Geneste objecten en table arrays",
+      "seoFeature4": "Voorbeeld configuratietemplates"
     }
   },
   "footer": {

@@ -4669,6 +4669,71 @@
       "seoFeature2": "แปลงวันที่ใดๆ เป็น Unix epoch (วินาที และ มิลลิวินาที)",
       "seoFeature3": "ตรวจสอบรูปแบบป้อนข้อมูลอัตโนมัติ - ระบุวินาที และ มิลลิวินาที ได้อย่างถูกต้อง",
       "seoFeature4": "แสดงผลลัพธ์ในรูปแบบหลายรูปแบบ: ISO 8601 UTC เวลาท้องถิ่น เวลาสัมพัทธ์ โซนเวลา และวันในสัปดาห์"
+    },
+    "json-to-swift": {
+      "name": "JSON เป็น Swift",
+      "description": "แปลง JSON เป็น Swift Codable structs",
+      "pageTitle": "ตัวแปลง JSON เป็น Swift - สร้าง Codable Structs ออนไลน์",
+      "pageDescription": "ตัวแปลง JSON เป็น Swift ออนไลน์ฟรี สร้าง Codable structs ที่ปลอดภัยจากข้อมูล JSON",
+      "seoTitle": "ตัวแปลง JSON เป็น Swift",
+      "seoContent": "แปลงข้อมูล JSON เป็น Swift Codable structs ทันทีด้วยเครื่องมือออนไลน์ฟรีของเรา",
+      "seoFeaturesTitle": "คุณสมบัติ",
+      "seoFeature1": "การอนุมานประเภท Swift อัตโนมัติ",
+      "seoFeature2": "การสร้าง CodingKeys",
+      "seoFeature3": "รองรับ struct ซ้อนกัน",
+      "seoFeature4": "รองรับ optional properties"
+    },
+    "graphql-formatter": {
+      "name": "ตัวจัดรูปแบบ GraphQL",
+      "description": "จัดรูปแบบและตกแต่งคำสั่ง GraphQL",
+      "pageTitle": "ตัวจัดรูปแบบ GraphQL - จัดรูปแบบคำสั่งออนไลน์",
+      "pageDescription": "ตัวจัดรูปแบบ GraphQL ออนไลน์ฟรี จัดรูปแบบและบีบอัดคำสั่ง GraphQL",
+      "seoTitle": "ตัวจัดรูปแบบ GraphQL ออนไลน์",
+      "seoContent": "จัดรูปแบบและตกแต่งคำสั่ง GraphQL ของคุณด้วยเครื่องมือออนไลน์ฟรี",
+      "seoFeaturesTitle": "คุณสมบัติ",
+      "seoFeature1": "จัดรูปแบบ query, mutation และ subscription",
+      "seoFeature2": "บีบอัด GraphQL สำหรับใช้งานจริง",
+      "seoFeature3": "ตั้งค่าการเยื้องได้",
+      "seoFeature4": "เรียงลำดับฟิลด์ตามตัวอักษร"
+    },
+    "json-to-php": {
+      "name": "JSON เป็น PHP",
+      "description": "แปลง JSON เป็นอาร์เรย์และคลาส PHP",
+      "pageTitle": "ตัวแปลง JSON เป็น PHP - สร้างอาร์เรย์และคลาส PHP ออนไลน์",
+      "pageDescription": "ตัวแปลง JSON เป็น PHP ออนไลน์ฟรี แปลง JSON เป็นอาร์เรย์, คลาส หรือ stdClass",
+      "seoTitle": "ตัวแปลง JSON เป็น PHP",
+      "seoContent": "แปลงข้อมูล JSON เป็นโค้ด PHP ทันทีด้วยเครื่องมือฟรีของเรา",
+      "seoFeaturesTitle": "คุณสมบัติ",
+      "seoFeature1": "สามโหมด: Array, Class และ stdClass",
+      "seoFeature2": "รองรับ PHP 7.4+ typed properties",
+      "seoFeature3": "สร้าง constructor และ getter อัตโนมัติ",
+      "seoFeature4": "จัดการ object ซ้อนกัน"
+    },
+    "html-to-pug": {
+      "name": "HTML เป็น Pug",
+      "description": "แปลง HTML เป็นเทมเพลต Pug (Jade)",
+      "pageTitle": "ตัวแปลง HTML เป็น Pug - แปลง HTML เป็น Jade ออนไลน์",
+      "pageDescription": "ตัวแปลง HTML เป็น Pug (Jade) ออนไลน์ฟรี แปลง HTML เป็นไวยากรณ์ Pug",
+      "seoTitle": "ตัวแปลง HTML เป็น Pug",
+      "seoContent": "แปลง HTML เป็นไวยากรณ์เทมเพลต Pug (Jade) ทันที ทางลัด div, สัญกรณ์ย่อสำหรับคลาสและ ID",
+      "seoFeaturesTitle": "คุณสมบัติ",
+      "seoFeature1": "ทางลัด div อัตโนมัติ",
+      "seoFeature2": "สัญกรณ์ย่อสำหรับคลาสและ ID",
+      "seoFeature3": "ตั้งค่าการเยื้องได้",
+      "seoFeature4": "ตรวจจับแท็กปิดตัวเอง"
+    },
+    "yaml-to-toml": {
+      "name": "YAML เป็น TOML",
+      "description": "แปลงระหว่าง YAML และ TOML",
+      "pageTitle": "ตัวแปลง YAML เป็น TOML - แปลงไฟล์กำหนดค่าออนไลน์",
+      "pageDescription": "ตัวแปลง YAML เป็น TOML ออนไลน์ฟรี แปลงสองทิศทางระหว่าง YAML และ TOML",
+      "seoTitle": "ตัวแปลง YAML เป็น TOML",
+      "seoContent": "แปลงระหว่าง YAML และ TOML ทันที แปลงสองทิศทางกับส่วน TOML และอาร์เรย์",
+      "seoFeaturesTitle": "คุณสมบัติ",
+      "seoFeature1": "แปลงสองทิศทาง YAML ↔ TOML",
+      "seoFeature2": "ไวยากรณ์ TOML [section] และ [[array]]",
+      "seoFeature3": "จัดการ object ซ้อนกันและ array ตาราง",
+      "seoFeature4": "มีเทมเพลตกำหนดค่าตัวอย่าง"
     }
   },
   "footer": {

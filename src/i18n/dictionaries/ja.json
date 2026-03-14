@@ -4669,6 +4669,71 @@
       "seoFeature2": "任意の日付をUnixエポック（秒とミリ秒）に変換",
       "seoFeature3": "入力形式の自動検出 - 秒とミリ秒を正しく識別",
       "seoFeature4": "複数の形式で結果を表示：ISO 8601、UTC、現地時間、相対時間、タイムゾーン、曜日"
+    },
+    "json-to-swift": {
+      "name": "JSON to Swift 変換",
+      "description": "JSONをSwift Codable構造体に変換",
+      "pageTitle": "JSON to Swift変換ツール - Codable構造体をオンラインで生成",
+      "pageDescription": "無料オンラインJSON to Swift変換ツール。JSONデータから型安全なCodable構造体を生成。",
+      "seoTitle": "JSON to Swift変換ツール",
+      "seoContent": "JSONデータをSwift Codable構造体に即座に変換できる無料オンラインツール。",
+      "seoFeaturesTitle": "機能",
+      "seoFeature1": "自動Swift型推論",
+      "seoFeature2": "CodingKeys自動生成",
+      "seoFeature3": "ネストされた構造体のサポート",
+      "seoFeature4": "オプショナルプロパティのサポート"
+    },
+    "graphql-formatter": {
+      "name": "GraphQLフォーマッター",
+      "description": "GraphQLクエリをフォーマットして美化",
+      "pageTitle": "GraphQLフォーマッター - オンラインでクエリを整形",
+      "pageDescription": "無料オンラインGraphQLフォーマッター。GraphQLクエリ、ミューテーション、サブスクリプションを整形・美化・圧縮。",
+      "seoTitle": "GraphQLフォーマッター",
+      "seoContent": "無料オンラインGraphQLフォーマッターでクエリを整形・美化。",
+      "seoFeaturesTitle": "機能",
+      "seoFeature1": "クエリ、ミューテーション、サブスクリプションのフォーマット",
+      "seoFeature2": "本番用GraphQL圧縮",
+      "seoFeature3": "インデント設定可能",
+      "seoFeature4": "フィールドのアルファベット順ソート"
+    },
+    "json-to-php": {
+      "name": "JSON to PHP",
+      "description": "JSONをPHP配列やクラスに変換",
+      "pageTitle": "JSON to PHP変換ツール - PHP配列とクラスをオンラインで生成",
+      "pageDescription": "無料オンラインJSON to PHP変換ツール。JSONデータをPHP連想配列、型付きクラス、stdClassオブジェクトに変換。",
+      "seoTitle": "JSON to PHP変換ツール",
+      "seoContent": "JSONデータをPHPコードに即座に変換。連想配列、型付きクラス、stdClassオブジェクトを生成。",
+      "seoFeaturesTitle": "機能",
+      "seoFeature1": "3つの出力モード：配列、クラス、stdClass",
+      "seoFeature2": "PHP 7.4+型付きプロパティ対応",
+      "seoFeature3": "コンストラクタとgetterの自動生成",
+      "seoFeature4": "ネストされたオブジェクトと配列の処理"
+    },
+    "html-to-pug": {
+      "name": "HTML to Pug",
+      "description": "HTMLをPug (Jade) テンプレートに変換",
+      "pageTitle": "HTML to Pug変換ツール - HTMLをJadeテンプレートにオンライン変換",
+      "pageDescription": "無料オンラインHTML to Pug変換ツール。HTMLマークアップをPugテンプレート構文に変換。",
+      "seoTitle": "HTML to Pug変換ツール",
+      "seoContent": "HTMLマークアップをPugテンプレート構文に即座に変換。divショートカット、クラス/IDショートハンド対応。",
+      "seoFeaturesTitle": "機能",
+      "seoFeature1": "自動divショートカット",
+      "seoFeature2": "クラスとIDのショートハンド記法",
+      "seoFeature3": "インデント設定可能",
+      "seoFeature4": "自己閉じタグの検出"
+    },
+    "yaml-to-toml": {
+      "name": "YAML to TOML",
+      "description": "YAMLとTOML形式の相互変換",
+      "pageTitle": "YAML to TOML変換ツール - 設定ファイルをオンライン変換",
+      "pageDescription": "無料オンラインYAML to TOML変換ツール。YAMLとTOML設定形式間の双方向変換。",
+      "seoTitle": "YAML to TOML変換ツール",
+      "seoContent": "YAMLとTOML設定形式間を即座に変換。セクションヘッダーとテーブル配列に対応。",
+      "seoFeaturesTitle": "機能",
+      "seoFeature1": "双方向YAML ↔ TOML変換",
+      "seoFeature2": "TOML [section]と[[array]]構文",
+      "seoFeature3": "ネストオブジェクトとテーブル配列",
+      "seoFeature4": "サンプル設定テンプレート付き"
     }
   },
   "footer": {

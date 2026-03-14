@@ -4745,6 +4745,71 @@
       "seoFeature2": "将任何日期转换为 Unix 纪元（秒和毫秒都支持）",
       "seoFeature3": "自动检测输入格式 - 正确识别秒和毫秒",
       "seoFeature4": "以多种格式显示结果：ISO 8601、UTC、本地时间、相对时间、时区和星期几"
+    },
+    "json-to-swift": {
+      "name": "JSON 转 Swift",
+      "description": "将 JSON 转换为 Swift Codable 结构体",
+      "pageTitle": "JSON 转 Swift 转换器 - 在线生成 Codable 结构体",
+      "pageDescription": "免费在线 JSON 转 Swift 转换器。从 JSON 数据生成类型安全的 Codable 结构体，支持 CodingKeys、可选属性和嵌套类型。",
+      "seoTitle": "JSON 转 Swift 转换器",
+      "seoContent": "使用免费在线工具将 JSON 数据即时转换为 Swift Codable 结构体。支持自动类型推断、CodingKeys 生成和嵌套对象处理。",
+      "seoFeaturesTitle": "功能特点",
+      "seoFeature1": "自动 Swift 类型推断",
+      "seoFeature2": "CodingKeys 自动生成",
+      "seoFeature3": "嵌套结构体支持",
+      "seoFeature4": "可选属性和 let/var 声明"
+    },
+    "graphql-formatter": {
+      "name": "GraphQL 格式化",
+      "description": "格式化和美化 GraphQL 查询",
+      "pageTitle": "GraphQL 格式化工具 - 在线美化查询",
+      "pageDescription": "免费在线 GraphQL 格式化和美化工具。格式化、美化和压缩 GraphQL 查询、变更和订阅。",
+      "seoTitle": "GraphQL 格式化工具",
+      "seoContent": "使用免费在线工具格式化和美化 GraphQL 查询、变更和订阅。支持自定义缩进和字段排序。",
+      "seoFeaturesTitle": "功能特点",
+      "seoFeature1": "格式化查询、变更和订阅",
+      "seoFeature2": "压缩 GraphQL 用于生产环境",
+      "seoFeature3": "可配置缩进",
+      "seoFeature4": "字段按字母排序"
+    },
+    "json-to-php": {
+      "name": "JSON 转 PHP",
+      "description": "将 JSON 转换为 PHP 数组和类",
+      "pageTitle": "JSON 转 PHP 转换器 - 在线生成 PHP 数组和类",
+      "pageDescription": "免费在线 JSON 转 PHP 转换器。将 JSON 数据转换为 PHP 关联数组、类型化类或 stdClass 对象。",
+      "seoTitle": "JSON 转 PHP 转换器",
+      "seoContent": "即时将 JSON 数据转换为 PHP 代码。生成关联数组、带构造函数和 getter 的类型化类或 stdClass 对象。",
+      "seoFeaturesTitle": "功能特点",
+      "seoFeature1": "三种输出模式：数组、类和 stdClass",
+      "seoFeature2": "支持 PHP 7.4+ 类型化属性",
+      "seoFeature3": "自动生成构造函数和 getter 方法",
+      "seoFeature4": "嵌套对象和数组处理"
+    },
+    "html-to-pug": {
+      "name": "HTML 转 Pug",
+      "description": "将 HTML 转换为 Pug (Jade) 模板",
+      "pageTitle": "HTML 转 Pug 转换器 - 在线将 HTML 转换为 Jade 模板",
+      "pageDescription": "免费在线 HTML 转 Pug (Jade) 转换器。将 HTML 标记转换为简洁的 Pug 模板语法。",
+      "seoTitle": "HTML 转 Pug 转换器",
+      "seoContent": "即时将 HTML 标记转换为简洁的 Pug (Jade) 模板语法。支持 div 简写、类和 ID 简写以及正确的缩进。",
+      "seoFeaturesTitle": "功能特点",
+      "seoFeature1": "自动 div 简写",
+      "seoFeature2": "类和 ID 简写标记",
+      "seoFeature3": "可配置缩进",
+      "seoFeature4": "自闭合标签检测"
+    },
+    "yaml-to-toml": {
+      "name": "YAML 转 TOML",
+      "description": "YAML 和 TOML 格式互转",
+      "pageTitle": "YAML 转 TOML 转换器 - 在线转换配置文件",
+      "pageDescription": "免费在线 YAML 转 TOML 转换器。支持 YAML 和 TOML 配置格式之间的双向转换。",
+      "seoTitle": "YAML 转 TOML 转换器",
+      "seoContent": "即时在 YAML 和 TOML 配置格式之间转换。支持双向转换、TOML 节标题和数组表。",
+      "seoFeaturesTitle": "功能特点",
+      "seoFeature1": "双向 YAML ↔ TOML 转换",
+      "seoFeature2": "正确的 TOML [section] 和 [[array]] 语法",
+      "seoFeature3": "处理嵌套对象和数组表",
+      "seoFeature4": "包含示例配置模板"
     }
   },
   "footer": {

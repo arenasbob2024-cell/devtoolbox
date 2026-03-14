@@ -4669,6 +4669,71 @@
       "seoFeature2": "Converta qualquer data para epoch Unix (segundos e milissegundos)",
       "seoFeature3": "Deteccao automatica de formato de entrada - identifique corretamente segundos vs milissegundos",
       "seoFeature4": "Exiba resultados em multiplos formatos: ISO 8601, UTC, hora local, tempo relativo, fuso horrio e dia da semana"
+    },
+    "json-to-swift": {
+      "name": "JSON para Swift",
+      "description": "Converter JSON para structs Swift Codable",
+      "pageTitle": "Conversor JSON para Swift - Gerar Structs Codable Online",
+      "pageDescription": "Conversor JSON para Swift gratuito online. Gere structs Codable com CodingKeys e propriedades opcionais.",
+      "seoTitle": "Conversor JSON para Swift",
+      "seoContent": "Converta dados JSON para structs Swift Codable instantaneamente com nossa ferramenta online gratuita.",
+      "seoFeaturesTitle": "Recursos",
+      "seoFeature1": "Inferência automática de tipos Swift",
+      "seoFeature2": "Geração de CodingKeys",
+      "seoFeature3": "Suporte a structs aninhadas",
+      "seoFeature4": "Suporte a propriedades opcionais"
+    },
+    "graphql-formatter": {
+      "name": "Formatador GraphQL",
+      "description": "Formatar e embelezar consultas GraphQL",
+      "pageTitle": "Formatador GraphQL - Formatar consultas online",
+      "pageDescription": "Formatador GraphQL gratuito online. Formate e minifique consultas, mutações e assinaturas GraphQL.",
+      "seoTitle": "Formatador GraphQL Online",
+      "seoContent": "Formate e embeleze suas consultas GraphQL com nossa ferramenta gratuita online.",
+      "seoFeaturesTitle": "Recursos",
+      "seoFeature1": "Formatar consultas, mutações e assinaturas",
+      "seoFeature2": "Minificar GraphQL para produção",
+      "seoFeature3": "Indentação configurável",
+      "seoFeature4": "Ordenar campos alfabeticamente"
+    },
+    "json-to-php": {
+      "name": "JSON para PHP",
+      "description": "Converter JSON para arrays e classes PHP",
+      "pageTitle": "Conversor JSON para PHP - Gerar arrays e classes PHP online",
+      "pageDescription": "Conversor JSON para PHP gratuito. Converta JSON em arrays associativos, classes tipadas ou objetos stdClass.",
+      "seoTitle": "Conversor JSON para PHP",
+      "seoContent": "Converta dados JSON para código PHP instantaneamente com nossa ferramenta gratuita.",
+      "seoFeaturesTitle": "Recursos",
+      "seoFeature1": "Três modos: Array, Classe e stdClass",
+      "seoFeature2": "Propriedades tipadas PHP 7.4+",
+      "seoFeature3": "Construtores e getters auto-gerados",
+      "seoFeature4": "Tratamento de objetos aninhados"
+    },
+    "html-to-pug": {
+      "name": "HTML para Pug",
+      "description": "Converter HTML para templates Pug (Jade)",
+      "pageTitle": "Conversor HTML para Pug - Converter HTML para Jade online",
+      "pageDescription": "Conversor HTML para Pug (Jade) gratuito. Transforme HTML em sintaxe Pug com atalhos de classes e indentação.",
+      "seoTitle": "Conversor HTML para Pug",
+      "seoContent": "Converta HTML para sintaxe Pug (Jade) instantaneamente. Atalhos div, notação abreviada para classes e IDs.",
+      "seoFeaturesTitle": "Recursos",
+      "seoFeature1": "Atalho div automático",
+      "seoFeature2": "Notação abreviada para classes e IDs",
+      "seoFeature3": "Indentação configurável",
+      "seoFeature4": "Detecção de tags auto-fechantes"
+    },
+    "yaml-to-toml": {
+      "name": "YAML para TOML",
+      "description": "Converter entre YAML e TOML",
+      "pageTitle": "Conversor YAML para TOML - Converter arquivos de configuração online",
+      "pageDescription": "Conversor YAML para TOML gratuito. Conversão bidirecional entre YAML e TOML com seções e arrays.",
+      "seoTitle": "Conversor YAML para TOML",
+      "seoContent": "Converta entre YAML e TOML instantaneamente. Conversão bidirecional com seções e arrays TOML.",
+      "seoFeaturesTitle": "Recursos",
+      "seoFeature1": "Conversão bidirecional YAML ↔ TOML",
+      "seoFeature2": "Sintaxe TOML [section] e [[array]]",
+      "seoFeature3": "Objetos aninhados e arrays de tabelas",
+      "seoFeature4": "Templates de configuração incluídos"
     }
   },
   "footer": {

@@ -4669,6 +4669,71 @@
       "seoFeature2": "Konvertera vilket datum som helst till Unix epoch (sekunder och millisekunder)",
       "seoFeature3": "Automatisk detektering av inmatningsformat - identifiera korrekt sekunder vs millisekunder",
       "seoFeature4": "Visa resultat i flera format: ISO 8601, UTC, lokal tid, relativ tid, tidszon och veckodag"
+    },
+    "json-to-swift": {
+      "name": "JSON till Swift",
+      "description": "Konvertera JSON till Swift Codable structs",
+      "pageTitle": "JSON till Swift Konverterare - Generera Codable Structs Online",
+      "pageDescription": "Gratis online JSON till Swift konverterare. Generera typsäkra Codable structs från JSON-data.",
+      "seoTitle": "JSON till Swift Konverterare",
+      "seoContent": "Konvertera JSON-data direkt till Swift Codable structs med vårt gratis onlineverktyg.",
+      "seoFeaturesTitle": "Funktioner",
+      "seoFeature1": "Automatisk Swift-typinferens",
+      "seoFeature2": "CodingKeys-generering",
+      "seoFeature3": "Stöd för nästlade structs",
+      "seoFeature4": "Stöd för valfria egenskaper"
+    },
+    "graphql-formatter": {
+      "name": "GraphQL Formaterare",
+      "description": "Formatera och försköna GraphQL-frågor",
+      "pageTitle": "GraphQL Formaterare - Formatera frågor online",
+      "pageDescription": "Gratis online GraphQL formaterare. Formatera och minifiera GraphQL-frågor, mutationer och prenumerationer.",
+      "seoTitle": "GraphQL Formaterare Online",
+      "seoContent": "Formatera och försköna dina GraphQL-frågor med vårt gratis onlineverktyg.",
+      "seoFeaturesTitle": "Funktioner",
+      "seoFeature1": "Formatera frågor, mutationer och prenumerationer",
+      "seoFeature2": "Minifiera GraphQL för produktion",
+      "seoFeature3": "Konfigurerbar indrag",
+      "seoFeature4": "Sortera fält alfabetiskt"
+    },
+    "json-to-php": {
+      "name": "JSON till PHP",
+      "description": "Konvertera JSON till PHP-arrayer och klasser",
+      "pageTitle": "JSON till PHP Konverterare - Generera PHP-arrayer och klasser online",
+      "pageDescription": "Gratis JSON till PHP konverterare. Konvertera JSON till associativa arrayer, typade klasser eller stdClass-objekt.",
+      "seoTitle": "JSON till PHP Konverterare",
+      "seoContent": "Konvertera JSON-data direkt till PHP-kod med vårt gratis verktyg.",
+      "seoFeaturesTitle": "Funktioner",
+      "seoFeature1": "Tre lägen: Array, Klass och stdClass",
+      "seoFeature2": "PHP 7.4+ typade egenskaper",
+      "seoFeature3": "Auto-genererade konstruktorer och getters",
+      "seoFeature4": "Nästlade objekt och arrayer"
+    },
+    "html-to-pug": {
+      "name": "HTML till Pug",
+      "description": "Konvertera HTML till Pug (Jade) mallar",
+      "pageTitle": "HTML till Pug Konverterare - Konvertera HTML till Jade online",
+      "pageDescription": "Gratis HTML till Pug (Jade) konverterare. Transformera HTML till Pug-syntax med klassgenvägar och indrag.",
+      "seoTitle": "HTML till Pug Konverterare",
+      "seoContent": "Konvertera HTML direkt till Pug-template-syntax. Div-genvägar, förkortad klass- och ID-notation.",
+      "seoFeaturesTitle": "Funktioner",
+      "seoFeature1": "Automatisk div-genväg",
+      "seoFeature2": "Förkortad klass- och ID-notation",
+      "seoFeature3": "Konfigurerbar indrag",
+      "seoFeature4": "Detektering av självstängande taggar"
+    },
+    "yaml-to-toml": {
+      "name": "YAML till TOML",
+      "description": "Konvertera mellan YAML och TOML",
+      "pageTitle": "YAML till TOML Konverterare - Konvertera konfigurationsfiler online",
+      "pageDescription": "Gratis YAML till TOML konverterare. Dubbelriktad konvertering mellan YAML och TOML.",
+      "seoTitle": "YAML till TOML Konverterare",
+      "seoContent": "Konvertera direkt mellan YAML och TOML. Dubbelriktad konvertering med TOML-sektioner och arrayer.",
+      "seoFeaturesTitle": "Funktioner",
+      "seoFeature1": "Dubbelriktad YAML ↔ TOML konvertering",
+      "seoFeature2": "TOML [section] och [[array]] syntax",
+      "seoFeature3": "Nästlade objekt och tabell-arrayer",
+      "seoFeature4": "Exempelkonfigurationsmallar"
     }
   },
   "footer": {
