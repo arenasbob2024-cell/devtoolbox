@@ -3605,6 +3605,26 @@ export const tools: Tool[] = [
     path: '/tools/css-units-converter',
     relatedTools: ['css-formatter', 'css-gradient', 'pixel-to-rem-converter', 'css-box-model-visualizer'],
   },
+  {
+    id: 'json-to-proto',
+    name: 'JSON to Protobuf',
+    description: 'Convert JSON to Protocol Buffer (.proto) definitions. Auto-detect types, nested messages, repeated fields.',
+    icon: 'PB',
+    category: 'converter',
+    keywords: ['json to protobuf', 'json to proto', 'protobuf generator', 'proto file generator', 'json to protocol buffer', 'grpc proto'],
+    path: '/tools/json-to-proto',
+    relatedTools: ['json-to-typescript', 'json-to-graphql', 'json-to-go-struct', 'json-to-java'],
+  },
+  {
+    id: 'tailwind-to-css',
+    name: 'Tailwind to CSS Converter',
+    description: 'Convert Tailwind CSS classes to vanilla CSS properties. Support for spacing, colors, typography, and more.',
+    icon: '🎨',
+    category: 'css',
+    keywords: ['tailwind to css', 'tailwind converter', 'tailwind css converter', 'convert tailwind to css', 'tailwind to vanilla css'],
+    path: '/tools/tailwind-to-css',
+    relatedTools: ['css-to-tailwind', 'tailwind-colors', 'css-formatter', 'css-minifier'],
+  },
 ];
 
 export function getToolsByCategory(categoryId: string): Tool[] {

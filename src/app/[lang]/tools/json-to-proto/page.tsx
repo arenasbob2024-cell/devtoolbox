@@ -6,15 +6,14 @@ import CopyButton from '@/components/CopyButton';
 import { useLang } from '@/i18n/LangContext';
 import { encodeForUrl, decodeFromUrl, getHashParams, setHashParams } from '@/lib/url-state';
 
-export default function JsonToXmlConverter() {
+export default function JsonToProto() {
   const { dict } = useLang();
-  const t = dict.tools['json-to-xml-converter'];
+  const t = dict.tools['json-to-proto'];
   const [input, setInput] = useState('');
   const [output, setOutput] = useState('');
   const [error, setError] = useState('');
-  const [rootElement, setRootElement] = useState('root');
-  const [indent, setIndent] = useState(2);
-  const [attributeMode, setAttributeMode] = useState(false);
+  const [messageName, setMessageName] = useState('Data');
+  const [protoVersion, setProtoVersion] = useState('proto3');
   const [shareCopied, setShareCopied] = useState(false);
 
   useEffect(() => {
@@ -23,16 +22,74 @@ export default function JsonToXmlConverter() {
       const decoded = decodeFromUrl(params.json);
       if (decoded) {
         setInput(decoded);
-        convertJsonToXml(decoded);
+        convertJsonToProto(decoded);
       }
     }
   }, []);
 
-  const convertJsonToXml = (json, root = rootElement, ind = indent, attrMode = attributeMode) => {
+  const detectType = (value) => {
+    if (typeof value === 'string') return 'string';
+    if (typeof value === 'boolean') return 'bool';
+    if (typeof value === 'number') {
+      return Number.isInteger(value) ? 'int32' : 'double';
+    }
+    if (Array.isArray(value) && value.length > 0) {
+      return detectType(value[0]);
+    }
+    return 'string';
+  };
+
+  const toPascalCase = (str) => {
+    return str
+      .replace(/[\s_-]+(.)?/g, (_, char) => (char ? char.toUpperCase() : ''))
+      .replace(/^./, (char) => char.toUpperCase());
+  };
+
+  const generateProtoMessages = (obj, name = messageName, depth = 0) => {
+    const indent = '  '.repeat(depth);
+    const nextIndent = '  '.repeat(depth + 1);
+    let proto = `${indent}message ${name} {\n`;
+    let fieldNumber = 1;
+    let nestedMessages = '';
+
+    const entries = Object.entries(obj).filter(([key]) => !key.startsWith('_'));
+
+    for (const [key, value] of entries) {
+      if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
+        const msgName = toPascalCase(key);
+        nestedMessages += generateProtoMessages(value, msgName, depth + 1) + '\n';
+        proto += `${nextIndent}${msgName} ${key} = ${fieldNumber++};\n`;
+      } else if (Array.isArray(value)) {
+        if (value.length > 0 && typeof value[0] === 'object' && value[0] !== null) {
+          const msgName = toPascalCase(key.replace(/s$/, ''));
+          nestedMessages += generateProtoMessages(value[0], msgName, depth + 1) + '\n';
+          proto += `${nextIndent}repeated ${msgName} ${key} = ${fieldNumber++};\n`;
+        } else {
+          const itemType = value.length > 0 ? detectType(value[0]) : 'string';
+          proto += `${nextIndent}repeated ${itemType} ${key} = ${fieldNumber++};\n`;
+        }
+      } else {
+        const type = detectType(value);
+        proto += `${nextIndent}${type} ${key} = ${fieldNumber++};\n`;
+      }
+    }
+
+    proto += `${indent}}\n`;
+    return nestedMessages + proto;
+  };
+
+  const convertJsonToProto = (json, msg = messageName, version = protoVersion) => {
     try {
       const parsed = JSON.parse(json);
-      const xml = jsonToXml(parsed, root, 0, ind, attrMode);
-      setOutput(xml);
+      if (typeof parsed !== 'object' || parsed === null || Array.isArray(parsed)) {
+        throw new Error('Top-level must be a JSON object');
+      }
+
+      const messages = generateProtoMessages(parsed, msg);
+      const header = `syntax = "${version}";\n\n`;
+      const full = header + messages;
+
+      setOutput(full);
       setError('');
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Conversion error');
@@ -40,66 +97,12 @@ export default function JsonToXmlConverter() {
     }
   };
 
-  const jsonToXml = (obj, name = 'element', depth = 0, indentSize = 2, attrMode = false) => {
-    const currentIndent = ' '.repeat(depth * indentSize);
-    const nextIndent = ' '.repeat((depth + 1) * indentSize);
-
-    if (obj === null || obj === undefined) {
-      return `${currentIndent}<${name}></${name}>`;
-    }
-
-    if (typeof obj !== 'object') {
-      return `${currentIndent}<${name}>${escapeXml(String(obj))}</${name}>`;
-    }
-
-    if (Array.isArray(obj)) {
-      return obj
-        .map((item) => jsonToXml(item, name.replace(/s$/, ''), depth, indentSize, attrMode))
-        .join('\n');
-    }
-
-    const entries = Object.entries(obj);
-    if (entries.length === 0) {
-      return `${currentIndent}<${name}></${name}>`;
-    }
-
-    const children = entries
-      .map(([key, value]) => {
-        if (key.startsWith('@') && attrMode) {
-          return null;
-        }
-        if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
-          return jsonToXml(value, key, depth + 1, indentSize, attrMode);
-        } else if (Array.isArray(value)) {
-          return value.map((item) => jsonToXml(item, key.replace(/s$/, ''), depth + 1, indentSize, attrMode)).join('\n');
-        } else {
-          return `${nextIndent}<${key}>${escapeXml(String(value))}</${key}>`;
-        }
-      })
-      .filter(Boolean);
-
-    if (children.length === 0) {
-      return `${currentIndent}<${name}></${name}>`;
-    }
-
-    return `${currentIndent}<${name}>\n${children.join('\n')}\n${currentIndent}</${name}>`;
-  };
-
-  const escapeXml = (str) => {
-    return str
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&apos;');
-  };
-
   const handleConvert = () => {
     if (!input.trim()) {
       setError(t.inputRequired || 'Input required');
       return;
     }
-    convertJsonToXml(input, rootElement, indent, attributeMode);
+    convertJsonToProto(input, messageName, protoVersion);
   };
 
   const handleShare = () => {
@@ -114,26 +117,31 @@ export default function JsonToXmlConverter() {
 
   const loadSample = () => {
     const sample = JSON.stringify({
-      book: {
-        title: 'JSON to XML Converter',
-        author: 'DevToolBox',
-        year: 2024,
-        pages: 350,
+      id: 1,
+      name: 'Alice',
+      email: 'alice@example.com',
+      age: 30,
+      active: true,
+      tags: ['admin', 'user'],
+      address: {
+        street: '123 Main St',
+        city: 'New York',
+        zipCode: '10001',
       },
     }, null, 2);
     setInput(sample);
-    convertJsonToXml(sample);
+    convertJsonToProto(sample);
   };
 
   return (
-    <ToolLayout toolId="json-to-xml-converter">
+    <ToolLayout toolId="json-to-proto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div>
           <label className="block text-sm font-medium mb-2">{t.inputLabel || 'Input JSON'}</label>
           <textarea
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder={t.inputPlaceholder || 'Paste your JSON here...'}
+            placeholder={t.inputPlaceholder || 'Paste your JSON object here...'}
             className="w-full h-64 p-4 border border-gray-300 rounded-lg font-mono text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             style={{
               backgroundColor: 'var(--bg-secondary)',
@@ -144,7 +152,7 @@ export default function JsonToXmlConverter() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-2">{t.outputLabel || 'Output XML'}</label>
+          <label className="block text-sm font-medium mb-2">{t.outputLabel || 'Output .proto'}</label>
           <div
             className="w-full h-64 p-4 border border-gray-300 rounded-lg font-mono text-sm overflow-auto relative"
             style={{
@@ -165,13 +173,13 @@ export default function JsonToXmlConverter() {
         </div>
       </div>
 
-      <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium mb-2">{t.rootElement || 'Root Element'}</label>
+          <label className="block text-sm font-medium mb-2">{t.messageName || 'Message Name'}</label>
           <input
             type="text"
-            value={rootElement}
-            onChange={(e) => setRootElement(e.target.value)}
+            value={messageName}
+            onChange={(e) => setMessageName(e.target.value)}
             className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             style={{
               backgroundColor: 'var(--bg-secondary)',
@@ -181,10 +189,10 @@ export default function JsonToXmlConverter() {
           />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-2">{t.indent || 'Indent Size'}</label>
+          <label className="block text-sm font-medium mb-2">{t.protoVersion || 'Proto Version'}</label>
           <select
-            value={indent}
-            onChange={(e) => setIndent(parseInt(e.target.value))}
+            value={protoVersion}
+            onChange={(e) => setProtoVersion(e.target.value)}
             className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
             style={{
               backgroundColor: 'var(--bg-secondary)',
@@ -192,21 +200,9 @@ export default function JsonToXmlConverter() {
               borderColor: 'var(--border-color)',
             }}
           >
-            <option value={2}>2 spaces</option>
-            <option value={4}>4 spaces</option>
-            <option value={8}>8 spaces</option>
+            <option value="proto3">proto3</option>
+            <option value="proto2">proto2</option>
           </select>
-        </div>
-        <div className="flex items-end">
-          <label className="flex items-center cursor-pointer">
-            <input
-              type="checkbox"
-              checked={attributeMode}
-              onChange={(e) => setAttributeMode(e.target.checked)}
-              className="mr-2"
-            />
-            <span className="text-sm font-medium">{t.attributeMode || 'Attribute Mode'}</span>
-          </label>
         </div>
       </div>
 
@@ -228,16 +224,16 @@ export default function JsonToXmlConverter() {
       </div>
 
       <section className="mt-12 border-t pt-8">
-        <h2 className="text-2xl font-bold mb-4">{t.seoTitle || 'Convert JSON to XML Online'}</h2>
-        <p className="text-gray-600 mb-4">{t.seoContent || 'Transform JSON data into XML format with customizable options. Set root element names, indent size, and choose between element and attribute modes.'}</p>
+        <h2 className="text-2xl font-bold mb-4">{t.seoTitle || 'JSON to Protocol Buffer Generator'}</h2>
+        <p className="text-gray-600 mb-4">{t.seoContent || 'Convert JSON objects into Protocol Buffer (.proto) message definitions. Automatically detect field types, handle nested messages, and generate proto3 or proto2 syntax.'}</p>
 
         <h3 className="text-xl font-bold mb-3 mt-6">{t.seoFeaturesTitle || 'Features'}</h3>
         <ul className="list-disc list-inside space-y-2 text-gray-600">
-          <li>{t.seoFeature1 || 'Convert nested JSON objects to XML elements'}</li>
-          <li>{t.seoFeature2 || 'Handle JSON arrays as repeating XML elements'}</li>
-          <li>{t.seoFeature3 || 'Customize root element name'}</li>
-          <li>{t.seoFeature4 || 'Configure indentation (2, 4, or 8 spaces)'}</li>
-          <li>{t.seoFeature5 || 'Automatic XML escaping for special characters'}</li>
+          <li>{t.seoFeature1 || 'Automatic type detection (string, int32, bool, double)'}</li>
+          <li>{t.seoFeature2 || 'Generate nested message definitions'}</li>
+          <li>{t.seoFeature3 || 'Handle JSON arrays as repeated fields'}</li>
+          <li>{t.seoFeature4 || 'Support proto3 and proto2 syntax'}</li>
+          <li>{t.seoFeature5 || 'Customizable message name'}</li>
           <li>{t.seoFeature6 || '100% client-side processing'}</li>
         </ul>
 

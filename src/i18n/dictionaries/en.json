@@ -3846,37 +3846,18 @@
       ]
     },
     "csp-generator": {
-      "name": "CSP Header Generator",
-      "description": "Build Content-Security-Policy headers interactively",
-      "pageTitle": "CSP Header Generator — Content Security Policy Builder",
-      "pageDescription": "Build Content-Security-Policy headers with an interactive directive editor. Presets for strict, moderate, and permissive policies.",
-      "seoTitle": "What is a CSP Generator?",
-      "seoContent": "A Content-Security-Policy generator helps you build CSP headers that protect your website from XSS, data injection, and other code injection attacks.",
-      "howToUseTitle": "How to Use",
-      "howToUseSteps": [
-        "Select a preset or start from scratch",
-        "Configure each directive",
-        "Add trusted sources",
-        "Copy the CSP header"
-      ],
-      "useCasesTitle": "Use Cases",
-      "useCases": [
-        "Preventing XSS attacks",
-        "Meeting security compliance",
-        "Configuring Content-Security-Policy",
-        "Testing CSP rules"
-      ],
-      "faqTitle": "FAQ",
-      "faqs": [
-        {
-          "q": "What directives are supported?",
-          "a": "All standard CSP directives including default-src, script-src, style-src, img-src, and more."
-        },
-        {
-          "q": "Can I test my CSP?",
-          "a": "Use report-uri directive for monitoring. This tool generates the header you need."
-        }
-      ]
+      "name": "Content Security Policy Generator",
+      "description": "Generate CSP headers with directives and sources for web security",
+      "pageTitle": "CSP Generator - Content Security Policy Header Builder Online Free",
+      "pageDescription": "Generate Content Security Policy (CSP) headers with directives and sources. Create script-src, style-src, img-src rules. Download as header or meta tag.",
+      "validateBtn": "Update Preview",
+      "seoTitle": "CSP Generator",
+      "seoContent": "The Content Security Policy (CSP) Generator helps you create security headers to prevent cross-site scripting (XSS) and data injection attacks. Configure directives for scripts, styles, images, fonts, and more.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Configure directives: default-src, script-src, style-src, img-src, font-src, connect-src, frame-src, media-src",
+      "seoFeature2": "Add sources like 'self', 'unsafe-inline', 'unsafe-eval', and custom domains",
+      "seoFeature3": "Generate HTTP header format and HTML meta tag format",
+      "seoFeature4": "Download CSP configuration for your web server"
     },
     "sql-to-prisma": {
       "name": "SQL to Prisma Schema",
@@ -4919,27 +4900,20 @@
     },
     "json-to-csv": {
       "name": "JSON to CSV Converter",
-      "description": "Convert JSON arrays to CSV format with nested object flattening and CSV download",
-      "pageTitle": "JSON to CSV Converter Online Free — Flatten Nested JSON to CSV",
-      "pageDescription": "Free JSON to CSV converter. Convert JSON arrays to CSV with nested object flattening, custom delimiters, and instant CSV download. Runs locally in your browser.",
-      "faqs": [
-        {
-          "q": "How do I convert JSON to CSV online?",
-          "a": "Paste your JSON array in the input field. The tool automatically detects column headers from object keys, flattens nested objects, and generates a downloadable CSV file with proper quoting and escaping."
-        },
-        {
-          "q": "Can I convert nested JSON to CSV?",
-          "a": "Yes, the converter flattens nested objects using dot notation. For example, {\"user\": {\"name\": \"John\"}} becomes a column named 'user.name' with value 'John'. Arrays are joined with commas."
-        },
-        {
-          "q": "What JSON format does the converter expect?",
-          "a": "The input should be a JSON array of objects, like [{\"name\": \"Alice\", \"age\": 30}, {\"name\": \"Bob\", \"age\": 25}]. Each object becomes a CSV row, and unique keys across all objects become columns."
-        },
-        {
-          "q": "How do I handle special characters in CSV output?",
-          "a": "The tool automatically handles CSV escaping: values containing commas, quotes, or newlines are wrapped in double quotes. Existing double quotes are escaped by doubling them (\"\")."
-        }
-      ]
+      "description": "Convert JSON arrays to CSV with customizable delimiters and options",
+      "pageTitle": "JSON to CSV Converter Online Free - Convert JSON Arrays to CSV",
+      "pageDescription": "Convert JSON arrays to CSV format. Choose delimiters (comma, semicolon, tab), include headers, and flatten nested objects. Download as CSV file.",
+      "validateBtn": "Convert to CSV",
+      "jsonDataLabel": "JSON Input (Array of Objects)",
+      "jsonDataPlaceholder": "[{\"name\": \"Alice\", \"age\": 30}]",
+      "schemaLabel": "CSV Output",
+      "seoTitle": "JSON to CSV Converter",
+      "seoContent": "Convert JSON arrays to CSV (Comma-Separated Values) format. This tool handles arrays of objects and supports various delimiters and options for CSV export.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Support for comma, semicolon, tab, and pipe delimiters",
+      "seoFeature2": "Optional header row with column names",
+      "seoFeature3": "Flatten nested objects into separate columns",
+      "seoFeature4": "Download CSV file directly"
     },
     "text-counter": {
       "name": "Text Counter & Statistics",
@@ -10138,23 +10112,20 @@
     },
     "xpath-tester": {
       "name": "XPath Tester",
-      "description": "Test and evaluate XPath expressions against XML",
-      "pageTitle": "XPath Tester Online — Evaluate XPath Expressions Free",
-      "pageDescription": "Test XPath expressions against your XML data in real-time. Supports XPath 1.0 functions, node selection, and attribute queries. Free online XPath evaluator.",
-      "xpathExpression": "XPath Expression",
-      "xpathPlaceholder": "Enter XPath expression, e.g. //book/title",
-      "matchesFound": "matches found",
-      "evaluate": "Evaluate",
-      "loadSample": "Sample",
-      "examples": "Examples",
-      "xmlInput": "XML Input",
-      "xmlPlaceholder": "Paste your XML here...",
-      "xmlParseError": "XML Parse Error",
-      "xpathError": "XPath Error",
-      "results": "Results",
-      "noResults": "No matches found",
-      "seoTitle": "About XPath Tester",
-      "seoContent": "XPath (XML Path Language) is a query language for selecting nodes from XML documents. This online XPath tester lets you evaluate XPath expressions against your XML data in real-time. Supports XPath 1.0 functions including text(), count(), contains(), and more. Perfect for debugging XSLT transformations, web scraping selectors, and XML data extraction."
+      "description": "Test XPath expressions against XML documents with matching results",
+      "pageTitle": "XPath Tester Online - Test XPath Expressions for XML Free",
+      "pageDescription": "Test XPath expressions against XML documents. Paste XML, enter XPath query, see matching nodes and count. Includes common XPath examples.",
+      "validateBtn": "Evaluate XPath",
+      "jsonDataLabel": "XML Input",
+      "jsonDataPlaceholder": "Paste your XML here...",
+      "schemaLabel": "XPath Query",
+      "seoTitle": "XPath Tester",
+      "seoContent": "Test and debug XPath expressions against XML documents. This tool helps you develop and validate XPath queries for data extraction and manipulation.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Evaluate XPath expressions against XML documents",
+      "seoFeature2": "Shows matching node results and count",
+      "seoFeature3": "Common XPath examples for quick reference",
+      "seoFeature4": "Support for all standard XPath syntax"
     },
     "toml-json": {
       "name": "TOML ↔ JSON Converter",
@@ -11001,23 +10972,6 @@
       "seoFeature3": "Human-readable descriptions of cron expressions",
       "seoFeature4": "Shows next 5 scheduled run times"
     },
-    "json-to-csv": {
-      "name": "JSON to CSV Converter",
-      "description": "Convert JSON arrays to CSV with customizable delimiters and options",
-      "pageTitle": "JSON to CSV Converter Online Free - Convert JSON Arrays to CSV",
-      "pageDescription": "Convert JSON arrays to CSV format. Choose delimiters (comma, semicolon, tab), include headers, and flatten nested objects. Download as CSV file.",
-      "validateBtn": "Convert to CSV",
-      "jsonDataLabel": "JSON Input (Array of Objects)",
-      "jsonDataPlaceholder": "[{\"name\": \"Alice\", \"age\": 30}]",
-      "schemaLabel": "CSV Output",
-      "seoTitle": "JSON to CSV Converter",
-      "seoContent": "Convert JSON arrays to CSV (Comma-Separated Values) format. This tool handles arrays of objects and supports various delimiters and options for CSV export.",
-      "seoFeaturesTitle": "Features",
-      "seoFeature1": "Support for comma, semicolon, tab, and pipe delimiters",
-      "seoFeature2": "Optional header row with column names",
-      "seoFeature3": "Flatten nested objects into separate columns",
-      "seoFeature4": "Download CSV file directly"
-    },
     "css-units-converter": {
       "name": "CSS Units Converter",
       "description": "Convert between CSS units: px, rem, em, vw, vh, %, pt",
@@ -11032,36 +10986,31 @@
       "seoFeature3": "Complete conversion table showing all unit equivalents",
       "seoFeature4": "Useful for responsive design and accessibility"
     },
-    "xpath-tester": {
-      "name": "XPath Tester",
-      "description": "Test XPath expressions against XML documents with matching results",
-      "pageTitle": "XPath Tester Online - Test XPath Expressions for XML Free",
-      "pageDescription": "Test XPath expressions against XML documents. Paste XML, enter XPath query, see matching nodes and count. Includes common XPath examples.",
-      "validateBtn": "Evaluate XPath",
-      "jsonDataLabel": "XML Input",
-      "jsonDataPlaceholder": "Paste your XML here...",
-      "schemaLabel": "XPath Query",
-      "seoTitle": "XPath Tester",
-      "seoContent": "Test and debug XPath expressions against XML documents. This tool helps you develop and validate XPath queries for data extraction and manipulation.",
+    "json-to-proto": {
+      "name": "JSON to Protobuf",
+      "description": "Convert JSON to Protocol Buffer definitions",
+      "pageTitle": "JSON to Protobuf Converter Online - Generate .proto Files",
+      "pageDescription": "Convert JSON to Protocol Buffer (.proto) definitions. Auto-detect types, nested messages, and repeated fields.",
+      "seoTitle": "JSON to Protobuf Converter",
+      "seoContent": "Generate .proto files from JSON data.",
       "seoFeaturesTitle": "Features",
-      "seoFeature1": "Evaluate XPath expressions against XML documents",
-      "seoFeature2": "Shows matching node results and count",
-      "seoFeature3": "Common XPath examples for quick reference",
-      "seoFeature4": "Support for all standard XPath syntax"
+      "seoFeature1": "Auto type detection",
+      "seoFeature2": "Nested message generation",
+      "seoFeature3": "Proto2 and proto3 support",
+      "seoFeature4": "Repeated field handling"
     },
-    "csp-generator": {
-      "name": "Content Security Policy Generator",
-      "description": "Generate CSP headers with directives and sources for web security",
-      "pageTitle": "CSP Generator - Content Security Policy Header Builder Online Free",
-      "pageDescription": "Generate Content Security Policy (CSP) headers with directives and sources. Create script-src, style-src, img-src rules. Download as header or meta tag.",
-      "validateBtn": "Update Preview",
-      "seoTitle": "CSP Generator",
-      "seoContent": "The Content Security Policy (CSP) Generator helps you create security headers to prevent cross-site scripting (XSS) and data injection attacks. Configure directives for scripts, styles, images, fonts, and more.",
+    "tailwind-to-css": {
+      "name": "Tailwind to CSS Converter",
+      "description": "Convert Tailwind classes to vanilla CSS",
+      "pageTitle": "Tailwind to CSS Converter Online - Free Tool",
+      "pageDescription": "Convert Tailwind CSS utility classes to standard vanilla CSS. Support for 60+ common Tailwind classes.",
+      "seoTitle": "Tailwind to CSS Converter",
+      "seoContent": "Convert Tailwind utility classes to CSS.",
       "seoFeaturesTitle": "Features",
-      "seoFeature1": "Configure directives: default-src, script-src, style-src, img-src, font-src, connect-src, frame-src, media-src",
-      "seoFeature2": "Add sources like 'self', 'unsafe-inline', 'unsafe-eval', and custom domains",
-      "seoFeature3": "Generate HTTP header format and HTML meta tag format",
-      "seoFeature4": "Download CSP configuration for your web server"
+      "seoFeature1": "60+ Tailwind class mappings",
+      "seoFeature2": "Class breakdown with status indicators",
+      "seoFeature3": "Full CSS stylesheet generation",
+      "seoFeature4": "Support for spacing, colors, typography"
     }
   },
   "footer": {

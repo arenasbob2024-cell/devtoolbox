@@ -1981,4 +1981,664 @@
       <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/css-units-converter"/>
       <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/css-units-converter"/>
   </url>
+  <url>
+    <loc>https://viadreams.cc/en/tools/json-to-proto</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/json-to-proto"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/fr/tools/json-to-proto</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/json-to-proto"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/de/tools/json-to-proto</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/json-to-proto"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/it/tools/json-to-proto</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/json-to-proto"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/es/tools/json-to-proto</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/json-to-proto"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pt/tools/json-to-proto</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/json-to-proto"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/nl/tools/json-to-proto</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/json-to-proto"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pl/tools/json-to-proto</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/json-to-proto"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/sv/tools/json-to-proto</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/json-to-proto"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/no/tools/json-to-proto</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/json-to-proto"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/zh/tools/json-to-proto</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/json-to-proto"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ja/tools/json-to-proto</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/json-to-proto"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ko/tools/json-to-proto</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/json-to-proto"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/id/tools/json-to-proto</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/json-to-proto"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/th/tools/json-to-proto</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/json-to-proto"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/json-to-proto"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/en/tools/tailwind-to-css</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/tailwind-to-css"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/fr/tools/tailwind-to-css</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/tailwind-to-css"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/de/tools/tailwind-to-css</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/tailwind-to-css"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/it/tools/tailwind-to-css</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/tailwind-to-css"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/es/tools/tailwind-to-css</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/tailwind-to-css"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pt/tools/tailwind-to-css</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/tailwind-to-css"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/nl/tools/tailwind-to-css</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/tailwind-to-css"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pl/tools/tailwind-to-css</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/tailwind-to-css"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/sv/tools/tailwind-to-css</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/tailwind-to-css"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/no/tools/tailwind-to-css</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/tailwind-to-css"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/zh/tools/tailwind-to-css</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/tailwind-to-css"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ja/tools/tailwind-to-css</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/tailwind-to-css"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ko/tools/tailwind-to-css</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/tailwind-to-css"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/id/tools/tailwind-to-css</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/tailwind-to-css"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/th/tools/tailwind-to-css</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/tailwind-to-css"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/tailwind-to-css"/>
+  </url>
 </urlset>

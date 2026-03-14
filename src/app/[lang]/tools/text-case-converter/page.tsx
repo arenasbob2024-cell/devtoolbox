@@ -1,206 +1,236 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import ToolLayout from '@/components/ToolLayout';
 import CopyButton from '@/components/CopyButton';
+import { useLang } from '@/i18n/LangContext';
+import { encodeForUrl, decodeFromUrl, getHashParams, setHashParams } from '@/lib/url-state';
 
-function toWords(str: string): string[] {
-  return str
-    .replace(/([a-z])([A-Z])/g, '$1 $2')
-    .replace(/([A-Z]+)([A-Z][a-z])/g, '$1 $2')
-    .replace(/[-_./\\]+/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim()
-    .split(' ')
-    .filter(Boolean);
-}
-
-const converters: { id: string; label: string; example: string; fn: (s: string) => string }[] = [
-  {
-    id: 'camelCase',
-    label: 'camelCase',
-    example: 'myVariableName',
-    fn: s => {
-      const w = toWords(s);
-      return w.map((v, i) => i === 0 ? v.toLowerCase() : v.charAt(0).toUpperCase() + v.slice(1).toLowerCase()).join('');
-    },
-  },
-  {
-    id: 'PascalCase',
-    label: 'PascalCase',
-    example: 'MyVariableName',
-    fn: s => toWords(s).map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(''),
-  },
-  {
-    id: 'snake_case',
-    label: 'snake_case',
-    example: 'my_variable_name',
-    fn: s => toWords(s).map(w => w.toLowerCase()).join('_'),
-  },
-  {
-    id: 'CONSTANT_CASE',
-    label: 'CONSTANT_CASE',
-    example: 'MY_VARIABLE_NAME',
-    fn: s => toWords(s).map(w => w.toUpperCase()).join('_'),
-  },
-  {
-    id: 'kebab-case',
-    label: 'kebab-case',
-    example: 'my-variable-name',
-    fn: s => toWords(s).map(w => w.toLowerCase()).join('-'),
-  },
-  {
-    id: 'TRAIN-CASE',
-    label: 'TRAIN-CASE',
-    example: 'MY-VARIABLE-NAME',
-    fn: s => toWords(s).map(w => w.toUpperCase()).join('-'),
-  },
-  {
-    id: 'Title Case',
-    label: 'Title Case',
-    example: 'My Variable Name',
-    fn: s => toWords(s).map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(' '),
-  },
-  {
-    id: 'Sentence case',
-    label: 'Sentence case',
-    example: 'My variable name',
-    fn: s => {
-      const w = toWords(s);
-      return w.map((v, i) => i === 0 ? v.charAt(0).toUpperCase() + v.slice(1).toLowerCase() : v.toLowerCase()).join(' ');
-    },
-  },
-  {
-    id: 'lowercase',
-    label: 'lowercase',
-    example: 'my variable name',
-    fn: s => s.toLowerCase(),
-  },
-  {
-    id: 'UPPERCASE',
-    label: 'UPPERCASE',
-    example: 'MY VARIABLE NAME',
-    fn: s => s.toUpperCase(),
-  },
-  {
-    id: 'dot.case',
-    label: 'dot.case',
-    example: 'my.variable.name',
-    fn: s => toWords(s).map(w => w.toLowerCase()).join('.'),
-  },
-  {
-    id: 'path/case',
-    label: 'path/case',
-    example: 'my/variable/name',
-    fn: s => toWords(s).map(w => w.toLowerCase()).join('/'),
-  },
-  {
-    id: 'no case',
-    label: 'no case',
-    example: 'my variable name',
-    fn: s => toWords(s).map(w => w.toLowerCase()).join(' '),
-  },
-  {
-    id: 'sWAP cASE',
-    label: 'sWAP cASE',
-    example: 'mY vARIABLE nAME',
-    fn: s => s.split('').map(c => c === c.toUpperCase() ? c.toLowerCase() : c.toUpperCase()).join(''),
-  },
-];
-
-const ui = {
-  pageTitle: 'Text Case Converter',
-  pageDescription: 'Convert text between camelCase, snake_case, kebab-case, PascalCase, UPPERCASE, lowercase, Title Case, dot.case and 14 more formats instantly.',
-  inputLabel: 'Enter your text',
-  inputPlaceholder: 'Type or paste text here...\n\ne.g. Hello World Example',
-  copyAll: 'Copy All Results',
-  clear: 'Clear',
-  loadSample: 'Load Sample',
-  seoTitle: 'What Is Text Case Conversion?',
-  seoContent: 'Text case conversion transforms text between different casing and naming conventions. Developers use camelCase in JavaScript, snake_case in Python and Ruby, kebab-case in CSS and URLs, PascalCase for class names, and CONSTANT_CASE for constants. This converter supports 14 formats simultaneously, saving time when switching between languages, frameworks, or style guides. All processing happens in your browser -- your data never leaves your device.',
-};
-
-const sampleTexts = [
-  'hello world example',
-  'my-variable-name',
-  'firstName',
-  'SOME_CONSTANT_VALUE',
-  'The Quick Brown Fox',
-];
-
-export default function TextCaseConverterPage() {
+export default function TextCaseConverter() {
+  const { dict } = useLang();
+  const t = dict.tools['text-case-converter'];
   const [input, setInput] = useState('');
+  const [outputs, setOutputs] = useState([]);
+  const [shareCopied, setShareCopied] = useState(false);
 
-  const results = useMemo(() => {
-    if (!input.trim()) return [];
-    return converters.map(c => ({ ...c, result: c.fn(input) }));
-  }, [input]);
+  useEffect(() => {
+    const params = getHashParams();
+    if (params.text) {
+      const decoded = decodeFromUrl(params.text);
+      if (decoded) {
+        setInput(decoded);
+        convertText(decoded);
+      }
+    }
+  }, []);
 
-  const allText = results.map(r => `${r.label}: ${r.result}`).join('\n');
+  const toCamelCase = (str) => {
+    return str
+      .replace(/[\s_-]+(.)?/g, (_, char) => (char ? char.toUpperCase() : ''))
+      .replace(/^./, (char) => char.toLowerCase());
+  };
+
+  const toPascalCase = (str) => {
+    return str
+      .replace(/[\s_-]+(.)?/g, (_, char) => (char ? char.toUpperCase() : ''))
+      .replace(/^./, (char) => char.toUpperCase());
+  };
+
+  const toSnakeCase = (str) => {
+    return str
+      .replace(/([a-z])([A-Z])/g, '$1_$2')
+      .replace(/[\s-]+/g, '_')
+      .toLowerCase();
+  };
+
+  const toKebabCase = (str) => {
+    return str
+      .replace(/([a-z])([A-Z])/g, '$1-$2')
+      .replace(/[\s_]+/g, '-')
+      .toLowerCase();
+  };
+
+  const toConstantCase = (str) => {
+    return toSnakeCase(str).toUpperCase();
+  };
+
+  const toTitleCase = (str) => {
+    return str
+      .replace(/[\s_-]+/g, ' ')
+      .split(' ')
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+      .join(' ');
+  };
+
+  const toLowerCase = (str) => {
+    return str.toLowerCase();
+  };
+
+  const toUpperCase = (str) => {
+    return str.toUpperCase();
+  };
+
+  const toDotCase = (str) => {
+    return str
+      .replace(/([a-z])([A-Z])/g, '$1.$2')
+      .replace(/[\s_-]+/g, '.')
+      .toLowerCase();
+  };
+
+  const toPathCase = (str) => {
+    return str
+      .replace(/([a-z])([A-Z])/g, '$1/$2')
+      .replace(/[\s_.-]+/g, '/')
+      .toLowerCase();
+  };
+
+  const convertText = (text) => {
+    if (!text.trim()) {
+      setOutputs([]);
+      return;
+    }
+
+    const results = [
+      { label: 'camelCase', value: toCamelCase(text), key: 'camel' },
+      { label: 'PascalCase', value: toPascalCase(text), key: 'pascal' },
+      { label: 'snake_case', value: toSnakeCase(text), key: 'snake' },
+      { label: 'kebab-case', value: toKebabCase(text), key: 'kebab' },
+      { label: 'CONSTANT_CASE', value: toConstantCase(text), key: 'constant' },
+      { label: 'Title Case', value: toTitleCase(text), key: 'title' },
+      { label: 'lowercase', value: toLowerCase(text), key: 'lower' },
+      { label: 'UPPERCASE', value: toUpperCase(text), key: 'upper' },
+      { label: 'dot.case', value: toDotCase(text), key: 'dot' },
+      { label: 'path/case', value: toPathCase(text), key: 'path' },
+    ];
+
+    setOutputs(results);
+  };
+
+  const handleInputChange = (e) => {
+    const text = e.target.value;
+    setInput(text);
+    convertText(text);
+  };
+
+  const handleShare = () => {
+    if (!input) return;
+    const params = { text: encodeForUrl(input) };
+    setHashParams(params);
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      setShareCopied(true);
+      setTimeout(() => setShareCopied(false), 2000);
+    });
+  };
 
   return (
-    <ToolLayout
-      title={ui.pageTitle}
-      description={ui.pageDescription}
-      toolId="text-case-converter"
-    >
-      <div style={{ marginBottom: 16 }}>
-        <label style={{ fontSize: 13, fontWeight: 600, display: 'block', marginBottom: 8 }}>{ui.inputLabel}</label>
-        <textarea
-          value={input}
-          onChange={e => setInput(e.target.value)}
-          placeholder={ui.inputPlaceholder}
-          style={{ minHeight: 80 }}
-        />
-      </div>
-
-      <div style={{ display: 'flex', gap: 8, marginBottom: 20, flexWrap: 'wrap' }}>
-        <button onClick={() => setInput(sampleTexts[Math.floor(Math.random() * sampleTexts.length)])} className="btn btn-secondary">{ui.loadSample}</button>
-        <button onClick={() => setInput('')} className="btn btn-secondary">{ui.clear}</button>
-        {results.length > 0 && <CopyButton text={allText} label={ui.copyAll} />}
-      </div>
-
-      {results.length > 0 && (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: 10 }}>
-          {results.map(({ id, label, result }) => (
-            <div key={id} style={{
-              display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-              background: 'var(--bg-input)', borderRadius: 8, padding: '10px 14px',
-              border: '1px solid var(--border-color)',
-            }}>
-              <div style={{ flex: 1, minWidth: 0 }}>
-                <div style={{ fontSize: 11, color: 'var(--accent-blue)', fontWeight: 700, marginBottom: 2 }}>{label}</div>
-                <code style={{ fontSize: 13, fontFamily: 'JetBrains Mono, monospace', wordBreak: 'break-all', color: 'var(--text-primary)' }}>
-                  {result}
-                </code>
-              </div>
-              <CopyButton text={result} />
-            </div>
-          ))}
+    <ToolLayout toolId="text-case-converter">
+      <div className="max-w-3xl mx-auto">
+        <div className="mb-8">
+          <label className="block text-sm font-medium mb-2">{t.inputLabel || 'Enter Text'}</label>
+          <textarea
+            value={input}
+            onChange={handleInputChange}
+            placeholder={t.inputPlaceholder || 'Enter your text here and see all case conversions...'}
+            className="w-full h-32 p-4 border border-gray-300 rounded-lg font-mono text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            style={{
+              backgroundColor: 'var(--bg-secondary)',
+              color: 'var(--text-primary)',
+              borderColor: 'var(--border-color)',
+            }}
+          />
         </div>
-      )}
 
-      {!input.trim() && (
-        <div style={{ marginTop: 20 }}>
-          <h3 style={{ fontSize: 15, fontWeight: 600, marginBottom: 12 }}>Supported Formats</h3>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 8 }}>
-            {converters.map(c => (
-              <div key={c.id} style={{
-                background: 'var(--bg-input)', borderRadius: 6, padding: '8px 12px',
-                border: '1px solid var(--border-color)', fontSize: 13,
-              }}>
-                <span style={{ fontWeight: 600, color: 'var(--accent-blue)' }}>{c.label}</span>
-                <span style={{ color: 'var(--text-secondary)', marginLeft: 8 }}>{c.example}</span>
+        {outputs.length > 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {outputs.map((output) => (
+              <div
+                key={output.key}
+                className="p-4 border border-gray-300 rounded-lg"
+                style={{
+                  backgroundColor: 'var(--bg-secondary)',
+                  borderColor: 'var(--border-color)',
+                }}
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <label className="text-sm font-medium">{output.label}</label>
+                </div>
+                <div className="relative">
+                  <input
+                    type="text"
+                    value={output.value}
+                    readOnly
+                    className="w-full px-3 py-2 font-mono text-sm bg-gray-50 border border-gray-200 rounded"
+                    style={{
+                      backgroundColor: 'var(--bg-primary)',
+                      color: 'var(--text-primary)',
+                    }}
+                  />
+                  <button
+                    onClick={() => {
+                      navigator.clipboard.writeText(output.value);
+                    }}
+                    className="absolute right-2 top-1/2 transform -translate-y-1/2 text-blue-500 hover:text-blue-700 text-xs font-medium"
+                  >
+                    Copy
+                  </button>
+                </div>
               </div>
             ))}
           </div>
-        </div>
-      )}
+        )}
 
-      <div style={{ marginTop: 30, paddingTop: 20, borderTop: '1px solid var(--border-color)' }}>
-        <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>{ui.seoTitle}</h2>
-        <p style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.7 }}>{ui.seoContent}</p>
+        {!input.trim() && (
+          <div className="text-center py-12 text-gray-400">
+            <p>{t.placeholderMessage || 'Start typing to see all case conversions...'}</p>
+          </div>
+        )}
+
+        <div className="mt-8 flex flex-wrap gap-3">
+          <button
+            onClick={() => {
+              setInput('');
+              setOutputs([]);
+            }}
+            className="btn btn-secondary"
+          >
+            {t.clear || 'Clear'}
+          </button>
+          <button onClick={handleShare} className="btn btn-secondary">
+            {shareCopied ? '✓ Copied!' : 'Share'}
+          </button>
+        </div>
       </div>
+
+      <section className="mt-12 border-t pt-8">
+        <h2 className="text-2xl font-bold mb-4">{t.seoTitle || 'Text Case Converter Guide'}</h2>
+        <p className="text-gray-600 mb-4">{t.seoContent || 'Instantly convert text between 10 different case styles. Perfect for coding, variable naming, and text formatting. All conversions happen instantly in your browser.'}</p>
+
+        <h3 className="text-xl font-bold mb-3 mt-6">{t.seoFeaturesTitle || 'Supported Case Styles'}</h3>
+        <ul className="list-disc list-inside space-y-2 text-gray-600">
+          <li>{t.seoFeature1 || 'camelCase — first word lowercase, subsequent words capitalized'}</li>
+          <li>{t.seoFeature2 || 'PascalCase — each word capitalized, no spaces'}</li>
+          <li>{t.seoFeature3 || 'snake_case — words separated by underscores, lowercase'}</li>
+          <li>{t.seoFeature4 || 'kebab-case — words separated by hyphens, lowercase'}</li>
+          <li>{t.seoFeature5 || 'CONSTANT_CASE — all uppercase with underscores'}</li>
+          <li>{t.seoFeature6 || 'Title Case — each word capitalized with spaces'}</li>
+          <li>{t.seoFeature7 || 'dot.case — words separated by dots, lowercase'}</li>
+          <li>{t.seoFeature8 || 'path/case — words separated by slashes, lowercase'}</li>
+        </ul>
+
+        {t.faqs && (
+          <div className="mt-8">
+            <h3 className="text-xl font-bold mb-4">{t.faqTitle || 'FAQ'}</h3>
+            <div className="space-y-4">
+              {t.faqs.map((faq, idx) => (
+                <div key={idx} className="border-l-4 border-blue-500 pl-4">
+                  <h4 className="font-semibold mb-2">{faq.q}</h4>
+                  <p className="text-gray-600 text-sm">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </section>
     </ToolLayout>
   );
 }

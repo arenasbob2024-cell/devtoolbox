@@ -9,6 +9,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const dict = await getDictionary(lang);
   const t = dict.tools['json-to-xml-converter'];
   const url = `https://viadreams.cc/${lang}/tools/json-to-xml-converter`;
+
   return {
     title: t.pageTitle,
     description: t.pageDescription,
@@ -29,9 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     alternates: {
       canonical: url,
       languages: {
-        ...Object.fromEntries(
-          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/json-to-xml-converter`])
-        ),
+        ...Object.fromEntries(i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/json-to-xml-converter`])),
         'x-default': `https://viadreams.cc/en/tools/json-to-xml-converter`,
       },
     },
@@ -41,9 +40,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 export default async function Layout({ children, params }: { children: React.ReactNode; params: Promise<{ lang: string }> }) {
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
-  return (
-    <ToolSeoServer toolId="json-to-xml-converter" lang={lang}>
-      {children}
-    </ToolSeoServer>
-  );
+
+  return <ToolSeoServer toolId="json-to-xml-converter" lang={lang}>{children}</ToolSeoServer>;
 }
