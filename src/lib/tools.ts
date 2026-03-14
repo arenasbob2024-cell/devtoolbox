@@ -3554,6 +3554,7 @@ export const tools: Tool[] = [
     keywords: ['json to rust', 'json to rust struct', 'rust struct generator', 'json to rust converter', 'serde', 'rust serialize', 'rust deserialize', 'convert json to rust'],
     path: '/tools/json-to-rust-struct',
     relatedTools: ['json-to-go-struct', 'json-to-typescript', 'json-to-java', 'json-to-csharp'],
+  },
   {
     id: 'toml-to-yaml',
     name: 'TOML to YAML Converter',
