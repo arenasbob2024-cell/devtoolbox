@@ -23,7 +23,7 @@ function decodeJwt(token: string) {
 }
 
 export default function JwtDecoder() {
-  const { dict } = useLang();
+  const { dict, lang } = useLang();
   const t = dict.tools['jwt-decoder'];
 
   const [input, setInput] = useState('');
@@ -137,6 +137,39 @@ export default function JwtDecoder() {
         <p style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.7 }}>
           {t.seoContent}
         </p>
+      </div>
+
+      {/* FAQ Section */}
+      <div style={{ marginTop: 30, paddingTop: 20, borderTop: '1px solid var(--border-color)' }}>
+        <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>Frequently Asked Questions</h2>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <div style={{ border: '1px solid var(--border-color)', borderRadius: 8, overflow: 'hidden', background: 'var(--bg-input)' }}>
+            <div style={{ padding: '14px 16px', cursor: 'pointer', fontSize: 14, fontWeight: 600, color: 'var(--text-primary)' }}>What is JWT and why is it used?</div>
+            <div style={{ padding: '0 16px 14px', fontSize: 13, lineHeight: 1.7, color: 'var(--text-secondary)' }}>JWT (JSON Web Token) is a compact, self-contained way to transmit information as a JSON object. It's widely used for authentication and authorization in APIs. The token is signed, so the server can verify it hasn't been tampered with. See <a href={`/${lang}/tools/hash-generator`} style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>Hash Generator</a> for understanding token signatures.</div>
+          </div>
+          <div style={{ border: '1px solid var(--border-color)', borderRadius: 8, overflow: 'hidden', background: 'var(--bg-input)' }}>
+            <div style={{ padding: '14px 16px', cursor: 'pointer', fontSize: 14, fontWeight: 600, color: 'var(--text-primary)' }}>Is it safe to paste my JWT token here?</div>
+            <div style={{ padding: '0 16px 14px', fontSize: 13, lineHeight: 1.7, color: 'var(--text-secondary)' }}>This tool runs entirely in your browser—no data is sent to any server. However, JWTs often contain sensitive user information, so be careful pasting production tokens. Never share tokens with untrusted tools or paste them in public channels.</div>
+          </div>
+          <div style={{ border: '1px solid var(--border-color)', borderRadius: 8, overflow: 'hidden', background: 'var(--bg-input)' }}>
+            <div style={{ padding: '14px 16px', cursor: 'pointer', fontSize: 14, fontWeight: 600, color: 'var(--text-primary)' }}>What's the difference between JWT and JWE?</div>
+            <div style={{ padding: '0 16px 14px', fontSize: 13, lineHeight: 1.7, color: 'var(--text-secondary)' }}>JWT (Signed) proves the token wasn't modified and shows the payload in plain text (base64 encoded). JWE (Encrypted) encrypts the payload so only the intended recipient can read it. Use JWE when the payload contains truly sensitive data that shouldn't be visible to anyone with the token.</div>
+          </div>
+          <div style={{ border: '1px solid var(--border-color)', borderRadius: 8, overflow: 'hidden', background: 'var(--bg-input)' }}>
+            <div style={{ padding: '14px 16px', cursor: 'pointer', fontSize: 14, fontWeight: 600, color: 'var(--text-primary)' }}>What is the "exp" claim and why does it matter?</div>
+            <div style={{ padding: '0 16px 14px', fontSize: 13, lineHeight: 1.7, color: 'var(--text-secondary)' }}>The "exp" (expiration time) claim specifies when the token is no longer valid. Check this with your <a href={`/${lang}/tools/timestamp-converter`} style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>Unix timestamp converter</a> to see if a token has expired. Always validate token expiration on the server before trusting it.</div>
+          </div>
+        </div>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "What is JWT and why is it used?", "acceptedAnswer": { "@type": "Answer", "text": "JWT (JSON Web Token) is a compact, self-contained way to transmit information as a JSON object. It's widely used for authentication and authorization in APIs and is signed for verification." } },
+            { "@type": "Question", "name": "Is it safe to paste my JWT token here?", "acceptedAnswer": { "@type": "Answer", "text": "This tool runs entirely in your browser with no data sent to servers. However, be careful pasting production tokens as they contain sensitive user information. Never share tokens with untrusted tools." } },
+            { "@type": "Question", "name": "What's the difference between JWT and JWE?", "acceptedAnswer": { "@type": "Answer", "text": "JWT (Signed) proves authenticity and shows the payload in plain text. JWE (Encrypted) encrypts the payload so only the intended recipient can read it. Use JWE for sensitive data." } },
+            { "@type": "Question", "name": "What is the 'exp' claim and why does it matter?", "acceptedAnswer": { "@type": "Answer", "text": "The 'exp' (expiration time) claim specifies when the token is no longer valid. Always validate token expiration on the server before trusting it." } }
+          ]
+        }) }} />
       </div>
     </ToolLayout>
   );

@@ -438,7 +438,7 @@ Visit [DevToolBox](https://viadreams.cc) for more tools!
 `;
 
 export default function MarkdownPreview() {
-  const { lang } = useLang();
+  const { lang, dict } = useLang();
   const t = ui[lang] || ui.en;
 
   const [input, setInput] = useState(defaultMd);
@@ -536,6 +536,32 @@ export default function MarkdownPreview() {
             </Link>
           ))}
         </div>
+
+        <h3 style={{ fontSize: 16, fontWeight: 600, marginTop: 24, marginBottom: 8 }}>Additional FAQ</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 24 }}>
+          <div style={{ border: '1px solid var(--border-color)', borderRadius: 8, overflow: 'hidden', background: 'var(--bg-input)' }}>
+            <div style={{ padding: '14px 16px', cursor: 'pointer', fontSize: 14, fontWeight: 600, color: 'var(--text-primary)' }}>What is GitHub Flavored Markdown?</div>
+            <div style={{ padding: '0 16px 14px', fontSize: 13, lineHeight: 1.7, color: 'var(--text-secondary)' }}>GitHub Flavored Markdown (GFM) extends standard Markdown with additional features like strikethrough (~~text~~), task lists (- [ ] task), and mentions (@username). This tool supports standard Markdown syntax, so most GFM will render correctly.</div>
+          </div>
+          <div style={{ border: '1px solid var(--border-color)', borderRadius: 8, overflow: 'hidden', background: 'var(--bg-input)' }}>
+            <div style={{ padding: '14px 16px', cursor: 'pointer', fontSize: 14, fontWeight: 600, color: 'var(--text-primary)' }}>Can I use HTML inside Markdown?</div>
+            <div style={{ padding: '0 16px 14px', fontSize: 13, lineHeight: 1.7, color: 'var(--text-secondary)' }}>Standard Markdown is just text formatting, not HTML rendering. This tool converts Markdown to HTML for display. For advanced HTML styling, use a <a href={`/${lang}/tools/html-to-markdown`} style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>full HTML editor</a>.</div>
+          </div>
+          <div style={{ border: '1px solid var(--border-color)', borderRadius: 8, overflow: 'hidden', background: 'var(--bg-input)' }}>
+            <div style={{ padding: '14px 16px', cursor: 'pointer', fontSize: 14, fontWeight: 600, color: 'var(--text-primary)' }}>Is Markdown better than rich text editors?</div>
+            <div style={{ padding: '0 16px 14px', fontSize: 13, lineHeight: 1.7, color: 'var(--text-secondary)' }}>Markdown is lightweight, version-control friendly, and works anywhere plain text is supported. Rich text editors are easier for beginners but produce bloated HTML. Use Markdown for content, code documentation, and APIs. Use rich text for printed documents or complex layouts.</div>
+          </div>
+        </div>
+
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "What is GitHub Flavored Markdown?", "acceptedAnswer": { "@type": "Answer", "text": "GitHub Flavored Markdown (GFM) extends standard Markdown with features like strikethrough, task lists, and mentions. Most GFM renders correctly in this tool." } },
+            { "@type": "Question", "name": "Can I use HTML inside Markdown?", "acceptedAnswer": { "@type": "Answer", "text": "Standard Markdown is text formatting, not HTML rendering. This tool converts Markdown to HTML for display. For advanced HTML styling, use a full HTML editor." } },
+            { "@type": "Question", "name": "Is Markdown better than rich text editors?", "acceptedAnswer": { "@type": "Answer", "text": "Markdown is lightweight and version-control friendly. Rich text editors are easier for beginners but produce bloated HTML. Use Markdown for content and APIs." } }
+          ]
+        }) }} />
       </div>
     </ToolLayout>
   );

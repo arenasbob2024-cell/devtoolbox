@@ -383,6 +383,32 @@ export default function SqlFormatter() {
             </Link>
           ))}
         </div>
+
+        <h3 style={{ fontSize: 16, fontWeight: 600, marginTop: 24, marginBottom: 8 }}>Additional FAQ</h3>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 24 }}>
+          <div style={{ border: '1px solid var(--border-color)', borderRadius: 8, overflow: 'hidden', background: 'var(--bg-input)' }}>
+            <div style={{ padding: '14px 16px', cursor: 'pointer', fontSize: 14, fontWeight: 600, color: 'var(--text-primary)' }}>Why should I format my SQL?</div>
+            <div style={{ padding: '0 16px 14px', fontSize: 13, lineHeight: 1.7, color: 'var(--text-secondary)' }}>Formatted SQL is easier to read, debug, and maintain. Well-formatted queries help you spot errors faster, improve code reviews, and are essential when sharing SQL with team members. This tool adds proper indentation and line breaks automatically.</div>
+          </div>
+          <div style={{ border: '1px solid var(--border-color)', borderRadius: 8, overflow: 'hidden', background: 'var(--bg-input)' }}>
+            <div style={{ padding: '14px 16px', cursor: 'pointer', fontSize: 14, fontWeight: 600, color: 'var(--text-primary)' }}>Do different SQL dialects require different formatting?</div>
+            <div style={{ padding: '0 16px 14px', fontSize: 13, lineHeight: 1.7, color: 'var(--text-secondary)' }}>While SQL syntax differs between MySQL, PostgreSQL, SQL Server, and Oracle, basic formatting principles (indentation, line breaks) are universal. This tool uses standard SQL formatting that works across all major dialects. Always test formatted queries in your specific database.</div>
+          </div>
+          <div style={{ border: '1px solid var(--border-color)', borderRadius: 8, overflow: 'hidden', background: 'var(--bg-input)' }}>
+            <div style={{ padding: '14px 16px', cursor: 'pointer', fontSize: 14, fontWeight: 600, color: 'var(--text-primary)' }}>Can formatting help prevent SQL injection?</div>
+            <div style={{ padding: '0 16px 14px', fontSize: 13, lineHeight: 1.7, color: 'var(--text-secondary)' }}>Formatting alone doesn't prevent SQL injection—it's purely visual. Always use parameterized queries and prepared statements to prevent injection attacks. See <a href={`/${lang}/tools/json-formatter`} style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>data validation tools</a> for safety best practices.</div>
+          </div>
+        </div>
+
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "Why should I format my SQL?", "acceptedAnswer": { "@type": "Answer", "text": "Formatted SQL is easier to read, debug, and maintain. Well-formatted queries help spot errors, improve code reviews, and are essential for team collaboration." } },
+            { "@type": "Question", "name": "Do different SQL dialects require different formatting?", "acceptedAnswer": { "@type": "Answer", "text": "Basic formatting (indentation, line breaks) is universal across MySQL, PostgreSQL, SQL Server, and Oracle. This tool uses standard formatting compatible with all major dialects." } },
+            { "@type": "Question", "name": "Can formatting help prevent SQL injection?", "acceptedAnswer": { "@type": "Answer", "text": "Formatting is purely visual and doesn't prevent SQL injection. Always use parameterized queries and prepared statements for security." } }
+          ]
+        }) }} />
       </div>
     </ToolLayout>
   );

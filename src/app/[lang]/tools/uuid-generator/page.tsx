@@ -14,7 +14,7 @@ function generateUUID(): string {
 }
 
 export default function UuidGenerator() {
-  const { dict } = useLang();
+  const { dict, lang } = useLang();
   const t = dict.tools['uuid-generator'];
   const [uuids, setUuids] = useState<string[]>([]);
   const [count, setCount] = useState(5);
@@ -93,6 +93,39 @@ export default function UuidGenerator() {
         <p style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.7 }}>
           {t.seoContent}
         </p>
+      </div>
+
+      {/* FAQ Section */}
+      <div style={{ marginTop: 30, paddingTop: 20, borderTop: '1px solid var(--border-color)' }}>
+        <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>Frequently Asked Questions</h2>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <div style={{ border: '1px solid var(--border-color)', borderRadius: 8, overflow: 'hidden', background: 'var(--bg-input)' }}>
+            <div style={{ padding: '14px 16px', cursor: 'pointer', fontSize: 14, fontWeight: 600, color: 'var(--text-primary)' }}>What are UUID versions and which should I use?</div>
+            <div style={{ padding: '0 16px 14px', fontSize: 13, lineHeight: 1.7, color: 'var(--text-secondary)' }}>UUID v4 is random and the most commonly used for general purposes (like database IDs). UUID v7 is time-based and sortable, making it better for databases that benefit from ordering. This tool generates v4 by default. For distributed systems, v7 provides better performance because it's sortable by timestamp.</div>
+          </div>
+          <div style={{ border: '1px solid var(--border-color)', borderRadius: 8, overflow: 'hidden', background: 'var(--bg-input)' }}>
+            <div style={{ padding: '14px 16px', cursor: 'pointer', fontSize: 14, fontWeight: 600, color: 'var(--text-primary)' }}>What's the probability of UUID collision?</div>
+            <div style={{ padding: '0 16px 14px', fontSize: 13, lineHeight: 1.7, color: 'var(--text-secondary)' }}>For UUID v4 (128-bit random), the collision probability is astronomically low—you'd need to generate 5.3 × 10^36 UUIDs to have a 50% chance of one collision. In practical terms, you'll never encounter collisions for any real-world application.</div>
+          </div>
+          <div style={{ border: '1px solid var(--border-color)', borderRadius: 8, overflow: 'hidden', background: 'var(--bg-input)' }}>
+            <div style={{ padding: '14px 16px', cursor: 'pointer', fontSize: 14, fontWeight: 600, color: 'var(--text-primary)' }}>UUID vs Auto-Increment: which is better?</div>
+            <div style={{ padding: '0 16px 14px', fontSize: 13, lineHeight: 1.7, color: 'var(--text-secondary)' }}>Auto-increment is smaller and faster for single-database systems. UUIDs are better for distributed systems, microservices, and when you need unique IDs across multiple databases or servers. UUIDs don't leak information about data growth or insertion patterns.</div>
+          </div>
+          <div style={{ border: '1px solid var(--border-color)', borderRadius: 8, overflow: 'hidden', background: 'var(--bg-input)' }}>
+            <div style={{ padding: '14px 16px', cursor: 'pointer', fontSize: 14, fontWeight: 600, color: 'var(--text-primary)' }}>What is ULID and how does it compare to UUID?</div>
+            <div style={{ padding: '0 16px 14px', fontSize: 13, lineHeight: 1.7, color: 'var(--text-secondary)' }}>ULID (Universally Unique Lexicographically Sortable Identifier) is similar to UUID v7 but more compact (128 bits) and uses a different encoding. Like UUID v7, it's sortable by timestamp, making it ideal for databases. See <a href={`/${lang}/tools/timestamp-converter`} style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>Timestamp Converter</a> for time-based ID generation.</div>
+          </div>
+        </div>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "What are UUID versions and which should I use?", "acceptedAnswer": { "@type": "Answer", "text": "UUID v4 is random and most commonly used. UUID v7 is time-based and sortable, better for databases. This tool generates v4 by default, but v7 provides better performance for ordered data." } },
+            { "@type": "Question", "name": "What's the probability of UUID collision?", "acceptedAnswer": { "@type": "Answer", "text": "For UUID v4 (128-bit random), collision probability is astronomically low. You'd need 5.3 × 10^36 UUIDs for a 50% chance of collision. Collisions never occur in real-world applications." } },
+            { "@type": "Question", "name": "UUID vs Auto-Increment: which is better?", "acceptedAnswer": { "@type": "Answer", "text": "Auto-increment is smaller and faster for single databases. UUIDs are better for distributed systems, microservices, and don't leak information about data patterns." } },
+            { "@type": "Question", "name": "What is ULID and how does it compare to UUID?", "acceptedAnswer": { "@type": "Answer", "text": "ULID is similar to UUID v7 but more compact and uses different encoding. Like UUID v7, it's sortable by timestamp, ideal for databases." } }
+          ]
+        }) }} />
       </div>
     </ToolLayout>
   );

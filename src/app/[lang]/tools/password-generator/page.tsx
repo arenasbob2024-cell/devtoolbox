@@ -47,7 +47,7 @@ function calculateStrength(password: string): { score: number; label: string; co
 }
 
 export default function PasswordGenerator() {
-  const { dict } = useLang();
+  const { dict, lang } = useLang();
   const t = dict.tools['password-generator'];
   
   const [passwords, setPasswords] = useState<string[]>([]);
@@ -242,6 +242,39 @@ export default function PasswordGenerator() {
         <p style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.7 }}>
           {t.seoContent}
         </p>
+      </div>
+
+      {/* FAQ Section */}
+      <div style={{ marginTop: 30, paddingTop: 20, borderTop: '1px solid var(--border-color)' }}>
+        <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>Frequently Asked Questions</h2>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <div style={{ border: '1px solid var(--border-color)', borderRadius: 8, overflow: 'hidden', background: 'var(--bg-input)' }}>
+            <div style={{ padding: '14px 16px', cursor: 'pointer', fontSize: 14, fontWeight: 600, color: 'var(--text-primary)' }}>How long should passwords be?</div>
+            <div style={{ padding: '0 16px 14px', fontSize: 13, lineHeight: 1.7, color: 'var(--text-secondary)' }}>Security experts recommend at least 12-16 characters for strong passwords. This tool defaults to 16 characters, which provides excellent protection. Longer passwords (20+ characters) are even better, but consider usability. The password strength indicator will show you how strong your generated passwords are.</div>
+          </div>
+          <div style={{ border: '1px solid var(--border-color)', borderRadius: 8, overflow: 'hidden', background: 'var(--bg-input)' }}>
+            <div style={{ padding: '14px 16px', cursor: 'pointer', fontSize: 14, fontWeight: 600, color: 'var(--text-primary)' }}>Do I need special characters?</div>
+            <div style={{ padding: '0 16px 14px', fontSize: 13, lineHeight: 1.7, color: 'var(--text-secondary)' }}>Special characters (!@#$%^&*) add complexity and significantly increase entropy. Many systems require them. This tool includes them by default, but you can disable them if a service doesn't support special characters. Generally, keep them enabled for maximum security.</div>
+          </div>
+          <div style={{ border: '1px solid var(--border-color)', borderRadius: 8, overflow: 'hidden', background: 'var(--bg-input)' }}>
+            <div style={{ padding: '14px 16px', cursor: 'pointer', fontSize: 14, fontWeight: 600, color: 'var(--text-primary)' }}>Should I use a password manager?</div>
+            <div style={{ padding: '0 16px 14px', fontSize: 13, lineHeight: 1.7, color: 'var(--text-secondary)' }}>Absolutely. Password managers securely store and auto-fill strong passwords, so you don't have to remember them. This is the best practice for managing multiple accounts. Use a tool like this generator to create strong passwords, then let your password manager store them.</div>
+          </div>
+          <div style={{ border: '1px solid var(--border-color)', borderRadius: 8, overflow: 'hidden', background: 'var(--bg-input)' }}>
+            <div style={{ padding: '14px 16px', cursor: 'pointer', fontSize: 14, fontWeight: 600, color: 'var(--text-primary)' }}>What is password entropy?</div>
+            <div style={{ padding: '0 16px 14px', fontSize: 13, lineHeight: 1.7, color: 'var(--text-secondary)' }}>Entropy measures randomness and password strength. More character types (uppercase, lowercase, numbers, symbols) and longer passwords increase entropy. For example, a 12-character password with all four character types has much higher entropy than a 12-character lowercase-only password, making it harder to crack.</div>
+          </div>
+        </div>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "How long should passwords be?", "acceptedAnswer": { "@type": "Answer", "text": "Security experts recommend at least 12-16 characters. This tool defaults to 16 characters for excellent protection. Longer passwords (20+ characters) are even better." } },
+            { "@type": "Question", "name": "Do I need special characters?", "acceptedAnswer": { "@type": "Answer", "text": "Special characters add complexity and increase entropy significantly. Many systems require them. Keep them enabled for maximum security unless the service doesn't support them." } },
+            { "@type": "Question", "name": "Should I use a password manager?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Password managers securely store and auto-fill strong passwords so you don't have to remember them. This is the best practice for managing multiple accounts." } },
+            { "@type": "Question", "name": "What is password entropy?", "acceptedAnswer": { "@type": "Answer", "text": "Entropy measures randomness and password strength. More character types and longer passwords increase entropy, making passwords harder to crack." } }
+          ]
+        }) }} />
       </div>
     </ToolLayout>
   );

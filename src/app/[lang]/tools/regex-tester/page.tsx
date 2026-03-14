@@ -12,7 +12,7 @@ interface Match {
 }
 
 export default function RegexTester() {
-  const { dict } = useLang();
+  const { dict, lang } = useLang();
   const t = dict.tools['regex-tester'];
 
   const [pattern, setPattern] = useState('');
@@ -210,6 +210,39 @@ export default function RegexTester() {
         <p style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.7 }}>
           {t.seoContent}
         </p>
+      </div>
+
+      {/* FAQ Section */}
+      <div style={{ marginTop: 30, paddingTop: 20, borderTop: '1px solid var(--border-color)' }}>
+        <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>Frequently Asked Questions</h2>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <div style={{ border: '1px solid var(--border-color)', borderRadius: 8, overflow: 'hidden', background: 'var(--bg-input)' }}>
+            <div style={{ padding: '14px 16px', cursor: 'pointer', fontSize: 14, fontWeight: 600, color: 'var(--text-primary)' }}>What is the difference between testing and matching?</div>
+            <div style={{ padding: '0 16px 14px', fontSize: 13, lineHeight: 1.7, color: 'var(--text-secondary)' }}>Testing checks if a pattern matches a string at all (with the "g" flag, it finds all matches). Matching shows you where in the text the pattern was found and what was captured. Use <a href={`/${lang}/tools/json-formatter`} style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>tools like JSON Formatter</a> to validate your data before testing patterns.</div>
+          </div>
+          <div style={{ border: '1px solid var(--border-color)', borderRadius: 8, overflow: 'hidden', background: 'var(--bg-input)' }}>
+            <div style={{ padding: '14px 16px', cursor: 'pointer', fontSize: 14, fontWeight: 600, color: 'var(--text-primary)' }}>What do regex flags do?</div>
+            <div style={{ padding: '0 16px 14px', fontSize: 13, lineHeight: 1.7, color: 'var(--text-secondary)' }}>The global flag (g) finds all matches; case-insensitive (i) ignores uppercase/lowercase; multiline (m) makes ^ and $ match line boundaries instead of string boundaries; dotall (s) makes . match newlines. Combine flags as needed.</div>
+          </div>
+          <div style={{ border: '1px solid var(--border-color)', borderRadius: 8, overflow: 'hidden', background: 'var(--bg-input)' }}>
+            <div style={{ padding: '14px 16px', cursor: 'pointer', fontSize: 14, fontWeight: 600, color: 'var(--text-primary)' }}>How do I match email or phone numbers?</div>
+            <div style={{ padding: '0 16px 14px', fontSize: 13, lineHeight: 1.7, color: 'var(--text-secondary)' }}>Email: <code style={{ background: '#1e1e2e', padding: '2px 6px', borderRadius: 4 }}>/[^@]+@[^@]+\.[^@]+/</code>. Phone (US): <code style={{ background: '#1e1e2e', padding: '2px 6px', borderRadius: 4 }}>/\d{3}-\d{3}-\d{4}/</code>. For real production use, check the <a href={`/${lang}/tools/password-generator`} style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>validation best practices</a>.</div>
+          </div>
+          <div style={{ border: '1px solid var(--border-color)', borderRadius: 8, overflow: 'hidden', background: 'var(--bg-input)' }}>
+            <div style={{ padding: '14px 16px', cursor: 'pointer', fontSize: 14, fontWeight: 600, color: 'var(--text-primary)' }}>What's a capture group?</div>
+            <div style={{ padding: '0 16px 14px', fontSize: 13, lineHeight: 1.7, color: 'var(--text-secondary)' }}>Parentheses in a regex create capture groups. For example, <code style={{ background: '#1e1e2e', padding: '2px 6px', borderRadius: 4 }}>(\w+)</code> captures one or more word characters. Groups are shown separately in the matches list, allowing you to extract specific parts of your match.</div>
+          </div>
+        </div>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "What is the difference between testing and matching?", "acceptedAnswer": { "@type": "Answer", "text": "Testing checks if a pattern matches a string at all (with the 'g' flag, it finds all matches). Matching shows you where in the text the pattern was found and what was captured." } },
+            { "@type": "Question", "name": "What do regex flags do?", "acceptedAnswer": { "@type": "Answer", "text": "The global flag (g) finds all matches; case-insensitive (i) ignores uppercase/lowercase; multiline (m) makes ^ and $ match line boundaries; dotall (s) makes . match newlines." } },
+            { "@type": "Question", "name": "How do I match email or phone numbers?", "acceptedAnswer": { "@type": "Answer", "text": "Email: /[^@]+@[^@]+\\.[^@]+/. Phone (US): /\\d{3}-\\d{3}-\\d{4}/. For production use, consult validation best practices." } },
+            { "@type": "Question", "name": "What's a capture group?", "acceptedAnswer": { "@type": "Answer", "text": "Parentheses in a regex create capture groups like (\\w+) to capture word characters. Groups are shown separately in matches, allowing you to extract specific parts." } }
+          ]
+        }) }} />
       </div>
     </ToolLayout>
   );

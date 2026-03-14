@@ -32,6 +32,8 @@ export default function ToolLayout({ title, description, children, toolId }: Too
       <nav style={{ fontSize: 13, color: 'var(--text-secondary)', marginBottom: 16, display: 'flex', gap: 8, alignItems: 'center' }}>
         <Link href={`/${lang}`} style={{ color: 'var(--accent-blue)', textDecoration: 'none' }}>{dict.common.home}</Link>
         <span>/</span>
+        <Link href={`/${lang}/tools`} style={{ color: 'var(--accent-blue)', textDecoration: 'none' }}>{dict.common.allTools}</Link>
+        <span>/</span>
         <span>{title}</span>
       </nav>
 

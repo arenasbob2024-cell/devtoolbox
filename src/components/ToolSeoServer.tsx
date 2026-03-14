@@ -26,7 +26,8 @@ export default async function ToolSeoServer({ toolId, lang, children }: ToolSeoS
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: dict.common.home, item: `https://viadreams.cc/${lang}` },
-      { '@type': 'ListItem', position: 2, name: title, item: toolUrl },
+      { '@type': 'ListItem', position: 2, name: dict.common.allTools, item: `https://viadreams.cc/${lang}/tools` },
+      { '@type': 'ListItem', position: 3, name: title, item: toolUrl },
     ],
   };
 

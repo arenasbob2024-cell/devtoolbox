@@ -70,7 +70,7 @@ function jsonToTypeScript(json: string, rootName: string, useExport: boolean, us
 }
 
 export default function JsonToTypeScript() {
-  const { dict } = useLang();
+  const { dict, lang } = useLang();
   const t = dict.tools['json-to-typescript'] as Record<string, unknown>;
   const common = dict.common;
   const [input, setInput] = useState('');
@@ -151,6 +151,39 @@ export default function JsonToTypeScript() {
           <p style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.7 }}>{t.seoContent as string}</p>
         </div>
       )}
+
+      {/* FAQ Section */}
+      <div style={{ marginTop: 30, paddingTop: 20, borderTop: '1px solid var(--border-color)' }}>
+        <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 16 }}>Frequently Asked Questions</h2>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          <div style={{ border: '1px solid var(--border-color)', borderRadius: 8, overflow: 'hidden', background: 'var(--bg-input)' }}>
+            <div style={{ padding: '14px 16px', cursor: 'pointer', fontSize: 14, fontWeight: 600, color: 'var(--text-primary)' }}>Why convert JSON to TypeScript?</div>
+            <div style={{ padding: '0 16px 14px', fontSize: 13, lineHeight: 1.7, color: 'var(--text-secondary)' }}>Converting JSON to TypeScript interfaces provides type safety, IDE autocompletion, and compile-time error checking. Instead of treating data as <code style={{ background: '#1e1e2e', padding: '2px 6px', borderRadius: 4 }}>any</code>, TypeScript ensures you use the correct properties and types, preventing runtime errors and improving code quality.</div>
+          </div>
+          <div style={{ border: '1px solid var(--border-color)', borderRadius: 8, overflow: 'hidden', background: 'var(--bg-input)' }}>
+            <div style={{ padding: '14px 16px', cursor: 'pointer', fontSize: 14, fontWeight: 600, color: 'var(--text-primary)' }}>When should I use interface vs type?</div>
+            <div style={{ padding: '0 16px 14px', fontSize: 13, lineHeight: 1.7, color: 'var(--text-secondary)' }}>This tool generates <code style={{ background: '#1e1e2e', padding: '2px 6px', borderRadius: 4 }}>interfaces</code> by default. Use interfaces for object shapes (they're better for OOP patterns and declaration merging). Use <code style={{ background: '#1e1e2e', padding: '2px 6px', borderRadius: 4 }}>type</code> for unions, primitives, and more functional approaches. For JSON conversion, interfaces are preferred.</div>
+          </div>
+          <div style={{ border: '1px solid var(--border-color)', borderRadius: 8, overflow: 'hidden', background: 'var(--bg-input)' }}>
+            <div style={{ padding: '14px 16px', cursor: 'pointer', fontSize: 14, fontWeight: 600, color: 'var(--text-primary)' }}>How do nested objects get converted?</div>
+            <div style={{ padding: '0 16px 14px', fontSize: 13, lineHeight: 1.7, color: 'var(--text-secondary)' }}>This tool generates separate interfaces for each nested object. For example, if your JSON has a <code style={{ background: '#1e1e2e', padding: '2px 6px', borderRadius: 4 }}>user: { name, email }</code>, it creates a <code style={{ background: '#1e1e2e', padding: '2px 6px', borderRadius: 4 }}>User</code> interface and a <code style={{ background: '#1e1e2e', padding: '2px 6px', borderRadius: 4 }}>Root</code> interface that uses it. This keeps types clean and reusable.</div>
+          </div>
+          <div style={{ border: '1px solid var(--border-color)', borderRadius: 8, overflow: 'hidden', background: 'var(--bg-input)' }}>
+            <div style={{ padding: '14px 16px', cursor: 'pointer', fontSize: 14, fontWeight: 600, color: 'var(--text-primary)' }}>How are optional properties handled?</div>
+            <div style={{ padding: '0 16px 14px', fontSize: 13, lineHeight: 1.7, color: 'var(--text-secondary)' }}>This tool marks all properties as required by default. If you need optional properties (marked with <code style={{ background: '#1e1e2e', padding: '2px 6px', borderRadius: 4 }}>?</code>), you should manually add them or use the <code style={{ background: '#1e1e2e', padding: '2px 6px', borderRadius: 4 }}>readonly</code> checkbox to add that modifier. See <a href={`/${lang}/tools/json-formatter`} style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>JSON Formatter</a> to validate your JSON structure first.</div>
+          </div>
+        </div>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            { "@type": "Question", "name": "Why convert JSON to TypeScript?", "acceptedAnswer": { "@type": "Answer", "text": "Converting provides type safety, IDE autocompletion, and compile-time error checking. TypeScript ensures you use correct properties and types, preventing runtime errors." } },
+            { "@type": "Question", "name": "When should I use interface vs type?", "acceptedAnswer": { "@type": "Answer", "text": "This tool generates interfaces, which are better for OOP patterns and object shapes. Use type for unions, primitives, and functional approaches. For JSON conversion, interfaces are preferred." } },
+            { "@type": "Question", "name": "How do nested objects get converted?", "acceptedAnswer": { "@type": "Answer", "text": "This tool generates separate interfaces for each nested object. For example, a user object creates a User interface and a Root interface that uses it, keeping types clean and reusable." } },
+            { "@type": "Question", "name": "How are optional properties handled?", "acceptedAnswer": { "@type": "Answer", "text": "This tool marks all properties as required by default. For optional properties, manually add the ? modifier. Use the readonly checkbox to add that modifier." } }
+          ]
+        }) }} />
+      </div>
     </ToolLayout>
   );
 }
