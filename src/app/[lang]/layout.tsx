@@ -137,9 +137,9 @@ export default async function LangLayout({
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1183198810365600" crossOrigin="anonymous" />
         
         {/* Organization Schema */}
-        <script 
-          type="application/ld+json" 
-          dangerouslySetInnerHTML={{ 
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Organization',
@@ -148,8 +148,26 @@ export default async function LangLayout({
               logo: 'https://viadreams.cc/og-image.png',
               description: 'Free online developer tools for encoding, formatting, generating, and converting data.',
               sameAs: [],
-            }) 
-          }} 
+            })
+          }}
+        />
+
+        {/* WebSite Schema with SearchAction - enables Google sitelinks search box */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: 'DevToolBox',
+              url: 'https://viadreams.cc',
+              potentialAction: {
+                '@type': 'SearchAction',
+                target: 'https://viadreams.cc/en/tools?q={search_term_string}',
+                'query-input': 'required name=search_term_string'
+              }
+            })
+          }}
         />
       </head>
       <body style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>

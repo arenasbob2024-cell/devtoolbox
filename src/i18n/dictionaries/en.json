@@ -2309,8 +2309,8 @@
     "typescript-to-javascript": {
       "name": "TypeScript to JavaScript",
       "description": "Compile TypeScript code to plain JavaScript",
-      "pageTitle": "TypeScript to JavaScript Converter Online Free — Convert TS to JS Instantly",
-      "pageDescription": "Convert TypeScript to JavaScript online free. Remove type annotations, interfaces, generics & enums instantly — no signup. Paste TS code, get clean JS in seconds.",
+      "pageTitle": "TypeScript to JavaScript Converter – Online, Free, Instant",
+      "pageDescription": "Convert TypeScript to clean JavaScript instantly. Removes type annotations, interfaces, generics and enums. Paste TS code, get browser-ready JS — no signup needed.",
       "seoTitle": "About TypeScript to JavaScript Conversion",
       "seoContent": "TypeScript is a typed superset of JavaScript that compiles to plain JS. Sometimes you need to quickly strip TypeScript-specific syntax to get clean JavaScript — for sharing code with non-TS projects, debugging, or learning what TypeScript compiles to. This tool removes type annotations, interfaces, type aliases, generic parameters, access modifiers (public, private, protected, readonly), type assertions (as Type), non-null assertions (!), and declare statements. It preserves all runtime JavaScript code including classes, functions, imports, and expressions. The output is clean, readable JavaScript ready to run in any environment. All processing happens in your browser with no external dependencies.",
       "faqTitle": "Frequently Asked Questions",
@@ -2725,8 +2725,8 @@
     "json-to-json-schema": {
       "name": "JSON to JSON Schema",
       "description": "Convert JSON to JSON Schema — generate schema from JSON instantly",
-      "pageTitle": "JSON to JSON Schema Generator Online Free — Create Schema from JSON",
-      "pageDescription": "Generate JSON Schema from JSON data online free. Auto-detect types, required fields, nested objects & arrays. Supports Draft 2020-12. Paste JSON, get schema instantly.",
+      "pageTitle": "JSON to JSON Schema Generator – Free Online Tool",
+      "pageDescription": "Instantly generate JSON Schema from any JSON data. Auto-detects types, required fields, nested objects and arrays. Supports Draft 2020-12. Paste JSON, get schema in seconds.",
       "seoTitle": "About JSON to JSON Schema Conversion",
       "seoContent": "JSON Schema is a vocabulary for annotating and validating JSON documents. It's widely used for API documentation (OpenAPI/Swagger), form generation, configuration validation, and data interchange. This tool analyzes your JSON data and generates a JSON Schema (draft-07) that describes its structure. It correctly identifies types, marks all existing fields as required, handles arrays with item schemas, and creates nested schemas for objects. The output can be used with any JSON Schema validator or integrated into OpenAPI specifications. All processing happens in your browser.",
       "faqTitle": "Frequently Asked Questions",
@@ -11276,8 +11276,8 @@
     "contactText": "Questions about this policy? Open an issue on our GitHub repository."
   },
   "meta": {
-    "homeTitle": "DevToolBox - Free Online Developer Tools",
-    "homeDescription": "Free online developer tools: JSON formatter, Base64 encoder, UUID generator, regex tester, hash generator, and 100+ more. No signup required. All processing in your browser."
+    "homeTitle": "DevToolBox – 93+ Free Online Developer Tools | JSON, Regex, Base64, JWT & More",
+    "homeDescription": "Free online tools for developers. Format JSON, test regex, encode Base64, decode JWT, generate UUIDs, hash text, parse cron expressions, and 80+ more tools. No signup required."
   },
   "blog": {
     "nav": "Blog",

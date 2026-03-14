@@ -56,6 +56,47 @@ export async function generateMetadata({
   };
 }
 
-export default function BlogPostLayout({ children }: { children: React.ReactNode }) {
-  return children;
+export default async function BlogPostLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ lang: string; slug: string }>;
+}) {
+  const { lang: rawLang, slug } = await params;
+  const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
+  const post = getLocalizedPost(slug, lang);
+
+  return (
+    <>
+      {post && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Article',
+              headline: post.title,
+              description: post.description,
+              datePublished: post.date,
+              author: { '@type': 'Organization', name: 'DevToolBox' },
+              publisher: {
+                '@type': 'Organization',
+                name: 'DevToolBox',
+                logo: {
+                  '@type': 'ImageObject',
+                  url: 'https://viadreams.cc/og-image.png'
+                }
+              },
+              mainEntityOfPage: {
+                '@type': 'WebPage',
+                '@id': `https://viadreams.cc/${lang}/blog/${slug}`
+              }
+            })
+          }}
+        />
+      )}
+      {children}
+    </>
+  );
 }
