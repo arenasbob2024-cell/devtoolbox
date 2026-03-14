@@ -5150,6 +5150,34 @@
       "seoFeature2": "CSS property format selection",
       "seoFeature3": "SVG optimization and minification",
       "seoFeature4": "Real-time preview of SVG graphics"
+    },
+    "cron-job-generator": {
+      "name": "Générateur d'expressions Cron",
+      "description": "Générateur interactif d'expressions cron avec descriptions",
+      "pageTitle": "Générateur d'expressions Cron en ligne gratuit - Constructeur interactif",
+      "pageDescription": "Générez des expressions cron avec un générateur interactif. Voyez des descriptions lisibles et les 5 prochaines exécutions planifiées.",
+      "validateBtn": "Generate Expression",
+      "seoTitle": "Cron Job Generator",
+      "seoContent": "Create and understand cron expressions.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Interactive dropdowns for scheduling",
+      "seoFeature2": "Preset schedules for common tasks",
+      "seoFeature3": "Human-readable descriptions",
+      "seoFeature4": "Shows next 5 scheduled run times"
+    },
+    "css-units-converter": {
+      "name": "Convertisseur d'unités CSS",
+      "description": "Convertir entre les unités CSS: px, rem, em, vw, vh, %, pt",
+      "pageTitle": "Convertisseur d'unités CSS en ligne - Convertisseur PX vers REM gratuit",
+      "pageDescription": "Convertissez les unités CSS en ligne. Convertissez les pixels en rem, em, vw, vh, pt, et plus.",
+      "validateBtn": "Convert",
+      "seoTitle": "CSS Units Converter",
+      "seoContent": "Convert between different CSS measurement units.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Convert between 7 CSS units",
+      "seoFeature2": "Configurable base font size",
+      "seoFeature3": "Complete conversion table",
+      "seoFeature4": "Useful for responsive design"
     }
   },
   "footer": {

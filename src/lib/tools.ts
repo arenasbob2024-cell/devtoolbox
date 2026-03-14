@@ -3575,6 +3575,36 @@ export const tools: Tool[] = [
     path: '/tools/svg-to-css',
     relatedTools: ['svg-to-react', 'svg-to-png-converter', 'css-gradient', 'css-formatter'],
   },
+  {
+    id: 'cron-job-generator',
+    name: 'Cron Job Generator',
+    description: 'Interactive cron expression builder with presets and human-readable descriptions. Generate cron expressions for scheduling tasks.',
+    icon: '⏰',
+    category: 'generator',
+    keywords: ['cron', 'cron job', 'cron expression', 'schedule', 'cronjob', 'cron generator', 'crontab', 'cron expression builder', 'cron schedule', 'cron syntax'],
+    path: '/tools/cron-job-generator',
+    relatedTools: ['cron-parser', 'cron-expression-parser', 'cron-expression-generator', 'timestamp-converter', 'crontab-validator'],
+  },
+  {
+    id: 'json-to-csv',
+    name: 'JSON to CSV Converter',
+    description: 'Convert JSON arrays to CSV format with customizable delimiters. Supports flattening nested objects and setting headers.',
+    icon: '📊',
+    category: 'converter',
+    keywords: ['json to csv', 'json csv converter', 'convert json to csv', 'json array to csv', 'csv converter', 'json csv', 'csv export', 'json to csv online'],
+    path: '/tools/json-to-csv',
+    relatedTools: ['csv-to-json-converter', 'json-formatter', 'json-beautifier', 'json-to-xml', 'json-to-yaml'],
+  },
+  {
+    id: 'css-units-converter',
+    name: 'CSS Units Converter',
+    description: 'Convert between CSS units (px, rem, em, vw, vh, %, pt). Set base font size for accurate rem/em calculations.',
+    icon: '📐',
+    category: 'css',
+    keywords: ['css units', 'units converter', 'px to rem', 'em to px', 'pixel to rem', 'css unit converter', 'css conversion', 'rem calculator', 'responsive units'],
+    path: '/tools/css-units-converter',
+    relatedTools: ['css-formatter', 'css-gradient', 'pixel-to-rem-converter', 'css-box-model-visualizer'],
+  },
 ];
 
 export function getToolsByCategory(categoryId: string): Tool[] {

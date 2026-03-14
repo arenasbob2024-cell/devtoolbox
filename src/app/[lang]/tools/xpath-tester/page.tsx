@@ -1,208 +1,188 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import ToolLayout from '@/components/ToolLayout';
 import CopyButton from '@/components/CopyButton';
 import { useLang } from '@/i18n/LangContext';
 
-const SAMPLE_XML = `<?xml version="1.0" encoding="UTF-8"?>
-<bookstore>
-  <book category="fiction">
-    <title lang="en">Harry Potter</title>
-    <author>J.K. Rowling</author>
-    <year>2005</year>
-    <price>29.99</price>
-  </book>
-  <book category="non-fiction">
-    <title lang="en">Learning XML</title>
-    <author>Erik T. Ray</author>
-    <year>2003</year>
-    <price>39.95</price>
-  </book>
-  <book category="fiction">
-    <title lang="fr">Le Petit Prince</title>
-    <author>Antoine de Saint-Exupéry</author>
-    <year>1943</year>
-    <price>15.99</price>
-  </book>
-</bookstore>`;
-
-const EXAMPLE_XPATHS = [
-  '//book',
-  '//book[@category="fiction"]',
-  '//title/text()',
-  '//book[price>30]/title',
-  '//book/author',
-  '/bookstore/book[1]',
-  '//title[@lang="en"]',
-  'count(//book)',
-];
-
-export default function XPathTesterTool() {
+export default function XpathTester() {
   const { dict } = useLang();
   const t = dict.tools['xpath-tester'];
-  const [xml, setXml] = useState(SAMPLE_XML);
-  const [xpath, setXpath] = useState('//book/title/text()');
+
+  const [xmlInput, setXmlInput] = useState('');
+  const [xpathQuery, setXpathQuery] = useState('');
   const [results, setResults] = useState<string[]>([]);
   const [error, setError] = useState('');
-  const [matchCount, setMatchCount] = useState(0);
+
+  const parseXml = (xmlString: string) => {
+    try {
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xmlString, 'text/xml');
+      if (xmlDoc.getElementsByTagName('parsererror').length) {
+        return null;
+      }
+      return xmlDoc;
+    } catch {
+      return null;
+    }
+  };
 
   const evaluateXPath = () => {
     setError('');
     setResults([]);
-    setMatchCount(0);
-    try {
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(xml, 'text/xml');
-      const parseError = doc.querySelector('parsererror');
-      if (parseError) {
-        setError(t.xmlParseError || 'XML Parse Error: ' + parseError.textContent);
-        return;
-      }
 
-      const result = doc.evaluate(xpath, doc, null, XPathResult.ANY_TYPE, null);
+    if (!xmlInput.trim() || !xpathQuery.trim()) {
+      setError('Both XML and XPath query are required');
+      return;
+    }
+
+    const xmlDoc = parseXml(xmlInput);
+    if (!xmlDoc) {
+      setError('Invalid XML format');
+      return;
+    }
+
+    try {
+      const xpath = xpathQuery;
+      const result = xmlDoc.evaluate(xpath, xmlDoc, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
       const matches: string[] = [];
 
-      switch (result.resultType) {
-        case XPathResult.NUMBER_TYPE:
-          matches.push(String(result.numberValue));
-          break;
-        case XPathResult.STRING_TYPE:
-          matches.push(result.stringValue);
-          break;
-        case XPathResult.BOOLEAN_TYPE:
-          matches.push(String(result.booleanValue));
-          break;
-        default: {
-          let node = result.iterateNext();
-          while (node) {
-            if (node.nodeType === Node.TEXT_NODE) {
-              matches.push(node.textContent || '');
-            } else if (node.nodeType === Node.ATTRIBUTE_NODE) {
-              matches.push(`${(node as Attr).name}="${(node as Attr).value}"`);
-            } else {
-              const serializer = new XMLSerializer();
-              matches.push(serializer.serializeToString(node));
-            }
-            node = result.iterateNext();
-          }
+      for (let i = 0; i < result.snapshotLength; i++) {
+        const node = result.snapshotItem(i);
+        if (node) {
+          matches.push(node.textContent || node.toString());
         }
       }
 
-      setResults(matches);
-      setMatchCount(matches.length);
+      if (matches.length === 0) {
+        setError('No matches found for the XPath query');
+      } else {
+        setResults(matches);
+      }
     } catch (e: unknown) {
-      setError(t.xpathError || `XPath Error: ${e instanceof Error ? e.message : 'Invalid XPath expression'}`);
+      const errorMsg = e instanceof Error ? e.message : 'Error evaluating XPath';
+      setError(`XPath Error: ${errorMsg}`);
     }
   };
 
-  useEffect(() => {
-    evaluateXPath();
-  }, []);
+  const loadSample = () => {
+    const sample = `<?xml version="1.0"?>
+<books>
+  <book id="1">
+    <title>The Hobbit</title>
+    <author>J.R.R. Tolkien</author>
+    <year>1937</year>
+  </book>
+  <book id="2">
+    <title>1984</title>
+    <author>George Orwell</author>
+    <year>1949</year>
+  </book>
+  <book id="3">
+    <title>Brave New World</title>
+    <author>Aldous Huxley</author>
+    <year>1932</year>
+  </book>
+</books>`;
+    setXmlInput(sample);
+    setXpathQuery('//book/title/text()');
+  };
+
+  const loadSampleQuery = (query: string) => {
+    setXpathQuery(query);
+  };
 
   return (
-    <ToolLayout title={t.pageTitle} description={t.pageDescription} toolId="xpath-tester">
-      {/* XPath Input */}
-      <div style={{ marginBottom: 16 }}>
-        <div style={{ display: 'flex', gap: 8, alignItems: 'center', marginBottom: 8 }}>
-          <label style={{ fontSize: 13, fontWeight: 600 }}>{t.xpathExpression || 'XPath Expression'}</label>
-          <span style={{ fontSize: 12, color: 'var(--text-tertiary)' }}>
-            {matchCount > 0 && `(${matchCount} ${t.matchesFound || 'matches found'})`}
-          </span>
-        </div>
-        <div style={{ display: 'flex', gap: 8 }}>
-          <input
-            type="text"
-            value={xpath}
-            onChange={e => setXpath(e.target.value)}
-            onKeyDown={e => { if (e.key === 'Enter') evaluateXPath(); }}
-            placeholder={t.xpathPlaceholder || 'Enter XPath expression, e.g. //book/title'}
-            style={{
-              flex: 1, padding: '10px 14px', borderRadius: 8,
-              border: '1px solid var(--border-color)', background: 'var(--bg-input)',
-              fontSize: 14, fontFamily: 'monospace', color: 'var(--text-primary)',
-            }}
-          />
-          <button onClick={evaluateXPath} className="btn btn-primary">
-            {t.evaluate || 'Evaluate'}
-          </button>
-          <button onClick={() => { setXml(SAMPLE_XML); setXpath('//book/title/text()'); }} className="btn btn-secondary">
-            {t.loadSample || 'Sample'}
-          </button>
-        </div>
+    <ToolLayout
+      title={t.pageTitle}
+      description={t.pageDescription}
+      toolId="xpath-tester"
+    >
+      <div style={{ display: 'flex', gap: 8, marginBottom: 16, flexWrap: 'wrap' }}>
+        <button onClick={evaluateXPath} className="btn btn-primary">Evaluate XPath</button>
+        <button onClick={loadSample} className="btn btn-secondary">{dict.common.loadSample}</button>
+        <button onClick={() => { setXmlInput(''); setXpathQuery(''); setResults([]); setError(''); }} className="btn btn-secondary">{dict.common.clear}</button>
       </div>
 
-      {/* Quick examples */}
-      <div style={{ display: 'flex', gap: 6, marginBottom: 16, flexWrap: 'wrap' }}>
-        <span style={{ fontSize: 12, color: 'var(--text-tertiary)', lineHeight: '28px' }}>{t.examples || 'Examples'}:</span>
-        {EXAMPLE_XPATHS.map(xp => (
-          <button
-            key={xp}
-            onClick={() => { setXpath(xp); }}
-            style={{
-              padding: '4px 10px', borderRadius: 6, fontSize: 11, fontFamily: 'monospace',
-              border: '1px solid var(--border-color)', background: 'var(--bg-input)',
-              color: 'var(--text-secondary)', cursor: 'pointer',
-            }}
-          >
-            {xp}
-          </button>
-        ))}
+      <div style={{ marginBottom: 16, padding: 12, background: 'rgba(59, 130, 246, 0.1)', borderRadius: 8, fontSize: 12 }}>
+        <strong>Common XPath Examples:</strong>
+        <div style={{ display: 'flex', gap: 8, marginTop: 8, flexWrap: 'wrap' }}>
+          <button onClick={() => loadSampleQuery('//book')} className="btn btn-secondary" style={{ fontSize: 11 }}>All elements</button>
+          <button onClick={() => loadSampleQuery('//book/title/text()')} className="btn btn-secondary" style={{ fontSize: 11 }}>All titles</button>
+          <button onClick={() => loadSampleQuery('//book[@id="1"]')} className="btn btn-secondary" style={{ fontSize: 11 }}>By attribute</button>
+          <button onClick={() => loadSampleQuery('//book[1]')} className="btn btn-secondary" style={{ fontSize: 11 }}>First element</button>
+          <button onClick={() => loadSampleQuery('count(//book)')} className="btn btn-secondary" style={{ fontSize: 11 }}>Count</button>
+        </div>
       </div>
 
       {error && (
         <div style={{
-          background: 'rgba(244, 63, 94, 0.1)', border: '1px solid rgba(244, 63, 94, 0.3)',
-          borderRadius: 8, padding: '10px 14px', marginBottom: 16, fontSize: 13, color: 'var(--accent-rose)',
+          background: 'rgba(244, 63, 94, 0.1)',
+          border: '1px solid rgba(244, 63, 94, 0.3)',
+          borderRadius: 8,
+          padding: '10px 14px',
+          marginBottom: 16,
+          fontSize: 13,
+          color: 'var(--accent-rose)',
         }}>
-          ✕ {error}
+          ✕ {dict.common.error}: {error}
         </div>
       )}
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
         <div>
-          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-            <label style={{ fontSize: 13, fontWeight: 600 }}>{t.xmlInput || 'XML Input'}</label>
-          </div>
+          <label style={{ fontSize: 13, fontWeight: 600, marginBottom: 8, display: 'block' }}>XML Input</label>
           <textarea
-            value={xml}
-            onChange={e => setXml(e.target.value)}
-            placeholder={t.xmlPlaceholder || 'Paste your XML here...'}
-            style={{ minHeight: 350, fontFamily: 'monospace', fontSize: 12 }}
+            value={xmlInput}
+            onChange={e => setXmlInput(e.target.value)}
+            placeholder="Paste your XML here..."
+            style={{ minHeight: 300 }}
           />
         </div>
         <div>
-          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-            <label style={{ fontSize: 13, fontWeight: 600 }}>{t.results || 'Results'}</label>
-            <CopyButton text={results.join('\n')} />
-          </div>
-          <div style={{
-            minHeight: 350, borderRadius: 8, border: '1px solid var(--border-color)',
-            background: 'var(--bg-input)', padding: 14, overflow: 'auto', fontFamily: 'monospace', fontSize: 12,
-          }}>
-            {results.length > 0 ? results.map((r, i) => (
-              <div key={i} style={{
-                padding: '6px 10px', marginBottom: 4, borderRadius: 6,
-                background: 'var(--bg-card)', border: '1px solid var(--border-color)',
-                whiteSpace: 'pre-wrap', wordBreak: 'break-all',
+          <label style={{ fontSize: 13, fontWeight: 600, marginBottom: 8, display: 'block' }}>XPath Query</label>
+          <textarea
+            value={xpathQuery}
+            onChange={e => setXpathQuery(e.target.value)}
+            placeholder="Enter XPath expression (e.g., //element/text())"
+            style={{ minHeight: 60, marginBottom: 12 }}
+          />
+          {results.length > 0 && (
+            <div>
+              <label style={{ fontSize: 13, fontWeight: 600, marginBottom: 8, display: 'block' }}>Results ({results.length} matches)</label>
+              <div style={{
+                background: 'var(--bg-secondary)',
+                border: '1px solid var(--border-color)',
+                borderRadius: 6,
+                padding: 10,
+                maxHeight: 200,
+                overflowY: 'auto',
+                fontSize: 12,
               }}>
-                <span style={{ color: 'var(--text-tertiary)', marginRight: 8 }}>[{i + 1}]</span>
-                {r}
+                {results.map((res, i) => (
+                  <div key={i} style={{ padding: '6px 0', borderBottom: i < results.length - 1 ? '1px solid var(--border-color)' : 'none' }}>
+                    <code style={{ wordBreak: 'break-word' }}>{res}</code>
+                  </div>
+                ))}
               </div>
-            )) : (
-              <div style={{ color: 'var(--text-tertiary)', textAlign: 'center', paddingTop: 100 }}>
-                {t.noResults || 'No matches found'}
-              </div>
-            )}
-          </div>
+              <CopyButton text={results.join('\n')} />
+            </div>
+          )}
         </div>
       </div>
 
       <div style={{ marginTop: 30, paddingTop: 20, borderTop: '1px solid var(--border-color)' }}>
-        <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>{t.seoTitle || 'About XPath Tester'}</h2>
+        <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>{t.seoTitle}</h2>
         <p style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-          {t.seoContent || 'XPath (XML Path Language) is a query language for selecting nodes from XML documents. This online XPath tester lets you evaluate XPath expressions against your XML data in real-time. Supports XPath 1.0 functions including text(), count(), contains(), and more. Perfect for debugging XSLT transformations, web scraping selectors, and XML data extraction.'}
+          {t.seoContent}
         </p>
+        <h3 style={{ fontSize: 16, fontWeight: 600, marginTop: 16, marginBottom: 8 }}>{t.seoFeaturesTitle}</h3>
+        <ul style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.8, paddingLeft: 20 }}>
+          <li>{t.seoFeature1}</li>
+          <li>{t.seoFeature2}</li>
+          <li>{t.seoFeature3}</li>
+          <li>{t.seoFeature4}</li>
+        </ul>
       </div>
     </ToolLayout>
   );

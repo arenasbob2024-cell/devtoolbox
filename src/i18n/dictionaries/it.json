@@ -5153,6 +5153,34 @@
       "seoFeature2": "CSS property format selection",
       "seoFeature3": "SVG optimization and minification",
       "seoFeature4": "Real-time preview of SVG graphics"
+    },
+    "cron-job-generator": {
+      "name": "Generatore di espressioni Cron",
+      "description": "Generatore interattivo di espressioni cron con descrizioni",
+      "pageTitle": "Generatore di espressioni Cron online gratuito",
+      "pageDescription": "Genera espressioni cron con un generatore interattivo.",
+      "validateBtn": "Generate Expression",
+      "seoTitle": "Cron Job Generator",
+      "seoContent": "Create and understand cron expressions.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Interactive dropdowns for scheduling",
+      "seoFeature2": "Preset schedules for common tasks",
+      "seoFeature3": "Human-readable descriptions",
+      "seoFeature4": "Shows next 5 scheduled run times"
+    },
+    "css-units-converter": {
+      "name": "Convertitore unità CSS",
+      "description": "Converti tra le unità CSS: px, rem, em, vw, vh, %, pt",
+      "pageTitle": "Convertitore unità CSS online - Convertitore PX a REM gratuito",
+      "pageDescription": "Converti le unità CSS online.",
+      "validateBtn": "Convert",
+      "seoTitle": "CSS Units Converter",
+      "seoContent": "Convert between different CSS measurement units.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Convert between 7 CSS units",
+      "seoFeature2": "Configurable base font size",
+      "seoFeature3": "Complete conversion table",
+      "seoFeature4": "Useful for responsive design"
     }
   },
   "footer": {
