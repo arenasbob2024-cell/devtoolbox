@@ -4734,6 +4734,71 @@
       "seoFeature2": "TOML [section] en [[array]] syntax",
       "seoFeature3": "Geneste objecten en table arrays",
       "seoFeature4": "Voorbeeld configuratietemplates"
+    },
+    "typescript-to-zod": {
+      "name": "TypeScript naar Zod",
+      "description": "Converteer TypeScript types naar Zod schemas",
+      "pageTitle": "TypeScript naar Zod Converter",
+      "pageDescription": "Gratis TypeScript naar Zod converter.",
+      "seoTitle": "TypeScript naar Zod Converter",
+      "seoContent": "Converteer TypeScript types naar Zod schemas.",
+      "seoFeaturesTitle": "Functies",
+      "seoFeature1": "Interfaces en types converteren",
+      "seoFeature2": "Union types ondersteund",
+      "seoFeature3": "Optionele eigenschappen",
+      "seoFeature4": "Strict modus"
+    },
+    "sql-to-mongodb": {
+      "name": "SQL naar MongoDB",
+      "description": "Converteer SQL-query's naar MongoDB",
+      "pageTitle": "SQL naar MongoDB Converter",
+      "pageDescription": "Gratis SQL naar MongoDB converter.",
+      "seoTitle": "SQL naar MongoDB Converter",
+      "seoContent": "Converteer SQL-query's naar MongoDB-commando's.",
+      "seoFeaturesTitle": "Functies",
+      "seoFeature1": "SELECT naar find()",
+      "seoFeature2": "WHERE-clausule conversie",
+      "seoFeature3": "INSERT/UPDATE/DELETE",
+      "seoFeature4": "JavaScript en JSON uitvoer"
+    },
+    "env-to-json": {
+      "name": ".env naar JSON",
+      "description": "Converteer tussen .env en JSON",
+      "pageTitle": ".env naar JSON Converter",
+      "pageDescription": "Gratis .env naar JSON converter.",
+      "seoTitle": ".env naar JSON Converter",
+      "seoContent": "Converteer tussen .env en JSON formaat.",
+      "seoFeaturesTitle": "Functies",
+      "seoFeature1": "Bidirectionele conversie",
+      "seoFeature2": "Aanhalingstekens en commentaar",
+      "seoFeature3": "Sleutels sorteren",
+      "seoFeature4": "Meerregelige waarden"
+    },
+    "regex-to-english": {
+      "name": "Regex naar Engels",
+      "description": "Leg regex-patronen uit in het Engels",
+      "pageTitle": "Regex Uitlegger",
+      "pageDescription": "Gratis regex uitleg tool.",
+      "seoTitle": "Regex Vertaler",
+      "seoContent": "Vertaal reguliere expressies naar Engelse uitleg.",
+      "seoFeaturesTitle": "Functies",
+      "seoFeature1": "Token-voor-token analyse",
+      "seoFeature2": "Volledige regex-syntax",
+      "seoFeature3": "Snelle voorbeelden",
+      "seoFeature4": "Realtime analyse"
+    },
+    "json-to-form": {
+      "name": "JSON naar HTML-formulier",
+      "description": "Genereer HTML-formulieren vanuit JSON",
+      "pageTitle": "JSON naar HTML-formulier Generator",
+      "pageDescription": "Gratis HTML-formulier generator.",
+      "seoTitle": "JSON naar HTML-formulier",
+      "seoContent": "Genereer HTML-formulieren vanuit JSON-gegevens.",
+      "seoFeaturesTitle": "Functies",
+      "seoFeature1": "Automatische typedetectie",
+      "seoFeature2": "Bootstrap en CSS",
+      "seoFeature3": "HTML5-validatie",
+      "seoFeature4": "Live voorbeeld"
     }
   },
   "footer": {

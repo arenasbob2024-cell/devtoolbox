@@ -4734,6 +4734,71 @@
       "seoFeature2": "Sintassi TOML [section] e [[array]]",
       "seoFeature3": "Oggetti annidati e array di tabelle",
       "seoFeature4": "Template di configurazione inclusi"
+    },
+    "typescript-to-zod": {
+      "name": "TypeScript a Zod",
+      "description": "Converti tipi TypeScript in schemi Zod",
+      "pageTitle": "Convertitore TypeScript a Zod",
+      "pageDescription": "Convertitore TypeScript a Zod gratuito.",
+      "seoTitle": "Convertitore TypeScript a Zod",
+      "seoContent": "Converti tipi TypeScript in schemi Zod.",
+      "seoFeaturesTitle": "Funzionalità",
+      "seoFeature1": "Converti interfacce e tipi",
+      "seoFeature2": "Tipi union supportati",
+      "seoFeature3": "Proprietà opzionali",
+      "seoFeature4": "Modalità strict"
+    },
+    "sql-to-mongodb": {
+      "name": "SQL a MongoDB",
+      "description": "Converti query SQL in MongoDB",
+      "pageTitle": "Convertitore SQL a MongoDB",
+      "pageDescription": "Convertitore SQL a MongoDB gratuito.",
+      "seoTitle": "Convertitore SQL a MongoDB",
+      "seoContent": "Converti query SQL in comandi MongoDB.",
+      "seoFeaturesTitle": "Funzionalità",
+      "seoFeature1": "SELECT a find()",
+      "seoFeature2": "Conversione clausola WHERE",
+      "seoFeature3": "INSERT/UPDATE/DELETE",
+      "seoFeature4": "Output JavaScript e JSON"
+    },
+    "env-to-json": {
+      "name": ".env a JSON",
+      "description": "Converti tra .env e JSON",
+      "pageTitle": "Convertitore .env a JSON",
+      "pageDescription": "Convertitore .env a JSON gratuito.",
+      "seoTitle": "Convertitore .env a JSON",
+      "seoContent": "Converti tra file .env e formato JSON.",
+      "seoFeaturesTitle": "Funzionalità",
+      "seoFeature1": "Conversione bidirezionale",
+      "seoFeature2": "Gestione virgolette e commenti",
+      "seoFeature3": "Ordina chiavi",
+      "seoFeature4": "Valori multilinea"
+    },
+    "regex-to-english": {
+      "name": "Regex in inglese",
+      "description": "Spiega i pattern regex in inglese",
+      "pageTitle": "Spiegatore di Regex",
+      "pageDescription": "Strumento di spiegazione regex gratuito.",
+      "seoTitle": "Traduttore Regex",
+      "seoContent": "Traduci le espressioni regolari in spiegazioni in inglese.",
+      "seoFeaturesTitle": "Funzionalità",
+      "seoFeature1": "Analisi token per token",
+      "seoFeature2": "Sintassi regex completa",
+      "seoFeature3": "Esempi rapidi",
+      "seoFeature4": "Analisi in tempo reale"
+    },
+    "json-to-form": {
+      "name": "JSON a modulo HTML",
+      "description": "Genera moduli HTML da JSON",
+      "pageTitle": "Generatore JSON a modulo HTML",
+      "pageDescription": "Generatore di moduli HTML gratuito.",
+      "seoTitle": "Generatore JSON a modulo",
+      "seoContent": "Genera moduli HTML da dati JSON.",
+      "seoFeaturesTitle": "Funzionalità",
+      "seoFeature1": "Rilevamento automatico dei tipi",
+      "seoFeature2": "Bootstrap e CSS",
+      "seoFeature3": "Validazione HTML5",
+      "seoFeature4": "Anteprima dal vivo"
     }
   },
   "footer": {

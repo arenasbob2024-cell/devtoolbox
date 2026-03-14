@@ -4734,6 +4734,71 @@
       "seoFeature2": "TOML [section]と[[array]]構文",
       "seoFeature3": "ネストオブジェクトとテーブル配列",
       "seoFeature4": "サンプル設定テンプレート付き"
+    },
+    "typescript-to-zod": {
+      "name": "TypeScript to Zod",
+      "description": "TypeScript型をZodスキーマに変換",
+      "pageTitle": "TypeScript to Zod変換ツール",
+      "pageDescription": "無料オンラインTypeScript to Zod変換ツール。",
+      "seoTitle": "TypeScript to Zod変換",
+      "seoContent": "TypeScript型をZodバリデーションスキーマに変換。",
+      "seoFeaturesTitle": "機能",
+      "seoFeature1": "インターフェースと型の変換",
+      "seoFeature2": "ユニオン型対応",
+      "seoFeature3": "オプショナルプロパティ",
+      "seoFeature4": "厳格モード"
+    },
+    "sql-to-mongodb": {
+      "name": "SQL to MongoDB",
+      "description": "SQLクエリをMongoDBに変換",
+      "pageTitle": "SQL to MongoDB変換ツール",
+      "pageDescription": "無料SQLからMongoDB変換ツール。",
+      "seoTitle": "SQL to MongoDB変換",
+      "seoContent": "SQLクエリをMongoDBコマンドに変換。",
+      "seoFeaturesTitle": "機能",
+      "seoFeature1": "SELECTをfind()に変換",
+      "seoFeature2": "WHERE句の変換",
+      "seoFeature3": "INSERT/UPDATE/DELETE対応",
+      "seoFeature4": "JavaScriptとJSON出力"
+    },
+    "env-to-json": {
+      "name": ".env to JSON",
+      "description": ".envとJSON形式の相互変換",
+      "pageTitle": ".env to JSON変換ツール",
+      "pageDescription": "無料.envからJSON変換ツール。",
+      "seoTitle": ".env to JSON変換",
+      "seoContent": ".env環境変数ファイルとJSON形式の相互変換。",
+      "seoFeaturesTitle": "機能",
+      "seoFeature1": "双方向変換",
+      "seoFeature2": "引用符値とコメント処理",
+      "seoFeature3": "キーのソート",
+      "seoFeature4": "複数行値対応"
+    },
+    "regex-to-english": {
+      "name": "正規表現を英語に",
+      "description": "正規表現を英語で説明",
+      "pageTitle": "正規表現エクスプレイナー",
+      "pageDescription": "無料正規表現説明ツール。",
+      "seoTitle": "正規表現翻訳",
+      "seoContent": "正規表現を英語の説明に変換。",
+      "seoFeaturesTitle": "機能",
+      "seoFeature1": "トークンごとの分解",
+      "seoFeature2": "一般的な構文対応",
+      "seoFeature3": "クイック例",
+      "seoFeature4": "リアルタイム解析"
+    },
+    "json-to-form": {
+      "name": "JSON to HTMLフォーム",
+      "description": "JSONからHTMLフォームを生成",
+      "pageTitle": "JSON to HTMLフォーム生成ツール",
+      "pageDescription": "無料JSONからHTMLフォーム生成ツール。",
+      "seoTitle": "JSON to HTMLフォーム生成",
+      "seoContent": "JSONデータからHTMLフォームを生成。",
+      "seoFeaturesTitle": "機能",
+      "seoFeature1": "自動入力タイプ検出",
+      "seoFeature2": "BootstrapとCSS",
+      "seoFeature3": "HTML5バリデーション",
+      "seoFeature4": "ライブプレビュー"
     }
   },
   "footer": {

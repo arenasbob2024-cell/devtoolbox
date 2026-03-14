@@ -4734,6 +4734,71 @@
       "seoFeature2": "Sintaks TOML [section] dan [[array]]",
       "seoFeature3": "Objek bersarang dan array tabel",
       "seoFeature4": "Template konfigurasi contoh disertakan"
+    },
+    "typescript-to-zod": {
+      "name": "TypeScript ke Zod",
+      "description": "Konversi tipe TypeScript ke skema Zod",
+      "pageTitle": "Konverter TypeScript ke Zod",
+      "pageDescription": "Konverter TypeScript ke Zod gratis.",
+      "seoTitle": "Konverter TypeScript ke Zod",
+      "seoContent": "Konversi tipe TypeScript ke skema Zod.",
+      "seoFeaturesTitle": "Fitur",
+      "seoFeature1": "Konversi interface dan tipe",
+      "seoFeature2": "Dukungan tipe union",
+      "seoFeature3": "Properti opsional",
+      "seoFeature4": "Mode ketat"
+    },
+    "sql-to-mongodb": {
+      "name": "SQL ke MongoDB",
+      "description": "Konversi kueri SQL ke MongoDB",
+      "pageTitle": "Konverter SQL ke MongoDB",
+      "pageDescription": "Konverter SQL ke MongoDB gratis.",
+      "seoTitle": "Konverter SQL ke MongoDB",
+      "seoContent": "Konversi kueri SQL ke perintah MongoDB.",
+      "seoFeaturesTitle": "Fitur",
+      "seoFeature1": "SELECT ke find()",
+      "seoFeature2": "Konversi klausa WHERE",
+      "seoFeature3": "INSERT/UPDATE/DELETE",
+      "seoFeature4": "Output JavaScript dan JSON"
+    },
+    "env-to-json": {
+      "name": ".env ke JSON",
+      "description": "Konversi antara .env dan JSON",
+      "pageTitle": "Konverter .env ke JSON",
+      "pageDescription": "Konverter .env ke JSON gratis.",
+      "seoTitle": "Konverter .env ke JSON",
+      "seoContent": "Konversi antara file .env dan format JSON.",
+      "seoFeaturesTitle": "Fitur",
+      "seoFeature1": "Konversi dua arah",
+      "seoFeature2": "Penanganan kutipan dan komentar",
+      "seoFeature3": "Sortir kunci",
+      "seoFeature4": "Nilai multiline"
+    },
+    "regex-to-english": {
+      "name": "Regex ke Inggris",
+      "description": "Jelaskan pola regex dalam bahasa Inggris",
+      "pageTitle": "Penjelasan Regex",
+      "pageDescription": "Alat penjelasan regex gratis.",
+      "seoTitle": "Penerjemah Regex",
+      "seoContent": "Terjemahkan ekspresi reguler ke penjelasan bahasa Inggris.",
+      "seoFeaturesTitle": "Fitur",
+      "seoFeature1": "Analisis token per token",
+      "seoFeature2": "Sintaks regex lengkap",
+      "seoFeature3": "Contoh cepat",
+      "seoFeature4": "Parsing real-time"
+    },
+    "json-to-form": {
+      "name": "JSON ke Form HTML",
+      "description": "Buat formulir HTML dari JSON",
+      "pageTitle": "Generator JSON ke Form HTML",
+      "pageDescription": "Generator formulir HTML gratis.",
+      "seoTitle": "Generator JSON ke Form",
+      "seoContent": "Buat formulir HTML dari data JSON.",
+      "seoFeaturesTitle": "Fitur",
+      "seoFeature1": "Deteksi tipe input otomatis",
+      "seoFeature2": "Bootstrap dan CSS",
+      "seoFeature3": "Validasi HTML5",
+      "seoFeature4": "Pratinjau langsung"
     }
   },
   "footer": {

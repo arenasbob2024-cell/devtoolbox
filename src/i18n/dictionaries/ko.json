@@ -4734,6 +4734,71 @@
       "seoFeature2": "TOML [section]과 [[array]] 구문",
       "seoFeature3": "중첩 객체와 테이블 배열 처리",
       "seoFeature4": "샘플 설정 템플릿 포함"
+    },
+    "typescript-to-zod": {
+      "name": "TypeScript to Zod",
+      "description": "TypeScript 타입을 Zod 스키마로 변환",
+      "pageTitle": "TypeScript to Zod 변환기",
+      "pageDescription": "무료 온라인 TypeScript to Zod 변환기.",
+      "seoTitle": "TypeScript to Zod 변환",
+      "seoContent": "TypeScript 타입을 Zod 검증 스키마로 변환합니다.",
+      "seoFeaturesTitle": "기능",
+      "seoFeature1": "인터페이스와 타입 변환",
+      "seoFeature2": "유니온 타입 지원",
+      "seoFeature3": "옵셔널 프로퍼티",
+      "seoFeature4": "엄격 모드"
+    },
+    "sql-to-mongodb": {
+      "name": "SQL to MongoDB",
+      "description": "SQL 쿼리를 MongoDB로 변환",
+      "pageTitle": "SQL to MongoDB 변환기",
+      "pageDescription": "무료 SQL to MongoDB 변환기.",
+      "seoTitle": "SQL to MongoDB 변환",
+      "seoContent": "SQL 쿼리를 MongoDB 명령으로 변환합니다.",
+      "seoFeaturesTitle": "기능",
+      "seoFeature1": "SELECT를 find()로 변환",
+      "seoFeature2": "WHERE 절 변환",
+      "seoFeature3": "INSERT/UPDATE/DELETE 지원",
+      "seoFeature4": "JavaScript와 JSON 출력"
+    },
+    "env-to-json": {
+      "name": ".env to JSON",
+      "description": ".env와 JSON 형식 간 변환",
+      "pageTitle": ".env to JSON 변환기",
+      "pageDescription": "무료 .env to JSON 변환기.",
+      "seoTitle": ".env to JSON 변환",
+      "seoContent": ".env 환경 변수 파일과 JSON 형식 간 변환.",
+      "seoFeaturesTitle": "기능",
+      "seoFeature1": "양방향 변환",
+      "seoFeature2": "따옴표 값과 주석 처리",
+      "seoFeature3": "키 정렬",
+      "seoFeature4": "여러 줄 값 지원"
+    },
+    "regex-to-english": {
+      "name": "정규식 설명",
+      "description": "정규식을 영어로 설명",
+      "pageTitle": "정규식 설명 도구",
+      "pageDescription": "무료 정규식 설명 도구.",
+      "seoTitle": "정규식 번역기",
+      "seoContent": "정규식을 영어 설명으로 번역합니다.",
+      "seoFeaturesTitle": "기능",
+      "seoFeature1": "토큰별 분석",
+      "seoFeature2": "일반 구문 지원",
+      "seoFeature3": "빠른 예제",
+      "seoFeature4": "실시간 파싱"
+    },
+    "json-to-form": {
+      "name": "JSON to HTML 폼",
+      "description": "JSON 데이터에서 HTML 폼 생성",
+      "pageTitle": "JSON to HTML 폼 생성기",
+      "pageDescription": "무료 JSON to HTML 폼 생성기.",
+      "seoTitle": "JSON to HTML 폼 생성",
+      "seoContent": "JSON 데이터에서 HTML 폼을 생성합니다.",
+      "seoFeaturesTitle": "기능",
+      "seoFeature1": "자동 입력 타입 감지",
+      "seoFeature2": "Bootstrap과 CSS",
+      "seoFeature3": "HTML5 유효성 검사",
+      "seoFeature4": "라이브 미리보기"
     }
   },
   "footer": {

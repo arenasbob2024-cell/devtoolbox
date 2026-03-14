@@ -4810,6 +4810,71 @@
       "seoFeature2": "正确的 TOML [section] 和 [[array]] 语法",
       "seoFeature3": "处理嵌套对象和数组表",
       "seoFeature4": "包含示例配置模板"
+    },
+    "typescript-to-zod": {
+      "name": "TypeScript 转 Zod",
+      "description": "将 TypeScript 类型转换为 Zod 模式",
+      "pageTitle": "TypeScript 转 Zod 转换器 - 在线生成 Zod 模式",
+      "pageDescription": "免费在线 TypeScript 转 Zod 转换器。将 TypeScript 接口和类型即时转换为 Zod 验证模式。",
+      "seoTitle": "TypeScript 转 Zod 模式转换器",
+      "seoContent": "使用免费在线工具将 TypeScript 类型和接口转换为 Zod 验证模式。",
+      "seoFeaturesTitle": "功能",
+      "seoFeature1": "转换接口、类型和枚举",
+      "seoFeature2": "支持联合和交叉类型",
+      "seoFeature3": "可选属性和数组处理",
+      "seoFeature4": "严格模式和描述生成"
+    },
+    "sql-to-mongodb": {
+      "name": "SQL 转 MongoDB",
+      "description": "将 SQL 查询转换为 MongoDB",
+      "pageTitle": "SQL 转 MongoDB 转换器 - 在线转换 SQL 查询",
+      "pageDescription": "免费在线 SQL 转 MongoDB 转换器。将 SQL 查询转换为 MongoDB 命令。",
+      "seoTitle": "SQL 转 MongoDB 查询转换器",
+      "seoContent": "即时将 SQL 查询转换为 MongoDB 命令。支持 SELECT、INSERT、UPDATE、DELETE。",
+      "seoFeaturesTitle": "功能",
+      "seoFeature1": "SELECT 转 find() 查询",
+      "seoFeature2": "WHERE 子句转 MongoDB 操作符",
+      "seoFeature3": "INSERT/UPDATE/DELETE 转换",
+      "seoFeature4": "JavaScript 和 JSON 输出"
+    },
+    "env-to-json": {
+      "name": ".env 转 JSON",
+      "description": ".env 和 JSON 格式互转",
+      "pageTitle": ".env 转 JSON 转换器 - 在线解析环境变量",
+      "pageDescription": "免费在线 .env 转 JSON 转换器。支持双向转换、注释处理和引号值。",
+      "seoTitle": ".env 转 JSON 转换器",
+      "seoContent": "在 .env 环境变量文件和 JSON 格式之间转换。",
+      "seoFeaturesTitle": "功能",
+      "seoFeature1": "双向 .env ↔ JSON 转换",
+      "seoFeature2": "处理引号值和注释",
+      "seoFeature3": "排序键和引号样式配置",
+      "seoFeature4": "多行值支持"
+    },
+    "regex-to-english": {
+      "name": "正则转英文",
+      "description": "用英文解释正则表达式",
+      "pageTitle": "正则表达式翻译器 - 在线解释正则",
+      "pageDescription": "免费在线正则表达式解释工具。将正则表达式翻译为通俗易懂的英文描述。",
+      "seoTitle": "正则表达式翻译器",
+      "seoContent": "通过将正则表达式翻译为英文描述来理解复杂的正则。逐个标记分解，包含常用模式示例。",
+      "seoFeaturesTitle": "功能",
+      "seoFeature1": "逐标记分解正则",
+      "seoFeature2": "支持所有常见正则语法",
+      "seoFeature3": "快速示例：邮箱、URL、电话、IP",
+      "seoFeature4": "实时自动解析"
+    },
+    "json-to-form": {
+      "name": "JSON 转 HTML 表单",
+      "description": "从 JSON 数据生成 HTML 表单",
+      "pageTitle": "JSON 转 HTML 表单生成器 - 在线创建表单",
+      "pageDescription": "免费在线 JSON 转 HTML 表单生成器。自动检测输入类型，创建语义化 HTML5 表单。",
+      "seoTitle": "JSON 转 HTML 表单生成器",
+      "seoContent": "从 JSON 数据生成 HTML 表单，自动检测输入类型。创建带标签、验证和 CSS 样式的表单。",
+      "seoFeaturesTitle": "功能",
+      "seoFeature1": "自动输入类型检测",
+      "seoFeature2": "Bootstrap 和自定义 CSS",
+      "seoFeature3": "HTML5 表单验证",
+      "seoFeature4": "实时表单预览"
     }
   },
   "footer": {

@@ -4734,6 +4734,71 @@
       "seoFeature2": "TOML [section] och [[array]] syntax",
       "seoFeature3": "Nästlade objekt och tabell-arrayer",
       "seoFeature4": "Exempelkonfigurationsmallar"
+    },
+    "typescript-to-zod": {
+      "name": "TypeScript till Zod",
+      "description": "Konvertera TypeScript-typer till Zod-scheman",
+      "pageTitle": "TypeScript till Zod Konverterare",
+      "pageDescription": "Gratis TypeScript till Zod konverterare.",
+      "seoTitle": "TypeScript till Zod Konverterare",
+      "seoContent": "Konvertera TypeScript-typer till Zod-scheman.",
+      "seoFeaturesTitle": "Funktioner",
+      "seoFeature1": "Konvertera interfaces och typer",
+      "seoFeature2": "Union-typer stöds",
+      "seoFeature3": "Valfria egenskaper",
+      "seoFeature4": "Strikt läge"
+    },
+    "sql-to-mongodb": {
+      "name": "SQL till MongoDB",
+      "description": "Konvertera SQL-frågor till MongoDB",
+      "pageTitle": "SQL till MongoDB Konverterare",
+      "pageDescription": "Gratis SQL till MongoDB konverterare.",
+      "seoTitle": "SQL till MongoDB Konverterare",
+      "seoContent": "Konvertera SQL-frågor till MongoDB-kommandon.",
+      "seoFeaturesTitle": "Funktioner",
+      "seoFeature1": "SELECT till find()",
+      "seoFeature2": "WHERE-klausul konvertering",
+      "seoFeature3": "INSERT/UPDATE/DELETE",
+      "seoFeature4": "JavaScript och JSON utdata"
+    },
+    "env-to-json": {
+      "name": ".env till JSON",
+      "description": "Konvertera mellan .env och JSON",
+      "pageTitle": ".env till JSON Konverterare",
+      "pageDescription": "Gratis .env till JSON konverterare.",
+      "seoTitle": ".env till JSON Konverterare",
+      "seoContent": "Konvertera mellan .env och JSON.",
+      "seoFeaturesTitle": "Funktioner",
+      "seoFeature1": "Dubbelriktad konvertering",
+      "seoFeature2": "Citattecken och kommentarer",
+      "seoFeature3": "Sortera nycklar",
+      "seoFeature4": "Flerradiga värden"
+    },
+    "regex-to-english": {
+      "name": "Regex till engelska",
+      "description": "Förklara regex-mönster på engelska",
+      "pageTitle": "Regex Förklarare",
+      "pageDescription": "Gratis regex-förklaringsverktyg.",
+      "seoTitle": "Regex Översättare",
+      "seoContent": "Översätt reguljära uttryck till engelska förklaringar.",
+      "seoFeaturesTitle": "Funktioner",
+      "seoFeature1": "Token-för-token analys",
+      "seoFeature2": "Fullständig regex-syntax",
+      "seoFeature3": "Snabba exempel",
+      "seoFeature4": "Realtidsanalys"
+    },
+    "json-to-form": {
+      "name": "JSON till HTML-formulär",
+      "description": "Generera HTML-formulär från JSON",
+      "pageTitle": "JSON till HTML-formulär Generator",
+      "pageDescription": "Gratis HTML-formulärgenerator.",
+      "seoTitle": "JSON till HTML-formulär",
+      "seoContent": "Generera HTML-formulär från JSON-data.",
+      "seoFeaturesTitle": "Funktioner",
+      "seoFeature1": "Automatisk typdetektering",
+      "seoFeature2": "Bootstrap och CSS",
+      "seoFeature3": "HTML5-validering",
+      "seoFeature4": "Liveförhandsgranskning"
     }
   },
   "footer": {

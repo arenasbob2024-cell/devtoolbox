@@ -4734,6 +4734,71 @@
       "seoFeature2": "Składnia TOML [section] i [[array]]",
       "seoFeature3": "Zagnieżdżone obiekty i tablice",
       "seoFeature4": "Szablony konfiguracji w zestawie"
+    },
+    "typescript-to-zod": {
+      "name": "TypeScript do Zod",
+      "description": "Konwertuj typy TypeScript na schematy Zod",
+      "pageTitle": "Konwerter TypeScript do Zod",
+      "pageDescription": "Darmowy konwerter TypeScript do Zod.",
+      "seoTitle": "Konwerter TypeScript do Zod",
+      "seoContent": "Konwertuj typy TypeScript na schematy Zod.",
+      "seoFeaturesTitle": "Funkcje",
+      "seoFeature1": "Konwersja interfejsów i typów",
+      "seoFeature2": "Obsługa typów union",
+      "seoFeature3": "Opcjonalne właściwości",
+      "seoFeature4": "Tryb ścisły"
+    },
+    "sql-to-mongodb": {
+      "name": "SQL do MongoDB",
+      "description": "Konwertuj zapytania SQL na MongoDB",
+      "pageTitle": "Konwerter SQL do MongoDB",
+      "pageDescription": "Darmowy konwerter SQL do MongoDB.",
+      "seoTitle": "Konwerter SQL do MongoDB",
+      "seoContent": "Konwertuj zapytania SQL na komendy MongoDB.",
+      "seoFeaturesTitle": "Funkcje",
+      "seoFeature1": "SELECT do find()",
+      "seoFeature2": "Konwersja klauzuli WHERE",
+      "seoFeature3": "INSERT/UPDATE/DELETE",
+      "seoFeature4": "Wyjście JavaScript i JSON"
+    },
+    "env-to-json": {
+      "name": ".env do JSON",
+      "description": "Konwertuj między .env a JSON",
+      "pageTitle": "Konwerter .env do JSON",
+      "pageDescription": "Darmowy konwerter .env do JSON.",
+      "seoTitle": "Konwerter .env do JSON",
+      "seoContent": "Konwertuj między plikami .env a formatem JSON.",
+      "seoFeaturesTitle": "Funkcje",
+      "seoFeature1": "Dwukierunkowa konwersja",
+      "seoFeature2": "Cudzysłowy i komentarze",
+      "seoFeature3": "Sortowanie kluczy",
+      "seoFeature4": "Wartości wieloliniowe"
+    },
+    "regex-to-english": {
+      "name": "Regex po angielsku",
+      "description": "Wyjaśnij wzorce regex po angielsku",
+      "pageTitle": "Wyjaśniacz Regex",
+      "pageDescription": "Darmowe narzędzie do wyjaśniania regex.",
+      "seoTitle": "Tłumacz Regex",
+      "seoContent": "Tłumacz wyrażenia regularne na wyjaśnienia po angielsku.",
+      "seoFeaturesTitle": "Funkcje",
+      "seoFeature1": "Analiza token po tokenie",
+      "seoFeature2": "Pełna składnia regex",
+      "seoFeature3": "Szybkie przykłady",
+      "seoFeature4": "Analiza w czasie rzeczywistym"
+    },
+    "json-to-form": {
+      "name": "JSON do formularza HTML",
+      "description": "Generuj formularze HTML z JSON",
+      "pageTitle": "Generator JSON do formularza HTML",
+      "pageDescription": "Darmowy generator formularzy HTML.",
+      "seoTitle": "Generator JSON do formularza",
+      "seoContent": "Generuj formularze HTML z danych JSON.",
+      "seoFeaturesTitle": "Funkcje",
+      "seoFeature1": "Automatyczne wykrywanie typów",
+      "seoFeature2": "Bootstrap i CSS",
+      "seoFeature3": "Walidacja HTML5",
+      "seoFeature4": "Podgląd na żywo"
     }
   },
   "footer": {

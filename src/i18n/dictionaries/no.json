@@ -4734,6 +4734,71 @@
       "seoFeature2": "TOML [section] og [[array]] syntaks",
       "seoFeature3": "Nestede objekter og tabell-arrays",
       "seoFeature4": "Eksempelkonfigurasjoner inkludert"
+    },
+    "typescript-to-zod": {
+      "name": "TypeScript til Zod",
+      "description": "Konverter TypeScript-typer til Zod-skjemaer",
+      "pageTitle": "TypeScript til Zod Konverter",
+      "pageDescription": "Gratis TypeScript til Zod konverter.",
+      "seoTitle": "TypeScript til Zod Konverter",
+      "seoContent": "Konverter TypeScript-typer til Zod-skjemaer.",
+      "seoFeaturesTitle": "Funksjoner",
+      "seoFeature1": "Konverter interfaces og typer",
+      "seoFeature2": "Union-typer støttes",
+      "seoFeature3": "Valgfrie egenskaper",
+      "seoFeature4": "Streng modus"
+    },
+    "sql-to-mongodb": {
+      "name": "SQL til MongoDB",
+      "description": "Konverter SQL-spørringer til MongoDB",
+      "pageTitle": "SQL til MongoDB Konverter",
+      "pageDescription": "Gratis SQL til MongoDB konverter.",
+      "seoTitle": "SQL til MongoDB Konverter",
+      "seoContent": "Konverter SQL-spørringer til MongoDB-kommandoer.",
+      "seoFeaturesTitle": "Funksjoner",
+      "seoFeature1": "SELECT til find()",
+      "seoFeature2": "WHERE-klausul konvertering",
+      "seoFeature3": "INSERT/UPDATE/DELETE",
+      "seoFeature4": "JavaScript og JSON utdata"
+    },
+    "env-to-json": {
+      "name": ".env til JSON",
+      "description": "Konverter mellom .env og JSON",
+      "pageTitle": ".env til JSON Konverter",
+      "pageDescription": "Gratis .env til JSON konverter.",
+      "seoTitle": ".env til JSON Konverter",
+      "seoContent": "Konverter mellom .env og JSON.",
+      "seoFeaturesTitle": "Funksjoner",
+      "seoFeature1": "Toveis konvertering",
+      "seoFeature2": "Anførselstegn og kommentarer",
+      "seoFeature3": "Sorter nøkler",
+      "seoFeature4": "Flerlinjeverdier"
+    },
+    "regex-to-english": {
+      "name": "Regex til engelsk",
+      "description": "Forklar regex-mønstre på engelsk",
+      "pageTitle": "Regex Forklarer",
+      "pageDescription": "Gratis regex-forklaringsverktøy.",
+      "seoTitle": "Regex Oversetter",
+      "seoContent": "Oversett regulære uttrykk til engelske forklaringer.",
+      "seoFeaturesTitle": "Funksjoner",
+      "seoFeature1": "Token-for-token analyse",
+      "seoFeature2": "Fullstendig regex-syntaks",
+      "seoFeature3": "Raske eksempler",
+      "seoFeature4": "Sanntidsanalyse"
+    },
+    "json-to-form": {
+      "name": "JSON til HTML-skjema",
+      "description": "Generer HTML-skjemaer fra JSON",
+      "pageTitle": "JSON til HTML-skjema Generator",
+      "pageDescription": "Gratis HTML-skjemagenerator.",
+      "seoTitle": "JSON til HTML-skjema",
+      "seoContent": "Generer HTML-skjemaer fra JSON-data.",
+      "seoFeaturesTitle": "Funksjoner",
+      "seoFeature1": "Automatisk typedeteksjon",
+      "seoFeature2": "Bootstrap og CSS",
+      "seoFeature3": "HTML5-validering",
+      "seoFeature4": "Direkteforhåndsvisning"
     }
   },
   "footer": {

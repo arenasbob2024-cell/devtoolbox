@@ -4734,6 +4734,71 @@
       "seoFeature2": "Sintaxe TOML [section] e [[array]]",
       "seoFeature3": "Objetos aninhados e arrays de tabelas",
       "seoFeature4": "Templates de configuração incluídos"
+    },
+    "typescript-to-zod": {
+      "name": "TypeScript para Zod",
+      "description": "Converter tipos TypeScript para esquemas Zod",
+      "pageTitle": "Conversor TypeScript para Zod",
+      "pageDescription": "Conversor TypeScript para Zod gratuito.",
+      "seoTitle": "Conversor TypeScript para Zod",
+      "seoContent": "Converta tipos TypeScript para esquemas Zod.",
+      "seoFeaturesTitle": "Recursos",
+      "seoFeature1": "Converter interfaces e tipos",
+      "seoFeature2": "Tipos union suportados",
+      "seoFeature3": "Propriedades opcionais",
+      "seoFeature4": "Modo estrito"
+    },
+    "sql-to-mongodb": {
+      "name": "SQL para MongoDB",
+      "description": "Converter consultas SQL para MongoDB",
+      "pageTitle": "Conversor SQL para MongoDB",
+      "pageDescription": "Conversor SQL para MongoDB gratuito.",
+      "seoTitle": "Conversor SQL para MongoDB",
+      "seoContent": "Converta consultas SQL para comandos MongoDB.",
+      "seoFeaturesTitle": "Recursos",
+      "seoFeature1": "SELECT para find()",
+      "seoFeature2": "Conversão cláusula WHERE",
+      "seoFeature3": "INSERT/UPDATE/DELETE",
+      "seoFeature4": "Saída JavaScript e JSON"
+    },
+    "env-to-json": {
+      "name": ".env para JSON",
+      "description": "Converter entre .env e JSON",
+      "pageTitle": "Conversor .env para JSON",
+      "pageDescription": "Conversor .env para JSON gratuito.",
+      "seoTitle": "Conversor .env para JSON",
+      "seoContent": "Converta entre arquivos .env e formato JSON.",
+      "seoFeaturesTitle": "Recursos",
+      "seoFeature1": "Conversão bidirecional",
+      "seoFeature2": "Tratamento de aspas e comentários",
+      "seoFeature3": "Ordenar chaves",
+      "seoFeature4": "Valores multilinha"
+    },
+    "regex-to-english": {
+      "name": "Regex para inglês",
+      "description": "Explicar padrões regex em inglês",
+      "pageTitle": "Explicador de Regex",
+      "pageDescription": "Ferramenta de explicação de regex gratuita.",
+      "seoTitle": "Tradutor de Regex",
+      "seoContent": "Traduza expressões regulares para explicações em inglês.",
+      "seoFeaturesTitle": "Recursos",
+      "seoFeature1": "Análise token por token",
+      "seoFeature2": "Sintaxe regex completa",
+      "seoFeature3": "Exemplos rápidos",
+      "seoFeature4": "Análise em tempo real"
+    },
+    "json-to-form": {
+      "name": "JSON para formulário HTML",
+      "description": "Gerar formulários HTML a partir de JSON",
+      "pageTitle": "Gerador JSON para formulário HTML",
+      "pageDescription": "Gerador de formulários HTML gratuito.",
+      "seoTitle": "Gerador JSON para formulário",
+      "seoContent": "Gere formulários HTML a partir de dados JSON.",
+      "seoFeaturesTitle": "Recursos",
+      "seoFeature1": "Detecção automática de tipos",
+      "seoFeature2": "Bootstrap e CSS",
+      "seoFeature3": "Validação HTML5",
+      "seoFeature4": "Pré-visualização ao vivo"
     }
   },
   "footer": {

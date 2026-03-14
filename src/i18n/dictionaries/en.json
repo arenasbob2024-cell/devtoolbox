@@ -10594,6 +10594,71 @@
       "seoFeature2": "Proper TOML [section] and [[array]] syntax",
       "seoFeature3": "Handles nested objects and arrays of tables",
       "seoFeature4": "Sample configuration templates included"
+    },
+    "typescript-to-zod": {
+      "name": "TypeScript to Zod",
+      "description": "Convert TypeScript types to Zod schemas",
+      "pageTitle": "TypeScript to Zod Converter - Generate Zod Schemas Online",
+      "pageDescription": "Free online TypeScript to Zod converter. Transform TypeScript interfaces, types, and enums into Zod validation schemas instantly.",
+      "seoTitle": "TypeScript to Zod Schema Converter",
+      "seoContent": "Convert TypeScript types and interfaces to Zod validation schemas with our free online tool. Supports union types, optional properties, enums, arrays, and nested objects.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Convert interfaces, types, and enums to Zod",
+      "seoFeature2": "Support for union and intersection types",
+      "seoFeature3": "Optional properties and array handling",
+      "seoFeature4": "Strict mode and description generation"
+    },
+    "sql-to-mongodb": {
+      "name": "SQL to MongoDB",
+      "description": "Convert SQL queries to MongoDB",
+      "pageTitle": "SQL to MongoDB Converter - Convert SQL Queries Online",
+      "pageDescription": "Free online SQL to MongoDB converter. Transform SELECT, INSERT, UPDATE, DELETE queries to MongoDB find, insertOne, updateOne syntax.",
+      "seoTitle": "SQL to MongoDB Query Converter",
+      "seoContent": "Convert SQL queries to MongoDB commands instantly. Supports SELECT with WHERE, ORDER BY, LIMIT; INSERT, UPDATE with SET, and DELETE operations.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "SELECT to find() with projection and filters",
+      "seoFeature2": "WHERE clause to MongoDB query operators",
+      "seoFeature3": "INSERT, UPDATE, DELETE conversion",
+      "seoFeature4": "JavaScript and JSON output formats"
+    },
+    "env-to-json": {
+      "name": ".env to JSON",
+      "description": "Convert between .env and JSON formats",
+      "pageTitle": ".env to JSON Converter - Parse Environment Variables Online",
+      "pageDescription": "Free online .env to JSON converter. Bidirectional conversion between dotenv files and JSON objects with support for comments, quotes, and multiline values.",
+      "seoTitle": ".env to JSON Converter Online",
+      "seoContent": "Convert between .env environment variable files and JSON format. Parse dotenv files, handle quoted values, skip comments, and sort keys.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Bidirectional .env ↔ JSON conversion",
+      "seoFeature2": "Handle quoted values and comments",
+      "seoFeature3": "Sort keys and configurable quote styles",
+      "seoFeature4": "Multiline value support"
+    },
+    "regex-to-english": {
+      "name": "Regex to English",
+      "description": "Explain regex patterns in plain English",
+      "pageTitle": "Regex to English - Explain Regular Expressions Online",
+      "pageDescription": "Free online regex explainer. Translate regular expressions to plain English with token-by-token breakdown and visual explanation.",
+      "seoTitle": "Regex to English Translator",
+      "seoContent": "Understand complex regular expressions by translating them to plain English explanations. Get token-by-token breakdown with quick examples for common patterns.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Token-by-token regex breakdown",
+      "seoFeature2": "Supports all common regex syntax",
+      "seoFeature3": "Quick examples: email, URL, phone, IP",
+      "seoFeature4": "Real-time auto-parsing"
+    },
+    "json-to-form": {
+      "name": "JSON to HTML Form",
+      "description": "Generate HTML forms from JSON data",
+      "pageTitle": "JSON to HTML Form Generator - Create Forms Online",
+      "pageDescription": "Free online JSON to HTML form generator. Automatically detect input types and create semantic HTML5 forms with validation and CSS styling.",
+      "seoTitle": "JSON to HTML Form Generator",
+      "seoContent": "Generate HTML forms from JSON data with automatic input type detection. Create forms with proper labels, validation, and responsive CSS styling.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Automatic input type detection (text, email, number, date)",
+      "seoFeature2": "Bootstrap and custom CSS styling options",
+      "seoFeature3": "HTML5 form validation support",
+      "seoFeature4": "Live form preview"
     }
   },
   "footer": {

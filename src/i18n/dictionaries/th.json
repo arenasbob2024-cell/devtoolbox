@@ -4734,6 +4734,71 @@
       "seoFeature2": "ไวยากรณ์ TOML [section] และ [[array]]",
       "seoFeature3": "จัดการ object ซ้อนกันและ array ตาราง",
       "seoFeature4": "มีเทมเพลตกำหนดค่าตัวอย่าง"
+    },
+    "typescript-to-zod": {
+      "name": "TypeScript เป็น Zod",
+      "description": "แปลงประเภท TypeScript เป็น Zod schema",
+      "pageTitle": "ตัวแปลง TypeScript เป็น Zod",
+      "pageDescription": "ตัวแปลง TypeScript เป็น Zod ฟรี",
+      "seoTitle": "ตัวแปลง TypeScript เป็น Zod",
+      "seoContent": "แปลงประเภท TypeScript เป็น Zod schema",
+      "seoFeaturesTitle": "คุณสมบัติ",
+      "seoFeature1": "แปลง interface และ type",
+      "seoFeature2": "รองรับ union type",
+      "seoFeature3": "Optional properties",
+      "seoFeature4": "โหมด strict"
+    },
+    "sql-to-mongodb": {
+      "name": "SQL เป็น MongoDB",
+      "description": "แปลงคำสั่ง SQL เป็น MongoDB",
+      "pageTitle": "ตัวแปลง SQL เป็น MongoDB",
+      "pageDescription": "ตัวแปลง SQL เป็น MongoDB ฟรี",
+      "seoTitle": "ตัวแปลง SQL เป็น MongoDB",
+      "seoContent": "แปลงคำสั่ง SQL เป็นคำสั่ง MongoDB",
+      "seoFeaturesTitle": "คุณสมบัติ",
+      "seoFeature1": "SELECT เป็น find()",
+      "seoFeature2": "แปลง WHERE clause",
+      "seoFeature3": "INSERT/UPDATE/DELETE",
+      "seoFeature4": "เอาต์พุต JavaScript และ JSON"
+    },
+    "env-to-json": {
+      "name": ".env เป็น JSON",
+      "description": "แปลงระหว่าง .env และ JSON",
+      "pageTitle": "ตัวแปลง .env เป็น JSON",
+      "pageDescription": "ตัวแปลง .env เป็น JSON ฟรี",
+      "seoTitle": "ตัวแปลง .env เป็น JSON",
+      "seoContent": "แปลงระหว่างไฟล์ .env และรูปแบบ JSON",
+      "seoFeaturesTitle": "คุณสมบัติ",
+      "seoFeature1": "แปลงสองทิศทาง",
+      "seoFeature2": "จัดการเครื่องหมายคำพูดและความคิดเห็น",
+      "seoFeature3": "เรียงลำดับคีย์",
+      "seoFeature4": "รองรับค่าหลายบรรทัด"
+    },
+    "regex-to-english": {
+      "name": "Regex เป็นภาษาอังกฤษ",
+      "description": "อธิบายรูปแบบ regex เป็นภาษาอังกฤษ",
+      "pageTitle": "ตัวอธิบาย Regex",
+      "pageDescription": "เครื่องมืออธิบาย regex ฟรี",
+      "seoTitle": "ตัวแปล Regex",
+      "seoContent": "แปล regular expression เป็นคำอธิบายภาษาอังกฤษ",
+      "seoFeaturesTitle": "คุณสมบัติ",
+      "seoFeature1": "วิเคราะห์ทีละ token",
+      "seoFeature2": "รองรับ regex ทั้งหมด",
+      "seoFeature3": "ตัวอย่างด่วน",
+      "seoFeature4": "วิเคราะห์แบบเรียลไทม์"
+    },
+    "json-to-form": {
+      "name": "JSON เป็นฟอร์ม HTML",
+      "description": "สร้างฟอร์ม HTML จาก JSON",
+      "pageTitle": "ตัวสร้าง JSON เป็นฟอร์ม HTML",
+      "pageDescription": "ตัวสร้างฟอร์ม HTML ฟรี",
+      "seoTitle": "ตัวสร้าง JSON เป็นฟอร์ม",
+      "seoContent": "สร้างฟอร์ม HTML จากข้อมูล JSON",
+      "seoFeaturesTitle": "คุณสมบัติ",
+      "seoFeature1": "ตรวจจับประเภท input อัตโนมัติ",
+      "seoFeature2": "Bootstrap และ CSS",
+      "seoFeature3": "การตรวจสอบ HTML5",
+      "seoFeature4": "แสดงตัวอย่างสด"
     }
   },
   "footer": {
