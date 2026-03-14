@@ -7730,36 +7730,17 @@
       ]
     },
     "json-to-xml-converter": {
-      "name": "Json To Xml",
-      "description": "Json To Xml - Free online tool for JSON data processing and conversion. Fast, secure, and easy to use.",
-      "pageTitle": "Json To Xml Online Free — Developer Tool | DevToolBox",
-      "pageDescription": "Free online json to xml tool. Json data processing and conversion instantly in your browser. No signup required, 100% secure client-side processing. Try it now!",
-      "howToUseSteps": [
-        "Enter or paste your data in the input field",
-        "Configure any options if available",
-        "Click the action button to process",
-        "Copy the result to your clipboard"
-      ],
-      "useCases": [
-        "Development and debugging workflows",
-        "Data format conversion",
-        "Code generation and formatting",
-        "Quick calculations and validation"
-      ],
-      "faqs": [
-        {
-          "q": "Is this Json To Xml tool free to use?",
-          "a": "Yes, the Json To Xml tool is completely free. No registration or payment required."
-        },
-        {
-          "q": "Is my data secure?",
-          "a": "Absolutely. All processing happens client-side in your browser. Your data never leaves your device or is sent to any server."
-        },
-        {
-          "q": "What formats does the Json To Xml tool support?",
-          "a": "The tool supports all standard formats for JSON data processing and conversion. Check the tool interface for specific format options."
-        }
-      ]
+      "name": "JSON to XML Converter",
+      "description": "Convert JSON to XML",
+      "pageTitle": "JSON to XML Converter Online",
+      "pageDescription": "Free online JSON to XML converter with customizable root element and formatting options.",
+      "seoTitle": "JSON to XML Converter",
+      "seoContent": "Convert JSON to XML",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Free online tool",
+      "seoFeature2": "No installation needed",
+      "seoFeature3": "Real-time preview",
+      "seoFeature4": "One-click copy"
     },
     "json-to-yaml": {
       "name": "Json To Yaml",
@@ -10549,16 +10530,16 @@
     },
     "json-to-graphql-schema": {
       "name": "JSON to GraphQL Schema",
-      "description": "Convert JSON to GraphQL SDL",
-      "pageTitle": "JSON to GraphQL Schema Generator - Convert JSON to SDL Online",
-      "pageDescription": "Free online JSON to GraphQL Schema converter. Generate GraphQL type definitions from JSON data with automatic type detection.",
-      "seoTitle": "JSON to GraphQL Schema Generator",
-      "seoContent": "Convert JSON data to GraphQL Schema Definition Language (SDL) instantly. Auto-detect types, handle nested objects, and generate complete GraphQL schemas.",
+      "description": "Convert JSON to GraphQL types",
+      "pageTitle": "JSON to GraphQL Schema Converter Online",
+      "pageDescription": "Free online JSON to GraphQL schema converter. Generate GraphQL type definitions from JSON data.",
+      "seoTitle": "JSON to GraphQL Schema",
+      "seoContent": "Convert JSON to GraphQL types",
       "seoFeaturesTitle": "Features",
-      "seoFeature1": "Automatic type detection (String, Int, Float, Boolean, ID)",
-      "seoFeature2": "Nested object to GraphQL type generation",
-      "seoFeature3": "Array type support with [Type] syntax",
-      "seoFeature4": "Configurable root type name"
+      "seoFeature1": "Free online tool",
+      "seoFeature2": "No installation needed",
+      "seoFeature3": "Real-time preview",
+      "seoFeature4": "One-click copy"
     },
     "openapi-to-typescript": {
       "name": "OpenAPI to TypeScript",
@@ -10749,17 +10730,17 @@
       "seoFeature4": "CSV download support"
     },
     "ip-geolocation": {
-      "name": "IP Geolocation",
-      "description": "Look up IP address geographic location",
-      "pageTitle": "IP Geolocation Lookup - Find IP Address Location Online",
-      "pageDescription": "Free online IP geolocation lookup tool. Find the geographic location, country, city, ISP, and timezone of any IP address.",
-      "seoTitle": "IP Geolocation Lookup Tool",
-      "seoContent": "Look up the geographic location of any IP address. Shows country, city, coordinates, timezone, ISP, and organization.",
+      "name": "IP Geolocation Lookup",
+      "description": "Look up IP address geolocation",
+      "pageTitle": "IP Geolocation Lookup Online - Find IP Location",
+      "pageDescription": "Free online IP geolocation lookup. Find the location, ISP, and network info for any IP address.",
+      "seoTitle": "IP Geolocation Lookup",
+      "seoContent": "Look up IP address geolocation",
       "seoFeaturesTitle": "Features",
-      "seoFeature1": "Auto-detect your own IP address",
-      "seoFeature2": "Country, city, and coordinate display",
-      "seoFeature3": "ISP and organization information",
-      "seoFeature4": "Lookup history tracking"
+      "seoFeature1": "Free online tool",
+      "seoFeature2": "No installation needed",
+      "seoFeature3": "Real-time preview",
+      "seoFeature4": "One-click copy"
     },
     "png-to-jpg": {
       "name": "PNG to JPG",
@@ -11084,6 +11065,32 @@
       "pageDescription": "Free online Markdown to PDF converter. Preview and print Markdown with professional formatting.",
       "seoTitle": "Markdown to PDF",
       "seoContent": "Preview Markdown as styled print-ready output",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Free online tool",
+      "seoFeature2": "No installation needed",
+      "seoFeature3": "Real-time preview",
+      "seoFeature4": "One-click copy"
+    },
+    "tailwind-css-converter": {
+      "name": "Tailwind CSS Converter",
+      "description": "Convert CSS to Tailwind classes",
+      "pageTitle": "CSS to Tailwind Converter Online",
+      "pageDescription": "Free online CSS to Tailwind converter. Transform regular CSS to Tailwind utility classes instantly.",
+      "seoTitle": "Tailwind CSS Converter",
+      "seoContent": "Convert CSS to Tailwind classes",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Free online tool",
+      "seoFeature2": "No installation needed",
+      "seoFeature3": "Real-time preview",
+      "seoFeature4": "One-click copy"
+    },
+    "svg-editor": {
+      "name": "SVG Editor",
+      "description": "Edit and preview SVG code",
+      "pageTitle": "SVG Editor & Optimizer Online",
+      "pageDescription": "Free online SVG editor. Edit SVG code with live preview, optimize, and clean up SVG files.",
+      "seoTitle": "SVG Editor",
+      "seoContent": "Edit and preview SVG code",
       "seoFeaturesTitle": "Features",
       "seoFeature1": "Free online tool",
       "seoFeature2": "No installation needed",

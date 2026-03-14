@@ -1,260 +1,229 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import ToolLayout from '@/components/ToolLayout';
 import CopyButton from '@/components/CopyButton';
 import { useLang } from '@/i18n/LangContext';
-import { encodeForUrl, decodeFromUrl, getHashParams, setHashParams } from '@/lib/url-state';
 
 export default function JsonToXmlConverter() {
   const { dict } = useLang();
-  const t = dict.tools['json-to-xml-converter'];
+  const t = (dict.tools as unknown as Record<string, Record<string, string>>)['json-to-xml-converter'];
+
   const [input, setInput] = useState('');
-  const [output, setOutput] = useState('');
-  const [error, setError] = useState('');
   const [rootElement, setRootElement] = useState('root');
-  const [indent, setIndent] = useState(2);
-  const [attributeMode, setAttributeMode] = useState(false);
-  const [shareCopied, setShareCopied] = useState(false);
+  const [indentation, setIndentation] = useState('2');
+  const [useAttributes, setUseAttributes] = useState(false);
+  const [error, setError] = useState('');
 
-  useEffect(() => {
-    const params = getHashParams();
-    if (params.json) {
-      const decoded = decodeFromUrl(params.json);
-      if (decoded) {
-        setInput(decoded);
-        convertJsonToXml(decoded);
-      }
-    }
-  }, []);
+  const jsonToXml = (obj: unknown, root: string, indent: number, asAttrs: boolean): string => {
+    const indentStr = ' '.repeat(indent);
+    const nextIndent = ' '.repeat(indent + 2);
 
-  const convertJsonToXml = (json, root = rootElement, ind = indent, attrMode = attributeMode) => {
-    try {
-      const parsed = JSON.parse(json);
-      const xml = jsonToXml(parsed, root, 0, ind, attrMode);
-      setOutput(xml);
-      setError('');
-    } catch (e) {
-      setError(e instanceof Error ? e.message : 'Conversion error');
-      setOutput('');
-    }
-  };
-
-  const jsonToXml = (obj, name = 'element', depth = 0, indentSize = 2, attrMode = false) => {
-    const currentIndent = ' '.repeat(depth * indentSize);
-    const nextIndent = ' '.repeat((depth + 1) * indentSize);
-
-    if (obj === null || obj === undefined) {
-      return `${currentIndent}<${name}></${name}>`;
+    if (typeof obj === 'string' || typeof obj === 'number' || typeof obj === 'boolean') {
+      return `${indentStr}<${root}>${String(obj)}</${root}>`;
     }
 
-    if (typeof obj !== 'object') {
-      return `${currentIndent}<${name}>${escapeXml(String(obj))}</${name}>`;
+    if (obj === null) {
+      return `${indentStr}<${root}/>`;
     }
 
     if (Array.isArray(obj)) {
-      return obj
-        .map((item) => jsonToXml(item, name.replace(/s$/, ''), depth, indentSize, attrMode))
-        .join('\n');
+      const items = (obj as unknown[]).map((item, idx) => jsonToXml(item, 'item', indent + 2, asAttrs)).join('\n');
+      return `${indentStr}<${root}>\n${items}\n${indentStr}</${root}>`;
     }
 
-    const entries = Object.entries(obj);
-    if (entries.length === 0) {
-      return `${currentIndent}<${name}></${name}>`;
+    if (typeof obj === 'object') {
+      const entries = Object.entries(obj as Record<string, unknown>);
+      if (entries.length === 0) {
+        return `${indentStr}<${root}/>`;
+      }
+
+      if (asAttrs && entries.length <= 3 && entries.every(([_, v]) => typeof v === 'string' || typeof v === 'number')) {
+        const attrs = entries.map(([k, v]) => `${k}="${String(v)}"`).join(' ');
+        return `${indentStr}<${root} ${attrs}/>`;
+      }
+
+      const children = entries.map(([key, value]) => {
+        const sanitizedKey = key.replace(/[^a-zA-Z0-9_]/g, '_');
+        return jsonToXml(value, sanitizedKey, indent + 2, asAttrs);
+      }).join('\n');
+
+      return `${indentStr}<${root}>\n${children}\n${indentStr}</${root}>`;
     }
 
-    const children = entries
-      .map(([key, value]) => {
-        if (key.startsWith('@') && attrMode) {
-          return null;
-        }
-        if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
-          return jsonToXml(value, key, depth + 1, indentSize, attrMode);
-        } else if (Array.isArray(value)) {
-          return value.map((item) => jsonToXml(item, key.replace(/s$/, ''), depth + 1, indentSize, attrMode)).join('\n');
-        } else {
-          return `${nextIndent}<${key}>${escapeXml(String(value))}</${key}>`;
-        }
-      })
-      .filter(Boolean);
-
-    if (children.length === 0) {
-      return `${currentIndent}<${name}></${name}>`;
-    }
-
-    return `${currentIndent}<${name}>\n${children.join('\n')}\n${currentIndent}</${name}>`;
+    return '';
   };
 
-  const escapeXml = (str) => {
-    return str
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&apos;');
-  };
-
-  const handleConvert = () => {
+  const output = useMemo(() => {
     if (!input.trim()) {
-      setError(t.inputRequired || 'Input required');
-      return;
+      setError('');
+      return '';
     }
-    convertJsonToXml(input, rootElement, indent, attributeMode);
+
+    try {
+      const json = JSON.parse(input);
+      const indentNum = Math.max(0, parseInt(indentation) || 2);
+      const xml = jsonToXml(json, rootElement || 'root', 0, useAttributes);
+      setError('');
+      return xml;
+    } catch {
+      setError('Invalid JSON syntax');
+      return '';
+    }
+  }, [input, rootElement, indentation, useAttributes]);
+
+  const containerStyle: React.CSSProperties = {
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+    gap: 16,
+    marginBottom: 16,
   };
 
-  const handleShare = () => {
-    if (!input) return;
-    const params = { json: encodeForUrl(input) };
-    setHashParams(params);
-    navigator.clipboard.writeText(window.location.href).then(() => {
-      setShareCopied(true);
-      setTimeout(() => setShareCopied(false), 2000);
-    });
+  const panelStyle: React.CSSProperties = {
+    display: 'flex',
+    flexDirection: 'column',
+    background: 'var(--bg-input)',
+    border: '1px solid var(--border-color)',
+    borderRadius: 10,
+    overflow: 'hidden',
   };
 
-  const loadSample = () => {
-    const sample = JSON.stringify({
-      book: {
-        title: 'JSON to XML Converter',
-        author: 'DevToolBox',
-        year: 2024,
-        pages: 350,
-      },
-    }, null, 2);
-    setInput(sample);
-    convertJsonToXml(sample);
+  const headerStyle: React.CSSProperties = {
+    padding: 12,
+    borderBottom: '1px solid var(--border-color)',
+    fontSize: 13,
+    fontWeight: 700,
+    color: 'var(--text-primary)',
+  };
+
+  const textareaStyle: React.CSSProperties = {
+    flex: 1,
+    padding: 12,
+    fontSize: 13,
+    fontFamily: "'JetBrains Mono', 'Fira Code', monospace",
+    background: 'var(--bg-primary)',
+    border: 'none',
+    color: 'var(--text-primary)',
+    outline: 'none',
+    resize: 'none',
+    minHeight: 400,
+  };
+
+  const labelStyle: React.CSSProperties = {
+    fontSize: 12,
+    fontWeight: 600,
+    color: 'var(--text-secondary)',
+    display: 'block',
+    marginBottom: 4,
+  };
+
+  const inputStyle: React.CSSProperties = {
+    padding: '6px 8px',
+    fontSize: 12,
+    background: 'var(--bg-primary)',
+    border: '1px solid var(--border-color)',
+    borderRadius: 4,
+    color: 'var(--text-primary)',
+    outline: 'none',
   };
 
   return (
-    <ToolLayout toolId="json-to-xml-converter">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <ToolLayout
+      title={t.pageTitle}
+      description={t.pageDescription}
+      toolId="json-to-xml-converter"
+    >
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr 1fr auto',
+        gap: 12,
+        marginBottom: 16,
+        alignItems: 'flex-end',
+      }}>
         <div>
-          <label className="block text-sm font-medium mb-2">{t.inputLabel || 'Input JSON'}</label>
-          <textarea
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder={t.inputPlaceholder || 'Paste your JSON here...'}
-            className="w-full h-64 p-4 border border-gray-300 rounded-lg font-mono text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            style={{
-              backgroundColor: 'var(--bg-secondary)',
-              color: 'var(--text-primary)',
-              borderColor: 'var(--border-color)',
-            }}
-          />
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium mb-2">{t.outputLabel || 'Output XML'}</label>
-          <div
-            className="w-full h-64 p-4 border border-gray-300 rounded-lg font-mono text-sm overflow-auto relative"
-            style={{
-              backgroundColor: 'var(--bg-secondary)',
-              color: 'var(--text-primary)',
-              borderColor: 'var(--border-color)',
-            }}
-          >
-            {output ? (
-              <>
-                <pre className="whitespace-pre-wrap break-words">{output}</pre>
-                <CopyButton text={output} />
-              </>
-            ) : (
-              <p className="text-gray-400">{t.outputPlaceholder || 'Output will appear here...'}</p>
-            )}
-          </div>
-        </div>
-      </div>
-
-      <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div>
-          <label className="block text-sm font-medium mb-2">{t.rootElement || 'Root Element'}</label>
+          <label style={labelStyle}>Root Element</label>
           <input
             type="text"
             value={rootElement}
-            onChange={(e) => setRootElement(e.target.value)}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            style={{
-              backgroundColor: 'var(--bg-secondary)',
-              color: 'var(--text-primary)',
-              borderColor: 'var(--border-color)',
-            }}
+            onChange={e => setRootElement(e.target.value || 'root')}
+            style={{ ...inputStyle, width: '100%' }}
           />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-2">{t.indent || 'Indent Size'}</label>
-          <select
-            value={indent}
-            onChange={(e) => setIndent(parseInt(e.target.value))}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            style={{
-              backgroundColor: 'var(--bg-secondary)',
-              color: 'var(--text-primary)',
-              borderColor: 'var(--border-color)',
-            }}
-          >
-            <option value={2}>2 spaces</option>
-            <option value={4}>4 spaces</option>
-            <option value={8}>8 spaces</option>
-          </select>
+          <label style={labelStyle}>Indentation (spaces)</label>
+          <input
+            type="number"
+            value={indentation}
+            onChange={e => setIndentation(e.target.value)}
+            min="0"
+            max="8"
+            style={{ ...inputStyle, width: '100%' }}
+          />
         </div>
-        <div className="flex items-end">
-          <label className="flex items-center cursor-pointer">
-            <input
-              type="checkbox"
-              checked={attributeMode}
-              onChange={(e) => setAttributeMode(e.target.checked)}
-              className="mr-2"
-            />
-            <span className="text-sm font-medium">{t.attributeMode || 'Attribute Mode'}</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+          <input
+            type="checkbox"
+            id="useAttributes"
+            checked={useAttributes}
+            onChange={e => setUseAttributes(e.target.checked)}
+          />
+          <label htmlFor="useAttributes" style={{ fontSize: 12, cursor: 'pointer', margin: 0 }}>
+            Use attributes
           </label>
         </div>
       </div>
 
-      {error && <div className="mt-4 p-4 bg-red-100 text-red-700 rounded-lg text-sm">{error}</div>}
+      <div style={containerStyle}>
+        <div style={panelStyle}>
+          <div style={headerStyle}>Input JSON</div>
+          <textarea
+            value={input}
+            onChange={e => setInput(e.target.value)}
+            placeholder={'{\n  "user": {\n    "name": "John",\n    "age": 30,\n    "email": "john@example.com"\n  }\n}'}
+            style={textareaStyle}
+          />
+        </div>
 
-      <div className="mt-6 flex flex-wrap gap-3">
-        <button onClick={handleConvert} className="btn btn-primary">
-          {t.convert || 'Convert'}
-        </button>
-        <button onClick={loadSample} className="btn btn-secondary">
-          {t.loadSample || 'Load Sample'}
-        </button>
-        <button onClick={() => setInput('')} className="btn btn-secondary">
-          {t.clear || 'Clear'}
-        </button>
-        <button onClick={handleShare} className="btn btn-secondary">
-          {shareCopied ? '✓ Copied!' : 'Share'}
-        </button>
+        <div style={panelStyle}>
+          <div style={{ ...headerStyle, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <span>Output XML</span>
+            {output && <CopyButton text={output} label={dict.common.copy} />}
+          </div>
+          <pre style={{
+            flex: 1,
+            padding: 12,
+            fontSize: 13,
+            fontFamily: "'JetBrains Mono', 'Fira Code', monospace",
+            background: 'var(--bg-primary)',
+            color: 'var(--accent-emerald)',
+            border: 'none',
+            margin: 0,
+            overflow: 'auto',
+            minHeight: 400,
+          }}>
+            {output || (dict.common.resultPlaceholder || 'Result will appear here...')}
+          </pre>
+        </div>
       </div>
 
-      <section className="mt-12 border-t pt-8">
-        <h2 className="text-2xl font-bold mb-4">{t.seoTitle || 'Convert JSON to XML Online'}</h2>
-        <p className="text-gray-600 mb-4">{t.seoContent || 'Transform JSON data into XML format with customizable options. Set root element names, indent size, and choose between element and attribute modes.'}</p>
+      {error && (
+        <div style={{
+          padding: 12,
+          borderRadius: 6,
+          background: 'rgba(239, 68, 68, 0.1)',
+          border: '1px solid rgb(239, 68, 68)',
+          color: 'rgb(239, 68, 68)',
+          fontSize: 13,
+          marginBottom: 16,
+        }}>
+          {error}
+        </div>
+      )}
 
-        <h3 className="text-xl font-bold mb-3 mt-6">{t.seoFeaturesTitle || 'Features'}</h3>
-        <ul className="list-disc list-inside space-y-2 text-gray-600">
-          <li>{t.seoFeature1 || 'Convert nested JSON objects to XML elements'}</li>
-          <li>{t.seoFeature2 || 'Handle JSON arrays as repeating XML elements'}</li>
-          <li>{t.seoFeature3 || 'Customize root element name'}</li>
-          <li>{t.seoFeature4 || 'Configure indentation (2, 4, or 8 spaces)'}</li>
-          <li>{t.seoFeature5 || 'Automatic XML escaping for special characters'}</li>
-          <li>{t.seoFeature6 || '100% client-side processing'}</li>
-        </ul>
-
-        {t.faqs && (
-          <div className="mt-8">
-            <h3 className="text-xl font-bold mb-4">{t.faqTitle || 'FAQ'}</h3>
-            <div className="space-y-4">
-              {t.faqs.map((faq, idx) => (
-                <div key={idx} className="border-l-4 border-blue-500 pl-4">
-                  <h4 className="font-semibold mb-2">{faq.q}</h4>
-                  <p className="text-gray-600 text-sm">{faq.a}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-      </section>
+      <div style={{ marginTop: 30, paddingTop: 20, borderTop: '1px solid var(--border-color)' }}>
+        <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>{t.seoTitle}</h2>
+        <p style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.7 }}>{t.seoContent}</p>
+      </div>
     </ToolLayout>
   );
 }

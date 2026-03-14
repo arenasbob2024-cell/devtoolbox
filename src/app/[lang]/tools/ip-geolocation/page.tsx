@@ -1,24 +1,19 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import ToolLayout from '@/components/ToolLayout';
+import CopyButton from '@/components/CopyButton';
 import { useLang } from '@/i18n/LangContext';
 
-interface GeolocationData {
-  status: string;
+interface GeoData {
+  ip: string;
   country?: string;
-  countryCode?: string;
   region?: string;
-  regionName?: string;
   city?: string;
-  zip?: string;
-  lat?: number;
-  lon?: number;
-  timezone?: string;
+  latitude?: number;
+  longitude?: number;
   isp?: string;
-  org?: string;
-  query?: string;
-  message?: string;
+  timezone?: string;
 }
 
 export default function IpGeolocation() {
@@ -26,293 +21,229 @@ export default function IpGeolocation() {
   const t = (dict.tools as unknown as Record<string, Record<string, string>>)['ip-geolocation'];
 
   const [ipInput, setIpInput] = useState('');
-  const [geolocation, setGeolocation] = useState<GeolocationData | null>(null);
+  const [geoData, setGeoData] = useState<GeoData | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [history, setHistory] = useState<string[]>([]);
 
-  const isValidIp = (ip: string): boolean => {
+  useEffect(() => {
+    fetchCurrentIP();
+  }, []);
+
+  const fetchCurrentIP = async () => {
+    setLoading(true);
+    setError('');
+    try {
+      const response = await fetch('https://ipapi.co/json/');
+      const data = await response.json();
+      setGeoData({
+        ip: data.ip,
+        country: data.country_name,
+        region: data.region,
+        city: data.city,
+        latitude: data.latitude,
+        longitude: data.longitude,
+        isp: data.org,
+        timezone: data.timezone,
+      });
+      setIpInput(data.ip);
+    } catch {
+      setError('Failed to fetch IP information');
+    }
+    setLoading(false);
+  };
+
+  const validateIP = (ip: string): boolean => {
     const ipv4Regex = /^(\d{1,3}\.){3}\d{1,3}$/;
-    const ipv6Regex = /^([\da-fA-F]{0,4}:){2,7}[\da-fA-F]{0,4}$/;
+    const ipv6Regex = /^(([0-9a-fA-F]{0,4}:){2,7}[0-9a-fA-F]{0,4})$/;
     return ipv4Regex.test(ip) || ipv6Regex.test(ip);
   };
 
-  const lookupIp = useCallback(async (ip: string) => {
+  const handleLookup = async () => {
+    if (!ipInput.trim()) {
+      setError('Please enter an IP address');
+      return;
+    }
+
+    if (!validateIP(ipInput)) {
+      setError('Invalid IP address format');
+      return;
+    }
+
+    setLoading(true);
+    setError('');
     try {
-      setLoading(true);
-      setError('');
-
-      if (!ip.trim()) {
-        setError('Please enter an IP address');
-        setLoading(false);
-        return;
-      }
-
-      if (!isValidIp(ip.trim())) {
-        setError('Invalid IP address format');
-        setLoading(false);
-        return;
-      }
-
-      const response = await fetch(`https://ip-api.com/json/${ip.trim()}?fields=status,country,countryCode,region,regionName,city,zip,lat,lon,timezone,isp,org,query,message`, {
-        headers: { 'Accept': 'application/json' },
-      });
-
+      const response = await fetch(`https://ipapi.co/${ipInput}/json/`);
       if (!response.ok) {
-        throw new Error('Failed to fetch geolocation data');
+        throw new Error('IP not found');
       }
-
-      const data: GeolocationData = await response.json();
-
-      if (data.status === 'fail') {
-        setError(data.message || 'IP not found or invalid');
-        setGeolocation(null);
-      } else {
-        setGeolocation(data);
-        setHistory(prev => {
-          const updated = [ip.trim(), ...prev.filter(x => x !== ip.trim())];
-          return updated.slice(0, 10);
-        });
-      }
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Lookup failed');
-      setGeolocation(null);
-    } finally {
-      setLoading(false);
+      const data = await response.json();
+      setGeoData({
+        ip: data.ip,
+        country: data.country_name,
+        region: data.region,
+        city: data.city,
+        latitude: data.latitude,
+        longitude: data.longitude,
+        isp: data.org,
+        timezone: data.timezone,
+      });
+    } catch {
+      setError('Could not find information for this IP address');
+      setGeoData(null);
     }
-  }, []);
-
-  useEffect(() => {
-    const loadUserIp = async () => {
-      try {
-        const response = await fetch('https://ip-api.com/json/?fields=query', {
-          headers: { 'Accept': 'application/json' },
-        });
-        const data: { query?: string } = await response.json();
-        if (data.query) {
-          setIpInput(data.query);
-          lookupIp(data.query);
-        }
-      } catch {
-        // silently fail for auto-lookup
-      }
-    };
-
-    loadUserIp();
-  }, [lookupIp]);
-
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') {
-      lookupIp(ipInput);
-    }
+    setLoading(false);
   };
 
-  const handleHistoryClick = (ip: string) => {
-    setIpInput(ip);
-    lookupIp(ip);
-  };
-
-  const inputStyle: React.CSSProperties = {
-    width: '100%',
-    padding: '12px',
-    fontSize: 13,
+  const cardStyle: React.CSSProperties = {
     background: 'var(--bg-input)',
     border: '1px solid var(--border-color)',
-    borderRadius: 6,
-    color: 'var(--text-primary)',
-    outline: 'none',
-  };
-
-  const buttonStyle: React.CSSProperties = {
-    padding: '12px 24px',
-    fontSize: 13,
-    fontWeight: 600,
-    borderRadius: 6,
-    border: 'none',
-    cursor: 'pointer',
-    background: 'var(--accent-blue)',
-    color: 'white',
-    transition: 'opacity 0.2s',
-  };
-
-  const dataRowStyle: React.CSSProperties = {
-    display: 'grid',
-    gridTemplateColumns: '150px 1fr',
-    gap: 16,
-    padding: '12px 0',
-    borderBottom: '1px solid var(--border-color)',
-    alignItems: 'center',
+    borderRadius: 10,
+    padding: 16,
+    marginBottom: 16,
   };
 
   const labelStyle: React.CSSProperties = {
     fontSize: 12,
     fontWeight: 600,
     color: 'var(--text-secondary)',
-    textTransform: 'uppercase',
+    display: 'block',
+    marginBottom: 4,
   };
 
   const valueStyle: React.CSSProperties = {
-    fontSize: 13,
+    fontSize: 14,
+    fontWeight: 500,
     color: 'var(--text-primary)',
-    fontFamily: "'JetBrains Mono', monospace",
+    wordBreak: 'break-all',
+  };
+
+  const rowStyle: React.CSSProperties = {
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+    gap: 16,
+    marginBottom: 16,
   };
 
   return (
-    <ToolLayout title={t.pageTitle} description={t.pageDescription} toolId="ip-geolocation">
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: 10, marginBottom: 16 }}>
-        <input
-          type="text"
-          value={ipInput}
-          onChange={(e) => setIpInput(e.target.value)}
-          onKeyPress={handleKeyPress}
-          placeholder="Enter IP address (e.g., 8.8.8.8)..."
-          style={inputStyle}
-        />
-        <button
-          onClick={() => lookupIp(ipInput)}
-          disabled={loading}
-          style={{ ...buttonStyle, opacity: loading ? 0.6 : 1, cursor: loading ? 'not-allowed' : 'pointer' }}
-        >
-          {loading ? 'Lookup...' : 'Lookup'}
-        </button>
+    <ToolLayout
+      title={t.pageTitle}
+      description={t.pageDescription}
+      toolId="ip-geolocation"
+    >
+      <div style={cardStyle}>
+        <div style={{ display: 'flex', gap: 8, marginBottom: 12 }}>
+          <input
+            type="text"
+            value={ipInput}
+            onChange={e => setIpInput(e.target.value)}
+            onKeyDown={e => e.key === 'Enter' && handleLookup()}
+            placeholder="Enter IP address (e.g., 8.8.8.8)"
+            style={{
+              flex: 1,
+              padding: '10px 12px',
+              fontSize: 13,
+              background: 'var(--bg-primary)',
+              border: '1px solid var(--border-color)',
+              borderRadius: 6,
+              color: 'var(--text-primary)',
+              outline: 'none',
+            }}
+          />
+          <button
+            onClick={handleLookup}
+            disabled={loading}
+            className="btn btn-primary"
+            style={{
+              padding: '10px 20px',
+              fontSize: 13,
+              fontWeight: 600,
+            }}
+          >
+            {loading ? 'Checking...' : 'Lookup'}
+          </button>
+          <button
+            onClick={fetchCurrentIP}
+            className="btn btn-secondary"
+            style={{
+              padding: '10px 20px',
+              fontSize: 13,
+              fontWeight: 600,
+            }}
+          >
+            My IP
+          </button>
+        </div>
+
+        {error && (
+          <div style={{
+            padding: 10,
+            borderRadius: 6,
+            background: 'rgba(239, 68, 68, 0.1)',
+            border: '1px solid rgb(239, 68, 68)',
+            color: 'rgb(239, 68, 68)',
+            fontSize: 13,
+            marginBottom: 12,
+          }}>
+            {error}
+          </div>
+        )}
       </div>
 
-      {error && (
-        <div style={{
-          padding: 12,
-          background: 'rgba(239, 68, 68, 0.1)',
-          border: '1px solid rgb(239, 68, 68)',
-          borderRadius: 6,
-          color: 'rgb(239, 68, 68)',
-          fontSize: 12,
-          marginBottom: 16,
-        }}>
-          {error}
-        </div>
-      )}
-
-      {geolocation && geolocation.status === 'success' && (
-        <div style={{
-          background: 'var(--bg-input)',
-          border: '1px solid var(--border-color)',
-          borderRadius: 10,
-          padding: 16,
-          marginBottom: 16,
-        }}>
-          <div style={{ fontSize: 14, fontWeight: 700, marginBottom: 12, color: 'var(--text-primary)' }}>
-            Geolocation Information
-          </div>
-
-          <div style={dataRowStyle}>
-            <div style={labelStyle}>IP Address</div>
-            <div style={valueStyle}>{geolocation.query}</div>
-          </div>
-
-          {geolocation.country && (
-            <div style={dataRowStyle}>
-              <div style={labelStyle}>Country</div>
-              <div style={valueStyle}>{geolocation.country} ({geolocation.countryCode})</div>
+      {geoData && (
+        <div>
+          <div style={cardStyle}>
+            <div style={{ fontSize: 14, fontWeight: 700, marginBottom: 14, color: 'var(--accent-blue)' }}>
+              IP Address Information
             </div>
-          )}
-
-          {geolocation.region && (
-            <div style={dataRowStyle}>
-              <div style={labelStyle}>Region</div>
-              <div style={valueStyle}>{geolocation.regionName || geolocation.region}</div>
+            <div style={{ ...rowStyle, marginBottom: 12 }}>
+              <div>
+                <label style={labelStyle}>IP Address</label>
+                <div style={{ ...valueStyle, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <span>{geoData.ip}</span>
+                  <CopyButton text={geoData.ip} label={dict.common.copy} />
+                </div>
+              </div>
+              <div>
+                <label style={labelStyle}>ISP / Organization</label>
+                <div style={valueStyle}>{geoData.isp || 'N/A'}</div>
+              </div>
             </div>
-          )}
 
-          {geolocation.city && (
-            <div style={dataRowStyle}>
-              <div style={labelStyle}>City</div>
-              <div style={valueStyle}>{geolocation.city}</div>
+            <div style={rowStyle}>
+              <div>
+                <label style={labelStyle}>Country</label>
+                <div style={valueStyle}>{geoData.country || 'N/A'}</div>
+              </div>
+              <div>
+                <label style={labelStyle}>Region</label>
+                <div style={valueStyle}>{geoData.region || 'N/A'}</div>
+              </div>
             </div>
-          )}
 
-          {geolocation.zip && (
-            <div style={dataRowStyle}>
-              <div style={labelStyle}>Zip Code</div>
-              <div style={valueStyle}>{geolocation.zip}</div>
+            <div style={rowStyle}>
+              <div>
+                <label style={labelStyle}>City</label>
+                <div style={valueStyle}>{geoData.city || 'N/A'}</div>
+              </div>
+              <div>
+                <label style={labelStyle}>Timezone</label>
+                <div style={valueStyle}>{geoData.timezone || 'N/A'}</div>
+              </div>
             </div>
-          )}
 
-          {geolocation.lat !== undefined && geolocation.lon !== undefined && (
-            <div style={dataRowStyle}>
-              <div style={labelStyle}>Coordinates</div>
-              <div style={valueStyle}>{geolocation.lat.toFixed(4)}, {geolocation.lon.toFixed(4)}</div>
+            <div style={rowStyle}>
+              <div>
+                <label style={labelStyle}>Latitude</label>
+                <div style={valueStyle}>{geoData.latitude?.toFixed(6) || 'N/A'}</div>
+              </div>
+              <div>
+                <label style={labelStyle}>Longitude</label>
+                <div style={valueStyle}>{geoData.longitude?.toFixed(6) || 'N/A'}</div>
+              </div>
             </div>
-          )}
-
-          {geolocation.timezone && (
-            <div style={dataRowStyle}>
-              <div style={labelStyle}>Timezone</div>
-              <div style={valueStyle}>{geolocation.timezone}</div>
-            </div>
-          )}
-
-          {geolocation.isp && (
-            <div style={dataRowStyle}>
-              <div style={labelStyle}>ISP</div>
-              <div style={valueStyle}>{geolocation.isp}</div>
-            </div>
-          )}
-
-          {geolocation.org && (
-            <div style={dataRowStyle}>
-              <div style={labelStyle}>Organization</div>
-              <div style={valueStyle}>{geolocation.org}</div>
-            </div>
-          )}
-        </div>
-      )}
-
-      {history.length > 0 && (
-        <div style={{
-          background: 'var(--bg-input)',
-          border: '1px solid var(--border-color)',
-          borderRadius: 10,
-          padding: 16,
-          marginBottom: 16,
-        }}>
-          <div style={{ fontSize: 12, fontWeight: 700, marginBottom: 10, color: 'var(--text-secondary)', textTransform: 'uppercase' }}>
-            Recent Lookups
-          </div>
-          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-            {history.map((ip) => (
-              <button
-                key={ip}
-                onClick={() => handleHistoryClick(ip)}
-                style={{
-                  padding: '6px 12px',
-                  fontSize: 12,
-                  borderRadius: 6,
-                  border: '1px solid var(--border-color)',
-                  background: 'var(--bg-secondary)',
-                  color: 'var(--text-primary)',
-                  cursor: 'pointer',
-                  fontFamily: "'JetBrains Mono', monospace",
-                  transition: 'all 0.2s',
-                }}
-              >
-                {ip}
-              </button>
-            ))}
           </div>
         </div>
       )}
-
-      <div style={{
-        background: 'rgba(59, 130, 246, 0.1)',
-        border: '1px solid rgb(59, 130, 246)',
-        borderRadius: 6,
-        padding: 12,
-        fontSize: 12,
-        color: 'var(--text-secondary)',
-        marginBottom: 16,
-        lineHeight: 1.6,
-      }}>
-        Rate limit: 45 requests/minute. Powered by <strong>ip-api.com</strong> (free tier, no API key required).
-      </div>
 
       <div style={{ marginTop: 30, paddingTop: 20, borderTop: '1px solid var(--border-color)' }}>
         <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>{t.seoTitle}</h2>

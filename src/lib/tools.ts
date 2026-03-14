@@ -3410,6 +3410,26 @@ export const tools: Tool[] = [
     path: '/tools/markdown-to-pdf',
     relatedTools: ['markdown-preview', 'markdown-editor-online', 'markdown-to-html-converter'],
   },
+  {
+    id: 'tailwind-css-converter',
+    name: 'Tailwind CSS Converter',
+    description: 'Convert CSS to Tailwind utility classes',
+    icon: '🎨',
+    category: 'css',
+    keywords: ['tailwind', 'css', 'converter', 'utility', 'classes', 'transform'],
+    path: '/tools/tailwind-css-converter',
+    relatedTools: ['css-to-tailwind', 'css-formatter', 'css-minifier'],
+  },
+  {
+    id: 'svg-editor',
+    name: 'SVG Editor',
+    description: 'Edit, preview, and optimize SVG code',
+    icon: '✏️',
+    category: 'converter',
+    keywords: ['svg', 'editor', 'preview', 'optimize', 'vector', 'graphics'],
+    path: '/tools/svg-editor',
+    relatedTools: ['svg-to-react', 'svg-to-png-converter', 'html-preview'],
+  },
 ];
 
 export function getToolsByCategory(categoryId: string): Tool[] {
