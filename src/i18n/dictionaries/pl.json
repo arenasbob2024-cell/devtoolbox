@@ -5523,6 +5523,383 @@
       "seoFeature2": "No install",
       "seoFeature3": "Live preview",
       "seoFeature4": "Copy output"
+    },
+    "image-resizer": {
+      "name": "Zmiana Rozmiaru Obrazów",
+      "description": "Resize images online for free with custom dimensions",
+      "pageTitle": "Zmiana Rozmiaru Obrazów - DevToolBox",
+      "pageDescription": "Resize images online for free. Adjust width, height, maintain aspect ratio. Support PNG, JPG, WebP, GIF. No upload needed - everything runs in your browser.",
+      "seoTitle": "What is Image Resizer?",
+      "seoContent": "Image Resizer is a free online tool that lets you resize images to exact pixel dimensions. Simply upload your image, set the desired width and height, and download the resized result. All processing happens in your browser - your images are never uploaded to any server.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Upload an image by dragging and dropping or clicking to select",
+        "Set the desired width and height in pixels",
+        "Toggle aspect ratio lock to maintain proportions",
+        "Click Resize Image to process",
+        "Download the resized image"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Resize images for social media posts",
+        "Create thumbnails for websites",
+        "Reduce image dimensions for email attachments",
+        "Prepare images for web optimization"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "Is my image uploaded to a server?",
+          "a": "No, all processing happens locally in your browser. Your images never leave your device."
+        },
+        {
+          "q": "What image formats are supported?",
+          "a": "PNG, JPG, WebP, GIF, and most common image formats are supported."
+        },
+        {
+          "q": "Will resizing affect image quality?",
+          "a": "Downscaling generally preserves quality well. Upscaling may result in some blurriness depending on the scale factor."
+        }
+      ]
+    },
+    "image-cropper": {
+      "name": "Przycinanie Obrazów",
+      "description": "Crop images online for free with custom areas",
+      "pageTitle": "Przycinanie Obrazów - DevToolBox",
+      "pageDescription": "Crop images online for free. Select custom crop areas, use preset aspect ratios like 1:1, 16:9, 4:3. Download instantly. No upload needed.",
+      "seoTitle": "What is Image Cropper?",
+      "seoContent": "Image Cropper is a free online tool that lets you crop images to exact dimensions. Choose preset aspect ratios or define custom crop areas. All processing happens locally in your browser for maximum privacy.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Upload an image by dragging and dropping or clicking",
+        "Choose a preset aspect ratio or set custom crop dimensions",
+        "Adjust the X, Y, Width, and Height values",
+        "Click Crop Image to process",
+        "Download the cropped result"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Crop profile pictures to square format",
+        "Create 16:9 thumbnails for YouTube",
+        "Trim unwanted areas from screenshots",
+        "Prepare images for specific social media dimensions"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "Can I crop to custom dimensions?",
+          "a": "Yes, you can set exact X, Y, Width, and Height values or use preset ratios like 1:1, 16:9, 4:3."
+        },
+        {
+          "q": "Is the cropping done locally?",
+          "a": "Yes, all image processing happens in your browser. No data is sent to any server."
+        },
+        {
+          "q": "What output format is used?",
+          "a": "Cropped images are exported as PNG format for the best quality."
+        }
+      ]
+    },
+    "webp-converter": {
+      "name": "Konwerter WebP",
+      "description": "Convert images to and from WebP format",
+      "pageTitle": "Konwerter WebP - DevToolBox",
+      "pageDescription": "Convert images to and from WebP format online. Support PNG to WebP, JPG to WebP, and WebP to PNG/JPG. Adjust quality settings. Free and private.",
+      "seoTitle": "What is WebP Converter?",
+      "seoContent": "WebP Converter is a free online tool that converts images between WebP and other formats. WebP is a modern image format that provides superior compression, reducing file sizes by 25-35% compared to JPEG and PNG while maintaining visual quality.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Upload an image (WebP, PNG, JPG, or GIF)",
+        "Select the output format (WebP, PNG, or JPEG)",
+        "Adjust quality settings if needed",
+        "Click Convert to process",
+        "Download the converted image"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Convert PNG/JPG to WebP for faster web loading",
+        "Convert WebP images to PNG for compatibility",
+        "Optimize images for web performance",
+        "Batch prepare images for modern browsers"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "Why use WebP format?",
+          "a": "WebP provides 25-35% smaller file sizes than JPEG and PNG while maintaining visual quality, leading to faster page loads."
+        },
+        {
+          "q": "Is WebP supported by all browsers?",
+          "a": "WebP is supported by all modern browsers including Chrome, Firefox, Safari, and Edge."
+        },
+        {
+          "q": "Does conversion affect image quality?",
+          "a": "You can control the quality level. Higher quality means larger file sizes. Lossless conversion (PNG) preserves perfect quality."
+        }
+      ]
+    },
+    "css-glassmorphism-generator": {
+      "name": "Generator CSS Glassmorfizm",
+      "description": "Generate glassmorphism CSS effects with live preview",
+      "pageTitle": "Generator CSS Glassmorfizm - DevToolBox",
+      "pageDescription": "Generate beautiful glassmorphism CSS effects with live preview. Customize blur, transparency, border radius, and colors. Copy ready-to-use CSS code.",
+      "seoTitle": "What is Glassmorphism?",
+      "seoContent": "Glassmorphism is a modern UI design trend that creates a frosted glass effect using CSS backdrop-filter and semi-transparent backgrounds. This generator lets you customize blur intensity, opacity, border effects, and colors with real-time preview and copy-ready CSS code.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Adjust the blur, opacity, and border settings using sliders",
+        "Pick a background color for the glass effect",
+        "Preview the result in the live preview panel",
+        "Copy the generated CSS code"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Create modern glass-effect cards and panels",
+        "Design frosted glass navigation bars",
+        "Build translucent modal overlays",
+        "Add depth to hero sections with blur effects"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What is backdrop-filter?",
+          "a": "backdrop-filter is a CSS property that applies graphical effects like blur to the area behind an element, creating the glass effect."
+        },
+        {
+          "q": "Is glassmorphism supported by all browsers?",
+          "a": "backdrop-filter is supported by all modern browsers. For older browsers, a fallback solid background is recommended."
+        },
+        {
+          "q": "Can I customize the colors?",
+          "a": "Yes, you can change the background color, opacity, blur intensity, border opacity, and border radius."
+        }
+      ]
+    },
+    "css-neumorphism-generator": {
+      "name": "Generator CSS Neumorfizm",
+      "description": "Generate neumorphism soft UI CSS effects",
+      "pageTitle": "Generator CSS Neumorfizm - DevToolBox",
+      "pageDescription": "Generate neumorphism (soft UI) CSS effects with live preview. Customize shadows, colors, shapes. Create flat, concave, convex, and pressed states.",
+      "seoTitle": "What is Neumorphism?",
+      "seoContent": "Neumorphism (also called soft UI) is a design style that combines flat design with subtle shadows to create soft, extruded shapes. This generator creates neumorphic CSS effects with customizable shadow size, intensity, and four different shape variations.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Choose a background color for your design",
+        "Select a shape style: flat, concave, convex, or pressed",
+        "Adjust shadow size, intensity, and border radius",
+        "Preview the effect in real-time",
+        "Copy the CSS code"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Design soft UI buttons and cards",
+        "Create neumorphic form inputs",
+        "Build modern dashboard interfaces",
+        "Add depth to minimalist designs"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What makes neumorphism different from flat design?",
+          "a": "Neumorphism adds subtle light and dark shadows to create a soft, extruded appearance, while flat design uses no shadows."
+        },
+        {
+          "q": "What are the shape options?",
+          "a": "Four shapes: Flat (basic neumorphism), Concave (inward curve), Convex (outward curve), and Pressed (inset shadow)."
+        },
+        {
+          "q": "Does background color matter?",
+          "a": "Yes, neumorphism works best with soft, muted colors. Very dark or very bright colors may not produce the desired effect."
+        }
+      ]
+    },
+    "aspect-ratio-calculator": {
+      "name": "Kalkulator Proporcji",
+      "description": "Calculate and convert aspect ratios",
+      "pageTitle": "Kalkulator Proporcji - DevToolBox",
+      "pageDescription": "Calculate and convert aspect ratios for images, videos, and screens. Find missing dimensions, use common presets like 16:9, 4:3, 1:1. Free online tool.",
+      "seoTitle": "What is Aspect Ratio Calculator?",
+      "seoContent": "Aspect Ratio Calculator helps you calculate the aspect ratio of any image, video, or screen from its width and height. It also helps you find missing dimensions when you know one dimension and the desired aspect ratio.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Enter the original width and height",
+        "View the calculated aspect ratio",
+        "Enter a new width or height to calculate the missing dimension",
+        "Use preset ratios for common formats"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Calculate aspect ratios for responsive web design",
+        "Find correct dimensions for video thumbnails",
+        "Resize images while maintaining proportions",
+        "Determine screen ratios for design mockups"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What is aspect ratio?",
+          "a": "Aspect ratio is the proportional relationship between width and height, expressed as two numbers like 16:9 or 4:3."
+        },
+        {
+          "q": "What is the most common aspect ratio?",
+          "a": "16:9 is the most common for HD video and modern screens. 4:3 was the traditional TV standard."
+        },
+        {
+          "q": "How do I calculate a missing dimension?",
+          "a": "Enter one dimension (width or height) and click the calculate button to find the other dimension based on the current aspect ratio."
+        }
+      ]
+    },
+    "sitemap-generator": {
+      "name": "Generator Mapy Strony XML",
+      "description": "Generate XML sitemaps for your website",
+      "pageTitle": "Generator Mapy Strony XML - DevToolBox",
+      "pageDescription": "Generate XML sitemaps for your website. Add URLs, set priorities, change frequencies. Download sitemap.xml file. Free online sitemap creator.",
+      "seoTitle": "What is XML Sitemap Generator?",
+      "seoContent": "XML Sitemap Generator creates valid XML sitemaps that help search engines discover and index your web pages. Add URLs individually or in bulk, set change frequencies and priorities, then download a ready-to-upload sitemap.xml file.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Add URLs individually or paste multiple URLs in bulk",
+        "Set change frequency and priority for each URL",
+        "Set the last modification date",
+        "Click Generate Sitemap",
+        "Download the sitemap.xml file"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Create sitemaps for new websites",
+        "Update sitemaps after adding new pages",
+        "Generate sitemaps for small static sites",
+        "Quickly create test sitemaps for SEO audits"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What is an XML sitemap?",
+          "a": "An XML sitemap is a file that lists all pages on your website, helping search engines like Google discover and crawl them efficiently."
+        },
+        {
+          "q": "Where do I upload the sitemap?",
+          "a": "Upload sitemap.xml to your website root directory and submit it via Google Search Console or add it to your robots.txt."
+        },
+        {
+          "q": "How many URLs can I add?",
+          "a": "This tool has no practical limit. However, XML sitemaps should contain no more than 50,000 URLs per the protocol specification."
+        }
+      ]
+    },
+    "html-to-text": {
+      "name": "Konwerter HTML na Tekst",
+      "description": "Convert HTML to plain text",
+      "pageTitle": "Konwerter HTML na Tekst - DevToolBox",
+      "pageDescription": "Convert HTML to plain text online. Strip HTML tags, decode entities, extract readable text content. Option to preserve links and line breaks.",
+      "seoTitle": "What is HTML to Text Converter?",
+      "seoContent": "HTML to Text Converter strips all HTML tags and converts HTML content to readable plain text. It decodes HTML entities, preserves text structure, and optionally retains links and line breaks.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Paste your HTML code in the input area",
+        "Choose options: preserve links, preserve line breaks",
+        "Click Convert to extract plain text",
+        "Copy the result"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Extract text content from HTML emails",
+        "Clean HTML for plain text newsletters",
+        "Convert web page content to text files",
+        "Remove markup from copied web content"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "Does it decode HTML entities?",
+          "a": "Yes, it converts entities like &amp;, &lt;, &gt;, &nbsp; and others to their text equivalents."
+        },
+        {
+          "q": "Can I keep the links?",
+          "a": "Yes, enable the Preserve Links option to convert <a> tags to text format like: link text (URL)."
+        },
+        {
+          "q": "Is formatting preserved?",
+          "a": "Line breaks from block elements (p, div, br, h1-h6) are preserved when the Preserve Line Breaks option is enabled."
+        }
+      ]
+    },
+    "json-sorter": {
+      "name": "Sortowanie Kluczy JSON",
+      "description": "Sort JSON keys alphabetically",
+      "pageTitle": "Sortowanie Kluczy JSON - DevToolBox",
+      "pageDescription": "Sort JSON keys alphabetically online. Order JSON properties A-Z or Z-A, with deep sorting for nested objects. Free JSON organizer tool.",
+      "seoTitle": "What is JSON Key Sorter?",
+      "seoContent": "JSON Key Sorter organizes JSON data by sorting object keys alphabetically. It supports both ascending (A-Z) and descending (Z-A) order, with optional deep sorting that recursively sorts keys in nested objects.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Paste your JSON in the input area",
+        "Choose sort order: A-Z or Z-A",
+        "Toggle deep sort for nested objects",
+        "Click Sort Keys to process",
+        "Copy the sorted result"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Normalize JSON for consistent diffs in version control",
+        "Organize configuration files alphabetically",
+        "Clean up API responses for documentation",
+        "Make JSON files more readable and navigable"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "What is deep sorting?",
+          "a": "Deep sorting recursively sorts keys in nested objects, not just the top-level keys."
+        },
+        {
+          "q": "Does it preserve array order?",
+          "a": "Yes, array elements maintain their original order. Only object keys are sorted."
+        },
+        {
+          "q": "Can I sort in reverse order?",
+          "a": "Yes, choose Z-A from the dropdown to sort keys in descending alphabetical order."
+        }
+      ]
+    },
+    "css-gradient-text": {
+      "name": "Generator Gradientu Tekstu CSS",
+      "description": "Create gradient text effects with CSS",
+      "pageTitle": "Generator Gradientu Tekstu CSS - DevToolBox",
+      "pageDescription": "Create beautiful gradient text effects with CSS. Live preview, multiple colors, angle control, font size and weight. Copy ready-to-use CSS code.",
+      "seoTitle": "What is CSS Gradient Text?",
+      "seoContent": "CSS Gradient Text Generator creates colorful gradient effects on text using CSS background-clip and -webkit-text-fill-color properties. Customize colors, angles, font size, and weight with real-time preview and copy-ready CSS code.",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Enter your preview text",
+        "Choose gradient colors (2 or 3 colors)",
+        "Adjust the angle, font size, and weight",
+        "Try preset color combinations",
+        "Copy the CSS code"
+      ],
+      "useCasesTitle": "Use Cases",
+      "useCases": [
+        "Create eye-catching headings for websites",
+        "Design gradient logos and titles",
+        "Add visual interest to landing pages",
+        "Build colorful text effects for marketing pages"
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "q": "How does gradient text work in CSS?",
+          "a": "It uses background with a gradient, then background-clip: text and -webkit-text-fill-color: transparent to show the gradient through the text shape."
+        },
+        {
+          "q": "Is gradient text supported by all browsers?",
+          "a": "Yes, it works in all modern browsers. The -webkit- prefix ensures compatibility with older versions of Chrome and Safari."
+        },
+        {
+          "q": "Can I use more than 2 colors?",
+          "a": "Yes, this generator supports up to 3 colors. The third color is optional."
+        }
+      ]
     }
   },
   "footer": {
