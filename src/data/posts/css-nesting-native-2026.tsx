@@ -19,14 +19,14 @@ export default function CssNestingNative2026() {
           </tr>
         </thead>
         <tbody>
-          <tr><td>Chrome</td><td>120+</td><td>December 2023</td></tr>
-          <tr><td>Firefox</td><td>117+</td><td>August 2023</td></tr>
-          <tr><td>Safari</td><td>17.2+</td><td>December 2023</td></tr>
-          <tr><td>Edge</td><td>120+</td><td>December 2023</td></tr>
+          <tr><td>Chrome</td><td>120+ (132 latest)</td><td>December 2023</td></tr>
+          <tr><td>Firefox</td><td>117+ (135 latest)</td><td>August 2023</td></tr>
+          <tr><td>Safari</td><td>17.2+ (18.3 latest)</td><td>December 2023</td></tr>
+          <tr><td>Edge</td><td>120+ (132 latest)</td><td>December 2023</td></tr>
         </tbody>
       </table>
       <p>
-        As of 2026, native CSS nesting has over 95% global browser support. You can safely use it in
+        As of March 2026, native CSS nesting has over 97% global browser support (Can I Use data). You can safely use it in
         production without a preprocessor for any project that does not need to support very old browsers.
       </p>
 
@@ -497,6 +497,134 @@ export default function CssNestingNative2026() {
     --bg-primary: #111827;
     --text-primary: #f9fafb;
     --border: #374151;
+  }
+}`}</code></pre>
+
+
+      <h2>New in 2026: @scope and @layer with Nesting</h2>
+      <p>
+        CSS continues to evolve. Two powerful features now work beautifully with nesting:
+        <code>@scope</code> for proximity-based styling and <code>@layer</code> for cascade
+        management.
+      </p>
+
+      <h3>@scope with Nesting</h3>
+      <pre><code className="language-css">{`/* @scope limits where styles apply */
+@scope (.card) to (.card-footer) {
+  /* Only applies between .card and .card-footer */
+  p {
+    color: #374151;
+    line-height: 1.7;
+  }
+
+  a {
+    color: #2563eb;
+    text-decoration: underline;
+
+    &:hover {
+      color: #1d4ed8;
+    }
+  }
+}
+
+/* Nested @scope */
+.dashboard {
+  @scope (.widget) to (.widget-footer) {
+    h3 {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .metric {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #059669;
+    }
+  }
+}`}</code></pre>
+
+      <h3>@layer with Nesting</h3>
+      <pre><code className="language-css">{`/* Cascade layers + nesting for organized styles */
+@layer base, components, utilities;
+
+@layer base {
+  body {
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    color: #111827;
+  }
+}
+
+@layer components {
+  .button {
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s;
+
+    &.primary {
+      background: #3b82f6;
+      color: white;
+
+      &:hover { background: #2563eb; }
+    }
+
+    &.secondary {
+      background: #e5e7eb;
+      color: #374151;
+
+      &:hover { background: #d1d5db; }
+    }
+  }
+}
+
+@layer utilities {
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+}`}</code></pre>
+
+      <h3>@starting-style for Entry Animations</h3>
+      <pre><code className="language-css">{`/* New in 2026: animate elements when they first appear */
+.toast {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s, transform 0.3s;
+
+  @starting-style {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  &.leaving {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Dialog with @starting-style */
+dialog[open] {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.2s, transform 0.2s;
+
+  @starting-style {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  &::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+    transition: background 0.2s;
+
+    @starting-style {
+      background: transparent;
+    }
   }
 }`}</code></pre>
 
