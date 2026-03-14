@@ -440,7 +440,6 @@ export const tools: Tool[] = [
     path: '/tools/bcrypt-generator',
     relatedTools: ['hash-generator', 'multi-hash-generator', 'hmac-generator', 'password-generator'],
   },
-  // P0 — Code conversion tools (competing with transform.tools)
   {
     id: 'json-to-typescript',
     name: 'JSON to TypeScript',
@@ -511,7 +510,6 @@ export const tools: Tool[] = [
     path: '/tools/typescript-to-javascript',
     relatedTools: ['json-to-typescript', 'js-html-formatter', 'html-to-jsx', 'graphql-to-typescript', 'svg-to-jsx'],
   },
-  // P1 tools
   {
     id: 'json-to-graphql',
     name: 'JSON to GraphQL',
@@ -592,7 +590,6 @@ export const tools: Tool[] = [
     path: '/tools/toml-yaml',
     relatedTools: ['json-yaml', 'json-formatter', 'xml-formatter', 'csv-json'],
   },
-  // P2 tools
   {
     id: 'json-to-zod',
     name: 'JSON to Zod Schema',
@@ -653,7 +650,6 @@ export const tools: Tool[] = [
     path: '/tools/xml-to-json',
     relatedTools: ['xml-formatter', 'json-formatter', 'json-yaml', 'csv-json'],
   },
-  // CSS & Visual tools
   {
     id: 'css-gradient',
     name: 'CSS Gradient Generator',
@@ -674,7 +670,6 @@ export const tools: Tool[] = [
     path: '/tools/box-shadow',
     relatedTools: ['css-gradient', 'color-converter', 'css-minifier', 'css-to-tailwind'],
   },
-  // SEO tools
   {
     id: 'meta-tag-generator',
     name: 'Meta Tag Generator',
@@ -705,7 +700,6 @@ export const tools: Tool[] = [
     path: '/tools/robots-generator',
     relatedTools: ['meta-tag-generator', 'schema-generator', 'slug-generator', 'url-parser'],
   },
-  // JSON tools
   {
     id: 'json-viewer',
     name: 'JSON Viewer / Tree',
@@ -726,7 +720,6 @@ export const tools: Tool[] = [
     path: '/tools/json-path-finder',
     relatedTools: ['json-formatter', 'json-viewer', 'json-to-typescript', 'json-validator'],
   },
-  // Generator tools
   {
     id: 'favicon-generator',
     name: 'Favicon Generator',
@@ -767,7 +760,6 @@ export const tools: Tool[] = [
     path: '/tools/placeholder-image',
     relatedTools: ['favicon-generator', 'image-base64', 'qrcode-generator', 'color-converter'],
   },
-  // Round 2 — CSS & Visual tools
   {
     id: 'color-palette',
     name: 'Color Palette Generator',
@@ -838,7 +830,6 @@ export const tools: Tool[] = [
     path: '/tools/tailwind-colors',
     relatedTools: ['color-palette', 'color-converter', 'css-to-tailwind', 'css-gradient'],
   },
-  // Round 3 — Blue ocean tools
   {
     id: 'yaml-validator',
     name: 'YAML Validator & Formatter',
@@ -1109,7 +1100,6 @@ export const tools: Tool[] = [
     path: '/tools/unix-timestamp-converter',
     relatedTools: ['cron-generator', 'uuid', 'json-formatter'],
   },
-  // Programmatic SEO — Hash Generator variants
   {
     id: 'md5-hash-generator',
     name: 'MD5 Hash Generator',
@@ -1150,7 +1140,6 @@ export const tools: Tool[] = [
     path: '/tools/sha512-hash-generator',
     relatedTools: ['hash-generator', 'md5-hash-generator', 'sha256-hash-generator', 'sha1-hash-generator'],
   },
-  // Programmatic SEO — Base64 variants
   {
     id: 'base64-encoder',
     name: 'Base64 Encoder',
@@ -1191,7 +1180,6 @@ export const tools: Tool[] = [
     path: '/tools/string-to-base64',
     relatedTools: ['base64', 'base64-encoder', 'url-encoder', 'binary-text'],
   },
-  // Programmatic SEO — JSON Formatter variants
   {
     id: 'json-beautifier',
     name: 'JSON Beautifier',
@@ -1222,7 +1210,6 @@ export const tools: Tool[] = [
     path: '/tools/json-minifier',
     relatedTools: ['json-formatter', 'json-beautifier', 'json-validator', 'css-minifier'],
   },
-  // Programmatic SEO — JWT variants
   {
     id: 'jwt-token-decoder',
     name: 'JWT Token Decoder',
@@ -1253,7 +1240,6 @@ export const tools: Tool[] = [
     path: '/tools/jwt-validator',
     relatedTools: ['jwt-decoder', 'jwt-token-decoder', 'jwt-parser', 'json-validator'],
   },
-  // Programmatic SEO — Regex variants
   {
     id: 'regex-checker',
     name: 'Regex Checker',
@@ -1284,7 +1270,6 @@ export const tools: Tool[] = [
     path: '/tools/regex-generator',
     relatedTools: ['regex-tester', 'regex-checker', 'regex-matcher', 'password-generator'],
   },
-  // Programmatic SEO — Cron variants
   {
     id: 'crontab-generator',
     name: 'Crontab Generator',
@@ -1315,7 +1300,6 @@ export const tools: Tool[] = [
     path: '/tools/cron-expression-parser',
     relatedTools: ['cron-parser', 'cron-generator', 'crontab-generator', 'cron-job-scheduler'],
   },
-  // Programmatic SEO — URL Encoder variants
   {
     id: 'url-decoder',
     name: 'URL Decoder',
@@ -1346,7 +1330,6 @@ export const tools: Tool[] = [
     path: '/tools/percent-encoding-tool',
     relatedTools: ['url-encoder', 'url-decoder', 'url-encode-online', 'html-entity'],
   },
-  // Programmatic SEO — VS Comparison Pages
   {
     id: 'md5-vs-sha256',
     name: 'MD5 vs SHA-256',
@@ -1447,7 +1430,6 @@ export const tools: Tool[] = [
     path: '/tools/typescript-vs-javascript',
     relatedTools: ['json-to-typescript', 'typescript-to-javascript', 'json-formatter', 'regex-tester'],
   },
-  // JSON to Table — interactive table viewer
   {
     id: 'json-to-table',
     name: 'JSON to Table',
@@ -1458,7 +1440,6 @@ export const tools: Tool[] = [
     path: '/tools/json-to-table',
     relatedTools: ['json-formatter', 'csv-json', 'json-viewer', 'json-to-typescript'],
   },
-  // Programmatic SEO — Additional high-volume variants
   {
     id: 'base64-image-converter',
     name: 'Base64 Image Converter',
@@ -1499,17 +1480,6 @@ export const tools: Tool[] = [
     path: '/tools/regex-tester-online',
     relatedTools: ['regex-tester', 'regex-checker', 'regex-matcher', 'regex-generator'],
   },
-  // Programmatic SEO — Additional long-tail variants
-  {
-    id: 'json-formatter-validator',
-    name: 'JSON Formatter & Validator',
-    description: 'Format, beautify, and validate JSON data online with syntax checking and error highlighting',
-    icon: '{✓',
-    category: 'formatter',
-    keywords: ['json formatter validator', 'json lint', 'validate json online', 'json syntax checker', 'json format and validate', 'json lint online'],
-    path: '/tools/json-formatter-validator',
-    relatedTools: ['json-formatter', 'json-validator', 'json-beautifier', 'json-minifier'],
-  },
   {
     id: 'uuid-generator-v4',
     name: 'UUID v4 Generator',
@@ -1540,7 +1510,6 @@ export const tools: Tool[] = [
     path: '/tools/cron-expression-generator',
     relatedTools: ['cron-generator', 'cron-parser', 'crontab-generator', 'cron-job-scheduler'],
   },
-  // New high-value tools
   {
     id: 'string-case-converter',
     name: 'String Case Converter',
@@ -1611,7 +1580,6 @@ export const tools: Tool[] = [
     path: '/tools/image-compressor',
     relatedTools: ['image-base64', 'base64-image-converter', 'image-to-base64', 'svg-optimizer'],
   },
-  // Programmatic SEO — New pSEO variants (Feb 2026)
   {
     id: 'online-json-editor',
     name: 'Online JSON Editor',
@@ -2113,26 +2081,6 @@ export const tools: Tool[] = [
     relatedTools: ['json-yaml', 'json-formatter', 'xml-to-json-converter'],
   },
   {
-    id: 'chmod-calculator',
-    name: 'Chmod Calculator',
-    description: 'Calculate Unix file permissions with an interactive chmod calculator. Convert between numeric and symbolic notation.',
-    icon: '🔒',
-    category: 'web',
-    keywords: ['chmod', 'file permissions', 'chmod calculator', 'unix permissions', 'linux permissions', 'chmod 755', 'chmod 644'],
-    path: '/tools/chmod-calculator',
-    relatedTools: ['cron-expression-generator', 'regex-builder', 'url-parser'],
-  },
-  {
-    id: 'crontab-generator',
-    name: 'Crontab Generator',
-    description: 'Generate crontab expressions with a visual builder. Create and validate cron schedules with human-readable explanations.',
-    icon: '📅',
-    category: 'generator',
-    keywords: ['crontab', 'cron generator', 'crontab generator', 'cron schedule', 'cron builder', 'crontab editor'],
-    path: '/tools/crontab-generator',
-    relatedTools: ['cron-expression-generator', 'crontab-guru', 'timestamp-converter'],
-  },
-  {
     id: 'sql-formatter-online',
     name: 'SQL Formatter Online',
     description: 'Format and beautify SQL queries online with syntax highlighting, indentation options, and support for multiple SQL dialects.',
@@ -2382,57 +2330,6 @@ export const tools: Tool[] = [
     path: '/tools/csv-to-json-online',
     relatedTools: ['csv-json-converter', 'json-to-csv-converter', 'json-formatter'],
   },
-  // Batch 4: New developer tools
-  {
-    id: 'password-generator',
-    name: 'Password Generator',
-    description: 'Generate strong random passwords online. Customizable length, uppercase, lowercase, numbers, and symbols.',
-    icon: '🔑',
-    category: 'generator',
-    keywords: ['password generator', 'random password', 'strong password generator', 'secure password'],
-    path: '/tools/password-generator',
-    relatedTools: ['uuid-generator', 'string-hash-generator', 'bcrypt-generator'],
-  },
-  {
-    id: 'color-palette-generator',
-    name: 'Color Palette Generator',
-    description: 'Generate harmonious color palettes online. Complementary, triadic, analogous, and split-complementary schemes.',
-    icon: '🎨',
-    category: 'css',
-    keywords: ['color palette generator', 'color scheme generator', 'harmonious colors', 'complementary colors'],
-    path: '/tools/color-palette-generator',
-    relatedTools: ['color-converter', 'css-gradient-generator', 'hex-to-rgba'],
-  },
-  {
-    id: 'json-path-finder',
-    name: 'JSON Path Finder',
-    description: 'Find JSONPath expressions from JSON data. Click any value to get its path. Free online JSONPath tool.',
-    icon: '🔍',
-    category: 'json',
-    keywords: ['json path finder', 'jsonpath', 'json path expression', 'find json path'],
-    path: '/tools/json-path-finder',
-    relatedTools: ['json-formatter', 'json-validator', 'json-prettifier'],
-  },
-  {
-    id: 'css-grid-generator',
-    name: 'CSS Grid Generator',
-    description: 'Generate CSS Grid layouts visually. Free grid layout builder with rows, columns, gap control and code export.',
-    icon: '📐',
-    category: 'css',
-    keywords: ['css grid generator', 'grid layout builder', 'css grid tool', 'grid template generator'],
-    path: '/tools/css-grid-generator',
-    relatedTools: ['flexbox-generator', 'css-animation-playground', 'css-formatter'],
-  },
-  {
-    id: 'sql-formatter',
-    name: 'SQL Formatter',
-    description: 'Format and beautify SQL queries online. Free SQL formatter with proper indentation and keyword highlighting.',
-    icon: '🗃️',
-    category: 'formatter',
-    keywords: ['sql formatter', 'sql beautifier', 'format sql online', 'sql pretty print'],
-    path: '/tools/sql-formatter',
-    relatedTools: ['json-formatter', 'css-formatter', 'xml-formatter'],
-  },
   {
     id: 'chmod-visualizer',
     name: 'Chmod Visualizer',
@@ -2464,27 +2361,6 @@ export const tools: Tool[] = [
     relatedTools: ['json-to-typescript', 'typescript-to-javascript', 'json-formatter'],
   },
   {
-    id: 'html-entity-encoder',
-    name: 'HTML Entity Encoder',
-    description: 'Encode and decode HTML entities online. Convert special characters to HTML entities and back.',
-    icon: '🔣',
-    category: 'encoder',
-    keywords: ['html entity encoder', 'html entity decoder', 'html entities', 'encode html characters'],
-    path: '/tools/html-entity-encoder',
-    relatedTools: ['url-encoder-decoder', 'base64-encoder-decoder', 'escape-unescape'],
-  },
-  {
-    id: 'unix-timestamp-converter',
-    name: 'Unix Timestamp Converter',
-    description: 'Convert between Unix timestamps and human-readable dates online. Free epoch time converter.',
-    icon: '⏱️',
-    category: 'converter',
-    keywords: ['unix timestamp converter', 'epoch converter', 'timestamp to date', 'date to timestamp'],
-    path: '/tools/unix-timestamp-converter',
-    relatedTools: ['crontab-generator', 'uuid-generator', 'json-formatter'],
-  },
-  // Batch 4: pSEO variants
-  {
     id: 'base64-encoder-decoder',
     name: 'Base64 Encoder Decoder',
     description: 'Encode and decode Base64 strings online. Free Base64 encoder/decoder tool with file support.',
@@ -2493,16 +2369,6 @@ export const tools: Tool[] = [
     keywords: ['base64 encoder decoder', 'base64 encode', 'base64 decode', 'base64 online'],
     path: '/tools/base64-encoder-decoder',
     relatedTools: ['base64-decode', 'url-encoder-decoder', 'image-to-base64'],
-  },
-  {
-    id: 'json-to-yaml-converter',
-    name: 'JSON to YAML Converter',
-    description: 'Convert JSON to YAML online. Free JSON to YAML converter with proper formatting and indentation.',
-    icon: '🔄',
-    category: 'converter',
-    keywords: ['json to yaml converter', 'json to yaml', 'convert json to yaml', 'json yaml converter'],
-    path: '/tools/json-to-yaml-converter',
-    relatedTools: ['json-to-yaml', 'yaml-to-json-online', 'json-formatter'],
   },
   {
     id: 'markdown-to-html-converter',
@@ -2535,26 +2401,6 @@ export const tools: Tool[] = [
     relatedTools: ['color-converter', 'rgb-to-hex-converter', 'hex-to-rgba'],
   },
   {
-    id: 'sha256-hash-generator',
-    name: 'SHA256 Hash Generator',
-    description: 'Generate SHA-256 hash online. Free SHA256 hash calculator for strings and text.',
-    icon: '#️⃣',
-    category: 'encoder',
-    keywords: ['sha256 hash generator', 'sha256 hash', 'sha-256 generator', 'sha256 online'],
-    path: '/tools/sha256-hash-generator',
-    relatedTools: ['hash-generator', 'hmac-generator', 'bcrypt-generator'],
-  },
-  {
-    id: 'yaml-to-json-converter',
-    name: 'YAML to JSON Converter',
-    description: 'Convert YAML to JSON online. Free YAML to JSON converter with validation and formatting.',
-    icon: '🔄',
-    category: 'converter',
-    keywords: ['yaml to json converter', 'yaml to json', 'convert yaml to json', 'yaml json converter'],
-    path: '/tools/yaml-to-json-converter',
-    relatedTools: ['yaml-to-json-online', 'json-to-yaml-converter', 'json-formatter'],
-  },
-  {
     id: 'json-validator-online',
     name: 'JSON Validator Online',
     description: 'Validate JSON syntax online. Free JSON validator with error detection, line numbers, and detailed error messages.',
@@ -2585,26 +2431,6 @@ export const tools: Tool[] = [
     relatedTools: ['typescript-to-javascript', 'ts-to-js-converter', 'json-to-typescript', 'typescript-playground'],
   },
   {
-    id: 'markdown-table-generator',
-    name: 'Markdown Table Generator',
-    description: 'Generate Markdown tables online with alignment options and live preview. Free visual table editor.',
-    icon: '📊',
-    category: 'converter',
-    keywords: ['markdown table generator', 'markdown table', 'create markdown table', 'table generator'],
-    path: '/tools/markdown-table-generator',
-    relatedTools: ['markdown-preview', 'json-to-csv', 'csv-to-json-online'],
-  },
-  {
-    id: 'css-specificity-calculator',
-    name: 'CSS Specificity Calculator',
-    description: 'Calculate CSS selector specificity online. Understand specificity scores with visual breakdown.',
-    icon: '🎯',
-    category: 'css',
-    keywords: ['css specificity calculator', 'css specificity', 'selector specificity', 'css specificity checker'],
-    path: '/tools/css-specificity-calculator',
-    relatedTools: ['css-formatter', 'css-minifier', 'css-grid-generator'],
-  },
-  {
     id: 'color-contrast-checker',
     name: 'Color Contrast Checker',
     description: 'Check WCAG color contrast ratios online. Verify AA/AAA accessibility compliance for text and backgrounds.',
@@ -2613,117 +2439,6 @@ export const tools: Tool[] = [
     keywords: ['color contrast checker', 'wcag contrast checker', 'contrast ratio', 'accessibility color checker'],
     path: '/tools/color-contrast-checker',
     relatedTools: ['color-converter', 'rgb-to-hex-converter', 'hex-to-rgb-converter'],
-  },
-  {
-    id: 'meta-tag-generator',
-    name: 'Meta Tag Generator',
-    description: 'Generate SEO meta tags, Open Graph tags, and Twitter Card tags online. Free meta tag builder.',
-    icon: '🏷️',
-    category: 'converter',
-    keywords: ['meta tag generator', 'seo meta tags', 'open graph generator', 'twitter card generator'],
-    path: '/tools/meta-tag-generator',
-    relatedTools: ['open-graph-preview', 'favicon-generator', 'json-formatter'],
-  },
-  {
-    id: 'open-graph-preview',
-    name: 'Open Graph Preview',
-    description: 'Preview how your Open Graph and Twitter Card will appear on social media. Live preview for Facebook, Twitter, LinkedIn.',
-    icon: '👁️',
-    category: 'converter',
-    keywords: ['open graph preview', 'og tag preview', 'social media preview', 'twitter card preview'],
-    path: '/tools/open-graph-preview',
-    relatedTools: ['meta-tag-generator', 'favicon-generator', 'url-parser'],
-  },
-  {
-    id: 'responsive-breakpoint-tester',
-    name: 'Responsive Breakpoint Tester',
-    description: 'Test your website at different screen sizes and breakpoints. Preview responsive design for mobile, tablet, desktop.',
-    icon: '📱',
-    category: 'converter',
-    keywords: ['responsive breakpoint tester', 'responsive design tester', 'screen size tester', 'breakpoint checker'],
-    path: '/tools/responsive-breakpoint-tester',
-    relatedTools: ['css-grid-generator', 'css-flexbox-generator', 'color-contrast-checker'],
-  },
-  {
-    id: 'svg-to-css-converter',
-    name: 'SVG to CSS Converter',
-    description: 'Convert SVG files to CSS background images. Generate URL-encoded and Base64 data URIs for CSS.',
-    icon: '🖼️',
-    category: 'converter',
-    keywords: ['svg to css', 'svg to css background', 'svg base64 css', 'svg data uri'],
-    path: '/tools/svg-to-css-converter',
-    relatedTools: ['svg-to-react', 'svg-optimizer', 'base64-encoder-decoder'],
-  },
-  {
-    id: 'image-to-base64',
-    name: 'Image to Base64 Converter',
-    description: 'Convert images to Base64 data URI online. Support PNG, JPG, GIF, WebP. Generate Data URI, CSS background, img tag.',
-    icon: '🖼️',
-    category: 'encoder',
-    keywords: ['image to base64', 'image to base64 converter', 'base64 image', 'img to base64'],
-    path: '/tools/image-to-base64',
-    relatedTools: ['base64-encoder-decoder', 'svg-to-css-converter', 'base64-decode'],
-  },
-
-  {
-    id: 'dns-record-checker',
-    name: 'DNS Record Checker',
-    description: 'Look up DNS records online. Check A, AAAA, CNAME, MX, TXT, NS records with TTL. Free DNS lookup tool.',
-    icon: '🌐',
-    category: 'network',
-    keywords: ['dns record checker', 'dns lookup', 'dns records online', 'check dns records', 'dns lookup tool'],
-    path: '/tools/dns-record-checker',
-    relatedTools: ['ip-lookup', 'url-parser', 'http-request-builder'],
-  },
-  {
-    id: 'cors-tester',
-    name: 'CORS Tester',
-    description: 'Test CORS headers online. Check preflight OPTIONS requests and Access-Control headers. Debug CORS errors.',
-    icon: '🔒',
-    category: 'network',
-    keywords: ['cors tester', 'cors checker', 'test cors headers', 'cors debug', 'cross origin tester'],
-    path: '/tools/cors-tester',
-    relatedTools: ['http-request-builder', 'dns-record-checker', 'url-parser'],
-  },
-  {
-    id: 'http-request-builder',
-    name: 'HTTP Request Builder',
-    description: 'Build HTTP requests visually and generate cURL, fetch, and axios code. Free API testing tool.',
-    icon: '🌐',
-    category: 'network',
-    keywords: ['http request builder', 'api tester', 'curl generator', 'fetch code generator', 'http client online'],
-    path: '/tools/http-request-builder',
-    relatedTools: ['cors-tester', 'url-parser', 'json-formatter'],
-  },
-  {
-    id: 'css-animation-playground',
-    name: 'CSS Animation Playground',
-    description: 'Create and preview CSS animations online. Visual animation builder with presets for bounce, fade, slide, rotate and more.',
-    icon: '🎨',
-    category: 'css',
-    keywords: ['css animation playground', 'css animation generator', 'css keyframe generator', 'css animation tool'],
-    path: '/tools/css-animation-playground',
-    relatedTools: ['css-grid-generator', 'css-flexbox-generator', 'css-specificity-calculator'],
-  },
-  {
-    id: 'docker-run-to-compose',
-    name: 'Docker Run to Compose Converter',
-    description: 'Convert docker run commands to docker-compose.yml online. Supports ports, volumes, env vars, networks.',
-    icon: '🐋',
-    category: 'converter',
-    keywords: ['docker run to compose', 'docker-compose generator', 'docker to compose', 'docker run converter'],
-    path: '/tools/docker-run-to-compose',
-    relatedTools: ['json-formatter', 'yaml-to-json', 'json-to-yaml-converter'],
-  },
-  {
-    id: 'typescript-playground',
-    name: 'TypeScript Playground',
-    description: 'Strip TypeScript types and convert to JavaScript online. Remove type annotations, interfaces, enums and generics.',
-    icon: '🔷',
-    category: 'converter',
-    keywords: ['typescript playground', 'typescript to javascript online', 'ts playground', 'typescript strip types'],
-    path: '/tools/typescript-playground',
-    relatedTools: ['typescript-to-javascript-converter', 'typescript-to-javascript', 'json-to-typescript-online'],
   },
   {
     id: 'ascii-table-generator',
@@ -3005,7 +2720,6 @@ export const tools: Tool[] = [
     path: '/tools/sql-query-formatter',
     relatedTools: ['sql-formatter', 'json-formatter', 'css-beautifier', 'sql-to-prisma'],
   },
-  // Programmatic SEO — Password Generator variants
   {
     id: 'strong-password-generator',
     name: 'Strong Password Generator',
@@ -3185,16 +2899,6 @@ export const tools: Tool[] = [
     keywords: ['qr code', 'qr generator', 'qr code generator', 'create qr code', 'qr code maker', 'barcode generator', 'qr code online free'],
     path: '/tools/qr-code-generator',
     relatedTools: ['base64', 'url-encoder', 'slug-generator', 'uuid-generator'],
-  },
-  {
-    id: 'markdown-table-generator',
-    name: 'Markdown Table Generator',
-    description: 'Create and format Markdown tables visually with alignment controls and live preview',
-    icon: '📊',
-    category: 'formatters',
-    keywords: ['markdown table', 'markdown table generator', 'md table', 'table generator', 'markdown table maker', 'github markdown table', 'create markdown table'],
-    path: '/tools/markdown-table-generator',
-    relatedTools: ['markdown-preview', 'markdown-editor-online', 'markdown-to-html-converter', 'markdown-link-checker'],
   },
   {
     id: 'border-radius-generator',
@@ -3577,16 +3281,6 @@ export const tools: Tool[] = [
     relatedTools: ['cron-parser', 'cron-expression-parser', 'cron-expression-generator', 'timestamp-converter', 'crontab-validator'],
   },
   {
-    id: 'json-to-csv',
-    name: 'JSON to CSV Converter',
-    description: 'Convert JSON arrays to CSV format with customizable delimiters. Supports flattening nested objects and setting headers.',
-    icon: '📊',
-    category: 'converter',
-    keywords: ['json to csv', 'json csv converter', 'convert json to csv', 'json array to csv', 'csv converter', 'json csv', 'csv export', 'json to csv online'],
-    path: '/tools/json-to-csv',
-    relatedTools: ['csv-to-json-converter', 'json-formatter', 'json-beautifier', 'json-to-xml', 'json-to-yaml'],
-  },
-  {
     id: 'css-units-converter',
     name: 'CSS Units Converter',
     description: 'Convert between CSS units (px, rem, em, vw, vh, %, pt). Set base font size for accurate rem/em calculations.',
@@ -3627,16 +3321,15 @@ export const tools: Tool[] = [
     relatedTools: ['yaml-to-json', 'json-formatter', 'xml-formatter', 'toml-to-yaml'],
   },
   {
-    id: 'xml-to-csv',
-    name: 'XML to CSV Converter',
-    description: 'Convert XML data to CSV format with customizable delimiters and header options. Extract rows from any element.',
-    icon: '📊',
+    id: 'unix-timestamp',
+    name: 'Unix Timestamp Converter',
+    description: 'Convert between Unix timestamps and human-readable dates',
+    icon: '⏱️',
     category: 'converter',
-    keywords: ['xml to csv', 'xml csv converter', 'convert xml to csv', 'xml data export', 'csv converter', 'xml converter', 'data conversion'],
-    path: '/tools/xml-to-csv',
-    relatedTools: ['xml-formatter', 'csv-to-json-converter', 'json-to-csv', 'xml-to-json-converter'],
+    keywords: ['unix', 'timestamp', 'epoch', 'date', 'time', 'converter', 'seconds', 'milliseconds'],
+    path: '/tools/unix-timestamp',
+    relatedTools: ['timestamp-converter', 'cron-parser', 'json-formatter'],
   },
-
 ];
 
 export function getToolsByCategory(categoryId: string): Tool[] {

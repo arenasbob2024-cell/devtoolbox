@@ -1920,45 +1920,25 @@
       ]
     },
     "json-to-go": {
-      "name": "JSON เป็น Go Struct",
-      "description": "แปลงข้อมูล JSON เป็นนิยาม Go struct",
-      "pageTitle": "ตัวแปลง JSON เป็น Go Struct",
-      "pageDescription": "แปลง JSON เป็นประเภท Go struct โดยอัตโนมัติ สร้างโครงสร้าง Go ที่ถูกต้องพร้อมแท็ก JSON",
-      "seoTitle": "เกี่ยวกับการแปลง JSON เป็น Go Struct",
-      "seoContent": "Go ใช้การกำหนดประเภทแบบสถิตและต้องการนิยาม struct เพื่อทำงานกับข้อมูล JSON เครื่องมือนี้วิเคราะห์ข้อมูล JSON ของคุณและสร้าง struct ของ Go พร้อมประเภทฟิลด์ที่ถูกต้องและแท็ก JSON ช่วยประหยัดเวลาในการเชื่อมต่อ API และการสร้างโมเดลข้อมูล",
-      "faqTitle": "คำถามที่พบบ่อย",
-      "faqs": [
-        {
-          "q": "สร้างประเภท Go อะไรบ้าง?",
-          "a": "เครื่องมือแมปประเภท JSON เป็น Go: string, int64, float64, bool และประเภท struct ซ้อนสำหรับอ็อบเจกต์"
-        },
-        {
-          "q": "รวมแท็ก JSON ด้วยไหม?",
-          "a": "ใช่ ทุกฟิลด์จะได้รับแท็ก json ที่ตรงกับชื่อฟิลด์ JSON ดั้งเดิม"
-        },
-        {
-          "q": "จัดการอ็อบเจกต์ซ้อนได้ไหม?",
-          "a": "ได้ อ็อบเจกต์ JSON ซ้อนถูกแปลงเป็น struct ของ Go แยกต่างหากพร้อมการอ้างอิงที่ถูกต้อง"
-        },
-        {
-          "q": "ใช้ผลลัพธ์ใน Go ได้เลยไหม?",
-          "a": "ได้ นิยาม struct ที่สร้างขึ้นสามารถคัดลอกไปยังโปรเจกต์ Go ของคุณได้โดยตรง"
-        }
-      ],
-      "howToUseTitle": "วิธีใช้งาน",
-      "howToUseSteps": [
-        "วางข้อมูล JSON ของคุณในช่องป้อนข้อมูล",
-        "นิยาม Go struct จะถูกสร้างโดยอัตโนมัติ",
-        "ปรับแต่งชื่อ struct ตามต้องการ",
-        "คัดลอกโค้ด Go ไปยังโปรเจกต์ของคุณ"
-      ],
-      "useCasesTitle": "กรณีใช้งาน",
-      "useCases": [
-        "สร้าง struct ของ Go จากการตอบกลับ API",
-        "สร้างโมเดลข้อมูลสำหรับเว็บเซิร์ฟเวอร์ Go",
-        "สร้างต้นแบบอย่างรวดเร็วด้วย Go และ JSON",
-        "สร้างนิยามประเภทสำหรับ microservice ของ Go"
-      ]
+      "name": "JSON เป็น Go",
+      "description": "แปลง JSON เป็นคำจำกัดความโครงสร้าง Go ออนไลน์",
+      "pageTitle": "ตัวแปลง JSON เป็น Go Struct - เครื่องมือออนไลน์ฟรี",
+      "pageDescription": "แปลงข้อมูล JSON เป็นคำจำกัดความโครงสร้าง Go ทันที สร้างประเภท Go ที่เหมาะสมด้วยแท็กโครงสร้าง ตัวแปลง JSON เป็น Go ออนไลน์ฟรีสำหรับนักพัฒนา",
+      "convertBtn": "แปลง",
+      "structNameLabel": "ชื่อโครงสร้าง",
+      "omitEmptyLabel": "เพิ่มแท็ก omitempty",
+      "inlineTypesLabel": "ใช้ประเภทตัวชี้",
+      "jsonInputLabel": "อินพุต JSON",
+      "jsonInputPlaceholder": "วางข้อมูล JSON ของคุณที่นี่...",
+      "goOutputLabel": "เอาต์พุต Go",
+      "goOutputPlaceholder": "โครงสร้าง Go ของคุณจะปรากฏที่นี่...",
+      "seoTitle": "แปลง JSON เป็นโครงสร้าง Go ออนไลน์",
+      "seoContent": "การแปลง JSON เป็นโครงสร้าง Go เป็นงานทั่วไปเมื่อทำงานกับ API ไฟล์การกำหนดค่า หรือการประมวลผลข้อมูลใน Go เครื่องมือนี้วิเคราะห์โครงสร้าง JSON ของคุณโดยอัตโนมัติและสร้างคำจำกัดความโครงสร้าง Go ที่สอดคล้องกันพร้อมคำอธิบายประกอบประเภทที่เหมาะสมและแท็กโครงสร้าง มันจัดการวัตถุที่ซ้อนกัน อาร์เรย์ และประเภทข้อมูล JSON ทั้งหมด โดยรองรับทั้งแท็กโครงสร้างมาตรฐานและตัวเลือกแท็กที่กำหนดเอง",
+      "seoFeaturesTitle": "คุณสมบัติ",
+      "seoFeature1": "การอนุมานประเภทอัตโนมัติสำหรับประเภทข้อมูล JSON ทั้งหมด (สตริง ตัวเลข บูลีน วัตถุ อาร์เรย์)",
+      "seoFeature2": "ชื่อโครงสร้างที่ปรับได้และการสนับสนุนการสร้างโครงสร้างที่ซ้อนกัน",
+      "seoFeature3": "ตัวเลือกสำหรับแท็ก omitempty และประเภทตัวชี้ในโครงสร้าง Go ที่สร้างขึ้น",
+      "seoFeature4": "การแปลง 100% ด้านไคลเอนต์ - ข้อมูลของคุณไม่เคยออกจากเบราว์เซอร์ของคุณ"
     },
     "json-to-go-struct": {
       "name": "ตัวแปลง JSON เป็น Go Struct",
@@ -3169,6 +3149,11 @@
       "pageDescription": "Browse emojis by category, search by name, and copy Unicode code points, HTML entities, and CSS escapes with one click.",
       "seoTitle": "What is an Emoji Picker?",
       "seoContent": "An emoji picker lets you browse and search emojis by category or keyword. Click any emoji to see its Unicode code point, HTML entity, and CSS escape, then copy with one click.",
+      "seoFeaturesTitle": "คุณสมบัติ",
+      "seoFeature1": "เรียกดูอีโมจิ 150+ รายการในหมวดหมู่ 9 หมวด: ใบหน้า คน สัตว์ อาหาร การท่องเที่ยว กิจกรรม วัตถุ สัญลักษณ์ และธงชาติ",
+      "seoFeature2": "ค้นหาอีโมจิตามชื่อหรือหมวดหมู่ทันทีด้วยการกรองแบบเรียลไทม์",
+      "seoFeature3": "คัดลอกอีโมจิในหลายรูปแบบ: อีโมจิดิบ Unicode code point HTML entity และลำดับ escape CSS",
+      "seoFeature4": "การประมวลผล 100% ด้านไคลเอนต์ — ไม่มีการส่งข้อมูลไปยังเซิร์ฟเวอร์ ปลอดภัยและส่วนตัวทั้งหมด",
       "howToUseTitle": "How to Use",
       "howToUseSteps": [
         "Browse categories or search by keyword",
@@ -5029,6 +5014,12 @@
       "description": "Live HTML/CSS/JS editor with preview",
       "pageTitle": "HTML Live Preview - Online HTML Editor with Real-Time Preview",
       "pageDescription": "Free online HTML editor with live preview. Write HTML, CSS, and JavaScript code and see results instantly.",
+      "htmlPlaceholder": "<div class=\"container\">\n  <h1>Hello World</h1>\n  <p>Edit me!</p>\n</div>",
+      "cssPlaceholder": ".container {\n  max-width: 1000px;\n  margin: 0 auto;\n  padding: 20px;\n}",
+      "jsPlaceholder": "document.addEventListener('DOMContentLoaded', () => {\n  console.log('Page loaded!');\n});",
+      "enterFullscreen": "Fullscreen",
+      "exitFullscreen": "Exit",
+      "preview": "Preview",
       "seoTitle": "HTML Live Preview Editor",
       "seoContent": "Write and preview HTML, CSS, and JavaScript code in real-time with our free online editor.",
       "seoFeaturesTitle": "Features",
@@ -5259,6 +5250,31 @@
       "seoFeature2": "Custom claims",
       "seoFeature3": "Header configuration",
       "seoFeature4": "Token preview"
+    },
+    "unix-timestamp": {
+      "name": "ตัวแปลง Unix Timestamp",
+      "description": "Convert between Unix timestamps and human-readable dates",
+      "pageTitle": "ตัวแปลง Unix Timestamp Online",
+      "pageDescription": "Free online Unix timestamp converter. Convert Unix epoch timestamps to human-readable dates and vice versa. Supports seconds and milliseconds.",
+      "currentTimestamp": "Current Unix Timestamp",
+      "timestampToDate": "Timestamp to Date",
+      "dateToTimestamp": "Date to Timestamp",
+      "enterTimestamp": "Enter Unix timestamp",
+      "convert": "Convert",
+      "copyTimestamp": "Copy Timestamp",
+      "iso8601": "ISO 8601",
+      "utcTime": "UTC Time",
+      "localTime": "Local Time",
+      "seconds": "Seconds",
+      "milliseconds": "Milliseconds",
+      "commonTimestamps": "Common Timestamps",
+      "seoTitle": "Unix Timestamp Converter - Epoch Time Tool",
+      "seoContent": "Convert Unix timestamps to human-readable dates instantly. Our free online epoch converter supports both seconds and milliseconds formats.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Live current timestamp display",
+      "seoFeature2": "Bidirectional conversion",
+      "seoFeature3": "Multiple date formats",
+      "seoFeature4": "Common timestamps reference"
     }
   },
   "footer": {

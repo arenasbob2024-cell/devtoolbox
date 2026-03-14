@@ -1920,45 +1920,25 @@
       ]
     },
     "json-to-go": {
-      "name": "JSON → Go Struct",
-      "description": "JSON 데이터를 Go 구조체 정의로 변환",
-      "pageTitle": "JSON → Go Struct 변환기",
-      "pageDescription": "온라인으로 JSON을 Go 구조체 정의로 변환. json 태그가 포함된 적절한 Go 타입을 생성합니다.",
-      "seoTitle": "JSON → Go Struct 변환 정보",
-      "seoContent": "Go의 엄격한 타입 시스템은 JSON 데이터를 언마셜링하기 전에 구조체를 정의해야 합니다. 이 도구는 JSON을 분석하여 적절한 필드명, 올바른 Go 타입, 직렬화용 json 구조 태그를 가진 관용적 Go 구조체 정의를 생성합니다. 모든 처리는 브라우저에서 수행됩니다.",
-      "faqTitle": "자주 묻는 질문",
-      "faqs": [
-        {
-          "q": "JSON을 Go 구조체로 변환하는 방법은?",
-          "a": "JSON 데이터를 붙여넣고, 루트 구조체명을 설정한 후 변환을 클릭하세요."
-        },
-        {
-          "q": "JSON에서 어떤 Go 타입이 생성되나요?",
-          "a": "문자열은 string, 정수는 int, 소수는 float64, 불리언은 bool, null은 interface{}, 객체는 명명된 구조체, 배열은 요소 타입의 슬라이스가 됩니다."
-        },
-        {
-          "q": "json 구조 태그란?",
-          "a": "`json:\"field_name\"`과 같은 구조 태그는 Go의 encoding/json 패키지에 JSON 키와 구조체 필드 간의 매핑을 지시합니다."
-        },
-        {
-          "q": "omitempty란?",
-          "a": "json 태그에 omitempty를 추가하면 필드가 제로 값일 때 JSON 출력에서 생략됩니다."
-        }
-      ],
-      "howToUseTitle": "사용 방법",
-      "howToUseSteps": [
-        "입력 패널에 JSON 데이터 붙여넣기",
-        "루트 구조체명 설정 (기본값: Root)",
-        "omitempty 및 인라인 구조체 옵션 전환",
-        "생성된 Go 구조체를 .go 파일에 복사"
-      ],
-      "useCasesTitle": "일반적인 사용 사례",
-      "useCases": [
-        "REST API 응답 본문에서 Go 구조체 생성",
-        "JSON 설정 파일용 타입 모델 구축",
-        "Go HTTP 핸들러용 요청/응답 타입 생성",
-        "샘플 데이터에서 Go 데이터 모델 빠르게 프로토타입"
-      ]
+      "name": "JSON에서 Go로",
+      "description": "JSON을 Go 구조 정의로 온라인 변환",
+      "pageTitle": "JSON에서 Go Struct 변환기 - 무료 온라인 도구",
+      "pageDescription": "JSON 데이터를 Go 구조 정의로 즉시 변환합니다. 구조 태그가 포함된 적절한 Go 유형을 생성합니다. 개발자를 위한 무료 온라인 JSON에서 Go 변환기입니다.",
+      "convertBtn": "변환",
+      "structNameLabel": "구조 이름",
+      "omitEmptyLabel": "omitempty 태그 추가",
+      "inlineTypesLabel": "포인터 타입 사용",
+      "jsonInputLabel": "JSON 입력",
+      "jsonInputPlaceholder": "JSON 데이터를 여기에 붙여넣으세요...",
+      "goOutputLabel": "Go 출력",
+      "goOutputPlaceholder": "Go 구조가 여기에 표시됩니다...",
+      "seoTitle": "JSON을 Go 구조로 온라인 변환",
+      "seoContent": "JSON을 Go 구조로 변환하는 것은 API, 구성 파일 또는 Go의 데이터 처리로 작업할 때 일반적인 작업입니다. 이 도구는 JSON 구조를 자동으로 분석하고 적절한 유형 주석 및 구조 태그를 사용하여 해당하는 Go 구조 정의를 생성합니다. 중첩된 객체, 배열 및 모든 JSON 데이터 유형을 처리하며, 표준 구조 태그와 사용자 정의 태그 옵션을 모두 지원합니다.",
+      "seoFeaturesTitle": "특징",
+      "seoFeature1": "모든 JSON 데이터 유형(문자열, 숫자, 부울, 객체, 배열)에 대한 자동 유형 추론",
+      "seoFeature2": "사용자 정의 가능한 구조 이름 및 중첩된 구조 생성 지원",
+      "seoFeature3": "생성된 Go 구조에서 omitempty 태그 및 포인터 타입 옵션",
+      "seoFeature4": "100% 클라이언트 측 변환 - 데이터가 브라우저를 떠나지 않습니다"
     },
     "json-to-go-struct": {
       "name": "JSON을 Go Struct로 변환",
@@ -3169,6 +3149,11 @@
       "pageDescription": "카테고리별 이모지 탐색, 이름 검색, 유니코드 코드포인트 원클릭 복사.",
       "seoTitle": "What is an Emoji Picker?",
       "seoContent": "An emoji picker lets you browse and search emojis by category or keyword. Click any emoji to see its Unicode code point, HTML entity, and CSS escape, then copy with one click.",
+      "seoFeaturesTitle": "기능",
+      "seoFeature1": "9개 카테고리의 150+ 이모지 탐색: 표정, 사람, 동물, 음식, 여행, 활동, 객체, 기호, 국기",
+      "seoFeature2": "실시간 필터링으로 이모지를 이름 또는 카테고리별로 즉시 검색",
+      "seoFeature3": "여러 형식으로 이모지 복사: 원본 이모지, Unicode 코드포인트, HTML 엔티티, CSS 이스케이프 시퀀스",
+      "seoFeature4": "100% 클라이언트 측 처리 — 서버에 데이터 전송 없음, 완전히 안전하고 비공개",
       "howToUseTitle": "How to Use",
       "howToUseSteps": [
         "Browse categories or search by keyword",
@@ -5029,6 +5014,12 @@
       "description": "Live HTML/CSS/JS editor with preview",
       "pageTitle": "HTML Live Preview - Online HTML Editor with Real-Time Preview",
       "pageDescription": "Free online HTML editor with live preview. Write HTML, CSS, and JavaScript code and see results instantly.",
+      "htmlPlaceholder": "<div class=\"container\">\n  <h1>Hello World</h1>\n  <p>Edit me!</p>\n</div>",
+      "cssPlaceholder": ".container {\n  max-width: 1000px;\n  margin: 0 auto;\n  padding: 20px;\n}",
+      "jsPlaceholder": "document.addEventListener('DOMContentLoaded', () => {\n  console.log('Page loaded!');\n});",
+      "enterFullscreen": "Fullscreen",
+      "exitFullscreen": "Exit",
+      "preview": "Preview",
       "seoTitle": "HTML Live Preview Editor",
       "seoContent": "Write and preview HTML, CSS, and JavaScript code in real-time with our free online editor.",
       "seoFeaturesTitle": "Features",
@@ -5259,6 +5250,31 @@
       "seoFeature2": "Custom claims",
       "seoFeature3": "Header configuration",
       "seoFeature4": "Token preview"
+    },
+    "unix-timestamp": {
+      "name": "Unix 타임스탬프 변환기",
+      "description": "Convert between Unix timestamps and human-readable dates",
+      "pageTitle": "Unix 타임스탬프 변환기 Online",
+      "pageDescription": "Free online Unix timestamp converter. Convert Unix epoch timestamps to human-readable dates and vice versa. Supports seconds and milliseconds.",
+      "currentTimestamp": "Current Unix Timestamp",
+      "timestampToDate": "Timestamp to Date",
+      "dateToTimestamp": "Date to Timestamp",
+      "enterTimestamp": "Enter Unix timestamp",
+      "convert": "Convert",
+      "copyTimestamp": "Copy Timestamp",
+      "iso8601": "ISO 8601",
+      "utcTime": "UTC Time",
+      "localTime": "Local Time",
+      "seconds": "Seconds",
+      "milliseconds": "Milliseconds",
+      "commonTimestamps": "Common Timestamps",
+      "seoTitle": "Unix Timestamp Converter - Epoch Time Tool",
+      "seoContent": "Convert Unix timestamps to human-readable dates instantly. Our free online epoch converter supports both seconds and milliseconds formats.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Live current timestamp display",
+      "seoFeature2": "Bidirectional conversion",
+      "seoFeature3": "Multiple date formats",
+      "seoFeature4": "Common timestamps reference"
     }
   },
   "footer": {

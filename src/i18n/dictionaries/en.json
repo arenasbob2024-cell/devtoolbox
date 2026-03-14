@@ -2160,45 +2160,25 @@
       ]
     },
     "json-to-go": {
-      "name": "JSON to Go Struct",
-      "description": "Convert JSON data to Go struct definitions",
-      "pageTitle": "JSON to Go Struct Converter Online Free — Generate Golang Types with Tags",
-      "pageDescription": "Free JSON to Go struct converter. Generate Go types with json tags, nested structs, arrays & custom names. Paste JSON, get Go struct instantly. No signup required.",
-      "seoTitle": "About JSON to Go Struct Conversion",
-      "seoContent": "Go's strict type system requires defining structs before unmarshaling JSON data. Writing Go structs manually for complex JSON APIs is time-consuming and error-prone. This tool analyzes your JSON and generates idiomatic Go struct definitions with proper field names (PascalCase), correct Go types (string, int, float64, bool), and json struct tags for serialization. Nested objects become separate named structs, arrays are typed by their element type, and null values map to interface{}. You can customize the root struct name, add omitempty tags for optional fields, and choose between separate or inline struct definitions. All processing is done in your browser.",
-      "faqTitle": "Frequently Asked Questions",
-      "faqs": [
-        {
-          "q": "How do I convert JSON to Go struct?",
-          "a": "Paste your JSON data, set the root struct name, and click Convert. The tool generates Go struct definitions with proper types and json tags for each field."
-        },
-        {
-          "q": "What Go types are generated from JSON?",
-          "a": "Strings map to string, integers to int, decimals to float64, booleans to bool, null to interface{}, objects to named structs, and arrays to slices of the element type."
-        },
-        {
-          "q": "What are json struct tags?",
-          "a": "Struct tags like `json:\"field_name\"` tell Go's encoding/json package how to map between JSON keys and struct fields. The tool adds these automatically."
-        },
-        {
-          "q": "What does omitempty do?",
-          "a": "Adding omitempty to a json tag means the field is omitted from JSON output if it has a zero value (empty string, 0, false, nil). Enable this for optional fields."
-        }
-      ],
-      "howToUseTitle": "How to Use",
-      "howToUseSteps": [
-        "Paste your JSON data into the input panel",
-        "Set the root struct name (default: Root)",
-        "Toggle omitempty and inline struct options",
-        "Copy the generated Go structs into your .go file"
-      ],
-      "useCasesTitle": "Common Use Cases",
-      "useCases": [
-        "Creating Go structs from REST API response bodies",
-        "Building typed models for JSON configuration files",
-        "Generating request/response types for Go HTTP handlers",
-        "Quickly prototyping Go data models from sample data"
-      ]
+      "name": "JSON to Go",
+      "description": "Convert JSON to Go struct definitions online",
+      "pageTitle": "JSON to Go Struct Converter - Free Online Tool",
+      "pageDescription": "Convert JSON data to Go struct definitions instantly. Generate proper Go types with struct tags. Free online JSON to Go converter for developers.",
+      "convertBtn": "Convert",
+      "structNameLabel": "Struct Name",
+      "omitEmptyLabel": "Add omitempty tags",
+      "inlineTypesLabel": "Use pointer types",
+      "jsonInputLabel": "JSON Input",
+      "jsonInputPlaceholder": "Paste your JSON data here...",
+      "goOutputLabel": "Go Output",
+      "goOutputPlaceholder": "Your Go struct will appear here...",
+      "seoTitle": "Convert JSON to Go Structs Online",
+      "seoContent": "Converting JSON to Go structs is a common task when working with APIs, configuration files, or data processing in Go. This tool automatically analyzes your JSON structure and generates corresponding Go struct definitions with proper type annotations and struct tags. It handles nested objects, arrays, and all JSON data types, supporting both standard struct tags and custom tag options.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Automatic type inference for all JSON data types (string, number, boolean, object, array)",
+      "seoFeature2": "Customizable struct names and support for nested struct generation",
+      "seoFeature3": "Options for omitempty tags and pointer types in generated Go structs",
+      "seoFeature4": "100% client-side conversion — your data never leaves your browser"
     },
     "json-to-go-struct": {
       "name": "JSON to Go Struct Converter",
@@ -3468,6 +3448,11 @@
         "Unicode code points for programming",
         "CSS content property values"
       ],
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Browse 150+ emojis across 9 categories: Smileys, People, Animals, Food, Travel, Activities, Objects, Symbols, and Flags",
+      "seoFeature2": "Search emojis by name or category instantly with real-time filtering",
+      "seoFeature3": "Copy emojis in multiple formats: raw emoji, Unicode code point, HTML entity, and CSS escape sequence",
+      "seoFeature4": "100% client-side processing — no data sent to servers, completely private and secure",
       "faqTitle": "FAQ",
       "faqs": [
         {
@@ -10785,13 +10770,19 @@
       "description": "Live HTML/CSS/JS editor with preview",
       "pageTitle": "HTML Live Preview - Online HTML Editor with Real-Time Preview",
       "pageDescription": "Free online HTML editor with live preview. Write HTML, CSS, and JavaScript code and see results instantly.",
+      "htmlPlaceholder": "<div class=\"container\">\n  <h1>Hello World</h1>\n  <p>Edit me!</p>\n</div>",
+      "cssPlaceholder": ".container {\n  max-width: 1000px;\n  margin: 0 auto;\n  padding: 20px;\n}",
+      "jsPlaceholder": "document.addEventListener('DOMContentLoaded', () => {\n  console.log('Page loaded!');\n});",
+      "enterFullscreen": "Fullscreen",
+      "exitFullscreen": "Exit",
+      "preview": "Preview",
       "seoTitle": "HTML Live Preview Editor",
-      "seoContent": "Write and preview HTML, CSS, and JavaScript code in real-time with our free online editor.",
+      "seoContent": "Write and preview HTML, CSS, and JavaScript code in real-time with our free online editor. No compilation needed—see changes instantly in the live preview window. Perfect for learning web development, testing code snippets, and creating quick prototypes.",
       "seoFeaturesTitle": "Features",
-      "seoFeature1": "Real-time preview updates",
-      "seoFeature2": "HTML, CSS, and JavaScript tabs",
-      "seoFeature3": "Fullscreen preview mode",
-      "seoFeature4": "Sample code templates"
+      "seoFeature1": "Real-time preview updates as you code",
+      "seoFeature2": "Separate HTML, CSS, and JavaScript editors",
+      "seoFeature3": "Built-in code templates (Flexbox, Form, Landing Page)",
+      "seoFeature4": "Fullscreen preview mode for immersive viewing"
     },
     "text-to-morse": {
       "name": "Text to Morse Code",
@@ -11027,6 +11018,31 @@
           "a": "Yes. Click the Validate button to check if your YAML is syntactically correct. The tool will show detailed error messages if any issues are found."
         }
       ]
+    },
+    "unix-timestamp": {
+      "name": "Unix Timestamp Converter",
+      "description": "Convert between Unix timestamps and human-readable dates",
+      "pageTitle": "Unix Timestamp Converter Online - Epoch Converter",
+      "pageDescription": "Free online Unix timestamp converter. Convert Unix epoch timestamps to human-readable dates and vice versa. Supports seconds and milliseconds.",
+      "currentTimestamp": "Current Unix Timestamp",
+      "timestampToDate": "Timestamp to Date",
+      "dateToTimestamp": "Date to Timestamp",
+      "enterTimestamp": "Enter Unix timestamp",
+      "convert": "Convert",
+      "copyTimestamp": "Copy Timestamp",
+      "iso8601": "ISO 8601",
+      "utcTime": "UTC Time",
+      "localTime": "Local Time",
+      "seconds": "Seconds",
+      "milliseconds": "Milliseconds",
+      "commonTimestamps": "Common Timestamps",
+      "seoTitle": "Unix Timestamp Converter - Epoch Time Tool",
+      "seoContent": "Convert Unix timestamps to human-readable dates instantly. Our free online epoch converter supports both seconds and milliseconds formats.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Live current timestamp display",
+      "seoFeature2": "Bidirectional conversion",
+      "seoFeature3": "Multiple date formats",
+      "seoFeature4": "Common timestamps reference"
     }
   },
   "footer": {

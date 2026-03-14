@@ -1920,45 +1920,25 @@
       ]
     },
     "json-to-go": {
-      "name": "JSON til Go Struct",
-      "description": "Konverter JSON-data til Go struct-definisjoner",
-      "pageTitle": "JSON til Go Struct-konverter",
-      "pageDescription": "Konverter JSON til Go struct-typer automatisk. Genererer korrekte Go-strukturer med JSON-tagger.",
-      "seoTitle": "Om JSON til Go Struct-konvertering",
-      "seoContent": "Go bruker statisk typning og krever struct-definisjoner for å arbeide med JSON-data. Dette verktøyet analyserer JSON-dataene dine og genererer Go-strukturer med korrekte felttyper og JSON-tagger, noe som sparer tid ved API-integrasjon og datamodellering.",
-      "faqTitle": "Ofte stilte spørsmål",
-      "faqs": [
-        {
-          "q": "Hvilke Go-typer genereres?",
-          "a": "Verktøyet mapper JSON-typer til Go: string, int64, float64, bool, og nestede struct-typer for objekter."
-        },
-        {
-          "q": "Inkluderes JSON-tagger?",
-          "a": "Ja. Hvert felt får en json-tagg som matcher det opprinnelige JSON-feltnavnet."
-        },
-        {
-          "q": "Håndteres nestede objekter?",
-          "a": "Ja. Nestede JSON-objekter konverteres til separate Go-strukturer med korrekte referanser."
-        },
-        {
-          "q": "Kan jeg bruke resultatet direkte i Go?",
-          "a": "Ja. De genererte struct-definisjonene kan kopieres direkte til Go-prosjektet ditt."
-        }
-      ],
-      "howToUseTitle": "Slik bruker du det",
-      "howToUseSteps": [
-        "Lim inn JSON-dataene dine i inndatafeltet",
-        "Go struct-definisjoner genereres automatisk",
-        "Tilpass struct-navnet hvis du ønsker det",
-        "Kopier Go-koden til prosjektet ditt"
-      ],
-      "useCasesTitle": "Vanlige bruksområder",
-      "useCases": [
-        "Opprette Go-strukturer fra API-svar",
-        "Modellere data for Go-webservere",
-        "Rask prototyping med Go og JSON",
-        "Generere typedefinisjoner for Go-mikrotjenester"
-      ]
+      "name": "JSON til Go",
+      "description": "Konverter JSON til Go-strukturdefinisjoner online",
+      "pageTitle": "JSON til Go Struct Converter - Gratis Online-verktøy",
+      "pageDescription": "Konverter JSON-data til Go-strukturdefinisjoner øyeblikkelig. Generer riktige Go-typer med strukturkoder. Gratis online JSON til Go konverterer for utviklere.",
+      "convertBtn": "Konverter",
+      "structNameLabel": "Strukturnavn",
+      "omitEmptyLabel": "Legg til omitempty-koder",
+      "inlineTypesLabel": "Bruk pekertyper",
+      "jsonInputLabel": "JSON-inndata",
+      "jsonInputPlaceholder": "Lim inn dine JSON-data her...",
+      "goOutputLabel": "Go-utdata",
+      "goOutputPlaceholder": "Din Go-struktur vises her...",
+      "seoTitle": "Konverter JSON til Go-strukturer online",
+      "seoContent": "Å konvertere JSON til Go-strukturer er en vanlig oppgave når du arbeider med API-er, konfigurasjonsfiler eller databehandling i Go. Dette verktøyet analyserer automatisk JSON-strukturen din og genererer tilsvarende Go-strukturdefinisjoner med passende typeannotasjoner og strukturkoder. Den håndterer nestede objekter, matriser og alle JSON-datatyper, og støtter både standard strukturkoder og egendefinerte kodalternativer.",
+      "seoFeaturesTitle": "Funksjoner",
+      "seoFeature1": "Automatisk typeinferanse for alle JSON-datatyper (streng, tall, boolsk, objekt, matrise)",
+      "seoFeature2": "Tilpassbare strukturnavn og støtte for generering av nestede strukturer",
+      "seoFeature3": "Alternativer for omitempty-koder og pekertyper i genererte Go-strukturer",
+      "seoFeature4": "100% konvertering på klientsiden - dine data forlater aldri nettleseren din"
     },
     "json-to-go-struct": {
       "name": "JSON til Go Struct Omformer",
@@ -3169,6 +3149,11 @@
       "pageDescription": "Browse emojis by category, search by name, and copy Unicode code points, HTML entities, and CSS escapes with one click.",
       "seoTitle": "What is an Emoji Picker?",
       "seoContent": "An emoji picker lets you browse and search emojis by category or keyword. Click any emoji to see its Unicode code point, HTML entity, and CSS escape, then copy with one click.",
+      "seoFeaturesTitle": "Funksjoner",
+      "seoFeature1": "Bla gjennom 150+ emojis i 9 kategorier: Smileys, Personer, Dyr, Mat, Reise, Aktiviteter, Objekter, Symboler og Flagg",
+      "seoFeature2": "Søk etter emojis etter navn eller kategori øyeblikkelig med sanntidsfiltrering",
+      "seoFeature3": "Kopier emojis i flere formater: rå emoji, Unicode-kodepunkt, HTML-enhet og CSS-escape-sekvens",
+      "seoFeature4": "100% klientsidebehandling — ingen data sendt til servere, helt privat og sikker",
       "howToUseTitle": "How to Use",
       "howToUseSteps": [
         "Browse categories or search by keyword",
@@ -5029,6 +5014,12 @@
       "description": "Live HTML/CSS/JS editor with preview",
       "pageTitle": "HTML Live Preview - Online HTML Editor with Real-Time Preview",
       "pageDescription": "Free online HTML editor with live preview. Write HTML, CSS, and JavaScript code and see results instantly.",
+      "htmlPlaceholder": "<div class=\"container\">\n  <h1>Hello World</h1>\n  <p>Edit me!</p>\n</div>",
+      "cssPlaceholder": ".container {\n  max-width: 1000px;\n  margin: 0 auto;\n  padding: 20px;\n}",
+      "jsPlaceholder": "document.addEventListener('DOMContentLoaded', () => {\n  console.log('Page loaded!');\n});",
+      "enterFullscreen": "Fullscreen",
+      "exitFullscreen": "Exit",
+      "preview": "Preview",
       "seoTitle": "HTML Live Preview Editor",
       "seoContent": "Write and preview HTML, CSS, and JavaScript code in real-time with our free online editor.",
       "seoFeaturesTitle": "Features",
@@ -5259,6 +5250,31 @@
       "seoFeature2": "Custom claims",
       "seoFeature3": "Header configuration",
       "seoFeature4": "Token preview"
+    },
+    "unix-timestamp": {
+      "name": "Unix tidsstempel-konverterer",
+      "description": "Convert between Unix timestamps and human-readable dates",
+      "pageTitle": "Unix tidsstempel-konverterer Online",
+      "pageDescription": "Free online Unix timestamp converter. Convert Unix epoch timestamps to human-readable dates and vice versa. Supports seconds and milliseconds.",
+      "currentTimestamp": "Current Unix Timestamp",
+      "timestampToDate": "Timestamp to Date",
+      "dateToTimestamp": "Date to Timestamp",
+      "enterTimestamp": "Enter Unix timestamp",
+      "convert": "Convert",
+      "copyTimestamp": "Copy Timestamp",
+      "iso8601": "ISO 8601",
+      "utcTime": "UTC Time",
+      "localTime": "Local Time",
+      "seconds": "Seconds",
+      "milliseconds": "Milliseconds",
+      "commonTimestamps": "Common Timestamps",
+      "seoTitle": "Unix Timestamp Converter - Epoch Time Tool",
+      "seoContent": "Convert Unix timestamps to human-readable dates instantly. Our free online epoch converter supports both seconds and milliseconds formats.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Live current timestamp display",
+      "seoFeature2": "Bidirectional conversion",
+      "seoFeature3": "Multiple date formats",
+      "seoFeature4": "Common timestamps reference"
     }
   },
   "footer": {

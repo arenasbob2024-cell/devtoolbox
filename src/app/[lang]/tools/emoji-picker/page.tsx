@@ -538,6 +538,21 @@ export default function EmojiPicker() {
           )}
         </div>
       </div>
+
+      {/* SEO Content */}
+      <div style={{ marginTop: 30, paddingTop: 20, borderTop: '1px solid var(--border-color)' }}>
+        <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>{t.seoTitle}</h2>
+        <p style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.7 }}>
+          {t.seoContent}
+        </p>
+        <h3 style={{ fontSize: 16, fontWeight: 600, marginTop: 16, marginBottom: 8 }}>{t.seoFeaturesTitle}</h3>
+        <ul style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.8, paddingLeft: 20 }}>
+          <li>{t.seoFeature1}</li>
+          <li>{t.seoFeature2}</li>
+          <li>{t.seoFeature3}</li>
+          <li>{t.seoFeature4}</li>
+        </ul>
+      </div>
     </ToolLayout>
   );
 }

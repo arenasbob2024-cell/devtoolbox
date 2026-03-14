@@ -1920,45 +1920,25 @@
       ]
     },
     "json-to-go": {
-      "name": "JSON → Go Struct",
-      "description": "JSONデータをGo構造体定義に変換",
-      "pageTitle": "JSON → Go Struct変換ツール",
-      "pageDescription": "オンラインでJSONをGo構造体定義に変換。jsonタグ付きの適切なGo型を生成。ネストされたオブジェクトと配列に対応。",
-      "seoTitle": "JSON → Go Struct変換について",
-      "seoContent": "Goの厳格な型システムではJSONデータをアンマーシャルする前に構造体を定義する必要があります。このツールはJSONを分析し、適切なフィールド名（PascalCase）、正しいGo型、シリアライゼーション用のjson構造タグを持つ慣用的なGo構造体定義を生成します。ネストされたオブジェクトは個別の名前付き構造体になり、配列は要素型でタイプされ、null値はinterface{}にマップされます。すべての処理はブラウザ内で行われます。",
-      "faqTitle": "よくある質問",
-      "faqs": [
-        {
-          "q": "JSONをGo構造体に変換するには？",
-          "a": "JSONデータを貼り付け、ルート構造体名を設定し、変換をクリックします。各フィールドに適切な型とjsonタグを持つGo構造体定義が生成されます。"
-        },
-        {
-          "q": "JSONからどのGo型が生成されますか？",
-          "a": "文字列はstring、整数はint、小数はfloat64、真偽値はbool、nullはinterface{}、オブジェクトは名前付き構造体、配列は要素型のスライスになります。"
-        },
-        {
-          "q": "json構造タグとは？",
-          "a": "`json:\"field_name\"`のような構造タグは、Goのencoding/jsonパッケージにJSONキーと構造体フィールドのマッピングを指示します。"
-        },
-        {
-          "q": "omitemptyとは？",
-          "a": "jsonタグにomitemptyを追加すると、フィールドがゼロ値の場合にJSON出力から省略されます。"
-        }
-      ],
-      "howToUseTitle": "使い方",
-      "howToUseSteps": [
-        "入力パネルにJSONデータを貼り付け",
-        "ルート構造体名を設定（デフォルト：Root）",
-        "omitemptyとインライン構造体オプションを切り替え",
-        "生成されたGo構造体を.goファイルにコピー"
-      ],
-      "useCasesTitle": "一般的な使用例",
-      "useCases": [
-        "REST APIレスポンスボディからGo構造体を作成",
-        "JSON設定ファイル用の型モデルを構築",
-        "Go HTTPハンドラ用のリクエスト/レスポンス型を生成",
-        "サンプルデータからGoデータモデルを素早くプロトタイプ"
-      ]
+      "name": "JSON から Go へ",
+      "description": "JSONをGo構造定義にオンラインで変換",
+      "pageTitle": "JSON から Go Struct コンバーター - 無料オンラインツール",
+      "pageDescription": "JSON データを Go 構造定義に即座に変換します。構造タグ付きの適切な Go 型を生成します。開発者向けの無料オンライン JSON から Go コンバーター。",
+      "convertBtn": "変換",
+      "structNameLabel": "構造名",
+      "omitEmptyLabel": "omitempty タグを追加",
+      "inlineTypesLabel": "ポインタ型を使用",
+      "jsonInputLabel": "JSON 入力",
+      "jsonInputPlaceholder": "JSON データをここに貼り付けてください...",
+      "goOutputLabel": "Go 出力",
+      "goOutputPlaceholder": "Go 構造がここに表示されます...",
+      "seoTitle": "JSON を Go 構造にオンラインで変換",
+      "seoContent": "JSON を Go 構造に変換することは、API、設定ファイル、または Go でのデータ処理を操作する際の一般的なタスクです。このツールは JSON 構造を自動的に分析し、適切な型注釈と構造タグを使用して対応する Go 構造定義を生成します。ネストされたオブジェクト、配列、およびすべての JSON データ型を処理し、標準構造タグとカスタムタグオプションの両方をサポートします。",
+      "seoFeaturesTitle": "特長",
+      "seoFeature1": "すべての JSON データ型（文字列、数値、ブール値、オブジェクト、配列）の自動型推論",
+      "seoFeature2": "カスタマイズ可能な構造名とネストされた構造生成のサポート",
+      "seoFeature3": "生成された Go 構造の omitempty タグとポインタ型のオプション",
+      "seoFeature4": "100% クライアント側の変換 - データがブラウザを離れることはありません"
     },
     "json-to-go-struct": {
       "name": "JSON to Go Struct コンバーター",
@@ -3169,6 +3149,11 @@
       "pageDescription": "カテゴリ別に絵文字を閲覧、名前で検索、Unicodeコードポイントをワンクリックコピー。",
       "seoTitle": "What is an Emoji Picker?",
       "seoContent": "An emoji picker lets you browse and search emojis by category or keyword. Click any emoji to see its Unicode code point, HTML entity, and CSS escape, then copy with one click.",
+      "seoFeaturesTitle": "機能",
+      "seoFeature1": "150+ 個の絵文字を 9 つのカテゴリーで閲覧：顔、人物、動物、食べ物、旅行、活動、オブジェクト、シンボル、フラグ",
+      "seoFeature2": "名前またはカテゴリー別にリアルタイムで絵文字を検索",
+      "seoFeature3": "複数の形式で絵文字をコピー：生の絵文字、Unicode コードポイント、HTML エンティティ、CSS エスケープシーケンス",
+      "seoFeature4": "100% クライアント側処理 — サーバーへデータ送信なし、完全にプライベートで安全",
       "howToUseTitle": "How to Use",
       "howToUseSteps": [
         "Browse categories or search by keyword",
@@ -5029,6 +5014,12 @@
       "description": "Live HTML/CSS/JS editor with preview",
       "pageTitle": "HTML Live Preview - Online HTML Editor with Real-Time Preview",
       "pageDescription": "Free online HTML editor with live preview. Write HTML, CSS, and JavaScript code and see results instantly.",
+      "htmlPlaceholder": "<div class=\"container\">\n  <h1>Hello World</h1>\n  <p>Edit me!</p>\n</div>",
+      "cssPlaceholder": ".container {\n  max-width: 1000px;\n  margin: 0 auto;\n  padding: 20px;\n}",
+      "jsPlaceholder": "document.addEventListener('DOMContentLoaded', () => {\n  console.log('Page loaded!');\n});",
+      "enterFullscreen": "Fullscreen",
+      "exitFullscreen": "Exit",
+      "preview": "Preview",
       "seoTitle": "HTML Live Preview Editor",
       "seoContent": "Write and preview HTML, CSS, and JavaScript code in real-time with our free online editor.",
       "seoFeaturesTitle": "Features",
@@ -5259,6 +5250,31 @@
       "seoFeature2": "Custom claims",
       "seoFeature3": "Header configuration",
       "seoFeature4": "Token preview"
+    },
+    "unix-timestamp": {
+      "name": "Unix タイムスタンプ変換",
+      "description": "Convert between Unix timestamps and human-readable dates",
+      "pageTitle": "Unix タイムスタンプ変換 Online",
+      "pageDescription": "Free online Unix timestamp converter. Convert Unix epoch timestamps to human-readable dates and vice versa. Supports seconds and milliseconds.",
+      "currentTimestamp": "Current Unix Timestamp",
+      "timestampToDate": "Timestamp to Date",
+      "dateToTimestamp": "Date to Timestamp",
+      "enterTimestamp": "Enter Unix timestamp",
+      "convert": "Convert",
+      "copyTimestamp": "Copy Timestamp",
+      "iso8601": "ISO 8601",
+      "utcTime": "UTC Time",
+      "localTime": "Local Time",
+      "seconds": "Seconds",
+      "milliseconds": "Milliseconds",
+      "commonTimestamps": "Common Timestamps",
+      "seoTitle": "Unix Timestamp Converter - Epoch Time Tool",
+      "seoContent": "Convert Unix timestamps to human-readable dates instantly. Our free online epoch converter supports both seconds and milliseconds formats.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Live current timestamp display",
+      "seoFeature2": "Bidirectional conversion",
+      "seoFeature3": "Multiple date formats",
+      "seoFeature4": "Common timestamps reference"
     }
   },
   "footer": {

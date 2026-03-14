@@ -53,10 +53,19 @@ function parseCurlCommand(curlStr: string): ParsedCurl {
     }
   }
 
-  // Extract URL - look for first unquoted word or quoted string
-  const urlMatch = sanitized.match(/(?:^|\s)(?:"([^"]*)"|([^\s]+))/);
+  // Extract URL - look for the first argument that starts with http (not a flag)
+  const urlMatch = sanitized.match(/https?:\/\/[^\s"]+|"(https?:\/\/[^"]*)"/);
   if (urlMatch) {
-    parsed.url = urlMatch[1] || urlMatch[2];
+    parsed.url = urlMatch[1] || urlMatch[0];
+  } else {
+    // Fallback: get first non-flag argument
+    const parts = sanitized.split(/\s+/);
+    for (const part of parts) {
+      if (!part.startsWith('-') && part.length > 0) {
+        parsed.url = part.replace(/^["']|["']$/g, '');
+        break;
+      }
+    }
   }
 
   // Parse method (-X or --request)

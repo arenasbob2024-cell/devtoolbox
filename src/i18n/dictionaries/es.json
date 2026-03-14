@@ -1920,45 +1920,25 @@
       ]
     },
     "json-to-go": {
-      "name": "JSON a Go Struct",
-      "description": "Convertir datos JSON en definiciones de struct Go",
-      "pageTitle": "Convertidor JSON a Go Struct",
-      "pageDescription": "Convierte JSON en definiciones de struct Go en línea. Genera tipos Go con tags json. Soporta objetos anidados y arrays.",
-      "seoTitle": "Sobre la conversión de JSON a Go Struct",
-      "seoContent": "El sistema de tipos estricto de Go requiere definir structs antes de deserializar datos JSON. Esta herramienta analiza tu JSON y genera definiciones de struct Go idiomáticas con nombres de campo correctos, tipos Go apropiados y tags json para serialización.",
-      "faqTitle": "Preguntas frecuentes",
-      "faqs": [
-        {
-          "q": "¿Cómo convertir JSON en structs Go?",
-          "a": "Pega los datos JSON, establece el nombre del struct raíz y haz clic en Convertir."
-        },
-        {
-          "q": "¿Qué tipos Go se generan?",
-          "a": "Cadenas a string, enteros a int, decimales a float64, booleanos a bool, null a interface{}, objetos a structs nombrados."
-        },
-        {
-          "q": "¿Qué son los tags json struct?",
-          "a": "Tags como `json:\"field_name\"` indican al paquete encoding/json de Go cómo mapear claves JSON y campos de struct."
-        },
-        {
-          "q": "¿Qué hace omitempty?",
-          "a": "Añadir omitempty a un tag json significa que el campo se omite de la salida JSON si tiene un valor cero."
-        }
-      ],
-      "howToUseTitle": "Cómo usar",
-      "howToUseSteps": [
-        "Pega los datos JSON en el panel de entrada",
-        "Establece el nombre del struct raíz (predeterminado: Root)",
-        "Activa las opciones omitempty y struct inline",
-        "Copia los structs Go generados en tu archivo .go"
-      ],
-      "useCasesTitle": "Casos de uso comunes",
-      "useCases": [
-        "Crear structs Go desde respuestas de API REST",
-        "Construir modelos tipados para archivos de configuración JSON",
-        "Generar tipos request/response para handlers HTTP Go",
-        "Prototipar rápidamente modelos de datos Go"
-      ]
+      "name": "JSON a Go",
+      "description": "Convertir JSON a definiciones de estructura Go en línea",
+      "pageTitle": "Convertidor de JSON a Go Struct - Herramienta Gratuita",
+      "pageDescription": "Convierta datos JSON a definiciones de estructura Go al instante. Genere tipos Go apropiados con etiquetas de estructura. Convertidor gratuito de JSON a Go para desarrolladores.",
+      "convertBtn": "Convertir",
+      "structNameLabel": "Nombre de la estructura",
+      "omitEmptyLabel": "Agregar etiquetas omitempty",
+      "inlineTypesLabel": "Usar tipos de puntero",
+      "jsonInputLabel": "Entrada JSON",
+      "jsonInputPlaceholder": "Pegue sus datos JSON aquí...",
+      "goOutputLabel": "Salida Go",
+      "goOutputPlaceholder": "Su estructura Go aparecerá aquí...",
+      "seoTitle": "Convertir JSON a Estructuras Go en línea",
+      "seoContent": "Convertir JSON a estructuras Go es una tarea común cuando se trabaja con API, archivos de configuración o procesamiento de datos en Go. Esta herramienta analiza automáticamente su estructura JSON y genera definiciones de estructuras Go correspondientes con anotaciones de tipo apropiadas y etiquetas de estructura. Maneja objetos anidados, matrices y todos los tipos de datos JSON, soportando tanto etiquetas de estructura estándar como opciones de etiquetas personalizadas.",
+      "seoFeaturesTitle": "Características",
+      "seoFeature1": "Inferencia automática de tipos para todos los tipos de datos JSON (cadena, número, booleano, objeto, matriz)",
+      "seoFeature2": "Nombres de estructura personalizables y soporte para generación de estructuras anidadas",
+      "seoFeature3": "Opciones para etiquetas omitempty y tipos de puntero en estructuras Go generadas",
+      "seoFeature4": "Conversión 100% del lado del cliente: sus datos nunca abandonan su navegador"
     },
     "json-to-go-struct": {
       "name": "Convertidor JSON a Go Struct",
@@ -3169,6 +3149,11 @@
       "pageDescription": "Explore emojis por categoría y copie puntos de código Unicode y entidades HTML.",
       "seoTitle": "What is an Emoji Picker?",
       "seoContent": "An emoji picker lets you browse and search emojis by category or keyword. Click any emoji to see its Unicode code point, HTML entity, and CSS escape, then copy with one click.",
+      "seoFeaturesTitle": "Características",
+      "seoFeature1": "Explora 150+ emojis en 9 categorías: Caras, Personas, Animales, Comida, Viajes, Actividades, Objetos, Símbolos y Banderas",
+      "seoFeature2": "Busca emojis por nombre o categoría al instante con filtrado en tiempo real",
+      "seoFeature3": "Copia emojis en múltiples formatos: emoji sin procesar, punto de código Unicode, entidad HTML y secuencia de escape CSS",
+      "seoFeature4": "Procesamiento 100% del lado del cliente — sin datos enviados a servidores, completamente privado y seguro",
       "howToUseTitle": "How to Use",
       "howToUseSteps": [
         "Browse categories or search by keyword",
@@ -5026,6 +5011,12 @@
       "description": "Live HTML/CSS/JS editor with preview",
       "pageTitle": "HTML Live Preview - Online HTML Editor with Real-Time Preview",
       "pageDescription": "Free online HTML editor with live preview. Write HTML, CSS, and JavaScript code and see results instantly.",
+      "htmlPlaceholder": "<div class=\"container\">\n  <h1>Hello World</h1>\n  <p>Edit me!</p>\n</div>",
+      "cssPlaceholder": ".container {\n  max-width: 1000px;\n  margin: 0 auto;\n  padding: 20px;\n}",
+      "jsPlaceholder": "document.addEventListener('DOMContentLoaded', () => {\n  console.log('Page loaded!');\n});",
+      "enterFullscreen": "Fullscreen",
+      "exitFullscreen": "Exit",
+      "preview": "Preview",
       "seoTitle": "HTML Live Preview Editor",
       "seoContent": "Write and preview HTML, CSS, and JavaScript code in real-time with our free online editor.",
       "seoFeaturesTitle": "Features",
@@ -5256,6 +5247,31 @@
       "seoFeature2": "Custom claims",
       "seoFeature3": "Header configuration",
       "seoFeature4": "Token preview"
+    },
+    "unix-timestamp": {
+      "name": "Convertidor de timestamp Unix",
+      "description": "Convert between Unix timestamps and human-readable dates",
+      "pageTitle": "Convertidor de timestamp Unix Online",
+      "pageDescription": "Free online Unix timestamp converter. Convert Unix epoch timestamps to human-readable dates and vice versa. Supports seconds and milliseconds.",
+      "currentTimestamp": "Current Unix Timestamp",
+      "timestampToDate": "Timestamp to Date",
+      "dateToTimestamp": "Date to Timestamp",
+      "enterTimestamp": "Enter Unix timestamp",
+      "convert": "Convert",
+      "copyTimestamp": "Copy Timestamp",
+      "iso8601": "ISO 8601",
+      "utcTime": "UTC Time",
+      "localTime": "Local Time",
+      "seconds": "Seconds",
+      "milliseconds": "Milliseconds",
+      "commonTimestamps": "Common Timestamps",
+      "seoTitle": "Unix Timestamp Converter - Epoch Time Tool",
+      "seoContent": "Convert Unix timestamps to human-readable dates instantly. Our free online epoch converter supports both seconds and milliseconds formats.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Live current timestamp display",
+      "seoFeature2": "Bidirectional conversion",
+      "seoFeature3": "Multiple date formats",
+      "seoFeature4": "Common timestamps reference"
     }
   },
   "footer": {

@@ -1920,45 +1920,25 @@
       ]
     },
     "json-to-go": {
-      "name": "JSON naar Go Struct",
-      "description": "Converteer JSON-objecten naar Go struct-definities",
-      "pageTitle": "JSON naar Go Struct Converter",
-      "pageDescription": "Converteer JSON-data naar Go struct-definities met correcte json-tags. Snel en volledig in je browser.",
-      "seoTitle": "Wat is JSON naar Go Struct conversie?",
-      "seoContent": "Go (Golang) gebruikt structs om gestructureerde data te representeren. Bij het werken met JSON API's moet je Go structs definiëren die overeenkomen met de JSON-structuur. Deze tool analyseert je JSON en genereert automatisch de bijbehorende Go struct-definities, inclusief json-tags en correcte Go-types.",
-      "faqTitle": "Veelgestelde vragen",
-      "faqs": [
-        {
-          "q": "Wat zijn Go structs?",
-          "a": "Go structs zijn samengestelde datatypen die gerelateerde velden groeperen. Ze worden veel gebruikt voor het deserialiseren van JSON-data uit API-responses."
-        },
-        {
-          "q": "Worden json-tags automatisch toegevoegd?",
-          "a": "Ja. De tool voegt automatisch json-tags toe aan elk veld zodat encoding/json de juiste mapping gebruikt tussen JSON-sleutels en Go-velden."
-        },
-        {
-          "q": "Hoe worden geneste objecten verwerkt?",
-          "a": "Geneste JSON-objecten worden omgezet naar aparte Go structs met de juiste verwijzingen, zodat de volledige hiërarchie behouden blijft."
-        },
-        {
-          "q": "Welke Go-types worden gebruikt?",
-          "a": "De tool kiest automatisch het juiste Go-type: string, int, float64, bool, en geneste structs of slices voor arrays."
-        }
-      ],
-      "howToUseTitle": "Hoe te gebruiken",
-      "howToUseSteps": [
-        "Plak je JSON-data in het invoerveld",
-        "De Go struct-definities worden automatisch gegenereerd",
-        "Pas de struct-naam aan indien gewenst",
-        "Kopieer de gegenereerde Go-code naar je project"
-      ],
-      "useCasesTitle": "Veelvoorkomende toepassingen",
-      "useCases": [
-        "Go structs genereren voor REST API-integraties",
-        "Snel type-definities maken voor JSON-configuraties",
-        "Go-modellen opzetten voor database-records",
-        "JSON-responses van externe services mappen naar Go-types"
-      ]
+      "name": "JSON naar Go",
+      "description": "Converteer JSON naar Go-structaanduidingen online",
+      "pageTitle": "JSON naar Go Struct Converter - Gratis Online Tool",
+      "pageDescription": "Converteer JSON-gegevens direct naar Go-structaanduidingen. Genereer correcte Go-typen met structtags. Gratis online JSON naar Go converter voor ontwikkelaars.",
+      "convertBtn": "Omzetten",
+      "structNameLabel": "Structuurnaam",
+      "omitEmptyLabel": "Omitempty-tags toevoegen",
+      "inlineTypesLabel": "Pointertypen gebruiken",
+      "jsonInputLabel": "JSON-invoer",
+      "jsonInputPlaceholder": "Plak hier uw JSON-gegevens...",
+      "goOutputLabel": "Go-uitvoer",
+      "goOutputPlaceholder": "Uw Go-structuur verschijnt hier...",
+      "seoTitle": "JSON converteren naar Go-structuren online",
+      "seoContent": "Het converteren van JSON naar Go-structuren is een veelgebruikte taak wanneer u met API's, configuratiebestanden of gegevensverwerking in Go werkt. Deze tool analyseert automatisch uw JSON-structuur en genereert corresponderende Go-structaanduidingen met geschikte typeannotaties en structtags. Het verwerkt geneste objecten, arrays en alle JSON-gegevenstypen en ondersteunt zowel standaard structtags als aangepaste tagopties.",
+      "seoFeaturesTitle": "Functies",
+      "seoFeature1": "Automatische typeafleiding voor alle JSON-gegevenstypen (string, getal, booleaans, object, array)",
+      "seoFeature2": "Aanpasbare structuurnamen en ondersteuning voor generatie van geneste structuren",
+      "seoFeature3": "Opties voor omitempty-tags en pointertypen in gegenereerde Go-structuren",
+      "seoFeature4": "100% client-side conversie - uw gegevens verlaten uw browser nooit"
     },
     "json-to-go-struct": {
       "name": "JSON naar Go Struct Converter",
@@ -3169,6 +3149,11 @@
       "pageDescription": "Browse emojis by category, search by name, and copy Unicode code points, HTML entities, and CSS escapes with one click.",
       "seoTitle": "What is an Emoji Picker?",
       "seoContent": "An emoji picker lets you browse and search emojis by category or keyword. Click any emoji to see its Unicode code point, HTML entity, and CSS escape, then copy with one click.",
+      "seoFeaturesTitle": "Functies",
+      "seoFeature1": "Blader door 150+ emojis in 9 categorieën: Smileys, Mensen, Dieren, Voedsel, Reizen, Activiteiten, Objecten, Symbolen en Vlaggen",
+      "seoFeature2": "Zoek emojis op naam of categorie instant met real-time filtering",
+      "seoFeature3": "Kopieer emojis in meerdere formaten: rauwe emoji, Unicode-codepunt, HTML-entiteit en CSS-escape-reeks",
+      "seoFeature4": "100% client-side verwerking — geen gegevens naar servers verzonden, volledig privé en veilig",
       "howToUseTitle": "How to Use",
       "howToUseSteps": [
         "Browse categories or search by keyword",
@@ -5029,6 +5014,12 @@
       "description": "Live HTML/CSS/JS editor with preview",
       "pageTitle": "HTML Live Preview - Online HTML Editor with Real-Time Preview",
       "pageDescription": "Free online HTML editor with live preview. Write HTML, CSS, and JavaScript code and see results instantly.",
+      "htmlPlaceholder": "<div class=\"container\">\n  <h1>Hello World</h1>\n  <p>Edit me!</p>\n</div>",
+      "cssPlaceholder": ".container {\n  max-width: 1000px;\n  margin: 0 auto;\n  padding: 20px;\n}",
+      "jsPlaceholder": "document.addEventListener('DOMContentLoaded', () => {\n  console.log('Page loaded!');\n});",
+      "enterFullscreen": "Fullscreen",
+      "exitFullscreen": "Exit",
+      "preview": "Preview",
       "seoTitle": "HTML Live Preview Editor",
       "seoContent": "Write and preview HTML, CSS, and JavaScript code in real-time with our free online editor.",
       "seoFeaturesTitle": "Features",
@@ -5259,6 +5250,31 @@
       "seoFeature2": "Custom claims",
       "seoFeature3": "Header configuration",
       "seoFeature4": "Token preview"
+    },
+    "unix-timestamp": {
+      "name": "Unix tijdstempel converter",
+      "description": "Convert between Unix timestamps and human-readable dates",
+      "pageTitle": "Unix tijdstempel converter Online",
+      "pageDescription": "Free online Unix timestamp converter. Convert Unix epoch timestamps to human-readable dates and vice versa. Supports seconds and milliseconds.",
+      "currentTimestamp": "Current Unix Timestamp",
+      "timestampToDate": "Timestamp to Date",
+      "dateToTimestamp": "Date to Timestamp",
+      "enterTimestamp": "Enter Unix timestamp",
+      "convert": "Convert",
+      "copyTimestamp": "Copy Timestamp",
+      "iso8601": "ISO 8601",
+      "utcTime": "UTC Time",
+      "localTime": "Local Time",
+      "seconds": "Seconds",
+      "milliseconds": "Milliseconds",
+      "commonTimestamps": "Common Timestamps",
+      "seoTitle": "Unix Timestamp Converter - Epoch Time Tool",
+      "seoContent": "Convert Unix timestamps to human-readable dates instantly. Our free online epoch converter supports both seconds and milliseconds formats.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Live current timestamp display",
+      "seoFeature2": "Bidirectional conversion",
+      "seoFeature3": "Multiple date formats",
+      "seoFeature4": "Common timestamps reference"
     }
   },
   "footer": {

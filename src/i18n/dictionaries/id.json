@@ -1920,45 +1920,25 @@
       ]
     },
     "json-to-go": {
-      "name": "JSON ke Go Struct",
-      "description": "Konversi data JSON ke definisi Go struct",
-      "pageTitle": "Konverter JSON ke Go Struct",
-      "pageDescription": "Konversi JSON ke tipe Go struct secara otomatis. Menghasilkan struktur Go yang benar dengan tag JSON.",
-      "seoTitle": "Tentang Konversi JSON ke Go Struct",
-      "seoContent": "Go menggunakan pengetikan statis dan memerlukan definisi struct untuk bekerja dengan data JSON. Alat ini menganalisis data JSON Anda dan menghasilkan struct Go dengan tipe field yang benar dan tag JSON, menghemat waktu untuk integrasi API dan pemodelan data.",
-      "faqTitle": "Pertanyaan Umum",
-      "faqs": [
-        {
-          "q": "Tipe Go apa yang dihasilkan?",
-          "a": "Alat ini memetakan tipe JSON ke Go: string, int64, float64, bool, dan tipe struct bersarang untuk objek."
-        },
-        {
-          "q": "Apakah tag JSON disertakan?",
-          "a": "Ya. Setiap field mendapatkan tag json yang cocok dengan nama field JSON asli."
-        },
-        {
-          "q": "Apakah objek bersarang ditangani?",
-          "a": "Ya. Objek JSON bersarang dikonversi menjadi struct Go terpisah dengan referensi yang benar."
-        },
-        {
-          "q": "Bisakah saya menggunakan hasilnya langsung di Go?",
-          "a": "Ya. Definisi struct yang dihasilkan dapat langsung disalin ke proyek Go Anda."
-        }
-      ],
-      "howToUseTitle": "Cara Menggunakan",
-      "howToUseSteps": [
-        "Tempel data JSON Anda di kolom input",
-        "Definisi Go struct dihasilkan secara otomatis",
-        "Sesuaikan nama struct jika diinginkan",
-        "Salin kode Go ke proyek Anda"
-      ],
-      "useCasesTitle": "Kasus Penggunaan",
-      "useCases": [
-        "Membuat struct Go dari respons API",
-        "Memodelkan data untuk web server Go",
-        "Prototyping cepat dengan Go dan JSON",
-        "Menghasilkan definisi tipe untuk microservice Go"
-      ]
+      "name": "JSON ke Go",
+      "description": "Konversi JSON ke definisi struktur Go secara online",
+      "pageTitle": "Konverter JSON ke Go Struct - Alat Online Gratis",
+      "pageDescription": "Konversi data JSON ke definisi struktur Go secara instan. Hasilkan tipe Go yang tepat dengan tag struktur. Konverter JSON ke Go gratis online untuk pengembang.",
+      "convertBtn": "Konversi",
+      "structNameLabel": "Nama Struktur",
+      "omitEmptyLabel": "Tambahkan tag omitempty",
+      "inlineTypesLabel": "Gunakan tipe pointer",
+      "jsonInputLabel": "Input JSON",
+      "jsonInputPlaceholder": "Tempel data JSON Anda di sini...",
+      "goOutputLabel": "Output Go",
+      "goOutputPlaceholder": "Struktur Go Anda akan muncul di sini...",
+      "seoTitle": "Konversi JSON ke Struktur Go Secara Online",
+      "seoContent": "Mengkonversi JSON ke struktur Go adalah tugas umum saat bekerja dengan API, file konfigurasi, atau pemrosesan data di Go. Alat ini secara otomatis menganalisis struktur JSON Anda dan menghasilkan definisi struktur Go yang sesuai dengan anotasi tipe yang tepat dan tag struktur. Ini menangani objek bertingkat, array, dan semua tipe data JSON, mendukung tag struktur standar dan opsi tag khusus.",
+      "seoFeaturesTitle": "Fitur",
+      "seoFeature1": "Inferensi tipe otomatis untuk semua tipe data JSON (string, angka, boolean, objek, array)",
+      "seoFeature2": "Nama struktur yang dapat disesuaikan dan dukungan untuk pembuatan struktur bertingkat",
+      "seoFeature3": "Opsi untuk tag omitempty dan tipe pointer dalam struktur Go yang dihasilkan",
+      "seoFeature4": "Konversi 100% sisi klien - data Anda tidak pernah meninggalkan browser Anda"
     },
     "json-to-go-struct": {
       "name": "Konverter JSON ke Go Struct",
@@ -3169,6 +3149,11 @@
       "pageDescription": "Browse emojis by category, search by name, and copy Unicode code points, HTML entities, and CSS escapes with one click.",
       "seoTitle": "What is an Emoji Picker?",
       "seoContent": "An emoji picker lets you browse and search emojis by category or keyword. Click any emoji to see its Unicode code point, HTML entity, and CSS escape, then copy with one click.",
+      "seoFeaturesTitle": "Fitur",
+      "seoFeature1": "Jelajahi 150+ emoji dalam 9 kategori: Wajah, Orang, Hewan, Makanan, Perjalanan, Aktivitas, Objek, Simbol, dan Bendera",
+      "seoFeature2": "Cari emoji berdasarkan nama atau kategori secara instan dengan penyaringan real-time",
+      "seoFeature3": "Salin emoji dalam berbagai format: emoji mentah, poin kode Unicode, entitas HTML, dan urutan escape CSS",
+      "seoFeature4": "Pemrosesan 100% sisi klien — tidak ada data yang dikirim ke server, sepenuhnya pribadi dan aman",
       "howToUseTitle": "How to Use",
       "howToUseSteps": [
         "Browse categories or search by keyword",
@@ -5029,6 +5014,12 @@
       "description": "Live HTML/CSS/JS editor with preview",
       "pageTitle": "HTML Live Preview - Online HTML Editor with Real-Time Preview",
       "pageDescription": "Free online HTML editor with live preview. Write HTML, CSS, and JavaScript code and see results instantly.",
+      "htmlPlaceholder": "<div class=\"container\">\n  <h1>Hello World</h1>\n  <p>Edit me!</p>\n</div>",
+      "cssPlaceholder": ".container {\n  max-width: 1000px;\n  margin: 0 auto;\n  padding: 20px;\n}",
+      "jsPlaceholder": "document.addEventListener('DOMContentLoaded', () => {\n  console.log('Page loaded!');\n});",
+      "enterFullscreen": "Fullscreen",
+      "exitFullscreen": "Exit",
+      "preview": "Preview",
       "seoTitle": "HTML Live Preview Editor",
       "seoContent": "Write and preview HTML, CSS, and JavaScript code in real-time with our free online editor.",
       "seoFeaturesTitle": "Features",
@@ -5259,6 +5250,31 @@
       "seoFeature2": "Custom claims",
       "seoFeature3": "Header configuration",
       "seoFeature4": "Token preview"
+    },
+    "unix-timestamp": {
+      "name": "Konverter Timestamp Unix",
+      "description": "Convert between Unix timestamps and human-readable dates",
+      "pageTitle": "Konverter Timestamp Unix Online",
+      "pageDescription": "Free online Unix timestamp converter. Convert Unix epoch timestamps to human-readable dates and vice versa. Supports seconds and milliseconds.",
+      "currentTimestamp": "Current Unix Timestamp",
+      "timestampToDate": "Timestamp to Date",
+      "dateToTimestamp": "Date to Timestamp",
+      "enterTimestamp": "Enter Unix timestamp",
+      "convert": "Convert",
+      "copyTimestamp": "Copy Timestamp",
+      "iso8601": "ISO 8601",
+      "utcTime": "UTC Time",
+      "localTime": "Local Time",
+      "seconds": "Seconds",
+      "milliseconds": "Milliseconds",
+      "commonTimestamps": "Common Timestamps",
+      "seoTitle": "Unix Timestamp Converter - Epoch Time Tool",
+      "seoContent": "Convert Unix timestamps to human-readable dates instantly. Our free online epoch converter supports both seconds and milliseconds formats.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Live current timestamp display",
+      "seoFeature2": "Bidirectional conversion",
+      "seoFeature3": "Multiple date formats",
+      "seoFeature4": "Common timestamps reference"
     }
   },
   "footer": {
