@@ -7,8 +7,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   const dict = await getDictionary(lang);
-  const t = dict.tools['json-to-sql'];
-  const url = `https://viadreams.cc/${lang}/tools/json-to-sql`;
+  const t = dict.tools['crontab-editor'];
+  const url = `https://viadreams.cc/${lang}/tools/crontab-editor`;
   return {
     title: t.pageTitle,
     description: t.pageDescription,
@@ -30,9 +30,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: url,
       languages: {
         ...Object.fromEntries(
-          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/json-to-sql`])
+          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/crontab-editor`])
         ),
-        'x-default': `https://viadreams.cc/en/tools/json-to-sql`,
+        'x-default': `https://viadreams.cc/en/tools/crontab-editor`,
       },
     },
   };
@@ -42,7 +42,7 @@ export default async function Layout({ children, params }: { children: React.Rea
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   return (
-    <ToolSeoServer toolId="json-to-sql" lang={lang}>
+    <ToolSeoServer toolId="crontab-editor" lang={lang}>
       {children}
     </ToolSeoServer>
   );

@@ -4637,17 +4637,17 @@
       "seoFeature4": "一键复制CSS代码"
     },
     "toml-editor": {
-      "name": "TOML 编辑器和验证器",
-      "description": "在线编辑、验证和转换 TOML 文件",
-      "pageTitle": "在线 TOML 编辑器和验证器 - TOML 转 JSON",
-      "pageDescription": "免费在线 TOML 编辑器，支持语法验证和格式转换。轻松编辑 TOML 文件，在 TOML 和 JSON 格式之间即时转换。",
-      "seoTitle": "关于 TOML 编辑器和验证器",
-      "seoContent": "TOML（Tom 的明显最小语言）是一种易于阅读的配置文件格式。我们的在线 TOML 编辑器帮助您轻松编辑、验证和转换 TOML 文件。",
-      "seoFeaturesTitle": "主要功能",
-      "seoFeature1": "实时 TOML 语法验证，提供详细错误信息",
-      "seoFeature2": "TOML 转 JSON 和 JSON 转 TOML 即时转换",
-      "seoFeature3": "支持表格、数组、内联表格和所有 TOML 数据类型",
-      "seoFeature4": "加载示例 Cargo.toml 快速开始"
+      "name": "TOML Editor",
+      "description": "TOML editor, validator and JSON converter",
+      "pageTitle": "TOML Editor & Validator Online",
+      "pageDescription": "Free online TOML editor and validator. Parse TOML, validate syntax, and convert between TOML and JSON.",
+      "seoTitle": "TOML Editor",
+      "seoContent": "TOML editor, validator and JSON converter",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Free online tool",
+      "seoFeature2": "No installation needed",
+      "seoFeature3": "Real-time preview",
+      "seoFeature4": "One-click copy"
     },
     "epoch-converter": {
       "name": "纪元时间戳转换器",
@@ -4875,17 +4875,17 @@
       "seoFeature4": "自动检测模式"
     },
     "json-to-sql": {
-      "name": "JSON 转 SQL",
-      "description": "将 JSON 转换为 SQL INSERT 语句",
-      "pageTitle": "JSON 转 SQL 转换器 - 在线生成 INSERT 语句",
-      "pageDescription": "免费在线 JSON 转 SQL 转换器。",
-      "seoTitle": "JSON 转 SQL 转换器",
-      "seoContent": "即时将 JSON 数据转换为 SQL INSERT 语句。",
-      "seoFeaturesTitle": "功能",
-      "seoFeature1": "MySQL、PostgreSQL、SQLite 方言",
-      "seoFeature2": "CREATE TABLE 生成",
-      "seoFeature3": "批量 INSERT",
-      "seoFeature4": "自动类型推断"
+      "name": "JSON to SQL",
+      "description": "Convert JSON data to SQL INSERT statements",
+      "pageTitle": "JSON to SQL Converter Online - Generate INSERT Statements",
+      "pageDescription": "Free online JSON to SQL converter. Generate INSERT statements for MySQL, PostgreSQL, SQLite from JSON data.",
+      "seoTitle": "JSON to SQL",
+      "seoContent": "Convert JSON data to SQL INSERT statements",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Free online tool",
+      "seoFeature2": "No installation needed",
+      "seoFeature3": "Real-time preview",
+      "seoFeature4": "One-click copy"
     },
     "scss-to-css": {
       "name": "SCSS 转 CSS",
@@ -5269,6 +5269,45 @@
       "description": "将文字转换为多种风格的 ASCII 艺术字",
       "pageTitle": "文字转 ASCII 艺术字生成器",
       "pageDescription": "免费在线文字转 ASCII 艺术字工具，支持多种字体风格。"
+    },
+    "css-shadow-generator": {
+      "name": "CSS Shadow Generator",
+      "description": "Visual box-shadow and text-shadow generator",
+      "pageTitle": "CSS Box Shadow Generator Online - Visual Shadow Tool",
+      "pageDescription": "Free online CSS shadow generator. Create box-shadow and text-shadow with visual controls, multiple layers, and presets.",
+      "seoTitle": "CSS Shadow Generator",
+      "seoContent": "Visual box-shadow and text-shadow generator",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Free online tool",
+      "seoFeature2": "No installation needed",
+      "seoFeature3": "Real-time preview",
+      "seoFeature4": "One-click copy"
+    },
+    "regex-visualizer": {
+      "name": "Regex Visualizer",
+      "description": "Visual regex tester with match highlighting",
+      "pageTitle": "Regex Visualizer Online - Pattern Tester & Debugger",
+      "pageDescription": "Free online regex visualizer. Test patterns with live highlighting, capture groups, and detailed explanations.",
+      "seoTitle": "Regex Visualizer",
+      "seoContent": "Visual regex tester with match highlighting",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Free online tool",
+      "seoFeature2": "No installation needed",
+      "seoFeature3": "Real-time preview",
+      "seoFeature4": "One-click copy"
+    },
+    "crontab-editor": {
+      "name": "Crontab Editor",
+      "description": "Visual crontab editor with next run times",
+      "pageTitle": "Crontab Editor Online - Visual Cron Expression Builder",
+      "pageDescription": "Free online crontab editor. Build cron expressions visually, see human-readable descriptions, and preview next execution times.",
+      "seoTitle": "Crontab Editor",
+      "seoContent": "Visual crontab editor with next run times",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Free online tool",
+      "seoFeature2": "No installation needed",
+      "seoFeature3": "Real-time preview",
+      "seoFeature4": "One-click copy"
     }
   },
   "footer": {

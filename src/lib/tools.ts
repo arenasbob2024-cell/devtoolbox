@@ -3340,6 +3340,36 @@ export const tools: Tool[] = [
     path: '/tools/text-to-ascii-art',
     relatedTools: ['ascii-table-generator', 'ascii-art-generator', 'lorem-ipsum-generator'],
   },
+  {
+    id: 'css-shadow-generator',
+    name: 'CSS Shadow Generator',
+    description: 'Visual CSS box-shadow and text-shadow generator',
+    icon: '🌓',
+    category: 'css',
+    keywords: ['css', 'box-shadow', 'text-shadow', 'generator', 'visual', 'design'],
+    path: '/tools/css-shadow-generator',
+    relatedTools: ['css-gradient', 'border-radius-generator', 'css-animation-generator'],
+  },
+  {
+    id: 'regex-visualizer',
+    name: 'Regex Visualizer',
+    description: 'Visual regex pattern tester with match highlighting',
+    icon: '🔍',
+    category: 'regex',
+    keywords: ['regex', 'visualizer', 'pattern', 'match', 'highlight', 'capture group'],
+    path: '/tools/regex-visualizer',
+    relatedTools: ['regex-tester', 'regex-builder', 'regex-generator'],
+  },
+  {
+    id: 'crontab-editor',
+    name: 'Crontab Editor',
+    description: 'Visual crontab editor with human-readable descriptions',
+    icon: '⏰',
+    category: 'developer',
+    keywords: ['crontab', 'cron', 'editor', 'scheduler', 'visual', 'next run'],
+    path: '/tools/crontab-editor',
+    relatedTools: ['cron-parser', 'cron-expression-generator', 'crontab-validator'],
+  },
 ];
 
 export function getToolsByCategory(categoryId: string): Tool[] {

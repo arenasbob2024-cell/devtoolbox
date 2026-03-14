@@ -5,516 +5,290 @@ import ToolLayout from '@/components/ToolLayout';
 import CopyButton from '@/components/CopyButton';
 import { useLang } from '@/i18n/LangContext';
 
-// Simple TOML parser for common use cases
-function parseToml(input: string): Record<string, any> {
-  const result: Record<string, any> = {};
-  const lines = input.split('\n');
-  let currentSection: Record<string, any> = result;
-  let currentSectionPath: string[] = [];
-
-  for (let i = 0; i < lines.length; i++) {
-    let line = lines[i].trim();
-
-    // Remove comments
-    const commentIdx = line.indexOf('#');
-    if (commentIdx >= 0) {
-      const beforeComment = line.substring(0, commentIdx);
-      if (!beforeComment.includes('"') && !beforeComment.includes("'")) {
-        line = beforeComment.trim();
-      }
-    }
-
-    // Skip empty lines
-    if (!line) continue;
-
-    // Array of tables [[name]]
-    if (line.match(/^\[\[.+\]\]$/)) {
-      const tableName = line.slice(2, -2).trim();
-      currentSectionPath = tableName.split('.');
-      if (!result[currentSectionPath[0]]) {
-        result[currentSectionPath[0]] = [];
-      }
-      const arrayItem: Record<string, any> = {};
-      (result[currentSectionPath[0]] as any[]).push(arrayItem);
-      currentSection = arrayItem;
-      continue;
-    }
-
-    // Table section [name]
-    if (line.match(/^\[.+\]$/)) {
-      const tableName = line.slice(1, -1).trim();
-      currentSectionPath = tableName.split('.');
-      let obj = result;
-      for (let j = 0; j < currentSectionPath.length - 1; j++) {
-        const key = currentSectionPath[j];
-        if (!obj[key]) obj[key] = {};
-        obj = obj[key];
-      }
-      const finalKey = currentSectionPath[currentSectionPath.length - 1];
-      if (!obj[finalKey]) obj[finalKey] = {};
-      currentSection = obj[finalKey];
-      continue;
-    }
-
-    // Key-value pair
-    const eqIdx = line.indexOf('=');
-    if (eqIdx > 0) {
-      const key = line.substring(0, eqIdx).trim();
-      let value = line.substring(eqIdx + 1).trim();
-
-      // Parse value
-      let parsed: any = value;
-      if (value.startsWith('"') && value.endsWith('"')) {
-        // String
-        parsed = value.slice(1, -1);
-      } else if (value.startsWith("'") && value.endsWith("'")) {
-        // Single quoted string
-        parsed = value.slice(1, -1);
-      } else if (value.startsWith('"""') && value.endsWith('"""')) {
-        // Multi-line string
-        parsed = value.slice(3, -3);
-      } else if (value.startsWith("'''") && value.endsWith("'''")) {
-        // Multi-line string (single quotes)
-        parsed = value.slice(3, -3);
-      } else if (value.toLowerCase() === 'true') {
-        parsed = true;
-      } else if (value.toLowerCase() === 'false') {
-        parsed = false;
-      } else if (value.match(/^-?\d+$/)) {
-        // Integer
-        parsed = parseInt(value, 10);
-      } else if (value.match(/^-?\d+\.\d+$/)) {
-        // Float
-        parsed = parseFloat(value);
-      } else if (value.startsWith('[') && value.endsWith(']')) {
-        // Array
-        try {
-          const arrayStr = value.slice(1, -1).trim();
-          if (arrayStr === '') {
-            parsed = [];
-          } else {
-            const items = arrayStr.split(',').map((item) => {
-              const trimmed = item.trim();
-              if (trimmed.startsWith('"') && trimmed.endsWith('"')) return trimmed.slice(1, -1);
-              if (trimmed.toLowerCase() === 'true') return true;
-              if (trimmed.toLowerCase() === 'false') return false;
-              if (/^-?\d+$/.test(trimmed)) return parseInt(trimmed, 10);
-              if (/^-?\d+\.\d+$/.test(trimmed)) return parseFloat(trimmed);
-              return trimmed;
-            });
-            parsed = items;
-          }
-        } catch {
-          parsed = value;
-        }
-      } else if (value.startsWith('{') && value.endsWith('}')) {
-        // Inline table
-        try {
-          const tableStr = value.slice(1, -1).trim();
-          const inlineTable: Record<string, any> = {};
-          if (tableStr) {
-            const pairs = tableStr.split(',');
-            for (const pair of pairs) {
-              const pairParts = pair.split('=');
-              if (pairParts.length === 2) {
-                const k = pairParts[0].trim();
-                const v = pairParts[1].trim();
-                if (v.startsWith('"') && v.endsWith('"')) {
-                  inlineTable[k] = v.slice(1, -1);
-                } else if (v.toLowerCase() === 'true') {
-                  inlineTable[k] = true;
-                } else if (v.toLowerCase() === 'false') {
-                  inlineTable[k] = false;
-                } else if (/^-?\d+$/.test(v)) {
-                  inlineTable[k] = parseInt(v, 10);
-                } else {
-                  inlineTable[k] = v;
-                }
-              }
-            }
-          }
-          parsed = inlineTable;
-        } catch {
-          parsed = value;
-        }
-      }
-
-      currentSection[key] = parsed;
-    }
-  }
-
-  return result;
-}
-
-// Convert JSON to TOML
-function jsonToToml(obj: any, prefix = ''): string {
-  let result = '';
-  const keys = Object.keys(obj);
-
-  // First pass: add simple key-value pairs
-  for (const key of keys) {
-    const value = obj[key];
-    if (value === null || value === undefined) continue;
-
-    const isObject = typeof value === 'object' && !Array.isArray(value);
-    const isArray = Array.isArray(value);
-    const isArrayOfObjects = isArray && value.length > 0 && typeof value[0] === 'object' && !Array.isArray(value[0]);
-
-    if (!isObject && !isArrayOfObjects) {
-      result += `${key} = `;
-      if (typeof value === 'string') {
-        result += `"${value.replace(/"/g, '\\"')}"`;
-      } else if (typeof value === 'boolean') {
-        result += value ? 'true' : 'false';
-      } else if (Array.isArray(value)) {
-        result += '[' + value.map((v) => {
-          if (typeof v === 'string') return `"${v}"`;
-          return String(v);
-        }).join(', ') + ']';
-      } else {
-        result += String(value);
-      }
-      result += '\n';
-    }
-  }
-
-  // Second pass: add sections and array of tables
-  for (const key of keys) {
-    const value = obj[key];
-    if (value === null || value === undefined) continue;
-
-    const isObject = typeof value === 'object' && !Array.isArray(value);
-    const isArray = Array.isArray(value);
-    const isArrayOfObjects = isArray && value.length > 0 && typeof value[0] === 'object' && !Array.isArray(value[0]);
-
-    if (isObject && !isArrayOfObjects) {
-      const newPrefix = prefix ? `${prefix}.${key}` : key;
-      result += `\n[${newPrefix}]\n`;
-      result += jsonToToml(value, newPrefix);
-    } else if (isArrayOfObjects) {
-      for (const item of value) {
-        const newPrefix = prefix ? `${prefix}.${key}` : key;
-        result += `\n[[${newPrefix}]]\n`;
-        result += jsonToToml(item, newPrefix);
-      }
-    }
-  }
-
-  return result;
+interface TomlError {
+  line: number;
+  message: string;
 }
 
 export default function TomlEditor() {
   const { dict } = useLang();
   const t = dict.tools['toml-editor'];
-  const [input, setInput] = useState('');
-  const [output, setOutput] = useState('');
-  const [mode, setMode] = useState<'edit' | 'toml-to-json' | 'json-to-toml'>('edit');
-  const [validationStatus, setValidationStatus] = useState<'valid' | 'invalid' | ''>('');
-  const [errorMsg, setErrorMsg] = useState('');
+  const [tomlInput, setTomlInput] = useState('');
+  const [jsonOutput, setJsonOutput] = useState('');
+  const [errors, setErrors] = useState<TomlError[]>([]);
+  const [convertMode, setConvertMode] = useState<'toml-to-json' | 'json-to-toml'>('toml-to-json');
 
-  const validateToml = () => {
-    setErrorMsg('');
-    setValidationStatus('');
+  const parseToml = (input: string): { data: Record<string, any>; errors: TomlError[] } => {
+    const errors: TomlError[] = [];
+    const result: Record<string, any> = {};
 
-    if (!input.trim()) {
-      setErrorMsg(dict.common.error + ': ' + t.inputRequired);
-      return;
+    if (!input.trim()) return { data: result, errors };
+
+    const lines = input.split('\n');
+    let currentSection: Record<string, any> = result;
+    let currentPath: string[] = [];
+
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
+      const lineNum = i + 1;
+      const trimmed = line.trim();
+
+      if (!trimmed || trimmed.startsWith('#')) continue;
+
+      // Section header
+      if (trimmed.startsWith('[')) {
+        if (!trimmed.endsWith(']')) {
+          errors.push({ line: lineNum, message: 'Invalid section header' });
+          continue;
+        }
+        const sectionName = trimmed.slice(1, -1).trim();
+        currentPath = sectionName.split('.');
+        currentSection = result;
+
+        for (const part of currentPath) {
+          if (!currentSection[part]) currentSection[part] = {};
+          currentSection = currentSection[part];
+        }
+        continue;
+      }
+
+      // Key-value pair
+      const eqIndex = trimmed.indexOf('=');
+      if (eqIndex === -1) {
+        errors.push({ line: lineNum, message: 'Missing = operator' });
+        continue;
+      }
+
+      const key = trimmed.substring(0, eqIndex).trim();
+      const valueStr = trimmed.substring(eqIndex + 1).trim();
+
+      if (!key) {
+        errors.push({ line: lineNum, message: 'Empty key' });
+        continue;
+      }
+
+      try {
+        let value: any = valueStr;
+
+        if (valueStr === 'true') value = true;
+        else if (valueStr === 'false') value = false;
+        else if (valueStr === 'null') value = null;
+        else if (!isNaN(Number(valueStr)) && valueStr !== '') value = Number(valueStr);
+        else if (valueStr.startsWith('"') && valueStr.endsWith('"')) {
+          value = JSON.parse(valueStr);
+        } else if (valueStr.startsWith("'") && valueStr.endsWith("'")) {
+          value = valueStr.slice(1, -1);
+        } else if (valueStr.startsWith('[') && valueStr.endsWith(']')) {
+          value = JSON.parse(valueStr);
+        } else if (valueStr.startsWith('{') && valueStr.endsWith('}')) {
+          value = JSON.parse(valueStr);
+        }
+
+        currentSection[key] = value;
+      } catch {
+        errors.push({ line: lineNum, message: 'Invalid value format' });
+      }
     }
 
-    try {
-      parseToml(input);
-      setValidationStatus('valid');
-      setErrorMsg('');
-    } catch (e: unknown) {
-      const msg = e instanceof Error ? e.message : 'Parse error';
-      setValidationStatus('invalid');
-      setErrorMsg(msg);
-    }
+    return { data: result, errors };
   };
 
-  const convertTomlToJson = () => {
-    setErrorMsg('');
-    setOutput('');
+  const stringifyToml = (obj: Record<string, any>, prefix = ''): string => {
+    let result = '';
 
-    if (!input.trim()) {
-      setErrorMsg(dict.common.error + ': ' + t.inputRequired);
+    for (const [key, value] of Object.entries(obj)) {
+      if (value === null) continue;
+
+      if (typeof value === 'object' && !Array.isArray(value)) {
+        if (Object.keys(value).length > 0) {
+          const sectionName = prefix ? `${prefix}.${key}` : key;
+          result += `\n[${sectionName}]\n`;
+          result += stringifyToml(value as Record<string, any>, sectionName);
+        }
+      } else if (Array.isArray(value)) {
+        result += `${key} = ${JSON.stringify(value)}\n`;
+      } else if (typeof value === 'string') {
+        result += `${key} = "${value}"\n`;
+      } else {
+        result += `${key} = ${value}\n`;
+      }
+    }
+
+    return result;
+  };
+
+  const convertToml = () => {
+    setErrors([]);
+    setJsonOutput('');
+
+    if (!tomlInput.trim()) {
+      setErrors([{ line: 0, message: 'Input is empty' }]);
       return;
     }
 
-    try {
-      const parsed = parseToml(input);
-      setOutput(JSON.stringify(parsed, null, 2));
-      setValidationStatus('valid');
-    } catch (e: unknown) {
-      const msg = e instanceof Error ? e.message : 'Parse error';
-      setErrorMsg(msg);
-      setValidationStatus('invalid');
+    const { data, errors: parseErrors } = parseToml(tomlInput);
+
+    if (parseErrors.length > 0) {
+      setErrors(parseErrors);
     }
+
+    setJsonOutput(JSON.stringify(data, null, 2));
   };
 
   const convertJsonToToml = () => {
-    setErrorMsg('');
-    setOutput('');
+    setErrors([]);
+    setJsonOutput('');
 
-    if (!input.trim()) {
-      setErrorMsg(dict.common.error + ': ' + t.inputRequired);
+    if (!tomlInput.trim()) {
+      setErrors([{ line: 0, message: 'Input is empty' }]);
       return;
     }
 
     try {
-      const parsed = JSON.parse(input);
-      const tomlStr = jsonToToml(parsed).trim();
-      setOutput(tomlStr);
-      setValidationStatus('valid');
-    } catch (e: unknown) {
-      const msg = e instanceof Error ? e.message : 'Parse error';
-      setErrorMsg(msg);
-      setValidationStatus('invalid');
+      const parsed = JSON.parse(tomlInput);
+      const tomlStr = stringifyToml(parsed);
+      setJsonOutput(tomlStr);
+    } catch (e) {
+      const msg = e instanceof Error ? e.message : 'Invalid JSON';
+      setErrors([{ line: 0, message: msg }]);
     }
   };
 
-  const loadSample = () => {
-    const sample = `[package]
-name = "my-project"
+  const convert = () => {
+    if (convertMode === 'toml-to-json') {
+      convertToml();
+    } else {
+      convertJsonToToml();
+    }
+  };
+
+  const loadSampleToml = () => {
+    const sample = `# This is a TOML example
+title = "DevToolBox"
 version = "1.0.0"
-edition = "2021"
-authors = ["John Doe <john@example.com>"]
+debug = true
 
-[dependencies]
-serde = { version = "1.0", features = ["derive"] }
-tokio = { version = "1", features = ["full"] }
+[owner]
+name = "John Doe"
+email = "john@example.com"
 
-[[bin]]
-name = "app"
-path = "src/main.rs"
-
-[profile.release]
-opt-level = 3
-lto = true`;
-    setInput(sample);
-    setOutput('');
-    setValidationStatus('');
-    setErrorMsg('');
-  };
-
-  const clearAll = () => {
-    setInput('');
-    setOutput('');
-    setValidationStatus('');
-    setErrorMsg('');
-  };
-
-  const handleModeChange = (newMode: typeof mode) => {
-    setMode(newMode);
-    setOutput('');
-    setValidationStatus('');
-    setErrorMsg('');
+[database]
+server = "192.168.1.1"
+ports = [8001, 8001, 8002]
+maxRetries = 3
+enabled = true`;
+    setTomlInput(sample);
+    setJsonOutput('');
+    setErrors([]);
   };
 
   return (
-    <ToolLayout title={t.pageTitle} description={t.pageDescription} toolId="toml-editor">
-      {/* Mode Tabs */}
-      <div
-        style={{
-          display: 'flex',
-          gap: 8,
-          marginBottom: 16,
-          borderBottom: '1px solid var(--border-color)',
-        }}
-      >
-        <button
-          onClick={() => handleModeChange('edit')}
-          style={{
-            padding: '10px 16px',
-            border: 'none',
-            background: mode === 'edit' ? 'var(--bg-secondary)' : 'transparent',
-            color: mode === 'edit' ? 'var(--text-primary)' : 'var(--text-secondary)',
-            cursor: 'pointer',
-            fontSize: 14,
-            fontWeight: 500,
-            borderBottom: mode === 'edit' ? '2px solid var(--accent-blue)' : '2px solid transparent',
-          }}
-        >
-          {t.editValidateTab}
-        </button>
-        <button
-          onClick={() => handleModeChange('toml-to-json')}
-          style={{
-            padding: '10px 16px',
-            border: 'none',
-            background: mode === 'toml-to-json' ? 'var(--bg-secondary)' : 'transparent',
-            color: mode === 'toml-to-json' ? 'var(--text-primary)' : 'var(--text-secondary)',
-            cursor: 'pointer',
-            fontSize: 14,
-            fontWeight: 500,
-            borderBottom: mode === 'toml-to-json' ? '2px solid var(--accent-blue)' : '2px solid transparent',
-          }}
-        >
-          {t.tomlToJsonTab}
-        </button>
-        <button
-          onClick={() => handleModeChange('json-to-toml')}
-          style={{
-            padding: '10px 16px',
-            border: 'none',
-            background: mode === 'json-to-toml' ? 'var(--bg-secondary)' : 'transparent',
-            color: mode === 'json-to-toml' ? 'var(--text-primary)' : 'var(--text-secondary)',
-            cursor: 'pointer',
-            fontSize: 14,
-            fontWeight: 500,
-            borderBottom: mode === 'json-to-toml' ? '2px solid var(--accent-blue)' : '2px solid transparent',
-          }}
-        >
-          {t.jsonToTomlTab}
-        </button>
-      </div>
-
+    <ToolLayout
+      title={t.pageTitle}
+      description={t.pageDescription}
+      toolId="toml-editor"
+    >
       {/* Controls */}
       <div style={{ display: 'flex', gap: 8, marginBottom: 16, flexWrap: 'wrap' }}>
-        {mode === 'edit' && (
-          <button onClick={validateToml} className="btn btn-primary">
-            {t.validateBtn}
-          </button>
-        )}
-        {mode === 'toml-to-json' && (
-          <button onClick={convertTomlToJson} className="btn btn-primary">
-            {t.convertBtn}
-          </button>
-        )}
-        {mode === 'json-to-toml' && (
-          <button onClick={convertJsonToToml} className="btn btn-primary">
-            {t.convertBtn}
-          </button>
-        )}
-        <button onClick={loadSample} className="btn btn-secondary">
-          {dict.common.loadSample}
-        </button>
-        <button onClick={clearAll} className="btn btn-secondary">
-          {dict.common.clear}
+        <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+          <label style={{ fontSize: 13, fontWeight: 600 }}>Mode:</label>
+          <select
+            value={convertMode}
+            onChange={(e) => {
+              setConvertMode(e.target.value as 'toml-to-json' | 'json-to-toml');
+              setJsonOutput('');
+              setErrors([]);
+            }}
+            style={{
+              padding: '8px 12px',
+              borderRadius: 6,
+              border: '1px solid var(--border-color)',
+              background: 'var(--bg-secondary)',
+              color: 'var(--text-primary)',
+              fontSize: 13,
+            }}
+          >
+            <option value="toml-to-json">TOML → JSON</option>
+            <option value="json-to-toml">JSON → TOML</option>
+          </select>
+        </div>
+        <button onClick={convert} className="btn btn-primary">Convert</button>
+        <button onClick={loadSampleToml} className="btn btn-secondary">Load Sample</button>
+        <button
+          onClick={() => {
+            setTomlInput('');
+            setJsonOutput('');
+            setErrors([]);
+          }}
+          className="btn btn-secondary"
+        >
+          Clear
         </button>
       </div>
 
-      {/* Error */}
-      {errorMsg && (
-        <div
-          style={{
-            background: 'rgba(244, 63, 94, 0.1)',
-            border: '1px solid rgba(244, 63, 94, 0.3)',
-            borderRadius: 8,
-            padding: '10px 14px',
-            marginBottom: 16,
-            fontSize: 13,
-            color: 'var(--accent-rose)',
-          }}
-        >
-          ✕ {errorMsg}
+      {/* Errors */}
+      {errors.length > 0 && (
+        <div style={{
+          background: 'rgba(244, 63, 94, 0.1)',
+          border: '1px solid rgba(244, 63, 94, 0.3)',
+          borderRadius: 8,
+          padding: '12px 14px',
+          marginBottom: 16,
+          fontSize: 13,
+          color: 'var(--accent-rose)',
+        }}>
+          <div style={{ fontWeight: 600, marginBottom: 8 }}>✕ Errors ({errors.length}):</div>
+          {errors.map((err, i) => (
+            <div key={i}>
+              {err.line > 0 ? `Line ${err.line}: ` : ''}{err.message}
+            </div>
+          ))}
         </div>
       )}
 
-      {/* Validation Status */}
-      {validationStatus && mode === 'edit' && (
-        <div
-          style={{
-            background:
-              validationStatus === 'valid' ? 'rgba(34, 197, 94, 0.1)' : 'rgba(244, 63, 94, 0.1)',
-            border:
-              validationStatus === 'valid'
-                ? '1px solid rgba(34, 197, 94, 0.3)'
-                : '1px solid rgba(244, 63, 94, 0.3)',
-            borderRadius: 8,
-            padding: '10px 14px',
-            marginBottom: 16,
-            fontSize: 13,
-            color: validationStatus === 'valid' ? 'var(--accent-green)' : 'var(--accent-rose)',
-          }}
-        >
-          {validationStatus === 'valid' ? '✓ ' + t.validToml : '✕ ' + t.invalidToml}
-        </div>
-      )}
-
-      {/* Editor and Output */}
+      {/* Input/Output */}
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
         <div>
           <div style={{ marginBottom: 8 }}>
             <label style={{ fontSize: 13, fontWeight: 600 }}>
-              {mode === 'json-to-toml' ? t.jsonInputLabel : t.tomlInputLabel}
+              {convertMode === 'toml-to-json' ? 'TOML Input' : 'JSON Input'}
             </label>
           </div>
           <textarea
-            value={input}
-            onChange={(e) => {
-              setInput(e.target.value);
-              setValidationStatus('');
-              setErrorMsg('');
-            }}
-            placeholder={mode === 'json-to-toml' ? t.jsonInputPlaceholder : t.tomlInputPlaceholder}
-            style={{
-              minHeight: 400,
-              fontFamily: 'monospace',
-              fontSize: 13,
-              padding: 12,
-              borderRadius: 6,
-              border: '1px solid var(--border-color)',
-              background: 'var(--bg-secondary)',
-              color: 'var(--text-primary)',
-              resize: 'vertical',
-            }}
+            value={tomlInput}
+            onChange={(e) => setTomlInput(e.target.value)}
+            placeholder={convertMode === 'toml-to-json' ? 'Paste TOML content...' : 'Paste JSON content...'}
+            style={{ minHeight: 350 }}
           />
         </div>
         <div>
-          <div style={{ marginBottom: 8, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
             <label style={{ fontSize: 13, fontWeight: 600 }}>
-              {mode === 'json-to-toml' ? t.tomlOutputLabel : t.jsonOutputLabel}
+              {convertMode === 'toml-to-json' ? 'JSON Output' : 'TOML Output'}
             </label>
-            {output && <CopyButton text={output} />}
+            {jsonOutput && <CopyButton text={jsonOutput} />}
           </div>
           <textarea
-            value={output}
+            value={jsonOutput}
             readOnly
-            placeholder={t.outputPlaceholder}
-            style={{
-              minHeight: 400,
-              fontFamily: 'monospace',
-              fontSize: 13,
-              padding: 12,
-              borderRadius: 6,
-              border: '1px solid var(--border-color)',
-              background: 'var(--bg-secondary)',
-              color: 'var(--text-primary)',
-              resize: 'vertical',
-              cursor: 'default',
-            }}
+            placeholder="Output will appear here..."
+            style={{ minHeight: 350, background: 'var(--bg-secondary)', cursor: 'default' }}
           />
         </div>
       </div>
 
       {/* SEO Content */}
-      <div
-        style={{
-          marginTop: 30,
-          paddingTop: 20,
-          borderTop: '1px solid var(--border-color)',
-        }}
-      >
-        <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>{t.seoTitle}</h2>
+      <div style={{ marginTop: 30, paddingTop: 20, borderTop: '1px solid var(--border-color)' }}>
+        <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>About TOML Editor</h2>
         <p style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-          {t.seoContent}
+          TOML (Tom's Obvious, Minimal Language) is a configuration file format that is easy to read and write. Our TOML editor allows you to parse, validate, and convert TOML to JSON and vice versa with full syntax error reporting.
         </p>
-        <h3 style={{ fontSize: 16, fontWeight: 600, marginTop: 16, marginBottom: 8 }}>
-          {t.seoFeaturesTitle}
-        </h3>
-        <ul
-          style={{
-            fontSize: 14,
-            color: 'var(--text-secondary)',
-            lineHeight: 1.8,
-            paddingLeft: 20,
-          }}
-        >
-          <li>{t.seoFeature1}</li>
-          <li>{t.seoFeature2}</li>
-          <li>{t.seoFeature3}</li>
-          <li>{t.seoFeature4}</li>
+        <h3 style={{ fontSize: 16, fontWeight: 600, marginTop: 16, marginBottom: 8 }}>Features</h3>
+        <ul style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.8, paddingLeft: 20 }}>
+          <li>Parse TOML and validate syntax with line number error reporting</li>
+          <li>Convert TOML to JSON format for easy processing</li>
+          <li>Convert JSON to TOML for configuration files</li>
+          <li>Support for sections, arrays, strings, numbers, booleans, and null values</li>
         </ul>
       </div>
     </ToolLayout>

@@ -4598,17 +4598,17 @@
       "seoFeature4": "Copiar código CSS"
     },
     "toml-editor": {
-      "name": "Editor y validador TOML",
-      "description": "Edite, valide y convierta archivos TOML en línea",
-      "pageTitle": "Editor y validador TOML en línea - Convertir TOML a JSON",
-      "pageDescription": "Editor TOML en línea gratuito con validación y conversión. Convierta entre TOML y JSON al instante.",
-      "seoTitle": "Acerca del editor TOML",
-      "seoContent": "TOML es un formato de archivo de configuración fácil de leer. Nuestro editor TOML en línea le ayuda a editar, validar y convertir archivos TOML.",
-      "seoFeaturesTitle": "Características principales",
-      "seoFeature1": "Validación de sintaxis TOML en tiempo real",
-      "seoFeature2": "Conversión instantánea TOML↔JSON",
-      "seoFeature3": "Soporte para tablas, arrays y tablas inline",
-      "seoFeature4": "Cargue un ejemplo Cargo.toml para comenzar"
+      "name": "TOML Editor",
+      "description": "TOML editor, validator and JSON converter",
+      "pageTitle": "TOML Editor & Validator Online",
+      "pageDescription": "Free online TOML editor and validator. Parse TOML, validate syntax, and convert between TOML and JSON.",
+      "seoTitle": "TOML Editor",
+      "seoContent": "TOML editor, validator and JSON converter",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Free online tool",
+      "seoFeature2": "No installation needed",
+      "seoFeature3": "Real-time preview",
+      "seoFeature4": "One-click copy"
     },
     "epoch-converter": {
       "name": "Convertidor de Epoch",
@@ -4837,16 +4837,16 @@
     },
     "json-to-sql": {
       "name": "JSON to SQL",
-      "description": "Convert JSON to SQL INSERT statements",
-      "pageTitle": "JSON to SQL Converter - Generate INSERT Statements Online",
-      "pageDescription": "Free online JSON to SQL converter. Generate INSERT statements for MySQL, PostgreSQL, and SQLite from JSON data with CREATE TABLE support.",
-      "seoTitle": "JSON to SQL Converter Online",
-      "seoContent": "Convert JSON data to SQL INSERT statements instantly. Supports MySQL, PostgreSQL, SQLite dialects with batch INSERT and CREATE TABLE generation.",
-      "seoFeaturesTitle": "Características",
-      "seoFeature1": "MySQL, PostgreSQL, SQLite dialect support",
-      "seoFeature2": "CREATE TABLE statement generation",
-      "seoFeature3": "Batch INSERT with multiple VALUES",
-      "seoFeature4": "Automatic type inference"
+      "description": "Convert JSON data to SQL INSERT statements",
+      "pageTitle": "JSON to SQL Converter Online - Generate INSERT Statements",
+      "pageDescription": "Free online JSON to SQL converter. Generate INSERT statements for MySQL, PostgreSQL, SQLite from JSON data.",
+      "seoTitle": "JSON to SQL",
+      "seoContent": "Convert JSON data to SQL INSERT statements",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Free online tool",
+      "seoFeature2": "No installation needed",
+      "seoFeature3": "Real-time preview",
+      "seoFeature4": "One-click copy"
     },
     "scss-to-css": {
       "name": "SCSS to CSS",
@@ -5261,6 +5261,45 @@
       "seoFeature1": "5 font styles",
       "seoFeature2": "Live preview",
       "seoFeature3": "Full alphanumeric support",
+      "seoFeature4": "One-click copy"
+    },
+    "css-shadow-generator": {
+      "name": "CSS Shadow Generator",
+      "description": "Visual box-shadow and text-shadow generator",
+      "pageTitle": "CSS Box Shadow Generator Online - Visual Shadow Tool",
+      "pageDescription": "Free online CSS shadow generator. Create box-shadow and text-shadow with visual controls, multiple layers, and presets.",
+      "seoTitle": "CSS Shadow Generator",
+      "seoContent": "Visual box-shadow and text-shadow generator",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Free online tool",
+      "seoFeature2": "No installation needed",
+      "seoFeature3": "Real-time preview",
+      "seoFeature4": "One-click copy"
+    },
+    "regex-visualizer": {
+      "name": "Regex Visualizer",
+      "description": "Visual regex tester with match highlighting",
+      "pageTitle": "Regex Visualizer Online - Pattern Tester & Debugger",
+      "pageDescription": "Free online regex visualizer. Test patterns with live highlighting, capture groups, and detailed explanations.",
+      "seoTitle": "Regex Visualizer",
+      "seoContent": "Visual regex tester with match highlighting",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Free online tool",
+      "seoFeature2": "No installation needed",
+      "seoFeature3": "Real-time preview",
+      "seoFeature4": "One-click copy"
+    },
+    "crontab-editor": {
+      "name": "Crontab Editor",
+      "description": "Visual crontab editor with next run times",
+      "pageTitle": "Crontab Editor Online - Visual Cron Expression Builder",
+      "pageDescription": "Free online crontab editor. Build cron expressions visually, see human-readable descriptions, and preview next execution times.",
+      "seoTitle": "Crontab Editor",
+      "seoContent": "Visual crontab editor with next run times",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Free online tool",
+      "seoFeature2": "No installation needed",
+      "seoFeature3": "Real-time preview",
       "seoFeature4": "One-click copy"
     }
   },
