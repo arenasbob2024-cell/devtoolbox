@@ -5005,6 +5005,71 @@
       "seoFeature2": "多个颜色停止点",
       "seoFeature3": "实时渐变预览",
       "seoFeature4": "预设渐变模板"
+    },
+    "json-to-scala": {
+      "name": "JSON 转 Scala",
+      "description": "将 JSON 转换为 Scala case class",
+      "pageTitle": "JSON 转 Scala 转换器",
+      "pageDescription": "免费在线 JSON 转 Scala 转换器。",
+      "seoTitle": "JSON 转 Scala",
+      "seoContent": "即时将 JSON 转换为 Scala case class。",
+      "seoFeaturesTitle": "功能",
+      "seoFeature1": "自动类型推断",
+      "seoFeature2": "PascalCase 命名",
+      "seoFeature3": "伴生对象生成",
+      "seoFeature4": "嵌套 case class"
+    },
+    "ascii-to-hex": {
+      "name": "ASCII 转十六进制",
+      "description": "ASCII 文本和十六进制互转",
+      "pageTitle": "ASCII 转十六进制转换器",
+      "pageDescription": "免费在线 ASCII 转十六进制转换器。",
+      "seoTitle": "ASCII 转十六进制",
+      "seoContent": "ASCII 文本和十六进制互转。",
+      "seoFeaturesTitle": "功能",
+      "seoFeature1": "双向转换",
+      "seoFeature2": "多种格式",
+      "seoFeature3": "前缀选项",
+      "seoFeature4": "字节计数"
+    },
+    "binary-to-text": {
+      "name": "二进制转文本",
+      "description": "二进制和文本互转",
+      "pageTitle": "二进制转文本转换器",
+      "pageDescription": "免费在线二进制转文本转换器。",
+      "seoTitle": "二进制转文本",
+      "seoContent": "二进制和文本之间的转换。",
+      "seoFeaturesTitle": "功能",
+      "seoFeature1": "8位二进制编码",
+      "seoFeature2": "自动检测输入",
+      "seoFeature3": "可配置分隔符",
+      "seoFeature4": "实时转换"
+    },
+    "html-preview": {
+      "name": "HTML 实时预览",
+      "description": "带实时预览的 HTML/CSS/JS 编辑器",
+      "pageTitle": "HTML 实时预览 - 在线 HTML 编辑器",
+      "pageDescription": "免费在线 HTML 编辑器，支持实时预览。",
+      "seoTitle": "HTML 实时预览编辑器",
+      "seoContent": "实时编写和预览 HTML、CSS 和 JavaScript 代码。",
+      "seoFeaturesTitle": "功能",
+      "seoFeature1": "实时预览更新",
+      "seoFeature2": "HTML/CSS/JS 标签页",
+      "seoFeature3": "全屏预览",
+      "seoFeature4": "示例代码模板"
+    },
+    "text-to-morse": {
+      "name": "文本转摩尔斯电码",
+      "description": "文本和摩尔斯电码互转",
+      "pageTitle": "文本转摩尔斯电码 - 在线摩尔斯电码翻译器",
+      "pageDescription": "免费在线摩尔斯电码转换器。支持音频播放。",
+      "seoTitle": "摩尔斯电码翻译器",
+      "seoContent": "文本和摩尔斯电码互转，支持音频播放。",
+      "seoFeaturesTitle": "功能",
+      "seoFeature1": "双向转换",
+      "seoFeature2": "Web Audio 音频播放",
+      "seoFeature3": "可调速度和频率",
+      "seoFeature4": "完整摩尔斯电码参考表"
     }
   },
   "footer": {

@@ -10757,6 +10757,71 @@
       "seoFeature2": "Multiple color stops with visual editing",
       "seoFeature3": "Live gradient preview",
       "seoFeature4": "Preset gradient templates"
+    },
+    "json-to-scala": {
+      "name": "JSON to Scala",
+      "description": "Convert JSON to Scala case classes",
+      "pageTitle": "JSON to Scala Converter - Generate Case Classes Online",
+      "pageDescription": "Free online JSON to Scala converter. Generate type-safe case classes from JSON data with proper type mapping.",
+      "seoTitle": "JSON to Scala Case Class Generator",
+      "seoContent": "Convert JSON data to Scala case classes instantly with automatic type inference and PascalCase naming.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Automatic type inference",
+      "seoFeature2": "PascalCase class names",
+      "seoFeature3": "Companion object generation",
+      "seoFeature4": "Nested case class support"
+    },
+    "ascii-to-hex": {
+      "name": "ASCII to Hex",
+      "description": "Convert between ASCII text and hex",
+      "pageTitle": "ASCII to Hex Converter - Convert Text to Hexadecimal Online",
+      "pageDescription": "Free online ASCII to hex converter. Convert text to hexadecimal with multiple format options.",
+      "seoTitle": "ASCII to Hex Converter",
+      "seoContent": "Convert ASCII text to hexadecimal and back with configurable separators and prefix options.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Bidirectional conversion",
+      "seoFeature2": "Multiple hex formats",
+      "seoFeature3": "0x and \\x prefix options",
+      "seoFeature4": "Byte count display"
+    },
+    "binary-to-text": {
+      "name": "Binary to Text",
+      "description": "Convert between binary and text",
+      "pageTitle": "Binary to Text Converter - Decode Binary Online",
+      "pageDescription": "Free online binary to text converter. Convert binary strings to readable text and text to binary.",
+      "seoTitle": "Binary to Text Converter",
+      "seoContent": "Convert binary to text and text to binary with 8-bit encoding support.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "8-bit binary encoding",
+      "seoFeature2": "Auto-detect input type",
+      "seoFeature3": "Configurable separators",
+      "seoFeature4": "Real-time conversion"
+    },
+    "html-preview": {
+      "name": "HTML Live Preview",
+      "description": "Live HTML/CSS/JS editor with preview",
+      "pageTitle": "HTML Live Preview - Online HTML Editor with Real-Time Preview",
+      "pageDescription": "Free online HTML editor with live preview. Write HTML, CSS, and JavaScript code and see results instantly.",
+      "seoTitle": "HTML Live Preview Editor",
+      "seoContent": "Write and preview HTML, CSS, and JavaScript code in real-time with our free online editor.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Real-time preview updates",
+      "seoFeature2": "HTML, CSS, and JavaScript tabs",
+      "seoFeature3": "Fullscreen preview mode",
+      "seoFeature4": "Sample code templates"
+    },
+    "text-to-morse": {
+      "name": "Text to Morse Code",
+      "description": "Convert text to Morse code and back",
+      "pageTitle": "Text to Morse Code Converter - Morse Code Translator Online",
+      "pageDescription": "Free online Morse code converter. Convert text to Morse code and Morse to text with audio playback.",
+      "seoTitle": "Morse Code Translator",
+      "seoContent": "Convert text to Morse code and decode Morse code to text with audio playback using Web Audio API.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Bidirectional text ↔ Morse conversion",
+      "seoFeature2": "Audio playback with Web Audio API",
+      "seoFeature3": "Adjustable speed and frequency",
+      "seoFeature4": "Complete Morse code reference table"
     }
   },
   "footer": {
