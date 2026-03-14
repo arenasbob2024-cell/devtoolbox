@@ -3608,7 +3608,7 @@ export const tools: Tool[] = [
     category: 'converter',
     keywords: ['image resizer', 'resize image online', 'image resize', 'photo resizer', 'resize picture', 'image dimensions', 'scale image', 'reduce image size', 'image scaler', 'resize photo online free', 'bulk image resizer', 'pixel resizer'],
     path: '/tools/image-resizer',
-    relatedTools: ['image-compressor', 'png-to-jpg', 'image-cropper', 'webp-converter'],
+    relatedTools: ['image-cropper', 'webp-converter', 'base64-image-converter', 'favicon-converter'],
   },
   {
     id: 'image-cropper',
@@ -3618,7 +3618,7 @@ export const tools: Tool[] = [
     category: 'converter',
     keywords: ['image cropper', 'crop image online', 'photo cropper', 'crop picture', 'image crop tool', 'cut image', 'trim image', 'crop photo online free', 'image cutter', 'crop jpg online', 'crop png online', 'free image cropper'],
     path: '/tools/image-cropper',
-    relatedTools: ['image-resizer', 'image-compressor', 'png-to-jpg', 'webp-converter'],
+    relatedTools: ['image-resizer', 'webp-converter', 'base64-image-converter', 'favicon-converter'],
   },
   {
     id: 'webp-converter',
@@ -3628,7 +3628,7 @@ export const tools: Tool[] = [
     category: 'converter',
     keywords: ['webp converter', 'webp to png', 'webp to jpg', 'png to webp', 'jpg to webp', 'convert webp', 'webp converter online', 'webp to jpeg', 'image to webp', 'webp image converter', 'free webp converter', 'webp format'],
     path: '/tools/webp-converter',
-    relatedTools: ['png-to-jpg', 'image-resizer', 'image-compressor', 'image-cropper'],
+    relatedTools: ['image-resizer', 'image-cropper', 'base64-image-converter', 'favicon-converter'],
   },
   {
     id: 'css-glassmorphism-generator',
@@ -3638,7 +3638,7 @@ export const tools: Tool[] = [
     category: 'css',
     keywords: ['glassmorphism', 'glassmorphism css', 'glassmorphism generator', 'glass effect css', 'frosted glass css', 'glassmorphism css generator', 'glass morphism', 'backdrop blur', 'css glass effect', 'transparent glass css', 'blur background css', 'frosted glass effect'],
     path: '/tools/css-glassmorphism-generator',
-    relatedTools: ['css-neumorphism-generator', 'css-gradient-generator', 'css-shadow-generator', 'css-filter-generator'],
+    relatedTools: ['css-neumorphism-generator', 'css-gradient-text', 'css-gradient-generator', 'css-shadow-generator'],
   },
   {
     id: 'css-neumorphism-generator',
@@ -3648,7 +3648,7 @@ export const tools: Tool[] = [
     category: 'css',
     keywords: ['neumorphism', 'neumorphism css', 'neumorphism generator', 'soft ui', 'neumorphic design', 'neumorphism css generator', 'neomorphism', 'soft shadow css', 'neumorphic ui', 'neumorphism shadow', 'soft ui generator', 'new morphism css'],
     path: '/tools/css-neumorphism-generator',
-    relatedTools: ['css-glassmorphism-generator', 'css-shadow-generator', 'css-gradient-generator', 'box-shadow'],
+    relatedTools: ['css-glassmorphism-generator', 'css-gradient-text', 'css-gradient-generator', 'css-shadow-generator'],
   },
   {
     id: 'aspect-ratio-calculator',
@@ -3658,7 +3658,7 @@ export const tools: Tool[] = [
     category: 'web',
     keywords: ['aspect ratio calculator', 'aspect ratio', 'image aspect ratio', 'video aspect ratio', 'screen ratio', '16:9 calculator', 'aspect ratio converter', 'calculate aspect ratio', 'ratio calculator', 'image ratio', 'display aspect ratio', 'pixel aspect ratio'],
     path: '/tools/aspect-ratio-calculator',
-    relatedTools: ['image-resizer', 'image-cropper', 'css-unit-converter', 'pixel-to-rem-converter'],
+    relatedTools: ['image-resizer', 'image-cropper', 'css-unit-converter', 'viewport-units-calculator'],
   },
   {
     id: 'sitemap-generator',
@@ -3668,7 +3668,7 @@ export const tools: Tool[] = [
     category: 'web',
     keywords: ['sitemap generator', 'xml sitemap', 'sitemap xml generator', 'create sitemap', 'sitemap builder', 'website sitemap', 'seo sitemap', 'sitemap creator', 'generate sitemap xml', 'sitemap tool', 'xml sitemap generator online', 'free sitemap generator'],
     path: '/tools/sitemap-generator',
-    relatedTools: ['robots-generator', 'meta-tag-generator', 'og-image-preview', 'url-parser'],
+    relatedTools: ['robots-txt-generator', 'meta-tag-generator', 'open-graph-generator', 'htaccess-generator'],
   },
   {
     id: 'html-to-text',
@@ -3678,7 +3678,7 @@ export const tools: Tool[] = [
     category: 'converter',
     keywords: ['html to text', 'strip html tags', 'html to plain text', 'remove html tags', 'html stripper', 'html to text converter', 'extract text from html', 'html tag remover', 'convert html to text', 'html cleaner', 'strip tags online', 'html to string'],
     path: '/tools/html-to-text',
-    relatedTools: ['html-entity', 'html-beautifier', 'html-minifier-online', 'html-to-markdown'],
+    relatedTools: ['html-entity-encoder', 'html-minifier', 'markdown-to-html', 'xml-formatter'],
   },
   {
     id: 'json-sorter',
@@ -3688,7 +3688,7 @@ export const tools: Tool[] = [
     category: 'formatter',
     keywords: ['json sorter', 'sort json keys', 'json key sorter', 'alphabetical json', 'order json keys', 'json sort', 'sort json online', 'json key order', 'organize json', 'json alphabetize', 'sort json alphabetically', 'json property sorter'],
     path: '/tools/json-sorter',
-    relatedTools: ['json-formatter', 'json-validator', 'json-beautifier', 'json-minifier'],
+    relatedTools: ['json-formatter', 'json-validator', 'json-to-yaml', 'json-to-typescript'],
   },
   {
     id: 'css-gradient-text',
@@ -3698,7 +3698,7 @@ export const tools: Tool[] = [
     category: 'css',
     keywords: ['gradient text css', 'css gradient text', 'text gradient generator', 'gradient text generator', 'css text gradient', 'colorful text css', 'rainbow text css', 'gradient font css', 'text color gradient', 'css gradient text generator', 'gradient heading css', 'text gradient effect'],
     path: '/tools/css-gradient-text',
-    relatedTools: ['css-gradient-generator', 'css-text-shadow-generator', 'css-glassmorphism-generator', 'color-gradient-generator'],
+    relatedTools: ['css-glassmorphism-generator', 'css-neumorphism-generator', 'css-gradient-generator', 'css-shadow-generator'],
   },
 ];
 

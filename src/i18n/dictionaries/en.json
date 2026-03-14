@@ -68,7 +68,7 @@
       "name": "JSON Formatter",
       "description": "Format, validate, and beautify JSON data with syntax highlighting",
       "pageTitle": "JSON Formatter & Validator Online – Free, Fast, No Signup",
-      "pageDescription": "Format, beautify, and validate JSON instantly. Syntax highlighting, error detection, and one-click copy. Paste messy JSON, get clean output in seconds.",
+      "pageDescription": "Format, beautify, and validate JSON instantly. Syntax highlighting, error detection, and one-click copy. Paste messy JSON, get clean output in seconds. Free, no signup required.",
       "formatBtn": "Format / Beautify",
       "inputLabel": "Input JSON",
       "outputLabel": "Output",
@@ -239,7 +239,7 @@
     "multi-hash-generator": {
       "name": "Multi Hash Generator",
       "description": "Generate MD5, SHA-1, SHA-256, SHA-384, SHA-512 hashes simultaneously from text or files",
-      "pageTitle": "Multi Hash Generator - MD5, SHA256, SHA512 & All Hash Types at Once",
+      "pageTitle": "Multi Hash Generator - Free Online MD5, SHA256, SHA512 & All Hash Types at Once",
       "pageDescription": "Generate ALL hashes simultaneously — MD5, SHA-1, SHA-256, SHA-384, SHA-512. Hash text or files instantly. Free online multi-hash calculator with file support.",
       "textMode": "Text Input",
       "fileMode": "File Input",
@@ -606,7 +606,7 @@
       "name": "Lorem Ipsum Generator",
       "description": "Generate placeholder text in paragraphs, sentences, or words",
       "pageTitle": "Lorem Ipsum Generator Online Free — Generate Placeholder Text",
-      "pageDescription": "Generate placeholder text in paragraphs, sentences, or words for design and development.",
+      "pageDescription": "Generate placeholder text in paragraphs, sentences, or words for design and development. Free, no signup required.",
       "paragraphs": "Paragraphs",
       "sentences": "Sentences",
       "startWithLorem": "Start with \"Lorem ipsum...\"",
@@ -647,7 +647,7 @@
       "name": "HTML Entity Encoder",
       "description": "Encode and decode HTML entities and special characters",
       "pageTitle": "HTML Entity Encoder / Decoder Online Free — Escape HTML Characters",
-      "pageDescription": "Encode special characters to HTML entities or decode entities back to characters.",
+      "pageDescription": "Encode special characters to HTML entities or decode entities back to characters. Free, no signup required.",
       "encodeSpecial": "Encode (special chars only)",
       "encodeAll": "Encode All (including Unicode)",
       "seoTitle": "About HTML Entities",
@@ -686,7 +686,7 @@
       "name": "CSS Minifier / Beautifier",
       "description": "Minify or beautify CSS code for production or readability",
       "pageTitle": "CSS Minifier & Beautifier Online Free — Compress or Format CSS",
-      "pageDescription": "Minify CSS for production or beautify it for readability. Removes comments and extra whitespace.",
+      "pageDescription": "Minify CSS for production or beautify it for readability. Removes comments and extra whitespace. Free, no signup required.",
       "inputCss": "Input CSS",
       "placeholder": "Paste your CSS here...",
       "seoTitle": "About CSS Minification",
@@ -1119,7 +1119,7 @@
       "name": "Cron Expression Parser",
       "description": "Parse and explain cron expressions with next run times",
       "pageTitle": "Cron Expression Parser & Generator – Free Online Tool",
-      "pageDescription": "Parse and generate cron expressions with a visual editor. See next 10 execution times, validate syntax, and build schedules. Supports standard 5-field cron format.",
+      "pageDescription": "Parse and generate cron expressions with a visual editor. See next 10 execution times, validate syntax, and build schedules. Supports standard 5-field cron format. Free, no signup required.",
       "cronExpression": "Cron Expression",
       "placeholder": "* * * * * (min hour day month weekday)",
       "minute": "Minute (0-59)",
@@ -1218,7 +1218,7 @@
       "name": "String Case Converter",
       "description": "Convert text between camelCase, snake_case, kebab-case, and more",
       "pageTitle": "String Case Converter Online Free — camelCase, snake_case, UPPER",
-      "pageDescription": "Convert text between camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE, and more naming conventions.",
+      "pageDescription": "Convert text between camelCase, PascalCase, snake_case, kebab-case, CONSTANT_CASE, and more naming conventions. Free, no signup required.",
       "inputLabel": "Input Text",
       "inputPlaceholder": "Enter text, variable name, or sentence...\n\ne.g. my variable name",
       "seoTitle": "About Naming Conventions",
@@ -1256,7 +1256,7 @@
       "name": "URL Slug Generator",
       "description": "Convert text to SEO-friendly URL slugs",
       "pageTitle": "URL Slug Generator Online Free — Create SEO-Friendly URL Slugs",
-      "pageDescription": "Convert any text to clean, SEO-friendly URL slugs. Customizable separators, stop word removal, and length limits.",
+      "pageDescription": "Convert any text to clean, SEO-friendly URL slugs. Customizable separators, stop word removal, and length limits. Free, no signup required.",
       "inputLabel": "Input Text",
       "inputPlaceholder": "Enter a title or text to convert to a slug...",
       "resultLabel": "Generated Slug",
@@ -1302,7 +1302,7 @@
       "name": "Chmod Calculator",
       "description": "Calculate Linux file permissions with interactive checkboxes",
       "pageTitle": "Linux Chmod Calculator Online Free — File Permission Calculator",
-      "pageDescription": "Interactive chmod permission calculator. Convert between numeric (755) and symbolic (rwxr-xr-x) Linux file permissions.",
+      "pageDescription": "Interactive chmod permission calculator. Convert between numeric (755) and symbolic (rwxr-xr-x) Linux file permissions. Free, no signup required.",
       "numericLabel": "Numeric",
       "symbolicLabel": "Symbolic",
       "commandLabel": "Command",
@@ -1469,7 +1469,7 @@
       "name": "JS/HTML Formatter",
       "description": "Minify or beautify JavaScript and HTML code",
       "pageTitle": "JavaScript & HTML Minifier / Beautifier Online Free — Compress JS & HTML",
-      "pageDescription": "Minify or beautify JavaScript and HTML code online. Remove comments, compress whitespace, or format for readability.",
+      "pageDescription": "Minify or beautify JavaScript and HTML code online. Remove comments, compress whitespace, or format for readability. Free, no signup required.",
       "inputLabel": "Input Code",
       "jsPlaceholder": "Paste your JavaScript code here...",
       "htmlPlaceholder": "Paste your HTML code here...",
@@ -1509,7 +1509,7 @@
       "name": "Image Base64 Converter",
       "description": "Convert images to Base64 strings and data URIs with drag & drop",
       "pageTitle": "Image to Base64 Converter Online Free — Convert PNG, JPG to Data URI",
-      "pageDescription": "Convert images to Base64 encoded strings and data URIs. Supports PNG, JPG, GIF, SVG, WebP. Drag & drop upload.",
+      "pageDescription": "Convert images to Base64 encoded strings and data URIs. Supports PNG, JPG, GIF, SVG, WebP. Drag & drop upload. Free, no signup required.",
       "encodeTab": "Image → Base64",
       "decodeTab": "Base64 → Image",
       "dropText": "Drop an image here or click to select",
@@ -1558,7 +1558,7 @@
     "git-command-generator": {
       "name": "Git Command Generator",
       "description": "Searchable Git cheat sheet with 90+ commands",
-      "pageTitle": "Git Cheat Sheet & Command Generator Online",
+      "pageTitle": "Git Cheat Sheet & Command Generator Online – Free Online Tool",
       "pageDescription": "Free online Git cheat sheet with 90+ commands, examples, and common flags. Search by keyword or browse by category.",
       "search": "Search commands...",
       "allCategories": "All",
@@ -1651,7 +1651,7 @@
       "name": "HTTP Status Code Reference",
       "description": "Lookup HTTP status codes with meanings and use cases",
       "pageTitle": "HTTP Status Code Reference Online Free — 1xx to 5xx Lookup",
-      "pageDescription": "Lookup HTTP status codes: 1xx, 2xx, 3xx, 4xx, 5xx with descriptions and when to use them.",
+      "pageDescription": "Lookup HTTP status codes: 1xx, 2xx, 3xx, 4xx, 5xx with descriptions and when to use them. Free, no signup required.",
       "seoTitle": "About HTTP Status Codes",
       "seoContent": "HTTP status codes are three-digit numbers returned by servers to indicate the result of a client request. They are grouped into five classes: 1xx (informational), 2xx (success), 3xx (redirection), 4xx (client errors), and 5xx (server errors). Understanding these codes is essential for API development, debugging network issues, and building robust web applications. This reference tool lets you quickly look up any status code, understand its meaning, and learn when to use it in your own APIs. It covers all standard codes defined in RFC 7231 and common extensions.",
       "faqTitle": "Frequently Asked Questions",
@@ -1688,7 +1688,7 @@
       "name": "MIME Type Lookup",
       "description": "Find MIME types by file extension or content type",
       "pageTitle": "MIME Type Lookup Online Free — Find Content-Type for Any File",
-      "pageDescription": "Find MIME types by file extension. Browse common content types for web development.",
+      "pageDescription": "Find MIME types by file extension. Browse common content types for web development. Free, no signup required.",
       "seoTitle": "About MIME Types",
       "seoContent": "MIME types (Multipurpose Internet Mail Extensions) define the nature and format of a document or file. Web servers use MIME types in Content-Type headers to tell browsers how to handle files. Getting the MIME type wrong can cause browsers to download files instead of displaying them, or break file uploads. This tool lets you look up the correct MIME type for any file extension, or find which extensions correspond to a given content type. It includes hundreds of MIME types covering images, audio, video, documents, fonts, and application-specific formats.",
       "faqTitle": "Frequently Asked Questions",
@@ -1725,7 +1725,7 @@
       "name": "Escape / Unescape",
       "description": "Escape or unescape HTML, JavaScript, and JSON strings",
       "pageTitle": "Escape / Unescape Tool Online Free — JSON, HTML, URL, SQL Escape",
-      "pageDescription": "Escape special characters for HTML, JavaScript, or JSON. Unescape encoded strings.",
+      "pageDescription": "Escape special characters for HTML, JavaScript, or JSON. Unescape encoded strings. Free, no signup required.",
       "seoTitle": "About Escaping and Unescaping",
       "seoContent": "Character escaping converts special characters into safe representations to prevent injection attacks and parsing errors. HTML escaping converts characters like < > & into entities (&lt; &gt; &amp;). JavaScript escaping handles quotes and backslashes in strings. JSON escaping ensures strings are valid within JSON documents. This tool supports all three escaping modes and their reverse operations. It is essential for security-conscious developers who need to sanitize user input, build safe HTML output, or debug encoded strings in logs and API responses.",
       "faqTitle": "Frequently Asked Questions",
@@ -1762,7 +1762,7 @@
       "name": "IP Subnet Calculator",
       "description": "Calculate subnet mask, network, broadcast, and host range",
       "pageTitle": "IP Subnet Calculator Online Free — CIDR, Netmask & Subnetting",
-      "pageDescription": "Calculate subnet mask, network address, broadcast address, and host range from IP and CIDR.",
+      "pageDescription": "Calculate subnet mask, network address, broadcast address, and host range from IP and CIDR. Free, no signup required.",
       "seoTitle": "About IP Subnetting",
       "seoContent": "IP subnetting divides a network into smaller subnetworks to improve performance and security. Understanding subnets is critical for network administrators, DevOps engineers, and anyone configuring cloud infrastructure. This calculator takes an IP address with a CIDR prefix (e.g., 192.168.1.0/24) and instantly computes the subnet mask, network address, broadcast address, first and last usable host, and total number of hosts. It supports both IPv4 addresses and various CIDR notations from /8 to /30. All calculations are done locally in your browser.",
       "faqTitle": "Frequently Asked Questions",
@@ -1799,7 +1799,7 @@
       "name": "Fake Data Generator",
       "description": "Generate fake names, emails, addresses for testing",
       "pageTitle": "Fake Data Generator Online Free — Names, Emails, Addresses, JSON",
-      "pageDescription": "Generate fake names, emails, phone numbers, and addresses for testing and development.",
+      "pageDescription": "Generate fake names, emails, phone numbers, and addresses for testing and development. Free, no signup required.",
       "seoTitle": "About Fake Data Generation",
       "seoContent": "Generating realistic test data is essential for software development, QA testing, and database seeding. Using real personal data for testing creates privacy risks and compliance issues with regulations like GDPR. This tool generates fake but realistic names, email addresses, phone numbers, physical addresses, and other data types. All data is generated randomly in your browser using established patterns — no real personal information is used. You can generate single records or bulk data sets, and copy the results in various formats for use in your applications.",
       "faqTitle": "Frequently Asked Questions",
@@ -1836,7 +1836,7 @@
       "name": "HMAC Generator",
       "description": "Generate HMAC-SHA256, HMAC-SHA1 from message and secret key",
       "pageTitle": "HMAC Generator Online Free — SHA-256, SHA-512 HMAC Calculator",
-      "pageDescription": "Generate HMAC signatures with SHA-256 or SHA-1 for API verification and webhooks.",
+      "pageDescription": "Generate HMAC signatures with SHA-256 or SHA-1 for API verification and webhooks. Free, no signup required.",
       "seoTitle": "About HMAC Signatures",
       "seoContent": "HMAC (Hash-based Message Authentication Code) combines a cryptographic hash function with a secret key to verify both data integrity and authenticity. Unlike simple hashing, HMAC requires the secret key to generate and verify signatures, making it resistant to tampering. HMAC-SHA256 is the most commonly used variant and is required by many APIs and webhook systems (Stripe, GitHub, Shopify). This tool generates HMAC signatures using SHA-1, SHA-256, or SHA-512 algorithms. Enter your message and secret key, and get the signature in hexadecimal or Base64 format. All computation happens locally.",
       "faqTitle": "Frequently Asked Questions",
@@ -1873,7 +1873,7 @@
       "name": "URL Parser",
       "description": "Parse URL into components: protocol, host, path, query params",
       "pageTitle": "URL Parser Online Free — Extract Protocol, Host, Path, Params",
-      "pageDescription": "Parse URLs into protocol, host, pathname, query parameters, and hash. Extract URL components.",
+      "pageDescription": "Parse URLs into protocol, host, pathname, query parameters, and hash. Extract URL components. Free, no signup required.",
       "seoTitle": "About URL Parsing",
       "seoContent": "URLs (Uniform Resource Locators) contain multiple components: protocol (https), hostname, port, pathname, query parameters, and fragment hash. Understanding URL structure is essential for web development, API design, and debugging network requests. This tool breaks any URL into its individual components for easy inspection. It decodes percent-encoded characters, parses query strings into key-value pairs, and validates URL format. Useful for debugging redirect chains, analyzing tracking parameters, and understanding complex API endpoints.",
       "faqTitle": "Frequently Asked Questions",
@@ -2021,7 +2021,7 @@
       "name": "Bcrypt Hash Generator",
       "description": "Generate bcrypt password hashes with configurable cost",
       "pageTitle": "Bcrypt Hash Generator Online Free — Hash & Verify Passwords",
-      "pageDescription": "Generate bcrypt password hashes with configurable cost factor for secure password storage.",
+      "pageDescription": "Generate bcrypt password hashes with configurable cost factor for secure password storage. Free, no signup required.",
       "seoTitle": "About Bcrypt Hashing",
       "seoContent": "Bcrypt is a password hashing function designed to be slow and computationally expensive, making brute-force attacks impractical. Unlike fast hashes like MD5 or SHA-256, bcrypt incorporates a configurable cost factor that controls how many iterations are performed. Each increase in cost doubles the computation time. Bcrypt also automatically generates and embeds a random salt, preventing rainbow table attacks. This tool generates bcrypt hashes from passwords with your chosen cost factor (typically 10-12 for web applications). It can also verify if a password matches a given bcrypt hash. All processing happens locally.",
       "faqTitle": "Frequently Asked Questions",
@@ -2499,7 +2499,7 @@
     "json-to-python": {
       "name": "JSON to Python",
       "description": "Convert JSON to Python dataclass, TypedDict, or Pydantic model",
-      "pageTitle": "JSON to Python Converter Online - Dataclass & Pydantic Generator",
+      "pageTitle": "JSON to Python Converter Online - Free Dataclass & Pydantic Generator",
       "pageDescription": "Free online JSON to Python converter. Generate Python dataclasses, TypedDict, or Pydantic models from JSON data instantly.",
       "convertBtn": "Convert",
       "structName": "Class Name",
@@ -2726,7 +2726,7 @@
       "name": "JSON to JSON Schema",
       "description": "Convert JSON to JSON Schema — generate schema from JSON instantly",
       "pageTitle": "JSON to JSON Schema Generator – Free Online Tool",
-      "pageDescription": "Instantly generate JSON Schema from any JSON data. Auto-detects types, required fields, nested objects and arrays. Supports Draft 2020-12. Paste JSON, get schema in seconds.",
+      "pageDescription": "Instantly generate JSON Schema from any JSON data. Auto-detects types, required fields, nested objects and arrays. Supports Draft 2020-12. Paste JSON, get schema in seconds. Free, no signup required.",
       "seoTitle": "About JSON to JSON Schema Conversion",
       "seoContent": "JSON Schema is a vocabulary for annotating and validating JSON documents. It's widely used for API documentation (OpenAPI/Swagger), form generation, configuration validation, and data interchange. This tool analyzes your JSON data and generates a JSON Schema (draft-07) that describes its structure. It correctly identifies types, marks all existing fields as required, handles arrays with item schemas, and creates nested schemas for objects. The output can be used with any JSON Schema validator or integrated into OpenAPI specifications. All processing happens in your browser.",
       "faqTitle": "Frequently Asked Questions",
@@ -2945,7 +2945,7 @@
       "name": "CSS Gradient Generator",
       "description": "Create beautiful CSS gradients with a visual editor",
       "pageTitle": "CSS Gradient Generator Online Free — Linear & Radial Gradients",
-      "pageDescription": "Create beautiful CSS linear, radial, and conic gradients with a visual editor. Copy CSS code instantly.",
+      "pageDescription": "Create beautiful CSS linear, radial, and conic gradients with a visual editor. Copy CSS code instantly. Free, no signup required.",
       "seoTitle": "What is CSS Gradient Generator?",
       "seoContent": "CSS gradients let you display smooth transitions between two or more colors. This visual generator helps you create linear-gradient, radial-gradient, and conic-gradient CSS code with an interactive editor.",
       "howToUseTitle": "How to Use",
@@ -2983,7 +2983,7 @@
       "name": "Box Shadow Generator",
       "description": "Design CSS box shadows visually with real-time preview",
       "pageTitle": "CSS Box Shadow Generator Online Free — Visual Shadow Builder",
-      "pageDescription": "Design CSS box shadows visually with controls for offset, blur, spread, color, and inset. Copy CSS code instantly.",
+      "pageDescription": "Design CSS box shadows visually with controls for offset, blur, spread, color, and inset. Copy CSS code instantly. Free, no signup required.",
       "seoTitle": "What is CSS Box Shadow Generator?",
       "seoContent": "The CSS box-shadow property adds shadow effects around elements. This visual generator lets you adjust offset, blur, spread, color, and inset with real-time preview.",
       "howToUseTitle": "How to Use",
@@ -3021,7 +3021,7 @@
       "name": "Meta Tag Generator",
       "description": "Generate HTML meta tags, Open Graph, and Twitter Card tags for SEO",
       "pageTitle": "Meta Tag Generator Online Free — SEO & Open Graph Tags",
-      "pageDescription": "Generate HTML meta tags, Open Graph tags, and Twitter Card tags for better SEO and social media sharing.",
+      "pageDescription": "Generate HTML meta tags, Open Graph tags, and Twitter Card tags for better SEO and social media sharing. Free, no signup required.",
       "seoTitle": "What is Meta Tag Generator?",
       "seoContent": "Meta tags help search engines understand your content and control how your page appears in search results and social media.",
       "howToUseTitle": "How to Use",
@@ -3059,7 +3059,7 @@
       "name": "Schema Markup Generator",
       "description": "Generate JSON-LD structured data for rich snippets in search results",
       "pageTitle": "Schema Markup Generator Online Free — JSON-LD Structured Data",
-      "pageDescription": "Generate JSON-LD structured data for Article, FAQ, HowTo, Product, and more. Boost SEO with rich snippets.",
+      "pageDescription": "Generate JSON-LD structured data for Article, FAQ, HowTo, Product, and more. Boost SEO with rich snippets. Free, no signup required.",
       "seoTitle": "What is Schema Markup?",
       "seoContent": "Schema markup helps search engines understand your content and display rich results like FAQ dropdowns and product ratings.",
       "howToUseTitle": "How to Use",
@@ -3097,7 +3097,7 @@
       "name": "Robots.txt Generator",
       "description": "Generate robots.txt files with crawler rules and sitemap directives",
       "pageTitle": "Robots.txt Generator Online Free — Create & Validate robots.txt",
-      "pageDescription": "Generate robots.txt files with user-agent rules, allow/disallow paths, and sitemap directives.",
+      "pageDescription": "Generate robots.txt files with user-agent rules, allow/disallow paths, and sitemap directives. Free, no signup required.",
       "seoTitle": "What is Robots.txt?",
       "seoContent": "The robots.txt file tells search engine crawlers which pages they can or cannot access on your site.",
       "howToUseTitle": "How to Use",
@@ -3135,7 +3135,7 @@
       "name": "JSON Viewer / Tree",
       "description": "View JSON data as an interactive collapsible tree",
       "pageTitle": "JSON Viewer & Tree Visualizer Online Free — Explore JSON Data",
-      "pageDescription": "View and explore JSON data as an interactive collapsible tree with search and JSONPath display.",
+      "pageDescription": "View and explore JSON data as an interactive collapsible tree with search and JSONPath display. Free, no signup required.",
       "seoTitle": "What is JSON Viewer?",
       "seoContent": "JSON Viewer displays JSON data in a visual tree structure for easy exploration of complex nested data.",
       "howToUseTitle": "How to Use",
@@ -3173,7 +3173,7 @@
       "name": "Favicon Generator",
       "description": "Create favicons from text or emoji with custom colors and sizes",
       "pageTitle": "Favicon Generator Online Free — Create ICO, PNG Favicons",
-      "pageDescription": "Create favicons from text or emoji with custom colors, sizes, and border radius. Download as PNG.",
+      "pageDescription": "Create favicons from text or emoji with custom colors, sizes, and border radius. Download as PNG. Free, no signup required.",
       "seoTitle": "What is Favicon Generator?",
       "seoContent": "A favicon is the small icon in browser tabs. This tool generates favicons from text or emoji with customizable colors and sizes.",
       "howToUseTitle": "How to Use",
@@ -3211,7 +3211,7 @@
       "name": "ASCII Art Generator",
       "description": "Convert text to ASCII art with multiple font styles",
       "pageTitle": "ASCII Art Generator Online Free — Convert Text to ASCII Art",
-      "pageDescription": "Convert text to ASCII art with multiple font styles for terminals, comments, and README files.",
+      "pageDescription": "Convert text to ASCII art with multiple font styles for terminals, comments, and README files. Free, no signup required.",
       "seoTitle": "What is ASCII Art?",
       "seoContent": "ASCII art uses printable characters to create visual designs and text banners for terminals, code comments, and README headers.",
       "howToUseTitle": "How to Use",
@@ -3248,7 +3248,7 @@
       "name": "SVG Optimizer",
       "description": "Optimize and minify SVG files to reduce file size",
       "pageTitle": "SVG Optimizer & Minifier Online Free — Reduce SVG File Size",
-      "pageDescription": "Optimize and minify SVG files online. Remove metadata, comments, and unnecessary attributes.",
+      "pageDescription": "Optimize and minify SVG files online. Remove metadata, comments, and unnecessary attributes. Free, no signup required.",
       "seoTitle": "What is SVG Optimizer?",
       "seoContent": "SVG files often contain unnecessary metadata and attributes. This optimizer cleans SVG files, typically reducing size by 20-60%.",
       "howToUseTitle": "How to Use",
@@ -3286,7 +3286,7 @@
       "name": "Placeholder Image Generator",
       "description": "Generate placeholder images with custom dimensions, colors, and text",
       "pageTitle": "Placeholder Image Generator Online Free — Custom Size & Color",
-      "pageDescription": "Generate placeholder images with custom dimensions, colors, and text. Download as PNG or Data URI.",
+      "pageDescription": "Generate placeholder images with custom dimensions, colors, and text. Download as PNG or Data URI. Free, no signup required.",
       "seoTitle": "What is Placeholder Image?",
       "seoContent": "Placeholder images are used during development to represent future content. Generate custom images with specified dimensions and colors.",
       "howToUseTitle": "How to Use",
@@ -3323,8 +3323,8 @@
     "color-palette": {
       "name": "Color Palette Generator",
       "description": "Generate harmonious color palettes from any base color",
-      "pageTitle": "Color Palette Generator — Complementary, Analogous, Triadic",
-      "pageDescription": "Generate beautiful color palettes with complementary, analogous, triadic, and tetradic color schemes. Export as HEX, RGB, or HSL.",
+      "pageTitle": "Color Palette Generator — Complementary, Analogous, Triadic – Free Online Tool",
+      "pageDescription": "Generate beautiful color palettes with complementary, analogous, triadic, and tetradic color schemes. Export as HEX, RGB, or HSL. Free, no signup required.",
       "seoTitle": "What is a Color Palette Generator?",
       "seoContent": "A color palette generator creates harmonious color schemes based on color theory. Input a base color and get complementary, analogous, triadic, and tetradic palettes instantly.",
       "howToUseTitle": "How to Use",
@@ -3357,8 +3357,8 @@
     "flexbox-generator": {
       "name": "Flexbox Generator",
       "description": "Visual Flexbox layout builder with live preview",
-      "pageTitle": "CSS Flexbox Generator — Visual Layout Builder",
-      "pageDescription": "Build CSS Flexbox layouts visually. Configure direction, justify-content, align-items, wrap, and gap with real-time preview and code output.",
+      "pageTitle": "CSS Flexbox Generator — Visual Layout Builder – Free Online Tool",
+      "pageDescription": "Build CSS Flexbox layouts visually. Configure direction, justify-content, align-items, wrap, and gap with real-time preview and code output. Free, no signup required.",
       "seoTitle": "What is a Flexbox Generator?",
       "seoContent": "A Flexbox generator lets you visually configure CSS Flexbox container properties like direction, justify-content, align-items, and gap. See the layout update in real-time and copy the CSS code.",
       "howToUseTitle": "How to Use",
@@ -3391,8 +3391,8 @@
     "emoji-picker": {
       "name": "Emoji Picker & Search",
       "description": "Browse and search emojis, copy Unicode and HTML entities",
-      "pageTitle": "Emoji Picker & Search — Copy Unicode, HTML Entity, CSS",
-      "pageDescription": "Browse emojis by category, search by name, and copy Unicode code points, HTML entities, and CSS escapes with one click.",
+      "pageTitle": "Emoji Picker & Search — Copy Unicode, HTML Entity, CSS – Free Online Tool",
+      "pageDescription": "Browse emojis by category, search by name, and copy Unicode code points, HTML entities, and CSS escapes with one click. Free, no signup required.",
       "seoTitle": "What is an Emoji Picker?",
       "seoContent": "An emoji picker lets you browse and search emojis by category or keyword. Click any emoji to see its Unicode code point, HTML entity, and CSS escape, then copy with one click.",
       "howToUseTitle": "How to Use",
@@ -3429,8 +3429,8 @@
     "border-radius": {
       "name": "Border Radius Generator",
       "description": "Design CSS border-radius with independent corner control",
-      "pageTitle": "CSS Border Radius Generator — Visual Corner Editor",
-      "pageDescription": "Design CSS border-radius with independent control for each corner. Live preview, presets, and instant CSS code output.",
+      "pageTitle": "CSS Border Radius Generator — Visual Corner Editor – Free Online Tool",
+      "pageDescription": "Design CSS border-radius with independent control for each corner. Live preview, presets, and instant CSS code output. Free, no signup required.",
       "seoTitle": "What is a Border Radius Generator?",
       "seoContent": "A CSS border-radius generator lets you visually design rounded corners for HTML elements. Control each corner independently and copy the CSS code.",
       "howToUseTitle": "How to Use",
@@ -3463,7 +3463,7 @@
     "css-unit-converter": {
       "name": "CSS Unit Converter",
       "description": "Convert between CSS units like px, rem, em, vw, vh",
-      "pageTitle": "CSS Unit Converter Online - px to rem, em, vw Calculator",
+      "pageTitle": "CSS Unit Converter Online - Free px to rem, em, vw Calculator",
       "pageDescription": "Free online CSS unit converter. Convert between px, rem, em, vw, vh, pt, cm, mm and more with configurable base font size.",
       "baseFontSize": "Base Font Size",
       "viewportWidth": "Viewport Width",
@@ -3482,8 +3482,8 @@
     "og-image-preview": {
       "name": "Open Graph Image Preview",
       "description": "Preview how your page looks when shared on social media",
-      "pageTitle": "Open Graph Image Preview — Social Share Card Tester",
-      "pageDescription": "Preview how your page looks when shared on Facebook, Twitter/X, LinkedIn, and Discord. Generate og:tags and twitter:card meta tags.",
+      "pageTitle": "Open Graph Image Preview — Social Share Card Tester – Free Online Tool",
+      "pageDescription": "Preview how your page looks when shared on Facebook, Twitter/X, LinkedIn, and Discord. Generate og:tags and twitter:card meta tags. Free, no signup required.",
       "seoTitle": "What is Open Graph Preview?",
       "seoContent": "Open Graph tags control how your page appears when shared on social media. This tool previews your share cards on Facebook, Twitter, LinkedIn, and Discord.",
       "howToUseTitle": "How to Use",
@@ -3515,8 +3515,8 @@
     "tailwind-colors": {
       "name": "Tailwind CSS Color Picker",
       "description": "Browse the full Tailwind CSS color palette",
-      "pageTitle": "Tailwind CSS Color Picker — Full Palette Browser",
-      "pageDescription": "Browse all Tailwind CSS v3 colors. Search by name or hex, copy class names, HEX, RGB, and HSL values instantly.",
+      "pageTitle": "Tailwind CSS Color Picker — Full Palette Browser – Free Online Tool",
+      "pageDescription": "Browse all Tailwind CSS v3 colors. Search by name or hex, copy class names, HEX, RGB, and HSL values instantly. Free, no signup required.",
       "seoTitle": "What is the Tailwind CSS Color Picker?",
       "seoContent": "Browse the complete Tailwind CSS color palette with all 22 color groups and shades from 50 to 950. Search, preview, and copy color values in any format.",
       "howToUseTitle": "How to Use",
@@ -3548,8 +3548,8 @@
     "yaml-validator": {
       "name": "YAML Validator & Formatter",
       "description": "Validate and format YAML with error highlighting",
-      "pageTitle": "YAML Validator & Formatter — Lint and Beautify YAML",
-      "pageDescription": "Validate YAML syntax, highlight errors with line numbers, and auto-format for readability. Supports Kubernetes, Docker Compose, and GitHub Actions.",
+      "pageTitle": "YAML Validator & Formatter — Lint and Beautify YAML – Free Online Tool",
+      "pageDescription": "Validate YAML syntax, highlight errors with line numbers, and auto-format for readability. Supports Kubernetes, Docker Compose, and GitHub Actions. Free, no signup required.",
       "seoTitle": "What is a YAML Validator?",
       "seoContent": "A YAML validator checks your YAML files for syntax errors, indentation issues, and formatting problems. Essential for DevOps and configuration management.",
       "howToUseTitle": "How to Use",
@@ -3581,8 +3581,8 @@
     "gitignore-generator": {
       "name": ".gitignore Generator",
       "description": "Generate .gitignore files for any language, framework, or IDE",
-      "pageTitle": ".gitignore Generator — Templates for Every Stack",
-      "pageDescription": "Generate .gitignore files for Node.js, Python, Java, Go, React, Vue, VS Code, IntelliJ, macOS, and 100+ more templates.",
+      "pageTitle": ".gitignore Generator — Templates for Every Stack – Free Online Tool",
+      "pageDescription": "Generate .gitignore files for Node.js, Python, Java, Go, React, Vue, VS Code, IntelliJ, macOS, and 100+ more templates. Free, no signup required.",
       "seoTitle": "What is a .gitignore Generator?",
       "seoContent": "A .gitignore generator creates customized .gitignore files by combining templates for your programming language, framework, IDE, and operating system.",
       "howToUseTitle": "How to Use",
@@ -3614,7 +3614,7 @@
     "json-to-dart": {
       "name": "JSON to Dart",
       "description": "Convert JSON to Dart/Flutter classes",
-      "pageTitle": "JSON to Dart Converter Online - Flutter Class Generator",
+      "pageTitle": "JSON to Dart Converter Online - Free Flutter Class Generator",
       "pageDescription": "Free online JSON to Dart converter. Generate Flutter class definitions with fromJson/toJson methods.",
       "seoTitle": "JSON to Dart",
       "seoContent": "Convert JSON to Dart/Flutter classes",
@@ -3660,7 +3660,7 @@
     "htaccess-generator": {
       "name": ".htaccess Generator",
       "description": "Generate Apache .htaccess rules",
-      "pageTitle": ".htaccess Generator Online - Apache Config Builder",
+      "pageTitle": ".htaccess Generator Online - Free Apache Config Builder",
       "pageDescription": "Free online .htaccess generator. Create redirects, rewrites, force HTTPS, caching rules and more.",
       "seoTitle": ".htaccess Generator",
       "seoContent": "Generate Apache .htaccess rules",
@@ -3673,7 +3673,7 @@
     "docker-compose-generator": {
       "name": "Docker Compose Generator",
       "description": "Visual docker-compose.yml builder",
-      "pageTitle": "Docker Compose Generator Online - Visual YAML Builder",
+      "pageTitle": "Docker Compose Generator Online - Free Visual YAML Builder",
       "pageDescription": "Free online Docker Compose file generator. Create docker-compose.yml with templates for MySQL, Redis, PostgreSQL.",
       "seoTitle": "Docker Compose Generator",
       "seoContent": "Visual docker-compose.yml builder",
@@ -3686,7 +3686,7 @@
     "json-to-protobuf": {
       "name": "JSON to Protobuf",
       "description": "Convert JSON to protobuf",
-      "pageTitle": "JSON to Protobuf Converter Online",
+      "pageTitle": "JSON to Protobuf Converter Online – Free Online Tool",
       "pageDescription": "Free online JSON to Protocol Buffers converter. Generate .proto message definitions from JSON.",
       "seoTitle": "JSON to Protobuf",
       "seoContent": "Convert JSON to protobuf",
@@ -3700,7 +3700,7 @@
       "name": "Content Security Policy Generator",
       "description": "Generate CSP headers with directives and sources for web security",
       "pageTitle": "CSP Generator - Content Security Policy Header Builder Online Free",
-      "pageDescription": "Generate Content Security Policy (CSP) headers with directives and sources. Create script-src, style-src, img-src rules. Download as header or meta tag.",
+      "pageDescription": "Generate Content Security Policy (CSP) headers with directives and sources. Create script-src, style-src, img-src rules. Download as header or meta tag. Free, no signup required.",
       "validateBtn": "Update Preview",
       "seoTitle": "CSP Generator",
       "seoContent": "The Content Security Policy (CSP) Generator helps you create security headers to prevent cross-site scripting (XSS) and data injection attacks. Configure directives for scripts, styles, images, fonts, and more.",
@@ -3713,8 +3713,8 @@
     "sql-to-prisma": {
       "name": "SQL to Prisma Schema",
       "description": "Convert SQL CREATE TABLE to Prisma schema models",
-      "pageTitle": "SQL to Prisma Schema Converter — Generate Prisma Models",
-      "pageDescription": "Convert SQL CREATE TABLE statements to Prisma schema models with proper types, relations, indexes, and default values. Supports MySQL and PostgreSQL.",
+      "pageTitle": "SQL to Prisma Schema Converter — Generate Prisma Models – Free Online Tool",
+      "pageDescription": "Convert SQL CREATE TABLE statements to Prisma schema models with proper types, relations, indexes, and default values. Supports MySQL and PostgreSQL. Free, no signup required.",
       "seoTitle": "What is SQL to Prisma?",
       "seoContent": "SQL to Prisma converts existing SQL database schemas into Prisma schema format, making it easy to adopt Prisma ORM in TypeScript/Node.js projects.",
       "howToUseTitle": "How to Use",
@@ -3746,7 +3746,7 @@
     "cron-generator": {
       "name": "Cron Expression Generator",
       "description": "Build, validate, and understand cron expressions with a visual editor",
-      "pageTitle": "Cron Expression Generator - Build & Validate Cron Schedules Online",
+      "pageTitle": "Cron Expression Generator - Free Build & Validate Cron Schedules Online",
       "pageDescription": "Free online cron expression generator and validator. Build cron schedules visually, see next run times, and understand cron syntax with our easy-to-use tool.",
       "presetsTitle": "Common Presets",
       "customPlaceholder": "Enter cron expression (e.g. */5 * * * *)",
@@ -3777,7 +3777,7 @@
     "cron-expression-generator": {
       "name": "Cron Expression Generator",
       "description": "Build, validate, and understand cron expressions with a visual editor",
-      "pageTitle": "Cron Expression Generator - Build & Validate Cron Schedules Online",
+      "pageTitle": "Cron Expression Generator - Free Build & Validate Cron Schedules Online",
       "pageDescription": "Free online cron expression generator and validator. Build cron schedules visually, see next run times, and understand cron syntax with our easy-to-use tool.",
       "expression": "Cron Expression",
       "humanReadable": "Human Readable",
@@ -3839,7 +3839,7 @@
     "yaml-json-converter": {
       "name": "YAML ↔ JSON Converter",
       "description": "Convert between YAML and JSON formats with real-time preview",
-      "pageTitle": "YAML to JSON Converter - Convert YAML ↔ JSON Online",
+      "pageTitle": "YAML to JSON Converter - Free Convert YAML ↔ JSON Online",
       "pageDescription": "Free online YAML to JSON converter. Easily convert between YAML and JSON formats. Supports bidirectional conversion, pretty print, and error validation. No signup required.",
       "yamlToJson": "YAML → JSON",
       "jsonToYaml": "JSON → YAML",
@@ -3923,7 +3923,7 @@
     "hex-to-rgb": {
       "name": "Hex to RGB Converter",
       "description": "Convert between hex color codes and RGB values with color preview",
-      "pageTitle": "Hex to RGB Converter - Convert Hex Color to RGB Online",
+      "pageTitle": "Hex to RGB Converter - Free Convert Hex Color to RGB Online",
       "pageDescription": "Free online hex to RGB converter. Convert hex color codes to RGB values and RGB to hex instantly. Includes color preview, HSL conversion, and common color reference. No signup required.",
       "hexInput": "Hex Color Input",
       "rgbInput": "RGB Input",
@@ -4004,7 +4004,7 @@
     "roman-numeral-converter": {
       "name": "Roman Numeral Converter",
       "description": "Convert between numbers and Roman numerals with date converter",
-      "pageTitle": "Roman Numeral Converter - Convert Numbers to Roman Numerals",
+      "pageTitle": "Roman Numeral Converter - Free Online Convert Numbers to Roman Numerals",
       "pageDescription": "Free online Roman numeral converter. Convert numbers to Roman numerals and Roman numerals to numbers. Includes date converter for birthdays and special dates. No signup required.",
       "numberToRoman": "Number → Roman Numeral",
       "romanToNumber": "Roman Numeral → Number",
@@ -4047,7 +4047,7 @@
     "byte-converter": {
       "name": "Byte Converter",
       "description": "Convert between bytes, KB, MB, GB, TB and other file size units",
-      "pageTitle": "Byte Converter - Convert KB, MB, GB, TB Online",
+      "pageTitle": "Byte Converter - Free Convert KB, MB, GB, TB Online",
       "pageDescription": "Free online byte converter. Convert between bytes, kilobytes, megabytes, gigabytes, terabytes and more. Supports both binary (1024) and decimal (1000) units. No signup required.",
       "inputValue": "Input Value",
       "inputUnit": "Input Unit",
@@ -4089,7 +4089,7 @@
     "ascii-text-converter": {
       "name": "ASCII Text Converter",
       "description": "Convert between ASCII codes and text characters with reference table",
-      "pageTitle": "ASCII to Text Converter - Convert ASCII Codes Online",
+      "pageTitle": "ASCII to Text Converter - Free Convert ASCII Codes Online",
       "pageDescription": "Free online ASCII to text converter. Convert ASCII codes to text and text to ASCII. Includes full ASCII reference table with decimal, hex, and binary values. No signup required.",
       "textToAscii": "Text → ASCII",
       "asciiToText": "ASCII → Text",
@@ -4132,7 +4132,7 @@
     "hex-to-binary": {
       "name": "Hex to Binary Converter",
       "description": "Convert between hexadecimal and binary number systems",
-      "pageTitle": "Hex to Binary Converter - Convert Hexadecimal to Binary Online",
+      "pageTitle": "Hex to Binary Converter - Free Convert Hexadecimal to Binary Online",
       "pageDescription": "Free online hex to binary converter. Convert hexadecimal to binary and binary to hex instantly. Includes step-by-step conversion and reference table. No signup required.",
       "hexToBinary": "Hex → Binary",
       "binaryToHex": "Binary → Hex",
@@ -4168,7 +4168,7 @@
     "fraction-decimal-converter": {
       "name": "Fraction Decimal Converter",
       "description": "Convert between fractions and decimal numbers with simplification",
-      "pageTitle": "Fraction to Decimal Converter - Convert Fractions Online",
+      "pageTitle": "Fraction to Decimal Converter - Free Convert Fractions Online",
       "pageDescription": "Free online fraction to decimal converter. Convert fractions to decimals and decimals to fractions with automatic simplification. Includes common fraction reference. No signup required.",
       "fractionToDecimal": "Fraction → Decimal",
       "decimalToFraction": "Decimal → Fraction",
@@ -4206,7 +4206,7 @@
     "scientific-notation-converter": {
       "name": "Scientific Notation Converter",
       "description": "Convert between scientific notation and standard numbers",
-      "pageTitle": "Scientific Notation Converter - Convert E Notation Online",
+      "pageTitle": "Scientific Notation Converter - Free Convert E Notation Online",
       "pageDescription": "Free online scientific notation converter. Convert between scientific notation and standard form. Supports E notation, engineering notation, and large numbers. No signup required.",
       "toScientific": "Number → Scientific Notation",
       "toStandard": "Scientific Notation → Number",
@@ -4243,7 +4243,7 @@
     "color-name-to-hex": {
       "name": "Color Name to Hex Converter",
       "description": "Convert CSS color names to hex codes, RGB and HSL values",
-      "pageTitle": "Color Name to Hex Converter - CSS Named Colors",
+      "pageTitle": "Color Name to Hex Converter - Free Online CSS Named Colors",
       "pageDescription": "Free online color name to hex converter. Browse all 148 CSS named colors with hex codes, RGB values, and HSL. Search, filter, and copy color values instantly. No signup required.",
       "searchColor": "Search Colors",
       "searchPlaceholder": "Search by name (e.g., coral, navy)",
@@ -4284,7 +4284,7 @@
     "text-repeater": {
       "name": "Text Repeater",
       "description": "Repeat text or characters multiple times with separator options",
-      "pageTitle": "Text Repeater - Repeat Text Online Generator",
+      "pageTitle": "Text Repeater - Free Repeat Text Online Generator",
       "pageDescription": "Free online text repeater. Repeat any text, word or character multiple times with custom separator. Copy repeated text instantly. No signup required.",
       "inputText": "Text to Repeat",
       "inputPlaceholder": "Enter text to repeat (e.g., Hello)",
@@ -4323,7 +4323,7 @@
     "em-px-converter": {
       "name": "Em/Px Converter",
       "description": "Convert between em, rem, px and other CSS units",
-      "pageTitle": "Em to Px Converter - CSS Unit Converter Online",
+      "pageTitle": "Em to Px Converter - Free CSS Unit Converter Online",
       "pageDescription": "Free online em to px converter. Convert between em, rem, px, pt and other CSS units. Customize base font size. Includes CSS unit reference. No signup required.",
       "baseSize": "Base Font Size (px)",
       "inputValue": "Value",
@@ -4360,7 +4360,7 @@
     "ip-to-binary": {
       "name": "IP to Binary Converter",
       "description": "Convert IP addresses to binary and binary to IP format",
-      "pageTitle": "IP to Binary Converter - Convert IP Address to Binary Online",
+      "pageTitle": "IP to Binary Converter - Free Convert IP Address to Binary Online",
       "pageDescription": "Free online IP to binary converter. Convert IPv4 addresses to binary format and binary to IP. Includes subnet mask conversion and octet breakdown. No signup required.",
       "ipToBinary": "IP → Binary",
       "binaryToIp": "Binary → IP",
@@ -4406,7 +4406,7 @@
     "unix-timestamp-converter": {
       "name": "Unix Timestamp Converter",
       "description": "Convert between Unix timestamps and human-readable dates",
-      "pageTitle": "Unix Timestamp Converter - Epoch Time Converter Online",
+      "pageTitle": "Unix Timestamp Converter - Free Epoch Time Converter Online",
       "pageDescription": "Free online Unix timestamp converter. Convert Unix epoch timestamps to human-readable dates and dates to timestamps. Supports seconds and milliseconds. No signup required.",
       "currentTimestamp": "Current Unix Timestamp",
       "timestampToDate": "Timestamp → Date",
@@ -4462,7 +4462,7 @@
     "json-to-table": {
       "name": "JSON to Table",
       "description": "Convert JSON data to an interactive, sortable HTML table with search, filter, and CSV export",
-      "pageTitle": "JSON to Table Converter - View JSON as Interactive Table",
+      "pageTitle": "JSON to Table Converter - Free Online View JSON as Interactive Table",
       "pageDescription": "Convert JSON data to a sortable, filterable HTML table online. Paste JSON arrays or objects, view as interactive table, search rows, sort columns, and download as CSV. Free, fast, and private.",
       "seoTitle": "About JSON to Table Conversion",
       "seoContent": "JSON (JavaScript Object Notation) is the most common data format for APIs and configuration files. While JSON is great for machines, viewing large JSON arrays as raw text is hard for humans. This JSON to Table converter transforms JSON data into an interactive HTML table with sortable columns, row search and filtering, and CSV export. It handles arrays of objects (the most common API response format), nested objects using dot notation flattening (e.g. address.city), and single objects displayed as one-row tables. All processing happens in your browser — your data never leaves your device.",
@@ -4692,8 +4692,8 @@
     "string-case-converter": {
       "name": "String Case Converter",
       "description": "Convert text between 14 naming formats: camelCase, snake_case, kebab-case, PascalCase, and more",
-      "pageTitle": "String Case Converter Online",
-      "pageDescription": "Convert text between camelCase, snake_case, kebab-case, PascalCase, CONSTANT_CASE, Title Case, UPPERCASE, lowercase and more naming conventions instantly.",
+      "pageTitle": "String Case Converter Online – Free Online Tool",
+      "pageDescription": "Convert text between camelCase, snake_case, kebab-case, PascalCase, CONSTANT_CASE, Title Case, UPPERCASE, lowercase and more naming conventions instantly. Free, no signup required.",
       "faqs": [
         {
           "q": "What string case formats are supported?",
@@ -4717,7 +4717,7 @@
       "name": "HTML Entity Encoder / Decoder",
       "description": "Encode and decode HTML entities with named and numeric entity support and reference table",
       "pageTitle": "HTML Entity Encoder & Decoder Online Free — Named & Numeric Entities",
-      "pageDescription": "Encode and decode HTML entities online. Convert special characters to named or numeric HTML entities and back with a comprehensive reference table.",
+      "pageDescription": "Encode and decode HTML entities online. Convert special characters to named or numeric HTML entities and back with a comprehensive reference table. Free, no signup required.",
       "faqs": [
         {
           "q": "What are HTML entities?",
@@ -4753,7 +4753,7 @@
       "name": "JSON to CSV Converter",
       "description": "Convert JSON arrays to CSV with customizable delimiters and options",
       "pageTitle": "JSON to CSV Converter Online Free - Convert JSON Arrays to CSV",
-      "pageDescription": "Convert JSON arrays to CSV format. Choose delimiters (comma, semicolon, tab), include headers, and flatten nested objects. Download as CSV file.",
+      "pageDescription": "Convert JSON arrays to CSV format. Choose delimiters (comma, semicolon, tab), include headers, and flatten nested objects. Download as CSV file. Free, no signup required.",
       "validateBtn": "Convert to CSV",
       "jsonDataLabel": "JSON Input (Array of Objects)",
       "jsonDataPlaceholder": "[{\"name\": \"Alice\", \"age\": 30}]",
@@ -4769,8 +4769,8 @@
     "text-counter": {
       "name": "Text Counter & Statistics",
       "description": "Count words, characters, sentences, paragraphs, lines, bytes, reading time, and speaking time",
-      "pageTitle": "Text Counter & Statistics",
-      "pageDescription": "Count words, characters, sentences, paragraphs, lines, and bytes with reading/speaking time estimation and character frequency analysis.",
+      "pageTitle": "Text Counter & Statistics – Free Online Tool",
+      "pageDescription": "Count words, characters, sentences, paragraphs, lines, and bytes with reading/speaking time estimation and character frequency analysis. Free, no signup required.",
       "faqs": [
         {
           "q": "How do I count words in text online?",
@@ -4794,7 +4794,7 @@
       "name": "Image to Base64 Encoder",
       "description": "Convert images to Base64 strings and data URIs with drag & drop support",
       "pageTitle": "Image to Base64 Encoder Online Free — Upload & Convert to Base64",
-      "pageDescription": "Convert images to Base64 strings and data URIs. Drag and drop or select image files to get Base64, CSS background, and HTML img tag output.",
+      "pageDescription": "Convert images to Base64 strings and data URIs. Drag and drop or select image files to get Base64, CSS background, and HTML img tag output. Free, no signup required.",
       "faqs": [
         {
           "q": "How do I convert an image to Base64?",
@@ -4829,8 +4829,8 @@
     "text-case-converter": {
       "name": "Text Case Converter",
       "description": "Convert text between camelCase, snake_case, kebab-case, PascalCase, UPPERCASE, lowercase, Title Case, dot.case and more",
-      "pageTitle": "Text Case Converter Online",
-      "pageDescription": "Convert text between camelCase, snake_case, kebab-case, PascalCase, UPPERCASE, lowercase, Title Case, dot.case and 14 more formats instantly.",
+      "pageTitle": "Text Case Converter Online – Free Online Tool",
+      "pageDescription": "Convert text between camelCase, snake_case, kebab-case, PascalCase, UPPERCASE, lowercase, Title Case, dot.case and 14 more formats instantly. Free, no signup required.",
       "faqs": [
         {
           "q": "How do I convert text between cases?",
@@ -4922,8 +4922,8 @@
     "css-beautifier": {
       "name": "CSS Beautifier",
       "description": "Format and beautify CSS code online",
-      "pageTitle": "CSS Beautifier & Formatter",
-      "pageDescription": "Format, beautify, and minify CSS code online. Auto-indent and clean up your CSS instantly.",
+      "pageTitle": "CSS Beautifier & Formatter – Free Online Tool",
+      "pageDescription": "Format, beautify, and minify CSS code online. Auto-indent and clean up your CSS instantly. Free, no signup required.",
       "faqs": [
         {
           "q": "How do I beautify CSS online?",
@@ -4958,8 +4958,8 @@
     "http-header-checker": {
       "name": "HTTP Header Checker",
       "description": "Check HTTP response headers for any URL",
-      "pageTitle": "HTTP Header Checker",
-      "pageDescription": "Check HTTP response headers for any URL. Inspect security headers, CORS, cache control, and more.",
+      "pageTitle": "HTTP Header Checker – Free Online Tool",
+      "pageDescription": "Check HTTP response headers for any URL. Inspect security headers, CORS, cache control, and more. Free, no signup required.",
       "faqs": [
         {
           "q": "What are HTTP headers?",
@@ -4990,7 +4990,7 @@
     "ip-lookup-tool": {
       "name": "IP Address Lookup",
       "description": "Look up geolocation and details for any IP address",
-      "pageTitle": "IP Address Lookup Tool",
+      "pageTitle": "IP Address Lookup Tool – Free Online Tool",
       "pageDescription": "Look up geolocation, ISP, ASN, and details for any IP address. Free IP lookup tool.",
       "faqs": [
         {
@@ -5026,8 +5026,8 @@
     "color-blindness-simulator": {
       "name": "Color Blindness Simulator",
       "description": "Simulate how colors appear with different types of color blindness",
-      "pageTitle": "Color Blindness Simulator",
-      "pageDescription": "Simulate how colors appear to people with different types of color blindness. Test your UI accessibility.",
+      "pageTitle": "Color Blindness Simulator – Free Online Tool",
+      "pageDescription": "Simulate how colors appear to people with different types of color blindness. Test your UI accessibility. Free, no signup required.",
       "faqs": [
         {
           "q": "What is color blindness simulation?",
@@ -5062,8 +5062,8 @@
     "cron-to-human": {
       "name": "Cron to Human Readable",
       "description": "Convert cron expressions to plain English",
-      "pageTitle": "Cron Expression to Human Readable",
-      "pageDescription": "Convert cron expressions to plain English. Understand when your cron jobs will run and preview next execution times.",
+      "pageTitle": "Cron Expression to Human Readable – Free Online Tool",
+      "pageDescription": "Convert cron expressions to plain English. Understand when your cron jobs will run and preview next execution times. Free, no signup required.",
       "faqs": [
         {
           "q": "How do I read a cron expression?",
@@ -5098,8 +5098,8 @@
     "text-diff-tool": {
       "name": "Text Diff Tool",
       "description": "Compare two texts side by side with highlighted differences",
-      "pageTitle": "Text Diff Tool - Compare Text Online",
-      "pageDescription": "Compare two texts side by side. Highlight additions, deletions and changes line by line.",
+      "pageTitle": "Text Diff Tool - Free Compare Text Online",
+      "pageDescription": "Compare two texts side by side. Highlight additions, deletions and changes line by line. Free, no signup required.",
       "faqs": [
         {
           "q": "How do I compare two texts online?",
@@ -5134,8 +5134,8 @@
     "sql-query-formatter": {
       "name": "SQL Query Formatter",
       "description": "Format and indent SQL queries online",
-      "pageTitle": "SQL Query Formatter & Beautifier",
-      "pageDescription": "Format and beautify SQL queries online. Auto-indent keywords, normalize whitespace, and minify SQL.",
+      "pageTitle": "SQL Query Formatter & Beautifier – Free Online Tool",
+      "pageDescription": "Format and beautify SQL queries online. Auto-indent keywords, normalize whitespace, and minify SQL. Free, no signup required.",
       "faqs": [
         {
           "q": "How do I format SQL queries online?",
@@ -5485,7 +5485,7 @@
     "base64-image-encoder": {
       "name": "Base64 Image Encoder",
       "description": "Convert images to Base64 and Base64 to images",
-      "pageTitle": "Base64 Image Encoder/Decoder Online - Image to Data URI",
+      "pageTitle": "Base64 Image Encoder/Decoder Online - Free Image to Data URI",
       "pageDescription": "Free online tool to convert images to Base64 encoded strings and decode Base64 back to images. Supports PNG, JPG, GIF, SVG.",
       "modeEncode": "Image to Base64",
       "modeDecode": "Base64 to Image",
@@ -6327,7 +6327,7 @@
     "css-variables-generator": {
       "name": "CSS Variables Generator",
       "description": "Generate CSS custom properties visually",
-      "pageTitle": "CSS Variables Generator - Create Design Tokens Online",
+      "pageTitle": "CSS Variables Generator - Free Create Design Tokens Online",
       "pageDescription": "Free online CSS custom properties generator. Create design tokens for colors, typography, spacing with visual editor and preset themes.",
       "seoTitle": "CSS Variables Generator Online",
       "seoContent": "Generate CSS custom properties with a visual editor. Create complete design systems with colors, typography, spacing, and shadow variables.",
@@ -7652,7 +7652,7 @@
     "json-to-xml-converter": {
       "name": "JSON to XML Converter",
       "description": "Convert JSON to XML",
-      "pageTitle": "JSON to XML Converter Online",
+      "pageTitle": "JSON to XML Converter Online – Free Online Tool",
       "pageDescription": "Free online JSON to XML converter with customizable root element and formatting options.",
       "seoTitle": "JSON to XML Converter",
       "seoContent": "Convert JSON to XML",
@@ -8169,8 +8169,8 @@
     "markdown-table-generator": {
       "name": "Markdown Table Generator",
       "description": "Create and format Markdown tables visually",
-      "pageTitle": "Markdown Table Generator Online - Create MD Tables Easily",
-      "pageDescription": "Generate Markdown tables visually with column alignment, row management, and instant preview. Copy-paste ready for GitHub, GitLab, and documentation.",
+      "pageTitle": "Markdown Table Generator Online - Free Create MD Tables Easily",
+      "pageDescription": "Generate Markdown tables visually with column alignment, row management, and instant preview. Copy-paste ready for GitHub, GitLab, and documentation. Free, no signup required.",
       "generateBtn": "Generate Markdown",
       "outputLabel": "Generated Markdown",
       "seoTitle": "Online Markdown Table Generator",
@@ -9896,7 +9896,7 @@
       "name": "WiFi QR Code Generator",
       "description": "Generate QR codes for WiFi network sharing",
       "pageTitle": "WiFi QR Code Generator — Share WiFi with QR Code Free",
-      "pageDescription": "Generate a QR code for your WiFi network. Guests can scan to connect instantly. Supports WPA/WPA2, WEP, and open networks.",
+      "pageDescription": "Generate a QR code for your WiFi network. Guests can scan to connect instantly. Supports WPA/WPA2, WEP, and open networks. Free, no signup required.",
       "ssidLabel": "Network Name (SSID)",
       "ssidPlaceholder": "Enter WiFi network name",
       "ssidRequired": "SSID (Network Name) is required",
@@ -9917,7 +9917,7 @@
       "name": "XPath Tester",
       "description": "Test XPath expressions against XML documents with matching results",
       "pageTitle": "XPath Tester Online - Test XPath Expressions for XML Free",
-      "pageDescription": "Test XPath expressions against XML documents. Paste XML, enter XPath query, see matching nodes and count. Includes common XPath examples.",
+      "pageDescription": "Test XPath expressions against XML documents. Paste XML, enter XPath query, see matching nodes and count. Includes common XPath examples. Free, no signup required.",
       "validateBtn": "Evaluate XPath",
       "jsonDataLabel": "XML Input",
       "jsonDataPlaceholder": "Paste your XML here...",
@@ -10208,7 +10208,7 @@
     "http-status-lookup": {
       "name": "HTTP Status Code Lookup",
       "description": "Search and reference all HTTP status codes with detailed explanations",
-      "pageTitle": "HTTP Status Code Lookup - Complete Reference 1xx-5xx",
+      "pageTitle": "HTTP Status Code Lookup - Free Online Complete Reference 1xx-5xx",
       "pageDescription": "Complete HTTP status code reference. Look up any HTTP status code (1xx-5xx) with detailed explanations, examples, and solutions. Free tool for developers.",
       "seoTitle": "HTTP Status Codes Reference",
       "seoContent": "HTTP status codes are three-digit responses from a web server indicating the outcome of an HTTP request. They are grouped into five classes: 1xx (Informational), 2xx (Success), 3xx (Redirection), 4xx (Client Error), and 5xx (Server Error). Understanding these codes is essential for debugging web applications and APIs. This reference provides detailed explanations, real-world examples, and solutions for each status code.",
@@ -10242,7 +10242,7 @@
     "border-radius-generator": {
       "name": "CSS Border Radius Generator",
       "description": "Visual CSS border-radius generator with presets and live preview",
-      "pageTitle": "CSS Border Radius Generator - Visual Rounded Corners Tool",
+      "pageTitle": "CSS Border Radius Generator - Free Online Visual Rounded Corners Tool",
       "pageDescription": "Generate CSS border-radius values visually. Control individual corners, use presets, and copy CSS code instantly. Free online tool for web developers.",
       "topLeftLabel": "Top Left",
       "topRightLabel": "Top Right",
@@ -10262,7 +10262,7 @@
     "toml-editor": {
       "name": "TOML Editor",
       "description": "TOML editor, validator and JSON converter",
-      "pageTitle": "TOML Editor & Validator Online",
+      "pageTitle": "TOML Editor & Validator Online – Free Online Tool",
       "pageDescription": "Free online TOML editor and validator. Parse TOML, validate syntax, and convert between TOML and JSON.",
       "seoTitle": "TOML Editor",
       "seoContent": "TOML editor, validator and JSON converter",
@@ -10318,7 +10318,7 @@
     "json-to-swift": {
       "name": "JSON to Swift",
       "description": "Convert JSON to Swift Codable structs",
-      "pageTitle": "JSON to Swift Converter Online - Codable Struct Generator",
+      "pageTitle": "JSON to Swift Converter Online - Free Codable Struct Generator",
       "pageDescription": "Free online JSON to Swift converter. Generate Codable struct definitions with optionals and nested types.",
       "seoTitle": "JSON to Swift",
       "seoContent": "Convert JSON to Swift Codable structs",
@@ -10331,7 +10331,7 @@
     "graphql-formatter": {
       "name": "GraphQL Formatter",
       "description": "Format and beautify GraphQL queries",
-      "pageTitle": "GraphQL Formatter & Beautifier - Format Queries Online",
+      "pageTitle": "GraphQL Formatter & Beautifier - Free Format Queries Online",
       "pageDescription": "Free online GraphQL formatter and beautifier. Format, prettify, and minify GraphQL queries, mutations, and subscriptions with proper indentation.",
       "seoTitle": "GraphQL Formatter & Beautifier Online",
       "seoContent": "Format and beautify your GraphQL queries, mutations, and subscriptions with our free online GraphQL formatter. Supports proper indentation, minification, and field sorting.",
@@ -10344,7 +10344,7 @@
     "json-to-php": {
       "name": "JSON to PHP",
       "description": "Convert JSON to PHP arrays/classes",
-      "pageTitle": "JSON to PHP Converter Online",
+      "pageTitle": "JSON to PHP Converter Online – Free Online Tool",
       "pageDescription": "Free online JSON to PHP converter. Generate PHP arrays, classes, and typed properties from JSON.",
       "seoTitle": "JSON to PHP",
       "seoContent": "Convert JSON to PHP arrays/classes",
@@ -10357,7 +10357,7 @@
     "html-to-pug": {
       "name": "HTML to Pug",
       "description": "Convert HTML to Pug (Jade) templates",
-      "pageTitle": "HTML to Pug Converter - Convert HTML to Jade Template Online",
+      "pageTitle": "HTML to Pug Converter - Free Convert HTML to Jade Template Online",
       "pageDescription": "Free online HTML to Pug (Jade) converter. Transform HTML markup into clean Pug template syntax with class shortcuts, ID shorthand, and proper indentation.",
       "seoTitle": "HTML to Pug (Jade) Converter Online",
       "seoContent": "Convert HTML markup to clean Pug (Jade) template syntax instantly. Supports div shortcuts, class and ID shorthand notation, proper indentation, and attribute handling.",
@@ -10370,7 +10370,7 @@
     "yaml-to-toml": {
       "name": "YAML to TOML",
       "description": "Convert between YAML and TOML formats",
-      "pageTitle": "YAML to TOML Converter - Convert Config Files Online",
+      "pageTitle": "YAML to TOML Converter - Free Convert Config Files Online",
       "pageDescription": "Free online YAML to TOML converter. Bidirectional conversion between YAML and TOML configuration formats with proper section and array handling.",
       "seoTitle": "YAML to TOML Converter Online",
       "seoContent": "Convert between YAML and TOML configuration formats instantly. Bidirectional conversion with proper TOML section headers, array of tables, and nested object support.",
@@ -10383,7 +10383,7 @@
     "typescript-to-zod": {
       "name": "TypeScript to Zod",
       "description": "Convert TypeScript types to Zod schemas",
-      "pageTitle": "TypeScript to Zod Converter - Generate Zod Schemas Online",
+      "pageTitle": "TypeScript to Zod Converter - Free Generate Zod Schemas Online",
       "pageDescription": "Free online TypeScript to Zod converter. Transform TypeScript interfaces, types, and enums into Zod validation schemas instantly.",
       "seoTitle": "TypeScript to Zod Schema Converter",
       "seoContent": "Convert TypeScript types and interfaces to Zod validation schemas with our free online tool. Supports union types, optional properties, enums, arrays, and nested objects.",
@@ -10396,7 +10396,7 @@
     "sql-to-mongodb": {
       "name": "SQL to MongoDB",
       "description": "Convert SQL queries to MongoDB",
-      "pageTitle": "SQL to MongoDB Converter - Convert SQL Queries Online",
+      "pageTitle": "SQL to MongoDB Converter - Free Convert SQL Queries Online",
       "pageDescription": "Free online SQL to MongoDB converter. Transform SELECT, INSERT, UPDATE, DELETE queries to MongoDB find, insertOne, updateOne syntax.",
       "seoTitle": "SQL to MongoDB Query Converter",
       "seoContent": "Convert SQL queries to MongoDB commands instantly. Supports SELECT with WHERE, ORDER BY, LIMIT; INSERT, UPDATE with SET, and DELETE operations.",
@@ -10425,7 +10425,7 @@
     "regex-to-english": {
       "name": "Regex to English",
       "description": "Explain regex patterns in plain English",
-      "pageTitle": "Regex to English - Explain Regular Expressions Online",
+      "pageTitle": "Regex to English - Free Explain Regular Expressions Online",
       "pageDescription": "Free online regex explainer. Translate regular expressions to plain English with token-by-token breakdown and visual explanation.",
       "seoTitle": "Regex to English Translator",
       "seoContent": "Understand complex regular expressions by translating them to plain English explanations. Get token-by-token breakdown with quick examples for common patterns.",
@@ -10438,7 +10438,7 @@
     "json-to-form": {
       "name": "JSON to HTML Form",
       "description": "Generate HTML forms from JSON data",
-      "pageTitle": "JSON to HTML Form Generator - Create Forms Online",
+      "pageTitle": "JSON to HTML Form Generator - Free Create Forms Online",
       "pageDescription": "Free online JSON to HTML form generator. Automatically detect input types and create semantic HTML5 forms with validation and CSS styling.",
       "seoTitle": "JSON to HTML Form Generator",
       "seoContent": "Generate HTML forms from JSON data with automatic input type detection. Create forms with proper labels, validation, and responsive CSS styling.",
@@ -10451,7 +10451,7 @@
     "json-to-graphql-schema": {
       "name": "JSON to GraphQL Schema",
       "description": "Convert JSON to GraphQL types",
-      "pageTitle": "JSON to GraphQL Schema Converter Online",
+      "pageTitle": "JSON to GraphQL Schema Converter Online – Free Online Tool",
       "pageDescription": "Free online JSON to GraphQL schema converter. Generate GraphQL type definitions from JSON data.",
       "seoTitle": "JSON to GraphQL Schema",
       "seoContent": "Convert JSON to GraphQL types",
@@ -10464,7 +10464,7 @@
     "openapi-to-typescript": {
       "name": "OpenAPI to TypeScript",
       "description": "Convert OpenAPI schemas to TypeScript",
-      "pageTitle": "OpenAPI to TypeScript Converter - Generate Types Online",
+      "pageTitle": "OpenAPI to TypeScript Converter - Free Generate Types Online",
       "pageDescription": "Free online OpenAPI/Swagger to TypeScript converter. Generate TypeScript interfaces from OpenAPI schemas with $ref resolution.",
       "seoTitle": "OpenAPI to TypeScript Converter",
       "seoContent": "Convert OpenAPI/Swagger JSON schemas to TypeScript interfaces. Supports $ref references, allOf, oneOf, anyOf composition.",
@@ -10477,7 +10477,7 @@
     "base32-encoder": {
       "name": "Base32 Encoder/Decoder",
       "description": "Encode/decode Base32 strings",
-      "pageTitle": "Base32 Encoder Decoder Online",
+      "pageTitle": "Base32 Encoder Decoder Online – Free Online Tool",
       "pageDescription": "Free online Base32 encoder and decoder. Support RFC 4648 standard and hex encoding.",
       "seoTitle": "Base32 Encoder/Decoder",
       "seoContent": "Encode/decode Base32 strings",
@@ -10490,7 +10490,7 @@
     "json-to-sql": {
       "name": "JSON to SQL",
       "description": "Convert JSON data to SQL INSERT statements",
-      "pageTitle": "JSON to SQL Converter Online - Generate INSERT Statements",
+      "pageTitle": "JSON to SQL Converter Online - Free Generate INSERT Statements",
       "pageDescription": "Free online JSON to SQL converter. Generate INSERT statements for MySQL, PostgreSQL, SQLite from JSON data.",
       "seoTitle": "JSON to SQL",
       "seoContent": "Convert JSON data to SQL INSERT statements",
@@ -10503,7 +10503,7 @@
     "scss-to-css": {
       "name": "SCSS to CSS",
       "description": "Convert SCSS/Sass to plain CSS",
-      "pageTitle": "SCSS to CSS Converter - Compile Sass Online",
+      "pageTitle": "SCSS to CSS Converter - Free Compile Sass Online",
       "pageDescription": "Free online SCSS to CSS converter. Compile Sass/SCSS code to plain CSS with variable resolution, nesting, and mixin support.",
       "seoTitle": "SCSS to CSS Converter Online",
       "seoContent": "Convert SCSS/Sass code to plain CSS instantly. Handles variables, nesting, parent selectors, mixins, and media queries.",
@@ -10516,7 +10516,7 @@
     "diff-viewer": {
       "name": "Diff Viewer",
       "description": "Compare text with visual diff highlighting",
-      "pageTitle": "Diff Viewer - Compare Text & Code Online",
+      "pageTitle": "Diff Viewer - Free Compare Text & Code Online",
       "pageDescription": "Free online diff viewer. Compare two text blocks with line-by-line diff highlighting showing additions, deletions, and unchanged lines.",
       "seoTitle": "Online Diff Viewer & Text Compare Tool",
       "seoContent": "Compare text and code side by side with visual diff highlighting. Shows line-by-line additions, deletions, and unchanged content with statistics.",
@@ -10529,7 +10529,7 @@
     "api-tester": {
       "name": "API Tester",
       "description": "Test REST API endpoints in your browser",
-      "pageTitle": "API Tester - Test REST API Endpoints Online",
+      "pageTitle": "API Tester - Free Test REST API Endpoints Online",
       "pageDescription": "Free online REST API testing tool. Send HTTP requests with custom headers and body, view responses with formatting.",
       "seoTitle": "Online REST API Tester",
       "seoContent": "Test REST API endpoints directly from your browser. Send GET, POST, PUT, PATCH, DELETE requests with custom headers, JSON body, and view formatted responses.",
@@ -10542,7 +10542,7 @@
     "hex-to-text": {
       "name": "Hex to Text",
       "description": "Convert between hex strings and text",
-      "pageTitle": "Hex to Text Converter - Convert Hexadecimal Online",
+      "pageTitle": "Hex to Text Converter - Free Convert Hexadecimal Online",
       "pageDescription": "Free online hex to text converter. Convert hexadecimal strings to readable text and text to hex with multiple format support.",
       "seoTitle": "Hex to Text Converter Online",
       "seoContent": "Convert between hexadecimal strings and readable text. Supports multiple hex formats, UTF-8 encoding, and configurable separators.",
@@ -10555,7 +10555,7 @@
     "color-gradient-generator": {
       "name": "Color Gradient Generator",
       "description": "Visual CSS gradient generator",
-      "pageTitle": "CSS Gradient Generator Online - Linear, Radial, Conic",
+      "pageTitle": "CSS Gradient Generator Online - Free Linear, Radial, Conic",
       "pageDescription": "Free online CSS gradient generator. Create linear, radial, and conic gradients with visual controls and presets.",
       "seoTitle": "Color Gradient Generator",
       "seoContent": "Visual CSS gradient generator",
@@ -10568,7 +10568,7 @@
     "json-to-scala": {
       "name": "JSON to Scala",
       "description": "Convert JSON to Scala case classes",
-      "pageTitle": "JSON to Scala Converter - Generate Case Classes Online",
+      "pageTitle": "JSON to Scala Converter - Free Generate Case Classes Online",
       "pageDescription": "Free online JSON to Scala converter. Generate type-safe case classes from JSON data with proper type mapping.",
       "seoTitle": "JSON to Scala Case Class Generator",
       "seoContent": "Convert JSON data to Scala case classes instantly with automatic type inference and PascalCase naming.",
@@ -10581,7 +10581,7 @@
     "ascii-to-hex": {
       "name": "ASCII to Hex",
       "description": "Convert between ASCII text and hex",
-      "pageTitle": "ASCII to Hex Converter - Convert Text to Hexadecimal Online",
+      "pageTitle": "ASCII to Hex Converter - Free Convert Text to Hexadecimal Online",
       "pageDescription": "Free online ASCII to hex converter. Convert text to hexadecimal with multiple format options.",
       "seoTitle": "ASCII to Hex Converter",
       "seoContent": "Convert ASCII text to hexadecimal and back with configurable separators and prefix options.",
@@ -10594,7 +10594,7 @@
     "binary-to-text": {
       "name": "Binary to Text",
       "description": "Convert between binary and text",
-      "pageTitle": "Binary to Text Converter - Decode Binary Online",
+      "pageTitle": "Binary to Text Converter - Free Decode Binary Online",
       "pageDescription": "Free online binary to text converter. Convert binary strings to readable text and text to binary.",
       "seoTitle": "Binary to Text Converter",
       "seoContent": "Convert binary to text and text to binary with 8-bit encoding support.",
@@ -10607,7 +10607,7 @@
     "html-preview": {
       "name": "HTML Live Preview",
       "description": "Live HTML/CSS/JS editor with preview",
-      "pageTitle": "HTML Live Preview - Online HTML Editor with Real-Time Preview",
+      "pageTitle": "HTML Live Preview - Free Online HTML Editor with Real-Time Preview",
       "pageDescription": "Free online HTML editor with live preview. Write HTML, CSS, and JavaScript code and see results instantly.",
       "htmlPlaceholder": "<div class=\"container\">\n  <h1>Hello World</h1>\n  <p>Edit me!</p>\n</div>",
       "cssPlaceholder": ".container {\n  max-width: 1000px;\n  margin: 0 auto;\n  padding: 20px;\n}",
@@ -10626,7 +10626,7 @@
     "text-to-morse": {
       "name": "Text to Morse Code",
       "description": "Convert text to Morse code and back",
-      "pageTitle": "Text to Morse Code Converter - Morse Code Translator Online",
+      "pageTitle": "Text to Morse Code Converter - Free Morse Code Translator Online",
       "pageDescription": "Free online Morse code converter. Convert text to Morse code and Morse to text with audio playback.",
       "seoTitle": "Morse Code Translator",
       "seoContent": "Convert text to Morse code and decode Morse code to text with audio playback using Web Audio API.",
@@ -10639,7 +10639,7 @@
     "xml-to-csv": {
       "name": "XML to CSV",
       "description": "Convert XML data to CSV format",
-      "pageTitle": "XML to CSV Converter - Convert XML to CSV Online",
+      "pageTitle": "XML to CSV Converter - Free Convert XML to CSV Online",
       "pageDescription": "Free online XML to CSV converter. Transform XML data to CSV with nested element flattening and configurable delimiters.",
       "seoTitle": "XML to CSV Converter Online",
       "seoContent": "Convert XML data to CSV format with automatic record detection, nested element flattening, and download support.",
@@ -10652,7 +10652,7 @@
     "ip-geolocation": {
       "name": "IP Geolocation Lookup",
       "description": "Look up IP address geolocation",
-      "pageTitle": "IP Geolocation Lookup Online - Find IP Location",
+      "pageTitle": "IP Geolocation Lookup Online - Free Find IP Location",
       "pageDescription": "Free online IP geolocation lookup. Find the location, ISP, and network info for any IP address.",
       "seoTitle": "IP Geolocation Lookup",
       "seoContent": "Look up IP address geolocation",
@@ -10678,7 +10678,7 @@
     "base58-encoder": {
       "name": "Base58 Encoder/Decoder",
       "description": "Encode and decode Base58 strings",
-      "pageTitle": "Base58 Encoder/Decoder - Bitcoin Base58 Online",
+      "pageTitle": "Base58 Encoder/Decoder - Free Bitcoin Base58 Online",
       "pageDescription": "Free online Base58 encoder and decoder. Uses Bitcoin alphabet with Base58Check support for version bytes and checksums.",
       "seoTitle": "Base58 Encoder/Decoder Online",
       "seoContent": "Encode and decode Base58 strings using Bitcoin alphabet. Supports Base58Check encoding with version byte and checksum.",
@@ -10691,7 +10691,7 @@
     "css-selector-tester": {
       "name": "CSS Selector Tester",
       "description": "Test CSS selectors against HTML",
-      "pageTitle": "CSS Selector Tester - Test Selectors Online",
+      "pageTitle": "CSS Selector Tester - Free Test Selectors Online",
       "pageDescription": "Free online CSS selector testing tool. Test CSS selectors against HTML markup and see matched elements.",
       "seoTitle": "CSS Selector Tester Online",
       "seoContent": "Test CSS selectors against HTML markup. See matched element count, content preview, and use quick selector examples.",
@@ -10704,7 +10704,7 @@
     "curl-to-code": {
       "name": "cURL to Code Converter",
       "description": "Convert cURL commands to code",
-      "pageTitle": "cURL to Code Converter Online - JavaScript, Python, Go, Java, PHP, Ruby",
+      "pageTitle": "cURL to Code Converter Online - Free JavaScript, Python, Go, Java, PHP, Ruby",
       "pageDescription": "Free online cURL to code converter. Convert cURL commands to JavaScript, Python, Go, Java, PHP, Node.js, and Ruby code. Auto-parse headers, body, auth, and cookies.",
       "inputLabel": "Paste your cURL command",
       "inputPlaceholder": "curl -X POST https://api.example.com/users -H \"Content-Type: application/json\" -H \"Authorization: Bearer token123\" -d '{\"name\":\"John\",\"email\":\"john@example.com\"}'",
@@ -10774,7 +10774,7 @@
       "name": "Cron Job Generator",
       "description": "Interactive cron expression builder with presets and human-readable descriptions",
       "pageTitle": "Cron Job Generator - Interactive Expression Builder Online Free",
-      "pageDescription": "Generate cron expressions with an interactive builder. See human-readable descriptions and next 5 run times. Supports minute, hour, day, month, day-of-week.",
+      "pageDescription": "Generate cron expressions with an interactive builder. See human-readable descriptions and next 5 run times. Supports minute, hour, day, month, day-of-week. Free, no signup required.",
       "validateBtn": "Generate Expression",
       "seoTitle": "Cron Job Generator",
       "seoContent": "The Cron Job Generator is an interactive tool to create and understand cron expressions. Use dropdowns or manually enter values for minute, hour, day, month, and day of week. Get human-readable descriptions and preview the next 5 scheduled run times.",
@@ -10788,7 +10788,7 @@
       "name": "CSS Units Converter",
       "description": "Convert between CSS units: px, rem, em, vw, vh, %, pt",
       "pageTitle": "CSS Units Converter Online - PX to REM, EM, VW Converter Free",
-      "pageDescription": "Convert CSS units online. Convert pixels to rem, em, vw, vh, pt, and more. Set base font size for accurate calculations. Conversion table included.",
+      "pageDescription": "Convert CSS units online. Convert pixels to rem, em, vw, vh, pt, and more. Set base font size for accurate calculations. Conversion table included. Free, no signup required.",
       "validateBtn": "Convert",
       "seoTitle": "CSS Units Converter",
       "seoContent": "The CSS Units Converter helps you convert between different CSS measurement units. Convert pixels (px) to relative units (rem, em), viewport units (vw, vh), percentages, and points (pt).",
@@ -10801,8 +10801,8 @@
     "json-to-proto": {
       "name": "JSON to Protobuf",
       "description": "Convert JSON to Protocol Buffer definitions",
-      "pageTitle": "JSON to Protobuf Converter Online - Generate .proto Files",
-      "pageDescription": "Convert JSON to Protocol Buffer (.proto) definitions. Auto-detect types, nested messages, and repeated fields.",
+      "pageTitle": "JSON to Protobuf Converter Online - Free Generate .proto Files",
+      "pageDescription": "Convert JSON to Protocol Buffer (.proto) definitions. Auto-detect types, nested messages, and repeated fields. Free, no signup required.",
       "seoTitle": "JSON to Protobuf Converter",
       "seoContent": "Generate .proto files from JSON data.",
       "seoFeaturesTitle": "Features",
@@ -10815,7 +10815,7 @@
       "name": "Tailwind to CSS Converter",
       "description": "Convert Tailwind classes to vanilla CSS",
       "pageTitle": "Tailwind to CSS Converter Online - Free Tool",
-      "pageDescription": "Convert Tailwind CSS utility classes to standard vanilla CSS. Support for 60+ common Tailwind classes.",
+      "pageDescription": "Convert Tailwind CSS utility classes to standard vanilla CSS. Support for 60+ common Tailwind classes. Free, no signup required.",
       "seoTitle": "Tailwind to CSS Converter",
       "seoContent": "Convert Tailwind utility classes to CSS.",
       "seoFeaturesTitle": "Features",
@@ -10861,7 +10861,7 @@
     "unix-timestamp": {
       "name": "Unix Timestamp Converter",
       "description": "Convert between Unix timestamps and human-readable dates",
-      "pageTitle": "Unix Timestamp Converter Online - Epoch Converter",
+      "pageTitle": "Unix Timestamp Converter Online - Free Epoch Converter",
       "pageDescription": "Free online Unix timestamp converter. Convert Unix epoch timestamps to human-readable dates and vice versa. Supports seconds and milliseconds.",
       "currentTimestamp": "Current Unix Timestamp",
       "timestampToDate": "Timestamp to Date",
@@ -10886,7 +10886,7 @@
     "text-to-ascii-art": {
       "name": "Text to ASCII Art",
       "description": "Convert text to ASCII art with various font styles",
-      "pageTitle": "Text to ASCII Art Generator Online - ASCII Art Maker",
+      "pageTitle": "Text to ASCII Art Generator Online - Free ASCII Art Maker",
       "pageDescription": "Free online text to ASCII art generator. Convert text to ASCII art banners with multiple font styles. Copy and use anywhere.",
       "enterText": "Enter Text",
       "fontStyle": "Font Style",
@@ -10903,7 +10903,7 @@
     "css-shadow-generator": {
       "name": "CSS Shadow Generator",
       "description": "Visual box-shadow and text-shadow generator",
-      "pageTitle": "CSS Box Shadow Generator Online - Visual Shadow Tool",
+      "pageTitle": "CSS Box Shadow Generator Online - Free Visual Shadow Tool",
       "pageDescription": "Free online CSS shadow generator. Create box-shadow and text-shadow with visual controls, multiple layers, and presets.",
       "seoTitle": "CSS Shadow Generator",
       "seoContent": "Visual box-shadow and text-shadow generator",
@@ -10916,7 +10916,7 @@
     "regex-visualizer": {
       "name": "Regex Visualizer",
       "description": "Visual regex tester with match highlighting",
-      "pageTitle": "Regex Visualizer Online - Pattern Tester & Debugger",
+      "pageTitle": "Regex Visualizer Online - Free Pattern Tester & Debugger",
       "pageDescription": "Free online regex visualizer. Test patterns with live highlighting, capture groups, and detailed explanations.",
       "seoTitle": "Regex Visualizer",
       "seoContent": "Visual regex tester with match highlighting",
@@ -10929,7 +10929,7 @@
     "crontab-editor": {
       "name": "Crontab Editor",
       "description": "Visual crontab editor with next run times",
-      "pageTitle": "Crontab Editor Online - Visual Cron Expression Builder",
+      "pageTitle": "Crontab Editor Online - Free Visual Cron Expression Builder",
       "pageDescription": "Free online crontab editor. Build cron expressions visually, see human-readable descriptions, and preview next execution times.",
       "seoTitle": "Crontab Editor",
       "seoContent": "Visual crontab editor with next run times",
@@ -10942,7 +10942,7 @@
     "sql-to-json": {
       "name": "SQL to JSON Schema",
       "description": "Convert SQL CREATE TABLE to JSON schema",
-      "pageTitle": "SQL to JSON Schema Converter Online",
+      "pageTitle": "SQL to JSON Schema Converter Online – Free Online Tool",
       "pageDescription": "Free online SQL to JSON schema converter. Parse CREATE TABLE statements and generate JSON schemas.",
       "seoTitle": "SQL to JSON Schema",
       "seoContent": "Convert SQL CREATE TABLE to JSON schema",
@@ -10955,7 +10955,7 @@
     "yaml-editor": {
       "name": "YAML Editor",
       "description": "YAML editor with validation and JSON conversion",
-      "pageTitle": "YAML Editor & Validator Online",
+      "pageTitle": "YAML Editor & Validator Online – Free Online Tool",
       "pageDescription": "Free online YAML editor with syntax validation, formatting, and bidirectional JSON conversion.",
       "seoTitle": "YAML Editor",
       "seoContent": "YAML editor with validation and JSON conversion",
@@ -10968,7 +10968,7 @@
     "http-method-tester": {
       "name": "HTTP Method Tester",
       "description": "Test HTTP requests with custom headers and body",
-      "pageTitle": "HTTP Request Tester Online - API Testing Tool",
+      "pageTitle": "HTTP Request Tester Online - Free API Testing Tool",
       "pageDescription": "Free online HTTP request tester. Send GET, POST, PUT, DELETE requests with custom headers and body.",
       "seoTitle": "HTTP Method Tester",
       "seoContent": "Test HTTP requests with custom headers and body",
@@ -10981,7 +10981,7 @@
     "markdown-to-pdf": {
       "name": "Markdown to PDF",
       "description": "Preview Markdown as styled print-ready output",
-      "pageTitle": "Markdown to PDF Converter Online",
+      "pageTitle": "Markdown to PDF Converter Online – Free Online Tool",
       "pageDescription": "Free online Markdown to PDF converter. Preview and print Markdown with professional formatting.",
       "seoTitle": "Markdown to PDF",
       "seoContent": "Preview Markdown as styled print-ready output",
@@ -10994,7 +10994,7 @@
     "tailwind-css-converter": {
       "name": "Tailwind CSS Converter",
       "description": "Convert CSS to Tailwind classes",
-      "pageTitle": "CSS to Tailwind Converter Online",
+      "pageTitle": "CSS to Tailwind Converter Online – Free Online Tool",
       "pageDescription": "Free online CSS to Tailwind converter. Transform regular CSS to Tailwind utility classes instantly.",
       "seoTitle": "Tailwind CSS Converter",
       "seoContent": "Convert CSS to Tailwind classes",
@@ -11007,7 +11007,7 @@
     "svg-editor": {
       "name": "SVG Editor",
       "description": "Edit and preview SVG code",
-      "pageTitle": "SVG Editor & Optimizer Online",
+      "pageTitle": "SVG Editor & Optimizer Online – Free Online Tool",
       "pageDescription": "Free online SVG editor. Edit SVG code with live preview, optimize, and clean up SVG files.",
       "seoTitle": "SVG Editor",
       "seoContent": "Edit and preview SVG code",
@@ -11020,7 +11020,7 @@
     "javascript-obfuscator": {
       "name": "JavaScript Obfuscator",
       "description": "Obfuscate JS code for protection",
-      "pageTitle": "JavaScript Obfuscator Online - Code Protection Tool",
+      "pageTitle": "JavaScript Obfuscator Online - Free Code Protection Tool",
       "pageDescription": "Free online JavaScript obfuscator. Protect your code by renaming variables and encoding strings.",
       "seoTitle": "JavaScript Obfuscator",
       "seoContent": "Obfuscate JS code for protection",
@@ -11033,7 +11033,7 @@
     "css-clip-path-generator": {
       "name": "CSS Clip Path Generator",
       "description": "Visual clip-path shape generator",
-      "pageTitle": "CSS Clip-Path Generator Online - Shape Maker",
+      "pageTitle": "CSS Clip-Path Generator Online - Free Shape Maker",
       "pageDescription": "Free visual CSS clip-path generator. Create polygon, circle, and ellipse shapes with drag-and-drop.",
       "seoTitle": "CSS Clip Path Generator",
       "seoContent": "Visual clip-path shape generator",
@@ -11046,7 +11046,7 @@
     "xml-validator": {
       "name": "XML Validator",
       "description": "Validate XML syntax",
-      "pageTitle": "XML Validator Online - Check XML Syntax",
+      "pageTitle": "XML Validator Online - Free Check XML Syntax",
       "pageDescription": "Free online XML validator. Check XML syntax, well-formedness, and get error details with line numbers.",
       "seoTitle": "XML Validator",
       "seoContent": "Validate XML syntax",
@@ -11059,7 +11059,7 @@
     "csp-header-generator": {
       "name": "CSP Header Generator",
       "description": "Build Content Security Policy headers",
-      "pageTitle": "CSP Header Generator Online - Content Security Policy Builder",
+      "pageTitle": "CSP Header Generator Online - Free Content Security Policy Builder",
       "pageDescription": "Free online Content Security Policy header generator. Build CSP directives with an intuitive checkbox interface.",
       "seoTitle": "CSP Header Generator",
       "seoContent": "Build Content Security Policy headers",
@@ -11072,7 +11072,7 @@
     "env-file-editor": {
       "name": "ENV File Editor",
       "description": ".env editor with export",
-      "pageTitle": ".env File Editor Online",
+      "pageTitle": ".env File Editor Online – Free Online Tool",
       "pageDescription": "Free online .env file editor with key-value management and export to multiple formats.",
       "seoTitle": "ENV File Editor",
       "seoContent": ".env editor with export",
@@ -11085,7 +11085,7 @@
     "css-filter-generator": {
       "name": "CSS Filter Generator",
       "description": "Visual CSS filter generator",
-      "pageTitle": "CSS Filter Generator Online - Visual Filter Effects",
+      "pageTitle": "CSS Filter Generator Online - Free Visual Filter Effects",
       "pageDescription": "Free online CSS filter generator. Create blur, brightness, contrast and more with live preview.",
       "seoTitle": "CSS Filter Generator",
       "seoContent": "Visual CSS filter generator",
@@ -11098,7 +11098,7 @@
     "nginx-config-generator": {
       "name": "Nginx Config Generator",
       "description": "Generate Nginx configurations",
-      "pageTitle": "Nginx Configuration Generator Online",
+      "pageTitle": "Nginx Configuration Generator Online – Free Online Tool",
       "pageDescription": "Free online Nginx config generator. Create server blocks, reverse proxy, SSL, and caching configs.",
       "seoTitle": "Nginx Config Generator",
       "seoContent": "Generate Nginx configurations",
@@ -11111,7 +11111,7 @@
     "dockerfile-generator": {
       "name": "Dockerfile Generator",
       "description": "Generate Dockerfiles visually",
-      "pageTitle": "Dockerfile Generator Online - Docker Build Tool",
+      "pageTitle": "Dockerfile Generator Online - Free Docker Build Tool",
       "pageDescription": "Free online Dockerfile generator. Build Docker images with multi-stage support and best practices.",
       "seoTitle": "Dockerfile Generator",
       "seoContent": "Generate Dockerfiles visually",
@@ -11124,7 +11124,7 @@
     "css-transition-generator": {
       "name": "CSS Transition Generator",
       "description": "Visual CSS transition builder",
-      "pageTitle": "CSS Transition Generator Online - Visual Builder",
+      "pageTitle": "CSS Transition Generator Online - Free Visual Builder",
       "pageDescription": "Free online CSS transition generator. Create transitions with timing functions, duration, and live preview.",
       "seoTitle": "CSS Transition Generator",
       "seoContent": "Visual CSS transition builder",
@@ -11137,7 +11137,7 @@
     "api-response-generator": {
       "name": "API Response Generator",
       "description": "Generate mock API responses",
-      "pageTitle": "Mock API Response Generator Online - Fake Data Tool",
+      "pageTitle": "Mock API Response Generator Online - Free Fake Data Tool",
       "pageDescription": "Free online mock API response generator. Create realistic fake JSON data for testing and development.",
       "seoTitle": "API Response Generator",
       "seoContent": "Generate mock API responses",
@@ -11150,7 +11150,7 @@
     "html-entity-decoder": {
       "name": "HTML Entity Decoder",
       "description": "Encode/decode HTML entities",
-      "pageTitle": "HTML Entity Encoder/Decoder Online",
+      "pageTitle": "HTML Entity Encoder/Decoder Online – Free Online Tool",
       "pageDescription": "Free online HTML entity encoder and decoder. Convert between HTML entities and special characters.",
       "seoTitle": "HTML Entity Decoder",
       "seoContent": "Encode/decode HTML entities",
@@ -11163,7 +11163,7 @@
     "css-flexbox-playground": {
       "name": "CSS Flexbox Playground",
       "description": "Interactive flexbox layout builder",
-      "pageTitle": "CSS Flexbox Playground Online - Interactive Layout Tool",
+      "pageTitle": "CSS Flexbox Playground Online - Free Interactive Layout Tool",
       "pageDescription": "Free interactive CSS flexbox playground. Visualize and learn flexbox properties with live preview.",
       "seoTitle": "CSS Flexbox Playground",
       "seoContent": "Interactive flexbox layout builder",
@@ -11176,7 +11176,7 @@
     "json-to-csv-online": {
       "name": "JSON to CSV Online",
       "description": "Convert JSON to CSV format",
-      "pageTitle": "JSON to CSV Converter Online",
+      "pageTitle": "JSON to CSV Converter Online – Free Online Tool",
       "pageDescription": "Free online JSON to CSV converter. Convert JSON arrays to CSV with custom delimiters and nested object flattening.",
       "seoTitle": "JSON to CSV Online",
       "seoContent": "Convert JSON to CSV format",
@@ -11189,7 +11189,7 @@
     "json-to-rust-serde": {
       "name": "JSON to Rust Serde",
       "description": "Convert JSON to Rust structs",
-      "pageTitle": "JSON to Rust Serde Converter Online",
+      "pageTitle": "JSON to Rust Serde Converter Online – Free Online Tool",
       "pageDescription": "Free online JSON to Rust converter. Generate serde-compatible struct definitions from JSON data.",
       "seoTitle": "JSON to Rust Serde",
       "seoContent": "Convert JSON to Rust structs",
@@ -11202,7 +11202,7 @@
     "css-text-shadow-generator": {
       "name": "CSS Text Shadow Generator",
       "description": "Visual text-shadow generator",
-      "pageTitle": "CSS Text Shadow Generator Online",
+      "pageTitle": "CSS Text Shadow Generator Online – Free Online Tool",
       "pageDescription": "Free online CSS text-shadow generator. Create multi-layer text shadows with visual controls.",
       "seoTitle": "CSS Text Shadow Generator",
       "seoContent": "Visual text-shadow generator",
@@ -11215,7 +11215,7 @@
     "json-path-evaluator": {
       "name": "JSONPath Evaluator",
       "description": "Evaluate JSONPath expressions",
-      "pageTitle": "JSONPath Evaluator Online - Query JSON Data",
+      "pageTitle": "JSONPath Evaluator Online - Free Query JSON Data",
       "pageDescription": "Free online JSONPath evaluator. Test JSONPath expressions against JSON data with live results.",
       "seoTitle": "JSONPath Evaluator",
       "seoContent": "Evaluate JSONPath expressions",
@@ -11228,7 +11228,7 @@
     "webhook-tester": {
       "name": "Webhook Tester",
       "description": "Test and inspect webhooks",
-      "pageTitle": "Webhook Tester Online - HTTP Request Inspector",
+      "pageTitle": "Webhook Tester Online - Free HTTP Request Inspector",
       "pageDescription": "Free online webhook tester. Generate URLs, send test requests, and inspect HTTP payloads.",
       "seoTitle": "Webhook Tester",
       "seoContent": "Test and inspect webhooks",
@@ -11355,8 +11355,8 @@
     "css-glassmorphism-generator": {
       "name": "Glassmorphism CSS Generator",
       "description": "Generate glassmorphism CSS effects with live preview",
-      "pageTitle": "Glassmorphism CSS Generator - Glass Effect Online",
-      "pageDescription": "Generate beautiful glassmorphism CSS effects with live preview. Customize blur, transparency, border radius, and colors. Copy ready-to-use CSS code.",
+      "pageTitle": "Glassmorphism CSS Generator - Free Glass Effect Online",
+      "pageDescription": "Generate beautiful glassmorphism CSS effects with live preview. Customize blur, transparency, border radius, and colors. Copy ready-to-use CSS code. Free, no signup required.",
       "seoTitle": "What is Glassmorphism?",
       "seoContent": "Glassmorphism is a modern UI design trend that creates a frosted glass effect using CSS backdrop-filter and semi-transparent backgrounds. This generator lets you customize blur intensity, opacity, border effects, and colors with real-time preview and copy-ready CSS code.",
       "howToUseTitle": "How to Use",
@@ -11392,8 +11392,8 @@
     "css-neumorphism-generator": {
       "name": "Neumorphism CSS Generator",
       "description": "Generate neumorphism soft UI CSS effects",
-      "pageTitle": "Neumorphism CSS Generator - Soft UI Generator Online",
-      "pageDescription": "Generate neumorphism (soft UI) CSS effects with live preview. Customize shadows, colors, shapes. Create flat, concave, convex, and pressed states.",
+      "pageTitle": "Neumorphism CSS Generator - Free Soft UI Generator Online",
+      "pageDescription": "Generate neumorphism (soft UI) CSS effects with live preview. Customize shadows, colors, shapes. Create flat, concave, convex, and pressed states. Free, no signup required.",
       "seoTitle": "What is Neumorphism?",
       "seoContent": "Neumorphism (also called soft UI) is a design style that combines flat design with subtle shadows to create soft, extruded shapes. This generator creates neumorphic CSS effects with customizable shadow size, intensity, and four different shape variations.",
       "howToUseTitle": "How to Use",
@@ -11430,7 +11430,7 @@
     "aspect-ratio-calculator": {
       "name": "Aspect Ratio Calculator",
       "description": "Calculate and convert aspect ratios",
-      "pageTitle": "Aspect Ratio Calculator - Calculate Image & Video Ratios",
+      "pageTitle": "Aspect Ratio Calculator - Free Online Calculate Image & Video Ratios",
       "pageDescription": "Calculate and convert aspect ratios for images, videos, and screens. Find missing dimensions, use common presets like 16:9, 4:3, 1:1. Free online tool.",
       "seoTitle": "What is Aspect Ratio Calculator?",
       "seoContent": "Aspect Ratio Calculator helps you calculate the aspect ratio of any image, video, or screen from its width and height. It also helps you find missing dimensions when you know one dimension and the desired aspect ratio.",
@@ -11505,8 +11505,8 @@
     "html-to-text": {
       "name": "HTML to Text Converter",
       "description": "Convert HTML to plain text",
-      "pageTitle": "HTML to Text Converter - Strip HTML Tags Online",
-      "pageDescription": "Convert HTML to plain text online. Strip HTML tags, decode entities, extract readable text content. Option to preserve links and line breaks.",
+      "pageTitle": "HTML to Text Converter - Free Strip HTML Tags Online",
+      "pageDescription": "Convert HTML to plain text online. Strip HTML tags, decode entities, extract readable text content. Option to preserve links and line breaks. Free, no signup required.",
       "seoTitle": "What is HTML to Text Converter?",
       "seoContent": "HTML to Text Converter strips all HTML tags and converts HTML content to readable plain text. It decodes HTML entities, preserves text structure, and optionally retains links and line breaks.",
       "howToUseTitle": "How to Use",
@@ -11542,7 +11542,7 @@
     "json-sorter": {
       "name": "JSON Key Sorter",
       "description": "Sort JSON keys alphabetically",
-      "pageTitle": "JSON Key Sorter - Sort JSON Keys Alphabetically Online",
+      "pageTitle": "JSON Key Sorter - Free Sort JSON Keys Alphabetically Online",
       "pageDescription": "Sort JSON keys alphabetically online. Order JSON properties A-Z or Z-A, with deep sorting for nested objects. Free JSON organizer tool.",
       "seoTitle": "What is JSON Key Sorter?",
       "seoContent": "JSON Key Sorter organizes JSON data by sorting object keys alphabetically. It supports both ascending (A-Z) and descending (Z-A) order, with optional deep sorting that recursively sorts keys in nested objects.",
@@ -11580,8 +11580,8 @@
     "css-gradient-text": {
       "name": "CSS Gradient Text Generator",
       "description": "Create gradient text effects with CSS",
-      "pageTitle": "CSS Gradient Text Generator - Gradient Text Effect Online",
-      "pageDescription": "Create beautiful gradient text effects with CSS. Live preview, multiple colors, angle control, font size and weight. Copy ready-to-use CSS code.",
+      "pageTitle": "CSS Gradient Text Generator - Free Gradient Text Effect Online",
+      "pageDescription": "Create beautiful gradient text effects with CSS. Live preview, multiple colors, angle control, font size and weight. Copy ready-to-use CSS code. Free, no signup required.",
       "seoTitle": "What is CSS Gradient Text?",
       "seoContent": "CSS Gradient Text Generator creates colorful gradient effects on text using CSS background-clip and -webkit-text-fill-color properties. Customize colors, angles, font size, and weight with real-time preview and copy-ready CSS code.",
       "howToUseTitle": "How to Use",
