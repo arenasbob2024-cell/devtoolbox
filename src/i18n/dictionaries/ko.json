@@ -3403,37 +3403,17 @@
       ]
     },
     "htaccess-generator": {
-      "name": ".htaccess 생성기",
-      "description": "리다이렉트, 보안 헤더용 .htaccess 생성",
-      "pageTitle": ".htaccess 생성기",
-      "pageDescription": "301 리다이렉트, HTTPS 강제, 보안 헤더용 .htaccess를 생성합니다.",
-      "seoTitle": "What is an .htaccess Generator?",
-      "seoContent": "An .htaccess generator creates Apache configuration files for URL redirects, security headers, caching rules, and access control without editing the main server config.",
-      "howToUseTitle": "How to Use",
-      "howToUseSteps": [
-        "Select features to enable",
-        "Configure redirects and rules",
-        "Preview the .htaccess code",
-        "Copy and upload to your server"
-      ],
-      "useCasesTitle": "Use Cases",
-      "useCases": [
-        "Setting up 301 redirects",
-        "Enforcing HTTPS",
-        "Adding security headers",
-        "Enabling browser caching"
-      ],
-      "faqTitle": "FAQ",
-      "faqs": [
-        {
-          "q": "Does it work with all Apache servers?",
-          "a": "Yes, if mod_rewrite is enabled (standard on most hosts)."
-        },
-        {
-          "q": "Can I use this for WordPress?",
-          "a": "Yes, the generated rules work alongside WordPress .htaccess rules."
-        }
-      ]
+      "name": ".htaccess Generator",
+      "description": "Generate Apache .htaccess rules",
+      "pageTitle": ".htaccess Generator Online - Apache Config Builder",
+      "pageDescription": "Free online .htaccess generator. Create redirects, rewrites, force HTTPS, caching rules and more.",
+      "seoTitle": ".htaccess Generator",
+      "seoContent": "Generate Apache .htaccess rules",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Free online",
+      "seoFeature2": "No install",
+      "seoFeature3": "Live preview",
+      "seoFeature4": "Copy output"
     },
     "docker-compose-generator": {
       "name": "Docker Compose 생성기",
@@ -4617,17 +4597,17 @@
       "seoFeature4": "여러 형식으로 결과 표시: ISO 8601, UTC, 현지 시간, 상대 시간, 시간대 및 요일"
     },
     "json-to-swift": {
-      "name": "JSON to Swift 변환",
-      "description": "JSON을 Swift Codable 구조체로 변환",
-      "pageTitle": "JSON to Swift 변환기 - 온라인 Codable 구조체 생성",
-      "pageDescription": "무료 온라인 JSON to Swift 변환기. JSON 데이터에서 타입 안전한 Codable 구조체를 생성합니다.",
-      "seoTitle": "JSON to Swift 변환기",
-      "seoContent": "JSON 데이터를 Swift Codable 구조체로 즉시 변환하는 무료 온라인 도구입니다.",
-      "seoFeaturesTitle": "기능",
-      "seoFeature1": "자동 Swift 타입 추론",
-      "seoFeature2": "CodingKeys 자동 생성",
-      "seoFeature3": "중첩 구조체 지원",
-      "seoFeature4": "옵셔널 프로퍼티 지원"
+      "name": "JSON to Swift",
+      "description": "Convert JSON to Swift Codable structs",
+      "pageTitle": "JSON to Swift Converter Online - Codable Struct Generator",
+      "pageDescription": "Free online JSON to Swift converter. Generate Codable struct definitions with optionals and nested types.",
+      "seoTitle": "JSON to Swift",
+      "seoContent": "Convert JSON to Swift Codable structs",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Free online",
+      "seoFeature2": "No install",
+      "seoFeature3": "Live preview",
+      "seoFeature4": "Copy output"
     },
     "graphql-formatter": {
       "name": "GraphQL 포맷터",
@@ -5441,6 +5421,45 @@
       "pageDescription": "Free online Dockerfile generator. Build Docker images with multi-stage support and best practices.",
       "seoTitle": "Dockerfile Generator",
       "seoContent": "Generate Dockerfiles visually",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Free online",
+      "seoFeature2": "No install",
+      "seoFeature3": "Live preview",
+      "seoFeature4": "Copy output"
+    },
+    "css-transition-generator": {
+      "name": "CSS Transition Generator",
+      "description": "Visual CSS transition builder",
+      "pageTitle": "CSS Transition Generator Online - Visual Builder",
+      "pageDescription": "Free online CSS transition generator. Create transitions with timing functions, duration, and live preview.",
+      "seoTitle": "CSS Transition Generator",
+      "seoContent": "Visual CSS transition builder",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Free online",
+      "seoFeature2": "No install",
+      "seoFeature3": "Live preview",
+      "seoFeature4": "Copy output"
+    },
+    "api-response-generator": {
+      "name": "API Response Generator",
+      "description": "Generate mock API responses",
+      "pageTitle": "Mock API Response Generator Online - Fake Data Tool",
+      "pageDescription": "Free online mock API response generator. Create realistic fake JSON data for testing and development.",
+      "seoTitle": "API Response Generator",
+      "seoContent": "Generate mock API responses",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Free online",
+      "seoFeature2": "No install",
+      "seoFeature3": "Live preview",
+      "seoFeature4": "Copy output"
+    },
+    "html-entity-decoder": {
+      "name": "HTML Entity Decoder",
+      "description": "Encode/decode HTML entities",
+      "pageTitle": "HTML Entity Encoder/Decoder Online",
+      "pageDescription": "Free online HTML entity encoder and decoder. Convert between HTML entities and special characters.",
+      "seoTitle": "HTML Entity Decoder",
+      "seoContent": "Encode/decode HTML entities",
       "seoFeaturesTitle": "Features",
       "seoFeature1": "Free online",
       "seoFeature2": "No install",

@@ -7,8 +7,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   const dict = await getDictionary(lang);
-  const t = dict.tools['htaccess-generator'];
-  const url = `https://viadreams.cc/${lang}/tools/htaccess-generator`;
+  const t = dict.tools['html-entity-decoder'];
+  const url = `https://viadreams.cc/${lang}/tools/html-entity-decoder`;
   return {
     title: t.pageTitle,
     description: t.pageDescription,
@@ -30,9 +30,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: url,
       languages: {
         ...Object.fromEntries(
-          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/htaccess-generator`])
+          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/html-entity-decoder`])
         ),
-        'x-default': `https://viadreams.cc/en/tools/htaccess-generator`,
+        'x-default': `https://viadreams.cc/en/tools/html-entity-decoder`,
       },
     },
   };
@@ -42,7 +42,7 @@ export default async function Layout({ children, params }: { children: React.Rea
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   return (
-    <ToolSeoServer toolId="htaccess-generator" lang={lang}>
+    <ToolSeoServer toolId="html-entity-decoder" lang={lang}>
       {children}
     </ToolSeoServer>
   );

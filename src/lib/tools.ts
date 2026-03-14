@@ -3510,6 +3510,36 @@ export const tools: Tool[] = [
     path: '/tools/dockerfile-generator',
     relatedTools: ['docker-run-to-compose', 'nginx-config-generator', 'yaml-editor'],
   },
+  {
+    id: 'css-transition-generator',
+    name: 'CSS Transition Generator',
+    description: 'Visual CSS transition property generator',
+    icon: '🎬',
+    category: 'css',
+    keywords: ['css', 'transition', 'animation', 'timing', 'cubic-bezier', 'generator'],
+    path: '/tools/css-transition-generator',
+    relatedTools: ['css-animation-generator', 'css-shadow-generator', 'css-filter-generator'],
+  },
+  {
+    id: 'api-response-generator',
+    name: 'API Response Generator',
+    description: 'Generate mock API JSON responses with fake data',
+    icon: '🎲',
+    category: 'developer',
+    keywords: ['api', 'mock', 'fake data', 'json', 'response', 'generator', 'testing'],
+    path: '/tools/api-response-generator',
+    relatedTools: ['json-formatter', 'http-method-tester', 'json-validator'],
+  },
+  {
+    id: 'html-entity-decoder',
+    name: 'HTML Entity Decoder',
+    description: 'Encode and decode HTML entities',
+    icon: '🔣',
+    category: 'encoding',
+    keywords: ['html', 'entity', 'encode', 'decode', 'amp', 'special characters'],
+    path: '/tools/html-entity-decoder',
+    relatedTools: ['html-entity-encoder', 'url-encoder', 'base64'],
+  },
 ];
 
 export function getToolsByCategory(categoryId: string): Tool[] {

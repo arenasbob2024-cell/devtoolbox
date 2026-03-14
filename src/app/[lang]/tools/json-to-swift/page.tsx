@@ -1,132 +1,41 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ToolLayout from '@/components/ToolLayout';
 import CopyButton from '@/components/CopyButton';
 import { useLang } from '@/i18n/LangContext';
-
-function jsonToSwift(
-  json: string,
-  rootName: string,
-  useCodingKeys: boolean,
-  makeOptional: boolean,
-  useVar: boolean
-): string {
-  const parsed = JSON.parse(json);
-  const structs: string[] = [];
-  const seen = new Map<string, string>();
-
-  function capitalize(s: string): string {
-    return s.charAt(0).toUpperCase() + s.slice(1);
-  }
-
-  function toPascalCase(s: string): string {
-    return s
-      .split(/[_\-\s]+/)
-      .map((word) => capitalize(word))
-      .join('')
-      .replace(/[^a-zA-Z0-9]/g, '');
-  }
-
-  function toCamelCase(s: string): string {
-    const pascal = toPascalCase(s);
-    return pascal.charAt(0).toLowerCase() + pascal.slice(1);
-  }
-
-  function getSwiftType(value: unknown, name: string): string {
-    if (value === null) return 'Any?';
-    if (Array.isArray(value)) {
-      if (value.length === 0) return '[Any]';
-      const types = new Set(value.map((item) => getSwiftType(item, name + 'Item')));
-      if (types.size === 1) {
-        const baseType = [...types][0];
-        return baseType.endsWith('?') ? `[${baseType}]` : `[${baseType}]`;
-      }
-      return '[Any]';
-    }
-    switch (typeof value) {
-      case 'string': return 'String';
-      case 'number': return Number.isInteger(value) ? 'Int' : 'Double';
-      case 'boolean': return 'Bool';
-      case 'object': {
-        const structName = toPascalCase(name);
-        const key = JSON.stringify(Object.keys(value as Record<string, unknown>).sort());
-        if (seen.has(key)) return seen.get(key)!;
-        seen.set(key, structName);
-        generateStruct(value as Record<string, unknown>, structName);
-        return structName;
-      }
-      default: return 'Any';
-    }
-  }
-
-  function generateStruct(obj: Record<string, unknown>, name: string): void {
-    const varKeyword = useVar ? 'var' : 'let';
-    const lines: string[] = [];
-    lines.push(`struct ${name}: Codable {`);
-
-    const codingKeys: string[] = [];
-    let hasCodingKeys = false;
-
-    for (const [key, value] of Object.entries(obj)) {
-      const swiftProperty = toCamelCase(key);
-      const type = getSwiftType(value, key);
-      const optionalType = makeOptional && value !== null ? `${type}?` : type;
-
-      // Check if we need CodingKeys: different name or has special chars that can't be property name
-      const needsMapping = key !== swiftProperty || !/^[a-zA-Z_][a-zA-Z0-9_]*$/.test(key);
-
-      if (useCodingKeys && needsMapping) {
-        hasCodingKeys = true;
-        codingKeys.push(`case ${swiftProperty} = "${key}"`);
-      }
-
-      lines.push(`  ${varKeyword} ${swiftProperty}: ${optionalType}`);
-    }
-
-    if (hasCodingKeys && useCodingKeys) {
-      lines.push('');
-      lines.push('  enum CodingKeys: String, CodingKey {');
-      for (const key of codingKeys) {
-        lines.push(`    ${key}`);
-      }
-      lines.push('  }');
-    }
-
-    lines.push('}');
-    structs.push(lines.join('\n'));
-  }
-
-  if (Array.isArray(parsed)) {
-    if (parsed.length > 0 && typeof parsed[0] === 'object' && parsed[0] !== null) {
-      generateStruct(parsed[0] as Record<string, unknown>, rootName);
-      return structs.reverse().join('\n\n') + `\n\n// Use: [${rootName}]`;
-    }
-    return `let ${rootName}: ${getSwiftType(parsed, rootName)}`;
-  } else if (typeof parsed === 'object' && parsed !== null) {
-    generateStruct(parsed as Record<string, unknown>, rootName);
-    return structs.reverse().join('\n\n');
-  }
-
-  return `let ${rootName}: ${typeof parsed}`;
-}
+import { encodeForUrl, decodeFromUrl, getHashParams, setHashParams } from '@/lib/url-state';
 
 export default function JsonToSwift() {
   const { dict } = useLang();
-  const t = dict.tools['json-to-swift'] as Record<string, unknown>;
-  const common = dict.common;
+  const t = dict.tools['json-to-swift'];
   const [input, setInput] = useState('');
   const [output, setOutput] = useState('');
   const [error, setError] = useState('');
-  const [rootName, setRootName] = useState('Root');
-  const [useCodingKeys, setUseCodingKeys] = useState(true);
-  const [makeOptional, setMakeOptional] = useState(false);
-  const [useVar, setUseVar] = useState(false);
+  const [structName, setStructName] = useState('ResponseData');
 
-  const convert = () => {
+  useEffect(() => {
+    const params = getHashParams();
+    if (params.json) {
+      const decoded = decodeFromUrl(params.json);
+      if (decoded) {
+        setInput(decoded);
+      }
+    }
+  }, []);
+
+  const handleShare = () => {
+    if (!input) return;
+    const params = { json: encodeForUrl(input) };
+    setHashParams(params);
+    navigator.clipboard.writeText(window.location.href);
+  };
+
+  const convertToSwift = () => {
     try {
-      const result = jsonToSwift(input, rootName, useCodingKeys, makeOptional, useVar);
-      setOutput(result);
+      const parsed = JSON.parse(input);
+      const swift = generateSwiftCode(parsed, structName);
+      setOutput(swift);
       setError('');
     } catch (e: unknown) {
       setError(e instanceof Error ? e.message : 'Invalid JSON');
@@ -134,74 +43,131 @@ export default function JsonToSwift() {
     }
   };
 
+  const generateSwiftCode = (obj: any, name: string): string => {
+    let code = `// Generated Swift Codable struct\nstruct ${name}: Codable {\n`;
+    const properties = generateProperties(obj, 1);
+    code += properties;
+    code += '}\n';
+    return code;
+  };
+
+  const generateProperties = (obj: any, indent: number): string => {
+    const indentStr = '  '.repeat(indent);
+    let code = '';
+    
+    for (const [key, value] of Object.entries(obj)) {
+      const swiftKey = escapeSwiftKeyword(key);
+      const type = getSwiftType(value);
+      code += `${indentStr}let ${swiftKey}: ${type}\n`;
+      
+      if (value !== null && typeof value === 'object' && !Array.isArray(value)) {
+        code += generateNestedStruct(value, key, indent);
+      }
+    }
+    
+    return code;
+  };
+
+  const generateNestedStruct = (obj: any, name: string, indent: number): string => {
+    const indentStr = '  '.repeat(indent);
+    const structName = capitalize(name);
+    let code = `\n${indentStr}struct ${structName}: Codable {\n`;
+    
+    for (const [key, value] of Object.entries(obj)) {
+      const swiftKey = escapeSwiftKeyword(key);
+      const type = getSwiftType(value);
+      code += `${indentStr}  let ${swiftKey}: ${type}\n`;
+    }
+    
+    code += `${indentStr}}\n`;
+    return code;
+  };
+
+  const getSwiftType = (value: any): string => {
+    if (value === null) return 'String?';
+    if (typeof value === 'string') return 'String';
+    if (typeof value === 'number') return Number.isInteger(value) ? 'Int' : 'Double';
+    if (typeof value === 'boolean') return 'Bool';
+    if (Array.isArray(value)) {
+      if (value.length === 0) return '[String]';
+      return `[${getSwiftType(value[0])}]`;
+    }
+    if (typeof value === 'object') return 'Codable';
+    return 'String';
+  };
+
+  const escapeSwiftKeyword = (key: string): string => {
+    const keywords = ['class', 'struct', 'enum', 'protocol', 'func', 'var', 'let', 'init', 'self', 'type', 'for', 'if', 'else', 'while', 'do', 'try', 'catch', 'throw', 'return', 'break', 'continue'];
+    const lower = key.toLowerCase();
+    if (keywords.includes(lower)) return `\`${key}\``;
+    return key.replace(/[^a-zA-Z0-9_]/g, '_');
+  };
+
+  const capitalize = (str: string): string => {
+    return str.charAt(0).toUpperCase() + str.slice(1).replace(/_/g, (m) => m.toUpperCase());
+  };
+
   const loadSample = () => {
-    setInput(JSON.stringify({
+    const sample = {
       id: 1,
-      name: 'John Doe',
-      email: 'john@example.com',
-      isActive: true,
-      address: { street: '123 Main St', city: 'Springfield', zipCode: '62701', country: 'US' },
-      tags: ['developer', 'swift'],
-      scores: [95, 87, 92],
-      metadata: null
-    }, null, 2));
+      name: "John Doe",
+      email: "john@example.com",
+      active: true,
+      tags: ["developer", "swift"],
+      address: {
+        street: "123 Main St",
+        city: "San Francisco",
+        country: "USA"
+      }
+    };
+    setInput(JSON.stringify(sample, null, 2));
   };
 
   return (
-    <ToolLayout
-      title={(t.pageTitle as string) || 'JSON to Swift Converter'}
-      description={(t.pageDescription as string) || 'Convert JSON data to Swift Codable structs instantly'}
-      toolId="json-to-swift"
-    >
-      <div style={{ display: 'flex', gap: 8, marginBottom: 16, flexWrap: 'wrap', alignItems: 'center' }}>
-        <button onClick={convert} className="btn btn-primary">{common.convert}</button>
-        <button onClick={loadSample} className="btn btn-secondary">{common.loadSample}</button>
-        <button onClick={() => { setInput(''); setOutput(''); setError(''); }} className="btn btn-secondary">{common.clear}</button>
-        <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-            <label style={{ fontSize: 12, color: 'var(--text-secondary)' }}>Root:</label>
-            <input value={rootName} onChange={e => setRootName(e.target.value || 'Root')} style={{ width: 80, padding: '4px 8px', fontSize: 12 }} />
+    <ToolLayout toolId="json-to-swift" title={t.pageTitle} description={t.pageDescription}>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div>
+          <label className="block text-sm font-medium mb-2">JSON Input</label>
+          <textarea
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder="Paste JSON here..."
+            className="w-full h-96 p-3 border border-gray-300 rounded bg-white text-gray-900 font-mono text-sm"
+          />
+          <div className="mt-2 flex gap-2">
+            <input
+              type="text"
+              value={structName}
+              onChange={(e) => setStructName(e.target.value)}
+              placeholder="Struct name"
+              className="flex-1 px-3 py-2 border border-gray-300 rounded bg-white text-gray-900"
+            />
+            <button onClick={convertToSwift} className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+              Convert
+            </button>
+            <button onClick={loadSample} className="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600">
+              Sample
+            </button>
           </div>
-          <label style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 12, color: 'var(--text-secondary)', cursor: 'pointer' }}>
-            <input type="checkbox" checked={useCodingKeys} onChange={e => setUseCodingKeys(e.target.checked)} /> CodingKeys
-          </label>
-          <label style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 12, color: 'var(--text-secondary)', cursor: 'pointer' }}>
-            <input type="checkbox" checked={makeOptional} onChange={e => setMakeOptional(e.target.checked)} /> Optional
-          </label>
-          <label style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 12, color: 'var(--text-secondary)', cursor: 'pointer' }}>
-            <input type="checkbox" checked={useVar} onChange={e => setUseVar(e.target.checked)} /> var
-          </label>
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium mb-2">Swift Codable Output</label>
+          <textarea
+            value={output}
+            readOnly
+            className="w-full h-96 p-3 border border-gray-300 rounded bg-gray-50 text-gray-900 font-mono text-sm"
+          />
+          {output && <CopyButton text={output} className="mt-2" />}
         </div>
       </div>
 
-      {error && (
-        <div style={{ background: 'rgba(244, 63, 94, 0.1)', border: '1px solid rgba(244, 63, 94, 0.3)', borderRadius: 8, padding: '10px 14px', marginBottom: 16, fontSize: 13, color: 'var(--accent-rose)' }}>
-          ✕ {common.error}: {error}
-        </div>
-      )}
+      {error && <div className="mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">{error}</div>}
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-        <div>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
-            <label style={{ fontSize: 13, fontWeight: 600 }}>JSON {common.input}</label>
-          </div>
-          <textarea value={input} onChange={e => setInput(e.target.value)} placeholder='{"key": "value", ...}' style={{ minHeight: 350, fontFamily: 'JetBrains Mono, monospace' }} />
-        </div>
-        <div>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
-            <label style={{ fontSize: 13, fontWeight: 600 }}>Swift</label>
-            <CopyButton text={output} />
-          </div>
-          <textarea value={output} readOnly placeholder={common.resultPlaceholder} style={{ minHeight: 350, fontFamily: 'JetBrains Mono, monospace', opacity: output ? 1 : 0.5 }} />
-        </div>
+      <div className="mt-8 space-y-4">
+        <h2 className="text-xl font-bold">{t.pageTitle}</h2>
+        <p>{t.pageDescription}</p>
       </div>
-
-      {typeof t.seoTitle === 'string' && (
-        <div style={{ marginTop: 30, paddingTop: 20, borderTop: '1px solid var(--border-color)' }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>{t.seoTitle}</h2>
-          <p style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.7 }}>{t.seoContent as string}</p>
-        </div>
-      )}
     </ToolLayout>
   );
 }
