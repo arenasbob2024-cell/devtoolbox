@@ -3225,6 +3225,16 @@ export const tools: Tool[] = [
     path: '/tools/toml-editor',
     relatedTools: ['json-formatter', 'json-yaml', 'yaml-to-json', 'xml-formatter'],
   },
+  {
+    id: 'epoch-converter',
+    name: 'Epoch Converter',
+    description: 'Convert between Unix epoch timestamps and human-readable dates. Supports seconds and milliseconds auto-detection.',
+    icon: '⏰',
+    category: 'converter',
+    keywords: ['epoch', 'unix epoch', 'timestamp', 'converter', 'epoch converter', 'unix timestamp', 'epoch time', 'epoch to date', 'date to epoch', 'epoch timestamp converter online', 'unix epoch converter'],
+    path: '/tools/epoch-converter',
+    relatedTools: ['timestamp-converter', 'cron-parser', 'time-zone-converter', 'number-base-converter'],
+  },
 ];
 
 export function getToolsByCategory(categoryId: string): Tool[] {
