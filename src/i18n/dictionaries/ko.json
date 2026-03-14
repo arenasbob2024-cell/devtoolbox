@@ -4799,6 +4799,71 @@
       "seoFeature2": "Bootstrap과 CSS",
       "seoFeature3": "HTML5 유효성 검사",
       "seoFeature4": "라이브 미리보기"
+    },
+    "json-to-graphql-schema": {
+      "name": "JSON to GraphQL Schema",
+      "description": "Convert JSON to GraphQL SDL",
+      "pageTitle": "JSON to GraphQL Schema Generator - Convert JSON to SDL Online",
+      "pageDescription": "Free online JSON to GraphQL Schema converter. Generate GraphQL type definitions from JSON data with automatic type detection.",
+      "seoTitle": "JSON to GraphQL Schema Generator",
+      "seoContent": "Convert JSON data to GraphQL Schema Definition Language (SDL) instantly. Auto-detect types, handle nested objects, and generate complete GraphQL schemas.",
+      "seoFeaturesTitle": "기능",
+      "seoFeature1": "Automatic type detection (String, Int, Float, Boolean, ID)",
+      "seoFeature2": "Nested object to GraphQL type generation",
+      "seoFeature3": "Array type support with [Type] syntax",
+      "seoFeature4": "Configurable root type name"
+    },
+    "css-variables-generator": {
+      "name": "CSS Variables Generator",
+      "description": "Generate CSS custom properties visually",
+      "pageTitle": "CSS Variables Generator - Create Design Tokens Online",
+      "pageDescription": "Free online CSS custom properties generator. Create design tokens for colors, typography, spacing with visual editor and preset themes.",
+      "seoTitle": "CSS Variables Generator Online",
+      "seoContent": "Generate CSS custom properties with a visual editor. Create complete design systems with colors, typography, spacing, and shadow variables.",
+      "seoFeaturesTitle": "기능",
+      "seoFeature1": "Visual color pickers for CSS variables",
+      "seoFeature2": "Preset themes (Light, Dark, Modern, Minimal)",
+      "seoFeature3": "Typography, spacing, and shadow variables",
+      "seoFeature4": "Live preview of generated CSS"
+    },
+    "openapi-to-typescript": {
+      "name": "OpenAPI to TypeScript",
+      "description": "Convert OpenAPI schemas to TypeScript",
+      "pageTitle": "OpenAPI to TypeScript Converter - Generate Types Online",
+      "pageDescription": "Free online OpenAPI/Swagger to TypeScript converter. Generate TypeScript interfaces from OpenAPI schemas with $ref resolution.",
+      "seoTitle": "OpenAPI to TypeScript Converter",
+      "seoContent": "Convert OpenAPI/Swagger JSON schemas to TypeScript interfaces. Supports $ref references, allOf, oneOf, anyOf composition.",
+      "seoFeaturesTitle": "기능",
+      "seoFeature1": "$ref reference resolution",
+      "seoFeature2": "allOf, oneOf, anyOf composition support",
+      "seoFeature3": "Required/optional property handling",
+      "seoFeature4": "Nested schema generation"
+    },
+    "base32-encoder": {
+      "name": "Base32 Encoder/Decoder",
+      "description": "Encode and decode Base32 strings",
+      "pageTitle": "Base32 Encoder/Decoder - Encode & Decode Base32 Online",
+      "pageDescription": "Free online Base32 encoder and decoder. RFC 4648 compliant with padding and hex variant support.",
+      "seoTitle": "Base32 Encoder/Decoder Online",
+      "seoContent": "Encode text to Base32 or decode Base32 strings online. RFC 4648 compliant implementation with optional padding and hex encoding variant.",
+      "seoFeaturesTitle": "기능",
+      "seoFeature1": "RFC 4648 compliant Base32 encoding",
+      "seoFeature2": "Optional padding (= characters)",
+      "seoFeature3": "Hex encoding variant (Base32hex)",
+      "seoFeature4": "Auto-detect encode/decode mode"
+    },
+    "json-to-sql": {
+      "name": "JSON to SQL",
+      "description": "Convert JSON to SQL INSERT statements",
+      "pageTitle": "JSON to SQL Converter - Generate INSERT Statements Online",
+      "pageDescription": "Free online JSON to SQL converter. Generate INSERT statements for MySQL, PostgreSQL, and SQLite from JSON data with CREATE TABLE support.",
+      "seoTitle": "JSON to SQL Converter Online",
+      "seoContent": "Convert JSON data to SQL INSERT statements instantly. Supports MySQL, PostgreSQL, SQLite dialects with batch INSERT and CREATE TABLE generation.",
+      "seoFeaturesTitle": "기능",
+      "seoFeature1": "MySQL, PostgreSQL, SQLite dialect support",
+      "seoFeature2": "CREATE TABLE statement generation",
+      "seoFeature3": "Batch INSERT with multiple VALUES",
+      "seoFeature4": "Automatic type inference"
     }
   },
   "footer": {

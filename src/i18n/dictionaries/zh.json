@@ -4875,6 +4875,71 @@
       "seoFeature2": "Bootstrap 和自定义 CSS",
       "seoFeature3": "HTML5 表单验证",
       "seoFeature4": "实时表单预览"
+    },
+    "json-to-graphql-schema": {
+      "name": "JSON 转 GraphQL Schema",
+      "description": "将 JSON 转换为 GraphQL SDL",
+      "pageTitle": "JSON 转 GraphQL Schema 生成器",
+      "pageDescription": "免费在线 JSON 转 GraphQL Schema 转换器。",
+      "seoTitle": "JSON 转 GraphQL Schema",
+      "seoContent": "即时将 JSON 数据转换为 GraphQL Schema。",
+      "seoFeaturesTitle": "功能",
+      "seoFeature1": "自动类型检测",
+      "seoFeature2": "嵌套对象生成",
+      "seoFeature3": "数组类型支持",
+      "seoFeature4": "可配置根类型名称"
+    },
+    "css-variables-generator": {
+      "name": "CSS 变量生成器",
+      "description": "可视化生成 CSS 自定义属性",
+      "pageTitle": "CSS 变量生成器 - 在线创建设计令牌",
+      "pageDescription": "免费在线 CSS 自定义属性生成器。",
+      "seoTitle": "CSS 变量生成器",
+      "seoContent": "使用可视化编辑器生成 CSS 自定义属性。",
+      "seoFeaturesTitle": "功能",
+      "seoFeature1": "可视化颜色选择器",
+      "seoFeature2": "预设主题",
+      "seoFeature3": "排版和间距变量",
+      "seoFeature4": "实时预览"
+    },
+    "openapi-to-typescript": {
+      "name": "OpenAPI 转 TypeScript",
+      "description": "将 OpenAPI 模式转换为 TypeScript",
+      "pageTitle": "OpenAPI 转 TypeScript 转换器",
+      "pageDescription": "免费在线 OpenAPI 转 TypeScript 转换器。",
+      "seoTitle": "OpenAPI 转 TypeScript",
+      "seoContent": "将 OpenAPI/Swagger JSON 模式转换为 TypeScript 接口。",
+      "seoFeaturesTitle": "功能",
+      "seoFeature1": "$ref 引用解析",
+      "seoFeature2": "allOf/oneOf/anyOf 组合",
+      "seoFeature3": "必填/可选属性",
+      "seoFeature4": "嵌套模式生成"
+    },
+    "base32-encoder": {
+      "name": "Base32 编解码",
+      "description": "编码和解码 Base32 字符串",
+      "pageTitle": "Base32 编码器/解码器 - 在线编解码 Base32",
+      "pageDescription": "免费在线 Base32 编码器和解码器。",
+      "seoTitle": "Base32 编解码器",
+      "seoContent": "在线编码文本为 Base32 或解码 Base32 字符串。",
+      "seoFeaturesTitle": "功能",
+      "seoFeature1": "RFC 4648 标准编码",
+      "seoFeature2": "可选填充",
+      "seoFeature3": "十六进制编码变体",
+      "seoFeature4": "自动检测模式"
+    },
+    "json-to-sql": {
+      "name": "JSON 转 SQL",
+      "description": "将 JSON 转换为 SQL INSERT 语句",
+      "pageTitle": "JSON 转 SQL 转换器 - 在线生成 INSERT 语句",
+      "pageDescription": "免费在线 JSON 转 SQL 转换器。",
+      "seoTitle": "JSON 转 SQL 转换器",
+      "seoContent": "即时将 JSON 数据转换为 SQL INSERT 语句。",
+      "seoFeaturesTitle": "功能",
+      "seoFeature1": "MySQL、PostgreSQL、SQLite 方言",
+      "seoFeature2": "CREATE TABLE 生成",
+      "seoFeature3": "批量 INSERT",
+      "seoFeature4": "自动类型推断"
     }
   },
   "footer": {
