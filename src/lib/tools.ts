@@ -3565,6 +3565,16 @@ export const tools: Tool[] = [
     path: '/tools/toml-to-yaml',
     relatedTools: ['yaml-to-toml', 'yaml-to-json', 'json-to-yaml', 'yaml-validator'],
   },
+  {
+    id: 'svg-to-css',
+    name: 'SVG to CSS Converter',
+    description: 'Convert SVG to CSS background-image with data URI encoding. URL-encode or base64 your SVG for use in CSS.',
+    icon: '🎨',
+    category: 'converter',
+    keywords: ['svg to css', 'svg background', 'svg data uri', 'css background image', 'svg url encode', 'svg base64 css', 'svg inline css', 'mask-image svg'],
+    path: '/tools/svg-to-css',
+    relatedTools: ['svg-to-react', 'svg-to-png-converter', 'css-gradient', 'css-formatter'],
+  },
 ];
 
 export function getToolsByCategory(categoryId: string): Tool[] {

@@ -5216,6 +5216,19 @@
       "seoFeature2": "Proper YAML output with configurable indentation",
       "seoFeature3": "Handles nested structures and inline tables",
       "seoFeature4": "Real-time conversion with error handling"
+    },
+    "svg-to-css": {
+      "name": "SVG to CSS Converter",
+      "description": "Convert SVG to CSS background-image data URI",
+      "pageTitle": "SVG to CSS Background Image Converter Online - Free Tool",
+      "pageDescription": "Convert SVG code to CSS background-image using data URI encoding. Free online tool with URL-encode and base64 options.",
+      "seoTitle": "SVG to CSS Converter",
+      "seoContent": "Convert SVG graphics to CSS background-image inline styles using data URI encoding.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "URL-encode and Base64 encoding options",
+      "seoFeature2": "CSS property format selection",
+      "seoFeature3": "SVG optimization and minification",
+      "seoFeature4": "Real-time preview of SVG graphics"
     }
   },
   "footer": {
