@@ -158,7 +158,7 @@ const parseToml = (input: string): ParsedToml | null => {
   try {
     const result: ParsedToml = {};
     const stack: string[] = [];
-    const arrayStacks: string[] = [];
+    let arrayStacks: string[] = [];
 
     const lines = input.split('\n');
     for (const line of lines) {
