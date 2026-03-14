@@ -3,10 +3,11 @@
 import { useState } from 'react';
 import ToolLayout from '@/components/ToolLayout';
 import CopyButton from '@/components/CopyButton';
+import FaqSection from '@/components/FaqSection';
 import { useLang } from '@/i18n/LangContext';
 
 export default function UrlEncoder() {
-  const { dict } = useLang();
+  const { dict, lang } = useLang();
   const t = dict.tools['url-encoder'];
   const [input, setInput] = useState('');
   const [output, setOutput] = useState('');
@@ -79,6 +80,54 @@ export default function UrlEncoder() {
           {t.seoContent}
         </p>
       </div>
+
+      <FaqSection
+        title={t.faqTitle}
+        faqs={[
+          {
+            question: t.faqs[0].q,
+            answer: (
+              <>
+                {t.faqs[0].a} Safe URL transmission is essential for APIs. Learn more with our{{' '}}
+                <a href={`/${lang}/tools/http-request-builder`} style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>
+                  HTTP Request Builder
+                </a>
+                .
+              </>
+            ),
+          },
+          {
+            question: t.faqs[1].q,
+            answer: (
+              <>
+                {t.faqs[1].a} For example, encodeURIComponent("hello&world") includes the &, while encodeURI preserves it. Try our{{' '}}
+                <a href={`/${lang}/tools/base64`} style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>
+                  Base64 Encoder
+                </a>{' '}}
+                for another encoding method.
+              </>
+            ),
+          },
+          {
+            question: t.faqs[2].q,
+            answer: t.faqs[2].a,
+          },
+          {
+            question: 'What about query string encoding?',
+            answer: (
+              <>
+                Always use encodeURIComponent for query string values. Need to validate your URLs afterward? Try our{{' '}}
+                <a href={`/${lang}/tools/url-parser`} style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>
+                  URL Parser
+                </a>{' '}}
+                to break down URLs into components.
+              </>
+            ),
+          },
+        ]}
+        toolId="url-encoder"
+        lang={lang}
+      />
     </ToolLayout>
   );
 }

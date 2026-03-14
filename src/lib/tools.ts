@@ -28,7 +28,7 @@ export const tools: Tool[] = [
     category: 'formatter',
     keywords: ['json', 'format', 'validate', 'beautify', 'pretty print', 'minify', 'json formatter online', 'json validator', 'json beautifier', 'json lint', 'json prettifier', 'format json online'],
     path: '/tools/json-formatter',
-    relatedTools: ['json-yaml', 'csv-json', 'xml-formatter', 'json-to-typescript', 'json-viewer', 'json-validator', 'json-formatter-validator'],
+    relatedTools: ['json-validator', 'json-schema-validator', 'json-to-yaml', 'json-to-xml', 'json-to-typescript', 'csv-json'],
   },
   {
     id: 'base64',
@@ -38,7 +38,7 @@ export const tools: Tool[] = [
     category: 'encoder',
     keywords: ['base64', 'encode', 'decode', 'binary', 'text', 'base64 encode', 'base64 decode', 'base64 encoder', 'base64 decoder', 'base64 online', 'base64 converter', 'encode base64 online'],
     path: '/tools/base64',
-    relatedTools: ['base64-encoder', 'base64-decoder', 'url-encoder', 'image-base64'],
+    relatedTools: ['url-encoder', 'base64-image-converter', 'hash-generator', 'hex-to-text'],
   },
   {
     id: 'url-encoder',
@@ -48,7 +48,7 @@ export const tools: Tool[] = [
     category: 'encoder',
     keywords: ['url', 'encode', 'decode', 'uri', 'percent encoding', 'query string'],
     path: '/tools/url-encoder',
-    relatedTools: ['url-decoder', 'url-encode-online', 'percent-encoding-tool', 'base64'],
+    relatedTools: ['base64', 'html-entity-encoder', 'percent-encoding-tool', 'http-request-builder'],
   },
   {
     id: 'hash-generator',
@@ -58,7 +58,7 @@ export const tools: Tool[] = [
     category: 'generator',
     keywords: ['hash', 'md5', 'sha1', 'sha256', 'sha512', 'checksum', 'digest', 'sha256 hash generator', 'multi hash generator', 'sha1 hash generator'],
     path: '/tools/hash-generator',
-    relatedTools: ['multi-hash-generator', 'md5-hash-generator', 'sha256-hash-generator', 'hmac-generator'],
+    relatedTools: ['multi-hash-generator', 'hmac-generator', 'bcrypt-generator', 'password-generator-online'],
   },
   {
     id: 'multi-hash-generator',
@@ -238,7 +238,7 @@ export const tools: Tool[] = [
     category: 'web',
     keywords: ['cron', 'schedule', 'parse', 'expression', 'time', 'job', 'cron parser', 'cron expression parser', 'crontab parser', 'cron expression explained', 'cron expression generator', 'cron next run', 'cron schedule online', 'crontab online'],
     path: '/tools/cron-parser',
-    relatedTools: ['cron-generator', 'crontab-generator', 'cron-job-scheduler', 'cron-expression-parser'],
+    relatedTools: ['cron-expression-generator', 'timestamp-converter', 'regex-tester', 'crontab-guru'],
   },
   {
     id: 'json-yaml',

@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 interface FaqItem {
   question: string;
-  answer: string;
+  answer: string | React.ReactNode;
 }
 
 interface FaqSectionProps {
@@ -25,7 +25,7 @@ export default function FaqSection({ title, faqs, toolId, lang }: FaqSectionProp
       name: faq.question,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: faq.answer,
+        text: typeof faq.answer === 'string' ? faq.answer : 'See answer for details',
       },
     })),
   };

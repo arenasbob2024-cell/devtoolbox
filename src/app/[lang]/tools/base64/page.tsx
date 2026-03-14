@@ -3,11 +3,12 @@
 import { useState, useEffect } from 'react';
 import ToolLayout from '@/components/ToolLayout';
 import CopyButton from '@/components/CopyButton';
+import FaqSection from '@/components/FaqSection';
 import { useLang } from '@/i18n/LangContext';
 import { encodeForUrl, decodeFromUrl, getHashParams, setHashParams } from '@/lib/url-state';
 
 export default function Base64Tool() {
-  const { dict } = useLang();
+  const { dict, lang } = useLang();
   const t = dict.tools['base64'];
   const [input, setInput] = useState('');
   const [output, setOutput] = useState('');
@@ -170,6 +171,54 @@ export default function Base64Tool() {
           {t.seoContent}
         </p>
       </div>
+
+      <FaqSection
+        title={t.faqTitle}
+        faqs={[
+          {
+            question: t.faqs[0].q,
+            answer: (
+              <>
+                {t.faqs[0].a} Learn more with our{' '}
+                <a href={`/${lang}/tools/url-encoder`} style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>
+                  URL Encoder
+                </a>{' '}
+                tool for safe data transmission.
+              </>
+            ),
+          },
+          {
+            question: t.faqs[1].q,
+            answer: (
+              <>
+                {t.faqs[1].a} For actual encryption, try our{' '}
+                <a href={`/${lang}/tools/hash-generator`} style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>
+                  Hash Generator
+                </a>{' '}
+                for cryptographic hashing.
+              </>
+            ),
+          },
+          {
+            question: t.faqs[2].q,
+            answer: t.faqs[2].a,
+          },
+          {
+            question: 'How do I encode an image to Base64?',
+            answer: (
+              <>
+                Use our{' '}
+                <a href={`/${lang}/tools/base64-image-converter`} style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>
+                  Base64 Image Converter
+                </a>{' '}
+                to encode images directly. This is useful for embedding images in HTML or CSS.
+              </>
+            ),
+          },
+        ]}
+        toolId="base64"
+        lang={lang}
+      />
     </ToolLayout>
   );
 }

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import ToolLayout from '@/components/ToolLayout';
 import CopyButton from '@/components/CopyButton';
+import FaqSection from '@/components/FaqSection';
 import { useLang } from '@/i18n/LangContext';
 
 interface CronParts {
@@ -82,7 +83,7 @@ function getNextRuns(cron: string, count: number = 5): string[] {
 }
 
 export default function CronParser() {
-  const { dict } = useLang();
+  const { dict, lang } = useLang();
   const t = dict.tools['cron-parser'];
 
   const [cron, setCron] = useState('');
@@ -178,6 +179,62 @@ export default function CronParser() {
           {t.seoContent}
         </p>
       </div>
+
+      <FaqSection
+        title={t.faqTitle}
+        faqs={[
+          {
+            question: t.faqs[0].q,
+            answer: (
+              <>
+                {t.faqs[0].a} Use our cron expression generator below, or try the{' '}
+                <a href={`/${lang}/tools/cron-expression-generator`} style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>
+                  Cron Expression Generator
+                </a>{' '}
+                for guided creation.
+              </>
+            ),
+          },
+          {
+            question: t.faqs[1].q,
+            answer: (
+              <>
+                {t.faqs[1].a} Use the presets below for quick common schedules, or consult the{{' '}}
+                <a href={`/${lang}/tools/crontab-guru`} style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>
+                  Crontab Reference
+                </a>{' '}
+                for detailed field documentation.
+              </>
+            ),
+          },
+          {
+            question: t.faqs[2].q,
+            answer: (
+              <>
+                {t.faqs[2].a} You can also convert Unix timestamps using our{{' '}}
+                <a href={`/${lang}/tools/timestamp-converter`} style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>
+                  Timestamp Converter
+                </a>{' '}
+                to help with scheduling.
+              </>
+            ),
+          },
+          {
+            question: 'How can I debug a failing cron job?',
+            answer: (
+              <>
+                First, verify your expression syntax with this parser. Then check your cron logs (usually in /var/log/syslog on Linux). Make sure your script path is absolute and executable. Use our{{' '}}
+                <a href={`/${lang}/tools/regex-tester`} style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>
+                  Regex Tester
+                </a>{' '}}
+                if you need to validate patterns in your scripts.
+              </>
+            ),
+          },
+        ]}
+        toolId="cron-parser"
+        lang={lang}
+      />
     </ToolLayout>
   );
 }

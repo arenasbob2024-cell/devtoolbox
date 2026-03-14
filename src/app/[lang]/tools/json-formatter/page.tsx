@@ -3,11 +3,12 @@
 import { useState, useEffect } from 'react';
 import ToolLayout from '@/components/ToolLayout';
 import CopyButton from '@/components/CopyButton';
+import FaqSection from '@/components/FaqSection';
 import { useLang } from '@/i18n/LangContext';
 import { encodeForUrl, decodeFromUrl, getHashParams, setHashParams } from '@/lib/url-state';
 
 export default function JsonFormatter() {
-  const { dict } = useLang();
+  const { dict, lang } = useLang();
   const t = dict.tools['json-formatter'];
   const [input, setInput] = useState('');
   const [output, setOutput] = useState('');
@@ -175,6 +176,54 @@ export default function JsonFormatter() {
           <li>{t.seoFeature4}</li>
         </ul>
       </div>
+
+      <FaqSection
+        title={t.faqTitle}
+        faqs={[
+          {
+            question: t.faqs[0].q,
+            answer: (
+              <>
+                {t.faqs[0].a} Try the{' '}
+                <a href={`/${lang}/tools/json-validator`} style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>
+                  JSON Validator
+                </a>{' '}
+                for deeper validation checks.
+              </>
+            ),
+          },
+          {
+            question: t.faqs[1].q,
+            answer: (
+              <>
+                {t.faqs[1].a} For advanced schema validation, check out the{' '}
+                <a href={`/${lang}/tools/json-schema-validator`} style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>
+                  JSON Schema Validator
+                </a>
+                .
+              </>
+            ),
+          },
+          {
+            question: t.faqs[2].q,
+            answer: (
+              <>
+                {t.faqs[2].a} You can also convert JSON to other formats using our{' '}
+                <a href={`/${lang}/tools/json-to-yaml`} style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>
+                  JSON to YAML
+                </a>{' '}
+                or{' '}
+                <a href={`/${lang}/tools/json-to-xml`} style={{ color: 'var(--accent-blue)', textDecoration: 'underline' }}>
+                  JSON to XML
+                </a>{' '}
+                tools.
+              </>
+            ),
+          },
+        ]}
+        toolId="json-formatter"
+        lang={lang}
+      />
     </ToolLayout>
   );
 }
