@@ -1321,40 +1321,21 @@
     },
     "git-command-generator": {
       "name": "Git Command Generator",
-      "description": "Visual Git command builder — select an action, fill in parameters, copy the command",
-      "pageTitle": "Git Command Generator",
-      "pageDescription": "Visual Git command builder. Select an operation, customize parameters, and copy the ready-to-use command. Covers init, branch, commit, merge, rebase, stash, and more.",
-      "seoTitle": "About Git Commands",
-      "seoContent": "Git is the most widely used version control system in the world. While powerful, its command-line interface has a steep learning curve. This tool helps you build Git commands visually — select the operation you need, fill in parameters like branch names or commit messages, and copy the complete command. Covers 40+ common Git operations organized by category.",
-      "faqTitle": "Frequently Asked Questions",
-      "faqs": [
-        {
-          "q": "Does this tool run Git commands?",
-          "a": "No. This tool generates Git command strings for you to copy and paste into your terminal. No commands are executed."
-        },
-        {
-          "q": "What Git operations are covered?",
-          "a": "Over 40 operations: init, clone, branch, checkout, commit, push, pull, merge, rebase, cherry-pick, stash, reset, revert, tag, and more."
-        },
-        {
-          "q": "Can I customize the parameters?",
-          "a": "Yes. Click on any command to expand it and fill in parameters like branch names, commit messages, file paths, etc. The command updates in real-time."
-        }
-      ],
-      "howToUseTitle": "How to Use",
-      "howToUseSteps": [
-        "Select a category (Branch, Commit, Push & Pull, etc.)",
-        "Click on the operation you need",
-        "Fill in the parameters (branch name, message, etc.)",
-        "Copy the generated command and paste it in your terminal"
-      ],
-      "useCasesTitle": "Common Use Cases",
-      "useCases": [
-        "Learning Git commands as a beginner",
-        "Quickly generating complex Git commands",
-        "Reference guide for less common operations (cherry-pick, rebase, stash)",
-        "Building CI/CD pipeline scripts"
-      ]
+      "description": "Searchable Git cheat sheet with 90+ commands",
+      "pageTitle": "Git Cheat Sheet & Command Generator Online",
+      "pageDescription": "Free online Git cheat sheet with 90+ commands, examples, and common flags. Search by keyword or browse by category.",
+      "search": "Search commands...",
+      "allCategories": "All",
+      "command": "Command",
+      "example": "Example",
+      "flags": "Common Flags",
+      "seoTitle": "Git Command Generator & Cheat Sheet",
+      "seoContent": "Find any git command instantly with our searchable cheat sheet.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "90+ git commands",
+      "seoFeature2": "9 categories",
+      "seoFeature3": "Real-world examples",
+      "seoFeature4": "One-click copy"
     },
     "xml-formatter": {
       "name": "Formatador XML",
@@ -2246,44 +2227,24 @@
     },
     "json-to-python": {
       "name": "JSON to Python",
-      "description": "Convert JSON data to Python dataclass or TypedDict",
-      "pageTitle": "JSON to Python Dataclass Converter",
-      "pageDescription": "Convert JSON to Python dataclasses or TypedDict online. Generate typed Python code with proper type hints. Free, fast, and private.",
-      "seoTitle": "About JSON to Python Conversion",
-      "seoContent": "Python's dataclasses and TypedDict provide structured ways to define typed data models. When consuming JSON APIs in Python, having properly typed classes improves code quality and IDE support. This tool analyzes your JSON and generates Python dataclasses with type hints or TypedDict definitions. It maps types correctly (str, int, float, bool, Optional, List), converts field names to snake_case, and creates separate classes for nested objects. The generated code includes proper imports from dataclasses and typing modules. All processing happens in your browser.",
-      "faqTitle": "Frequently Asked Questions",
-      "faqs": [
-        {
-          "q": "What's the difference between dataclass and TypedDict?",
-          "a": "Dataclasses create full Python classes with __init__, __repr__, etc. TypedDict defines dictionary shapes for type checking without creating a class. Use dataclass for objects, TypedDict for JSON-like dicts."
-        },
-        {
-          "q": "How are field names converted?",
-          "a": "camelCase and PascalCase field names are automatically converted to snake_case following Python naming conventions."
-        },
-        {
-          "q": "Does it handle Optional types?",
-          "a": "Yes. Fields with null values are typed as Optional[type], and the typing.Optional import is added automatically."
-        },
-        {
-          "q": "Can I use this with Pydantic?",
-          "a": "The dataclass output is close to Pydantic models. You can easily adapt it by changing @dataclass to inherit from pydantic.BaseModel."
-        }
-      ],
-      "howToUseTitle": "How to Use",
-      "howToUseSteps": [
-        "Paste your JSON data into the input panel",
-        "Set the root class name (default: Root)",
-        "Choose between dataclass and TypedDict output",
-        "Copy the generated Python code into your project"
-      ],
-      "useCasesTitle": "Common Use Cases",
-      "useCases": [
-        "Creating Python dataclasses from API response data",
-        "Generating typed models for FastAPI or Flask applications",
-        "Building type-safe data parsers for JSON files",
-        "Converting API documentation examples to Python types"
-      ]
+      "description": "Convert JSON to Python dataclass, TypedDict, or Pydantic model",
+      "pageTitle": "JSON to Python Converter Online - Dataclass & Pydantic Generator",
+      "pageDescription": "Free online JSON to Python converter. Generate Python dataclasses, TypedDict, or Pydantic models from JSON data instantly.",
+      "convertBtn": "Convert",
+      "structName": "Class Name",
+      "modeDataclass": "Dataclass",
+      "modeTypedDict": "TypedDict",
+      "modePydantic": "Pydantic",
+      "jsonInput": "JSON Input",
+      "pythonOutput": "Python Output",
+      "loadSample": "Load Sample",
+      "seoTitle": "JSON to Python Converter",
+      "seoContent": "Convert JSON data to Python type definitions instantly.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Dataclass generation",
+      "seoFeature2": "TypedDict support",
+      "seoFeature3": "Pydantic BaseModel",
+      "seoFeature4": "Nested class support"
     },
     "json-to-csharp": {
       "name": "JSON to C#",
@@ -3216,37 +3177,22 @@
     },
     "css-unit-converter": {
       "name": "CSS Unit Converter",
-      "description": "Convert between px, rem, em, vw, vh, pt, and %",
-      "pageTitle": "CSS Unit Converter — px, rem, em, vw, vh, pt, %",
-      "pageDescription": "Convert CSS units between px, rem, em, vw, vh, pt, and percentage. Configure root font-size and viewport dimensions for accurate conversions.",
-      "seoTitle": "What is a CSS Unit Converter?",
-      "seoContent": "A CSS unit converter helps you translate between different CSS length units like px, rem, em, vw, vh, pt, and %. Configure base font-size and viewport for accurate results.",
-      "howToUseTitle": "How to Use",
-      "howToUseSteps": [
-        "Enter a value and select the source unit",
-        "Set root font-size (default 16px)",
-        "Set viewport dimensions if using vw/vh",
-        "See all conversions instantly",
-        "Copy any converted value"
-      ],
-      "useCasesTitle": "Use Cases",
-      "useCases": [
-        "Converting px designs to rem",
-        "Responsive design calculations",
-        "Understanding relative units",
-        "Design system unit standardization"
-      ],
-      "faqTitle": "FAQ",
-      "faqs": [
-        {
-          "q": "Why does root font-size matter for rem?",
-          "a": "1rem equals the root font-size (usually 16px). Changing it affects all rem conversions."
-        },
-        {
-          "q": "What viewport size is used for vw/vh?",
-          "a": "Default is 1920x1080. You can change it to match your target viewport."
-        }
-      ]
+      "description": "Convert between CSS units like px, rem, em, vw, vh",
+      "pageTitle": "CSS Unit Converter Online - px to rem, em, vw Calculator",
+      "pageDescription": "Free online CSS unit converter. Convert between px, rem, em, vw, vh, pt, cm, mm and more with configurable base font size.",
+      "baseFontSize": "Base Font Size",
+      "viewportWidth": "Viewport Width",
+      "viewportHeight": "Viewport Height",
+      "inputValue": "Value",
+      "unit": "Unit",
+      "results": "Results",
+      "seoTitle": "CSS Unit Converter",
+      "seoContent": "Convert between all CSS units instantly.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "All CSS units supported",
+      "seoFeature2": "Configurable base font",
+      "seoFeature3": "Viewport dimension control",
+      "seoFeature4": "Quick presets"
     },
     "og-image-preview": {
       "name": "Open Graph Image Preview",
@@ -5275,6 +5221,50 @@
       "seoFeature2": "Bidirectional conversion",
       "seoFeature3": "Multiple date formats",
       "seoFeature4": "Common timestamps reference"
+    },
+    "base64-image-encoder": {
+      "name": "Base64 Image Encoder",
+      "description": "Convert images to Base64 and Base64 to images",
+      "pageTitle": "Base64 Image Encoder/Decoder Online - Image to Data URI",
+      "pageDescription": "Free online tool to convert images to Base64 encoded strings and decode Base64 back to images. Supports PNG, JPG, GIF, SVG.",
+      "modeEncode": "Image to Base64",
+      "modeDecode": "Base64 to Image",
+      "dragDropText": "Drag & drop image here or click to select",
+      "supportedFormats": "Supports PNG, JPG, GIF, SVG, WebP",
+      "fileName": "File Name",
+      "fileSize": "File Size",
+      "dimensions": "Dimensions",
+      "mimeType": "MIME Type",
+      "preview": "Preview",
+      "base64Output": "Base64 Output",
+      "base64Input": "Base64 Input",
+      "downloadImage": "Download Image",
+      "decodeBtn": "Decode",
+      "codeSnippets": "Code Snippets",
+      "seoTitle": "Base64 Image Encoder",
+      "seoContent": "Convert images to Base64 data URIs for embedding.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Drag and drop support",
+      "seoFeature2": "Multiple format support",
+      "seoFeature3": "Code snippet generation",
+      "seoFeature4": "Bidirectional conversion"
+    },
+    "text-to-ascii-art": {
+      "name": "Text to ASCII Art",
+      "description": "Convert text to ASCII art with various font styles",
+      "pageTitle": "Text to ASCII Art Generator Online - ASCII Art Maker",
+      "pageDescription": "Free online text to ASCII art generator. Convert text to ASCII art banners with multiple font styles. Copy and use anywhere.",
+      "enterText": "Enter Text",
+      "fontStyle": "Font Style",
+      "generate": "Generate",
+      "output": "ASCII Art Output",
+      "seoTitle": "Text to ASCII Art Generator",
+      "seoContent": "Create ASCII art text banners from any text instantly.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "5 font styles",
+      "seoFeature2": "Live preview",
+      "seoFeature3": "Full alphanumeric support",
+      "seoFeature4": "One-click copy"
     }
   },
   "footer": {

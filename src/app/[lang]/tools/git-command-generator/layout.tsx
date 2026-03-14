@@ -7,7 +7,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   const dict = await getDictionary(lang);
-  const t = (dict.tools as unknown as Record<string, Record<string, string>>)['git-command-generator'];
+  const t = dict.tools['git-command-generator'];
   const url = `https://viadreams.cc/${lang}/tools/git-command-generator`;
   return {
     title: t.pageTitle,
@@ -20,7 +20,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       siteName: 'DevToolBox',
       images: [{ url: 'https://viadreams.cc/og-image.png', width: 1200, height: 630 }],
     },
-    twitter: { card: 'summary_large_image', title: `${t.pageTitle} | DevToolBox`, description: t.pageDescription, images: ['https://viadreams.cc/og-image.png'] },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${t.pageTitle} | DevToolBox`,
+      description: t.pageDescription,
+      images: ['https://viadreams.cc/og-image.png'],
+    },
     alternates: {
       canonical: url,
       languages: {
@@ -32,6 +37,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     },
   };
 }
+
 export default async function Layout({ children, params }: { children: React.ReactNode; params: Promise<{ lang: string }> }) {
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;

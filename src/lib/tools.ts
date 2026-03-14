@@ -3330,6 +3330,16 @@ export const tools: Tool[] = [
     path: '/tools/unix-timestamp',
     relatedTools: ['timestamp-converter', 'cron-parser', 'json-formatter'],
   },
+  {
+    id: 'text-to-ascii-art',
+    name: 'Text to ASCII Art',
+    description: 'Convert text to ASCII art with various font styles',
+    icon: '🎨',
+    category: 'text',
+    keywords: ['ascii', 'art', 'text', 'font', 'generator', 'banner'],
+    path: '/tools/text-to-ascii-art',
+    relatedTools: ['ascii-table-generator', 'ascii-art-generator', 'lorem-ipsum-generator'],
+  },
 ];
 
 export function getToolsByCategory(categoryId: string): Tool[] {

@@ -1330,40 +1330,9 @@
     },
     "git-command-generator": {
       "name": "Git 命令生成器",
-      "description": "可视化 Git 命令构建器 — 选择操作，填写参数，复制命令",
-      "pageTitle": "Git 命令生成器",
-      "pageDescription": "可视化 Git 命令构建器。选择操作，自定义参数，复制即用命令。覆盖 init、branch、commit、merge 等。",
-      "seoTitle": "About Git Commands",
-      "seoContent": "Git is the most widely used version control system in the world. While powerful, its command-line interface has a steep learning curve. This tool helps you build Git commands visually — select the operation you need, fill in parameters like branch names or commit messages, and copy the complete command. Covers 40+ common Git operations organized by category.",
-      "faqTitle": "常见问题",
-      "faqs": [
-        {
-          "q": "Does this tool run Git commands?",
-          "a": "No. This tool generates Git command strings for you to copy and paste into your terminal. No commands are executed."
-        },
-        {
-          "q": "What Git operations are covered?",
-          "a": "Over 40 operations: init, clone, branch, checkout, commit, push, pull, merge, rebase, cherry-pick, stash, reset, revert, tag, and more."
-        },
-        {
-          "q": "Can I customize the parameters?",
-          "a": "Yes. Click on any command to expand it and fill in parameters like branch names, commit messages, file paths, etc. The command updates in real-time."
-        }
-      ],
-      "howToUseTitle": "使用方法",
-      "howToUseSteps": [
-        "Select a category (Branch, Commit, Push & Pull, etc.)",
-        "Click on the operation you need",
-        "Fill in the parameters (branch name, message, etc.)",
-        "Copy the generated command and paste it in your terminal"
-      ],
-      "useCasesTitle": "常见用途",
-      "useCases": [
-        "Learning Git commands as a beginner",
-        "Quickly generating complex Git commands",
-        "Reference guide for less common operations (cherry-pick, rebase, stash)",
-        "Building CI/CD pipeline scripts"
-      ]
+      "description": "可搜索的 Git 速查表，含 90+ 命令",
+      "pageTitle": "Git 命令速查表与生成器",
+      "pageDescription": "免费在线 Git 速查表，90+ 命令和示例，支持关键词搜索和分类浏览。"
     },
     "xml-formatter": {
       "name": "XML 格式化器",
@@ -2254,45 +2223,10 @@
       ]
     },
     "json-to-python": {
-      "name": "JSON to Python",
-      "description": "Convert JSON data to Python dataclass or TypedDict",
-      "pageTitle": "JSON to Python Dataclass Converter",
-      "pageDescription": "Convert JSON to Python dataclasses or TypedDict online. Generate typed Python code with proper type hints. Free, fast, and private.",
-      "seoTitle": "About JSON to Python Conversion",
-      "seoContent": "Python's dataclasses and TypedDict provide structured ways to define typed data models. When consuming JSON APIs in Python, having properly typed classes improves code quality and IDE support. This tool analyzes your JSON and generates Python dataclasses with type hints or TypedDict definitions. It maps types correctly (str, int, float, bool, Optional, List), converts field names to snake_case, and creates separate classes for nested objects. The generated code includes proper imports from dataclasses and typing modules. All processing happens in your browser.",
-      "faqTitle": "Frequently Asked Questions",
-      "faqs": [
-        {
-          "q": "What's the difference between dataclass and TypedDict?",
-          "a": "Dataclasses create full Python classes with __init__, __repr__, etc. TypedDict defines dictionary shapes for type checking without creating a class. Use dataclass for objects, TypedDict for JSON-like dicts."
-        },
-        {
-          "q": "How are field names converted?",
-          "a": "camelCase and PascalCase field names are automatically converted to snake_case following Python naming conventions."
-        },
-        {
-          "q": "Does it handle Optional types?",
-          "a": "Yes. Fields with null values are typed as Optional[type], and the typing.Optional import is added automatically."
-        },
-        {
-          "q": "Can I use this with Pydantic?",
-          "a": "The dataclass output is close to Pydantic models. You can easily adapt it by changing @dataclass to inherit from pydantic.BaseModel."
-        }
-      ],
-      "howToUseTitle": "How to Use",
-      "howToUseSteps": [
-        "Paste your JSON data into the input panel",
-        "Set the root class name (default: Root)",
-        "Choose between dataclass and TypedDict output",
-        "Copy the generated Python code into your project"
-      ],
-      "useCasesTitle": "Common Use Cases",
-      "useCases": [
-        "Creating Python dataclasses from API response data",
-        "Generating typed models for FastAPI or Flask applications",
-        "Building type-safe data parsers for JSON files",
-        "Converting API documentation examples to Python types"
-      ]
+      "name": "JSON 转 Python",
+      "description": "将 JSON 转换为 Python dataclass、TypedDict 或 Pydantic 模型",
+      "pageTitle": "JSON 转 Python 在线转换器",
+      "pageDescription": "免费在线 JSON 转 Python 转换器，支持 dataclass、TypedDict 和 Pydantic 模型。"
     },
     "json-to-csharp": {
       "name": "JSON to C#",
@@ -3225,37 +3159,9 @@
     },
     "css-unit-converter": {
       "name": "CSS 单位转换器",
-      "description": "px、rem、em、vw、vh、pt、% 互转",
-      "pageTitle": "CSS 单位转换器 — px/rem/em/vw/vh/pt/%",
-      "pageDescription": "在 px、rem、em、vw、vh、pt 和百分比之间转换 CSS 单位，支持自定义根字体大小。",
-      "seoTitle": "What is a CSS Unit Converter?",
-      "seoContent": "A CSS unit converter helps you translate between different CSS length units like px, rem, em, vw, vh, pt, and %. Configure base font-size and viewport for accurate results.",
-      "howToUseTitle": "How to Use",
-      "howToUseSteps": [
-        "Enter a value and select the source unit",
-        "Set root font-size (default 16px)",
-        "Set viewport dimensions if using vw/vh",
-        "See all conversions instantly",
-        "Copy any converted value"
-      ],
-      "useCasesTitle": "Use Cases",
-      "useCases": [
-        "Converting px designs to rem",
-        "Responsive design calculations",
-        "Understanding relative units",
-        "Design system unit standardization"
-      ],
-      "faqTitle": "FAQ",
-      "faqs": [
-        {
-          "q": "Why does root font-size matter for rem?",
-          "a": "1rem equals the root font-size (usually 16px). Changing it affects all rem conversions."
-        },
-        {
-          "q": "What viewport size is used for vw/vh?",
-          "a": "Default is 1920x1080. You can change it to match your target viewport."
-        }
-      ]
+      "description": "在 px、rem、em、vw、vh 等 CSS 单位之间转换",
+      "pageTitle": "CSS 单位在线转换器",
+      "pageDescription": "免费在线 CSS 单位转换器，支持 px、rem、em、vw、vh、pt 等单位间转换。"
     },
     "og-image-preview": {
       "name": "OG 图片预览",
@@ -5351,6 +5257,18 @@
       "seoFeature2": "双向转换",
       "seoFeature3": "多种日期格式",
       "seoFeature4": "常用时间戳参考表"
+    },
+    "base64-image-encoder": {
+      "name": "Base64 图片编码器",
+      "description": "图片与 Base64 编码互转",
+      "pageTitle": "Base64 图片编码器/解码器",
+      "pageDescription": "免费在线 Base64 图片编码解码工具，支持 PNG、JPG、GIF、SVG 格式。"
+    },
+    "text-to-ascii-art": {
+      "name": "文字转 ASCII 艺术",
+      "description": "将文字转换为多种风格的 ASCII 艺术字",
+      "pageTitle": "文字转 ASCII 艺术字生成器",
+      "pageDescription": "免费在线文字转 ASCII 艺术字工具，支持多种字体风格。"
     }
   },
   "footer": {
