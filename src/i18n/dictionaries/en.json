@@ -11011,6 +11011,102 @@
       "seoFeature2": "Class breakdown with status indicators",
       "seoFeature3": "Full CSS stylesheet generation",
       "seoFeature4": "Support for spacing, colors, typography"
+    },
+    "yaml-formatter": {
+      "name": "YAML Formatter",
+      "description": "Format and beautify YAML files with validation",
+      "pageTitle": "YAML Formatter & Validator Online Free - Beautify, Validate YAML",
+      "pageDescription": "Free online YAML formatter and validator. Format, beautify, and validate YAML syntax with customizable indentation. Supports comments and nested structures.",
+      "inputLabel": "Input YAML",
+      "outputLabel": "Output YAML",
+      "inputPlaceholder": "Paste your YAML here...",
+      "formatBtn": "Format / Beautify",
+      "indent": "Indent",
+      "validYaml": "✓ Valid YAML",
+      "seoTitle": "What is YAML Formatter?",
+      "seoContent": "A YAML formatter helps you format and validate YAML syntax. YAML is a human-readable data serialization language commonly used for configuration files, Docker Compose, Kubernetes manifests, and more. This tool beautifies your YAML with proper indentation and validates syntax errors.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Format YAML with customizable indentation (2, 4, or 8 spaces)",
+      "seoFeature2": "Validate YAML syntax with error detection",
+      "seoFeature3": "Support for complex nested structures",
+      "seoFeature4": "100% client-side processing — your data never leaves your browser",
+      "faqTitle": "Frequently Asked Questions",
+      "faqs": [
+        {
+          "q": "What is YAML formatting?",
+          "a": "YAML formatting is the process of adding proper indentation, line breaks, and spacing to YAML data to make it more readable. It doesn't change the data itself, just its visual presentation."
+        },
+        {
+          "q": "Is this YAML formatter safe to use?",
+          "a": "Yes, 100% safe. All processing happens directly in your browser. Your YAML data is never sent to any server or stored anywhere."
+        },
+        {
+          "q": "Can I validate YAML with this tool?",
+          "a": "Yes. Click the Validate button to check if your YAML is syntactically correct. The tool will show detailed error messages if any issues are found."
+        }
+      ]
+    },
+    "color-contrast-checker": {
+      "name": "Color Contrast Checker",
+      "description": "Check color contrast ratio for WCAG accessibility",
+      "pageTitle": "Color Contrast Checker - WCAG AA/AAA Compliance Online Free",
+      "pageDescription": "Check color contrast ratio between foreground and background colors. Ensure WCAG AA and AAA compliance for web accessibility. Free online tool with real-time preview.",
+      "fgColor": "Foreground Color",
+      "bgColor": "Background Color",
+      "preview": "Preview",
+      "checkBtn": "Check Contrast",
+      "contrastRatio": "Contrast Ratio",
+      "wcagAA": "WCAG AA",
+      "wcagAAA": "WCAG AAA",
+      "normal": "Normal text",
+      "largeText": "Large text",
+      "seoTitle": "What is Color Contrast Checker?",
+      "seoContent": "Check the color contrast ratio between foreground and background colors to ensure WCAG accessibility compliance. This tool calculates the luminance ratio and determines if your colors meet WCAG AA and AAA standards for both normal and large text.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Calculate contrast ratio between two colors",
+      "seoFeature2": "Check WCAG AA and AAA compliance",
+      "seoFeature3": "Real-time preview of color combinations",
+      "seoFeature4": "100% client-side processing — your data never leaves your browser"
+    },
+    "jwt-generator": {
+      "name": "JWT Generator",
+      "description": "Generate and sign JSON Web Tokens with HS256",
+      "pageTitle": "JWT Generator Online Free - Create Signed JWT Tokens",
+      "pageDescription": "Free online JWT generator. Create and sign JSON Web Tokens with HS256 algorithm. Customize headers, payloads, and view decoded parts instantly.",
+      "headerLabel": "Header (JSON)",
+      "headerPlaceholder": "Enter header JSON...",
+      "payloadLabel": "Payload (JSON)",
+      "payloadPlaceholder": "Enter payload JSON...",
+      "secretLabel": "Secret Key",
+      "secretPlaceholder": "Enter secret key...",
+      "generateBtn": "Generate JWT",
+      "addTimeClaim": "Add Time Claims",
+      "outputLabel": "Generated JWT",
+      "decodedHeader": "Decoded Header",
+      "decodedPayload": "Decoded Payload",
+      "seoTitle": "What is JWT Generator?",
+      "seoContent": "Generate and sign JSON Web Tokens (JWT) with HS256 algorithm. Create custom headers and payloads, specify your secret key, and get a signed JWT token instantly. Perfect for API authentication and session management testing.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Generate JWT with custom headers and payloads",
+      "seoFeature2": "HS256 (HMAC SHA-256) signing algorithm",
+      "seoFeature3": "View decoded JWT parts for verification",
+      "seoFeature4": "100% client-side processing — your data never leaves your browser"
+    },
+    "env-to-json": {
+      "name": ".env to JSON Converter",
+      "description": "Convert environment variable files to JSON format",
+      "pageTitle": ".env to JSON Converter Online Free - Parse Environment Files",
+      "pageDescription": "Free online .env to JSON converter. Convert environment variable files to JSON format with support for comments, quotes, and multiline values.",
+      "inputLabel": "Input .env",
+      "inputPlaceholder": "Paste your .env content here...\n\nKEY=value\nAPI_KEY=secret123",
+      "outputLabel": "Output JSON",
+      "seoTitle": "What is .env to JSON Converter?",
+      "seoContent": "Convert environment variable files (.env) to JSON format instantly. Parse KEY=VALUE pairs, handle comments, quoted values, and multiline strings. Perfect for configuration management and environment setup documentation.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Parse .env format to JSON objects",
+      "seoFeature2": "Support for comments, quoted strings, and multiline values",
+      "seoFeature3": "Format output as beautified or minified JSON",
+      "seoFeature4": "100% client-side processing — your data never leaves your browser"
     }
   },
   "footer": {

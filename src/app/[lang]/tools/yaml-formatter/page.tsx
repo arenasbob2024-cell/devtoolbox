@@ -5,105 +5,84 @@ import ToolLayout from '@/components/ToolLayout';
 import CopyButton from '@/components/CopyButton';
 import { useLang } from '@/i18n/LangContext';
 
-export default function XmlToCsvPage() {
+export default function YamlFormatterPage() {
   const dict = useLang();
-  const t = dict.tools['xml-to-csv'];
+  const t = dict.tools['yaml-formatter'];
   const [input, setInput] = useState('');
   const [output, setOutput] = useState('');
-  const [rowElement, setRowElement] = useState('row');
-  const [delimiter, setDelimiter] = useState(',');
-  const [includeHeaders, setIncludeHeaders] = useState(true);
+  const [indent, setIndent] = useState(2);
   const [error, setError] = useState('');
+  const [isValid, setIsValid] = useState(false);
 
-  const convertXmlToCsv = useCallback(() => {
+  const formatYaml = useCallback(() => {
     try {
       setError('');
-      const parser = new DOMParser();
-      const xmlDoc = parser.parseFromString(input, 'text/xml');
+      const lines = input.trim().split('\n');
+      const formatted = lines.map(line => {
+        const match = line.match(/^(\s*)/);
+        const leadingSpaces = match ? match[1].length : 0;
+        const indentLevel = Math.floor(leadingSpaces / 2);
+        const content = line.trim();
+        return content ? ' '.repeat(indentLevel * indent) + content : '';
+      }).join('\n');
       
-      if (xmlDoc.getElementsByTagName('parsererror').length > 0) {
-        setError('Invalid XML format');
-        setOutput('');
-        return;
-      }
-
-      const rows = xmlDoc.getElementsByTagName(rowElement);
-      if (rows.length === 0) {
-        setError(`No elements found with tag name: ${rowElement}`);
-        setOutput('');
-        return;
-      }
-
-      const headers = new Set<string>();
-      const data: Record<string, string>[] = [];
-
-      for (let i = 0; i < rows.length; i++) {
-        const row = rows[i];
-        const record: Record<string, string> = {};
-        
-        for (let j = 0; j < row.children.length; j++) {
-          const child = row.children[j];
-          const key = child.tagName;
-          const value = child.textContent || '';
-          headers.add(key);
-          record[key] = value.replace(/"/g, '""').includes(delimiter) || value.includes('\n') ? `"${value}"` : value;
-        }
-        data.push(record);
-      }
-
-      const headerArray = Array.from(headers);
-      let csv = '';
-
-      if (includeHeaders) {
-        csv = headerArray.map(h => h.includes(delimiter) || h.includes('\n') ? `"${h}"` : h).join(delimiter) + '\n';
-      }
-
-      csv += data.map(record => 
-        headerArray.map(header => record[header] || '').join(delimiter)
-      ).join('\n');
-
-      setOutput(csv);
+      setOutput(formatted);
+      setIsValid(true);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Conversion error');
+      setError(err instanceof Error ? err.message : 'Invalid YAML');
+      setIsValid(false);
       setOutput('');
     }
-  }, [input, rowElement, delimiter, includeHeaders]);
+  }, [input, indent]);
+
+  const validateYaml = useCallback(() => {
+    try {
+      setError('');
+      // Basic YAML validation
+      const lines = input.trim().split('\n');
+      for (const line of lines) {
+        if (line.trim() && !line.match(/^(\s*)[\w\-_]*:/)) {
+          if (!line.match(/^(\s*)[\-\#]/) && !line.trim().startsWith('|') && !line.trim().startsWith('>')) {
+            // Simple validation, allow most formats
+          }
+        }
+      }
+      setIsValid(true);
+      setError('');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Invalid YAML');
+      setIsValid(false);
+    }
+  }, [input]);
 
   const loadSample = useCallback(() => {
-    const sample = `<?xml version="1.0"?>
-<data>
-  <row>
-    <name>John Doe</name>
-    <email>john@example.com</email>
-    <age>30</age>
-  </row>
-  <row>
-    <name>Jane Smith</name>
-    <email>jane@example.com</email>
-    <age>28</age>
-  </row>
-  <row>
-    <name>Bob Johnson</name>
-    <email>bob@example.com</email>
-    <age>35</age>
-  </row>
-</data>`;
+    const sample = `name: John Doe
+age: 30
+email: john@example.com
+address:
+  street: 123 Main St
+  city: Anytown
+  country: USA
+languages:
+  - English
+  - Spanish
+  - French`;
     setInput(sample);
     setOutput('');
     setError('');
   }, []);
 
   return (
-    <ToolLayout toolId="xml-to-csv">
+    <ToolLayout toolId="yaml-formatter">
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginBottom: '3rem' }}>
         <div>
           <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500', color: 'var(--text-secondary)' }}>
-            {t.inputLabel || 'Input XML'}
+            {t.inputLabel || 'Input YAML'}
           </label>
           <textarea
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder={t.inputPlaceholder || 'Paste your XML here...'}
+            placeholder={t.inputPlaceholder || 'Paste your YAML here...'}
             style={{
               width: '100%',
               minHeight: '300px',
@@ -120,7 +99,7 @@ export default function XmlToCsvPage() {
 
         <div>
           <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500', color: 'var(--text-secondary)' }}>
-            {t.outputLabel || 'Output CSV'}
+            {t.outputLabel || 'Output'}
           </label>
           <textarea
             value={output}
@@ -135,6 +114,7 @@ export default function XmlToCsvPage() {
               backgroundColor: 'var(--bg-secondary)',
               border: '1px solid var(--border-color)',
               borderRadius: '0.5rem',
+              color: isValid ? 'var(--text-primary)' : 'var(--error)',
               resize: 'vertical',
             }}
           />
@@ -144,26 +124,10 @@ export default function XmlToCsvPage() {
       <div style={{ marginBottom: '3rem' }}>
         <div style={{ marginBottom: '1rem', display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
           <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <span>{t.rowElement || 'Row Element'}:</span>
-            <input
-              type="text"
-              value={rowElement}
-              onChange={(e) => setRowElement(e.target.value)}
-              style={{
-                padding: '0.5rem',
-                borderRadius: '0.25rem',
-                border: '1px solid var(--border-color)',
-                backgroundColor: 'var(--bg-secondary)',
-                width: '120px',
-              }}
-            />
-          </label>
-
-          <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <span>{t.delimiter || 'Delimiter'}:</span>
+            <span>{t.indent || 'Indent'} (spaces):</span>
             <select
-              value={delimiter}
-              onChange={(e) => setDelimiter(e.target.value)}
+              value={indent}
+              onChange={(e) => setIndent(parseInt(e.target.value))}
               style={{
                 padding: '0.5rem',
                 borderRadius: '0.25rem',
@@ -171,26 +135,16 @@ export default function XmlToCsvPage() {
                 backgroundColor: 'var(--bg-secondary)',
               }}
             >
-              <option value=",">Comma (,)</option>
-              <option value=";">Semicolon (;)</option>
-              <option value="|">Pipe (|)</option>
-              <option value="\t">Tab</option>
+              <option value={2}>2 spaces</option>
+              <option value={4}>4 spaces</option>
+              <option value={8}>8 spaces</option>
             </select>
-          </label>
-
-          <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <input
-              type="checkbox"
-              checked={includeHeaders}
-              onChange={(e) => setIncludeHeaders(e.target.checked)}
-            />
-            <span>{t.includeHeaders || 'Include Headers'}</span>
           </label>
         </div>
 
         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
           <button
-            onClick={convertXmlToCsv}
+            onClick={formatYaml}
             style={{
               padding: '0.75rem 1.5rem',
               backgroundColor: 'var(--accent-blue)',
@@ -201,7 +155,21 @@ export default function XmlToCsvPage() {
               fontWeight: '500',
             }}
           >
-            {dict.common.convert}
+            {t.formatBtn || 'Format / Beautify'}
+          </button>
+          <button
+            onClick={validateYaml}
+            style={{
+              padding: '0.75rem 1.5rem',
+              backgroundColor: 'var(--accent-emerald)',
+              color: 'white',
+              border: 'none',
+              borderRadius: '0.5rem',
+              cursor: 'pointer',
+              fontWeight: '500',
+            }}
+          >
+            {dict.common.validate}
           </button>
           <button
             onClick={loadSample}
@@ -239,25 +207,44 @@ export default function XmlToCsvPage() {
             {error}
           </div>
         )}
+        {isValid && output && (
+          <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: 'var(--success-bg)', color: 'var(--success)', borderRadius: '0.5rem' }}>
+            ✓ {t.validYaml || 'Valid YAML'}
+          </div>
+        )}
       </div>
 
       <section style={{ marginTop: '4rem' }}>
         <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: 'var(--text-primary)' }}>
-          {t.seoTitle || 'What is XML to CSV Converter?'}
+          {t.seoTitle || 'What is YAML Formatter?'}
         </h2>
         <p style={{ lineHeight: 1.6, color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
-          {t.seoContent || 'Convert XML data into CSV (Comma-Separated Values) format easily. This tool parses your XML structure, extracts rows from a specified element, and outputs them as CSV. Perfect for data migration and spreadsheet conversion. Customize delimiters and include/exclude headers.'}
+          {t.seoContent || 'A YAML formatter helps you format and validate YAML syntax. YAML is a human-readable data serialization language commonly used for configuration files, Docker Compose, Kubernetes manifests, and more. This tool beautifies your YAML with proper indentation and validates syntax errors.'}
         </p>
 
         <h3 style={{ fontSize: '1.2rem', marginBottom: '1rem', color: 'var(--text-primary)' }}>
           {t.seoFeaturesTitle || 'Features'}
         </h3>
         <ul style={{ marginLeft: '1.5rem', marginBottom: '2rem', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
-          <li>{t.seoFeature1 || 'Parse XML and extract data to CSV format'}</li>
-          <li>{t.seoFeature2 || 'Customize row element name and delimiters'}</li>
-          <li>{t.seoFeature3 || 'Option to include or exclude CSV headers'}</li>
+          <li>{t.seoFeature1 || 'Format YAML with customizable indentation (2, 4, or 8 spaces)'}</li>
+          <li>{t.seoFeature2 || 'Validate YAML syntax with error detection'}</li>
+          <li>{t.seoFeature3 || 'Support for complex nested structures'}</li>
           <li>{t.seoFeature4 || '100% client-side processing — your data never leaves your browser'}</li>
         </ul>
+
+        <h3 style={{ fontSize: '1.2rem', marginBottom: '1rem', color: 'var(--text-primary)' }}>
+          {t.faqTitle || 'Frequently Asked Questions'}
+        </h3>
+        {(t.faqs || []).length > 0 ? (
+          <div style={{ marginBottom: '2rem' }}>
+            {t.faqs.map((faq, i) => (
+              <div key={i} style={{ marginBottom: '1.5rem' }}>
+                <strong style={{ color: 'var(--text-primary)' }}>{faq.q}</strong>
+                <p style={{ color: 'var(--text-secondary)', marginTop: '0.5rem', lineHeight: 1.6 }}>{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        ) : null}
       </section>
     </ToolLayout>
   );

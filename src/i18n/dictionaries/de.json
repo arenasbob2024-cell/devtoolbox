@@ -5217,6 +5217,45 @@
       "seoFeature2": "Class breakdown with status indicators",
       "seoFeature3": "Full CSS stylesheet generation",
       "seoFeature4": "Support for spacing, colors, typography"
+    },
+    "yaml-formatter": {
+      "name": "YAML Formatter",
+      "description": "Format and beautify YAML",
+      "pageTitle": "YAML Formatter Online - Format & Beautify YAML Free",
+      "pageDescription": "Format and beautify YAML with syntax validation. Free online YAML formatter with configurable indentation.",
+      "seoTitle": "YAML Formatter",
+      "seoContent": "Format YAML online.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "Syntax validation",
+      "seoFeature2": "Configurable indentation",
+      "seoFeature3": "Error highlighting",
+      "seoFeature4": "Copy formatted output"
+    },
+    "color-contrast-checker": {
+      "name": "Color Contrast Checker",
+      "description": "Check WCAG color contrast ratio",
+      "pageTitle": "Color Contrast Checker - WCAG AA/AAA Compliance Tool",
+      "pageDescription": "Check color contrast ratio between foreground and background. WCAG AA/AAA compliance checker.",
+      "seoTitle": "Color Contrast Checker",
+      "seoContent": "Check WCAG compliance.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "WCAG AA/AAA compliance",
+      "seoFeature2": "Real-time preview",
+      "seoFeature3": "Hex color input",
+      "seoFeature4": "Contrast ratio calculation"
+    },
+    "jwt-generator": {
+      "name": "JWT Generator",
+      "description": "Generate JWT tokens",
+      "pageTitle": "JWT Generator Online - Create JWT Tokens Free",
+      "pageDescription": "Generate JWT tokens with custom headers, payload, and HS256 signing. Free online JWT generator.",
+      "seoTitle": "JWT Generator",
+      "seoContent": "Generate JWT tokens.",
+      "seoFeaturesTitle": "Features",
+      "seoFeature1": "HS256 signing",
+      "seoFeature2": "Custom claims",
+      "seoFeature3": "Header configuration",
+      "seoFeature4": "Token preview"
     }
   },
   "footer": {

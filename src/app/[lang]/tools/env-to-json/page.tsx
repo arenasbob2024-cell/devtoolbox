@@ -1,339 +1,251 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import ToolLayout from '@/components/ToolLayout';
 import CopyButton from '@/components/CopyButton';
 import { useLang } from '@/i18n/LangContext';
 
-export default function EnvToJson() {
-  const { dict } = useLang();
-  const t = dict.tools['env-to-json'] as Record<string, unknown>;
-  const common = dict.common;
-
-  const [mode, setMode] = useState<'env-to-json' | 'json-to-env'>('env-to-json');
+export default function EnvToJsonPage() {
+  const dict = useLang();
+  const t = dict.tools['env-to-json'];
   const [input, setInput] = useState('');
   const [output, setOutput] = useState('');
   const [error, setError] = useState('');
-  const [sortKeys, setSortKeys] = useState(true);
-  const [includeEmpty, setIncludeEmpty] = useState(true);
-  const [quoteStyle, setQuoteStyle] = useState<'none' | 'single' | 'double'>('double');
 
-  const sampleEnv = `DATABASE_URL=postgresql://user:pass@localhost:5432/mydb
-API_KEY=sk-1234567890abcdef
-NODE_ENV=development
+  const parseEnvToJson = useCallback(() => {
+    try {
+      setError('');
+      const lines = input.split('\n');
+      const json: Record<string, string> = {};
+      let multilineKey = '';
+      let multilineValue = '';
+
+      for (let line of lines) {
+        line = line.trim();
+
+        if (!line || line.startsWith('#')) {
+          continue;
+        }
+
+        if (multilineKey) {
+          if (line.endsWith('"') && !line.endsWith('\\"')) {
+            multilineValue += '\n' + line.slice(0, -1);
+            json[multilineKey] = multilineValue;
+            multilineKey = '';
+            multilineValue = '';
+          } else {
+            multilineValue += '\n' + line;
+          }
+          continue;
+        }
+
+        const eqIndex = line.indexOf('=');
+        if (eqIndex === -1) continue;
+
+        const key = line.slice(0, eqIndex).trim();
+        let value = line.slice(eqIndex + 1).trim();
+
+        if (!key) continue;
+
+        if (value.startsWith('"')) {
+          if (value.endsWith('"') && !value.endsWith('\\"')) {
+            json[key] = value.slice(1, -1).replace(/\\"/g, '"').replace(/\\n/g, '\n');
+          } else {
+            multilineKey = key;
+            multilineValue = value.slice(1);
+          }
+        } else if (value.startsWith("'")) {
+          if (value.endsWith("'")) {
+            json[key] = value.slice(1, -1);
+          } else {
+            multilineKey = key;
+            multilineValue = value.slice(1);
+          }
+        } else {
+          json[key] = value;
+        }
+      }
+
+      if (multilineKey) {
+        json[multilineKey] = multilineValue;
+      }
+
+      const jsonStr = JSON.stringify(json, null, 2);
+      setOutput(jsonStr);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Parse error');
+      setOutput('');
+    }
+  }, [input]);
+
+  const loadSample = useCallback(() => {
+    const sample = `# Database Configuration
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=myapp
+DB_USER=admin
+DB_PASSWORD=secret123
+
+# API Configuration
+API_KEY=your-api-key-here
+API_URL=https://api.example.com
 DEBUG=true
-REACT_APP_API_BASE=https://api.example.com
-SECRET_TOKEN="secret with spaces"
-MULTI_LINE_VALUE='This is a \\
-multiline value'
-EMPTY_VALUE=
-FEATURE_FLAG=enabled`;
 
-  const parseEnv = (envText: string): Record<string, string> => {
-    const result: Record<string, string> = {};
-    const lines = envText.split('\n');
-    let i = 0;
-
-    while (i < lines.length) {
-      let line = lines[i].trim();
-      i++;
-
-      if (!line || line.startsWith('#')) continue;
-
-      while (line.endsWith('\\') && i < lines.length) {
-        line = line.slice(0, -1).trim() + lines[i].trim();
-        i++;
-      }
-
-      const eqIndex = line.indexOf('=');
-      if (eqIndex === -1) continue;
-
-      const key = line.substring(0, eqIndex).trim();
-      let value = line.substring(eqIndex + 1).trim();
-
-      if (value.startsWith('"') && value.endsWith('"')) {
-        value = value.slice(1, -1);
-      } else if (value.startsWith("'") && value.endsWith("'")) {
-        value = value.slice(1, -1);
-      }
-
-      if (value || includeEmpty) {
-        result[key] = value;
-      }
-    }
-
-    return result;
-  };
-
-  const convertEnvToJson = () => {
-    try {
-      setError('');
-      const parsed = parseEnv(input);
-      const sorted = sortKeys ? Object.keys(parsed).sort().reduce((acc, key) => {
-        acc[key] = parsed[key];
-        return acc;
-      }, {} as Record<string, string>) : parsed;
-      setOutput(JSON.stringify(sorted, null, 2));
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Conversion failed');
-    }
-  };
-
-  const convertJsonToEnv = () => {
-    try {
-      setError('');
-      const parsed = JSON.parse(input);
-
-      if (typeof parsed !== 'object' || Array.isArray(parsed)) {
-        setError('Input must be a flat JSON object');
-        return;
-      }
-
-      let lines: string[] = [];
-      const keys = sortKeys ? Object.keys(parsed).sort() : Object.keys(parsed);
-
-      keys.forEach(key => {
-        const value = parsed[key];
-
-        if (typeof value === 'object' && value !== null) {
-          lines.push(`# ${key}=<nested object - cannot convert>`);
-          return;
-        }
-
-        const strValue = String(value);
-        let formattedValue = strValue;
-
-        if (quoteStyle === 'double' && (strValue.includes(' ') || strValue.includes('='))) {
-          formattedValue = `"${strValue.replace(/"/g, '\\"')}"`;
-        } else if (quoteStyle === 'single' && (strValue.includes(' ') || strValue.includes('='))) {
-          formattedValue = `'${strValue.replace(/'/g, "\\'")}'`;
-        }
-
-        lines.push(`${key}=${formattedValue}`);
-      });
-
-      setOutput(lines.join('\n'));
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Invalid JSON');
-    }
-  };
-
-  const handleConvert = () => {
-    if (mode === 'env-to-json') {
-      convertEnvToJson();
-    } else {
-      convertJsonToEnv();
-    }
-  };
-
-  const handleLoadSample = () => {
-    setInput(sampleEnv);
+# Multiline Example
+DESCRIPTION="This is a
+multiline
+description"`;
+    setInput(sample);
     setOutput('');
     setError('');
-  };
+  }, []);
 
-  const handleClear = () => {
-    setInput('');
-    setOutput('');
-    setError('');
-  };
+  const formatAsMinified = useCallback(() => {
+    if (output) {
+      try {
+        const json = JSON.parse(output);
+        const minified = JSON.stringify(json);
+        setOutput(minified);
+      } catch (err) {
+        setError('Could not minify JSON');
+      }
+    }
+  }, [output]);
 
   return (
-    <ToolLayout
-      title={t.pageTitle as string}
-      description={t.pageDescription as string}
-      toolId="env-to-json"
-    >
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
-        {/* Left Panel */}
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-          {/* Mode Toggle */}
-          <div style={{ display: 'flex', gap: 8, marginBottom: 16 }}>
-            <button
-              onClick={() => { setMode('env-to-json'); setOutput(''); setError(''); }}
-              className={`btn ${mode === 'env-to-json' ? 'btn-primary' : 'btn-secondary'}`}
-              style={{ flex: 1 }}
-            >
-              {t.envToJsonBtn || '.env → JSON'}
-            </button>
-            <button
-              onClick={() => { setMode('json-to-env'); setOutput(''); setError(''); }}
-              className={`btn ${mode === 'json-to-env' ? 'btn-primary' : 'btn-secondary'}`}
-              style={{ flex: 1 }}
-            >
-              {t.jsonToEnvBtn || 'JSON → .env'}
-            </button>
-          </div>
-
-          {/* Options */}
-          <div style={{ background: 'var(--bg-input)', borderRadius: 8, padding: 12, marginBottom: 16, border: '1px solid var(--border-color)' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
-              <input
-                type="checkbox"
-                id="sortKeys"
-                checked={sortKeys}
-                onChange={e => setSortKeys(e.target.checked)}
-              />
-              <label htmlFor="sortKeys" style={{ fontSize: 13, cursor: 'pointer' }}>
-                {t.sortKeysLabel || 'Sort Keys'}
-              </label>
-            </div>
-
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
-              <input
-                type="checkbox"
-                id="includeEmpty"
-                checked={includeEmpty}
-                onChange={e => setIncludeEmpty(e.target.checked)}
-              />
-              <label htmlFor="includeEmpty" style={{ fontSize: 13, cursor: 'pointer' }}>
-                {t.includeEmptyLabel || 'Include Empty Values'}
-              </label>
-            </div>
-
-            {mode === 'json-to-env' && (
-              <div style={{ marginTop: 10 }}>
-                <label style={{ fontSize: 13, display: 'block', marginBottom: 4 }}>
-                  {t.quoteStyleLabel || 'Quote Style'}
-                </label>
-                <select
-                  value={quoteStyle}
-                  onChange={e => setQuoteStyle(e.target.value as 'none' | 'single' | 'double')}
-                  style={{ width: '100%' }}
-                >
-                  <option value="none">{t.quoteNone || 'None'}</option>
-                  <option value="single">{t.quoteSingle || 'Single'}</option>
-                  <option value="double">{t.quoteDouble || 'Double'}</option>
-                </select>
-              </div>
-            )}
-          </div>
-
-          {/* Input */}
-          <label style={{ fontSize: 13, fontWeight: 600, marginBottom: 4, display: 'block' }}>
-            {mode === 'env-to-json' ? (t.envInputLabel || '.env Input') : (t.jsonInputLabel || 'JSON Input')}
+    <ToolLayout toolId="env-to-json">
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginBottom: '3rem' }}>
+        <div>
+          <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500', color: 'var(--text-secondary)' }}>
+            {t.inputLabel || 'Input .env'}
           </label>
           <textarea
             value={input}
-            onChange={e => setInput(e.target.value)}
-            placeholder={mode === 'env-to-json' ? (t.envPlaceholder || 'KEY=VALUE\nAPI_KEY=secret') : (t.jsonPlaceholder || '{"KEY": "VALUE"}')}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder={t.inputPlaceholder || 'Paste your .env content here...\n\nKEY=value\nAPI_KEY=secret123'}
             style={{
-              flex: 1,
+              width: '100%',
+              minHeight: '300px',
+              padding: '1rem',
               fontFamily: 'monospace',
-              fontSize: 12,
-              padding: 12,
-              borderRadius: 8,
+              fontSize: '0.9rem',
+              backgroundColor: 'var(--bg-secondary)',
               border: '1px solid var(--border-color)',
-              background: 'var(--bg-input)',
-              color: 'var(--text-primary)',
-              resize: 'none',
-              minHeight: 300,
+              borderRadius: '0.5rem',
+              resize: 'vertical',
             }}
           />
-
-          {/* Buttons */}
-          <div style={{ display: 'flex', gap: 8, marginTop: 12 }}>
-            <button onClick={handleConvert} className="btn btn-primary" style={{ flex: 1 }}>
-              {common.convert}
-            </button>
-            <button onClick={handleLoadSample} className="btn btn-secondary">
-              {common.loadSample}
-            </button>
-            <button onClick={handleClear} className="btn btn-secondary">
-              {common.clear}
-            </button>
-          </div>
         </div>
 
-        {/* Right Panel */}
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-          <label style={{ fontSize: 13, fontWeight: 600, marginBottom: 4, display: 'block' }}>
-            {common.output}
+        <div>
+          <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500', color: 'var(--text-secondary)' }}>
+            {t.outputLabel || 'Output JSON'}
           </label>
-
-          {error && (
-            <div style={{
-              background: '#fee2e2',
-              color: '#991b1b',
-              padding: 12,
-              borderRadius: 8,
-              marginBottom: 12,
-              fontSize: 13,
-              border: '1px solid #fca5a5',
-            }}>
-              <strong>{common.error}:</strong> {error}
-            </div>
-          )}
-
           <textarea
             value={output}
             readOnly
-            placeholder={common.resultPlaceholder as string}
+            placeholder={dict.common.resultPlaceholder}
             style={{
-              flex: 1,
+              width: '100%',
+              minHeight: '300px',
+              padding: '1rem',
               fontFamily: 'monospace',
-              fontSize: 12,
-              padding: 12,
-              borderRadius: 8,
+              fontSize: '0.9rem',
+              backgroundColor: 'var(--bg-secondary)',
               border: '1px solid var(--border-color)',
-              background: 'var(--bg-input)',
-              color: 'var(--text-primary)',
-              resize: 'none',
-              minHeight: 300,
+              borderRadius: '0.5rem',
+              resize: 'vertical',
             }}
           />
-
-          {output && (
-            <div style={{ marginTop: 12 }}>
-              <CopyButton text={output} />
-            </div>
-          )}
         </div>
       </div>
 
-      {/* SEO Content */}
-      <div style={{ marginTop: 30, paddingTop: 20, borderTop: '1px solid var(--border-color)' }}>
-        <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>
+      <div style={{ marginBottom: '3rem' }}>
+        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+          <button
+            onClick={parseEnvToJson}
+            style={{
+              padding: '0.75rem 1.5rem',
+              backgroundColor: 'var(--accent-blue)',
+              color: 'white',
+              border: 'none',
+              borderRadius: '0.5rem',
+              cursor: 'pointer',
+              fontWeight: '500',
+            }}
+          >
+            {dict.common.convert}
+          </button>
+          <button
+            onClick={formatAsMinified}
+            style={{
+              padding: '0.75rem 1.5rem',
+              backgroundColor: 'var(--accent-purple)',
+              color: 'white',
+              border: 'none',
+              borderRadius: '0.5rem',
+              cursor: 'pointer',
+              fontWeight: '500',
+            }}
+          >
+            {dict.common.minify}
+          </button>
+          <button
+            onClick={loadSample}
+            style={{
+              padding: '0.75rem 1.5rem',
+              backgroundColor: 'var(--accent-orange)',
+              color: 'white',
+              border: 'none',
+              borderRadius: '0.5rem',
+              cursor: 'pointer',
+              fontWeight: '500',
+            }}
+          >
+            {dict.common.loadSample}
+          </button>
+          <button
+            onClick={() => { setInput(''); setOutput(''); setError(''); }}
+            style={{
+              padding: '0.75rem 1.5rem',
+              backgroundColor: 'var(--accent-gray)',
+              color: 'white',
+              border: 'none',
+              borderRadius: '0.5rem',
+              cursor: 'pointer',
+              fontWeight: '500',
+            }}
+          >
+            {dict.common.clearAll}
+          </button>
+          {output && <CopyButton text={output} />}
+        </div>
+
+        {error && (
+          <div style={{ marginTop: '1rem', padding: '1rem', backgroundColor: 'var(--error-bg)', color: 'var(--error)', borderRadius: '0.5rem' }}>
+            {error}
+          </div>
+        )}
+      </div>
+
+      <section style={{ marginTop: '4rem' }}>
+        <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: 'var(--text-primary)' }}>
           {t.seoTitle || 'What is .env to JSON Converter?'}
         </h2>
-        <p style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-          {t.seoContent || 'The .env to JSON converter tool helps you seamlessly convert environment variable files to JSON format and vice versa. Easily parse .env files with support for quoted values, multiline strings, and comments, then convert them to structured JSON. Perfect for configuration management, deployment automation, and development workflows.'}
+        <p style={{ lineHeight: 1.6, color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
+          {t.seoContent || 'Convert environment variable files (.env) to JSON format instantly. Parse KEY=VALUE pairs, handle comments, quoted values, and multiline strings. Perfect for configuration management and environment setup documentation.'}
         </p>
 
-        <h3 style={{ fontSize: 16, fontWeight: 600, marginTop: 16, marginBottom: 8 }}>
+        <h3 style={{ fontSize: '1.2rem', marginBottom: '1rem', color: 'var(--text-primary)' }}>
           {t.seoFeaturesTitle || 'Features'}
         </h3>
-        <ul style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.8, paddingLeft: 20 }}>
-          <li>{t.seoFeature1 || 'Convert .env files to JSON with full support for quoted values'}</li>
-          <li>{t.seoFeature2 || 'Convert JSON objects back to .env format'}</li>
-          <li>{t.seoFeature3 || 'Handle multiline values with backslash continuation'}</li>
-          <li>{t.seoFeature4 || 'Sort keys and filter empty values with toggleable options'}</li>
+        <ul style={{ marginLeft: '1.5rem', marginBottom: '2rem', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
+          <li>{t.seoFeature1 || 'Parse .env format to JSON objects'}</li>
+          <li>{t.seoFeature2 || 'Support for comments, quoted strings, and multiline values'}</li>
+          <li>{t.seoFeature3 || 'Format output as beautified or minified JSON'}</li>
+          <li>{t.seoFeature4 || '100% client-side processing — your data never leaves your browser'}</li>
         </ul>
-
-        <h3 style={{ fontSize: 16, fontWeight: 600, marginTop: 16, marginBottom: 8 }}>
-          {t.faqTitle || 'Frequently Asked Questions'}
-        </h3>
-        <div style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.8 }}>
-          <div style={{ marginBottom: 12 }}>
-            <strong>{t.faq1q || 'What is a .env file?'}</strong>
-            <p style={{ margin: '4px 0 0 0' }}>
-              {t.faq1a || 'A .env file is a text file that stores environment variables in KEY=VALUE format. It\'s commonly used in development to store sensitive configuration like database credentials and API keys.'}
-            </p>
-          </div>
-          <div style={{ marginBottom: 12 }}>
-            <strong>{t.faq2q || 'Why convert .env to JSON?'}</strong>
-            <p style={{ margin: '4px 0 0 0' }}>
-              {t.faq2a || 'JSON format is more structured and easier to parse programmatically. It\'s useful for configuration management tools, CI/CD pipelines, and development workflows.'}
-            </p>
-          </div>
-          <div>
-            <strong>{t.faq3q || 'Is my data secure?'}</strong>
-            <p style={{ margin: '4px 0 0 0' }}>
-              {t.faq3a || 'Yes, 100% secure. All conversion happens locally in your browser. Your environment variables are never sent to any server.'}
-            </p>
-          </div>
-        </div>
-      </div>
+      </section>
     </ToolLayout>
   );
 }
