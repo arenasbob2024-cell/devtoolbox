@@ -10,283 +10,269 @@ interface ColorStop {
   position: number;
 }
 
-interface GradientSettings {
-  type: 'linear' | 'radial' | 'conic';
-  angle: number;
-  shape: 'circle' | 'ellipse';
-  stops: ColorStop[];
-}
-
-function generateGradientCSS(settings: GradientSettings): string {
-  const stops = settings.stops
-    .sort((a, b) => a.position - b.position)
-    .map((s) => `${s.color} ${s.position}%`)
-    .join(', ');
-
-  if (settings.type === 'linear') {
-    return `background: linear-gradient(${settings.angle}deg, ${stops});`;
-  } else if (settings.type === 'radial') {
-    return `background: radial-gradient(${settings.shape}, ${stops});`;
-  } else {
-    return `background: conic-gradient(from ${settings.angle}deg, ${stops});`;
-  }
-}
-
 export default function ColorGradientGenerator() {
   const { dict } = useLang();
   const t = dict.tools['color-gradient-generator'];
+  const [gradientType, setGradientType] = useState<'linear' | 'radial' | 'conic'>('linear');
+  const [angle, setAngle] = useState(45);
+  const [colorStops, setColorStops] = useState<ColorStop[]>([
+    { color: '#FF6B6B', position: 0 },
+    { color: '#4ECDC4', position: 100 },
+  ]);
+  const [shape, setShape] = useState<'circle' | 'ellipse'>('circle');
+  const [preset, setPreset] = useState('custom');
 
-  const [settings, setSettings] = useState<GradientSettings>({
-    type: 'linear',
-    angle: 45,
-    shape: 'circle',
-    stops: [
-      { color: '#ff6b6b', position: 0 },
-      { color: '#4ecdc4', position: 100 },
+  const presets: Record<string, ColorStop[]> = {
+    custom: colorStops,
+    sunset: [
+      { color: '#FF6B6B', position: 0 },
+      { color: '#FFA06B', position: 50 },
+      { color: '#FFD66B', position: 100 },
     ],
-  });
-
-  const presets = [
-    {
-      name: 'Sunset',
-      settings: {
-        type: 'linear' as const,
-        angle: 135,
-        shape: 'circle' as const,
-        stops: [
-          { color: '#ff6b6b', position: 0 },
-          { color: '#ffd93d', position: 50 },
-          { color: '#6bcf7f', position: 100 },
-        ],
-      },
-    },
-    {
-      name: 'Ocean',
-      settings: {
-        type: 'linear' as const,
-        angle: 90,
-        shape: 'circle' as const,
-        stops: [
-          { color: '#001f3f', position: 0 },
-          { color: '#0074d9', position: 50 },
-          { color: '#7fdbca', position: 100 },
-        ],
-      },
-    },
-    {
-      name: 'Purple Haze',
-      settings: {
-        type: 'radial' as const,
-        angle: 0,
-        shape: 'circle' as const,
-        stops: [
-          { color: '#ff00ff', position: 0 },
-          { color: '#4b0082', position: 100 },
-        ],
-      },
-    },
-    {
-      name: 'Forest',
-      settings: {
-        type: 'linear' as const,
-        angle: 180,
-        shape: 'circle' as const,
-        stops: [
-          { color: '#2d5016', position: 0 },
-          { color: '#6fa86f', position: 50 },
-          { color: '#a4d65e', position: 100 },
-        ],
-      },
-    },
-  ];
-
-  const addStop = () => {
-    const newPosition = settings.stops.length > 0
-      ? Math.min(100, Math.max(0, settings.stops[settings.stops.length - 1].position + 50))
-      : 50;
-    setSettings({
-      ...settings,
-      stops: [...settings.stops, { color: '#ffffff', position: newPosition }],
-    });
+    ocean: [
+      { color: '#0066CC', position: 0 },
+      { color: '#00CCFF', position: 100 },
+    ],
+    forest: [
+      { color: '#1A4D2E', position: 0 },
+      { color: '#2D6A4F', position: 50 },
+      { color: '#A7C957', position: 100 },
+    ],
+    purple: [
+      { color: '#9D4EDD', position: 0 },
+      { color: '#E0AAFF', position: 100 },
+    ],
+    fire: [
+      { color: '#FF0000', position: 0 },
+      { color: '#FF7F00', position: 50 },
+      { color: '#FFFF00', position: 100 },
+    ],
+    cool: [
+      { color: '#00D4FF', position: 0 },
+      { color: '#0099FF', position: 100 },
+    ],
+    warm: [
+      { color: '#FFB347', position: 0 },
+      { color: '#FF8C00', position: 100 },
+    ],
   };
 
-  const removeStop = (idx: number) => {
-    if (settings.stops.length > 2) {
-      setSettings({
-        ...settings,
-        stops: settings.stops.filter((_, i) => i !== idx),
-      });
+  const applyPreset = (presetName: string) => {
+    setPreset(presetName);
+    if (presetName !== 'custom' && presets[presetName]) {
+      setColorStops(presets[presetName]);
     }
   };
 
-  const updateStop = (idx: number, color: string, position: number) => {
-    const newStops = [...settings.stops];
-    newStops[idx] = { color, position };
-    setSettings({
-      ...settings,
-      stops: newStops,
-    });
+  const generateCss = (): string => {
+    const colorString = colorStops
+      .sort((a, b) => a.position - b.position)
+      .map(stop => `${stop.color} ${stop.position}%`)
+      .join(', ');
+
+    if (gradientType === 'linear') {
+      return `background: linear-gradient(${angle}deg, ${colorString});`;
+    } else if (gradientType === 'radial') {
+      return `background: radial-gradient(${shape}, ${colorString});`;
+    } else {
+      return `background: conic-gradient(${colorString});`;
+    }
   };
 
-  const css = generateGradientCSS(settings);
-  const gradientValue = `linear-gradient(${settings.type === 'linear' ? settings.angle + 'deg, ' : ''}${settings.stops.map((s) => s.color + ' ' + s.position + '%').join(', ')})`;
+  const updateColorStop = (index: number, color: string, position: number) => {
+    const newStops = [...colorStops];
+    newStops[index] = { color, position };
+    setColorStops(newStops);
+    setPreset('custom');
+  };
+
+  const addColorStop = () => {
+    const newPosition = colorStops.length > 0 ? 50 : 0;
+    setColorStops([...colorStops, { color: '#000000', position: newPosition }]);
+    setPreset('custom');
+  };
+
+  const removeColorStop = (index: number) => {
+    if (colorStops.length > 2) {
+      setColorStops(colorStops.filter((_, i) => i !== index));
+      setPreset('custom');
+    }
+  };
+
+  const gradientStyle = {
+    width: '100%',
+    height: 250,
+    borderRadius: 8,
+    background: generateCss().replace('background: ', ''),
+  };
 
   return (
-    <ToolLayout title={t.pageTitle} description={t.pageDescription} toolId="color-gradient-generator">
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '16px' }}>
-        <div>
-          <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>Gradient Type</label>
-          <select
-            value={settings.type}
-            onChange={(e) => setSettings({ ...settings, type: e.target.value as 'linear' | 'radial' | 'conic' })}
+    <ToolLayout
+      title={t.pageTitle}
+      description={t.pageDescription}
+      toolId="color-gradient-generator"
+    >
+      {/* Controls */}
+      <div style={{ display: 'flex', gap: 8, marginBottom: 16, flexWrap: 'wrap' }}>
+        <button onClick={() => setColorStops([{ color: '#FF6B6B', position: 0 }, { color: '#4ECDC4', position: 100 }])} className="btn btn-secondary">{dict.common.reset}</button>
+      </div>
+
+      {/* Preview */}
+      <div style={{ marginBottom: 16 }}>
+        <label style={{ fontSize: 13, fontWeight: 600, marginBottom: 8, display: 'block' }}>Preview</label>
+        <div style={gradientStyle} />
+      </div>
+
+      {/* Gradient Type */}
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12, marginBottom: 16 }}>
+        {(['linear', 'radial', 'conic'] as const).map(type => (
+          <button
+            key={type}
+            onClick={() => setGradientType(type)}
             style={{
-              width: '100%',
-              padding: '8px',
-              border: '1px solid #ccc',
-              borderRadius: '4px',
-              marginBottom: '16px',
+              padding: '8px 12px',
+              border: `2px solid ${gradientType === type ? 'var(--accent-blue)' : 'var(--border-color)'}`,
+              background: gradientType === type ? 'rgba(59, 130, 246, 0.1)' : 'transparent',
+              borderRadius: 6,
+              cursor: 'pointer',
+              fontWeight: 500,
+              fontSize: 13,
             }}
           >
-            <option value="linear">Linear</option>
-            <option value="radial">Radial</option>
-            <option value="conic">Conic</option>
-          </select>
-
-          {settings.type === 'linear' && (
-            <div style={{ marginBottom: '16px' }}>
-              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>
-                Angle: {settings.angle}°
-              </label>
-              <input
-                type="range"
-                min="0"
-                max="360"
-                value={settings.angle}
-                onChange={(e) => setSettings({ ...settings, angle: parseInt(e.target.value) })}
-                style={{ width: '100%' }}
-              />
-            </div>
-          )}
-
-          {settings.type === 'radial' && (
-            <div style={{ marginBottom: '16px' }}>
-              <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>Shape</label>
-              <select
-                value={settings.shape}
-                onChange={(e) => setSettings({ ...settings, shape: e.target.value as 'circle' | 'ellipse' })}
-                style={{
-                  width: '100%',
-                  padding: '8px',
-                  border: '1px solid #ccc',
-                  borderRadius: '4px',
-                }}
-              >
-                <option value="circle">Circle</option>
-                <option value="ellipse">Ellipse</option>
-              </select>
-            </div>
-          )}
-
-          <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>Color Stops</label>
-          <div style={{ maxHeight: '250px', overflowY: 'auto', marginBottom: '12px' }}>
-            {settings.stops.map((stop, idx) => (
-              <div key={idx} style={{ display: 'grid', gridTemplateColumns: '60px 1fr auto', gap: '8px', marginBottom: '8px', alignItems: 'center' }}>
-                <input
-                  type="color"
-                  value={stop.color}
-                  onChange={(e) => updateStop(idx, e.target.value, stop.position)}
-                  style={{
-                    width: '100%',
-                    height: '40px',
-                    border: '1px solid #ccc',
-                    borderRadius: '4px',
-                    cursor: 'pointer',
-                  }}
-                />
-                <div style={{ display: 'flex', gap: '4px', alignItems: 'center' }}>
-                  <input
-                    type="range"
-                    min="0"
-                    max="100"
-                    value={stop.position}
-                    onChange={(e) => updateStop(idx, stop.color, parseInt(e.target.value))}
-                    style={{ flex: 1 }}
-                  />
-                  <span style={{ minWidth: '35px', fontSize: '12px', fontWeight: '500' }}>{stop.position}%</span>
-                </div>
-                <button
-                  onClick={() => removeStop(idx)}
-                  disabled={settings.stops.length <= 2}
-                  className="btn btn-secondary"
-                  style={{ fontSize: '12px', padding: '4px 8px', opacity: settings.stops.length <= 2 ? 0.5 : 1 }}
-                >
-                  Remove
-                </button>
-              </div>
-            ))}
-          </div>
-          <button onClick={addStop} className="btn btn-primary" style={{ marginBottom: '16px', width: '100%' }}>
-            Add Stop
+            {type.charAt(0).toUpperCase() + type.slice(1)}
           </button>
+        ))}
+      </div>
 
-          <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>Presets</label>
-          <div style={{ display: 'grid', gap: '8px' }}>
-            {presets.map((preset) => (
-              <button
-                key={preset.name}
-                onClick={() => setSettings(preset.settings)}
-                className="btn btn-secondary"
-                style={{ textAlign: 'left' }}
-              >
-                {preset.name}
-              </button>
-            ))}
+      {/* Gradient Options */}
+      <div style={{ background: 'var(--bg-secondary)', borderRadius: 8, padding: 16, marginBottom: 16 }}>
+        <h3 style={{ fontSize: 14, fontWeight: 600, marginBottom: 12 }}>Options</h3>
+
+        {gradientType === 'linear' && (
+          <div style={{ marginBottom: 12 }}>
+            <label style={{ fontSize: 12, fontWeight: 600, marginBottom: 8, display: 'block' }}>Angle: {angle}°</label>
+            <input
+              type="range"
+              min="0"
+              max="360"
+              value={angle}
+              onChange={e => setAngle(Number(e.target.value))}
+              style={{ width: '100%' }}
+            />
           </div>
-        </div>
+        )}
 
-        <div>
-          <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>Preview</label>
-          <div
-            style={{
-              width: '100%',
-              height: '300px',
-              borderRadius: '8px',
-              marginBottom: '16px',
-              border: '1px solid #ddd',
-              background: gradientValue,
-            }}
-          />
+        {gradientType === 'radial' && (
+          <div style={{ marginBottom: 12 }}>
+            <label style={{ fontSize: 12, fontWeight: 600, marginBottom: 8, display: 'block' }}>Shape</label>
+            <div style={{ display: 'flex', gap: 12 }}>
+              {(['circle', 'ellipse'] as const).map(s => (
+                <label key={s} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                  <input
+                    type="radio"
+                    checked={shape === s}
+                    onChange={() => setShape(s)}
+                  />
+                  {s.charAt(0).toUpperCase() + s.slice(1)}
+                </label>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
 
-          <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>CSS Code</label>
-          <textarea
-            value={css}
-            readOnly
-            style={{
-              width: '100%',
-              height: '100px',
-              padding: '8px',
-              fontFamily: 'monospace',
-              fontSize: '12px',
-              border: '1px solid #ccc',
-              borderRadius: '4px',
-              backgroundColor: '#f5f5f5',
-              marginBottom: '12px',
-            }}
-          />
-          <CopyButton text={css} label="Copy CSS" />
+      {/* Presets */}
+      <div style={{ marginBottom: 16 }}>
+        <label style={{ fontSize: 13, fontWeight: 600, marginBottom: 8, display: 'block' }}>Presets</label>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 8 }}>
+          {Object.keys(presets).map(presetName => (
+            <button
+              key={presetName}
+              onClick={() => applyPreset(presetName)}
+              style={{
+                padding: '8px 12px',
+                border: `2px solid ${preset === presetName ? 'var(--accent-blue)' : 'var(--border-color)'}`,
+                background: preset === presetName ? 'rgba(59, 130, 246, 0.1)' : 'transparent',
+                borderRadius: 6,
+                cursor: 'pointer',
+                fontWeight: 500,
+                fontSize: 12,
+                textTransform: 'capitalize',
+              }}
+            >
+              {presetName}
+            </button>
+          ))}
         </div>
       </div>
 
-      <div style={{ marginTop: '32px', color: '#666', lineHeight: '1.6' }}>
-        <h3>{t.featuresTitle || 'Features'}</h3>
-        <ul style={{ marginLeft: '20px' }}>
-          <li>Multiple gradient types: linear, radial, conic</li>
-          <li>Visual color picker for each stop</li>
-          <li>Adjustable gradient angle and shape</li>
-          <li>Add/remove color stops dynamically</li>
-          <li>Live gradient preview</li>
-          <li>CSS output with vendor prefixes</li>
-          <li>Preset gradients for quick inspiration</li>
+      {/* Color Stops */}
+      <div style={{ background: 'var(--bg-secondary)', borderRadius: 8, padding: 16, marginBottom: 16 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
+          <h3 style={{ fontSize: 14, fontWeight: 600 }}>Color Stops</h3>
+          <button onClick={addColorStop} className="btn btn-sm">{dict.common.add}</button>
+        </div>
+
+        {colorStops.map((stop, index) => (
+          <div key={index} style={{ display: 'flex', gap: 12, marginBottom: 12, alignItems: 'center' }}>
+            <input
+              type="color"
+              value={stop.color}
+              onChange={e => updateColorStop(index, e.target.value, stop.position)}
+              style={{ width: 60, height: 40, borderRadius: 6, border: 'none', cursor: 'pointer' }}
+            />
+            <div style={{ flex: 1 }}>
+              <label style={{ fontSize: 11, color: 'var(--text-secondary)' }}>Position: {stop.position}%</label>
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value={stop.position}
+                onChange={e => updateColorStop(index, stop.color, Number(e.target.value))}
+                style={{ width: '100%' }}
+              />
+            </div>
+            <input
+              type="text"
+              value={stop.color}
+              onChange={e => updateColorStop(index, e.target.value, stop.position)}
+              style={{ width: 100, fontSize: 12 }}
+            />
+            <button
+              onClick={() => removeColorStop(index)}
+              disabled={colorStops.length <= 2}
+              className="btn btn-sm"
+              style={{ opacity: colorStops.length <= 2 ? 0.5 : 1 }}
+            >
+              {dict.common.remove}
+            </button>
+          </div>
+        ))}
+      </div>
+
+      {/* CSS Output */}
+      <div style={{ background: 'var(--bg-secondary)', borderRadius: 8, padding: 16, marginBottom: 16 }}>
+        <label style={{ fontSize: 13, fontWeight: 600, marginBottom: 8, display: 'block' }}>CSS Code</label>
+        <textarea
+          value={generateCss()}
+          readOnly
+          style={{ minHeight: 80, fontFamily: 'monospace', fontSize: 12 }}
+        />
+        <CopyButton text={generateCss()} />
+      </div>
+
+      {/* SEO Content */}
+      <div style={{ marginTop: 30, paddingTop: 20, borderTop: '1px solid var(--border-color)' }}>
+        <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>{t.seoTitle}</h2>
+        <p style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.7 }}>
+          {t.seoContent}
+        </p>
+        <h3 style={{ fontSize: 16, fontWeight: 600, marginTop: 16, marginBottom: 8 }}>{t.seoFeaturesTitle}</h3>
+        <ul style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.8, paddingLeft: 20 }}>
+          <li>{t.seoFeature1}</li>
+          <li>{t.seoFeature2}</li>
+          <li>{t.seoFeature3}</li>
+          <li>{t.seoFeature4}</li>
         </ul>
       </div>
     </ToolLayout>

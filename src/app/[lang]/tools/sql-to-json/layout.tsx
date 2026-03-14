@@ -7,8 +7,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   const dict = await getDictionary(lang);
-  const t = dict.tools['color-gradient-generator'];
-  const url = `https://viadreams.cc/${lang}/tools/color-gradient-generator`;
+  const t = dict.tools['sql-to-json'];
+  const url = `https://viadreams.cc/${lang}/tools/sql-to-json`;
   return {
     title: t.pageTitle,
     description: t.pageDescription,
@@ -29,8 +29,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     alternates: {
       canonical: url,
       languages: {
-        ...Object.fromEntries(i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/color-gradient-generator`])),
-        'x-default': 'https://viadreams.cc/en/tools/color-gradient-generator',
+        ...Object.fromEntries(i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/sql-to-json`])),
+        'x-default': 'https://viadreams.cc/en/tools/sql-to-json',
       },
     },
   };
@@ -39,5 +39,5 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 export default async function Layout({ children, params }: { children: React.ReactNode; params: Promise<{ lang: string }> }) {
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
-  return <ToolSeoServer toolId="color-gradient-generator" lang={lang}>{children}</ToolSeoServer>;
+  return <ToolSeoServer toolId="sql-to-json" lang={lang}>{children}</ToolSeoServer>;
 }
