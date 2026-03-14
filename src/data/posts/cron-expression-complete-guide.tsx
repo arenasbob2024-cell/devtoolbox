@@ -257,7 +257,7 @@ export default function CronExpressionCompleteGuide({ lang }: { lang: string }) 
 
       <h2 style={h2Style}>{ct.toolsTitle}</h2>
       <p style={pStyle}>{ct.toolsIntro}</p>
-      <pre style={codeStyle}><code>{\`# GitHub Actions (uses standard cron, UTC timezone)
+      <pre style={codeStyle}><code>{`# GitHub Actions (uses standard cron, UTC timezone)
 on:
   schedule:
     - cron: '0 9 * * 1-5'  # Weekdays at 9 AM UTC
@@ -301,11 +301,11 @@ cron.schedule('*/5 * * * *', () => {
 
 # Python (APScheduler)
 from apscheduler.triggers.cron import CronTrigger
-scheduler.add_job(my_task, CronTrigger.from_crontab('0 9 * * 1-5'))\`}</code></pre>
+scheduler.add_job(my_task, CronTrigger.from_crontab('0 9 * * 1-5'))`}</code></pre>
 
       <h2 style={h2Style}>{ct.debugTitle}</h2>
       <p style={pStyle}>{ct.debugIntro}</p>
-      <pre style={codeStyle}><code>{\`# Common cron debugging tips
+      <pre style={codeStyle}><code>{`# Common cron debugging tips
 
 # 1. Check cron service is running
 systemctl status cron
@@ -335,7 +335,7 @@ crontab -e
 bash -x /path/to/script.sh
 
 # 8. Lock file to prevent overlap
-flock -n /tmp/myjob.lock /path/to/script.sh\`}</code></pre>
+flock -n /tmp/myjob.lock /path/to/script.sh`}</code></pre>
 
       <h2 style={h2Style}>{ct.bestPracticesTitle}</h2>
       <div style={boxStyle}>
