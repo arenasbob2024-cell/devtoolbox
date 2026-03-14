@@ -1960,6 +1960,64 @@
         "สร้างนิยามประเภทสำหรับ microservice ของ Go"
       ]
     },
+    "json-to-go-struct": {
+      "name": "ตัวแปลง JSON เป็น Go Struct",
+      "description": "สร้างนิยาม Go Struct จากข้อมูล JSON ด้วยตัวเลือกที่ปรับแต่งได้",
+      "pageTitle": "ตัวแปลง JSON เป็น Go Struct ฟรีออนไลน์ — สร้าง Golang Structures ทันที",
+      "pageDescription": "แปลง JSON เป็น Go Struct ฟรีออนไลน์ สร้างประเภท Go ที่เป็นมาตรฐานพร้อม JSON tags และโครงสร้างที่ซ้อนกัน วาง JSON และรับรหัส Go ทันที — ไม่จำเป็นต้องลงทะเบียน",
+      "structNameLabel": "ชื่อ Struct",
+      "addJsonTagsLabel": "เพิ่ม JSON Tags",
+      "addOmitemptyLabel": "เพิ่ม omitempty",
+      "inlineStructsLabel": "Inline Structs",
+      "convertBtn": "แปลงเป็น Go Struct",
+      "loadSampleBtn": "โหลดตัวอย่าง",
+      "clearAllBtn": "ล้างทั้งหมด",
+      "jsonInputLabel": "ข้อมูล JSON",
+      "goStructOutputLabel": "ผลลัพธ์ Go Struct",
+      "jsonInputPlaceholder": "วางข้อมูล JSON ของคุณที่นี่...",
+      "outputPlaceholder": "นิยาม Go Struct จะปรากฏที่นี่...",
+      "seoTitle": "แปลง JSON เป็นนิยาม Struct Go",
+      "seoContent": "การแปลงข้อมูล JSON เป็นนิยาม struct Go เป็นสิ่งจำเป็นสำหรับการสร้างแอปพลิเคชัน Go ที่ปลอดภัยจากประเภท เครื่องมือนี้สร้างประเภท Go จากข้อมูล JSON โดยอัตโนมัติ",
+      "seoFeaturesTitle": "คุณสมบัติหลัก",
+      "seoFeature1": "การตรวจสอบประเภทอัตโนมัติ — แมปประเภท JSON ไปยังประเภท Go ที่เหมาะสม",
+      "seoFeature2": "ชื่อ struct ที่ปรับแต่งได้ — ตั้งชื่อ struct ราก",
+      "seoFeature3": "รองรับ JSON tags — เพิ่มป้ายกำกับ JSON ด้วยชื่อฟิลด์และ omitempty",
+      "seoFeature4": "การประมวลผล 100% ฝั่งไคลเอนต์ — การแปลงทั้งหมดเกิดขึ้นในเบราว์เซอร์ของคุณ",
+      "howToUseTitle": "วิธีใช้",
+      "howToUseSteps": [
+        "ป้อนหรือวางข้อมูล JSON ของคุณในช่องอินพุตด้านซ้าย",
+        "ตั้งชื่อ struct รูท",
+        "เลือกตัวเลือก: เพิ่ม JSON tags, omitempty, inline structs",
+        "คลิก 'แปลงเป็น Go Struct' เพื่อสร้างรหัส Go",
+        "คัดลอกผลลัพธ์และวางลงในโครงการ Go ของคุณ"
+      ],
+      "useCasesTitle": "กรณีการใช้งานทั่วไป",
+      "useCases": [
+        "สร้างนิยามประเภทจากเอกสาร REST API",
+        "สร้างโมเดลสำหรับไฟล์กำหนดค่า JSON",
+        "สร้างประเภทคำขอ/ตอบสำหรับบริการ Go HTTP",
+        "สร้างต้นแบบอย่างรวดเร็วสำหรับโมเดลข้อมูลจาก JSON ตัวอย่าง"
+      ],
+      "faqTitle": "คำถามที่พบบ่อย",
+      "faqs": [
+        {
+          "q": "Struct Go คืออะไร?",
+          "a": "Struct ใน Go เป็นประเภทข้อมูลแบบผสมที่จัดกลุ่มตัวแปรเข้าด้วยกัน ซึ่งต่างจากแผนที่ที่ struct มีความปลอดภัยจากประเภท"
+        },
+        {
+          "q": "การตั้งชื่อฟิลด์ 'PascalCase' หมายความว่าอะไร?",
+          "a": "PascalCase เป็นข้อตกลง Go สำหรับฟิลด์ struct ที่ส่งออก เครื่องมือนี้แปลง snake_case และ kebab-case เป็น PascalCase โดยอัตโนมัติ"
+        },
+        {
+          "q": "ป้ายกำกับ struct JSON ใช้เพื่ออะไร?",
+          "a": "ป้ายกำกับ JSON บอก Go package encoding/json ว่าจะแมปคีย์ JSON ไปยังฟิลด์ struct อย่างไร"
+        },
+        {
+          "q": "ควรใช้ omitempty เมื่อไหร่?",
+          "a": "ใช้ omitempty สำหรับฟิลด์ทางเลือก มันบอก Go ให้หักออกจากผลลัพธ์ JSON หากมีค่าศูนย์"
+        }
+      ]
+    },
     "svg-to-jsx": {
       "name": "SVG เป็น JSX/React",
       "description": "แปลงไฟล์ SVG เป็นคอมโพเนนต์ React JSX",
@@ -3272,37 +3330,34 @@
       ]
     },
     "curl-to-code": {
-      "name": "cURL to Code Converter",
-      "description": "Convert cURL commands to Python, JavaScript, Go, PHP, and more",
-      "pageTitle": "cURL to Code Converter — Python, JavaScript, Go, PHP",
-      "pageDescription": "Convert cURL commands to Python requests, JavaScript fetch, Go, PHP, Ruby, Java, and C#. Paste any cURL command and get clean code instantly.",
-      "seoTitle": "What is a cURL to Code Converter?",
-      "seoContent": "A cURL to code converter translates cURL commands from API documentation or browser DevTools into equivalent code in your preferred programming language.",
-      "howToUseTitle": "How to Use",
-      "howToUseSteps": [
-        "Paste a cURL command",
-        "Select target language",
-        "View generated code",
-        "Copy the code"
-      ],
-      "useCasesTitle": "Use Cases",
-      "useCases": [
-        "Converting API docs to code",
-        "Translating browser network requests",
-        "Quick API prototyping",
-        "Learning HTTP request syntax"
-      ],
-      "faqTitle": "FAQ",
-      "faqs": [
-        {
-          "q": "What languages are supported?",
-          "a": "Python, JavaScript (fetch/axios), Go, PHP, Ruby, Java, C#, and more."
-        },
-        {
-          "q": "Can I paste cURL from Chrome DevTools?",
-          "a": "Yes, copy as cURL from Chrome Network tab and paste directly."
-        }
-      ]
+      "name": "เครื่องมือแปลง cURL เป็นโค้ด",
+      "description": "แปลงคำสั่ง cURL เป็นโค้ด",
+      "pageTitle": "เครื่องมือแปลง cURL เป็นโค้ดออนไลน์ - JavaScript, Python, Go, Java, PHP, Ruby",
+      "pageDescription": "เครื่องมือแปลง cURL เป็นโค้ดออนไลน์ฟรี แปลงคำสั่ง cURL เป็นโค้ด JavaScript, Python, Go, Java, PHP, Node.js และ Ruby",
+      "inputLabel": "วางคำสั่ง cURL ของคุณ",
+      "inputPlaceholder": "curl -X POST https://api.example.com/users -H \"Content-Type: application/json\" -H \"Authorization: Bearer token123\" -d '{\"name\":\"John\",\"email\":\"john@example.com\"}'",
+      "outputLabel": "ผลลัพธ์โค้ด",
+      "convertBtn": "แปลง",
+      "copyBtn": "คัดลอกโค้ด",
+      "languageLabel": "เลือกภาษา",
+      "selectLanguage": "เลือกภาษา",
+      "javascript": "JavaScript (fetch)",
+      "pythonRequests": "Python (requests)",
+      "go": "Go (net/http)",
+      "java": "Java (HttpURLConnection)",
+      "php": "PHP (curl)",
+      "nodejs": "Node.js (axios)",
+      "ruby": "Ruby (net/http)",
+      "loadSample": "โหลดตัวอย่าง",
+      "errorInvalidCurl": "คำสั่ง cURL ไม่ถูกต้อง",
+      "errorParsing": "เกิดข้อผิดพลาดในการแยกวิเคราะห์คำสั่ง cURL",
+      "seoTitle": "เครื่องมือแปลง cURL เป็นโค้ดออนไลน์",
+      "seoContent": "แปลงคำสั่ง cURL เป็นโค้ดในหลายภาษาการเขียนโปรแกรม",
+      "seoFeaturesTitle": "ฟีเจอร์",
+      "seoFeature1": "แปลง cURL เป็น 7+ ภาษาการเขียนโปรแกรม",
+      "seoFeature2": "แยกวิเคราะห์ส่วนหัว เนื้อหา การรับรองความถูกต้อง และคุกกี้โดยอัตโนมัติ",
+      "seoFeature3": "รองรับแฟล็กและตัวเลือก cURL ทั่วไป",
+      "seoFeature4": "คัดลอกโค้ดด้วยคลิกเดียว"
     },
     "yaml-validator": {
       "name": "YAML Validator & Formatter",

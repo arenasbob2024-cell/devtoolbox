@@ -1960,6 +1960,64 @@
         "Prototipar rápidamente modelos de datos Go"
       ]
     },
+    "json-to-go-struct": {
+      "name": "Convertidor JSON a Go Struct",
+      "description": "Genera definiciones de estructuras Go desde JSON con opciones personalizables",
+      "pageTitle": "Convertidor JSON a Go Struct Online Gratis — Crea Estructuras Golang Instantáneamente",
+      "pageDescription": "Convierte JSON a estructuras Go online de forma gratuita. Genera tipos Go idiomáticos con etiquetas JSON y estructuras anidadas. Pega JSON, obtén código Go al instante — sin registro requerido.",
+      "structNameLabel": "Nombre de la Estructura",
+      "addJsonTagsLabel": "Agregar Etiquetas JSON",
+      "addOmitemptyLabel": "Agregar omitempty",
+      "inlineStructsLabel": "Estructuras Inline",
+      "convertBtn": "Convertir a Go Struct",
+      "loadSampleBtn": "Cargar Ejemplo",
+      "clearAllBtn": "Limpiar Todo",
+      "jsonInputLabel": "Entrada JSON",
+      "goStructOutputLabel": "Salida de Go Struct",
+      "jsonInputPlaceholder": "Pega tus datos JSON aquí...",
+      "outputPlaceholder": "La definición de Go struct aparecerá aquí...",
+      "seoTitle": "Convertir JSON a Definiciones de Estructura Go",
+      "seoContent": "Convertir datos JSON a definiciones de estructura Go es esencial para construir aplicaciones Go type-safe. Esta herramienta genera automáticamente tipos Go a partir de entrada JSON, manejo de objetos anidados, matrices y varios tipos de datos.",
+      "seoFeaturesTitle": "Características Principales",
+      "seoFeature1": "Detección automática de tipos — mapea tipos JSON a tipos Go apropiados (string, int64, float64, bool, interface{})",
+      "seoFeature2": "Nombres de estructura personalizables — establece el nombre de estructura raíz, genera automáticamente nombres para tipos anidados",
+      "seoFeature3": "Soporte de etiquetas JSON — agregue opcionalmente etiquetas JSON con nombres de campo y omitempty",
+      "seoFeature4": "Procesamiento 100% del lado del cliente — toda la conversión ocurre en tu navegador, sin datos enviados a servidores",
+      "howToUseTitle": "Cómo Usar",
+      "howToUseSteps": [
+        "Ingresa o pega tus datos JSON en el campo de entrada izquierdo",
+        "Establece el nombre de estructura raíz (p. ej., 'Usuario', 'Respuesta', 'AutoGenerado')",
+        "Elige opciones: agregar etiquetas JSON, omitempty, estructuras inline",
+        "Haz clic en 'Convertir a Go Struct' para generar el código Go",
+        "Copia la salida y pégala en tu proyecto Go"
+      ],
+      "useCasesTitle": "Casos de Uso Común",
+      "useCases": [
+        "Genera definiciones de tipo a partir de documentación de API REST",
+        "Crea modelos para archivos de configuración JSON",
+        "Construye tipos de solicitud/respuesta para servicios Go HTTP",
+        "Prototipar rápidamente modelos de datos a partir de JSON de muestra"
+      ],
+      "faqTitle": "Preguntas Frecuentes",
+      "faqs": [
+        {
+          "q": "¿Qué es una estructura Go?",
+          "a": "Una estructura en Go es un tipo de dato compuesto que agrupa variables juntas. A diferencia de los mapas, las estructuras proporcionan seguridad de tipos."
+        },
+        {
+          "q": "¿Qué significa el nombre de campo 'PascalCase'?",
+          "a": "PascalCase es la convención Go para campos de estructura exportados. La herramienta convierte snake_case y kebab-case a PascalCase automáticamente."
+        },
+        {
+          "q": "¿Para qué sirven las etiquetas de estructura JSON?",
+          "a": "Las etiquetas JSON (p. ej., `json:\"field_name\"`) indican al paquete encoding/json de Go cómo mapear entre claves JSON y campos de estructura."
+        },
+        {
+          "q": "¿Cuándo debo usar omitempty?",
+          "a": "Utiliza omitempty para campos opcionales. Indica a Go que omita el campo de la salida JSON si tiene un valor cero."
+        }
+      ]
+    },
     "svg-to-jsx": {
       "name": "SVG a JSX/React",
       "description": "Convertir marcado SVG en componentes React JSX",
@@ -3272,37 +3330,34 @@
       ]
     },
     "curl-to-code": {
-      "name": "cURL to Code Converter",
-      "description": "Convert cURL commands to Python, JavaScript, Go, PHP, and more",
-      "pageTitle": "cURL to Code Converter — Python, JavaScript, Go, PHP",
-      "pageDescription": "Convert cURL commands to Python requests, JavaScript fetch, Go, PHP, Ruby, Java, and C#. Paste any cURL command and get clean code instantly.",
-      "seoTitle": "What is a cURL to Code Converter?",
-      "seoContent": "A cURL to code converter translates cURL commands from API documentation or browser DevTools into equivalent code in your preferred programming language.",
-      "howToUseTitle": "How to Use",
-      "howToUseSteps": [
-        "Paste a cURL command",
-        "Select target language",
-        "View generated code",
-        "Copy the code"
-      ],
-      "useCasesTitle": "Use Cases",
-      "useCases": [
-        "Converting API docs to code",
-        "Translating browser network requests",
-        "Quick API prototyping",
-        "Learning HTTP request syntax"
-      ],
-      "faqTitle": "FAQ",
-      "faqs": [
-        {
-          "q": "What languages are supported?",
-          "a": "Python, JavaScript (fetch/axios), Go, PHP, Ruby, Java, C#, and more."
-        },
-        {
-          "q": "Can I paste cURL from Chrome DevTools?",
-          "a": "Yes, copy as cURL from Chrome Network tab and paste directly."
-        }
-      ]
+      "name": "Convertidor de cURL a Código",
+      "description": "Convierte comandos cURL a código",
+      "pageTitle": "Convertidor de cURL a Código Online - JavaScript, Python, Go, Java, PHP, Ruby",
+      "pageDescription": "Convertidor gratuito en línea de cURL a código. Convierte comandos cURL a código JavaScript, Python, Go, Java, PHP, Node.js y Ruby.",
+      "inputLabel": "Pegue su comando cURL",
+      "inputPlaceholder": "curl -X POST https://api.example.com/users -H \"Content-Type: application/json\" -H \"Authorization: Bearer token123\" -d '{\"name\":\"John\",\"email\":\"john@example.com\"}'",
+      "outputLabel": "Salida de código",
+      "convertBtn": "Convertir",
+      "copyBtn": "Copiar código",
+      "languageLabel": "Seleccionar idioma",
+      "selectLanguage": "Seleccione un idioma",
+      "javascript": "JavaScript (fetch)",
+      "pythonRequests": "Python (requests)",
+      "go": "Go (net/http)",
+      "java": "Java (HttpURLConnection)",
+      "php": "PHP (curl)",
+      "nodejs": "Node.js (axios)",
+      "ruby": "Ruby (net/http)",
+      "loadSample": "Cargar muestra",
+      "errorInvalidCurl": "Comando cURL inválido",
+      "errorParsing": "Error al analizar el comando cURL",
+      "seoTitle": "Convertidor de cURL a Código Online",
+      "seoContent": "Convierte comandos cURL a código en múltiples lenguajes de programación.",
+      "seoFeaturesTitle": "Características",
+      "seoFeature1": "Convierte cURL a 7+ lenguajes de programación",
+      "seoFeature2": "Análisis automático de encabezados, cuerpo, autenticación y cookies",
+      "seoFeature3": "Soporte para banderas y opciones comunes de cURL",
+      "seoFeature4": "Copia de código con un clic"
     },
     "yaml-validator": {
       "name": "YAML Validator & Formatter",

@@ -1960,6 +1960,64 @@
         "Menghasilkan definisi tipe untuk microservice Go"
       ]
     },
+    "json-to-go-struct": {
+      "name": "Konverter JSON ke Go Struct",
+      "description": "Hasilkan definisi struct Go dari JSON dengan opsi yang dapat disesuaikan",
+      "pageTitle": "Konverter JSON ke Go Struct Gratis Online — Buat Struktur Golang Instan",
+      "pageDescription": "Konversikan JSON ke struct Go secara gratis online. Hasilkan tipe Go idiomatik dengan tag JSON dan struktur bersarang. Tempel JSON, dapatkan kode Go secara instan — tidak ada pendaftaran diperlukan.",
+      "structNameLabel": "Nama Struct",
+      "addJsonTagsLabel": "Tambah Tag JSON",
+      "addOmitemptyLabel": "Tambah omitempty",
+      "inlineStructsLabel": "Struct Inline",
+      "convertBtn": "Konversi ke Go Struct",
+      "loadSampleBtn": "Muat Contoh",
+      "clearAllBtn": "Hapus Semua",
+      "jsonInputLabel": "Input JSON",
+      "goStructOutputLabel": "Output Go Struct",
+      "jsonInputPlaceholder": "Tempel data JSON Anda di sini...",
+      "outputPlaceholder": "Definisi Go Struct akan ditampilkan di sini...",
+      "seoTitle": "Konversikan JSON ke Definisi Struct Go",
+      "seoContent": "Mengkonversi data JSON ke definisi struct Go sangat penting untuk membangun aplikasi Go yang aman tipe. Alat ini secara otomatis menghasilkan tipe Go dari masukan JSON.",
+      "seoFeaturesTitle": "Fitur Utama",
+      "seoFeature1": "Deteksi tipe otomatis — memetakan tipe JSON ke tipe Go yang sesuai",
+      "seoFeature2": "Nama struct yang dapat disesuaikan — atur nama struct akar",
+      "seoFeature3": "Dukungan tag JSON — secara opsional tambahkan tag JSON dengan nama bidang dan omitempty",
+      "seoFeature4": "Pemrosesan 100% sisi klien — semua konversi terjadi di browser Anda",
+      "howToUseTitle": "Cara Menggunakan",
+      "howToUseSteps": [
+        "Masukkan atau tempel data JSON Anda di bidang input kiri",
+        "Atur nama struct akar",
+        "Pilih opsi: tambah tag JSON, omitempty, struct inline",
+        "Klik 'Konversi ke Go Struct' untuk menghasilkan kode Go",
+        "Salin hasilnya dan tempel ke proyek Go Anda"
+      ],
+      "useCasesTitle": "Kasus Penggunaan Umum",
+      "useCases": [
+        "Hasilkan definisi tipe dari dokumentasi API REST",
+        "Buat model untuk file konfigurasi JSON",
+        "Bangun tipe permintaan/respons untuk layanan Go HTTP",
+        "Prototype dengan cepat model data dari JSON sampel"
+      ],
+      "faqTitle": "Pertanyaan yang Sering Diajukan",
+      "faqs": [
+        {
+          "q": "Apa itu struct Go?",
+          "a": "Struct di Go adalah tipe data komposit yang mengelompokkan variabel bersama-sama. Tidak seperti peta, struct memberikan keamanan tipe."
+        },
+        {
+          "q": "Apa arti penamaan bidang 'PascalCase'?",
+          "a": "PascalCase adalah konvensi Go untuk bidang struct yang diekspor. Alat ini secara otomatis mengonversi snake_case dan kebab-case ke PascalCase."
+        },
+        {
+          "q": "Tag struct JSON digunakan untuk apa?",
+          "a": "Tag JSON memberitahu paket encoding/json Go cara memetakan kunci JSON ke bidang struct."
+        },
+        {
+          "q": "Kapan saya harus menggunakan omitempty?",
+          "a": "Gunakan omitempty untuk bidang opsional. Ini memberi tahu Go untuk menghilangkan bidang dari output JSON jika memiliki nilai nol."
+        }
+      ]
+    },
     "svg-to-jsx": {
       "name": "SVG ke JSX/React",
       "description": "Konversi file SVG ke komponen React JSX",
@@ -3272,37 +3330,34 @@
       ]
     },
     "curl-to-code": {
-      "name": "cURL to Code Converter",
-      "description": "Convert cURL commands to Python, JavaScript, Go, PHP, and more",
-      "pageTitle": "cURL to Code Converter — Python, JavaScript, Go, PHP",
-      "pageDescription": "Convert cURL commands to Python requests, JavaScript fetch, Go, PHP, Ruby, Java, and C#. Paste any cURL command and get clean code instantly.",
-      "seoTitle": "What is a cURL to Code Converter?",
-      "seoContent": "A cURL to code converter translates cURL commands from API documentation or browser DevTools into equivalent code in your preferred programming language.",
-      "howToUseTitle": "How to Use",
-      "howToUseSteps": [
-        "Paste a cURL command",
-        "Select target language",
-        "View generated code",
-        "Copy the code"
-      ],
-      "useCasesTitle": "Use Cases",
-      "useCases": [
-        "Converting API docs to code",
-        "Translating browser network requests",
-        "Quick API prototyping",
-        "Learning HTTP request syntax"
-      ],
-      "faqTitle": "FAQ",
-      "faqs": [
-        {
-          "q": "What languages are supported?",
-          "a": "Python, JavaScript (fetch/axios), Go, PHP, Ruby, Java, C#, and more."
-        },
-        {
-          "q": "Can I paste cURL from Chrome DevTools?",
-          "a": "Yes, copy as cURL from Chrome Network tab and paste directly."
-        }
-      ]
+      "name": "Konverter cURL ke Kode",
+      "description": "Konversi perintah cURL ke kode",
+      "pageTitle": "Konverter cURL ke Kode Online - JavaScript, Python, Go, Java, PHP, Ruby",
+      "pageDescription": "Konverter cURL ke kode online gratis. Konversi perintah cURL ke kode JavaScript, Python, Go, Java, PHP, Node.js, dan Ruby.",
+      "inputLabel": "Tempel perintah cURL Anda",
+      "inputPlaceholder": "curl -X POST https://api.example.com/users -H \"Content-Type: application/json\" -H \"Authorization: Bearer token123\" -d '{\"name\":\"John\",\"email\":\"john@example.com\"}'",
+      "outputLabel": "Keluaran kode",
+      "convertBtn": "Konversi",
+      "copyBtn": "Salin kode",
+      "languageLabel": "Pilih bahasa",
+      "selectLanguage": "Pilih bahasa",
+      "javascript": "JavaScript (fetch)",
+      "pythonRequests": "Python (requests)",
+      "go": "Go (net/http)",
+      "java": "Java (HttpURLConnection)",
+      "php": "PHP (curl)",
+      "nodejs": "Node.js (axios)",
+      "ruby": "Ruby (net/http)",
+      "loadSample": "Muat sampel",
+      "errorInvalidCurl": "Perintah cURL tidak valid",
+      "errorParsing": "Kesalahan parsing perintah cURL",
+      "seoTitle": "Konverter cURL ke Kode Online",
+      "seoContent": "Konversi perintah cURL ke kode dalam berbagai bahasa pemrograman.",
+      "seoFeaturesTitle": "Fitur",
+      "seoFeature1": "Konversi cURL ke 7+ bahasa pemrograman",
+      "seoFeature2": "Parsing otomatis header, body, auth, dan cookie",
+      "seoFeature3": "Dukungan flag dan opsi cURL umum",
+      "seoFeature4": "Salin kode dengan satu klik"
     },
     "yaml-validator": {
       "name": "YAML Validator & Formatter",

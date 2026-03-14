@@ -1960,6 +1960,64 @@
         "JSON-responses van externe services mappen naar Go-types"
       ]
     },
+    "json-to-go-struct": {
+      "name": "JSON naar Go Struct Converter",
+      "description": "Genereer Go Struct-definities uit JSON met aanpasbare opties",
+      "pageTitle": "JSON naar Go Struct Converter Gratis Online — Creëer Golang Structuren Direct",
+      "pageDescription": "Converteer JSON gratis naar Go Struct online. Genereer idiomatische Go-typen met JSON-tags en geneste structuren. Plak JSON, krijg direct Go-code — geen registratie vereist.",
+      "structNameLabel": "Structuur Naam",
+      "addJsonTagsLabel": "JSON-tags Toevoegen",
+      "addOmitemptyLabel": "Omitempty Toevoegen",
+      "inlineStructsLabel": "Inline Structuren",
+      "convertBtn": "Naar Go Struct Converteren",
+      "loadSampleBtn": "Voorbeeld Laden",
+      "clearAllBtn": "Alles Wissen",
+      "jsonInputLabel": "JSON-invoer",
+      "goStructOutputLabel": "Go Struct-uitvoer",
+      "jsonInputPlaceholder": "Plak je JSON-gegevens hier...",
+      "outputPlaceholder": "De Go Struct-definitie verschijnt hier...",
+      "seoTitle": "JSON naar Go Struct-definities Converteren",
+      "seoContent": "Het converteren van JSON-gegevens naar Go Struct-definities is essentieel voor het bouwen van type-veilige Go-applicaties. Deze tool genereert automatisch Go-typen uit JSON-invoer.",
+      "seoFeaturesTitle": "Belangrijkste Functies",
+      "seoFeature1": "Automatische typedetectie — wijst JSON-typen toe aan geschikte Go-typen",
+      "seoFeature2": "Aanpasbare structuurnamen — stel de naam van de root-structuur in",
+      "seoFeature3": "JSON-tags ondersteuning — voeg optioneel JSON-tags toe met veldnamen en omitempty",
+      "seoFeature4": "100% client-side verwerking — alle conversie vindt plaats in je browser",
+      "howToUseTitle": "Hoe te Gebruiken",
+      "howToUseSteps": [
+        "Voer je JSON-gegevens in of plak ze in het linkerveld",
+        "Stel de naam van de root-structuur in",
+        "Kies opties: JSON-tags toevoegen, omitempty, inline structuren",
+        "Klik op 'Naar Go Struct Converteren' om de Go-code te genereren",
+        "Kopieer de uitvoer en plak deze in je Go-project"
+      ],
+      "useCasesTitle": "Veelvoorkomende Gebruik",
+      "useCases": [
+        "Genereer typdefinities uit REST API-documentatie",
+        "Creëer modellen voor JSON-configuratiebestanden",
+        "Bouw aanvraag-/antwoordtypen voor Go HTTP-services",
+        "Prototype snel gegevensmodellen op basis van voorbeeld-JSON"
+      ],
+      "faqTitle": "Veelgestelde Vragen",
+      "faqs": [
+        {
+          "q": "Wat is een Go Struct?",
+          "a": "Een struct in Go is een samengesteld gegevenstype dat variabelen samen groepeert. In tegenstelling tot maps bieden structs type-veiligheid."
+        },
+        {
+          "q": "Wat betekent 'PascalCase' veldnaamgeving?",
+          "a": "PascalCase is de Go-conventie voor geëxporteerde structuurvelden. De tool converteert snake_case en kebab-case automatisch naar PascalCase."
+        },
+        {
+          "q": "Waar zijn JSON-structuurtags voor?",
+          "a": "JSON-tags vertellen Go's encoding/json package hoe JSON-sleutels aan structuurvelden moeten worden toegewezen."
+        },
+        {
+          "q": "Wanneer moet ik omitempty gebruiken?",
+          "a": "Gebruik omitempty voor optionele velden. Het zegt Go het veld weg te laten uit de JSON-uitvoer als deze een nulwaarde heeft."
+        }
+      ]
+    },
     "svg-to-jsx": {
       "name": "SVG naar JSX/React",
       "description": "Converteer SVG-bestanden naar JSX React-componenten",
@@ -3272,37 +3330,34 @@
       ]
     },
     "curl-to-code": {
-      "name": "cURL to Code Converter",
-      "description": "Convert cURL commands to Python, JavaScript, Go, PHP, and more",
-      "pageTitle": "cURL to Code Converter — Python, JavaScript, Go, PHP",
-      "pageDescription": "Convert cURL commands to Python requests, JavaScript fetch, Go, PHP, Ruby, Java, and C#. Paste any cURL command and get clean code instantly.",
-      "seoTitle": "What is a cURL to Code Converter?",
-      "seoContent": "A cURL to code converter translates cURL commands from API documentation or browser DevTools into equivalent code in your preferred programming language.",
-      "howToUseTitle": "How to Use",
-      "howToUseSteps": [
-        "Paste a cURL command",
-        "Select target language",
-        "View generated code",
-        "Copy the code"
-      ],
-      "useCasesTitle": "Use Cases",
-      "useCases": [
-        "Converting API docs to code",
-        "Translating browser network requests",
-        "Quick API prototyping",
-        "Learning HTTP request syntax"
-      ],
-      "faqTitle": "FAQ",
-      "faqs": [
-        {
-          "q": "What languages are supported?",
-          "a": "Python, JavaScript (fetch/axios), Go, PHP, Ruby, Java, C#, and more."
-        },
-        {
-          "q": "Can I paste cURL from Chrome DevTools?",
-          "a": "Yes, copy as cURL from Chrome Network tab and paste directly."
-        }
-      ]
+      "name": "cURL naar Code Converter",
+      "description": "Zet cURL-commando's om in code",
+      "pageTitle": "cURL naar Code Converter Online - JavaScript, Python, Go, Java, PHP, Ruby",
+      "pageDescription": "Gratis online cURL naar code converter. Zet cURL-commando's om in JavaScript, Python, Go, Java, PHP, Node.js en Ruby-code.",
+      "inputLabel": "Plak uw cURL-commando",
+      "inputPlaceholder": "curl -X POST https://api.example.com/users -H \"Content-Type: application/json\" -H \"Authorization: Bearer token123\" -d '{\"name\":\"John\",\"email\":\"john@example.com\"}'",
+      "outputLabel": "Code-uitvoer",
+      "convertBtn": "Converteren",
+      "copyBtn": "Code kopiëren",
+      "languageLabel": "Taal selecteren",
+      "selectLanguage": "Kies een taal",
+      "javascript": "JavaScript (fetch)",
+      "pythonRequests": "Python (requests)",
+      "go": "Go (net/http)",
+      "java": "Java (HttpURLConnection)",
+      "php": "PHP (curl)",
+      "nodejs": "Node.js (axios)",
+      "ruby": "Ruby (net/http)",
+      "loadSample": "Voorbeeld laden",
+      "errorInvalidCurl": "Ongeldig cURL-commando",
+      "errorParsing": "Fout bij het parseren van cURL-commando",
+      "seoTitle": "cURL naar Code Converter Online",
+      "seoContent": "Zet cURL-commando's om in code in meerdere programmeertalen.",
+      "seoFeaturesTitle": "Functies",
+      "seoFeature1": "Zet cURL om in 7+ programmeertalen",
+      "seoFeature2": "Automatisch parseren van headers, body, auth en cookies",
+      "seoFeature3": "Ondersteuning voor veelgebruikte cURL-vlaggen en opties",
+      "seoFeature4": "Code kopiëren met één klik"
     },
     "yaml-validator": {
       "name": "YAML Validator & Formatter",

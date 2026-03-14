@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ToolLayout from '@/components/ToolLayout';
 import CopyButton from '@/components/CopyButton';
 import { useLang } from '@/i18n/LangContext';
@@ -9,674 +9,524 @@ interface ParsedCurl {
   method: string;
   url: string;
   headers: Record<string, string>;
-  data: string;
-  auth: { user: string; pass: string } | null;
-  cookies: string;
-  isJson: boolean;
+  body?: string;
+  auth?: { username: string; password: string };
+  cookies?: Record<string, string>;
 }
 
-function parseCurl(input: string): ParsedCurl {
-  const result: ParsedCurl = {
+function encodeBase64(str: string): string {
+  try {
+    return btoa(unescape(encodeURIComponent(str)));
+  } catch {
+    return btoa(str);
+  }
+}
+
+function parseCurlCommand(curlStr: string): ParsedCurl {
+  const parsed: ParsedCurl = {
     method: 'GET',
     url: '',
     headers: {},
-    data: '',
-    auth: null,
-    cookies: '',
-    isJson: false,
+    cookies: {},
   };
 
-  // Normalize: join line continuations, trim
-  let cmd = input.trim();
-  cmd = cmd.replace(/\\\s*\n/g, ' ').replace(/\\\s*\r\n/g, ' ');
-
-  // Remove leading "curl" keyword
-  if (/^curl\s/i.test(cmd)) {
-    cmd = cmd.replace(/^curl\s+/i, '');
+  // Remove curl keyword at the beginning
+  let cleaned = curlStr.trim();
+  if (cleaned.startsWith('curl ')) {
+    cleaned = cleaned.substring(5);
   }
 
-  const tokens: string[] = [];
-  let current = '';
-  let inSingle = false;
-  let inDouble = false;
-  let escape = false;
-
-  for (let i = 0; i < cmd.length; i++) {
-    const ch = cmd[i];
-    if (escape) {
-      current += ch;
-      escape = false;
-      continue;
-    }
-    if (ch === '\\' && !inSingle) {
-      escape = true;
-      continue;
-    }
-    if (ch === "'" && !inDouble) {
-      inSingle = !inSingle;
-      continue;
-    }
-    if (ch === '"' && !inSingle) {
-      inDouble = !inDouble;
-      continue;
-    }
-    if ((ch === ' ' || ch === '\t') && !inSingle && !inDouble) {
-      if (current.length > 0) {
-        tokens.push(current);
-        current = '';
-      }
-      continue;
-    }
-    current += ch;
-  }
-  if (current.length > 0) tokens.push(current);
-
-  let i = 0;
-  while (i < tokens.length) {
-    const token = tokens[i];
-    if (token === '-X' || token === '--request') {
-      i++;
-      if (i < tokens.length) result.method = tokens[i].toUpperCase();
-    } else if (token === '-H' || token === '--header') {
-      i++;
-      if (i < tokens.length) {
-        const colonIdx = tokens[i].indexOf(':');
-        if (colonIdx > 0) {
-          const key = tokens[i].substring(0, colonIdx).trim();
-          const value = tokens[i].substring(colonIdx + 1).trim();
-          result.headers[key] = value;
-        }
-      }
-    } else if (token === '-d' || token === '--data' || token === '--data-raw' || token === '--data-binary') {
-      i++;
-      if (i < tokens.length) {
-        result.data = tokens[i];
-        if (result.method === 'GET') result.method = 'POST';
-      }
-    } else if (token === '--data-urlencode') {
-      i++;
-      if (i < tokens.length) {
-        const part = tokens[i];
-        if (result.data) result.data += '&' + encodeURIComponent(part);
-        else result.data = encodeURIComponent(part);
-        if (result.method === 'GET') result.method = 'POST';
-        if (!result.headers['Content-Type']) {
-          result.headers['Content-Type'] = 'application/x-www-form-urlencoded';
-        }
-      }
-    } else if (token === '-u' || token === '--user') {
-      i++;
-      if (i < tokens.length) {
-        const parts = tokens[i].split(':');
-        result.auth = { user: parts[0], pass: parts.slice(1).join(':') };
-      }
-    } else if (token === '-b' || token === '--cookie') {
-      i++;
-      if (i < tokens.length) result.cookies = tokens[i];
-    } else if (token === '-L' || token === '--location' || token === '-s' || token === '--silent' || token === '-k' || token === '--insecure' || token === '-v' || token === '--verbose' || token === '--compressed') {
-      // flags without values, skip
-    } else if (token === '-o' || token === '--output' || token === '-A' || token === '--user-agent') {
-      i++; // skip the value
-    } else if (!token.startsWith('-')) {
-      result.url = token;
-    }
-    i++;
-  }
-
-  // Detect JSON body
-  if (result.data) {
-    try {
-      JSON.parse(result.data);
-      result.isJson = true;
-    } catch {
-      // not json
+  // Single quotes handling - convert to double quotes for easier parsing
+  let inSingleQuote = false;
+  let inDoubleQuote = false;
+  let sanitized = '';
+  for (let i = 0; i < cleaned.length; i++) {
+    const char = cleaned[i];
+    if (char === "'" && !inDoubleQuote) {
+      inSingleQuote = !inSingleQuote;
+      sanitized += '"';
+    } else if (char === '"' && !inSingleQuote) {
+      inDoubleQuote = !inDoubleQuote;
+      sanitized += char;
+    } else {
+      sanitized += char;
     }
   }
 
-  // Check Content-Type header for JSON
-  const ct = result.headers['Content-Type'] || result.headers['content-type'] || '';
-  if (ct.includes('application/json')) result.isJson = true;
+  // Extract URL - look for first unquoted word or quoted string
+  const urlMatch = sanitized.match(/(?:^|\s)(?:"([^"]*)"|([^\s]+))/);
+  if (urlMatch) {
+    parsed.url = urlMatch[1] || urlMatch[2];
+  }
 
-  return result;
+  // Parse method (-X or --request)
+  const methodMatch = sanitized.match(/(?:-X|--request)\s+(?:"([^"]*)"|(\S+))/);
+  if (methodMatch) {
+    parsed.method = (methodMatch[1] || methodMatch[2]).toUpperCase();
+  }
+
+  // Parse headers (-H or --header)
+  const headerRegex = /(?:-H|--header)\s+(?:"([^"]*)"|(\S+))/g;
+  let headerMatch;
+  while ((headerMatch = headerRegex.exec(sanitized))) {
+    const headerLine = headerMatch[1] || headerMatch[2];
+    const [key, ...valueParts] = headerLine.split(':');
+    if (key && valueParts.length > 0) {
+      parsed.headers[key.trim()] = valueParts.join(':').trim();
+    }
+  }
+
+  // Parse body (-d, --data, or --data-raw)
+  const bodyMatch = sanitized.match(/(?:-d|--data|--data-raw)\s+(?:"([^"]*)"|'([^']*)'|(\S+))/);
+  if (bodyMatch) {
+    parsed.body = bodyMatch[1] || bodyMatch[2] || bodyMatch[3];
+  }
+
+  // Parse form data (-F or --form)
+  const formMatch = sanitized.match(/(?:-F|--form)\s+(?:"([^"]*)"|(\S+))/);
+  if (formMatch) {
+    const formData = formMatch[1] || formMatch[2];
+    if (!parsed.body) {
+      parsed.body = formData;
+    }
+  }
+
+  // Parse authentication (-u or --user)
+  const authMatch = sanitized.match(/(?:-u|--user)\s+(?:"([^"]*)"|(\S+))/);
+  if (authMatch) {
+    const authStr = authMatch[1] || authMatch[2];
+    const [username, password] = authStr.split(':');
+    if (username) {
+      parsed.auth = { username, password: password || '' };
+    }
+  }
+
+  // Parse cookies (-b or --cookie)
+  const cookieMatch = sanitized.match(/(?:-b|--cookie)\s+(?:"([^"]*)"|(\S+))/);
+  if (cookieMatch) {
+    const cookieStr = cookieMatch[1] || cookieMatch[2];
+    const cookies = cookieStr.split(';');
+    for (const cookie of cookies) {
+      const [key, value] = cookie.split('=').map((s) => s.trim());
+      if (key && value) {
+        parsed.cookies![key] = value;
+      }
+    }
+  }
+
+  return parsed;
 }
 
-type TargetLang = 'python' | 'javascript' | 'php' | 'go' | 'rust' | 'java' | 'csharp' | 'ruby';
+function generateJavaScript(parsed: ParsedCurl): string {
+  const { url, method, headers, body, auth } = parsed;
 
-function generateCode(parsed: ParsedCurl, lang: TargetLang): string {
-  const { method, url, headers, data, auth, cookies, isJson } = parsed;
+  let code = `const response = await fetch('${url}', {\n`;
+  code += `  method: '${method}',\n`;
 
-  switch (lang) {
-    case 'python': {
-      const lines: string[] = ['import requests', ''];
-      const kwargs: string[] = [];
-
-      if (Object.keys(headers).length > 0) {
-        lines.push('headers = {');
-        for (const [k, v] of Object.entries(headers)) {
-          lines.push(`    "${k}": "${v}",`);
-        }
-        lines.push('}');
-        kwargs.push('headers=headers');
-      }
-
-      if (data && isJson) {
-        lines.push('');
-        lines.push(`json_data = ${data}`);
-        kwargs.push('json=json_data');
-      } else if (data) {
-        lines.push('');
-        lines.push(`data = "${data}"`);
-        kwargs.push('data=data');
-      }
-
-      if (auth) {
-        kwargs.push(`auth=("${auth.user}", "${auth.pass}")`);
-      }
-
-      if (cookies) {
-        lines.push('');
-        lines.push('cookies = {');
-        cookies.split(';').forEach(c => {
-          const [k, ...v] = c.trim().split('=');
-          if (k) lines.push(`    "${k.trim()}": "${v.join('=').trim()}",`);
-        });
-        lines.push('}');
-        kwargs.push('cookies=cookies');
-      }
-
-      lines.push('');
-      const argsStr = kwargs.length > 0 ? `, ${kwargs.join(', ')}` : '';
-      lines.push(`response = requests.${method.toLowerCase()}("${url}"${argsStr})`);
-      lines.push('');
-      lines.push('print(response.status_code)');
-      lines.push('print(response.text)');
-      return lines.join('\n');
+  if (Object.keys(headers).length > 0 || auth) {
+    code += `  headers: {\n`;
+    for (const [key, value] of Object.entries(headers)) {
+      code += `    '${key}': '${value}',\n`;
     }
-
-    case 'javascript': {
-      const lines: string[] = [];
-      const opts: string[] = [];
-      opts.push(`  method: "${method}"`);
-
-      if (Object.keys(headers).length > 0 || auth) {
-        const allHeaders = { ...headers };
-        if (auth) {
-          allHeaders['Authorization'] = `Basic \${btoa("${auth.user}:${auth.pass}")}`;
-        }
-        if (cookies) {
-          allHeaders['Cookie'] = cookies;
-        }
-        opts.push('  headers: {');
-        for (const [k, v] of Object.entries(allHeaders)) {
-          if (k === 'Authorization' && auth) {
-            opts.push(`    "Authorization": \`Basic \${btoa("${auth.user}:${auth.pass}")}\`,`);
-          } else {
-            opts.push(`    "${k}": "${v}",`);
-          }
-        }
-        opts.push('  }');
-      }
-
-      if (data) {
-        if (isJson) {
-          opts.push(`  body: JSON.stringify(${data})`);
-        } else {
-          opts.push(`  body: "${data}"`);
-        }
-      }
-
-      lines.push(`const response = await fetch("${url}", {`);
-      lines.push(opts.join(',\n'));
-      lines.push('});');
-      lines.push('');
-      lines.push('const data = await response.json();');
-      lines.push('console.log(data);');
-      return lines.join('\n');
+    if (auth) {
+      const encoded = encodeBase64(`${auth.username}:${auth.password}`);
+      code += `    'Authorization': 'Basic ${encoded}',\n`;
     }
+    code += `  },\n`;
+  }
 
-    case 'php': {
-      const lines: string[] = ['<?php', '', '$ch = curl_init();', ''];
-      lines.push(`curl_setopt($ch, CURLOPT_URL, "${url}");`);
-      lines.push('curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);');
+  if (body) {
+    code += `  body: ${typeof body === 'string' && body.startsWith('{') ? body : `'${body}'`},\n`;
+  }
 
-      if (method !== 'GET') {
-        lines.push(`curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "${method}");`);
-      }
+  code += `});\nconst data = await response.json();`;
+  return code;
+}
 
-      if (Object.keys(headers).length > 0) {
-        lines.push('curl_setopt($ch, CURLOPT_HTTPHEADER, [');
-        for (const [k, v] of Object.entries(headers)) {
-          lines.push(`    "${k}: ${v}",`);
-        }
-        lines.push(']);');
-      }
+function generatePython(parsed: ParsedCurl): string {
+  const { url, method, headers, body, auth } = parsed;
 
-      if (data) {
-        lines.push(`curl_setopt($ch, CURLOPT_POSTFIELDS, '${data.replace(/'/g, "\\'")}');`);
-      }
+  let code = `import requests\n\n`;
 
-      if (auth) {
-        lines.push(`curl_setopt($ch, CURLOPT_USERPWD, "${auth.user}:${auth.pass}");`);
-      }
+  if (auth) {
+    code += `auth = ('${auth.username}', '${auth.password}')\n\n`;
+  }
 
-      if (cookies) {
-        lines.push(`curl_setopt($ch, CURLOPT_COOKIE, "${cookies}");`);
-      }
+  const headerDict = Object.entries(headers)
+    .map(([k, v]) => `    '${k}': '${v}'`)
+    .join(',\n');
 
-      lines.push('');
-      lines.push('$response = curl_exec($ch);');
-      lines.push('curl_close($ch);');
-      lines.push('');
-      lines.push('echo $response;');
-      return lines.join('\n');
-    }
+  code += `response = requests.${method.toLowerCase()}(\n`;
+  code += `  '${url}',\n`;
 
-    case 'go': {
-      const lines: string[] = ['package main', '', 'import (', '\t"fmt"', '\t"io"', '\t"net/http"'];
-      if (data) lines.push('\t"strings"');
-      if (auth) lines.push('\t"encoding/base64"');
-      lines.push(')', '');
-      lines.push('func main() {');
+  if (headerDict) {
+    code += `  headers={\n${headerDict}\n  },\n`;
+  }
 
-      if (data) {
-        lines.push(`\tbody := strings.NewReader(\`${data}\`)`);
-        lines.push(`\treq, err := http.NewRequest("${method}", "${url}", body)`);
-      } else {
-        lines.push(`\treq, err := http.NewRequest("${method}", "${url}", nil)`);
-      }
-      lines.push('\tif err != nil {');
-      lines.push('\t\tpanic(err)');
-      lines.push('\t}');
+  if (body) {
+    code += `  json=${typeof body === 'string' && body.startsWith('{') ? body : `'${body}'`},\n`;
+  }
 
-      for (const [k, v] of Object.entries(headers)) {
-        lines.push(`\treq.Header.Set("${k}", "${v}")`);
-      }
+  if (auth) {
+    code += `  auth=auth,\n`;
+  }
 
-      if (auth) {
-        lines.push(`\treq.Header.Set("Authorization", "Basic " + base64.StdEncoding.EncodeToString([]byte("${auth.user}:${auth.pass}")))`);
-      }
+  code += `)\ndata = response.json()`;
+  return code;
+}
 
-      if (cookies) {
-        lines.push(`\treq.Header.Set("Cookie", "${cookies}")`);
-      }
+function generateGo(parsed: ParsedCurl): string {
+  const { url, method, headers, body, auth } = parsed;
 
-      lines.push('');
-      lines.push('\tclient := &http.Client{}');
-      lines.push('\tresp, err := client.Do(req)');
-      lines.push('\tif err != nil {');
-      lines.push('\t\tpanic(err)');
-      lines.push('\t}');
-      lines.push('\tdefer resp.Body.Close()');
-      lines.push('');
-      lines.push('\trespBody, _ := io.ReadAll(resp.Body)');
-      lines.push('\tfmt.Println(string(respBody))');
-      lines.push('}');
-      return lines.join('\n');
-    }
+  let code = `package main\n\nimport (\n`;
+  code += `  "fmt"\n`;
+  if (body || auth) code += `  "io"\n`;
+  code += `  "net/http"\n`;
+  if (body && typeof body === 'string' && body.startsWith('{')) code += `  "strings"\n`;
+  code += `)\n\nfunc main() {\n`;
 
-    case 'rust': {
-      const lines: string[] = [
-        '// Add to Cargo.toml: reqwest = { version = "0.11", features = ["blocking"] }',
-        '',
-        'use reqwest::blocking::Client;',
-        '',
-        'fn main() -> Result<(), Box<dyn std::error::Error>> {',
-        '    let client = Client::new();',
-        '',
-      ];
+  if (body) {
+    code += `  body := strings.NewReader(\`${body}\`)\n`;
+  }
 
-      lines.push(`    let response = client.${method.toLowerCase()}("${url}")`);
+  code += `  req, _ := http.NewRequest("${method}", "${url}", ${body ? 'body' : 'nil'})\n`;
 
-      for (const [k, v] of Object.entries(headers)) {
-        lines.push(`        .header("${k}", "${v}")`);
-      }
+  for (const [key, value] of Object.entries(headers)) {
+    code += `  req.Header.Add("${key}", "${value}")\n`;
+  }
 
-      if (auth) {
-        lines.push(`        .basic_auth("${auth.user}", Some("${auth.pass}"))`);
-      }
+  if (auth) {
+    code += `  req.SetBasicAuth("${auth.username}", "${auth.password}")\n`;
+  }
 
-      if (data) {
-        if (isJson) {
-          lines.push(`        .json(&serde_json::from_str::<serde_json::Value>(r#"${data}"#)?)`);
-        } else {
-          lines.push(`        .body("${data}")`);
-        }
-      }
+  code += `  resp, _ := http.DefaultClient.Do(req)\n`;
+  code += `  defer resp.Body.Close()\n`;
+  code += `  fmt.Println(resp.Status)\n`;
+  code += `}`;
 
-      lines.push('        .send()?;');
-      lines.push('');
-      lines.push('    println!("{}", response.text()?);');
-      lines.push('    Ok(())');
-      lines.push('}');
-      return lines.join('\n');
-    }
+  return code;
+}
 
-    case 'java': {
-      const lines: string[] = [
-        'import java.net.URI;',
-        'import java.net.http.HttpClient;',
-        'import java.net.http.HttpRequest;',
-        'import java.net.http.HttpResponse;',
-        '',
-        'public class Main {',
-        '    public static void main(String[] args) throws Exception {',
-        '        HttpClient client = HttpClient.newHttpClient();',
-        '',
-      ];
+function generateJava(parsed: ParsedCurl): string {
+  const { url, method, headers, body, auth } = parsed;
 
-      lines.push('        HttpRequest request = HttpRequest.newBuilder()');
-      lines.push(`            .uri(URI.create("${url}"))`);
+  let code = `import java.net.HttpURLConnection;\nimport java.net.URL;\nimport java.util.Base64;\n\n`;
+  code += `public class CurlRequest {\n`;
+  code += `  public static void main(String[] args) throws Exception {\n`;
+  code += `    URL url = new URL("${url}");\n`;
+  code += `    HttpURLConnection conn = (HttpURLConnection) url.openConnection();\n`;
+  code += `    conn.setRequestMethod("${method}");\n`;
 
-      if (data) {
-        lines.push(`            .method("${method}", HttpRequest.BodyPublishers.ofString(${JSON.stringify(data)}))`);
-      } else {
-        lines.push(`            .method("${method}", HttpRequest.BodyPublishers.noBody())`);
-      }
+  for (const [key, value] of Object.entries(headers)) {
+    code += `    conn.setRequestProperty("${key}", "${value}");\n`;
+  }
 
-      for (const [k, v] of Object.entries(headers)) {
-        lines.push(`            .header("${k}", "${v}")`);
-      }
+  if (auth) {
+    const encoded = encodeBase64(`${auth.username}:${auth.password}`);
+    code += `    conn.setRequestProperty("Authorization", "Basic ${encoded}");\n`;
+  }
 
-      if (auth) {
-        lines.push(`            .header("Authorization", "Basic " + java.util.Base64.getEncoder().encodeToString("${auth.user}:${auth.pass}".getBytes()))`);
-      }
+  if (body) {
+    code += `    conn.setDoOutput(true);\n`;
+    code += `    conn.getOutputStream().write("${body}".getBytes());\n`;
+  }
 
-      if (cookies) {
-        lines.push(`            .header("Cookie", "${cookies}")`);
-      }
+  code += `    int responseCode = conn.getResponseCode();\n`;
+  code += `    System.out.println("Response Code: " + responseCode);\n`;
+  code += `  }\n`;
+  code += `}`;
 
-      lines.push('            .build();');
-      lines.push('');
-      lines.push('        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());');
-      lines.push('        System.out.println(response.statusCode());');
-      lines.push('        System.out.println(response.body());');
-      lines.push('    }');
-      lines.push('}');
-      return lines.join('\n');
-    }
+  return code;
+}
 
-    case 'csharp': {
-      const lines: string[] = [
-        'using System;',
-        'using System.Net.Http;',
-        'using System.Text;',
-        'using System.Threading.Tasks;',
-        '',
-        'class Program',
-        '{',
-        '    static async Task Main()',
-        '    {',
-        '        using var client = new HttpClient();',
-        '',
-      ];
+function generatePHP(parsed: ParsedCurl): string {
+  const { url, method, headers, body, auth } = parsed;
 
-      for (const [k, v] of Object.entries(headers)) {
-        if (k.toLowerCase() === 'content-type') continue;
-        lines.push(`        client.DefaultRequestHeaders.Add("${k}", "${v}");`);
-      }
+  let code = `<?php\n\n$curl = curl_init();\n\n`;
+  code += `curl_setopt_array($curl, [\n`;
+  code += `  CURLOPT_URL => '${url}',\n`;
+  code += `  CURLOPT_CUSTOMREQUEST => '${method}',\n`;
 
-      if (auth) {
-        lines.push(`        client.DefaultRequestHeaders.Add("Authorization", "Basic " + Convert.ToBase64String(Encoding.UTF8.GetBytes("${auth.user}:${auth.pass}")));`);
-      }
+  const headerArr = Object.entries(headers)
+    .map(([k, v]) => `    '${k}: ${v}'`)
+    .join(',\n');
 
-      if (cookies) {
-        lines.push(`        client.DefaultRequestHeaders.Add("Cookie", "${cookies}");`);
-      }
+  if (headerArr || auth) {
+    code += `  CURLOPT_HTTPHEADER => [\n${headerArr}${auth ? (headerArr ? ',\n' : '') + `    'Authorization: Basic ' . base64_encode('${auth.username}:${auth.password}')` : ''}\n  ],\n`;
+  }
 
-      lines.push('');
+  if (body) {
+    code += `  CURLOPT_POSTFIELDS => '${body}',\n`;
+  }
 
-      const ct = headers['Content-Type'] || headers['content-type'] || (isJson ? 'application/json' : 'text/plain');
+  code += `]);\n\n`;
+  code += `$response = curl_exec($curl);\n`;
+  code += `curl_close($curl);\n`;
+  code += `echo $response;`;
 
-      if (data) {
-        lines.push(`        var content = new StringContent(@"${data.replace(/"/g, '""')}", Encoding.UTF8, "${ct}");`);
-        lines.push(`        var response = await client.${method === 'POST' ? 'PostAsync' : method === 'PUT' ? 'PutAsync' : 'SendAsync'}(`);
-        if (method !== 'POST' && method !== 'PUT') {
-          lines.push(`            new HttpRequestMessage(new HttpMethod("${method}"), "${url}") { Content = content });`);
-        } else {
-          lines.push(`            "${url}", content);`);
-        }
-      } else {
-        if (method === 'GET') {
-          lines.push(`        var response = await client.GetAsync("${url}");`);
-        } else if (method === 'DELETE') {
-          lines.push(`        var response = await client.DeleteAsync("${url}");`);
-        } else {
-          lines.push(`        var response = await client.SendAsync(`);
-          lines.push(`            new HttpRequestMessage(new HttpMethod("${method}"), "${url}"));`);
-        }
-      }
+  return code;
+}
 
-      lines.push('');
-      lines.push('        var body = await response.Content.ReadAsStringAsync();');
-      lines.push('        Console.WriteLine($"Status: {response.StatusCode}");');
-      lines.push('        Console.WriteLine(body);');
-      lines.push('    }');
-      lines.push('}');
-      return lines.join('\n');
-    }
+function generateNodeAxios(parsed: ParsedCurl): string {
+  const { url, method, headers, body, auth } = parsed;
 
-    case 'ruby': {
-      const lines: string[] = [
-        "require 'net/http'",
-        "require 'uri'",
-        "require 'json'",
-        '',
-      ];
+  let code = `const axios = require('axios');\n\n`;
+  code += `const config = {\n`;
+  code += `  method: '${method.toLowerCase()}',\n`;
+  code += `  url: '${url}',\n`;
 
-      lines.push(`uri = URI.parse("${url}")`);
-      lines.push('http = Net::HTTP.new(uri.host, uri.port)');
-      lines.push('http.use_ssl = true if uri.scheme == "https"');
-      lines.push('');
+  const headerObj = Object.entries(headers)
+    .map(([k, v]) => `    '${k}': '${v}'`)
+    .join(',\n');
 
-      const rubyMethod = method.charAt(0) + method.slice(1).toLowerCase();
-      lines.push(`request = Net::HTTP::${rubyMethod}.new(uri.request_uri)`);
+  if (headerObj || auth) {
+    code += `  headers: {\n${headerObj}${auth ? (headerObj ? ',\n' : '') + `    'Authorization': 'Basic ' + Buffer.from('${auth.username}:${auth.password}').toString('base64')` : ''}\n  },\n`;
+  }
 
-      for (const [k, v] of Object.entries(headers)) {
-        lines.push(`request["${k}"] = "${v}"`);
-      }
+  if (body) {
+    code += `  data: ${typeof body === 'string' && body.startsWith('{') ? body : `'${body}'`},\n`;
+  }
 
-      if (auth) {
-        lines.push(`request.basic_auth("${auth.user}", "${auth.pass}")`);
-      }
+  code += `};\n\naxios(config)\n`;
+  code += `  .then((response) => console.log(response.data))\n`;
+  code += `  .catch((error) => console.error(error));`;
 
-      if (cookies) {
-        lines.push(`request["Cookie"] = "${cookies}"`);
-      }
+  return code;
+}
 
-      if (data) {
-        if (isJson) {
-          lines.push(`request.body = '${data}'`);
-          lines.push('request["Content-Type"] = "application/json"');
-        } else {
-          lines.push(`request.body = "${data}"`);
-        }
-      }
+function generateRuby(parsed: ParsedCurl): string {
+  const { url, method, headers, body, auth } = parsed;
 
-      lines.push('');
-      lines.push('response = http.request(request)');
-      lines.push('puts response.code');
-      lines.push('puts response.body');
-      return lines.join('\n');
-    }
+  let code = `require 'net/http'\nrequire 'json'\nrequire 'base64'\n\n`;
+  code += `uri = URI('${url}')\n`;
+  code += `http = Net::HTTP.new(uri.host, uri.port)\n`;
+  code += `request = Net::HTTP::${method.charAt(0).toUpperCase() + method.slice(1).toLowerCase()}.new(uri.path)\n\n`;
 
+  for (const [key, value] of Object.entries(headers)) {
+    code += `request['${key}'] = '${value}'\n`;
+  }
+
+  if (auth) {
+    code += `request.basic_auth('${auth.username}', '${auth.password}')\n`;
+  }
+
+  if (body) {
+    code += `\nrequest.body = ${typeof body === 'string' && body.startsWith('{') ? body : `'${body}'`}\n`;
+  }
+
+  code += `\nresponse = http.request(request)\n`;
+  code += `puts response.body`;
+
+  return code;
+}
+
+function generateCode(language: string, parsed: ParsedCurl): string {
+  switch (language) {
+    case 'javascript':
+      return generateJavaScript(parsed);
+    case 'python':
+      return generatePython(parsed);
+    case 'go':
+      return generateGo(parsed);
+    case 'java':
+      return generateJava(parsed);
+    case 'php':
+      return generatePHP(parsed);
+    case 'nodejs':
+      return generateNodeAxios(parsed);
+    case 'ruby':
+      return generateRuby(parsed);
     default:
       return '';
   }
 }
 
-const SAMPLE_CURL = `curl -X POST https://api.example.com/users \\
-  -H "Content-Type: application/json" \\
-  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiZGV2In0.abc123" \\
-  -d '{"name": "John Doe", "email": "john@example.com", "role": "admin"}'`;
-
-const LANGUAGES: { id: TargetLang; label: string }[] = [
-  { id: 'python', label: 'Python' },
-  { id: 'javascript', label: 'JavaScript' },
-  { id: 'php', label: 'PHP' },
-  { id: 'go', label: 'Go' },
-  { id: 'rust', label: 'Rust' },
-  { id: 'java', label: 'Java' },
-  { id: 'csharp', label: 'C#' },
-  { id: 'ruby', label: 'Ruby' },
-];
-
 export default function CurlToCode() {
   const { dict } = useLang();
-  const t = dict.tools['curl-to-code'] as Record<string, unknown>;
-  const common = dict.common;
-
-  const [input, setInput] = useState('');
-  const [output, setOutput] = useState('');
+  const t = dict.tools['curl-to-code'];
+  const [curlInput, setCurlInput] = useState('');
+  const [selectedLanguage, setSelectedLanguage] = useState('javascript');
+  const [generatedCode, setGeneratedCode] = useState('');
   const [error, setError] = useState('');
-  const [selectedLang, setSelectedLang] = useState<TargetLang>('python');
 
-  const convert = (curlInput?: string, lang?: TargetLang) => {
-    const src = curlInput ?? input;
-    const target = lang ?? selectedLang;
-    if (!src.trim()) {
-      setError('Please enter a cURL command');
-      setOutput('');
-      return;
-    }
+  const handleConvert = () => {
     try {
-      const parsed = parseCurl(src);
-      if (!parsed.url) {
-        setError('Could not find a URL in the cURL command');
-        setOutput('');
+      if (!curlInput.trim()) {
+        setError('Please enter a cURL command');
+        setGeneratedCode('');
         return;
       }
-      const code = generateCode(parsed, target);
-      setOutput(code);
+
+      const parsed = parseCurlCommand(curlInput);
+
+      if (!parsed.url) {
+        setError('Could not find URL in cURL command');
+        setGeneratedCode('');
+        return;
+      }
+
+      const code = generateCode(selectedLanguage, parsed);
+      setGeneratedCode(code);
       setError('');
-    } catch (e: unknown) {
-      setError(e instanceof Error ? e.message : 'Failed to parse cURL command');
-      setOutput('');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Error parsing cURL command');
+      setGeneratedCode('');
     }
   };
 
   const loadSample = () => {
-    setInput(SAMPLE_CURL);
-    try {
-      const parsed = parseCurl(SAMPLE_CURL);
-      setOutput(generateCode(parsed, selectedLang));
-      setError('');
-    } catch {
-      // ignore
-    }
+    setCurlInput(t.inputPlaceholder);
+    setError('');
   };
 
-  const handleLangChange = (lang: TargetLang) => {
-    setSelectedLang(lang);
-    if (input.trim()) {
-      convert(input, lang);
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+      handleConvert();
     }
   };
 
   return (
-    <ToolLayout
-      title={(t.pageTitle as string) || 'cURL to Code Converter'}
-      description={(t.pageDescription as string) || 'Convert cURL commands to code'}
-      toolId="curl-to-code"
-    >
-      {/* Action buttons */}
-      <div style={{ display: 'flex', gap: 8, marginBottom: 16, flexWrap: 'wrap', alignItems: 'center' }}>
-        <button onClick={() => convert()} className="btn btn-primary">{common.convert}</button>
-        <button onClick={loadSample} className="btn btn-secondary">{common.loadSample}</button>
-        <button onClick={() => { setInput(''); setOutput(''); setError(''); }} className="btn btn-secondary">{common.clear}</button>
+    <ToolLayout title={t.pageTitle} description={t.pageDescription} toolId="curl-to-code">
+      <div style={{ display: 'flex', gap: 16, marginBottom: 16, flexWrap: 'wrap', alignItems: 'center' }}>
+        <button onClick={handleConvert} className="btn btn-primary">
+          {t.convertBtn}
+        </button>
+        <button onClick={loadSample} className="btn btn-secondary">
+          {t.loadSample}
+        </button>
       </div>
 
-      {/* Error display */}
-      {error && (
-        <div style={{
-          background: 'rgba(244, 63, 94, 0.1)',
-          border: '1px solid rgba(244, 63, 94, 0.3)',
-          borderRadius: 8,
-          padding: '10px 14px',
-          marginBottom: 16,
-          fontSize: 13,
-          color: 'var(--accent-rose)',
-        }}>
-          {error}
-        </div>
-      )}
-
-      {/* Input area */}
-      <div style={{ marginBottom: 16 }}>
-        <label style={{ fontSize: 13, fontWeight: 600, marginBottom: 8, display: 'block' }}>
-          cURL Command
-        </label>
-        <textarea
-          value={input}
-          onChange={e => setInput(e.target.value)}
-          placeholder={'curl -X GET https://api.example.com/data -H "Authorization: Bearer token"'}
-          style={{
-            minHeight: 150,
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: 13,
-          }}
-        />
-      </div>
-
-      {/* Language tabs */}
-      <div style={{ marginBottom: 12 }}>
-        <div style={{
-          display: 'flex',
-          gap: 0,
-          borderBottom: '2px solid var(--border-color)',
-          overflowX: 'auto',
-        }}>
-          {LANGUAGES.map(lang => (
-            <button
-              key={lang.id}
-              onClick={() => handleLangChange(lang.id)}
-              style={{
-                padding: '8px 16px',
-                fontSize: 13,
-                fontWeight: selectedLang === lang.id ? 700 : 400,
-                color: selectedLang === lang.id ? 'var(--accent-blue)' : 'var(--text-secondary)',
-                background: 'none',
-                border: 'none',
-                borderBottom: selectedLang === lang.id ? '2px solid var(--accent-blue)' : '2px solid transparent',
-                cursor: 'pointer',
-                marginBottom: -2,
-                whiteSpace: 'nowrap',
-                transition: 'color 0.15s, border-color 0.15s',
-              }}
-            >
-              {lang.label}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Output area */}
-      <div>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
-          <label style={{ fontSize: 13, fontWeight: 600 }}>
-            Generated Code
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: 16,
+          marginBottom: 24,
+        }}
+      >
+        <div>
+          <label style={{ display: 'block', marginBottom: 8, color: 'var(--text-primary)', fontWeight: 500 }}>
+            {t.inputLabel}
           </label>
-          {output && <CopyButton text={output} />}
+          <textarea
+            value={curlInput}
+            onChange={(e) => setCurlInput(e.target.value)}
+            onKeyDown={handleKeyDown}
+            placeholder={t.inputPlaceholder}
+            style={{
+              width: '100%',
+              minHeight: 200,
+              padding: 12,
+              border: '1px solid var(--border-color)',
+              borderRadius: 8,
+              fontFamily: 'monospace',
+              fontSize: 14,
+              backgroundColor: 'var(--bg-secondary)',
+              color: 'var(--text-primary)',
+              resize: 'vertical',
+            }}
+          />
         </div>
-        <textarea
-          value={output}
-          readOnly
-          placeholder={common.resultPlaceholder}
-          style={{
-            minHeight: 350,
-            fontFamily: 'JetBrains Mono, monospace',
-            fontSize: 13,
-            opacity: output ? 1 : 0.5,
-          }}
-        />
+
+        <div>
+          <label style={{ display: 'block', marginBottom: 8, color: 'var(--text-primary)', fontWeight: 500 }}>
+            {t.languageLabel}
+          </label>
+          <select
+            value={selectedLanguage}
+            onChange={(e) => {
+              setSelectedLanguage(e.target.value);
+              if (generatedCode) {
+                const parsed = parseCurlCommand(curlInput);
+                if (parsed.url) {
+                  setGeneratedCode(generateCode(e.target.value, parsed));
+                }
+              }
+            }}
+            style={{
+              width: '100%',
+              padding: 10,
+              marginBottom: 12,
+              border: '1px solid var(--border-color)',
+              borderRadius: 8,
+              backgroundColor: 'var(--bg-secondary)',
+              color: 'var(--text-primary)',
+              cursor: 'pointer',
+              fontSize: 14,
+            }}
+          >
+            <option value="javascript">{t.javascript}</option>
+            <option value="python">{t.pythonRequests}</option>
+            <option value="go">{t.go}</option>
+            <option value="java">{t.java}</option>
+            <option value="php">{t.php}</option>
+            <option value="nodejs">{t.nodejs}</option>
+            <option value="ruby">{t.ruby}</option>
+          </select>
+
+          <div
+            style={{
+              position: 'relative',
+              backgroundColor: 'var(--bg-secondary)',
+              border: '1px solid var(--border-color)',
+              borderRadius: 8,
+              minHeight: 200,
+              overflow: 'auto',
+            }}
+          >
+            {generatedCode ? (
+              <>
+                <pre
+                  style={{
+                    padding: 12,
+                    margin: 0,
+                    fontSize: 13,
+                    fontFamily: 'monospace',
+                    color: 'var(--text-primary)',
+                    whiteSpace: 'pre-wrap',
+                    wordBreak: 'break-word',
+                  }}
+                >
+                  {generatedCode}
+                </pre>
+                <div style={{ position: 'absolute', top: 8, right: 8 }}>
+                  <CopyButton text={generatedCode} />
+                </div>
+              </>
+            ) : (
+              <div
+                style={{
+                  padding: 12,
+                  color: 'var(--text-secondary)',
+                  fontStyle: 'italic',
+                }}
+              >
+                {error ? `Error: ${error}` : t.outputLabel}
+              </div>
+            )}
+          </div>
+        </div>
       </div>
 
-      {/* SEO section */}
-      {typeof t.seoTitle === 'string' && (
-        <div style={{ marginTop: 30, paddingTop: 20, borderTop: '1px solid var(--border-color)' }}>
-          <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>{t.seoTitle}</h2>
-          <p style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.7 }}>{t.seoContent as string}</p>
-        </div>
-      )}
+      {/* SEO Content Section */}
+      <div style={{ marginTop: 48, paddingTop: 24, borderTop: '1px solid var(--border-color)' }}>
+        <h2 style={{ fontSize: 24, fontWeight: 600, marginBottom: 16, color: 'var(--text-primary)' }}>
+          {t.seoTitle}
+        </h2>
+        <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: 20 }}>
+          {t.seoContent}
+        </p>
+
+        <h3 style={{ fontSize: 18, fontWeight: 600, marginBottom: 12, color: 'var(--text-primary)' }}>
+          {t.seoFeaturesTitle}
+        </h3>
+        <ul style={{ color: 'var(--text-secondary)', lineHeight: 1.8, paddingLeft: 20 }}>
+          <li>{t.seoFeature1}</li>
+          <li>{t.seoFeature2}</li>
+          <li>{t.seoFeature3}</li>
+          <li>{t.seoFeature4}</li>
+        </ul>
+      </div>
     </ToolLayout>
   );
 }

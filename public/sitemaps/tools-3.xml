@@ -2,6 +2,336 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://viadreams.cc/en/tools/flexbox-generator</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/flexbox-generator"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/fr/tools/flexbox-generator</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/flexbox-generator"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/de/tools/flexbox-generator</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/flexbox-generator"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/it/tools/flexbox-generator</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/flexbox-generator"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/es/tools/flexbox-generator</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/flexbox-generator"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pt/tools/flexbox-generator</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/flexbox-generator"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/nl/tools/flexbox-generator</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/flexbox-generator"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/pl/tools/flexbox-generator</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/flexbox-generator"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/sv/tools/flexbox-generator</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/flexbox-generator"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/no/tools/flexbox-generator</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/flexbox-generator"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/zh/tools/flexbox-generator</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/flexbox-generator"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ja/tools/flexbox-generator</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/flexbox-generator"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/ko/tools/flexbox-generator</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/flexbox-generator"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/id/tools/flexbox-generator</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/flexbox-generator"/>
+  </url>
+  <url>
+    <loc>https://viadreams.cc/th/tools/flexbox-generator</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/flexbox-generator"/>
+      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/flexbox-generator"/>
+  </url>
+  <url>
     <loc>https://viadreams.cc/en/tools/emoji-picker</loc>
     <lastmod>2026-03-14</lastmod>
     <changefreq>monthly</changefreq>
@@ -1650,336 +1980,6 @@
       <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/tailwind-colors"/>
       <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/tailwind-colors"/>
       <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/tailwind-colors"/>
-  </url>
-  <url>
-    <loc>https://viadreams.cc/en/tools/curl-to-code</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/curl-to-code"/>
-  </url>
-  <url>
-    <loc>https://viadreams.cc/fr/tools/curl-to-code</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/curl-to-code"/>
-  </url>
-  <url>
-    <loc>https://viadreams.cc/de/tools/curl-to-code</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/curl-to-code"/>
-  </url>
-  <url>
-    <loc>https://viadreams.cc/it/tools/curl-to-code</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/curl-to-code"/>
-  </url>
-  <url>
-    <loc>https://viadreams.cc/es/tools/curl-to-code</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/curl-to-code"/>
-  </url>
-  <url>
-    <loc>https://viadreams.cc/pt/tools/curl-to-code</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/curl-to-code"/>
-  </url>
-  <url>
-    <loc>https://viadreams.cc/nl/tools/curl-to-code</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/curl-to-code"/>
-  </url>
-  <url>
-    <loc>https://viadreams.cc/pl/tools/curl-to-code</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/curl-to-code"/>
-  </url>
-  <url>
-    <loc>https://viadreams.cc/sv/tools/curl-to-code</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/curl-to-code"/>
-  </url>
-  <url>
-    <loc>https://viadreams.cc/no/tools/curl-to-code</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/curl-to-code"/>
-  </url>
-  <url>
-    <loc>https://viadreams.cc/zh/tools/curl-to-code</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/curl-to-code"/>
-  </url>
-  <url>
-    <loc>https://viadreams.cc/ja/tools/curl-to-code</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/curl-to-code"/>
-  </url>
-  <url>
-    <loc>https://viadreams.cc/ko/tools/curl-to-code</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/curl-to-code"/>
-  </url>
-  <url>
-    <loc>https://viadreams.cc/id/tools/curl-to-code</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/curl-to-code"/>
-  </url>
-  <url>
-    <loc>https://viadreams.cc/th/tools/curl-to-code</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-      <xhtml:link rel="alternate" hreflang="en" href="https://viadreams.cc/en/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="fr" href="https://viadreams.cc/fr/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="de" href="https://viadreams.cc/de/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="it" href="https://viadreams.cc/it/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="es" href="https://viadreams.cc/es/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="pt" href="https://viadreams.cc/pt/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="nl" href="https://viadreams.cc/nl/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="pl" href="https://viadreams.cc/pl/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="sv" href="https://viadreams.cc/sv/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="no" href="https://viadreams.cc/no/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="zh" href="https://viadreams.cc/zh/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="ja" href="https://viadreams.cc/ja/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="ko" href="https://viadreams.cc/ko/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="id" href="https://viadreams.cc/id/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="th" href="https://viadreams.cc/th/tools/curl-to-code"/>
-      <xhtml:link rel="alternate" hreflang="x-default" href="https://viadreams.cc/en/tools/curl-to-code"/>
   </url>
   <url>
     <loc>https://viadreams.cc/en/tools/yaml-validator</loc>

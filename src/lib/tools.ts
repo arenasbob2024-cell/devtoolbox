@@ -472,6 +472,16 @@ export const tools: Tool[] = [
     relatedTools: ['json-to-typescript', 'json-to-rust', 'json-to-java', 'json-formatter'],
   },
   {
+    id: 'json-to-go-struct',
+    name: 'JSON to Go Struct Converter',
+    description: 'Generate Go struct definitions from JSON data with customizable options for struct names, JSON tags, and omitempty fields',
+    icon: '⚙️',
+    category: 'converter',
+    keywords: ['json', 'go', 'golang', 'struct', 'struct definition', 'json to go', 'json to struct', 'convert json to go struct', 'go code generator', 'struct generator', 'json parsing', 'golang json', 'json tags'],
+    path: '/tools/json-to-go-struct',
+    relatedTools: ['json-to-go', 'json-to-typescript', 'json-formatter', 'json-validator'],
+  },
+  {
     id: 'svg-to-jsx',
     name: 'SVG to JSX/React',
     description: 'Convert SVG to JSX online. Free SVG to React component converter with proper attribute renaming and optimization.',
@@ -829,16 +839,6 @@ export const tools: Tool[] = [
     relatedTools: ['color-palette', 'color-converter', 'css-to-tailwind', 'css-gradient'],
   },
   // Round 3 — Blue ocean tools
-  {
-    id: 'curl-to-code',
-    name: 'cURL to Code Converter',
-    description: 'Convert cURL commands to Python, JavaScript, Go, PHP, Ruby, Java, and more',
-    icon: '>>',
-    category: 'converter',
-    keywords: ['curl', 'curl to python', 'curl to javascript', 'curl to fetch', 'curl to go', 'curl converter', 'http request'],
-    path: '/tools/curl-to-code',
-    relatedTools: ['url-parser', 'json-formatter', 'http-status', 'url-encoder', 'html-entity'],
-  },
   {
     id: 'yaml-validator',
     name: 'YAML Validator & Formatter',
@@ -3534,6 +3534,16 @@ export const tools: Tool[] = [
     keywords: ['css', 'selector', 'tester', 'query', 'css selector', 'css selector tester', 'test css selector', 'queryselectorall', 'css selector online'],
     path: '/tools/css-selector-tester',
     relatedTools: ['css-formatter', 'css-specificity-calculator', 'html-beautifier', 'xpath-tester'],
+  },
+  {
+    id: 'curl-to-code',
+    name: 'cURL to Code Converter',
+    description: 'Convert cURL commands to code in JavaScript, Python, Go, Java, PHP, Node.js, Ruby, and more',
+    icon: '🔄',
+    category: 'converter',
+    keywords: ['curl', 'code', 'converter', 'http', 'api', 'javascript', 'python', 'go', 'java', 'php', 'nodejs', 'ruby', 'http request', 'api client', 'curl command to code'],
+    path: '/tools/curl-to-code',
+    relatedTools: ['http-request-builder', 'json-formatter', 'http-header-analyzer', 'url-encoder', 'base64', 'jwt-decoder'],
   },
 ];
 

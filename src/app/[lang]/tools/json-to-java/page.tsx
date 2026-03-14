@@ -5,7 +5,7 @@ import ToolLayout from '@/components/ToolLayout';
 import CopyButton from '@/components/CopyButton';
 import { useLang } from '@/i18n/LangContext';
 
-function jsonToJava(json: string, rootClassName: string, useLombok: boolean, useJackson: boolean, generateGettersSetters: boolean): string {
+function jsonToJava(json: string, rootClassName: string, packageName: string, useLombok: boolean, useJackson: boolean, generateGettersSetters: boolean): string {
   const parsed = JSON.parse(json);
   const classes: string[] = [];
   const seen = new Map<string, string>();
@@ -74,6 +74,12 @@ function jsonToJava(json: string, rootClassName: string, useLombok: boolean, use
       const fieldName = toFieldName(key);
       fields.push({ type, fieldName, key });
       if (type.startsWith('List<')) needsList = true;
+    }
+
+    // Package
+    if (packageName) {
+      lines.push(`package ${packageName};`);
+      lines.push('');
     }
 
     // Imports
@@ -153,13 +159,14 @@ export default function JsonToJava() {
   const [output, setOutput] = useState('');
   const [error, setError] = useState('');
   const [rootName, setRootName] = useState('Root');
+  const [packageName, setPackageName] = useState('com.example');
   const [useLombok, setUseLombok] = useState(false);
   const [useJackson, setUseJackson] = useState(true);
   const [generateGettersSetters, setGenerateGettersSetters] = useState(true);
 
   const convert = () => {
     try {
-      const result = jsonToJava(input, rootName, useLombok, useJackson, generateGettersSetters);
+      const result = jsonToJava(input, rootName, packageName, useLombok, useJackson, generateGettersSetters);
       setOutput(result);
       setError('');
     } catch (e: unknown) {
@@ -193,7 +200,7 @@ export default function JsonToJava() {
 
   return (
     <ToolLayout
-      title={(t.pageTitle as string) || 'JSON to Java Converter'}
+      title={(t.pageTitle as string) || 'JSON to Java Class Converter'}
       description={(t.pageDescription as string) || 'Convert JSON data to Java POJO classes'}
       toolId="json-to-java"
     >
@@ -201,23 +208,32 @@ export default function JsonToJava() {
         <button onClick={convert} className="btn btn-primary">{common.convert}</button>
         <button onClick={loadSample} className="btn btn-secondary">{common.loadSample}</button>
         <button onClick={() => { setInput(''); setOutput(''); setError(''); }} className="btn btn-secondary">{common.clear}</button>
-        <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-            <label style={{ fontSize: 12, color: 'var(--text-secondary)' }}>Root Class:</label>
-            <input value={rootName} onChange={e => setRootName(e.target.value || 'Root')} style={{ width: 100, padding: '4px 8px', fontSize: 12 }} />
-          </div>
-          <label style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 12, color: 'var(--text-secondary)', cursor: 'pointer' }}>
-            <input type="checkbox" checked={useLombok} onChange={e => setUseLombok(e.target.checked)} /> Lombok
-          </label>
-          <label style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 12, color: 'var(--text-secondary)', cursor: 'pointer' }}>
-            <input type="checkbox" checked={useJackson} onChange={e => setUseJackson(e.target.checked)} /> Jackson
-          </label>
-          {!useLombok && (
-            <label style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 12, color: 'var(--text-secondary)', cursor: 'pointer' }}>
-              <input type="checkbox" checked={generateGettersSetters} onChange={e => setGenerateGettersSetters(e.target.checked)} /> Getters/Setters
-            </label>
-          )}
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 12, marginBottom: 16 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+          <label style={{ fontSize: 12, fontWeight: 600 }}>Class Name</label>
+          <input value={rootName} onChange={e => setRootName(e.target.value || 'Root')} placeholder="Root" style={{ padding: '8px 10px', fontSize: 13, backgroundColor: 'var(--bg-secondary)', border: '1px solid var(--border-color)', borderRadius: 6, color: 'var(--text-primary)' }} />
         </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+          <label style={{ fontSize: 12, fontWeight: 600 }}>Package Name</label>
+          <input value={packageName} onChange={e => setPackageName(e.target.value)} placeholder="com.example" style={{ padding: '8px 10px', fontSize: 13, backgroundColor: 'var(--bg-secondary)', border: '1px solid var(--border-color)', borderRadius: 6, color: 'var(--text-primary)' }} />
+        </div>
+      </div>
+
+      <div style={{ display: 'flex', gap: 16, marginBottom: 16, flexWrap: 'wrap' }}>
+        <label style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, cursor: 'pointer' }}>
+          <input type="checkbox" checked={useLombok} onChange={e => setUseLombok(e.target.checked)} style={{ cursor: 'pointer' }} />
+          Use Lombok @Data
+        </label>
+        <label style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, cursor: 'pointer' }}>
+          <input type="checkbox" checked={useJackson} onChange={e => setUseJackson(e.target.checked)} style={{ cursor: 'pointer' }} />
+          Add Jackson Annotations
+        </label>
+        <label style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, cursor: 'pointer', opacity: useLombok ? 0.5 : 1 }}>
+          <input type="checkbox" checked={generateGettersSetters} onChange={e => setGenerateGettersSetters(e.target.checked)} disabled={useLombok} style={{ cursor: useLombok ? 'not-allowed' : 'pointer' }} />
+          Generate Getters/Setters
+        </label>
       </div>
 
       {error && (
@@ -231,14 +247,14 @@ export default function JsonToJava() {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
             <label style={{ fontSize: 13, fontWeight: 600 }}>JSON {common.input}</label>
           </div>
-          <textarea value={input} onChange={e => setInput(e.target.value)} placeholder='{"key": "value", ...}' style={{ minHeight: 350, fontFamily: 'JetBrains Mono, monospace' }} />
+          <textarea value={input} onChange={e => setInput(e.target.value)} placeholder='{"key": "value", "nested": {"key2": "value2"}}' style={{ minHeight: 400, fontFamily: 'JetBrains Mono, monospace', padding: '12px', backgroundColor: 'var(--bg-secondary)', border: '1px solid var(--border-color)', borderRadius: 6, color: 'var(--text-primary)', resize: 'vertical' }} />
         </div>
         <div>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 }}>
-            <label style={{ fontSize: 13, fontWeight: 600 }}>Java</label>
+            <label style={{ fontSize: 13, fontWeight: 600 }}>Java Code</label>
             <CopyButton text={output} />
           </div>
-          <textarea value={output} readOnly placeholder={common.resultPlaceholder} style={{ minHeight: 350, fontFamily: 'JetBrains Mono, monospace', opacity: output ? 1 : 0.5 }} />
+          <textarea value={output} readOnly placeholder={common.resultPlaceholder} style={{ minHeight: 400, fontFamily: 'JetBrains Mono, monospace', padding: '12px', backgroundColor: 'var(--bg-secondary)', border: '1px solid var(--border-color)', borderRadius: 6, color: 'var(--text-primary)', opacity: output ? 1 : 0.5, resize: 'vertical' }} />
         </div>
       </div>
 
@@ -246,6 +262,20 @@ export default function JsonToJava() {
         <div style={{ marginTop: 30, paddingTop: 20, borderTop: '1px solid var(--border-color)' }}>
           <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>{t.seoTitle}</h2>
           <p style={{ fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.7 }}>{t.seoContent as string}</p>
+
+          {typeof t.faqTitle === 'string' && Array.isArray(t.faqs) && (
+            <div style={{ marginTop: 24 }}>
+              <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 12 }}>{t.faqTitle}</h3>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                {(t.faqs as Array<{ q: string; a: string }>).map((faq, idx) => (
+                  <div key={idx} style={{ background: 'var(--bg-secondary)', padding: '12px 14px', borderRadius: 6, borderLeft: '3px solid var(--accent-color)' }}>
+                    <p style={{ fontSize: 13, fontWeight: 600, marginBottom: 6 }}>{faq.q}</p>
+                    <p style={{ fontSize: 13, color: 'var(--text-secondary)', lineHeight: 1.6 }}>{faq.a}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       )}
     </ToolLayout>

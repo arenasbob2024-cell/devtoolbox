@@ -1960,6 +1960,64 @@
         "Prototyper rapidement des modèles de données Go"
       ]
     },
+    "json-to-go-struct": {
+      "name": "Convertisseur JSON vers Go Struct",
+      "description": "Générer des définitions de structures Go à partir de JSON avec options personnalisables",
+      "pageTitle": "Convertisseur JSON vers Go Struct Gratuit en Ligne — Créer des Structures Golang Instantanément",
+      "pageDescription": "Convertissez JSON en structures Go gratuitement en ligne. Générez des types Go idiomatiques avec des tags JSON et des structures imbriquées. Collez du JSON, obtenez du code Go instantanément — sans inscription requise.",
+      "structNameLabel": "Nom du Struct",
+      "addJsonTagsLabel": "Ajouter des Tags JSON",
+      "addOmitemptyLabel": "Ajouter omitempty",
+      "inlineStructsLabel": "Structs Inline",
+      "convertBtn": "Convertir en Go Struct",
+      "loadSampleBtn": "Charger un Exemple",
+      "clearAllBtn": "Tout Effacer",
+      "jsonInputLabel": "Entrée JSON",
+      "goStructOutputLabel": "Sortie Go Struct",
+      "jsonInputPlaceholder": "Collez vos données JSON ici...",
+      "outputPlaceholder": "La définition de Go struct apparaîtra ici...",
+      "seoTitle": "Convertir JSON en Définitions de Struct Go",
+      "seoContent": "La conversion de données JSON en définitions de struct Go est essentielle pour construire des applications Go sûres en types. Cet outil génère automatiquement des types Go à partir d'une entrée JSON, gérant les objets imbriqués, les tableaux et divers types de données.",
+      "seoFeaturesTitle": "Caractéristiques Principales",
+      "seoFeature1": "Détection automatique des types — mappe les types JSON aux types Go appropriés (string, int64, float64, bool, interface{})",
+      "seoFeature2": "Noms de struct personnalisables — définissez le nom du struct racine, générez automatiquement des noms pour les types imbriqués",
+      "seoFeature3": "Support des tags JSON — ajoutez optionnellement des tags JSON avec noms de champ et omitempty",
+      "seoFeature4": "Traitement 100% côté client — toute la conversion se fait dans votre navigateur, aucune donnée envoyée aux serveurs",
+      "howToUseTitle": "Comment Utiliser",
+      "howToUseSteps": [
+        "Entrez ou collez vos données JSON dans le champ d'entrée de gauche",
+        "Définissez le nom du struct racine (p. ex., 'Utilisateur', 'Réponse', 'AutoGénéré')",
+        "Choisissez des options : ajouter des tags JSON, omitempty, structs inline",
+        "Cliquez sur 'Convertir en Go Struct' pour générer le code Go",
+        "Copiez la sortie et collez-la dans votre projet Go"
+      ],
+      "useCasesTitle": "Cas d'Utilisation Courants",
+      "useCases": [
+        "Générer des définitions de types à partir de documentation d'API REST",
+        "Créer des modèles pour fichiers de configuration JSON",
+        "Construire des types requête/réponse pour services Go HTTP",
+        "Prototyper rapidement des modèles de données à partir d'échantillons JSON"
+      ],
+      "faqTitle": "Questions Fréquemment Posées",
+      "faqs": [
+        {
+          "q": "Qu'est-ce qu'un struct Go ?",
+          "a": "Un struct en Go est un type de données composite qui regroupe les variables. Contrairement aux cartes, les structs fournissent la sécurité des types."
+        },
+        {
+          "q": "Que signifie le nommage de champ 'PascalCase' ?",
+          "a": "PascalCase est la convention Go pour les champs de struct exportés. L'outil convertit automatiquement snake_case et kebab-case en PascalCase."
+        },
+        {
+          "q": "À quoi servent les tags de struct JSON ?",
+          "a": "Les tags JSON (p. ex., `json:\"field_name\"`) indiquent au package encoding/json de Go comment mapper les clés JSON aux champs de struct."
+        },
+        {
+          "q": "Quand dois-je utiliser omitempty ?",
+          "a": "Utilisez omitempty pour les champs facultatifs. Il indique à Go d'omettre le champ de la sortie JSON s'il a une valeur zéro."
+        }
+      ]
+    },
     "svg-to-jsx": {
       "name": "SVG vers JSX/React",
       "description": "Convertir le balisage SVG en composants React JSX",
@@ -3272,37 +3330,34 @@
       ]
     },
     "curl-to-code": {
-      "name": "cURL to Code Converter",
-      "description": "Convert cURL commands to Python, JavaScript, Go, PHP, and more",
-      "pageTitle": "cURL to Code Converter — Python, JavaScript, Go, PHP",
-      "pageDescription": "Convert cURL commands to Python requests, JavaScript fetch, Go, PHP, Ruby, Java, and C#. Paste any cURL command and get clean code instantly.",
-      "seoTitle": "What is a cURL to Code Converter?",
-      "seoContent": "A cURL to code converter translates cURL commands from API documentation or browser DevTools into equivalent code in your preferred programming language.",
-      "howToUseTitle": "How to Use",
-      "howToUseSteps": [
-        "Paste a cURL command",
-        "Select target language",
-        "View generated code",
-        "Copy the code"
-      ],
-      "useCasesTitle": "Use Cases",
-      "useCases": [
-        "Converting API docs to code",
-        "Translating browser network requests",
-        "Quick API prototyping",
-        "Learning HTTP request syntax"
-      ],
-      "faqTitle": "FAQ",
-      "faqs": [
-        {
-          "q": "What languages are supported?",
-          "a": "Python, JavaScript (fetch/axios), Go, PHP, Ruby, Java, C#, and more."
-        },
-        {
-          "q": "Can I paste cURL from Chrome DevTools?",
-          "a": "Yes, copy as cURL from Chrome Network tab and paste directly."
-        }
-      ]
+      "name": "Convertisseur cURL en Code",
+      "description": "Convertissez les commandes cURL en code",
+      "pageTitle": "Convertisseur cURL en Code en Ligne - JavaScript, Python, Go, Java, PHP, Ruby",
+      "pageDescription": "Convertisseur gratuit en ligne de cURL en code. Convertissez les commandes cURL en code JavaScript, Python, Go, Java, PHP, Node.js et Ruby.",
+      "inputLabel": "Collez votre commande cURL",
+      "inputPlaceholder": "curl -X POST https://api.example.com/users -H \"Content-Type: application/json\" -H \"Authorization: Bearer token123\" -d '{\"name\":\"John\",\"email\":\"john@example.com\"}'",
+      "outputLabel": "Sortie du code",
+      "convertBtn": "Convertir",
+      "copyBtn": "Copier le code",
+      "languageLabel": "Sélectionner la langue",
+      "selectLanguage": "Choisissez une langue",
+      "javascript": "JavaScript (fetch)",
+      "pythonRequests": "Python (requests)",
+      "go": "Go (net/http)",
+      "java": "Java (HttpURLConnection)",
+      "php": "PHP (curl)",
+      "nodejs": "Node.js (axios)",
+      "ruby": "Ruby (net/http)",
+      "loadSample": "Charger l'exemple",
+      "errorInvalidCurl": "Commande cURL invalide",
+      "errorParsing": "Erreur lors de l'analyse de la commande cURL",
+      "seoTitle": "Convertisseur cURL en Code en Ligne",
+      "seoContent": "Convertissez les commandes cURL en code dans plusieurs langages de programmation.",
+      "seoFeaturesTitle": "Caractéristiques",
+      "seoFeature1": "Convertissez cURL en 7+ langages de programmation",
+      "seoFeature2": "Analyse automatique des en-têtes, du corps, de l'authentification et des cookies",
+      "seoFeature3": "Support des drapeaux et options cURL courants",
+      "seoFeature4": "Copie du code en un clic"
     },
     "yaml-validator": {
       "name": "YAML Validator & Formatter",

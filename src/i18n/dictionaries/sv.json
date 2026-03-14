@@ -1960,6 +1960,64 @@
         "Generera typdefinitioner för Go-mikrotjänster"
       ]
     },
+    "json-to-go-struct": {
+      "name": "JSON till Go Struct Konverterare",
+      "description": "Generera Go Struct-definitioner från JSON med anpassningsbara alternativ",
+      "pageTitle": "Gratis JSON till Go Struct Konverterare Online — Skapa Golang Strukturer Omedelbar",
+      "pageDescription": "Konvertera JSON till Go Struct gratis online. Generera idiomatiska Go-typer med JSON-taggar och kapslade strukturer. Klistra JSON, få Go-kod omedelbar — ingen registrering krävs.",
+      "structNameLabel": "Struktur Namn",
+      "addJsonTagsLabel": "Lägg Till JSON-taggar",
+      "addOmitemptyLabel": "Lägg Till omitempty",
+      "inlineStructsLabel": "Inbäddade Strukturer",
+      "convertBtn": "Konvertera till Go Struct",
+      "loadSampleBtn": "Ladda Exempel",
+      "clearAllBtn": "Rensa Allt",
+      "jsonInputLabel": "JSON-ingång",
+      "goStructOutputLabel": "Go Struct-utdata",
+      "jsonInputPlaceholder": "Klistra dina JSON-data här...",
+      "outputPlaceholder": "Go Struct-definitionen visas här...",
+      "seoTitle": "Konvertera JSON till Go Struct-definitioner",
+      "seoContent": "Att konvertera JSON-data till Go Struct-definitioner är väsentligt för att bygga typstryska Go-applikationer. Det här verktyget genererar automatiskt Go-typer från JSON-indata.",
+      "seoFeaturesTitle": "Huvudfunktioner",
+      "seoFeature1": "Automatisk typdetektering — mappar JSON-typer till lämpliga Go-typer",
+      "seoFeature2": "Anpassningsbara strukturnamn — ställ in rotstruktursnamn",
+      "seoFeature3": "JSON-stöd för taggar — lägg optionellt till JSON-taggar med fältnamn och omitempty",
+      "seoFeature4": "100% klientsidebearbetning — all konvertering sker i din webbläsare",
+      "howToUseTitle": "Hur man Använder",
+      "howToUseSteps": [
+        "Ange eller klistra dina JSON-data i det vänstra indatafältet",
+        "Ställ in rotstruktursnamnet",
+        "Välj alternativ: lägg till JSON-taggar, omitempty, inbäddade strukturer",
+        "Klicka på 'Konvertera till Go Struct' för att generera Go-koden",
+        "Kopiera utdatan och klistra in den i ditt Go-projekt"
+      ],
+      "useCasesTitle": "Vanliga Användningsfall",
+      "useCases": [
+        "Generera typdefinitioner från REST API-dokumentation",
+        "Skapa modeller för JSON-konfigurationsfiler",
+        "Bygg begärande-/svartyper för Go HTTP-tjänster",
+        "Prototyp snabbt datamodeller från exempel-JSON"
+      ],
+      "faqTitle": "Vanliga Frågor",
+      "faqs": [
+        {
+          "q": "Vad är en Go Struct?",
+          "a": "En struct i Go är en sammansatt datatyp som grupperar variabler tillsammans. Till skillnad från kartor ger strukturer typsäkerhet."
+        },
+        {
+          "q": "Vad betyder 'PascalCase' fältnamn?",
+          "a": "PascalCase är Go-konventionen för exporterade strukturfält. Verktyget konverterar automatiskt snake_case och kebab-case till PascalCase."
+        },
+        {
+          "q": "Vad är JSON struct-taggar till för?",
+          "a": "JSON-taggar säger till Gos encoding/json-paket hur man mappar JSON-nycklar till strukturfält."
+        },
+        {
+          "q": "När bör jag använda omitempty?",
+          "a": "Använd omitempty för valfria fält. Det talar om för Go att utesluta fältet från JSON-utdata om det har ett nollvärde."
+        }
+      ]
+    },
     "svg-to-jsx": {
       "name": "SVG till JSX/React",
       "description": "Konvertera SVG-filer till React JSX-komponenter",
@@ -3272,37 +3330,34 @@
       ]
     },
     "curl-to-code": {
-      "name": "cURL to Code Converter",
-      "description": "Convert cURL commands to Python, JavaScript, Go, PHP, and more",
-      "pageTitle": "cURL to Code Converter — Python, JavaScript, Go, PHP",
-      "pageDescription": "Convert cURL commands to Python requests, JavaScript fetch, Go, PHP, Ruby, Java, and C#. Paste any cURL command and get clean code instantly.",
-      "seoTitle": "What is a cURL to Code Converter?",
-      "seoContent": "A cURL to code converter translates cURL commands from API documentation or browser DevTools into equivalent code in your preferred programming language.",
-      "howToUseTitle": "How to Use",
-      "howToUseSteps": [
-        "Paste a cURL command",
-        "Select target language",
-        "View generated code",
-        "Copy the code"
-      ],
-      "useCasesTitle": "Use Cases",
-      "useCases": [
-        "Converting API docs to code",
-        "Translating browser network requests",
-        "Quick API prototyping",
-        "Learning HTTP request syntax"
-      ],
-      "faqTitle": "FAQ",
-      "faqs": [
-        {
-          "q": "What languages are supported?",
-          "a": "Python, JavaScript (fetch/axios), Go, PHP, Ruby, Java, C#, and more."
-        },
-        {
-          "q": "Can I paste cURL from Chrome DevTools?",
-          "a": "Yes, copy as cURL from Chrome Network tab and paste directly."
-        }
-      ]
+      "name": "cURL till Code Converter",
+      "description": "Konvertera cURL-kommandon till kod",
+      "pageTitle": "cURL till Code Converter Online - JavaScript, Python, Go, Java, PHP, Ruby",
+      "pageDescription": "Gratis online cURL till kod-konverterare. Konvertera cURL-kommandon till JavaScript, Python, Go, Java, PHP, Node.js och Ruby-kod.",
+      "inputLabel": "Klistra in ditt cURL-kommando",
+      "inputPlaceholder": "curl -X POST https://api.example.com/users -H \"Content-Type: application/json\" -H \"Authorization: Bearer token123\" -d '{\"name\":\"John\",\"email\":\"john@example.com\"}'",
+      "outputLabel": "Kodutgång",
+      "convertBtn": "Konvertera",
+      "copyBtn": "Kopiera kod",
+      "languageLabel": "Välj språk",
+      "selectLanguage": "Välj ett språk",
+      "javascript": "JavaScript (fetch)",
+      "pythonRequests": "Python (requests)",
+      "go": "Go (net/http)",
+      "java": "Java (HttpURLConnection)",
+      "php": "PHP (curl)",
+      "nodejs": "Node.js (axios)",
+      "ruby": "Ruby (net/http)",
+      "loadSample": "Ladda exempel",
+      "errorInvalidCurl": "Ogiltigt cURL-kommando",
+      "errorParsing": "Fel vid tolkning av cURL-kommando",
+      "seoTitle": "cURL till Code Converter Online",
+      "seoContent": "Konvertera cURL-kommandon till kod i flera programmeringsspråk.",
+      "seoFeaturesTitle": "Funktioner",
+      "seoFeature1": "Konvertera cURL till 7+ programmeringsspråk",
+      "seoFeature2": "Automatisk analys av headers, body, auth och cookies",
+      "seoFeature3": "Stöd för vanliga cURL-flaggor och alternativ",
+      "seoFeature4": "Kodkopiering med ett klick"
     },
     "yaml-validator": {
       "name": "YAML Validator & Formatter",
