@@ -126,7 +126,7 @@
       "invalidBase64": "Invalid Base64 string",
       "encodingError": "Encoding error",
       "seoTitle": "About Base64 Encoding",
-      "seoContent": "Base64 is a binary-to-text encoding scheme that represents binary data in an ASCII string format. It's commonly used for encoding data in URLs, emails, HTML, and APIs. This tool supports full UTF-8 encoding and decoding.",
+      "seoContent": "Base64 is a binary-to-text encoding scheme that represents binary data in an ASCII string format. It's commonly used for encoding data in URLs, emails, HTML, and APIs. You can also decode Base64 from the command line using openssl base64 decode: run 'echo <encoded> | openssl base64 -d'. This online Base64 encoder and decoder supports full UTF-8, handles Base64 padding (the trailing = characters), and works entirely in your browser. Whether you need to base64 encode a file, decode an API response, or convert data for URL-safe transport, this tool handles it instantly.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
         {
@@ -140,6 +140,26 @@
         {
           "q": "Does this tool support UTF-8?",
           "a": "Yes. This tool fully supports UTF-8 encoding and decoding, allowing you to work with international characters and emojis."
+        },
+        {
+          "q": "How do I use openssl to base64 decode on the command line?",
+          "a": "Run 'echo <base64string> | openssl base64 -d' to decode. To encode, use 'echo -n \"text\" | openssl base64'. The openssl base64 command is available on macOS and Linux by default."
+        },
+        {
+          "q": "What is the difference between Base64 and Base64URL?",
+          "a": "Standard Base64 uses + and / as special characters, while Base64URL replaces them with - and _ to be safe in URLs and filenames. Base64URL also omits padding (=) characters."
+        },
+        {
+          "q": "What is Base64 padding and why are there = signs?",
+          "a": "Base64 encodes 3 bytes into 4 characters. When the input length isn't a multiple of 3, padding characters (=) are added to make the output length a multiple of 4. One = means 2 bytes were encoded in the last group, == means 1 byte."
+        },
+        {
+          "q": "Can I Base64 encode a file?",
+          "a": "Yes. On the command line use 'base64 < file.bin > file.b64' or 'openssl base64 -in file.bin'. For images, use our Image Base64 Converter tool which supports drag-and-drop file encoding."
+        },
+        {
+          "q": "Is it safe to use Base64 in URLs?",
+          "a": "Standard Base64 is not URL-safe because + and / have special meanings in URLs. Use Base64URL encoding instead, which replaces + with - and / with _ . Most programming languages have built-in Base64URL functions."
         }
       ],
       "howToUseTitle": "How to Use",
@@ -205,7 +225,7 @@
       "uppercase": "Uppercase",
       "generateHashes": "Generate Hashes",
       "seoTitle": "About Hash Functions",
-      "seoContent": "Cryptographic hash functions generate a fixed-size hash value from input data. They're used for data integrity verification, password storage, digital signatures, and more. SHA-256 is the most commonly used algorithm today.",
+      "seoContent": "Cryptographic hash functions generate a fixed-size hash value from input data. This online MD5 hash generator and SHA256 hash tool computes MD5, SHA-1, SHA-256, and SHA-512 hashes instantly in your browser. Hash functions are one-way: you cannot reverse a hash back to the original data. They're used for data integrity verification, password storage, digital signatures, file checksums, and deduplication. SHA-256 is recommended for security-sensitive applications, while MD5 remains useful for quick checksums despite being cryptographically broken.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
         {
@@ -219,6 +239,26 @@
         {
           "q": "Is my data safe?",
           "a": "Yes. All hash computation happens in your browser using the Web Crypto API. No data is sent to any server."
+        },
+        {
+          "q": "What is the difference between MD5 and SHA-256?",
+          "a": "MD5 produces a 128-bit (32 hex character) hash and is fast but cryptographically broken — collisions can be generated. SHA-256 produces a 256-bit (64 hex character) hash and is considered secure. Use SHA-256 for security, MD5 only for non-security checksums."
+        },
+        {
+          "q": "What is a hash collision?",
+          "a": "A hash collision occurs when two different inputs produce the same hash output. MD5 and SHA-1 have known collision vulnerabilities. SHA-256 and SHA-512 have no known practical collisions and are considered collision-resistant."
+        },
+        {
+          "q": "What is a hash salt and why is it important?",
+          "a": "A salt is random data added to the input before hashing, making each hash unique even for identical inputs. Salting prevents rainbow table attacks on password hashes. Always use a unique salt per password when storing hashed passwords."
+        },
+        {
+          "q": "When should I use bcrypt instead of SHA-256 for passwords?",
+          "a": "Always use bcrypt (or Argon2, scrypt) for password hashing. SHA-256 is too fast, making brute-force attacks feasible. Bcrypt is intentionally slow and includes built-in salting, making it far more secure for password storage."
+        },
+        {
+          "q": "Can I reverse a hash back to the original text?",
+          "a": "No. Hash functions are one-way by design. You cannot mathematically reverse a hash. Attackers use brute-force or rainbow tables to find inputs that match a hash, which is why strong passwords and salting are essential."
         }
       ],
       "howToUseTitle": "How to Use",
@@ -913,7 +953,7 @@
       "weekdaysMorning": "Weekdays at 8am",
       "invalidCron": "Invalid cron expression (expected 5 fields)",
       "seoTitle": "About Cron Expressions",
-      "seoContent": "Cron is a time-based job scheduler in Unix-like systems. A cron expression consists of 5 fields: minute, hour, day of month, month, and day of week. Special characters include * (any), / (step), , (list), and - (range). Used extensively in CI/CD, scheduled tasks, and automation.",
+      "seoContent": "Cron is a time-based job scheduler in Unix-like systems. A cron expression consists of 5 fields: minute, hour, day of month, month, and day of week. Special characters include * (any), / (step), , (list), and - (range). Our online cron expression parser lets you validate and decode any cron schedule instantly. Common cron expressions include */5 * * * * (every 5 minutes), 0 0 * * * (daily at midnight), and 0 9 * * 1 (every Monday at 9am). Use this cron schedule generator for CI/CD pipelines, crontab debugging, automated backups, and recurring task planning.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
         {
@@ -927,6 +967,26 @@
         {
           "q": "Can I see when my cron job will run next?",
           "a": "Yes. Enter your cron expression and the tool will show the next scheduled execution times, plus a human-readable description."
+        },
+        {
+          "q": "What are the 5 fields in a cron expression?",
+          "a": "The 5 fields are: minute (0-59), hour (0-23), day of month (1-31), month (1-12), and day of week (0-6, where 0 is Sunday). Each field can use numbers, wildcards (*), ranges (-), lists (,), and steps (/)."
+        },
+        {
+          "q": "What is the difference between cron and crontab?",
+          "a": "Cron is the daemon (background service) that runs scheduled tasks. Crontab (cron table) is the file where you define your cron jobs and their schedules. You edit the crontab using the 'crontab -e' command."
+        },
+        {
+          "q": "What are common cron expressions for everyday tasks?",
+          "a": "Every 5 minutes: */5 * * * *. Daily at midnight: 0 0 * * *. Every Monday at 9am: 0 9 * * 1. Every hour: 0 * * * *. First day of every month: 0 0 1 * *. Weekdays at 8am: 0 8 * * 1-5."
+        },
+        {
+          "q": "How does cron handle timezones?",
+          "a": "Standard Unix cron uses the system's local timezone. There is no timezone field in a cron expression. To run jobs in a specific timezone, set the TZ variable in your crontab or use tools that support timezone-aware scheduling."
+        },
+        {
+          "q": "What is the difference between Spring cron and Unix cron?",
+          "a": "Spring cron expressions have 6 fields (adding seconds as the first field), while Unix cron has 5 fields. Spring cron also uses different syntax for day-of-week (1-7 where 1=Monday) compared to Unix (0-6 where 0=Sunday)."
         }
       ],
       "howToUseTitle": "How to Use",
@@ -1288,7 +1348,7 @@
       "decodePlaceholder": "Paste a Base64 string or data:image/png;base64,... URI here",
       "decodeBtn": "Decode to Image",
       "seoTitle": "About Image Base64 Encoding",
-      "seoContent": "Converting images to Base64 strings allows you to embed them directly in HTML, CSS, or JSON without separate image files. This is useful for small icons (under 10KB), email templates, and reducing HTTP requests. The trade-off is a ~33% increase in data size compared to the binary original.",
+      "seoContent": "This base64 to image converter lets you encode images to Base64 strings or decode Base64 back to viewable images. Embed images directly in HTML using <img src=\"data:image/png;base64,...\">, in CSS with background-image: url(data:image/png;base64,...), or store them in JSON configs. Supports PNG, JPG, WebP, SVG, GIF, and ICO formats. The data URI format includes the MIME type prefix, while raw Base64 is just the encoded string. Best practice: only Base64-encode images under 10KB to avoid bloated HTML. All conversion happens client-side for privacy.",
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
         {
@@ -1302,6 +1362,26 @@
         {
           "q": "Is my image uploaded to a server?",
           "a": "No. All conversion happens entirely in your browser. Your images never leave your device."
+        },
+        {
+          "q": "What is the difference between a data URI and raw Base64?",
+          "a": "A data URI includes the MIME type prefix like 'data:image/png;base64,' followed by the encoded string. Raw Base64 is just the encoded characters without the prefix. Browsers need the full data URI format to display images inline."
+        },
+        {
+          "q": "How do I use Base64 images in CSS background-image?",
+          "a": "Use the syntax: background-image: url('data:image/png;base64,iVBOR...'). This tool generates the complete CSS snippet ready to copy and paste into your stylesheet."
+        },
+        {
+          "q": "How do I use Base64 images in HTML img tags?",
+          "a": "Set the src attribute to the data URI: <img src=\"data:image/png;base64,iVBOR...\">. This tool generates the complete HTML <img> tag with the encoded image ready to use."
+        },
+        {
+          "q": "What is the recommended image size limit for Base64 encoding?",
+          "a": "Keep Base64-encoded images under 10KB (original file size). Larger images significantly increase HTML/CSS file size and hurt page load performance. Use regular image files with CDN for larger assets."
+        },
+        {
+          "q": "Can I convert Base64 back to a PNG or JPG file?",
+          "a": "Yes. Switch to the 'Base64 to Image' tab, paste your Base64 string or data URI, and the tool will decode and display the image. You can then right-click to save it as PNG or JPG."
         }
       ],
       "howToUseTitle": "How to Use",
@@ -3001,7 +3081,7 @@
       "pageTitle": "Favicon生成ツール",
       "pageDescription": "テキストや絵文字からカスタムFaviconを作成。無料で登録不要。",
       "seoTitle": "What is Favicon Generator?",
-      "seoContent": "A favicon is the small icon in browser tabs. This tool generates favicons from text or emoji with customizable colors and sizes.",
+      "seoContent": "A favicon is the small icon displayed in browser tabs, bookmarks, and history. This favicon generator creates ICO and PNG favicons from text or emoji with customizable colors, sizes, and border radius. Generate minimal valid ICO files in standard sizes: 16x16 for browser tabs, 32x32 for taskbar icons, and 48x48 for Windows shortcuts. You can also create 180x180 Apple Touch icons for iOS. Download as ICO, PNG, or copy as a Base64 data URI for inline HTML embedding. Supports custom background colors, font sizes, and rounded corners for modern favicon designs.",
       "howToUseTitle": "How to Use",
       "howToUseSteps": [
         "Enter text or emoji",
@@ -3030,6 +3110,26 @@
         {
           "q": "Can I use emoji?",
           "a": "Yes! Modern browsers support emoji favicons with custom backgrounds."
+        },
+        {
+          "q": "What is the minimal valid ICO file format?",
+          "a": "A minimal valid ICO file contains a 6-byte header (magic bytes, type, image count), a 16-byte directory entry (size, color info, data offset), and the image data. The smallest practical favicon is a 16x16 pixel ICO file, typically a few hundred bytes."
+        },
+        {
+          "q": "Should I use ICO, PNG, or SVG for my favicon?",
+          "a": "ICO is the traditional format that supports multiple sizes in one file. PNG is widely supported and simpler. SVG favicons are the newest option, supported in modern browsers, and scale perfectly to any size. Use ICO for maximum compatibility."
+        },
+        {
+          "q": "How do I add a favicon to my website using Base64?",
+          "a": "Add this to your HTML <head>: <link rel=\"icon\" href=\"data:image/png;base64,...\">. This embeds the favicon directly in your HTML without needing a separate file. This tool generates the Base64 data URI ready to use."
+        },
+        {
+          "q": "What favicon sizes should I include for PWA manifest?",
+          "a": "For Progressive Web Apps, include 192x192 and 512x512 PNG icons in your manifest.json. Also include 16x16, 32x32, and 180x180 (Apple Touch) for complete browser and device coverage."
+        },
+        {
+          "q": "Why isn't my favicon showing up?",
+          "a": "Common issues: browser cache (try hard refresh with Ctrl+Shift+R), wrong file path in the <link> tag, incorrect MIME type, or the ICO file is malformed. Place favicon.ico in your site root as a fallback, since browsers check there by default."
         }
       ]
     },
