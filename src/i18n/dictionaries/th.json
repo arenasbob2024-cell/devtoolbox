@@ -5996,6 +5996,36 @@
       "description": "คำนวณ rate limit, ค่าใช้จ่าย และการวางแผนโควต้า API",
       "pageTitle": "คำนวณ Rate Limit API",
       "pageDescription": "เครื่องมือคำนวณ rate limit API ฟรี"
+    },
+    "oauth-debugger": {
+      "name": "OAuth 2.0 Debugger",
+      "description": "Debug OAuth 2.0 flows, decode tokens, and test authorization endpoints",
+      "pageTitle": "OAuth 2.0 Debugger - Token Inspector Online",
+      "pageDescription": "Free OAuth 2.0 debugger. Inspect authorization flows, decode access tokens, test PKCE and OpenID Connect configurations."
+    },
+    "dockerfile-linter": {
+      "name": "Dockerfile Linter",
+      "description": "Lint Dockerfiles for best practices and common mistakes",
+      "pageTitle": "Dockerfile Linter Online - Best Practices Checker",
+      "pageDescription": "Free online Dockerfile linter. Check for best practices, security issues, and common mistakes in your Dockerfiles."
+    },
+    "ssl-certificate-decoder": {
+      "name": "SSL Certificate Decoder",
+      "description": "Decode and inspect SSL/TLS certificates, view expiry and chain details",
+      "pageTitle": "SSL Certificate Decoder Online - X.509 Inspector",
+      "pageDescription": "Free SSL certificate decoder. Inspect X.509 certificates, check expiry dates, view certificate chains and subject details."
+    },
+    "font-pairing-tool": {
+      "name": "Font Pairing Tool",
+      "description": "Find beautiful font combinations for web design with live preview",
+      "pageTitle": "Font Pairing Tool - Typography Combinations",
+      "pageDescription": "Free font pairing tool. Find beautiful Google Fonts combinations with live preview for headings and body text."
+    },
+    "helm-chart-validator": {
+      "name": "Helm Chart Validator",
+      "description": "Validate Helm chart structure, values.yaml and Chart.yaml files",
+      "pageTitle": "Helm Chart Validator Online - K8s Chart Checker",
+      "pageDescription": "Free Helm chart validator. Check Chart.yaml and values.yaml for errors, required fields, and best practices."
     }
   },
   "footer": {

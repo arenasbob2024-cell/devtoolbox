@@ -6000,6 +6000,36 @@
       "description": "计算 API 速率限制、成本和配额规划",
       "pageTitle": "API 速率限制计算器 - 成本估算",
       "pageDescription": "免费 API 速率限制计算器。规划 API 用量，估算 OpenAI、Claude 等 LLM API 成本。"
+    },
+    "oauth-debugger": {
+      "name": "OAuth 2.0 调试器",
+      "description": "调试 OAuth 2.0 流程、解码令牌、测试授权端点",
+      "pageTitle": "OAuth 2.0 调试器 - 在线令牌检查",
+      "pageDescription": "免费 OAuth 2.0 调试器。检查授权流程、解码访问令牌、测试 PKCE 和 OpenID Connect 配置。"
+    },
+    "dockerfile-linter": {
+      "name": "Dockerfile 检查器",
+      "description": "检查 Dockerfile 的最佳实践和常见错误",
+      "pageTitle": "在线 Dockerfile 检查器 - 最佳实践",
+      "pageDescription": "免费在线 Dockerfile 检查器。检查最佳实践、安全问题和常见错误。"
+    },
+    "ssl-certificate-decoder": {
+      "name": "SSL 证书解码器",
+      "description": "解码和检查 SSL/TLS 证书，查看过期和链详情",
+      "pageTitle": "在线 SSL 证书解码器 - X.509 检查",
+      "pageDescription": "免费 SSL 证书解码器。检查 X.509 证书、过期日期、证书链和主题详情。"
+    },
+    "font-pairing-tool": {
+      "name": "字体配对工具",
+      "description": "为网页设计找到完美的字体组合并实时预览",
+      "pageTitle": "字体配对工具 - 排版组合",
+      "pageDescription": "免费字体配对工具。通过实时预览找到完美的 Google Fonts 字体组合。"
+    },
+    "helm-chart-validator": {
+      "name": "Helm Chart 验证器",
+      "description": "验证 Helm chart 结构、values.yaml 和 Chart.yaml 文件",
+      "pageTitle": "在线 Helm Chart 验证器 - K8s Chart 检查",
+      "pageDescription": "免费 Helm chart 验证器。检查 Chart.yaml 和 values.yaml 的错误、必填字段和最佳实践。"
     }
   },
   "footer": {

@@ -5996,7 +5996,12 @@
       "description": "Hitung rate limit API, biaya, dan perencanaan kuota",
       "pageTitle": "Kalkulator Rate Limit API",
       "pageDescription": "Kalkulator rate limit API gratis."
-    }
+    },
+    "oauth-debugger": "oauth-debugger",
+    "dockerfile-linter": "dockerfile-linter",
+    "ssl-certificate-decoder": "ssl-certificate-decoder",
+    "font-pairing-tool": "font-pairing-tool",
+    "helm-chart-validator": "helm-chart-validator"
   },
   "footer": {
     "tagline": "Alat developer online gratis. Tanpa perlu daftar akun. Semua pemrosesan dilakukan di browser Anda — data Anda tidak pernah keluar dari perangkat Anda.",
