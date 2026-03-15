@@ -5900,6 +5900,72 @@
           "a": "Yes, this generator supports up to 3 colors. The third color is optional."
         }
       ]
+    },
+    "mermaid-editor": {
+      "name": "Mermaid-editor",
+      "description": "Rediger og forhåndsvis Mermaid-diagrammer i sanntid",
+      "pageTitle": "Gratis Mermaid-editor på nett",
+      "pageDescription": "Lag og forhåndsvis Mermaid-diagrammer online. Gratis, ingen registrering."
+    },
+    "kubernetes-yaml-validator": {
+      "name": "Kubernetes YAML-validator",
+      "description": "Valider Kubernetes-manifest YAML-filer",
+      "pageTitle": "Gratis Kubernetes YAML-validator",
+      "pageDescription": "Valider dine Kubernetes YAML-manifester online. Gratis, ingen registrering."
+    },
+    "openapi-validator": {
+      "name": "OpenAPI-validator",
+      "description": "Valider OpenAPI/Swagger-spesifikasjonsfiler",
+      "pageTitle": "Gratis OpenAPI-validator",
+      "pageDescription": "Valider dine OpenAPI-spesifikasjoner online. Gratis, ingen registrering."
+    },
+    "github-actions-validator": {
+      "name": "GitHub Actions-validator",
+      "description": "Valider GitHub Actions workflow YAML-filer",
+      "pageTitle": "Gratis GitHub Actions-validator",
+      "pageDescription": "Valider dine GitHub Actions workflows online. Gratis, ingen registrering."
+    },
+    "csv-viewer": {
+      "name": "CSV-viser",
+      "description": "Vis og utforsk CSV-data i en tabell",
+      "pageTitle": "Gratis CSV-viser på nett",
+      "pageDescription": "Vis CSV-filer online. Gratis, ingen registrering."
+    },
+    "htpasswd-generator": {
+      "name": "htpasswd-generator",
+      "description": "Generer Apache htpasswd-oppføringer",
+      "pageTitle": "Gratis htpasswd-generator",
+      "pageDescription": "Generer htpasswd-oppføringer online. Gratis, ingen registrering."
+    },
+    "json-patch-tool": {
+      "name": "JSON Patch-verktøy",
+      "description": "Bruk JSON Patch-operasjoner (RFC 6902)",
+      "pageTitle": "Gratis JSON Patch-verktøy",
+      "pageDescription": "Bruk JSON Patch-operasjoner online. Gratis, ingen registrering."
+    },
+    "graphql-playground": {
+      "name": "GraphQL Playground",
+      "description": "Test og utforsk GraphQL-spørringer",
+      "pageTitle": "Gratis GraphQL Playground",
+      "pageDescription": "Test GraphQL-spørringer online. Gratis, ingen registrering."
+    },
+    "code-to-image": {
+      "name": "Kode til Bilde",
+      "description": "Generer vakre kodeskjermbilder",
+      "pageTitle": "Gratis Kode-til-Bilde generator",
+      "pageDescription": "Lag vakre kodeskjermbilder. Gratis, ingen registrering."
+    },
+    "docker-compose-validator": {
+      "name": "Docker Compose-validator",
+      "description": "Valider Docker Compose YAML-filer",
+      "pageTitle": "Gratis Docker Compose-validator",
+      "pageDescription": "Valider dine docker-compose.yml online. Gratis, ingen registrering."
+    },
+    "terraform-formatter": {
+      "name": "Terraform-formater",
+      "description": "Formater og valider Terraform HCL-konfigurasjon",
+      "pageTitle": "Gratis Terraform HCL-formater",
+      "pageDescription": "Formater dine Terraform HCL-filer online. Gratis, ingen registrering."
     }
   },
   "footer": {

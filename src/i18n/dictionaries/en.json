@@ -11614,6 +11614,72 @@
           "a": "Yes, this generator supports up to 3 colors. The third color is optional."
         }
       ]
+    },
+    "mermaid-editor": {
+      "name": "Mermaid Editor",
+      "description": "Edit and preview Mermaid diagrams in real-time",
+      "pageTitle": "Free Online Mermaid Diagram Editor - Live Preview",
+      "pageDescription": "Create and preview Mermaid diagrams online. Supports flowcharts, sequence diagrams, class diagrams, Gantt charts, and more. Free, no signup required."
+    },
+    "kubernetes-yaml-validator": {
+      "name": "Kubernetes YAML Validator",
+      "description": "Validate Kubernetes manifest YAML files",
+      "pageTitle": "Free Kubernetes YAML Validator Online",
+      "pageDescription": "Validate your Kubernetes YAML manifests online. Check deployments, services, pods, and more for syntax errors. Free, no signup required."
+    },
+    "openapi-validator": {
+      "name": "OpenAPI Validator",
+      "description": "Validate OpenAPI/Swagger specification files",
+      "pageTitle": "Free OpenAPI/Swagger Validator Online",
+      "pageDescription": "Validate your OpenAPI 3.x and Swagger 2.0 specifications online. Check for syntax errors, missing fields, and best practices. Free, no signup."
+    },
+    "github-actions-validator": {
+      "name": "GitHub Actions Validator",
+      "description": "Validate GitHub Actions workflow YAML files",
+      "pageTitle": "Free GitHub Actions YAML Validator Online",
+      "pageDescription": "Validate your GitHub Actions workflow YAML files online. Check syntax, jobs, steps, and common errors. Free, no signup required."
+    },
+    "csv-viewer": {
+      "name": "CSV Viewer",
+      "description": "View and explore CSV data in an interactive table",
+      "pageTitle": "Free Online CSV Viewer - Interactive Table",
+      "pageDescription": "View and explore CSV files online with sorting, searching, and filtering. Paste or upload CSV data. Free, no signup required."
+    },
+    "htpasswd-generator": {
+      "name": "htpasswd Generator",
+      "description": "Generate Apache htpasswd entries for basic auth",
+      "pageTitle": "Free Online htpasswd Generator - Apache/Nginx",
+      "pageDescription": "Generate htpasswd entries for Apache and Nginx basic authentication. Supports bcrypt, MD5, and SHA1 algorithms. Free, no signup."
+    },
+    "json-patch-tool": {
+      "name": "JSON Patch Tool",
+      "description": "Apply JSON Patch operations (RFC 6902)",
+      "pageTitle": "Free Online JSON Patch Tool - RFC 6902",
+      "pageDescription": "Apply JSON Patch operations to JSON documents. Supports add, remove, replace, move, copy, and test operations per RFC 6902. Free, no signup."
+    },
+    "graphql-playground": {
+      "name": "GraphQL Playground",
+      "description": "Test and explore GraphQL queries online",
+      "pageTitle": "Free Online GraphQL Playground - Query Editor",
+      "pageDescription": "Test GraphQL queries online with syntax highlighting and auto-formatting. Write queries, mutations, and subscriptions. Free, no signup required."
+    },
+    "code-to-image": {
+      "name": "Code to Image",
+      "description": "Generate beautiful code screenshots for sharing",
+      "pageTitle": "Free Code to Image Generator - Code Screenshots",
+      "pageDescription": "Create beautiful code screenshots with syntax highlighting, custom themes, and backgrounds. Share code as images. Free, no signup required."
+    },
+    "docker-compose-validator": {
+      "name": "Docker Compose Validator",
+      "description": "Validate Docker Compose YAML files",
+      "pageTitle": "Free Docker Compose Validator Online",
+      "pageDescription": "Validate your docker-compose.yml files online. Check syntax, services, volumes, and networks. Free, no signup required."
+    },
+    "terraform-formatter": {
+      "name": "Terraform Formatter",
+      "description": "Format and validate Terraform HCL configuration",
+      "pageTitle": "Free Online Terraform HCL Formatter",
+      "pageDescription": "Format and validate your Terraform HCL configuration files online. Equivalent to terraform fmt. Free, no signup required."
     }
   },
   "footer": {

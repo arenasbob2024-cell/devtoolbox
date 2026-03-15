@@ -5897,6 +5897,72 @@
           "a": "Yes, this generator supports up to 3 colors. The third color is optional."
         }
       ]
+    },
+    "mermaid-editor": {
+      "name": "Éditeur Mermaid",
+      "description": "Éditez et prévisualisez des diagrammes Mermaid en temps réel",
+      "pageTitle": "Éditeur Mermaid en ligne gratuit",
+      "pageDescription": "Créez et prévisualisez des diagrammes Mermaid en ligne. Gratuit, sans inscription."
+    },
+    "kubernetes-yaml-validator": {
+      "name": "Validateur YAML Kubernetes",
+      "description": "Validez les fichiers YAML de manifestes Kubernetes",
+      "pageTitle": "Validateur YAML Kubernetes gratuit en ligne",
+      "pageDescription": "Validez vos manifestes Kubernetes YAML en ligne. Gratuit, sans inscription."
+    },
+    "openapi-validator": {
+      "name": "Validateur OpenAPI",
+      "description": "Validez les fichiers de spécification OpenAPI/Swagger",
+      "pageTitle": "Validateur OpenAPI/Swagger gratuit en ligne",
+      "pageDescription": "Validez vos spécifications OpenAPI en ligne. Gratuit, sans inscription."
+    },
+    "github-actions-validator": {
+      "name": "Validateur GitHub Actions",
+      "description": "Validez les fichiers YAML de workflow GitHub Actions",
+      "pageTitle": "Validateur GitHub Actions gratuit",
+      "pageDescription": "Validez vos workflows GitHub Actions en ligne. Gratuit, sans inscription."
+    },
+    "csv-viewer": {
+      "name": "Visualiseur CSV",
+      "description": "Visualisez et explorez les données CSV",
+      "pageTitle": "Visualiseur CSV gratuit en ligne",
+      "pageDescription": "Visualisez les fichiers CSV en ligne. Gratuit, sans inscription."
+    },
+    "htpasswd-generator": {
+      "name": "Générateur htpasswd",
+      "description": "Générez des entrées htpasswd Apache",
+      "pageTitle": "Générateur htpasswd gratuit en ligne",
+      "pageDescription": "Générez des entrées htpasswd en ligne. Gratuit, sans inscription."
+    },
+    "json-patch-tool": {
+      "name": "Outil JSON Patch",
+      "description": "Appliquez des opérations JSON Patch (RFC 6902)",
+      "pageTitle": "Outil JSON Patch gratuit en ligne",
+      "pageDescription": "Appliquez des opérations JSON Patch. Gratuit, sans inscription."
+    },
+    "graphql-playground": {
+      "name": "GraphQL Playground",
+      "description": "Testez et explorez les requêtes GraphQL",
+      "pageTitle": "GraphQL Playground gratuit en ligne",
+      "pageDescription": "Testez les requêtes GraphQL en ligne. Gratuit, sans inscription."
+    },
+    "code-to-image": {
+      "name": "Code vers Image",
+      "description": "Générez de belles captures de code",
+      "pageTitle": "Générateur Code vers Image gratuit",
+      "pageDescription": "Créez de belles captures de code. Gratuit, sans inscription."
+    },
+    "docker-compose-validator": {
+      "name": "Validateur Docker Compose",
+      "description": "Validez les fichiers YAML Docker Compose",
+      "pageTitle": "Validateur Docker Compose gratuit",
+      "pageDescription": "Validez vos fichiers docker-compose.yml en ligne. Gratuit, sans inscription."
+    },
+    "terraform-formatter": {
+      "name": "Formateur Terraform",
+      "description": "Formatez et validez la configuration Terraform HCL",
+      "pageTitle": "Formateur Terraform HCL gratuit",
+      "pageDescription": "Formatez vos fichiers Terraform HCL en ligne. Gratuit, sans inscription."
     }
   },
   "footer": {

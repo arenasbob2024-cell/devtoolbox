@@ -5904,6 +5904,72 @@
           "a": "Yes, this generator supports up to 3 colors. The third color is optional."
         }
       ]
+    },
+    "mermaid-editor": {
+      "name": "Mermaid 编辑器",
+      "description": "实时编辑和预览 Mermaid 图表",
+      "pageTitle": "免费在线 Mermaid 图表编辑器 - 实时预览",
+      "pageDescription": "在线创建和预览 Mermaid 图表。支持流程图、序列图、类图、甘特图等。免费使用，无需注册。"
+    },
+    "kubernetes-yaml-validator": {
+      "name": "Kubernetes YAML 验证器",
+      "description": "验证 Kubernetes 清单 YAML 文件",
+      "pageTitle": "免费在线 Kubernetes YAML 验证器",
+      "pageDescription": "在线验证 Kubernetes YAML 清单文件。检查部署、服务、Pod等语法错误。免费，无需注册。"
+    },
+    "openapi-validator": {
+      "name": "OpenAPI 验证器",
+      "description": "验证 OpenAPI/Swagger 规范文件",
+      "pageTitle": "免费在线 OpenAPI/Swagger 验证器",
+      "pageDescription": "在线验证 OpenAPI 3.x 和 Swagger 2.0 规范。检查语法错误和缺失字段。免费，无需注册。"
+    },
+    "github-actions-validator": {
+      "name": "GitHub Actions 验证器",
+      "description": "验证 GitHub Actions 工作流 YAML 文件",
+      "pageTitle": "免费在线 GitHub Actions YAML 验证器",
+      "pageDescription": "在线验证 GitHub Actions 工作流 YAML 文件。检查语法、作业、步骤等。免费，无需注册。"
+    },
+    "csv-viewer": {
+      "name": "CSV 查看器",
+      "description": "在交互式表格中查看和探索 CSV 数据",
+      "pageTitle": "免费在线 CSV 查看器 - 交互式表格",
+      "pageDescription": "在线查看和探索 CSV 文件，支持排序、搜索和过滤。免费，无需注册。"
+    },
+    "htpasswd-generator": {
+      "name": "htpasswd 生成器",
+      "description": "生成 Apache htpasswd 条目用于基本认证",
+      "pageTitle": "免费在线 htpasswd 生成器",
+      "pageDescription": "生成 Apache 和 Nginx 基本认证的 htpasswd 条目。支持 bcrypt、MD5、SHA1。免费，无需注册。"
+    },
+    "json-patch-tool": {
+      "name": "JSON Patch 工具",
+      "description": "应用 JSON Patch 操作 (RFC 6902)",
+      "pageTitle": "免费在线 JSON Patch 工具",
+      "pageDescription": "对 JSON 文档应用 JSON Patch 操作。支持添加、删除、替换等操作。免费，无需注册。"
+    },
+    "graphql-playground": {
+      "name": "GraphQL Playground",
+      "description": "在线测试和探索 GraphQL 查询",
+      "pageTitle": "免费在线 GraphQL Playground - 查询编辑器",
+      "pageDescription": "在线测试 GraphQL 查询，支持语法高亮和自动格式化。免费，无需注册。"
+    },
+    "code-to-image": {
+      "name": "代码转图片",
+      "description": "生成精美的代码截图用于分享",
+      "pageTitle": "免费代码转图片生成器 - 代码截图",
+      "pageDescription": "创建带语法高亮、自定义主题和背景的精美代码截图。免费，无需注册。"
+    },
+    "docker-compose-validator": {
+      "name": "Docker Compose 验证器",
+      "description": "验证 Docker Compose YAML 配置文件",
+      "pageTitle": "免费在线 Docker Compose 验证器",
+      "pageDescription": "在线验证 docker-compose.yml 文件。检查语法、服务、卷和网络。免费，无需注册。"
+    },
+    "terraform-formatter": {
+      "name": "Terraform 格式化",
+      "description": "格式化和验证 Terraform HCL 配置",
+      "pageTitle": "免费在线 Terraform HCL 格式化工具",
+      "pageDescription": "在线格式化和验证 Terraform HCL 配置文件。等同于 terraform fmt。免费，无需注册。"
     }
   },
   "footer": {

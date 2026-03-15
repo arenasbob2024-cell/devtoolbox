@@ -5897,6 +5897,72 @@
           "a": "Yes, this generator supports up to 3 colors. The third color is optional."
         }
       ]
+    },
+    "mermaid-editor": {
+      "name": "Mermaid Editor",
+      "description": "Mermaid-Diagramme in Echtzeit bearbeiten und vorschauen",
+      "pageTitle": "Kostenloser Online Mermaid Editor",
+      "pageDescription": "Erstellen und Vorschau von Mermaid-Diagrammen online. Kostenlos, keine Anmeldung."
+    },
+    "kubernetes-yaml-validator": {
+      "name": "Kubernetes YAML Validator",
+      "description": "Kubernetes-Manifest-YAML-Dateien validieren",
+      "pageTitle": "Kostenloser Kubernetes YAML Validator",
+      "pageDescription": "Validieren Sie Ihre Kubernetes YAML-Manifeste online. Kostenlos, keine Anmeldung."
+    },
+    "openapi-validator": {
+      "name": "OpenAPI Validator",
+      "description": "OpenAPI/Swagger-Spezifikationsdateien validieren",
+      "pageTitle": "Kostenloser OpenAPI Validator",
+      "pageDescription": "Validieren Sie Ihre OpenAPI-Spezifikationen online. Kostenlos, keine Anmeldung."
+    },
+    "github-actions-validator": {
+      "name": "GitHub Actions Validator",
+      "description": "GitHub Actions Workflow YAML validieren",
+      "pageTitle": "Kostenloser GitHub Actions Validator",
+      "pageDescription": "Validieren Sie Ihre GitHub Actions Workflows online. Kostenlos, keine Anmeldung."
+    },
+    "csv-viewer": {
+      "name": "CSV Viewer",
+      "description": "CSV-Daten in interaktiver Tabelle anzeigen",
+      "pageTitle": "Kostenloser CSV Viewer online",
+      "pageDescription": "CSV-Dateien online anzeigen. Kostenlos, keine Anmeldung."
+    },
+    "htpasswd-generator": {
+      "name": "htpasswd Generator",
+      "description": "Apache htpasswd-Einträge generieren",
+      "pageTitle": "Kostenloser htpasswd Generator",
+      "pageDescription": "Generieren Sie htpasswd-Einträge online. Kostenlos, keine Anmeldung."
+    },
+    "json-patch-tool": {
+      "name": "JSON Patch Tool",
+      "description": "JSON Patch Operationen anwenden (RFC 6902)",
+      "pageTitle": "Kostenloses JSON Patch Tool",
+      "pageDescription": "Wenden Sie JSON Patch Operationen an. Kostenlos, keine Anmeldung."
+    },
+    "graphql-playground": {
+      "name": "GraphQL Playground",
+      "description": "GraphQL-Abfragen online testen",
+      "pageTitle": "Kostenloser GraphQL Playground",
+      "pageDescription": "Testen Sie GraphQL-Abfragen online. Kostenlos, keine Anmeldung."
+    },
+    "code-to-image": {
+      "name": "Code zu Bild",
+      "description": "Schöne Code-Screenshots generieren",
+      "pageTitle": "Kostenloser Code-zu-Bild Generator",
+      "pageDescription": "Erstellen Sie schöne Code-Screenshots. Kostenlos, keine Anmeldung."
+    },
+    "docker-compose-validator": {
+      "name": "Docker Compose Validator",
+      "description": "Docker Compose YAML-Dateien validieren",
+      "pageTitle": "Kostenloser Docker Compose Validator",
+      "pageDescription": "Validieren Sie Ihre docker-compose.yml online. Kostenlos, keine Anmeldung."
+    },
+    "terraform-formatter": {
+      "name": "Terraform Formatter",
+      "description": "Terraform HCL-Konfiguration formatieren",
+      "pageTitle": "Kostenloser Terraform HCL Formatter",
+      "pageDescription": "Formatieren Sie Ihre Terraform HCL online. Kostenlos, keine Anmeldung."
     }
   },
   "footer": {

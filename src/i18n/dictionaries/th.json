@@ -5900,6 +5900,72 @@
           "a": "Yes, this generator supports up to 3 colors. The third color is optional."
         }
       ]
+    },
+    "mermaid-editor": {
+      "name": "Mermaid Editor",
+      "description": "แก้ไขและดูตัวอย่างไดอะแกรม Mermaid แบบเรียลไทม์",
+      "pageTitle": "Mermaid Editor ออนไลน์ฟรี",
+      "pageDescription": "สร้างและดูตัวอย่างไดอะแกรม Mermaid ออนไลน์ ฟรี ไม่ต้องลงทะเบียน"
+    },
+    "kubernetes-yaml-validator": {
+      "name": "Kubernetes YAML Validator",
+      "description": "ตรวจสอบไฟล์ YAML ของ Kubernetes",
+      "pageTitle": "Kubernetes YAML Validator ออนไลน์ฟรี",
+      "pageDescription": "ตรวจสอบ Kubernetes YAML manifest ออนไลน์ ฟรี ไม่ต้องลงทะเบียน"
+    },
+    "openapi-validator": {
+      "name": "OpenAPI Validator",
+      "description": "ตรวจสอบไฟล์ข้อกำหนด OpenAPI/Swagger",
+      "pageTitle": "OpenAPI Validator ออนไลน์ฟรี",
+      "pageDescription": "ตรวจสอบข้อกำหนด OpenAPI ออนไลน์ ฟรี ไม่ต้องลงทะเบียน"
+    },
+    "github-actions-validator": {
+      "name": "GitHub Actions Validator",
+      "description": "ตรวจสอบไฟล์ YAML ของ GitHub Actions",
+      "pageTitle": "GitHub Actions Validator ออนไลน์ฟรี",
+      "pageDescription": "ตรวจสอบ GitHub Actions workflow ออนไลน์ ฟรี ไม่ต้องลงทะเบียน"
+    },
+    "csv-viewer": {
+      "name": "CSV Viewer",
+      "description": "ดูและสำรวจข้อมูล CSV ในตาราง",
+      "pageTitle": "CSV Viewer ออนไลน์ฟรี",
+      "pageDescription": "ดูไฟล์ CSV ออนไลน์ ฟรี ไม่ต้องลงทะเบียน"
+    },
+    "htpasswd-generator": {
+      "name": "htpasswd Generator",
+      "description": "สร้างรายการ htpasswd ของ Apache",
+      "pageTitle": "htpasswd Generator ออนไลน์ฟรี",
+      "pageDescription": "สร้างรายการ htpasswd ออนไลน์ ฟรี ไม่ต้องลงทะเบียน"
+    },
+    "json-patch-tool": {
+      "name": "JSON Patch Tool",
+      "description": "ใช้ JSON Patch operations (RFC 6902)",
+      "pageTitle": "JSON Patch Tool ออนไลน์ฟรี",
+      "pageDescription": "ใช้ JSON Patch operations ออนไลน์ ฟรี ไม่ต้องลงทะเบียน"
+    },
+    "graphql-playground": {
+      "name": "GraphQL Playground",
+      "description": "ทดสอบและสำรวจ GraphQL queries ออนไลน์",
+      "pageTitle": "GraphQL Playground ออนไลน์ฟรี",
+      "pageDescription": "ทดสอบ GraphQL queries ออนไลน์ ฟรี ไม่ต้องลงทะเบียน"
+    },
+    "code-to-image": {
+      "name": "Code to Image",
+      "description": "สร้างภาพหน้าจอโค้ดสวยงาม",
+      "pageTitle": "Code to Image Generator ออนไลน์ฟรี",
+      "pageDescription": "สร้างภาพหน้าจอโค้ด ฟรี ไม่ต้องลงทะเบียน"
+    },
+    "docker-compose-validator": {
+      "name": "Docker Compose Validator",
+      "description": "ตรวจสอบไฟล์ YAML ของ Docker Compose",
+      "pageTitle": "Docker Compose Validator ออนไลน์ฟรี",
+      "pageDescription": "ตรวจสอบ docker-compose.yml ออนไลน์ ฟรี ไม่ต้องลงทะเบียน"
+    },
+    "terraform-formatter": {
+      "name": "Terraform Formatter",
+      "description": "จัดรูปแบบและตรวจสอบ Terraform HCL",
+      "pageTitle": "Terraform HCL Formatter ออนไลน์ฟรี",
+      "pageDescription": "จัดรูปแบบ Terraform HCL ออนไลน์ ฟรี ไม่ต้องลงทะเบียน"
     }
   },
   "footer": {

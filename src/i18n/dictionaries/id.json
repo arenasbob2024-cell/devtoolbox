@@ -5900,6 +5900,72 @@
           "a": "Yes, this generator supports up to 3 colors. The third color is optional."
         }
       ]
+    },
+    "mermaid-editor": {
+      "name": "Editor Mermaid",
+      "description": "Edit dan pratinjau diagram Mermaid secara real-time",
+      "pageTitle": "Editor Mermaid online gratis",
+      "pageDescription": "Buat dan pratinjau diagram Mermaid online. Gratis, tanpa pendaftaran."
+    },
+    "kubernetes-yaml-validator": {
+      "name": "Validator YAML Kubernetes",
+      "description": "Validasi file YAML manifest Kubernetes",
+      "pageTitle": "Validator YAML Kubernetes gratis",
+      "pageDescription": "Validasi manifest Kubernetes YAML Anda secara online. Gratis, tanpa pendaftaran."
+    },
+    "openapi-validator": {
+      "name": "Validator OpenAPI",
+      "description": "Validasi file spesifikasi OpenAPI/Swagger",
+      "pageTitle": "Validator OpenAPI/Swagger gratis",
+      "pageDescription": "Validasi spesifikasi OpenAPI Anda secara online. Gratis, tanpa pendaftaran."
+    },
+    "github-actions-validator": {
+      "name": "Validator GitHub Actions",
+      "description": "Validasi file YAML workflow GitHub Actions",
+      "pageTitle": "Validator GitHub Actions gratis",
+      "pageDescription": "Validasi workflow GitHub Actions Anda secara online. Gratis, tanpa pendaftaran."
+    },
+    "csv-viewer": {
+      "name": "Penampil CSV",
+      "description": "Lihat dan jelajahi data CSV dalam tabel",
+      "pageTitle": "Penampil CSV gratis online",
+      "pageDescription": "Lihat file CSV secara online. Gratis, tanpa pendaftaran."
+    },
+    "htpasswd-generator": {
+      "name": "Generator htpasswd",
+      "description": "Buat entri htpasswd Apache",
+      "pageTitle": "Generator htpasswd gratis",
+      "pageDescription": "Buat entri htpasswd secara online. Gratis, tanpa pendaftaran."
+    },
+    "json-patch-tool": {
+      "name": "Alat JSON Patch",
+      "description": "Terapkan operasi JSON Patch (RFC 6902)",
+      "pageTitle": "Alat JSON Patch gratis",
+      "pageDescription": "Terapkan operasi JSON Patch secara online. Gratis, tanpa pendaftaran."
+    },
+    "graphql-playground": {
+      "name": "GraphQL Playground",
+      "description": "Uji dan jelajahi query GraphQL",
+      "pageTitle": "GraphQL Playground gratis",
+      "pageDescription": "Uji query GraphQL secara online. Gratis, tanpa pendaftaran."
+    },
+    "code-to-image": {
+      "name": "Kode ke Gambar",
+      "description": "Buat tangkapan layar kode yang indah",
+      "pageTitle": "Generator Kode ke Gambar gratis",
+      "pageDescription": "Buat tangkapan layar kode. Gratis, tanpa pendaftaran."
+    },
+    "docker-compose-validator": {
+      "name": "Validator Docker Compose",
+      "description": "Validasi file YAML Docker Compose",
+      "pageTitle": "Validator Docker Compose gratis",
+      "pageDescription": "Validasi file docker-compose.yml Anda secara online. Gratis, tanpa pendaftaran."
+    },
+    "terraform-formatter": {
+      "name": "Formatter Terraform",
+      "description": "Format dan validasi konfigurasi Terraform HCL",
+      "pageTitle": "Formatter Terraform HCL gratis",
+      "pageDescription": "Format file Terraform HCL Anda secara online. Gratis, tanpa pendaftaran."
     }
   },
   "footer": {

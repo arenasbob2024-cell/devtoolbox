@@ -5900,6 +5900,72 @@
           "a": "Yes, this generator supports up to 3 colors. The third color is optional."
         }
       ]
+    },
+    "mermaid-editor": {
+      "name": "Mermaid エディタ",
+      "description": "Mermaid図をリアルタイムで編集・プレビュー",
+      "pageTitle": "無料オンラインMermaidエディタ",
+      "pageDescription": "Mermaid図をオンラインで作成・プレビュー。無料、登録不要。"
+    },
+    "kubernetes-yaml-validator": {
+      "name": "Kubernetes YAMLバリデーター",
+      "description": "KubernetesマニフェストYAMLファイルを検証",
+      "pageTitle": "無料オンラインKubernetes YAMLバリデーター",
+      "pageDescription": "KubernetesのYAMLマニフェストをオンラインで検証。無料、登録不要。"
+    },
+    "openapi-validator": {
+      "name": "OpenAPIバリデーター",
+      "description": "OpenAPI/Swagger仕様ファイルを検証",
+      "pageTitle": "無料オンラインOpenAPIバリデーター",
+      "pageDescription": "OpenAPI仕様をオンラインで検証。無料、登録不要。"
+    },
+    "github-actions-validator": {
+      "name": "GitHub Actionsバリデーター",
+      "description": "GitHub ActionsワークフローYAMLを検証",
+      "pageTitle": "無料GitHub Actionsバリデーター",
+      "pageDescription": "GitHub ActionsのワークフローYAMLをオンラインで検証。無料、登録不要。"
+    },
+    "csv-viewer": {
+      "name": "CSVビューアー",
+      "description": "CSVデータをインタラクティブなテーブルで表示",
+      "pageTitle": "無料オンラインCSVビューアー",
+      "pageDescription": "CSVファイルをオンラインで表示・探索。無料、登録不要。"
+    },
+    "htpasswd-generator": {
+      "name": "htpasswdジェネレーター",
+      "description": "Apache htpasswdエントリを生成",
+      "pageTitle": "無料htpasswdジェネレーター",
+      "pageDescription": "htpasswdエントリをオンラインで生成。無料、登録不要。"
+    },
+    "json-patch-tool": {
+      "name": "JSON Patchツール",
+      "description": "JSON Patch操作を適用 (RFC 6902)",
+      "pageTitle": "無料JSON Patchツール",
+      "pageDescription": "JSONドキュメントにJSON Patch操作を適用。無料、登録不要。"
+    },
+    "graphql-playground": {
+      "name": "GraphQL Playground",
+      "description": "GraphQLクエリをオンラインでテスト",
+      "pageTitle": "無料GraphQL Playground",
+      "pageDescription": "GraphQLクエリをオンラインでテスト。無料、登録不要。"
+    },
+    "code-to-image": {
+      "name": "コード画像生成",
+      "description": "コードの美しいスクリーンショットを生成",
+      "pageTitle": "無料コード画像ジェネレーター",
+      "pageDescription": "コードのスクリーンショットを生成。無料、登録不要。"
+    },
+    "docker-compose-validator": {
+      "name": "Docker Composeバリデーター",
+      "description": "Docker Compose YAML設定ファイルを検証",
+      "pageTitle": "無料Docker Composeバリデーター",
+      "pageDescription": "docker-compose.ymlファイルをオンラインで検証。無料、登録不要。"
+    },
+    "terraform-formatter": {
+      "name": "Terraformフォーマッター",
+      "description": "Terraform HCL設定をフォーマット・検証",
+      "pageTitle": "無料Terraform HCLフォーマッター",
+      "pageDescription": "Terraform HCL設定をオンラインでフォーマット。無料、登録不要。"
     }
   },
   "footer": {
