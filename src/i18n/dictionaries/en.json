@@ -1174,8 +1174,8 @@
     "cron-parser": {
       "name": "Cron Expression Parser",
       "description": "Parse and explain cron expressions with next run times",
-      "pageTitle": "Cron Expression Parser & Generator – Free Online Tool",
-      "pageDescription": "Parse and generate cron expressions with a visual editor. See next 10 execution times, validate syntax, and build schedules. Supports standard 5-field cron format. Free, no signup required.",
+      "pageTitle": "Cron Parser Online – Parse & Generate Cron Expressions Free",
+      "pageDescription": "Parse cron expressions instantly. See next 10 run times, validate syntax, and generate schedules with a visual editor. Standard 5-field cron format. Free online cron-parser tool.",
       "cronExpression": "Cron Expression",
       "placeholder": "* * * * * (min hour day month weekday)",
       "minute": "Minute (0-59)",
@@ -1564,8 +1564,8 @@
     "image-base64": {
       "name": "Image Base64 Converter",
       "description": "Convert images to Base64 strings and data URIs with drag & drop",
-      "pageTitle": "Image to Base64 Converter Online Free — Convert PNG, JPG to Data URI",
-      "pageDescription": "Convert images to Base64 encoded strings and data URIs. Supports PNG, JPG, GIF, SVG, WebP. Drag & drop upload. Free, no signup required.",
+      "pageTitle": "Base64 to Image Converter & Encoder – Free Online Tool",
+      "pageDescription": "Convert Base64 to image or image to Base64 instantly. Encode PNG, JPG, SVG, WebP to data URI strings. Decode Base64 back to images. Free, no signup.",
       "encodeTab": "Image → Base64",
       "decodeTab": "Base64 → Image",
       "dropText": "Drop an image here or click to select",
@@ -2892,8 +2892,8 @@
     "json-to-json-schema": {
       "name": "JSON to JSON Schema",
       "description": "Convert JSON to JSON Schema — generate schema from JSON instantly",
-      "pageTitle": "JSON to JSON Schema Generator – Free Online Tool",
-      "pageDescription": "Instantly generate JSON Schema from any JSON data. Auto-detects types, required fields, nested objects and arrays. Supports Draft 2020-12. Paste JSON, get schema in seconds. Free, no signup required.",
+      "pageTitle": "JSON Schema Generator – Create Schema from JSON Online",
+      "pageDescription": "Generate JSON Schema from JSON instantly. Auto-detects types, required fields, nested objects and arrays. Free online JSON schema tool for API validation and OpenAPI docs.",
       "seoTitle": "About JSON to JSON Schema Conversion",
       "seoContent": "JSON Schema is a vocabulary for annotating and validating JSON documents. It's widely used for API documentation (OpenAPI/Swagger), form generation, configuration validation, and data interchange. This tool analyzes your JSON data and generates a JSON Schema (draft-07) that describes its structure. It correctly identifies types, marks all existing fields as required, handles arrays with item schemas, and creates nested schemas for objects. The output can be used with any JSON Schema validator or integrated into OpenAPI specifications. All processing happens in your browser.",
       "faqTitle": "Frequently Asked Questions",
@@ -3339,8 +3339,8 @@
     "favicon-generator": {
       "name": "Favicon Generator",
       "description": "Create favicons from text or emoji with custom colors and sizes",
-      "pageTitle": "Favicon Generator Online Free — Create ICO, PNG Favicons",
-      "pageDescription": "Create favicons from text or emoji with custom colors, sizes, and border radius. Download as PNG. Free, no signup required.",
+      "pageTitle": "Favicon Generator – Create ICO 16x16 & PNG Favicons Free",
+      "pageDescription": "Generate favicons from text or emoji. Create minimal valid ICO files (16x16), PNG icons, and Base64 data URIs. Custom colors and sizes. Free online tool.",
       "seoTitle": "What is Favicon Generator?",
       "seoContent": "A favicon is the small icon in browser tabs. This tool generates favicons from text or emoji with customizable colors and sizes.",
       "howToUseTitle": "How to Use",
@@ -11536,8 +11536,8 @@
     "favicon-checker": {
       "name": "Favicon Checker & Generator",
       "description": "Check if a website has proper favicons configured. Generate favicon HTML tags for all platforms including Apple Touch Icon and PWA manifest.",
-      "pageTitle": "Favicon Checker & Generator Online Free — Check & Create Favicons for 2026",
-      "pageDescription": "Free favicon checker and generator. Verify your website favicons are properly configured. Generate HTML tags for favicon.ico, SVG, Apple Touch Icon, and PWA manifest.",
+      "pageTitle": "Favicon Checker – Validate ICO Format & All Sizes 2026",
+      "pageDescription": "Check your website favicons are properly configured. Validate favicon.ico format, 16x16 sizes, SVG, Apple Touch Icon, and PWA manifest. Generate HTML tags free.",
       "howToUseTitle": "How to Use",
       "useCasesTitle": "Use Cases",
       "howToUseSteps": [

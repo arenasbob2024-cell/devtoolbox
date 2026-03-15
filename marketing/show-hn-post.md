@@ -1,13 +1,13 @@
-# Show HN: DevToolBox – 93 Free Online Developer Tools
+# Show HN: DevToolBox – 375 Free Online Developer Tools
 
 **URL:** https://viadreams.cc
 
-We built DevToolBox out of frustration with having to search for different tools across 10+ websites. Started 4 months ago with 28 tools, now at 93 and growing based on real search demand.
+We built DevToolBox out of frustration with having to search for different tools across 10+ websites. Started 5 months ago with 28 tools, now at 375 and growing based on real search demand.
 
 **What it does:**
-- 93 free, no-signup online tools for daily dev work (JSON formatter/validator, regex tester, JWT decoder, CSS generators, base64 encoder, hash generators, cron parser, etc.)
+- 375 free, no-signup online tools for daily dev work (JSON formatter/validator, regex tester, JWT decoder, CSS generators, base64 encoder, hash generators, cron parser, etc.)
 - 15 languages (English, Chinese, Japanese, Korean, Spanish, German, French, Dutch, Italian, Portuguese, Polish, Swedish, Norwegian, Indonesian, Thai)
-- 200+ SEO-optimized blog posts with tutorials
+- 600+ SEO-optimized blog posts with tutorials
 - Built with Next.js 16 (App Router) + TypeScript + Tailwind CSS
 
 **Why we made it:**
@@ -16,10 +16,11 @@ We built DevToolBox out of frustration with having to search for different tools
 3. **Practical**: Tools designed for actual workflows - JSON/regex/encoding, the things you use daily.
 
 **Current stats:**
-- 13,890 URLs in sitemap
-- ~388 visits/week from Google (growing)
-- 473 unique IPs per day
-- Top tools: JSON Formatter (158 daily), Hash Generator (76), Cron Parser (75)
+- 12,345 URLs in sitemap (cleaned: removed 159 redirect URLs)
+- 1,693 pages indexed by Google (+113% growth)
+- 6,330 Google impressions in last 28 days
+- 139 organic keywords tracked by Semrush
+- 15 languages × 375 tools = 5,625+ tool pages
 
 **Stack:**
 - Next.js 16, TypeScript, Tailwind CSS
