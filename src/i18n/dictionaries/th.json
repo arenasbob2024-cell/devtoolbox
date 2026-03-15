@@ -5966,6 +5966,36 @@
       "description": "จัดรูปแบบและตรวจสอบ Terraform HCL",
       "pageTitle": "Terraform HCL Formatter ออนไลน์ฟรี",
       "pageDescription": "จัดรูปแบบ Terraform HCL ออนไลน์ ฟรี ไม่ต้องลงทะเบียน"
+    },
+    "websocket-tester": {
+      "name": "ทดสอบ WebSocket",
+      "description": "ทดสอบการเชื่อมต่อ WebSocket ส่ง/รับข้อความแบบเรียลไทม์",
+      "pageTitle": "ทดสอบ WebSocket ออนไลน์ - ดีบักแบบเรียลไทม์",
+      "pageDescription": "เครื่องมือทดสอบ WebSocket ออนไลน์ฟรี เชื่อมต่อกับ endpoint WS/WSS ใดก็ได้"
+    },
+    "totp-generator": {
+      "name": "ตัวสร้าง TOTP",
+      "description": "สร้างรหัสผ่านครั้งเดียวแบบอิงเวลาสำหรับทดสอบ 2FA",
+      "pageTitle": "ตัวสร้าง TOTP - สร้างรหัส 2FA ออนไลน์",
+      "pageDescription": "ตัวสร้าง TOTP ฟรีสำหรับทดสอบการยืนยันตัวตนสองปัจจัย"
+    },
+    "connection-string-builder": {
+      "name": "สร้าง Connection String",
+      "description": "สร้าง connection string สำหรับ MySQL, PostgreSQL, MongoDB และอื่นๆ",
+      "pageTitle": "สร้าง Connection String ฐานข้อมูล",
+      "pageDescription": "เครื่องมือสร้าง connection string ฐานข้อมูลฟรี รองรับ MySQL, PostgreSQL, MongoDB, Redis"
+    },
+    "systemd-unit-validator": {
+      "name": "ตรวจสอบ Systemd Unit",
+      "description": "ตรวจสอบไฟล์ systemd service unit",
+      "pageTitle": "ตรวจสอบไฟล์ Systemd Unit ออนไลน์",
+      "pageDescription": "เครื่องมือตรวจสอบไฟล์ systemd unit ฟรี"
+    },
+    "api-rate-limit-calculator": {
+      "name": "คำนวณ Rate Limit API",
+      "description": "คำนวณ rate limit, ค่าใช้จ่าย และการวางแผนโควต้า API",
+      "pageTitle": "คำนวณ Rate Limit API",
+      "pageDescription": "เครื่องมือคำนวณ rate limit API ฟรี"
     }
   },
   "footer": {

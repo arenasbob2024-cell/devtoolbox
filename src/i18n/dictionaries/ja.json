@@ -5966,6 +5966,36 @@
       "description": "Terraform HCL設定をフォーマット・検証",
       "pageTitle": "無料Terraform HCLフォーマッター",
       "pageDescription": "Terraform HCL設定をオンラインでフォーマット。無料、登録不要。"
+    },
+    "websocket-tester": {
+      "name": "WebSocket テスター",
+      "description": "WebSocket接続をテストし、リアルタイムでメッセージを送受信",
+      "pageTitle": "オンライン WebSocket テスター - リアルタイム接続デバッグ",
+      "pageDescription": "無料オンラインWebSocketテスター。WS/WSSエンドポイントに接続、メッセージ送信、リアルタイム応答確認。"
+    },
+    "totp-generator": {
+      "name": "TOTP ジェネレーター",
+      "description": "2FAテスト用の時間ベースワンタイムパスワードを生成",
+      "pageTitle": "TOTP ジェネレーター - 2FAコード生成",
+      "pageDescription": "無料TOTPジェネレーター。カスタムシークレットとインターバルでOTPコードを生成。"
+    },
+    "connection-string-builder": {
+      "name": "DB接続文字列ビルダー",
+      "description": "MySQL、PostgreSQL、MongoDB等のデータベース接続文字列を生成",
+      "pageTitle": "データベース接続文字列ビルダー",
+      "pageDescription": "無料のデータベース接続文字列ビルダー。MySQL、PostgreSQL、MongoDB、Redisなどに対応。"
+    },
+    "systemd-unit-validator": {
+      "name": "Systemd ユニットバリデーター",
+      "description": "systemdサービスユニットファイルを検証",
+      "pageTitle": "Systemd ユニットファイルバリデーター",
+      "pageDescription": "無料のsystemdユニットファイルバリデーター。.serviceファイルのエラーチェック。"
+    },
+    "api-rate-limit-calculator": {
+      "name": "APIレート制限計算機",
+      "description": "APIレート制限、コスト、クォータ計画を計算",
+      "pageTitle": "APIレート制限計算機 - コスト見積もり",
+      "pageDescription": "無料APIレート制限計算機。OpenAI、Claude等のLLM APIコストを見積もり。"
     }
   },
   "footer": {

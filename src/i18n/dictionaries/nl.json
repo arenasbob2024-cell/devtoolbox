@@ -5966,6 +5966,36 @@
       "description": "Terraform HCL-configuratie formatteren",
       "pageTitle": "Gratis Terraform HCL Formatter",
       "pageDescription": "Formatteer uw Terraform HCL online. Gratis, geen registratie."
+    },
+    "websocket-tester": {
+      "name": "WebSocket Tester",
+      "description": "Test WebSocket-verbindingen, verzend/ontvang berichten in realtime",
+      "pageTitle": "Online WebSocket Tester - Realtime debugging",
+      "pageDescription": "Gratis online WebSocket tester. Maak verbinding met elk WS/WSS-endpoint."
+    },
+    "totp-generator": {
+      "name": "TOTP-generator",
+      "description": "Genereer tijdgebaseerde eenmalige wachtwoorden voor 2FA-tests",
+      "pageTitle": "TOTP-generator - 2FA-codegenerator",
+      "pageDescription": "Gratis TOTP-generator voor het testen van tweefactorauthenticatie."
+    },
+    "connection-string-builder": {
+      "name": "DB-verbindingsstring-builder",
+      "description": "Maak verbindingsstrings voor MySQL, PostgreSQL, MongoDB en meer",
+      "pageTitle": "Database-verbindingsstring-builder",
+      "pageDescription": "Gratis database-verbindingsstring-builder voor MySQL, PostgreSQL, MongoDB, Redis."
+    },
+    "systemd-unit-validator": {
+      "name": "Systemd Unit Validator",
+      "description": "Valideer systemd service unit-bestanden",
+      "pageTitle": "Systemd Unit Bestand Validator",
+      "pageDescription": "Gratis systemd unit bestand validator."
+    },
+    "api-rate-limit-calculator": {
+      "name": "API Rate Limit Calculator",
+      "description": "Bereken API-snelheidslimieten, kosten en quotaplanning",
+      "pageTitle": "API Rate Limit Calculator",
+      "pageDescription": "Gratis API rate limit calculator."
     }
   },
   "footer": {

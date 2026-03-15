@@ -5963,6 +5963,36 @@
       "description": "Terraform HCL-Konfiguration formatieren",
       "pageTitle": "Kostenloser Terraform HCL Formatter",
       "pageDescription": "Formatieren Sie Ihre Terraform HCL online. Kostenlos, keine Anmeldung."
+    },
+    "websocket-tester": {
+      "name": "WebSocket Tester",
+      "description": "WebSocket-Verbindungen testen, Nachrichten in Echtzeit senden/empfangen",
+      "pageTitle": "Online WebSocket Tester - Echtzeit-Debugging",
+      "pageDescription": "Kostenloser Online WebSocket Tester. Verbinden Sie sich mit jedem WS/WSS-Endpunkt."
+    },
+    "totp-generator": {
+      "name": "TOTP-Generator",
+      "description": "Zeitbasierte Einmalpasswörter für 2FA-Tests generieren",
+      "pageTitle": "TOTP-Generator - 2FA-Code-Generator",
+      "pageDescription": "Kostenloser TOTP-Generator zum Testen der Zwei-Faktor-Authentifizierung."
+    },
+    "connection-string-builder": {
+      "name": "DB-Verbindungsstring-Builder",
+      "description": "Erstellen Sie Verbindungsstrings für MySQL, PostgreSQL, MongoDB und mehr",
+      "pageTitle": "Datenbank-Verbindungsstring-Builder",
+      "pageDescription": "Kostenloser Datenbank-Verbindungsstring-Builder für MySQL, PostgreSQL, MongoDB, Redis."
+    },
+    "systemd-unit-validator": {
+      "name": "Systemd Unit Validator",
+      "description": "Validieren Sie systemd-Service-Unit-Dateien",
+      "pageTitle": "Systemd Unit Datei Validator",
+      "pageDescription": "Kostenloser systemd Unit Datei Validator. Prüfen Sie .service Dateien auf Fehler."
+    },
+    "api-rate-limit-calculator": {
+      "name": "API Rate Limit Rechner",
+      "description": "Berechnen Sie API-Ratenlimits, Kosten und Kontingentplanung",
+      "pageTitle": "API Rate Limit Rechner",
+      "pageDescription": "Kostenloser API Rate Limit Rechner."
     }
   },
   "footer": {

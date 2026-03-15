@@ -5966,6 +5966,36 @@
       "description": "Formater og valider Terraform HCL-konfigurasjon",
       "pageTitle": "Gratis Terraform HCL-formater",
       "pageDescription": "Formater dine Terraform HCL-filer online. Gratis, ingen registrering."
+    },
+    "websocket-tester": {
+      "name": "WebSocket-tester",
+      "description": "Test WebSocket-tilkoblinger, send/motta meldinger i sanntid",
+      "pageTitle": "WebSocket-tester online - Sanntidsfeilsøking",
+      "pageDescription": "Gratis WebSocket-tester online. Koble til hvilken som helst WS/WSS-endepunkt."
+    },
+    "totp-generator": {
+      "name": "TOTP-generator",
+      "description": "Generer tidsbaserte engangspassord for 2FA-testing",
+      "pageTitle": "TOTP-generator - 2FA-kodegenerator",
+      "pageDescription": "Gratis TOTP-generator for testing av tofaktorautentisering."
+    },
+    "connection-string-builder": {
+      "name": "DB-tilkoblingsstrengbygger",
+      "description": "Bygg tilkoblingsstrenger for MySQL, PostgreSQL, MongoDB og mer",
+      "pageTitle": "Database-tilkoblingsstrengbygger",
+      "pageDescription": "Gratis database-tilkoblingsstrengbygger for MySQL, PostgreSQL, MongoDB, Redis."
+    },
+    "systemd-unit-validator": {
+      "name": "Systemd-enhetsvalidator",
+      "description": "Valider systemd service unit-filer",
+      "pageTitle": "Systemd enhetsfil-validator",
+      "pageDescription": "Gratis systemd enhetsfil-validator."
+    },
+    "api-rate-limit-calculator": {
+      "name": "API-hastighetsgrensekalkulator",
+      "description": "Beregn API-hastighetsgrenser, kostnader og kvoteplanlegging",
+      "pageTitle": "API-hastighetsgrensekalkulator",
+      "pageDescription": "Gratis API-hastighetsgrensekalkulator."
     }
   },
   "footer": {

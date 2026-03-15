@@ -5970,6 +5970,36 @@
       "description": "格式化和验证 Terraform HCL 配置",
       "pageTitle": "免费在线 Terraform HCL 格式化工具",
       "pageDescription": "在线格式化和验证 Terraform HCL 配置文件。等同于 terraform fmt。免费，无需注册。"
+    },
+    "websocket-tester": {
+      "name": "WebSocket 测试工具",
+      "description": "测试 WebSocket 连接，实时发送和接收消息",
+      "pageTitle": "在线 WebSocket 测试工具 - 实时连接调试",
+      "pageDescription": "免费在线 WebSocket 测试工具。连接任意 WS/WSS 端点，发送消息，实时查看响应和延迟。"
+    },
+    "totp-generator": {
+      "name": "TOTP 生成器",
+      "description": "生成基于时间的一次性密码用于 2FA 测试",
+      "pageTitle": "TOTP 生成器 - 在线 2FA 验证码生成",
+      "pageDescription": "免费 TOTP 生成器，用于测试双因素认证。支持自定义密钥和时间间隔生成 OTP 验证码。"
+    },
+    "connection-string-builder": {
+      "name": "数据库连接字符串生成器",
+      "description": "生成 MySQL、PostgreSQL、MongoDB 等数据库连接字符串",
+      "pageTitle": "在线数据库连接字符串生成器",
+      "pageDescription": "免费在线数据库连接字符串生成器。支持 MySQL、PostgreSQL、MongoDB、Redis、SQL Server 等。"
+    },
+    "systemd-unit-validator": {
+      "name": "Systemd 单元文件验证器",
+      "description": "验证和检查 systemd 服务单元文件",
+      "pageTitle": "在线 Systemd 单元文件验证器",
+      "pageDescription": "免费在线 systemd 单元文件验证器。检查 .service 文件的常见错误、缺失字段和最佳实践。"
+    },
+    "api-rate-limit-calculator": {
+      "name": "API 速率限制计算器",
+      "description": "计算 API 速率限制、成本和配额规划",
+      "pageTitle": "API 速率限制计算器 - 成本估算",
+      "pageDescription": "免费 API 速率限制计算器。规划 API 用量，估算 OpenAI、Claude 等 LLM API 成本。"
     }
   },
   "footer": {

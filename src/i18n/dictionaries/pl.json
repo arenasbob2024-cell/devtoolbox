@@ -5966,6 +5966,36 @@
       "description": "Formatuj i waliduj konfigurację Terraform HCL",
       "pageTitle": "Darmowy formater Terraform HCL",
       "pageDescription": "Formatuj pliki Terraform HCL online. Darmowy, bez rejestracji."
+    },
+    "websocket-tester": {
+      "name": "Tester WebSocket",
+      "description": "Testuj połączenia WebSocket, wysyłaj/odbieraj wiadomości w czasie rzeczywistym",
+      "pageTitle": "Tester WebSocket online - Debugowanie w czasie rzeczywistym",
+      "pageDescription": "Darmowy tester WebSocket online. Połącz się z dowolnym endpointem WS/WSS."
+    },
+    "totp-generator": {
+      "name": "Generator TOTP",
+      "description": "Generuj jednorazowe hasła oparte na czasie do testów 2FA",
+      "pageTitle": "Generator TOTP - Generator kodów 2FA",
+      "pageDescription": "Darmowy generator TOTP do testowania uwierzytelniania dwuskładnikowego."
+    },
+    "connection-string-builder": {
+      "name": "Generator connection string",
+      "description": "Generuj ciągi połączenia dla MySQL, PostgreSQL, MongoDB i więcej",
+      "pageTitle": "Generator ciągów połączenia bazy danych",
+      "pageDescription": "Darmowy generator ciągów połączenia dla MySQL, PostgreSQL, MongoDB, Redis."
+    },
+    "systemd-unit-validator": {
+      "name": "Walidator Systemd",
+      "description": "Waliduj pliki jednostek systemd",
+      "pageTitle": "Walidator plików Systemd",
+      "pageDescription": "Darmowy walidator plików jednostek systemd."
+    },
+    "api-rate-limit-calculator": {
+      "name": "Kalkulator limitów API",
+      "description": "Oblicz limity szybkości API, koszty i planowanie przydziałów",
+      "pageTitle": "Kalkulator limitów API",
+      "pageDescription": "Darmowy kalkulator limitów szybkości API."
     }
   },
   "footer": {

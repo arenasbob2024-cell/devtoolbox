@@ -11680,6 +11680,36 @@
       "description": "Format and validate Terraform HCL configuration",
       "pageTitle": "Free Online Terraform HCL Formatter",
       "pageDescription": "Format and validate your Terraform HCL configuration files online. Equivalent to terraform fmt. Free, no signup required."
+    },
+    "websocket-tester": {
+      "name": "WebSocket Tester",
+      "description": "Test WebSocket connections, send/receive messages in real-time",
+      "pageTitle": "Online WebSocket Tester - Real-time Connection Debug",
+      "pageDescription": "Free online WebSocket tester. Connect to any WS/WSS endpoint, send messages, view responses in real-time with latency tracking."
+    },
+    "totp-generator": {
+      "name": "TOTP Generator",
+      "description": "Generate Time-based One-Time Passwords for 2FA testing",
+      "pageTitle": "TOTP Generator - 2FA Code Generator Online",
+      "pageDescription": "Free TOTP generator for testing two-factor authentication. Generate time-based OTP codes with custom secrets and intervals."
+    },
+    "connection-string-builder": {
+      "name": "DB Connection String Builder",
+      "description": "Build database connection strings for MySQL, PostgreSQL, MongoDB and more",
+      "pageTitle": "Database Connection String Builder Online",
+      "pageDescription": "Free online database connection string builder. Generate connection strings for MySQL, PostgreSQL, MongoDB, Redis, SQL Server and more."
+    },
+    "systemd-unit-validator": {
+      "name": "Systemd Unit Validator",
+      "description": "Validate and lint systemd service unit files",
+      "pageTitle": "Systemd Unit File Validator Online",
+      "pageDescription": "Free online systemd unit file validator. Check .service files for common errors, missing fields, and best practices."
+    },
+    "api-rate-limit-calculator": {
+      "name": "API Rate Limit Calculator",
+      "description": "Calculate API rate limits, costs, and quota planning for LLM and REST APIs",
+      "pageTitle": "API Rate Limit Calculator - Cost Estimator",
+      "pageDescription": "Free API rate limit calculator. Plan API usage, estimate costs for OpenAI, Claude, and other LLM APIs with quota optimization."
     }
   },
   "footer": {

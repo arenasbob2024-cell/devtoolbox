@@ -5966,6 +5966,36 @@
       "description": "Terraform HCL 구성 포맷 및 검증",
       "pageTitle": "무료 Terraform HCL 포맷터",
       "pageDescription": "Terraform HCL 구성을 온라인으로 포맷. 무료, 가입 불필요."
+    },
+    "websocket-tester": {
+      "name": "WebSocket 테스터",
+      "description": "WebSocket 연결 테스트, 실시간 메시지 송수신",
+      "pageTitle": "온라인 WebSocket 테스터 - 실시간 연결 디버그",
+      "pageDescription": "무료 온라인 WebSocket 테스터. WS/WSS 엔드포인트 연결, 메시지 전송, 실시간 응답 확인."
+    },
+    "totp-generator": {
+      "name": "TOTP 생성기",
+      "description": "2FA 테스트를 위한 시간 기반 일회용 비밀번호 생성",
+      "pageTitle": "TOTP 생성기 - 2FA 코드 생성기",
+      "pageDescription": "무료 TOTP 생성기. 사용자 정의 비밀키와 간격으로 OTP 코드를 생성합니다."
+    },
+    "connection-string-builder": {
+      "name": "DB 연결 문자열 빌더",
+      "description": "MySQL, PostgreSQL, MongoDB 등의 데이터베이스 연결 문자열 생성",
+      "pageTitle": "데이터베이스 연결 문자열 빌더",
+      "pageDescription": "무료 데이터베이스 연결 문자열 빌더. MySQL, PostgreSQL, MongoDB, Redis 등 지원."
+    },
+    "systemd-unit-validator": {
+      "name": "Systemd 유닛 검증기",
+      "description": "systemd 서비스 유닛 파일 검증 및 린트",
+      "pageTitle": "Systemd 유닛 파일 검증기",
+      "pageDescription": "무료 systemd 유닛 파일 검증기. .service 파일의 일반적인 오류 확인."
+    },
+    "api-rate-limit-calculator": {
+      "name": "API 속도 제한 계산기",
+      "description": "API 속도 제한, 비용, 할당량 계획 계산",
+      "pageTitle": "API 속도 제한 계산기 - 비용 추정",
+      "pageDescription": "무료 API 속도 제한 계산기. OpenAI, Claude 등 LLM API 비용 추정."
     }
   },
   "footer": {

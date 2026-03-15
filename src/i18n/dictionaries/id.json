@@ -5966,6 +5966,36 @@
       "description": "Format dan validasi konfigurasi Terraform HCL",
       "pageTitle": "Formatter Terraform HCL gratis",
       "pageDescription": "Format file Terraform HCL Anda secara online. Gratis, tanpa pendaftaran."
+    },
+    "websocket-tester": {
+      "name": "Penguji WebSocket",
+      "description": "Uji koneksi WebSocket, kirim/terima pesan secara real-time",
+      "pageTitle": "Penguji WebSocket Online - Debug Real-time",
+      "pageDescription": "Penguji WebSocket online gratis. Hubungkan ke endpoint WS/WSS mana pun."
+    },
+    "totp-generator": {
+      "name": "Generator TOTP",
+      "description": "Buat kata sandi sekali pakai berbasis waktu untuk pengujian 2FA",
+      "pageTitle": "Generator TOTP - Generator Kode 2FA",
+      "pageDescription": "Generator TOTP gratis untuk menguji autentikasi dua faktor."
+    },
+    "connection-string-builder": {
+      "name": "Pembuat Connection String DB",
+      "description": "Buat connection string untuk MySQL, PostgreSQL, MongoDB dan lainnya",
+      "pageTitle": "Pembuat Connection String Database",
+      "pageDescription": "Pembuat connection string database gratis untuk MySQL, PostgreSQL, MongoDB, Redis."
+    },
+    "systemd-unit-validator": {
+      "name": "Validator Unit Systemd",
+      "description": "Validasi file unit layanan systemd",
+      "pageTitle": "Validator File Unit Systemd",
+      "pageDescription": "Validator file unit systemd gratis."
+    },
+    "api-rate-limit-calculator": {
+      "name": "Kalkulator Rate Limit API",
+      "description": "Hitung rate limit API, biaya, dan perencanaan kuota",
+      "pageTitle": "Kalkulator Rate Limit API",
+      "pageDescription": "Kalkulator rate limit API gratis."
     }
   },
   "footer": {
