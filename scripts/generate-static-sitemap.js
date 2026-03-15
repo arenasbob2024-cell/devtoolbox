@@ -15,13 +15,25 @@ const BASE_URL = 'https://viadreams.cc';
 const LOCALES = ['en', 'fr', 'de', 'it', 'es', 'pt', 'nl', 'pl', 'sv', 'no', 'zh', 'ja', 'ko', 'id', 'th'];
 const PUBLIC_DIR = path.join(__dirname, '..', 'public');
 
-// Parse tool paths from tools.ts
+// Parse redirect sources from next.config.ts to exclude from sitemap
+const configFile = fs.readFileSync(path.join(__dirname, '..', 'next.config.ts'), 'utf8');
+const redirectSources = new Set();
+const redirectRegex = /source:\s*'\/:[^/]+\/tools\/([^']+)'/g;
+let rmatch;
+while ((rmatch = redirectRegex.exec(configFile)) !== null) {
+  redirectSources.add('/tools/' + rmatch[1]);
+}
+console.log(`  Redirect sources to exclude: ${redirectSources.size}`);
+
+// Parse tool paths from tools.ts (excluding redirect-only paths)
 const toolsFile = fs.readFileSync(path.join(__dirname, '..', 'src', 'lib', 'tools.ts'), 'utf8');
 const toolPaths = [];
 const pathRegex = /path:\s*'([^']+)'/g;
 let match;
 while ((match = pathRegex.exec(toolsFile)) !== null) {
-  toolPaths.push(match[1]);
+  if (!redirectSources.has(match[1])) {
+    toolPaths.push(match[1]);
+  }
 }
 
 // Parse blog slugs from blog-posts.ts
@@ -38,18 +50,22 @@ function xmlEscape(s) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
+function ensureTrailingSlash(url) {
+  return url.endsWith('/') ? url : url + '/';
+}
+
 function buildXhtmlLinks(pagePath) {
   return LOCALES.map(locale =>
-    `      <xhtml:link rel="alternate" hreflang="${locale}" href="${BASE_URL}/${locale}${pagePath}"/>`
+    `      <xhtml:link rel="alternate" hreflang="${locale}" href="${ensureTrailingSlash(BASE_URL + '/' + locale + pagePath)}"/>`
   ).join('\n') + '\n' +
-    `      <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}/en${pagePath}"/>`;
+    `      <xhtml:link rel="alternate" hreflang="x-default" href="${ensureTrailingSlash(BASE_URL + '/en' + pagePath)}"/>`;
 }
 
 function buildUrlEntry(pagePath, priority, changefreq) {
   const entries = [];
   for (const locale of LOCALES) {
     entries.push(`  <url>
-    <loc>${BASE_URL}/${locale}${pagePath}</loc>
+    <loc>${ensureTrailingSlash(BASE_URL + '/' + locale + pagePath)}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
@@ -88,9 +104,12 @@ if (!fs.existsSync(sitemapsDir)) {
 
 const sitemapFiles = [];
 
-// Sitemap 1: Homepages + blog list pages
+// Sitemap 1: Homepages + tools index + blog list pages
 let urls = buildUrlEntry('', 1.0, 'weekly');
+urls += '\n' + buildUrlEntry('/tools', 0.9, 'weekly');
 urls += '\n' + buildUrlEntry('/blog', 0.7, 'weekly');
+urls += '\n' + buildUrlEntry('/about', 0.3, 'monthly');
+urls += '\n' + buildUrlEntry('/privacy', 0.3, 'monthly');
 fs.writeFileSync(path.join(sitemapsDir, 'pages.xml'), buildSitemap(urls));
 sitemapFiles.push('sitemaps/pages.xml');
 

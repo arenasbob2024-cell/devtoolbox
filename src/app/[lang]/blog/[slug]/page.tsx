@@ -146,8 +146,6 @@ import JavascriptArrayMethods from '@/data/posts/javascript-array-methods';
 import CssGridLayoutGuide from '@/data/posts/css-grid-layout-guide';
 import ApiRateLimitingGuide from '@/data/posts/api-rate-limiting-guide';
 import SqlJoinsExplained from '@/data/posts/sql-joins-explained';
-import PrismaVsDrizzle2026 from '@/data/posts/prisma-vs-drizzle-2026';
-import CronExpressionCompleteGuide from '@/data/posts/cron-expression-complete-guide';
 import ReactHooksGuide from '@/data/posts/react-hooks-guide';
 import PythonVsJavascript from '@/data/posts/python-vs-javascript';
 import GraphqlVsRestApi from '@/data/posts/graphql-vs-rest-api';
@@ -640,8 +638,6 @@ const postComponents: Record<string, React.ComponentType<{ lang: string }>> = {
   'api-rate-limiting-guide': ApiRateLimitingGuide,
   'sql-joins-explained': SqlJoinsExplained,
   'react-hooks-guide': ReactHooksGuide,
-  'prisma-vs-drizzle-2026': PrismaVsDrizzle2026,
-  'cron-expression-complete-guide': CronExpressionCompleteGuide,
   'python-vs-javascript': PythonVsJavascript,
   'graphql-vs-rest-api': GraphqlVsRestApi,
   'web-performance-optimization': WebPerformanceOptimization,

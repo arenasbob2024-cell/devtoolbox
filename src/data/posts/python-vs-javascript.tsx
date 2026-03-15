@@ -164,7 +164,7 @@ Key notes:
   - Hugging Face Transformers      - Chart.js, Plotly.js
   - LangChain (LLM apps)          - LangChain.js`}</code></pre>
 
-      <h2>Job Market and Salaries (2026 Updated)</h2>
+      <h2>Job Market and Salaries (2026)</h2>
       <pre><code className="language-text">{`Job Market Overview:
 
 Category              Python                    JavaScript
@@ -252,75 +252,6 @@ Once you learn one well, picking up the other is much faster.`}</code></pre>
    Storefront: Next.js (JavaScript)
    ML Engine:  Python (scikit-learn/PyTorch)
    API:        GraphQL gateway`}</code></pre>
-
-
-      <h2>What&apos;s New in 2026</h2>
-
-      <h3>Python 3.13+: Free-Threaded Mode (No GIL)</h3>
-      <p>
-        Python 3.13 introduced experimental free-threaded mode, removing the Global Interpreter Lock
-        (GIL). This means Python can now utilize multiple CPU cores for true parallel execution. While
-        still experimental in 3.13, Python 3.14 (releasing mid-2026) will improve stability and
-        performance of this mode. This is the biggest change to CPython in its history.
-      </p>
-      <pre><code className="language-python">{`# Python 3.13+ free-threaded mode
-# Run with: python3.13t script.py
-import threading
-import time
-
-def cpu_intensive(n):
-    """Now actually runs in parallel!"""
-    total = 0
-    for i in range(n):
-        total += i * i
-    return total
-
-# True parallel execution (no GIL!)
-threads = [
-    threading.Thread(target=cpu_intensive, args=(10_000_000,))
-    for _ in range(4)
-]
-for t in threads: t.start()
-for t in threads: t.join()
-# ~4x faster than GIL-locked Python on 4 cores`}</code></pre>
-
-      <h3>Node.js 22 LTS &amp; Beyond</h3>
-      <p>
-        Node.js 22 (LTS since October 2024) brought stable features like <code>require()</code> for
-        ES modules, a built-in test runner, and enhanced <code>--watch</code> mode. The JavaScript
-        runtime landscape now includes Node.js, Deno 2.0 (with Node.js compatibility), and Bun 1.x
-        as production-ready choices.
-      </p>
-      <pre><code className="language-javascript">{`// Node.js 22+ features
-// 1. require() now works with ES modules
-const { useState } = require('react');
-
-// 2. Built-in test runner (stable)
-import { test, describe, it } from 'node:test';
-import assert from 'node:assert';
-
-describe('math', () => {
-  it('adds numbers', () => {
-    assert.strictEqual(1 + 1, 2);
-  });
-});
-
-// 3. Built-in .env support
-// node --env-file=.env app.js
-
-// 4. Enhanced glob support
-import { glob } from 'node:fs/promises';
-for await (const file of glob('src/**/*.ts')) {
-  console.log(file);
-}`}</code></pre>
-
-      <h3>AI/LLM Development: Both Languages Thrive</h3>
-      <p>
-        In 2026, AI/LLM development uses both languages heavily. Python dominates model training and
-        fine-tuning with PyTorch, Hugging Face, and vLLM. JavaScript dominates AI-powered web apps
-        with the Vercel AI SDK, LangChain.js, and edge-deployed inference. The typical AI startup
-        stack uses Python for the ML backend and JavaScript/TypeScript for the product layer.
-      </p>
 
       <h2>Frequently Asked Questions</h2>
 

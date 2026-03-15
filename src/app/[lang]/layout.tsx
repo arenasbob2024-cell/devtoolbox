@@ -19,8 +19,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export async function generateStaticParams() {
-  // Only pre-render 'en' at build time; other locales use ISR (on-demand)
-  return [{ lang: 'en' }];
+  // Pre-render all locales at build time for better SEO indexing
+  return i18n.locales.map((lang) => ({ lang }));
 }
 
 export const viewport: Viewport = {
