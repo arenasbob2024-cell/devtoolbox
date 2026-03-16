@@ -15545,6 +15545,215 @@
           "a": "The tool supports all standard formats for YAML processing. Check the tool interface for specific format options."
         }
       ]
+    },
+    "toml-to-json": {
+      "name": "TOML ↔ JSON Converter",
+      "description": "Convert TOML to JSON and JSON to TOML online instantly",
+      "pageTitle": "TOML to JSON Converter - Convert JSON to TOML Online Free",
+      "pageDescription": "Free TOML to JSON converter and JSON to TOML converter. Parse TOML configuration files to JSON format instantly in your browser. No data sent to servers.",
+      "tomlToJson": "TOML → JSON",
+      "jsonToToml": "JSON → TOML",
+      "tomlPlaceholder": "Paste your TOML here...\n\n[server]\nhost = \"localhost\"\nport = 8080",
+      "jsonPlaceholder": "Paste your JSON here...\n\n{\"key\": \"value\"}",
+      "inputLabel": "TOML Input",
+      "outputLabel": "JSON Output",
+      "convertBtn": "Convert",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Paste TOML in the left panel or JSON in the right panel",
+        "Click 'TOML → JSON' or 'JSON → TOML' to convert",
+        "Copy the converted output using the copy button",
+        "Use 'Load Sample' to try with example TOML configuration"
+      ],
+      "useCasesTitle": "Common Use Cases",
+      "useCases": [
+        "Converting Cargo.toml (Rust) configurations to JSON for programmatic access",
+        "Parsing pyproject.toml (Python) to JSON for CI/CD pipelines",
+        "Migrating configuration files between TOML and JSON formats",
+        "Validating TOML syntax by converting to structured JSON"
+      ],
+      "faqTitle": "Frequently Asked Questions",
+      "faqs": [
+        {
+          "q": "What is TOML?",
+          "a": "TOML (Tom's Obvious Minimal Language) is a configuration file format designed to be easy to read. It's used by Rust (Cargo.toml), Python (pyproject.toml), and many other tools."
+        },
+        {
+          "q": "Is TOML better than JSON for config files?",
+          "a": "TOML is more human-readable with support for comments and cleaner syntax for nested structures. JSON is better for data interchange and API responses."
+        },
+        {
+          "q": "Does this tool handle nested TOML tables?",
+          "a": "Yes. The converter supports sections [section], dotted keys, arrays, strings, numbers, and booleans."
+        },
+        {
+          "q": "Is my data safe?",
+          "a": "All conversion happens in your browser. No data is sent to any server."
+        },
+        {
+          "q": "What TOML features are supported?",
+          "a": "Basic key-value pairs, sections (tables), arrays, strings (basic and literal), integers, floats, and booleans are supported."
+        }
+      ],
+      "seoTitle": "About TOML and JSON Conversion",
+      "seoContent": "TOML (Tom's Obvious Minimal Language) is a popular configuration file format used by Rust (Cargo.toml), Python (pyproject.toml), Hugo, and many developer tools. This free online TOML to JSON converter parses TOML files into structured JSON and converts JSON back to TOML format. All processing runs entirely in your browser for maximum privacy and speed."
+    },
+    "ini-to-json": {
+      "name": "INI ↔ JSON Converter",
+      "description": "Convert INI config files to JSON and JSON to INI online",
+      "pageTitle": "INI to JSON Converter - Parse INI Config Files Online Free",
+      "pageDescription": "Free INI to JSON converter. Parse INI configuration files with sections and key-value pairs to JSON format. Convert JSON back to INI. Browser-based, no upload needed.",
+      "iniToJson": "INI → JSON",
+      "jsonToIni": "JSON → INI",
+      "iniPlaceholder": "Paste your INI config here...\n\n[section]\nkey=value",
+      "jsonPlaceholder": "Paste your JSON here...\n\n{\"section\": {\"key\": \"value\"}}",
+      "inputLabel": "INI Input",
+      "outputLabel": "JSON Output",
+      "convertBtn": "Convert",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Paste INI content in the left panel or JSON in the right panel",
+        "Click 'INI → JSON' or 'JSON → INI' to convert",
+        "Copy the converted output using the copy button",
+        "Use 'Load Sample' to try with example INI configuration"
+      ],
+      "useCasesTitle": "Common Use Cases",
+      "useCases": [
+        "Converting php.ini or my.cnf configurations to JSON for automation",
+        "Parsing Windows .ini files for migration to modern config formats",
+        "Extracting structured data from legacy INI-based configurations",
+        "Generating INI config files from JSON data sources"
+      ],
+      "faqTitle": "Frequently Asked Questions",
+      "faqs": [
+        {
+          "q": "What is an INI file?",
+          "a": "INI (Initialization) files are simple text-based configuration files with sections in [brackets] and key=value pairs. They're used by PHP, MySQL, Windows, and many applications."
+        },
+        {
+          "q": "Does this handle INI sections?",
+          "a": "Yes. Sections like [database] are converted to nested JSON objects. Keys outside any section become top-level properties."
+        },
+        {
+          "q": "Are comments preserved?",
+          "a": "Comments (lines starting with ; or #) are ignored during parsing, as JSON doesn't support comments."
+        },
+        {
+          "q": "Does it handle data types?",
+          "a": "Yes. The parser automatically detects numbers, booleans (true/false), and strings. Quoted values are treated as strings."
+        },
+        {
+          "q": "Is my data safe?",
+          "a": "Absolutely. All parsing happens in your browser. No data is sent to any server."
+        }
+      ],
+      "seoTitle": "About INI and JSON Conversion",
+      "seoContent": "INI (Initialization) files are one of the oldest and simplest configuration formats, widely used by PHP (php.ini), MySQL (my.cnf), Windows applications, and many legacy systems. This free online INI to JSON converter parses INI sections and key-value pairs into structured JSON, and can convert JSON back to INI format. Processing runs entirely in your browser."
+    },
+    "ulid-generator": {
+      "name": "ULID Generator",
+      "description": "Generate ULIDs - Universally Unique Lexicographically Sortable Identifiers",
+      "pageTitle": "ULID Generator - Generate Sortable Unique IDs Online Free",
+      "pageDescription": "Free ULID generator. Create Universally Unique Lexicographically Sortable Identifiers online. Decode ULID timestamps. Better than UUID for sorted data.",
+      "generateBtn": "Generate ULIDs",
+      "countLabel": "Count",
+      "lowercaseLabel": "Lowercase",
+      "decodeTitle": "Decode ULID Timestamp",
+      "decodePlaceholder": "Paste a ULID to decode its timestamp...",
+      "decodeBtn": "Decode",
+      "inputLabel": "ULID Output",
+      "outputLabel": "Generated ULIDs",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Set the number of ULIDs to generate (1-100)",
+        "Click 'Generate ULIDs' to create new identifiers",
+        "Copy individual ULIDs or all at once",
+        "Paste a ULID in the decode section to extract its timestamp"
+      ],
+      "useCasesTitle": "Common Use Cases",
+      "useCases": [
+        "Database primary keys that sort chronologically",
+        "Distributed systems requiring sortable unique identifiers",
+        "Event logging with time-ordered IDs",
+        "Replacing UUIDs when lexicographic sorting is needed"
+      ],
+      "faqTitle": "Frequently Asked Questions",
+      "faqs": [
+        {
+          "q": "What is a ULID?",
+          "a": "A ULID (Universally Unique Lexicographically Sortable Identifier) is a 26-character, 128-bit identifier that encodes a timestamp and random data. ULIDs sort naturally by creation time."
+        },
+        {
+          "q": "ULID vs UUID - which should I use?",
+          "a": "Use ULID when you need time-sorted IDs (databases, logs). Use UUID when you need maximum compatibility. ULIDs are URL-safe and more compact than UUIDs."
+        },
+        {
+          "q": "Are ULIDs truly unique?",
+          "a": "Yes. ULIDs combine a 48-bit millisecond timestamp with 80 bits of randomness, making collisions virtually impossible."
+        },
+        {
+          "q": "Can I extract the timestamp from a ULID?",
+          "a": "Yes! The first 10 characters encode the creation timestamp. Use the decode section below the generator to extract it."
+        },
+        {
+          "q": "What encoding do ULIDs use?",
+          "a": "ULIDs use Crockford's Base32 encoding (0-9, A-Z excluding I, L, O, U), which is URL-safe and case-insensitive."
+        }
+      ],
+      "seoTitle": "About ULID (Universally Unique Lexicographically Sortable Identifier)",
+      "seoContent": "ULID (Universally Unique Lexicographically Sortable Identifier) is a modern alternative to UUID that provides 128-bit unique identifiers with built-in timestamp sorting. Each ULID encodes a millisecond-precision timestamp in the first 48 bits and 80 bits of cryptographic randomness, formatted as a 26-character Crockford Base32 string. This makes ULIDs ideal for database primary keys, distributed systems, and any use case requiring chronologically sortable unique identifiers."
+    },
+    "plist-to-json": {
+      "name": "Plist ↔ JSON Converter",
+      "description": "Convert Apple Property List (plist) XML to JSON and back",
+      "pageTitle": "Plist to JSON Converter - Apple Property List Parser Online Free",
+      "pageDescription": "Free Plist to JSON converter. Parse Apple Property List XML files to JSON format. Convert JSON to plist XML. View and edit Info.plist files in your browser.",
+      "plistToJson": "Plist → JSON",
+      "jsonToPlist": "JSON → Plist",
+      "plistPlaceholder": "Paste your Apple Plist XML here...\n\n<?xml version=\"1.0\"?>\n<plist version=\"1.0\">\n<dict>...</dict>\n</plist>",
+      "jsonPlaceholder": "Paste your JSON here...\n\n{\"key\": \"value\"}",
+      "inputLabel": "Plist Input",
+      "outputLabel": "JSON Output",
+      "convertBtn": "Convert",
+      "howToUseTitle": "How to Use",
+      "howToUseSteps": [
+        "Paste Apple Plist XML in the left panel or JSON in the right panel",
+        "Click 'Plist → JSON' or 'JSON → Plist' to convert",
+        "Copy the converted output using the copy button",
+        "Use 'Load Sample' to try with an example Info.plist file"
+      ],
+      "useCasesTitle": "Common Use Cases",
+      "useCases": [
+        "Viewing and editing iOS/macOS Info.plist files as JSON",
+        "Converting Xcode project settings to a readable format",
+        "Parsing macOS preference plist files for automation scripts",
+        "Generating plist files from JSON for Apple development workflows"
+      ],
+      "faqTitle": "Frequently Asked Questions",
+      "faqs": [
+        {
+          "q": "What is a plist file?",
+          "a": "A Property List (plist) is Apple's standard format for storing configuration data. It uses XML to represent dictionaries, arrays, strings, numbers, booleans, dates, and binary data."
+        },
+        {
+          "q": "Where are plist files used?",
+          "a": "Plist files are used throughout Apple's ecosystem: Info.plist for app metadata, preference files in ~/Library/Preferences, launchd configurations, and Xcode project settings."
+        },
+        {
+          "q": "Does this handle all plist types?",
+          "a": "Yes. The converter supports dict, array, string, integer, real, boolean (true/false), date, and data elements."
+        },
+        {
+          "q": "Can I edit binary plist files?",
+          "a": "This tool handles XML plist format. Binary plists need to be converted to XML first using 'plutil -convert xml1' on macOS."
+        },
+        {
+          "q": "Is my data safe?",
+          "a": "All conversion happens in your browser using the DOMParser API. No data is sent to any server."
+        }
+      ],
+      "seoTitle": "About Apple Property List (Plist) and JSON Conversion",
+      "seoContent": "Apple Property List (plist) is the standard configuration format used across iOS and macOS development. Info.plist files define app metadata, entitlements, and settings. This free online plist to JSON converter parses XML plist files into readable JSON and can generate valid plist XML from JSON data. Built with the browser's native DOMParser for fast, private conversion without uploading your files."
     }
   },
   "footer": {
