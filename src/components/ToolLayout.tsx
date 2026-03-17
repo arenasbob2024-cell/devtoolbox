@@ -8,7 +8,6 @@ import NewsletterSignup from './NewsletterSignup';
 import SupportButton from './SupportButton';
 import ToolRating from './ugc/ToolRating';
 import ShareBar from './ugc/ShareBar';
-import FeedbackWidget from './ugc/FeedbackWidget';
 import AffiliateCard from './AffiliateCard';
 
 interface ToolLayoutProps {
@@ -60,7 +59,6 @@ export default function ToolLayout({ title, description, children, toolId }: Too
             {children}
           </div>
           <ShareBar url={`https://viadreams.cc/${lang}/tools/${toolId}`} title={title} lang={lang} />
-          <FeedbackWidget toolId={toolId} lang={lang} />
         </div>
 
         {/* Sidebar */}

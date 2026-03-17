@@ -3,7 +3,7 @@ import { Inter, JetBrains_Mono } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { LangProvider } from '@/i18n/LangContext';
-import { getDictionary } from '@/i18n/getDictionary';
+import { getUIDictionary } from '@/i18n/getDictionary';
 import { i18n, type Locale } from '@/i18n/config';
 
 const inter = Inter({
@@ -36,7 +36,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
-  const dict = await getDictionary(lang);
+  const dict = await getUIDictionary(lang);
 
   return {
     title: {
@@ -90,7 +90,7 @@ export default async function LangLayout({
 }) {
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
-  const dict = await getDictionary(lang);
+  const dict = await getUIDictionary(lang);
 
   return (
     <html lang={lang} className={`${inter.variable} ${jetbrainsMono.variable}`}>

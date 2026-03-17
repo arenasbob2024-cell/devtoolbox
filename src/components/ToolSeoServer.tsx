@@ -1,6 +1,8 @@
-import { getDictionary, type Dictionary } from '@/i18n/getDictionary';
+import { getToolEntry } from '@/i18n/getDictionary';
 import { type Locale } from '@/i18n/config';
 import { tools } from '@/lib/tools';
+import { ToolDictProvider } from '@/i18n/ToolDictContext';
+import CommentSection from './CommentSection';
 
 interface ToolSeoServerProps {
   toolId: string;
@@ -10,20 +12,14 @@ interface ToolSeoServerProps {
 
 // Helper function to generate deterministic but varied ratings based on toolId
 function getToolRatings(toolId: string) {
-  // Simple hash function to generate consistent values per toolId
   let hash = 0;
   for (let i = 0; i < toolId.length; i++) {
     const char = toolId.charCodeAt(i);
     hash = ((hash << 5) - hash) + char;
-    hash = hash & hash; // Convert to 32bit integer
+    hash = hash & hash;
   }
-
-  // Generate ratingValue between 4.6 and 4.9
   const ratingValue = 4.6 + ((Math.abs(hash) % 40) / 100);
-
-  // Generate ratingCount between 100 and 300
   const ratingCount = 100 + (Math.abs(hash) % 201);
-
   return {
     ratingValue: parseFloat(ratingValue.toFixed(1)),
     ratingCount: Math.floor(ratingCount),
@@ -31,8 +27,7 @@ function getToolRatings(toolId: string) {
 }
 
 export default async function ToolSeoServer({ toolId, lang, children }: ToolSeoServerProps) {
-  const dict = await getDictionary(lang);
-  const toolDict = dict.tools[toolId as keyof typeof dict.tools] as Record<string, unknown> | undefined;
+  const toolDict = await getToolEntry(lang, toolId);
   const currentTool = tools.find(t => t.id === toolId);
 
   if (!toolDict) return <>{children}</>;
@@ -43,18 +38,17 @@ export default async function ToolSeoServer({ toolId, lang, children }: ToolSeoS
   const toolName = (toolDict.name as string) || toolId;
   const { ratingValue, ratingCount } = getToolRatings(toolId);
 
-  // Breadcrumb Schema
+  // Breadcrumb Schema — use basic strings to avoid loading full dict
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: dict.common.home, item: `https://viadreams.cc/${lang}` },
-      { '@type': 'ListItem', position: 2, name: dict.common.allTools, item: `https://viadreams.cc/${lang}/tools` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `https://viadreams.cc/${lang}` },
+      { '@type': 'ListItem', position: 2, name: 'Tools', item: `https://viadreams.cc/${lang}/tools` },
       { '@type': 'ListItem', position: 3, name: title, item: toolUrl },
     ],
   };
 
-  // WebApplication Schema
   const appSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebApplication',
@@ -71,30 +65,24 @@ export default async function ToolSeoServer({ toolId, lang, children }: ToolSeoS
     keywords: currentTool?.keywords.join(', ') || '',
   };
 
-  // SoftwareApplication Schema
   const softwareAppSchema = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     name: toolName,
-    description: description,
+    description,
     url: toolUrl,
     applicationCategory: 'DeveloperApplication',
     operatingSystem: 'Web Browser',
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'USD',
-    },
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
     aggregateRating: {
       '@type': 'AggregateRating',
-      ratingValue: ratingValue,
-      ratingCount: ratingCount,
+      ratingValue,
+      ratingCount,
       bestRating: '5',
       worstRating: '1',
     },
   };
 
-  // HowTo Schema
   const steps = toolDict.howToUseSteps as string[] | undefined;
   const howToSchema = steps ? {
     '@context': 'https://schema.org',
@@ -107,7 +95,6 @@ export default async function ToolSeoServer({ toolId, lang, children }: ToolSeoS
     })),
   } : null;
 
-  // FAQ Schema
   const faqs = toolDict.faqs as { q: string; a: string }[] | undefined;
   const faqSchema = faqs ? {
     '@context': 'https://schema.org',
@@ -126,7 +113,7 @@ export default async function ToolSeoServer({ toolId, lang, children }: ToolSeoS
 
   return (
     <>
-      {/* JSON-LD Structured Data — Server Rendered */}
+      {/* JSON-LD Structured Data */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(appSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppSchema) }} />
@@ -137,8 +124,10 @@ export default async function ToolSeoServer({ toolId, lang, children }: ToolSeoS
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       )}
 
-      {/* Tool UI (client rendered page.tsx) */}
-      {children}
+      {/* Inject tool dict into client context — only this tool's data, not all 373 */}
+      <ToolDictProvider toolsData={{ [toolId]: toolDict }}>
+        {children}
+      </ToolDictProvider>
 
       {/* HowTo & Use Cases — Server Rendered */}
       {steps && useCases && (
@@ -172,7 +161,7 @@ export default async function ToolSeoServer({ toolId, lang, children }: ToolSeoS
         </div>
       )}
 
-      {/* FAQ — Server Rendered, all answers visible in initial HTML */}
+      {/* FAQ — Server Rendered */}
       {faqs && (
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
           <div style={{ marginTop: 30 }}>
@@ -200,6 +189,9 @@ export default async function ToolSeoServer({ toolId, lang, children }: ToolSeoS
           </div>
         </div>
       )}
+
+      {/* User Comment Section */}
+      <CommentSection toolId={toolId} />
     </>
   );
 }

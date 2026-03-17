@@ -15,6 +15,12 @@
 
 # environment
 .env
+.env.local
+
+# SQLite database
+/data/*.db
+/data/*.db-shm
+/data/*.db-wal
 
 # next.js
 /.next/

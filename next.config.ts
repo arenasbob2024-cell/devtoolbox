@@ -3,6 +3,8 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   // 跳过 TypeScript 和 ESLint 检查以减少构建内存
   typescript: { ignoreBuildErrors: true },
+  // better-sqlite3 是原生模块，只在服务端运行，不打包进客户端
+  serverExternalPackages: ['better-sqlite3'],
   // ==========================================
   // 图片优化配置
   // ==========================================

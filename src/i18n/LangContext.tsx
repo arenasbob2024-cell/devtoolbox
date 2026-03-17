@@ -2,11 +2,12 @@
 
 import { createContext, useContext } from 'react';
 import type { Locale } from './config';
-import type { Dictionary } from './getDictionary';
+import type { Dictionary, UIDictionary } from './getDictionary';
+import { ToolDictContext } from './ToolDictContext';
 
 interface LangContextType {
   lang: Locale;
-  dict: Dictionary;
+  dict: UIDictionary & { tools: Record<string, unknown> };
 }
 
 const LangContext = createContext<LangContextType | null>(null);
@@ -17,20 +18,42 @@ export function LangProvider({
   children,
 }: {
   lang: Locale;
-  dict: Dictionary;
+  dict: UIDictionary;
   children: React.ReactNode;
 }) {
+  const value: LangContextType = {
+    lang,
+    dict: { ...dict, tools: {} },
+  };
   return (
-    <LangContext.Provider value={{ lang, dict }}>
+    <LangContext.Provider value={value}>
       {children}
     </LangContext.Provider>
   );
 }
 
+/**
+ * Returns lang + dict.
+ * On tool pages, dict.tools is automatically merged with tool-specific data
+ * injected by ToolSeoServer via ToolDictContext.
+ */
 export function useLang() {
-  const context = useContext(LangContext);
-  if (!context) {
-    throw new Error('useLang must be used within a LangProvider');
+  const ctx = useContext(LangContext);
+  if (!ctx) throw new Error('useLang must be used within a LangProvider');
+
+  const toolCtx = useContext(ToolDictContext);
+  if (toolCtx && Object.keys(toolCtx.toolsData).length > 0) {
+    return {
+      lang: ctx.lang,
+      dict: {
+        ...ctx.dict,
+        tools: { ...ctx.dict.tools, ...toolCtx.toolsData },
+      } as unknown as Dictionary,
+    };
   }
-  return context;
+
+  return {
+    lang: ctx.lang,
+    dict: ctx.dict as unknown as Dictionary,
+  };
 }
