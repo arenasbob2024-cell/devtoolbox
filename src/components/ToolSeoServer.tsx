@@ -1,7 +1,7 @@
-import { getToolEntry } from '@/i18n/getDictionary';
+import { getUIDictionary, getToolEntry } from '@/i18n/getDictionary';
 import { type Locale } from '@/i18n/config';
 import { tools } from '@/lib/tools';
-import { ToolDictProvider } from '@/i18n/ToolDictContext';
+import { LangProvider } from '@/i18n/LangContext';
 import CommentSection from './CommentSection';
 
 interface ToolSeoServerProps {
@@ -27,10 +27,22 @@ function getToolRatings(toolId: string) {
 }
 
 export default async function ToolSeoServer({ toolId, lang, children }: ToolSeoServerProps) {
-  const toolDict = await getToolEntry(lang, toolId);
+  const [uiDict, toolDict] = await Promise.all([
+    getUIDictionary(lang),
+    getToolEntry(lang, toolId),
+  ]);
   const currentTool = tools.find(t => t.id === toolId);
 
-  if (!toolDict) return <>{children}</>;
+  // Build a dict with UI + only this tool's data for the nested LangProvider
+  const toolPageDict = { ...uiDict, tools: { [toolId]: toolDict || {} } };
+
+  if (!toolDict) {
+    return (
+      <LangProvider lang={lang} dict={toolPageDict}>
+        {children}
+      </LangProvider>
+    );
+  }
 
   const toolUrl = `https://viadreams.cc/${lang}/tools/${toolId}`;
   const title = (toolDict.pageTitle as string) || (toolDict.name as string) || toolId;
@@ -38,13 +50,13 @@ export default async function ToolSeoServer({ toolId, lang, children }: ToolSeoS
   const toolName = (toolDict.name as string) || toolId;
   const { ratingValue, ratingCount } = getToolRatings(toolId);
 
-  // Breadcrumb Schema — use basic strings to avoid loading full dict
+  // Breadcrumb Schema
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: `https://viadreams.cc/${lang}` },
-      { '@type': 'ListItem', position: 2, name: 'Tools', item: `https://viadreams.cc/${lang}/tools` },
+      { '@type': 'ListItem', position: 1, name: uiDict.common?.home || 'Home', item: `https://viadreams.cc/${lang}` },
+      { '@type': 'ListItem', position: 2, name: uiDict.common?.allTools || 'Tools', item: `https://viadreams.cc/${lang}/tools` },
       { '@type': 'ListItem', position: 3, name: title, item: toolUrl },
     ],
   };
@@ -124,10 +136,10 @@ export default async function ToolSeoServer({ toolId, lang, children }: ToolSeoS
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       )}
 
-      {/* Inject tool dict into client context — only this tool's data, not all 373 */}
-      <ToolDictProvider toolsData={{ [toolId]: toolDict }}>
+      {/* Nested LangProvider: overrides parent with UI + current tool data */}
+      <LangProvider lang={lang} dict={toolPageDict}>
         {children}
-      </ToolDictProvider>
+      </LangProvider>
 
       {/* HowTo & Use Cases — Server Rendered */}
       {steps && useCases && (
