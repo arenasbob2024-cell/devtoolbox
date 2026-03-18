@@ -1,7 +1,6 @@
 import { getUIDictionary, getToolEntry } from '@/i18n/getDictionary';
 import { type Locale } from '@/i18n/config';
 import { tools } from '@/lib/tools';
-import { LangProvider } from '@/i18n/LangContext';
 import CommentSection from './CommentSection';
 
 interface ToolSeoServerProps {
@@ -33,16 +32,7 @@ export default async function ToolSeoServer({ toolId, lang, children }: ToolSeoS
   ]);
   const currentTool = tools.find(t => t.id === toolId);
 
-  // Build a dict with UI + only this tool's data for the nested LangProvider
-  const toolPageDict = { ...uiDict, tools: { [toolId]: toolDict || {} } };
-
-  if (!toolDict) {
-    return (
-      <LangProvider lang={lang} dict={toolPageDict}>
-        {children}
-      </LangProvider>
-    );
-  }
+  if (!toolDict) return <>{children}</>;
 
   const toolUrl = `https://viadreams.cc/${lang}/tools/${toolId}`;
   const title = (toolDict.pageTitle as string) || (toolDict.name as string) || toolId;
@@ -136,10 +126,8 @@ export default async function ToolSeoServer({ toolId, lang, children }: ToolSeoS
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       )}
 
-      {/* Nested LangProvider: overrides parent with UI + current tool data */}
-      <LangProvider lang={lang} dict={toolPageDict}>
-        {children}
-      </LangProvider>
+      {/* Tool UI (client rendered page.tsx) */}
+      {children}
 
       {/* HowTo & Use Cases — Server Rendered */}
       {steps && useCases && (

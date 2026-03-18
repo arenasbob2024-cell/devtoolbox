@@ -6,8 +6,7 @@ import type { Dictionary } from './getDictionary';
 
 interface LangContextType {
   lang: Locale;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  dict: any;
+  dict: Dictionary;
 }
 
 const LangContext = createContext<LangContextType | null>(null);
@@ -18,8 +17,7 @@ export function LangProvider({
   children,
 }: {
   lang: Locale;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  dict: any;
+  dict: Dictionary;
   children: React.ReactNode;
 }) {
   return (
@@ -34,5 +32,5 @@ export function useLang() {
   if (!context) {
     throw new Error('useLang must be used within a LangProvider');
   }
-  return context as { lang: Locale; dict: Dictionary };
+  return context;
 }
