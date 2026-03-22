@@ -1,13 +1,12 @@
 import type { Metadata } from 'next';
-import { getDictionary } from '@/i18n/getDictionary';
+import { getToolEntry } from '@/i18n/getDictionary';
 import ToolSeoServer from '@/components/ToolSeoServer';
 
 type Props = { params: Promise<{ lang: string }>; children: React.ReactNode };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
-  const dict = await getDictionary(lang);
-  const t = dict.tools?.['dockerfile-linter'];
+  const t = await getToolEntry(lang, 'dockerfile-linter');
   return {
     title: t?.pageTitle || 'Dockerfile Linter',
     description: t?.pageDescription || 'Lint Dockerfiles for best practices and common mistakes',

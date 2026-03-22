@@ -1,13 +1,12 @@
 import type { Metadata } from 'next';
-import { getDictionary } from '@/i18n/getDictionary';
+import { getToolEntry } from '@/i18n/getDictionary';
 import ToolSeoServer from '@/components/ToolSeoServer';
 
 type Props = { params: Promise<{ lang: string }>; children: React.ReactNode };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
-  const dict = await getDictionary(lang);
-  const t = dict.tools?.['helm-chart-validator'];
+  const t = await getToolEntry(lang, 'helm-chart-validator');
   return {
     title: t?.pageTitle || 'Helm Chart Validator',
     description: t?.pageDescription || 'Validate Helm chart structure, values.yaml and Chart.yaml files',

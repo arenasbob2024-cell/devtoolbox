@@ -3,7 +3,7 @@ import { Inter, JetBrains_Mono } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { LangProvider } from '@/i18n/LangContext';
-import { getDictionary } from '@/i18n/getDictionary';
+import { getDictionary, getUIDictionary } from '@/i18n/getDictionary';
 import { i18n, type Locale } from '@/i18n/config';
 
 const inter = Inter({
@@ -36,19 +36,19 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
-  const dict = await getDictionary(lang);
+  const ui = await getUIDictionary(lang);
 
   return {
     title: {
-      default: dict.meta.homeTitle,
+      default: ui.meta.homeTitle,
       template: '%s | DevToolBox',
     },
-    description: dict.meta.homeDescription,
+    description: ui.meta.homeDescription,
     keywords: ['developer tools', 'json formatter', 'base64 encoder', 'uuid generator', 'hash generator', 'url encoder', 'online tools', 'free tools', 'web developer', 'regex tester'],
     authors: [{ name: 'DevToolBox' }],
     openGraph: {
-      title: dict.meta.homeTitle,
-      description: dict.meta.homeDescription,
+      title: ui.meta.homeTitle,
+      description: ui.meta.homeDescription,
       url: `https://viadreams.cc/${lang}`,
       type: 'website',
       locale: { en: 'en_US', fr: 'fr_FR', de: 'de_DE', it: 'it_IT', es: 'es_ES', pt: 'pt_PT', nl: 'nl_NL', pl: 'pl_PL', sv: 'sv_SE', no: 'nb_NO', zh: 'zh_CN', ja: 'ja_JP', ko: 'ko_KR', id: 'id_ID', th: 'th_TH' }[lang] || 'en_US',
@@ -57,8 +57,8 @@ export async function generateMetadata({
     },
     twitter: {
       card: 'summary_large_image',
-      title: dict.meta.homeTitle,
-      description: dict.meta.homeDescription,
+      title: ui.meta.homeTitle,
+      description: ui.meta.homeDescription,
       images: ['https://viadreams.cc/og-image.png'],
     },
     robots: {

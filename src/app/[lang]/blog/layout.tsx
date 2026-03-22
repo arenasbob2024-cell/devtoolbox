@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getDictionary } from '@/i18n/getDictionary';
+import { getUIDictionary } from '@/i18n/getDictionary';
 import { i18n, type Locale } from '@/i18n/config';
 
 export async function generateMetadata({
@@ -9,7 +9,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
-  const dict = await getDictionary(lang);
+  const dict = await getUIDictionary(lang);
   const blog = (dict as Record<string, unknown>).blog as Record<string, string> | undefined;
   const title = blog?.title || 'DevToolBox Blog';
   const description = blog?.description || 'Developer guides, tutorials, and best practices';

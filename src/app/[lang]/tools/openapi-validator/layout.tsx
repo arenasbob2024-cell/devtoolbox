@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { i18n, type Locale } from '@/i18n/config';
-import { getDictionary } from '@/i18n/getDictionary';
+import { getToolEntry } from '@/i18n/getDictionary';
 import ToolSeoServer from '@/components/ToolSeoServer';
 
 const TOOL_ID = 'openapi-validator';
@@ -8,8 +8,7 @@ const TOOL_ID = 'openapi-validator';
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
   const validLang = i18n.locales.includes(lang as Locale) ? lang : 'en';
-  const dict = await getDictionary(validLang as Locale);
-  const t = dict.tools?.[TOOL_ID] || { pageTitle: 'OpenAPI Validator', pageDescription: 'Validate OpenAPI/Swagger specification files' };
+  const t = (await getToolEntry(validLang as Locale, TOOL_ID)) || { pageTitle: 'OpenAPI Validator', pageDescription: 'Validate OpenAPI/Swagger specification files' };
   const canonical = `https://viadreams.cc/${validLang}/tools/${TOOL_ID}`;
   return {
     title: t.pageTitle,
@@ -26,7 +25,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 export default async function Layout({ children, params }: { children: React.ReactNode; params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const validLang = i18n.locales.includes(lang as Locale) ? lang : 'en';
-  const dict = await getDictionary(validLang as Locale);
-  const t = dict.tools?.[TOOL_ID] || { pageTitle: 'OpenAPI Validator', pageDescription: 'Validate OpenAPI/Swagger specification files' };
+  const t = (await getToolEntry(validLang as Locale, TOOL_ID)) || { pageTitle: 'OpenAPI Validator', pageDescription: 'Validate OpenAPI/Swagger specification files' };
   return <ToolSeoServer toolId={TOOL_ID} lang={validLang} title={t.pageTitle} description={t.pageDescription}>{children}</ToolSeoServer>;
 }

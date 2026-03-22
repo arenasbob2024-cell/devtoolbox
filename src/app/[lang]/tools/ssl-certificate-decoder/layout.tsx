@@ -1,13 +1,12 @@
 import type { Metadata } from 'next';
-import { getDictionary } from '@/i18n/getDictionary';
+import { getToolEntry } from '@/i18n/getDictionary';
 import ToolSeoServer from '@/components/ToolSeoServer';
 
 type Props = { params: Promise<{ lang: string }>; children: React.ReactNode };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
-  const dict = await getDictionary(lang);
-  const t = dict.tools?.['ssl-certificate-decoder'];
+  const t = await getToolEntry(lang, 'ssl-certificate-decoder');
   return {
     title: t?.pageTitle || 'SSL Certificate Decoder',
     description: t?.pageDescription || 'Decode and inspect SSL/TLS certificates, view expiry and chain details',

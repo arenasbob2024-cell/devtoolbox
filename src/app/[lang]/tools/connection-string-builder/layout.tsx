@@ -1,13 +1,12 @@
 import type { Metadata } from 'next';
-import { getDictionary } from '@/i18n/getDictionary';
+import { getToolEntry } from '@/i18n/getDictionary';
 import ToolSeoServer from '@/components/ToolSeoServer';
 
 type Props = { params: Promise<{ lang: string }>; children: React.ReactNode };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
-  const dict = await getDictionary(lang);
-  const t = dict.tools?.['connection-string-builder'];
+  const t = await getToolEntry(lang, 'connection-string-builder');
   return {
     title: t?.pageTitle || 'Connection String Builder',
     description: t?.pageDescription || t?.description || 'Build database connection strings for MySQL, PostgreSQL, MongoDB and more',
