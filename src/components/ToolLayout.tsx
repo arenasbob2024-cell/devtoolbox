@@ -9,6 +9,7 @@ import SupportButton from './SupportButton';
 import ToolRating from './ugc/ToolRating';
 import ShareBar from './ugc/ShareBar';
 import AffiliateCard from './AffiliateCard';
+import CommentSection from './CommentSection';
 
 interface ToolLayoutProps {
   title: string;
@@ -59,6 +60,7 @@ export default function ToolLayout({ title, description, children, toolId }: Too
             {children}
           </div>
           <ShareBar url={`https://viadreams.cc/${lang}/tools/${toolId}`} title={title} lang={lang} />
+          <CommentSection toolId={toolId} />
         </div>
 
         {/* Sidebar */}

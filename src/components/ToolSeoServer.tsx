@@ -1,7 +1,6 @@
 import { getUIDictionary, getToolEntry } from '@/i18n/getDictionary';
 import { type Locale } from '@/i18n/config';
 import { tools } from '@/lib/tools';
-import CommentSection from './CommentSection';
 
 interface ToolSeoServerProps {
   toolId: string;
@@ -190,8 +189,6 @@ export default async function ToolSeoServer({ toolId, lang, children }: ToolSeoS
         </div>
       )}
 
-      {/* User Comment Section */}
-      <CommentSection toolId={toolId} />
     </>
   );
 }
