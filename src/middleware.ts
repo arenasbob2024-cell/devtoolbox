@@ -25,10 +25,11 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const host = request.headers.get('host') || '';
 
-  // Skip for static files, API routes, Next.js internals
+  // Skip for static files, API routes, admin, Next.js internals
   if (
     pathname.startsWith('/_next') ||
     pathname.startsWith('/api') ||
+    pathname.startsWith('/admin') ||
     pathname.includes('.') ||
     pathname === '/favicon.ico'
   ) {
@@ -56,5 +57,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!_next|api|favicon\\.ico|sitemap\\.xml|robots\\.txt|.*\\..*).*)'],
+  matcher: ['/((?!_next|api|admin|favicon\\.ico|sitemap\\.xml|robots\\.txt|.*\\..*).*)'],
 };
