@@ -5,8 +5,8 @@ import { LangProvider } from '@/i18n/LangContext';
 import HomePageClient from './HomePageClient';
 
 export async function generateStaticParams() {
-  const { i18n } = await import('@/i18n/config');
-  return i18n.locales.map((lang) => ({ lang }));
+  // Only pre-render English homepage; other locales use ISR
+  return [{ lang: 'en' }];
 }
 
 interface PageProps {

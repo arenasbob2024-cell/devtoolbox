@@ -19,8 +19,10 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export async function generateStaticParams() {
-  // Pre-render all locales at build time for better SEO indexing
-  return i18n.locales.map((lang) => ({ lang }));
+  // Only pre-render English at build time to save ~16GB disk space.
+  // Other locales use ISR (Incremental Static Regeneration) — rendered on first request and cached.
+  // This is safe for SEO: Googlebot still gets full SSR HTML for all languages.
+  return [{ lang: 'en' }];
 }
 
 export const viewport: Viewport = {

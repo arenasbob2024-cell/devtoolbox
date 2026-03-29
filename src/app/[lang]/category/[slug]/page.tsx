@@ -87,13 +87,8 @@ const categoryMeta: Record<string, Record<string, { title: string; description: 
 };
 
 export async function generateStaticParams() {
-  const params: { lang: string; slug: string }[] = [];
-  for (const lang of i18n.locales) {
-    for (const slug of validSlugs) {
-      params.push({ lang, slug });
-    }
-  }
-  return params;
+  // Only pre-render English category pages; other locales use ISR
+  return validSlugs.map(slug => ({ lang: 'en', slug }));
 }
 
 function getToolsForCategory(slug: string): Tool[] {

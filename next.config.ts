@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Standalone output: creates minimal production server, saves ~700MB (no full node_modules needed)
+  output: 'standalone',
   // 跳过 TypeScript 和 ESLint 检查以减少构建内存
   typescript: { ignoreBuildErrors: true },
   // better-sqlite3 是原生模块，只在服务端运行，不打包进客户端
