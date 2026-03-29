@@ -66,6 +66,46 @@ export default function Footer() {
           ))}
         </div>
 
+
+        {/* Browse by Category - SEO Internal Links */}
+        <div style={{ marginTop: 30, paddingTop: 20, borderTop: '1px solid var(--border-color)' }}>
+          <h4 style={{ fontSize: 13, fontWeight: 700, color: 'var(--text-primary)', marginBottom: 12, textTransform: 'uppercase', letterSpacing: 1 }}>
+            Browse by Category
+          </h4>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+            {[
+              { slug: 'json-tools', label: 'JSON Tools' },
+              { slug: 'css-tools', label: 'CSS Tools' },
+              { slug: 'converter-tools', label: 'Converters' },
+              { slug: 'encoder-decoder-tools', label: 'Encoders & Decoders' },
+              { slug: 'formatter-tools', label: 'Formatters' },
+              { slug: 'generator-tools', label: 'Generators' },
+              { slug: 'text-tools', label: 'Text Tools' },
+              { slug: 'web-tools', label: 'Web Tools' },
+              { slug: 'image-tools', label: 'Image Tools' },
+              { slug: 'security-tools', label: 'Security Tools' },
+              { slug: 'devops-tools', label: 'DevOps Tools' },
+              { slug: 'markdown-tools', label: 'Markdown Tools' },
+            ].map(cat => (
+              <Link
+                key={cat.slug}
+                href={`/${lang}/category/${cat.slug}`}
+                style={{
+                  fontSize: 12,
+                  color: 'var(--text-secondary)',
+                  textDecoration: 'none',
+                  padding: '4px 10px',
+                  borderRadius: 12,
+                  border: '1px solid var(--border-color)',
+                  transition: 'all 0.2s',
+                }}
+              >
+                {cat.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+
         <div style={{
           marginTop: 30,
           paddingTop: 20,

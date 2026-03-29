@@ -232,6 +232,53 @@ export default function HomePageClient() {
           ))}
         </div>
       </section>
+
+      {/* Category Hub Pages - SEO */}
+      <section style={{ marginTop: 60, marginBottom: 40 }}>
+        <h2 style={{ fontSize: 24, fontWeight: 700, marginBottom: 16, textAlign: 'center' }}>
+          <span className="gradient-text">{dict.home?.browseByCategoryTitle || 'Browse Tools by Category'}</span>
+        </h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: 12 }}>
+          {[
+            { slug: 'json-tools', icon: '📋', label: 'JSON Tools', count: '50+' },
+            { slug: 'css-tools', icon: '🎨', label: 'CSS Tools', count: '40+' },
+            { slug: 'converter-tools', icon: '🔄', label: 'Code Converters', count: '100+' },
+            { slug: 'encoder-decoder-tools', icon: '🔐', label: 'Encoders & Decoders', count: '40+' },
+            { slug: 'formatter-tools', icon: '✨', label: 'Code Formatters', count: '30+' },
+            { slug: 'generator-tools', icon: '⚡', label: 'Generators', count: '35+' },
+            { slug: 'text-tools', icon: '📝', label: 'Text Tools', count: '25+' },
+            { slug: 'web-tools', icon: '🌐', label: 'Web Dev Tools', count: '40+' },
+            { slug: 'image-tools', icon: '🖼️', label: 'Image & Color Tools', count: '30+' },
+            { slug: 'security-tools', icon: '🔒', label: 'Security Tools', count: '20+' },
+            { slug: 'devops-tools', icon: '🚀', label: 'DevOps Tools', count: '20+' },
+            { slug: 'markdown-tools', icon: '📑', label: 'Markdown Tools', count: '10+' },
+          ].map(cat => (
+            <Link
+              key={cat.slug}
+              href={`/${lang}/category/${cat.slug}`}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 10,
+                padding: '12px 16px',
+                borderRadius: 10,
+                border: '1px solid var(--border-color)',
+                textDecoration: 'none',
+                color: 'var(--text-primary)',
+                transition: 'all 0.2s',
+                background: 'var(--bg-secondary)',
+              }}
+            >
+              <span style={{ fontSize: 20 }}>{cat.icon}</span>
+              <div>
+                <div style={{ fontSize: 14, fontWeight: 600 }}>{cat.label}</div>
+                <div style={{ fontSize: 12, color: 'var(--text-secondary)' }}>{cat.count} tools</div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
     </div>
   );
 }

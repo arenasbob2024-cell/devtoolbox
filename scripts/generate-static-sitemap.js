@@ -124,6 +124,18 @@ for (let i = 0; i < toolPaths.length; i += TOOLS_PER_FILE) {
   sitemapFiles.push(`sitemaps/${fileName}`);
 }
 
+
+// Category hub pages
+const categorySlugs = [
+  'json-tools', 'css-tools', 'converter-tools', 'encoder-decoder-tools',
+  'formatter-tools', 'generator-tools', 'text-tools', 'web-tools',
+  'image-tools', 'security-tools', 'devops-tools', 'markdown-tools',
+];
+const categoryUrls = categorySlugs.map(slug => buildUrlEntry('/category/' + slug, 0.7, 'weekly')).join('\n');
+const categoryFileName = 'categories.xml';
+fs.writeFileSync(path.join(sitemapsDir, categoryFileName), buildSitemap(categoryUrls));
+sitemapFiles.push('sitemaps/' + categoryFileName);
+
 // Blog post sitemaps
 const POSTS_PER_FILE = 30;
 for (let i = 0; i < blogSlugs.length; i += POSTS_PER_FILE) {
@@ -139,7 +151,7 @@ for (let i = 0; i < blogSlugs.length; i += POSTS_PER_FILE) {
 fs.writeFileSync(path.join(PUBLIC_DIR, 'sitemap.xml'), buildSitemapIndex(sitemapFiles));
 
 // Summary
-const totalUrls = (2 + toolPaths.length + blogSlugs.length) * LOCALES.length;
+const totalUrls = (2 + toolPaths.length + blogSlugs.length + categorySlugs.length) * LOCALES.length;
 console.log(`Generated sitemap index + ${sitemapFiles.length} sub-sitemaps`);
 console.log(`  Tools: ${toolPaths.length}`);
 console.log(`  Blog posts: ${blogSlugs.length}`);
