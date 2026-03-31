@@ -1,6 +1,6 @@
 export const i18n = {
   defaultLocale: 'en',
-  locales: ['en', 'fr', 'de', 'it', 'es', 'pt', 'nl', 'pl', 'sv', 'no', 'zh', 'ja', 'ko', 'id', 'th'],
+  locales: ['en', 'fr', 'de', 'it', 'es', 'pt', 'zh', 'ja', 'ko'],
 } as const;
 
 export type Locale = (typeof i18n)['locales'][number];
@@ -12,15 +12,9 @@ export const localeNames: Record<Locale, string> = {
   it: 'Italiano',
   es: 'Español',
   pt: 'Português',
-  nl: 'Nederlands',
-  pl: 'Polski',
-  sv: 'Svenska',
-  no: 'Norsk',
   zh: '中文',
   ja: '日本語',
   ko: '한국어',
-  id: 'Bahasa Indonesia',
-  th: 'ไทย',
 };
 
 export const localeFlags: Record<Locale, string> = {
@@ -30,13 +24,7 @@ export const localeFlags: Record<Locale, string> = {
   it: '🇮🇹',
   es: '🇪🇸',
   pt: '🇵🇹',
-  nl: '🇳🇱',
-  pl: '🇵🇱',
-  sv: '🇸🇪',
-  no: '🇳🇴',
   zh: '🇨🇳',
   ja: '🇯🇵',
   ko: '🇰🇷',
-  id: '🇮🇩',
-  th: '🇹🇭',
 };

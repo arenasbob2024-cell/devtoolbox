@@ -35,7 +35,9 @@ export async function generateMetadata({
       type: 'article',
       siteName: 'DevToolBox',
       publishedTime: post.date,
+      modifiedTime: post.date,
       authors: [post.author],
+      locale: lang,
       images: [{ url: 'https://viadreams.cc/og-image.png', width: 1200, height: 630 }],
     },
     twitter: {
@@ -70,31 +72,53 @@ export default async function BlogPostLayout({
   return (
     <>
       {post && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Article',
-              headline: post.title,
-              description: post.description,
-              datePublished: post.date,
-              author: { '@type': 'Organization', name: 'DevToolBox' },
-              publisher: {
-                '@type': 'Organization',
-                name: 'DevToolBox',
-                logo: {
-                  '@type': 'ImageObject',
-                  url: 'https://viadreams.cc/og-image.png'
-                }
-              },
-              mainEntityOfPage: {
-                '@type': 'WebPage',
-                '@id': `https://viadreams.cc/${lang}/blog/${slug}`
-              }
-            })
-          }}
-        />
+        <>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'Article',
+                headline: post.title,
+                description: post.description,
+                datePublished: post.date,
+                dateModified: post.date,
+                inLanguage: lang,
+                image: 'https://viadreams.cc/og-image.png',
+                author: { '@type': 'Organization', name: 'DevToolBox', url: 'https://viadreams.cc' },
+                publisher: {
+                  '@type': 'Organization',
+                  name: 'DevToolBox',
+                  url: 'https://viadreams.cc',
+                  logo: {
+                    '@type': 'ImageObject',
+                    url: 'https://viadreams.cc/og-image.png'
+                  }
+                },
+                mainEntityOfPage: {
+                  '@type': 'WebPage',
+                  '@id': `https://viadreams.cc/${lang}/blog/${slug}`
+                },
+                isAccessibleForFree: true,
+                keywords: post.keywords?.join(', ')
+              })
+            }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'BreadcrumbList',
+                itemListElement: [
+                  { '@type': 'ListItem', position: 1, name: 'Home', item: `https://viadreams.cc/${lang}` },
+                  { '@type': 'ListItem', position: 2, name: 'Blog', item: `https://viadreams.cc/${lang}/blog` },
+                  { '@type': 'ListItem', position: 3, name: post.title, item: `https://viadreams.cc/${lang}/blog/${slug}` }
+                ]
+              })
+            }}
+          />
+        </>
       )}
       {children}
     </>

@@ -22,6 +22,6 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: 'cohere-ai', allow: '/' },
       { userAgent: 'meta-externalagent', allow: '/' },
     ],
-    sitemap: 'https://viadreams.cc/sitemap-index.xml',
+    sitemap: 'https://viadreams.cc/sitemap.xml',
   };
 }
