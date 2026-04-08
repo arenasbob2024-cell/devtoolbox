@@ -18,7 +18,7 @@ export async function GET() {
 
   for (let i = 0; i < totalChunks; i++) {
     xml += `  <sitemap>\n`
-    xml += `    <loc>${BASE_URL}/api/sitemap?id=${i}</loc>\n`
+    xml += `    <loc>${BASE_URL}/api/sitemap/?id=${i}</loc>\n`
     xml += `    <lastmod>${today}</lastmod>\n`
     xml += `  </sitemap>\n`
   }
