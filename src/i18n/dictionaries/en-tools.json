@@ -1115,20 +1115,28 @@
     "placeholder": "Paste your SQL query here...",
     "outputPlaceholder": "Formatted SQL...",
     "seoTitle": "About SQL Formatting",
-    "seoContent": "Well-formatted SQL queries are easier to read, debug, and maintain. This tool automatically adds indentation, capitalizes keywords, and places clauses on separate lines. Supports SELECT, INSERT, UPDATE, DELETE, and JOIN statements.",
+    "seoContent": "Well-formatted SQL queries are easier to read, debug, and maintain. This instant SQL formatter automatically beautifies your SQL code by adding proper indentation, capitalizing keywords like SELECT, FROM, WHERE, and JOIN, and placing clauses on separate lines for maximum readability. Whether you are working with MySQL, PostgreSQL, SQLite, or SQL Server, paste your raw SQL and get clean, production-ready output in seconds. This online SQL beautifier handles complex queries including subqueries, Common Table Expressions (CTEs with WITH clauses), window functions, UNION statements, and nested JOINs. It is the perfect companion for code reviews, documentation, and debugging sessions where readable SQL is essential. Unlike desktop tools, this browser-based SQL formatter requires no installation — just paste, format, and copy.",
     "faqTitle": "Frequently Asked Questions",
     "faqs": [
       {
         "q": "What SQL dialects are supported?",
-        "a": "This formatter supports standard SQL syntax that works with MySQL, PostgreSQL, SQLite, SQL Server, and most other databases."
+        "a": "This instant SQL formatter supports standard SQL syntax compatible with MySQL, PostgreSQL, SQLite, SQL Server (T-SQL), Oracle PL/SQL, and most other relational database systems. The formatting rules follow ANSI SQL standards."
       },
       {
         "q": "Does formatting change query behavior?",
-        "a": "No. SQL formatting only adds whitespace and line breaks. The query logic and results remain identical."
+        "a": "No. SQL formatting only modifies whitespace, line breaks, and keyword capitalization. The query logic, execution plan, and results remain completely identical. It is a purely cosmetic transformation."
       },
       {
-        "q": "Can I format complex queries?",
-        "a": "Yes. The tool handles SELECT, INSERT, UPDATE, DELETE, JOIN, subqueries, CTEs (WITH clauses), and other standard SQL constructs."
+        "q": "Can I format complex queries with subqueries and CTEs?",
+        "a": "Yes. This tool handles all standard SQL constructs including SELECT, INSERT, UPDATE, DELETE, multi-table JOINs, subqueries, CTEs (WITH clauses), window functions (OVER/PARTITION BY), UNION/INTERSECT, CASE expressions, and nested queries of any depth."
+      },
+      {
+        "q": "Is there a size limit for SQL formatting?",
+        "a": "This online SQL formatter can handle queries of any practical size. It processes the formatting entirely in your browser, so your SQL code never leaves your device — ensuring complete privacy and security."
+      },
+      {
+        "q": "How is this different from a SQL linter?",
+        "a": "A SQL formatter (beautifier) focuses on code style — indentation, line breaks, and keyword casing. A SQL linter checks for errors, performance issues, and best practices. This tool is a formatter that makes your SQL readable without analyzing its correctness."
       }
     ],
     "howToUseTitle": "How to Use",
