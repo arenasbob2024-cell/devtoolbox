@@ -16473,5 +16473,132 @@
       "Checking chart structure in CI/CD pipelines",
       "Auditing third-party Helm charts"
     ]
+  },
+  "whois-lookup": {
+    "name": "WHOIS 域名查询",
+    "description": "通过 RDAP 查询域名注册信息。",
+    "pageTitle": "免费 WHOIS 域名查询工具 — 查注册商、到期时间、Nameservers",
+    "pageDescription": "免费在线 WHOIS 查询工具。查任意域名的注册商、注册日期、到期日期、Nameservers、DNSSEC 状态和滥用举报邮箱。基于 RDAP 协议，全程浏览器运行。",
+    "domainLabel": "域名",
+    "domainPlaceholder": "example.com",
+    "lookup": "查询",
+    "loading": "查询中...",
+    "samples": "示例",
+    "results": "结果",
+    "labelRegistrar": "注册商",
+    "labelRegistered": "注册时间",
+    "labelExpires": "到期时间",
+    "labelUpdated": "最后更新",
+    "labelDnssec": "DNSSEC",
+    "labelRegistrant": "注册人",
+    "labelAbuseContact": "滥用举报",
+    "labelNameservers": "Nameservers",
+    "labelStatus": "状态",
+    "showRaw": "显示原始 RDAP 响应",
+    "hideRaw": "隐藏原始响应",
+    "errorInvalid": "请输入有效的域名（如 example.com）。",
+    "errorNotFound": "域名不存在或无 WHOIS 数据。",
+    "errorNetwork": "查询失败，请检查网络后重试。",
+    "seoTitle": "关于 WHOIS 查询",
+    "seoContent": "WHOIS 是查询域名注册信息的标准协议，包括所有者、到期时间和联系方式。现代 WHOIS 查询使用 RDAP（注册数据访问协议）——它是结构化 JSON 格式的继任者。本工具直接从浏览器查询公共 RDAP 服务器，不记录、不缓存、不存储任何查询。可用于查看域名到期时间、注册人、权威 Nameservers 以及是否启用了 DNSSEC。",
+    "howToUseTitle": "使用步骤",
+    "howToUseSteps": [
+      "在输入框中输入域名（不带 http:// 和路径）。",
+      "点击\"查询\"或按回车。",
+      "查看注册商、日期、Nameservers 和状态码。",
+      "点击\"显示原始 RDAP 响应\"查看完整机器可读数据。",
+      "点击\"复制\"按钮复制结果摘要。"
+    ],
+    "useCasesTitle": "使用场景",
+    "useCases": [
+      "在续费或购买前查看域名到期时间。",
+      "域名交易/转移过程中核实所有者。",
+      "查找滥用举报邮箱，举报垃圾邮件或恶意活动。",
+      "DNS 迁移或事故响应时审计 Nameservers。",
+      "确认自己拥有的域名是否启用了 DNSSEC。"
+    ],
+    "faqTitle": "常见问题",
+    "faqs": [
+      {
+        "q": "WHOIS 是什么？",
+        "a": "WHOIS 是用于查询存储域名注册信息（所有者、注册商、创建日期、到期日期、Nameservers）的数据库的标准协议。"
+      },
+      {
+        "q": "RDAP 和 WHOIS 有什么区别？",
+        "a": "RDAP（注册数据访问协议）是 WHOIS 的现代继任者。它返回结构化 JSON，支持国际化，更适合自动化工具使用。本工具底层基于 RDAP。"
+      },
+      {
+        "q": "我的查询会被记录吗？",
+        "a": "本工具直接从浏览器把查询转发到 rdap.org——我们的服务器不记录、不缓存、不存储任何查询。RDAP 服务器本身可能按其策略记录请求。"
+      },
+      {
+        "q": "为什么有些字段显示 \"—\"？",
+        "a": "GDPR 和隐私法规导致许多注册商屏蔽了个人联系信息。即使注册人信息被隐藏，域名本身可能仍然有效。"
+      },
+      {
+        "q": "可以查询非 .com 的 TLD 吗？",
+        "a": "可以。RDAP 支持大多数 gTLD（com、org、net、io、dev 等）和许多 ccTLD。部分限制较严的 ccTLD 注册局可能只返回部分数据。"
+      }
+    ]
+  },
+  "text-to-speech": {
+    "name": "文本转语音",
+    "description": "在浏览器中将文本转为语音。",
+    "pageTitle": "免费在线文本转语音 — 自然语音，支持 50+ 种语言",
+    "pageDescription": "免费在线文本转语音（TTS）工具。使用浏览器内置语音将任意文本转为自然音频。可调语速、音调、音量。支持 50+ 种语言，无需注册。",
+    "inputLabel": "要朗读的文本",
+    "inputPlaceholder": "在此输入或粘贴文本...",
+    "voice": "语音",
+    "voicesAvailable": "个可用语音",
+    "rate": "语速",
+    "pitch": "音调",
+    "volume": "音量",
+    "play": "播放",
+    "pause": "暂停",
+    "resume": "继续",
+    "stop": "停止",
+    "sampleText": "你好！这是一个免费的在线文本转语音工具。它完全在你的浏览器中运行，不向任何服务器发送数据。尝试不同的语音、语速和音调，找到最适合你需求的组合。",
+    "unsupported": "你的浏览器不支持 Web Speech API。请尝试 Chrome、Edge 或 Safari。",
+    "seoTitle": "关于文本转语音",
+    "seoContent": "文本转语音（TTS）将书面文本转为语音音频。本工具使用现代浏览器内置的 Web Speech API，提供高质量语音且不向任何服务器发送文本。可用语音数量取决于操作系统——macOS、Windows、iOS 和 Android 各自自带多种语言的语音。",
+    "howToUseTitle": "使用步骤",
+    "howToUseSteps": [
+      "在输入框中键入或粘贴文本（最多 10,000 字符）。",
+      "从下拉菜单中选择语音——按语言分组。",
+      "调整语速、音调、音量滑块。",
+      "点击\"播放\"试听。可随时\"暂停\"或\"停止\"。",
+      "加载示例文本快速测试语音。"
+    ],
+    "useCasesTitle": "使用场景",
+    "useCases": [
+      "预览单词、人名或外语文本的发音。",
+      "做饭、通勤时免手操作听文章。",
+      "校对文字——听出不流畅之处。",
+      "为视障用户制作可访问性演示内容。",
+      "原型开发时生成语音片段，无需付费 TTS API。"
+    ],
+    "faqTitle": "常见问题",
+    "faqs": [
+      {
+        "q": "是免费的吗？",
+        "a": "是的，完全免费且无限制。使用浏览器内置的 Web Speech API——无 API key、无配额。"
+      },
+      {
+        "q": "可以离线使用吗？",
+        "a": "取决于你的操作系统。macOS 和 iOS 语音通常可离线；Windows/Linux 的 Chrome 可能需要网络才能使用某些语音。"
+      },
+      {
+        "q": "可以下载音频吗？",
+        "a": "Web Speech API 不支持直接捕获音频。如需录制，请使用系统的音频回环或屏幕录制软件。"
+      },
+      {
+        "q": "为什么我的浏览器里语音很少？",
+        "a": "语音数量取决于操作系统。可从系统设置安装更多语音包，或尝试 Chrome（通常提供更多语音）。"
+      },
+      {
+        "q": "我的文本会被发送到服务器吗？",
+        "a": "不会。文本完全由浏览器的本地语音引擎处理，不会经过网络传输。"
+      }
+    ]
   }
 }

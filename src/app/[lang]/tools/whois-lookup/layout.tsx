@@ -1,0 +1,48 @@
+import type { Metadata } from 'next';
+import ToolSeoServer from '@/components/ToolSeoServer';
+import { getToolEntry } from '@/i18n/getDictionary';
+import { i18n, type Locale } from '@/i18n/config';
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang: rawLang } = await params;
+  const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
+  const t = await getToolEntry(lang, 'whois-lookup');
+  const url = `https://viadreams.cc/${lang}/tools/whois-lookup`;
+  return {
+    title: t?.pageTitle as string,
+    description: t?.pageDescription as string,
+    openGraph: {
+      title: `${t?.pageTitle} | DevToolBox`,
+      description: t?.pageDescription as string,
+      url,
+      type: 'website',
+      siteName: 'DevToolBox',
+      images: [{ url: 'https://viadreams.cc/og-image.png', width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${t?.pageTitle} | DevToolBox`,
+      description: t?.pageDescription as string,
+      images: ['https://viadreams.cc/og-image.png'],
+    },
+    alternates: {
+      canonical: url,
+      languages: {
+        ...Object.fromEntries(
+          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/whois-lookup`])
+        ),
+        'x-default': `https://viadreams.cc/en/tools/whois-lookup`,
+      },
+    },
+  };
+}
+
+export default async function Layout({ children, params }: { children: React.ReactNode; params: Promise<{ lang: string }> }) {
+  const { lang: rawLang } = await params;
+  const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
+  return (
+    <ToolSeoServer toolId="whois-lookup" lang={lang}>
+      {children}
+    </ToolSeoServer>
+  );
+}

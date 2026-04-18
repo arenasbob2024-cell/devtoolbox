@@ -16673,5 +16673,132 @@
       "Checking chart structure in CI/CD pipelines",
       "Auditing third-party Helm charts"
     ]
+  },
+  "whois-lookup": {
+    "name": "WHOIS Lookup",
+    "description": "Look up domain registration info via RDAP.",
+    "pageTitle": "WHOIS Lookup Online Free — Check Domain Registration, Expiry, Nameservers",
+    "pageDescription": "Free WHOIS lookup tool. Check any domain's registrar, registration date, expiry date, nameservers, DNSSEC status, and abuse contact. Powered by RDAP, runs in your browser.",
+    "domainLabel": "Domain name",
+    "domainPlaceholder": "example.com",
+    "lookup": "Look up",
+    "loading": "Looking up...",
+    "samples": "Try",
+    "results": "Results",
+    "labelRegistrar": "Registrar",
+    "labelRegistered": "Registered",
+    "labelExpires": "Expires",
+    "labelUpdated": "Last updated",
+    "labelDnssec": "DNSSEC",
+    "labelRegistrant": "Registrant",
+    "labelAbuseContact": "Abuse contact",
+    "labelNameservers": "Nameservers",
+    "labelStatus": "Status",
+    "showRaw": "Show raw RDAP response",
+    "hideRaw": "Hide raw response",
+    "errorInvalid": "Please enter a valid domain (e.g., example.com).",
+    "errorNotFound": "Domain not found or WHOIS data unavailable.",
+    "errorNetwork": "Lookup failed. Please check your network and try again.",
+    "seoTitle": "About WHOIS Lookup",
+    "seoContent": "WHOIS is a protocol for querying domain registration data including ownership, expiration, and contact information. Modern WHOIS lookups use RDAP (Registration Data Access Protocol), the structured JSON-based successor. This tool queries public RDAP servers directly from your browser — your queries are not logged, cached, or stored on our side. Use it to check when a domain expires, who registered it, its authoritative nameservers, and whether DNSSEC is enabled.",
+    "howToUseTitle": "How to Use",
+    "howToUseSteps": [
+      "Type a domain name in the input field (no http://, no path).",
+      "Click \"Look up\" or press Enter.",
+      "Review registrar, dates, nameservers, and status codes.",
+      "Click \"Show raw RDAP response\" to see the full machine-readable data.",
+      "Click \"Copy\" to copy the summary for sharing or pasting into tickets."
+    ],
+    "useCasesTitle": "Use Cases",
+    "useCases": [
+      "Check when a domain will expire before renewing or buying.",
+      "Verify domain ownership during a sale or transfer negotiation.",
+      "Find abuse contact emails to report spam or malicious activity.",
+      "Audit nameservers during DNS migration or incident response.",
+      "Confirm DNSSEC is enabled on domains you control."
+    ],
+    "faqTitle": "Frequently Asked Questions",
+    "faqs": [
+      {
+        "q": "What is WHOIS?",
+        "a": "WHOIS is a standard protocol used to query databases that store domain registration information such as the owner, registrar, creation date, expiration date, and nameservers."
+      },
+      {
+        "q": "What is RDAP and how is it different from WHOIS?",
+        "a": "RDAP (Registration Data Access Protocol) is the modern replacement for WHOIS. It returns structured JSON, supports internationalization, and is more suitable for automated tools. This tool uses RDAP under the hood."
+      },
+      {
+        "q": "Is my query logged?",
+        "a": "This tool forwards your query directly from your browser to rdap.org — we do not log, cache, or store queries on our servers. The RDAP server itself may log requests per its own policy."
+      },
+      {
+        "q": "Why do some fields show \"—\" or nothing?",
+        "a": "GDPR and privacy regulations cause many registrars to redact personal contact information. The domain may still be valid even if registrant details are hidden."
+      },
+      {
+        "q": "Can I look up non-.com TLDs?",
+        "a": "Yes. RDAP supports most gTLDs (com, org, net, io, dev, etc.) and many ccTLDs. Some ccTLDs with restrictive registries may return partial data."
+      }
+    ]
+  },
+  "text-to-speech": {
+    "name": "Text to Speech",
+    "description": "Convert text to spoken audio in your browser.",
+    "pageTitle": "Text to Speech Online Free — Natural Voice, 50+ Languages",
+    "pageDescription": "Free online text-to-speech converter. Turn any text into natural-sounding audio using your browser's built-in voices. Adjustable rate, pitch, volume. 50+ languages supported, no signup.",
+    "inputLabel": "Text to speak",
+    "inputPlaceholder": "Type or paste text here...",
+    "voice": "Voice",
+    "voicesAvailable": "voices available",
+    "rate": "Rate",
+    "pitch": "Pitch",
+    "volume": "Volume",
+    "play": "Play",
+    "pause": "Pause",
+    "resume": "Resume",
+    "stop": "Stop",
+    "sampleText": "Hello! This is a free online text-to-speech tool. It works entirely in your browser, with no data sent to any server. Try different voices, rates, and pitches to find the perfect combination for your needs.",
+    "unsupported": "Your browser does not support the Web Speech API. Try Chrome, Edge, or Safari.",
+    "seoTitle": "About Text-to-Speech",
+    "seoContent": "Text-to-speech (TTS) converts written text into spoken audio. This tool uses the Web Speech API built into modern browsers, which provides high-quality voices without sending your text to any server. Voice availability depends on your operating system — macOS, Windows, iOS, and Android each ship with their own set of voices in multiple languages.",
+    "howToUseTitle": "How to Use",
+    "howToUseSteps": [
+      "Type or paste text in the input box (up to 10,000 characters).",
+      "Pick a voice from the dropdown — voices are grouped by language.",
+      "Adjust rate (speed), pitch, and volume sliders.",
+      "Click \"Play\" to hear the text. Use \"Pause\" or \"Stop\" any time.",
+      "Load the sample to quickly test a voice before using your own text."
+    ],
+    "useCasesTitle": "Use Cases",
+    "useCases": [
+      "Preview pronunciation of words, names, or foreign-language text.",
+      "Listen to articles hands-free while cooking or commuting.",
+      "Proofread your writing — hearing it out loud exposes awkward phrasing.",
+      "Create accessibility demos or content for visually impaired users.",
+      "Generate voice clips for prototypes without paid TTS APIs."
+    ],
+    "faqTitle": "Frequently Asked Questions",
+    "faqs": [
+      {
+        "q": "Is this free?",
+        "a": "Yes, completely free and unlimited. It uses the Web Speech API built into your browser — no API keys, no quotas."
+      },
+      {
+        "q": "Does it work offline?",
+        "a": "Voice availability and whether they work offline depends on your OS. macOS and iOS voices typically work offline; Chrome on Windows/Linux may require network for some voices."
+      },
+      {
+        "q": "Can I download the audio?",
+        "a": "The Web Speech API does not support direct audio capture. For recording, use your system's audio loopback or a screen recorder."
+      },
+      {
+        "q": "Why are there so few voices on my browser?",
+        "a": "Voice selection depends on your OS. Try installing additional voice packs from your system settings, or open the site in Chrome (often offers more voices)."
+      },
+      {
+        "q": "Is my text sent to a server?",
+        "a": "No. The text is processed entirely by your browser's local speech engine. Nothing is transmitted over the network."
+      }
+    ]
   }
 }

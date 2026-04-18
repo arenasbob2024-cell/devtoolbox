@@ -16469,5 +16469,132 @@
       "Checking chart structure in CI/CD pipelines",
       "Auditing third-party Helm charts"
     ]
+  },
+  "whois-lookup": {
+    "name": "Ricerca WHOIS",
+    "description": "Cerca informazioni di registrazione dominio via RDAP.",
+    "pageTitle": "Ricerca WHOIS Online Gratis — Registrar, Scadenza, Nameservers",
+    "pageDescription": "Strumento WHOIS gratuito. Controlla registrar, data di registrazione, scadenza, nameservers, DNSSEC e contatto abusi di qualsiasi dominio. Basato su RDAP, gira nel tuo browser.",
+    "domainLabel": "Nome dominio",
+    "domainPlaceholder": "example.com",
+    "lookup": "Cerca",
+    "loading": "Ricerca...",
+    "samples": "Prova",
+    "results": "Risultati",
+    "labelRegistrar": "Registrar",
+    "labelRegistered": "Registrato",
+    "labelExpires": "Scade",
+    "labelUpdated": "Ultimo aggiornamento",
+    "labelDnssec": "DNSSEC",
+    "labelRegistrant": "Titolare",
+    "labelAbuseContact": "Contatto abusi",
+    "labelNameservers": "Nameservers",
+    "labelStatus": "Stato",
+    "showRaw": "Mostra risposta RDAP grezza",
+    "hideRaw": "Nascondi grezza",
+    "errorInvalid": "Inserisci un dominio valido (es. example.com).",
+    "errorNotFound": "Dominio non trovato o dati WHOIS non disponibili.",
+    "errorNetwork": "Ricerca fallita. Verifica la rete e riprova.",
+    "seoTitle": "Informazioni sulla ricerca WHOIS",
+    "seoContent": "WHOIS è un protocollo per interrogare dati di registrazione dominio. Le ricerche moderne usano RDAP, il successore basato su JSON. Questo strumento interroga server RDAP pubblici direttamente dal tuo browser — non registriamo né archiviamo query.",
+    "howToUseTitle": "Come Usare",
+    "howToUseSteps": [
+      "Inserisci il nome dominio (senza http://, senza percorso).",
+      "Clicca \"Cerca\" o premi Invio.",
+      "Controlla registrar, date, nameservers e codici di stato.",
+      "Clicca \"Mostra grezza\" per vedere i dati completi.",
+      "Clicca \"Copia\" per copiare il riepilogo."
+    ],
+    "useCasesTitle": "Casi d'Uso",
+    "useCases": [
+      "Verificare scadenza prima di rinnovare o acquistare.",
+      "Confermare proprietà durante vendita o trasferimento.",
+      "Trovare contatti abusi per segnalare spam.",
+      "Controllare nameservers in migrazione DNS.",
+      "Confermare DNSSEC attivo sui propri domini."
+    ],
+    "faqTitle": "Domande Frequenti",
+    "faqs": [
+      {
+        "q": "Cos'è WHOIS?",
+        "a": "WHOIS è un protocollo standard per interrogare dati di registrazione dominio."
+      },
+      {
+        "q": "Cos'è RDAP?",
+        "a": "RDAP è il successore moderno di WHOIS, restituisce JSON strutturato."
+      },
+      {
+        "q": "La mia query viene registrata?",
+        "a": "No. La query va dal browser a rdap.org — non memorizziamo nulla."
+      },
+      {
+        "q": "Perché alcuni campi mostrano \"—\"?",
+        "a": "GDPR ha portato all'oscuramento delle informazioni personali."
+      },
+      {
+        "q": "Posso cercare TLD diversi da .com?",
+        "a": "Sì. RDAP supporta la maggior parte dei gTLD e ccTLD."
+      }
+    ]
+  },
+  "text-to-speech": {
+    "name": "Testo in Voce",
+    "description": "Converte testo in audio parlato nel browser.",
+    "pageTitle": "Testo in Voce Online Gratis — Voci Naturali, 50+ Lingue",
+    "pageDescription": "Convertitore testo-a-voce gratuito. Trasforma qualsiasi testo in audio naturale usando le voci del browser. Velocità, tono, volume regolabili. 50+ lingue.",
+    "inputLabel": "Testo da leggere",
+    "inputPlaceholder": "Digita o incolla testo qui...",
+    "voice": "Voce",
+    "voicesAvailable": "voci disponibili",
+    "rate": "Velocità",
+    "pitch": "Tono",
+    "volume": "Volume",
+    "play": "Riproduci",
+    "pause": "Pausa",
+    "resume": "Riprendi",
+    "stop": "Ferma",
+    "sampleText": "Ciao! Questo è uno strumento gratuito di sintesi vocale. Funziona interamente nel browser, senza inviare dati a server.",
+    "unsupported": "Il tuo browser non supporta la Web Speech API. Prova Chrome, Edge o Safari.",
+    "seoTitle": "Informazioni sulla sintesi vocale",
+    "seoContent": "La sintesi vocale (TTS) converte testo scritto in audio parlato. Questo strumento usa la Web Speech API integrata nei browser moderni — voci di alta qualità senza invio di testo al server.",
+    "howToUseTitle": "Come Usare",
+    "howToUseSteps": [
+      "Digita o incolla testo (fino a 10.000 caratteri).",
+      "Scegli una voce dal menu — raggruppate per lingua.",
+      "Regola velocità, tono, volume.",
+      "Clicca \"Riproduci\". Pausa/Ferma in qualsiasi momento.",
+      "Carica l'esempio per testare."
+    ],
+    "useCasesTitle": "Casi d'Uso",
+    "useCases": [
+      "Ascoltare pronuncia di parole o nomi.",
+      "Ascoltare articoli a mani libere.",
+      "Rileggere il proprio testo ascoltandolo.",
+      "Creare demo di accessibilità.",
+      "Generare clip vocali per prototipi."
+    ],
+    "faqTitle": "Domande Frequenti",
+    "faqs": [
+      {
+        "q": "È gratis?",
+        "a": "Sì, completamente gratis e illimitato."
+      },
+      {
+        "q": "Funziona offline?",
+        "a": "Dipende dall'OS. macOS e iOS di solito funzionano offline."
+      },
+      {
+        "q": "Posso scaricare l'audio?",
+        "a": "La Web Speech API non permette cattura diretta."
+      },
+      {
+        "q": "Perché poche voci?",
+        "a": "Dipende dall'OS. Installa più pacchetti vocali nelle impostazioni."
+      },
+      {
+        "q": "Il mio testo viene inviato?",
+        "a": "No. Elaborato localmente nel browser."
+      }
+    ]
   }
 }

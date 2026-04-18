@@ -16469,5 +16469,132 @@
       "Checking chart structure in CI/CD pipelines",
       "Auditing third-party Helm charts"
     ]
+  },
+  "whois-lookup": {
+    "name": "WHOIS 検索",
+    "description": "RDAP でドメイン登録情報を検索。",
+    "pageTitle": "WHOIS 検索オンライン無料 — レジストラ、有効期限、ネームサーバー",
+    "pageDescription": "無料の WHOIS 検索ツール。任意のドメインのレジストラ、登録日、有効期限、ネームサーバー、DNSSEC ステータス、不正報告先を確認。RDAP ベースでブラウザ内実行。",
+    "domainLabel": "ドメイン名",
+    "domainPlaceholder": "example.com",
+    "lookup": "検索",
+    "loading": "検索中...",
+    "samples": "例",
+    "results": "結果",
+    "labelRegistrar": "レジストラ",
+    "labelRegistered": "登録日",
+    "labelExpires": "有効期限",
+    "labelUpdated": "最終更新",
+    "labelDnssec": "DNSSEC",
+    "labelRegistrant": "登録者",
+    "labelAbuseContact": "不正報告",
+    "labelNameservers": "ネームサーバー",
+    "labelStatus": "ステータス",
+    "showRaw": "生の RDAP レスポンスを表示",
+    "hideRaw": "生を隠す",
+    "errorInvalid": "有効なドメインを入力してください (例: example.com)。",
+    "errorNotFound": "ドメインが見つからないか WHOIS データがありません。",
+    "errorNetwork": "検索に失敗しました。ネットワークを確認して再試行してください。",
+    "seoTitle": "WHOIS 検索について",
+    "seoContent": "WHOIS はドメイン登録データを照会するプロトコルです。最新の WHOIS は JSON ベースの後継である RDAP を使用します。このツールはブラウザから直接公開 RDAP サーバーに問い合わせ、クエリは当方で記録・保存されません。",
+    "howToUseTitle": "使い方",
+    "howToUseSteps": [
+      "ドメイン名を入力（http://、パスなし）。",
+      "\"検索\" をクリックまたは Enter キー。",
+      "レジストラ、日付、ネームサーバー、ステータスコードを確認。",
+      "\"生の RDAP\" をクリックで完全データ表示。",
+      "\"コピー\" で要約をコピー。"
+    ],
+    "useCasesTitle": "ユースケース",
+    "useCases": [
+      "更新・購入前の有効期限チェック。",
+      "売買・移管時の所有者確認。",
+      "スパム・悪質サイト報告先の確認。",
+      "DNS 移行時のネームサーバー監査。",
+      "自社ドメインの DNSSEC 有効化確認。"
+    ],
+    "faqTitle": "よくある質問",
+    "faqs": [
+      {
+        "q": "WHOIS とは？",
+        "a": "ドメイン登録情報を照会する標準プロトコルです。"
+      },
+      {
+        "q": "RDAP とは？",
+        "a": "WHOIS の現代的な後継で、構造化 JSON を返します。"
+      },
+      {
+        "q": "クエリは記録されますか？",
+        "a": "いいえ。ブラウザから rdap.org へ直送され、当方は保存しません。"
+      },
+      {
+        "q": "なぜ一部フィールドが \"—\" ですか？",
+        "a": "GDPR 等により多くのレジストラが個人情報を非表示化しています。"
+      },
+      {
+        "q": ".com 以外の TLD も検索できますか？",
+        "a": "はい。RDAP は主要な gTLD と多くの ccTLD をサポートします。"
+      }
+    ]
+  },
+  "text-to-speech": {
+    "name": "音声合成",
+    "description": "ブラウザ内でテキストを音声に変換。",
+    "pageTitle": "テキスト読み上げオンライン無料 — 自然な音声、50+ 言語",
+    "pageDescription": "無料オンライン音声合成。ブラウザ内蔵音声でテキストを自然な音声に変換。速度、ピッチ、音量調整可能。50+ 言語対応、登録不要。",
+    "inputLabel": "読み上げるテキスト",
+    "inputPlaceholder": "ここに入力または貼り付け...",
+    "voice": "音声",
+    "voicesAvailable": "音声利用可能",
+    "rate": "速度",
+    "pitch": "ピッチ",
+    "volume": "音量",
+    "play": "再生",
+    "pause": "一時停止",
+    "resume": "再開",
+    "stop": "停止",
+    "sampleText": "こんにちは！これは無料のオンライン音声合成ツールです。ブラウザ内で完結し、データはサーバーに送信されません。",
+    "unsupported": "お使いのブラウザは Web Speech API に対応していません。Chrome、Edge、Safari をお試しください。",
+    "seoTitle": "音声合成について",
+    "seoContent": "音声合成（TTS）は書かれたテキストを音声に変換します。このツールは最新ブラウザ内蔵の Web Speech API を使用し、テキストをサーバーに送信せずに高品質な音声を提供します。",
+    "howToUseTitle": "使い方",
+    "howToUseSteps": [
+      "テキストを入力または貼り付け（最大 10,000 文字）。",
+      "ドロップダウンから音声を選択（言語別）。",
+      "速度、ピッチ、音量を調整。",
+      "\"再生\"をクリック。一時停止/停止はいつでも可能。",
+      "サンプルを読み込んで素早くテスト。"
+    ],
+    "useCasesTitle": "ユースケース",
+    "useCases": [
+      "単語や名前の発音を確認。",
+      "料理・通勤中のハンズフリー読み上げ。",
+      "自分の文章を聞いて校正。",
+      "アクセシビリティデモ作成。",
+      "TTS API を使わないプロトタイプ用音声生成。"
+    ],
+    "faqTitle": "よくある質問",
+    "faqs": [
+      {
+        "q": "無料ですか？",
+        "a": "はい、完全無料・無制限。ブラウザの Web Speech API を使用。"
+      },
+      {
+        "q": "オフラインで動作しますか？",
+        "a": "OS に依存します。macOS と iOS の音声は通常オフラインで動作。"
+      },
+      {
+        "q": "音声をダウンロードできますか？",
+        "a": "Web Speech API は直接の音声キャプチャをサポートしません。"
+      },
+      {
+        "q": "音声が少ないのはなぜ？",
+        "a": "OS に依存します。システム設定から音声パックを追加インストール可能。"
+      },
+      {
+        "q": "テキストはサーバーに送信されますか？",
+        "a": "いいえ。すべてブラウザのローカルエンジンで処理されます。"
+      }
+    ]
   }
 }

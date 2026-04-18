@@ -16466,5 +16466,132 @@
       "Checking chart structure in CI/CD pipelines",
       "Auditing third-party Helm charts"
     ]
+  },
+  "whois-lookup": {
+    "name": "WHOIS-Abfrage",
+    "description": "Domain-Registrierungsinfos per RDAP abrufen.",
+    "pageTitle": "WHOIS-Abfrage Online Kostenlos — Registrar, Ablauf, Nameserver",
+    "pageDescription": "Kostenloses WHOIS-Tool. Prüfe Registrar, Registrierungsdatum, Ablaufdatum, Nameserver, DNSSEC-Status und Missbrauchskontakt beliebiger Domains. Basiert auf RDAP, läuft im Browser.",
+    "domainLabel": "Domainname",
+    "domainPlaceholder": "example.com",
+    "lookup": "Abfragen",
+    "loading": "Abfrage läuft...",
+    "samples": "Beispiele",
+    "results": "Ergebnis",
+    "labelRegistrar": "Registrar",
+    "labelRegistered": "Registriert",
+    "labelExpires": "Läuft ab",
+    "labelUpdated": "Zuletzt geändert",
+    "labelDnssec": "DNSSEC",
+    "labelRegistrant": "Inhaber",
+    "labelAbuseContact": "Missbrauchskontakt",
+    "labelNameservers": "Nameserver",
+    "labelStatus": "Status",
+    "showRaw": "Rohdaten anzeigen",
+    "hideRaw": "Rohdaten ausblenden",
+    "errorInvalid": "Bitte gültigen Domainnamen eingeben (z. B. example.com).",
+    "errorNotFound": "Domain nicht gefunden oder keine WHOIS-Daten verfügbar.",
+    "errorNetwork": "Abfrage fehlgeschlagen. Netzwerk prüfen und erneut versuchen.",
+    "seoTitle": "Über WHOIS-Abfragen",
+    "seoContent": "WHOIS ist ein Protokoll zur Abfrage von Domain-Registrierungsdaten. Moderne WHOIS-Abfragen nutzen RDAP, den JSON-basierten Nachfolger. Dieses Tool fragt öffentliche RDAP-Server direkt aus dem Browser ab — Abfragen werden nicht protokolliert oder gespeichert.",
+    "howToUseTitle": "So geht's",
+    "howToUseSteps": [
+      "Domainname eingeben (ohne http://, ohne Pfad).",
+      "\"Abfragen\" klicken oder Enter drücken.",
+      "Registrar, Daten, Nameserver und Status-Codes prüfen.",
+      "\"Rohdaten anzeigen\" für vollständige RDAP-Antwort.",
+      "\"Kopieren\" klicken, um Zusammenfassung zu kopieren."
+    ],
+    "useCasesTitle": "Anwendungsfälle",
+    "useCases": [
+      "Ablaufdatum vor Verlängerung oder Kauf prüfen.",
+      "Eigentümerschaft bei Verkauf/Transfer verifizieren.",
+      "Missbrauchskontakte für Spam-Meldungen finden.",
+      "Nameserver bei DNS-Migration überprüfen.",
+      "DNSSEC-Status eigener Domains bestätigen."
+    ],
+    "faqTitle": "Häufige Fragen",
+    "faqs": [
+      {
+        "q": "Was ist WHOIS?",
+        "a": "WHOIS ist ein Standardprotokoll zur Abfrage von Domain-Registrierungsdaten."
+      },
+      {
+        "q": "Was ist RDAP?",
+        "a": "RDAP ist der moderne Nachfolger von WHOIS — JSON-basiert, international, für Automatisierung geeignet."
+      },
+      {
+        "q": "Wird meine Abfrage protokolliert?",
+        "a": "Nein. Die Abfrage geht direkt vom Browser zu rdap.org, wir speichern nichts."
+      },
+      {
+        "q": "Warum zeigen manche Felder \"—\"?",
+        "a": "DSGVO und Datenschutzregeln führen zur Schwärzung persönlicher Kontaktdaten."
+      },
+      {
+        "q": "Funktioniert es mit .de oder anderen ccTLDs?",
+        "a": "RDAP unterstützt die meisten gTLDs und viele ccTLDs, inkl. .de."
+      }
+    ]
+  },
+  "text-to-speech": {
+    "name": "Text-zu-Sprache",
+    "description": "Text zu Sprachausgabe im Browser konvertieren.",
+    "pageTitle": "Text-zu-Sprache Online Kostenlos — Natürliche Stimmen, 50+ Sprachen",
+    "pageDescription": "Kostenloser Text-to-Speech-Konverter. Wandle jeden Text mit browsereigenen Stimmen in natürliches Audio um. Geschwindigkeit, Tonhöhe, Lautstärke einstellbar. 50+ Sprachen.",
+    "inputLabel": "Text zum Vorlesen",
+    "inputPlaceholder": "Text hier eingeben oder einfügen...",
+    "voice": "Stimme",
+    "voicesAvailable": "Stimmen verfügbar",
+    "rate": "Geschwindigkeit",
+    "pitch": "Tonhöhe",
+    "volume": "Lautstärke",
+    "play": "Abspielen",
+    "pause": "Pause",
+    "resume": "Fortsetzen",
+    "stop": "Stopp",
+    "sampleText": "Hallo! Dies ist ein kostenloses Text-to-Speech-Tool. Es läuft vollständig im Browser, ohne Daten an Server zu senden.",
+    "unsupported": "Dein Browser unterstützt die Web Speech API nicht. Probiere Chrome, Edge oder Safari.",
+    "seoTitle": "Über Text-to-Speech",
+    "seoContent": "Text-to-Speech (TTS) wandelt geschriebenen Text in gesprochenes Audio. Dieses Tool nutzt die in modernen Browsern integrierte Web Speech API — hochwertige Stimmen ohne Serverübertragung.",
+    "howToUseTitle": "So geht's",
+    "howToUseSteps": [
+      "Text eingeben (bis 10.000 Zeichen).",
+      "Stimme aus Dropdown wählen — nach Sprache gruppiert.",
+      "Geschwindigkeit, Tonhöhe, Lautstärke anpassen.",
+      "\"Abspielen\" klicken. Pause/Stopp jederzeit möglich.",
+      "Beispiel laden zum schnellen Test."
+    ],
+    "useCasesTitle": "Anwendungsfälle",
+    "useCases": [
+      "Aussprache von Wörtern oder Namen anhören.",
+      "Artikel freihändig beim Kochen/Pendeln hören.",
+      "Eigene Texte durch Anhören Korrektur lesen.",
+      "Barrierefreiheit-Demos erstellen.",
+      "Sprachclips für Prototypen ohne TTS-APIs."
+    ],
+    "faqTitle": "Häufige Fragen",
+    "faqs": [
+      {
+        "q": "Ist es kostenlos?",
+        "a": "Ja, völlig kostenlos und unbegrenzt. Nutzt die Web Speech API."
+      },
+      {
+        "q": "Funktioniert offline?",
+        "a": "Abhängig vom OS. macOS und iOS meist offline."
+      },
+      {
+        "q": "Kann ich das Audio herunterladen?",
+        "a": "Die Web Speech API erlaubt keinen direkten Audio-Download."
+      },
+      {
+        "q": "Warum so wenige Stimmen?",
+        "a": "Abhängig vom OS. In Systemeinstellungen weitere Stimmpakete installieren."
+      },
+      {
+        "q": "Wird mein Text an einen Server gesendet?",
+        "a": "Nein. Alles lokal im Browser."
+      }
+    ]
   }
 }

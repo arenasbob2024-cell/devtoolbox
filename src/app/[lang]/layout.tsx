@@ -136,6 +136,16 @@ export default async function LangLayout({
         
         {/* Google AdSense */}
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1183198810365600" crossOrigin="anonymous" />
+
+        {/* Microsoft Clarity — Bing-owned behavior analytics (free, may boost Bing ranking signal) */}
+        {/* To activate: set NEXT_PUBLIC_CLARITY_PROJECT_ID in .env.local then rebuild */}
+        {process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID && (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","${process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID}");`
+            }}
+          />
+        )}
         
         {/* Organization Schema */}
         <script

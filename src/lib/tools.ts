@@ -3740,6 +3740,26 @@ export const tools: Tool[] = [
     path: '/tools/plist-to-json',
     relatedTools: ['json-formatter', 'xml-formatter', 'toml-to-json', 'json-yaml'],
   },
+  {
+    id: 'whois-lookup',
+    name: 'WHOIS Lookup',
+    description: 'Look up domain registration info: registrar, creation/expiry dates, nameservers, DNSSEC, and abuse contacts using RDAP.',
+    icon: '🔎',
+    category: 'web',
+    keywords: ['whois', 'whois lookup', 'whois domain', 'domain lookup', 'rdap', 'registrar lookup', 'domain info', 'domain expiry check', 'nameserver lookup', 'check domain owner', 'free whois', 'whois online'],
+    path: '/tools/whois-lookup',
+    relatedTools: ['dns-lookup-tool', 'ip-lookup-tool', 'ssl-certificate-decoder', 'url-parser'],
+  },
+  {
+    id: 'text-to-speech',
+    name: 'Text to Speech',
+    description: "Convert text to spoken audio using your browser's built-in voices. Supports 50+ languages, adjustable rate, pitch, and volume.",
+    icon: '🔊',
+    category: 'text',
+    keywords: ['text to speech', 'tts', 'text to voice', 'speech synthesis', 'read aloud', 'voice generator', 'free tts', 'text to speech online', 'natural voice', 'multilingual tts', 'browser speech', 'webspeech api'],
+    path: '/tools/text-to-speech',
+    relatedTools: ['slug-generator', 'markdown-preview', 'lorem-ipsum', 'string-case'],
+  },
 ];
 
 export function getToolsByCategory(categoryId: string): Tool[] {

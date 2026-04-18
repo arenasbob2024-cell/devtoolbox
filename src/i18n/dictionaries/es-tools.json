@@ -16466,5 +16466,132 @@
       "Checking chart structure in CI/CD pipelines",
       "Auditing third-party Helm charts"
     ]
+  },
+  "whois-lookup": {
+    "name": "Búsqueda WHOIS",
+    "description": "Consulta información de registro de dominio mediante RDAP.",
+    "pageTitle": "Búsqueda WHOIS Online Gratis — Registrador, Caducidad, Nameservers",
+    "pageDescription": "Herramienta WHOIS gratuita. Comprueba registrador, fecha de registro, caducidad, nameservers, DNSSEC y contacto de abuso de cualquier dominio. Basada en RDAP, se ejecuta en tu navegador.",
+    "domainLabel": "Nombre de dominio",
+    "domainPlaceholder": "example.com",
+    "lookup": "Buscar",
+    "loading": "Buscando...",
+    "samples": "Probar",
+    "results": "Resultados",
+    "labelRegistrar": "Registrador",
+    "labelRegistered": "Registrado",
+    "labelExpires": "Caduca",
+    "labelUpdated": "Última actualización",
+    "labelDnssec": "DNSSEC",
+    "labelRegistrant": "Titular",
+    "labelAbuseContact": "Contacto de abuso",
+    "labelNameservers": "Nameservers",
+    "labelStatus": "Estado",
+    "showRaw": "Mostrar respuesta RDAP bruta",
+    "hideRaw": "Ocultar respuesta bruta",
+    "errorInvalid": "Introduce un dominio válido (por ejemplo, example.com).",
+    "errorNotFound": "Dominio no encontrado o sin datos WHOIS.",
+    "errorNetwork": "Búsqueda fallida. Revisa tu red e intenta de nuevo.",
+    "seoTitle": "Sobre la búsqueda WHOIS",
+    "seoContent": "WHOIS es un protocolo para consultar datos de registro de dominios, incluida la propiedad, la caducidad y la información de contacto. Las búsquedas WHOIS modernas usan RDAP (Registration Data Access Protocol), el sucesor basado en JSON. Esta herramienta consulta servidores públicos RDAP directamente desde tu navegador — tus consultas no se registran ni almacenan en nuestro lado.",
+    "howToUseTitle": "Cómo Usar",
+    "howToUseSteps": [
+      "Escribe un nombre de dominio en el campo (sin http://, sin ruta).",
+      "Haz clic en \"Buscar\" o pulsa Enter.",
+      "Revisa registrador, fechas, nameservers y códigos de estado.",
+      "Haz clic en \"Mostrar respuesta RDAP bruta\" para ver los datos completos.",
+      "Haz clic en \"Copiar\" para copiar el resumen."
+    ],
+    "useCasesTitle": "Casos de Uso",
+    "useCases": [
+      "Comprobar cuándo caduca un dominio antes de renovarlo o comprarlo.",
+      "Verificar propiedad de dominio en una compraventa.",
+      "Encontrar contactos de abuso para reportar spam o actividad maliciosa.",
+      "Auditar nameservers durante migración DNS o respuesta a incidentes.",
+      "Confirmar que DNSSEC está habilitado en dominios propios."
+    ],
+    "faqTitle": "Preguntas Frecuentes",
+    "faqs": [
+      {
+        "q": "¿Qué es WHOIS?",
+        "a": "WHOIS es un protocolo estándar para consultar bases de datos de registro de dominios (propietario, registrador, fecha de creación, caducidad, nameservers)."
+      },
+      {
+        "q": "¿Qué es RDAP y en qué se diferencia de WHOIS?",
+        "a": "RDAP es el reemplazo moderno de WHOIS. Devuelve JSON estructurado, soporta internacionalización y es más adecuado para herramientas automatizadas."
+      },
+      {
+        "q": "¿Se registra mi consulta?",
+        "a": "Esta herramienta reenvía tu consulta directamente desde tu navegador a rdap.org — no registramos, cacheamos ni almacenamos consultas."
+      },
+      {
+        "q": "¿Por qué algunos campos muestran \"—\"?",
+        "a": "GDPR y regulaciones de privacidad hacen que muchos registradores oculten información personal de contacto."
+      },
+      {
+        "q": "¿Puedo consultar TLDs que no sean .com?",
+        "a": "Sí. RDAP soporta la mayoría de gTLDs (com, org, net, io, dev) y muchos ccTLDs."
+      }
+    ]
+  },
+  "text-to-speech": {
+    "name": "Texto a Voz",
+    "description": "Convierte texto a audio hablado en tu navegador.",
+    "pageTitle": "Texto a Voz Online Gratis — Voces Naturales, 50+ Idiomas",
+    "pageDescription": "Conversor de texto a voz gratuito. Convierte cualquier texto en audio natural usando las voces integradas del navegador. Velocidad, tono y volumen ajustables. 50+ idiomas.",
+    "inputLabel": "Texto a leer",
+    "inputPlaceholder": "Escribe o pega texto aquí...",
+    "voice": "Voz",
+    "voicesAvailable": "voces disponibles",
+    "rate": "Velocidad",
+    "pitch": "Tono",
+    "volume": "Volumen",
+    "play": "Reproducir",
+    "pause": "Pausar",
+    "resume": "Continuar",
+    "stop": "Detener",
+    "sampleText": "¡Hola! Esta es una herramienta gratuita de texto a voz. Funciona completamente en tu navegador, sin enviar datos a ningún servidor. Prueba diferentes voces, velocidades y tonos.",
+    "unsupported": "Tu navegador no soporta la Web Speech API. Prueba Chrome, Edge o Safari.",
+    "seoTitle": "Acerca de Texto a Voz",
+    "seoContent": "Texto a voz (TTS) convierte texto escrito en audio hablado. Esta herramienta usa la Web Speech API integrada en navegadores modernos, que proporciona voces de alta calidad sin enviar tu texto a ningún servidor.",
+    "howToUseTitle": "Cómo Usar",
+    "howToUseSteps": [
+      "Escribe o pega texto (hasta 10.000 caracteres).",
+      "Elige una voz del desplegable — agrupadas por idioma.",
+      "Ajusta velocidad, tono y volumen.",
+      "Haz clic en \"Reproducir\". Puedes pausar o detener.",
+      "Carga el ejemplo para probar una voz rápido."
+    ],
+    "useCasesTitle": "Casos de Uso",
+    "useCases": [
+      "Escuchar pronunciación de palabras o nombres.",
+      "Escuchar artículos con las manos libres.",
+      "Revisar tu redacción escuchándola.",
+      "Crear demos de accesibilidad.",
+      "Generar clips de voz para prototipos sin APIs de pago."
+    ],
+    "faqTitle": "Preguntas Frecuentes",
+    "faqs": [
+      {
+        "q": "¿Es gratis?",
+        "a": "Sí, completamente gratis y sin límites. Usa la Web Speech API del navegador."
+      },
+      {
+        "q": "¿Funciona sin conexión?",
+        "a": "Depende de tu sistema operativo. macOS e iOS suelen funcionar offline."
+      },
+      {
+        "q": "¿Puedo descargar el audio?",
+        "a": "La Web Speech API no permite capturar audio directamente."
+      },
+      {
+        "q": "¿Por qué hay pocas voces?",
+        "a": "Depende del SO. Instala más paquetes de voz en los ajustes del sistema."
+      },
+      {
+        "q": "¿Mi texto se envía a un servidor?",
+        "a": "No. Se procesa localmente en tu navegador."
+      }
+    ]
   }
 }

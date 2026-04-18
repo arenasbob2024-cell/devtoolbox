@@ -16466,5 +16466,132 @@
       "Checking chart structure in CI/CD pipelines",
       "Auditing third-party Helm charts"
     ]
+  },
+  "whois-lookup": {
+    "name": "Recherche WHOIS",
+    "description": "Recherche des informations d'enregistrement de domaine via RDAP.",
+    "pageTitle": "Recherche WHOIS Gratuite en Ligne — Registraire, Expiration, Nameservers",
+    "pageDescription": "Outil WHOIS gratuit. Consultez le registraire, la date d'enregistrement, l'expiration, les nameservers, le statut DNSSEC et le contact d'abus de tout domaine. Basé sur RDAP, exécuté dans votre navigateur.",
+    "domainLabel": "Nom de domaine",
+    "domainPlaceholder": "example.com",
+    "lookup": "Rechercher",
+    "loading": "Recherche...",
+    "samples": "Essayer",
+    "results": "Résultats",
+    "labelRegistrar": "Registraire",
+    "labelRegistered": "Enregistré",
+    "labelExpires": "Expire",
+    "labelUpdated": "Dernière mise à jour",
+    "labelDnssec": "DNSSEC",
+    "labelRegistrant": "Titulaire",
+    "labelAbuseContact": "Contact abus",
+    "labelNameservers": "Nameservers",
+    "labelStatus": "Statut",
+    "showRaw": "Afficher la réponse RDAP brute",
+    "hideRaw": "Masquer la réponse brute",
+    "errorInvalid": "Veuillez entrer un domaine valide (ex : example.com).",
+    "errorNotFound": "Domaine introuvable ou données WHOIS indisponibles.",
+    "errorNetwork": "Recherche échouée. Vérifiez votre réseau et réessayez.",
+    "seoTitle": "À propos de la recherche WHOIS",
+    "seoContent": "WHOIS est un protocole pour interroger les données d'enregistrement de domaines, y compris la propriété, l'expiration et les coordonnées. Les recherches WHOIS modernes utilisent RDAP, le successeur basé sur JSON. Cet outil interroge des serveurs RDAP publics directement depuis votre navigateur.",
+    "howToUseTitle": "Comment Utiliser",
+    "howToUseSteps": [
+      "Saisissez un nom de domaine (sans http://, sans chemin).",
+      "Cliquez sur \"Rechercher\" ou appuyez sur Entrée.",
+      "Examinez registraire, dates, nameservers et codes de statut.",
+      "Cliquez sur \"Afficher RDAP brut\" pour voir toutes les données.",
+      "Cliquez sur \"Copier\" pour copier le résumé."
+    ],
+    "useCasesTitle": "Cas d'Usage",
+    "useCases": [
+      "Vérifier l'expiration avant de renouveler ou acheter un domaine.",
+      "Vérifier la propriété lors d'une vente ou transfert.",
+      "Trouver les contacts d'abus pour signaler spam ou activité malveillante.",
+      "Auditer les nameservers lors d'une migration DNS.",
+      "Confirmer que DNSSEC est activé sur vos domaines."
+    ],
+    "faqTitle": "Questions Fréquentes",
+    "faqs": [
+      {
+        "q": "Qu'est-ce que WHOIS ?",
+        "a": "WHOIS est un protocole standard pour interroger les bases de données d'enregistrement de domaines."
+      },
+      {
+        "q": "Qu'est-ce que RDAP ?",
+        "a": "RDAP est le remplaçant moderne de WHOIS. Il retourne du JSON structuré et est mieux adapté aux outils automatisés."
+      },
+      {
+        "q": "Ma requête est-elle enregistrée ?",
+        "a": "Cet outil transmet votre requête directement de votre navigateur à rdap.org — nous n'enregistrons rien."
+      },
+      {
+        "q": "Pourquoi certains champs affichent \"—\" ?",
+        "a": "Le RGPD entraîne l'occultation des informations personnelles chez de nombreux registraires."
+      },
+      {
+        "q": "Puis-je interroger des TLDs autres que .com ?",
+        "a": "Oui. RDAP supporte la plupart des gTLDs et ccTLDs."
+      }
+    ]
+  },
+  "text-to-speech": {
+    "name": "Synthèse Vocale",
+    "description": "Convertit le texte en audio dans votre navigateur.",
+    "pageTitle": "Synthèse Vocale en Ligne Gratuite — Voix Naturelles, 50+ Langues",
+    "pageDescription": "Convertisseur texte-vers-voix gratuit. Transformez tout texte en audio naturel avec les voix intégrées à votre navigateur. Vitesse, hauteur, volume ajustables. 50+ langues.",
+    "inputLabel": "Texte à lire",
+    "inputPlaceholder": "Saisissez ou collez du texte ici...",
+    "voice": "Voix",
+    "voicesAvailable": "voix disponibles",
+    "rate": "Vitesse",
+    "pitch": "Hauteur",
+    "volume": "Volume",
+    "play": "Lire",
+    "pause": "Pause",
+    "resume": "Reprendre",
+    "stop": "Arrêter",
+    "sampleText": "Bonjour ! Ceci est un outil gratuit de synthèse vocale. Il fonctionne entièrement dans votre navigateur, sans envoi de données à un serveur.",
+    "unsupported": "Votre navigateur ne supporte pas la Web Speech API. Essayez Chrome, Edge ou Safari.",
+    "seoTitle": "À propos de la synthèse vocale",
+    "seoContent": "La synthèse vocale (TTS) convertit du texte écrit en audio parlé. Cet outil utilise la Web Speech API intégrée aux navigateurs modernes, avec des voix de haute qualité sans envoi de texte vers un serveur.",
+    "howToUseTitle": "Comment Utiliser",
+    "howToUseSteps": [
+      "Saisissez ou collez du texte (jusqu'à 10 000 caractères).",
+      "Choisissez une voix — groupées par langue.",
+      "Ajustez vitesse, hauteur, volume.",
+      "Cliquez \"Lire\". Vous pouvez mettre en pause ou arrêter.",
+      "Chargez l'exemple pour tester rapidement."
+    ],
+    "useCasesTitle": "Cas d'Usage",
+    "useCases": [
+      "Écouter la prononciation de mots ou noms.",
+      "Écouter des articles en conduisant ou cuisinant.",
+      "Relire votre écriture en l'écoutant.",
+      "Créer des démos d'accessibilité.",
+      "Générer des clips vocaux pour prototypes."
+    ],
+    "faqTitle": "Questions Fréquentes",
+    "faqs": [
+      {
+        "q": "Est-ce gratuit ?",
+        "a": "Oui, totalement gratuit et illimité. Utilise la Web Speech API du navigateur."
+      },
+      {
+        "q": "Fonctionne hors ligne ?",
+        "a": "Dépend de l'OS. macOS et iOS fonctionnent généralement hors ligne."
+      },
+      {
+        "q": "Puis-je télécharger l'audio ?",
+        "a": "La Web Speech API ne permet pas de capturer directement l'audio."
+      },
+      {
+        "q": "Pourquoi peu de voix ?",
+        "a": "Dépend de l'OS. Installez plus de voix dans les paramètres système."
+      },
+      {
+        "q": "Mon texte est-il envoyé à un serveur ?",
+        "a": "Non. Traitement local dans le navigateur."
+      }
+    ]
   }
 }
