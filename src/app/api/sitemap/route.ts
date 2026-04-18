@@ -6,6 +6,23 @@ import { i18n } from '@/i18n/config'
 const BASE_URL = 'https://viadreams.cc'
 const URLS_PER_SITEMAP = 500
 
+// Category collection pages (high-value aggregate landing pages).
+// Each category targets a competitive long-tail query (e.g. "Free JSON Tools 2026").
+const CATEGORY_SLUGS = [
+  'json-tools',
+  'css-tools',
+  'converter-tools',
+  'encoder-decoder-tools',
+  'formatter-tools',
+  'generator-tools',
+  'text-tools',
+  'web-tools',
+  'image-tools',
+  'security-tools',
+  'devops-tools',
+  'markdown-tools',
+]
+
 interface SitemapEntry {
   url: string
   lastmod: string
@@ -64,6 +81,17 @@ function buildAllUrls(): SitemapEntry[] {
     })
   }
 
+  // EN Category pages (high-priority aggregate landing pages)
+  for (const slug of CATEGORY_SLUGS) {
+    entries.push({
+      url: `${BASE_URL}/en/category/${slug}/`,
+      lastmod: today,
+      changefreq: 'weekly',
+      priority: 0.85,
+      alternates: getAlternates(l => `/${l}/category/${slug}/`),
+    })
+  }
+
   // EN Blog index
   entries.push({
     url: `${BASE_URL}/en/blog/`,
@@ -105,6 +133,17 @@ function buildAllUrls(): SitemapEntry[] {
         changefreq: 'monthly',
         priority: 0.5,
         alternates: getAlternates(l => `/${l}/blog/${post.slug}/`),
+      })
+    }
+
+    // Category pages for non-English locales
+    for (const slug of CATEGORY_SLUGS) {
+      entries.push({
+        url: `${BASE_URL}/${locale}/category/${slug}/`,
+        lastmod: today,
+        changefreq: 'weekly',
+        priority: 0.55,
+        alternates: getAlternates(l => `/${l}/category/${slug}/`),
       })
     }
 
