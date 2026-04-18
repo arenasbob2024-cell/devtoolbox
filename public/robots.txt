@@ -1,11 +1,45 @@
 # DevToolBox - robots.txt
 # https://viadreams.cc
+# Last updated: 2026-04-18
 
 User-agent: *
 Allow: /
+
+# Block crawling of Next.js internal params to save crawl budget.
+# These parameters produce duplicate content that Google penalizes.
+Disallow: /*?_rsc=
+Disallow: /*?_next=
+Disallow: /*?callbackUrl=
+Disallow: /*?q=
+Disallow: /*?search=
+
+# Block internal / debug paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Block legacy aitoolvs.com paths (site discontinued)
+Disallow: /best-ai-
+Disallow: /top-10-ai-
+Disallow: /chatgpt-
+Disallow: /midjourney-
+Disallow: /claude-alternatives
+Disallow: /notion-ai-vs-
+Disallow: /cursor-ai-
+Disallow: /perplexity-ai-vs
+
+# Allow CSS & JS (important for rendering)
+Allow: /_next/static/
 
 # Sitemaps
 Sitemap: https://viadreams.cc/sitemap.xml
 
 # Canonical host
 Host: https://viadreams.cc
+
+# Specific bot directives
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10

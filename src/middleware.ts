@@ -25,7 +25,7 @@ function getLocale(request: NextRequest): Locale {
 }
 
 export function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
+  const { pathname, searchParams } = request.nextUrl;
   const host = request.headers.get('host') || '';
 
   // Skip for static files, API routes, admin, Next.js internals
@@ -38,6 +38,11 @@ export function middleware(request: NextRequest) {
   ) {
     return;
   }
+
+  // Detect Next.js RSC prefetch URLs (?_rsc=, ?_next=) — these are duplicates of
+  // the canonical URL and should not be indexed. Set X-Robots-Tag noindex to
+  // reinforce the robots.txt Disallow rule.
+  const hasRscParam = searchParams.has('_rsc') || searchParams.has('_next');
 
   // www → non-www redirect (fixes duplicate page issues in Search Console)
   if (host.startsWith('www.')) {
@@ -61,11 +66,21 @@ export function middleware(request: NextRequest) {
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   );
 
-  if (pathnameHasLocale) return;
+  if (pathnameHasLocale) {
+    // Pass-through, but add noindex header for RSC-prefetch URLs
+    if (hasRscParam) {
+      const response = NextResponse.next();
+      response.headers.set('X-Robots-Tag', 'noindex, nofollow');
+      return response;
+    }
+    return;
+  }
 
   // Redirect to locale-prefixed path
   const locale = getLocale(request);
   const newUrl = new URL(`/${locale}${pathname}`, request.url);
+  // Preserve query string on redirect
+  newUrl.search = request.nextUrl.search;
   return NextResponse.redirect(newUrl);
 }
 
