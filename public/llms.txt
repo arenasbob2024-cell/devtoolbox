@@ -1,0 +1,70 @@
+# DevToolBox
+
+> Free online developer tools for everyday tasks: formatters, encoders, generators, converters, validators. 88+ tools across 15 languages. Zero ads, zero tracking, all-browser (no data uploaded).
+
+DevToolBox (https://viadreams.cc) is a privacy-first web application that provides fast, reliable developer utilities. Every tool runs client-side in the browser — no data ever leaves the user's device. The site covers JSON, Base64, URL, JWT, regex, hash, UUID, timestamp, color, Markdown, SQL, XML, CSV, YAML, and dozens of other common developer needs.
+
+## Most popular tools
+
+- [JSON Formatter](https://viadreams.cc/en/tools/json-formatter/): Format, validate, and beautify JSON with syntax highlighting. Supports minify, pretty-print, and error line pointing.
+- [Base64 Encoder/Decoder](https://viadreams.cc/en/tools/base64/): Encode text to Base64 or decode Base64 strings. UTF-8 safe, supports URLs and binary data.
+- [URL Encoder/Decoder](https://viadreams.cc/en/tools/url-encoder/): Encode or decode URL components, percent-encoding, and query strings.
+- [JWT Decoder](https://viadreams.cc/en/tools/jwt-decoder/): Decode JSON Web Tokens, inspect headers and payloads, verify signatures.
+- [Regex Tester](https://viadreams.cc/en/tools/regex-tester/): Test regular expressions against input text with real-time highlighting, supports PCRE/JavaScript flavors.
+- [UUID Generator](https://viadreams.cc/en/tools/uuid-generator/): Generate RFC-4122 UUID v4 (random) and v7 (time-ordered). Bulk generation up to 1000 at once.
+- [Password Generator](https://viadreams.cc/en/tools/password-generator/): Generate cryptographically secure passwords with configurable length and character sets.
+- [Hash Generator](https://viadreams.cc/en/tools/hash-generator/): Compute MD5, SHA-1, SHA-256, SHA-384, SHA-512 hashes from text or files.
+- [HMAC Generator](https://viadreams.cc/en/tools/hmac-generator/): Create HMAC signatures (HMAC-SHA256, HMAC-SHA1, HMAC-MD5) for API authentication.
+- [Timestamp Converter](https://viadreams.cc/en/tools/timestamp-converter/): Convert between Unix epoch timestamps and human-readable dates in any timezone.
+- [Cron Parser](https://viadreams.cc/en/tools/cron-parser/): Parse and visualize cron expressions, preview next 10 scheduled runs.
+- [Color Converter](https://viadreams.cc/en/tools/color-converter/): Convert colors between HEX, RGB, HSL, HSV, CMYK with live preview.
+- [IP Calculator](https://viadreams.cc/en/tools/ip-calculator/): CIDR subnet calculator — compute netmask, broadcast, host range, and subnet size.
+- [QR Code Generator](https://viadreams.cc/en/tools/qr-generator/): Generate QR codes from URLs, text, WiFi, vCard, or SMS with custom styling.
+- [Text Diff](https://viadreams.cc/en/tools/text-diff/): Side-by-side text comparison with character-level highlighting.
+- [SQL Formatter](https://viadreams.cc/en/tools/sql-formatter/): Format and beautify SQL queries for MySQL, PostgreSQL, SQLite, BigQuery dialects.
+- [Markdown Preview](https://viadreams.cc/en/tools/markdown-preview/): Live Markdown-to-HTML preview with GitHub-flavored syntax.
+- [Fake Data Generator](https://viadreams.cc/en/tools/fake-data/): Generate realistic fake names, emails, addresses, credit cards for testing.
+- [Bcrypt Generator](https://viadreams.cc/en/tools/bcrypt-generator/): Generate bcrypt hashes with configurable cost factor for password storage.
+- [Number Base Converter](https://viadreams.cc/en/tools/number-base/): Convert numbers between binary, octal, decimal, hexadecimal bases.
+
+## Tool categories
+
+- [JSON Tools](https://viadreams.cc/en/category/json-tools/): Formatter, validator, schema validator, YAML/XML/CSV converters, JSONPath tester.
+- [CSS Tools](https://viadreams.cc/en/category/css-tools/): Minifier, beautifier, gradient generator, box-shadow generator, flexbox playground.
+- [Converter Tools](https://viadreams.cc/en/category/converter-tools/): Between JSON/YAML/XML/CSV, color formats, number bases, timestamp formats.
+- [Encoder/Decoder Tools](https://viadreams.cc/en/category/encoder-decoder-tools/): Base64, URL, HTML entity, JWT, hex, binary, percent encoding.
+- [Formatter Tools](https://viadreams.cc/en/category/formatter-tools/): JSON, XML, SQL, HTML, CSS, JavaScript pretty-printers.
+- [Generator Tools](https://viadreams.cc/en/category/generator-tools/): UUID, password, hash, HMAC, QR, fake data, UUID v7.
+- [Text Tools](https://viadreams.cc/en/category/text-tools/): Diff, case converter, character counter, lorem ipsum, slugify.
+- [Web Tools](https://viadreams.cc/en/category/web-tools/): HTTP status codes, MIME types, URL parser, IP calculator, user-agent parser.
+- [Image Tools](https://viadreams.cc/en/category/image-tools/): Base64 image encoder, SVG minifier, image-to-data-URI.
+- [Security Tools](https://viadreams.cc/en/category/security-tools/): Bcrypt, PEM decoder, JWT verifier, HMAC signatures, hash comparison.
+- [DevOps Tools](https://viadreams.cc/en/category/devops-tools/): Cron parser, YAML linter, ENV file parser, Dockerfile validator.
+- [Markdown Tools](https://viadreams.cc/en/category/markdown-tools/): Preview, table generator, README builder, Markdown-to-HTML.
+
+## Guides and articles
+
+- [Ollama Guide](https://viadreams.cc/en/blog/ollama-guide/): Run LLMs locally on your own hardware.
+- [Coolify Self-hosting Guide](https://viadreams.cc/en/blog/coolify-guide/): Open-source Heroku alternative deployment.
+- [LangChain Introduction](https://viadreams.cc/en/blog/langchain-guide/): Build LLM apps with chains, agents, memory.
+- [RAG Primer](https://viadreams.cc/en/blog/rag-introduction/): Retrieval-Augmented Generation architectures.
+- [Vector Databases Guide](https://viadreams.cc/en/blog/vector-databases-guide/): Pinecone vs Weaviate vs Qdrant vs pgvector comparison.
+- [Cursor vs Copilot](https://viadreams.cc/en/blog/cursor-vs-copilot/): Which AI coding assistant wins in 2026.
+- [Docker Compose Guide](https://viadreams.cc/en/blog/docker-compose-guide/): Production-grade multi-container setups.
+- [Next.js App Router](https://viadreams.cc/en/blog/nextjs-app-router/): Server components, streaming, and caching.
+- [Git Cheatsheet](https://viadreams.cc/en/blog/git-cheatsheet/): Most-used commands for daily development.
+- [Caddy Web Server](https://viadreams.cc/en/blog/caddy-web-server/): Automatic HTTPS and simple configs.
+
+## Languages supported
+
+DevToolBox is available in 9 active languages with fully translated UI, tool descriptions, and SEO metadata: English (en), Spanish (es), French (fr), German (de), Portuguese (pt), Italian (it), Chinese Simplified (zh), Japanese (ja), Korean (ko). Each language has its own canonical URL and hreflang alternates.
+
+## Privacy and licensing
+
+All tools run 100% client-side. No user input is uploaded, logged, or stored. No account required. No cookies for tracking. Source code uses standard open-source libraries (MIT/Apache). Safe for use with sensitive data like API keys, JWTs, or production logs during debugging.
+
+## Contact
+
+Website: https://viadreams.cc
+Sitemap: https://viadreams.cc/sitemap.xml
+Canonical URLs end with trailing slash. All locale variants are indexed via hreflang.

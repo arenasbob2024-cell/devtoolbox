@@ -1,0 +1,59 @@
+name: Auto IndexNow Submit
+
+# Push URLs to IndexNow (Bing/Yandex) automatically when content changes.
+# Triggers on main branch pushes that touch tools, blog, or i18n dictionaries.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/lib/tools.ts'
+      - 'src/data/blog-posts.ts'
+      - 'src/app/[lang]/tools/**'
+      - 'src/app/[lang]/blog/**'
+      - 'src/app/[lang]/category/**'
+      - 'src/i18n/dictionaries/**'
+      - 'public/llms.txt'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Submission mode'
+        required: false
+        default: 'priority'
+        type: choice
+        options:
+          - priority
+          - all
+
+concurrency:
+  group: indexnow-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Submit to IndexNow
+        run: |
+          if [ "${{ github.event.inputs.mode }}" = "all" ]; then
+            echo "Running full submission..."
+            node scripts/indexnow-submit.js
+          else
+            echo "Running priority submission..."
+            node scripts/indexnow-priority.js
+          fi
+
+      - name: Report
+        if: always()
+        run: |
+          echo "::notice title=IndexNow::Submitted to Bing / Yandex / IndexNow.org"
+          echo "Check Bing Webmaster Tools → URL Submission in ~24h to verify."
