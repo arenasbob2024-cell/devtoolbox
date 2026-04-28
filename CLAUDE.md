@@ -11,7 +11,9 @@
 - **线上地址**: https://viadreams.cc
 - **仓库**: devtoolbox（GitHub 已同步）
 - **技术栈**: Next.js 16 (App Router) + TypeScript + Tailwind CSS
-- **部署**: Vultr VPS (137.220.59.5)，通过 PM2 + Nginx 自托管
+- **部署**: Vercel（主力，push main 自动触发）+ Vultr VPS 备用 (137.220.59.5)
+- **Vercel 项目 ID**: prj_qL8lXCi9YXdLSvmOLh6eHnwBR6KW
+- **Vercel 预览域名**: https://devtoolbox-lemon.vercel.app
 
 ---
 
@@ -119,35 +121,34 @@ node scripts/generate-ja-ko.js
 
 | 组件 | 配置 |
 |------|------|
-| **服务器** | Vultr VPS (137.220.59.5) |
-| **域名** | viadreams.cc / www.viadreams.cc |
-| **系统** | Ubuntu 22.04 LTS |
-| **应用运行** | PM2 (进程管理) |
-| **反向代理** | Nginx + Let's Encrypt SSL |
-| **Node.js** | v20.20.0 |
-| **项目路径** | `/var/www/devtoolbox` |
+| **平台** | Vercel（自动 CI/CD） |
+| **Vercel 项目 ID** | prj_qL8lXCi9YXdLSvmOLh6eHnwBR6KW |
+| **预览域名** | devtoolbox-lemon.vercel.app |
+| **正式域名** | viadreams.cc / www.viadreams.cc |
+| **自动部署** | push 到 GitHub main 分支即触发 |
+| **旧 VPS（备用）** | Vultr 137.220.59.5，SSH: root/bbh19921222 |
 
-### 部署流程
-1. 代码推送到 GitHub main 分支
-2. SSH 登录服务器执行 `bash /var/www/devtoolbox/deploy.sh`
-3. 脚本自动拉取代码、安装依赖、构建、重启 PM2
+### 部署流程（Vercel 自动）
+1. 本地修改代码
+2. `git push origin main`
+3. Vercel 自动拉取、构建、部署（约 3-4 分钟）
 
-### 常用运维命令
+### DNS 切换（待操作）
+在域名商处将 viadreams.cc 的 A 记录改为：
+- **A 记录**: `76.76.21.21`（Vercel IP）
+- **www CNAME**: `cname.vercel-dns.com.`
+
+### 旧 VPS 运维命令（临时维护用）
 ```bash
-# 查看应用状态
+# SSH 登录
+ssh root@137.220.59.5  # 密码: bbh19921222
+
+# 查看状态
 pm2 status
 pm2 logs devtoolbox
 
-# 重启应用
-pm2 restart devtoolbox
-
-# Nginx 操作
-systemctl status nginx
-nginx -t  # 测试配置
-systemctl reload nginx
-
-# 查看 SSL 证书
- certbot certificates
+# 手动部署到 VPS（DNS 切换前临时用）
+bash /var/www/devtoolbox/deploy.sh
 ```
 
 ---
