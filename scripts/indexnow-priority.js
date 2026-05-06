@@ -1,16 +1,17 @@
 #!/usr/bin/env node
 /**
  * Submit priority canonical URLs to IndexNow API.
- * Only 9 active locales, canonical trailing-slash URLs, top tools first.
+ * Active locales only (en/zh/ru), canonical trailing-slash URLs, top tools first.
  */
+/* eslint-disable @typescript-eslint/no-require-imports */
 const https = require('https');
 
 const HOST = 'viadreams.cc';
 const KEY = '20f1b836f28044618a828be72fb2fdff';
 const BASE = `https://${HOST}`;
 
-// Active locales only (nl, pl, sv, no, id, th are 301'd to /en/)
-const LOCALES = ['en', 'es', 'fr', 'de', 'pt', 'it', 'zh', 'ja', 'ko'];
+// Active locales only (all others are 301'd to /en/ via middleware)
+const LOCALES = ['en', 'zh', 'ru'];
 
 // Top priority tools for indexing (high-search-volume keywords)
 const PRIORITY_TOOLS = [

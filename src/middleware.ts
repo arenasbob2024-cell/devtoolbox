@@ -2,8 +2,14 @@ import { NextRequest, NextResponse } from 'next/server';
 import { i18n } from './i18n/config';
 import type { Locale } from './i18n/config';
 
-// Locales that were removed — 301 redirect to English equivalent
-const REMOVED_LOCALES = ['nl', 'pl', 'sv', 'no', 'id', 'th'];
+// Locales that were removed — 301 redirect to English equivalent.
+// Keeps SEO weight from already-indexed URLs while pruning the language matrix.
+const REMOVED_LOCALES = [
+  // Original wave (Nordics + SEA)
+  'nl', 'pl', 'sv', 'no', 'id', 'th',
+  // Second wave — focusing on en/zh/ru only based on actual traffic data
+  'fr', 'de', 'it', 'es', 'pt', 'ja', 'ko',
+];
 
 function getLocale(request: NextRequest): Locale {
   const acceptLanguage = request.headers.get('accept-language') || '';

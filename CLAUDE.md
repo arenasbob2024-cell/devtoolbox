@@ -13,7 +13,8 @@
 - **技术栈**: Next.js 16 (App Router) + TypeScript + Tailwind CSS
 - **部署**: Vercel（主力，push main 自动触发）
 - **Vercel 项目 ID**: prj_qL8lXCi9YXdLSvmOLh6eHnwBR6KW
-- **Vercel API Token**: `vcp_4IDSzTvtpWUdFUeTTtnMNixGn61ZRNM1IhGVg0nT0KlgsDsBo7V1OmldM`
+- **Vercel API Token**: 不在文档中存放,使用时从 Vercel dashboard (Settings → Tokens) 单独生成
+- **Vercel Team ID**: `team_CP5WhE4wensGmx92NAImRHjV`(slug: arenas-projects-ac293cdb)
 - **Vercel 预览域名**: https://devtoolbox-lemon.vercel.app
 - **域名商**: Gname.com（新加坡），账号：arenasbob.2024@gmail.com
 
@@ -30,7 +31,25 @@
 | **邮件订阅** | Buttondown 集成（Footer、工具页侧边栏、博客页） |
 | **SEO 优化** | sitemap hreflang 重构、IndexNow 接入、博客多语言翻译（pt/it） |
 | **迁移** | 已从 Vultr VPS 全量迁移至 Vercel，DNS 已切换完成 |
+| **变现** | Adsterra Native Banner 已接入(2026-05-06),全站投放,带 Cookie 同意 |
 | **代码同步** | 已提交并推送到 GitHub main 分支 |
+
+### Adsterra 变现接入详情（2026-05-06）
+
+- **账户**: arenasbob @ Adsterra(Publisher)
+- **站点**: viadreams.cc(Website ID: 5768041,审核已通过 Active)
+- **广告位**: NativeBanner_1(Ad Unit ID: 29254685,Format: Native Banner)
+- **invoke.js**: `https://pl29355184.profitablecpmratenetwork.com/1996698ecc1a68bcd8a4b03d8e78d459/invoke.js`
+- **Container Key**: `1996698ecc1a68bcd8a4b03d8e78d459`
+- **组件文件**:
+  - `src/components/CookieConsent.tsx`(GDPR 同意 banner,9 语言)
+  - `src/components/AdsterraNativeBanner.tsx`(广告组件,Cookie 同意后才加载)
+  - 集成位置: `src/app/[lang]/layout.tsx`(全站投放)
+- **Vercel 环境变量**:
+  - `NEXT_PUBLIC_ADSTERRA_NATIVE_SCRIPT` = invoke.js URL
+  - `NEXT_PUBLIC_ADSTERRA_NATIVE_KEY` = container key
+- **ads.txt**: `public/ads.txt` 占位文件已创建(invoke.js 加载方式不依赖 ads.txt)
+- **注意**: 中文用户(CN 大陆)可能因 GFW 阻断 profitablecpmratenetwork.com 而看到空广告位。中文流量 eCPM 通常较低($0.05-0.30)。建议先观察 1-2 周数据再决定是否补充百度联盟等其他网络
 
 ### SEO 优化详情（2026-04）
 

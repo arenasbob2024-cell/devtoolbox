@@ -31,14 +31,8 @@ export function useConsent(): ConsentValue | null {
 
 const t: Record<Locale, { msg: string; accept: string; reject: string; privacy: string }> = {
   en: { msg: 'We use cookies to display ads and analyze traffic. You can choose what to allow.', accept: 'Accept', reject: 'Reject', privacy: 'Privacy Policy' },
-  fr: { msg: 'Nous utilisons des cookies pour afficher des publicités et analyser le trafic.', accept: 'Accepter', reject: 'Refuser', privacy: 'Politique de confidentialité' },
-  de: { msg: 'Wir verwenden Cookies, um Anzeigen anzuzeigen und den Datenverkehr zu analysieren.', accept: 'Akzeptieren', reject: 'Ablehnen', privacy: 'Datenschutzerklärung' },
-  it: { msg: 'Utilizziamo i cookie per mostrare annunci e analizzare il traffico.', accept: 'Accetta', reject: 'Rifiuta', privacy: 'Privacy Policy' },
-  es: { msg: 'Usamos cookies para mostrar anuncios y analizar el tráfico.', accept: 'Aceptar', reject: 'Rechazar', privacy: 'Política de privacidad' },
-  pt: { msg: 'Usamos cookies para exibir anúncios e analisar o tráfego.', accept: 'Aceitar', reject: 'Recusar', privacy: 'Política de privacidade' },
   zh: { msg: '我们使用 Cookie 展示广告并分析流量。您可以自行选择是否允许。', accept: '接受', reject: '拒绝', privacy: '隐私政策' },
-  ja: { msg: '広告の表示とトラフィック分析のためにCookieを使用します。', accept: '同意する', reject: '拒否', privacy: 'プライバシーポリシー' },
-  ko: { msg: '광고 표시 및 트래픽 분석을 위해 쿠키를 사용합니다.', accept: '동의', reject: '거부', privacy: '개인정보 처리방침' },
+  ru: { msg: 'Мы используем файлы cookie для показа рекламы и анализа трафика. Вы можете выбрать, что разрешить.', accept: 'Принять', reject: 'Отклонить', privacy: 'Политика конфиденциальности' },
 };
 
 export default function CookieConsent({ lang }: { lang: Locale }) {

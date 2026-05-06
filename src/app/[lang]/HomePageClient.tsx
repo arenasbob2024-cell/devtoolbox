@@ -3,8 +3,21 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { tools, categories } from '@/lib/tools';
-import AdSlot from '@/components/AdSlot';
 import { useLang } from '@/i18n/LangContext';
+
+// 8 most-loved developer tools — surfaced at the top of the homepage so
+// users see actionable entry points within the first viewport (instead of
+// hunting through the 88-tool grid). IDs verified against src/lib/tools.ts.
+const POPULAR_TOOL_IDS = [
+  'json-formatter',
+  'base64',
+  'url-encoder',
+  'uuid-generator',
+  'jwt-decoder',
+  'hash-generator',
+  'regex-tester',
+  'timestamp-converter',
+] as const;
 
 export default function HomePageClient() {
   const { lang, dict } = useLang();
@@ -67,12 +80,12 @@ export default function HomePageClient() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
 
       {/* Hero */}
-      <section style={{ textAlign: 'center', padding: '50px 0 30px' }}>
+      <section style={{ textAlign: 'center', padding: '32px 0 20px' }}>
         <h1 style={{
-          fontSize: 48,
+          fontSize: 44,
           fontWeight: 800,
           lineHeight: 1.1,
-          marginBottom: 16,
+          marginBottom: 14,
         }}>
           <span className="gradient-text">{dict.home.heroTitle1}</span>
           <br />
@@ -111,6 +124,95 @@ export default function HomePageClient() {
           </svg>
         </div>
       </section>
+
+      {/* Popular Tools — surfaced at the top to drive immediate engagement */}
+      {!search && activeCategory === 'all' && (
+        <section style={{ marginBottom: 40 }}>
+          <div style={{ textAlign: 'center', marginBottom: 24 }}>
+            <h2 style={{ fontSize: 22, fontWeight: 700, marginBottom: 6, display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+              <span style={{ fontSize: 24 }}>🔥</span>
+              <span className="gradient-text">{dict.home.popularTitle}</span>
+            </h2>
+            <p style={{ fontSize: 13, color: 'var(--text-secondary)', margin: 0 }}>
+              {dict.home.popularSubtitle}
+            </p>
+          </div>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
+            gap: 14,
+          }}>
+            {POPULAR_TOOL_IDS.map((toolId, idx) => {
+              const tool = tools.find(x => x.id === toolId);
+              if (!tool) return null;
+              const toolDict = t[tool.id as keyof typeof t];
+              return (
+                <Link
+                  key={tool.id}
+                  href={`/${lang}${tool.path}`}
+                  className="tool-card"
+                  style={{
+                    position: 'relative',
+                    borderColor: 'rgba(59,130,246,0.35)',
+                    background: 'linear-gradient(135deg, rgba(59,130,246,0.06), rgba(139,92,246,0.06))',
+                  }}
+                >
+                  <span style={{
+                    position: 'absolute',
+                    top: 8,
+                    right: 10,
+                    fontSize: 10,
+                    fontWeight: 700,
+                    padding: '2px 8px',
+                    borderRadius: 4,
+                    background: 'rgba(34,197,94,0.18)',
+                    color: '#22c55e',
+                    letterSpacing: 0.4,
+                  }}>
+                    #{idx + 1}
+                  </span>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: 14 }}>
+                    <div style={{
+                      width: 48,
+                      height: 48,
+                      borderRadius: 12,
+                      background: 'linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.2))',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: 17,
+                      fontWeight: 800,
+                      fontFamily: 'monospace',
+                      flexShrink: 0,
+                      color: 'var(--accent-blue)',
+                    }}>
+                      {tool.icon}
+                    </div>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <h3 style={{ fontSize: 15, fontWeight: 700, marginBottom: 4, color: 'var(--text-primary)' }}>
+                        {toolDict?.name || tool.name}
+                      </h3>
+                      <p style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.5, margin: '0 0 8px' }}>
+                        {toolDict?.description || tool.description}
+                      </p>
+                      <span style={{
+                        fontSize: 12,
+                        fontWeight: 600,
+                        color: 'var(--accent-blue)',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: 4,
+                      }}>
+                        {dict.home.tryNow} →
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </section>
+      )}
 
       {/* Category Tabs */}
       <div style={{
@@ -156,9 +258,6 @@ export default function HomePageClient() {
           </button>
         ))}
       </div>
-
-      {/* Ad */}
-      <AdSlot size="leaderboard" />
 
       {/* Tools Grid */}
       <div style={{
@@ -208,9 +307,6 @@ export default function HomePageClient() {
           <p style={{ fontSize: 14 }}>{dict.common.tryDifferent}</p>
         </div>
       )}
-
-      {/* Bottom Ad */}
-      <AdSlot size="leaderboard" style={{ marginTop: 30 }} />
 
       {/* Features Section */}
       <section style={{ padding: '50px 0', textAlign: 'center' }}>

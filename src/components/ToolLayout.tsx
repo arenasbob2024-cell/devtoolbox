@@ -22,9 +22,25 @@ export default function ToolLayout({ title, description, children, toolId }: Too
   const { lang, dict } = useLang();
   const t = dict.tools;
   const currentTool = tools.find(t => t.id === toolId);
-  const relatedTools = currentTool?.relatedTools
-    ? currentTool.relatedTools.map(id => tools.find(t => t.id === id)).filter((t): t is NonNullable<typeof t> => t != null).slice(0, 4)
-    : tools.filter(t => t.id !== toolId).slice(0, 4);
+  // Show 6 related tools: declared relatedTools first, then top up from same category, finally any others.
+  // More related links = more internal link juice flowing into this page = better SEO.
+  const relatedTools = (() => {
+    const declared = (currentTool?.relatedTools || [])
+      .map(id => tools.find(t => t.id === id))
+      .filter((t): t is NonNullable<typeof t> => t != null);
+    if (declared.length >= 6) return declared.slice(0, 6);
+    const sameCat = currentTool
+      ? tools.filter(t =>
+          t.id !== toolId &&
+          t.category === currentTool.category &&
+          !declared.some(d => d.id === t.id)
+        )
+      : [];
+    const filled = [...declared, ...sameCat].slice(0, 6);
+    if (filled.length >= 6) return filled;
+    const others = tools.filter(t => t.id !== toolId && !filled.some(d => d.id === t.id));
+    return [...filled, ...others].slice(0, 6);
+  })();
 
   return (
     <div style={{ maxWidth: 1200, margin: '0 auto', padding: '24px' }}>
@@ -94,6 +110,20 @@ export default function ToolLayout({ title, description, children, toolId }: Too
                 </Link>
               );
             })}
+            <Link
+              href={`/${lang}/tools`}
+              style={{
+                display: 'block',
+                marginTop: 10,
+                padding: '8px 0 0',
+                fontSize: 12,
+                fontWeight: 600,
+                color: 'var(--accent-blue)',
+                textDecoration: 'none',
+              }}
+            >
+              {dict.common.allTools} ({tools.length}) →
+            </Link>
           </div>
 
           <AffiliateCard category={currentTool?.category} />

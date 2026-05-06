@@ -54,7 +54,7 @@ export async function generateMetadata({
       description: ui.meta.homeDescription,
       url: `https://viadreams.cc/${lang}`,
       type: 'website',
-      locale: { en: 'en_US', fr: 'fr_FR', de: 'de_DE', it: 'it_IT', es: 'es_ES', pt: 'pt_PT', zh: 'zh_CN', ja: 'ja_JP', ko: 'ko_KR' }[lang] || 'en_US',
+      locale: { en: 'en_US', zh: 'zh_CN', ru: 'ru_RU' }[lang] || 'en_US',
       siteName: 'DevToolBox',
       images: [{ url: 'https://viadreams.cc/og-image.png', width: 1200, height: 630, alt: 'DevToolBox - Free Online Developer Tools' }],
     },

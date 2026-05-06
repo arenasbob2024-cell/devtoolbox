@@ -3,27 +3,15 @@ import type { Locale } from './config';
 // UI dictionaries (~4-10KB each) — common, home, categories, footer, etc.
 const uiDictionaries = {
   en: () => import('./dictionaries/en-ui.json').then((m) => m.default),
-  fr: () => import('./dictionaries/fr-ui.json').then((m) => m.default),
-  de: () => import('./dictionaries/de-ui.json').then((m) => m.default),
-  it: () => import('./dictionaries/it-ui.json').then((m) => m.default),
-  es: () => import('./dictionaries/es-ui.json').then((m) => m.default),
-  pt: () => import('./dictionaries/pt-ui.json').then((m) => m.default),
   zh: () => import('./dictionaries/zh-ui.json').then((m) => m.default),
-  ja: () => import('./dictionaries/ja-ui.json').then((m) => m.default),
-  ko: () => import('./dictionaries/ko-ui.json').then((m) => m.default),
+  ru: () => import('./dictionaries/ru-ui.json').then((m) => m.default),
 };
 
 // Tools dictionaries (~650-710KB each) — only loaded on tool pages
 const toolsDictionaries = {
   en: () => import('./dictionaries/en-tools.json').then((m) => m.default),
-  fr: () => import('./dictionaries/fr-tools.json').then((m) => m.default),
-  de: () => import('./dictionaries/de-tools.json').then((m) => m.default),
-  it: () => import('./dictionaries/it-tools.json').then((m) => m.default),
-  es: () => import('./dictionaries/es-tools.json').then((m) => m.default),
-  pt: () => import('./dictionaries/pt-tools.json').then((m) => m.default),
   zh: () => import('./dictionaries/zh-tools.json').then((m) => m.default),
-  ja: () => import('./dictionaries/ja-tools.json').then((m) => m.default),
-  ko: () => import('./dictionaries/ko-tools.json').then((m) => m.default),
+  ru: () => import('./dictionaries/ru-tools.json').then((m) => m.default),
 };
 
 export type UIDictionary = Awaited<ReturnType<(typeof uiDictionaries)['en']>>;

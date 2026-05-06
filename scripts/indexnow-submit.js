@@ -1,10 +1,12 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 const https = require('https');
 const fs = require('fs');
 const path = require('path');
 
 const KEY = '18c23d4fa0c24bb2b5765783a90c0f4d';
 const HOST = 'viadreams.cc';
-const LOCALES = ['en','fr','de','it','es','pt','nl','pl','sv','no','zh','ja','ko','id','th'];
+// Active locales only (all others 301'd to /en/ via middleware)
+const LOCALES = ['en', 'zh', 'ru'];
 
 // Get all tool directories
 const toolsDir = path.join(__dirname, '..', 'src', 'app', '[lang]', 'tools');
@@ -30,8 +32,13 @@ console.log(`Total URLs to submit: ${urls.length}`);
 const BATCH_SIZE = 10000;
 let submitted = 0;
 
-function submitBatch(batch, batchNum) {
-  return new Promise((resolve, reject) => {
+// Push to all three IndexNow-compatible endpoints in parallel for redundancy.
+// Bing and Yandex both accept IndexNow but their direct endpoints are usually
+// faster than the central api.indexnow.org relay, especially for new domains.
+const ENDPOINTS = ['api.indexnow.org', 'www.bing.com', 'yandex.com'];
+
+function submitToEndpoint(endpoint, batch, batchNum) {
+  return new Promise((resolve) => {
     const body = JSON.stringify({
       host: HOST,
       key: KEY,
@@ -40,8 +47,8 @@ function submitBatch(batch, batchNum) {
     });
 
     const options = {
-      hostname: 'api.indexnow.org',
-      path: '/IndexNow',
+      hostname: endpoint,
+      path: '/indexnow',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json; charset=utf-8',
@@ -53,22 +60,28 @@ function submitBatch(batch, batchNum) {
       let data = '';
       res.on('data', chunk => data += chunk);
       res.on('end', () => {
-        console.log(`Batch ${batchNum}: HTTP ${res.statusCode} - ${batch.length} URLs`);
-        if (res.statusCode === 200 || res.statusCode === 202) {
-          submitted += batch.length;
-        }
+        console.log(`Batch ${batchNum} [${endpoint}]: HTTP ${res.statusCode} - ${batch.length} URLs`);
         resolve(res.statusCode);
       });
     });
 
     req.on('error', (e) => {
-      console.error(`Batch ${batchNum} error:`, e.message);
-      reject(e);
+      console.error(`Batch ${batchNum} [${endpoint}] error:`, e.message);
+      resolve(0);
     });
 
     req.write(body);
     req.end();
   });
+}
+
+async function submitBatch(batch, batchNum) {
+  const results = await Promise.all(
+    ENDPOINTS.map(ep => submitToEndpoint(ep, batch, batchNum))
+  );
+  if (results.some(c => c === 200 || c === 202)) {
+    submitted += batch.length;
+  }
 }
 
 async function main() {
@@ -77,7 +90,7 @@ async function main() {
     const batchNum = Math.floor(i / BATCH_SIZE) + 1;
     await submitBatch(batch, batchNum);
   }
-  console.log(`\nDone! Submitted ${submitted}/${urls.length} URLs to IndexNow`);
+  console.log(`\nDone! Submitted ${submitted}/${urls.length} URLs to IndexNow (Bing + Yandex + relay)`);
 }
 
 main().catch(console.error);
