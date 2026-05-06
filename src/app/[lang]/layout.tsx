@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import CookieConsent from '@/components/CookieConsent';
+import AdsterraNativeBanner from '@/components/AdsterraNativeBanner';
 import { LangProvider } from '@/i18n/LangContext';
 import { getDictionary, getUIDictionary } from '@/i18n/getDictionary';
 import { i18n, type Locale } from '@/i18n/config';
@@ -186,8 +188,12 @@ export default async function LangLayout({
           <Header />
           <main style={{ flex: 1 }}>
             {children}
+            {/* Adsterra Native Banner — loads only after cookie consent */}
+            <AdsterraNativeBanner />
           </main>
           <Footer />
+          {/* Cookie consent banner — controls when ad scripts may load */}
+          <CookieConsent lang={lang} />
         </LangProvider>
       </body>
     </html>

@@ -11,9 +11,11 @@
 - **线上地址**: https://viadreams.cc
 - **仓库**: devtoolbox（GitHub 已同步）
 - **技术栈**: Next.js 16 (App Router) + TypeScript + Tailwind CSS
-- **部署**: Vercel（主力，push main 自动触发）+ Vultr VPS 备用 (137.220.59.5)
+- **部署**: Vercel（主力，push main 自动触发）
 - **Vercel 项目 ID**: prj_qL8lXCi9YXdLSvmOLh6eHnwBR6KW
+- **Vercel API Token**: `vcp_4IDSzTvtpWUdFUeTTtnMNixGn61ZRNM1IhGVg0nT0KlgsDsBo7V1OmldM`
 - **Vercel 预览域名**: https://devtoolbox-lemon.vercel.app
+- **域名商**: Gname.com（新加坡），账号：arenasbob.2024@gmail.com
 
 ---
 
@@ -21,13 +23,22 @@
 
 | 类别 | 内容 |
 |------|------|
-| **工具数量** | 78 款（从 28 → 41 → 71 → 78） |
+| **工具数量** | 88 款 |
 | **支持语言** | 15 种：en, fr, de, it, es, pt, nl, pl, sv, no, zh, ja, ko, id, th |
-| **新增工具** | xml-formatter, csv-json, http-status, mime-types, escape-unescape, ip-calculator, fake-data, hmac-generator, url-parser, binary-text, pem-decoder, html-table, bcrypt-generator |
-| **新增语言** | 欧洲：pt, nl, pl, sv, no；东亚：ja, ko |
-| **修复** | zh.json 中文乱码（通过 scripts/fix-zh-encoding.js 修复） |
-| **部署** | 已部署至 viadreams.cc |
+| **博客文章** | 93 篇 |
+| **总索引页** | 约 2780 页 |
+| **邮件订阅** | Buttondown 集成（Footer、工具页侧边栏、博客页） |
+| **SEO 优化** | sitemap hreflang 重构、IndexNow 接入、博客多语言翻译（pt/it） |
+| **迁移** | 已从 Vultr VPS 全量迁移至 Vercel，DNS 已切换完成 |
 | **代码同步** | 已提交并推送到 GitHub main 分支 |
+
+### SEO 优化详情（2026-04）
+
+- `src/app/api/sitemap/route.ts` 重构：英文页优先、添加 `xhtml:link` hreflang 标注（含 x-default）、新增分类页（12 个 category slug）
+- `src/data/blog-posts.ts`：为 5 篇博文添加 pt / it 翻译（langchain-guide, rag-guide, vector-database-guide, cursor-vs-copilot-guide, caddy-server-guide）
+- IndexNow key：`18c23d4fa0c24bb2b5765783a90c0f4d`（Yandex 端点已验证）
+- `public/robots.txt` 已配置 AI 爬虫白名单（GPTBot、ClaudeBot、PerplexityBot 等）
+- **注意**：`public/robots.txt` 静态文件优先级高于 `src/app/robots.ts`，修改 robots 规则应改静态文件
 
 ---
 
@@ -43,6 +54,9 @@ devtoolbox/
 │   │   ├── blog/             # 博客列表与文章
 │   │   ├── about/
 │   │   └── privacy/
+│   ├── app/api/
+│   │   ├── sitemap/route.ts        # 分片 sitemap（含 hreflang）
+│   │   └── sitemap-index/route.ts  # sitemap 索引
 │   ├── components/           # 通用组件（ToolLayout, CopyButton, Header 等）
 │   ├── i18n/
 │   │   ├── config.ts         # locales、localeNames、localeFlags
@@ -53,6 +67,11 @@ devtoolbox/
 ├── scripts/
 │   ├── fix-zh-encoding.js    # 修复 zh.json 中文乱码
 │   └── generate-ja-ko.js     # 生成 ja.json、ko.json
+├── content/                  # 待发布外链内容
+│   ├── devto-article-productivity-tools-2026.md
+│   └── social-media-copy.md
+├── public/
+│   └── robots.txt            # 静态 robots（优先于 src/app/robots.ts）
 ├── vercel.json               # Vercel 配置
 └── package.json
 ```
@@ -89,16 +108,8 @@ npm run dev
 # 构建
 npm run build
 
-# 部署到生产环境（服务器上执行）
-# 方式1：使用 deploy.sh
-bash /var/www/devtoolbox/deploy.sh
-
-# 方式2：手动部署
-cd /var/www/devtoolbox
-git pull origin main
-npm install --production=false
-NODE_OPTIONS='--max-old-space-size=4096' npm run build
-pm2 restart devtoolbox
+# 部署（push 到 GitHub 即自动触发 Vercel）
+git add -A && git commit -m "描述" && git push origin main
 
 # 修复 zh 编码（如需）
 node scripts/fix-zh-encoding.js
@@ -111,7 +122,7 @@ node scripts/generate-ja-ko.js
 
 ## 6. 用户偏好（记忆）
 
-- 修改完成后**直接部署**到线上
+- 修改完成后**直接部署**到线上（push GitHub 即可，Vercel 自动构建）
 - 修改完成后**同步提交并推送到 GitHub**
 - 回复使用**简体中文**
 
@@ -125,49 +136,56 @@ node scripts/generate-ja-ko.js
 | **Vercel 项目 ID** | prj_qL8lXCi9YXdLSvmOLh6eHnwBR6KW |
 | **预览域名** | devtoolbox-lemon.vercel.app |
 | **正式域名** | viadreams.cc / www.viadreams.cc |
-| **自动部署** | push 到 GitHub main 分支即触发 |
-| **旧 VPS（备用）** | Vultr 137.220.59.5，SSH: root/bbh19921222 |
+| **自动部署** | push 到 GitHub main 分支即触发（约 3-4 分钟） |
+| **旧 VPS（备用/闲置）** | Vultr 137.220.59.5，SSH: root/bbh19921222 |
 
-### 部署流程（Vercel 自动）
-1. 本地修改代码
-2. `git push origin main`
-3. Vercel 自动拉取、构建、部署（约 3-4 分钟）
+### DNS 配置（已完成，2026-04-28）
 
-### DNS 切换（待操作）
-在域名商处将 viadreams.cc 的 A 记录改为：
-- **A 记录**: `76.76.21.21`（Vercel IP）
-- **www CNAME**: `cname.vercel-dns.com.`
+域名商 Gname.com 当前生效记录：
 
-### 旧 VPS 运维命令（临时维护用）
+| 主机记录 | 类型 | 记录值 | 状态 |
+|---------|------|--------|------|
+| `@` | A | `76.76.21.21`（Vercel） | ✅ 正常 |
+| `www` | CNAME | `cname.vercel-dns.com` | ✅ 正常 |
+| `@` | TXT | google-site-verification=... | ✅ 正常 |
+
+DNS 服务器：`a.share-dns.com` / `b.share-dns.net`
+
+### 旧 VPS 运维命令（仅紧急备用）
+
 ```bash
-# SSH 登录
 ssh root@137.220.59.5  # 密码: bbh19921222
-
-# 查看状态
 pm2 status
 pm2 logs devtoolbox
-
-# 手动部署到 VPS（DNS 切换前临时用）
 bash /var/www/devtoolbox/deploy.sh
 ```
 
 ---
 
-## 8. 当前状态
+## 8. 当前状态（2026-05-06）
 
-- 线上站点：https://viadreams.cc，功能正常
-- 15 种语言、88 款工具、93 篇博客已配置
-- 邮件订阅组件（Buttondown）已集成到 Footer、工具页侧边栏、博客页
-- 总索引页：2780 页
-- 无已知未完成任务
-- 可在此基础上继续扩展工具、语言或功能
+- 线上站点：https://viadreams.cc，运行于 Vercel，HTTP 200 ✅
+- 15 种语言、88 款工具、93 篇博客
+- Sitemap 已重构，含 hreflang + x-default，分片每组 500 URL
+- DNS 已从 VPS 迁移至 Vercel（2026-04-28 完成）
+- Google 收录约 15 页（新站权重低，SEO 优化已做，待 Google 重新爬取）
 
 ---
 
-## 9. 可选后续方向
+## 9. 待办事项（下一步）
 
-- 新增更多工具
-- 新增更多语言
-- 改进 SEO / 结构化数据
-- 接入更多广告位或变现方式
-- 优化性能和首屏加载
+- [ ] **Google Search Console**：重新提交 sitemap.xml，对主要英文工具页逐一"请求索引"
+- [ ] **发布外链内容**：`content/devto-article-productivity-tools-2026.md` 发布到 Dev.to；`content/social-media-copy.md` 发布到 Reddit 相关子版块
+- [ ] 可继续新增工具、语言或博客
+- [ ] 可接入更多广告位或变现方式
+- [ ] 可优化首屏加载性能
+
+---
+
+## 10. 可选后续方向
+
+- 新增更多工具（当前 88 款）
+- 新增更多语言（当前 15 种）
+- 改进结构化数据（JSON-LD Schema）
+- 接入 Google AdSense 或其他变现
+- 优化 Core Web Vitals / 首屏加载
