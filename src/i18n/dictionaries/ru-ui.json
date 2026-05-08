@@ -65,13 +65,13 @@
     "browseByCategoryTitle": "Просмотр по категориям"
   },
   "categories": {
-    "encoder": "Encoder / Decoder",
-    "formatter": "Formatter / Beautifier",
-    "generator": "Generator",
-    "converter": "Converter",
-    "text": "Text Tools",
-    "web": "Web Tools",
-    "css": "CSS Tools"
+    "encoder": "Кодировщики",
+    "formatter": "Форматтеры",
+    "generator": "Генераторы",
+    "converter": "Конвертеры",
+    "text": "Текстовые инструменты",
+    "web": "Веб-инструменты",
+    "css": "CSS инструменты"
   },
   "footer": {
     "tagline": "Free online developer tools. No signup required. All processing happens in your browser — your data never leaves your device.",
