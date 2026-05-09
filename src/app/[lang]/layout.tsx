@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CookieConsent from '@/components/CookieConsent';
 import AdsterraNativeBanner from '@/components/AdsterraNativeBanner';
+import AdsterraIframeBanner from '@/components/AdsterraIframeBanner';
 import { LangProvider } from '@/i18n/LangContext';
 import { getDictionary, getUIDictionary } from '@/i18n/getDictionary';
 import { i18n, type Locale } from '@/i18n/config';
@@ -186,13 +187,12 @@ export default async function LangLayout({
       <body style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         <LangProvider lang={lang} dict={dict}>
           <Header />
-          {/* Top Adsterra Native Banner (above the fold, after Header).
-              Renders only when NEXT_PUBLIC_ADSTERRA_TOP_SCRIPT/KEY are set —
-              create a second ad unit in the Adsterra dashboard then configure
-              the env vars in Vercel to activate this slot. */}
-          <AdsterraNativeBanner
-            scriptSrc={process.env.NEXT_PUBLIC_ADSTERRA_TOP_SCRIPT}
-            containerKey={process.env.NEXT_PUBLIC_ADSTERRA_TOP_KEY}
+          {/* Top Adsterra Banner 728x90 (leaderboard, above the fold).
+              Activates when NEXT_PUBLIC_ADSTERRA_TOP_KEY is set. */}
+          <AdsterraIframeBanner
+            adKey={process.env.NEXT_PUBLIC_ADSTERRA_TOP_KEY}
+            width={728}
+            height={90}
             style={{ marginTop: 8, marginBottom: 0 }}
           />
           <main style={{ flex: 1 }}>
