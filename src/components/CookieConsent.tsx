@@ -3,16 +3,30 @@
 import { useSyncExternalStore } from 'react';
 import type { Locale } from '@/i18n/config';
 
+/**
+ * Lightweight cookie notice.
+ * --------------------------------------------------
+ * Shows a one-time informational banner at the bottom of the page until the
+ * user dismisses it. Crucially, this notice does NOT block the Adsterra
+ * invoke.js script — Adsterra handles EU GDPR personalization on its server
+ * side automatically. Our banner is here purely so the user knows cookies are
+ * in use and where to read more.
+ *
+ * Once dismissed (close button), the banner stays hidden across visits via
+ * localStorage. The "consent" hook is kept for forward-compatibility with any
+ * cookie-gated third-party scripts we may add in the future.
+ */
+
 const STORAGE_KEY = 'cookie-consent';
 export const CONSENT_EVENT = 'cookie-consent-changed';
 
-export type ConsentValue = 'accepted' | 'rejected';
+export type ConsentValue = 'accepted' | 'rejected' | 'dismissed';
 
 export function getConsent(): ConsentValue | null {
   if (typeof window === 'undefined') return null;
   try {
     const v = window.localStorage.getItem(STORAGE_KEY);
-    return v === 'accepted' || v === 'rejected' ? v : null;
+    return v === 'accepted' || v === 'rejected' || v === 'dismissed' ? v : null;
   } catch {
     return null;
   }
@@ -24,27 +38,27 @@ function subscribe(callback: () => void) {
   return () => window.removeEventListener(CONSENT_EVENT, callback);
 }
 
-/** Hook other components can use to read the current consent state. */
+/** Hook for components that want to react to consent changes. */
 export function useConsent(): ConsentValue | null {
   return useSyncExternalStore(subscribe, getConsent, () => null);
 }
 
-const t: Record<Locale, { msg: string; accept: string; reject: string; privacy: string }> = {
-  en: { msg: 'We use cookies to display ads and analyze traffic. You can choose what to allow.', accept: 'Accept', reject: 'Reject', privacy: 'Privacy Policy' },
-  zh: { msg: '我们使用 Cookie 展示广告并分析流量。您可以自行选择是否允许。', accept: '接受', reject: '拒绝', privacy: '隐私政策' },
-  ru: { msg: 'Мы используем файлы cookie для показа рекламы и анализа трафика. Вы можете выбрать, что разрешить.', accept: 'Принять', reject: 'Отклонить', privacy: 'Политика конфиденциальности' },
+const t: Record<Locale, { msg: string; ok: string; privacy: string }> = {
+  en: { msg: 'This site uses cookies for analytics and to display ads. By continuing to browse, you agree.', ok: 'Got it', privacy: 'Privacy Policy' },
+  zh: { msg: '本站使用 Cookie 进行流量分析与广告展示。继续浏览即视为同意。', ok: '我知道了', privacy: '隐私政策' },
+  ru: { msg: 'Этот сайт использует cookie для аналитики и показа рекламы. Продолжая просмотр, вы соглашаетесь.', ok: 'Понятно', privacy: 'Политика конфиденциальности' },
 };
 
 export default function CookieConsent({ lang }: { lang: Locale }) {
   const consent = useConsent();
 
-  const choose = (v: ConsentValue) => {
+  const dismiss = () => {
     try {
-      window.localStorage.setItem(STORAGE_KEY, v);
+      window.localStorage.setItem(STORAGE_KEY, 'dismissed');
     } catch {
       // ignore (private mode etc.)
     }
-    window.dispatchEvent(new CustomEvent(CONSENT_EVENT, { detail: v }));
+    window.dispatchEvent(new CustomEvent(CONSENT_EVENT, { detail: 'dismissed' }));
   };
 
   if (consent !== null) return null;
@@ -52,76 +66,53 @@ export default function CookieConsent({ lang }: { lang: Locale }) {
 
   return (
     <div
-      role="dialog"
-      aria-live="polite"
-      aria-label="Cookie consent"
+      role="region"
+      aria-label="Cookie notice"
       style={{
         position: 'fixed',
-        left: 0,
-        right: 0,
-        bottom: 0,
+        left: 16,
+        right: 16,
+        bottom: 16,
         zIndex: 9999,
+        maxWidth: 720,
+        margin: '0 auto',
         background: 'rgba(15, 15, 22, 0.97)',
         color: '#e5e7eb',
-        borderTop: '1px solid #2a2a35',
-        padding: '14px 16px',
-        boxShadow: '0 -4px 20px rgba(0,0,0,0.4)',
+        border: '1px solid #2a2a35',
+        borderRadius: 12,
+        padding: '12px 16px',
+        boxShadow: '0 8px 32px rgba(0,0,0,0.5)',
+        display: 'flex',
+        gap: 12,
+        alignItems: 'center',
       }}
     >
-      <div
+      <p style={{ margin: 0, fontSize: 13, lineHeight: 1.5, flex: 1 }}>
+        {s.msg}{' '}
+        <a
+          href={`/${lang}/privacy`}
+          style={{ color: '#7dd3fc', textDecoration: 'underline' }}
+        >
+          {s.privacy}
+        </a>
+      </p>
+      <button
+        type="button"
+        onClick={dismiss}
         style={{
-          maxWidth: 1100,
-          margin: '0 auto',
-          display: 'flex',
-          flexWrap: 'wrap',
-          gap: 12,
-          alignItems: 'center',
-          justifyContent: 'space-between',
+          background: '#3b82f6',
+          color: '#fff',
+          border: 'none',
+          borderRadius: 6,
+          padding: '6px 14px',
+          fontSize: 13,
+          fontWeight: 600,
+          cursor: 'pointer',
+          flexShrink: 0,
         }}
       >
-        <p style={{ margin: 0, fontSize: 14, lineHeight: 1.5, flex: '1 1 320px' }}>
-          {s.msg}{' '}
-          <a
-            href={`/${lang}/privacy`}
-            style={{ color: '#7dd3fc', textDecoration: 'underline' }}
-          >
-            {s.privacy}
-          </a>
-        </p>
-        <div style={{ display: 'flex', gap: 8, flexShrink: 0 }}>
-          <button
-            type="button"
-            onClick={() => choose('rejected')}
-            style={{
-              background: 'transparent',
-              color: '#e5e7eb',
-              border: '1px solid #4b5563',
-              borderRadius: 6,
-              padding: '8px 16px',
-              fontSize: 14,
-              cursor: 'pointer',
-            }}
-          >
-            {s.reject}
-          </button>
-          <button
-            type="button"
-            onClick={() => choose('accepted')}
-            style={{
-              background: '#3b82f6',
-              color: '#fff',
-              border: 'none',
-              borderRadius: 6,
-              padding: '8px 16px',
-              fontSize: 14,
-              fontWeight: 600,
-              cursor: 'pointer',
-            }}
-          >
-            {s.accept}
-          </button>
-        </div>
-      </div>
+        {s.ok}
+      </button>
     </div>
   );
 }

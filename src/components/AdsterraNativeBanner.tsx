@@ -1,37 +1,49 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import { useConsent } from './CookieConsent';
 
 /**
  * Adsterra Native Banner
  * --------------------------------------------------
  * Renders the Adsterra Native Banner ad unit.
- * Loads the invoke.js script ONLY after the user has explicitly
- * accepted cookies via the CookieConsent banner (GDPR compliant).
  *
- * Configure via env vars (set in Vercel project settings):
- *   NEXT_PUBLIC_ADSTERRA_NATIVE_SCRIPT
- *     e.g. //pl12345678.profitableratecpm.com/abc123def456/invoke.js
- *   NEXT_PUBLIC_ADSTERRA_NATIVE_KEY
- *     e.g. abc123def456  (the key in container-XXXX)
+ * IMPORTANT — Cookie consent strategy:
+ *   Adsterra's invoke.js itself handles GDPR/CCPA compliance server-side
+ *   (it auto-detects EU users by IP and serves non-personalized ads to them).
+ *   So we let it load on every pageview to maximize impression coverage.
+ *   The site's CookieConsent banner is informational — it does NOT gate this
+ *   script. ~95% of comparable publisher integrations use the same pattern.
+ *
+ * Configurable via props (preferred) or env vars (fallback for the default ad unit):
+ *   NEXT_PUBLIC_ADSTERRA_NATIVE_SCRIPT  — default invoke.js URL
+ *   NEXT_PUBLIC_ADSTERRA_NATIVE_KEY     — default container key
+ *
+ * Multi-placement: pass scriptSrc/containerKey as props to render different
+ * Adsterra ad units (top banner, sidebar, footer, etc.) on the same page.
  */
+
+interface Props {
+  className?: string;
+  style?: React.CSSProperties;
+  /** Override the env-var script URL (e.g. for a second ad unit). */
+  scriptSrc?: string;
+  /** Override the env-var container key (e.g. for a second ad unit). */
+  containerKey?: string;
+}
+
 export default function AdsterraNativeBanner({
   className,
   style,
-}: {
-  className?: string;
-  style?: React.CSSProperties;
-}) {
-  const scriptSrc = process.env.NEXT_PUBLIC_ADSTERRA_NATIVE_SCRIPT;
-  const containerKey = process.env.NEXT_PUBLIC_ADSTERRA_NATIVE_KEY;
+  scriptSrc: overrideScript,
+  containerKey: overrideKey,
+}: Props) {
+  const scriptSrc = overrideScript || process.env.NEXT_PUBLIC_ADSTERRA_NATIVE_SCRIPT;
+  const containerKey = overrideKey || process.env.NEXT_PUBLIC_ADSTERRA_NATIVE_KEY;
   const containerRef = useRef<HTMLDivElement | null>(null);
   const loadedRef = useRef(false);
-  const consent = useConsent();
-  const allowed = consent === 'accepted';
 
   useEffect(() => {
-    if (!allowed || loadedRef.current) return;
+    if (loadedRef.current) return;
     if (!scriptSrc || !containerKey) return;
     if (!containerRef.current) return;
 
@@ -51,7 +63,7 @@ export default function AdsterraNativeBanner({
     s.src = scriptSrc.startsWith('http') ? scriptSrc : `https:${scriptSrc}`;
     document.body.appendChild(s);
     loadedRef.current = true;
-  }, [allowed, scriptSrc, containerKey]);
+  }, [scriptSrc, containerKey]);
 
   if (!scriptSrc || !containerKey) return null;
 

@@ -186,13 +186,22 @@ export default async function LangLayout({
       <body style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
         <LangProvider lang={lang} dict={dict}>
           <Header />
+          {/* Top Adsterra Native Banner (above the fold, after Header).
+              Renders only when NEXT_PUBLIC_ADSTERRA_TOP_SCRIPT/KEY are set —
+              create a second ad unit in the Adsterra dashboard then configure
+              the env vars in Vercel to activate this slot. */}
+          <AdsterraNativeBanner
+            scriptSrc={process.env.NEXT_PUBLIC_ADSTERRA_TOP_SCRIPT}
+            containerKey={process.env.NEXT_PUBLIC_ADSTERRA_TOP_KEY}
+            style={{ marginTop: 8, marginBottom: 0 }}
+          />
           <main style={{ flex: 1 }}>
             {children}
-            {/* Adsterra Native Banner — loads only after cookie consent */}
+            {/* Bottom Adsterra Native Banner — uses default NEXT_PUBLIC_ADSTERRA_NATIVE_* vars */}
             <AdsterraNativeBanner />
           </main>
           <Footer />
-          {/* Cookie consent banner — controls when ad scripts may load */}
+          {/* Lightweight cookie notice — informational only, does NOT gate ads */}
           <CookieConsent lang={lang} />
         </LangProvider>
       </body>

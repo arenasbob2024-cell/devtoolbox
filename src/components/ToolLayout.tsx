@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import AdSlot from './AdSlot';
+import AdsterraNativeBanner from './AdsterraNativeBanner';
 import { tools } from '@/lib/tools';
 import { useLang } from '@/i18n/LangContext';
 import NewsletterSignup from './NewsletterSignup';
@@ -82,6 +83,15 @@ export default function ToolLayout({ title, description, children, toolId }: Too
         {/* Sidebar */}
         <div style={{ width: 300, flexShrink: 0, display: 'flex', flexDirection: 'column', gap: 20 }}>
           <AdSlot size="rectangle" />
+
+          {/* Sidebar Adsterra Native Banner — only renders if SIDEBAR env vars are set.
+              Configure NEXT_PUBLIC_ADSTERRA_SIDEBAR_SCRIPT + KEY in Vercel after creating
+              the second ad unit in the Adsterra dashboard. */}
+          <AdsterraNativeBanner
+            scriptSrc={process.env.NEXT_PUBLIC_ADSTERRA_SIDEBAR_SCRIPT}
+            containerKey={process.env.NEXT_PUBLIC_ADSTERRA_SIDEBAR_KEY}
+            style={{ margin: 0, maxWidth: '100%', minHeight: 250 }}
+          />
 
           <ToolRating toolId={toolId} lang={lang} />
 
