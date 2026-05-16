@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { tools, categories } from '@/lib/tools';
 import { getDictionary } from '@/i18n/getDictionary';
 import { i18n, type Locale } from '@/i18n/config';
+import SponsorCta from '@/components/SponsorCta';
 
 interface PageProps {
   params: Promise<{ lang: string }>;
@@ -82,6 +83,8 @@ export default async function ToolsIndexPage({ params }: PageProps) {
           {tools.length} {dict.common.allTools?.toLowerCase().includes('tool') ? '' : 'tools'}
         </p>
       </section>
+
+      <SponsorCta placement="tools-index-sponsor" category="tools-index" id="tools-index-sponsor" />
 
       {/* Category Sections */}
       {toolsByCategory.map((cat) => (

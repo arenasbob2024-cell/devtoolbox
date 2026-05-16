@@ -30,3 +30,21 @@ export function trackMonetizationClick({
     placement: placement || 'unknown',
   });
 }
+
+export function trackMonetizationImpression({
+  type,
+  id,
+  category,
+  placement,
+}: MonetizationClick) {
+  if (typeof window === 'undefined' || typeof window.gtag !== 'function') {
+    return;
+  }
+
+  window.gtag('event', 'monetization_impression', {
+    monetization_type: type,
+    monetization_id: id,
+    tool_category: category || 'unknown',
+    placement: placement || 'unknown',
+  });
+}

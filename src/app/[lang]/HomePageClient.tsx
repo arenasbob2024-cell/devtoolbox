@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { tools, categories } from '@/lib/tools';
 import { useLang } from '@/i18n/LangContext';
+import SponsorCta from '@/components/SponsorCta';
 
 // 8 most-loved developer tools — surfaced at the top of the homepage so
 // users see actionable entry points within the first viewport (instead of
@@ -212,6 +213,10 @@ export default function HomePageClient() {
             })}
           </div>
         </section>
+      )}
+
+      {!search && activeCategory === 'all' && (
+        <SponsorCta placement="home-sponsor" category="home" id="home-sponsor" />
       )}
 
       {/* Category Tabs */}

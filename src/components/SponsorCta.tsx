@@ -1,8 +1,9 @@
 'use client';
 
 import Link from 'next/link';
+import { useEffect, useRef } from 'react';
 import { useLang } from '@/i18n/LangContext';
-import { trackMonetizationClick } from '@/lib/analytics';
+import { trackMonetizationClick, trackMonetizationImpression } from '@/lib/analytics';
 
 const copy = {
   en: {
@@ -36,9 +37,44 @@ export default function SponsorCta({
 }) {
   const { lang } = useLang();
   const t = copy[lang as keyof typeof copy] || copy.en;
+  const containerRef = useRef<HTMLElement | null>(null);
+  const trackedRef = useRef(false);
+
+  useEffect(() => {
+    const element = containerRef.current;
+    if (!element || trackedRef.current) return;
+
+    const track = () => {
+      if (trackedRef.current) return;
+      trackedRef.current = true;
+      trackMonetizationImpression({
+        type: 'sponsor',
+        id,
+        category,
+        placement,
+      });
+    };
+
+    if (!('IntersectionObserver' in window)) {
+      track();
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some(entry => entry.isIntersecting)) {
+        track();
+        observer.disconnect();
+      }
+    }, { threshold: 0.5 });
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, [category, id, placement]);
 
   return (
     <aside
+      ref={containerRef}
       style={{
         margin: '24px 0',
         padding: 18,
