@@ -17,6 +17,7 @@ type AdSlotPlacement =
 interface AdSlotProps {
   size?: AdSlotSize;
   placement?: AdSlotPlacement;
+  category?: string;
   className?: string;
   style?: React.CSSProperties;
 }
@@ -43,6 +44,7 @@ function getDimensions(size: AdSlotSize) {
 export default function AdSlot({
   size = 'leaderboard',
   placement,
+  category,
   className,
   style,
 }: AdSlotProps) {
@@ -56,6 +58,8 @@ export default function AdSlot({
       adKey={adKey}
       width={width}
       height={height}
+      placement={placement}
+      category={category}
       className={className}
       style={style}
     />

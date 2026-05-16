@@ -191,12 +191,13 @@ export default async function LangLayout({
             adKey={process.env.NEXT_PUBLIC_ADSTERRA_TOP_KEY}
             width={728}
             height={90}
+            placement="site-top-leaderboard"
             style={{ marginTop: 8, marginBottom: 0 }}
           />
           <main style={{ flex: 1 }}>
             {children}
             {/* Bottom Adsterra Native Banner — uses default NEXT_PUBLIC_ADSTERRA_NATIVE_* vars */}
-            <AdsterraNativeBanner />
+            <AdsterraNativeBanner placement="site-bottom-native" />
           </main>
           <Footer />
           {/* Lightweight cookie notice — informational only, does NOT gate ads */}

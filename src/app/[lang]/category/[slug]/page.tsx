@@ -297,7 +297,7 @@ export default async function CategoryPage({ params }: PageProps) {
           {isZh ? `${toolCount} 个工具可用` : `${toolCount} tools available`}
         </p>
 
-        <AdSlot size="leaderboard" placement="category-top" />
+        <AdSlot size="leaderboard" placement="category-top" category={slug} />
         <SponsorCta placement="category-top-sponsor" category={slug} id="category-sponsor" />
 
         {/* Tools grid */}
@@ -347,7 +347,7 @@ export default async function CategoryPage({ params }: PageProps) {
           </div>
         </section>
 
-        <AdSlot size="leaderboard" placement="category-bottom" style={{ marginTop: 36 }} />
+        <AdSlot size="leaderboard" placement="category-bottom" category={slug} style={{ marginTop: 36 }} />
 
         {/* Cross-linking to other categories */}
         <section className="mt-12">

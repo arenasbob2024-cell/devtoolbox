@@ -7,7 +7,7 @@ declare global {
 }
 
 interface MonetizationClick {
-  type: 'affiliate' | 'support' | 'sponsor';
+  type: 'adsterra' | 'affiliate' | 'support' | 'sponsor';
   id: string;
   category?: string;
   placement?: string;

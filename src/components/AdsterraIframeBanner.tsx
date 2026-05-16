@@ -1,5 +1,8 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
+import { trackMonetizationImpression } from '@/lib/analytics';
+
 /**
  * Adsterra iframe Banner (traditional format with fixed size: 728x90, 300x250, etc.)
  * --------------------------------------------------
@@ -21,6 +24,8 @@ interface Props {
   height: number;
   className?: string;
   style?: React.CSSProperties;
+  placement?: string;
+  category?: string;
 }
 
 export default function AdsterraIframeBanner({
@@ -29,7 +34,44 @@ export default function AdsterraIframeBanner({
   height,
   className,
   style,
+  placement = 'adsterra-iframe',
+  category,
 }: Props) {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const trackedRef = useRef(false);
+
+  useEffect(() => {
+    const element = containerRef.current;
+    if (!element || trackedRef.current || !adKey) return;
+
+    const track = () => {
+      if (trackedRef.current) return;
+      trackedRef.current = true;
+      trackMonetizationImpression({
+        type: 'adsterra',
+        id: placement,
+        category,
+        placement,
+      });
+    };
+
+    if (!('IntersectionObserver' in window)) {
+      track();
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some(entry => entry.isIntersecting)) {
+        track();
+        observer.disconnect();
+      }
+    }, { threshold: 0.5 });
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, [adKey, category, placement]);
+
   if (!adKey) return null;
 
   // Inline document loaded into the sandboxed iframe.
@@ -37,6 +79,7 @@ export default function AdsterraIframeBanner({
 
   return (
     <div
+      ref={containerRef}
       className={className}
       style={{
         margin: '20px auto',

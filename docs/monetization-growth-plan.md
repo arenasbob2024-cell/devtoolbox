@@ -64,7 +64,7 @@ The sidebar recommendation card can now use real partner/referral URLs without c
 
 Tool sidebar partner cards only show affiliate links whose env vars are configured. If no relevant affiliate URL exists, the slot falls back to the internal `/advertise` sponsorship CTA instead of sending high-intent traffic to unpaid external homepages.
 
-Clicks are sent to Google Analytics as `monetization_click` with `monetization_type`, `monetization_id`, `tool_category`, and `placement` parameters. Sponsor CTAs also emit `monetization_impression` when at least half of the CTA is visible, so GA can calculate CTR by surface. Use these events to decide which categories deserve stronger partner offers.
+Clicks are sent to Google Analytics as `monetization_click` with `monetization_type`, `monetization_id`, `tool_category`, and `placement` parameters. Sponsor CTAs and Adsterra containers also emit `monetization_impression` when at least half of the monetized surface is visible, so GA can calculate CTR and viewable opportunity by surface. Use these events to decide which categories deserve stronger partner offers and which ad slots deserve dedicated Adsterra placements.
 
 ## Weekly operating loop
 

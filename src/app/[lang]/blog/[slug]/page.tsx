@@ -1089,7 +1089,7 @@ export default function BlogPostPage() {
         </div>
       </header>
 
-      <AdSlot size="leaderboard" placement="blog-article-top" />
+      <AdSlot size="leaderboard" placement="blog-article-top" category={slug} />
       <SponsorCta placement="blog-article-sponsor" category={slug} id="blog-article-sponsor" />
 
       {/* Article Body */}
@@ -1144,7 +1144,7 @@ export default function BlogPostPage() {
         </div>
       )}
 
-      <AdSlot size="leaderboard" placement="blog-article-bottom" style={{ marginTop: 30 }} />
+      <AdSlot size="leaderboard" placement="blog-article-bottom" category={slug} style={{ marginTop: 30 }} />
 
       {/* Related Posts */}
       {relatedPostsList.length > 0 && (

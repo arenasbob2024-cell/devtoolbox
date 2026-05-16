@@ -37,7 +37,7 @@ export default function BlogListPage() {
         </p>
       </section>
 
-      <AdSlot size="leaderboard" placement="blog-list-top" />
+      <AdSlot size="leaderboard" placement="blog-list-top" category="blog" />
       <SponsorCta placement="blog-list-sponsor" id="blog-list-sponsor" />
 
       {/* Articles */}
@@ -116,7 +116,7 @@ export default function BlogListPage() {
         })}
       </div>
 
-      <AdSlot size="leaderboard" placement="blog-list-bottom" style={{ marginTop: 30 }} />
+      <AdSlot size="leaderboard" placement="blog-list-bottom" category="blog" style={{ marginTop: 30 }} />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { trackMonetizationImpression } from '@/lib/analytics';
 
 /**
  * Adsterra Native Banner
@@ -29,6 +30,8 @@ interface Props {
   scriptSrc?: string;
   /** Override the env-var container key (e.g. for a second ad unit). */
   containerKey?: string;
+  placement?: string;
+  category?: string;
 }
 
 export default function AdsterraNativeBanner({
@@ -36,11 +39,15 @@ export default function AdsterraNativeBanner({
   style,
   scriptSrc: overrideScript,
   containerKey: overrideKey,
+  placement = 'site-bottom-native',
+  category,
 }: Props) {
   const scriptSrc = overrideScript || process.env.NEXT_PUBLIC_ADSTERRA_NATIVE_SCRIPT;
   const containerKey = overrideKey || process.env.NEXT_PUBLIC_ADSTERRA_NATIVE_KEY;
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const loadedRef = useRef(false);
+  const trackedRef = useRef(false);
 
   useEffect(() => {
     if (loadedRef.current) return;
@@ -65,10 +72,43 @@ export default function AdsterraNativeBanner({
     loadedRef.current = true;
   }, [scriptSrc, containerKey]);
 
+  useEffect(() => {
+    const element = wrapperRef.current;
+    if (!element || trackedRef.current || !scriptSrc || !containerKey) return;
+
+    const track = () => {
+      if (trackedRef.current) return;
+      trackedRef.current = true;
+      trackMonetizationImpression({
+        type: 'adsterra',
+        id: placement,
+        category,
+        placement,
+      });
+    };
+
+    if (!('IntersectionObserver' in window)) {
+      track();
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some(entry => entry.isIntersecting)) {
+        track();
+        observer.disconnect();
+      }
+    }, { threshold: 0.5 });
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, [category, containerKey, placement, scriptSrc]);
+
   if (!scriptSrc || !containerKey) return null;
 
   return (
     <div
+      ref={wrapperRef}
       className={className}
       style={{
         margin: '24px auto',

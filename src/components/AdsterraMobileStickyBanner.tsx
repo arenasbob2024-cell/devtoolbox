@@ -68,6 +68,7 @@ export default function AdsterraMobileStickyBanner({
             adKey={adKey}
             width={width}
             height={height}
+            placement="mobile-sticky"
             style={{ margin: 0 }}
           />
         </div>
