@@ -5,6 +5,7 @@ import { getDictionary } from '@/i18n/getDictionary';
 import { i18n, type Locale } from '@/i18n/config';
 import SponsorCta from '@/components/SponsorCta';
 import AdSlot from '@/components/AdSlot';
+import PartnerOfferStrip from '@/components/PartnerOfferStrip';
 
 interface PageProps {
   params: Promise<{ lang: string }>;
@@ -87,6 +88,11 @@ export default async function ToolsIndexPage({ params }: PageProps) {
 
       <AdSlot size="leaderboard" placement="tools-index-top" category="tools-index" />
       <SponsorCta placement="tools-index-sponsor" category="tools-index" id="tools-index-sponsor" />
+      <PartnerOfferStrip
+        category="tools-index"
+        keywords={categories.flatMap(category => [category.id, category.name])}
+        placement="tools-index-partner-strip"
+      />
 
       {/* Category Sections */}
       {toolsByCategory.map((cat) => (

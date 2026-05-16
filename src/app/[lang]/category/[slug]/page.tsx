@@ -7,6 +7,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import AdSlot from '@/components/AdSlot';
 import SponsorCta from '@/components/SponsorCta';
+import PartnerOfferStrip from '@/components/PartnerOfferStrip';
 
 // Category filter configuration
 const categoryConfigs: Record<string, {
@@ -238,6 +239,12 @@ export default async function CategoryPage({ params }: PageProps) {
   const ui = await getUIDictionary(lang);
   const categoryTools = getToolsForCategory(slug);
   const meta = categoryMeta[slug]?.[lang] || categoryMeta[slug]?.['en'];
+  const categoryKeywords = [
+    slug,
+    meta?.h1 || '',
+    ...categoryConfigs[slug].filterCategories,
+    ...categoryConfigs[slug].filterKeywords,
+  ];
 
   const isZh = lang === 'zh';
 
@@ -299,6 +306,11 @@ export default async function CategoryPage({ params }: PageProps) {
 
         <AdSlot size="leaderboard" placement="category-top" category={slug} />
         <SponsorCta placement="category-top-sponsor" category={slug} id="category-sponsor" />
+        <PartnerOfferStrip
+          category={slug}
+          keywords={categoryKeywords}
+          placement="category-partner-strip"
+        />
 
         {/* Tools grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
