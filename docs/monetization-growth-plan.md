@@ -43,6 +43,8 @@ Create each as a separate Adsterra placement so reports can show RPM by location
 
 The homepage, tools index, category pages, blog listing, and blog article pages include a direct `/advertise` sponsor CTA. These links pass `source` and `category` query parameters into the advertise page, and the default sponsorship email includes that context in the inquiry body. This captures commercial interest even before a paid ad network slot is configured for that surface.
 
+The `/advertise` page now behaves like a lightweight media kit. It recommends a starter package from the incoming `source` and `category`, shows sellable inventory for each package, and sends the selected package in the sponsorship inquiry. Package-level CTA clicks use `monetization_click` IDs such as `advertise-package-category-sponsor`, so GA can show which commercial offer is getting buyer intent.
+
 ## Non-ad revenue configuration
 
 The sidebar recommendation card can now use real partner/referral URLs without code changes:
