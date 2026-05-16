@@ -68,6 +68,8 @@ Tool sidebar partner cards only show affiliate links whose env vars are configur
 
 Blog article pages now include an inline partner-offer block after the newsletter signup. It matches configured affiliate offers against the article slug and keywords, tracks affiliate impressions/clicks with `placement=blog-article-partner-offer`, and falls back to an article sponsorship inquiry when no affiliate URL is configured.
 
+After a visitor successfully copies tool output three times in one session, the site now shows a lightweight support/sponsor nudge. It waits until the cookie notice is dismissed, frequency-caps dismissal for 24 hours, links to `NEXT_PUBLIC_SUPPORT_URL` or `/advertise`, and tracks `monetization_impression` / `monetization_click` with `placement=copy-success-nudge`. This turns high-intent tool usage into a non-ad revenue opportunity without adding another page-level ad slot.
+
 Clicks are sent to Google Analytics as `monetization_click` with `monetization_type`, `monetization_id`, `tool_category`, and `placement` parameters. Sponsor CTAs and Adsterra containers also emit `monetization_impression` when at least half of the monetized surface is visible, so GA can calculate CTR and viewable opportunity by surface. Use these events to decide which categories deserve stronger partner offers and which ad slots deserve dedicated Adsterra placements.
 
 ## Weekly operating loop
@@ -94,3 +96,4 @@ Then decide:
 4. Replace generic affiliate links with real partner/referral links and track clicks by category.
 5. Publish the prepared Dev.to and social posts in `content/` to drive referral traffic and backlinks.
 6. Use GA `monetization_click` counts to identify which tool categories produce buyer-intent clicks and sell those categories through `/advertise`.
+7. Review `copy-success-nudge` impressions, support clicks, and sponsor clicks weekly; if CTR is weak, test copy threshold `2` vs `3` and alternate support text.

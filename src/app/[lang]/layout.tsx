@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CookieConsent from '@/components/CookieConsent';
+import CopySuccessNudge from '@/components/CopySuccessNudge';
 import AdsterraNativeBanner from '@/components/AdsterraNativeBanner';
 import AdsterraIframeBanner from '@/components/AdsterraIframeBanner';
 import AdsterraMobileStickyBanner from '@/components/AdsterraMobileStickyBanner';
@@ -200,6 +201,7 @@ export default async function LangLayout({
             <AdsterraNativeBanner placement="site-bottom-native" />
           </main>
           <Footer />
+          <CopySuccessNudge />
           {/* Lightweight cookie notice — informational only, does NOT gate ads */}
           <CookieConsent lang={lang} />
           {/* Optional high-viewability mobile anchor banner.
