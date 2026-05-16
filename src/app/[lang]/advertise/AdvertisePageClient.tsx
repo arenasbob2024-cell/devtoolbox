@@ -267,6 +267,8 @@ const copy = {
 
 type PackageId = 'category-sponsor' | 'article-sponsor' | 'sitewide-sponsor' | 'partner-test';
 
+const packageIds: PackageId[] = ['category-sponsor', 'article-sponsor', 'sitewide-sponsor', 'partner-test'];
+
 interface InquiryFormState {
   product: string;
   email: string;
@@ -439,14 +441,20 @@ function getRecommendedPackageId(source: string, category: string): PackageId {
   return 'partner-test';
 }
 
+function normalizePackageId(value?: string): PackageId | undefined {
+  return packageIds.includes(value as PackageId) ? value as PackageId : undefined;
+}
+
 interface AdvertisePageClientProps {
   source?: string;
   category?: string;
+  packageId?: string;
 }
 
 function AdvertiseContent({
   source = '',
   category = '',
+  packageId = '',
 }: AdvertisePageClientProps) {
   const { lang } = useLang();
   const t = copy[lang as keyof typeof copy] || copy.en;
@@ -460,7 +468,7 @@ function AdvertiseContent({
   const inquiryTrackedRef = useRef(false);
   const contactBaseUrl = process.env.NEXT_PUBLIC_SPONSOR_CONTACT_URL
     || 'mailto:arenasbob.2024@gmail.com?subject=DevToolBox%20sponsorship%20inquiry';
-  const recommendedPackageId = getRecommendedPackageId(source, category);
+  const recommendedPackageId = normalizePackageId(packageId) || getRecommendedPackageId(source, category);
   const recommendedPackage = t.packages.find(pkg => pkg.id === recommendedPackageId)
     || t.packages.find(pkg => pkg.id === 'partner-test')
     || t.packages[t.packages.length - 1];

@@ -52,6 +52,8 @@ Homepage inline, mobile sticky, and selected sitewide fallback surfaces are now 
 
 The `/advertise` page now behaves like a lightweight media kit. It recommends a starter package from the incoming `source` and `category`, shows sellable inventory for each package, and sends the selected package in the sponsorship inquiry. Package-level CTA clicks use `monetization_click` IDs such as `advertise-package-category-sponsor`, so GA can show which commercial offer is getting buyer intent.
 
+Sponsor CTA blocks now display the recommended starter package and entry budget directly on the source surface before the click. They also pass a `package` query parameter into `/advertise`, so homepage/mobile/sitewide CTAs land on Sitewide Visibility, blog CTAs land on Article Sponsor, category CTAs land on Category Sponsor, and generic partner/sidebar CTAs land on Partner Test.
+
 The `/advertise` page also emits sponsor impressions for the main contact CTA and every visible package card, and includes OfferCatalog JSON-LD for the sponsorship packages. This makes the advertiser funnel measurable from landing-page view to package-level inquiry click.
 
 The `/advertise` page now includes a tracked media-kit download CTA. The static kit lives at `/devtoolbox-media-kit.md` and gives prospective sponsors a self-serve summary of audience fit, packages, available inventory, measurement, creative requirements, and contact details. The CTA emits `monetization_impression` with `id=advertise-media-kit` and `monetization_click` with `id=advertise-media-kit-download`.

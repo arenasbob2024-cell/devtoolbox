@@ -102,6 +102,7 @@ export default async function AdvertisePage({
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   const source = getSearchValue(query?.source);
   const category = getSearchValue(query?.category);
+  const packageId = getSearchValue(query?.package);
 
   return (
     <>
@@ -112,6 +113,7 @@ export default async function AdvertisePage({
       <AdvertisePageClient
         source={source}
         category={category}
+        packageId={packageId}
       />
     </>
   );

@@ -10,21 +10,72 @@ const copy = {
     label: 'Sponsor DevToolBox',
     title: 'Reach developers at the moment they need a tool',
     description: 'Promote developer platforms, APIs, IDEs, cloud products, and technical education to high-intent visitors.',
+    packagePrefix: 'Starter package',
+    packageHints: {
+      'category-sponsor': 'Category Sponsor from US$299/month',
+      'article-sponsor': 'Article Sponsor from US$149/article',
+      'sitewide-sponsor': 'Sitewide Visibility from US$199/week',
+      'partner-test': 'Partner Test from US$99',
+    },
     cta: 'Advertise with us',
   },
   zh: {
     label: '赞助 DevToolBox',
     title: '在开发者真正需要工具时触达他们',
     description: '向高意图开发者推广开发者平台、API、IDE、云服务和技术教育产品。',
+    packagePrefix: '推荐套餐',
+    packageHints: {
+      'category-sponsor': '分类赞助，每月 US$299 起',
+      'article-sponsor': '文章赞助，每篇 US$149 起',
+      'sitewide-sponsor': '全站曝光，每周 US$199 起',
+      'partner-test': '合作测试，US$99 起',
+    },
     cta: '查看广告合作',
   },
   ru: {
     label: 'Спонсировать DevToolBox',
     title: 'Охватите разработчиков, когда им нужен инструмент',
     description: 'Продвигайте платформы для разработчиков, API, IDE, облачные продукты и техническое обучение.',
+    packagePrefix: 'Стартовый пакет',
+    packageHints: {
+      'category-sponsor': 'Спонсор категории от US$299/месяц',
+      'article-sponsor': 'Спонсор статьи от US$149/статья',
+      'sitewide-sponsor': 'Широкая видимость от US$199/неделя',
+      'partner-test': 'Тест партнерства от US$99',
+    },
     cta: 'Разместить рекламу',
   },
 };
+
+type SponsorPackageId = 'category-sponsor' | 'article-sponsor' | 'sitewide-sponsor' | 'partner-test';
+
+function getSponsorPackageId(placement: string, category?: string): SponsorPackageId {
+  const source = `${placement} ${category || ''}`.toLowerCase();
+
+  if (source.includes('blog')) {
+    return 'article-sponsor';
+  }
+
+  if (
+    source.includes('home') ||
+    source.includes('mobile') ||
+    source.includes('site-') ||
+    source.includes('tools-index') ||
+    category === 'tools-index'
+  ) {
+    return 'sitewide-sponsor';
+  }
+
+  if (source.includes('partner') || source.includes('sidebar')) {
+    return 'partner-test';
+  }
+
+  if (category && category !== 'blog' && category !== 'site') {
+    return 'category-sponsor';
+  }
+
+  return 'partner-test';
+}
 
 export default function SponsorCta({
   placement,
@@ -39,9 +90,10 @@ export default function SponsorCta({
   const t = copy[lang as keyof typeof copy] || copy.en;
   const containerRef = useRef<HTMLElement | null>(null);
   const trackedRef = useRef(false);
+  const packageId = getSponsorPackageId(placement, category);
   const sponsorHref = `/${lang}/advertise/?source=${encodeURIComponent(placement)}${
     category ? `&category=${encodeURIComponent(category)}` : ''
-  }`;
+  }&package=${encodeURIComponent(packageId)}`;
 
   useEffect(() => {
     const element = containerRef.current;
@@ -95,6 +147,21 @@ export default function SponsorCta({
       <p style={{ margin: '0 0 14px', fontSize: 13, lineHeight: 1.65, color: 'var(--text-secondary)' }}>
         {t.description}
       </p>
+      <p style={{
+        margin: '0 0 14px',
+        display: 'inline-flex',
+        padding: '6px 9px',
+        borderRadius: 8,
+        border: '1px solid rgba(16,185,129,0.28)',
+        background: 'rgba(16,185,129,0.08)',
+        color: 'var(--text-primary)',
+        fontSize: 12,
+        fontWeight: 750,
+        lineHeight: 1.35,
+      }}>
+        {t.packagePrefix}: {t.packageHints[packageId]}
+      </p>
+      <br />
       <Link
         href={sponsorHref}
         onClick={() => trackMonetizationClick({
