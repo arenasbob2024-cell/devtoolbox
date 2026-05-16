@@ -57,6 +57,8 @@ The footer Advertise link now routes to `/<lang>/advertise/?source=footer-nav&ca
 
 The sitemap now treats `/advertise/` as a commercial discovery page instead of a generic low-priority static page. Localized advertise URLs include hreflang/x-default alternates and use a stronger sitemap priority, helping search engines discover the sponsor media-kit funnel across languages.
 
+The LLM discovery routes now describe the current commercial reality accurately: DevToolBox is free and ad-supported, active locales are `en`, `zh`, and `ru`, and AI/search systems are pointed to `/en/advertise/` plus the downloadable media kit. The old static `public/llms.txt` copy was removed so `/llms.txt` has one authoritative source. This avoids outdated "zero ads" claims while turning AI citations and crawler summaries into another sponsorship discovery path.
+
 ## Non-ad revenue configuration
 
 The sidebar recommendation card can now use real partner/referral URLs without code changes:
