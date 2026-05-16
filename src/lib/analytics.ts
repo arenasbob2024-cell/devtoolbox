@@ -20,6 +20,13 @@ interface ToolShareEvent {
   placement?: string;
 }
 
+interface ContentFeedbackEvent {
+  contentType: 'blog' | 'tool';
+  id: string;
+  value: 'up' | 'down' | 'cleared';
+  placement?: string;
+}
+
 export function trackMonetizationClick({
   type,
   id,
@@ -52,6 +59,24 @@ export function trackToolShare({
     share_method: method,
     tool_id: toolId || 'unknown',
     tool_category: category || 'unknown',
+    placement: placement || 'unknown',
+  });
+}
+
+export function trackContentFeedback({
+  contentType,
+  id,
+  value,
+  placement,
+}: ContentFeedbackEvent) {
+  if (typeof window === 'undefined' || typeof window.gtag !== 'function') {
+    return;
+  }
+
+  window.gtag('event', 'content_feedback', {
+    content_type: contentType,
+    content_id: id,
+    feedback_value: value,
     placement: placement || 'unknown',
   });
 }

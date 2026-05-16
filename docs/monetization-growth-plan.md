@@ -82,6 +82,8 @@ When a visitor shares a tool on X/LinkedIn or copies the page link from the tool
 
 When a visitor submits tool feedback in the comment section, the success state now includes a support/sponsor follow-up. Sponsor clicks route to `/advertise/?source=comment-success-nudge&category=<tool-id>`, and impressions/clicks are tracked with `placement=comment-success-nudge`.
 
+When a reader marks a blog guide as helpful, the helpful-vote widget now records a `content_feedback` event and shows a support/sponsor follow-up. Sponsor clicks route to `/advertise/?source=blog-helpful-thanks&category=<post-slug>`, and impressions/clicks are tracked with `placement=blog-helpful-thanks`.
+
 Clicks are sent to Google Analytics as `monetization_click` with `monetization_type`, `monetization_id`, `tool_category`, and `placement` parameters. Sponsor CTAs and Adsterra containers also emit `monetization_impression` when at least half of the monetized surface is visible, so GA can calculate CTR and viewable opportunity by surface. Use these events to decide which categories deserve stronger partner offers and which ad slots deserve dedicated Adsterra placements.
 
 ## Weekly operating loop
@@ -114,3 +116,4 @@ Then decide:
 8. Review `tool-rating-thanks` impressions, support clicks, and sponsor clicks weekly; if CTR is weak, test showing the nudge after 4-star ratings or replacing the support CTA with a category-specific partner offer.
 9. Review `tool_share` by method and compare it with `share-bar-thanks` clicks. If X/LinkedIn shares are low but copy-link shares are high, prioritize copy-link follow-up copy and category-specific partner offers.
 10. Review `comment-success-nudge` impressions and clicks. If sponsor CTR is strong, prioritize direct sponsorship outreach for tools that receive repeated feedback submissions.
+11. Review `content_feedback` and `blog-helpful-thanks` by post slug. If helpful votes cluster around a topic, sell that topic as sponsored guide inventory and create more articles for the same category.
