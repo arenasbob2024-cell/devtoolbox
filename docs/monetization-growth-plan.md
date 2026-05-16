@@ -86,6 +86,8 @@ When a reader marks a blog guide as helpful, the helpful-vote widget now records
 
 When a visitor subscribes to the newsletter from the footer, tool sidebar, or blog article, the site now records a `newsletter_signup` event with placement and category. The success state includes a support/sponsor follow-up, sponsor links preserve the source as `<placement>-newsletter-success`, and impressions/clicks are tracked with `placement=newsletter-success-nudge`.
 
+When a homepage search returns zero tools, the site now records a privacy-safe `tool_search_no_results` event with query length, language, and placement, without sending the raw search text. The no-results state also shows a sponsor CTA with `placement=home-search-no-results`, turning unmet tool demand into a measurable sponsorship signal.
+
 Clicks are sent to Google Analytics as `monetization_click` with `monetization_type`, `monetization_id`, `tool_category`, and `placement` parameters. Sponsor CTAs and Adsterra containers also emit `monetization_impression` when at least half of the monetized surface is visible, so GA can calculate CTR and viewable opportunity by surface. Use these events to decide which categories deserve stronger partner offers and which ad slots deserve dedicated Adsterra placements.
 
 ## Weekly operating loop
@@ -120,3 +122,4 @@ Then decide:
 10. Review `comment-success-nudge` impressions and clicks. If sponsor CTR is strong, prioritize direct sponsorship outreach for tools that receive repeated feedback submissions.
 11. Review `content_feedback` and `blog-helpful-thanks` by post slug. If helpful votes cluster around a topic, sell that topic as sponsored guide inventory and create more articles for the same category.
 12. Review `newsletter_signup` by placement and compare it with `newsletter-success-nudge` clicks. If tool-sidebar subscribers convert better than footer subscribers, prioritize category-specific sponsor packages for those tool categories.
+13. Review `tool_search_no_results` counts by language and compare them with `home-search-no-results` sponsor clicks. Build new tools or category sponsorship pitches around repeated zero-result demand.

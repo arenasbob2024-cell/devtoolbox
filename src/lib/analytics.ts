@@ -32,6 +32,12 @@ interface NewsletterSignupEvent {
   placement?: string;
 }
 
+interface ToolSearchNoResultsEvent {
+  queryLength: number;
+  language?: string;
+  placement?: string;
+}
+
 export function trackMonetizationClick({
   type,
   id,
@@ -96,6 +102,23 @@ export function trackNewsletterSignup({
 
   window.gtag('event', 'newsletter_signup', {
     tool_category: category || 'unknown',
+    placement: placement || 'unknown',
+  });
+}
+
+export function trackToolSearchNoResults({
+  queryLength,
+  language,
+  placement,
+}: ToolSearchNoResultsEvent) {
+  if (typeof window === 'undefined' || typeof window.gtag !== 'function') {
+    return;
+  }
+
+  window.gtag('event', 'tool_search_no_results', {
+    query_length: queryLength,
+    result_count: 0,
+    language: language || 'unknown',
     placement: placement || 'unknown',
   });
 }

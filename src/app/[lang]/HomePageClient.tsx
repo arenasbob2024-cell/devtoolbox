@@ -1,10 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { tools, categories } from '@/lib/tools';
 import { useLang } from '@/i18n/LangContext';
 import SponsorCta from '@/components/SponsorCta';
+import { trackToolSearchNoResults } from '@/lib/analytics';
 
 // 8 most-loved developer tools — surfaced at the top of the homepage so
 // users see actionable entry points within the first viewport (instead of
@@ -23,6 +24,7 @@ const POPULAR_TOOL_IDS = [
 export default function HomePageClient() {
   const { lang, dict } = useLang();
   const [search, setSearch] = useState('');
+  const lastNoResultTrackedRef = useRef('');
 
   const websiteSchema = {
     '@context': 'https://schema.org',
@@ -62,10 +64,11 @@ export default function HomePageClient() {
   };
   const [activeCategory, setActiveCategory] = useState('all');
 
-  const filteredTools = search
+  const normalizedSearch = search.trim().toLowerCase();
+  const filteredTools = normalizedSearch
     ? tools.filter(t =>
-        (dict.tools[t.id as keyof typeof dict.tools]?.name || t.name).toLowerCase().includes(search.toLowerCase()) ||
-        t.keywords.some(k => k.includes(search.toLowerCase()))
+        (dict.tools[t.id as keyof typeof dict.tools]?.name || t.name).toLowerCase().includes(normalizedSearch) ||
+        t.keywords.some(k => k.toLowerCase().includes(normalizedSearch))
       )
     : activeCategory === 'all'
       ? tools
@@ -73,6 +76,23 @@ export default function HomePageClient() {
 
   const t = dict.tools;
   const c = dict.categories;
+
+  useEffect(() => {
+    if (!normalizedSearch || filteredTools.length > 0) return;
+
+    const trackingKey = `${lang}:${normalizedSearch}`;
+    const timeout = window.setTimeout(() => {
+      if (lastNoResultTrackedRef.current === trackingKey) return;
+      lastNoResultTrackedRef.current = trackingKey;
+      trackToolSearchNoResults({
+        queryLength: normalizedSearch.length,
+        language: lang,
+        placement: 'home-search',
+      });
+    }, 800);
+
+    return () => window.clearTimeout(timeout);
+  }, [filteredTools.length, lang, normalizedSearch]);
 
   return (
     <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
@@ -310,6 +330,11 @@ export default function HomePageClient() {
         <div style={{ textAlign: 'center', padding: 40, color: 'var(--text-secondary)' }}>
           <p style={{ fontSize: 18 }}>{dict.common.noResults} &quot;{search}&quot;</p>
           <p style={{ fontSize: 14 }}>{dict.common.tryDifferent}</p>
+          <SponsorCta
+            placement="home-search-no-results"
+            category="search-no-results"
+            id="home-search-no-results-sponsor"
+          />
         </div>
       )}
 
