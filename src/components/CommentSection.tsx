@@ -1,6 +1,8 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
+import { trackMonetizationClick, trackMonetizationImpression } from '@/lib/analytics';
+import { useLang } from '@/i18n/LangContext';
 
 interface Comment {
   id: number;
@@ -15,7 +17,38 @@ interface Comment {
 
 interface CommentSectionProps {
   toolId: string;
+  category?: string;
 }
+
+const successCopy: Record<string, {
+  thanks: string;
+  detail: string;
+  another: string;
+  support: string;
+  sponsor: string;
+}> = {
+  en: {
+    thanks: 'Thanks for your feedback. We will review it shortly.',
+    detail: 'Helpful reports keep these tools free and useful.',
+    another: 'Submit another',
+    support: 'Support free tools',
+    sponsor: 'Sponsor this tool',
+  },
+  zh: {
+    thanks: '\u611f\u8c22\u4f60\u7684\u53cd\u9988\uff0c\u6211\u4eec\u4f1a\u5c3d\u5feb\u5ba1\u6838\u3002',
+    detail: '\u6709\u7528\u7684\u53cd\u9988\u80fd\u8ba9\u8fd9\u4e9b\u5de5\u5177\u6301\u7eed\u514d\u8d39\u5e76\u66f4\u597d\u7528\u3002',
+    another: '\u518d\u63d0\u4ea4\u4e00\u6761',
+    support: '\u652f\u6301\u514d\u8d39\u5de5\u5177',
+    sponsor: '\u8d5e\u52a9\u8fd9\u4e2a\u5de5\u5177',
+  },
+  ru: {
+    thanks: '\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0442\u0437\u044b\u0432. \u041c\u044b \u0441\u043a\u043e\u0440\u043e \u0435\u0433\u043e \u043f\u0440\u043e\u0432\u0435\u0440\u0438\u043c.',
+    detail: '\u041f\u043e\u043b\u0435\u0437\u043d\u044b\u0435 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u044f \u043f\u043e\u043c\u043e\u0433\u0430\u044e\u0442 \u0434\u0435\u0440\u0436\u0430\u0442\u044c \u044d\u0442\u0438 \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u044b \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u044b\u043c\u0438.',
+    another: '\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c \u0435\u0449\u0435',
+    support: '\u041f\u043e\u0434\u0434\u0435\u0440\u0436\u0430\u0442\u044c \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u044b\u0435 \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u044b',
+    sponsor: '\u0421\u0442\u0430\u0442\u044c \u0441\u043f\u043e\u043d\u0441\u043e\u0440\u043e\u043c',
+  },
+};
 
 function formatDate(ts: number) {
   return new Date(ts).toLocaleDateString(undefined, {
@@ -23,13 +56,19 @@ function formatDate(ts: number) {
   });
 }
 
-export default function CommentSection({ toolId }: CommentSectionProps) {
+export default function CommentSection({ toolId, category }: CommentSectionProps) {
+  const { lang } = useLang();
+  const copy = successCopy[lang] || successCopy.en;
+  const trackingCategory = category || toolId;
+  const sponsorHref = `/${lang}/advertise/?source=comment-success-nudge&category=${encodeURIComponent(toolId)}`;
+  const supportHref = process.env.NEXT_PUBLIC_SUPPORT_URL || 'https://buymeacoffee.com/devtoolbox';
   const [comments, setComments] = useState<Comment[]>([]);
   const [name, setName] = useState('');
   const [content, setContent] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
+  const successTrackedRef = useRef(false);
 
   const loadComments = useCallback(async () => {
     try {
@@ -46,6 +85,17 @@ export default function CommentSection({ toolId }: CommentSectionProps) {
   useEffect(() => {
     loadComments();
   }, [loadComments]);
+
+  useEffect(() => {
+    if (!submitted || successTrackedRef.current) return;
+    successTrackedRef.current = true;
+    trackMonetizationImpression({
+      type: 'support',
+      id: 'comment-success-nudge',
+      category: trackingCategory,
+      placement: 'comment-success-nudge',
+    });
+  }, [submitted, trackingCategory]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -144,13 +194,71 @@ export default function CommentSection({ toolId }: CommentSectionProps) {
             color: 'var(--accent-emerald)',
             fontSize: 14,
           }}>
-            ✓ Thanks for your feedback! We&apos;ll review it shortly.{' '}
-            <button
-              onClick={() => setSubmitted(false)}
-              style={{ background: 'none', border: 'none', color: 'var(--accent-blue)', cursor: 'pointer', textDecoration: 'underline', fontSize: 14 }}
-            >
-              Submit another
-            </button>
+            <div style={{ color: 'var(--accent-emerald)', fontWeight: 700, marginBottom: 6 }}>
+              {copy.thanks}
+            </div>
+            <div style={{ color: 'var(--text-secondary)', marginBottom: 12 }}>
+              {copy.detail}
+            </div>
+            <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'center' }}>
+              <a
+                href={supportHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackMonetizationClick({
+                  type: 'support',
+                  id: 'buy-me-a-coffee',
+                  category: trackingCategory,
+                  placement: 'comment-success-nudge',
+                })}
+                style={{
+                  color: '#fff',
+                  background: 'linear-gradient(135deg, #FF813F, #FF5F5F)',
+                  borderRadius: 6,
+                  padding: '7px 12px',
+                  fontSize: 13,
+                  fontWeight: 700,
+                  textDecoration: 'none',
+                }}
+              >
+                {copy.support}
+              </a>
+              <a
+                href={sponsorHref}
+                onClick={() => trackMonetizationClick({
+                  type: 'sponsor',
+                  id: 'comment-success-sponsor',
+                  category: trackingCategory,
+                  placement: 'comment-success-nudge',
+                })}
+                style={{
+                  color: 'var(--accent-blue)',
+                  border: '1px solid var(--border-color)',
+                  borderRadius: 6,
+                  padding: '7px 12px',
+                  fontSize: 13,
+                  fontWeight: 700,
+                  textDecoration: 'none',
+                }}
+              >
+                {copy.sponsor}
+              </a>
+              <button
+                type="button"
+                onClick={() => setSubmitted(false)}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  color: 'var(--accent-blue)',
+                  cursor: 'pointer',
+                  textDecoration: 'underline',
+                  fontSize: 13,
+                  padding: '7px 0',
+                }}
+              >
+                {copy.another}
+              </button>
+            </div>
           </div>
         ) : (
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>

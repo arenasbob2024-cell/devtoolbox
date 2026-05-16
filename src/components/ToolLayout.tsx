@@ -83,7 +83,7 @@ export default function ToolLayout({ title, description, children, toolId }: Too
             toolId={toolId}
             category={currentTool?.category}
           />
-          <CommentSection toolId={toolId} />
+          <CommentSection toolId={toolId} category={currentTool?.category} />
         </div>
 
         {/* Sidebar */}
