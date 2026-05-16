@@ -5,6 +5,7 @@ Last updated: 2026-05-16
 ## Current baseline
 
 - Revenue network: Adsterra.
+- Search discovery is part of the revenue engine: `/sitemap.xml` now resolves to the sitemap index, and legacy `/sitemaps/*.xml` requests redirect to the live sitemap route so Google/Bing do not hit dead sitemap URLs.
 - Live placements seen in production HTML:
   - Top leaderboard iframe: `NEXT_PUBLIC_ADSTERRA_TOP_KEY`.
   - Tool sidebar rectangle iframe: `NEXT_PUBLIC_ADSTERRA_SIDEBAR_KEY`.

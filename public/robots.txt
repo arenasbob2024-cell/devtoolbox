@@ -1,6 +1,6 @@
 # DevToolBox - robots.txt
 # https://viadreams.cc
-# Last updated: 2026-04-18
+# Last updated: 2026-05-16
 
 User-agent: *
 Allow: /
