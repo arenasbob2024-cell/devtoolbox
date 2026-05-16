@@ -116,7 +116,13 @@ export default function BlogListPage() {
         })}
       </div>
 
-      <AdSlot size="leaderboard" placement="blog-list-bottom" category="blog" style={{ marginTop: 30 }} />
+      <AdSlot
+        size="leaderboard"
+        placement="blog-list-bottom"
+        category="blog"
+        fallbackToSponsor
+        style={{ marginTop: 30 }}
+      />
     </div>
   );
 }

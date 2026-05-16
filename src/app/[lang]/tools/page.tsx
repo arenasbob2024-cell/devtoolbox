@@ -163,7 +163,13 @@ export default async function ToolsIndexPage({ params }: PageProps) {
         </section>
       ))}
 
-      <AdSlot size="leaderboard" placement="tools-index-bottom" category="tools-index" style={{ marginTop: 8, marginBottom: 32 }} />
+      <AdSlot
+        size="leaderboard"
+        placement="tools-index-bottom"
+        category="tools-index"
+        fallbackToSponsor
+        style={{ marginTop: 8, marginBottom: 32 }}
+      />
     </div>
   );
 }

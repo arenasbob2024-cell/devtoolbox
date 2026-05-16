@@ -1151,7 +1151,13 @@ export default function BlogPostPage() {
         </div>
       )}
 
-      <AdSlot size="leaderboard" placement="blog-article-bottom" category={slug} style={{ marginTop: 30 }} />
+      <AdSlot
+        size="leaderboard"
+        placement="blog-article-bottom"
+        category={slug}
+        fallbackToSponsor
+        style={{ marginTop: 30 }}
+      />
 
       {/* Related Posts */}
       {relatedPostsList.length > 0 && (

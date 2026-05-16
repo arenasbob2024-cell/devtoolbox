@@ -359,7 +359,13 @@ export default async function CategoryPage({ params }: PageProps) {
           </div>
         </section>
 
-        <AdSlot size="leaderboard" placement="category-bottom" category={slug} style={{ marginTop: 36 }} />
+        <AdSlot
+          size="leaderboard"
+          placement="category-bottom"
+          category={slug}
+          fallbackToSponsor
+          style={{ marginTop: 36 }}
+        />
 
         {/* Cross-linking to other categories */}
         <section className="mt-12">

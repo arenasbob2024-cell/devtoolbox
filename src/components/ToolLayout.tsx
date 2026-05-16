@@ -162,7 +162,13 @@ export default function ToolLayout({ title, description, children, toolId }: Too
       </div>
 
       {/* Bottom Ad */}
-      <AdSlot size="leaderboard" placement="tool-bottom" category={currentTool?.category} style={{ marginTop: 30 }} />
+      <AdSlot
+        size="leaderboard"
+        placement="tool-bottom"
+        category={currentTool?.category}
+        fallbackToSponsor
+        style={{ marginTop: 30 }}
+      />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import AdsterraIframeBanner from './AdsterraIframeBanner';
+import SponsorCta from './SponsorCta';
 
 type AdSlotSize = 'leaderboard' | 'rectangle';
 type AdSlotPlacement =
@@ -22,6 +23,7 @@ interface AdSlotProps {
   category?: string;
   className?: string;
   style?: React.CSSProperties;
+  fallbackToSponsor?: boolean;
 }
 
 const AD_KEYS: Record<AdSlotPlacement, string | undefined> = {
@@ -51,9 +53,21 @@ export default function AdSlot({
   category,
   className,
   style,
+  fallbackToSponsor = false,
 }: AdSlotProps) {
   const adKey = placement ? AD_KEYS[placement] : undefined;
-  if (!adKey) return null;
+
+  if (!adKey) {
+    if (!fallbackToSponsor || !placement) return null;
+
+    return (
+      <SponsorCta
+        placement={`${placement}-ad-fallback`}
+        category={category}
+        id={`${placement}-ad-fallback-sponsor`}
+      />
+    );
+  }
 
   const { width, height } = getDimensions(size);
 
