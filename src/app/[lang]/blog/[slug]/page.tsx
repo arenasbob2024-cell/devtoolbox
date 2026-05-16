@@ -11,6 +11,7 @@ import NewsletterSignup from '@/components/NewsletterSignup';
 import ShareBar from '@/components/ugc/ShareBar';
 import HelpfulButton from '@/components/ugc/HelpfulButton';
 import SponsorCta from '@/components/SponsorCta';
+import BlogPartnerOffer from '@/components/BlogPartnerOffer';
 
 /* ---------- lazy-load article bodies ---------- */
 import UuidComparison from '@/data/posts/uuid-v4-vs-v7-vs-ulid';
@@ -1103,6 +1104,8 @@ export default function BlogPostPage() {
 
       {/* Newsletter */}
       <NewsletterSignup variant="wide" />
+
+      <BlogPartnerOffer slug={slug} keywords={post.keywords} />
 
       {/* Related Tools CTA */}
       {relatedToolsList.length > 0 && (
