@@ -55,6 +55,8 @@ The header now includes a tracked Advertise link to `/<lang>/advertise/?source=h
 
 The footer Advertise link now routes to `/<lang>/advertise/?source=footer-nav&category=site` and emits sponsor `monetization_impression` / `monetization_click` events with `placement=footer-nav`. This makes the persistent bottom navigation sponsorship entry point comparable with the header and in-page sponsor CTAs.
 
+The sitemap now treats `/advertise/` as a commercial discovery page instead of a generic low-priority static page. Localized advertise URLs include hreflang/x-default alternates and use a stronger sitemap priority, helping search engines discover the sponsor media-kit funnel across languages.
+
 ## Non-ad revenue configuration
 
 The sidebar recommendation card can now use real partner/referral URLs without code changes:

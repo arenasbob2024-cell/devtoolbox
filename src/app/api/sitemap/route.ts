@@ -171,18 +171,21 @@ function buildAllUrls(): SitemapEntry[] {
       lastmod: '2026-03-31',
       changefreq: 'monthly',
       priority: 0.2,
+      alternates: getAlternates(l => `/${l}/about/`),
     })
     entries.push({
       url: `${BASE_URL}/${locale}/privacy/`,
       lastmod: '2026-03-31',
       changefreq: 'monthly',
       priority: 0.1,
+      alternates: getAlternates(l => `/${l}/privacy/`),
     })
     entries.push({
       url: `${BASE_URL}/${locale}/advertise/`,
       lastmod: today,
       changefreq: 'monthly',
-      priority: 0.2,
+      priority: 0.45,
+      alternates: getAlternates(l => `/${l}/advertise/`),
     })
   }
 
