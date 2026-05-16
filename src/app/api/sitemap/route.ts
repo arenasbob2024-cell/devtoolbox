@@ -31,11 +31,19 @@ interface SitemapEntry {
   alternates?: { locale: string; url: string }[]
 }
 
-// Priority order for locales: English first, then major European, then Asian
-const LOCALE_PRIORITY: string[] = ['en', 'es', 'fr', 'de', 'pt', 'it', 'zh', 'ja', 'ko']
+// Preferred crawl order; any newly enabled locale is appended automatically.
+const PREFERRED_LOCALE_ORDER = ['en', 'zh', 'ru']
+
+function getOrderedLocales(): string[] {
+  const enabledLocales: readonly string[] = i18n.locales
+  const preferredLocales = PREFERRED_LOCALE_ORDER.filter(locale => enabledLocales.includes(locale))
+  const remainingLocales = enabledLocales.filter(locale => !preferredLocales.includes(locale))
+
+  return [...preferredLocales, ...remainingLocales]
+}
 
 function buildAllUrls(): SitemapEntry[] {
-  const locales = i18n.locales
+  const locales = getOrderedLocales()
   const entries: SitemapEntry[] = []
   const today = new Date().toISOString().split('T')[0]
 
@@ -102,7 +110,7 @@ function buildAllUrls(): SitemapEntry[] {
   })
 
   // === SECTION 2: Other locales (grouped by locale priority) ===
-  const otherLocales = LOCALE_PRIORITY.filter(l => l !== 'en')
+  const otherLocales = locales.filter(l => l !== 'en')
 
   for (const locale of otherLocales) {
     // Homepage
@@ -156,8 +164,8 @@ function buildAllUrls(): SitemapEntry[] {
     })
   }
 
-  // === SECTION 3: Low-priority static pages (about, privacy) ===
-  for (const locale of LOCALE_PRIORITY) {
+  // === SECTION 3: Low-priority static pages (about, privacy, advertise) ===
+  for (const locale of locales) {
     entries.push({
       url: `${BASE_URL}/${locale}/about/`,
       lastmod: '2026-03-31',
@@ -169,6 +177,12 @@ function buildAllUrls(): SitemapEntry[] {
       lastmod: '2026-03-31',
       changefreq: 'monthly',
       priority: 0.1,
+    })
+    entries.push({
+      url: `${BASE_URL}/${locale}/advertise/`,
+      lastmod: today,
+      changefreq: 'monthly',
+      priority: 0.2,
     })
   }
 

@@ -8,12 +8,12 @@ const URLS_PER_SITEMAP = 500
 
 export async function GET() {
   const locales = i18n.locales
-  // EN pages: 1 (home) + tools + blogs + 1 (blog index) = 2 + tools.length + blogPosts.length
-  // Other locales: 8 × (2 + tools.length + blogPosts.length)
-  // Static pages: 9 × 2 (about, privacy)
-  const enPages = 2 + tools.length + blogPosts.length
-  const otherLocalePages = (locales.length - 1) * (2 + tools.length + blogPosts.length)
-  const staticPages = locales.length * 2
+  const categoryPages = 12
+  const staticPagesPerLocale = 3 // about, privacy, advertise
+  const pagesPerLocale = 2 + tools.length + blogPosts.length + categoryPages
+  const staticPages = locales.length * staticPagesPerLocale
+  const enPages = pagesPerLocale
+  const otherLocalePages = (locales.length - 1) * pagesPerLocale
   const totalUrls = enPages + otherLocalePages + staticPages
   const totalChunks = Math.ceil(totalUrls / URLS_PER_SITEMAP)
 

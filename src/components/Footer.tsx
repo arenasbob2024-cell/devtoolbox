@@ -120,6 +120,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} {dict.footer.copyright}
           </p>
           <div style={{ display: 'flex', gap: 16 }}>
+            <Link href={`/${lang}/advertise`} style={{ fontSize: 12, color: 'var(--text-secondary)', textDecoration: 'none' }}>{dict.common.advertise || 'Advertise'}</Link>
             <Link href={`/${lang}/privacy`} style={{ fontSize: 12, color: 'var(--text-secondary)', textDecoration: 'none' }}>{dict.common.privacyPolicy}</Link>
             <Link href={`/${lang}/about`} style={{ fontSize: 12, color: 'var(--text-secondary)', textDecoration: 'none' }}>{dict.common.about}</Link>
           </div>
