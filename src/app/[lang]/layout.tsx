@@ -198,7 +198,7 @@ export default async function LangLayout({
           <main style={{ flex: 1 }}>
             {children}
             {/* Bottom Adsterra Native Banner — uses default NEXT_PUBLIC_ADSTERRA_NATIVE_* vars */}
-            <AdsterraNativeBanner placement="site-bottom-native" />
+            <AdsterraNativeBanner placement="site-bottom-native" fallbackToSponsor />
           </main>
           <Footer />
           <CopySuccessNudge />

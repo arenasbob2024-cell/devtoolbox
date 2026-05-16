@@ -1,7 +1,8 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { trackMonetizationImpression } from '@/lib/analytics';
+import SponsorCta from './SponsorCta';
 
 /**
  * Adsterra Native Banner
@@ -32,6 +33,8 @@ interface Props {
   containerKey?: string;
   placement?: string;
   category?: string;
+  fallbackToSponsor?: boolean;
+  fallbackDelayMs?: number;
 }
 
 export default function AdsterraNativeBanner({
@@ -41,6 +44,8 @@ export default function AdsterraNativeBanner({
   containerKey: overrideKey,
   placement = 'site-bottom-native',
   category,
+  fallbackToSponsor = false,
+  fallbackDelayMs = 8000,
 }: Props) {
   const scriptSrc = overrideScript || process.env.NEXT_PUBLIC_ADSTERRA_NATIVE_SCRIPT;
   const containerKey = overrideKey || process.env.NEXT_PUBLIC_ADSTERRA_NATIVE_KEY;
@@ -48,6 +53,7 @@ export default function AdsterraNativeBanner({
   const containerRef = useRef<HTMLDivElement | null>(null);
   const loadedRef = useRef(false);
   const trackedRef = useRef(false);
+  const [showFallback, setShowFallback] = useState(false);
 
   useEffect(() => {
     if (loadedRef.current) return;
@@ -104,7 +110,39 @@ export default function AdsterraNativeBanner({
     return () => observer.disconnect();
   }, [category, containerKey, placement, scriptSrc]);
 
-  if (!scriptSrc || !containerKey) return null;
+  useEffect(() => {
+    if (!fallbackToSponsor || showFallback) return;
+    if (!scriptSrc || !containerKey) return;
+
+    const timer = window.setTimeout(() => {
+      const container = containerRef.current;
+      const hasRenderedNativeAd = Boolean(
+        container && (container.children.length > 0 || container.textContent?.trim())
+      );
+
+      if (!hasRenderedNativeAd) {
+        setShowFallback(true);
+      }
+    }, fallbackDelayMs);
+
+    return () => window.clearTimeout(timer);
+  }, [containerKey, fallbackDelayMs, fallbackToSponsor, scriptSrc, showFallback]);
+
+  if (!scriptSrc || !containerKey || showFallback) {
+    if (!fallbackToSponsor) return null;
+
+    const fallbackPlacement = !scriptSrc || !containerKey
+      ? `${placement}-ad-fallback`
+      : `${placement}-ad-empty`;
+
+    return (
+      <SponsorCta
+        placement={fallbackPlacement}
+        category={category}
+        id={`${fallbackPlacement}-sponsor`}
+      />
+    );
+  }
 
   return (
     <div
