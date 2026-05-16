@@ -156,7 +156,7 @@ export default function ToolLayout({ title, description, children, toolId }: Too
             <p style={{ fontSize: 12, color: 'var(--text-secondary)', marginBottom: 10 }}>
               Enjoy these free tools?
             </p>
-            <SupportButton placement="tool-sidebar" />
+            <SupportButton placement="tool-sidebar" category={currentTool?.category} />
           </div>
         </div>
       </div>

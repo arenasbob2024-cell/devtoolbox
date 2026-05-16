@@ -1,20 +1,60 @@
 'use client';
 
-import { trackMonetizationClick } from '@/lib/analytics';
+import { useEffect, useRef } from 'react';
+import { trackMonetizationClick, trackMonetizationImpression } from '@/lib/analytics';
 
 export default function SupportButton({
   placement = 'unknown',
+  category,
 }: {
   placement?: string;
+  category?: string;
 }) {
+  const buttonRef = useRef<HTMLAnchorElement | null>(null);
+  const trackedRef = useRef(false);
+
+  useEffect(() => {
+    const element = buttonRef.current;
+    if (!element || trackedRef.current) return;
+
+    const track = () => {
+      if (trackedRef.current) return;
+      trackedRef.current = true;
+      trackMonetizationImpression({
+        type: 'support',
+        id: 'buy-me-a-coffee',
+        category,
+        placement,
+      });
+    };
+
+    if (!('IntersectionObserver' in window)) {
+      track();
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some(entry => entry.isIntersecting)) {
+        track();
+        observer.disconnect();
+      }
+    }, { threshold: 0.5 });
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, [category, placement]);
+
   return (
     <a
+      ref={buttonRef}
       href={process.env.NEXT_PUBLIC_SUPPORT_URL || 'https://buymeacoffee.com/devtoolbox'}
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => trackMonetizationClick({
         type: 'support',
         id: 'buy-me-a-coffee',
+        category,
         placement,
       })}
       style={{

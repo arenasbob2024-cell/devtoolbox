@@ -88,6 +88,8 @@ When a visitor subscribes to the newsletter from the footer, tool sidebar, or bl
 
 When a homepage search returns zero tools, the site now records a privacy-safe `tool_search_no_results` event with query length, language, and placement, without sending the raw search text. The no-results state also shows a sponsor CTA with `placement=home-search-no-results`, turning unmet tool demand into a measurable sponsorship signal.
 
+The footer and tool-sidebar support buttons now emit `monetization_impression` as well as `monetization_click`, with the tool sidebar passing the current tool category. This makes support CTR measurable by page surface and category instead of only counting outbound clicks.
+
 Clicks are sent to Google Analytics as `monetization_click` with `monetization_type`, `monetization_id`, `tool_category`, and `placement` parameters. Sponsor CTAs and Adsterra containers also emit `monetization_impression` when at least half of the monetized surface is visible, so GA can calculate CTR and viewable opportunity by surface. Use these events to decide which categories deserve stronger partner offers and which ad slots deserve dedicated Adsterra placements.
 
 ## Weekly operating loop
@@ -123,3 +125,4 @@ Then decide:
 11. Review `content_feedback` and `blog-helpful-thanks` by post slug. If helpful votes cluster around a topic, sell that topic as sponsored guide inventory and create more articles for the same category.
 12. Review `newsletter_signup` by placement and compare it with `newsletter-success-nudge` clicks. If tool-sidebar subscribers convert better than footer subscribers, prioritize category-specific sponsor packages for those tool categories.
 13. Review `tool_search_no_results` counts by language and compare them with `home-search-no-results` sponsor clicks. Build new tools or category sponsorship pitches around repeated zero-result demand.
+14. Review support-button impressions and clicks by `placement=tool-sidebar` versus `placement=footer`. If a category has strong support CTR, reuse that category for higher-priced sponsorship outreach.

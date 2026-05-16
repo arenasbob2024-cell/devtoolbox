@@ -44,7 +44,7 @@ export default function Footer() {
               />
             </div>
             <div style={{ marginTop: 12 }}>
-              <SupportButton placement="footer" />
+              <SupportButton placement="footer" category="site" />
             </div>
           </div>
 
