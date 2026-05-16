@@ -33,6 +33,15 @@ const copy = {
         price: 'Suggested test budget: US$149-US$499 per article.',
       },
       {
+        id: 'sitewide-sponsor',
+        name: 'Sitewide Visibility',
+        detail: 'Put your offer on high-visibility site surfaces including the homepage, mobile sticky sponsor bar, and global sponsor fallbacks.',
+        inventory: 'Homepage inline sponsor/ad fallback, mobile sticky sponsor fallback, and selected sitewide fallback placements.',
+        bestFor: 'Product launches, brand awareness, and broad developer-audience tests.',
+        budget: 'Best for short launch windows and broad reach tests.',
+        price: 'Suggested test budget: US$199-US$599 per week.',
+      },
+      {
         id: 'partner-test',
         name: 'Partner Test',
         detail: 'Run a short campaign across selected placements before committing to a larger buy.',
@@ -70,7 +79,7 @@ const copy = {
     packageLabel: 'Package',
     budgetLabel: 'Budget range',
     budgetPlaceholder: 'Select a range',
-    budgetOptions: ['US$99-US$299', 'US$149-US$499', 'US$299-US$799/month', 'Custom budget'],
+    budgetOptions: ['US$99-US$299', 'US$149-US$499', 'US$199-US$599/week', 'US$299-US$799/month', 'Custom budget'],
     timelineLabel: 'Campaign timing',
     timelinePlaceholder: 'e.g. Launch in June, 4-week test',
     messageLabel: 'Campaign notes',
@@ -110,6 +119,15 @@ const copy = {
         price: '建议测试预算：每篇 US$149-US$499。',
       },
       {
+        id: 'sitewide-sponsor',
+        name: '全站曝光',
+        detail: '在首页、移动端 sticky 赞助条和全站高可见赞助兜底位展示产品。',
+        inventory: '首页 inline 赞助/广告兜底、移动端 sticky 赞助兜底，以及精选全站兜底位置。',
+        bestFor: '产品发布、品牌曝光和覆盖更广开发者流量的测试。',
+        budget: '适合短期发布窗口和广覆盖测试。',
+        price: '建议测试预算：每周 US$199-US$599。',
+      },
+      {
         id: 'partner-test',
         name: '合作测试',
         detail: '先在精选位置短期测试，再决定是否扩大预算。',
@@ -147,7 +165,7 @@ const copy = {
     packageLabel: '套餐',
     budgetLabel: '预算范围',
     budgetPlaceholder: '选择预算范围',
-    budgetOptions: ['US$99-US$299', 'US$149-US$499', '每月 US$299-US$799', '自定义预算'],
+    budgetOptions: ['US$99-US$299', 'US$149-US$499', '每周 US$199-US$599', '每月 US$299-US$799', '自定义预算'],
     timelineLabel: '投放时间',
     timelinePlaceholder: '例如：6 月上线，测试 4 周',
     messageLabel: '投放备注',
@@ -187,6 +205,15 @@ const copy = {
         price: 'Тестовый бюджет: US$149-US$499 за статью.',
       },
       {
+        id: 'sitewide-sponsor',
+        name: 'Широкая видимость',
+        detail: 'Покажите оффер на заметных поверхностях сайта: главная страница, мобильная sticky-панель и глобальные спонсорские fallback-блоки.',
+        inventory: 'Inline-блок на главной, мобильный sticky fallback и выбранные sitewide fallback-размещения.',
+        bestFor: 'Запуски продуктов, узнаваемость бренда и широкие тесты на аудитории разработчиков.',
+        budget: 'Подходит для коротких запусков и тестов с широким охватом.',
+        price: 'Тестовый бюджет: US$199-US$599 в неделю.',
+      },
+      {
         id: 'partner-test',
         name: 'Тест партнерства',
         detail: 'Запустите короткую кампанию на выбранных позициях перед увеличением бюджета.',
@@ -224,7 +251,7 @@ const copy = {
     packageLabel: 'Пакет',
     budgetLabel: 'Бюджет',
     budgetPlaceholder: 'Выберите диапазон',
-    budgetOptions: ['US$99-US$299', 'US$149-US$499', 'US$299-US$799/месяц', 'Индивидуальный бюджет'],
+    budgetOptions: ['US$99-US$299', 'US$149-US$499', 'US$199-US$599/неделя', 'US$299-US$799/месяц', 'Индивидуальный бюджет'],
     timelineLabel: 'Сроки кампании',
     timelinePlaceholder: 'Например: запуск в июне, тест 4 недели',
     messageLabel: 'Примечания',
@@ -238,7 +265,7 @@ const copy = {
   },
 };
 
-type PackageId = 'category-sponsor' | 'article-sponsor' | 'partner-test';
+type PackageId = 'category-sponsor' | 'article-sponsor' | 'sitewide-sponsor' | 'partner-test';
 
 interface InquiryFormState {
   product: string;
@@ -389,11 +416,23 @@ function getRecommendedPackageId(source: string, category: string): PackageId {
     return 'article-sponsor';
   }
 
+  if (
+    source.includes('home') ||
+    source.includes('mobile') ||
+    source.includes('site-') ||
+    source.includes('tools-index') ||
+    category === 'home' ||
+    category === 'mobile' ||
+    category === 'site'
+  ) {
+    return 'sitewide-sponsor';
+  }
+
   if (source.includes('partner') || source.includes('sidebar')) {
     return 'partner-test';
   }
 
-  if (category && category !== 'home' && category !== 'tools-index' && category !== 'blog') {
+  if (category && category !== 'home' && category !== 'tools-index' && category !== 'blog' && category !== 'site') {
     return 'category-sponsor';
   }
 
@@ -422,7 +461,9 @@ function AdvertiseContent({
   const contactBaseUrl = process.env.NEXT_PUBLIC_SPONSOR_CONTACT_URL
     || 'mailto:arenasbob.2024@gmail.com?subject=DevToolBox%20sponsorship%20inquiry';
   const recommendedPackageId = getRecommendedPackageId(source, category);
-  const recommendedPackage = t.packages.find(pkg => pkg.id === recommendedPackageId) || t.packages[2];
+  const recommendedPackage = t.packages.find(pkg => pkg.id === recommendedPackageId)
+    || t.packages.find(pkg => pkg.id === 'partner-test')
+    || t.packages[t.packages.length - 1];
   const [formStatus, setFormStatus] = useState<'idle' | 'submitted' | 'copied' | 'copy-error'>('idle');
   const [formState, setFormState] = useState<InquiryFormState>(() => ({
     product: '',

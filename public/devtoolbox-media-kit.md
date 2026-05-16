@@ -34,6 +34,19 @@ Inventory can include:
 
 Suggested starter budget: US$149-US$499 per article.
 
+### Sitewide Visibility
+
+Put a sponsor offer on high-visibility surfaces for broader developer-audience reach.
+
+Inventory can include:
+
+- Homepage inline sponsor/ad fallback.
+- Mobile sticky sponsor fallback.
+- Selected sitewide fallback placements.
+- Optional launch-week placement mix.
+
+Suggested starter budget: US$199-US$599 per week.
+
 ### Partner Test
 
 Run a small campaign before committing to a larger buy.

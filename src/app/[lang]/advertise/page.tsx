@@ -27,6 +27,12 @@ function buildAdvertiseJsonLd(lang: Locale, source: string, category: string) {
       maxPrice: 499,
     },
     {
+      name: 'Sitewide Visibility',
+      description: 'Show a sponsor offer on high-visibility homepage, mobile, and sitewide fallback surfaces.',
+      minPrice: 199,
+      maxPrice: 599,
+    },
+    {
       name: 'Partner Test',
       description: 'Run a short campaign across one to three tracked placements.',
       minPrice: 99,
