@@ -1,7 +1,7 @@
 'use client';
 
-import { useMemo } from 'react';
-import { trackMonetizationClick } from '@/lib/analytics';
+import { useEffect, useMemo, useRef } from 'react';
+import { trackMonetizationClick, trackMonetizationImpression } from '@/lib/analytics';
 import { useLang } from '@/i18n/LangContext';
 
 const copy = {
@@ -206,6 +206,10 @@ function AdvertiseContent({
 }: AdvertisePageClientProps) {
   const { lang } = useLang();
   const t = copy[lang as keyof typeof copy] || copy.en;
+  const heroRef = useRef<HTMLElement | null>(null);
+  const packagesRef = useRef<HTMLElement | null>(null);
+  const heroTrackedRef = useRef(false);
+  const packagesTrackedRef = useRef(false);
   const contactBaseUrl = process.env.NEXT_PUBLIC_SPONSOR_CONTACT_URL
     || 'mailto:arenasbob.2024@gmail.com?subject=DevToolBox%20sponsorship%20inquiry';
   const recommendedPackageId = getRecommendedPackageId(source, category);
@@ -222,9 +226,75 @@ function AdvertiseContent({
     [contactBaseUrl, category, source, t.packages]
   ) as Record<PackageId, string>;
 
+  useEffect(() => {
+    const element = heroRef.current;
+    if (!element || heroTrackedRef.current) return;
+
+    const track = () => {
+      if (heroTrackedRef.current) return;
+      heroTrackedRef.current = true;
+      trackMonetizationImpression({
+        type: 'sponsor',
+        id: 'advertise-contact',
+        category: category || undefined,
+        placement: source || 'advertise-page',
+      });
+    };
+
+    if (!('IntersectionObserver' in window)) {
+      track();
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some(entry => entry.isIntersecting)) {
+        track();
+        observer.disconnect();
+      }
+    }, { threshold: 0.5 });
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, [category, source]);
+
+  useEffect(() => {
+    const element = packagesRef.current;
+    if (!element || packagesTrackedRef.current) return;
+
+    const track = () => {
+      if (packagesTrackedRef.current) return;
+      packagesTrackedRef.current = true;
+      t.packages.forEach((pkg) => {
+        trackMonetizationImpression({
+          type: 'sponsor',
+          id: `advertise-package-${pkg.id}`,
+          category: category || undefined,
+          placement: source || 'advertise-page',
+        });
+      });
+    };
+
+    if (!('IntersectionObserver' in window)) {
+      track();
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some(entry => entry.isIntersecting)) {
+        track();
+        observer.disconnect();
+      }
+    }, { threshold: 0.5 });
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, [category, source, t.packages]);
+
   return (
     <div style={{ maxWidth: 920, margin: '0 auto', padding: '48px 24px' }}>
-      <section style={{ marginBottom: 34 }}>
+      <section ref={heroRef} style={{ marginBottom: 34 }}>
         <p style={{
           color: 'var(--accent-emerald)',
           fontSize: 13,
@@ -306,7 +376,7 @@ function AdvertiseContent({
         </div>
       </section>
 
-      <section style={{ marginBottom: 24 }}>
+      <section ref={packagesRef} style={{ marginBottom: 24 }}>
         <h2 style={{ fontSize: 18, fontWeight: 750, marginBottom: 14 }}>{t.packagesTitle}</h2>
         <div style={{
           display: 'grid',

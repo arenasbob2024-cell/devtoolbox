@@ -47,6 +47,8 @@ The homepage, tools index, category pages, blog listing, and blog article pages 
 
 The `/advertise` page now behaves like a lightweight media kit. It recommends a starter package from the incoming `source` and `category`, shows sellable inventory for each package, and sends the selected package in the sponsorship inquiry. Package-level CTA clicks use `monetization_click` IDs such as `advertise-package-category-sponsor`, so GA can show which commercial offer is getting buyer intent.
 
+The `/advertise` page also emits sponsor impressions for the main contact CTA and every visible package card, and includes OfferCatalog JSON-LD for the sponsorship packages. This makes the advertiser funnel measurable from landing-page view to package-level inquiry click.
+
 ## Non-ad revenue configuration
 
 The sidebar recommendation card can now use real partner/referral URLs without code changes:
