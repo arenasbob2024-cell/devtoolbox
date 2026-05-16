@@ -78,6 +78,8 @@ After a visitor successfully copies tool output three times in one session, the 
 
 When a visitor gives a tool a 5-star rating, the sidebar rating widget now shows a compact support/sponsor follow-up. This captures a high-satisfaction moment, sends support clicks to `NEXT_PUBLIC_SUPPORT_URL`, routes sponsor interest to `/advertise/?source=tool-rating-thanks&category=<tool-id>`, and tracks `monetization_impression` / `monetization_click` with `placement=tool-rating-thanks`.
 
+When a visitor shares a tool on X/LinkedIn or copies the page link from the tool-page share bar, the site now records a `tool_share` event with method, tool ID, category, and placement. The share bar then shows a compact support/sponsor follow-up, routes sponsor interest to `/advertise/?source=share-bar-thanks&category=<tool-id>`, and tracks `monetization_impression` / `monetization_click` with `placement=share-bar-thanks`.
+
 Clicks are sent to Google Analytics as `monetization_click` with `monetization_type`, `monetization_id`, `tool_category`, and `placement` parameters. Sponsor CTAs and Adsterra containers also emit `monetization_impression` when at least half of the monetized surface is visible, so GA can calculate CTR and viewable opportunity by surface. Use these events to decide which categories deserve stronger partner offers and which ad slots deserve dedicated Adsterra placements.
 
 ## Weekly operating loop
@@ -108,3 +110,4 @@ Then decide:
 6. Use GA `monetization_click` counts to identify which tool categories produce buyer-intent clicks and sell those categories through `/advertise`.
 7. Review `copy-success-nudge` impressions, support clicks, and sponsor clicks weekly; if CTR is weak, test copy threshold `2` vs `3` and alternate support text.
 8. Review `tool-rating-thanks` impressions, support clicks, and sponsor clicks weekly; if CTR is weak, test showing the nudge after 4-star ratings or replacing the support CTA with a category-specific partner offer.
+9. Review `tool_share` by method and compare it with `share-bar-thanks` clicks. If X/LinkedIn shares are low but copy-link shares are high, prioritize copy-link follow-up copy and category-specific partner offers.

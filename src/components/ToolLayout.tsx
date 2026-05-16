@@ -76,7 +76,13 @@ export default function ToolLayout({ title, description, children, toolId }: Too
           <div className="card">
             {children}
           </div>
-          <ShareBar url={`https://viadreams.cc/${lang}/tools/${toolId}`} title={title} lang={lang} />
+          <ShareBar
+            url={`https://viadreams.cc/${lang}/tools/${toolId}`}
+            title={title}
+            lang={lang}
+            toolId={toolId}
+            category={currentTool?.category}
+          />
           <CommentSection toolId={toolId} />
         </div>
 
