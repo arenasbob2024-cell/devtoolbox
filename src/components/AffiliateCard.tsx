@@ -1,8 +1,9 @@
 'use client';
 
 import Link from 'next/link';
+import { useEffect, useMemo, useRef } from 'react';
 import { useLang } from '@/i18n/LangContext';
-import { trackMonetizationClick } from '@/lib/analytics';
+import { trackMonetizationClick, trackMonetizationImpression } from '@/lib/analytics';
 import { getRelevantAffiliateLinks } from '@/lib/affiliate-offers';
 
 const copy = {
@@ -26,14 +27,62 @@ const copy = {
 export default function AffiliateCard({ category }: { category?: string }) {
   const { lang } = useLang();
   const t = copy[lang as keyof typeof copy] || copy.en;
-  const relevant = getRelevantAffiliateLinks({ category, limit: 2 });
+  const relevant = useMemo(
+    () => getRelevantAffiliateLinks({ category, limit: 2 }),
+    [category]
+  );
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const trackedRef = useRef(false);
+  const placement = 'tool-sidebar-partner-card';
 
-  const sponsorHref = `/${lang}/advertise/?source=tool-sidebar-partner-card${
+  const sponsorHref = `/${lang}/advertise/?source=${placement}${
     category ? `&category=${encodeURIComponent(category)}` : ''
   }`;
 
+  useEffect(() => {
+    const element = containerRef.current;
+    if (!element || trackedRef.current) return;
+
+    const track = () => {
+      if (trackedRef.current) return;
+      trackedRef.current = true;
+
+      relevant.forEach((link) => {
+        trackMonetizationImpression({
+          type: 'affiliate',
+          id: link.id,
+          category,
+          placement,
+        });
+      });
+
+      trackMonetizationImpression({
+        type: 'sponsor',
+        id: 'tool-sidebar-sponsor',
+        category,
+        placement,
+      });
+    };
+
+    if (!('IntersectionObserver' in window)) {
+      track();
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some(entry => entry.isIntersecting)) {
+        track();
+        observer.disconnect();
+      }
+    }, { threshold: 0.5 });
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, [category, relevant]);
+
   return (
-    <div className="card" style={{ padding: 16 }}>
+    <div ref={containerRef} className="card" style={{ padding: 16 }}>
       <h3 style={{ fontSize: 12, fontWeight: 700, marginBottom: 10, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: 0 }}>
         {t.heading}
       </h3>
@@ -47,7 +96,7 @@ export default function AffiliateCard({ category }: { category?: string }) {
             type: 'affiliate',
             id: link.id,
             category,
-            placement: 'tool-sidebar-partner-card',
+            placement,
           })}
           style={{
             display: 'block',
@@ -66,7 +115,7 @@ export default function AffiliateCard({ category }: { category?: string }) {
           type: 'sponsor',
           id: 'tool-sidebar-sponsor',
           category,
-          placement: 'tool-sidebar-partner-card',
+          placement,
         })}
         style={{
           display: 'block',

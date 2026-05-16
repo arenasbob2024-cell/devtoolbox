@@ -66,7 +66,7 @@ The sidebar recommendation card can now use real partner/referral URLs without c
 | `NEXT_PUBLIC_SUPPORT_URL` | Support / donation CTA |
 | `NEXT_PUBLIC_SPONSOR_CONTACT_URL` | Sponsor inquiry link for `/advertise` |
 
-Tool sidebar partner cards only show affiliate links whose env vars are configured. If no relevant affiliate URL exists, the slot falls back to the internal `/advertise` sponsorship CTA instead of sending high-intent traffic to unpaid external homepages.
+Tool sidebar partner cards only show affiliate links whose env vars are configured. If no relevant affiliate URL exists, the slot falls back to the internal `/advertise` sponsorship CTA instead of sending high-intent traffic to unpaid external homepages. The card now emits `monetization_impression` for each visible affiliate offer and for the sidebar sponsor link with `placement=tool-sidebar-partner-card`, so GA can calculate CTR by tool category.
 
 Blog article pages now include an inline partner-offer block after the newsletter signup. It matches configured affiliate offers against the article slug and keywords, tracks affiliate impressions/clicks with `placement=blog-article-partner-offer`, and falls back to an article sponsorship inquiry when no affiliate URL is configured.
 
