@@ -32,6 +32,9 @@ The codebase now supports separate Adsterra keys for high-signal placements:
 | `NEXT_PUBLIC_ADSTERRA_BLOG_BOTTOM_KEY` | Blog listing, below article cards |
 | `NEXT_PUBLIC_ADSTERRA_BLOG_ARTICLE_TOP_KEY` | Blog article, below article header |
 | `NEXT_PUBLIC_ADSTERRA_BLOG_ARTICLE_BOTTOM_KEY` | Blog article, after newsletter/related tools |
+| `NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_KEY` | Mobile-only bottom sticky banner |
+| `NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_WIDTH` | Optional sticky banner width, default `320` |
+| `NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_HEIGHT` | Optional sticky banner height, default `50` |
 
 Create each as a separate Adsterra placement so reports can show RPM by location. Do not reuse the same key everywhere unless you only need aggregate impressions.
 
@@ -71,6 +74,6 @@ Then decide:
 
 1. Fill the exact Adsterra `ads.txt` seller line from the dashboard.
 2. Create separate Adsterra placements for tool top, tool bottom, blog top, and blog article bottom.
-3. Test one additional non-intrusive mobile placement. Avoid popunder/interstitial formats until bounce rate and search traffic impact can be measured.
+3. Create a 320x50 mobile banner in Adsterra and test it with `NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_KEY`. Watch mobile bounce rate and revenue/session for at least 7 days.
 4. Replace generic affiliate links with real partner/referral links and track clicks by category.
 5. Publish the prepared Dev.to and social posts in `content/` to drive referral traffic and backlinks.

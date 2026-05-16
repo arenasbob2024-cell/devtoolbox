@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import CookieConsent from '@/components/CookieConsent';
 import AdsterraNativeBanner from '@/components/AdsterraNativeBanner';
 import AdsterraIframeBanner from '@/components/AdsterraIframeBanner';
+import AdsterraMobileStickyBanner from '@/components/AdsterraMobileStickyBanner';
 import { LangProvider } from '@/i18n/LangContext';
 import { getDictionary, getUIDictionary } from '@/i18n/getDictionary';
 import { i18n, type Locale } from '@/i18n/config';
@@ -200,6 +201,13 @@ export default async function LangLayout({
           <Footer />
           {/* Lightweight cookie notice — informational only, does NOT gate ads */}
           <CookieConsent lang={lang} />
+          {/* Optional high-viewability mobile anchor banner.
+              Activates when NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_KEY is set. */}
+          <AdsterraMobileStickyBanner
+            adKey={process.env.NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_KEY}
+            width={Number(process.env.NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_WIDTH || 320)}
+            height={Number(process.env.NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_HEIGHT || 50)}
+          />
         </LangProvider>
       </body>
     </html>
