@@ -50,7 +50,14 @@ The sidebar recommendation card can now use real partner/referral URLs without c
 | `NEXT_PUBLIC_AFFILIATE_GITHUB_COPILOT_URL` | GitHub Copilot |
 | `NEXT_PUBLIC_AFFILIATE_JETBRAINS_URL` | JetBrains |
 | `NEXT_PUBLIC_AFFILIATE_TAILWIND_UI_URL` | Tailwind UI |
+| `NEXT_PUBLIC_AFFILIATE_SUPABASE_URL` | Supabase |
+| `NEXT_PUBLIC_AFFILIATE_SENTRY_URL` | Sentry |
+| `NEXT_PUBLIC_AFFILIATE_POSTMAN_URL` | Postman |
+| `NEXT_PUBLIC_AFFILIATE_1PASSWORD_URL` | 1Password |
 | `NEXT_PUBLIC_SUPPORT_URL` | Support / donation CTA |
+| `NEXT_PUBLIC_SPONSOR_CONTACT_URL` | Sponsor inquiry link for `/advertise` |
+
+Tool sidebar partner cards only show affiliate links whose env vars are configured. If no relevant affiliate URL exists, the slot falls back to the internal `/advertise` sponsorship CTA instead of sending high-intent traffic to unpaid external homepages.
 
 Clicks are sent to Google Analytics as `monetization_click` with `monetization_type`, `monetization_id`, `tool_category`, and `placement` parameters. Use these events to decide which categories deserve stronger partner offers.
 
@@ -77,3 +84,4 @@ Then decide:
 3. Create a 320x50 mobile banner in Adsterra and test it with `NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_KEY`. Watch mobile bounce rate and revenue/session for at least 7 days.
 4. Replace generic affiliate links with real partner/referral links and track clicks by category.
 5. Publish the prepared Dev.to and social posts in `content/` to drive referral traffic and backlinks.
+6. Use GA `monetization_click` counts to identify which tool categories produce buyer-intent clicks and sell those categories through `/advertise`.
