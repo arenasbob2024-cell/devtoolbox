@@ -1,6 +1,8 @@
 # DevToolBox ads.txt - https://viadreams.cc
 # Authorized digital sellers (IAB ads.txt 1.1)
 
+OWNERDOMAIN=viadreams.cc
+
 # Adsterra — value to be filled in from Adsterra publisher dashboard
 # Format: adsterra.com, <publisher-id>, DIRECT, <optional-cert>
 # adsterra.com, ADSTERRA_PUBLISHER_ID_PLACEHOLDER, DIRECT

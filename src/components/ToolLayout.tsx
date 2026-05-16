@@ -55,7 +55,7 @@ export default function ToolLayout({ title, description, children, toolId }: Too
       </nav>
 
       {/* Top Ad */}
-      <AdSlot size="leaderboard" />
+      <AdSlot size="leaderboard" placement="tool-top" />
 
       {/* Title */}
       <div style={{ marginBottom: 24 }}>
@@ -82,7 +82,7 @@ export default function ToolLayout({ title, description, children, toolId }: Too
 
         {/* Sidebar */}
         <div style={{ width: 300, flexShrink: 0, display: 'flex', flexDirection: 'column', gap: 20 }}>
-          <AdSlot size="rectangle" />
+          <AdSlot size="rectangle" placement="tool-sidebar-secondary" />
 
           {/* Sidebar Adsterra Banner 300x250 (rectangle).
               Activates when NEXT_PUBLIC_ADSTERRA_SIDEBAR_KEY is set. */}
@@ -150,7 +150,7 @@ export default function ToolLayout({ title, description, children, toolId }: Too
       </div>
 
       {/* Bottom Ad */}
-      <AdSlot size="leaderboard" style={{ marginTop: 30 }} />
+      <AdSlot size="leaderboard" placement="tool-bottom" style={{ marginTop: 30 }} />
     </div>
   );
 }

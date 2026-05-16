@@ -1088,7 +1088,7 @@ export default function BlogPostPage() {
         </div>
       </header>
 
-      <AdSlot size="leaderboard" />
+      <AdSlot size="leaderboard" placement="blog-article-top" />
 
       {/* Article Body */}
       <article className="blog-article" style={{ marginTop: 24 }}>
@@ -1142,7 +1142,7 @@ export default function BlogPostPage() {
         </div>
       )}
 
-      <AdSlot size="leaderboard" style={{ marginTop: 30 }} />
+      <AdSlot size="leaderboard" placement="blog-article-bottom" style={{ marginTop: 30 }} />
 
       {/* Related Posts */}
       {relatedPostsList.length > 0 && (

@@ -36,7 +36,7 @@ export default function BlogListPage() {
         </p>
       </section>
 
-      <AdSlot size="leaderboard" />
+      <AdSlot size="leaderboard" placement="blog-list-top" />
 
       {/* Articles */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: 24, marginTop: 24 }}>
@@ -114,7 +114,7 @@ export default function BlogListPage() {
         })}
       </div>
 
-      <AdSlot size="leaderboard" style={{ marginTop: 30 }} />
+      <AdSlot size="leaderboard" placement="blog-list-bottom" style={{ marginTop: 30 }} />
     </div>
   );
 }

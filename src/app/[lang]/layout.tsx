@@ -137,9 +137,6 @@ export default async function LangLayout({
           }} 
         />
         
-        {/* Google AdSense */}
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1183198810365600" crossOrigin="anonymous" />
-
         {/* Microsoft Clarity — Bing-owned behavior analytics (free, may boost Bing ranking signal) */}
         {/* To activate: set NEXT_PUBLIC_CLARITY_PROJECT_ID in .env.local then rebuild */}
         {process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID && (
