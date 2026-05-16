@@ -57,18 +57,41 @@ class Base58 {
     return new Uint8Array(bytes.length === 0 ? [0] : bytes);
   }
 
-  static encodeCheck(buffer: Uint8Array): string {
-    const crypto = require('crypto');
-    const checksum = crypto.createHash('sha256').update(buffer).digest();
-    const withChecksum = new Uint8Array([...buffer, ...checksum.slice(0, 4)]);
-    return this.encode(withChecksum);
+}
+
+async function sha256(bytes: Uint8Array): Promise<Uint8Array> {
+  if (!globalThis.crypto?.subtle) {
+    throw new Error('Base58Check requires Web Crypto support');
+  }
+  const digest = await globalThis.crypto.subtle.digest('SHA-256', bytes);
+  return new Uint8Array(digest);
+}
+
+async function appendBase58CheckChecksum(payload: Uint8Array): Promise<Uint8Array> {
+  const first = await sha256(payload);
+  const second = await sha256(first);
+  const withChecksum = new Uint8Array(payload.length + 4);
+  withChecksum.set(payload);
+  withChecksum.set(second.slice(0, 4), payload.length);
+  return withChecksum;
+}
+
+async function verifyBase58Check(decoded: Uint8Array): Promise<Uint8Array> {
+  if (decoded.length < 5) {
+    throw new Error('Invalid Base58Check input');
   }
 
-  static decodeCheck(encoded: string): Uint8Array {
-    const decoded = this.decode(encoded);
-    const payload = decoded.slice(0, -4);
-    return payload;
+  const payload = decoded.slice(0, -4);
+  const checksum = decoded.slice(-4);
+  const expected = (await appendBase58CheckChecksum(payload)).slice(-4);
+
+  for (let i = 0; i < checksum.length; i++) {
+    if (checksum[i] !== expected[i]) {
+      throw new Error('Invalid Base58Check checksum');
+    }
   }
+
+  return payload;
 }
 
 export default function Base58Encoder() {
@@ -81,7 +104,7 @@ export default function Base58Encoder() {
   const [useCheck, setUseCheck] = useState(false);
   const [error, setError] = useState('');
 
-  const process = useCallback(() => {
+  const process = useCallback(async () => {
     try {
       setError('');
       if (!input.trim()) {
@@ -94,29 +117,14 @@ export default function Base58Encoder() {
       if (mode === 'encode') {
         const encoder = new TextEncoder();
         const bytes = encoder.encode(input);
-
-        try {
-          if (useCheck && typeof window !== 'undefined' && window.crypto) {
-            const hash = require('crypto-js/sha256');
-            const checksum = hash(bytes).toString().slice(0, 8);
-            const withCheck = new TextEncoder().encode(input + checksum);
-            result = Base58.encode(withCheck);
-          } else {
-            result = Base58.encode(bytes);
-          }
-        } catch {
-          result = Base58.encode(bytes);
-        }
+        result = Base58.encode(useCheck ? await appendBase58CheckChecksum(bytes) : bytes);
       } else {
         try {
           const decoded = Base58.decode(input);
-          if (useCheck && decoded.length > 4) {
-            result = new TextDecoder().decode(decoded.slice(0, -4));
-          } else {
-            result = new TextDecoder().decode(decoded);
-          }
+          const payload = useCheck ? await verifyBase58Check(decoded) : decoded;
+          result = new TextDecoder().decode(payload);
         } catch (err) {
-          throw new Error('Invalid Base58 input');
+          throw err instanceof Error ? err : new Error('Invalid Base58 input');
         }
       }
 
