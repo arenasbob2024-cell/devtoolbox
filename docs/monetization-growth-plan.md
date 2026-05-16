@@ -49,6 +49,8 @@ The `/advertise` page now behaves like a lightweight media kit. It recommends a 
 
 The `/advertise` page also emits sponsor impressions for the main contact CTA and every visible package card, and includes OfferCatalog JSON-LD for the sponsorship packages. This makes the advertiser funnel measurable from landing-page view to package-level inquiry click.
 
+The `/advertise` page now includes a tracked media-kit download CTA. The static kit lives at `/devtoolbox-media-kit.md` and gives prospective sponsors a self-serve summary of audience fit, packages, available inventory, measurement, creative requirements, and contact details. The CTA emits `monetization_impression` with `id=advertise-media-kit` and `monetization_click` with `id=advertise-media-kit-download`.
+
 The header now includes a tracked Advertise link to `/<lang>/advertise/?source=header-nav&category=site`. It emits `monetization_impression` and `monetization_click` with `placement=header-nav`, giving direct sponsorship demand a site-wide entry point without waiting for users to scroll into page-level sponsor blocks.
 
 ## Non-ad revenue configuration
@@ -141,3 +143,4 @@ The CSV import path accepts common column names such as placement/ad unit/zone, 
 14. Review support-button impressions and clicks by `placement=tool-sidebar` versus `placement=footer`. If a category has strong support CTR, reuse that category for higher-priced sponsorship outreach.
 15. Review bottom ad fallback sponsor impressions and clicks by placement, including `*-ad-fallback` and `*-ad-empty`. If a fallback surface gets clicks before an Adsterra key is configured, or if an enabled key repeatedly appears empty, create a dedicated Adsterra unit for that surface, move the slot, or sell it as direct sponsorship inventory.
 16. Review `placement=header-nav` sponsor CTR. If it gets advertiser-intent clicks, test stronger header copy on desktop or route repeat clicks to a richer media kit/contact form.
+17. Review `advertise-media-kit-download` clicks against package inquiry clicks. If downloads occur without follow-up, replace the static kit with a short form or add a stronger budget/timeline prompt inside the kit.

@@ -43,6 +43,9 @@ const copy = {
     bestForTitle: 'Best for',
     budgetTitle: 'Budget fit',
     packageCta: 'Ask about this package',
+    mediaKitTitle: 'Need details before contacting?',
+    mediaKitDescription: 'Download the sponsorship media kit for package details, available inventory, measurement notes, and creative requirements.',
+    mediaKitCta: 'Download media kit',
     recommendedTitle: 'Recommended starting point',
     recommendedFallback: 'Partner Test is the safest first buy when you want to compare placements before scaling.',
     trackingTitle: 'Measurement',
@@ -91,6 +94,9 @@ const copy = {
     bestForTitle: '适合',
     budgetTitle: '预算建议',
     packageCta: '咨询这个套餐',
+    mediaKitTitle: '想先了解详细资料？',
+    mediaKitDescription: '下载赞助媒体包，查看套餐、可投放位置、效果衡量方式和素材要求。',
+    mediaKitCta: '下载媒体包',
     recommendedTitle: '推荐起投方案',
     recommendedFallback: '如果你想先比较不同位置的效果，合作测试是最稳妥的起投方式。',
     trackingTitle: '效果衡量',
@@ -139,6 +145,9 @@ const copy = {
     bestForTitle: 'Лучше всего для',
     budgetTitle: 'Бюджет',
     packageCta: 'Обсудить пакет',
+    mediaKitTitle: 'Нужны детали перед обращением?',
+    mediaKitDescription: 'Скачайте медиакит со спонсорскими пакетами, инвентарем, измерением и требованиями к материалам.',
+    mediaKitCta: 'Скачать медиакит',
     recommendedTitle: 'Рекомендуемый старт',
     recommendedFallback: 'Partner Test - самый безопасный первый запуск, если нужно сравнить размещения перед масштабированием.',
     trackingTitle: 'Измерение',
@@ -208,8 +217,10 @@ function AdvertiseContent({
   const t = copy[lang as keyof typeof copy] || copy.en;
   const heroRef = useRef<HTMLElement | null>(null);
   const packagesRef = useRef<HTMLElement | null>(null);
+  const mediaKitRef = useRef<HTMLElement | null>(null);
   const heroTrackedRef = useRef(false);
   const packagesTrackedRef = useRef(false);
+  const mediaKitTrackedRef = useRef(false);
   const contactBaseUrl = process.env.NEXT_PUBLIC_SPONSOR_CONTACT_URL
     || 'mailto:arenasbob.2024@gmail.com?subject=DevToolBox%20sponsorship%20inquiry';
   const recommendedPackageId = getRecommendedPackageId(source, category);
@@ -292,6 +303,38 @@ function AdvertiseContent({
     return () => observer.disconnect();
   }, [category, source, t.packages]);
 
+  useEffect(() => {
+    const element = mediaKitRef.current;
+    if (!element || mediaKitTrackedRef.current) return;
+
+    const track = () => {
+      if (mediaKitTrackedRef.current) return;
+      mediaKitTrackedRef.current = true;
+      trackMonetizationImpression({
+        type: 'sponsor',
+        id: 'advertise-media-kit',
+        category: category || undefined,
+        placement: source || 'advertise-page',
+      });
+    };
+
+    if (!('IntersectionObserver' in window)) {
+      track();
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some(entry => entry.isIntersecting)) {
+        track();
+        observer.disconnect();
+      }
+    }, { threshold: 0.5 });
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, [category, source]);
+
   return (
     <div style={{ maxWidth: 920, margin: '0 auto', padding: '48px 24px' }}>
       <section ref={heroRef} style={{ marginBottom: 34 }}>
@@ -354,6 +397,53 @@ function AdvertiseContent({
         <p style={{ margin: 0, color: 'var(--text-secondary)', lineHeight: 1.7 }}>
           {category || source ? recommendedPackage.detail : t.recommendedFallback}
         </p>
+      </section>
+
+      <section
+        ref={mediaKitRef}
+        className="card"
+        style={{
+          marginBottom: 24,
+          padding: 18,
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          gap: 16,
+          flexWrap: 'wrap',
+        }}
+      >
+        <div style={{ minWidth: 240, flex: '1 1 360px' }}>
+          <h2 style={{ fontSize: 18, fontWeight: 800, marginBottom: 8 }}>
+            {t.mediaKitTitle}
+          </h2>
+          <p style={{ margin: 0, color: 'var(--text-secondary)', lineHeight: 1.7 }}>
+            {t.mediaKitDescription}
+          </p>
+        </div>
+        <a
+          href="/devtoolbox-media-kit.md"
+          download
+          onClick={() => trackMonetizationClick({
+            type: 'sponsor',
+            id: 'advertise-media-kit-download',
+            category: category || undefined,
+            placement: source || 'advertise-page',
+          })}
+          style={{
+            display: 'inline-flex',
+            padding: '10px 14px',
+            borderRadius: 8,
+            background: 'var(--bg-input)',
+            border: '1px solid var(--border-color)',
+            color: 'var(--text-primary)',
+            fontSize: 13,
+            fontWeight: 750,
+            textDecoration: 'none',
+            whiteSpace: 'nowrap',
+          }}
+        >
+          {t.mediaKitCta}
+        </a>
       </section>
 
       <section style={{
