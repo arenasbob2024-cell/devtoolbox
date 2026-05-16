@@ -5,6 +5,8 @@ import { LangProvider } from '@/i18n/LangContext';
 import { tools, type Tool } from '@/lib/tools';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import AdSlot from '@/components/AdSlot';
+import SponsorCta from '@/components/SponsorCta';
 
 // Category filter configuration
 const categoryConfigs: Record<string, {
@@ -164,10 +166,9 @@ const categoryMeta: Record<string, Record<string, { title: string; description: 
 };
 
 export async function generateStaticParams() {
-  // Pre-render all active locales for all categories (9 × 12 = 108 pages).
+  // Pre-render all currently enabled locales for all categories.
   // These are high-priority aggregate landing pages for long-tail queries.
-  const activeLocales = ['en', 'es', 'fr', 'de', 'pt', 'it', 'zh', 'ja', 'ko'];
-  return activeLocales.flatMap(lang =>
+  return i18n.locales.flatMap(lang =>
     validSlugs.map(slug => ({ lang, slug }))
   );
 }
@@ -296,8 +297,11 @@ export default async function CategoryPage({ params }: PageProps) {
           {isZh ? `${toolCount} 个工具可用` : `${toolCount} tools available`}
         </p>
 
+        <AdSlot size="leaderboard" placement="category-top" />
+        <SponsorCta placement="category-top-sponsor" category={slug} id="category-sponsor" />
+
         {/* Tools grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
           {categoryTools.map(tool => {
             const toolDict = dict.tools?.[tool.id];
             return (
@@ -342,6 +346,8 @@ export default async function CategoryPage({ params }: PageProps) {
             </p>
           </div>
         </section>
+
+        <AdSlot size="leaderboard" placement="category-bottom" style={{ marginTop: 36 }} />
 
         {/* Cross-linking to other categories */}
         <section className="mt-12">

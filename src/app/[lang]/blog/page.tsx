@@ -6,6 +6,7 @@ import { blogPosts, getLocalizedPost } from '@/data/blog-posts';
 import { useLang } from '@/i18n/LangContext';
 import { i18n, type Locale } from '@/i18n/config';
 import AdSlot from '@/components/AdSlot';
+import SponsorCta from '@/components/SponsorCta';
 
 export default function BlogListPage() {
   const params = useParams();
@@ -37,6 +38,7 @@ export default function BlogListPage() {
       </section>
 
       <AdSlot size="leaderboard" placement="blog-list-top" />
+      <SponsorCta placement="blog-list-sponsor" id="blog-list-sponsor" />
 
       {/* Articles */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: 24, marginTop: 24 }}>

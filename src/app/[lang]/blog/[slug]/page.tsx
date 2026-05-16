@@ -10,6 +10,7 @@ import AdSlot from '@/components/AdSlot';
 import NewsletterSignup from '@/components/NewsletterSignup';
 import ShareBar from '@/components/ugc/ShareBar';
 import HelpfulButton from '@/components/ugc/HelpfulButton';
+import SponsorCta from '@/components/SponsorCta';
 
 /* ---------- lazy-load article bodies ---------- */
 import UuidComparison from '@/data/posts/uuid-v4-vs-v7-vs-ulid';
@@ -1089,6 +1090,7 @@ export default function BlogPostPage() {
       </header>
 
       <AdSlot size="leaderboard" placement="blog-article-top" />
+      <SponsorCta placement="blog-article-sponsor" category={slug} id="blog-article-sponsor" />
 
       {/* Article Body */}
       <article className="blog-article" style={{ marginTop: 24 }}>
