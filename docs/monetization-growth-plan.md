@@ -40,7 +40,7 @@ The codebase now supports separate Adsterra keys for high-signal placements:
 
 Create each as a separate Adsterra placement so reports can show RPM by location. Do not reuse the same key everywhere unless you only need aggregate impressions.
 
-The category pages, blog listing, and blog article pages also include a direct `/advertise` sponsor CTA. This captures commercial interest even before a paid ad network slot is configured for that surface.
+The homepage, tools index, category pages, blog listing, and blog article pages include a direct `/advertise` sponsor CTA. These links pass `source` and `category` query parameters into the advertise page, and the default sponsorship email includes that context in the inquiry body. This captures commercial interest even before a paid ad network slot is configured for that surface.
 
 ## Non-ad revenue configuration
 

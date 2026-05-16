@@ -39,6 +39,9 @@ export default function SponsorCta({
   const t = copy[lang as keyof typeof copy] || copy.en;
   const containerRef = useRef<HTMLElement | null>(null);
   const trackedRef = useRef(false);
+  const sponsorHref = `/${lang}/advertise/?source=${encodeURIComponent(placement)}${
+    category ? `&category=${encodeURIComponent(category)}` : ''
+  }`;
 
   useEffect(() => {
     const element = containerRef.current;
@@ -93,7 +96,7 @@ export default function SponsorCta({
         {t.description}
       </p>
       <Link
-        href={`/${lang}/advertise/`}
+        href={sponsorHref}
         onClick={() => trackMonetizationClick({
           type: 'sponsor',
           id,

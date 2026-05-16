@@ -117,7 +117,9 @@ export default function AffiliateCard({ category }: { category?: string }) {
     .filter((link, index, all) => all.findIndex(candidate => candidate.id === link.id) === index)
     .slice(0, 2);
 
-  const sponsorHref = `/${lang}/advertise`;
+  const sponsorHref = `/${lang}/advertise/?source=tool-sidebar-partner-card${
+    category ? `&category=${encodeURIComponent(category)}` : ''
+  }`;
 
   return (
     <div className="card" style={{ padding: 16 }}>
