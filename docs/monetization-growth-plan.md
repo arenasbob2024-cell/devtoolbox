@@ -110,6 +110,15 @@ Then decide:
 - Build new content for countries with high CPM and visible search demand.
 - Add `placement_sub_id` tracking for Smartlink experiments before putting Smartlinks into content.
 
+If the Adsterra API token is not available, export placement and country reports from the dashboard as CSV and run:
+
+```bash
+npm run adsterra:report -- stats --file=exports/adsterra-placement.csv
+npm run adsterra:report -- recommend --placements-file=exports/placements.csv --countries-file=exports/countries.csv --min-impressions=1000
+```
+
+The CSV import path accepts common column names such as placement/ad unit/zone, country/geo, impressions/views/loads, clicks, CTR, CPM/eCPM, revenue/profit/earnings, and prints the same scale/review recommendations as the API flow.
+
 ## Next experiments
 
 1. Fill the exact Adsterra `ads.txt` seller line from the dashboard.

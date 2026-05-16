@@ -8,6 +8,8 @@
  *   ADSTERRA_API_KEY=... npm run adsterra:report -- recommend --days=7
  *   ADSTERRA_API_KEY=... npm run adsterra:report -- stats --start=2026-05-01 --end=2026-05-15 --group-by=country
  *   ADSTERRA_API_KEY=... npm run adsterra:report -- domains
+ *   npm run adsterra:report -- stats --file=exports/adsterra-placement.csv
+ *   npm run adsterra:report -- recommend --placements-file=exports/placements.csv --countries-file=exports/countries.csv
  *
  * Keep the token out of git. Generate it in the Adsterra publisher dashboard:
  * API page -> GENERATE NEW TOKEN.
@@ -32,6 +34,7 @@ Options for stats:
   --domain=ID              Optional Adsterra domain ID.
   --placement=ID           Optional Adsterra placement ID.
   --country=US             Optional country filter.
+  --file=PATH              Read a CSV export instead of calling the API.
   --json                   Print raw JSON instead of a compact table.
 
 Options for recommend:
@@ -39,6 +42,8 @@ Options for recommend:
   --start=YYYY-MM-DD       Start date.
   --end=YYYY-MM-DD         End date.
   --min-impressions=1000   Minimum impressions before judging CPM.
+  --placements-file=PATH   Read placement CSV export instead of calling the API.
+  --countries-file=PATH    Read country CSV export instead of calling the API.
   --sample                 Run with built-in sample rows, no API token needed.
   --json                   Print machine-readable recommendations.
 `;
@@ -76,6 +81,82 @@ function getDateRange(args) {
   const start = addDays(end, -(Number.isFinite(days) && days > 0 ? days - 1 : 6));
 
   return { start: formatDate(start), end: formatDate(end) };
+}
+
+function normalizeHeader(header) {
+  return header
+    .replace(/^\uFEFF/, '')
+    .trim()
+    .toLowerCase()
+    .replace(/[%$]/g, '')
+    .replace(/[^a-z0-9]+/g, '_')
+    .replace(/^_+|_+$/g, '');
+}
+
+function parseCsv(text) {
+  const rows = [];
+  let row = [];
+  let cell = '';
+  let inQuotes = false;
+
+  for (let i = 0; i < text.length; i += 1) {
+    const char = text[i];
+    const next = text[i + 1];
+
+    if (char === '"') {
+      if (inQuotes && next === '"') {
+        cell += '"';
+        i += 1;
+      } else {
+        inQuotes = !inQuotes;
+      }
+      continue;
+    }
+
+    if (char === ',' && !inQuotes) {
+      row.push(cell);
+      cell = '';
+      continue;
+    }
+
+    if ((char === '\n' || char === '\r') && !inQuotes) {
+      if (char === '\r' && next === '\n') i += 1;
+      row.push(cell);
+      if (row.some(value => value.trim() !== '')) rows.push(row);
+      row = [];
+      cell = '';
+      continue;
+    }
+
+    cell += char;
+  }
+
+  if (cell !== '' || row.length > 0) {
+    row.push(cell);
+    if (row.some(value => value.trim() !== '')) rows.push(row);
+  }
+
+  if (rows.length === 0) return [];
+
+  const headers = rows[0].map(normalizeHeader);
+  return rows.slice(1).map(values => (
+    Object.fromEntries(headers.map((header, index) => [header || `column_${index + 1}`, values[index] ?? '']))
+  ));
+}
+
+async function readCsvFile(filePath) {
+  const [{ readFile }, path] = await Promise.all([
+    import('node:fs/promises'),
+    import('node:path'),
+  ]);
+  const resolvedPath = path.resolve(process.cwd(), filePath);
+  try {
+    return parseCsv(await readFile(resolvedPath, 'utf8'));
+  } catch (error) {
+    console.error(`Could not read CSV file: ${resolvedPath}`);
+    console.error(error.message);
+    process.exit(1);
+  }
 }
 
 async function request(path, query = {}) {
@@ -147,18 +228,32 @@ function labelFor(row, candidates, fallback) {
   return value === '' ? fallback : String(value);
 }
 
+function dimensionCandidateKeys(dimension) {
+  const keys = [dimension, `${dimension}_name`, `${dimension}_id`];
+
+  if (dimension === 'placement') {
+    keys.push('ad_unit', 'ad_unit_name', 'ad_unit_id', 'zone', 'zone_id', 'spot', 'spot_id');
+  }
+
+  if (dimension === 'country') {
+    keys.push('country_code', 'country_name', 'geo', 'geo_name');
+  }
+
+  return keys;
+}
+
 function normalizeMetricRows(payload, dimension) {
   return rowsFromStats(payload).map((row) => {
-    const impressions = numberFor(row, ['impressions', 'views', 'loads']);
-    const clicks = numberFor(row, ['clicks']);
-    const revenue = numberFor(row, ['revenue', 'profit', 'earnings']);
-    const cpmFromApi = numberFor(row, ['cpm', 'ecpm']);
-    const ctrFromApi = numberFor(row, ['ctr']);
+    const impressions = numberFor(row, ['impressions', 'impression', 'views', 'loads']);
+    const clicks = numberFor(row, ['clicks', 'click']);
+    const revenue = numberFor(row, ['revenue', 'revenue_usd', 'profit', 'profit_usd', 'earnings', 'earnings_usd', 'income']);
+    const cpmFromApi = numberFor(row, ['cpm', 'ecpm', 'cpm_usd', 'ecpm_usd']);
+    const ctrFromApi = numberFor(row, ['ctr', 'ctr_percent']);
     const cpm = cpmFromApi || (impressions > 0 ? (revenue / impressions) * 1000 : 0);
     const ctr = ctrFromApi || (impressions > 0 ? (clicks / impressions) * 100 : 0);
 
     return {
-      name: labelFor(row, [dimension, `${dimension}_name`, `${dimension}_id`, 'geo'], 'unknown'),
+      name: labelFor(row, dimensionCandidateKeys(dimension), 'unknown'),
       impressions,
       clicks,
       ctr,
@@ -261,13 +356,13 @@ function printStatsTable(payload) {
   const columns = [
     ['date', ['date', 'day']],
     ['domain', ['domain', 'domain_name', 'domain_id']],
-    ['placement', ['placement', 'placement_name', 'placement_id']],
-    ['country', ['country', 'geo']],
-    ['impressions', ['impressions', 'views', 'loads']],
-    ['clicks', ['clicks']],
-    ['ctr', ['ctr']],
-    ['cpm', ['cpm', 'ecpm']],
-    ['revenue', ['revenue', 'profit', 'earnings']],
+    ['placement', ['placement', 'placement_name', 'placement_id', 'ad_unit', 'ad_unit_name', 'ad_unit_id', 'zone', 'zone_id']],
+    ['country', ['country', 'country_code', 'country_name', 'geo']],
+    ['impressions', ['impressions', 'impression', 'views', 'loads']],
+    ['clicks', ['clicks', 'click']],
+    ['ctr', ['ctr', 'ctr_percent']],
+    ['cpm', ['cpm', 'ecpm', 'cpm_usd', 'ecpm_usd']],
+    ['revenue', ['revenue', 'revenue_usd', 'profit', 'profit_usd', 'earnings', 'earnings_usd', 'income']],
   ];
 
   const normalized = rows.map((row) => (
@@ -317,7 +412,14 @@ async function main() {
   if (command === 'recommend') {
     const { start, end } = getDateRange(args);
     const minImpressions = Number(args['min-impressions'] || 1000);
-    const [placementPayload, countryPayload] = args.sample
+    const placementFile = args['placements-file'] || args['placement-file'];
+    const countryFile = args['countries-file'] || args['country-file'];
+    const [placementPayload, countryPayload] = placementFile || countryFile
+      ? [
+          placementFile ? await readCsvFile(placementFile) : [],
+          countryFile ? await readCsvFile(countryFile) : [],
+        ]
+      : args.sample
       ? [
           [
             { placement: 'tool-sidebar-primary', impressions: 8200, clicks: 45, revenue: 3.9 },
@@ -368,14 +470,16 @@ async function main() {
   }
 
   const { start, end } = getDateRange(args);
-  const payload = await request('stats.json', {
-    start_date: start,
-    finish_date: end,
-    group_by: args['group-by'] || 'placement',
-    domain: args.domain,
-    placement: args.placement,
-    country: args.country,
-  });
+  const payload = args.file
+    ? await readCsvFile(args.file)
+    : await request('stats.json', {
+        start_date: start,
+        finish_date: end,
+        group_by: args['group-by'] || 'placement',
+        domain: args.domain,
+        placement: args.placement,
+        country: args.country,
+      });
 
   if (args.json) {
     console.log(JSON.stringify(payload, null, 2));
