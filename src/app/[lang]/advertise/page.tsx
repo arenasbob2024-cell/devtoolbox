@@ -13,10 +13,25 @@ function getSearchValue(value?: string | string[]) {
 
 function buildAdvertiseJsonLd(lang: Locale, source: string, category: string) {
   const pageUrl = `${BASE_URL}/${lang}/advertise/`;
-  const offerNames = [
-    'Category Sponsor',
-    'Article Sponsor',
-    'Partner Test',
+  const offers = [
+    {
+      name: 'Category Sponsor',
+      description: 'Own a high-intent developer tool category for a monthly test.',
+      minPrice: 299,
+      maxPrice: 799,
+    },
+    {
+      name: 'Article Sponsor',
+      description: 'Place a sponsor CTA inside developer guides or comparison articles.',
+      minPrice: 149,
+      maxPrice: 499,
+    },
+    {
+      name: 'Partner Test',
+      description: 'Run a short campaign across one to three tracked placements.',
+      minPrice: 99,
+      maxPrice: 299,
+    },
   ];
 
   return {
@@ -39,15 +54,23 @@ function buildAdvertiseJsonLd(lang: Locale, source: string, category: string) {
         '@id': `${pageUrl}#sponsorship-packages`,
         name: 'DevToolBox Sponsorship Packages',
         url: pageUrl,
-        itemListElement: offerNames.map((name, index) => ({
+        itemListElement: offers.map((offer, index) => ({
           '@type': 'Offer',
           position: index + 1,
-          name,
+          name: offer.name,
+          description: offer.description,
           availability: 'https://schema.org/InStock',
           url: pageUrl,
+          priceCurrency: 'USD',
+          priceSpecification: {
+            '@type': 'PriceSpecification',
+            priceCurrency: 'USD',
+            minPrice: offer.minPrice,
+            maxPrice: offer.maxPrice,
+          },
           itemOffered: {
             '@type': 'Service',
-            name: `DevToolBox ${name}`,
+            name: `DevToolBox ${offer.name}`,
             serviceType: 'Developer audience sponsorship',
             provider: {
               '@type': 'Organization',

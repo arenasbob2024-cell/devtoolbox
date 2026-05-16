@@ -20,6 +20,8 @@ Inventory can include:
 - Relevant tool sidebar CTA.
 - Selected tool-page partner placement.
 
+Suggested starter budget: US$299-US$799 per month.
+
 ### Article Sponsor
 
 Promote a product inside developer guides and comparison articles.
@@ -30,6 +32,8 @@ Inventory can include:
 - Related tool block.
 - Optional blog-list presence.
 
+Suggested starter budget: US$149-US$499 per article.
+
 ### Partner Test
 
 Run a small campaign before committing to a larger buy.
@@ -39,6 +43,12 @@ Inventory can include:
 - One to three tracked placements selected by category and traffic fit.
 - Short test window.
 - Post-test placement recommendation.
+
+Suggested starter budget: US$99-US$299 per test.
+
+## Budget Notes
+
+Starter budgets are guidance for low-friction tests, not fixed rate-card guarantees. Final pricing depends on target category, placement mix, campaign length, traffic fit, and whether the sponsor needs custom copy or reporting.
 
 ## Measurement
 

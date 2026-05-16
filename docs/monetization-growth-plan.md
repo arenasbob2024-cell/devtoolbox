@@ -51,6 +51,8 @@ The `/advertise` page also emits sponsor impressions for the main contact CTA an
 
 The `/advertise` page now includes a tracked media-kit download CTA. The static kit lives at `/devtoolbox-media-kit.md` and gives prospective sponsors a self-serve summary of audience fit, packages, available inventory, measurement, creative requirements, and contact details. The CTA emits `monetization_impression` with `id=advertise-media-kit` and `monetization_click` with `id=advertise-media-kit-download`.
 
+The sponsorship packages now include visible starter budget anchors: Partner Test at US$99-US$299, Article Sponsor at US$149-US$499, and Category Sponsor at US$299-US$799/month. These ranges are also exposed in the media kit and OfferCatalog JSON-LD so buyers, search systems, and AI crawlers see that the inventory is immediately purchasable while still leaving room for custom pricing.
+
 The header now includes a tracked Advertise link to `/<lang>/advertise/?source=header-nav&category=site`. It emits `monetization_impression` and `monetization_click` with `placement=header-nav`, giving direct sponsorship demand a site-wide entry point without waiting for users to scroll into page-level sponsor blocks.
 
 The footer Advertise link now routes to `/<lang>/advertise/?source=footer-nav&category=site` and emits sponsor `monetization_impression` / `monetization_click` events with `placement=footer-nav`. This makes the persistent bottom navigation sponsorship entry point comparable with the header and in-page sponsor CTAs.

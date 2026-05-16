@@ -21,6 +21,7 @@ const copy = {
         inventory: 'Category page CTA, relevant tool sidebar CTA, and selected tool-page partner placement.',
         bestFor: 'Developer platforms with a clear category fit.',
         budget: 'Best for monthly tests and renewals.',
+        price: 'Suggested test budget: US$299-US$799 per month.',
       },
       {
         id: 'article-sponsor',
@@ -29,6 +30,7 @@ const copy = {
         inventory: 'Article sponsor CTA, related tool block, and optional blog-list presence.',
         bestFor: 'API, hosting, IDE, database, security, and education offers.',
         budget: 'Best for content-led campaigns.',
+        price: 'Suggested test budget: US$149-US$499 per article.',
       },
       {
         id: 'partner-test',
@@ -37,11 +39,13 @@ const copy = {
         inventory: 'One to three tracked placements chosen by category and traffic fit.',
         bestFor: 'New offers that need quick proof of intent.',
         budget: 'Best for small pilot budgets.',
+        price: 'Suggested test budget: US$99-US$299 per test.',
       },
     ],
     inventoryTitle: 'Inventory',
     bestForTitle: 'Best for',
     budgetTitle: 'Budget fit',
+    priceTitle: 'Starter budget',
     packageCta: 'Ask about this package',
     mediaKitTitle: 'Need details before contacting?',
     mediaKitDescription: 'Download the sponsorship media kit for package details, available inventory, measurement notes, and creative requirements.',
@@ -72,6 +76,7 @@ const copy = {
         inventory: '分类页 CTA、相关工具侧边栏 CTA，以及精选工具页合作推荐位。',
         bestFor: '与某个开发者分类高度匹配的平台或工具。',
         budget: '适合按月测试和续投。',
+        price: '建议测试预算：每月 US$299-US$799。',
       },
       {
         id: 'article-sponsor',
@@ -80,6 +85,7 @@ const copy = {
         inventory: '文章赞助 CTA、相关工具模块，以及可选博客列表曝光。',
         bestFor: 'API、云服务、IDE、数据库、安全和技术教育产品。',
         budget: '适合内容驱动型投放。',
+        price: '建议测试预算：每篇 US$149-US$499。',
       },
       {
         id: 'partner-test',
@@ -88,11 +94,13 @@ const copy = {
         inventory: '按分类和流量匹配选择 1-3 个可追踪位置。',
         bestFor: '需要快速验证意向的新产品或新 offer。',
         budget: '适合小预算试投。',
+        price: '建议测试预算：每次 US$99-US$299。',
       },
     ],
     inventoryTitle: '可投放位置',
     bestForTitle: '适合',
     budgetTitle: '预算建议',
+    priceTitle: '起投预算',
     packageCta: '咨询这个套餐',
     mediaKitTitle: '想先了解详细资料？',
     mediaKitDescription: '下载赞助媒体包，查看套餐、可投放位置、效果衡量方式和素材要求。',
@@ -123,6 +131,7 @@ const copy = {
         inventory: 'CTA на странице категории, CTA в боковой панели релевантных инструментов и партнерское размещение на выбранных страницах.',
         bestFor: 'Платформы и продукты с четким совпадением по категории.',
         budget: 'Подходит для месячных тестов и продлений.',
+        price: 'Тестовый бюджет: US$299-US$799 в месяц.',
       },
       {
         id: 'article-sponsor',
@@ -131,6 +140,7 @@ const copy = {
         inventory: 'CTA в статье, блок связанных инструментов и опциональное присутствие в списке блога.',
         bestFor: 'API, хостинг, IDE, базы данных, безопасность и обучение.',
         budget: 'Подходит для контентных кампаний.',
+        price: 'Тестовый бюджет: US$149-US$499 за статью.',
       },
       {
         id: 'partner-test',
@@ -139,11 +149,13 @@ const copy = {
         inventory: 'От одного до трех отслеживаемых размещений по категории и трафику.',
         bestFor: 'Новые предложения, которым нужно быстро проверить намерение.',
         budget: 'Подходит для небольших пилотных бюджетов.',
+        price: 'Тестовый бюджет: US$99-US$299 за тест.',
       },
     ],
     inventoryTitle: 'Инвентарь',
     bestForTitle: 'Лучше всего для',
     budgetTitle: 'Бюджет',
+    priceTitle: 'Стартовый бюджет',
     packageCta: 'Обсудить пакет',
     mediaKitTitle: 'Нужны детали перед обращением?',
     mediaKitDescription: 'Скачайте медиакит со спонсорскими пакетами, инвентарем, измерением и требованиями к материалам.',
@@ -502,6 +514,14 @@ function AdvertiseContent({
                   </dt>
                   <dd style={{ margin: 0, color: 'var(--text-secondary)', fontSize: 12, lineHeight: 1.55 }}>
                     {pkg.budget}
+                  </dd>
+                </div>
+                <div>
+                  <dt style={{ fontSize: 11, fontWeight: 750, color: 'var(--text-primary)', marginBottom: 3 }}>
+                    {t.priceTitle}
+                  </dt>
+                  <dd style={{ margin: 0, color: 'var(--text-secondary)', fontSize: 12, lineHeight: 1.55 }}>
+                    {pkg.price}
                   </dd>
                 </div>
               </dl>
