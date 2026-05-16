@@ -49,6 +49,8 @@ The `/advertise` page now behaves like a lightweight media kit. It recommends a 
 
 The `/advertise` page also emits sponsor impressions for the main contact CTA and every visible package card, and includes OfferCatalog JSON-LD for the sponsorship packages. This makes the advertiser funnel measurable from landing-page view to package-level inquiry click.
 
+The header now includes a tracked Advertise link to `/<lang>/advertise/?source=header-nav&category=site`. It emits `monetization_impression` and `monetization_click` with `placement=header-nav`, giving direct sponsorship demand a site-wide entry point without waiting for users to scroll into page-level sponsor blocks.
+
 ## Non-ad revenue configuration
 
 The sidebar recommendation card can now use real partner/referral URLs without code changes:
@@ -138,3 +140,4 @@ The CSV import path accepts common column names such as placement/ad unit/zone, 
 13. Review `tool_search_no_results` counts by language and compare them with `home-search-no-results` sponsor clicks. Build new tools or category sponsorship pitches around repeated zero-result demand.
 14. Review support-button impressions and clicks by `placement=tool-sidebar` versus `placement=footer`. If a category has strong support CTR, reuse that category for higher-priced sponsorship outreach.
 15. Review bottom ad fallback sponsor impressions and clicks by placement. If a fallback surface gets clicks before an Adsterra key is configured, create a dedicated Adsterra unit for that surface or sell it as direct sponsorship inventory.
+16. Review `placement=header-nav` sponsor CTR. If it gets advertiser-intent clicks, test stronger header copy on desktop or route repeat clicks to a richer media kit/contact form.

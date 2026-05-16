@@ -1,19 +1,35 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { tools } from '@/lib/tools';
 import { useRouter } from 'next/navigation';
 import { useLang } from '@/i18n/LangContext';
 import LanguageSwitcher from './LanguageSwitcher';
+import { trackMonetizationClick, trackMonetizationImpression } from '@/lib/analytics';
 
 export default function Header() {
   const { lang, dict } = useLang();
   const [search, setSearch] = useState('');
   const [showResults, setShowResults] = useState(false);
+  const sponsorTrackedRef = useRef(false);
   const router = useRouter();
 
   const t = dict.tools;
+  const sponsorNavPlacement = 'header-nav';
+  const sponsorNavId = 'header-advertise';
+
+  useEffect(() => {
+    if (sponsorTrackedRef.current) return;
+
+    sponsorTrackedRef.current = true;
+    trackMonetizationImpression({
+      type: 'sponsor',
+      id: sponsorNavId,
+      category: 'site',
+      placement: sponsorNavPlacement,
+    });
+  }, []);
 
   const results = search.length > 0
     ? tools.filter(tool => {
@@ -146,6 +162,29 @@ export default function Header() {
             onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-secondary)')}
           >
             {(dict as Record<string, unknown> as { blog?: { nav?: string } }).blog?.nav || 'Blog'}
+          </Link>
+          <Link
+            href={`/${lang}/advertise/?source=${sponsorNavPlacement}&category=site`}
+            className="header-sponsor-link"
+            onClick={() => trackMonetizationClick({
+              type: 'sponsor',
+              id: sponsorNavId,
+              category: 'site',
+              placement: sponsorNavPlacement,
+            })}
+            style={{
+              fontSize: 13,
+              fontWeight: 750,
+              color: '#fff',
+              textDecoration: 'none',
+              padding: '7px 12px',
+              borderRadius: 8,
+              background: 'rgba(16, 185, 129, 0.16)',
+              border: '1px solid rgba(16, 185, 129, 0.35)',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            {dict.common.advertise || 'Advertise'}
           </Link>
           <LanguageSwitcher />
           <a
