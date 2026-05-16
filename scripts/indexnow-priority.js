@@ -18,7 +18,7 @@ const PRIORITY_TOOLS = [
   'json-formatter', 'base64', 'url-encoder', 'jwt-decoder', 'regex-tester',
   'uuid-generator', 'password-generator', 'hash-generator', 'timestamp-converter',
   'cron-parser', 'json-yaml', 'xml-formatter', 'csv-json', 'markdown-preview',
-  'color-converter', 'ip-calculator', 'qr-generator', 'number-base',
+  'color-converter', 'ip-calculator', 'qrcode-generator', 'number-base',
   'string-case', 'text-diff', 'sql-formatter', 'html-entity', 'hmac-generator',
   'url-parser', 'http-status', 'image-base64', 'bcrypt-generator',
   'escape-unescape', 'fake-data', 'pem-decoder',
@@ -26,9 +26,13 @@ const PRIORITY_TOOLS = [
 
 // Top priority blog posts
 const PRIORITY_BLOG = [
-  'ollama-guide', 'coolify-guide', 'langchain-guide', 'rag-introduction',
-  'vector-databases-guide', 'cursor-vs-copilot', 'caddy-web-server',
-  'docker-compose-guide', 'git-cheatsheet', 'nextjs-app-router',
+  'ollama-guide', 'coolify-guide', 'github-actions-secrets-guide',
+  'git-rebase-vs-merge-explained', 'rag-guide', 'langchain-guide',
+  'vector-database-guide', 'cursor-vs-copilot-guide', 'caddy-server-guide',
+  'docker-compose-cheat-sheet', 'nextjs-app-router-guide',
+  'docker-volumes-bind-mounts-guide', 'css-nesting-native-2026',
+  'yaml-multiline-string-block-folded', 'tailwind-v4-new-features',
+  'tauri-guide', 'word-counter-online-guide',
 ];
 
 const urls = [];
