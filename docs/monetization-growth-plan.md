@@ -104,6 +104,8 @@ The footer and tool-sidebar support buttons now emit `monetization_impression` a
 
 Bottom Adsterra slots now fall back to a direct sponsorship CTA when the corresponding Adsterra key is not configured. When a bottom slot does have a key but the client iframe still appears empty after load time, it falls back with placements such as `tool-bottom-ad-empty` and `blog-article-bottom-ad-empty`. The global bottom native banner also falls back through `site-bottom-native-ad-fallback` or `site-bottom-native-ad-empty`. This applies to tool pages, tools index, blog list, blog articles, category pages, and the site-wide footer ad surface, so unfilled, blocked, or regionally unreachable ad inventory still becomes a measurable sponsor opportunity.
 
+High-visibility empty ad surfaces now also recover into sponsor inventory. The global top leaderboard falls back through `site-top-leaderboard-ad-fallback` / `site-top-leaderboard-ad-empty`, while tool pages recover `tool-top`, `tool-sidebar-secondary`, and `tool-sidebar-primary` into tracked sponsor CTAs. This prevents the most valuable above-the-fold and sidebar areas from disappearing when Adsterra keys are missing, blocked, or unfilled.
+
 Clicks are sent to Google Analytics as `monetization_click` with `monetization_type`, `monetization_id`, `tool_category`, and `placement` parameters. Sponsor CTAs and Adsterra containers also emit `monetization_impression` when at least half of the monetized surface is visible, so GA can calculate CTR and viewable opportunity by surface. Use these events to decide which categories deserve stronger partner offers and which ad slots deserve dedicated Adsterra placements.
 
 ## Weekly operating loop

@@ -105,7 +105,17 @@ export default function AdsterraIframeBanner({
     return () => window.clearTimeout(timer);
   }, [adKey, fallbackDelayMs, fallbackToSponsor, showFallback]);
 
-  if (!adKey) return null;
+  if (!adKey) {
+    if (!fallbackToSponsor) return null;
+
+    return (
+      <SponsorCta
+        placement={fallbackPlacement || `${placement}-ad-fallback`}
+        category={category}
+        id={fallbackId || `${placement}-ad-fallback-sponsor`}
+      />
+    );
+  }
 
   if (showFallback) {
     return (

@@ -193,6 +193,7 @@ export default async function LangLayout({
             width={728}
             height={90}
             placement="site-top-leaderboard"
+            fallbackToSponsor
             style={{ marginTop: 8, marginBottom: 0 }}
           />
           <main style={{ flex: 1 }}>
