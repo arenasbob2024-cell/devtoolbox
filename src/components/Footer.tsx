@@ -37,7 +37,11 @@ export default function Footer() {
               {dict.footer.tagline}
             </p>
             <div style={{ marginTop: 16 }}>
-              <NewsletterSignup variant="compact" />
+              <NewsletterSignup
+                variant="compact"
+                placement="footer-newsletter"
+                category="site"
+              />
             </div>
             <div style={{ marginTop: 12 }}>
               <SupportButton placement="footer" />

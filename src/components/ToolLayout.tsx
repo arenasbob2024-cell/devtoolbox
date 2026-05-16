@@ -145,7 +145,11 @@ export default function ToolLayout({ title, description, children, toolId }: Too
           </div>
 
           <AffiliateCard category={currentTool?.category} />
-          <NewsletterSignup variant="compact" />
+          <NewsletterSignup
+            variant="compact"
+            placement="tool-sidebar-newsletter"
+            category={currentTool?.category}
+          />
 
           {/* Support */}
           <div className="card" style={{ padding: 16, textAlign: 'center' }}>

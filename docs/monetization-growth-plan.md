@@ -84,6 +84,8 @@ When a visitor submits tool feedback in the comment section, the success state n
 
 When a reader marks a blog guide as helpful, the helpful-vote widget now records a `content_feedback` event and shows a support/sponsor follow-up. Sponsor clicks route to `/advertise/?source=blog-helpful-thanks&category=<post-slug>`, and impressions/clicks are tracked with `placement=blog-helpful-thanks`.
 
+When a visitor subscribes to the newsletter from the footer, tool sidebar, or blog article, the site now records a `newsletter_signup` event with placement and category. The success state includes a support/sponsor follow-up, sponsor links preserve the source as `<placement>-newsletter-success`, and impressions/clicks are tracked with `placement=newsletter-success-nudge`.
+
 Clicks are sent to Google Analytics as `monetization_click` with `monetization_type`, `monetization_id`, `tool_category`, and `placement` parameters. Sponsor CTAs and Adsterra containers also emit `monetization_impression` when at least half of the monetized surface is visible, so GA can calculate CTR and viewable opportunity by surface. Use these events to decide which categories deserve stronger partner offers and which ad slots deserve dedicated Adsterra placements.
 
 ## Weekly operating loop
@@ -117,3 +119,4 @@ Then decide:
 9. Review `tool_share` by method and compare it with `share-bar-thanks` clicks. If X/LinkedIn shares are low but copy-link shares are high, prioritize copy-link follow-up copy and category-specific partner offers.
 10. Review `comment-success-nudge` impressions and clicks. If sponsor CTR is strong, prioritize direct sponsorship outreach for tools that receive repeated feedback submissions.
 11. Review `content_feedback` and `blog-helpful-thanks` by post slug. If helpful votes cluster around a topic, sell that topic as sponsored guide inventory and create more articles for the same category.
+12. Review `newsletter_signup` by placement and compare it with `newsletter-success-nudge` clicks. If tool-sidebar subscribers convert better than footer subscribers, prioritize category-specific sponsor packages for those tool categories.

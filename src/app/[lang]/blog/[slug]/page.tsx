@@ -1103,7 +1103,11 @@ export default function BlogPostPage() {
       <HelpfulButton slug={slug} lang={lang} />
 
       {/* Newsletter */}
-      <NewsletterSignup variant="wide" />
+      <NewsletterSignup
+        variant="wide"
+        placement="blog-article-newsletter"
+        category={slug}
+      />
 
       <BlogPartnerOffer slug={slug} keywords={post.keywords} />
 

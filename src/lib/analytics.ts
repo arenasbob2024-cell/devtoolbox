@@ -27,6 +27,11 @@ interface ContentFeedbackEvent {
   placement?: string;
 }
 
+interface NewsletterSignupEvent {
+  category?: string;
+  placement?: string;
+}
+
 export function trackMonetizationClick({
   type,
   id,
@@ -77,6 +82,20 @@ export function trackContentFeedback({
     content_type: contentType,
     content_id: id,
     feedback_value: value,
+    placement: placement || 'unknown',
+  });
+}
+
+export function trackNewsletterSignup({
+  category,
+  placement,
+}: NewsletterSignupEvent) {
+  if (typeof window === 'undefined' || typeof window.gtag !== 'function') {
+    return;
+  }
+
+  window.gtag('event', 'newsletter_signup', {
+    tool_category: category || 'unknown',
     placement: placement || 'unknown',
   });
 }

@@ -1,19 +1,75 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useLang } from '@/i18n/LangContext';
+import {
+  trackMonetizationClick,
+  trackMonetizationImpression,
+  trackNewsletterSignup,
+} from '@/lib/analytics';
 
 interface NewsletterSignupProps {
   variant?: 'wide' | 'compact';
+  placement?: string;
+  category?: string;
 }
 
-export default function NewsletterSignup({ variant = 'wide' }: NewsletterSignupProps) {
-  const { dict } = useLang();
+const successNudgeCopy: Record<string, {
+  detail: string;
+  support: string;
+  sponsor: string;
+}> = {
+  en: {
+    detail: 'Thanks for following DevToolBox.',
+    support: 'Support free tools',
+    sponsor: 'Sponsor DevToolBox',
+  },
+  zh: {
+    detail: '\u611f\u8c22\u5173\u6ce8 DevToolBox\u3002',
+    support: '\u652f\u6301\u514d\u8d39\u5de5\u5177',
+    sponsor: '\u8d5e\u52a9 DevToolBox',
+  },
+  ru: {
+    detail: '\u0421\u043f\u0430\u0441\u0438\u0431\u043e, \u0447\u0442\u043e \u0441\u043b\u0435\u0434\u0438\u0442\u0435 \u0437\u0430 DevToolBox.',
+    support: '\u041f\u043e\u0434\u0434\u0435\u0440\u0436\u0430\u0442\u044c \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u044b\u0435 \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u044b',
+    sponsor: '\u0421\u0442\u0430\u0442\u044c \u0441\u043f\u043e\u043d\u0441\u043e\u0440\u043e\u043c',
+  },
+};
+
+export default function NewsletterSignup({
+  variant = 'wide',
+  placement = 'newsletter',
+  category,
+}: NewsletterSignupProps) {
+  const { lang, dict } = useLang();
   const t = (dict as Record<string, unknown>).newsletter as Record<string, string> | undefined;
+  const successNudge = successNudgeCopy[lang] || successNudgeCopy.en;
+  const trackingCategory = category || 'newsletter';
+  const supportHref = process.env.NEXT_PUBLIC_SUPPORT_URL || 'https://buymeacoffee.com/devtoolbox';
+  const sponsorHref = `/${lang}/advertise/?source=${encodeURIComponent(`${placement}-newsletter-success`)}&category=${encodeURIComponent(trackingCategory)}`;
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const successTrackedRef = useRef(false);
 
-  if (!t) return null;
+  useEffect(() => {
+    if (status !== 'success' || successTrackedRef.current) return;
+    successTrackedRef.current = true;
+    trackMonetizationImpression({
+      type: 'support',
+      id: 'newsletter-success-nudge',
+      category: trackingCategory,
+      placement: 'newsletter-success-nudge',
+    });
+  }, [status, trackingCategory]);
+
+  const markSuccess = () => {
+    trackNewsletterSignup({
+      category: trackingCategory,
+      placement,
+    });
+    setStatus('success');
+    setEmail('');
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,15 +82,16 @@ export default function NewsletterSignup({ variant = 'wide' }: NewsletterSignupP
         body: JSON.stringify({ email_address: email, tags: ['devtoolbox'] }),
       });
       if (res.ok || res.status === 201) {
-        setStatus('success');
-        setEmail('');
+        markSuccess();
       } else {
-        setStatus('success'); // Buttondown may return 4xx for existing; treat as success
+        markSuccess(); // Buttondown may return 4xx for existing; treat as success
       }
     } catch {
       setStatus('error');
     }
   };
+
+  if (!t) return null;
 
   if (variant === 'compact') {
     return (
@@ -51,7 +108,62 @@ export default function NewsletterSignup({ variant = 'wide' }: NewsletterSignupP
           {t.subtitle}
         </p>
         {status === 'success' ? (
-          <p style={{ fontSize: 12, color: '#22c55e', fontWeight: 600 }}>{t.success}</p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            <p style={{ fontSize: 12, color: '#22c55e', fontWeight: 600, margin: 0 }}>
+              {t.success}
+            </p>
+            <p style={{ fontSize: 12, color: 'var(--text-secondary)', margin: 0 }}>
+              {successNudge.detail}
+            </p>
+            <a
+              href={supportHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackMonetizationClick({
+                type: 'support',
+                id: 'buy-me-a-coffee',
+                category: trackingCategory,
+                placement: 'newsletter-success-nudge',
+              })}
+              style={{
+                display: 'block',
+                width: '100%',
+                padding: '8px 10px',
+                borderRadius: 6,
+                background: 'linear-gradient(135deg, #FF813F, #FF5F5F)',
+                color: '#fff',
+                fontSize: 12,
+                fontWeight: 700,
+                textAlign: 'center',
+                textDecoration: 'none',
+              }}
+            >
+              {successNudge.support}
+            </a>
+            <a
+              href={sponsorHref}
+              onClick={() => trackMonetizationClick({
+                type: 'sponsor',
+                id: 'newsletter-sponsor',
+                category: trackingCategory,
+                placement: 'newsletter-success-nudge',
+              })}
+              style={{
+                display: 'block',
+                width: '100%',
+                padding: '8px 10px',
+                borderRadius: 6,
+                border: '1px solid var(--border-color)',
+                color: 'var(--accent-blue)',
+                fontSize: 12,
+                fontWeight: 700,
+                textAlign: 'center',
+                textDecoration: 'none',
+              }}
+            >
+              {successNudge.sponsor}
+            </a>
+          </div>
         ) : (
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             <input
@@ -122,7 +234,58 @@ export default function NewsletterSignup({ variant = 'wide' }: NewsletterSignupP
         </div>
         <div style={{ flex: 1, minWidth: 280 }}>
           {status === 'success' ? (
-            <p style={{ fontSize: 13, color: '#22c55e', fontWeight: 600 }}>{t.success}</p>
+            <div>
+              <p style={{ fontSize: 13, color: '#22c55e', fontWeight: 600, margin: '0 0 6px' }}>
+                {t.success}
+              </p>
+              <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'center' }}>
+                <span style={{ color: 'var(--text-secondary)', fontSize: 13 }}>
+                  {successNudge.detail}
+                </span>
+                <a
+                  href={supportHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackMonetizationClick({
+                    type: 'support',
+                    id: 'buy-me-a-coffee',
+                    category: trackingCategory,
+                    placement: 'newsletter-success-nudge',
+                  })}
+                  style={{
+                    color: '#fff',
+                    background: 'linear-gradient(135deg, #FF813F, #FF5F5F)',
+                    borderRadius: 6,
+                    padding: '6px 10px',
+                    fontSize: 12,
+                    fontWeight: 700,
+                    textDecoration: 'none',
+                  }}
+                >
+                  {successNudge.support}
+                </a>
+                <a
+                  href={sponsorHref}
+                  onClick={() => trackMonetizationClick({
+                    type: 'sponsor',
+                    id: 'newsletter-sponsor',
+                    category: trackingCategory,
+                    placement: 'newsletter-success-nudge',
+                  })}
+                  style={{
+                    color: 'var(--accent-blue)',
+                    border: '1px solid var(--border-color)',
+                    borderRadius: 6,
+                    padding: '6px 10px',
+                    fontSize: 12,
+                    fontWeight: 700,
+                    textDecoration: 'none',
+                  }}
+                >
+                  {successNudge.sponsor}
+                </a>
+              </div>
+            </div>
           ) : (
             <form onSubmit={handleSubmit} style={{ display: 'flex', gap: 8 }}>
               <input
