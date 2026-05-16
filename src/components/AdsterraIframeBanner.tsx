@@ -31,6 +31,7 @@ interface Props {
   fallbackPlacement?: string;
   fallbackId?: string;
   fallbackDelayMs?: number;
+  fallbackContent?: React.ReactNode;
 }
 
 export default function AdsterraIframeBanner({
@@ -45,6 +46,7 @@ export default function AdsterraIframeBanner({
   fallbackPlacement,
   fallbackId,
   fallbackDelayMs = 6000,
+  fallbackContent,
 }: Props) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
@@ -107,6 +109,7 @@ export default function AdsterraIframeBanner({
 
   if (!adKey) {
     if (!fallbackToSponsor) return null;
+    if (fallbackContent) return <>{fallbackContent}</>;
 
     return (
       <SponsorCta
@@ -118,6 +121,8 @@ export default function AdsterraIframeBanner({
   }
 
   if (showFallback) {
+    if (fallbackContent) return <>{fallbackContent}</>;
+
     return (
       <SponsorCta
         placement={fallbackPlacement || `${placement}-ad-empty`}

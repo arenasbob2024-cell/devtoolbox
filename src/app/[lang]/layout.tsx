@@ -206,11 +206,12 @@ export default async function LangLayout({
           {/* Lightweight cookie notice — informational only, does NOT gate ads */}
           <CookieConsent lang={lang} />
           {/* Optional high-viewability mobile anchor banner.
-              Activates when NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_KEY is set. */}
+              Falls back to a compact sponsor CTA when the ad key is missing or empty. */}
           <AdsterraMobileStickyBanner
             adKey={process.env.NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_KEY}
             width={Number(process.env.NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_WIDTH || 320)}
             height={Number(process.env.NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_HEIGHT || 50)}
+            fallbackToSponsor
           />
         </LangProvider>
       </body>

@@ -108,6 +108,8 @@ Bottom Adsterra slots now fall back to a direct sponsorship CTA when the corresp
 
 High-visibility empty ad surfaces now also recover into sponsor inventory. The global top leaderboard falls back through `site-top-leaderboard-ad-fallback` / `site-top-leaderboard-ad-empty`, while tool pages recover `tool-top`, `tool-sidebar-secondary`, and `tool-sidebar-primary` into tracked sponsor CTAs. This prevents the most valuable above-the-fold and sidebar areas from disappearing when Adsterra keys are missing, blocked, or unfilled.
 
+The mobile sticky slot now also recovers into a compact direct-sponsor bar. If `NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_KEY` is not configured, the site shows a dismissible mobile-only sponsor CTA with `placement=mobile-sticky-ad-fallback`; if the configured mobile iframe appears empty after load time, it recovers through `placement=mobile-sticky-ad-empty`. Closing the bar is remembered for 24 hours in local storage so the test can monetize mobile visibility without reappearing on every reload.
+
 Clicks are sent to Google Analytics as `monetization_click` with `monetization_type`, `monetization_id`, `tool_category`, and `placement` parameters. Sponsor CTAs and Adsterra containers also emit `monetization_impression` when at least half of the monetized surface is visible, so GA can calculate CTR and viewable opportunity by surface. Use these events to decide which categories deserve stronger partner offers and which ad slots deserve dedicated Adsterra placements.
 
 ## Weekly operating loop
@@ -158,3 +160,4 @@ The CSV import path accepts common column names such as placement/ad unit/zone, 
 17. Review `advertise-media-kit-download` clicks against package inquiry clicks. If downloads occur without follow-up, replace the static kit with a short form or add a stronger budget/timeline prompt inside the kit.
 18. Compare `placement=footer-nav` against `placement=header-nav`. If footer clicks convert better, add stronger media-kit copy near the footer support/newsletter area.
 19. Review `advertise-inquiry-form-submit` versus `advertise-inquiry-copy` weekly. If copy clicks are high but email replies are low, move the contact address closer to the brief preview or add a durable lead destination such as a CRM form endpoint.
+20. Review `mobile-sticky-ad-fallback` and `mobile-sticky-ad-empty` impressions/clicks against mobile bounce rate. If sponsor CTR is weak but impressions are high, create a dedicated Adsterra 320x50 mobile unit; if bounce rate worsens, keep the 24-hour close cap and reduce mobile sticky usage to high-intent tool pages only.

@@ -1,22 +1,200 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import AdsterraIframeBanner from './AdsterraIframeBanner';
+import { useLang } from '@/i18n/LangContext';
+import { trackMonetizationClick, trackMonetizationImpression } from '@/lib/analytics';
+import { useConsent } from './CookieConsent';
 
 interface Props {
   adKey?: string;
   width?: number;
   height?: number;
+  fallbackToSponsor?: boolean;
+}
+
+const CLOSE_STORAGE_KEY = 'devtoolbox-mobile-sticky-closed-until';
+const CLOSE_TTL_MS = 24 * 60 * 60 * 1000;
+
+const fallbackCopy = {
+  en: {
+    label: 'Sponsor DevToolBox',
+    title: 'Reach developer traffic on mobile',
+    cta: 'Advertise',
+  },
+  zh: {
+    label: '赞助 DevToolBox',
+    title: '触达移动端开发者流量',
+    cta: '投放广告',
+  },
+  ru: {
+    label: 'Спонсор DevToolBox',
+    title: 'Охватите мобильный трафик разработчиков',
+    cta: 'Реклама',
+  },
+};
+
+function MobileSponsorFallback({
+  width,
+  height,
+  placement,
+}: {
+  width: number;
+  height: number;
+  placement: string;
+}) {
+  const { lang } = useLang();
+  const t = fallbackCopy[lang as keyof typeof fallbackCopy] || fallbackCopy.en;
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const trackedRef = useRef(false);
+  const sponsorHref = `/${lang}/advertise/?source=${encodeURIComponent(placement)}&category=mobile`;
+
+  useEffect(() => {
+    const element = containerRef.current;
+    if (!element || trackedRef.current) return;
+
+    const track = () => {
+      if (trackedRef.current) return;
+      trackedRef.current = true;
+      trackMonetizationImpression({
+        type: 'sponsor',
+        id: `${placement}-sponsor`,
+        category: 'mobile',
+        placement,
+      });
+    };
+
+    if (!('IntersectionObserver' in window)) {
+      track();
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some(entry => entry.isIntersecting)) {
+        track();
+        observer.disconnect();
+      }
+    }, { threshold: 0.5 });
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, [placement]);
+
+  return (
+    <div
+      ref={containerRef}
+      style={{
+        width: '100%',
+        maxWidth: width,
+        minHeight: height,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        gap: 10,
+        padding: '7px 10px',
+        borderRadius: 8,
+        border: '1px solid rgba(16,185,129,0.35)',
+        background: 'linear-gradient(135deg, rgba(16,185,129,0.18), rgba(59,130,246,0.16))',
+      }}
+    >
+      <div style={{ minWidth: 0 }}>
+        <p style={{
+          margin: '0 0 2px',
+          color: 'var(--accent-emerald)',
+          fontSize: 10,
+          fontWeight: 800,
+          letterSpacing: 0,
+          textTransform: 'uppercase',
+          lineHeight: 1.2,
+        }}>
+          {t.label}
+        </p>
+        <p style={{
+          margin: 0,
+          color: 'var(--text-primary)',
+          fontSize: 12,
+          fontWeight: 750,
+          lineHeight: 1.25,
+        }}>
+          {t.title}
+        </p>
+      </div>
+      <a
+        href={sponsorHref}
+        onClick={() => trackMonetizationClick({
+          type: 'sponsor',
+          id: `${placement}-sponsor`,
+          category: 'mobile',
+          placement,
+        })}
+        style={{
+          flex: '0 0 auto',
+          padding: '7px 9px',
+          borderRadius: 7,
+          background: 'var(--accent-blue)',
+          color: '#fff',
+          fontSize: 11,
+          fontWeight: 800,
+          textDecoration: 'none',
+          lineHeight: 1,
+          whiteSpace: 'nowrap',
+        }}
+      >
+        {t.cta}
+      </a>
+    </div>
+  );
 }
 
 export default function AdsterraMobileStickyBanner({
   adKey,
   width = 320,
   height = 50,
+  fallbackToSponsor = false,
 }: Props) {
+  const consent = useConsent();
+  const [ready, setReady] = useState(false);
   const [closed, setClosed] = useState(false);
+  const fallbackPlacement = adKey ? 'mobile-sticky-ad-empty' : 'mobile-sticky-ad-fallback';
 
-  if (!adKey || closed) return null;
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      try {
+        const closedUntil = Number(window.localStorage.getItem(CLOSE_STORAGE_KEY));
+        if (closedUntil > Date.now()) {
+          setClosed(true);
+        } else if (closedUntil) {
+          window.localStorage.removeItem(CLOSE_STORAGE_KEY);
+        }
+      } catch {
+        // localStorage can be unavailable in hardened browsers; keep the bar usable.
+      }
+
+      setReady(true);
+    }, 0);
+
+    return () => window.clearTimeout(timer);
+  }, []);
+
+  const close = () => {
+    setClosed(true);
+    try {
+      window.localStorage.setItem(CLOSE_STORAGE_KEY, String(Date.now() + CLOSE_TTL_MS));
+    } catch {
+      // Closing still works for the current page even if persistence is blocked.
+    }
+  };
+
+  if (consent === null || !ready || closed || (!adKey && !fallbackToSponsor)) return null;
+
+  const fallbackContent = fallbackToSponsor ? (
+    <MobileSponsorFallback
+      width={width}
+      height={height}
+      placement={fallbackPlacement}
+    />
+  ) : undefined;
 
   return (
     <>
@@ -46,7 +224,7 @@ export default function AdsterraMobileStickyBanner({
           <button
             type="button"
             aria-label="Close sponsored content"
-            onClick={() => setClosed(true)}
+            onClick={close}
             style={{
               position: 'absolute',
               right: 0,
@@ -64,13 +242,19 @@ export default function AdsterraMobileStickyBanner({
           >
             x
           </button>
-          <AdsterraIframeBanner
-            adKey={adKey}
-            width={width}
-            height={height}
-            placement="mobile-sticky"
-            style={{ margin: 0 }}
-          />
+          {adKey ? (
+            <AdsterraIframeBanner
+              adKey={adKey}
+              width={width}
+              height={height}
+              placement="mobile-sticky"
+              style={{ margin: 0 }}
+              fallbackToSponsor={fallbackToSponsor}
+              fallbackPlacement={fallbackPlacement}
+              fallbackId={`${fallbackPlacement}-sponsor`}
+              fallbackContent={fallbackContent}
+            />
+          ) : fallbackContent}
         </div>
       </div>
     </>
