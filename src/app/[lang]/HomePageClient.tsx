@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import { tools, categories } from '@/lib/tools';
 import { useLang } from '@/i18n/LangContext';
 import SponsorCta from '@/components/SponsorCta';
+import AdSlot from '@/components/AdSlot';
 import { trackToolSearchNoResults } from '@/lib/analytics';
 
 // 8 most-loved developer tools — surfaced at the top of the homepage so
@@ -236,7 +237,13 @@ export default function HomePageClient() {
       )}
 
       {!search && activeCategory === 'all' && (
-        <SponsorCta placement="home-sponsor" category="home" id="home-sponsor" />
+        <AdSlot
+          size="leaderboard"
+          placement="home-inline"
+          category="home"
+          fallbackToSponsor
+          style={{ marginTop: 0, marginBottom: 30 }}
+        />
       )}
 
       {/* Category Tabs */}

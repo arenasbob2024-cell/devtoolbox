@@ -26,6 +26,7 @@ The codebase now supports separate Adsterra keys for high-signal placements:
 
 | Environment variable | Placement |
 | --- | --- |
+| `NEXT_PUBLIC_ADSTERRA_HOME_INLINE_KEY` | Homepage inline slot, below popular tools |
 | `NEXT_PUBLIC_ADSTERRA_TOOL_TOP_KEY` | Tool page, above the tool body |
 | `NEXT_PUBLIC_ADSTERRA_TOOL_BOTTOM_KEY` | Tool page, after the tool content |
 | `NEXT_PUBLIC_ADSTERRA_SIDEBAR_SECONDARY_KEY` | Tool sidebar, secondary 300x250 |
@@ -44,6 +45,8 @@ The codebase now supports separate Adsterra keys for high-signal placements:
 Create each as a separate Adsterra placement so reports can show RPM by location. Do not reuse the same key everywhere unless you only need aggregate impressions.
 
 The homepage, tools index, category pages, blog listing, and blog article pages include a direct `/advertise` sponsor CTA. These links pass `source` and `category` query parameters into the advertise page, and the default sponsorship email includes that context in the inquiry body. This captures commercial interest even before a paid ad network slot is configured for that surface.
+
+The homepage sponsor surface is now a configurable Adsterra placement. Set `NEXT_PUBLIC_ADSTERRA_HOME_INLINE_KEY` to run a dedicated homepage inline banner below the popular tools block. If the key is missing or the iframe appears empty, the same surface falls back to a direct sponsorship CTA through `home-inline-ad-fallback` or `home-inline-ad-empty`, keeping homepage traffic measurable instead of mixing it into only the global top/bottom placements.
 
 The `/advertise` page now behaves like a lightweight media kit. It recommends a starter package from the incoming `source` and `category`, shows sellable inventory for each package, and sends the selected package in the sponsorship inquiry. Package-level CTA clicks use `monetization_click` IDs such as `advertise-package-category-sponsor`, so GA can show which commercial offer is getting buyer intent.
 
@@ -161,3 +164,4 @@ The CSV import path accepts common column names such as placement/ad unit/zone, 
 18. Compare `placement=footer-nav` against `placement=header-nav`. If footer clicks convert better, add stronger media-kit copy near the footer support/newsletter area.
 19. Review `advertise-inquiry-form-submit` versus `advertise-inquiry-copy` weekly. If copy clicks are high but email replies are low, move the contact address closer to the brief preview or add a durable lead destination such as a CRM form endpoint.
 20. Review `mobile-sticky-ad-fallback` and `mobile-sticky-ad-empty` impressions/clicks against mobile bounce rate. If sponsor CTR is weak but impressions are high, create a dedicated Adsterra 320x50 mobile unit; if bounce rate worsens, keep the 24-hour close cap and reduce mobile sticky usage to high-intent tool pages only.
+21. Create a dedicated homepage inline Adsterra unit and configure `NEXT_PUBLIC_ADSTERRA_HOME_INLINE_KEY`. Compare `home-inline` RPM against global top leaderboard RPM; if homepage RPM is weak but fallback sponsor CTR is strong, sell the homepage block as direct sponsorship instead of running network ads there.
