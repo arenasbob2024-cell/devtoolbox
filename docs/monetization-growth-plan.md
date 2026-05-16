@@ -29,6 +29,8 @@ The codebase now supports separate Adsterra keys for high-signal placements:
 | `NEXT_PUBLIC_ADSTERRA_TOOL_TOP_KEY` | Tool page, above the tool body |
 | `NEXT_PUBLIC_ADSTERRA_TOOL_BOTTOM_KEY` | Tool page, after the tool content |
 | `NEXT_PUBLIC_ADSTERRA_SIDEBAR_SECONDARY_KEY` | Tool sidebar, secondary 300x250 |
+| `NEXT_PUBLIC_ADSTERRA_TOOLS_INDEX_TOP_KEY` | All tools index, above the sponsor CTA |
+| `NEXT_PUBLIC_ADSTERRA_TOOLS_INDEX_BOTTOM_KEY` | All tools index, after the category sections |
 | `NEXT_PUBLIC_ADSTERRA_BLOG_TOP_KEY` | Blog listing, above article cards |
 | `NEXT_PUBLIC_ADSTERRA_BLOG_BOTTOM_KEY` | Blog listing, below article cards |
 | `NEXT_PUBLIC_ADSTERRA_BLOG_ARTICLE_TOP_KEY` | Blog article, below article header |

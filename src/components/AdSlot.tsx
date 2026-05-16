@@ -7,6 +7,8 @@ type AdSlotPlacement =
   | 'tool-top'
   | 'tool-sidebar-secondary'
   | 'tool-bottom'
+  | 'tools-index-top'
+  | 'tools-index-bottom'
   | 'blog-list-top'
   | 'blog-list-bottom'
   | 'blog-article-top'
@@ -26,6 +28,8 @@ const AD_KEYS: Record<AdSlotPlacement, string | undefined> = {
   'tool-top': process.env.NEXT_PUBLIC_ADSTERRA_TOOL_TOP_KEY,
   'tool-sidebar-secondary': process.env.NEXT_PUBLIC_ADSTERRA_SIDEBAR_SECONDARY_KEY,
   'tool-bottom': process.env.NEXT_PUBLIC_ADSTERRA_TOOL_BOTTOM_KEY,
+  'tools-index-top': process.env.NEXT_PUBLIC_ADSTERRA_TOOLS_INDEX_TOP_KEY,
+  'tools-index-bottom': process.env.NEXT_PUBLIC_ADSTERRA_TOOLS_INDEX_BOTTOM_KEY,
   'blog-list-top': process.env.NEXT_PUBLIC_ADSTERRA_BLOG_TOP_KEY,
   'blog-list-bottom': process.env.NEXT_PUBLIC_ADSTERRA_BLOG_BOTTOM_KEY,
   'blog-article-top': process.env.NEXT_PUBLIC_ADSTERRA_BLOG_ARTICLE_TOP_KEY,

@@ -4,6 +4,7 @@ import { tools, categories } from '@/lib/tools';
 import { getDictionary } from '@/i18n/getDictionary';
 import { i18n, type Locale } from '@/i18n/config';
 import SponsorCta from '@/components/SponsorCta';
+import AdSlot from '@/components/AdSlot';
 
 interface PageProps {
   params: Promise<{ lang: string }>;
@@ -84,6 +85,7 @@ export default async function ToolsIndexPage({ params }: PageProps) {
         </p>
       </section>
 
+      <AdSlot size="leaderboard" placement="tools-index-top" category="tools-index" />
       <SponsorCta placement="tools-index-sponsor" category="tools-index" id="tools-index-sponsor" />
 
       {/* Category Sections */}
@@ -154,6 +156,8 @@ export default async function ToolsIndexPage({ params }: PageProps) {
           </div>
         </section>
       ))}
+
+      <AdSlot size="leaderboard" placement="tools-index-bottom" category="tools-index" style={{ marginTop: 8, marginBottom: 32 }} />
     </div>
   );
 }
