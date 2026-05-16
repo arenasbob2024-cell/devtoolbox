@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { trackMonetizationClick, trackMonetizationImpression } from '@/lib/analytics';
 import { useLang } from '@/i18n/LangContext';
 
@@ -59,6 +59,28 @@ const copy = {
     sourceTitle: 'Inquiry Source',
     sourceUnknown: 'Direct visit',
     cta: 'Contact for sponsorship',
+    inquiryTitle: 'Send a sponsor brief',
+    inquiryDescription: 'Share the product, package, budget, and timeline in one structured email so the first reply can focus on fit and inventory.',
+    productLabel: 'Product or company',
+    productPlaceholder: 'e.g. API monitoring platform',
+    emailLabel: 'Work email',
+    emailPlaceholder: 'name@company.com',
+    websiteLabel: 'Website',
+    websitePlaceholder: 'https://example.com',
+    packageLabel: 'Package',
+    budgetLabel: 'Budget range',
+    budgetPlaceholder: 'Select a range',
+    budgetOptions: ['US$99-US$299', 'US$149-US$499', 'US$299-US$799/month', 'Custom budget'],
+    timelineLabel: 'Campaign timing',
+    timelinePlaceholder: 'e.g. Launch in June, 4-week test',
+    messageLabel: 'Campaign notes',
+    messagePlaceholder: 'Target audience, preferred categories, countries, creative requirements, or tracking needs.',
+    sendInquiryCta: 'Open email draft',
+    copyBriefCta: 'Copy brief',
+    submittedNote: 'If your email app did not open, copy the brief below and send it manually.',
+    copiedNote: 'Sponsor brief copied.',
+    copyErrorNote: 'Copy failed. Select the brief text and copy it manually.',
+    briefPreviewTitle: 'Generated brief',
   },
   zh: {
     title: '在 DevToolBox 投放广告',
@@ -114,6 +136,28 @@ const copy = {
     sourceTitle: '询盘来源',
     sourceUnknown: '直接访问',
     cta: '联系赞助合作',
+    inquiryTitle: '发送赞助合作 brief',
+    inquiryDescription: '一次性填写产品、套餐、预算和时间计划，第一封回复就可以直接讨论匹配度和可投放位置。',
+    productLabel: '产品或公司',
+    productPlaceholder: '例如：API 监控平台',
+    emailLabel: '工作邮箱',
+    emailPlaceholder: 'name@company.com',
+    websiteLabel: '网站',
+    websitePlaceholder: 'https://example.com',
+    packageLabel: '套餐',
+    budgetLabel: '预算范围',
+    budgetPlaceholder: '选择预算范围',
+    budgetOptions: ['US$99-US$299', 'US$149-US$499', '每月 US$299-US$799', '自定义预算'],
+    timelineLabel: '投放时间',
+    timelinePlaceholder: '例如：6 月上线，测试 4 周',
+    messageLabel: '投放备注',
+    messagePlaceholder: '目标受众、偏好的分类、国家/地区、素材要求或追踪需求。',
+    sendInquiryCta: '打开邮件草稿',
+    copyBriefCta: '复制 brief',
+    submittedNote: '如果邮件应用没有打开，请复制下方 brief 后手动发送。',
+    copiedNote: '赞助 brief 已复制。',
+    copyErrorNote: '复制失败。请选中 brief 文本后手动复制。',
+    briefPreviewTitle: '自动生成的 brief',
   },
   ru: {
     title: 'Реклама на DevToolBox',
@@ -169,15 +213,147 @@ const copy = {
     sourceTitle: 'Источник заявки',
     sourceUnknown: 'Прямой визит',
     cta: 'Связаться по рекламе',
+    inquiryTitle: 'Отправить brief спонсора',
+    inquiryDescription: 'Укажите продукт, пакет, бюджет и сроки в одном письме, чтобы первый ответ был уже о релевантности и доступном инвентаре.',
+    productLabel: 'Продукт или компания',
+    productPlaceholder: 'Например: платформа мониторинга API',
+    emailLabel: 'Рабочая почта',
+    emailPlaceholder: 'name@company.com',
+    websiteLabel: 'Сайт',
+    websitePlaceholder: 'https://example.com',
+    packageLabel: 'Пакет',
+    budgetLabel: 'Бюджет',
+    budgetPlaceholder: 'Выберите диапазон',
+    budgetOptions: ['US$99-US$299', 'US$149-US$499', 'US$299-US$799/месяц', 'Индивидуальный бюджет'],
+    timelineLabel: 'Сроки кампании',
+    timelinePlaceholder: 'Например: запуск в июне, тест 4 недели',
+    messageLabel: 'Примечания',
+    messagePlaceholder: 'Целевая аудитория, категории, страны, требования к креативам или трекингу.',
+    sendInquiryCta: 'Открыть черновик email',
+    copyBriefCta: 'Скопировать brief',
+    submittedNote: 'Если почтовое приложение не открылось, скопируйте brief ниже и отправьте вручную.',
+    copiedNote: 'Brief скопирован.',
+    copyErrorNote: 'Не удалось скопировать. Выделите текст brief и скопируйте вручную.',
+    briefPreviewTitle: 'Сгенерированный brief',
   },
 };
 
 type PackageId = 'category-sponsor' | 'article-sponsor' | 'partner-test';
 
-function buildContactUrl(baseUrl: string, source: string, category: string, packageName?: string) {
+interface InquiryFormState {
+  product: string;
+  email: string;
+  website: string;
+  packageId: PackageId;
+  budget: string;
+  timeline: string;
+  message: string;
+}
+
+const fieldStyle: CSSProperties = {
+  width: '100%',
+  padding: '10px 12px',
+  borderRadius: 8,
+  border: '1px solid var(--border-color)',
+  background: 'var(--bg-input)',
+  color: 'var(--text-primary)',
+  fontSize: 13,
+  outline: 'none',
+};
+
+const labelStyle: CSSProperties = {
+  display: 'block',
+  marginBottom: 6,
+  color: 'var(--text-primary)',
+  fontSize: 12,
+  fontWeight: 750,
+};
+
+const actionButtonStyle: CSSProperties = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  padding: '10px 14px',
+  borderRadius: 8,
+  fontSize: 13,
+  fontWeight: 750,
+  cursor: 'pointer',
+};
+
+function buildInquiryBody({
+  source,
+  category,
+  packageName,
+  form,
+}: {
+  source: string;
+  category: string;
+  packageName: string;
+  form: InquiryFormState;
+}) {
+  const lines = [
+    'DevToolBox sponsorship inquiry',
+    '',
+    `Source: ${source || 'direct'}`,
+    `Category: ${category || 'unknown'}`,
+    `Package: ${packageName}`,
+    `Budget: ${form.budget || 'Not selected'}`,
+    `Timeline: ${form.timeline || 'Not provided'}`,
+    '',
+    `Product/company: ${form.product || 'Not provided'}`,
+    `Email: ${form.email || 'Not provided'}`,
+    `Website: ${form.website || 'Not provided'}`,
+    '',
+    'Campaign notes:',
+    form.message || 'Not provided',
+  ];
+
+  return lines.join('\n');
+}
+
+function copyTextWithTextarea(text: string) {
+  const textarea = document.createElement('textarea');
+  textarea.value = text;
+  textarea.setAttribute('readonly', 'true');
+  textarea.style.position = 'fixed';
+  textarea.style.left = '-9999px';
+  document.body.appendChild(textarea);
+  textarea.select();
+  const copied = document.execCommand('copy');
+  document.body.removeChild(textarea);
+
+  if (!copied) {
+    return Promise.reject(new Error('copy failed'));
+  }
+
+  return Promise.resolve();
+}
+
+async function copyToClipboard(text: string) {
+  if (navigator.clipboard?.writeText) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return;
+    } catch {
+      // Fall through to the textarea copy path for browsers that expose
+      // Clipboard API but reject it because of permissions or context.
+    }
+  }
+
+  await copyTextWithTextarea(text);
+}
+
+function buildContactUrl(
+  baseUrl: string,
+  source: string,
+  category: string,
+  packageName?: string,
+  bodyOverride?: string,
+  inquiry?: InquiryFormState
+) {
   const safeSource = source || 'direct';
   const safeCategory = category || 'unknown';
-  const body = `Source: ${safeSource}\nCategory: ${safeCategory}\nPackage: ${packageName || 'Not selected'}\n\nTell us about your product, target audience, preferred placements, and budget range.`;
+  const body = bodyOverride || `Source: ${safeSource}\nCategory: ${safeCategory}\nPackage: ${packageName || 'Not selected'}\n\nTell us about your product, target audience, preferred placements, and budget range.`;
 
   if (baseUrl.startsWith('mailto:')) {
     const [address, query = ''] = baseUrl.split('?');
@@ -196,6 +372,14 @@ function buildContactUrl(baseUrl: string, source: string, category: string, pack
   url.searchParams.set('category', safeCategory);
   if (packageName) {
     url.searchParams.set('package', packageName);
+  }
+  if (inquiry) {
+    url.searchParams.set('product', inquiry.product);
+    url.searchParams.set('email', inquiry.email);
+    if (inquiry.website) url.searchParams.set('website', inquiry.website);
+    if (inquiry.budget) url.searchParams.set('budget', inquiry.budget);
+    if (inquiry.timeline) url.searchParams.set('timeline', inquiry.timeline);
+    if (inquiry.message) url.searchParams.set('message', inquiry.message);
   }
   return url.toString();
 }
@@ -230,16 +414,42 @@ function AdvertiseContent({
   const heroRef = useRef<HTMLElement | null>(null);
   const packagesRef = useRef<HTMLElement | null>(null);
   const mediaKitRef = useRef<HTMLElement | null>(null);
+  const inquiryRef = useRef<HTMLElement | null>(null);
   const heroTrackedRef = useRef(false);
   const packagesTrackedRef = useRef(false);
   const mediaKitTrackedRef = useRef(false);
+  const inquiryTrackedRef = useRef(false);
   const contactBaseUrl = process.env.NEXT_PUBLIC_SPONSOR_CONTACT_URL
     || 'mailto:arenasbob.2024@gmail.com?subject=DevToolBox%20sponsorship%20inquiry';
   const recommendedPackageId = getRecommendedPackageId(source, category);
   const recommendedPackage = t.packages.find(pkg => pkg.id === recommendedPackageId) || t.packages[2];
+  const [formStatus, setFormStatus] = useState<'idle' | 'submitted' | 'copied' | 'copy-error'>('idle');
+  const [formState, setFormState] = useState<InquiryFormState>(() => ({
+    product: '',
+    email: '',
+    website: '',
+    packageId: recommendedPackageId,
+    budget: '',
+    timeline: '',
+    message: '',
+  }));
+  const selectedPackage = t.packages.find(pkg => pkg.id === formState.packageId) || recommendedPackage;
+  const inquiryBody = useMemo(
+    () => buildInquiryBody({
+      source,
+      category,
+      packageName: selectedPackage.name,
+      form: formState,
+    }),
+    [category, formState, selectedPackage.name, source]
+  );
   const contactUrl = useMemo(
     () => buildContactUrl(contactBaseUrl, source, category, recommendedPackage.name),
     [contactBaseUrl, category, recommendedPackage.name, source]
+  );
+  const inquiryContactUrl = useMemo(
+    () => buildContactUrl(contactBaseUrl, source, category, selectedPackage.name, inquiryBody, formState),
+    [contactBaseUrl, category, formState, inquiryBody, selectedPackage.name, source]
   );
 
   const packageContactUrls = useMemo(
@@ -248,6 +458,43 @@ function AdvertiseContent({
     ),
     [contactBaseUrl, category, source, t.packages]
   ) as Record<PackageId, string>;
+
+  const updateFormField = <K extends keyof InquiryFormState>(field: K, value: InquiryFormState[K]) => {
+    setFormState(prev => ({
+      ...prev,
+      [field]: value,
+    }));
+    if (formStatus !== 'idle') {
+      setFormStatus('idle');
+    }
+  };
+
+  const handleInquirySubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    trackMonetizationClick({
+      type: 'sponsor',
+      id: 'advertise-inquiry-form-submit',
+      category: category || undefined,
+      placement: source || 'advertise-page',
+    });
+    setFormStatus('submitted');
+    window.location.href = inquiryContactUrl;
+  };
+
+  const handleCopyBrief = async () => {
+    try {
+      await copyToClipboard(inquiryBody);
+      trackMonetizationClick({
+        type: 'sponsor',
+        id: 'advertise-inquiry-copy',
+        category: category || undefined,
+        placement: source || 'advertise-page',
+      });
+      setFormStatus('copied');
+    } catch {
+      setFormStatus('copy-error');
+    }
+  };
 
   useEffect(() => {
     const element = heroRef.current;
@@ -347,6 +594,38 @@ function AdvertiseContent({
     return () => observer.disconnect();
   }, [category, source]);
 
+  useEffect(() => {
+    const element = inquiryRef.current;
+    if (!element || inquiryTrackedRef.current) return;
+
+    const track = () => {
+      if (inquiryTrackedRef.current) return;
+      inquiryTrackedRef.current = true;
+      trackMonetizationImpression({
+        type: 'sponsor',
+        id: 'advertise-inquiry-form',
+        category: category || undefined,
+        placement: source || 'advertise-page',
+      });
+    };
+
+    if (!('IntersectionObserver' in window)) {
+      track();
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some(entry => entry.isIntersecting)) {
+        track();
+        observer.disconnect();
+      }
+    }, { threshold: 0.5 });
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, [category, source]);
+
   return (
     <div style={{ maxWidth: 920, margin: '0 auto', padding: '48px 24px' }}>
       <section ref={heroRef} style={{ marginBottom: 34 }}>
@@ -409,6 +688,175 @@ function AdvertiseContent({
         <p style={{ margin: 0, color: 'var(--text-secondary)', lineHeight: 1.7 }}>
           {category || source ? recommendedPackage.detail : t.recommendedFallback}
         </p>
+      </section>
+
+      <section
+        ref={inquiryRef}
+        className="card"
+        style={{
+          marginBottom: 24,
+          padding: 18,
+          borderColor: 'rgba(16,185,129,0.35)',
+          background: 'linear-gradient(135deg, rgba(16,185,129,0.08), rgba(59,130,246,0.06))',
+        }}
+      >
+        <div style={{ marginBottom: 16 }}>
+          <h2 style={{ fontSize: 20, fontWeight: 800, marginBottom: 8 }}>
+            {t.inquiryTitle}
+          </h2>
+          <p style={{ margin: 0, color: 'var(--text-secondary)', lineHeight: 1.7 }}>
+            {t.inquiryDescription}
+          </p>
+        </div>
+
+        <form onSubmit={handleInquirySubmit} style={{ display: 'grid', gap: 14 }}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+            gap: 14,
+          }}>
+            <label>
+              <span style={labelStyle}>{t.productLabel}</span>
+              <input
+                type="text"
+                required
+                value={formState.product}
+                onChange={event => updateFormField('product', event.target.value)}
+                placeholder={t.productPlaceholder}
+                style={fieldStyle}
+              />
+            </label>
+            <label>
+              <span style={labelStyle}>{t.emailLabel}</span>
+              <input
+                type="email"
+                required
+                value={formState.email}
+                onChange={event => updateFormField('email', event.target.value)}
+                placeholder={t.emailPlaceholder}
+                style={fieldStyle}
+              />
+            </label>
+          </div>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+            gap: 14,
+          }}>
+            <label>
+              <span style={labelStyle}>{t.websiteLabel}</span>
+              <input
+                type="url"
+                value={formState.website}
+                onChange={event => updateFormField('website', event.target.value)}
+                placeholder={t.websitePlaceholder}
+                style={fieldStyle}
+              />
+            </label>
+            <label>
+              <span style={labelStyle}>{t.packageLabel}</span>
+              <select
+                value={formState.packageId}
+                onChange={event => updateFormField('packageId', event.target.value as PackageId)}
+                style={fieldStyle}
+              >
+                {t.packages.map(pkg => (
+                  <option key={pkg.id} value={pkg.id}>{pkg.name}</option>
+                ))}
+              </select>
+            </label>
+          </div>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+            gap: 14,
+          }}>
+            <label>
+              <span style={labelStyle}>{t.budgetLabel}</span>
+              <select
+                required
+                value={formState.budget}
+                onChange={event => updateFormField('budget', event.target.value)}
+                style={fieldStyle}
+              >
+                <option value="">{t.budgetPlaceholder}</option>
+                {t.budgetOptions.map(option => (
+                  <option key={option} value={option}>{option}</option>
+                ))}
+              </select>
+            </label>
+            <label>
+              <span style={labelStyle}>{t.timelineLabel}</span>
+              <input
+                type="text"
+                value={formState.timeline}
+                onChange={event => updateFormField('timeline', event.target.value)}
+                placeholder={t.timelinePlaceholder}
+                style={fieldStyle}
+              />
+            </label>
+          </div>
+
+          <label>
+            <span style={labelStyle}>{t.messageLabel}</span>
+            <textarea
+              value={formState.message}
+              onChange={event => updateFormField('message', event.target.value)}
+              placeholder={t.messagePlaceholder}
+              style={{ ...fieldStyle, minHeight: 110, resize: 'vertical', fontFamily: 'var(--font-inter), sans-serif' }}
+            />
+          </label>
+
+          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+            <button
+              type="submit"
+              style={{
+                ...actionButtonStyle,
+                border: 'none',
+                background: 'linear-gradient(135deg, var(--accent-blue), var(--accent-purple))',
+                color: '#fff',
+              }}
+            >
+              {t.sendInquiryCta}
+            </button>
+            <button
+              type="button"
+              onClick={handleCopyBrief}
+              style={{
+                ...actionButtonStyle,
+                border: '1px solid var(--border-color)',
+                background: 'var(--bg-input)',
+                color: 'var(--text-primary)',
+              }}
+            >
+              {t.copyBriefCta}
+            </button>
+          </div>
+
+          {formStatus !== 'idle' && (
+            <p style={{
+              margin: 0,
+              color: formStatus === 'copy-error' ? 'var(--accent-rose)' : 'var(--accent-emerald)',
+              fontSize: 12,
+              fontWeight: 700,
+            }}>
+              {formStatus === 'submitted' && t.submittedNote}
+              {formStatus === 'copied' && t.copiedNote}
+              {formStatus === 'copy-error' && t.copyErrorNote}
+            </p>
+          )}
+
+          <div>
+            <p style={{ ...labelStyle, marginBottom: 8 }}>{t.briefPreviewTitle}</p>
+            <textarea
+              readOnly
+              value={inquiryBody}
+              style={{ ...fieldStyle, minHeight: 170, resize: 'vertical' }}
+            />
+          </div>
+        </form>
       </section>
 
       <section

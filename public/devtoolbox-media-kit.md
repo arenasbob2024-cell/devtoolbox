@@ -76,4 +76,6 @@ Recommended assets:
 
 Email: arenasbob.2024@gmail.com
 
+Use the structured sponsor brief form at https://viadreams.cc/en/advertise/ or email directly.
+
 Include your product, target audience, preferred placements, budget range, and campaign timeline.

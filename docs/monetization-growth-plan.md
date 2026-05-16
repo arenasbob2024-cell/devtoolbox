@@ -53,6 +53,8 @@ The `/advertise` page now includes a tracked media-kit download CTA. The static 
 
 The sponsorship packages now include visible starter budget anchors: Partner Test at US$99-US$299, Article Sponsor at US$149-US$499, and Category Sponsor at US$299-US$799/month. These ranges are also exposed in the media kit and OfferCatalog JSON-LD so buyers, search systems, and AI crawlers see that the inventory is immediately purchasable while still leaving room for custom pricing.
 
+The `/advertise` page now includes a structured sponsor brief form. It collects product/company, work email, website, package, budget range, timeline, and campaign notes, then opens a prefilled sponsorship email and provides a one-click copy fallback. The form emits `monetization_impression` with `id=advertise-inquiry-form`, submit clicks with `id=advertise-inquiry-form-submit`, and copy clicks with `id=advertise-inquiry-copy`. This reduces lead friction without storing valuable sponsor inquiries in Vercel's non-durable local filesystem.
+
 The header now includes a tracked Advertise link to `/<lang>/advertise/?source=header-nav&category=site`. It emits `monetization_impression` and `monetization_click` with `placement=header-nav`, giving direct sponsorship demand a site-wide entry point without waiting for users to scroll into page-level sponsor blocks.
 
 The footer Advertise link now routes to `/<lang>/advertise/?source=footer-nav&category=site` and emits sponsor `monetization_impression` / `monetization_click` events with `placement=footer-nav`. This makes the persistent bottom navigation sponsorship entry point comparable with the header and in-page sponsor CTAs.
@@ -155,3 +157,4 @@ The CSV import path accepts common column names such as placement/ad unit/zone, 
 16. Review `placement=header-nav` sponsor CTR. If it gets advertiser-intent clicks, test stronger header copy on desktop or route repeat clicks to a richer media kit/contact form.
 17. Review `advertise-media-kit-download` clicks against package inquiry clicks. If downloads occur without follow-up, replace the static kit with a short form or add a stronger budget/timeline prompt inside the kit.
 18. Compare `placement=footer-nav` against `placement=header-nav`. If footer clicks convert better, add stronger media-kit copy near the footer support/newsletter area.
+19. Review `advertise-inquiry-form-submit` versus `advertise-inquiry-copy` weekly. If copy clicks are high but email replies are low, move the contact address closer to the brief preview or add a durable lead destination such as a CRM form endpoint.
