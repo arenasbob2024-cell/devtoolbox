@@ -53,6 +53,8 @@ The `/advertise` page now includes a tracked media-kit download CTA. The static 
 
 The header now includes a tracked Advertise link to `/<lang>/advertise/?source=header-nav&category=site`. It emits `monetization_impression` and `monetization_click` with `placement=header-nav`, giving direct sponsorship demand a site-wide entry point without waiting for users to scroll into page-level sponsor blocks.
 
+The footer Advertise link now routes to `/<lang>/advertise/?source=footer-nav&category=site` and emits sponsor `monetization_impression` / `monetization_click` events with `placement=footer-nav`. This makes the persistent bottom navigation sponsorship entry point comparable with the header and in-page sponsor CTAs.
+
 ## Non-ad revenue configuration
 
 The sidebar recommendation card can now use real partner/referral URLs without code changes:
@@ -144,3 +146,4 @@ The CSV import path accepts common column names such as placement/ad unit/zone, 
 15. Review bottom ad fallback sponsor impressions and clicks by placement, including `*-ad-fallback`, `*-ad-empty`, and `site-bottom-native-*`. If a fallback surface gets clicks before an Adsterra key is configured, or if an enabled key repeatedly appears empty, create a dedicated Adsterra unit for that surface, move the slot, or sell it as direct sponsorship inventory.
 16. Review `placement=header-nav` sponsor CTR. If it gets advertiser-intent clicks, test stronger header copy on desktop or route repeat clicks to a richer media kit/contact form.
 17. Review `advertise-media-kit-download` clicks against package inquiry clicks. If downloads occur without follow-up, replace the static kit with a short form or add a stronger budget/timeline prompt inside the kit.
+18. Compare `placement=footer-nav` against `placement=header-nav`. If footer clicks convert better, add stronger media-kit copy near the footer support/newsletter area.

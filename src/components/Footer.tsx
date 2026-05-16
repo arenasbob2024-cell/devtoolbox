@@ -1,15 +1,53 @@
 'use client';
 
 import Link from 'next/link';
+import { useEffect, useRef } from 'react';
 import { categories, tools } from '@/lib/tools';
 import { useLang } from '@/i18n/LangContext';
 import NewsletterSignup from './NewsletterSignup';
 import SupportButton from './SupportButton';
+import { trackMonetizationClick, trackMonetizationImpression } from '@/lib/analytics';
 
 export default function Footer() {
   const { lang, dict } = useLang();
   const t = dict.tools;
   const c = dict.categories;
+  const advertiseRef = useRef<HTMLAnchorElement | null>(null);
+  const advertiseTrackedRef = useRef(false);
+  const advertisePlacement = 'footer-nav';
+  const advertiseId = 'footer-advertise';
+
+  useEffect(() => {
+    const element = advertiseRef.current;
+    if (!element || advertiseTrackedRef.current) return;
+
+    const track = () => {
+      if (advertiseTrackedRef.current) return;
+      advertiseTrackedRef.current = true;
+      trackMonetizationImpression({
+        type: 'sponsor',
+        id: advertiseId,
+        category: 'site',
+        placement: advertisePlacement,
+      });
+    };
+
+    if (!('IntersectionObserver' in window)) {
+      track();
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some(entry => entry.isIntersecting)) {
+        track();
+        observer.disconnect();
+      }
+    }, { threshold: 0.5 });
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <footer style={{
@@ -124,7 +162,19 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} {dict.footer.copyright}
           </p>
           <div style={{ display: 'flex', gap: 16 }}>
-            <Link href={`/${lang}/advertise`} style={{ fontSize: 12, color: 'var(--text-secondary)', textDecoration: 'none' }}>{dict.common.advertise || 'Advertise'}</Link>
+            <Link
+              ref={advertiseRef}
+              href={`/${lang}/advertise/?source=${advertisePlacement}&category=site`}
+              onClick={() => trackMonetizationClick({
+                type: 'sponsor',
+                id: advertiseId,
+                category: 'site',
+                placement: advertisePlacement,
+              })}
+              style={{ fontSize: 12, color: 'var(--text-secondary)', textDecoration: 'none' }}
+            >
+              {dict.common.advertise || 'Advertise'}
+            </Link>
             <Link href={`/${lang}/privacy`} style={{ fontSize: 12, color: 'var(--text-secondary)', textDecoration: 'none' }}>{dict.common.privacyPolicy}</Link>
             <Link href={`/${lang}/about`} style={{ fontSize: 12, color: 'var(--text-secondary)', textDecoration: 'none' }}>{dict.common.about}</Link>
           </div>
