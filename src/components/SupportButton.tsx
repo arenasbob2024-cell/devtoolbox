@@ -1,11 +1,22 @@
 'use client';
 
-export default function SupportButton() {
+import { trackMonetizationClick } from '@/lib/analytics';
+
+export default function SupportButton({
+  placement = 'unknown',
+}: {
+  placement?: string;
+}) {
   return (
     <a
-      href="https://buymeacoffee.com/devtoolbox"
+      href={process.env.NEXT_PUBLIC_SUPPORT_URL || 'https://buymeacoffee.com/devtoolbox'}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackMonetizationClick({
+        type: 'support',
+        id: 'buy-me-a-coffee',
+        placement,
+      })}
       style={{
         display: 'flex',
         alignItems: 'center',

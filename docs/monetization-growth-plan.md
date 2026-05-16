@@ -35,6 +35,22 @@ The codebase now supports separate Adsterra keys for high-signal placements:
 
 Create each as a separate Adsterra placement so reports can show RPM by location. Do not reuse the same key everywhere unless you only need aggregate impressions.
 
+## Non-ad revenue configuration
+
+The sidebar recommendation card can now use real partner/referral URLs without code changes:
+
+| Environment variable | Offer |
+| --- | --- |
+| `NEXT_PUBLIC_AFFILIATE_VERCEL_URL` | Vercel |
+| `NEXT_PUBLIC_AFFILIATE_DIGITALOCEAN_URL` | DigitalOcean |
+| `NEXT_PUBLIC_AFFILIATE_CLOUDFLARE_URL` | Cloudflare |
+| `NEXT_PUBLIC_AFFILIATE_GITHUB_COPILOT_URL` | GitHub Copilot |
+| `NEXT_PUBLIC_AFFILIATE_JETBRAINS_URL` | JetBrains |
+| `NEXT_PUBLIC_AFFILIATE_TAILWIND_UI_URL` | Tailwind UI |
+| `NEXT_PUBLIC_SUPPORT_URL` | Support / donation CTA |
+
+Clicks are sent to Google Analytics as `monetization_click` with `monetization_type`, `monetization_id`, `tool_category`, and `placement` parameters. Use these events to decide which categories deserve stronger partner offers.
+
 ## Weekly operating loop
 
 Run the API report after generating an Adsterra Publisher API token:

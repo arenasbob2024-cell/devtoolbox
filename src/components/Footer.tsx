@@ -40,7 +40,7 @@ export default function Footer() {
               <NewsletterSignup variant="compact" />
             </div>
             <div style={{ marginTop: 12 }}>
-              <SupportButton />
+              <SupportButton placement="footer" />
             </div>
           </div>
 

@@ -1,6 +1,9 @@
 'use client';
 
+import { trackMonetizationClick } from '@/lib/analytics';
+
 interface AffiliateLink {
+  id: string;
   name: string;
   tagline: string;
   url: string;
@@ -8,12 +11,48 @@ interface AffiliateLink {
 }
 
 const affiliateLinks: AffiliateLink[] = [
-  { name: 'Vercel', tagline: 'Deploy your frontend instantly', url: 'https://vercel.com', categories: ['web', 'converter', 'formatter'] },
-  { name: 'DigitalOcean', tagline: 'Cloud hosting from $4/mo', url: 'https://www.digitalocean.com', categories: ['web', 'generator'] },
-  { name: 'Cloudflare', tagline: 'Free CDN & DDoS protection', url: 'https://www.cloudflare.com', categories: ['web', 'encoder'] },
-  { name: 'GitHub Copilot', tagline: 'AI pair programming', url: 'https://github.com/features/copilot', categories: ['converter', 'formatter', 'text', 'json'] },
-  { name: 'JetBrains', tagline: 'Smart IDEs for developers', url: 'https://www.jetbrains.com', categories: ['formatter', 'converter', 'text'] },
-  { name: 'Tailwind UI', tagline: 'Beautiful UI components', url: 'https://tailwindui.com', categories: ['css', 'web'] },
+  {
+    id: 'vercel',
+    name: 'Vercel',
+    tagline: 'Deploy your frontend instantly',
+    url: process.env.NEXT_PUBLIC_AFFILIATE_VERCEL_URL || 'https://vercel.com',
+    categories: ['web', 'converter', 'formatter'],
+  },
+  {
+    id: 'digitalocean',
+    name: 'DigitalOcean',
+    tagline: 'Cloud hosting from $4/mo',
+    url: process.env.NEXT_PUBLIC_AFFILIATE_DIGITALOCEAN_URL || 'https://www.digitalocean.com',
+    categories: ['web', 'generator'],
+  },
+  {
+    id: 'cloudflare',
+    name: 'Cloudflare',
+    tagline: 'Free CDN & DDoS protection',
+    url: process.env.NEXT_PUBLIC_AFFILIATE_CLOUDFLARE_URL || 'https://www.cloudflare.com',
+    categories: ['web', 'encoder'],
+  },
+  {
+    id: 'github-copilot',
+    name: 'GitHub Copilot',
+    tagline: 'AI pair programming',
+    url: process.env.NEXT_PUBLIC_AFFILIATE_GITHUB_COPILOT_URL || 'https://github.com/features/copilot',
+    categories: ['converter', 'formatter', 'text', 'json'],
+  },
+  {
+    id: 'jetbrains',
+    name: 'JetBrains',
+    tagline: 'Smart IDEs for developers',
+    url: process.env.NEXT_PUBLIC_AFFILIATE_JETBRAINS_URL || 'https://www.jetbrains.com',
+    categories: ['formatter', 'converter', 'text'],
+  },
+  {
+    id: 'tailwind-ui',
+    name: 'Tailwind UI',
+    tagline: 'Beautiful UI components',
+    url: process.env.NEXT_PUBLIC_AFFILIATE_TAILWIND_UI_URL || 'https://tailwindui.com',
+    categories: ['css', 'web'],
+  },
 ];
 
 export default function AffiliateCard({ category }: { category?: string }) {
@@ -34,6 +73,12 @@ export default function AffiliateCard({ category }: { category?: string }) {
           href={link.url}
           target="_blank"
           rel="noopener sponsored"
+          onClick={() => trackMonetizationClick({
+            type: 'affiliate',
+            id: link.id,
+            category,
+            placement: 'tool-sidebar',
+          })}
           style={{
             display: 'block',
             padding: '10px 0',
