@@ -5,6 +5,7 @@
  *
  * Usage:
  *   ADSTERRA_API_KEY=... npm run adsterra:report -- stats --days=7 --group-by=placement
+ *   ADSTERRA_API_KEY=... npm run adsterra:report -- recommend --days=7
  *   ADSTERRA_API_KEY=... npm run adsterra:report -- stats --start=2026-05-01 --end=2026-05-15 --group-by=country
  *   ADSTERRA_API_KEY=... npm run adsterra:report -- domains
  *
@@ -19,6 +20,7 @@ Adsterra report helper
 
 Commands:
   stats       Fetch revenue stats. Default command.
+  recommend   Rank placements/countries and print optimization actions.
   domains     Fetch domains as CSV.
   placements  Fetch placements as CSV.
 
@@ -31,6 +33,14 @@ Options for stats:
   --placement=ID           Optional Adsterra placement ID.
   --country=US             Optional country filter.
   --json                   Print raw JSON instead of a compact table.
+
+Options for recommend:
+  --days=7                 Days to include, ending yesterday by default.
+  --start=YYYY-MM-DD       Start date.
+  --end=YYYY-MM-DD         End date.
+  --min-impressions=1000   Minimum impressions before judging CPM.
+  --sample                 Run with built-in sample rows, no API token needed.
+  --json                   Print machine-readable recommendations.
 `;
 
 function parseArgs(argv) {
@@ -125,6 +135,122 @@ function valueFor(row, candidates) {
   return '';
 }
 
+function numberFor(row, candidates) {
+  const raw = valueFor(row, candidates);
+  if (raw === '') return 0;
+  const parsed = Number(String(raw).replace(/[$,%\s,]/g, ''));
+  return Number.isFinite(parsed) ? parsed : 0;
+}
+
+function labelFor(row, candidates, fallback) {
+  const value = valueFor(row, candidates);
+  return value === '' ? fallback : String(value);
+}
+
+function normalizeMetricRows(payload, dimension) {
+  return rowsFromStats(payload).map((row) => {
+    const impressions = numberFor(row, ['impressions', 'views', 'loads']);
+    const clicks = numberFor(row, ['clicks']);
+    const revenue = numberFor(row, ['revenue', 'profit', 'earnings']);
+    const cpmFromApi = numberFor(row, ['cpm', 'ecpm']);
+    const ctrFromApi = numberFor(row, ['ctr']);
+    const cpm = cpmFromApi || (impressions > 0 ? (revenue / impressions) * 1000 : 0);
+    const ctr = ctrFromApi || (impressions > 0 ? (clicks / impressions) * 100 : 0);
+
+    return {
+      name: labelFor(row, [dimension, `${dimension}_name`, `${dimension}_id`, 'geo'], 'unknown'),
+      impressions,
+      clicks,
+      ctr,
+      cpm,
+      revenue,
+    };
+  });
+}
+
+function median(values) {
+  const sorted = values.filter(value => value > 0).sort((a, b) => a - b);
+  if (sorted.length === 0) return 0;
+  const midpoint = Math.floor(sorted.length / 2);
+  return sorted.length % 2 === 0
+    ? (sorted[midpoint - 1] + sorted[midpoint]) / 2
+    : sorted[midpoint];
+}
+
+function money(value) {
+  return `$${value.toFixed(2)}`;
+}
+
+function percentage(value) {
+  return `${value.toFixed(2)}%`;
+}
+
+function buildRecommendations({ placementPayload, countryPayload, minImpressions }) {
+  const placements = normalizeMetricRows(placementPayload, 'placement')
+    .sort((a, b) => b.revenue - a.revenue);
+  const countries = normalizeMetricRows(countryPayload, 'country')
+    .sort((a, b) => b.revenue - a.revenue);
+
+  const placementMedianCpm = median(placements.map(row => row.cpm));
+  const countryMedianCpm = median(countries.map(row => row.cpm));
+
+  const scalablePlacements = placements
+    .filter(row => row.impressions >= minImpressions && placementMedianCpm > 0 && row.cpm >= placementMedianCpm * 1.25)
+    .slice(0, 5);
+  const weakPlacements = placements
+    .filter(row => row.impressions >= minImpressions && placementMedianCpm > 0 && row.cpm <= placementMedianCpm * 0.5)
+    .slice(0, 5);
+  const highValueCountries = countries
+    .filter(row => row.impressions >= minImpressions && countryMedianCpm > 0 && row.cpm >= countryMedianCpm * 1.25)
+    .slice(0, 8);
+
+  return {
+    minImpressions,
+    baselines: {
+      placementMedianCpm,
+      countryMedianCpm,
+    },
+    topPlacements: placements.slice(0, 8),
+    scalablePlacements,
+    weakPlacements,
+    topCountries: countries.slice(0, 10),
+    highValueCountries,
+  };
+}
+
+function printRows(title, rows) {
+  console.log(`\n${title}`);
+  if (rows.length === 0) {
+    console.log('  No qualified rows.');
+    return;
+  }
+
+  for (const row of rows) {
+    console.log(
+      `  - ${row.name}: revenue ${money(row.revenue)}, CPM ${money(row.cpm)}, CTR ${percentage(row.ctr)}, impressions ${Math.round(row.impressions)}`
+    );
+  }
+}
+
+function printRecommendations(report) {
+  console.log('Adsterra optimization recommendations');
+  console.log(`Minimum impressions for CPM decisions: ${report.minImpressions}`);
+  console.log(`Placement median CPM: ${money(report.baselines.placementMedianCpm)}`);
+  console.log(`Country median CPM: ${money(report.baselines.countryMedianCpm)}`);
+
+  printRows('Top revenue placements', report.topPlacements);
+  printRows('Scale candidates: high CPM placements', report.scalablePlacements);
+  printRows('Review candidates: low CPM placements with enough traffic', report.weakPlacements);
+  printRows('Top revenue countries', report.topCountries);
+  printRows('High-value countries: CPM above country baseline', report.highValueCountries);
+
+  console.log('\nNext actions');
+  console.log('  - Create dedicated Adsterra units for scalable placements so RPM is isolated.');
+  console.log('  - Move or remove weak placements only after checking bounce rate and revenue/session in GA.');
+  console.log('  - Write more English content for high-value countries and categories that already monetize.');
+  console.log('  - Keep country and placement winners separate from generic fallback ad keys.');
+}
+
 function printStatsTable(payload) {
   const rows = rowsFromStats(payload);
   if (rows.length === 0) {
@@ -185,6 +311,53 @@ async function main() {
 
   if (command === 'placements') {
     console.log(await request('placements.csv'));
+    return;
+  }
+
+  if (command === 'recommend') {
+    const { start, end } = getDateRange(args);
+    const minImpressions = Number(args['min-impressions'] || 1000);
+    const [placementPayload, countryPayload] = args.sample
+      ? [
+          [
+            { placement: 'tool-sidebar-primary', impressions: 8200, clicks: 45, revenue: 3.9 },
+            { placement: 'site-top-leaderboard', impressions: 12000, clicks: 38, revenue: 2.1 },
+            { placement: 'blog-article-bottom', impressions: 1700, clicks: 18, revenue: 2.4 },
+            { placement: 'mobile-sticky', impressions: 9000, clicks: 40, revenue: 0.7 },
+          ],
+          [
+            { country: 'US', impressions: 3100, clicks: 22, revenue: 5.4 },
+            { country: 'DE', impressions: 1500, clicks: 11, revenue: 2.0 },
+            { country: 'CN', impressions: 9000, clicks: 19, revenue: 0.5 },
+            { country: 'IN', impressions: 4200, clicks: 16, revenue: 0.9 },
+          ],
+        ]
+      : await Promise.all([
+          request('stats.json', {
+            start_date: start,
+            finish_date: end,
+            group_by: 'placement',
+            domain: args.domain,
+          }),
+          request('stats.json', {
+            start_date: start,
+            finish_date: end,
+            group_by: 'country',
+            domain: args.domain,
+          }),
+        ]);
+    const report = buildRecommendations({
+      placementPayload,
+      countryPayload,
+      minImpressions: Number.isFinite(minImpressions) && minImpressions > 0 ? minImpressions : 1000,
+    });
+
+    if (args.json) {
+      console.log(JSON.stringify(report, null, 2));
+      return;
+    }
+
+    printRecommendations(report);
     return;
   }
 

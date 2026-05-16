@@ -83,6 +83,8 @@ Run the API report after generating an Adsterra Publisher API token:
 ```bash
 ADSTERRA_API_KEY=... npm run adsterra:report -- stats --days=7 --group-by=placement
 ADSTERRA_API_KEY=... npm run adsterra:report -- stats --days=7 --group-by=country
+ADSTERRA_API_KEY=... npm run adsterra:report -- recommend --days=7 --min-impressions=1000
+npm run adsterra:report -- recommend --sample
 ```
 
 Then decide:
