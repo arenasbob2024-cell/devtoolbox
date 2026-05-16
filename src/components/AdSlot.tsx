@@ -80,6 +80,9 @@ export default function AdSlot({
       category={category}
       className={className}
       style={style}
+      fallbackToSponsor={fallbackToSponsor}
+      fallbackPlacement={placement ? `${placement}-ad-empty` : undefined}
+      fallbackId={placement ? `${placement}-ad-empty-sponsor` : undefined}
     />
   );
 }
