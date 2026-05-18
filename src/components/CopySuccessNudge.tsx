@@ -14,7 +14,7 @@ const DEFAULT_COPY_THRESHOLD = 2;
 const DISMISS_TTL_MS = 24 * 60 * 60 * 1000;
 const PLACEMENT = 'copy-success-nudge';
 
-const copy: Record<Locale, {
+const copy: Partial<Record<Locale, {
   eyebrow: string;
   title: string;
   body: string;
@@ -22,7 +22,7 @@ const copy: Record<Locale, {
   sponsor: string;
   direct: string;
   dismiss: string;
-}> = {
+}>> = {
   en: {
     eyebrow: 'Free tool saved',
     title: 'This helped? Support DevToolBox',

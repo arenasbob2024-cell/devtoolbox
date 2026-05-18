@@ -43,7 +43,7 @@ export function useConsent(): ConsentValue | null {
   return useSyncExternalStore(subscribe, getConsent, () => null);
 }
 
-const t: Record<Locale, { msg: string; ok: string; privacy: string }> = {
+const t: Partial<Record<Locale, { msg: string; ok: string; privacy: string }>> = {
   en: { msg: 'This site uses cookies for analytics and to display ads. By continuing to browse, you agree.', ok: 'Got it', privacy: 'Privacy Policy' },
   zh: { msg: '本站使用 Cookie 进行流量分析与广告展示。继续浏览即视为同意。', ok: '我知道了', privacy: '隐私政策' },
   ru: { msg: 'Этот сайт использует cookie для аналитики и показа рекламы. Продолжая просмотр, вы соглашаетесь.', ok: 'Понятно', privacy: 'Политика конфиденциальности' },

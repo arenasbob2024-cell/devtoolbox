@@ -11,6 +11,25 @@ import { LangProvider } from '@/i18n/LangContext';
 import { getDictionary, getUIDictionary } from '@/i18n/getDictionary';
 import { i18n, type Locale } from '@/i18n/config';
 
+const openGraphLocales: Record<Locale, string> = {
+  en: 'en_US',
+  fr: 'fr_FR',
+  de: 'de_DE',
+  it: 'it_IT',
+  es: 'es_ES',
+  pt: 'pt_PT',
+  nl: 'nl_NL',
+  pl: 'pl_PL',
+  sv: 'sv_SE',
+  no: 'nb_NO',
+  zh: 'zh_CN',
+  ja: 'ja_JP',
+  ko: 'ko_KR',
+  id: 'id_ID',
+  th: 'th_TH',
+  ru: 'ru_RU',
+};
+
 export async function generateStaticParams() {
   // Only pre-render English at build time to save disk space.
   // Other locales use ISR (rendered on first request and cached).
@@ -45,7 +64,7 @@ export async function generateMetadata({
       description: ui.meta.homeDescription,
       url: `https://viadreams.cc/${lang}/`,
       type: 'website',
-      locale: { en: 'en_US', zh: 'zh_CN', ru: 'ru_RU' }[lang] || 'en_US',
+      locale: openGraphLocales[lang],
       siteName: 'DevToolBox',
       images: [{ url: 'https://viadreams.cc/og-image.png', width: 1200, height: 630, alt: 'DevToolBox - Free Online Developer Tools' }],
     },

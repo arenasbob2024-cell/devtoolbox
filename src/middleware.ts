@@ -2,15 +2,6 @@ import { NextRequest, NextResponse } from 'next/server';
 import { i18n } from './i18n/config';
 import type { Locale } from './i18n/config';
 
-// Locales that were removed — 301 redirect to English equivalent.
-// Keeps SEO weight from already-indexed URLs while pruning the language matrix.
-const REMOVED_LOCALES = [
-  // Original wave (Nordics + SEA)
-  'nl', 'pl', 'sv', 'no', 'id', 'th',
-  // Second wave — focusing on en/zh/ru only based on actual traffic data
-  'fr', 'de', 'it', 'es', 'pt', 'ja', 'ko',
-];
-
 function getLocale(request: NextRequest): Locale {
   const acceptLanguage = request.headers.get('accept-language') || '';
   const languages = acceptLanguage
@@ -55,16 +46,6 @@ export function middleware(request: NextRequest) {
     const newUrl = new URL(request.url);
     newUrl.host = host.replace('www.', '');
     return NextResponse.redirect(newUrl, 301);
-  }
-
-  // 301 redirect removed locales to English equivalent
-  // e.g. /id/blog/coolify-guide/ → /en/blog/coolify-guide/
-  for (const removedLocale of REMOVED_LOCALES) {
-    if (pathname.startsWith(`/${removedLocale}/`) || pathname === `/${removedLocale}`) {
-      const rest = pathname.slice(removedLocale.length + 1); // strip /{locale}
-      const newUrl = new URL(`/en${rest}`, request.url);
-      return NextResponse.redirect(newUrl, 301);
-    }
   }
 
   // Check if the pathname already has a locale

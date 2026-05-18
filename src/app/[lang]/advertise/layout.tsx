@@ -3,7 +3,7 @@ import { i18n, type Locale } from '@/i18n/config';
 
 const BASE_URL = 'https://viadreams.cc';
 
-const metadataCopy: Record<Locale, { title: string; description: string }> = {
+const metadataCopy: Partial<Record<Locale, { title: string; description: string }>> = {
   en: {
     title: 'Advertise on DevToolBox',
     description: 'Reach developers with sponsorships, partner placements, and advertising on DevToolBox.',
@@ -18,6 +18,25 @@ const metadataCopy: Record<Locale, { title: string; description: string }> = {
   },
 };
 
+const openGraphLocales: Partial<Record<Locale, string>> = {
+  en: 'en_US',
+  fr: 'fr_FR',
+  de: 'de_DE',
+  it: 'it_IT',
+  es: 'es_ES',
+  pt: 'pt_PT',
+  nl: 'nl_NL',
+  pl: 'pl_PL',
+  sv: 'sv_SE',
+  no: 'nb_NO',
+  zh: 'zh_CN',
+  ja: 'ja_JP',
+  ko: 'ko_KR',
+  id: 'id_ID',
+  th: 'th_TH',
+  ru: 'ru_RU',
+};
+
 export async function generateMetadata({
   params,
 }: {
@@ -25,7 +44,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
-  const copy = metadataCopy[lang];
+  const copy = metadataCopy[lang] ?? metadataCopy.en!;
   const pageUrl = `${BASE_URL}/${lang}/advertise/`;
 
   return {
@@ -49,7 +68,7 @@ export async function generateMetadata({
       description: copy.description,
       url: pageUrl,
       type: 'website',
-      locale: { en: 'en_US', zh: 'zh_CN', ru: 'ru_RU' }[lang] || 'en_US',
+      locale: openGraphLocales[lang] ?? 'en_US',
       siteName: 'DevToolBox',
       images: [
         {
