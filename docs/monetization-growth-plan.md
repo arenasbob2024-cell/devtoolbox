@@ -151,6 +151,8 @@ Clicks are sent to Google Analytics as `monetization_click` with `monetization_t
 Run the API report after generating an Adsterra Publisher API token:
 
 ```bash
+npm run adsterra:ads-txt -- --seller-line='adsterra.com, <publisher-id>, DIRECT'
+npm run adsterra:ads-txt -- --site-url=https://viadreams.cc
 npm run adsterra:setup -- --vercel-scope=arenas-projects-ac293cdb --site-url=https://viadreams.cc
 npm run adsterra:setup -- --vercel-scope=arenas-projects-ac293cdb --site-url=https://viadreams.cc --csv
 npm run adsterra:readiness -- --vercel-scope=arenas-projects-ac293cdb --site-url=https://viadreams.cc
@@ -179,6 +181,8 @@ npm run adsterra:report -- recommend --placements-file=exports/placements.csv --
 ```
 
 The CSV import path accepts common column names such as placement/ad unit/zone, country/geo, impressions/views/loads, clicks, CTR, CPM/eCPM, revenue/profit/earnings, and prints the same scale/review recommendations as the API flow.
+
+The `adsterra:ads-txt` command preflights the exact seller line copied from Adsterra before it is added to Vercel. The live `/ads.txt` route only emits seller lines that match the expected `adsterra.com, <publisher-id>, DIRECT, <optional-cert>` shape, so a malformed env value is ignored instead of producing a broken authorized-seller file.
 
 The `adsterra:setup` command prints the operational checklist for creating Adsterra units and filling Vercel env vars. It groups required trust/proof items, active production units, high-impact experiments, and dedicated RPM placements; the `--csv` variant is designed for copy/paste into an operating sheet while creating units in the Adsterra dashboard. It does not print secret values.
 

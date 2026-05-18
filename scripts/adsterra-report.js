@@ -9,6 +9,7 @@
  *   ADSTERRA_API_KEY=... npm run adsterra:report -- stats --start=2026-05-01 --end=2026-05-15 --group-by=country
  *   ADSTERRA_API_KEY=... npm run adsterra:report -- goal --days=7 --target=10
  *   ADSTERRA_API_KEY=... npm run adsterra:report -- domains
+ *   npm run adsterra:ads-txt -- --seller-line='adsterra.com, ... , DIRECT'
  *   npm run adsterra:setup -- --vercel-scope=arenas-projects-ac293cdb --site-url=https://viadreams.cc
  *   npm run adsterra:report -- readiness
  *   npm run adsterra:report -- stats --file=exports/adsterra-placement.csv
@@ -28,6 +29,7 @@ Commands:
   stats       Fetch revenue stats. Default command.
   goal        Check whether average daily revenue meets a target.
   recommend   Rank placements/countries and print optimization actions.
+  ads-txt     Validate and preview the Adsterra ads.txt seller line.
   setup       Print the exact Adsterra unit/env setup checklist.
   readiness   Check local Adsterra env/reporting readiness and next actions without printing secrets.
   domains     Fetch domains as CSV.
@@ -70,6 +72,12 @@ Options for readiness:
   --site-url=https://...    Also fetch and verify the live /ads.txt response.
   --json                   Print machine-readable readiness result.
 
+Options for ads-txt:
+  --seller-line='...'       Preflight a seller line copied from Adsterra.
+  --env-file=.env.local     Env file to inspect in addition to process env.
+  --site-url=https://...    Also fetch and verify the live /ads.txt response.
+  --json                   Print machine-readable ads.txt validation result.
+
 Options for setup:
   --env-file=.env.local     Env file to inspect in addition to process env.
   --vercel-scope=SLUG       Include scoped Vercel env add commands.
@@ -77,6 +85,9 @@ Options for setup:
   --csv                    Print CSV for copy/paste into an operating sheet.
   --json                   Print machine-readable setup result.
 `;
+
+const ADSTERRA_SELLER_LINE_PATTERN =
+  /^adsterra\.com\s*,\s*(?!ADSTERRA_PUBLISHER_ID_PLACEHOLDER\b)[a-z0-9_-]+\s*,\s*DIRECT(?:\s*,\s*[a-z0-9_-]+)?\s*$/i;
 
 function parseArgs(argv) {
   const args = { _: [] };
@@ -417,6 +428,52 @@ async function loadLiveAdsTxt(siteUrl) {
 function envValue(env, key) {
   const value = env[key];
   return typeof value === 'string' && value.trim() !== '' ? value.trim() : '';
+}
+
+function sellerLinesFromText(text) {
+  return String(text || '')
+    .split(/\r?\n/)
+    .map(line => line.trim())
+    .filter(line => line && !line.startsWith('#'));
+}
+
+function isValidAdsterraSellerLine(line) {
+  return ADSTERRA_SELLER_LINE_PATTERN.test(String(line || '').trim());
+}
+
+function validateAdsterraSellerLines(text) {
+  const lines = sellerLinesFromText(text);
+  const validLines = lines.filter(isValidAdsterraSellerLine);
+  const invalidLines = lines.filter(line => !isValidAdsterraSellerLine(line));
+
+  return {
+    lines,
+    validLines,
+    invalidLines,
+    valid: validLines.length > 0 && invalidLines.length === 0,
+    hasValidLine: validLines.length > 0,
+  };
+}
+
+function buildAdsTxtBody(sellerLines) {
+  const validLines = sellerLines.filter(isValidAdsterraSellerLine);
+  return [
+    '# DevToolBox ads.txt - https://viadreams.cc',
+    '# Authorized digital sellers (IAB ads.txt 1.1)',
+    '',
+    'OWNERDOMAIN=viadreams.cc',
+    '',
+    validLines.length > 0
+      ? '# Adsterra'
+      : '# Adsterra - set ADSTERRA_ADS_TXT_SELLER_LINE from the publisher dashboard',
+    ...(validLines.length > 0
+      ? validLines
+      : [
+          '# Format: adsterra.com, <publisher-id>, DIRECT, <optional-cert>',
+          '# adsterra.com, ADSTERRA_PUBLISHER_ID_PLACEHOLDER, DIRECT',
+        ]),
+    '',
+  ].join('\n');
 }
 
 const ADSTERRA_SETUP_ITEMS = [
@@ -901,12 +958,12 @@ async function buildReadinessReport(args) {
   const verificationMissing = envGroups
     .filter(group => group.severity === 'verification')
     .flatMap(group => group.checks.filter(check => !check.present).map(check => check.name));
-  const adsterraSellerLinePattern = /^adsterra\.com\s*,\s*(?!ADSTERRA_PUBLISHER_ID_PLACEHOLDER\b)[^,\s#]+,\s*DIRECT\b/im;
   const adsTxtEnvLine = envValue(env, 'ADSTERRA_ADS_TXT_SELLER_LINE');
   const adsTxtSourceText = [adsTxtText, adsTxtRouteText, adsTxtEnvLine, liveAdsTxt.text].join('\n');
-  const hasAdsterraSellerLine = adsterraSellerLinePattern.test(adsTxtText) ||
-    adsterraSellerLinePattern.test(adsTxtEnvLine) ||
-    adsterraSellerLinePattern.test(liveAdsTxt.text);
+  const hasAdsterraSellerLine = validateAdsterraSellerLines(adsTxtText).hasValidLine ||
+    validateAdsterraSellerLines(adsTxtEnvLine).hasValidLine ||
+    validateAdsterraSellerLines(liveAdsTxt.text).hasValidLine;
+  const invalidAdsTxtEnvLines = validateAdsterraSellerLines(adsTxtEnvLine).invalidLines;
   const hasAdsTxtPlaceholder = !adsTxtEnvLine &&
     /ADSTERRA_PUBLISHER_ID_PLACEHOLDER/.test(adsTxtSourceText);
   const hasOwnerDomain = /^OWNERDOMAIN=viadreams\.cc\s*$/im.test(adsTxtSourceText) ||
@@ -920,6 +977,10 @@ async function buildReadinessReport(args) {
 
   if (!hasAdsterraSellerLine) {
     warnings.push('ads.txt does not contain the exact active Adsterra seller line.');
+  }
+
+  if (invalidAdsTxtEnvLines.length > 0) {
+    warnings.push('ADSTERRA_ADS_TXT_SELLER_LINE is present but does not match the expected Adsterra ads.txt format.');
   }
 
   if (!hasRevenueProofSource) {
@@ -1036,9 +1097,101 @@ async function buildSetupReport(args) {
   };
 }
 
+async function buildAdsTxtReport(args) {
+  const envFile = args['env-file'] || '.env.local';
+  const siteUrl = args['site-url'] || args.site || '';
+  const [
+    { text: envFileText, path: envFilePath },
+    liveAdsTxt,
+  ] = await Promise.all([
+    readOptionalTextFile(envFile),
+    loadLiveAdsTxt(siteUrl),
+  ]);
+  const env = { ...parseEnvFileText(envFileText), ...process.env };
+  const inputText = args['seller-line'] || args.sellerLine || envValue(env, 'ADSTERRA_ADS_TXT_SELLER_LINE');
+  const inputValidation = validateAdsterraSellerLines(inputText);
+  const liveValidation = validateAdsterraSellerLines(liveAdsTxt.text);
+  const preview = buildAdsTxtBody(inputValidation.validLines);
+  const status = inputValidation.valid && (!liveAdsTxt.enabled || liveValidation.hasValidLine)
+    ? 'PASS'
+    : 'FAIL';
+  const warnings = [];
+
+  if (!inputValidation.hasValidLine) {
+    warnings.push('No valid Adsterra seller line found in --seller-line, process env, or env file.');
+  }
+
+  if (inputValidation.invalidLines.length > 0) {
+    warnings.push('One or more provided seller lines are invalid and would be ignored by the ads.txt route.');
+  }
+
+  if (liveAdsTxt.enabled && !liveValidation.hasValidLine) {
+    warnings.push(`Live ads.txt does not contain a valid Adsterra seller line: ${liveAdsTxt.url}`);
+  }
+
+  if (liveAdsTxt.error) {
+    warnings.push(`Could not verify live ads.txt: ${liveAdsTxt.error}`);
+  }
+
+  return {
+    status,
+    envFile: {
+      path: envFilePath,
+      found: Boolean(envFileText),
+    },
+    input: inputValidation,
+    live: {
+      checked: liveAdsTxt.enabled,
+      url: liveAdsTxt.url,
+      error: liveAdsTxt.error,
+      hasValidLine: liveValidation.hasValidLine,
+      validLines: liveValidation.validLines,
+    },
+    preview,
+    warnings,
+  };
+}
+
 function csvValue(value) {
   const text = String(value ?? '');
   return /[",\n\r]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text;
+}
+
+function printAdsTxtReport(report) {
+  console.log('Adsterra ads.txt validation');
+  console.log(`Status: ${report.status}`);
+  console.log(`Env file: ${report.envFile.found ? 'found' : 'missing'} (${report.envFile.path})`);
+  console.log(`Input valid lines: ${report.input.validLines.length}`);
+  console.log(`Input invalid lines: ${report.input.invalidLines.length}`);
+
+  if (report.live.checked) {
+    console.log(`Live ads.txt: ${report.live.hasValidLine ? 'OK' : 'MISSING'} (${report.live.url}${report.live.error ? `, ${report.live.error}` : ''})`);
+  }
+
+  if (report.warnings.length > 0) {
+    console.log('\nWarnings');
+    for (const warning of report.warnings) {
+      console.log(`  - ${warning}`);
+    }
+  }
+
+  if (report.input.hasValidLine) {
+    console.log('\nPreview');
+    console.log(report.preview.trimEnd());
+  }
+
+  console.log('\nNext actions');
+  if (report.input.hasValidLine) {
+    console.log('  - Add the validated line to Vercel production env:');
+    console.log('    $ npx vercel env add ADSTERRA_ADS_TXT_SELLER_LINE production --scope arenas-projects-ac293cdb');
+    console.log('  - Redeploy and verify live ads.txt:');
+    console.log('    $ git commit --allow-empty -m "Redeploy with Adsterra ads.txt seller line" && git push origin main');
+    console.log('    $ npm run adsterra:ads-txt -- --site-url=https://viadreams.cc');
+  } else {
+    console.log('  - Copy the exact seller line from the Adsterra publisher dashboard.');
+    console.log('  - Preflight it before adding the Vercel env:');
+    console.log("    $ npm run adsterra:ads-txt -- --seller-line='adsterra.com, <publisher-id>, DIRECT'");
+  }
 }
 
 function printSetupCsv(report) {
@@ -1454,6 +1607,21 @@ async function main() {
       console.log(JSON.stringify(report, null, 2));
     } else {
       printReadinessReport(report);
+    }
+
+    if (report.status === 'FAIL') {
+      process.exitCode = 1;
+    }
+    return;
+  }
+
+  if (command === 'ads-txt') {
+    const report = await buildAdsTxtReport(args);
+
+    if (args.json) {
+      console.log(JSON.stringify(report, null, 2));
+    } else {
+      printAdsTxtReport(report);
     }
 
     if (report.status === 'FAIL') {

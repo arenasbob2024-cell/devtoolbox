@@ -1,7 +1,13 @@
 const OWNER_DOMAIN = 'viadreams.cc';
 const SELLER_LINE_ENV = 'ADSTERRA_ADS_TXT_SELLER_LINE';
+const ADSTERRA_SELLER_LINE_PATTERN =
+  /^adsterra\.com\s*,\s*(?!ADSTERRA_PUBLISHER_ID_PLACEHOLDER\b)[a-z0-9_-]+\s*,\s*DIRECT(?:\s*,\s*[a-z0-9_-]+)?\s*$/i;
 
 export const dynamic = 'force-dynamic';
+
+function isValidAdsterraSellerLine(line: string) {
+  return ADSTERRA_SELLER_LINE_PATTERN.test(line);
+}
 
 function getSellerLines() {
   const raw = process.env[SELLER_LINE_ENV] || '';
@@ -9,7 +15,7 @@ function getSellerLines() {
   return raw
     .split(/\r?\n/)
     .map(line => line.trim())
-    .filter(line => line && !line.startsWith('#'));
+    .filter(line => line && !line.startsWith('#') && isValidAdsterraSellerLine(line));
 }
 
 export function GET() {
