@@ -1,9 +1,10 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useRef } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import { useLang } from '@/i18n/LangContext';
 import { trackMonetizationClick, trackMonetizationImpression } from '@/lib/analytics';
+import { getAdsterraDirectLink } from '@/lib/adsterra-direct-link';
 
 const copy = {
   en: {
@@ -18,6 +19,7 @@ const copy = {
       'partner-test': 'Partner Test from US$99',
     },
     cta: 'Advertise with us',
+    directCta: 'Sponsored offer',
   },
   zh: {
     label: '赞助 DevToolBox',
@@ -31,6 +33,7 @@ const copy = {
       'partner-test': '合作测试，US$99 起',
     },
     cta: '查看广告合作',
+    directCta: '赞助推荐',
   },
   ru: {
     label: 'Спонсировать DevToolBox',
@@ -44,6 +47,7 @@ const copy = {
       'partner-test': 'Тест партнерства от US$99',
     },
     cta: 'Разместить рекламу',
+    directCta: 'Спонсорский оффер',
   },
 };
 
@@ -91,6 +95,10 @@ export default function SponsorCta({
   const containerRef = useRef<HTMLElement | null>(null);
   const trackedRef = useRef(false);
   const packageId = getSponsorPackageId(placement, category);
+  const directLink = useMemo(
+    () => getAdsterraDirectLink({ placement, category, lang }),
+    [category, lang, placement]
+  );
   const sponsorHref = `/${lang}/advertise/?source=${encodeURIComponent(placement)}${
     category ? `&category=${encodeURIComponent(category)}` : ''
   }&package=${encodeURIComponent(packageId)}`;
@@ -108,6 +116,15 @@ export default function SponsorCta({
         category,
         placement,
       });
+
+      if (directLink) {
+        trackMonetizationImpression({
+          type: 'adsterra',
+          id: directLink.id,
+          category,
+          placement,
+        });
+      }
     };
 
     if (!('IntersectionObserver' in window)) {
@@ -125,7 +142,7 @@ export default function SponsorCta({
     observer.observe(element);
 
     return () => observer.disconnect();
-  }, [category, id, placement]);
+  }, [category, directLink, id, placement]);
 
   return (
     <aside
@@ -183,6 +200,33 @@ export default function SponsorCta({
       >
         {t.cta}
       </Link>
+      {directLink && (
+        <a
+          href={directLink.url}
+          target="_blank"
+          rel="noopener sponsored nofollow"
+          onClick={() => trackMonetizationClick({
+            type: 'adsterra',
+            id: directLink.id,
+            category,
+            placement,
+          })}
+          style={{
+            display: 'inline-flex',
+            marginLeft: 8,
+            marginTop: 8,
+            padding: '9px 14px',
+            borderRadius: 8,
+            border: '1px solid rgba(59,130,246,0.35)',
+            color: 'var(--accent-blue)',
+            fontSize: 13,
+            fontWeight: 750,
+            textDecoration: 'none',
+          }}
+        >
+          {t.directCta}
+        </a>
+      )}
     </aside>
   );
 }

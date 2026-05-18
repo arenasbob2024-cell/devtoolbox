@@ -1,9 +1,10 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import AdsterraIframeBanner from './AdsterraIframeBanner';
 import { useLang } from '@/i18n/LangContext';
 import { trackMonetizationClick, trackMonetizationImpression } from '@/lib/analytics';
+import { getAdsterraDirectLink } from '@/lib/adsterra-direct-link';
 import { useConsent } from './CookieConsent';
 
 interface Props {
@@ -21,16 +22,25 @@ const fallbackCopy = {
     label: 'Sponsor DevToolBox',
     title: 'Reach developer traffic on mobile',
     cta: 'Advertise',
+    directLabel: 'Sponsored offer',
+    directTitle: 'Open a matched developer offer',
+    directCta: 'Open',
   },
   zh: {
     label: '赞助 DevToolBox',
     title: '触达移动端开发者流量',
     cta: '投放广告',
+    directLabel: '赞助推荐',
+    directTitle: '打开匹配的开发者推荐',
+    directCta: '打开',
   },
   ru: {
     label: 'Спонсор DevToolBox',
     title: 'Охватите мобильный трафик разработчиков',
     cta: 'Реклама',
+    directLabel: 'Спонсорский оффер',
+    directTitle: 'Открыть подходящее предложение',
+    directCta: 'Открыть',
   },
 };
 
@@ -47,7 +57,30 @@ function MobileSponsorFallback({
   const t = fallbackCopy[lang as keyof typeof fallbackCopy] || fallbackCopy.en;
   const containerRef = useRef<HTMLDivElement | null>(null);
   const trackedRef = useRef(false);
+  const directLink = useMemo(
+    () => getAdsterraDirectLink({ placement, category: 'mobile', lang }),
+    [lang, placement]
+  );
   const sponsorHref = `/${lang}/advertise/?source=${encodeURIComponent(placement)}&category=mobile`;
+  const activeOffer = directLink
+    ? {
+        href: directLink.url,
+        label: t.directLabel,
+        title: t.directTitle,
+        cta: t.directCta,
+        type: 'adsterra' as const,
+        id: directLink.id,
+        external: true,
+      }
+    : {
+        href: sponsorHref,
+        label: t.label,
+        title: t.title,
+        cta: t.cta,
+        type: 'sponsor' as const,
+        id: `${placement}-sponsor`,
+        external: false,
+      };
 
   useEffect(() => {
     const element = containerRef.current;
@@ -57,8 +90,8 @@ function MobileSponsorFallback({
       if (trackedRef.current) return;
       trackedRef.current = true;
       trackMonetizationImpression({
-        type: 'sponsor',
-        id: `${placement}-sponsor`,
+        type: activeOffer.type,
+        id: activeOffer.id,
         category: 'mobile',
         placement,
       });
@@ -79,7 +112,7 @@ function MobileSponsorFallback({
     observer.observe(element);
 
     return () => observer.disconnect();
-  }, [placement]);
+  }, [activeOffer.id, activeOffer.type, placement]);
 
   return (
     <div
@@ -108,7 +141,7 @@ function MobileSponsorFallback({
           textTransform: 'uppercase',
           lineHeight: 1.2,
         }}>
-          {t.label}
+          {activeOffer.label}
         </p>
         <p style={{
           margin: 0,
@@ -117,14 +150,16 @@ function MobileSponsorFallback({
           fontWeight: 750,
           lineHeight: 1.25,
         }}>
-          {t.title}
+          {activeOffer.title}
         </p>
       </div>
       <a
-        href={sponsorHref}
+        href={activeOffer.href}
+        target={activeOffer.external ? '_blank' : undefined}
+        rel={activeOffer.external ? 'noopener sponsored nofollow' : undefined}
         onClick={() => trackMonetizationClick({
-          type: 'sponsor',
-          id: `${placement}-sponsor`,
+          type: activeOffer.type,
+          id: activeOffer.id,
           category: 'mobile',
           placement,
         })}
@@ -141,7 +176,7 @@ function MobileSponsorFallback({
           whiteSpace: 'nowrap',
         }}
       >
-        {t.cta}
+        {activeOffer.cta}
       </a>
     </div>
   );
