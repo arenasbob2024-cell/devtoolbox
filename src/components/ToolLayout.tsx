@@ -11,6 +11,7 @@ import ToolRating from './ugc/ToolRating';
 import ShareBar from './ugc/ShareBar';
 import AffiliateCard from './AffiliateCard';
 import CommentSection from './CommentSection';
+import MobileToolRectangleAd from './MobileToolRectangleAd';
 
 interface ToolLayoutProps {
   title: string;
@@ -90,6 +91,7 @@ export default function ToolLayout({ title, description, children, toolId }: Too
             toolId={toolId}
             category={currentTool?.category}
           />
+          <MobileToolRectangleAd category={currentTool?.category} />
           <CommentSection toolId={toolId} category={currentTool?.category} />
         </div>
 
