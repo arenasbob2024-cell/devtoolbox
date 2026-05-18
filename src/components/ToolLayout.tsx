@@ -70,9 +70,9 @@ export default function ToolLayout({ title, description, children, toolId }: Too
         <p style={{ color: 'var(--text-secondary)', fontSize: 15 }}>{description}</p>
       </div>
 
-      <div style={{ display: 'flex', gap: 24, alignItems: 'flex-start' }}>
+      <div className="tool-page-layout" style={{ display: 'flex', gap: 24, alignItems: 'flex-start' }}>
         {/* Main Content */}
-        <div style={{ flex: 1, minWidth: 0 }}>
+        <div className="tool-page-main" style={{ flex: 1, minWidth: 0 }}>
           <div className="card">
             {children}
           </div>
@@ -94,7 +94,7 @@ export default function ToolLayout({ title, description, children, toolId }: Too
         </div>
 
         {/* Sidebar */}
-        <div style={{ width: 300, flexShrink: 0, display: 'flex', flexDirection: 'column', gap: 20 }}>
+        <div className="tool-page-sidebar" style={{ width: 300, flexShrink: 0, display: 'flex', flexDirection: 'column', gap: 20 }}>
           <AdSlot size="rectangle" placement="tool-sidebar-secondary" category={currentTool?.category} fallbackToSponsor />
 
           {/* Sidebar Adsterra Banner 300x250 (rectangle).

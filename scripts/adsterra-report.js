@@ -96,6 +96,19 @@ const LIVE_INVENTORY_PAGES = [
     expectedPlacements: ['site-top-leaderboard', 'home-inline', 'home-tools-grid', 'site-bottom-native'],
   },
   {
+    name: 'Tool workspace',
+    path: '/en/tools/json-formatter/',
+    expectedPlacements: [
+      'site-top-leaderboard',
+      'tool-top',
+      'tool-mid',
+      'tool-sidebar-secondary',
+      'tool-sidebar-primary',
+      'tool-bottom',
+      'site-bottom-native',
+    ],
+  },
+  {
     name: 'Blog listing',
     path: '/en/blog/',
     expectedPlacements: ['site-top-leaderboard', 'blog-list-top', 'blog-list-mid', 'blog-list-bottom', 'site-bottom-native'],

@@ -130,6 +130,18 @@ textarea {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
+@media (max-width: 900px) {
+  .tool-page-layout {
+    display: flex !important;
+    flex-direction: column;
+  }
+
+  .tool-page-main,
+  .tool-page-sidebar {
+    width: 100% !important;
+  }
+}
+
 @media (max-width: 760px) {
   .header-sponsor-link {
     display: none !important;
