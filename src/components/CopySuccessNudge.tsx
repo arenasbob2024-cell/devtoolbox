@@ -10,7 +10,7 @@ import type { Locale } from '@/i18n/config';
 
 const COPY_COUNT_KEY = 'devtoolbox-copy-success-count';
 const DISMISSED_AT_KEY = 'devtoolbox-copy-success-nudge-dismissed-at';
-const COPY_THRESHOLD = 3;
+const DEFAULT_COPY_THRESHOLD = 2;
 const DISMISS_TTL_MS = 24 * 60 * 60 * 1000;
 const PLACEMENT = 'copy-success-nudge';
 
@@ -26,7 +26,7 @@ const copy: Record<Locale, {
   en: {
     eyebrow: 'Free tool saved',
     title: 'This helped? Support DevToolBox',
-    body: 'You have copied results a few times. A small contribution keeps these tools fast and ad-light.',
+    body: 'You have copied useful results more than once. A small contribution keeps these tools fast and ad-light.',
     support: 'Support free tools',
     sponsor: 'Advertise instead',
     direct: 'Sponsored offer',
@@ -35,7 +35,7 @@ const copy: Record<Locale, {
   zh: {
     eyebrow: '工具结果已保存',
     title: '这个工具有用吗？支持 DevToolBox',
-    body: '你已经多次复制工具结果。一次小额支持可以帮助这些工具持续免费、快速且少广告。',
+    body: '你已经不止一次复制工具结果。一次小额支持可以帮助这些工具持续免费、快速且少广告。',
     support: '支持免费工具',
     sponsor: '广告合作',
     direct: '赞助推荐',
@@ -44,13 +44,26 @@ const copy: Record<Locale, {
   ru: {
     eyebrow: 'Result copied',
     title: 'Helpful? Support DevToolBox',
-    body: 'You have copied results a few times. A small contribution keeps these tools fast and ad-light.',
+    body: 'You have copied useful results more than once. A small contribution keeps these tools fast and ad-light.',
     support: 'Support free tools',
     sponsor: 'Advertise',
     direct: 'Sponsored offer',
     dismiss: 'Not now',
   },
 };
+
+function getCopyThreshold() {
+  const configured = Number.parseInt(
+    process.env.NEXT_PUBLIC_COPY_SUCCESS_NUDGE_THRESHOLD || '',
+    10
+  );
+
+  if (Number.isInteger(configured) && configured >= 1 && configured <= 5) {
+    return configured;
+  }
+
+  return DEFAULT_COPY_THRESHOLD;
+}
 
 function getStoredCopyCount() {
   try {
@@ -92,6 +105,7 @@ export default function CopySuccessNudge() {
   const consent = useConsent();
   const impressionTracked = useRef(false);
   const [visible, setVisible] = useState(false);
+  const copyThreshold = getCopyThreshold();
   const directLink = useMemo(
     () => getAdsterraDirectLink({
       placement: PLACEMENT,
@@ -108,14 +122,14 @@ export default function CopySuccessNudge() {
       const nextCount = getStoredCopyCount() + 1;
       setStoredCopyCount(nextCount);
 
-      if (nextCount >= COPY_THRESHOLD) {
+      if (nextCount >= copyThreshold) {
         setVisible(true);
       }
     };
 
     window.addEventListener(COPY_SUCCESS_EVENT, onCopySuccess);
     return () => window.removeEventListener(COPY_SUCCESS_EVENT, onCopySuccess);
-  }, []);
+  }, [copyThreshold]);
 
   useEffect(() => {
     if (!visible || consent === null || impressionTracked.current) return;

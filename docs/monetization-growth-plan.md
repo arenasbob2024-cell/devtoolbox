@@ -48,6 +48,7 @@ The codebase now supports separate Adsterra keys for high-signal placements:
 | `NEXT_PUBLIC_ADSTERRA_SOCIAL_BAR_SESSION_CAP` | Optional Social Bar session cap, default enabled; set `false` to disable |
 | `NEXT_PUBLIC_ADSTERRA_DIRECT_LINK_URL` | Optional Smart Direct Link / Smartlink URL shown in partner-offer surfaces |
 | `NEXT_PUBLIC_ADSTERRA_DIRECT_LINK_SUB_ID_PARAM` | Optional Smartlink sub ID parameter, default `psid` |
+| `NEXT_PUBLIC_COPY_SUCCESS_NUDGE_THRESHOLD` | Optional copy-success nudge threshold, default `2`, valid range `1`-`5` |
 
 Create each as a separate Adsterra placement so reports can show RPM by location. Do not reuse the same key everywhere unless you only need aggregate impressions.
 
@@ -110,7 +111,7 @@ Blog article pages now include a configurable post-content Adsterra slot with `p
 
 The all-tools index and category landing pages now have an affiliate-backed partner strip. It only renders when matching `NEXT_PUBLIC_AFFILIATE_*` URLs are configured, adds a category sponsorship link, and tracks impressions/clicks with `placement=tools-index-partner-strip` or `placement=category-partner-strip`.
 
-After a visitor successfully copies tool output three times in one session, the site now shows a lightweight support/sponsor nudge. It waits until the cookie notice is dismissed, frequency-caps dismissal for 24 hours, links to `NEXT_PUBLIC_SUPPORT_URL` or `/advertise`, and tracks `monetization_impression` / `monetization_click` with `placement=copy-success-nudge`. When `NEXT_PUBLIC_ADSTERRA_DIRECT_LINK_URL` is configured, the same nudge adds a tracked Smart Direct Link offer so high-intent tool usage can contribute Adsterra click revenue without adding another page-level ad slot.
+After a visitor successfully copies tool output twice in one session by default, the site now shows a lightweight support/sponsor nudge. The threshold can be tuned with `NEXT_PUBLIC_COPY_SUCCESS_NUDGE_THRESHOLD` from `1` to `5`. It waits until the cookie notice is dismissed, frequency-caps dismissal for 24 hours, links to `NEXT_PUBLIC_SUPPORT_URL` or `/advertise`, and tracks `monetization_impression` / `monetization_click` with `placement=copy-success-nudge`. When `NEXT_PUBLIC_ADSTERRA_DIRECT_LINK_URL` is configured, the same nudge adds a tracked Smart Direct Link offer so high-intent tool usage can contribute Adsterra click revenue without adding another page-level ad slot.
 
 When a visitor gives a tool a 5-star rating, the sidebar rating widget now shows a compact support/sponsor follow-up. This captures a high-satisfaction moment, sends support clicks to `NEXT_PUBLIC_SUPPORT_URL`, routes sponsor interest to `/advertise/?source=tool-rating-thanks&category=<tool-id>`, optionally shows an Adsterra Smart Direct Link offer, and tracks `monetization_impression` / `monetization_click` with `placement=tool-rating-thanks`.
 
@@ -181,7 +182,7 @@ The `adsterra:goal` command is the revenue completion gate. It prints PASS only 
 4. Replace generic affiliate links with real partner/referral links and track clicks by category.
 5. Publish the prepared Dev.to and social posts in `content/` to drive referral traffic and backlinks.
 6. Use GA `monetization_click` counts to identify which tool categories produce buyer-intent clicks and sell those categories through `/advertise`.
-7. Review `copy-success-nudge` impressions, support clicks, and sponsor clicks weekly; if CTR is weak, test copy threshold `2` vs `3` and alternate support text.
+7. Review `copy-success-nudge` impressions, support clicks, sponsor clicks, and Direct Link clicks weekly; if CTR is weak or bounce rate changes, test `NEXT_PUBLIC_COPY_SUCCESS_NUDGE_THRESHOLD=3` vs the default `2` and alternate support text.
 8. Review `tool-rating-thanks` impressions, support clicks, and sponsor clicks weekly; if CTR is weak, test showing the nudge after 4-star ratings or replacing the support CTA with a category-specific partner offer.
 9. Review `tool_share` by method and compare it with `share-bar-thanks` clicks. If X/LinkedIn shares are low but copy-link shares are high, prioritize copy-link follow-up copy and category-specific partner offers.
 10. Review `comment-success-nudge` impressions and clicks. If sponsor CTR is strong, prioritize direct sponsorship outreach for tools that receive repeated feedback submissions.
