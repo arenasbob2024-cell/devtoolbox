@@ -1,11 +1,12 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import {
   trackMonetizationClick,
   trackMonetizationImpression,
   trackToolShare,
 } from '@/lib/analytics';
+import { getAdsterraDirectLink } from '@/lib/adsterra-direct-link';
 import { getUGCStrings } from './ugcStrings';
 
 interface ShareBarProps {
@@ -20,21 +21,25 @@ const shareNudgeCopy: Record<string, {
   title: string;
   support: string;
   sponsor: string;
+  direct: string;
 }> = {
   en: {
     title: 'Thanks for sharing.',
     support: 'Support free tools',
     sponsor: 'Sponsor this tool',
+    direct: 'Sponsored offer',
   },
   zh: {
     title: '\u611f\u8c22\u5206\u4eab\u3002',
     support: '\u652f\u6301\u514d\u8d39\u5de5\u5177',
     sponsor: '\u8d5e\u52a9\u8fd9\u4e2a\u5de5\u5177',
+    direct: '\u8d5e\u52a9\u63a8\u8350',
   },
   ru: {
     title: '\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u0440\u0435\u043f\u043e\u0441\u0442.',
     support: '\u041f\u043e\u0434\u0434\u0435\u0440\u0436\u0430\u0442\u044c \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u044b\u0435 \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u044b',
     sponsor: '\u0421\u0442\u0430\u0442\u044c \u0441\u043f\u043e\u043d\u0441\u043e\u0440\u043e\u043c',
+    direct: 'Sponsored offer',
   },
 };
 
@@ -49,6 +54,14 @@ export default function ShareBar({ url, title, lang, toolId, category }: ShareBa
   const sponsorCategory = toolId || category || 'tool-share';
   const supportHref = process.env.NEXT_PUBLIC_SUPPORT_URL || 'https://buymeacoffee.com/devtoolbox';
   const sponsorHref = `/${lang}/advertise/?source=share-bar-thanks&category=${encodeURIComponent(sponsorCategory)}`;
+  const directLink = useMemo(
+    () => getAdsterraDirectLink({
+      placement: 'share-bar-thanks',
+      category: sponsorCategory,
+      lang,
+    }),
+    [lang, sponsorCategory]
+  );
 
   useEffect(() => {
     return () => {
@@ -67,7 +80,15 @@ export default function ShareBar({ url, title, lang, toolId, category }: ShareBa
       category: trackingCategory,
       placement: 'share-bar-thanks',
     });
-  }, [showNudge, trackingCategory]);
+    if (directLink) {
+      trackMonetizationImpression({
+        type: 'adsterra',
+        id: directLink.id,
+        category: trackingCategory,
+        placement: 'share-bar-thanks',
+      });
+    }
+  }, [directLink, showNudge, trackingCategory]);
 
   const handleShare = (method: 'x' | 'linkedin' | 'copy-link') => {
     trackToolShare({
@@ -194,6 +215,30 @@ export default function ShareBar({ url, title, lang, toolId, category }: ShareBa
           >
             {nudge.sponsor}
           </a>
+          {directLink && (
+            <a
+              href={directLink.url}
+              target="_blank"
+              rel="noopener sponsored nofollow"
+              onClick={() => trackMonetizationClick({
+                type: 'adsterra',
+                id: directLink.id,
+                category: trackingCategory,
+                placement: 'share-bar-thanks',
+              })}
+              style={{
+                color: 'var(--accent-blue)',
+                border: '1px solid var(--border-color)',
+                borderRadius: 6,
+                padding: '6px 10px',
+                fontSize: 12,
+                fontWeight: 700,
+                textDecoration: 'none',
+              }}
+            >
+              {nudge.direct}
+            </a>
+          )}
         </div>
       ) : null}
     </div>

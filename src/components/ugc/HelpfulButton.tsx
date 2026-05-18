@@ -1,11 +1,12 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react';
 import {
   trackContentFeedback,
   trackMonetizationClick,
   trackMonetizationImpression,
 } from '@/lib/analytics';
+import { getAdsterraDirectLink } from '@/lib/adsterra-direct-link';
 import { seedCount } from './seedHash';
 import { getUGCStrings } from './ugcStrings';
 
@@ -20,21 +21,25 @@ const helpfulNudgeCopy: Record<string, {
   title: string;
   support: string;
   sponsor: string;
+  direct: string;
 }> = {
   en: {
     title: 'Thanks for the vote.',
     support: 'Support free guides',
     sponsor: 'Sponsor this guide',
+    direct: 'Sponsored offer',
   },
   zh: {
     title: '\u611f\u8c22\u4f60\u7684\u6295\u7968\u3002',
     support: '\u652f\u6301\u514d\u8d39\u6307\u5357',
     sponsor: '\u8d5e\u52a9\u8fd9\u7bc7\u6307\u5357',
+    direct: '\u8d5e\u52a9\u63a8\u8350',
   },
   ru: {
     title: '\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0446\u0435\u043d\u043a\u0443.',
     support: '\u041f\u043e\u0434\u0434\u0435\u0440\u0436\u0430\u0442\u044c \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u044b\u0435 \u0433\u0430\u0439\u0434\u044b',
     sponsor: '\u0421\u0442\u0430\u0442\u044c \u0441\u043f\u043e\u043d\u0441\u043e\u0440\u043e\u043c',
+    direct: 'Sponsored offer',
   },
 };
 
@@ -80,6 +85,14 @@ export default function HelpfulButton({ slug, lang }: HelpfulButtonProps) {
   const baseDown = seedCount(slug + '_down', 1, 8);
   const supportHref = process.env.NEXT_PUBLIC_SUPPORT_URL || 'https://buymeacoffee.com/devtoolbox';
   const sponsorHref = `/${lang}/advertise/?source=blog-helpful-thanks&category=${encodeURIComponent(slug)}`;
+  const directLink = useMemo(
+    () => getAdsterraDirectLink({
+      placement: 'blog-helpful-thanks',
+      category: slug,
+      lang,
+    }),
+    [lang, slug]
+  );
   const subscribeVote = useCallback(
     (callback: () => void) => subscribeStoredVote(slug, callback),
     [slug]
@@ -101,7 +114,15 @@ export default function HelpfulButton({ slug, lang }: HelpfulButtonProps) {
       category: slug,
       placement: 'blog-helpful-thanks',
     });
-  }, [showNudge, slug]);
+    if (directLink) {
+      trackMonetizationImpression({
+        type: 'adsterra',
+        id: directLink.id,
+        category: slug,
+        placement: 'blog-helpful-thanks',
+      });
+    }
+  }, [directLink, showNudge, slug]);
 
   const handleVote = (v: Exclude<HelpfulVote, null>) => {
     const newVote = vote === v ? null : v;
@@ -234,6 +255,30 @@ export default function HelpfulButton({ slug, lang }: HelpfulButtonProps) {
           >
             {nudge.sponsor}
           </a>
+          {directLink && (
+            <a
+              href={directLink.url}
+              target="_blank"
+              rel="noopener sponsored nofollow"
+              onClick={() => trackMonetizationClick({
+                type: 'adsterra',
+                id: directLink.id,
+                category: slug,
+                placement: 'blog-helpful-thanks',
+              })}
+              style={{
+                color: 'var(--accent-blue)',
+                border: '1px solid var(--border-color)',
+                borderRadius: 6,
+                padding: '6px 10px',
+                fontSize: 12,
+                fontWeight: 700,
+                textDecoration: 'none',
+              }}
+            >
+              {nudge.direct}
+            </a>
+          )}
         </div>
       ) : null}
     </div>

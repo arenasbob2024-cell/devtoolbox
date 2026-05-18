@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback, useSyncExternalStore } from 'react';
+import { useState, useEffect, useRef, useCallback, useMemo, useSyncExternalStore } from 'react';
 import { trackMonetizationClick, trackMonetizationImpression } from '@/lib/analytics';
+import { getAdsterraDirectLink } from '@/lib/adsterra-direct-link';
 import { seedCount } from './seedHash';
 import { getUGCStrings } from './ugcStrings';
 
@@ -14,21 +15,25 @@ const nudgeCopy: Record<string, {
   title: string;
   support: string;
   sponsor: string;
+  direct: string;
 }> = {
   en: {
     title: 'Thanks for the rating.',
     support: 'Support free tools',
     sponsor: 'Sponsor this tool',
+    direct: 'Sponsored offer',
   },
   zh: {
     title: '\u611f\u8c22\u8bc4\u5206\u3002',
     support: '\u652f\u6301\u514d\u8d39\u5de5\u5177',
     sponsor: '\u8d5e\u52a9\u8fd9\u4e2a\u5de5\u5177',
+    direct: '\u8d5e\u52a9\u63a8\u8350',
   },
   ru: {
     title: '\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0446\u0435\u043d\u043a\u0443.',
     support: '\u041f\u043e\u0434\u0434\u0435\u0440\u0436\u0430\u0442\u044c \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u044b\u0435 \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u044b',
     sponsor: '\u0421\u0442\u0430\u0442\u044c \u0441\u043f\u043e\u043d\u0441\u043e\u0440\u043e\u043c',
+    direct: 'Sponsored offer',
   },
 };
 
@@ -75,6 +80,14 @@ export default function ToolRating({ toolId, lang }: ToolRatingProps) {
   const baseAvg = seedCount(toolId + '_avg', 36, 48) / 10;
   const supportHref = process.env.NEXT_PUBLIC_SUPPORT_URL || 'https://buymeacoffee.com/devtoolbox';
   const sponsorHref = `/${lang}/advertise/?source=tool-rating-thanks&category=${encodeURIComponent(toolId)}`;
+  const directLink = useMemo(
+    () => getAdsterraDirectLink({
+      placement: 'tool-rating-thanks',
+      category: toolId,
+      lang,
+    }),
+    [lang, toolId]
+  );
   const subscribeRating = useCallback(
     (callback: () => void) => subscribeStoredRating(toolId, callback),
     [toolId]
@@ -97,7 +110,15 @@ export default function ToolRating({ toolId, lang }: ToolRatingProps) {
       category: toolId,
       placement: 'tool-rating-thanks',
     });
-  }, [showNudge, toolId]);
+    if (directLink) {
+      trackMonetizationImpression({
+        type: 'adsterra',
+        id: directLink.id,
+        category: toolId,
+        placement: 'tool-rating-thanks',
+      });
+    }
+  }, [directLink, showNudge, toolId]);
 
   const handleRate = (star: number) => {
     setOptimisticRating({ toolId, rating: star });
@@ -215,6 +236,33 @@ export default function ToolRating({ toolId, lang }: ToolRatingProps) {
             >
               {nudge.sponsor}
             </a>
+            {directLink && (
+              <a
+                href={directLink.url}
+                target="_blank"
+                rel="noopener sponsored nofollow"
+                onClick={() => trackMonetizationClick({
+                  type: 'adsterra',
+                  id: directLink.id,
+                  category: toolId,
+                  placement: 'tool-rating-thanks',
+                })}
+                style={{
+                  display: 'block',
+                  width: '100%',
+                  padding: '8px 10px',
+                  borderRadius: 6,
+                  border: '1px solid var(--border-color)',
+                  color: 'var(--accent-blue)',
+                  fontSize: 12,
+                  fontWeight: 700,
+                  textAlign: 'center',
+                  textDecoration: 'none',
+                }}
+              >
+                {nudge.direct}
+              </a>
+            )}
           </div>
         </div>
       ) : null}

@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { trackMonetizationClick, trackMonetizationImpression } from '@/lib/analytics';
+import { getAdsterraDirectLink } from '@/lib/adsterra-direct-link';
 import { useLang } from '@/i18n/LangContext';
 
 interface Comment {
@@ -26,6 +27,7 @@ const successCopy: Record<string, {
   another: string;
   support: string;
   sponsor: string;
+  direct: string;
 }> = {
   en: {
     thanks: 'Thanks for your feedback. We will review it shortly.',
@@ -33,6 +35,7 @@ const successCopy: Record<string, {
     another: 'Submit another',
     support: 'Support free tools',
     sponsor: 'Sponsor this tool',
+    direct: 'Sponsored offer',
   },
   zh: {
     thanks: '\u611f\u8c22\u4f60\u7684\u53cd\u9988\uff0c\u6211\u4eec\u4f1a\u5c3d\u5feb\u5ba1\u6838\u3002',
@@ -40,6 +43,7 @@ const successCopy: Record<string, {
     another: '\u518d\u63d0\u4ea4\u4e00\u6761',
     support: '\u652f\u6301\u514d\u8d39\u5de5\u5177',
     sponsor: '\u8d5e\u52a9\u8fd9\u4e2a\u5de5\u5177',
+    direct: '\u8d5e\u52a9\u63a8\u8350',
   },
   ru: {
     thanks: '\u0421\u043f\u0430\u0441\u0438\u0431\u043e \u0437\u0430 \u043e\u0442\u0437\u044b\u0432. \u041c\u044b \u0441\u043a\u043e\u0440\u043e \u0435\u0433\u043e \u043f\u0440\u043e\u0432\u0435\u0440\u0438\u043c.',
@@ -47,6 +51,7 @@ const successCopy: Record<string, {
     another: '\u041e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c \u0435\u0449\u0435',
     support: '\u041f\u043e\u0434\u0434\u0435\u0440\u0436\u0430\u0442\u044c \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u044b\u0435 \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u044b',
     sponsor: '\u0421\u0442\u0430\u0442\u044c \u0441\u043f\u043e\u043d\u0441\u043e\u0440\u043e\u043c',
+    direct: 'Sponsored offer',
   },
 };
 
@@ -62,6 +67,14 @@ export default function CommentSection({ toolId, category }: CommentSectionProps
   const trackingCategory = category || toolId;
   const sponsorHref = `/${lang}/advertise/?source=comment-success-nudge&category=${encodeURIComponent(toolId)}`;
   const supportHref = process.env.NEXT_PUBLIC_SUPPORT_URL || 'https://buymeacoffee.com/devtoolbox';
+  const directLink = useMemo(
+    () => getAdsterraDirectLink({
+      placement: 'comment-success-nudge',
+      category: trackingCategory,
+      lang,
+    }),
+    [lang, trackingCategory]
+  );
   const [comments, setComments] = useState<Comment[]>([]);
   const [name, setName] = useState('');
   const [content, setContent] = useState('');
@@ -95,7 +108,15 @@ export default function CommentSection({ toolId, category }: CommentSectionProps
       category: trackingCategory,
       placement: 'comment-success-nudge',
     });
-  }, [submitted, trackingCategory]);
+    if (directLink) {
+      trackMonetizationImpression({
+        type: 'adsterra',
+        id: directLink.id,
+        category: trackingCategory,
+        placement: 'comment-success-nudge',
+      });
+    }
+  }, [directLink, submitted, trackingCategory]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -243,6 +264,30 @@ export default function CommentSection({ toolId, category }: CommentSectionProps
               >
                 {copy.sponsor}
               </a>
+              {directLink && (
+                <a
+                  href={directLink.url}
+                  target="_blank"
+                  rel="noopener sponsored nofollow"
+                  onClick={() => trackMonetizationClick({
+                    type: 'adsterra',
+                    id: directLink.id,
+                    category: trackingCategory,
+                    placement: 'comment-success-nudge',
+                  })}
+                  style={{
+                    color: 'var(--accent-blue)',
+                    border: '1px solid var(--border-color)',
+                    borderRadius: 6,
+                    padding: '7px 12px',
+                    fontSize: 13,
+                    fontWeight: 700,
+                    textDecoration: 'none',
+                  }}
+                >
+                  {copy.direct}
+                </a>
+              )}
               <button
                 type="button"
                 onClick={() => setSubmitted(false)}

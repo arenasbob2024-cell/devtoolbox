@@ -1,12 +1,13 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useLang } from '@/i18n/LangContext';
 import {
   trackMonetizationClick,
   trackMonetizationImpression,
   trackNewsletterSignup,
 } from '@/lib/analytics';
+import { getAdsterraDirectLink } from '@/lib/adsterra-direct-link';
 
 interface NewsletterSignupProps {
   variant?: 'wide' | 'compact';
@@ -18,21 +19,25 @@ const successNudgeCopy: Record<string, {
   detail: string;
   support: string;
   sponsor: string;
+  direct: string;
 }> = {
   en: {
     detail: 'Thanks for following DevToolBox.',
     support: 'Support free tools',
     sponsor: 'Sponsor DevToolBox',
+    direct: 'Sponsored offer',
   },
   zh: {
     detail: '\u611f\u8c22\u5173\u6ce8 DevToolBox\u3002',
     support: '\u652f\u6301\u514d\u8d39\u5de5\u5177',
     sponsor: '\u8d5e\u52a9 DevToolBox',
+    direct: '\u8d5e\u52a9\u63a8\u8350',
   },
   ru: {
     detail: '\u0421\u043f\u0430\u0441\u0438\u0431\u043e, \u0447\u0442\u043e \u0441\u043b\u0435\u0434\u0438\u0442\u0435 \u0437\u0430 DevToolBox.',
     support: '\u041f\u043e\u0434\u0434\u0435\u0440\u0436\u0430\u0442\u044c \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u044b\u0435 \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u044b',
     sponsor: '\u0421\u0442\u0430\u0442\u044c \u0441\u043f\u043e\u043d\u0441\u043e\u0440\u043e\u043c',
+    direct: 'Sponsored offer',
   },
 };
 
@@ -47,6 +52,14 @@ export default function NewsletterSignup({
   const trackingCategory = category || 'newsletter';
   const supportHref = process.env.NEXT_PUBLIC_SUPPORT_URL || 'https://buymeacoffee.com/devtoolbox';
   const sponsorHref = `/${lang}/advertise/?source=${encodeURIComponent(`${placement}-newsletter-success`)}&category=${encodeURIComponent(trackingCategory)}`;
+  const directLink = useMemo(
+    () => getAdsterraDirectLink({
+      placement: 'newsletter-success-nudge',
+      category: trackingCategory,
+      lang,
+    }),
+    [lang, trackingCategory]
+  );
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const successTrackedRef = useRef(false);
@@ -60,7 +73,15 @@ export default function NewsletterSignup({
       category: trackingCategory,
       placement: 'newsletter-success-nudge',
     });
-  }, [status, trackingCategory]);
+    if (directLink) {
+      trackMonetizationImpression({
+        type: 'adsterra',
+        id: directLink.id,
+        category: trackingCategory,
+        placement: 'newsletter-success-nudge',
+      });
+    }
+  }, [directLink, status, trackingCategory]);
 
   const markSuccess = () => {
     trackNewsletterSignup({
@@ -163,6 +184,33 @@ export default function NewsletterSignup({
             >
               {successNudge.sponsor}
             </a>
+            {directLink && (
+              <a
+                href={directLink.url}
+                target="_blank"
+                rel="noopener sponsored nofollow"
+                onClick={() => trackMonetizationClick({
+                  type: 'adsterra',
+                  id: directLink.id,
+                  category: trackingCategory,
+                  placement: 'newsletter-success-nudge',
+                })}
+                style={{
+                  display: 'block',
+                  width: '100%',
+                  padding: '8px 10px',
+                  borderRadius: 6,
+                  border: '1px solid var(--border-color)',
+                  color: 'var(--accent-blue)',
+                  fontSize: 12,
+                  fontWeight: 700,
+                  textAlign: 'center',
+                  textDecoration: 'none',
+                }}
+              >
+                {successNudge.direct}
+              </a>
+            )}
           </div>
         ) : (
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
@@ -284,6 +332,30 @@ export default function NewsletterSignup({
                 >
                   {successNudge.sponsor}
                 </a>
+                {directLink && (
+                  <a
+                    href={directLink.url}
+                    target="_blank"
+                    rel="noopener sponsored nofollow"
+                    onClick={() => trackMonetizationClick({
+                      type: 'adsterra',
+                      id: directLink.id,
+                      category: trackingCategory,
+                      placement: 'newsletter-success-nudge',
+                    })}
+                    style={{
+                      color: 'var(--accent-blue)',
+                      border: '1px solid var(--border-color)',
+                      borderRadius: 6,
+                      padding: '6px 10px',
+                      fontSize: 12,
+                      fontWeight: 700,
+                      textDecoration: 'none',
+                    }}
+                  >
+                    {successNudge.direct}
+                  </a>
+                )}
               </div>
             </div>
           ) : (
