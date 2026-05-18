@@ -205,6 +205,7 @@ export default async function LangLayout({
             placement="site-top-leaderboard"
             fallbackToSponsor
             style={{ marginTop: 8, marginBottom: 0 }}
+            loading="eager"
           />
           <main style={{ flex: 1 }}>
             {children}

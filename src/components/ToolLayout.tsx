@@ -107,6 +107,7 @@ export default function ToolLayout({ title, description, children, toolId }: Too
             category={currentTool?.category}
             fallbackToSponsor
             style={{ margin: 0 }}
+            loading="eager"
           />
 
           <ToolRating toolId={toolId} lang={lang} />

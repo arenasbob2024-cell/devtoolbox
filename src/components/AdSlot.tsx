@@ -79,6 +79,15 @@ const GLOBAL_RECTANGLE_FALLBACK_PLACEMENTS = new Set<AdSlotPlacement>([
   'tool-sidebar-secondary',
 ]);
 
+const EAGER_LOAD_PLACEMENTS = new Set<AdSlotPlacement>([
+  'tool-top',
+  'tool-sidebar-secondary',
+  'tools-index-top',
+  'blog-list-top',
+  'blog-article-top',
+  'category-top',
+]);
+
 function canUseGlobalLeaderboardFallback(placement: AdSlotPlacement | undefined, size: AdSlotSize) {
   return Boolean(
     placement &&
@@ -198,6 +207,7 @@ export default function AdSlot({
       fallbackToSponsor={fallbackToSponsor}
       fallbackPlacement={placement ? `${placement}-ad-empty` : undefined}
       fallbackId={placement ? `${placement}-ad-empty-sponsor` : undefined}
+      loading={placement && EAGER_LOAD_PLACEMENTS.has(placement) ? 'eager' : 'lazy'}
     />
   );
 }

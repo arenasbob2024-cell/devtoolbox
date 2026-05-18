@@ -288,6 +288,7 @@ export default function AdsterraMobileStickyBanner({
               fallbackPlacement={fallbackPlacement}
               fallbackId={`${fallbackPlacement}-sponsor`}
               fallbackContent={fallbackContent}
+              loading="eager"
             />
           ) : fallbackContent}
         </div>

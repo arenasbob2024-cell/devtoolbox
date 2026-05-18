@@ -32,6 +32,7 @@ interface Props {
   fallbackId?: string;
   fallbackDelayMs?: number;
   fallbackContent?: React.ReactNode;
+  loading?: 'eager' | 'lazy';
 }
 
 export default function AdsterraIframeBanner({
@@ -47,6 +48,7 @@ export default function AdsterraIframeBanner({
   fallbackId,
   fallbackDelayMs = 6000,
   fallbackContent,
+  loading = 'lazy',
 }: Props) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
@@ -164,7 +166,7 @@ export default function AdsterraIframeBanner({
         // to open the advertiser's destination in a new tab.
         sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox allow-same-origin"
         title="Sponsored"
-        loading="lazy"
+        loading={loading}
       />
     </div>
   );
