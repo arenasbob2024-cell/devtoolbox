@@ -11371,15 +11371,15 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'ollama-guide',
     title: 'Ollama Complete Guide 2026: Run LLMs Locally — Installation, Models, API & Best Practices',
-    description: 'A comprehensive guide to Ollama for running LLMs locally. Covers installation on macOS/Linux/Windows/Docker, model management, REST API, custom Modelfiles, GPU acceleration, LangChain/LlamaIndex integration, and production deployment.',
+    description: 'Complete Ollama guide for local LLMs: install on macOS/Linux/Windows/Docker, run and pull models, use the REST API, import GGUF/fine-tuned adapters with Modelfiles, tune GPU performance, and deploy with LangChain or LlamaIndex.',
     date: '2026-02-28',
     author: 'DevToolBox',
     readingTime: '18 min read',
-    keywords: ['ollama', 'run llm locally', 'ollama install', 'ollama api', 'ollama models', 'local llm', 'ollama vs lm studio', 'ollama docker', 'ollama gpu', 'ollama modelfile'],
+    keywords: ['ollama', 'run llm locally', 'ollama install', 'ollama api', 'ollama models', 'ollama run command', 'ollama pull model command', 'does ollama support fine-tuning', 'ollama fine-tuning', 'local llm', 'ollama vs lm studio', 'ollama docker', 'ollama gpu', 'ollama modelfile'],
     relatedTools: ['json-formatter', 'hash-generator', 'markdown-to-html'],
     relatedPosts: ['docker-compose-tutorial', 'docker-best-practices', 'graphql-vs-rest-api'],
     translations: {
-      zh: { title: 'Ollama 完全指南 2026：本地运行大语言模型 — 安装、模型、API 与最佳实践', description: '全面的 Ollama 指南，涵盖安装、模型管理、REST API、自定义 Modelfile、GPU 加速、LangChain/LlamaIndex 集成和生产部署。', readingTime: '18 分钟阅读', keywords: ['ollama', '本地运行大模型', 'ollama 安装', 'ollama api', 'ollama 模型', '本地 llm', 'ollama docker', 'ollama gpu'] },
+      zh: { title: 'Ollama 完全指南 2026：本地运行大语言模型 — 安装、模型、API 与最佳实践', description: '全面的 Ollama 指南，涵盖安装、运行和拉取模型、REST API、自定义 Modelfile、GGUF/微调 adapter 导入、GPU 加速、LangChain/LlamaIndex 集成和生产部署。', readingTime: '18 分钟阅读', keywords: ['ollama', '本地运行大模型', 'ollama 安装', 'ollama api', 'ollama 模型', 'ollama run 命令', 'ollama pull 模型', 'ollama 微调', '本地 llm', 'ollama docker', 'ollama gpu'] },
       ja: { title: 'Ollama 完全ガイド 2026：LLM をローカルで実行 — インストール、モデル、API、ベストプラクティス', description: 'Ollama でローカル LLM を実行するための包括的ガイド。インストール、モデル管理、REST API、GPU アクセラレーション、プロダクションデプロイまでカバー。', readingTime: '18分', keywords: ['ollama', 'ローカル llm', 'ollama インストール', 'ollama api', 'ollama モデル'] },
       ko: { title: 'Ollama 완전 가이드 2026: LLM 로컬 실행 — 설치, 모델, API 및 모범 사례', description: 'Ollama를 사용한 로컬 LLM 실행 완전 가이드. 설치, 모델 관리, REST API, GPU 가속, 프로덕션 배포까지 다룹니다.', readingTime: '18분 읽기', keywords: ['ollama', '로컬 llm', 'ollama 설치', 'ollama api', 'ollama 모델'] },
       es: { title: 'Guía Completa de Ollama 2026: Ejecutar LLMs Localmente — Instalación, Modelos, API y Mejores Prácticas', description: 'Guía completa de Ollama para ejecutar LLMs localmente. Cubre instalación en macOS/Linux/Windows/Docker, gestión de modelos, API REST, Modelfiles personalizados, aceleración GPU, integración con LangChain/LlamaIndex y despliegue en producción.', readingTime: '18 min de lectura', keywords: ['ollama', 'ejecutar llm localmente', 'ollama instalar', 'ollama api', 'ollama modelos', 'llm local', 'ollama docker', 'ollama gpu'] },

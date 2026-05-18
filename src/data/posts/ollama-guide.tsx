@@ -7,6 +7,13 @@ const translations: Record<string, Record<string, string>> = {
     intro: 'Ollama is an open-source tool that lets you run large language models (LLMs) locally on your own machine. Whether you care about data privacy, want to eliminate API costs, or need offline AI capabilities, Ollama makes it simple to download, run, and manage models like Llama 3, Mistral, Code Llama, Phi-3, and Gemma 2 with a single command. This guide covers everything from installation to production deployment.',
     tldr: 'TL;DR',
     tldrText: 'Ollama lets you run LLMs locally with one command. Install it on macOS/Linux/Windows, run "ollama run llama3" to start chatting, use the REST API at localhost:11434 for app integration, and create custom models with Modelfiles. It supports GPU acceleration via CUDA, Metal, and ROCm, and works great with LangChain, LlamaIndex, and Open WebUI.',
+    h2QuickAnswers: 'Quick Answers for Common Ollama Commands',
+    quickFineTuneQ: 'Does Ollama support fine-tuning?',
+    quickFineTuneA: 'Ollama does not train or fine-tune models directly. The practical workflow is to fine-tune with tools such as Unsloth, Axolotl, or llama.cpp, export a GGUF model or adapter, then import it into Ollama with a Modelfile using FROM or ADAPTER and run ollama create.',
+    quickRunQ: 'How do I run a model with Ollama?',
+    quickRunA: 'Use ollama run modelname. For example, ollama run llama3 downloads the model if needed and opens an interactive chat. For a scripted workflow, run ollama pull modelname first, then call the REST API at localhost:11434.',
+    quickPullQ: 'What is the official pull model command?',
+    quickPullA: 'Use ollama pull modelname to download or update a model without starting a chat session. Use ollama list to see downloaded models, ollama show modelname for details, and ollama rm modelname to remove one.',
     keyTakeaways: 'Key Takeaways',
     kt1: 'Ollama supports 100+ models including Llama 3, Mistral, Code Llama, Phi-3, and Gemma 2',
     kt2: 'Installation is a single command on macOS and Linux; Docker available for all platforms',
@@ -119,6 +126,13 @@ const translations: Record<string, Record<string, string>> = {
     intro: 'Ollama 是一款开源工具，让你在本地机器上运行大语言模型（LLM）。无论你关注数据隐私、想要消除 API 成本，还是需要离线 AI 能力，Ollama 都能让你用一条命令下载和运行 Llama 3、Mistral、Code Llama 等模型。本指南涵盖从安装到生产部署的全部内容。',
     tldr: '概要',
     tldrText: 'Ollama 让你用一条命令在本地运行 LLM。在 macOS/Linux/Windows 上安装后，运行 "ollama run llama3" 即可开始对话，使用 localhost:11434 的 REST API 集成到应用中，通过 Modelfile 创建自定义模型。支持 CUDA、Metal 和 ROCm GPU 加速。',
+    h2QuickAnswers: 'Ollama 常见命令快速答案',
+    quickFineTuneQ: 'Ollama 支持微调吗？',
+    quickFineTuneA: 'Ollama 不直接训练或微调模型。实际流程通常是用 Unsloth、Axolotl 或 llama.cpp 等工具微调，导出 GGUF 模型或 adapter，再通过 Modelfile 的 FROM 或 ADAPTER 导入 Ollama，并运行 ollama create。',
+    quickRunQ: '如何用 Ollama 运行模型？',
+    quickRunA: '使用 ollama run 模型名。例如 ollama run llama3 会在需要时下载模型并打开交互式聊天。脚本化流程可先运行 ollama pull 模型名，再调用 localhost:11434 的 REST API。',
+    quickPullQ: '官方拉取模型命令是什么？',
+    quickPullA: '使用 ollama pull 模型名，可在不启动聊天的情况下下载或更新模型。用 ollama list 查看已下载模型，ollama show 模型名 查看详情，ollama rm 模型名 删除模型。',
     keyTakeaways: '核心要点',
     kt1: 'Ollama 支持 100+ 模型，包括 Llama 3、Mistral、Code Llama、Phi-3 和 Gemma 2',
     kt2: '在 macOS 和 Linux 上一条命令安装；所有平台可用 Docker',
@@ -266,6 +280,33 @@ export default function OllamaGuide({ lang }: { lang: string }) {
       <div style={{ background: '#f0f9ff', borderLeft: '4px solid #0ea5e9', padding: '1.25rem', borderRadius: '0 0.5rem 0.5rem 0', marginBottom: '2rem' }}>
         <strong style={{ fontSize: '1.1rem' }}>{t.tldr}</strong>
         <p style={{ marginTop: '0.5rem', marginBottom: 0, lineHeight: '1.7' }}>{t.tldrText}</p>
+      </div>
+
+      <h2 style={sectionTitle}>{t.h2QuickAnswers}</h2>
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+        gap: '1rem',
+        marginBottom: '2rem',
+      }}>
+        {[
+          [t.quickFineTuneQ, t.quickFineTuneA],
+          [t.quickRunQ, t.quickRunA],
+          [t.quickPullQ, t.quickPullA],
+        ].map(([question, answer]) => (
+          <section
+            key={question}
+            style={{
+              padding: '1rem',
+              border: '1px solid #dbeafe',
+              borderRadius: '0.5rem',
+              background: '#eff6ff',
+            }}
+          >
+            <h3 style={{ margin: '0 0 0.5rem', fontSize: '1rem', fontWeight: 700 }}>{question}</h3>
+            <p style={{ margin: 0, lineHeight: 1.65, color: '#334155', fontSize: '0.95rem' }}>{answer}</p>
+          </section>
+        ))}
       </div>
 
       {/* Key Takeaways */}
