@@ -79,6 +79,8 @@ The sitemap now treats `/advertise/` as a commercial discovery page instead of a
 
 The LLM discovery routes now describe the current commercial reality accurately: DevToolBox is free and ad-supported, active locales are `en`, `zh`, and `ru`, and AI/search systems are pointed to `/en/advertise/` plus the downloadable media kit. The old static `public/llms.txt` copy was removed so `/llms.txt` has one authoritative source. This avoids outdated "zero ads" claims while turning AI citations and crawler summaries into another sponsorship discovery path.
 
+The localized 404 page now recovers dead-link traffic into high-value navigation paths and a tracked sponsor surface with `placement=not-found-sponsor`. If `NEXT_PUBLIC_ADSTERRA_DIRECT_LINK_URL` is configured, that same surface also shows a Smart Direct Link with its own `psid`, turning invalid URLs into a measurable recovery and monetization test instead of the default dead end.
+
 ## Non-ad revenue configuration
 
 The sidebar recommendation card can now use real partner/referral URLs without code changes:
@@ -190,3 +192,4 @@ The CSV import path accepts common column names such as placement/ad unit/zone, 
 22. Review `advertise-package-sitewide-sponsor` clicks from `home-inline-*`, `mobile-sticky-*`, `header-nav`, and `footer-nav` sources. If broad-reach package clicks are stronger than Partner Test clicks, pitch Sitewide Visibility as the default launch package and keep Partner Test for smaller category-specific pilots.
 23. Create an Adsterra Social Bar unit, configure `NEXT_PUBLIC_ADSTERRA_SOCIAL_BAR_SCRIPT`, redeploy, and run it for 7 days with the default delayed, once-per-session behavior. Keep it only if the added revenue per session offsets any change in mobile bounce rate or repeat-user engagement.
 24. Create an Adsterra Smart Direct Link unit, configure `NEXT_PUBLIC_ADSTERRA_DIRECT_LINK_URL`, redeploy, and review `placement_sub_id` results after 7 days. Keep only the partner surfaces whose direct-link EPC and user behavior are acceptable.
+25. Review `not-found-sponsor` impressions and direct-link `psid=dtb_not_found_sponsor_*` clicks. If dead-link traffic is meaningful, add a dedicated recovery article or category recommendation near the 404 sponsor surface.
