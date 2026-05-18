@@ -11,7 +11,7 @@ Last updated: 2026-05-18
   - Tool sidebar rectangle iframe: `NEXT_PUBLIC_ADSTERRA_SIDEBAR_KEY`.
   - Bottom native banner is injected client-side via `NEXT_PUBLIC_ADSTERRA_NATIVE_SCRIPT` and `NEXT_PUBLIC_ADSTERRA_NATIVE_KEY`.
 - Former AdSense slots are disabled; the remaining AdSense script has been removed from the layout.
-- `ads.txt` exists and now declares `OWNERDOMAIN=viadreams.cc`, but the exact Adsterra seller line still needs to be copied from the Adsterra dashboard.
+- `/ads.txt` is served by `src/app/ads.txt/route.ts`. It declares `OWNERDOMAIN=viadreams.cc` and can inject the exact Adsterra seller line from `ADSTERRA_ADS_TXT_SELLER_LINE`; that env value still needs to be copied from the Adsterra dashboard.
 
 ## Revenue levers
 
@@ -146,7 +146,7 @@ Clicks are sent to Google Analytics as `monetization_click` with `monetization_t
 Run the API report after generating an Adsterra Publisher API token:
 
 ```bash
-npm run adsterra:readiness -- --vercel-scope=arenas-projects-ac293cdb
+npm run adsterra:readiness -- --vercel-scope=arenas-projects-ac293cdb --site-url=https://viadreams.cc
 ADSTERRA_API_KEY=... npm run adsterra:report -- stats --days=7 --group-by=placement
 ADSTERRA_API_KEY=... npm run adsterra:report -- stats --days=7 --group-by=country
 ADSTERRA_API_KEY=... npm run adsterra:report -- stats --days=7 --group-by=placement_sub_id
@@ -173,13 +173,13 @@ npm run adsterra:report -- recommend --placements-file=exports/placements.csv --
 
 The CSV import path accepts common column names such as placement/ad unit/zone, country/geo, impressions/views/loads, clicks, CTR, CPM/eCPM, revenue/profit/earnings, and prints the same scale/review recommendations as the API flow.
 
-The `adsterra:readiness` command checks local and optional Vercel environment readiness without printing secret values. It reports whether the active Adsterra ad unit env vars are present, whether high-impact experiments such as Smart Direct Link / mobile sticky / Social Bar are configured, whether `public/ads.txt` still has the placeholder seller line, whether an API token or CSV export is available for a real revenue goal check, and a prioritized next-action list with the exact Vercel env commands to run after creating the missing Adsterra units.
+The `adsterra:readiness` command checks local, optional Vercel environment, and optional live-site readiness without printing secret values. It reports whether the active Adsterra ad unit env vars are present, whether high-impact experiments such as Smart Direct Link / mobile sticky / Social Bar are configured, whether `/ads.txt` still lacks the seller line env value or live seller line, whether an API token or CSV export is available for a real revenue goal check, and a prioritized next-action list with the exact Vercel env commands to run after creating the missing Adsterra units.
 
 The `adsterra:goal` command is the revenue completion gate. It prints PASS only when the measured average daily Adsterra revenue is at least the target, and exits non-zero when the period is below target so deployment or optimization work is not mistaken for verified revenue.
 
 ## Next experiments
 
-1. Fill the exact Adsterra `ads.txt` seller line from the dashboard.
+1. Fill the exact Adsterra `ads.txt` seller line from the dashboard by setting `ADSTERRA_ADS_TXT_SELLER_LINE` in Vercel production env and redeploying.
 2. Create separate Adsterra placements for tool top, tool mid, tool bottom, blog top, blog article mid, and blog article bottom.
 3. Create a 320x50 mobile banner in Adsterra and test it with `NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_KEY`. Watch mobile bounce rate and revenue/session for at least 7 days.
 4. Replace generic affiliate links with real partner/referral links and track clicks by category.

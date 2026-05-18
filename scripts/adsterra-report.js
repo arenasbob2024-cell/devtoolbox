@@ -65,6 +65,7 @@ Options for recommend:
 Options for readiness:
   --env-file=.env.local     Env file to inspect in addition to process env.
   --vercel-scope=SLUG       Also inspect Vercel env var names via vercel env ls.
+  --site-url=https://...    Also fetch and verify the live /ads.txt response.
   --json                   Print machine-readable readiness result.
 `;
 
@@ -301,7 +302,8 @@ function parseVercelEnvNames(output) {
     const name = match[1];
     if (
       name.startsWith('NEXT_PUBLIC_ADSTERRA_') ||
-      name === 'ADSTERRA_API_KEY'
+      name === 'ADSTERRA_API_KEY' ||
+      name === 'ADSTERRA_ADS_TXT_SELLER_LINE'
     ) {
       names.add(name);
     }
@@ -345,6 +347,59 @@ async function loadVercelEnvPresence(scope) {
     return {
       enabled: true,
       names: [],
+      error: error.message || String(error),
+    };
+  }
+}
+
+async function loadLiveAdsTxt(siteUrl) {
+  if (!siteUrl) {
+    return {
+      enabled: false,
+      url: '',
+      text: '',
+      error: '',
+    };
+  }
+
+  let url;
+  try {
+    url = new URL('/ads.txt', siteUrl).toString();
+  } catch {
+    return {
+      enabled: true,
+      url: siteUrl,
+      text: '',
+      error: `Invalid site URL: ${siteUrl}`,
+    };
+  }
+
+  try {
+    const response = await fetch(url, {
+      headers: { Accept: 'text/plain' },
+    });
+    const text = await response.text();
+
+    if (!response.ok) {
+      return {
+        enabled: true,
+        url,
+        text,
+        error: `HTTP ${response.status}`,
+      };
+    }
+
+    return {
+      enabled: true,
+      url,
+      text,
+      error: '',
+    };
+  } catch (error) {
+    return {
+      enabled: true,
+      url,
+      text: '',
       error: error.message || String(error),
     };
   }
@@ -438,10 +493,13 @@ function buildReadinessActions(report) {
     actions.push({
       priority: 'P0',
       title: 'Fill the exact Adsterra ads.txt seller line',
-      reason: 'A missing seller line can reduce demand trust and fill. Copy the exact line from the Adsterra publisher dashboard.',
+      reason: 'A missing seller line can reduce demand trust and fill. Copy the exact line from the Adsterra publisher dashboard into Vercel env.',
       commands: [
-        'Edit public/ads.txt and replace the placeholder with the Adsterra seller line',
-        'git add public/ads.txt && git commit -m "Add Adsterra seller line" && git push origin main',
+        vercelEnvCommand(report, 'ADSTERRA_ADS_TXT_SELLER_LINE'),
+        'git commit --allow-empty -m "Redeploy with Adsterra ads.txt seller line" && git push origin main',
+        report.vercelEnv.scope
+          ? `npm run adsterra:readiness -- --vercel-scope=${report.vercelEnv.scope} --site-url=https://viadreams.cc`
+          : 'npm run adsterra:readiness -- --site-url=https://viadreams.cc',
       ],
     });
   }
@@ -538,16 +596,21 @@ function buildReadinessActions(report) {
 async function buildReadinessReport(args) {
   const envFile = args['env-file'] || '.env.local';
   const vercelScope = args['vercel-scope'] || args.scope || '';
+  const siteUrl = args['site-url'] || args.site || '';
   const [
     { text: envFileText, path: envFilePath },
     { text: adsTxtText, path: adsTxtPath },
+    { text: adsTxtRouteText, path: adsTxtRoutePath },
     csvFiles,
     vercelEnv,
+    liveAdsTxt,
   ] = await Promise.all([
     readOptionalTextFile(envFile),
     readOptionalTextFile('public/ads.txt'),
+    readOptionalTextFile('src/app/ads.txt/route.ts'),
     listOptionalCsvFiles('exports'),
     loadVercelEnvPresence(vercelScope),
+    loadLiveAdsTxt(siteUrl),
   ]);
   const fileEnv = parseEnvFileText(envFileText);
   const vercelEnvPresence = Object.fromEntries(
@@ -564,9 +627,16 @@ async function buildReadinessReport(args) {
   const verificationMissing = envGroups
     .filter(group => group.severity === 'verification')
     .flatMap(group => group.checks.filter(check => !check.present).map(check => check.name));
-  const hasAdsterraSellerLine = /^adsterra\.com\s*,\s*(?!ADSTERRA_PUBLISHER_ID_PLACEHOLDER\b)[^,\s#]+,\s*DIRECT\b/im.test(adsTxtText);
-  const hasAdsTxtPlaceholder = /ADSTERRA_PUBLISHER_ID_PLACEHOLDER/.test(adsTxtText);
-  const hasOwnerDomain = /^OWNERDOMAIN=viadreams\.cc\s*$/im.test(adsTxtText);
+  const adsterraSellerLinePattern = /^adsterra\.com\s*,\s*(?!ADSTERRA_PUBLISHER_ID_PLACEHOLDER\b)[^,\s#]+,\s*DIRECT\b/im;
+  const adsTxtEnvLine = envValue(env, 'ADSTERRA_ADS_TXT_SELLER_LINE');
+  const adsTxtSourceText = [adsTxtText, adsTxtRouteText, adsTxtEnvLine, liveAdsTxt.text].join('\n');
+  const hasAdsterraSellerLine = adsterraSellerLinePattern.test(adsTxtText) ||
+    adsterraSellerLinePattern.test(adsTxtEnvLine) ||
+    adsterraSellerLinePattern.test(liveAdsTxt.text);
+  const hasAdsTxtPlaceholder = !adsTxtEnvLine &&
+    /ADSTERRA_PUBLISHER_ID_PLACEHOLDER/.test(adsTxtSourceText);
+  const hasOwnerDomain = /^OWNERDOMAIN=viadreams\.cc\s*$/im.test(adsTxtSourceText) ||
+    /OWNER_DOMAIN\s*=\s*['"]viadreams\.cc['"]/.test(adsTxtRouteText);
   const revenueCsvFiles = csvFiles.filter(file => /adsterra|daily|placement|country|revenue/i.test(file));
   const hasRevenueProofSource = Boolean(envValue(env, 'ADSTERRA_API_KEY')) || revenueCsvFiles.length > 0;
   const warnings = [
@@ -575,7 +645,7 @@ async function buildReadinessReport(args) {
   ];
 
   if (!hasAdsterraSellerLine) {
-    warnings.push('public/ads.txt does not contain the exact active Adsterra seller line.');
+    warnings.push('ads.txt does not contain the exact active Adsterra seller line.');
   }
 
   if (!hasRevenueProofSource) {
@@ -584,6 +654,10 @@ async function buildReadinessReport(args) {
 
   if (vercelEnv.error) {
     warnings.push(`Could not inspect Vercel env names: ${vercelEnv.error}`);
+  }
+
+  if (liveAdsTxt.error) {
+    warnings.push(`Could not verify live ads.txt: ${liveAdsTxt.error}`);
   }
 
   const status = requiredMissing.length > 0
@@ -607,9 +681,17 @@ async function buildReadinessReport(args) {
     adsTxt: {
       path: adsTxtPath,
       found: Boolean(adsTxtText),
+      routePath: adsTxtRoutePath,
+      routeFound: Boolean(adsTxtRouteText),
+      liveUrl: liveAdsTxt.url,
+      liveChecked: liveAdsTxt.enabled,
+      liveFound: Boolean(liveAdsTxt.text && !liveAdsTxt.error),
+      liveError: liveAdsTxt.error,
       hasOwnerDomain,
       hasAdsterraSellerLine,
       hasPlaceholder: hasAdsTxtPlaceholder,
+      envName: 'ADSTERRA_ADS_TXT_SELLER_LINE',
+      envPresent: Boolean(adsTxtEnvLine),
     },
     reports: {
       csvFiles: revenueCsvFiles,
@@ -642,7 +724,12 @@ function printReadinessReport(report) {
   }
 
   console.log('\nads.txt');
-  console.log(`  - ${report.adsTxt.found ? 'OK' : 'MISSING'} file: ${report.adsTxt.path}`);
+  console.log(`  - ${report.adsTxt.found ? 'OK static file' : report.adsTxt.routeFound ? 'OK no static file shadowing route' : 'MISSING static file'}: ${report.adsTxt.path}`);
+  console.log(`  - ${report.adsTxt.routeFound ? 'OK' : 'MISSING'} dynamic route: ${report.adsTxt.routePath}`);
+  if (report.adsTxt.liveChecked) {
+    console.log(`  - ${report.adsTxt.liveFound ? 'OK' : 'MISSING'} live response: ${report.adsTxt.liveUrl}${report.adsTxt.liveError ? ` (${report.adsTxt.liveError})` : ''}`);
+  }
+  console.log(`  - ${report.adsTxt.envPresent ? 'OK' : 'MISSING'} ${report.adsTxt.envName}`);
   console.log(`  - ${report.adsTxt.hasOwnerDomain ? 'OK' : 'MISSING'} OWNERDOMAIN=viadreams.cc`);
   console.log(`  - ${report.adsTxt.hasAdsterraSellerLine ? 'OK' : 'MISSING'} active Adsterra seller line`);
   if (report.adsTxt.hasPlaceholder) {

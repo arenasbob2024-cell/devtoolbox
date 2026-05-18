@@ -48,7 +48,7 @@
 - **Vercel 环境变量**:
   - `NEXT_PUBLIC_ADSTERRA_NATIVE_SCRIPT` = invoke.js URL
   - `NEXT_PUBLIC_ADSTERRA_NATIVE_KEY` = container key
-- **ads.txt**: `public/ads.txt` 占位文件已创建(invoke.js 加载方式不依赖 ads.txt)
+- **ads.txt**: `/ads.txt` 由 `src/app/ads.txt/route.ts` 提供，可通过 `ADSTERRA_ADS_TXT_SELLER_LINE` 注入 Adsterra 后台 seller line
 - **注意**: 中文用户(CN 大陆)可能因 GFW 阻断 profitablecpmratenetwork.com 而看到空广告位。中文流量 eCPM 通常较低($0.05-0.30)。建议先观察 1-2 周数据再决定是否补充百度联盟等其他网络
 
 ### SEO 优化详情（2026-04）
