@@ -6,6 +6,25 @@ const translations: Record<string, Record<string, string>> = {
     title: 'Tauri Guide 2026: Build Lightweight Cross-Platform Desktop Apps with Rust and Web Technologies',
     intro: 'Tauri is an open-source framework for building lightweight, secure, cross-platform desktop applications using a Rust backend and any web frontend. Unlike Electron, Tauri does not bundle Chromium or Node.js, resulting in dramatically smaller binaries (often under 5 MB), lower memory usage, and a stronger security model. With Tauri 2.0, the framework extends beyond the desktop to support iOS and Android, making it a compelling choice for developers who want native performance and web development flexibility.',
     tldr: 'Tauri is a Rust-powered framework for building cross-platform desktop apps with web frontends (React, Vue, Svelte, SolidJS). It produces binaries under 5 MB, uses 50-80% less RAM than Electron, provides a granular permissions-based security model, and supports mobile platforms (iOS/Android) in Tauri 2.0. The Rust backend handles system APIs while the frontend renders in the OS native webview.',
+    iosQuickTitle: 'Quick Answers: Tauri iOS Support in 2026',
+    iosQuickIntro: 'Yes, Tauri supports iOS in Tauri 2. The practical workflow is still native-platform aware: use macOS with Xcode, initialize the iOS project with the Tauri CLI, test in Simulator or on a signed device, and use Apple signing plus App Store Connect for release builds.',
+    iosQ1: 'Does Tauri support iOS apps?',
+    iosA1: 'Yes. Tauri 2 supports iOS and Android alongside desktop targets. The iOS app uses WKWebView for the web frontend and Rust for backend commands, plugins, and native integration.',
+    iosQ2: 'What do I need to build a Tauri iOS app?',
+    iosA2: 'You need macOS, the full Xcode app, Rust iOS targets, CocoaPods, Node or another supported package manager, and a Tauri 2 project initialized with `npm run tauri ios init`.',
+    iosQ3: 'Can a Tauri iOS app be published to the App Store?',
+    iosA3: 'Yes. For App Store distribution you need an Apple Developer account, a matching bundle identifier, iOS code signing, provisioning, and an App Store Connect upload flow such as `npm run tauri ios build -- --export-method app-store-connect`.',
+    iosQ4: 'Should I choose Tauri mobile instead of React Native or Flutter?',
+    iosA4: 'Choose Tauri mobile when you already want a web UI, Rust system logic, strong desktop parity, and small native bundles. React Native and Flutter still have larger mobile-specific component ecosystems for apps that are primarily mobile-first.',
+    iosMatrixPlatform: 'Platform',
+    iosMatrixWebview: 'Webview',
+    iosMatrixCommands: 'Core CLI commands',
+    iosMatrixRequirements: 'Main requirements',
+    iosPlatformIos: 'iOS',
+    iosPlatformAndroid: 'Android',
+    iosIosRequirements: 'macOS, Xcode, Rust iOS targets, CocoaPods, Apple signing for devices or App Store',
+    iosAndroidRequirements: 'Android Studio, SDK platform tools, NDK, Java home, Android Rust targets',
+    iosWorkflowTitle: 'Tauri iOS CLI Workflow',
     keyTakeaway1: 'Tauri apps are dramatically smaller than Electron apps because they use the OS native webview instead of bundling Chromium, often producing binaries under 5 MB.',
     keyTakeaway2: 'The Rust backend provides memory safety, high performance, and direct access to system APIs without garbage collection overhead.',
     keyTakeaway3: 'Tauri 2.0 introduces mobile support for iOS and Android, allowing a single codebase to target desktop and mobile platforms.',
@@ -91,7 +110,7 @@ const translations: Record<string, Record<string, string>> = {
 
     h2Mobile: 'Mobile Support: iOS and Android',
     mobileDesc: 'Tauri 2.0 brings first-class mobile support, allowing you to build iOS and Android apps from the same codebase used for desktop. The mobile runtime uses WKWebView on iOS and Android WebView, with platform-specific code written in Swift and Kotlin respectively.',
-    mobileDesc2: 'Mobile apps access native device features like the camera, GPS, biometrics, and push notifications through Tauri plugins. The development workflow includes hot-reload support for both platforms using the standard iOS Simulator and Android Emulator.',
+    mobileDesc2: 'Mobile apps access native device features like the camera, GPS, biometrics, and push notifications through Tauri plugins. The development workflow can use the iOS Simulator and Android Emulator, but release builds still require each platform toolchain: Xcode and signing for iOS, Android Studio and signing for Android.',
 
     h2Frontend: 'Frontend Framework Integration',
     frontendDesc: 'Tauri is frontend-agnostic and works with any framework that produces HTML, CSS, and JavaScript. The most popular choices are React, Vue, Svelte, and SolidJS. Each can be scaffolded directly through create-tauri-app.',
@@ -117,7 +136,7 @@ const translations: Record<string, Record<string, string>> = {
     faq4Q: 'Which frontend frameworks work with Tauri?',
     faq4A: 'Tauri works with any frontend framework that outputs HTML, CSS, and JavaScript. Officially supported scaffolding templates exist for React, Vue, Svelte, SolidJS, Angular, Preact, vanilla JavaScript, and vanilla TypeScript. You can also use meta-frameworks like Next.js, Nuxt, or SvelteKit in static export mode.',
     faq5Q: 'Does Tauri support mobile apps?',
-    faq5A: 'Yes. Tauri 2.0 introduced first-class support for iOS and Android. You can build mobile apps from the same codebase used for desktop, using WKWebView on iOS and Android WebView. Platform-specific code is written in Swift and Kotlin, and native device features are accessed through Tauri plugins.',
+    faq5A: 'Yes. Tauri 2.0 introduced first-class support for iOS and Android. You can build mobile apps from the same codebase used for desktop, using WKWebView on iOS and Android WebView. For iOS you need macOS, Xcode, Rust iOS targets, and Apple signing when testing on devices or publishing.',
     faq6Q: 'How does Tauri handle auto-updates?',
     faq6A: 'Tauri provides a built-in updater plugin that checks a remote endpoint for new versions. It supports signature verification to prevent tampered updates, differential updates to minimize download size, and custom update endpoints. You configure the update URL and public key in tauri.conf.json.',
     faq7Q: 'Is Tauri production-ready?',
@@ -129,6 +148,25 @@ const translations: Record<string, Record<string, string>> = {
     title: 'Tauri 指南 2026：使用 Rust 和 Web 技术构建轻量级跨平台桌面应用',
     intro: 'Tauri 是一个开源框架，使用 Rust 后端和任意 Web 前端构建轻量、安全的跨平台桌面应用。与 Electron 不同，Tauri 不捆绑 Chromium 或 Node.js，因此二进制文件极小（通常低于 5 MB）、内存占用更低、安全模型更强。Tauri 2.0 将支持扩展到 iOS 和 Android，使其成为追求原生性能与 Web 开发灵活性的开发者的理想选择。',
     tldr: 'Tauri 是一个由 Rust 驱动的跨平台桌面应用框架，支持 React、Vue、Svelte、SolidJS 等 Web 前端。二进制文件低于 5 MB，内存占用比 Electron 少 50-80%，具有细粒度权限安全模型，Tauri 2.0 支持 iOS/Android 移动端。Rust 后端处理系统 API，前端在操作系统原生 webview 中渲染。',
+    iosQuickTitle: '快速回答：Tauri 2026 年是否支持 iOS？',
+    iosQuickIntro: '支持。Tauri 2 支持 iOS，但实际工作流仍依赖 Apple 原生工具链：需要 macOS 和完整 Xcode，先用 Tauri CLI 初始化 iOS 项目，在模拟器或已签名设备上测试，发布时还需要 Apple 签名和 App Store Connect。',
+    iosQ1: 'Tauri 支持 iOS 应用吗？',
+    iosA1: '支持。Tauri 2 同时支持 iOS、Android 和桌面目标。iOS 应用使用 WKWebView 渲染 Web 前端，Rust 负责后端命令、插件和原生集成。',
+    iosQ2: '构建 Tauri iOS 应用需要什么？',
+    iosA2: '需要 macOS、完整 Xcode、Rust iOS targets、CocoaPods、Node 或其他受支持包管理器，以及通过 `npm run tauri ios init` 初始化过的 Tauri 2 项目。',
+    iosQ3: 'Tauri iOS 应用可以发布到 App Store 吗？',
+    iosA3: '可以。发布到 App Store 需要 Apple Developer 账号、匹配的 Bundle ID、iOS 代码签名、provisioning profile，以及类似 `npm run tauri ios build -- --export-method app-store-connect` 的 App Store Connect 构建上传流程。',
+    iosQ4: '应该选择 Tauri mobile 还是 React Native / Flutter？',
+    iosA4: '如果你已有 Web UI、需要 Rust 系统逻辑、希望桌面和移动端共享更多代码并保持小体积，Tauri mobile 很合适。如果产品主要是移动端优先，React Native 和 Flutter 的移动组件生态仍更成熟。',
+    iosMatrixPlatform: '平台',
+    iosMatrixWebview: 'Webview',
+    iosMatrixCommands: '核心 CLI 命令',
+    iosMatrixRequirements: '主要要求',
+    iosPlatformIos: 'iOS',
+    iosPlatformAndroid: 'Android',
+    iosIosRequirements: 'macOS、Xcode、Rust iOS targets、CocoaPods；真机测试或上架需要 Apple 签名',
+    iosAndroidRequirements: 'Android Studio、SDK platform tools、NDK、JAVA_HOME、Android Rust targets',
+    iosWorkflowTitle: 'Tauri iOS CLI 工作流',
     keyTakeaway1: 'Tauri 应用远小于 Electron，因为它使用操作系统原生 webview 而非捆绑 Chromium，二进制文件通常低于 5 MB。',
     keyTakeaway2: 'Rust 后端提供内存安全、高性能和直接系统 API 访问，无垃圾回收开销。',
     keyTakeaway3: 'Tauri 2.0 引入了 iOS 和 Android 移动端支持，单一代码库可同时覆盖桌面和移动平台。',
@@ -214,7 +252,7 @@ const translations: Record<string, Record<string, string>> = {
 
     h2Mobile: '移动端支持：iOS 和 Android',
     mobileDesc: 'Tauri 2.0 带来一等移动端支持，可以从桌面同一代码库构建 iOS 和 Android 应用。移动运行时在 iOS 上使用 WKWebView，Android 上使用 Android WebView，平台特定代码分别用 Swift 和 Kotlin 编写。',
-    mobileDesc2: '移动应用通过 Tauri 插件访问相机、GPS、生物识别和推送通知等原生设备功能。开发工作流支持 iOS 模拟器和 Android 模拟器的热重载。',
+    mobileDesc2: '移动应用通过 Tauri 插件访问相机、GPS、生物识别和推送通知等原生设备功能。开发阶段可以使用 iOS 模拟器和 Android 模拟器，但发布构建仍需要各平台原生工具链：iOS 需要 Xcode 和签名，Android 需要 Android Studio 和签名。',
 
     h2Frontend: '前端框架集成',
     frontendDesc: 'Tauri 与前端框架无关，支持任何输出 HTML、CSS 和 JavaScript 的框架。最流行的选择是 React、Vue、Svelte 和 SolidJS，均可通过 create-tauri-app 直接脚手架。',
@@ -240,7 +278,7 @@ const translations: Record<string, Record<string, string>> = {
     faq4Q: 'Tauri 支持哪些前端框架？',
     faq4A: 'Tauri 支持任何输出 HTML/CSS/JS 的前端框架。官方脚手架模板包括 React、Vue、Svelte、SolidJS、Angular、Preact、原生 JS 和 TypeScript。也可以使用 Next.js、Nuxt 等元框架的静态导出模式。',
     faq5Q: 'Tauri 支持移动端吗？',
-    faq5A: '支持。Tauri 2.0 引入了 iOS 和 Android 一等支持，可从同一代码库构建移动应用，通过 Tauri 插件访问原生设备功能。',
+    faq5A: '支持。Tauri 2.0 引入了 iOS 和 Android 一等支持，可从同一代码库构建移动应用。iOS 使用 WKWebView，构建需要 macOS、Xcode、Rust iOS targets；真机测试或发布还需要 Apple 签名。',
     faq6Q: 'Tauri 如何处理自动更新？',
     faq6A: 'Tauri 内置 updater 插件检查远程端点的新版本，支持签名验证、差量更新和自定义更新端点。在 tauri.conf.json 中配置更新 URL 和公钥。',
     faq7Q: 'Tauri 可以用于生产吗？',
@@ -252,6 +290,26 @@ const translations: Record<string, Record<string, string>> = {
 
 export default function TauriGuide({ lang }: { lang: string }) {
   const t = translations[lang] || translations.en;
+  const iosAnswerCards = [
+    { question: t.iosQ1, answer: t.iosA1 },
+    { question: t.iosQ2, answer: t.iosA2 },
+    { question: t.iosQ3, answer: t.iosA3 },
+    { question: t.iosQ4, answer: t.iosA4 },
+  ];
+  const iosMatrixRows = [
+    {
+      platform: t.iosPlatformIos,
+      webview: 'WKWebView',
+      commands: 'tauri ios init / dev / build',
+      requirements: t.iosIosRequirements,
+    },
+    {
+      platform: t.iosPlatformAndroid,
+      webview: 'Android WebView',
+      commands: 'tauri android init / dev / build',
+      requirements: t.iosAndroidRequirements,
+    },
+  ];
 
   const faqSchema = {
     '@context': 'https://schema.org',
@@ -265,6 +323,11 @@ export default function TauriGuide({ lang }: { lang: string }) {
       { '@type': 'Question', name: t.faq6Q, acceptedAnswer: { '@type': 'Answer', text: t.faq6A } },
       { '@type': 'Question', name: t.faq7Q, acceptedAnswer: { '@type': 'Answer', text: t.faq7A } },
       { '@type': 'Question', name: t.faq8Q, acceptedAnswer: { '@type': 'Answer', text: t.faq8A } },
+      ...iosAnswerCards.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: { '@type': 'Answer', text: item.answer },
+      })),
     ],
   };
 
@@ -275,6 +338,7 @@ export default function TauriGuide({ lang }: { lang: string }) {
   const listItem: React.CSSProperties = { marginBottom: '0.5rem', lineHeight: '1.6' };
   const tableCell: React.CSSProperties = { padding: '0.75rem 1rem', borderBottom: '1px solid #e2e8f0', textAlign: 'left' as const };
   const tableHeader: React.CSSProperties = { ...tableCell, fontWeight: 600, backgroundColor: '#f8fafc' };
+  const answerCard: React.CSSProperties = { background: '#ffffff', border: '1px solid #bae6fd', borderRadius: '0.5rem', padding: '1rem' };
 
   return (
     <article style={{ maxWidth: 'none' }}>
@@ -287,6 +351,55 @@ export default function TauriGuide({ lang }: { lang: string }) {
         <strong style={{ fontSize: '1.1rem' }}>TL;DR</strong>
         <p style={{ marginTop: '0.5rem', lineHeight: '1.7' }}>{t.tldr}</p>
       </div>
+
+      <section style={{ background: '#ecfeff', border: '1px solid #67e8f9', padding: '1.5rem', borderRadius: '0.75rem', marginBottom: '2rem' }}>
+        <h2 style={{ fontSize: '1.35rem', fontWeight: 700, marginTop: 0, marginBottom: '0.75rem' }}>{t.iosQuickTitle}</h2>
+        <p style={para}>{t.iosQuickIntro}</p>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.75rem', marginBottom: '1.25rem' }}>
+          {iosAnswerCards.map((item) => (
+            <div key={item.question} style={answerCard}>
+              <strong style={{ display: 'block', marginBottom: '0.5rem', color: '#0f172a' }}>{item.question}</strong>
+              <p style={{ margin: 0, color: '#334155', lineHeight: 1.6 }}>{item.answer}</p>
+            </div>
+          ))}
+        </div>
+        <div style={{ overflowX: 'auto', marginBottom: '1.25rem' }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse', border: '1px solid #bae6fd', background: '#fff' }}>
+            <thead>
+              <tr>
+                <th style={tableHeader}>{t.iosMatrixPlatform}</th>
+                <th style={tableHeader}>{t.iosMatrixWebview}</th>
+                <th style={tableHeader}>{t.iosMatrixCommands}</th>
+                <th style={tableHeader}>{t.iosMatrixRequirements}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {iosMatrixRows.map((row) => (
+                <tr key={row.platform}>
+                  <td style={tableCell}>{row.platform}</td>
+                  <td style={tableCell}>{row.webview}</td>
+                  <td style={tableCell}><code>{row.commands}</code></td>
+                  <td style={tableCell}>{row.requirements}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <strong style={{ display: 'block', marginBottom: '0.5rem' }}>{t.iosWorkflowTitle}</strong>
+        <pre style={{ ...codeBlock, marginBottom: 0 }}><code>{'# iOS prerequisites on macOS\n'
+          + 'rustup target add aarch64-apple-ios x86_64-apple-ios aarch64-apple-ios-sim\n'
+          + 'brew install cocoapods\n'
+          + '\n'
+          + '# Initialize and run iOS\n'
+          + 'npm run tauri ios init\n'
+          + 'npm run tauri ios dev\n'
+          + '\n'
+          + '# Build for App Store Connect\n'
+          + 'npm run tauri ios build -- --export-method app-store-connect\n'
+          + '\n'
+          + '# Open the generated Xcode project when you need Apple signing, entitlements, or archive settings\n'
+          + 'npm run tauri ios build -- --open'}</code></pre>
+      </section>
 
       {/* Key Takeaways */}
       <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', padding: '1.5rem', borderRadius: '0.5rem', marginBottom: '2rem' }}>
