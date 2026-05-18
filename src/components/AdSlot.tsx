@@ -46,6 +46,32 @@ const AD_KEYS: Record<AdSlotPlacement, string | undefined> = {
   'category-bottom': process.env.NEXT_PUBLIC_ADSTERRA_CATEGORY_BOTTOM_KEY,
 };
 
+const GLOBAL_LEADERBOARD_KEY = process.env.NEXT_PUBLIC_ADSTERRA_TOP_KEY;
+
+const GLOBAL_LEADERBOARD_FALLBACK_PLACEMENTS = new Set<AdSlotPlacement>([
+  'home-inline',
+  'tool-mid',
+  'tool-bottom',
+  'tools-index-bottom',
+  'blog-list-bottom',
+  'blog-article-mid',
+  'blog-article-bottom',
+  'category-bottom',
+]);
+
+function getAdKey(placement: AdSlotPlacement | undefined, size: AdSlotSize) {
+  if (!placement) return undefined;
+
+  const placementKey = AD_KEYS[placement];
+  if (placementKey) return placementKey;
+
+  if (size === 'leaderboard' && GLOBAL_LEADERBOARD_FALLBACK_PLACEMENTS.has(placement)) {
+    return GLOBAL_LEADERBOARD_KEY;
+  }
+
+  return undefined;
+}
+
 function getDimensions(size: AdSlotSize) {
   if (size === 'rectangle') {
     return { width: 300, height: 250 };
@@ -61,7 +87,7 @@ export default function AdSlot({
   style,
   fallbackToSponsor = false,
 }: AdSlotProps) {
-  const adKey = placement ? AD_KEYS[placement] : undefined;
+  const adKey = getAdKey(placement, size);
 
   if (!adKey) {
     if (!fallbackToSponsor || !placement) return null;

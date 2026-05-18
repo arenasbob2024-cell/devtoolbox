@@ -46,6 +46,8 @@ The codebase now supports separate Adsterra keys for high-signal placements:
 
 Create each as a separate Adsterra placement so reports can show RPM by location. Do not reuse the same key everywhere unless you only need aggregate impressions.
 
+To avoid waiting on every dedicated unit before revenue ramps, lower-friction leaderboard slots temporarily reuse `NEXT_PUBLIC_ADSTERRA_TOP_KEY` when their placement-specific key is missing. This applies to `home-inline`, `tool-mid`, `tool-bottom`, `tools-index-bottom`, `blog-list-bottom`, `blog-article-mid`, `blog-article-bottom`, and `category-bottom`. Create dedicated Adsterra units for winners as soon as they show meaningful impressions, then set the placement-specific env var to restore clean RPM reporting.
+
 The homepage, tools index, category pages, blog listing, and blog article pages include a direct `/advertise` sponsor CTA. These links pass `source` and `category` query parameters into the advertise page, and the default sponsorship email includes that context in the inquiry body. This captures commercial interest even before a paid ad network slot is configured for that surface.
 
 The homepage sponsor surface is now a configurable Adsterra placement. Set `NEXT_PUBLIC_ADSTERRA_HOME_INLINE_KEY` to run a dedicated homepage inline banner below the popular tools block. If the key is missing or the iframe appears empty, the same surface falls back to a direct sponsorship CTA through `home-inline-ad-fallback` or `home-inline-ad-empty`, keeping homepage traffic measurable instead of mixing it into only the global top/bottom placements.
