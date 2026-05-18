@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
 import { tools, categories } from '@/lib/tools';
 import { useLang } from '@/i18n/LangContext';
 import SponsorCta from '@/components/SponsorCta';
@@ -298,37 +298,50 @@ export default function HomePageClient() {
         gap: 16,
         marginTop: 20,
       }}>
-        {filteredTools.map(tool => {
+        {filteredTools.map((tool, index) => {
           const toolDict = t[tool.id as keyof typeof t];
           return (
-            <Link key={tool.id} href={`/${lang}${tool.path}`} className="tool-card">
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: 14 }}>
-                <div style={{
-                  width: 44,
-                  height: 44,
-                  borderRadius: 10,
-                  background: 'linear-gradient(135deg, rgba(59,130,246,0.15), rgba(139,92,246,0.15))',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: 16,
-                  fontWeight: 800,
-                  fontFamily: 'monospace',
-                  flexShrink: 0,
-                  color: 'var(--accent-blue)',
-                }}>
-                  {tool.icon}
+            <Fragment key={tool.id}>
+              {index === 12 && !normalizedSearch && filteredTools.length > 18 && (
+                <div key="home-tools-grid-ad" style={{ gridColumn: '1 / -1' }}>
+                  <AdSlot
+                    size="leaderboard"
+                    placement="home-tools-grid"
+                    category={activeCategory === 'all' ? 'home' : activeCategory}
+                    fallbackToSponsor
+                    style={{ marginTop: 4, marginBottom: 4 }}
+                  />
                 </div>
-                <div>
-                  <h3 style={{ fontSize: 15, fontWeight: 700, marginBottom: 4, color: 'var(--text-primary)' }}>
-                    {toolDict?.name || tool.name}
-                  </h3>
-                  <p style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.5, margin: 0 }}>
-                    {toolDict?.description || tool.description}
-                  </p>
+              )}
+              <Link href={`/${lang}${tool.path}`} className="tool-card">
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: 14 }}>
+                  <div style={{
+                    width: 44,
+                    height: 44,
+                    borderRadius: 10,
+                    background: 'linear-gradient(135deg, rgba(59,130,246,0.15), rgba(139,92,246,0.15))',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: 16,
+                    fontWeight: 800,
+                    fontFamily: 'monospace',
+                    flexShrink: 0,
+                    color: 'var(--accent-blue)',
+                  }}>
+                    {tool.icon}
+                  </div>
+                  <div>
+                    <h3 style={{ fontSize: 15, fontWeight: 700, marginBottom: 4, color: 'var(--text-primary)' }}>
+                      {toolDict?.name || tool.name}
+                    </h3>
+                    <p style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                      {toolDict?.description || tool.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </Fragment>
           );
         })}
       </div>

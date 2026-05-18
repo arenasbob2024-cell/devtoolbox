@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Fragment } from 'react';
 import { notFound } from 'next/navigation';
 import { tools, categories } from '@/lib/tools';
 import { getDictionary } from '@/i18n/getDictionary';
@@ -95,72 +96,83 @@ export default async function ToolsIndexPage({ params }: PageProps) {
       />
 
       {/* Category Sections */}
-      {toolsByCategory.map((cat) => (
-        <section key={cat.id} style={{ marginBottom: 48 }}>
-          <h2 style={{
-            fontSize: 24,
-            fontWeight: 700,
-            marginBottom: 20,
-            display: 'flex',
-            alignItems: 'center',
-            gap: 10,
-          }}>
-            <span>{cat.icon}</span>
-            <span>{cat.localizedName}</span>
-            <span style={{
-              fontSize: 13,
-              fontWeight: 500,
-              color: 'var(--text-secondary)',
-              marginLeft: 4,
+      {toolsByCategory.map((cat, index) => (
+        <Fragment key={cat.id}>
+          <section style={{ marginBottom: 48 }}>
+            <h2 style={{
+              fontSize: 24,
+              fontWeight: 700,
+              marginBottom: 20,
+              display: 'flex',
+              alignItems: 'center',
+              gap: 10,
             }}>
-              ({cat.tools.length})
-            </span>
-          </h2>
+              <span>{cat.icon}</span>
+              <span>{cat.localizedName}</span>
+              <span style={{
+                fontSize: 13,
+                fontWeight: 500,
+                color: 'var(--text-secondary)',
+                marginLeft: 4,
+              }}>
+                ({cat.tools.length})
+              </span>
+            </h2>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-            gap: 16,
-          }}>
-            {cat.tools.map((tool) => {
-              const toolDict = (t as Record<string, { name?: string; description?: string }>)[tool.id];
-              return (
-                <Link
-                  key={tool.id}
-                  href={`/${lang}${tool.path}`}
-                  className="tool-card"
-                >
-                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: 14 }}>
-                    <div style={{
-                      width: 44,
-                      height: 44,
-                      borderRadius: 10,
-                      background: 'linear-gradient(135deg, rgba(59,130,246,0.15), rgba(139,92,246,0.15))',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: 16,
-                      fontWeight: 800,
-                      fontFamily: 'monospace',
-                      flexShrink: 0,
-                      color: 'var(--accent-blue)',
-                    }}>
-                      {tool.icon}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+              gap: 16,
+            }}>
+              {cat.tools.map((tool) => {
+                const toolDict = (t as Record<string, { name?: string; description?: string }>)[tool.id];
+                return (
+                  <Link
+                    key={tool.id}
+                    href={`/${lang}${tool.path}`}
+                    className="tool-card"
+                  >
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: 14 }}>
+                      <div style={{
+                        width: 44,
+                        height: 44,
+                        borderRadius: 10,
+                        background: 'linear-gradient(135deg, rgba(59,130,246,0.15), rgba(139,92,246,0.15))',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: 16,
+                        fontWeight: 800,
+                        fontFamily: 'monospace',
+                        flexShrink: 0,
+                        color: 'var(--accent-blue)',
+                      }}>
+                        {tool.icon}
+                      </div>
+                      <div>
+                        <h3 style={{ fontSize: 15, fontWeight: 700, marginBottom: 4, color: 'var(--text-primary)' }}>
+                          {toolDict?.name || tool.name}
+                        </h3>
+                        <p style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.5, margin: 0 }}>
+                          {toolDict?.description || tool.description}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 style={{ fontSize: 15, fontWeight: 700, marginBottom: 4, color: 'var(--text-primary)' }}>
-                        {toolDict?.name || tool.name}
-                      </h3>
-                      <p style={{ fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.5, margin: 0 }}>
-                        {toolDict?.description || tool.description}
-                      </p>
-                    </div>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-        </section>
+                  </Link>
+                );
+              })}
+            </div>
+          </section>
+          {index === 1 && (
+            <AdSlot
+              size="leaderboard"
+              placement="tools-index-mid"
+              category="tools-index"
+              fallbackToSponsor
+              style={{ marginTop: -12, marginBottom: 36 }}
+            />
+          )}
+        </Fragment>
       ))}
 
       <AdSlot

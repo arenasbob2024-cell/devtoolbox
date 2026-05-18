@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation';
+import { Fragment } from 'react';
 import { i18n, type Locale } from '@/i18n/config';
 import { getDictionary, getUIDictionary } from '@/i18n/getDictionary';
 import { LangProvider } from '@/i18n/LangContext';
@@ -314,26 +315,38 @@ export default async function CategoryPage({ params }: PageProps) {
 
         {/* Tools grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
-          {categoryTools.map(tool => {
+          {categoryTools.map((tool, index) => {
             const toolDict = dict.tools?.[tool.id];
             return (
-              <Link
-                key={tool.id}
-                href={`/${lang}/tools/${tool.id}`}
-                className="group block p-5 rounded-xl bg-gray-800/50 border border-gray-700/50 hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-200"
-              >
-                <div className="flex items-start gap-3">
-                  <span className="text-2xl flex-shrink-0">{tool.icon}</span>
-                  <div className="min-w-0">
-                    <h2 className="text-white font-medium group-hover:text-blue-400 transition-colors truncate">
-                      {toolDict?.name || tool.name}
-                    </h2>
-                    <p className="text-sm text-gray-400 mt-1 line-clamp-2">
-                      {toolDict?.description || tool.description}
-                    </p>
+              <Fragment key={tool.id}>
+                {index === 9 && categoryTools.length > 15 && (
+                  <div className="sm:col-span-2 lg:col-span-3">
+                    <AdSlot
+                      size="leaderboard"
+                      placement="category-mid"
+                      category={slug}
+                      fallbackToSponsor
+                      style={{ marginTop: 8, marginBottom: 8 }}
+                    />
                   </div>
-                </div>
-              </Link>
+                )}
+                <Link
+                  href={`/${lang}/tools/${tool.id}`}
+                  className="group block p-5 rounded-xl bg-gray-800/50 border border-gray-700/50 hover:border-blue-500/50 hover:bg-gray-800/80 transition-all duration-200"
+                >
+                  <div className="flex items-start gap-3">
+                    <span className="text-2xl flex-shrink-0">{tool.icon}</span>
+                    <div className="min-w-0">
+                      <h2 className="text-white font-medium group-hover:text-blue-400 transition-colors truncate">
+                        {toolDict?.name || tool.name}
+                      </h2>
+                      <p className="text-sm text-gray-400 mt-1 line-clamp-2">
+                        {toolDict?.description || tool.description}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              </Fragment>
             );
           })}
         </div>

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
+import { Fragment } from 'react';
 import { blogPosts, getLocalizedPost } from '@/data/blog-posts';
 import { useLang } from '@/i18n/LangContext';
 import { i18n, type Locale } from '@/i18n/config';
@@ -42,76 +43,86 @@ export default function BlogListPage() {
 
       {/* Articles */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: 24, marginTop: 24 }}>
-        {[...blogPosts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).map((rawPost) => {
+        {[...blogPosts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).map((rawPost, index) => {
           const post = getLocalizedPost(rawPost.slug, lang) || rawPost;
           return (
-            <Link
-              key={post.slug}
-              href={`/${lang}/blog/${post.slug}`}
-              style={{ textDecoration: 'none' }}
-            >
-              <article
-                style={{
-                  background: 'var(--bg-card)',
-                  border: '1px solid var(--border-color)',
-                  borderRadius: 12,
-                  padding: 28,
-                  transition: 'border-color 0.2s, transform 0.2s',
-                  cursor: 'pointer',
-                }}
-                onMouseEnter={e => {
-                  e.currentTarget.style.borderColor = 'var(--accent-blue)';
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.borderColor = 'var(--border-color)';
-                  e.currentTarget.style.transform = 'translateY(0)';
-                }}
+            <Fragment key={post.slug}>
+              {index === 6 && blogPosts.length > 12 && (
+                <AdSlot
+                  size="leaderboard"
+                  placement="blog-list-mid"
+                  category="blog"
+                  fallbackToSponsor
+                  style={{ marginTop: 4, marginBottom: 4 }}
+                />
+              )}
+              <Link
+                href={`/${lang}/blog/${post.slug}`}
+                style={{ textDecoration: 'none' }}
               >
-                <div style={{ display: 'flex', gap: 12, marginBottom: 12, fontSize: 13, color: 'var(--text-secondary)' }}>
-                  <time>{post.date}</time>
-                  <span>|</span>
-                  <span>{post.readingTime}</span>
-                </div>
-                <h2 style={{
-                  fontSize: 22,
-                  fontWeight: 700,
-                  color: 'var(--text-primary)',
-                  marginBottom: 10,
-                  lineHeight: 1.3,
-                }}>
-                  {post.title}
-                </h2>
-                <p style={{
-                  fontSize: 14,
-                  color: 'var(--text-secondary)',
-                  lineHeight: 1.7,
-                  marginBottom: 16,
-                }}>
-                  {post.description}
-                </p>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-                  {post.keywords.slice(0, 3).map(kw => (
-                    <span
-                      key={kw}
-                      style={{
-                        fontSize: 11,
-                        padding: '3px 10px',
-                        borderRadius: 20,
-                        background: 'rgba(59,130,246,0.1)',
-                        color: 'var(--accent-blue)',
-                        fontWeight: 600,
-                      }}
-                    >
-                      {kw}
-                    </span>
-                  ))}
-                </div>
-                <div style={{ marginTop: 16, fontSize: 14, color: 'var(--accent-blue)', fontWeight: 600 }}>
-                  {readMore} &rarr;
-                </div>
-              </article>
-            </Link>
+                <article
+                  style={{
+                    background: 'var(--bg-card)',
+                    border: '1px solid var(--border-color)',
+                    borderRadius: 12,
+                    padding: 28,
+                    transition: 'border-color 0.2s, transform 0.2s',
+                    cursor: 'pointer',
+                  }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.borderColor = 'var(--accent-blue)';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.borderColor = 'var(--border-color)';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }}
+                >
+                  <div style={{ display: 'flex', gap: 12, marginBottom: 12, fontSize: 13, color: 'var(--text-secondary)' }}>
+                    <time>{post.date}</time>
+                    <span>|</span>
+                    <span>{post.readingTime}</span>
+                  </div>
+                  <h2 style={{
+                    fontSize: 22,
+                    fontWeight: 700,
+                    color: 'var(--text-primary)',
+                    marginBottom: 10,
+                    lineHeight: 1.3,
+                  }}>
+                    {post.title}
+                  </h2>
+                  <p style={{
+                    fontSize: 14,
+                    color: 'var(--text-secondary)',
+                    lineHeight: 1.7,
+                    marginBottom: 16,
+                  }}>
+                    {post.description}
+                  </p>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+                    {post.keywords.slice(0, 3).map(kw => (
+                      <span
+                        key={kw}
+                        style={{
+                          fontSize: 11,
+                          padding: '3px 10px',
+                          borderRadius: 20,
+                          background: 'rgba(59,130,246,0.1)',
+                          color: 'var(--accent-blue)',
+                          fontWeight: 600,
+                        }}
+                      >
+                        {kw}
+                      </span>
+                    ))}
+                  </div>
+                  <div style={{ marginTop: 16, fontSize: 14, color: 'var(--accent-blue)', fontWeight: 600 }}>
+                    {readMore} &rarr;
+                  </div>
+                </article>
+              </Link>
+            </Fragment>
           );
         })}
       </div>

@@ -7,19 +7,23 @@ import SponsorCta from './SponsorCta';
 type AdSlotSize = 'leaderboard' | 'rectangle';
 type AdSlotPlacement =
   | 'home-inline'
+  | 'home-tools-grid'
   | 'tool-top'
   | 'tool-mid'
   | 'tool-sidebar-secondary'
   | 'tool-bottom'
   | 'tools-index-top'
+  | 'tools-index-mid'
   | 'tools-index-bottom'
   | 'blog-list-top'
+  | 'blog-list-mid'
   | 'blog-list-bottom'
   | 'blog-article-top'
   | 'blog-article-mid'
   | 'blog-article-bottom'
   | 'blog-article-sidebar'
   | 'category-top'
+  | 'category-mid'
   | 'category-bottom';
 
 interface AdSlotProps {
@@ -42,19 +46,23 @@ declare global {
 
 const AD_KEYS: Record<AdSlotPlacement, string | undefined> = {
   'home-inline': process.env.NEXT_PUBLIC_ADSTERRA_HOME_INLINE_KEY,
+  'home-tools-grid': process.env.NEXT_PUBLIC_ADSTERRA_HOME_INLINE_KEY,
   'tool-top': process.env.NEXT_PUBLIC_ADSTERRA_TOOL_TOP_KEY,
   'tool-mid': process.env.NEXT_PUBLIC_ADSTERRA_TOOL_MID_KEY,
   'tool-sidebar-secondary': process.env.NEXT_PUBLIC_ADSTERRA_SIDEBAR_SECONDARY_KEY,
   'tool-bottom': process.env.NEXT_PUBLIC_ADSTERRA_TOOL_BOTTOM_KEY,
   'tools-index-top': process.env.NEXT_PUBLIC_ADSTERRA_TOOLS_INDEX_TOP_KEY,
+  'tools-index-mid': process.env.NEXT_PUBLIC_ADSTERRA_TOOLS_INDEX_BOTTOM_KEY,
   'tools-index-bottom': process.env.NEXT_PUBLIC_ADSTERRA_TOOLS_INDEX_BOTTOM_KEY,
   'blog-list-top': process.env.NEXT_PUBLIC_ADSTERRA_BLOG_TOP_KEY,
+  'blog-list-mid': process.env.NEXT_PUBLIC_ADSTERRA_BLOG_BOTTOM_KEY,
   'blog-list-bottom': process.env.NEXT_PUBLIC_ADSTERRA_BLOG_BOTTOM_KEY,
   'blog-article-top': process.env.NEXT_PUBLIC_ADSTERRA_BLOG_ARTICLE_TOP_KEY,
   'blog-article-mid': process.env.NEXT_PUBLIC_ADSTERRA_BLOG_ARTICLE_MID_KEY,
   'blog-article-bottom': process.env.NEXT_PUBLIC_ADSTERRA_BLOG_ARTICLE_BOTTOM_KEY,
   'blog-article-sidebar': process.env.NEXT_PUBLIC_ADSTERRA_BLOG_ARTICLE_SIDEBAR_KEY,
   'category-top': process.env.NEXT_PUBLIC_ADSTERRA_CATEGORY_TOP_KEY,
+  'category-mid': process.env.NEXT_PUBLIC_ADSTERRA_CATEGORY_BOTTOM_KEY,
   'category-bottom': process.env.NEXT_PUBLIC_ADSTERRA_CATEGORY_BOTTOM_KEY,
 };
 
@@ -63,17 +71,21 @@ const GLOBAL_RECTANGLE_KEY = process.env.NEXT_PUBLIC_ADSTERRA_SIDEBAR_KEY || und
 
 const GLOBAL_LEADERBOARD_FALLBACK_PLACEMENTS = new Set<AdSlotPlacement>([
   'home-inline',
+  'home-tools-grid',
   'tool-top',
   'tool-mid',
   'tool-bottom',
   'tools-index-top',
+  'tools-index-mid',
   'tools-index-bottom',
   'blog-list-top',
+  'blog-list-mid',
   'blog-list-bottom',
   'blog-article-top',
   'blog-article-mid',
   'blog-article-bottom',
   'category-top',
+  'category-mid',
   'category-bottom',
 ]);
 
