@@ -14,6 +14,7 @@ type AdSlotPlacement =
   | 'blog-list-top'
   | 'blog-list-bottom'
   | 'blog-article-top'
+  | 'blog-article-mid'
   | 'blog-article-bottom'
   | 'category-top'
   | 'category-bottom';
@@ -37,6 +38,7 @@ const AD_KEYS: Record<AdSlotPlacement, string | undefined> = {
   'blog-list-top': process.env.NEXT_PUBLIC_ADSTERRA_BLOG_TOP_KEY,
   'blog-list-bottom': process.env.NEXT_PUBLIC_ADSTERRA_BLOG_BOTTOM_KEY,
   'blog-article-top': process.env.NEXT_PUBLIC_ADSTERRA_BLOG_ARTICLE_TOP_KEY,
+  'blog-article-mid': process.env.NEXT_PUBLIC_ADSTERRA_BLOG_ARTICLE_MID_KEY,
   'blog-article-bottom': process.env.NEXT_PUBLIC_ADSTERRA_BLOG_ARTICLE_BOTTOM_KEY,
   'category-top': process.env.NEXT_PUBLIC_ADSTERRA_CATEGORY_TOP_KEY,
   'category-bottom': process.env.NEXT_PUBLIC_ADSTERRA_CATEGORY_BOTTOM_KEY,

@@ -29,6 +29,7 @@ Promote a product inside developer guides and comparison articles.
 Inventory can include:
 
 - Article sponsor CTA.
+- Mid-article sponsor/ad fallback.
 - Related tool block.
 - Optional blog-list presence.
 

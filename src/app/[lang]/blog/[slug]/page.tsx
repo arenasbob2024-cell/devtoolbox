@@ -1098,6 +1098,14 @@ export default function BlogPostPage() {
         {PostContent ? <PostContent lang={lang} /> : <p>Content not available.</p>}
       </article>
 
+      <AdSlot
+        size="leaderboard"
+        placement="blog-article-mid"
+        category={slug}
+        fallbackToSponsor
+        style={{ marginTop: 30, marginBottom: 10 }}
+      />
+
       {/* Share & Helpful */}
       <ShareBar url={`https://viadreams.cc/${lang}/blog/${slug}`} title={post.title} lang={lang} />
       <HelpfulButton slug={slug} lang={lang} />

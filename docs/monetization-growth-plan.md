@@ -35,6 +35,7 @@ The codebase now supports separate Adsterra keys for high-signal placements:
 | `NEXT_PUBLIC_ADSTERRA_BLOG_TOP_KEY` | Blog listing, above article cards |
 | `NEXT_PUBLIC_ADSTERRA_BLOG_BOTTOM_KEY` | Blog listing, below article cards |
 | `NEXT_PUBLIC_ADSTERRA_BLOG_ARTICLE_TOP_KEY` | Blog article, below article header |
+| `NEXT_PUBLIC_ADSTERRA_BLOG_ARTICLE_MID_KEY` | Blog article, after the article body and before share/newsletter actions |
 | `NEXT_PUBLIC_ADSTERRA_BLOG_ARTICLE_BOTTOM_KEY` | Blog article, after newsletter/related tools |
 | `NEXT_PUBLIC_ADSTERRA_CATEGORY_TOP_KEY` | Category landing page, above the tool grid |
 | `NEXT_PUBLIC_ADSTERRA_CATEGORY_BOTTOM_KEY` | Category landing page, after the tool grid |
@@ -93,6 +94,8 @@ Tool sidebar partner cards only show affiliate links whose env vars are configur
 
 Blog article pages now include an inline partner-offer block after the newsletter signup. It matches configured affiliate offers against the article slug and keywords, tracks affiliate impressions/clicks with `placement=blog-article-partner-offer`, and falls back to an article sponsorship inquiry when no affiliate URL is configured.
 
+Blog article pages now include a configurable post-content Adsterra slot with `placement=blog-article-mid`. Configure `NEXT_PUBLIC_ADSTERRA_BLOG_ARTICLE_MID_KEY` as a separate unit to measure long-read RPM independently from the article top and bottom slots. If the key is missing or the iframe appears empty, the surface falls back to an Article Sponsor CTA through `blog-article-mid-ad-fallback` or `blog-article-mid-ad-empty`.
+
 The all-tools index and category landing pages now have an affiliate-backed partner strip. It only renders when matching `NEXT_PUBLIC_AFFILIATE_*` URLs are configured, adds a category sponsorship link, and tracks impressions/clicks with `placement=tools-index-partner-strip` or `placement=category-partner-strip`.
 
 After a visitor successfully copies tool output three times in one session, the site now shows a lightweight support/sponsor nudge. It waits until the cookie notice is dismissed, frequency-caps dismissal for 24 hours, links to `NEXT_PUBLIC_SUPPORT_URL` or `/advertise`, and tracks `monetization_impression` / `monetization_click` with `placement=copy-success-nudge`. This turns high-intent tool usage into a non-ad revenue opportunity without adding another page-level ad slot.
@@ -149,7 +152,7 @@ The CSV import path accepts common column names such as placement/ad unit/zone, 
 ## Next experiments
 
 1. Fill the exact Adsterra `ads.txt` seller line from the dashboard.
-2. Create separate Adsterra placements for tool top, tool bottom, blog top, and blog article bottom.
+2. Create separate Adsterra placements for tool top, tool bottom, blog top, blog article mid, and blog article bottom.
 3. Create a 320x50 mobile banner in Adsterra and test it with `NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_KEY`. Watch mobile bounce rate and revenue/session for at least 7 days.
 4. Replace generic affiliate links with real partner/referral links and track clicks by category.
 5. Publish the prepared Dev.to and social posts in `content/` to drive referral traffic and backlinks.
