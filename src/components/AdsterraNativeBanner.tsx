@@ -156,6 +156,9 @@ export default function AdsterraNativeBanner({
         ...style,
       }}
       aria-label="Sponsored content"
+      data-ad-provider="adsterra"
+      data-ad-placement={placement}
+      data-ad-category={category}
     >
       <div ref={containerRef} id={`container-${containerKey}`} />
     </div>

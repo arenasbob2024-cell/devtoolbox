@@ -149,6 +149,9 @@ export default function AdsterraIframeBanner({
         ...style,
       }}
       aria-label="Sponsored content"
+      data-ad-provider="adsterra"
+      data-ad-placement={placement}
+      data-ad-category={category}
     >
       <iframe
         ref={iframeRef}
