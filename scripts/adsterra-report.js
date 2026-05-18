@@ -440,8 +440,16 @@ function buildEnvChecks(env) {
         ['NEXT_PUBLIC_ADSTERRA_TOOL_MID_KEY', 'Tool page post-tool slot'],
         ['NEXT_PUBLIC_ADSTERRA_TOOL_BOTTOM_KEY', 'Tool page bottom slot'],
         ['NEXT_PUBLIC_ADSTERRA_SIDEBAR_SECONDARY_KEY', 'Tool sidebar secondary rectangle'],
+        ['NEXT_PUBLIC_ADSTERRA_TOOLS_INDEX_TOP_KEY', 'All tools index top slot'],
+        ['NEXT_PUBLIC_ADSTERRA_TOOLS_INDEX_BOTTOM_KEY', 'All tools index bottom slot'],
+        ['NEXT_PUBLIC_ADSTERRA_BLOG_TOP_KEY', 'Blog listing top slot'],
+        ['NEXT_PUBLIC_ADSTERRA_BLOG_BOTTOM_KEY', 'Blog listing bottom slot'],
+        ['NEXT_PUBLIC_ADSTERRA_BLOG_ARTICLE_TOP_KEY', 'Blog article top slot'],
         ['NEXT_PUBLIC_ADSTERRA_BLOG_ARTICLE_MID_KEY', 'Blog article post-body slot'],
+        ['NEXT_PUBLIC_ADSTERRA_BLOG_ARTICLE_BOTTOM_KEY', 'Blog article bottom slot'],
         ['NEXT_PUBLIC_ADSTERRA_BLOG_ARTICLE_SIDEBAR_KEY', 'Blog article desktop sidebar rectangle'],
+        ['NEXT_PUBLIC_ADSTERRA_CATEGORY_TOP_KEY', 'Category landing page top slot'],
+        ['NEXT_PUBLIC_ADSTERRA_CATEGORY_BOTTOM_KEY', 'Category landing page bottom slot'],
       ],
     },
     {
@@ -574,7 +582,7 @@ function buildReadinessActions(report) {
       title: 'Create dedicated placement keys for RPM isolation',
       reason: 'The current site reuses global top/sidebar keys as fallbacks. Dedicated keys are needed to know which surfaces actually earn.',
       commands: [
-        ...dedicatedPlacementVars.slice(0, 4).map(name => vercelEnvCommand(report, name)),
+        ...dedicatedPlacementVars.map(name => vercelEnvCommand(report, name)),
         'npm run adsterra:report -- recommend --days=7 --min-impressions=1000',
       ],
     });
