@@ -6,6 +6,13 @@ const translations: Record<string, Record<string, string>> = {
     title: 'Astro Framework Guide 2026: Islands Architecture, Content Collections, and Performance',
     intro: 'Astro is a modern web framework designed for content-driven websites that ships zero JavaScript by default. With its unique islands architecture, Astro renders pages to static HTML at build time while allowing interactive components to hydrate independently. Whether you are building a blog, documentation site, marketing page, or e-commerce storefront, Astro delivers exceptional performance with a developer experience that supports React, Vue, Svelte, and Solid components in a single project.',
     tldr: 'Astro is a content-first web framework that ships zero JS by default, uses islands architecture for selective interactivity, supports multiple UI frameworks (React, Vue, Svelte), and delivers outstanding Core Web Vitals scores. It features content collections for type-safe data, view transitions for smooth navigation, SSR and SSG modes, and integrates seamlessly with Tailwind, MDX, and image optimization.',
+    quickContentReactTitle: 'Quick Answers: content-collections/react npm and Astro',
+    quickContentReactIntro: 'If you are searching for content-collections/react npm while building an Astro site, there are two different concepts that often get mixed together.',
+    quickContentReactAstro: 'Astro content collections are built into Astro. Define them in src/content.config.ts with defineCollection(), import helpers from astro:content, import Zod from astro/zod, and query entries with getCollection() or getEntry().',
+    quickContentReactInstall: 'React support in Astro comes from @astrojs/react. The recommended command is npx astro add react; the manual fallback is npm install @astrojs/react react react-dom followed by adding react() to astro.config.mjs.',
+    quickContentReactQuery: 'A React component can render collection data inside an Astro page, but the content query should stay in the .astro frontmatter so it runs at build time or on the server.',
+    quickContentReactPackage: 'As of May 2026, @content-collections/react is not a published npm package. The separate Content Collections library exposes a React MDX runtime through @content-collections/mdx/react after installing @content-collections/mdx, which is separate from Astro built-in content collections.',
+    quickContentReactHydration: 'Add a client directive such as client:visible only when the React component needs browser interactivity. Static article cards should remain Astro components or server-rendered HTML.',
     keyTakeaway1: 'Astro ships zero JavaScript by default, resulting in faster page loads and better Core Web Vitals than traditional SPA frameworks.',
     keyTakeaway2: 'Islands architecture allows mixing React, Vue, Svelte, and Solid components on the same page, each hydrating independently.',
     keyTakeaway3: 'Content Collections provide type-safe access to Markdown, MDX, YAML, and JSON data with automatic schema validation using Zod.',
@@ -29,7 +36,7 @@ const translations: Record<string, Record<string, string>> = {
     directiveOnly: 'client:only - Skip server rendering and only render on the client. Use for components that depend on browser APIs.',
 
     h2ContentCollections: 'Content Collections and Type Safety',
-    contentCollDesc: 'Content Collections are one of Astro most powerful features. They provide a structured way to organize, validate, and query your content with full TypeScript type safety. Collections live in the src/content directory and are defined with a schema using Zod validation.',
+    contentCollDesc: 'Content Collections are one of Astro most powerful features. They provide a structured way to organize, validate, and query your content with full TypeScript type safety. Collections usually read from the src/content directory and are defined in src/content.config.ts with loaders and a schema using Zod validation.',
     contentCollDesc2: 'When you define a collection schema, Astro generates TypeScript types automatically. If a Markdown frontmatter field is missing or has the wrong type, you get a build-time error instead of a runtime surprise. This is especially valuable for blogs with hundreds of posts.',
 
     h2Components: 'Astro Components vs Framework Components',
@@ -106,11 +113,20 @@ const translations: Record<string, Record<string, string>> = {
     faq7A: 'Astro view transitions use the browser View Transitions API to animate page navigations. When enabled, Astro intercepts link clicks and applies CSS transitions between the old and new page. You can customize transitions per element, persist component state across navigations, and create complex multi-element animations.',
     faq8Q: 'How do I deploy an Astro site?',
     faq8A: 'For static sites, build with astro build and deploy the dist directory to any static host (GitHub Pages, Vercel, Netlify, Cloudflare Pages). For SSR sites, install the appropriate adapter (@astrojs/vercel, @astrojs/netlify, @astrojs/cloudflare, @astrojs/node) and deploy to that platform. Most platforms auto-detect Astro projects.',
+    faq9Q: 'Do I need a content-collections/react npm package for Astro?',
+    faq9A: 'No. For Astro, use the built-in astro:content module for content collections and install @astrojs/react when you need React components. The package name @content-collections/react is not the Astro content collections integration; if you are using the separate Content Collections project for MDX, its React runtime is imported from @content-collections/mdx/react.',
   },
   zh: {
     title: 'Astro 框架指南 2026：岛屿架构、内容集合与性能优化',
     intro: 'Astro 是一个现代 Web 框架，专为内容驱动型网站设计，默认不发送任何 JavaScript。凭借独特的岛屿架构，Astro 在构建时将页面渲染为静态 HTML，同时允许交互组件独立水合。无论你是构建博客、文档站点、营销页面还是电商前端，Astro 都能提供卓越的性能和支持 React、Vue、Svelte、Solid 的开发体验。',
     tldr: 'Astro 是一个内容优先的 Web 框架，默认零 JS、使用岛屿架构实现选择性交互、支持多种 UI 框架（React、Vue、Svelte），提供出色的 Core Web Vitals 分数。具备内容集合、视图过渡、SSR/SSG 模式，并与 Tailwind、MDX 和图片优化无缝集成。',
+    quickContentReactTitle: '快速答案：content-collections/react npm 与 Astro',
+    quickContentReactIntro: '如果你在构建 Astro 站点时搜索 content-collections/react npm，通常是把两个不同概念混在了一起。',
+    quickContentReactAstro: 'Astro 内容集合是内置功能。在 src/content.config.ts 中用 defineCollection() 定义，从 astro:content 导入辅助函数，从 astro/zod 导入 Zod，并用 getCollection() 或 getEntry() 查询内容。',
+    quickContentReactInstall: 'Astro 的 React 支持来自 @astrojs/react。推荐命令是 npx astro add react；手动安装可用 npm install @astrojs/react react react-dom，然后在 astro.config.mjs 中加入 react()。',
+    quickContentReactQuery: 'React 组件可以在 Astro 页面中展示内容集合数据，但内容查询应留在 .astro frontmatter 中，让它在构建时或服务端运行。',
+    quickContentReactPackage: '截至 2026 年 5 月，@content-collections/react 不是已发布的 npm 包。独立的 Content Collections 库在安装 @content-collections/mdx 后，通过 @content-collections/mdx/react 提供 React MDX 运行时，这与 Astro 内置内容集合不是同一个功能。',
+    quickContentReactHydration: '只有 React 组件需要浏览器交互时才添加 client:visible 等客户端指令。静态文章卡片应优先保持为 Astro 组件或服务端渲染 HTML。',
     keyTakeaway1: 'Astro 默认不发送 JavaScript，页面加载更快，Core Web Vitals 优于传统 SPA 框架。',
     keyTakeaway2: '岛屿架构允许在同一页面混合使用 React、Vue、Svelte 和 Solid 组件，各自独立水合。',
     keyTakeaway3: '内容集合通过 Zod 验证提供类型安全的 Markdown、MDX、YAML 和 JSON 数据访问。',
@@ -134,7 +150,7 @@ const translations: Record<string, Record<string, string>> = {
     directiveOnly: 'client:only - 跳过服务端渲染，仅在客户端渲染。用于依赖浏览器 API 的组件。',
 
     h2ContentCollections: '内容集合与类型安全',
-    contentCollDesc: '内容集合是 Astro 最强大的功能之一，提供结构化的方式来组织、验证和查询内容，具有完整的 TypeScript 类型安全。',
+    contentCollDesc: '内容集合是 Astro 最强大的功能之一，提供结构化的方式来组织、验证和查询内容，具有完整的 TypeScript 类型安全。集合通常读取 src/content 目录，并在 src/content.config.ts 中通过 loader 和 Zod schema 定义。',
     contentCollDesc2: '定义集合模式后，Astro 自动生成 TypeScript 类型。如果 Markdown frontmatter 字段缺失或类型错误，你会在构建时收到错误。',
 
     h2Components: 'Astro 组件 vs 框架组件',
@@ -211,6 +227,8 @@ const translations: Record<string, Record<string, string>> = {
     faq7A: 'Astro 视图过渡使用浏览器的 View Transitions API 为页面导航添加动画，无需客户端路由器。',
     faq8Q: '如何部署 Astro 站点？',
     faq8A: '静态站点使用 astro build 构建后部署 dist 目录。SSR 站点安装相应适配器后部署到对应平台。',
+    faq9Q: 'Astro 需要 content-collections/react 这个 npm 包吗？',
+    faq9A: '不需要。Astro 内容集合使用内置的 astro:content 模块；需要 React 组件时安装 @astrojs/react。@content-collections/react 不是 Astro 内容集合集成；如果使用独立的 Content Collections 项目处理 MDX，它的 React 运行时从 @content-collections/mdx/react 导入。',
   },
 };
 
@@ -229,6 +247,7 @@ export default function AstroGuide({ lang }: { lang: string }) {
       { '@type': 'Question', name: t.faq6Q, acceptedAnswer: { '@type': 'Answer', text: t.faq6A } },
       { '@type': 'Question', name: t.faq7Q, acceptedAnswer: { '@type': 'Answer', text: t.faq7A } },
       { '@type': 'Question', name: t.faq8Q, acceptedAnswer: { '@type': 'Answer', text: t.faq8A } },
+      { '@type': 'Question', name: t.faq9Q, acceptedAnswer: { '@type': 'Answer', text: t.faq9A } },
     ],
   };
 
@@ -249,6 +268,61 @@ export default function AstroGuide({ lang }: { lang: string }) {
         <strong style={{ fontSize: '1.1rem' }}>TL;DR</strong>
         <p style={{ marginTop: '0.5rem', lineHeight: '1.7' }}>{t.tldr}</p>
       </div>
+
+      {/* Quick search answer */}
+      <section style={{ background: '#fff7ed', border: '1px solid #fed7aa', padding: '1.5rem', borderRadius: '0.5rem', marginBottom: '2rem' }}>
+        <h2 style={{ ...sectionTitle, marginTop: 0 }}>{t.quickContentReactTitle}</h2>
+        <p style={para}>{t.quickContentReactIntro}</p>
+        <ul style={{ paddingLeft: '1.5rem', marginBottom: '1.5rem' }}>
+          <li style={listItem}>{t.quickContentReactAstro}</li>
+          <li style={listItem}>{t.quickContentReactInstall}</li>
+          <li style={listItem}>{t.quickContentReactQuery}</li>
+          <li style={listItem}>{t.quickContentReactPackage}</li>
+          <li style={listItem}>{t.quickContentReactHydration}</li>
+        </ul>
+        <pre style={codeBlock}><code>{'# Astro content collections + React\n'
+          + 'npx astro add react\n'
+          + '\n'
+          + '# Manual fallback if peer dependencies are missing\n'
+          + 'npm install @astrojs/react react react-dom\n'
+          + '\n'
+          + '# Separate Content Collections library MDX runtime, not Astro built-in collections\n'
+          + 'npm install @content-collections/core @content-collections/mdx'}</code></pre>
+        <pre style={codeBlock}><code>{'// src/content.config.ts\n'
+          + 'import { defineCollection } from "astro:content";\n'
+          + 'import { glob } from "astro/loaders";\n'
+          + 'import { z } from "astro/zod";\n'
+          + '\n'
+          + 'const blog = defineCollection({\n'
+          + '  loader: glob({ base: "./src/content/blog", pattern: "**/*.{md,mdx}" }),\n'
+          + '  schema: z.object({\n'
+          + '    title: z.string(),\n'
+          + '    description: z.string(),\n'
+          + '    pubDate: z.coerce.date(),\n'
+          + '  }),\n'
+          + '});\n'
+          + '\n'
+          + 'export const collections = { blog };'}</code></pre>
+        <pre style={codeBlock}><code>{'---\n'
+          + '// src/pages/blog.astro\n'
+          + 'import { getCollection } from "astro:content";\n'
+          + 'import ArticleCard from "../components/ArticleCard.tsx";\n'
+          + '\n'
+          + 'const posts = await getCollection("blog");\n'
+          + '---\n'
+          + '\n'
+          + '{posts.map((post) => (\n'
+          + '  <ArticleCard\n'
+          + '    title={post.data.title}\n'
+          + '    description={post.data.description}\n'
+          + '  />\n'
+          + '))}\n'
+          + '\n'
+          + '<!-- Add client:visible only if the React component has browser state. -->\n'
+          + '\n'
+          + '// Separate library import when using @content-collections/mdx:\n'
+          + '// import { MDXContent } from "@content-collections/mdx/react";'}</code></pre>
+      </section>
 
       {/* Key Takeaways */}
       <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', padding: '1.5rem', borderRadius: '0.5rem', marginBottom: '2rem' }}>
@@ -338,11 +412,12 @@ export default function AstroGuide({ lang }: { lang: string }) {
       <p style={para}>{t.contentCollDesc2}</p>
 
       <pre style={codeBlock}><code>{'// src/content.config.ts\n'
-        + 'import { defineCollection, z } from "astro:content";\n'
+        + 'import { defineCollection } from "astro:content";\n'
         + 'import { glob } from "astro/loaders";\n'
+        + 'import { z } from "astro/zod";\n'
         + '\n'
         + 'const blog = defineCollection({\n'
-        + '  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/data/blog" }),\n'
+        + '  loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/blog" }),\n'
         + '  schema: z.object({\n'
         + '    title: z.string(),\n'
         + '    description: z.string(),\n'
@@ -356,7 +431,7 @@ export default function AstroGuide({ lang }: { lang: string }) {
         + '});\n'
         + '\n'
         + 'const docs = defineCollection({\n'
-        + '  loader: glob({ pattern: "**/*.md", base: "./src/data/docs" }),\n'
+        + '  loader: glob({ pattern: "**/*.md", base: "./src/content/docs" }),\n'
         + '  schema: z.object({\n'
         + '    title: z.string(),\n'
         + '    section: z.enum(["getting-started", "guides", "reference"]),\n'
@@ -943,6 +1018,7 @@ export default function AstroGuide({ lang }: { lang: string }) {
         { q: t.faq6Q, a: t.faq6A },
         { q: t.faq7Q, a: t.faq7A },
         { q: t.faq8Q, a: t.faq8A },
+        { q: t.faq9Q, a: t.faq9A },
       ].map((faq, i) => (
         <div key={i} style={{ marginBottom: '1.5rem' }}>
           <h3 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '0.5rem' }}>{faq.q}</h3>
