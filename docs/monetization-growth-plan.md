@@ -43,6 +43,9 @@ The codebase now supports separate Adsterra keys for high-signal placements:
 | `NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_KEY` | Mobile-only bottom sticky banner |
 | `NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_WIDTH` | Optional sticky banner width, default `320` |
 | `NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_HEIGHT` | Optional sticky banner height, default `50` |
+| `NEXT_PUBLIC_ADSTERRA_SOCIAL_BAR_SCRIPT` | Optional sitewide Social Bar / high-yield script format |
+| `NEXT_PUBLIC_ADSTERRA_SOCIAL_BAR_DELAY_MS` | Optional Social Bar load delay, default `15000` |
+| `NEXT_PUBLIC_ADSTERRA_SOCIAL_BAR_SESSION_CAP` | Optional Social Bar session cap, default enabled; set `false` to disable |
 
 Create each as a separate Adsterra placement so reports can show RPM by location. Do not reuse the same key everywhere unless you only need aggregate impressions.
 
@@ -125,6 +128,8 @@ Tool pages now include a post-tool Adsterra slot with `placement=tool-mid`. Conf
 
 The mobile sticky slot now also recovers into a compact direct-sponsor bar. If `NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_KEY` is not configured, the site shows a dismissible mobile-only sponsor CTA with `placement=mobile-sticky-ad-fallback`; if the configured mobile iframe appears empty after load time, it recovers through `placement=mobile-sticky-ad-empty`. Closing the bar is remembered for 24 hours in local storage so the test can monetize mobile visibility without reappearing on every reload.
 
+The optional Adsterra Social Bar / high-yield script slot is disabled unless `NEXT_PUBLIC_ADSTERRA_SOCIAL_BAR_SCRIPT` is configured and the site is rebuilt/redeployed. When enabled, it loads after a delay, deduplicates the script tag, caps loading to once per browser session by default, and records an Adsterra impression with `placement=site-social-bar`. Treat it as an experiment: compare revenue per session, mobile bounce rate, and returning-user behavior before keeping it permanently.
+
 Clicks are sent to Google Analytics as `monetization_click` with `monetization_type`, `monetization_id`, `tool_category`, and `placement` parameters. Sponsor CTAs and Adsterra containers also emit `monetization_impression` when at least half of the monetized surface is visible, so GA can calculate CTR and viewable opportunity by surface. Use these events to decide which categories deserve stronger partner offers and which ad slots deserve dedicated Adsterra placements.
 
 ## Weekly operating loop
@@ -178,3 +183,4 @@ The CSV import path accepts common column names such as placement/ad unit/zone, 
 20. Review `mobile-sticky-ad-fallback` and `mobile-sticky-ad-empty` impressions/clicks against mobile bounce rate. If sponsor CTR is weak but impressions are high, create a dedicated Adsterra 320x50 mobile unit; if bounce rate worsens, keep the 24-hour close cap and reduce mobile sticky usage to high-intent tool pages only.
 21. Create a dedicated homepage inline Adsterra unit and configure `NEXT_PUBLIC_ADSTERRA_HOME_INLINE_KEY`. Compare `home-inline` RPM against global top leaderboard RPM; if homepage RPM is weak but fallback sponsor CTR is strong, sell the homepage block as direct sponsorship instead of running network ads there.
 22. Review `advertise-package-sitewide-sponsor` clicks from `home-inline-*`, `mobile-sticky-*`, `header-nav`, and `footer-nav` sources. If broad-reach package clicks are stronger than Partner Test clicks, pitch Sitewide Visibility as the default launch package and keep Partner Test for smaller category-specific pilots.
+23. Create an Adsterra Social Bar unit, configure `NEXT_PUBLIC_ADSTERRA_SOCIAL_BAR_SCRIPT`, redeploy, and run it for 7 days with the default delayed, once-per-session behavior. Keep it only if the added revenue per session offsets any change in mobile bounce rate or repeat-user engagement.

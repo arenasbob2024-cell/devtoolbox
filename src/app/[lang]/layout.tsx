@@ -7,6 +7,7 @@ import CopySuccessNudge from '@/components/CopySuccessNudge';
 import AdsterraNativeBanner from '@/components/AdsterraNativeBanner';
 import AdsterraIframeBanner from '@/components/AdsterraIframeBanner';
 import AdsterraMobileStickyBanner from '@/components/AdsterraMobileStickyBanner';
+import AdsterraSocialBar from '@/components/AdsterraSocialBar';
 import { LangProvider } from '@/i18n/LangContext';
 import { getDictionary, getUIDictionary } from '@/i18n/getDictionary';
 import { i18n, type Locale } from '@/i18n/config';
@@ -213,6 +214,13 @@ export default async function LangLayout({
           <CopySuccessNudge />
           {/* Lightweight cookie notice — informational only, does NOT gate ads */}
           <CookieConsent lang={lang} />
+          {/* Optional higher-yield Adsterra script format.
+              Disabled unless NEXT_PUBLIC_ADSTERRA_SOCIAL_BAR_SCRIPT is configured. */}
+          <AdsterraSocialBar
+            scriptSrc={process.env.NEXT_PUBLIC_ADSTERRA_SOCIAL_BAR_SCRIPT}
+            delayMs={Number(process.env.NEXT_PUBLIC_ADSTERRA_SOCIAL_BAR_DELAY_MS || 15000)}
+            sessionCap={process.env.NEXT_PUBLIC_ADSTERRA_SOCIAL_BAR_SESSION_CAP !== 'false'}
+          />
           {/* Optional high-viewability mobile anchor banner.
               Falls back to a compact sponsor CTA when the ad key is missing or empty. */}
           <AdsterraMobileStickyBanner
