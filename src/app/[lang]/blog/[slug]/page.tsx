@@ -1058,7 +1058,28 @@ export default function BlogPostPage() {
   };
 
   return (
-    <div style={{ maxWidth: 820, margin: '0 auto', padding: '30px 24px 60px' }}>
+    <div style={{ maxWidth: 1180, margin: '0 auto', padding: '30px 24px 60px' }}>
+      <style>{`
+        @media (max-width: 1100px) {
+          .blog-article-layout {
+            display: block !important;
+          }
+
+          .blog-article-sidebar {
+            display: none !important;
+          }
+        }
+      `}</style>
+      <div
+        className="blog-article-layout"
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'minmax(0, 820px) 300px',
+          gap: 32,
+          alignItems: 'start',
+        }}
+      >
+        <main style={{ minWidth: 0 }}>
       {/* JSON-LD */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
@@ -1197,6 +1218,25 @@ export default function BlogPostPage() {
           </div>
         </div>
       )}
+        </main>
+        <aside
+          className="blog-article-sidebar"
+          aria-label="Article sponsor"
+          style={{
+            position: 'sticky',
+            top: 96,
+            alignSelf: 'start',
+          }}
+        >
+          <AdSlot
+            size="rectangle"
+            placement="blog-article-sidebar"
+            category={slug}
+            fallbackToSponsor
+            style={{ margin: 0 }}
+          />
+        </aside>
+      </div>
     </div>
   );
 }

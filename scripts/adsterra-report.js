@@ -441,6 +441,7 @@ function buildEnvChecks(env) {
         ['NEXT_PUBLIC_ADSTERRA_TOOL_BOTTOM_KEY', 'Tool page bottom slot'],
         ['NEXT_PUBLIC_ADSTERRA_SIDEBAR_SECONDARY_KEY', 'Tool sidebar secondary rectangle'],
         ['NEXT_PUBLIC_ADSTERRA_BLOG_ARTICLE_MID_KEY', 'Blog article post-body slot'],
+        ['NEXT_PUBLIC_ADSTERRA_BLOG_ARTICLE_SIDEBAR_KEY', 'Blog article desktop sidebar rectangle'],
       ],
     },
     {

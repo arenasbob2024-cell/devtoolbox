@@ -38,6 +38,7 @@ The codebase now supports separate Adsterra keys for high-signal placements:
 | `NEXT_PUBLIC_ADSTERRA_BLOG_ARTICLE_TOP_KEY` | Blog article, below article header |
 | `NEXT_PUBLIC_ADSTERRA_BLOG_ARTICLE_MID_KEY` | Blog article, after the article body and before share/newsletter actions |
 | `NEXT_PUBLIC_ADSTERRA_BLOG_ARTICLE_BOTTOM_KEY` | Blog article, after newsletter/related tools |
+| `NEXT_PUBLIC_ADSTERRA_BLOG_ARTICLE_SIDEBAR_KEY` | Blog article desktop sidebar 300x250 |
 | `NEXT_PUBLIC_ADSTERRA_CATEGORY_TOP_KEY` | Category landing page, above the tool grid |
 | `NEXT_PUBLIC_ADSTERRA_CATEGORY_BOTTOM_KEY` | Category landing page, after the tool grid |
 | `NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_KEY` | Mobile-only bottom sticky banner |
@@ -54,7 +55,7 @@ Create each as a separate Adsterra placement so reports can show RPM by location
 
 To avoid waiting on every dedicated unit before revenue ramps, leaderboard slots temporarily reuse `NEXT_PUBLIC_ADSTERRA_TOP_KEY` when their placement-specific key is missing. This applies to `home-inline`, `tool-top`, `tool-mid`, `tool-bottom`, `tools-index-top`, `tools-index-bottom`, `blog-list-top`, `blog-list-bottom`, `blog-article-top`, `blog-article-mid`, `blog-article-bottom`, `category-top`, and `category-bottom`. The layout exposes this public key to client-side ad slots through `window.__DEVTOOLBOX_ADS__`, so runtime Vercel env values still work in client-rendered tool surfaces. Create dedicated Adsterra units for winners as soon as they show meaningful impressions, then set the placement-specific env var to restore clean RPM reporting.
 
-Tool pages also use the existing 300x250 sidebar key as a temporary fallback for `tool-sidebar-secondary` when `NEXT_PUBLIC_ADSTERRA_SIDEBAR_SECONDARY_KEY` is missing. This doubles the rectangle opportunity on high-intent tool pages while the dedicated secondary unit is still waiting to be created, and the sidebar key is exposed through the same runtime `window.__DEVTOOLBOX_ADS__` config so Vercel env values are available to client-rendered slots.
+Tool pages also use the existing 300x250 sidebar key as a temporary fallback for `tool-sidebar-secondary` when `NEXT_PUBLIC_ADSTERRA_SIDEBAR_SECONDARY_KEY` is missing. Blog article pages reuse the same sidebar key for `blog-article-sidebar` until `NEXT_PUBLIC_ADSTERRA_BLOG_ARTICLE_SIDEBAR_KEY` exists. This increases rectangle opportunities on high-intent tool and long-read article pages while dedicated units are still waiting to be created, and the sidebar key is exposed through the same runtime `window.__DEVTOOLBOX_ADS__` config so Vercel env values are available to client-rendered slots.
 
 The homepage, tools index, category pages, blog listing, and blog article pages include a direct `/advertise` sponsor CTA. These links pass `source` and `category` query parameters into the advertise page, and the default sponsorship email includes that context in the inquiry body. This captures commercial interest even before a paid ad network slot is configured for that surface.
 
@@ -131,7 +132,7 @@ Bottom Adsterra slots now fall back to a direct sponsorship CTA when the corresp
 
 High-visibility empty ad surfaces now also recover into sponsor inventory. The global top leaderboard falls back through `site-top-leaderboard-ad-fallback` / `site-top-leaderboard-ad-empty`, while tool pages recover `tool-top`, `tool-mid`, `tool-sidebar-secondary`, and `tool-sidebar-primary` into tracked sponsor CTAs. This prevents the most valuable above-the-fold, post-tool, and sidebar areas from disappearing when Adsterra keys are missing, blocked, or unfilled.
 
-Above-the-fold Adsterra iframe units now load eagerly instead of using browser lazy loading. This applies to the site top leaderboard, page-level top leaderboards, the tool sidebar rectangles, and the mobile sticky unit so the highest-viewability requests are not delayed; mid-page and bottom inventory remains lazy.
+Above-the-fold Adsterra iframe units now load eagerly instead of using browser lazy loading. This applies to the site top leaderboard, page-level top leaderboards, the tool and blog article sidebar rectangles, and the mobile sticky unit so the highest-viewability requests are not delayed; mid-page and bottom inventory remains lazy.
 
 Tool pages now include a post-tool Adsterra slot with `placement=tool-mid`. Configure `NEXT_PUBLIC_ADSTERRA_TOOL_MID_KEY` as a separate unit to measure revenue from visitors who reached the tool body and are still engaged enough to share, comment, or continue browsing. If the key is missing or the iframe appears empty, the surface falls back to a Category Sponsor CTA through `tool-mid-ad-fallback` or `tool-mid-ad-empty`.
 
