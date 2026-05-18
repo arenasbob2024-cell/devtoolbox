@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, JetBrains_Mono } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CookieConsent from '@/components/CookieConsent';
@@ -11,35 +10,6 @@ import AdsterraSocialBar from '@/components/AdsterraSocialBar';
 import { LangProvider } from '@/i18n/LangContext';
 import { getDictionary, getUIDictionary } from '@/i18n/getDictionary';
 import { i18n, type Locale } from '@/i18n/config';
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-jetbrains',
-  display: 'swap',
-});
-
-function getHttpOrigin(url: string | undefined) {
-  if (!url) return undefined;
-
-  try {
-    const normalizedUrl = url.startsWith('//') ? `https:${url}` : url;
-    const parsedUrl = new URL(normalizedUrl);
-
-    if (parsedUrl.protocol !== 'http:' && parsedUrl.protocol !== 'https:') {
-      return undefined;
-    }
-
-    return parsedUrl.origin;
-  } catch {
-    return undefined;
-  }
-}
 
 export async function generateStaticParams() {
   // Only pre-render English at build time to save disk space.
@@ -115,152 +85,47 @@ export default async function LangLayout({
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   const dict = await getDictionary(lang);
-  const nativeAdOrigin = getHttpOrigin(process.env.NEXT_PUBLIC_ADSTERRA_NATIVE_SCRIPT);
-  const adRuntimeConfigScript = `window.__DEVTOOLBOX_ADS__=${JSON.stringify({
-    topKey: process.env.NEXT_PUBLIC_ADSTERRA_TOP_KEY || '',
-    sidebarKey: process.env.NEXT_PUBLIC_ADSTERRA_SIDEBAR_KEY || '',
-  }).replace(/</g, '\\u003c')};`;
 
   return (
-    <html lang={lang} className={`${inter.variable} ${jetbrainsMono.variable}`}>
-      <head>
-        {/* ==========================================
-            关键资源预加载 - 性能优化
-            ========================================== */}
-        
-        {/* 1. Google Fonts 预连接 */}
-        {/* 提前建立与字体服务器的连接，减少字体加载时间 */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
-        {/* 2. Analytics DNS 预解析 */}
-        {/* 提前解析 Analytics 域名，加速 GA 加载 */}
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-
-        {/* Adsterra ad script resource hints for above-the-fold inventory */}
-        <link rel="dns-prefetch" href="https://www.highperformanceformat.com" />
-        <link rel="preconnect" href="https://www.highperformanceformat.com" />
-        {nativeAdOrigin && (
-          <>
-            <link rel="dns-prefetch" href={nativeAdOrigin} />
-            <link rel="preconnect" href={nativeAdOrigin} />
-          </>
-        )}
-        
-        {/* 3. Google Analytics 预连接（可选，如果 GA 是关键资源） */}
-        <link rel="preconnect" href="https://www.google-analytics.com" />
-        
-        {/* 4. 关键图片预加载（如 LCP 图片） */}
-        {/* 如果有首屏关键图片，取消下面注释并修改路径 */}
-        {/* <link rel="preload" href="/hero-image.png" as="image" type="image/png" fetchPriority="high" /> */}
-        
-        {/* 5. 关键 CSS 预加载（如果使用外部 CSS） */}
-        {/* 当前项目使用 CSS-in-JS/Tailwind，不需要预加载外部 CSS */}
-        
-        {/* 6. LLMs.txt 链接 */}
-        <link rel="llms" href="https://viadreams.cc/llms.txt" />
-        
-        {/* ==========================================
-            第三方脚本加载
-            ========================================== */}
-        
-        {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-85N12XK3TY" />
-        <script 
-          dangerouslySetInnerHTML={{ 
-            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-85N12XK3TY');` 
-          }} 
+    <LangProvider lang={lang} dict={dict}>
+      <div lang={lang} style={{ display: 'contents' }}>
+        <Header />
+        {/* Top Adsterra Banner 728x90 (leaderboard, above the fold).
+            Activates when NEXT_PUBLIC_ADSTERRA_TOP_KEY is set. */}
+        <AdsterraIframeBanner
+          adKey={process.env.NEXT_PUBLIC_ADSTERRA_TOP_KEY}
+          width={728}
+          height={90}
+          placement="site-top-leaderboard"
+          fallbackToSponsor
+          style={{ marginTop: 8, marginBottom: 0 }}
+          loading="eager"
         />
-
-        {/* Public ad runtime config for client-side ad slot fallback. */}
-        <script
-          dangerouslySetInnerHTML={{ __html: adRuntimeConfigScript }}
+        <main style={{ flex: 1 }}>
+          {children}
+          {/* Bottom Adsterra Native Banner - uses default NEXT_PUBLIC_ADSTERRA_NATIVE_* vars */}
+          <AdsterraNativeBanner placement="site-bottom-native" fallbackToSponsor />
+        </main>
+        <Footer />
+        <CopySuccessNudge />
+        {/* Lightweight cookie notice - informational only, does NOT gate ads */}
+        <CookieConsent lang={lang} />
+        {/* Optional higher-yield Adsterra script format.
+            Disabled unless NEXT_PUBLIC_ADSTERRA_SOCIAL_BAR_SCRIPT is configured. */}
+        <AdsterraSocialBar
+          scriptSrc={process.env.NEXT_PUBLIC_ADSTERRA_SOCIAL_BAR_SCRIPT}
+          delayMs={Number(process.env.NEXT_PUBLIC_ADSTERRA_SOCIAL_BAR_DELAY_MS || 15000)}
+          sessionCap={process.env.NEXT_PUBLIC_ADSTERRA_SOCIAL_BAR_SESSION_CAP !== 'false'}
         />
-        
-        {/* Microsoft Clarity — Bing-owned behavior analytics (free, may boost Bing ranking signal) */}
-        {/* To activate: set NEXT_PUBLIC_CLARITY_PROJECT_ID in .env.local then rebuild */}
-        {process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID && (
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","${process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID}");`
-            }}
-          />
-        )}
-        
-        {/* Organization Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Organization',
-              name: 'DevToolBox',
-              url: 'https://viadreams.cc',
-              logo: 'https://viadreams.cc/og-image.png',
-              description: 'Free online developer tools for encoding, formatting, generating, and converting data.',
-              sameAs: [],
-            })
-          }}
+        {/* Optional high-viewability mobile anchor banner.
+            Falls back to a compact sponsor CTA when the ad key is missing or empty. */}
+        <AdsterraMobileStickyBanner
+          adKey={process.env.NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_KEY}
+          width={Number(process.env.NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_WIDTH || 320)}
+          height={Number(process.env.NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_HEIGHT || 50)}
+          fallbackToSponsor
         />
-
-        {/* WebSite Schema with SearchAction - enables Google sitelinks search box */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'WebSite',
-              name: 'DevToolBox',
-              url: 'https://viadreams.cc',
-              potentialAction: {
-                '@type': 'SearchAction',
-                target: 'https://viadreams.cc/en/tools/?q={search_term_string}',
-                'query-input': 'required name=search_term_string'
-              }
-            })
-          }}
-        />
-      </head>
-      <body style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-        <LangProvider lang={lang} dict={dict}>
-          <Header />
-          {/* Top Adsterra Banner 728x90 (leaderboard, above the fold).
-              Activates when NEXT_PUBLIC_ADSTERRA_TOP_KEY is set. */}
-          <AdsterraIframeBanner
-            adKey={process.env.NEXT_PUBLIC_ADSTERRA_TOP_KEY}
-            width={728}
-            height={90}
-            placement="site-top-leaderboard"
-            fallbackToSponsor
-            style={{ marginTop: 8, marginBottom: 0 }}
-            loading="eager"
-          />
-          <main style={{ flex: 1 }}>
-            {children}
-            {/* Bottom Adsterra Native Banner — uses default NEXT_PUBLIC_ADSTERRA_NATIVE_* vars */}
-            <AdsterraNativeBanner placement="site-bottom-native" fallbackToSponsor />
-          </main>
-          <Footer />
-          <CopySuccessNudge />
-          {/* Lightweight cookie notice — informational only, does NOT gate ads */}
-          <CookieConsent lang={lang} />
-          {/* Optional higher-yield Adsterra script format.
-              Disabled unless NEXT_PUBLIC_ADSTERRA_SOCIAL_BAR_SCRIPT is configured. */}
-          <AdsterraSocialBar
-            scriptSrc={process.env.NEXT_PUBLIC_ADSTERRA_SOCIAL_BAR_SCRIPT}
-            delayMs={Number(process.env.NEXT_PUBLIC_ADSTERRA_SOCIAL_BAR_DELAY_MS || 15000)}
-            sessionCap={process.env.NEXT_PUBLIC_ADSTERRA_SOCIAL_BAR_SESSION_CAP !== 'false'}
-          />
-          {/* Optional high-viewability mobile anchor banner.
-              Falls back to a compact sponsor CTA when the ad key is missing or empty. */}
-          <AdsterraMobileStickyBanner
-            adKey={process.env.NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_KEY}
-            width={Number(process.env.NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_WIDTH || 320)}
-            height={Number(process.env.NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_HEIGHT || 50)}
-            fallbackToSponsor
-          />
-        </LangProvider>
-      </body>
-    </html>
+      </div>
+    </LangProvider>
   );
 }
