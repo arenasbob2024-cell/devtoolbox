@@ -9,6 +9,7 @@ import type { Metadata } from 'next';
 import AdSlot from '@/components/AdSlot';
 import SponsorCta from '@/components/SponsorCta';
 import PartnerOfferStrip from '@/components/PartnerOfferStrip';
+import MobileRectangleAd from '@/components/MobileRectangleAd';
 
 // Category filter configuration
 const categoryConfigs: Record<string, {
@@ -306,6 +307,7 @@ export default async function CategoryPage({ params }: PageProps) {
         </p>
 
         <AdSlot size="leaderboard" placement="category-top" category={slug} />
+        <MobileRectangleAd placement="category-mobile-rectangle" category={slug} />
         <SponsorCta placement="category-top-sponsor" category={slug} id="category-sponsor" />
         <PartnerOfferStrip
           category={slug}

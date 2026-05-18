@@ -6,6 +6,7 @@ import { tools, categories } from '@/lib/tools';
 import { useLang } from '@/i18n/LangContext';
 import SponsorCta from '@/components/SponsorCta';
 import AdSlot from '@/components/AdSlot';
+import MobileRectangleAd from '@/components/MobileRectangleAd';
 import { trackToolSearchNoResults } from '@/lib/analytics';
 
 // 8 most-loved developer tools — surfaced at the top of the homepage so
@@ -146,6 +147,11 @@ export default function HomePageClient() {
           </svg>
         </div>
       </section>
+
+      <MobileRectangleAd
+        placement="home-mobile-rectangle"
+        category={activeCategory === 'all' ? 'home' : activeCategory}
+      />
 
       {/* Popular Tools — surfaced at the top to drive immediate engagement */}
       {!search && activeCategory === 'all' && (

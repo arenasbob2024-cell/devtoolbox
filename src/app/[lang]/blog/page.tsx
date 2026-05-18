@@ -8,6 +8,7 @@ import { useLang } from '@/i18n/LangContext';
 import { i18n, type Locale } from '@/i18n/config';
 import AdSlot from '@/components/AdSlot';
 import SponsorCta from '@/components/SponsorCta';
+import MobileRectangleAd from '@/components/MobileRectangleAd';
 
 export default function BlogListPage() {
   const params = useParams();
@@ -39,6 +40,7 @@ export default function BlogListPage() {
       </section>
 
       <AdSlot size="leaderboard" placement="blog-list-top" category="blog" />
+      <MobileRectangleAd placement="blog-list-mobile-rectangle" category="blog" />
       <SponsorCta placement="blog-list-sponsor" id="blog-list-sponsor" />
 
       {/* Articles */}

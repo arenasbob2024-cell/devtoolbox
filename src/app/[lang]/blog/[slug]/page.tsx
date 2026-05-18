@@ -1113,6 +1113,7 @@ export default function BlogPostPage() {
       </header>
 
       <AdSlot size="leaderboard" placement="blog-article-top" category={slug} />
+      <MobileRectangleAd placement="blog-article-mobile-top-rectangle" category={slug} />
       <SponsorCta placement="blog-article-sponsor" category={slug} id="blog-article-sponsor" />
 
       {/* Article Body */}

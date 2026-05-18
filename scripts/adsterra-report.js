@@ -139,14 +139,34 @@ const LIVE_INVENTORY_PAGES = [
 
 const SOURCE_INVENTORY_CHECKS = [
   {
+    name: 'Mobile homepage rectangle',
+    sourcePath: 'src/app/[lang]/HomePageClient.tsx',
+    expectedPlacements: ['home-mobile-rectangle'],
+  },
+  {
     name: 'Mobile tool rectangle',
     sourcePath: 'src/components/ToolLayout.tsx',
     expectedPlacements: ['tool-mobile-rectangle'],
   },
   {
+    name: 'Mobile tools index rectangle',
+    sourcePath: 'src/app/[lang]/tools/page.tsx',
+    expectedPlacements: ['tools-index-mobile-rectangle'],
+  },
+  {
+    name: 'Mobile blog listing rectangle',
+    sourcePath: 'src/app/[lang]/blog/page.tsx',
+    expectedPlacements: ['blog-list-mobile-rectangle'],
+  },
+  {
     name: 'Mobile blog article rectangle',
     sourcePath: 'src/app/[lang]/blog/[slug]/page.tsx',
-    expectedPlacements: ['blog-mobile-rectangle'],
+    expectedPlacements: ['blog-article-mobile-top-rectangle', 'blog-mobile-rectangle'],
+  },
+  {
+    name: 'Mobile category rectangle',
+    sourcePath: 'src/app/[lang]/category/[slug]/page.tsx',
+    expectedPlacements: ['category-mobile-rectangle'],
   },
 ];
 

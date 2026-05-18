@@ -7,6 +7,7 @@ import { i18n, type Locale } from '@/i18n/config';
 import SponsorCta from '@/components/SponsorCta';
 import AdSlot from '@/components/AdSlot';
 import PartnerOfferStrip from '@/components/PartnerOfferStrip';
+import MobileRectangleAd from '@/components/MobileRectangleAd';
 
 interface PageProps {
   params: Promise<{ lang: string }>;
@@ -88,6 +89,7 @@ export default async function ToolsIndexPage({ params }: PageProps) {
       </section>
 
       <AdSlot size="leaderboard" placement="tools-index-top" category="tools-index" />
+      <MobileRectangleAd placement="tools-index-mobile-rectangle" category="tools-index" />
       <SponsorCta placement="tools-index-sponsor" category="tools-index" id="tools-index-sponsor" />
       <PartnerOfferStrip
         category="tools-index"
