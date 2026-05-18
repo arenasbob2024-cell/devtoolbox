@@ -69,6 +69,17 @@ Intro: I've been building DevToolBox for the past few months...
 (写一篇 500-800 字的介绍文章，附带截图)
 ```
 
+### Dev.to 批量发布脚本：
+
+`scripts/publish-devto-batch.py` 默认只做 dry run，不会创建文章。确认标题、canonical URL 和正文后，再用环境变量传入 Dev.to API key 并显式加 `--publish`：
+
+```bash
+python3 scripts/publish-devto-batch.py
+DEVTO_API_KEY=... python3 scripts/publish-devto-batch.py --publish --limit=1
+```
+
+不要把 Dev.to API key 写进仓库；如果曾经提交过明文 key，应在 Dev.to 后台立即撤销并重新生成。
+
 ---
 
 ## 🟡 第二批（第2周完成）- 工具目录

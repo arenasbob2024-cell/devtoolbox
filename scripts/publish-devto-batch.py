@@ -1,4 +1,10 @@
-import json, time, urllib.request
+import argparse
+import json
+import os
+import sys
+import time
+import urllib.error
+import urllib.request
 
 articles = [
     {
@@ -38,13 +44,45 @@ articles = [
     }
 ]
 
-api_key = "ZhxJU3sfRd5bFCmG1MDSmK9B"
+def parse_args():
+    parser = argparse.ArgumentParser(description="Publish prepared Dev.to backlink articles.")
+    parser.add_argument(
+        "--publish",
+        action="store_true",
+        help="Actually create published Dev.to articles. Without this flag, the script only prints a dry run.",
+    )
+    parser.add_argument(
+        "--limit",
+        type=int,
+        default=0,
+        help="Optional maximum number of articles to process.",
+    )
+    return parser.parse_args()
 
-for a in articles:
-    with open(a["file"]) as f:
+
+def article_body(file_path):
+    with open(file_path) as f:
         content = f.read()
     parts = content.split("---", 2)
-    body = parts[2].strip() if len(parts) > 2 else content
+    return parts[2].strip() if len(parts) > 2 else content
+
+
+args = parse_args()
+selected_articles = articles[:args.limit] if args.limit and args.limit > 0 else articles
+
+if not args.publish:
+    print("DRY RUN: no articles will be created. Pass --publish with DEVTO_API_KEY set to publish.")
+    for article in selected_articles:
+        print(f"- {article['title']} -> {article['canonical']}")
+    sys.exit(0)
+
+api_key = os.environ.get("DEVTO_API_KEY", "").strip()
+if not api_key:
+    print("Missing DEVTO_API_KEY. Create a Dev.to API key and pass it via environment variable.", file=sys.stderr)
+    sys.exit(1)
+
+for a in selected_articles:
+    body = article_body(a["file"])
 
     payload = {
         "article": {
@@ -70,8 +108,11 @@ for a in articles:
         data = json.loads(resp.read())
         url = data.get("url", "published")
         print("OK: " + url)
-    except Exception as e:
+    except urllib.error.HTTPError as e:
         err = e.read().decode() if hasattr(e, "read") else str(e)
         title_short = a["title"][:30]
         print("FAIL (" + title_short + "): " + err[:150])
+    except Exception as e:
+        title_short = a["title"][:30]
+        print("FAIL (" + title_short + "): " + str(e)[:150])
     time.sleep(3)
