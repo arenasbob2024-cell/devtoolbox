@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Link from 'next/link';
 
 const codeCreateTable = `-- Create a table with JSONB column
 CREATE TABLE products (
@@ -82,22 +83,31 @@ SET metadata = metadata - ARRAY['stock', 'rating'];
 UPDATE products
 SET metadata = metadata #- '{specs,weight}';`;
 
-const codeIndexing = `-- GIN index: most useful for JSONB (supports ?, ?|, ?&, @>, <@)
-CREATE INDEX idx_products_metadata ON products USING GIN (metadata);
+const codeIndexing = `-- Default GIN operator class: jsonb_ops
+-- Supports ?, ?|, ?&, @>, @?, and @@ on the indexed JSONB column.
+CREATE INDEX idx_products_metadata_gin ON products USING GIN (metadata);
 
--- GIN index on a specific key (for equality queries on that key)
-CREATE INDEX idx_products_category ON products
-    USING GIN ((metadata -> 'category'));
+-- Non-default GIN operator class: jsonb_path_ops
+-- Smaller and often faster for @>, @?, and @@, but it does not support ?, ?|, or ?&.
+CREATE INDEX idx_products_metadata_path_ops ON products
+    USING GIN (metadata jsonb_path_ops);
 
--- B-tree index on extracted value (for range queries)
+-- Expression GIN index for operators applied to a nested JSONB value
+CREATE INDEX idx_products_tags_gin ON products
+    USING GIN ((metadata -> 'tags'));
+
+EXPLAIN (ANALYZE, BUFFERS)
+SELECT * FROM products WHERE metadata -> 'tags' ? 'sale';
+
+-- B-tree index on extracted value (for equality/range queries)
 CREATE INDEX idx_products_price ON products
-    USING BTREE ((( metadata ->> 'price' )::numeric));
+    USING BTREE (((metadata ->> 'price')::numeric));
 
 -- Expression index for a nested text field
 CREATE INDEX idx_products_color ON products
     USING BTREE ((metadata #>> '{specs,color}'));
 
--- Check index usage
+-- Check index usage for containment
 EXPLAIN (ANALYZE, BUFFERS)
 SELECT * FROM products WHERE metadata @> '{"category": "widgets"}';`;
 
@@ -143,6 +153,15 @@ const translations: Record<string, Record<string, string>> = {
     intro: 'PostgreSQL JSONB (Binary JSON) is one of the most powerful features in modern PostgreSQL. Unlike the JSON type which stores text verbatim, JSONB stores parsed binary data — enabling fast querying, indexing, and efficient storage. This guide covers everything from basic operations to advanced indexing strategies and performance optimization.',
     whyJsonbTitle: 'JSON vs JSONB: Which to Use?',
     whyJsonbDesc: 'PostgreSQL has two JSON types: json and jsonb. For almost all use cases, use jsonb.',
+    quickTitle: 'Quick Answers: PostgreSQL JSONB GIN Indexes',
+    quickGinQ: 'What index should I use for JSONB?',
+    quickGinA: 'Start with a GIN index on the jsonb column using the default jsonb_ops operator class. It supports key-exists operators (?, ?|, ?&), containment (@>), and jsonpath operators (@?, @@).',
+    quickPathOpsQ: 'jsonb_ops vs jsonb_path_ops: which is better?',
+    quickPathOpsA: 'Use jsonb_ops when you need flexible key-exists queries. Use jsonb_path_ops when your workload is mostly containment or jsonpath matching; it supports fewer operators but is usually smaller and faster for those supported operators.',
+    quickCreateQ: 'What is the exact CREATE INDEX syntax?',
+    quickCreateA: 'Use CREATE INDEX idx_products_metadata_gin ON products USING GIN (metadata); for the default operator class, or CREATE INDEX idx_products_metadata_path_ops ON products USING GIN (metadata jsonb_path_ops); for path-ops indexing.',
+    quickVerifyQ: 'How do I verify that PostgreSQL uses the JSONB index?',
+    quickVerifyA: 'Run EXPLAIN (ANALYZE, BUFFERS) on the real query. Do not assume ->> text extraction uses a JSONB GIN index; add expression B-tree or GIN indexes for the exact expression you filter on.',
     createTitle: 'Creating Tables and Inserting JSONB Data',
     createDesc: 'JSONB columns store any valid JSON value. Keys are sorted and duplicates are removed on storage.',
     queryTitle: 'Querying JSONB: Operators Reference',
@@ -150,16 +169,16 @@ const translations: Record<string, Record<string, string>> = {
     modifyTitle: 'Modifying JSONB Data',
     modifyDesc: 'Update, add, and remove fields within JSONB columns without replacing the entire value.',
     indexTitle: 'Indexing JSONB for Performance',
-    indexDesc: 'The right index strategy can make JSONB queries as fast as queries on regular columns. GIN indexes are the workhorse for JSONB.',
+    indexDesc: 'The right index strategy can make JSONB queries as fast as queries on regular columns. GIN indexes are the workhorse for JSONB, but jsonb_ops and jsonb_path_ops support different operator sets.',
     aggTitle: 'Aggregation and JSONB Functions',
     aggDesc: 'PostgreSQL provides powerful functions for aggregating, expanding, and constructing JSONB values.',
     operatorsTitle: 'JSONB Operators Quick Reference',
     perfTitle: 'Performance Tips',
-    perf1: 'Always create a GIN index on JSONB columns you query frequently. Without an index, JSONB queries require sequential scans.',
+    perf1: 'Create a GIN index on JSONB columns you query frequently. Use the default jsonb_ops class first, then consider jsonb_path_ops for heavy @>, @?, and @@ workloads.',
     perf2: 'Extract frequently-queried fields into regular columns with generated columns: GENERATED ALWAYS AS (metadata ->> \'category\') STORED.',
     perf3: 'Use jsonb instead of json — it is faster for reads (binary format, no re-parsing) and supports indexing.',
     perf4: 'Avoid deep nesting. Flat JSONB structures are easier to index and query. Consider normalizing very deep structures.',
-    perf5: 'Use @> (containment) for filtering on known sub-objects — it uses the GIN index. Avoid ->> with LIKE for text search; use full-text search instead.',
+    perf5: 'Use @> (containment) for filtering on known sub-objects because it can use JSONB GIN indexes. Avoid ->> with LIKE for text search; use full-text search or expression indexes instead.',
     faqTitle: 'Frequently Asked Questions',
     faq1q: 'When should I use JSONB instead of relational columns?',
     faq1a: 'Use JSONB for: semi-structured data where the schema varies per row, storing configurations or settings, event payloads or metadata, and prototype development where the schema is not yet fixed. Use regular columns when: data is highly structured and uniform, you need complex JOINs, or data changes frequently with strict transactional guarantees.',
@@ -168,7 +187,7 @@ const translations: Record<string, Record<string, string>> = {
     faq3q: 'What is the maximum size of a JSONB value?',
     faq3a: 'A single JSONB value in PostgreSQL can be up to 1 GB. However, for practical performance reasons, JSONB columns work best when individual values are under 1 MB. Large JSONB values slow down updates (the entire value must be rewritten) and indexing.',
     faq4q: 'How do I validate JSONB schema in PostgreSQL?',
-    faq4a: 'PostgreSQL 16+ supports JSON Schema validation with the jsonb_matches_schema() function. For older versions, use CHECK constraints with custom functions. Example: ALTER TABLE products ADD CONSTRAINT check_metadata CHECK (jsonb_typeof(metadata -> \'price\') = \'number\');',
+    faq4a: 'Core PostgreSQL does not provide built-in JSON Schema validation. Use CHECK constraints, generated columns, application-level validation, or an extension such as pg_jsonschema. Example: ALTER TABLE products ADD CONSTRAINT check_metadata CHECK (jsonb_typeof(metadata -> \'price\') = \'number\');',
     faq5q: 'How does JSONB compare to a dedicated document database like MongoDB?',
     faq5a: 'JSONB gives you document storage within PostgreSQL, combining the flexibility of document databases with ACID transactions, complex JOINs, full-text search, and all other PostgreSQL features. MongoDB offers native document-first querying and horizontal sharding. For most applications that already use PostgreSQL, JSONB is preferred over adding a separate database.',
     relatedTitle: 'Related Tools',
@@ -178,6 +197,15 @@ const translations: Record<string, Record<string, string>> = {
     intro: 'PostgreSQL JSONB（二进制 JSON）是现代 PostgreSQL 中最强大的功能之一。与以文本形式存储的 JSON 类型不同，JSONB 存储解析后的二进制数据——支持快速查询、索引和高效存储。本指南涵盖从基本操作到高级索引策略和性能优化的所有内容。',
     whyJsonbTitle: 'JSON vs JSONB：使用哪个？',
     whyJsonbDesc: 'PostgreSQL 有两种 JSON 类型：json 和 jsonb。对于几乎所有用例，请使用 jsonb。',
+    quickTitle: '快速答案：PostgreSQL JSONB GIN 索引',
+    quickGinQ: 'JSONB 应该使用什么索引？',
+    quickGinA: '优先从 JSONB 列上的默认 GIN 索引开始，也就是 jsonb_ops 运算符类。它支持键存在运算符（?、?|、?&）、包含查询（@>）以及 jsonpath 运算符（@?、@@）。',
+    quickPathOpsQ: 'jsonb_ops 和 jsonb_path_ops 应该选哪个？',
+    quickPathOpsA: '如果需要灵活的键存在查询，使用 jsonb_ops。如果主要是包含查询或 jsonpath 匹配，使用 jsonb_path_ops；它支持的运算符更少，但通常索引更小、对应查询更快。',
+    quickCreateQ: '准确的 CREATE INDEX 写法是什么？',
+    quickCreateA: '默认运算符类使用 CREATE INDEX idx_products_metadata_gin ON products USING GIN (metadata); path-ops 索引用 CREATE INDEX idx_products_metadata_path_ops ON products USING GIN (metadata jsonb_path_ops);。',
+    quickVerifyQ: '如何确认 PostgreSQL 真的使用了 JSONB 索引？',
+    quickVerifyA: '对真实查询运行 EXPLAIN (ANALYZE, BUFFERS)。不要假设 ->> 文本提取会使用 JSONB GIN 索引；应为实际过滤表达式建立表达式 B-tree 或 GIN 索引。',
     createTitle: '创建表并插入 JSONB 数据',
     createDesc: 'JSONB 列存储任何有效的 JSON 值。键在存储时会被排序，重复键会被删除。',
     queryTitle: '查询 JSONB：运算符参考',
@@ -185,16 +213,16 @@ const translations: Record<string, Record<string, string>> = {
     modifyTitle: '修改 JSONB 数据',
     modifyDesc: '在不替换整个值的情况下更新、添加和删除 JSONB 列中的字段。',
     indexTitle: 'JSONB 索引以提升性能',
-    indexDesc: '正确的索引策略可以使 JSONB 查询与常规列上的查询一样快。GIN 索引是 JSONB 的主力。',
+    indexDesc: '正确的索引策略可以使 JSONB 查询与常规列上的查询一样快。GIN 索引是 JSONB 的主力，但 jsonb_ops 和 jsonb_path_ops 支持的运算符范围不同。',
     aggTitle: '聚合和 JSONB 函数',
     aggDesc: 'PostgreSQL 提供了强大的函数来聚合、展开和构造 JSONB 值。',
     operatorsTitle: 'JSONB 运算符快速参考',
     perfTitle: '性能技巧',
-    perf1: '始终在频繁查询的 JSONB 列上创建 GIN 索引。没有索引，JSONB 查询需要顺序扫描。',
+    perf1: '在频繁查询的 JSONB 列上创建 GIN 索引。优先使用默认 jsonb_ops，再针对大量 @>、@?、@@ 查询考虑 jsonb_path_ops。',
     perf2: '使用生成列将频繁查询的字段提取为常规列：GENERATED ALWAYS AS (metadata ->> \'category\') STORED。',
     perf3: '使用 jsonb 而非 json——读取更快（二进制格式，无需重新解析）且支持索引。',
     perf4: '避免深层嵌套。扁平的 JSONB 结构更易于索引和查询。考虑对非常深的结构进行规范化。',
-    perf5: '使用 @>（包含）过滤已知子对象——它使用 GIN 索引。避免使用 ->> 和 LIKE 进行文本搜索；改用全文搜索。',
+    perf5: '使用 @>（包含）过滤已知子对象，因为它可以使用 JSONB GIN 索引。避免使用 ->> 和 LIKE 做文本搜索；应使用全文搜索或表达式索引。',
     faqTitle: '常见问题',
     faq1q: '什么时候应该使用 JSONB 而非关系列？',
     faq1a: '在以下情况使用 JSONB：每行模式不同的半结构化数据、存储配置或设置、事件载荷或元数据、模式尚未固定的原型开发。在以下情况使用常规列：数据高度结构化且统一、需要复杂 JOIN、或数据频繁变化且需要严格事务保证。',
@@ -203,7 +231,7 @@ const translations: Record<string, Record<string, string>> = {
     faq3q: 'JSONB 值的最大大小是多少？',
     faq3a: 'PostgreSQL 中单个 JSONB 值最大可达 1 GB。但是，出于实际性能原因，当单个值小于 1 MB 时，JSONB 列效果最佳。大型 JSONB 值会减慢更新（必须重写整个值）和索引速度。',
     faq4q: '如何在 PostgreSQL 中验证 JSONB 模式？',
-    faq4a: 'PostgreSQL 16+ 通过 jsonb_matches_schema() 函数支持 JSON Schema 验证。对于旧版本，使用带有自定义函数的 CHECK 约束。示例：ALTER TABLE products ADD CONSTRAINT check_metadata CHECK (jsonb_typeof(metadata -> \'price\') = \'number\');',
+    faq4a: 'PostgreSQL 核心功能不内置 JSON Schema 验证。可以使用 CHECK 约束、生成列、应用层校验，或 pg_jsonschema 等扩展。示例：ALTER TABLE products ADD CONSTRAINT check_metadata CHECK (jsonb_typeof(metadata -> \'price\') = \'number\');',
     faq5q: 'JSONB 与 MongoDB 等专用文档数据库相比如何？',
     faq5a: 'JSONB 让你在 PostgreSQL 中存储文档，将文档数据库的灵活性与 ACID 事务、复杂 JOIN、全文搜索以及所有其他 PostgreSQL 功能结合起来。MongoDB 提供原生文档优先查询和水平分片。对于大多数已经使用 PostgreSQL 的应用，JSONB 优于添加单独的数据库。',
     relatedTitle: '相关工具',
@@ -242,12 +270,21 @@ export default function PostgresqlJsonbGuide({ lang }: { lang: string }) {
     { op: '#>>', usage: "metadata #>> '{a,b}'", desc: 'Get text by path' },
     { op: '@>', usage: "metadata @> '{\"k\":\"v\"}'", desc: 'Containment (uses GIN)' },
     { op: '<@', usage: "'{\"k\":\"v\"}' <@ metadata", desc: 'Is contained by' },
+    { op: '@?', usage: "metadata @? '$.tags[*] ? (@ == \"sale\")'", desc: 'JSON path exists' },
+    { op: '@@', usage: "metadata @@ '$.price > 10'", desc: 'JSON path predicate match' },
     { op: '?', usage: "metadata ? 'key'", desc: 'Key exists' },
     { op: '?|', usage: "metadata ?| ARRAY['a','b']", desc: 'Any key exists' },
     { op: '?&', usage: "metadata ?& ARRAY['a','b']", desc: 'All keys exist' },
     { op: '||', usage: "metadata || '{\"new\":1}'", desc: 'Concatenate/merge' },
     { op: '-', usage: "metadata - 'key'", desc: 'Remove key' },
     { op: '#-', usage: "metadata #- '{a,b}'", desc: 'Remove by path' },
+  ];
+
+  const quickAnswerRows = [
+    { q: t.quickGinQ, a: t.quickGinA },
+    { q: t.quickPathOpsQ, a: t.quickPathOpsA },
+    { q: t.quickCreateQ, a: t.quickCreateA },
+    { q: t.quickVerifyQ, a: t.quickVerifyA },
   ];
 
   const preStyle: React.CSSProperties = { background: '#1e1e1e', color: '#d4d4d4', padding: '1.25rem', borderRadius: '8px', overflowX: 'auto', fontSize: '0.875rem', lineHeight: '1.6' };
@@ -260,6 +297,18 @@ export default function PostgresqlJsonbGuide({ lang }: { lang: string }) {
       />
 
       <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '2rem' }}>{t.intro}</p>
+
+      <section style={{ margin: '2rem 0', padding: '1.25rem', background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '8px' }}>
+        <h2 style={{ marginTop: 0 }}>{t.quickTitle}</h2>
+        <div style={{ display: 'grid', gap: '1rem' }}>
+          {quickAnswerRows.map((row, i) => (
+            <div key={i} style={{ padding: '1rem', background: '#fff', border: '1px solid #e5e7eb', borderRadius: '6px' }}>
+              <h3 style={{ margin: '0 0 0.5rem', fontSize: '1rem' }}>{row.q}</h3>
+              <p style={{ margin: 0, color: '#4a5568', lineHeight: 1.7 }}>{row.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <h2>{t.whyJsonbTitle}</h2>
       <p>{t.whyJsonbDesc}</p>
@@ -352,9 +401,9 @@ export default function PostgresqlJsonbGuide({ lang }: { lang: string }) {
       <div style={{ marginTop: '3rem', padding: '1.5rem', background: '#f0f4f8', borderRadius: '8px' }}>
         <h2 style={{ marginTop: 0 }}>{t.relatedTitle}</h2>
         <ul style={{ paddingLeft: '1.25rem', lineHeight: '2' }}>
-          <li><a href="/en/tools/json-formatter" style={{ color: '#3182ce' }}>JSON Formatter</a></li>
-          <li><a href="/en/tools/json-to-typescript" style={{ color: '#3182ce' }}>JSON to TypeScript</a></li>
-          <li><a href="/en/tools/sql-formatter" style={{ color: '#3182ce' }}>SQL Formatter</a></li>
+          <li><Link href="/en/tools/json-formatter" style={{ color: '#3182ce' }}>JSON Formatter</Link></li>
+          <li><Link href="/en/tools/json-to-typescript" style={{ color: '#3182ce' }}>JSON to TypeScript</Link></li>
+          <li><Link href="/en/tools/sql-formatter" style={{ color: '#3182ce' }}>SQL Formatter</Link></li>
         </ul>
       </div>
     </article>
