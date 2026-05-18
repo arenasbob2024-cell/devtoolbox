@@ -100,6 +100,7 @@ export default async function LangLayout({
   const dict = await getDictionary(lang);
   const adRuntimeConfigScript = `window.__DEVTOOLBOX_ADS__=${JSON.stringify({
     topKey: process.env.NEXT_PUBLIC_ADSTERRA_TOP_KEY || '',
+    sidebarKey: process.env.NEXT_PUBLIC_ADSTERRA_SIDEBAR_KEY || '',
   }).replace(/</g, '\\u003c')};`;
 
   return (

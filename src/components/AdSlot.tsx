@@ -34,6 +34,7 @@ declare global {
   interface Window {
     __DEVTOOLBOX_ADS__?: {
       topKey?: string;
+      sidebarKey?: string;
     };
   }
 }
@@ -56,6 +57,7 @@ const AD_KEYS: Record<AdSlotPlacement, string | undefined> = {
 };
 
 const GLOBAL_LEADERBOARD_KEY = process.env.NEXT_PUBLIC_ADSTERRA_TOP_KEY || undefined;
+const GLOBAL_RECTANGLE_KEY = process.env.NEXT_PUBLIC_ADSTERRA_SIDEBAR_KEY || undefined;
 
 const GLOBAL_LEADERBOARD_FALLBACK_PLACEMENTS = new Set<AdSlotPlacement>([
   'home-inline',
@@ -73,11 +75,23 @@ const GLOBAL_LEADERBOARD_FALLBACK_PLACEMENTS = new Set<AdSlotPlacement>([
   'category-bottom',
 ]);
 
+const GLOBAL_RECTANGLE_FALLBACK_PLACEMENTS = new Set<AdSlotPlacement>([
+  'tool-sidebar-secondary',
+]);
+
 function canUseGlobalLeaderboardFallback(placement: AdSlotPlacement | undefined, size: AdSlotSize) {
   return Boolean(
     placement &&
     size === 'leaderboard' &&
     GLOBAL_LEADERBOARD_FALLBACK_PLACEMENTS.has(placement)
+  );
+}
+
+function canUseGlobalRectangleFallback(placement: AdSlotPlacement | undefined, size: AdSlotSize) {
+  return Boolean(
+    placement &&
+    size === 'rectangle' &&
+    GLOBAL_RECTANGLE_FALLBACK_PLACEMENTS.has(placement)
   );
 }
 
@@ -93,17 +107,21 @@ function subscribeRuntimeAds(onStoreChange: () => void) {
 
 function getClientRuntimeAdSnapshot() {
   const topKey = window.__DEVTOOLBOX_ADS__?.topKey || GLOBAL_LEADERBOARD_KEY || '';
-  return `1:${topKey}`;
+  const sidebarKey = window.__DEVTOOLBOX_ADS__?.sidebarKey || GLOBAL_RECTANGLE_KEY || '';
+  return `1:${topKey}:${sidebarKey}`;
 }
 
 function getServerRuntimeAdSnapshot() {
-  return GLOBAL_LEADERBOARD_KEY ? `1:${GLOBAL_LEADERBOARD_KEY}` : '0:';
+  return GLOBAL_LEADERBOARD_KEY || GLOBAL_RECTANGLE_KEY
+    ? `1:${GLOBAL_LEADERBOARD_KEY || ''}:${GLOBAL_RECTANGLE_KEY || ''}`
+    : '0::';
 }
 
 function getAdKey(
   placement: AdSlotPlacement | undefined,
   size: AdSlotSize,
-  runtimeLeaderboardKey?: string
+  runtimeLeaderboardKey?: string,
+  runtimeRectangleKey?: string
 ) {
   if (!placement) return undefined;
 
@@ -112,6 +130,10 @@ function getAdKey(
 
   if (canUseGlobalLeaderboardFallback(placement, size)) {
     return runtimeLeaderboardKey || GLOBAL_LEADERBOARD_KEY;
+  }
+
+  if (canUseGlobalRectangleFallback(placement, size)) {
+    return runtimeRectangleKey || GLOBAL_RECTANGLE_KEY;
   }
 
   return undefined;
@@ -138,13 +160,20 @@ export default function AdSlot({
     getServerRuntimeAdSnapshot
   );
   const runtimeChecked = runtimeAdSnapshot.startsWith('1:');
-  const runtimeLeaderboardKey = runtimeAdSnapshot.slice(2) || undefined;
-  const canUseRuntimeLeaderboard = canUseGlobalLeaderboardFallback(placement, size);
-  const adKey = getAdKey(placement, size, runtimeLeaderboardKey);
+  const [, runtimeLeaderboardKey = '', runtimeRectangleKey = ''] = runtimeAdSnapshot.split(':');
+  const canUseRuntimeAd =
+    canUseGlobalLeaderboardFallback(placement, size) ||
+    canUseGlobalRectangleFallback(placement, size);
+  const adKey = getAdKey(
+    placement,
+    size,
+    runtimeLeaderboardKey || undefined,
+    runtimeRectangleKey || undefined
+  );
 
   if (!adKey) {
     if (!fallbackToSponsor || !placement) return null;
-    if (canUseRuntimeLeaderboard && !runtimeChecked) return null;
+    if (canUseRuntimeAd && !runtimeChecked) return null;
 
     return (
       <SponsorCta
