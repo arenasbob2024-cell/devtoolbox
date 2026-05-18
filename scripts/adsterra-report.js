@@ -15,6 +15,7 @@
  *   npm run adsterra:report -- stats --file=exports/adsterra-placement.csv
  *   npm run adsterra:report -- goal --file=exports/adsterra-daily.csv --target=10
  *   npm run adsterra:report -- recommend --placements-file=exports/placements.csv --countries-file=exports/countries.csv
+ *   ADSTERRA_API_KEY=... ADSTERRA_ADS_TXT_SELLER_LINE='adsterra.com, ... , DIRECT' npm run adsterra:gate
  *
  * Keep the token out of git. Generate it in the Adsterra publisher dashboard:
  * API page -> GENERATE NEW TOKEN.
@@ -28,6 +29,7 @@ Adsterra report helper
 Commands:
   stats       Fetch revenue stats. Default command.
   goal        Check whether average daily revenue meets a target.
+  gate        Final non-sample $10/day gate: live ads.txt + inventory + real revenue.
   recommend   Rank placements/countries and print optimization actions.
   ads-txt     Validate and preview the Adsterra ads.txt seller line.
   setup       Print the exact Adsterra unit/env setup checklist.
@@ -55,6 +57,17 @@ Options for goal:
   --file=PATH              Read a CSV export instead of calling the API.
   --sample                 Run with built-in sample rows, no API token needed.
   --json                   Print machine-readable result.
+
+Options for gate:
+  --days=7                 Days to include, ending yesterday by default.
+  --start=YYYY-MM-DD       Start date.
+  --end=YYYY-MM-DD         End date.
+  --target=10              Required average daily revenue in USD.
+  --domain=ID              Optional Adsterra domain ID.
+  --file=PATH              Read a real daily CSV export instead of calling the API.
+  --site-url=https://...    Live site to verify. Defaults to https://viadreams.cc.
+  --vercel-scope=SLUG       Also inspect Vercel env var names via vercel env ls.
+  --json                   Print machine-readable gate result.
 
 Options for recommend:
   --days=7                 Days to include, ending yesterday by default.
@@ -1380,7 +1393,7 @@ async function buildAdsTxtReport(args) {
       url: liveAdsTxt.url,
       error: liveAdsTxt.error,
       hasValidLine: liveValidation.hasValidLine,
-      matchesInput: liveAdsTxt.enabled && liveMissingInputLines.length === 0,
+      matchesInput: liveAdsTxt.enabled && inputValidation.hasValidLine && liveMissingInputLines.length === 0,
       validLines: liveValidation.validLines,
     },
     preview,
@@ -1784,6 +1797,134 @@ function buildGoalReport({ payload, start, end, days, targetDailyRevenue }) {
   };
 }
 
+function sampleGoalRows() {
+  return [
+    { date: '2026-05-12', revenue: 8.25 },
+    { date: '2026-05-13', revenue: 9.8 },
+    { date: '2026-05-14', revenue: 10.4 },
+    { date: '2026-05-15', revenue: 11.1 },
+    { date: '2026-05-16', revenue: 10.95 },
+    { date: '2026-05-17', revenue: 11.4 },
+    { date: '2026-05-18', revenue: 12.2 },
+  ];
+}
+
+async function buildGoalReportFromArgs(args, { allowSample = true } = {}) {
+  const { start, end } = getDateRange(args);
+  const days = Number(args.days || inclusiveDateCount(start, end) || 7);
+  const targetDailyRevenue = Number(args.target || 10);
+
+  if (args.sample && !allowSample) {
+    return {
+      report: null,
+      error: 'The final gate does not allow --sample; use a real Adsterra API token or a real daily CSV export.',
+    };
+  }
+
+  if (!args.file && !args.sample && !envValue(process.env, 'ADSTERRA_API_KEY')) {
+    return {
+      report: null,
+      error: 'Missing ADSTERRA_API_KEY. Generate a publisher API token in Adsterra and pass it via env, or use --file=exports/adsterra-daily.csv.',
+    };
+  }
+
+  const payload = args.file
+    ? await readCsvFile(args.file)
+    : args.sample
+    ? sampleGoalRows()
+    : await request('stats.json', {
+        start_date: start,
+        finish_date: end,
+        group_by: 'date',
+        domain: args.domain,
+      });
+
+  return {
+    report: buildGoalReport({
+      payload,
+      start,
+      end,
+      days: Number.isFinite(days) && days > 0 ? days : 7,
+      targetDailyRevenue: Number.isFinite(targetDailyRevenue) && targetDailyRevenue > 0 ? targetDailyRevenue : 10,
+    }),
+    error: '',
+  };
+}
+
+function summarizeAdsTxtForGate(report) {
+  return {
+    status: report.status,
+    inputValid: report.input.valid,
+    inputValidLineCount: report.input.validLines.length,
+    inputInvalidLineCount: report.input.invalidLines.length,
+    live: {
+      checked: report.live.checked,
+      url: report.live.url,
+      error: report.live.error,
+      hasValidLine: report.live.hasValidLine,
+      matchesInput: report.live.matchesInput,
+    },
+    warnings: report.warnings,
+  };
+}
+
+async function buildGateReport(args) {
+  const siteUrl = args['site-url'] || args.site || 'https://viadreams.cc';
+  const gateArgs = {
+    ...args,
+    'site-url': siteUrl,
+  };
+  const [adsTxt, readiness, goalResult] = await Promise.all([
+    buildAdsTxtReport(gateArgs),
+    buildReadinessReport(gateArgs),
+    buildGoalReportFromArgs(gateArgs, { allowSample: false }),
+  ]);
+  const failures = [];
+
+  if (adsTxt.status !== 'PASS') {
+    failures.push('Live ads.txt does not contain the configured Adsterra seller line.');
+  }
+
+  if (readiness.vercelEnv.enabled && !readiness.vercelEnv.error && readiness.requiredMissing.length > 0) {
+    failures.push(`Required Adsterra ad env vars are missing: ${readiness.requiredMissing.join(', ')}`);
+  }
+
+  if (readiness.liveInventory.errors.length > 0 || readiness.liveInventory.missingPlacements.length > 0) {
+    failures.push('Live ad inventory is missing one or more expected placements.');
+  }
+
+  if (readiness.sourceInventory.errors.length > 0 || readiness.sourceInventory.missingPlacements.length > 0) {
+    failures.push('Source ad inventory is missing one or more expected mobile placements.');
+  }
+
+  if (!goalResult.report) {
+    failures.push(goalResult.error);
+  } else if (!goalResult.report.achieved) {
+    failures.push(
+      `Measured Adsterra revenue is ${money(goalResult.report.averageDailyRevenue)} / day, below the ${money(goalResult.report.targetDailyRevenue)} / day target.`
+    );
+  }
+
+  return {
+    status: failures.length === 0 ? 'PASS' : 'FAIL',
+    achieved: failures.length === 0,
+    siteUrl,
+    adsTxt: summarizeAdsTxtForGate(adsTxt),
+    readiness: {
+      status: readiness.status,
+      vercelEnvChecked: readiness.vercelEnv.enabled && !readiness.vercelEnv.error,
+      requiredMissing: readiness.requiredMissing,
+      verificationMissing: readiness.verificationMissing,
+      recommendedMissing: readiness.recommendedMissing,
+      liveInventoryMissing: readiness.liveInventory.missingPlacements,
+      sourceInventoryMissing: readiness.sourceInventory.missingPlacements,
+      warningCount: readiness.warnings.length,
+    },
+    goal: goalResult.report,
+    failures,
+  };
+}
+
 function printGoalReport(report) {
   console.log('Adsterra revenue goal check');
   console.log(`Status: ${report.achieved ? 'PASS' : 'FAIL'}`);
@@ -1804,6 +1945,46 @@ function printGoalReport(report) {
   } else {
     console.log('\nDaily revenue breakdown was not present in the source data.');
     console.log('Use a date-grouped Adsterra export or API report for per-day validation.');
+  }
+}
+
+function printGateReport(report) {
+  console.log('Adsterra revenue completion gate');
+  console.log(`Status: ${report.status}`);
+  console.log(`Site: ${report.siteUrl}`);
+  console.log(`ads.txt: ${report.adsTxt.status}`);
+  if (report.adsTxt.live.checked) {
+    console.log(`Live seller line: ${report.adsTxt.live.hasValidLine ? 'present' : 'missing'}`);
+    console.log(`Live seller line matches input: ${report.adsTxt.live.matchesInput ? 'yes' : 'no'}`);
+  }
+  console.log(`Live ad inventory: ${report.readiness.liveInventoryMissing.length === 0 ? 'OK' : 'MISSING'}`);
+  console.log(
+    `Required Vercel ad env vars: ${
+      report.readiness.vercelEnvChecked
+        ? report.readiness.requiredMissing.length === 0 ? 'OK' : 'MISSING'
+        : 'not checked'
+    }`
+  );
+
+  if (report.goal) {
+    console.log(`Revenue period: ${report.goal.start} to ${report.goal.end} (${report.goal.days} days)`);
+    console.log(`Target average: ${money(report.goal.targetDailyRevenue)} / day`);
+    console.log(`Actual average: ${money(report.goal.averageDailyRevenue)} / day`);
+    console.log(`Total revenue: ${money(report.goal.totalRevenue)} of ${money(report.goal.requiredTotalRevenue)} required`);
+  } else {
+    console.log('Revenue period: not verified');
+  }
+
+  if (report.failures.length > 0) {
+    console.log('\nFailures');
+    for (const failure of report.failures) {
+      console.log(`  - ${failure}`);
+    }
+  }
+
+  if (report.readiness.warningCount > 0) {
+    console.log(`\nReadiness warnings: ${report.readiness.warningCount}`);
+    console.log('Run `npm run adsterra:readiness -- --vercel-scope=arenas-projects-ac293cdb --site-url=https://viadreams.cc` for the full list.');
   }
 }
 
@@ -1914,6 +2095,21 @@ async function main() {
     return;
   }
 
+  if (command === 'gate') {
+    const report = await buildGateReport(args);
+
+    if (args.json) {
+      console.log(JSON.stringify(report, null, 2));
+    } else {
+      printGateReport(report);
+    }
+
+    if (report.status !== 'PASS') {
+      process.exitCode = 1;
+    }
+    return;
+  }
+
   if (command === 'recommend') {
     const { start, end } = getDateRange(args);
     const minImpressions = Number(args['min-impressions'] || 1000);
@@ -1969,34 +2165,17 @@ async function main() {
   }
 
   if (command === 'goal') {
-    const { start, end } = getDateRange(args);
-    const days = Number(args.days || inclusiveDateCount(start, end) || 7);
-    const targetDailyRevenue = Number(args.target || 10);
-    const payload = args.file
-      ? await readCsvFile(args.file)
-      : args.sample
-      ? [
-          { date: '2026-05-12', revenue: 8.25 },
-          { date: '2026-05-13', revenue: 9.8 },
-          { date: '2026-05-14', revenue: 10.4 },
-          { date: '2026-05-15', revenue: 11.1 },
-          { date: '2026-05-16', revenue: 10.95 },
-          { date: '2026-05-17', revenue: 11.4 },
-          { date: '2026-05-18', revenue: 12.2 },
-        ]
-      : await request('stats.json', {
-          start_date: start,
-          finish_date: end,
-          group_by: 'date',
-          domain: args.domain,
-        });
-    const report = buildGoalReport({
-      payload,
-      start,
-      end,
-      days: Number.isFinite(days) && days > 0 ? days : 7,
-      targetDailyRevenue: Number.isFinite(targetDailyRevenue) && targetDailyRevenue > 0 ? targetDailyRevenue : 10,
-    });
+    const { report, error } = await buildGoalReportFromArgs(args);
+
+    if (!report) {
+      if (args.json) {
+        console.log(JSON.stringify({ achieved: false, error }, null, 2));
+      } else {
+        console.error(error);
+      }
+      process.exitCode = 1;
+      return;
+    }
 
     if (args.json) {
       console.log(JSON.stringify(report, null, 2));

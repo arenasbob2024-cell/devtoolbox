@@ -74,6 +74,7 @@ Useful checks:
 ```bash
 npm run adsterra:readiness -- --vercel-scope=arenas-projects-ac293cdb --site-url=https://viadreams.cc
 ADSTERRA_API_KEY=... npm run adsterra:goal -- --days=7 --target=10
+ADSTERRA_API_KEY=... ADSTERRA_ADS_TXT_SELLER_LINE='adsterra.com, <publisher-id>, DIRECT' npm run adsterra:gate -- --vercel-scope=arenas-projects-ac293cdb
 ```
 
 The workflow template in `docs/adsterra-revenue-goal.workflow.yml` can be enabled as `.github/workflows/adsterra-revenue-goal.yml` with a GitHub token that has `workflow` scope. It passes only when live `ads.txt` contains the configured Adsterra seller line and the rolling Adsterra API report averages at least `$10/day`.

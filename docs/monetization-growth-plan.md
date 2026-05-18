@@ -168,6 +168,7 @@ ADSTERRA_API_KEY=... npm run adsterra:report -- stats --days=7 --group-by=placem
 ADSTERRA_API_KEY=... npm run adsterra:report -- stats --days=7 --group-by=country
 ADSTERRA_API_KEY=... npm run adsterra:report -- stats --days=7 --group-by=placement_sub_id
 ADSTERRA_API_KEY=... npm run adsterra:goal -- --days=7 --target=10
+ADSTERRA_API_KEY=... ADSTERRA_ADS_TXT_SELLER_LINE='adsterra.com, <publisher-id>, DIRECT' npm run adsterra:gate -- --vercel-scope=arenas-projects-ac293cdb
 ADSTERRA_API_KEY=... npm run adsterra:report -- recommend --days=7 --min-impressions=1000
 npm run adsterra:goal -- --sample
 npm run adsterra:report -- recommend --sample
@@ -185,6 +186,7 @@ If the Adsterra API token is not available, export placement and country reports
 ```bash
 npm run adsterra:report -- stats --file=exports/adsterra-placement.csv
 npm run adsterra:goal -- --file=exports/adsterra-daily.csv --target=10
+npm run adsterra:gate -- --file=exports/adsterra-daily.csv --site-url=https://viadreams.cc
 npm run adsterra:report -- recommend --placements-file=exports/placements.csv --countries-file=exports/countries.csv --min-impressions=1000
 ```
 
@@ -199,6 +201,8 @@ The `adsterra:readiness` command checks local, optional Vercel environment, and 
 When `--site-url` is provided, `adsterra:readiness` also fetches representative live pages and checks the real `data-ad-placement` markers for homepage, a high-traffic tool workspace, a blog article, blog listing, all-tools index, and category landing inventory. It also source-checks client-rendered mobile rectangles that do not appear in raw HTML, such as `tool-mobile-rectangle` and `blog-mobile-rectangle`. This catches broken deployments or missing mid-list placements before waiting for Adsterra reports, and it gives the weekly operator a concrete list of live placements to compare against API/CSV revenue by placement.
 
 The `adsterra:goal` command is the revenue completion gate. It prints PASS only when the measured average daily Adsterra revenue is at least the target, and exits non-zero when the period is below target so deployment or optimization work is not mistaken for verified revenue.
+
+The `adsterra:gate` command is the stricter final gate for the `$10/day` objective. It does not allow sample data. It passes only when live `/ads.txt` contains the configured Adsterra seller line, required active ad env vars are present, and a real Adsterra API or CSV daily report reaches the target average. Its JSON output summarizes the check without printing the seller line or API token, so it is suitable for a scheduled GitHub Actions artifact.
 
 ## Next experiments
 

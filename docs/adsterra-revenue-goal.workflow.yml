@@ -50,17 +50,12 @@ jobs:
           test -n "$ADSTERRA_API_KEY" || { echo "::error title=Missing secret::Add ADSTERRA_API_KEY in GitHub repository secrets."; exit 1; }
           test -n "$ADSTERRA_ADS_TXT_SELLER_LINE" || { echo "::error title=Missing secret::Add ADSTERRA_ADS_TXT_SELLER_LINE in GitHub repository secrets."; exit 1; }
 
-      - name: Run verification reports
+      - name: Run revenue gate
         run: |
           set +e
-          npm run adsterra:ads-txt -- --site-url=https://viadreams.cc --json > adsterra-ads-txt.json
-          ads_txt_status=$?
-          npm run adsterra:goal -- --days="$DAYS" --target="$TARGET" --json > adsterra-revenue-goal.json
-          goal_status=$?
-          {
-            echo "ADS_TXT_STATUS=$ads_txt_status"
-            echo "GOAL_STATUS=$goal_status"
-          } >> "$GITHUB_ENV"
+          npm run adsterra:gate -- --site-url=https://viadreams.cc --days="$DAYS" --target="$TARGET" --json > adsterra-revenue-gate.json
+          gate_status=$?
+          echo "GATE_STATUS=$gate_status" >> "$GITHUB_ENV"
           exit 0
 
       - name: Summarize
@@ -75,17 +70,20 @@ jobs:
               return null;
             }
           }
-          const adsTxt = readJson('adsterra-ads-txt.json');
-          const goal = readJson('adsterra-revenue-goal.json');
-          if (adsTxt) {
-            console.log(`ads.txt status: ${adsTxt.status}`);
-            console.log(`live seller line: ${adsTxt.live?.hasValidLine ? 'present' : 'missing'}`);
-          }
-          if (goal) {
-            console.log(`revenue status: ${goal.achieved ? 'PASS' : 'FAIL'}`);
-            console.log(`period: ${goal.start} to ${goal.end} (${goal.days} days)`);
-            console.log(`average daily revenue: $${goal.averageDailyRevenue.toFixed(2)} / day`);
-            console.log(`target: $${goal.targetDailyRevenue.toFixed(2)} / day`);
+          const gate = readJson('adsterra-revenue-gate.json');
+          if (gate) {
+            console.log(`gate status: ${gate.status}`);
+            console.log(`ads.txt status: ${gate.adsTxt?.status}`);
+            console.log(`live seller line: ${gate.adsTxt?.live?.hasValidLine ? 'present' : 'missing'}`);
+            if (gate.goal) {
+              console.log(`period: ${gate.goal.start} to ${gate.goal.end} (${gate.goal.days} days)`);
+              console.log(`average daily revenue: $${gate.goal.averageDailyRevenue.toFixed(2)} / day`);
+              console.log(`target: $${gate.goal.targetDailyRevenue.toFixed(2)} / day`);
+            }
+            if (gate.failures?.length) {
+              console.log('failures:');
+              for (const failure of gate.failures) console.log(`- ${failure}`);
+            }
           }
           NODE
 
@@ -94,13 +92,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: adsterra-revenue-goal
-          path: |
-            adsterra-ads-txt.json
-            adsterra-revenue-goal.json
+          path: adsterra-revenue-gate.json
           if-no-files-found: ignore
 
       - name: Fail on unmet revenue gate
         if: always()
         run: |
-          test "${ADS_TXT_STATUS:-1}" -eq 0 || { echo "::error title=ads.txt gate failed::Live ads.txt must contain the valid Adsterra seller line."; exit 1; }
-          test "${GOAL_STATUS:-1}" -eq 0 || { echo "::error title=Revenue goal failed::Rolling Adsterra revenue is below the configured target or could not be verified."; exit 1; }
+          test "${GATE_STATUS:-1}" -eq 0 || { echo "::error title=Revenue gate failed::Live ads.txt, required inventory, or rolling Adsterra revenue did not pass."; exit 1; }

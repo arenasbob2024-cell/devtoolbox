@@ -12,6 +12,7 @@
     "adsterra:setup": "node scripts/adsterra-report.js setup",
     "adsterra:readiness": "node scripts/adsterra-report.js readiness",
     "adsterra:goal": "node scripts/adsterra-report.js goal",
+    "adsterra:gate": "node scripts/adsterra-report.js gate",
     "content:verify": "node scripts/verify-content-ids.js"
   },
   "dependencies": {
