@@ -109,6 +109,18 @@ const LIVE_INVENTORY_PAGES = [
     ],
   },
   {
+    name: 'Blog article',
+    path: '/en/blog/cursor-vs-windsurf/',
+    expectedPlacements: [
+      'site-top-leaderboard',
+      'blog-article-top',
+      'blog-article-mid',
+      'blog-article-bottom',
+      'blog-article-sidebar',
+      'site-bottom-native',
+    ],
+  },
+  {
     name: 'Blog listing',
     path: '/en/blog/',
     expectedPlacements: ['site-top-leaderboard', 'blog-list-top', 'blog-list-mid', 'blog-list-bottom', 'site-bottom-native'],
@@ -122,6 +134,19 @@ const LIVE_INVENTORY_PAGES = [
     name: 'Category landing',
     path: '/en/category/json-tools/',
     expectedPlacements: ['site-top-leaderboard', 'category-top', 'category-mid', 'category-bottom', 'site-bottom-native'],
+  },
+];
+
+const SOURCE_INVENTORY_CHECKS = [
+  {
+    name: 'Mobile tool rectangle',
+    sourcePath: 'src/components/ToolLayout.tsx',
+    expectedPlacements: ['tool-mobile-rectangle'],
+  },
+  {
+    name: 'Mobile blog article rectangle',
+    sourcePath: 'src/app/[lang]/blog/[slug]/page.tsx',
+    expectedPlacements: ['blog-mobile-rectangle'],
   },
 ];
 
@@ -531,6 +556,33 @@ async function loadLiveInventory(siteUrl) {
       page.missingPlacements.map(placement => `${page.path}:${placement}`)
     )),
     errors: pages.filter(page => page.error).map(page => `${page.path}: ${page.error}`),
+  };
+}
+
+async function loadSourceInventory() {
+  const checks = await Promise.all(SOURCE_INVENTORY_CHECKS.map(async (check) => {
+    const { text, path } = await readOptionalTextFile(check.sourcePath);
+    const placements = check.expectedPlacements.filter(placement => text.includes(placement));
+    const missingPlacements = check.expectedPlacements.filter(placement => !placements.includes(placement));
+
+    return {
+      ...check,
+      path,
+      status: text && missingPlacements.length === 0 ? 'OK' : 'WARN',
+      sourceFound: Boolean(text),
+      placements,
+      missingPlacements,
+      error: text ? '' : 'source file not found or unreadable',
+    };
+  }));
+
+  return {
+    enabled: true,
+    checks,
+    missingPlacements: checks.flatMap(check => (
+      check.missingPlacements.map(placement => `${check.sourcePath}:${placement}`)
+    )),
+    errors: checks.filter(check => check.error).map(check => `${check.sourcePath}: ${check.error}`),
   };
 }
 
@@ -1045,6 +1097,7 @@ async function buildReadinessReport(args) {
     vercelEnv,
     liveAdsTxt,
     liveInventory,
+    sourceInventory,
   ] = await Promise.all([
     readOptionalTextFile(envFile),
     readOptionalTextFile('public/ads.txt'),
@@ -1053,6 +1106,7 @@ async function buildReadinessReport(args) {
     loadVercelEnvPresence(vercelScope),
     loadLiveAdsTxt(siteUrl),
     loadLiveInventory(siteUrl),
+    loadSourceInventory(),
   ]);
   const fileEnv = parseEnvFileText(envFileText);
   const vercelEnvPresence = Object.fromEntries(
@@ -1114,6 +1168,14 @@ async function buildReadinessReport(args) {
     warnings.push(`Live ad inventory missing expected placement: ${missingPlacement}`);
   }
 
+  for (const error of sourceInventory.errors) {
+    warnings.push(`Could not verify source ad inventory: ${error}`);
+  }
+
+  for (const missingPlacement of sourceInventory.missingPlacements) {
+    warnings.push(`Source ad inventory missing expected client placement: ${missingPlacement}`);
+  }
+
   const status = requiredMissing.length > 0
     ? 'FAIL'
     : warnings.length > 0
@@ -1152,6 +1214,7 @@ async function buildReadinessReport(args) {
       hasRevenueProofSource,
     },
     liveInventory,
+    sourceInventory,
     envGroups,
     requiredMissing,
     recommendedMissing,
@@ -1428,6 +1491,21 @@ function printReadinessReport(report) {
       }
       if (page.error) {
         console.log(`    error: ${page.error}`);
+      }
+    }
+  }
+
+  if (report.sourceInventory.enabled) {
+    console.log('\nSource ad inventory');
+    for (const check of report.sourceInventory.checks) {
+      const status = check.status === 'OK' && check.missingPlacements.length === 0 ? 'OK' : 'WARN';
+      console.log(`  - ${status} ${check.name}: ${check.sourcePath}`);
+      console.log(`    placements: ${check.placements.length > 0 ? check.placements.join(', ') : 'none found'}`);
+      if (check.missingPlacements.length > 0) {
+        console.log(`    missing: ${check.missingPlacements.join(', ')}`);
+      }
+      if (check.error) {
+        console.log(`    error: ${check.error}`);
       }
     }
   }
