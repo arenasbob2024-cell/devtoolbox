@@ -148,7 +148,9 @@ Run the API report after generating an Adsterra Publisher API token:
 ADSTERRA_API_KEY=... npm run adsterra:report -- stats --days=7 --group-by=placement
 ADSTERRA_API_KEY=... npm run adsterra:report -- stats --days=7 --group-by=country
 ADSTERRA_API_KEY=... npm run adsterra:report -- stats --days=7 --group-by=placement_sub_id
+ADSTERRA_API_KEY=... npm run adsterra:goal -- --days=7 --target=10
 ADSTERRA_API_KEY=... npm run adsterra:report -- recommend --days=7 --min-impressions=1000
+npm run adsterra:goal -- --sample
 npm run adsterra:report -- recommend --sample
 ```
 
@@ -163,10 +165,13 @@ If the Adsterra API token is not available, export placement and country reports
 
 ```bash
 npm run adsterra:report -- stats --file=exports/adsterra-placement.csv
+npm run adsterra:goal -- --file=exports/adsterra-daily.csv --target=10
 npm run adsterra:report -- recommend --placements-file=exports/placements.csv --countries-file=exports/countries.csv --min-impressions=1000
 ```
 
 The CSV import path accepts common column names such as placement/ad unit/zone, country/geo, impressions/views/loads, clicks, CTR, CPM/eCPM, revenue/profit/earnings, and prints the same scale/review recommendations as the API flow.
+
+The `adsterra:goal` command is the revenue completion gate. It prints PASS only when the measured average daily Adsterra revenue is at least the target, and exits non-zero when the period is below target so deployment or optimization work is not mistaken for verified revenue.
 
 ## Next experiments
 

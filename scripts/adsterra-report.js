@@ -7,8 +7,10 @@
  *   ADSTERRA_API_KEY=... npm run adsterra:report -- stats --days=7 --group-by=placement
  *   ADSTERRA_API_KEY=... npm run adsterra:report -- recommend --days=7
  *   ADSTERRA_API_KEY=... npm run adsterra:report -- stats --start=2026-05-01 --end=2026-05-15 --group-by=country
+ *   ADSTERRA_API_KEY=... npm run adsterra:report -- goal --days=7 --target=10
  *   ADSTERRA_API_KEY=... npm run adsterra:report -- domains
  *   npm run adsterra:report -- stats --file=exports/adsterra-placement.csv
+ *   npm run adsterra:report -- goal --file=exports/adsterra-daily.csv --target=10
  *   npm run adsterra:report -- recommend --placements-file=exports/placements.csv --countries-file=exports/countries.csv
  *
  * Keep the token out of git. Generate it in the Adsterra publisher dashboard:
@@ -22,6 +24,7 @@ Adsterra report helper
 
 Commands:
   stats       Fetch revenue stats. Default command.
+  goal        Check whether average daily revenue meets a target.
   recommend   Rank placements/countries and print optimization actions.
   domains     Fetch domains as CSV.
   placements  Fetch placements as CSV.
@@ -36,6 +39,16 @@ Options for stats:
   --country=US             Optional country filter.
   --file=PATH              Read a CSV export instead of calling the API.
   --json                   Print raw JSON instead of a compact table.
+
+Options for goal:
+  --days=7                 Days to include, ending yesterday by default.
+  --start=YYYY-MM-DD       Start date.
+  --end=YYYY-MM-DD         End date.
+  --target=10              Required average daily revenue in USD.
+  --domain=ID              Optional Adsterra domain ID.
+  --file=PATH              Read a CSV export instead of calling the API.
+  --sample                 Run with built-in sample rows, no API token needed.
+  --json                   Print machine-readable result.
 
 Options for recommend:
   --days=7                 Days to include, ending yesterday by default.
@@ -69,6 +82,16 @@ function addDays(date, days) {
   const next = new Date(date);
   next.setUTCDate(next.getUTCDate() + days);
   return next;
+}
+
+function inclusiveDateCount(start, end) {
+  const startTime = Date.parse(`${start}T00:00:00.000Z`);
+  const endTime = Date.parse(`${end}T00:00:00.000Z`);
+  if (!Number.isFinite(startTime) || !Number.isFinite(endTime) || endTime < startTime) {
+    return 0;
+  }
+
+  return Math.floor((endTime - startTime) / 86400000) + 1;
 }
 
 function getDateRange(args) {
@@ -346,6 +369,77 @@ function printRecommendations(report) {
   console.log('  - Keep country and placement winners separate from generic fallback ad keys.');
 }
 
+function rowDate(row) {
+  const value = valueFor(row, ['date', 'day']);
+  return value === '' ? '' : String(value).slice(0, 10);
+}
+
+function buildGoalReport({ payload, start, end, days, targetDailyRevenue }) {
+  const rows = rowsFromStats(payload);
+  const dailyRevenue = new Map();
+  let totalRevenue = 0;
+
+  for (const row of rows) {
+    const revenue = numberFor(row, ['revenue', 'revenue_usd', 'profit', 'profit_usd', 'earnings', 'earnings_usd', 'income']);
+    totalRevenue += revenue;
+
+    const date = rowDate(row);
+    if (date) {
+      dailyRevenue.set(date, (dailyRevenue.get(date) || 0) + revenue);
+    }
+  }
+
+  const inferredDays = dailyRevenue.size || inclusiveDateCount(start, end) || days;
+  const normalizedDays = Number.isFinite(inferredDays) && inferredDays > 0 ? inferredDays : 1;
+  const averageDailyRevenue = totalRevenue / normalizedDays;
+  const requiredTotalRevenue = targetDailyRevenue * normalizedDays;
+  const gapPerDay = Math.max(0, targetDailyRevenue - averageDailyRevenue);
+  const requiredAdditionalRevenue = Math.max(0, requiredTotalRevenue - totalRevenue);
+  const dailyRows = Array.from(dailyRevenue.entries())
+    .map(([date, revenue]) => ({ date, revenue }))
+    .sort((a, b) => a.date.localeCompare(b.date));
+  const periodStart = dailyRows[0]?.date || start;
+  const periodEnd = dailyRows[dailyRows.length - 1]?.date || end;
+
+  return {
+    achieved: averageDailyRevenue >= targetDailyRevenue,
+    targetDailyRevenue,
+    start: periodStart,
+    end: periodEnd,
+    days: normalizedDays,
+    totalRevenue,
+    averageDailyRevenue,
+    requiredTotalRevenue,
+    gapPerDay,
+    requiredAdditionalRevenue,
+    rowCount: rows.length,
+    dailyRows,
+  };
+}
+
+function printGoalReport(report) {
+  console.log('Adsterra revenue goal check');
+  console.log(`Status: ${report.achieved ? 'PASS' : 'FAIL'}`);
+  console.log(`Period: ${report.start} to ${report.end} (${report.days} days)`);
+  console.log(`Target average: ${money(report.targetDailyRevenue)} / day`);
+  console.log(`Actual average: ${money(report.averageDailyRevenue)} / day`);
+  console.log(`Total revenue: ${money(report.totalRevenue)} of ${money(report.requiredTotalRevenue)} required`);
+
+  if (!report.achieved) {
+    console.log(`Gap: ${money(report.gapPerDay)} / day, ${money(report.requiredAdditionalRevenue)} total for this period`);
+  }
+
+  if (report.dailyRows.length > 0) {
+    console.log('\nDaily revenue');
+    for (const row of report.dailyRows) {
+      console.log(`  - ${row.date}: ${money(row.revenue)}`);
+    }
+  } else {
+    console.log('\nDaily revenue breakdown was not present in the source data.');
+    console.log('Use a date-grouped Adsterra export or API report for per-day validation.');
+  }
+}
+
 function printStatsTable(payload) {
   const rows = rowsFromStats(payload);
   if (rows.length === 0) {
@@ -460,6 +554,48 @@ async function main() {
     }
 
     printRecommendations(report);
+    return;
+  }
+
+  if (command === 'goal') {
+    const { start, end } = getDateRange(args);
+    const days = Number(args.days || inclusiveDateCount(start, end) || 7);
+    const targetDailyRevenue = Number(args.target || 10);
+    const payload = args.file
+      ? await readCsvFile(args.file)
+      : args.sample
+      ? [
+          { date: '2026-05-12', revenue: 8.25 },
+          { date: '2026-05-13', revenue: 9.8 },
+          { date: '2026-05-14', revenue: 10.4 },
+          { date: '2026-05-15', revenue: 11.1 },
+          { date: '2026-05-16', revenue: 10.95 },
+          { date: '2026-05-17', revenue: 11.4 },
+          { date: '2026-05-18', revenue: 12.2 },
+        ]
+      : await request('stats.json', {
+          start_date: start,
+          finish_date: end,
+          group_by: 'date',
+          domain: args.domain,
+        });
+    const report = buildGoalReport({
+      payload,
+      start,
+      end,
+      days: Number.isFinite(days) && days > 0 ? days : 7,
+      targetDailyRevenue: Number.isFinite(targetDailyRevenue) && targetDailyRevenue > 0 ? targetDailyRevenue : 10,
+    });
+
+    if (args.json) {
+      console.log(JSON.stringify(report, null, 2));
+    } else {
+      printGoalReport(report);
+    }
+
+    if (!report.achieved) {
+      process.exitCode = 1;
+    }
     return;
   }
 
