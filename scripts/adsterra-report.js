@@ -27,7 +27,7 @@ Commands:
   stats       Fetch revenue stats. Default command.
   goal        Check whether average daily revenue meets a target.
   recommend   Rank placements/countries and print optimization actions.
-  readiness   Check local Adsterra env/reporting readiness without printing secrets.
+  readiness   Check local Adsterra env/reporting readiness and next actions without printing secrets.
   domains     Fetch domains as CSV.
   placements  Fetch placements as CSV.
 
@@ -407,6 +407,134 @@ function buildEnvChecks(env) {
   }));
 }
 
+function hasMissing(report, names) {
+  const missing = new Set([
+    ...report.requiredMissing,
+    ...report.recommendedMissing,
+    ...report.verificationMissing,
+  ]);
+
+  return names.some(name => missing.has(name));
+}
+
+function vercelEnvCommand(report, name, environment = 'production') {
+  const scope = report.vercelEnv.scope ? ` --scope ${report.vercelEnv.scope}` : '';
+  return `npx vercel env add ${name} ${environment}${scope}`;
+}
+
+function buildReadinessActions(report) {
+  const actions = [];
+
+  if (report.requiredMissing.length > 0) {
+    actions.push({
+      priority: 'P0',
+      title: 'Restore required active Adsterra ad units',
+      reason: 'Required top/sidebar/native env vars are missing, so existing ad inventory may not render.',
+      commands: report.requiredMissing.map(name => vercelEnvCommand(report, name)),
+    });
+  }
+
+  if (!report.adsTxt.hasAdsterraSellerLine) {
+    actions.push({
+      priority: 'P0',
+      title: 'Fill the exact Adsterra ads.txt seller line',
+      reason: 'A missing seller line can reduce demand trust and fill. Copy the exact line from the Adsterra publisher dashboard.',
+      commands: [
+        'Edit public/ads.txt and replace the placeholder with the Adsterra seller line',
+        'git add public/ads.txt && git commit -m "Add Adsterra seller line" && git push origin main',
+      ],
+    });
+  }
+
+  if (report.verificationMissing.includes('ADSTERRA_API_KEY') && report.reports.csvFiles.length === 0) {
+    actions.push({
+      priority: 'P0',
+      title: 'Add a real revenue verification source',
+      reason: 'The $10/day goal cannot be proven from sample data. Use an Adsterra Publisher API token or export a real daily CSV report.',
+      commands: [
+        'ADSTERRA_API_KEY=... npm run adsterra:goal -- --days=7 --target=10',
+        'npm run adsterra:goal -- --file=exports/adsterra-daily.csv --target=10',
+      ],
+    });
+  }
+
+  if (hasMissing(report, ['NEXT_PUBLIC_ADSTERRA_DIRECT_LINK_URL'])) {
+    actions.push({
+      priority: 'P1',
+      title: 'Enable Smart Direct Link surfaces',
+      reason: 'The code already shows Direct Link offers in high-intent surfaces when the URL exists, including header, sponsor fallbacks, post-action nudges, and support buttons.',
+      commands: [
+        'Create a Smart Direct Link / Smartlink unit in Adsterra',
+        vercelEnvCommand(report, 'NEXT_PUBLIC_ADSTERRA_DIRECT_LINK_URL'),
+        'git commit --allow-empty -m "Redeploy with Adsterra direct link" && git push origin main',
+        report.vercelEnv.scope
+          ? `npm run adsterra:readiness -- --vercel-scope=${report.vercelEnv.scope}`
+          : 'npm run adsterra:readiness',
+      ],
+    });
+  }
+
+  if (hasMissing(report, ['NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_KEY'])) {
+    actions.push({
+      priority: 'P1',
+      title: 'Enable the mobile sticky banner experiment',
+      reason: 'Mobile sticky inventory has high viewability and the component is already shipped with fallback and close-state behavior.',
+      commands: [
+        'Create a 320x50 mobile banner unit in Adsterra',
+        vercelEnvCommand(report, 'NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_KEY'),
+        'git commit --allow-empty -m "Redeploy with Adsterra mobile sticky" && git push origin main',
+      ],
+    });
+  }
+
+  if (hasMissing(report, ['NEXT_PUBLIC_ADSTERRA_SOCIAL_BAR_SCRIPT'])) {
+    actions.push({
+      priority: 'P1',
+      title: 'Run a delayed Social Bar test',
+      reason: 'The Social Bar can lift revenue per session, but should be tested against bounce rate and returning-user behavior.',
+      commands: [
+        'Create a Social Bar unit in Adsterra',
+        vercelEnvCommand(report, 'NEXT_PUBLIC_ADSTERRA_SOCIAL_BAR_SCRIPT'),
+        `Optional: ${vercelEnvCommand(report, 'NEXT_PUBLIC_ADSTERRA_SOCIAL_BAR_DELAY_MS')}`,
+      ],
+    });
+  }
+
+  const dedicatedPlacementVars = report.recommendedMissing.filter(name => (
+    name.startsWith('NEXT_PUBLIC_ADSTERRA_') &&
+    ![
+      'NEXT_PUBLIC_ADSTERRA_DIRECT_LINK_URL',
+      'NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_KEY',
+      'NEXT_PUBLIC_ADSTERRA_SOCIAL_BAR_SCRIPT',
+    ].includes(name)
+  ));
+
+  if (dedicatedPlacementVars.length > 0) {
+    actions.push({
+      priority: 'P2',
+      title: 'Create dedicated placement keys for RPM isolation',
+      reason: 'The current site reuses global top/sidebar keys as fallbacks. Dedicated keys are needed to know which surfaces actually earn.',
+      commands: [
+        ...dedicatedPlacementVars.slice(0, 4).map(name => vercelEnvCommand(report, name)),
+        'npm run adsterra:report -- recommend --days=7 --min-impressions=1000',
+      ],
+    });
+  }
+
+  if (actions.length === 0) {
+    actions.push({
+      priority: 'OK',
+      title: 'Run the real revenue gate',
+      reason: 'Configuration readiness has no missing items. The remaining proof is measured Adsterra revenue.',
+      commands: [
+        'ADSTERRA_API_KEY=... npm run adsterra:goal -- --days=7 --target=10',
+      ],
+    });
+  }
+
+  return actions;
+}
+
 async function buildReadinessReport(args) {
   const envFile = args['env-file'] || '.env.local';
   const vercelScope = args['vercel-scope'] || args.scope || '';
@@ -464,7 +592,7 @@ async function buildReadinessReport(args) {
     ? 'WARN'
     : 'PASS';
 
-  return {
+  const report = {
     status,
     envFile: {
       path: envFilePath,
@@ -493,6 +621,9 @@ async function buildReadinessReport(args) {
     verificationMissing,
     warnings,
   };
+  report.nextActions = buildReadinessActions(report);
+
+  return report;
 }
 
 function printReadinessReport(report) {
@@ -530,6 +661,17 @@ function printReadinessReport(report) {
     console.log('\nWarnings');
     for (const warning of report.warnings) {
       console.log(`  - ${warning}`);
+    }
+  }
+
+  if (report.nextActions.length > 0) {
+    console.log('\nNext actions');
+    for (const action of report.nextActions) {
+      console.log(`  - ${action.priority} ${action.title}`);
+      console.log(`    ${action.reason}`);
+      for (const command of action.commands) {
+        console.log(`    $ ${command}`);
+      }
     }
   }
 
