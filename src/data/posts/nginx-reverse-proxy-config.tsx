@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Link from 'next/link';
 
 const codeBasicProxy = `# Basic reverse proxy configuration
 server {
@@ -191,10 +192,57 @@ server {
     }
 }`;
 
+const codeProxyPassSlash = `# proxy_pass trailing slash behavior
+# Rule: proxy_pass with a URI replaces the matching location prefix.
+#       proxy_pass without a URI passes the full original request URI.
+
+server {
+    listen 80;
+    server_name example.com;
+
+    # Keep the /api/ prefix on the upstream request
+    # Request:  /api/users?id=1
+    # Upstream: http://api_backend/api/users?id=1
+    location /api/ {
+        proxy_pass http://api_backend;
+    }
+
+    # Strip the /app/ prefix before forwarding
+    # Request:  /app/dashboard
+    # Upstream: http://app_backend/dashboard
+    location /app/ {
+        proxy_pass http://app_backend/;
+    }
+
+    # Replace /docs/ with /manual/
+    # Request:  /docs/install.html
+    # Upstream: http://docs_backend/manual/install.html
+    location /docs/ {
+        proxy_pass http://docs_backend/manual/;
+    }
+
+    # In regex or named locations, do not add a URI part to proxy_pass.
+    # Use rewrite or pass the full request URI explicitly instead.
+    location ~ ^/files/(.*)$ {
+        proxy_pass http://file_backend;
+    }
+}`;
+
 const translations: Record<string, Record<string, string>> = {
   en: {
     title: 'Nginx Reverse Proxy Configuration Guide: SSL, Upstream, Load Balancing',
     intro: 'A reverse proxy sits between your clients and backend servers, forwarding requests and returning responses. Nginx is the most popular choice for this role in 2026 — it handles SSL termination, load balancing, caching, and WebSocket proxying with minimal configuration. This guide covers every production-ready pattern you need.',
+    slashTitle: 'Quick Answers: nginx proxy_pass Trailing Slash',
+    slashIntro: 'The trailing slash question is really a URI replacement question: proxy_pass with a URI rewrites the matching location prefix; proxy_pass without a URI forwards the original request URI.',
+    slashQ1: 'What happens with proxy_pass http://backend?',
+    slashA1: 'No URI is specified, so Nginx forwards the full request URI. A request for /api/users reaches the upstream as /api/users.',
+    slashQ2: 'What happens with proxy_pass http://backend/?',
+    slashA2: 'The slash is a URI of /. Nginx replaces the matching location prefix with /, so location /api/ plus /api/users reaches the upstream as /users.',
+    slashQ3: 'What happens with proxy_pass http://backend/service/?',
+    slashA3: 'The /service/ URI replaces the matching location prefix. For location /api/, /api/users becomes /service/users upstream.',
+    slashQ4: 'Can I use a URI part in regex or named locations?',
+    slashA4: 'Avoid it. When Nginx cannot determine the prefix to replace, specify proxy_pass without a URI and use rewrite rules or variables deliberately.',
+    slashMapTitle: 'Request Mapping Examples',
     basicTitle: 'Basic Reverse Proxy Setup',
     basicDesc: 'The simplest reverse proxy forwards all requests to a single backend server. The key headers ensure your backend sees the real client IP and protocol.',
     sslTitle: 'SSL/TLS Termination',
@@ -216,9 +264,9 @@ const translations: Record<string, Record<string, string>> = {
     faq1q: 'How do I pass the real client IP to my backend?',
     faq1a: 'Add these headers: proxy_set_header X-Real-IP $remote_addr and proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for. Then in your backend, read X-Real-IP (for the direct client) or the first entry in X-Forwarded-For. If using multiple proxies, configure trusted proxy IPs.',
     faq2q: 'How do I handle multiple backends with different paths?',
-    faq2a: 'Use multiple location blocks: location /api/ { proxy_pass http://api-server:8080; } and location /app/ { proxy_pass http://app-server:3000; }. The trailing slash in proxy_pass matters — http://backend/api/ will strip the /api prefix before forwarding.',
+    faq2a: 'Use multiple location blocks: location /api/ { proxy_pass http://api-server:8080; } and location /app/ { proxy_pass http://app-server:3000/; }. The proxy_pass URI matters: a target with no URI keeps the matched prefix, while a target with a URI replaces the matched location prefix.',
     faq3q: 'What is the difference between proxy_pass with and without a trailing slash?',
-    faq3a: 'Without trailing slash: proxy_pass http://backend — the full URI including the location path is forwarded. With trailing slash: proxy_pass http://backend/ — the location path prefix is removed. Example: location /app/ with proxy_pass http://backend/ will forward /app/page as /page to the backend.',
+    faq3a: 'Without a URI, proxy_pass http://backend forwards the full request URI including the location path. With a URI, proxy_pass http://backend/ replaces the matched location prefix with /. Example: location /app/ with proxy_pass http://backend/ forwards /app/page as /page.',
     faq4q: 'How do I debug proxy connection issues?',
     faq4a: 'Check /var/log/nginx/error.log first. Common issues: (1) upstream connection refused — backend not running or wrong port; (2) upstream timed out — increase proxy_read_timeout; (3) 502 Bad Gateway — backend crashed or returned invalid response. Add "error_log /var/log/nginx/error.log debug;" temporarily for verbose logging.',
     faq5q: 'How do I configure Nginx to use HTTP/2 for backends?',
@@ -228,6 +276,17 @@ const translations: Record<string, Record<string, string>> = {
   zh: {
     title: 'Nginx 反向代理配置指南：SSL、上游和负载均衡',
     intro: '反向代理位于客户端和后端服务器之间，转发请求并返回响应。Nginx 是 2026 年这一角色最流行的选择——它以最少的配置处理 SSL 终止、负载均衡、缓存和 WebSocket 代理。本指南涵盖了所有你需要的生产就绪模式。',
+    slashTitle: '快速答案：nginx proxy_pass 尾部斜杠',
+    slashIntro: 'proxy_pass 的尾部斜杠本质上是 URI 替换规则：带 URI 的 proxy_pass 会替换匹配到的 location 前缀；不带 URI 的 proxy_pass 会转发原始请求 URI。',
+    slashQ1: 'proxy_pass http://backend 会发生什么？',
+    slashA1: '没有指定 URI，因此 Nginx 会转发完整请求 URI。请求 /api/users 会作为 /api/users 到达上游。',
+    slashQ2: 'proxy_pass http://backend/ 会发生什么？',
+    slashA2: '这个斜杠本身就是 URI /。Nginx 会用 / 替换匹配到的 location 前缀，因此 location /api/ 下的 /api/users 会作为 /users 到达上游。',
+    slashQ3: 'proxy_pass http://backend/service/ 会发生什么？',
+    slashA3: '/service/ 这个 URI 会替换匹配到的 location 前缀。对于 location /api/，/api/users 会变成上游的 /service/users。',
+    slashQ4: '正则 location 或 named location 里能使用 URI 部分吗？',
+    slashA4: '应避免这样写。当 Nginx 无法确定要替换的前缀时，应使用不带 URI 的 proxy_pass，并有意识地配合 rewrite 或变量。',
+    slashMapTitle: '请求映射示例',
     basicTitle: '基本反向代理设置',
     basicDesc: '最简单的反向代理将所有请求转发到单个后端服务器。关键头部确保你的后端看到真实的客户端 IP 和协议。',
     sslTitle: 'SSL/TLS 终止',
@@ -249,9 +308,9 @@ const translations: Record<string, Record<string, string>> = {
     faq1q: '如何将真实客户端 IP 传递给后端？',
     faq1a: '添加这些头部：proxy_set_header X-Real-IP $remote_addr 和 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for。然后在后端，读取 X-Real-IP（直接客户端）或 X-Forwarded-For 中的第一个条目。如果使用多个代理，配置受信任的代理 IP。',
     faq2q: '如何处理具有不同路径的多个后端？',
-    faq2a: '使用多个 location 块：location /api/ { proxy_pass http://api-server:8080; } 和 location /app/ { proxy_pass http://app-server:3000; }。proxy_pass 中的尾部斜杠很重要——http://backend/api/ 在转发前会去掉 /api 前缀。',
+    faq2a: '使用多个 location 块：location /api/ { proxy_pass http://api-server:8080; } 和 location /app/ { proxy_pass http://app-server:3000/; }。proxy_pass 的 URI 很重要：不带 URI 会保留匹配前缀，带 URI 会替换匹配到的 location 前缀。',
     faq3q: 'proxy_pass 有无尾部斜杠有什么区别？',
-    faq3a: '无尾部斜杠：proxy_pass http://backend——包含 location 路径的完整 URI 被转发。有尾部斜杠：proxy_pass http://backend/——location 路径前缀被移除。例如：带有 proxy_pass http://backend/ 的 location /app/ 会将 /app/page 作为 /page 转发给后端。',
+    faq3a: '不带 URI 时，proxy_pass http://backend 会转发包含 location 路径的完整请求 URI。带 URI 时，proxy_pass http://backend/ 会用 / 替换匹配到的 location 前缀。例如：location /app/ 搭配 proxy_pass http://backend/ 会将 /app/page 作为 /page 转发给后端。',
     faq4q: '如何调试代理连接问题？',
     faq4a: '首先检查 /var/log/nginx/error.log。常见问题：(1) upstream connection refused——后端未运行或端口错误；(2) upstream timed out——增加 proxy_read_timeout；(3) 502 Bad Gateway——后端崩溃或返回无效响应。临时添加 "error_log /var/log/nginx/error.log debug;" 进行详细日志记录。',
     faq5q: '如何配置 Nginx 对后端使用 HTTP/2？',
@@ -289,6 +348,19 @@ export default function NginxReverseProxyConfig({ lang }: { lang: string }) {
     { directive: 'keepalive', desc: 'Max idle keepalive connections to backends' },
   ];
 
+  const slashAnswerRows = [
+    { q: t.slashQ1, a: t.slashA1 },
+    { q: t.slashQ2, a: t.slashA2 },
+    { q: t.slashQ3, a: t.slashA3 },
+    { q: t.slashQ4, a: t.slashA4 },
+  ];
+
+  const slashMapRows = [
+    { location: '/api/', proxyPass: 'http://backend', request: '/api/users', upstream: '/api/users' },
+    { location: '/api/', proxyPass: 'http://backend/', request: '/api/users', upstream: '/users' },
+    { location: '/docs/', proxyPass: 'http://backend/manual/', request: '/docs/install.html', upstream: '/manual/install.html' },
+  ];
+
   const preStyle: React.CSSProperties = { background: '#1e1e1e', color: '#d4d4d4', padding: '1.25rem', borderRadius: '8px', overflowX: 'auto', fontSize: '0.875rem', lineHeight: '1.6' };
 
   return (
@@ -299,6 +371,43 @@ export default function NginxReverseProxyConfig({ lang }: { lang: string }) {
       />
 
       <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '2rem' }}>{t.intro}</p>
+
+      <section style={{ margin: '2rem 0', padding: '1.25rem', background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '8px' }}>
+        <h2 style={{ marginTop: 0 }}>{t.slashTitle}</h2>
+        <p style={{ color: '#4a5568', lineHeight: 1.8 }}>{t.slashIntro}</p>
+        <div style={{ display: 'grid', gap: '1rem', marginBottom: '1.25rem' }}>
+          {slashAnswerRows.map((row, i) => (
+            <div key={i} style={{ padding: '1rem', background: '#fff', border: '1px solid #e5e7eb', borderRadius: '6px' }}>
+              <h3 style={{ margin: '0 0 0.5rem', fontSize: '1rem' }}>{row.q}</h3>
+              <p style={{ margin: 0, color: '#4a5568', lineHeight: 1.7 }}>{row.a}</p>
+            </div>
+          ))}
+        </div>
+        <h3 style={{ marginTop: '1.5rem' }}>{t.slashMapTitle}</h3>
+        <div style={{ overflowX: 'auto' }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.85rem' }}>
+            <thead>
+              <tr style={{ background: '#f8f9fa' }}>
+                <th style={{ padding: '0.75rem', textAlign: 'left', border: '1px solid #dee2e6' }}>location</th>
+                <th style={{ padding: '0.75rem', textAlign: 'left', border: '1px solid #dee2e6' }}>proxy_pass</th>
+                <th style={{ padding: '0.75rem', textAlign: 'left', border: '1px solid #dee2e6' }}>request</th>
+                <th style={{ padding: '0.75rem', textAlign: 'left', border: '1px solid #dee2e6' }}>upstream URI</th>
+              </tr>
+            </thead>
+            <tbody>
+              {slashMapRows.map((row, i) => (
+                <tr key={i} style={{ background: i % 2 === 0 ? '#fff' : '#f8f9fa' }}>
+                  <td style={{ padding: '0.75rem', border: '1px solid #dee2e6', fontFamily: 'monospace' }}>{row.location}</td>
+                  <td style={{ padding: '0.75rem', border: '1px solid #dee2e6', fontFamily: 'monospace' }}>{row.proxyPass}</td>
+                  <td style={{ padding: '0.75rem', border: '1px solid #dee2e6', fontFamily: 'monospace' }}>{row.request}</td>
+                  <td style={{ padding: '0.75rem', border: '1px solid #dee2e6', fontFamily: 'monospace', fontWeight: 600 }}>{row.upstream}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <pre style={{ ...preStyle, marginTop: '1.25rem' }}><code>{codeProxyPassSlash}</code></pre>
+      </section>
 
       <h2>{t.basicTitle}</h2>
       <p>{t.basicDesc}</p>
@@ -366,9 +475,9 @@ export default function NginxReverseProxyConfig({ lang }: { lang: string }) {
       <div style={{ marginTop: '3rem', padding: '1.5rem', background: '#f0f4f8', borderRadius: '8px' }}>
         <h2 style={{ marginTop: 0 }}>{t.relatedTitle}</h2>
         <ul style={{ paddingLeft: '1.25rem', lineHeight: '2' }}>
-          <li><a href="/en/tools/curl-to-code" style={{ color: '#3182ce' }}>cURL to Code Converter</a></li>
-          <li><a href="/en/tools/json-formatter" style={{ color: '#3182ce' }}>JSON Formatter</a></li>
-          <li><a href="/en/tools/cors-tester" style={{ color: '#3182ce' }}>CORS Tester</a></li>
+          <li><Link href="/en/tools/curl-to-code" style={{ color: '#3182ce' }}>cURL to Code Converter</Link></li>
+          <li><Link href="/en/tools/json-formatter" style={{ color: '#3182ce' }}>JSON Formatter</Link></li>
+          <li><Link href="/en/tools/cors-tester" style={{ color: '#3182ce' }}>CORS Tester</Link></li>
         </ul>
       </div>
     </article>
