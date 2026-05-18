@@ -1,10 +1,11 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { COPY_SUCCESS_EVENT } from './CopyButton';
 import { useConsent } from './CookieConsent';
 import { useLang } from '@/i18n/LangContext';
 import { trackMonetizationClick, trackMonetizationImpression } from '@/lib/analytics';
+import { getAdsterraDirectLink } from '@/lib/adsterra-direct-link';
 import type { Locale } from '@/i18n/config';
 
 const COPY_COUNT_KEY = 'devtoolbox-copy-success-count';
@@ -19,6 +20,7 @@ const copy: Record<Locale, {
   body: string;
   support: string;
   sponsor: string;
+  direct: string;
   dismiss: string;
 }> = {
   en: {
@@ -27,6 +29,7 @@ const copy: Record<Locale, {
     body: 'You have copied results a few times. A small contribution keeps these tools fast and ad-light.',
     support: 'Support free tools',
     sponsor: 'Advertise instead',
+    direct: 'Sponsored offer',
     dismiss: 'Not now',
   },
   zh: {
@@ -35,6 +38,7 @@ const copy: Record<Locale, {
     body: '你已经多次复制工具结果。一次小额支持可以帮助这些工具持续免费、快速且少广告。',
     support: '支持免费工具',
     sponsor: '广告合作',
+    direct: '赞助推荐',
     dismiss: '暂不',
   },
   ru: {
@@ -43,6 +47,7 @@ const copy: Record<Locale, {
     body: 'You have copied results a few times. A small contribution keeps these tools fast and ad-light.',
     support: 'Support free tools',
     sponsor: 'Advertise',
+    direct: 'Sponsored offer',
     dismiss: 'Not now',
   },
 };
@@ -87,6 +92,14 @@ export default function CopySuccessNudge() {
   const consent = useConsent();
   const impressionTracked = useRef(false);
   const [visible, setVisible] = useState(false);
+  const directLink = useMemo(
+    () => getAdsterraDirectLink({
+      placement: PLACEMENT,
+      category: 'tool-usage',
+      lang,
+    }),
+    [lang]
+  );
 
   useEffect(() => {
     const onCopySuccess = () => {
@@ -114,7 +127,16 @@ export default function CopySuccessNudge() {
       category: 'tool-usage',
       placement: PLACEMENT,
     });
-  }, [consent, visible]);
+
+    if (directLink) {
+      trackMonetizationImpression({
+        type: 'adsterra',
+        id: directLink.id,
+        category: 'tool-usage',
+        placement: PLACEMENT,
+      });
+    }
+  }, [consent, directLink, visible]);
 
   if (!visible || consent === null) return null;
 
@@ -206,6 +228,36 @@ export default function CopySuccessNudge() {
         >
           {text.support}
         </a>
+        {directLink && (
+          <a
+            href={directLink.url}
+            target="_blank"
+            rel="noopener sponsored nofollow"
+            onClick={() => {
+              trackMonetizationClick({
+                type: 'adsterra',
+                id: directLink.id,
+                category: 'tool-usage',
+                placement: PLACEMENT,
+              });
+            }}
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              minHeight: 36,
+              padding: '8px 12px',
+              borderRadius: 7,
+              border: '1px solid #2563eb',
+              color: '#dbeafe',
+              textDecoration: 'none',
+              fontSize: 13,
+              fontWeight: 700,
+            }}
+          >
+            {text.direct}
+          </a>
+        )}
         <a
           href={sponsorHref}
           onClick={() => {
