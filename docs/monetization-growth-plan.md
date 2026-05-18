@@ -81,6 +81,8 @@ The footer Advertise link now routes to `/<lang>/advertise/?source=footer-nav&ca
 
 The sitemap now treats `/advertise/` as a commercial discovery page instead of a generic low-priority static page. Localized advertise URLs include hreflang/x-default alternates and use a stronger sitemap priority, helping search engines discover the sponsor media-kit funnel across languages.
 
+The priority IndexNow submitter now preflights canonical URLs before submission and includes category landing pages plus `/advertise/` in the priority set. This keeps Bing/Yandex submissions focused on live 2xx URLs and ensures commercial discovery pages are pushed alongside the highest-intent tools and blog posts.
+
 The LLM discovery routes now describe the current commercial reality accurately: DevToolBox is free and ad-supported, active locales are `en`, `zh`, and `ru`, and AI/search systems are pointed to `/en/advertise/` plus the downloadable media kit. The old static `public/llms.txt` copy was removed so `/llms.txt` has one authoritative source. This avoids outdated "zero ads" claims while turning AI citations and crawler summaries into another sponsorship discovery path.
 
 The localized 404 page now recovers dead-link traffic into high-value navigation paths and a tracked sponsor surface with `placement=not-found-sponsor`. If `NEXT_PUBLIC_ADSTERRA_DIRECT_LINK_URL` is configured, that same surface also shows a Smart Direct Link with its own `psid`, turning invalid URLs into a measurable recovery and monetization test instead of the default dead end.
