@@ -191,8 +191,9 @@ export default function AdsterraMobileStickyBanner({
   const consent = useConsent();
   const [ready, setReady] = useState(false);
   const [closed, setClosed] = useState(false);
+  const cookieNoticeVisible = consent === null;
   const fallbackPlacement = adKey ? 'mobile-sticky-ad-empty' : 'mobile-sticky-ad-fallback';
-  const canShowFallback = fallbackToSponsor && consent !== null;
+  const canShowFallback = fallbackToSponsor;
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -253,9 +254,15 @@ export default function AdsterraMobileStickyBanner({
             border-top: 1px solid var(--border-color);
             box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.35);
           }
+          .mobile-sticky-adsterra.with-cookie-notice {
+            bottom: 96px;
+          }
         }
       `}</style>
-      <div className="mobile-sticky-adsterra" aria-label="Sponsored content">
+      <div
+        className={`mobile-sticky-adsterra${cookieNoticeVisible ? ' with-cookie-notice' : ''}`}
+        aria-label="Sponsored content"
+      >
         <div style={{ position: 'relative', width: '100%', maxWidth: width }}>
           <button
             type="button"
