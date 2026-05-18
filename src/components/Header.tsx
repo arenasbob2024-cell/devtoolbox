@@ -1,35 +1,64 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { tools } from '@/lib/tools';
 import { useRouter } from 'next/navigation';
 import { useLang } from '@/i18n/LangContext';
 import LanguageSwitcher from './LanguageSwitcher';
 import { trackMonetizationClick, trackMonetizationImpression } from '@/lib/analytics';
+import { getAdsterraDirectLink } from '@/lib/adsterra-direct-link';
+
+const SPONSOR_NAV_PLACEMENT = 'header-nav';
+const SPONSOR_NAV_ID = 'header-advertise';
+const HEADER_DIRECT_LINK_PLACEMENT = 'header-direct-link';
+const HEADER_DIRECT_LINK_CATEGORY = 'site';
+
+const DIRECT_LINK_COPY: Record<string, string> = {
+  en: 'Offer',
+  zh: '推荐',
+  ru: 'Offer',
+};
 
 export default function Header() {
   const { lang, dict } = useLang();
   const [search, setSearch] = useState('');
   const [showResults, setShowResults] = useState(false);
   const sponsorTrackedRef = useRef(false);
+  const directLinkTrackedRef = useRef<string | null>(null);
   const router = useRouter();
 
   const t = dict.tools;
-  const sponsorNavPlacement = 'header-nav';
-  const sponsorNavId = 'header-advertise';
+  const directLink = useMemo(
+    () => getAdsterraDirectLink({
+      placement: HEADER_DIRECT_LINK_PLACEMENT,
+      category: HEADER_DIRECT_LINK_CATEGORY,
+      lang,
+    }),
+    [lang]
+  );
 
   useEffect(() => {
-    if (sponsorTrackedRef.current) return;
+    if (!sponsorTrackedRef.current) {
+      sponsorTrackedRef.current = true;
+      trackMonetizationImpression({
+        type: 'sponsor',
+        id: SPONSOR_NAV_ID,
+        category: HEADER_DIRECT_LINK_CATEGORY,
+        placement: SPONSOR_NAV_PLACEMENT,
+      });
+    }
 
-    sponsorTrackedRef.current = true;
+    if (!directLink || directLinkTrackedRef.current === directLink.subId) return;
+
+    directLinkTrackedRef.current = directLink.subId;
     trackMonetizationImpression({
-      type: 'sponsor',
-      id: sponsorNavId,
-      category: 'site',
-      placement: sponsorNavPlacement,
+      type: 'adsterra',
+      id: directLink.id,
+      category: HEADER_DIRECT_LINK_CATEGORY,
+      placement: HEADER_DIRECT_LINK_PLACEMENT,
     });
-  }, []);
+  }, [directLink]);
 
   const results = search.length > 0
     ? tools.filter(tool => {
@@ -164,13 +193,13 @@ export default function Header() {
             {(dict as Record<string, unknown> as { blog?: { nav?: string } }).blog?.nav || 'Blog'}
           </Link>
           <Link
-            href={`/${lang}/advertise/?source=${sponsorNavPlacement}&category=site`}
+            href={`/${lang}/advertise/?source=${SPONSOR_NAV_PLACEMENT}&category=${HEADER_DIRECT_LINK_CATEGORY}`}
             className="header-sponsor-link"
             onClick={() => trackMonetizationClick({
               type: 'sponsor',
-              id: sponsorNavId,
-              category: 'site',
-              placement: sponsorNavPlacement,
+              id: SPONSOR_NAV_ID,
+              category: HEADER_DIRECT_LINK_CATEGORY,
+              placement: SPONSOR_NAV_PLACEMENT,
             })}
             style={{
               fontSize: 13,
@@ -186,6 +215,31 @@ export default function Header() {
           >
             {dict.common.advertise || 'Advertise'}
           </Link>
+          {directLink && (
+            <a
+              href={directLink.url}
+              target="_blank"
+              rel="noopener sponsored nofollow"
+              onClick={() => trackMonetizationClick({
+                type: 'adsterra',
+                id: directLink.id,
+                category: HEADER_DIRECT_LINK_CATEGORY,
+                placement: HEADER_DIRECT_LINK_PLACEMENT,
+              })}
+              style={{
+                fontSize: 13,
+                fontWeight: 750,
+                color: 'var(--accent-blue)',
+                textDecoration: 'none',
+                padding: '7px 10px',
+                borderRadius: 8,
+                border: '1px solid rgba(59, 130, 246, 0.35)',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              {DIRECT_LINK_COPY[lang] || DIRECT_LINK_COPY.en}
+            </a>
+          )}
           <LanguageSwitcher />
           <a
             href="https://github.com"
