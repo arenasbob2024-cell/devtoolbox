@@ -194,6 +194,8 @@ The `adsterra:setup` command prints the operational checklist for creating Adste
 
 The `adsterra:readiness` command checks local, optional Vercel environment, and optional live-site readiness without printing secret values. It reports whether the active Adsterra ad unit env vars are present, whether every supported dedicated placement key is configured for clean RPM reporting, whether high-impact experiments such as Smart Direct Link / mobile sticky / Social Bar are configured, whether `/ads.txt` still lacks the seller line env value or live seller line, whether an API token or CSV export is available for a real revenue goal check, and a prioritized next-action list with the exact Vercel env commands to run after creating the missing Adsterra units.
 
+When `--site-url` is provided, `adsterra:readiness` also fetches representative live pages and checks the real `data-ad-placement` markers for homepage, blog listing, all-tools index, and category landing inventory. This catches broken deployments or missing mid-list placements before waiting for Adsterra reports, and it gives the weekly operator a concrete list of live placements to compare against API/CSV revenue by placement.
+
 The `adsterra:goal` command is the revenue completion gate. It prints PASS only when the measured average daily Adsterra revenue is at least the target, and exits non-zero when the period is below target so deployment or optimization work is not mistaken for verified revenue.
 
 ## Next experiments

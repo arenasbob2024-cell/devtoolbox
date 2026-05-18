@@ -89,6 +89,29 @@ Options for setup:
 const ADSTERRA_SELLER_LINE_PATTERN =
   /^adsterra\.com\s*,\s*(?!ADSTERRA_PUBLISHER_ID_PLACEHOLDER\b)[a-z0-9_-]+\s*,\s*DIRECT(?:\s*,\s*[a-z0-9_-]+)?\s*$/i;
 
+const LIVE_INVENTORY_PAGES = [
+  {
+    name: 'Homepage discovery',
+    path: '/en/',
+    expectedPlacements: ['site-top-leaderboard', 'home-inline', 'home-tools-grid', 'site-bottom-native'],
+  },
+  {
+    name: 'Blog listing',
+    path: '/en/blog/',
+    expectedPlacements: ['site-top-leaderboard', 'blog-list-top', 'blog-list-mid', 'blog-list-bottom', 'site-bottom-native'],
+  },
+  {
+    name: 'All tools index',
+    path: '/en/tools/',
+    expectedPlacements: ['site-top-leaderboard', 'tools-index-top', 'tools-index-mid', 'tools-index-bottom', 'site-bottom-native'],
+  },
+  {
+    name: 'Category landing',
+    path: '/en/category/json-tools/',
+    expectedPlacements: ['site-top-leaderboard', 'category-top', 'category-mid', 'category-bottom', 'site-bottom-native'],
+  },
+];
+
 function parseArgs(argv) {
   const args = { _: [] };
   for (const arg of argv) {
@@ -423,6 +446,79 @@ async function loadLiveAdsTxt(siteUrl) {
       error: error.message || String(error),
     };
   }
+}
+
+function extractLivePlacements(html) {
+  const placements = [
+    ...html.matchAll(/data-ad-placement=["']([^"']+)["']/g),
+  ].map(match => match[1]);
+
+  return [...new Set(placements)].sort();
+}
+
+async function loadLiveInventory(siteUrl) {
+  if (!siteUrl) {
+    return {
+      enabled: false,
+      pages: [],
+      missingPlacements: [],
+      errors: [],
+    };
+  }
+
+  let baseUrl;
+  try {
+    baseUrl = new URL(siteUrl);
+  } catch {
+    return {
+      enabled: true,
+      pages: [],
+      missingPlacements: [],
+      errors: [`Invalid site URL: ${siteUrl}`],
+    };
+  }
+
+  const pages = await Promise.all(LIVE_INVENTORY_PAGES.map(async (page) => {
+    const url = new URL(page.path, baseUrl).toString();
+
+    try {
+      const response = await fetch(url, {
+        headers: { Accept: 'text/html' },
+      });
+      const text = await response.text();
+      const placements = extractLivePlacements(text);
+      const missingPlacements = page.expectedPlacements.filter(placement => !placements.includes(placement));
+
+      return {
+        ...page,
+        url,
+        status: response.ok ? 'OK' : 'ERROR',
+        httpStatus: response.status,
+        placements,
+        missingPlacements,
+        error: response.ok ? '' : `HTTP ${response.status}`,
+      };
+    } catch (error) {
+      return {
+        ...page,
+        url,
+        status: 'ERROR',
+        httpStatus: 0,
+        placements: [],
+        missingPlacements: page.expectedPlacements,
+        error: error.message || String(error),
+      };
+    }
+  }));
+
+  return {
+    enabled: true,
+    pages,
+    missingPlacements: pages.flatMap(page => (
+      page.missingPlacements.map(placement => `${page.path}:${placement}`)
+    )),
+    errors: pages.filter(page => page.error).map(page => `${page.path}: ${page.error}`),
+  };
 }
 
 function envValue(env, key) {
@@ -935,6 +1031,7 @@ async function buildReadinessReport(args) {
     csvFiles,
     vercelEnv,
     liveAdsTxt,
+    liveInventory,
   ] = await Promise.all([
     readOptionalTextFile(envFile),
     readOptionalTextFile('public/ads.txt'),
@@ -942,6 +1039,7 @@ async function buildReadinessReport(args) {
     listOptionalCsvFiles('exports'),
     loadVercelEnvPresence(vercelScope),
     loadLiveAdsTxt(siteUrl),
+    loadLiveInventory(siteUrl),
   ]);
   const fileEnv = parseEnvFileText(envFileText);
   const vercelEnvPresence = Object.fromEntries(
@@ -995,6 +1093,14 @@ async function buildReadinessReport(args) {
     warnings.push(`Could not verify live ads.txt: ${liveAdsTxt.error}`);
   }
 
+  for (const error of liveInventory.errors) {
+    warnings.push(`Could not verify live ad inventory: ${error}`);
+  }
+
+  for (const missingPlacement of liveInventory.missingPlacements) {
+    warnings.push(`Live ad inventory missing expected placement: ${missingPlacement}`);
+  }
+
   const status = requiredMissing.length > 0
     ? 'FAIL'
     : warnings.length > 0
@@ -1032,6 +1138,7 @@ async function buildReadinessReport(args) {
       csvFiles: revenueCsvFiles,
       hasRevenueProofSource,
     },
+    liveInventory,
     envGroups,
     requiredMissing,
     recommendedMissing,
@@ -1294,6 +1401,21 @@ function printReadinessReport(report) {
   if (report.reports.csvFiles.length > 0) {
     for (const file of report.reports.csvFiles) {
       console.log(`    ${file}`);
+    }
+  }
+
+  if (report.liveInventory.enabled) {
+    console.log('\nLive ad inventory');
+    for (const page of report.liveInventory.pages) {
+      const status = page.status === 'OK' && page.missingPlacements.length === 0 ? 'OK' : 'WARN';
+      console.log(`  - ${status} ${page.name}: ${page.url}`);
+      console.log(`    placements: ${page.placements.length > 0 ? page.placements.join(', ') : 'none found'}`);
+      if (page.missingPlacements.length > 0) {
+        console.log(`    missing: ${page.missingPlacements.join(', ')}`);
+      }
+      if (page.error) {
+        console.log(`    error: ${page.error}`);
+      }
     }
   }
 
