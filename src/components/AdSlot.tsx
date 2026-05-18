@@ -59,12 +59,17 @@ const GLOBAL_LEADERBOARD_KEY = process.env.NEXT_PUBLIC_ADSTERRA_TOP_KEY || undef
 
 const GLOBAL_LEADERBOARD_FALLBACK_PLACEMENTS = new Set<AdSlotPlacement>([
   'home-inline',
+  'tool-top',
   'tool-mid',
   'tool-bottom',
+  'tools-index-top',
   'tools-index-bottom',
+  'blog-list-top',
   'blog-list-bottom',
+  'blog-article-top',
   'blog-article-mid',
   'blog-article-bottom',
+  'category-top',
   'category-bottom',
 ]);
 
