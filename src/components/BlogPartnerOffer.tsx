@@ -5,6 +5,7 @@ import { useEffect, useMemo, useRef } from 'react';
 import { useLang } from '@/i18n/LangContext';
 import { trackMonetizationClick, trackMonetizationImpression } from '@/lib/analytics';
 import { getRelevantAffiliateLinks } from '@/lib/affiliate-offers';
+import { getAdsterraDirectLink } from '@/lib/adsterra-direct-link';
 
 const copy = {
   en: {
@@ -14,6 +15,8 @@ const copy = {
     sponsorTitle: 'Sponsor this article',
     sponsorText: 'Place your product next to this developer topic with tracked clicks.',
     sponsorCta: 'Ask about article sponsorship',
+    directTitle: 'Sponsored developer offer',
+    directText: 'Open a matched advertiser offer in a new tab.',
   },
   zh: {
     heading: '合作推荐',
@@ -22,6 +25,8 @@ const copy = {
     sponsorTitle: '赞助这篇文章',
     sponsorText: '把你的产品放到这个开发者主题旁边，并追踪点击效果。',
     sponsorCta: '咨询文章赞助',
+    directTitle: '开发者赞助推荐',
+    directText: '在新标签页打开匹配的广告主推荐。',
   },
   ru: {
     heading: 'Партнерские рекомендации',
@@ -30,6 +35,8 @@ const copy = {
     sponsorTitle: 'Спонсировать статью',
     sponsorText: 'Разместите продукт рядом с этой темой для разработчиков с отслеживанием кликов.',
     sponsorCta: 'Обсудить спонсорство статьи',
+    directTitle: 'Спонсорское предложение',
+    directText: 'Открыть подходящее предложение рекламодателя в новой вкладке.',
   },
 };
 
@@ -49,6 +56,11 @@ export default function BlogPartnerOffer({
   const containerRef = useRef<HTMLElement | null>(null);
   const trackedRef = useRef(false);
   const placement = 'blog-article-partner-offer';
+  const directLink = useMemo(
+    () => getAdsterraDirectLink({ placement, category: slug, lang }),
+    [lang, slug]
+  );
+  const hasRevenueOffers = offers.length > 0 || Boolean(directLink);
   const sponsorHref = `/${lang}/advertise/?source=${encodeURIComponent(placement)}&category=${encodeURIComponent(slug)}`;
 
   useEffect(() => {
@@ -59,13 +71,21 @@ export default function BlogPartnerOffer({
       if (trackedRef.current) return;
       trackedRef.current = true;
 
-      if (offers.length > 0) {
+      if (hasRevenueOffers) {
         offers.forEach(offer => trackMonetizationImpression({
           type: 'affiliate',
           id: offer.id,
           category: slug,
           placement,
         }));
+        if (directLink) {
+          trackMonetizationImpression({
+            type: 'adsterra',
+            id: directLink.id,
+            category: slug,
+            placement,
+          });
+        }
         return;
       }
 
@@ -92,7 +112,7 @@ export default function BlogPartnerOffer({
     observer.observe(element);
 
     return () => observer.disconnect();
-  }, [offers, slug]);
+  }, [directLink, hasRevenueOffers, offers, slug]);
 
   return (
     <section
@@ -108,13 +128,13 @@ export default function BlogPartnerOffer({
         {t.heading}
       </p>
       <h2 style={{ margin: '0 0 8px', fontSize: 19, fontWeight: 800, color: 'var(--text-primary)' }}>
-        {offers.length > 0 ? t.title : t.sponsorTitle}
+        {hasRevenueOffers ? t.title : t.sponsorTitle}
       </h2>
       <p style={{ margin: '0 0 14px', color: 'var(--text-secondary)', fontSize: 13, lineHeight: 1.65 }}>
-        {offers.length > 0 ? t.description : t.sponsorText}
+        {hasRevenueOffers ? t.description : t.sponsorText}
       </p>
 
-      {offers.length > 0 ? (
+      {hasRevenueOffers ? (
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 12 }}>
           {offers.map(offer => (
             <a
@@ -145,6 +165,34 @@ export default function BlogPartnerOffer({
               </span>
             </a>
           ))}
+          {directLink && (
+            <a
+              href={directLink.url}
+              target="_blank"
+              rel="noopener sponsored nofollow"
+              onClick={() => trackMonetizationClick({
+                type: 'adsterra',
+                id: directLink.id,
+                category: slug,
+                placement,
+              })}
+              style={{
+                display: 'block',
+                padding: 14,
+                borderRadius: 8,
+                border: '1px solid var(--border-color)',
+                background: 'var(--bg-input)',
+                textDecoration: 'none',
+              }}
+            >
+              <span style={{ display: 'block', fontSize: 14, fontWeight: 800, color: 'var(--text-primary)', marginBottom: 4 }}>
+                {t.directTitle}
+              </span>
+              <span style={{ display: 'block', fontSize: 12, color: 'var(--text-secondary)', lineHeight: 1.55 }}>
+                {t.directText}
+              </span>
+            </a>
+          )}
         </div>
       ) : (
         <Link

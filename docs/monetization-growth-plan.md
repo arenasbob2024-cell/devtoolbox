@@ -1,6 +1,6 @@
 # DevToolBox Monetization Growth Plan
 
-Last updated: 2026-05-16
+Last updated: 2026-05-18
 
 ## Current baseline
 
@@ -46,6 +46,8 @@ The codebase now supports separate Adsterra keys for high-signal placements:
 | `NEXT_PUBLIC_ADSTERRA_SOCIAL_BAR_SCRIPT` | Optional sitewide Social Bar / high-yield script format |
 | `NEXT_PUBLIC_ADSTERRA_SOCIAL_BAR_DELAY_MS` | Optional Social Bar load delay, default `15000` |
 | `NEXT_PUBLIC_ADSTERRA_SOCIAL_BAR_SESSION_CAP` | Optional Social Bar session cap, default enabled; set `false` to disable |
+| `NEXT_PUBLIC_ADSTERRA_DIRECT_LINK_URL` | Optional Smart Direct Link / Smartlink URL shown in partner-offer surfaces |
+| `NEXT_PUBLIC_ADSTERRA_DIRECT_LINK_SUB_ID_PARAM` | Optional Smartlink sub ID parameter, default `psid` |
 
 Create each as a separate Adsterra placement so reports can show RPM by location. Do not reuse the same key everywhere unless you only need aggregate impressions.
 
@@ -130,6 +132,8 @@ The mobile sticky slot now also recovers into a compact direct-sponsor bar. If `
 
 The optional Adsterra Social Bar / high-yield script slot is disabled unless `NEXT_PUBLIC_ADSTERRA_SOCIAL_BAR_SCRIPT` is configured and the site is rebuilt/redeployed. When enabled, it loads after a delay, deduplicates the script tag, caps loading to once per browser session by default, and records an Adsterra impression with `placement=site-social-bar`. Treat it as an experiment: compare revenue per session, mobile bounce rate, and returning-user behavior before keeping it permanently.
 
+The optional Adsterra Smart Direct Link slot is disabled unless `NEXT_PUBLIC_ADSTERRA_DIRECT_LINK_URL` is configured and the site is rebuilt/redeployed. When enabled, it appears as a sponsored offer in high-intent partner surfaces: tool sidebar partner cards, blog article partner blocks, all-tools partner strips, and category partner strips. Each URL gets a `psid` sub ID by default, such as `dtb_tool_sidebar_partner_card_en_formatter`, so Adsterra reports can be grouped by `placement_sub_id` and weak surfaces can be removed quickly.
+
 Clicks are sent to Google Analytics as `monetization_click` with `monetization_type`, `monetization_id`, `tool_category`, and `placement` parameters. Sponsor CTAs and Adsterra containers also emit `monetization_impression` when at least half of the monetized surface is visible, so GA can calculate CTR and viewable opportunity by surface. Use these events to decide which categories deserve stronger partner offers and which ad slots deserve dedicated Adsterra placements.
 
 ## Weekly operating loop
@@ -139,6 +143,7 @@ Run the API report after generating an Adsterra Publisher API token:
 ```bash
 ADSTERRA_API_KEY=... npm run adsterra:report -- stats --days=7 --group-by=placement
 ADSTERRA_API_KEY=... npm run adsterra:report -- stats --days=7 --group-by=country
+ADSTERRA_API_KEY=... npm run adsterra:report -- stats --days=7 --group-by=placement_sub_id
 ADSTERRA_API_KEY=... npm run adsterra:report -- recommend --days=7 --min-impressions=1000
 npm run adsterra:report -- recommend --sample
 ```
@@ -148,7 +153,7 @@ Then decide:
 - Keep or expand placements with strong CPM and acceptable bounce rate.
 - Remove or move placements with weak CPM, low fill, or UX complaints.
 - Build new content for countries with high CPM and visible search demand.
-- Add `placement_sub_id` tracking for Smartlink experiments before putting Smartlinks into content.
+- Review `placement_sub_id` tracking for Smartlink experiments and remove weak surfaces quickly.
 
 If the Adsterra API token is not available, export placement and country reports from the dashboard as CSV and run:
 
@@ -184,3 +189,4 @@ The CSV import path accepts common column names such as placement/ad unit/zone, 
 21. Create a dedicated homepage inline Adsterra unit and configure `NEXT_PUBLIC_ADSTERRA_HOME_INLINE_KEY`. Compare `home-inline` RPM against global top leaderboard RPM; if homepage RPM is weak but fallback sponsor CTR is strong, sell the homepage block as direct sponsorship instead of running network ads there.
 22. Review `advertise-package-sitewide-sponsor` clicks from `home-inline-*`, `mobile-sticky-*`, `header-nav`, and `footer-nav` sources. If broad-reach package clicks are stronger than Partner Test clicks, pitch Sitewide Visibility as the default launch package and keep Partner Test for smaller category-specific pilots.
 23. Create an Adsterra Social Bar unit, configure `NEXT_PUBLIC_ADSTERRA_SOCIAL_BAR_SCRIPT`, redeploy, and run it for 7 days with the default delayed, once-per-session behavior. Keep it only if the added revenue per session offsets any change in mobile bounce rate or repeat-user engagement.
+24. Create an Adsterra Smart Direct Link unit, configure `NEXT_PUBLIC_ADSTERRA_DIRECT_LINK_URL`, redeploy, and review `placement_sub_id` results after 7 days. Keep only the partner surfaces whose direct-link EPC and user behavior are acceptable.

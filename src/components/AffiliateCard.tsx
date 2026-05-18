@@ -5,35 +5,46 @@ import { useEffect, useMemo, useRef } from 'react';
 import { useLang } from '@/i18n/LangContext';
 import { trackMonetizationClick, trackMonetizationImpression } from '@/lib/analytics';
 import { getRelevantAffiliateLinks } from '@/lib/affiliate-offers';
+import { getAdsterraDirectLink } from '@/lib/adsterra-direct-link';
 
 const copy = {
   en: {
     heading: 'Partner Offers',
     sponsorTitle: 'Sponsor this spot',
     sponsorText: 'Reach developers using this workflow',
+    directTitle: 'Sponsored developer offer',
+    directText: 'Open a matched advertiser offer in a new tab',
   },
   zh: {
     heading: '合作推荐',
     sponsorTitle: '赞助这个位置',
     sponsorText: '触达正在使用此工作流的开发者',
+    directTitle: '开发者赞助推荐',
+    directText: '在新标签页打开匹配的广告主推荐',
   },
   ru: {
     heading: 'Партнерские предложения',
     sponsorTitle: 'Спонсировать этот блок',
     sponsorText: 'Охватите разработчиков в этом рабочем процессе',
+    directTitle: 'Спонсорское предложение',
+    directText: 'Открыть подходящее предложение рекламодателя в новой вкладке',
   },
 };
 
 export default function AffiliateCard({ category }: { category?: string }) {
   const { lang } = useLang();
   const t = copy[lang as keyof typeof copy] || copy.en;
+  const placement = 'tool-sidebar-partner-card';
   const relevant = useMemo(
     () => getRelevantAffiliateLinks({ category, limit: 2 }),
     [category]
   );
+  const directLink = useMemo(
+    () => getAdsterraDirectLink({ placement, category, lang }),
+    [category, lang]
+  );
   const containerRef = useRef<HTMLDivElement | null>(null);
   const trackedRef = useRef(false);
-  const placement = 'tool-sidebar-partner-card';
 
   const sponsorHref = `/${lang}/advertise/?source=${placement}${
     category ? `&category=${encodeURIComponent(category)}` : ''
@@ -55,6 +66,15 @@ export default function AffiliateCard({ category }: { category?: string }) {
           placement,
         });
       });
+
+      if (directLink) {
+        trackMonetizationImpression({
+          type: 'adsterra',
+          id: directLink.id,
+          category,
+          placement,
+        });
+      }
 
       trackMonetizationImpression({
         type: 'sponsor',
@@ -79,7 +99,7 @@ export default function AffiliateCard({ category }: { category?: string }) {
     observer.observe(element);
 
     return () => observer.disconnect();
-  }, [category, relevant]);
+  }, [category, directLink, relevant]);
 
   return (
     <div ref={containerRef} className="card" style={{ padding: 16 }}>
@@ -109,6 +129,28 @@ export default function AffiliateCard({ category }: { category?: string }) {
           <span style={{ display: 'block', fontSize: 11, color: 'var(--text-secondary)', marginTop: 2 }}>{link.tagline}</span>
         </a>
       ))}
+      {directLink && (
+        <a
+          href={directLink.url}
+          target="_blank"
+          rel="noopener sponsored nofollow"
+          onClick={() => trackMonetizationClick({
+            type: 'adsterra',
+            id: directLink.id,
+            category,
+            placement,
+          })}
+          style={{
+            display: 'block',
+            padding: '10px 0',
+            borderBottom: '1px solid var(--border-color)',
+            textDecoration: 'none',
+          }}
+        >
+          <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--text-primary)' }}>{t.directTitle}</span>
+          <span style={{ display: 'block', fontSize: 11, color: 'var(--text-secondary)', marginTop: 2 }}>{t.directText}</span>
+        </a>
+      )}
       <Link
         href={sponsorHref}
         onClick={() => trackMonetizationClick({
@@ -119,7 +161,7 @@ export default function AffiliateCard({ category }: { category?: string }) {
         })}
         style={{
           display: 'block',
-          padding: relevant.length > 0 ? '12px 0 0' : '4px 0 0',
+          padding: relevant.length > 0 || directLink ? '12px 0 0' : '4px 0 0',
           textDecoration: 'none',
         }}
       >
