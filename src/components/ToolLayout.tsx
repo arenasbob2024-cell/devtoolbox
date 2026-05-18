@@ -76,6 +76,13 @@ export default function ToolLayout({ title, description, children, toolId }: Too
           <div className="card">
             {children}
           </div>
+          <AdSlot
+            size="leaderboard"
+            placement="tool-mid"
+            category={currentTool?.category}
+            fallbackToSponsor
+            style={{ marginTop: 24, marginBottom: 8 }}
+          />
           <ShareBar
             url={`https://viadreams.cc/${lang}/tools/${toolId}`}
             title={title}

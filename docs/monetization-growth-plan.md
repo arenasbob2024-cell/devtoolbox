@@ -28,6 +28,7 @@ The codebase now supports separate Adsterra keys for high-signal placements:
 | --- | --- |
 | `NEXT_PUBLIC_ADSTERRA_HOME_INLINE_KEY` | Homepage inline slot, below popular tools |
 | `NEXT_PUBLIC_ADSTERRA_TOOL_TOP_KEY` | Tool page, above the tool body |
+| `NEXT_PUBLIC_ADSTERRA_TOOL_MID_KEY` | Tool page, after the main tool card and before share/comment actions |
 | `NEXT_PUBLIC_ADSTERRA_TOOL_BOTTOM_KEY` | Tool page, after the tool content |
 | `NEXT_PUBLIC_ADSTERRA_SIDEBAR_SECONDARY_KEY` | Tool sidebar, secondary 300x250 |
 | `NEXT_PUBLIC_ADSTERRA_TOOLS_INDEX_TOP_KEY` | All tools index, above the sponsor CTA |
@@ -116,7 +117,9 @@ The footer and tool-sidebar support buttons now emit `monetization_impression` a
 
 Bottom Adsterra slots now fall back to a direct sponsorship CTA when the corresponding Adsterra key is not configured. When a bottom slot does have a key but the client iframe still appears empty after load time, it falls back with placements such as `tool-bottom-ad-empty` and `blog-article-bottom-ad-empty`. The global bottom native banner also falls back through `site-bottom-native-ad-fallback` or `site-bottom-native-ad-empty`. This applies to tool pages, tools index, blog list, blog articles, category pages, and the site-wide footer ad surface, so unfilled, blocked, or regionally unreachable ad inventory still becomes a measurable sponsor opportunity.
 
-High-visibility empty ad surfaces now also recover into sponsor inventory. The global top leaderboard falls back through `site-top-leaderboard-ad-fallback` / `site-top-leaderboard-ad-empty`, while tool pages recover `tool-top`, `tool-sidebar-secondary`, and `tool-sidebar-primary` into tracked sponsor CTAs. This prevents the most valuable above-the-fold and sidebar areas from disappearing when Adsterra keys are missing, blocked, or unfilled.
+High-visibility empty ad surfaces now also recover into sponsor inventory. The global top leaderboard falls back through `site-top-leaderboard-ad-fallback` / `site-top-leaderboard-ad-empty`, while tool pages recover `tool-top`, `tool-mid`, `tool-sidebar-secondary`, and `tool-sidebar-primary` into tracked sponsor CTAs. This prevents the most valuable above-the-fold, post-tool, and sidebar areas from disappearing when Adsterra keys are missing, blocked, or unfilled.
+
+Tool pages now include a post-tool Adsterra slot with `placement=tool-mid`. Configure `NEXT_PUBLIC_ADSTERRA_TOOL_MID_KEY` as a separate unit to measure revenue from visitors who reached the tool body and are still engaged enough to share, comment, or continue browsing. If the key is missing or the iframe appears empty, the surface falls back to a Category Sponsor CTA through `tool-mid-ad-fallback` or `tool-mid-ad-empty`.
 
 The mobile sticky slot now also recovers into a compact direct-sponsor bar. If `NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_KEY` is not configured, the site shows a dismissible mobile-only sponsor CTA with `placement=mobile-sticky-ad-fallback`; if the configured mobile iframe appears empty after load time, it recovers through `placement=mobile-sticky-ad-empty`. Closing the bar is remembered for 24 hours in local storage so the test can monetize mobile visibility without reappearing on every reload.
 
@@ -152,7 +155,7 @@ The CSV import path accepts common column names such as placement/ad unit/zone, 
 ## Next experiments
 
 1. Fill the exact Adsterra `ads.txt` seller line from the dashboard.
-2. Create separate Adsterra placements for tool top, tool bottom, blog top, blog article mid, and blog article bottom.
+2. Create separate Adsterra placements for tool top, tool mid, tool bottom, blog top, blog article mid, and blog article bottom.
 3. Create a 320x50 mobile banner in Adsterra and test it with `NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_KEY`. Watch mobile bounce rate and revenue/session for at least 7 days.
 4. Replace generic affiliate links with real partner/referral links and track clicks by category.
 5. Publish the prepared Dev.to and social posts in `content/` to drive referral traffic and backlinks.

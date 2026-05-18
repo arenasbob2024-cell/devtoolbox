@@ -7,6 +7,7 @@ type AdSlotSize = 'leaderboard' | 'rectangle';
 type AdSlotPlacement =
   | 'home-inline'
   | 'tool-top'
+  | 'tool-mid'
   | 'tool-sidebar-secondary'
   | 'tool-bottom'
   | 'tools-index-top'
@@ -31,6 +32,7 @@ interface AdSlotProps {
 const AD_KEYS: Record<AdSlotPlacement, string | undefined> = {
   'home-inline': process.env.NEXT_PUBLIC_ADSTERRA_HOME_INLINE_KEY,
   'tool-top': process.env.NEXT_PUBLIC_ADSTERRA_TOOL_TOP_KEY,
+  'tool-mid': process.env.NEXT_PUBLIC_ADSTERRA_TOOL_MID_KEY,
   'tool-sidebar-secondary': process.env.NEXT_PUBLIC_ADSTERRA_SIDEBAR_SECONDARY_KEY,
   'tool-bottom': process.env.NEXT_PUBLIC_ADSTERRA_TOOL_BOTTOM_KEY,
   'tools-index-top': process.env.NEXT_PUBLIC_ADSTERRA_TOOLS_INDEX_TOP_KEY,

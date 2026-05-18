@@ -18,6 +18,7 @@ Inventory can include:
 
 - Category page sponsor CTA.
 - Relevant tool sidebar CTA.
+- Post-tool sponsor/ad fallback.
 - Selected tool-page partner placement.
 
 Suggested starter budget: US$299-US$799 per month.
