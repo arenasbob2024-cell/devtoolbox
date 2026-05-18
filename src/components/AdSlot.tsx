@@ -1,5 +1,6 @@
 'use client';
 
+import { useSyncExternalStore } from 'react';
 import AdsterraIframeBanner from './AdsterraIframeBanner';
 import SponsorCta from './SponsorCta';
 
@@ -29,6 +30,14 @@ interface AdSlotProps {
   fallbackToSponsor?: boolean;
 }
 
+declare global {
+  interface Window {
+    __DEVTOOLBOX_ADS__?: {
+      topKey?: string;
+    };
+  }
+}
+
 const AD_KEYS: Record<AdSlotPlacement, string | undefined> = {
   'home-inline': process.env.NEXT_PUBLIC_ADSTERRA_HOME_INLINE_KEY,
   'tool-top': process.env.NEXT_PUBLIC_ADSTERRA_TOOL_TOP_KEY,
@@ -46,7 +55,7 @@ const AD_KEYS: Record<AdSlotPlacement, string | undefined> = {
   'category-bottom': process.env.NEXT_PUBLIC_ADSTERRA_CATEGORY_BOTTOM_KEY,
 };
 
-const GLOBAL_LEADERBOARD_KEY = process.env.NEXT_PUBLIC_ADSTERRA_TOP_KEY;
+const GLOBAL_LEADERBOARD_KEY = process.env.NEXT_PUBLIC_ADSTERRA_TOP_KEY || undefined;
 
 const GLOBAL_LEADERBOARD_FALLBACK_PLACEMENTS = new Set<AdSlotPlacement>([
   'home-inline',
@@ -59,14 +68,45 @@ const GLOBAL_LEADERBOARD_FALLBACK_PLACEMENTS = new Set<AdSlotPlacement>([
   'category-bottom',
 ]);
 
-function getAdKey(placement: AdSlotPlacement | undefined, size: AdSlotSize) {
+function canUseGlobalLeaderboardFallback(placement: AdSlotPlacement | undefined, size: AdSlotSize) {
+  return Boolean(
+    placement &&
+    size === 'leaderboard' &&
+    GLOBAL_LEADERBOARD_FALLBACK_PLACEMENTS.has(placement)
+  );
+}
+
+function subscribeRuntimeAds(onStoreChange: () => void) {
+  if (typeof queueMicrotask === 'function') {
+    queueMicrotask(onStoreChange);
+  } else {
+    window.setTimeout(onStoreChange, 0);
+  }
+
+  return () => {};
+}
+
+function getClientRuntimeAdSnapshot() {
+  const topKey = window.__DEVTOOLBOX_ADS__?.topKey || GLOBAL_LEADERBOARD_KEY || '';
+  return `1:${topKey}`;
+}
+
+function getServerRuntimeAdSnapshot() {
+  return GLOBAL_LEADERBOARD_KEY ? `1:${GLOBAL_LEADERBOARD_KEY}` : '0:';
+}
+
+function getAdKey(
+  placement: AdSlotPlacement | undefined,
+  size: AdSlotSize,
+  runtimeLeaderboardKey?: string
+) {
   if (!placement) return undefined;
 
   const placementKey = AD_KEYS[placement];
   if (placementKey) return placementKey;
 
-  if (size === 'leaderboard' && GLOBAL_LEADERBOARD_FALLBACK_PLACEMENTS.has(placement)) {
-    return GLOBAL_LEADERBOARD_KEY;
+  if (canUseGlobalLeaderboardFallback(placement, size)) {
+    return runtimeLeaderboardKey || GLOBAL_LEADERBOARD_KEY;
   }
 
   return undefined;
@@ -87,10 +127,19 @@ export default function AdSlot({
   style,
   fallbackToSponsor = false,
 }: AdSlotProps) {
-  const adKey = getAdKey(placement, size);
+  const runtimeAdSnapshot = useSyncExternalStore(
+    subscribeRuntimeAds,
+    getClientRuntimeAdSnapshot,
+    getServerRuntimeAdSnapshot
+  );
+  const runtimeChecked = runtimeAdSnapshot.startsWith('1:');
+  const runtimeLeaderboardKey = runtimeAdSnapshot.slice(2) || undefined;
+  const canUseRuntimeLeaderboard = canUseGlobalLeaderboardFallback(placement, size);
+  const adKey = getAdKey(placement, size, runtimeLeaderboardKey);
 
   if (!adKey) {
     if (!fallbackToSponsor || !placement) return null;
+    if (canUseRuntimeLeaderboard && !runtimeChecked) return null;
 
     return (
       <SponsorCta

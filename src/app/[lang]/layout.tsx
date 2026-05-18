@@ -97,6 +97,9 @@ export default async function LangLayout({
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   const dict = await getDictionary(lang);
+  const adRuntimeConfigScript = `window.__DEVTOOLBOX_ADS__=${JSON.stringify({
+    topKey: process.env.NEXT_PUBLIC_ADSTERRA_TOP_KEY || '',
+  }).replace(/</g, '\\u003c')};`;
 
   return (
     <html lang={lang} className={`${inter.variable} ${jetbrainsMono.variable}`}>
@@ -137,6 +140,11 @@ export default async function LangLayout({
           dangerouslySetInnerHTML={{ 
             __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-85N12XK3TY');` 
           }} 
+        />
+
+        {/* Public ad runtime config for client-side ad slot fallback. */}
+        <script
+          dangerouslySetInnerHTML={{ __html: adRuntimeConfigScript }}
         />
         
         {/* Microsoft Clarity — Bing-owned behavior analytics (free, may boost Bing ranking signal) */}
