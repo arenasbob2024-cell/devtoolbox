@@ -192,6 +192,7 @@ export default function AdsterraMobileStickyBanner({
   const [ready, setReady] = useState(false);
   const [closed, setClosed] = useState(false);
   const fallbackPlacement = adKey ? 'mobile-sticky-ad-empty' : 'mobile-sticky-ad-fallback';
+  const canShowFallback = fallbackToSponsor && consent !== null;
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -221,9 +222,9 @@ export default function AdsterraMobileStickyBanner({
     }
   };
 
-  if (consent === null || !ready || closed || (!adKey && !fallbackToSponsor)) return null;
+  if (!ready || closed || (!adKey && !canShowFallback)) return null;
 
-  const fallbackContent = fallbackToSponsor ? (
+  const fallbackContent = canShowFallback ? (
     <MobileSponsorFallback
       width={width}
       height={height}
@@ -284,7 +285,7 @@ export default function AdsterraMobileStickyBanner({
               height={height}
               placement="mobile-sticky"
               style={{ margin: 0 }}
-              fallbackToSponsor={fallbackToSponsor}
+              fallbackToSponsor={canShowFallback}
               fallbackPlacement={fallbackPlacement}
               fallbackId={`${fallbackPlacement}-sponsor`}
               fallbackContent={fallbackContent}

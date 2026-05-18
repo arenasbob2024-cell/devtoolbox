@@ -24,6 +24,23 @@ const jetbrainsMono = JetBrains_Mono({
   display: 'swap',
 });
 
+function getHttpOrigin(url: string | undefined) {
+  if (!url) return undefined;
+
+  try {
+    const normalizedUrl = url.startsWith('//') ? `https:${url}` : url;
+    const parsedUrl = new URL(normalizedUrl);
+
+    if (parsedUrl.protocol !== 'http:' && parsedUrl.protocol !== 'https:') {
+      return undefined;
+    }
+
+    return parsedUrl.origin;
+  } catch {
+    return undefined;
+  }
+}
+
 export async function generateStaticParams() {
   // Only pre-render English at build time to save disk space.
   // Other locales use ISR (rendered on first request and cached).
@@ -98,6 +115,7 @@ export default async function LangLayout({
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   const dict = await getDictionary(lang);
+  const nativeAdOrigin = getHttpOrigin(process.env.NEXT_PUBLIC_ADSTERRA_NATIVE_SCRIPT);
   const adRuntimeConfigScript = `window.__DEVTOOLBOX_ADS__=${JSON.stringify({
     topKey: process.env.NEXT_PUBLIC_ADSTERRA_TOP_KEY || '',
     sidebarKey: process.env.NEXT_PUBLIC_ADSTERRA_SIDEBAR_KEY || '',
@@ -118,6 +136,16 @@ export default async function LangLayout({
         {/* 2. Analytics DNS 预解析 */}
         {/* 提前解析 Analytics 域名，加速 GA 加载 */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+
+        {/* Adsterra ad script resource hints for above-the-fold inventory */}
+        <link rel="dns-prefetch" href="https://www.highperformanceformat.com" />
+        <link rel="preconnect" href="https://www.highperformanceformat.com" />
+        {nativeAdOrigin && (
+          <>
+            <link rel="dns-prefetch" href={nativeAdOrigin} />
+            <link rel="preconnect" href={nativeAdOrigin} />
+          </>
+        )}
         
         {/* 3. Google Analytics 预连接（可选，如果 GA 是关键资源） */}
         <link rel="preconnect" href="https://www.google-analytics.com" />
