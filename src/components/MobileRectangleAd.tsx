@@ -3,7 +3,8 @@
 import { useSyncExternalStore } from 'react';
 import AdsterraIframeBanner from './AdsterraIframeBanner';
 
-interface MobileToolRectangleAdProps {
+interface MobileRectangleAdProps {
+  placement: string;
   category?: string;
 }
 
@@ -33,7 +34,7 @@ function getServerMobileSnapshot() {
   return false;
 }
 
-export default function MobileToolRectangleAd({ category }: MobileToolRectangleAdProps) {
+export default function MobileRectangleAd({ placement, category }: MobileRectangleAdProps) {
   const isMobile = useSyncExternalStore(
     subscribeMobileQuery,
     getMobileSnapshot,
@@ -49,7 +50,7 @@ export default function MobileToolRectangleAd({ category }: MobileToolRectangleA
       adKey={adKey}
       width={300}
       height={250}
-      placement="tool-mobile-rectangle"
+      placement={placement}
       category={category}
       fallbackToSponsor
       style={{ marginTop: 18, marginBottom: 16 }}

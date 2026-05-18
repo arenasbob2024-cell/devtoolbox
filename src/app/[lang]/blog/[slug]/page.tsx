@@ -12,6 +12,7 @@ import ShareBar from '@/components/ugc/ShareBar';
 import HelpfulButton from '@/components/ugc/HelpfulButton';
 import SponsorCta from '@/components/SponsorCta';
 import BlogPartnerOffer from '@/components/BlogPartnerOffer';
+import MobileRectangleAd from '@/components/MobileRectangleAd';
 
 /* ---------- lazy-load article bodies ---------- */
 import UuidComparison from '@/data/posts/uuid-v4-vs-v7-vs-ulid';
@@ -1130,6 +1131,7 @@ export default function BlogPostPage() {
       {/* Share & Helpful */}
       <ShareBar url={`https://viadreams.cc/${lang}/blog/${slug}/`} title={post.title} lang={lang} />
       <HelpfulButton slug={slug} lang={lang} />
+      <MobileRectangleAd placement="blog-mobile-rectangle" category={slug} />
 
       {/* Newsletter */}
       <NewsletterSignup
