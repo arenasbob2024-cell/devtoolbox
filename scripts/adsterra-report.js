@@ -9,6 +9,7 @@
  *   ADSTERRA_API_KEY=... npm run adsterra:report -- stats --start=2026-05-01 --end=2026-05-15 --group-by=country
  *   ADSTERRA_API_KEY=... npm run adsterra:report -- goal --days=7 --target=10
  *   ADSTERRA_API_KEY=... npm run adsterra:report -- domains
+ *   npm run adsterra:setup -- --vercel-scope=arenas-projects-ac293cdb --site-url=https://viadreams.cc
  *   npm run adsterra:report -- readiness
  *   npm run adsterra:report -- stats --file=exports/adsterra-placement.csv
  *   npm run adsterra:report -- goal --file=exports/adsterra-daily.csv --target=10
@@ -27,6 +28,7 @@ Commands:
   stats       Fetch revenue stats. Default command.
   goal        Check whether average daily revenue meets a target.
   recommend   Rank placements/countries and print optimization actions.
+  setup       Print the exact Adsterra unit/env setup checklist.
   readiness   Check local Adsterra env/reporting readiness and next actions without printing secrets.
   domains     Fetch domains as CSV.
   placements  Fetch placements as CSV.
@@ -67,6 +69,13 @@ Options for readiness:
   --vercel-scope=SLUG       Also inspect Vercel env var names via vercel env ls.
   --site-url=https://...    Also fetch and verify the live /ads.txt response.
   --json                   Print machine-readable readiness result.
+
+Options for setup:
+  --env-file=.env.local     Env file to inspect in addition to process env.
+  --vercel-scope=SLUG       Include scoped Vercel env add commands.
+  --site-url=https://...    Also fetch and verify the live /ads.txt response.
+  --csv                    Print CSV for copy/paste into an operating sheet.
+  --json                   Print machine-readable setup result.
 `;
 
 function parseArgs(argv) {
@@ -410,6 +419,262 @@ function envValue(env, key) {
   return typeof value === 'string' && value.trim() !== '' ? value.trim() : '';
 }
 
+const ADSTERRA_SETUP_ITEMS = [
+  {
+    priority: 'P0',
+    group: 'Trust and proof',
+    name: 'ads.txt seller line',
+    envNames: ['ADSTERRA_ADS_TXT_SELLER_LINE'],
+    adsterraAction: 'Copy exact ads.txt seller line from the Adsterra publisher dashboard',
+    format: 'ads.txt',
+    size: 'n/a',
+    placement: '/ads.txt',
+    purpose: 'Improve demand trust and fill eligibility',
+  },
+  {
+    priority: 'P0',
+    group: 'Trust and proof',
+    name: 'Publisher API token or daily CSV export',
+    envNames: ['ADSTERRA_API_KEY'],
+    adsterraAction: 'Generate a Publisher API token, or export a date-grouped revenue CSV',
+    format: 'reporting',
+    size: 'n/a',
+    placement: 'revenue verification',
+    purpose: 'Prove the $10/day goal with real Adsterra revenue data',
+  },
+  {
+    priority: 'P0',
+    group: 'Required active units',
+    name: 'Global top leaderboard',
+    envNames: ['NEXT_PUBLIC_ADSTERRA_TOP_KEY'],
+    adsterraAction: 'Create or reuse a 728x90 iframe/banner unit',
+    format: 'iframe banner',
+    size: '728x90',
+    placement: 'site-top-leaderboard and leaderboard fallbacks',
+    purpose: 'Keep the primary above-the-fold inventory active',
+  },
+  {
+    priority: 'P0',
+    group: 'Required active units',
+    name: 'Global sidebar rectangle',
+    envNames: ['NEXT_PUBLIC_ADSTERRA_SIDEBAR_KEY'],
+    adsterraAction: 'Create or reuse a 300x250 iframe/banner unit',
+    format: 'iframe banner',
+    size: '300x250',
+    placement: 'tool-sidebar-primary and rectangle fallbacks',
+    purpose: 'Keep the primary desktop sidebar inventory active',
+  },
+  {
+    priority: 'P0',
+    group: 'Required active units',
+    name: 'Bottom native banner',
+    envNames: ['NEXT_PUBLIC_ADSTERRA_NATIVE_SCRIPT', 'NEXT_PUBLIC_ADSTERRA_NATIVE_KEY'],
+    adsterraAction: 'Create or reuse a Native Banner unit and copy both invoke.js URL and container key',
+    format: 'native banner',
+    size: 'responsive',
+    placement: 'site-bottom-native',
+    purpose: 'Keep bottom native inventory active across pages',
+  },
+  {
+    priority: 'P1',
+    group: 'High-impact experiments',
+    name: 'Smart Direct Link',
+    envNames: ['NEXT_PUBLIC_ADSTERRA_DIRECT_LINK_URL'],
+    adsterraAction: 'Create a Smart Direct Link / Smartlink URL',
+    format: 'direct link',
+    size: 'n/a',
+    placement: 'high-intent partner, support, and fallback surfaces',
+    purpose: 'Test click revenue without adding another page-level banner',
+  },
+  {
+    priority: 'P1',
+    group: 'High-impact experiments',
+    name: 'Mobile sticky banner',
+    envNames: ['NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_KEY'],
+    adsterraAction: 'Create a mobile 320x50 iframe/banner unit',
+    format: 'iframe banner',
+    size: '320x50',
+    placement: 'mobile-sticky',
+    purpose: 'Add high-viewability mobile inventory',
+  },
+  {
+    priority: 'P1',
+    group: 'High-impact experiments',
+    name: 'Delayed Social Bar',
+    envNames: ['NEXT_PUBLIC_ADSTERRA_SOCIAL_BAR_SCRIPT'],
+    adsterraAction: 'Create a Social Bar / high-yield script unit',
+    format: 'script',
+    size: 'responsive',
+    placement: 'site-social-bar',
+    purpose: 'Run a capped high-yield format test against bounce rate',
+  },
+  {
+    priority: 'P2',
+    group: 'Dedicated RPM placements',
+    name: 'Homepage inline leaderboard',
+    envNames: ['NEXT_PUBLIC_ADSTERRA_HOME_INLINE_KEY'],
+    adsterraAction: 'Create a dedicated 728x90 iframe/banner unit',
+    format: 'iframe banner',
+    size: '728x90',
+    placement: 'home-inline',
+    purpose: 'Measure homepage RPM separately from global fallback traffic',
+  },
+  {
+    priority: 'P2',
+    group: 'Dedicated RPM placements',
+    name: 'Tool page top leaderboard',
+    envNames: ['NEXT_PUBLIC_ADSTERRA_TOOL_TOP_KEY'],
+    adsterraAction: 'Create a dedicated 728x90 iframe/banner unit',
+    format: 'iframe banner',
+    size: '728x90',
+    placement: 'tool-top',
+    purpose: 'Measure tool-page above-fold RPM',
+  },
+  {
+    priority: 'P2',
+    group: 'Dedicated RPM placements',
+    name: 'Tool page mid leaderboard',
+    envNames: ['NEXT_PUBLIC_ADSTERRA_TOOL_MID_KEY'],
+    adsterraAction: 'Create a dedicated 728x90 iframe/banner unit',
+    format: 'iframe banner',
+    size: '728x90',
+    placement: 'tool-mid',
+    purpose: 'Measure engaged post-tool RPM',
+  },
+  {
+    priority: 'P2',
+    group: 'Dedicated RPM placements',
+    name: 'Tool page bottom leaderboard',
+    envNames: ['NEXT_PUBLIC_ADSTERRA_TOOL_BOTTOM_KEY'],
+    adsterraAction: 'Create a dedicated 728x90 iframe/banner unit',
+    format: 'iframe banner',
+    size: '728x90',
+    placement: 'tool-bottom',
+    purpose: 'Measure lower-page tool RPM',
+  },
+  {
+    priority: 'P2',
+    group: 'Dedicated RPM placements',
+    name: 'Tool sidebar secondary rectangle',
+    envNames: ['NEXT_PUBLIC_ADSTERRA_SIDEBAR_SECONDARY_KEY'],
+    adsterraAction: 'Create a dedicated 300x250 iframe/banner unit',
+    format: 'iframe banner',
+    size: '300x250',
+    placement: 'tool-sidebar-secondary',
+    purpose: 'Measure second desktop sidebar rectangle RPM',
+  },
+  {
+    priority: 'P2',
+    group: 'Dedicated RPM placements',
+    name: 'All tools index top leaderboard',
+    envNames: ['NEXT_PUBLIC_ADSTERRA_TOOLS_INDEX_TOP_KEY'],
+    adsterraAction: 'Create a dedicated 728x90 iframe/banner unit',
+    format: 'iframe banner',
+    size: '728x90',
+    placement: 'tools-index-top',
+    purpose: 'Measure all-tools index top RPM',
+  },
+  {
+    priority: 'P2',
+    group: 'Dedicated RPM placements',
+    name: 'All tools index bottom leaderboard',
+    envNames: ['NEXT_PUBLIC_ADSTERRA_TOOLS_INDEX_BOTTOM_KEY'],
+    adsterraAction: 'Create a dedicated 728x90 iframe/banner unit',
+    format: 'iframe banner',
+    size: '728x90',
+    placement: 'tools-index-bottom',
+    purpose: 'Measure all-tools index bottom RPM',
+  },
+  {
+    priority: 'P2',
+    group: 'Dedicated RPM placements',
+    name: 'Blog listing top leaderboard',
+    envNames: ['NEXT_PUBLIC_ADSTERRA_BLOG_TOP_KEY'],
+    adsterraAction: 'Create a dedicated 728x90 iframe/banner unit',
+    format: 'iframe banner',
+    size: '728x90',
+    placement: 'blog-list-top',
+    purpose: 'Measure blog-listing top RPM',
+  },
+  {
+    priority: 'P2',
+    group: 'Dedicated RPM placements',
+    name: 'Blog listing bottom leaderboard',
+    envNames: ['NEXT_PUBLIC_ADSTERRA_BLOG_BOTTOM_KEY'],
+    adsterraAction: 'Create a dedicated 728x90 iframe/banner unit',
+    format: 'iframe banner',
+    size: '728x90',
+    placement: 'blog-list-bottom',
+    purpose: 'Measure blog-listing bottom RPM',
+  },
+  {
+    priority: 'P2',
+    group: 'Dedicated RPM placements',
+    name: 'Blog article top leaderboard',
+    envNames: ['NEXT_PUBLIC_ADSTERRA_BLOG_ARTICLE_TOP_KEY'],
+    adsterraAction: 'Create a dedicated 728x90 iframe/banner unit',
+    format: 'iframe banner',
+    size: '728x90',
+    placement: 'blog-article-top',
+    purpose: 'Measure long-read above-fold RPM',
+  },
+  {
+    priority: 'P2',
+    group: 'Dedicated RPM placements',
+    name: 'Blog article mid leaderboard',
+    envNames: ['NEXT_PUBLIC_ADSTERRA_BLOG_ARTICLE_MID_KEY'],
+    adsterraAction: 'Create a dedicated 728x90 iframe/banner unit',
+    format: 'iframe banner',
+    size: '728x90',
+    placement: 'blog-article-mid',
+    purpose: 'Measure engaged post-article RPM',
+  },
+  {
+    priority: 'P2',
+    group: 'Dedicated RPM placements',
+    name: 'Blog article bottom leaderboard',
+    envNames: ['NEXT_PUBLIC_ADSTERRA_BLOG_ARTICLE_BOTTOM_KEY'],
+    adsterraAction: 'Create a dedicated 728x90 iframe/banner unit',
+    format: 'iframe banner',
+    size: '728x90',
+    placement: 'blog-article-bottom',
+    purpose: 'Measure lower article RPM',
+  },
+  {
+    priority: 'P2',
+    group: 'Dedicated RPM placements',
+    name: 'Blog article sidebar rectangle',
+    envNames: ['NEXT_PUBLIC_ADSTERRA_BLOG_ARTICLE_SIDEBAR_KEY'],
+    adsterraAction: 'Create a dedicated 300x250 iframe/banner unit',
+    format: 'iframe banner',
+    size: '300x250',
+    placement: 'blog-article-sidebar',
+    purpose: 'Measure desktop article sidebar RPM',
+  },
+  {
+    priority: 'P2',
+    group: 'Dedicated RPM placements',
+    name: 'Category top leaderboard',
+    envNames: ['NEXT_PUBLIC_ADSTERRA_CATEGORY_TOP_KEY'],
+    adsterraAction: 'Create a dedicated 728x90 iframe/banner unit',
+    format: 'iframe banner',
+    size: '728x90',
+    placement: 'category-top',
+    purpose: 'Measure category landing top RPM',
+  },
+  {
+    priority: 'P2',
+    group: 'Dedicated RPM placements',
+    name: 'Category bottom leaderboard',
+    envNames: ['NEXT_PUBLIC_ADSTERRA_CATEGORY_BOTTOM_KEY'],
+    adsterraAction: 'Create a dedicated 728x90 iframe/banner unit',
+    format: 'iframe banner',
+    size: '728x90',
+    placement: 'category-bottom',
+    purpose: 'Measure category landing bottom RPM',
+  },
+];
+
 function buildEnvChecks(env) {
   const groups = [
     {
@@ -715,6 +980,132 @@ async function buildReadinessReport(args) {
   report.nextActions = buildReadinessActions(report);
 
   return report;
+}
+
+function buildReadinessPresenceMap(report) {
+  const presence = new Map();
+
+  for (const group of report.envGroups) {
+    for (const check of group.checks) {
+      presence.set(check.name, check.present);
+    }
+  }
+
+  presence.set(
+    'ADSTERRA_ADS_TXT_SELLER_LINE',
+    report.adsTxt.envPresent || report.adsTxt.hasAdsterraSellerLine
+  );
+  presence.set('ADSTERRA_API_KEY', report.reports.hasRevenueProofSource);
+
+  return presence;
+}
+
+function setupItemCommands(report, item, missingEnvNames) {
+  if (item.envNames.includes('ADSTERRA_API_KEY')) {
+    return [
+      'ADSTERRA_API_KEY=... npm run adsterra:goal -- --days=7 --target=10',
+      'npm run adsterra:goal -- --file=exports/adsterra-daily.csv --target=10',
+    ];
+  }
+
+  return missingEnvNames.map(name => vercelEnvCommand(report, name));
+}
+
+async function buildSetupReport(args) {
+  const readiness = await buildReadinessReport(args);
+  const presence = buildReadinessPresenceMap(readiness);
+  const items = ADSTERRA_SETUP_ITEMS.map((item) => {
+    const missingEnvNames = item.envNames.filter(name => !presence.get(name));
+
+    return {
+      ...item,
+      status: missingEnvNames.length === 0 ? 'OK' : 'MISSING',
+      env: item.envNames.join(' + '),
+      missingEnvNames,
+      commands: missingEnvNames.length > 0 ? setupItemCommands(readiness, item, missingEnvNames) : [],
+    };
+  });
+
+  return {
+    status: items.some(item => item.status === 'MISSING') ? 'INCOMPLETE' : 'READY',
+    missingCount: items.filter(item => item.status === 'MISSING').length,
+    configuredCount: items.filter(item => item.status === 'OK').length,
+    readinessStatus: readiness.status,
+    readinessWarnings: readiness.warnings,
+    items,
+  };
+}
+
+function csvValue(value) {
+  const text = String(value ?? '');
+  return /[",\n\r]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text;
+}
+
+function printSetupCsv(report) {
+  const columns = [
+    'priority',
+    'group',
+    'status',
+    'name',
+    'env',
+    'format',
+    'size',
+    'placement',
+    'adsterraAction',
+    'purpose',
+    'commands',
+  ];
+
+  console.log(columns.map(csvValue).join(','));
+  for (const item of report.items) {
+    const row = {
+      ...item,
+      commands: item.commands.join('\n'),
+    };
+    console.log(columns.map(column => csvValue(row[column])).join(','));
+  }
+}
+
+function printSetupReport(report) {
+  console.log('Adsterra setup checklist');
+  console.log(`Status: ${report.status}`);
+  console.log(`Configured items: ${report.configuredCount}`);
+  console.log(`Missing items: ${report.missingCount}`);
+
+  const groupKeys = Array.from(new Set(
+    ADSTERRA_SETUP_ITEMS.map(item => `${item.priority}|${item.group}`)
+  ));
+
+  for (const key of groupKeys) {
+    const [priority, group] = key.split('|');
+    const items = report.items.filter(item => item.priority === priority && item.group === group);
+    console.log(`\n${priority} ${group}`);
+
+    for (const item of items) {
+      console.log(`  - ${item.status} ${item.name}`);
+      console.log(`    Env: ${item.env}`);
+      console.log(`    Format: ${item.format}; size: ${item.size}; placement: ${item.placement}`);
+      console.log(`    Dashboard: ${item.adsterraAction}`);
+      console.log(`    Purpose: ${item.purpose}`);
+
+      if (item.commands.length > 0) {
+        for (const command of item.commands) {
+          console.log(`    $ ${command}`);
+        }
+      }
+    }
+  }
+
+  if (report.readinessWarnings.length > 0) {
+    console.log('\nReadiness warnings');
+    for (const warning of report.readinessWarnings) {
+      console.log(`  - ${warning}`);
+    }
+  }
+
+  console.log('\nCompletion gate');
+  console.log('  - Run `npm run adsterra:goal -- --days=7 --target=10` with a real API token, or run it against a real daily CSV export.');
+  console.log('  - Do not treat this setup checklist as revenue proof; it only prepares the site to measure and optimize Adsterra revenue.');
 }
 
 function printReadinessReport(report) {
@@ -1068,6 +1459,20 @@ async function main() {
     if (report.status === 'FAIL') {
       process.exitCode = 1;
     }
+    return;
+  }
+
+  if (command === 'setup') {
+    const report = await buildSetupReport(args);
+
+    if (args.json) {
+      console.log(JSON.stringify(report, null, 2));
+    } else if (args.csv) {
+      printSetupCsv(report);
+    } else {
+      printSetupReport(report);
+    }
+
     return;
   }
 

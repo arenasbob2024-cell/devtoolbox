@@ -151,6 +151,8 @@ Clicks are sent to Google Analytics as `monetization_click` with `monetization_t
 Run the API report after generating an Adsterra Publisher API token:
 
 ```bash
+npm run adsterra:setup -- --vercel-scope=arenas-projects-ac293cdb --site-url=https://viadreams.cc
+npm run adsterra:setup -- --vercel-scope=arenas-projects-ac293cdb --site-url=https://viadreams.cc --csv
 npm run adsterra:readiness -- --vercel-scope=arenas-projects-ac293cdb --site-url=https://viadreams.cc
 ADSTERRA_API_KEY=... npm run adsterra:report -- stats --days=7 --group-by=placement
 ADSTERRA_API_KEY=... npm run adsterra:report -- stats --days=7 --group-by=country
@@ -177,6 +179,8 @@ npm run adsterra:report -- recommend --placements-file=exports/placements.csv --
 ```
 
 The CSV import path accepts common column names such as placement/ad unit/zone, country/geo, impressions/views/loads, clicks, CTR, CPM/eCPM, revenue/profit/earnings, and prints the same scale/review recommendations as the API flow.
+
+The `adsterra:setup` command prints the operational checklist for creating Adsterra units and filling Vercel env vars. It groups required trust/proof items, active production units, high-impact experiments, and dedicated RPM placements; the `--csv` variant is designed for copy/paste into an operating sheet while creating units in the Adsterra dashboard. It does not print secret values.
 
 The `adsterra:readiness` command checks local, optional Vercel environment, and optional live-site readiness without printing secret values. It reports whether the active Adsterra ad unit env vars are present, whether every supported dedicated placement key is configured for clean RPM reporting, whether high-impact experiments such as Smart Direct Link / mobile sticky / Social Bar are configured, whether `/ads.txt` still lacks the seller line env value or live seller line, whether an API token or CSV export is available for a real revenue goal check, and a prioritized next-action list with the exact Vercel env commands to run after creating the missing Adsterra units.
 
