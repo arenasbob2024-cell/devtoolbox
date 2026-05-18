@@ -625,6 +625,13 @@ function isValidAdsterraSellerLine(line) {
   return !match[1].toLowerCase().includes('placeholder');
 }
 
+function canonicalAdsterraSellerLine(line) {
+  const trimmed = String(line || '').trim();
+  if (!isValidAdsterraSellerLine(trimmed)) return '';
+
+  return trimmed.replace(/\s+/g, '').toLowerCase();
+}
+
 function validateAdsterraSellerLines(text) {
   const lines = sellerLinesFromText(text);
   const validLines = lines.filter(isValidAdsterraSellerLine);
@@ -1148,10 +1155,16 @@ async function buildReadinessReport(args) {
     .flatMap(group => group.checks.filter(check => !check.present).map(check => check.name));
   const adsTxtEnvLine = envValue(env, 'ADSTERRA_ADS_TXT_SELLER_LINE');
   const adsTxtSourceText = [adsTxtText, adsTxtRouteText, adsTxtEnvLine, liveAdsTxt.text].join('\n');
+  const envSellerValidation = validateAdsterraSellerLines(adsTxtEnvLine);
+  const liveSellerValidation = validateAdsterraSellerLines(liveAdsTxt.text);
+  const liveCanonicalSellerLines = new Set(liveSellerValidation.validLines.map(canonicalAdsterraSellerLine));
+  const liveMissingEnvSellerLine = Boolean(adsTxtEnvLine) && liveAdsTxt.enabled
+    ? envSellerValidation.validLines.filter(line => !liveCanonicalSellerLines.has(canonicalAdsterraSellerLine(line)))
+    : [];
   const hasAdsterraSellerLine = validateAdsterraSellerLines(adsTxtText).hasValidLine ||
-    validateAdsterraSellerLines(adsTxtEnvLine).hasValidLine ||
-    validateAdsterraSellerLines(liveAdsTxt.text).hasValidLine;
-  const invalidAdsTxtEnvLines = validateAdsterraSellerLines(adsTxtEnvLine).invalidLines;
+    envSellerValidation.hasValidLine ||
+    liveSellerValidation.hasValidLine;
+  const invalidAdsTxtEnvLines = envSellerValidation.invalidLines;
   const hasAdsTxtPlaceholder = !adsTxtEnvLine &&
     /ADSTERRA_PUBLISHER_ID_PLACEHOLDER/.test(adsTxtSourceText);
   const hasOwnerDomain = /^OWNERDOMAIN=viadreams\.cc\s*$/im.test(adsTxtSourceText) ||
@@ -1169,6 +1182,10 @@ async function buildReadinessReport(args) {
 
   if (invalidAdsTxtEnvLines.length > 0) {
     warnings.push('ADSTERRA_ADS_TXT_SELLER_LINE is present but does not match the expected Adsterra ads.txt format.');
+  }
+
+  if (liveMissingEnvSellerLine.length > 0) {
+    warnings.push('Live ads.txt does not contain the exact seller line from ADSTERRA_ADS_TXT_SELLER_LINE.');
   }
 
   if (!hasRevenueProofSource) {
@@ -1228,6 +1245,7 @@ async function buildReadinessReport(args) {
       liveError: liveAdsTxt.error,
       hasOwnerDomain,
       hasAdsterraSellerLine,
+      liveMatchesEnvLine: Boolean(adsTxtEnvLine) && liveAdsTxt.enabled && liveMissingEnvSellerLine.length === 0,
       hasPlaceholder: hasAdsTxtPlaceholder,
       envName: 'ADSTERRA_ADS_TXT_SELLER_LINE',
       envPresent: Boolean(adsTxtEnvLine),
@@ -1317,8 +1335,15 @@ async function buildAdsTxtReport(args) {
   const inputText = args['seller-line'] || args.sellerLine || envValue(env, 'ADSTERRA_ADS_TXT_SELLER_LINE');
   const inputValidation = validateAdsterraSellerLines(inputText);
   const liveValidation = validateAdsterraSellerLines(liveAdsTxt.text);
+  const liveCanonicalLines = new Set(liveValidation.validLines.map(canonicalAdsterraSellerLine));
+  const liveMissingInputLines = liveAdsTxt.enabled
+    ? inputValidation.validLines.filter(line => !liveCanonicalLines.has(canonicalAdsterraSellerLine(line)))
+    : [];
   const preview = buildAdsTxtBody(inputValidation.validLines);
-  const status = inputValidation.valid && (!liveAdsTxt.enabled || liveValidation.hasValidLine)
+  const status = inputValidation.valid && (
+    !liveAdsTxt.enabled ||
+    (liveValidation.hasValidLine && liveMissingInputLines.length === 0 && !liveAdsTxt.error)
+  )
     ? 'PASS'
     : 'FAIL';
   const warnings = [];
@@ -1333,6 +1358,10 @@ async function buildAdsTxtReport(args) {
 
   if (liveAdsTxt.enabled && !liveValidation.hasValidLine) {
     warnings.push(`Live ads.txt does not contain a valid Adsterra seller line: ${liveAdsTxt.url}`);
+  }
+
+  if (liveMissingInputLines.length > 0) {
+    warnings.push('Live ads.txt does not contain the provided Adsterra seller line.');
   }
 
   if (liveAdsTxt.error) {
@@ -1351,6 +1380,7 @@ async function buildAdsTxtReport(args) {
       url: liveAdsTxt.url,
       error: liveAdsTxt.error,
       hasValidLine: liveValidation.hasValidLine,
+      matchesInput: liveAdsTxt.enabled && liveMissingInputLines.length === 0,
       validLines: liveValidation.validLines,
     },
     preview,
@@ -1372,6 +1402,7 @@ function printAdsTxtReport(report) {
 
   if (report.live.checked) {
     console.log(`Live ads.txt: ${report.live.hasValidLine ? 'OK' : 'MISSING'} (${report.live.url}${report.live.error ? `, ${report.live.error}` : ''})`);
+    console.log(`Live seller line matches input: ${report.live.matchesInput ? 'OK' : 'MISSING'}`);
   }
 
   if (report.warnings.length > 0) {
@@ -1491,6 +1522,9 @@ function printReadinessReport(report) {
   console.log(`  - ${report.adsTxt.envPresent ? 'OK' : 'MISSING'} ${report.adsTxt.envName}`);
   console.log(`  - ${report.adsTxt.hasOwnerDomain ? 'OK' : 'MISSING'} OWNERDOMAIN=viadreams.cc`);
   console.log(`  - ${report.adsTxt.hasAdsterraSellerLine ? 'OK' : 'MISSING'} active Adsterra seller line`);
+  if (report.adsTxt.liveChecked && report.adsTxt.envPresent) {
+    console.log(`  - ${report.adsTxt.liveMatchesEnvLine ? 'OK' : 'MISSING'} live seller line matches env`);
+  }
   if (report.adsTxt.hasPlaceholder) {
     console.log('  - WARNING placeholder publisher ID is still present');
   }

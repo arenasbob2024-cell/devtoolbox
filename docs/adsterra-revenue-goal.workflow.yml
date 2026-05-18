@@ -1,0 +1,106 @@
+name: Adsterra Revenue Goal
+
+# Workflow template for verifying the real Adsterra revenue gate.
+# To enable it, commit this file as:
+# .github/workflows/adsterra-revenue-goal.yml
+#
+# Required GitHub repository secrets:
+# - ADSTERRA_API_KEY
+# - ADSTERRA_ADS_TXT_SELLER_LINE
+
+on:
+  schedule:
+    # Runs after the previous UTC day has had time to settle in Adsterra reports.
+    - cron: '30 8 * * *'
+  workflow_dispatch:
+    inputs:
+      days:
+        description: 'Rolling days to verify'
+        required: false
+        default: '7'
+      target:
+        description: 'Required average daily revenue in USD'
+        required: false
+        default: '10'
+
+concurrency:
+  group: adsterra-revenue-goal
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      ADSTERRA_API_KEY: ${{ secrets.ADSTERRA_API_KEY }}
+      ADSTERRA_ADS_TXT_SELLER_LINE: ${{ secrets.ADSTERRA_ADS_TXT_SELLER_LINE }}
+      DAYS: ${{ github.event.inputs.days || '7' }}
+      TARGET: ${{ github.event.inputs.target || '10' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Validate required secrets
+        run: |
+          test -n "$ADSTERRA_API_KEY" || { echo "::error title=Missing secret::Add ADSTERRA_API_KEY in GitHub repository secrets."; exit 1; }
+          test -n "$ADSTERRA_ADS_TXT_SELLER_LINE" || { echo "::error title=Missing secret::Add ADSTERRA_ADS_TXT_SELLER_LINE in GitHub repository secrets."; exit 1; }
+
+      - name: Run verification reports
+        run: |
+          set +e
+          npm run adsterra:ads-txt -- --site-url=https://viadreams.cc --json > adsterra-ads-txt.json
+          ads_txt_status=$?
+          npm run adsterra:goal -- --days="$DAYS" --target="$TARGET" --json > adsterra-revenue-goal.json
+          goal_status=$?
+          {
+            echo "ADS_TXT_STATUS=$ads_txt_status"
+            echo "GOAL_STATUS=$goal_status"
+          } >> "$GITHUB_ENV"
+          exit 0
+
+      - name: Summarize
+        if: always()
+        run: |
+          node - <<'NODE'
+          const fs = require('node:fs');
+          function readJson(path) {
+            try {
+              return JSON.parse(fs.readFileSync(path, 'utf8'));
+            } catch {
+              return null;
+            }
+          }
+          const adsTxt = readJson('adsterra-ads-txt.json');
+          const goal = readJson('adsterra-revenue-goal.json');
+          if (adsTxt) {
+            console.log(`ads.txt status: ${adsTxt.status}`);
+            console.log(`live seller line: ${adsTxt.live?.hasValidLine ? 'present' : 'missing'}`);
+          }
+          if (goal) {
+            console.log(`revenue status: ${goal.achieved ? 'PASS' : 'FAIL'}`);
+            console.log(`period: ${goal.start} to ${goal.end} (${goal.days} days)`);
+            console.log(`average daily revenue: $${goal.averageDailyRevenue.toFixed(2)} / day`);
+            console.log(`target: $${goal.targetDailyRevenue.toFixed(2)} / day`);
+          }
+          NODE
+
+      - name: Upload verification reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: adsterra-revenue-goal
+          path: |
+            adsterra-ads-txt.json
+            adsterra-revenue-goal.json
+          if-no-files-found: ignore
+
+      - name: Fail on unmet revenue gate
+        if: always()
+        run: |
+          test "${ADS_TXT_STATUS:-1}" -eq 0 || { echo "::error title=ads.txt gate failed::Live ads.txt must contain the valid Adsterra seller line."; exit 1; }
+          test "${GOAL_STATUS:-1}" -eq 0 || { echo "::error title=Revenue goal failed::Rolling Adsterra revenue is below the configured target or could not be verified."; exit 1; }

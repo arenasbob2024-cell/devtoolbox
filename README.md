@@ -6,7 +6,7 @@
 [![Next.js 16](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue?logo=typescript)](https://www.typescriptlang.org)
 
-> 🚀 **93+ free online developer tools**. No signup, no limits. Zero ads. All processing happens in your browser.
+> 🚀 **93+ free online developer tools**. No signup, no limits. Ad-supported. All processing happens in your browser.
 > Supporting 15 languages with SEO-optimized pages, contributing to your developer workflow.
 
 ![DevToolBox Preview](https://img.shields.io/badge/Tools-93%2B-brightgreen)
@@ -60,6 +60,24 @@
 ✅ **SEO Optimized** - 920+ pages, 13,890+ indexed URLs, structured data, hreflang
 ✅ **Ad-Supported** - Built-in monetization ready
 
+## 💰 Adsterra Revenue Operations
+
+The site has Adsterra inventory wired through environment variables. The revenue goal is measured with real Adsterra reporting data, not by checking whether ad slots render.
+
+Required production configuration:
+- `ADSTERRA_ADS_TXT_SELLER_LINE` - exact seller line copied from the Adsterra publisher dashboard
+- `ADSTERRA_API_KEY` - publisher API token used only for revenue verification
+- `NEXT_PUBLIC_ADSTERRA_TOP_KEY`, `NEXT_PUBLIC_ADSTERRA_SIDEBAR_KEY`, `NEXT_PUBLIC_ADSTERRA_NATIVE_SCRIPT`, `NEXT_PUBLIC_ADSTERRA_NATIVE_KEY`
+
+Useful checks:
+
+```bash
+npm run adsterra:readiness -- --vercel-scope=arenas-projects-ac293cdb --site-url=https://viadreams.cc
+ADSTERRA_API_KEY=... npm run adsterra:goal -- --days=7 --target=10
+```
+
+The workflow template in `docs/adsterra-revenue-goal.workflow.yml` can be enabled as `.github/workflows/adsterra-revenue-goal.yml` with a GitHub token that has `workflow` scope. It passes only when live `ads.txt` contains the configured Adsterra seller line and the rolling Adsterra API report averages at least `$10/day`.
+
 ---
 
 ## 🛠️ Tech Stack
@@ -70,9 +88,9 @@
 | **Language** | TypeScript 5.0+ |
 | **Styling** | Tailwind CSS + CSS Variables |
 | **i18n** | Custom multi-language system (15 locales) |
-| **Deployment** | Vultr VPS + Nginx + PM2 |
+| **Deployment** | Vercel |
 | **SEO** | JSON-LD Schema, Hreflang, Sitemap, IndexNow |
-| **Analytics** | Nginx access logs |
+| **Analytics** | Vercel logs + search console reports |
 
 ---
 
