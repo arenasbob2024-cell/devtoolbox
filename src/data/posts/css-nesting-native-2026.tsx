@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function CssNestingNative2026() {
   return (
     <>
@@ -9,26 +11,78 @@ export default function CssNestingNative2026() {
         guide covers the full specification, real-world patterns, migration tips, and edge cases.
       </p>
 
-      <h2>Browser Support</h2>
+      <section style={{ margin: '2rem 0', padding: '1.25rem', background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '8px' }}>
+        <h2 style={{ marginTop: 0 }}>Quick Answers: CSS Nesting Browser Support in 2026</h2>
+        <div style={{ display: 'grid', gap: '1rem' }}>
+          <div style={{ padding: '1rem', background: '#fff', border: '1px solid #e5e7eb', borderRadius: '6px' }}>
+            <h3 style={{ margin: '0 0 0.5rem', fontSize: '1rem' }}>Can I use native CSS nesting in production?</h3>
+            <p style={{ margin: 0, color: '#4a5568', lineHeight: 1.7 }}>
+              Yes, for modern evergreen browsers. Chrome, Edge, Firefox, Safari, and iOS Safari all support CSS nesting in current releases. If your audience includes older enterprise browsers or embedded WebViews, keep a PostCSS nesting fallback.
+            </p>
+          </div>
+          <div style={{ padding: '1rem', background: '#fff', border: '1px solid #e5e7eb', borderRadius: '6px' }}>
+            <h3 style={{ margin: '0 0 0.5rem', fontSize: '1rem' }}>Which versions support the current relaxed syntax?</h3>
+            <p style={{ margin: 0, color: '#4a5568', lineHeight: 1.7 }}>
+              Use Chrome 120+, Edge 120+, Firefox 117+, and Safari 17.2+ as the practical baseline for the relaxed syntax where nested element selectors like <code>.card &#123; h2 &#123; ... &#125; &#125;</code> work directly.
+            </p>
+          </div>
+          <div style={{ padding: '1rem', background: '#fff', border: '1px solid #e5e7eb', borderRadius: '6px' }}>
+            <h3 style={{ margin: '0 0 0.5rem', fontSize: '1rem' }}>Should I still write the <code>&amp;</code> selector?</h3>
+            <p style={{ margin: 0, color: '#4a5568', lineHeight: 1.7 }}>
+              Use <code>&amp;</code> for pseudo-classes, pseudo-elements, chained classes, and any place where you want the parent selector explicitly. For maximum compatibility with older nesting implementations, also use <code>&amp;</code> before bare element selectors or compile with PostCSS.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <h2>Browser Support Matrix</h2>
       <table>
         <thead>
           <tr>
             <th>Browser</th>
-            <th>Version</th>
-            <th>Release</th>
+            <th>Practical 2026 Baseline</th>
+            <th>Notes</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>Chrome</td><td>120+</td><td>December 2023</td></tr>
-          <tr><td>Firefox</td><td>117+</td><td>August 2023</td></tr>
-          <tr><td>Safari</td><td>17.2+</td><td>December 2023</td></tr>
-          <tr><td>Edge</td><td>120+</td><td>December 2023</td></tr>
+          <tr><td>Chrome</td><td>120+</td><td>Relaxed syntax with lookahead nesting enabled</td></tr>
+          <tr><td>Edge</td><td>120+</td><td>Chromium baseline matches Chrome</td></tr>
+          <tr><td>Firefox</td><td>117+</td><td>Supports native CSS nesting in modern Firefox</td></tr>
+          <tr><td>Safari</td><td>17.2+</td><td>Use as the safest baseline for current syntax</td></tr>
         </tbody>
       </table>
       <p>
-        As of 2026, native CSS nesting has over 95% global browser support. You can safely use it in
-        production without a preprocessor for any project that does not need to support very old browsers.
+        As of 2026, native CSS nesting is safe for modern-browser production sites. The main compatibility
+        question is not whether nesting exists, but whether your minimum browser versions support the relaxed
+        syntax. If in doubt, keep the <code>&amp;</code> selector explicit or compile with PostCSS.
       </p>
+
+      <h2>Feature Detection with @supports</h2>
+      <p>
+        CSS nesting can be feature-detected with <code>@supports (selector(&amp;))</code>. Use it when you
+        need a safe fallback for older browsers or long-lived embedded WebViews.
+      </p>
+      <pre><code className="language-css">{`/* Feature-detect native CSS nesting */
+@supports (selector(&)) {
+  .card {
+    padding: 1rem;
+
+    &:hover {
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+    }
+  }
+}
+
+/* Fallback for older browsers */
+@supports not (selector(&)) {
+  .card {
+    padding: 1rem;
+  }
+
+  .card:hover {
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  }
+}`}</code></pre>
 
       <h2>Basic Nesting Syntax</h2>
       <pre><code className="language-css">{`/* Native CSS nesting */
@@ -511,11 +565,11 @@ export default function CssNestingNative2026() {
       </ul>
 
       <p>
-        Experiment with CSS nesting patterns using our <a href="/en/tools/css-formatter">CSS Formatter</a> tool.
+        Experiment with CSS nesting patterns using our <Link href="/en/tools/css-formatter">CSS Formatter</Link> tool.
         For migrating from Tailwind utility classes to custom CSS nesting, read our{" "}
-        <a href="/en/blog/css-to-tailwind-migration">CSS to Tailwind Migration</a> guide. If you are
+        <Link href="/en/blog/css-to-tailwind-migration">CSS to Tailwind Migration</Link> guide. If you are
         building responsive layouts with nesting, check out our{" "}
-        <a href="/en/blog/css-grid-layout-cheat-sheet">CSS Grid Layout Cheat Sheet</a>.
+        <Link href="/en/blog/css-grid-layout-cheat-sheet">CSS Grid Layout Cheat Sheet</Link>.
       </p>
     </>
   );
