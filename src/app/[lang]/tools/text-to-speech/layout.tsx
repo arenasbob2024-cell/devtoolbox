@@ -7,7 +7,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   const t = await getToolEntry(lang, 'text-to-speech');
-  const url = `https://viadreams.cc/${lang}/tools/text-to-speech`;
+  const url = `https://viadreams.cc/${lang}/tools/text-to-speech/`;
   return {
     title: t?.pageTitle as string,
     description: t?.pageDescription as string,
@@ -29,9 +29,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: url,
       languages: {
         ...Object.fromEntries(
-          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/text-to-speech`])
+          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/text-to-speech/`])
         ),
-        'x-default': `https://viadreams.cc/en/tools/text-to-speech`,
+        'x-default': `https://viadreams.cc/en/tools/text-to-speech/`,
       },
     },
   };

@@ -10,7 +10,7 @@ export async function generateMetadata({
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   const dict = await getDictionary(lang);
-  const url = `https://viadreams.cc/${lang}/tools`;
+  const url = `https://viadreams.cc/${lang}/tools/`;
 
   const title = dict.meta?.toolsIndexTitle || 'Free Online Developer Tools - JSON, Base64, Hash, CSS & More | DevToolBox';
   const description = dict.meta?.toolsIndexDescription || 'Browse 200+ free online developer tools. JSON formatter, Base64 encoder, hash generator, CSS tools, and more. No signup required, runs in your browser.';
@@ -41,9 +41,9 @@ export async function generateMetadata({
       canonical: url,
       languages: {
         ...Object.fromEntries(
-          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools`])
+          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/`])
         ),
-        'x-default': 'https://viadreams.cc/en/tools',
+        'x-default': 'https://viadreams.cc/en/tools/',
       },
     },
   };

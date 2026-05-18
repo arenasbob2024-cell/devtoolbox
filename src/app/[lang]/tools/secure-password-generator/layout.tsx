@@ -7,7 +7,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   const t = await getToolEntry(lang, 'secure-password-generator');
-  const url = `https://viadreams.cc/${lang}/tools/secure-password-generator`;
+  const url = `https://viadreams.cc/${lang}/tools/secure-password-generator/`;
   return {
     title: t?.pageTitle,
     description: t?.pageDescription,
@@ -29,9 +29,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: url,
       languages: {
         ...Object.fromEntries(
-          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/secure-password-generator`])
+          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/secure-password-generator/`])
         ),
-        'x-default': `https://viadreams.cc/en/tools/secure-password-generator`,
+        'x-default': `https://viadreams.cc/en/tools/secure-password-generator/`,
       },
     },
   };

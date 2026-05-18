@@ -7,7 +7,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   const t = await getToolEntry(lang, 'text-case-converter');
-  const url = `https://viadreams.cc/${lang}/tools/text-case-converter`;
+  const url = `https://viadreams.cc/${lang}/tools/text-case-converter/`;
 
   return {
     title: t?.pageTitle,
@@ -29,8 +29,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     alternates: {
       canonical: url,
       languages: {
-        ...Object.fromEntries(i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/text-case-converter`])),
-        'x-default': `https://viadreams.cc/en/tools/text-case-converter`,
+        ...Object.fromEntries(i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/text-case-converter/`])),
+        'x-default': `https://viadreams.cc/en/tools/text-case-converter/`,
       },
     },
   };

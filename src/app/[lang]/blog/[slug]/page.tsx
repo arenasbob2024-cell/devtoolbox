@@ -1042,7 +1042,7 @@ export default function BlogPostPage() {
     inLanguage: lang,
     author: { '@type': 'Organization', name: post.author, url: 'https://viadreams.cc' },
     publisher: { '@type': 'Organization', name: 'DevToolBox', url: 'https://viadreams.cc' },
-    mainEntityOfPage: `https://viadreams.cc/${lang}/blog/${slug}`,
+    mainEntityOfPage: `https://viadreams.cc/${lang}/blog/${slug}/`,
     image: 'https://viadreams.cc/og-image.png',
     keywords: post.keywords.join(', '),
   };
@@ -1051,9 +1051,9 @@ export default function BlogPostPage() {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: uiText.home, item: `https://viadreams.cc/${lang}` },
-      { '@type': 'ListItem', position: 2, name: uiText.blog, item: `https://viadreams.cc/${lang}/blog` },
-      { '@type': 'ListItem', position: 3, name: post.title, item: `https://viadreams.cc/${lang}/blog/${slug}` },
+      { '@type': 'ListItem', position: 1, name: uiText.home, item: `https://viadreams.cc/${lang}/` },
+      { '@type': 'ListItem', position: 2, name: uiText.blog, item: `https://viadreams.cc/${lang}/blog/` },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `https://viadreams.cc/${lang}/blog/${slug}/` },
     ],
   };
 
@@ -1128,7 +1128,7 @@ export default function BlogPostPage() {
       />
 
       {/* Share & Helpful */}
-      <ShareBar url={`https://viadreams.cc/${lang}/blog/${slug}`} title={post.title} lang={lang} />
+      <ShareBar url={`https://viadreams.cc/${lang}/blog/${slug}/`} title={post.title} lang={lang} />
       <HelpfulButton slug={slug} lang={lang} />
 
       {/* Newsletter */}

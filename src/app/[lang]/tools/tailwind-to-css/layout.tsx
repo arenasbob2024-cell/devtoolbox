@@ -7,7 +7,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   const t = await getToolEntry(lang, 'tailwind-to-css');
-  const url = `https://viadreams.cc/${lang}/tools/tailwind-to-css`;
+  const url = `https://viadreams.cc/${lang}/tools/tailwind-to-css/`;
 
   return {
     title: t?.pageTitle,
@@ -29,8 +29,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     alternates: {
       canonical: url,
       languages: {
-        ...Object.fromEntries(i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/tailwind-to-css`])),
-        'x-default': `https://viadreams.cc/en/tools/tailwind-to-css`,
+        ...Object.fromEntries(i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/tailwind-to-css/`])),
+        'x-default': `https://viadreams.cc/en/tools/tailwind-to-css/`,
       },
     },
   };

@@ -9,13 +9,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const validLang = i18n.locales.includes(lang as Locale) ? lang : 'en';
   const t = (await getToolEntry(validLang as Locale, TOOL_ID)) || { pageTitle: 'GitHub Actions Validator', pageDescription: 'Validate GitHub Actions workflow YAML files' };
-  const canonical = `https://viadreams.cc/${validLang}/tools/${TOOL_ID}`;
+  const canonical = `https://viadreams.cc/${validLang}/tools/${TOOL_ID}/`;
   return {
     title: t.pageTitle,
     description: t.pageDescription,
     alternates: {
       canonical,
-      languages: Object.fromEntries(i18n.locales.map(l => [l, `https://viadreams.cc/${l}/tools/${TOOL_ID}`])),
+      languages: Object.fromEntries(i18n.locales.map(l => [l, `https://viadreams.cc/${l}/tools/${TOOL_ID}/`])),
     },
     openGraph: { title: t.pageTitle, description: t.pageDescription, url: canonical, type: 'website' },
     twitter: { card: 'summary_large_image', title: t.pageTitle, description: t.pageDescription },

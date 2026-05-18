@@ -73,7 +73,7 @@ export async function generateMetadata({
     openGraph: {
       title: ui.meta.homeTitle,
       description: ui.meta.homeDescription,
-      url: `https://viadreams.cc/${lang}`,
+      url: `https://viadreams.cc/${lang}/`,
       type: 'website',
       locale: { en: 'en_US', zh: 'zh_CN', ru: 'ru_RU' }[lang] || 'en_US',
       siteName: 'DevToolBox',
@@ -90,12 +90,12 @@ export async function generateMetadata({
       follow: true,
     },
     alternates: {
-      canonical: `https://viadreams.cc/${lang}`,
+      canonical: `https://viadreams.cc/${lang}/`,
       languages: {
         ...Object.fromEntries(
-          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}`])
+          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/`])
         ),
-        'x-default': `https://viadreams.cc/en`,
+        'x-default': `https://viadreams.cc/en/`,
       },
     },
     // 预连接第三方资源
@@ -214,7 +214,7 @@ export default async function LangLayout({
               url: 'https://viadreams.cc',
               potentialAction: {
                 '@type': 'SearchAction',
-                target: 'https://viadreams.cc/en/tools?q={search_term_string}',
+                target: 'https://viadreams.cc/en/tools/?q={search_term_string}',
                 'query-input': 'required name=search_term_string'
               }
             })

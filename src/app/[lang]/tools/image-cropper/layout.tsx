@@ -7,7 +7,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   const t = await getToolEntry(lang, 'image-cropper');
-  const url = `https://viadreams.cc/${lang}/tools/image-cropper`;
+  const url = `https://viadreams.cc/${lang}/tools/image-cropper/`;
   return {
     title: t?.pageTitle,
     description: t?.pageDescription,
@@ -29,9 +29,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: url,
       languages: {
         ...Object.fromEntries(
-          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/image-cropper`])
+          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/image-cropper/`])
         ),
-        'x-default': `https://viadreams.cc/en/tools/image-cropper`,
+        'x-default': `https://viadreams.cc/en/tools/image-cropper/`,
       },
     },
   };

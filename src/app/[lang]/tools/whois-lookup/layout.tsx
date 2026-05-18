@@ -7,7 +7,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   const t = await getToolEntry(lang, 'whois-lookup');
-  const url = `https://viadreams.cc/${lang}/tools/whois-lookup`;
+  const url = `https://viadreams.cc/${lang}/tools/whois-lookup/`;
   return {
     title: t?.pageTitle as string,
     description: t?.pageDescription as string,
@@ -29,9 +29,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: url,
       languages: {
         ...Object.fromEntries(
-          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/whois-lookup`])
+          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/whois-lookup/`])
         ),
-        'x-default': `https://viadreams.cc/en/tools/whois-lookup`,
+        'x-default': `https://viadreams.cc/en/tools/whois-lookup/`,
       },
     },
   };

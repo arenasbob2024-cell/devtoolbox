@@ -33,7 +33,7 @@ export default async function ToolSeoServer({ toolId, lang, children }: ToolSeoS
 
   if (!toolDict) return <>{children}</>;
 
-  const toolUrl = `https://viadreams.cc/${lang}/tools/${toolId}`;
+  const toolUrl = `https://viadreams.cc/${lang}/tools/${toolId}/`;
   const title = (toolDict.pageTitle as string) || (toolDict.name as string) || toolId;
   const description = (toolDict.pageDescription as string) || '';
   const toolName = (toolDict.name as string) || toolId;
@@ -44,8 +44,8 @@ export default async function ToolSeoServer({ toolId, lang, children }: ToolSeoS
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: uiDict.common?.home || 'Home', item: `https://viadreams.cc/${lang}` },
-      { '@type': 'ListItem', position: 2, name: uiDict.common?.allTools || 'Tools', item: `https://viadreams.cc/${lang}/tools` },
+      { '@type': 'ListItem', position: 1, name: uiDict.common?.home || 'Home', item: `https://viadreams.cc/${lang}/` },
+      { '@type': 'ListItem', position: 2, name: uiDict.common?.allTools || 'Tools', item: `https://viadreams.cc/${lang}/tools/` },
       { '@type': 'ListItem', position: 3, name: title, item: toolUrl },
     ],
   };

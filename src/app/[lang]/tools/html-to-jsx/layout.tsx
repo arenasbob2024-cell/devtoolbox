@@ -7,7 +7,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   const t = await getToolEntry(lang, 'html-to-jsx');
-  const url = `https://viadreams.cc/${lang}/tools/html-to-jsx`;
+  const url = `https://viadreams.cc/${lang}/tools/html-to-jsx/`;
 
   return {
     title: t?.pageTitle,
@@ -29,8 +29,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     alternates: {
       canonical: url,
       languages: {
-        ...Object.fromEntries(i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/html-to-jsx`])),
-        'x-default': `https://viadreams.cc/en/tools/html-to-jsx`,
+        ...Object.fromEntries(i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/html-to-jsx/`])),
+        'x-default': `https://viadreams.cc/en/tools/html-to-jsx/`,
       },
     },
   };

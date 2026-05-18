@@ -13,7 +13,7 @@ export async function generateMetadata({
   const blog = (dict as Record<string, unknown>).blog as Record<string, string> | undefined;
   const title = blog?.title || 'DevToolBox Blog';
   const description = blog?.description || 'Developer guides, tutorials, and best practices';
-  const url = `https://viadreams.cc/${lang}/blog`;
+  const url = `https://viadreams.cc/${lang}/blog/`;
 
   return {
     title,
@@ -36,9 +36,9 @@ export async function generateMetadata({
       canonical: url,
       languages: {
         ...Object.fromEntries(
-          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/blog`])
+          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/blog/`])
         ),
-        'x-default': 'https://viadreams.cc/en/blog',
+        'x-default': 'https://viadreams.cc/en/blog/',
       },
     },
   };

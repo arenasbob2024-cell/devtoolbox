@@ -38,7 +38,7 @@ export default async function ToolsIndexPage({ params }: PageProps) {
     '@type': 'CollectionPage',
     name: pageTitle,
     description: pageDescription,
-    url: `https://viadreams.cc/${lang}/tools`,
+    url: `https://viadreams.cc/${lang}/tools/`,
     mainEntity: {
       '@type': 'ItemList',
       numberOfItems: tools.length,
@@ -46,7 +46,7 @@ export default async function ToolsIndexPage({ params }: PageProps) {
         '@type': 'ListItem',
         position: idx + 1,
         name: (t as Record<string, { name?: string }>)[tool.id]?.name || tool.name,
-        url: `https://viadreams.cc/${lang}${tool.path}`,
+        url: `https://viadreams.cc/${lang}${tool.path}/`,
       })),
     },
   };

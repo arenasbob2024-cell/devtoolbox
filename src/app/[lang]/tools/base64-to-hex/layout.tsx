@@ -7,7 +7,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   const t = await getToolEntry(lang, 'base64-to-hex');
-  const url = `https://viadreams.cc/${lang}/tools/base64-to-hex`;
+  const url = `https://viadreams.cc/${lang}/tools/base64-to-hex/`;
   return {
     title: t?.pageTitle,
     description: t?.pageDescription,
@@ -29,9 +29,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: url,
       languages: {
         ...Object.fromEntries(
-          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/base64-to-hex`])
+          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/base64-to-hex/`])
         ),
-        'x-default': `https://viadreams.cc/en/tools/base64-to-hex`,
+        'x-default': `https://viadreams.cc/en/tools/base64-to-hex/`,
       },
     },
   };

@@ -7,7 +7,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   const t = await getToolEntry(lang, 'ai-token-counter');
-  const url = `https://viadreams.cc/${lang}/tools/ai-token-counter`;
+  const url = `https://viadreams.cc/${lang}/tools/ai-token-counter/`;
   return {
     title: t?.pageTitle, description: t?.pageDescription,
     openGraph: {
@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     twitter: { card: 'summary_large_image', title: `${t?.pageTitle} | DevToolBox`, description: t?.pageDescription, images: ['https://viadreams.cc/og-image.png'] },
     alternates: {
       canonical: url,
-      languages: { ...Object.fromEntries(i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/ai-token-counter`])), 'x-default': `https://viadreams.cc/en/tools/ai-token-counter` },
+      languages: { ...Object.fromEntries(i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/ai-token-counter/`])), 'x-default': `https://viadreams.cc/en/tools/ai-token-counter/` },
     },
   };
 }

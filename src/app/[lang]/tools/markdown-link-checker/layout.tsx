@@ -7,7 +7,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   const t = await getToolEntry(lang, 'markdown-link-checker');
-  const url = `https://viadreams.cc/${lang}/tools/markdown-link-checker`;
+  const url = `https://viadreams.cc/${lang}/tools/markdown-link-checker/`;
   return {
     title: t?.pageTitle,
     description: t?.pageDescription,
@@ -29,9 +29,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: url,
       languages: {
         ...Object.fromEntries(
-          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/markdown-link-checker`])
+          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/markdown-link-checker/`])
         ),
-        'x-default': `https://viadreams.cc/en/tools/markdown-link-checker`,
+        'x-default': `https://viadreams.cc/en/tools/markdown-link-checker/`,
       },
     },
   };

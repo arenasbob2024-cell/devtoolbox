@@ -7,12 +7,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   const t = await getToolEntry(lang, 'xpath-tester');
-  const url = `https://viadreams.cc/${lang}/tools/xpath-tester`;
+  const url = `https://viadreams.cc/${lang}/tools/xpath-tester/`;
   return {
     title: t?.pageTitle, description: t?.pageDescription,
     openGraph: { title: `${t?.pageTitle} | DevToolBox`, description: t?.pageDescription, url, type: 'website', siteName: 'DevToolBox', images: [{ url: 'https://viadreams.cc/og-image.png', width: 1200, height: 630 }] },
     twitter: { card: 'summary_large_image', title: `${t?.pageTitle} | DevToolBox`, description: t?.pageDescription, images: ['https://viadreams.cc/og-image.png'] },
-    alternates: { canonical: url, languages: { ...Object.fromEntries(i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/xpath-tester`])), 'x-default': `https://viadreams.cc/en/tools/xpath-tester` } },
+    alternates: { canonical: url, languages: { ...Object.fromEntries(i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/xpath-tester/`])), 'x-default': `https://viadreams.cc/en/tools/xpath-tester/` } },
   };
 }
 export default async function Layout({ children, params }: { children: React.ReactNode; params: Promise<{ lang: string }> }) {

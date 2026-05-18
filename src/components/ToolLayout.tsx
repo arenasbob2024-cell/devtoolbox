@@ -84,7 +84,7 @@ export default function ToolLayout({ title, description, children, toolId }: Too
             style={{ marginTop: 24, marginBottom: 8 }}
           />
           <ShareBar
-            url={`https://viadreams.cc/${lang}/tools/${toolId}`}
+            url={`https://viadreams.cc/${lang}/tools/${toolId}/`}
             title={title}
             lang={lang}
             toolId={toolId}

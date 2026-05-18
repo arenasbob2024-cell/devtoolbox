@@ -7,7 +7,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   const t = await getToolEntry(lang, 'typescript-vs-javascript');
-  const url = `https://viadreams.cc/${lang}/tools/typescript-vs-javascript`;
+  const url = `https://viadreams.cc/${lang}/tools/typescript-vs-javascript/`;
   return {
     title: t?.pageTitle,
     description: t?.pageDescription,
@@ -29,9 +29,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: url,
       languages: {
         ...Object.fromEntries(
-          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/typescript-vs-javascript`])
+          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/typescript-vs-javascript/`])
         ),
-        'x-default': `https://viadreams.cc/en/tools/typescript-vs-javascript`,
+        'x-default': `https://viadreams.cc/en/tools/typescript-vs-javascript/`,
       },
     },
   };

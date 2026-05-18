@@ -31,7 +31,7 @@ export default function HomePageClient() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'DevToolBox',
-    url: `https://viadreams.cc/${lang}`,
+    url: `https://viadreams.cc/${lang}/`,
     description: dict.meta.homeDescription,
     inLanguage: lang,
     publisher: {
@@ -41,7 +41,7 @@ export default function HomePageClient() {
     },
     potentialAction: {
       '@type': 'SearchAction',
-      target: `https://viadreams.cc/${lang}?q={search_term_string}`,
+      target: `https://viadreams.cc/${lang}/?q={search_term_string}`,
       'query-input': 'required name=search_term_string',
     },
   };
@@ -51,7 +51,7 @@ export default function HomePageClient() {
     '@type': 'CollectionPage',
     name: dict.meta.homeTitle,
     description: dict.meta.homeDescription,
-    url: `https://viadreams.cc/${lang}`,
+    url: `https://viadreams.cc/${lang}/`,
     mainEntity: {
       '@type': 'ItemList',
       numberOfItems: tools.length,
@@ -59,7 +59,7 @@ export default function HomePageClient() {
         '@type': 'ListItem',
         position: idx + 1,
         name: dict.tools[tool.id as keyof typeof dict.tools]?.name || tool.name,
-        url: `https://viadreams.cc/${lang}${tool.path}`,
+        url: `https://viadreams.cc/${lang}${tool.path}/`,
       })),
     },
   };

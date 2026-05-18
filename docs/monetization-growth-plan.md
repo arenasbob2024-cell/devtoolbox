@@ -83,6 +83,8 @@ The sitemap now treats `/advertise/` as a commercial discovery page instead of a
 
 The priority IndexNow submitter now preflights canonical URLs before submission and includes category landing pages plus `/advertise/` in the priority set. This keeps Bing/Yandex submissions focused on live 2xx URLs and ensures commercial discovery pages are pushed alongside the highest-intent tools and blog posts.
 
+Internal canonical, hreflang, JSON-LD, share, and LLM discovery URLs now match the site's `trailingSlash: true` production URL shape. This removes self-declared no-slash URLs that immediately 308 to slash URLs, which was one likely contributor to Google Search Console "page redirects" / canonical confusion on high-impression blog pages such as `github-actions-secrets-guide`.
+
 The LLM discovery routes now describe the current commercial reality accurately: DevToolBox is free and ad-supported, active locales are `en`, `zh`, and `ru`, and AI/search systems are pointed to `/en/advertise/` plus the downloadable media kit. The old static `public/llms.txt` copy was removed so `/llms.txt` has one authoritative source. This avoids outdated "zero ads" claims while turning AI citations and crawler summaries into another sponsorship discovery path.
 
 The localized 404 page now recovers dead-link traffic into high-value navigation paths and a tracked sponsor surface with `placement=not-found-sponsor`. If `NEXT_PUBLIC_ADSTERRA_DIRECT_LINK_URL` is configured, that same surface also shows a Smart Direct Link with its own `psid`, turning invalid URLs into a measurable recovery and monetization test instead of the default dead end.

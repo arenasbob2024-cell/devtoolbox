@@ -7,7 +7,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   const t = await getToolEntry(lang, 'json-to-csharp');
-  const url = `https://viadreams.cc/${lang}/tools/json-to-csharp`;
+  const url = `https://viadreams.cc/${lang}/tools/json-to-csharp/`;
   return {
     title: t?.pageTitle,
     description: t?.pageDescription,
@@ -15,9 +15,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     twitter: { card: 'summary_large_image', title: `${t?.pageTitle} | DevToolBox`, description: t?.pageDescription, images: ['https://viadreams.cc/og-image.png'] },
     alternates: { canonical: url, languages: {
         ...Object.fromEntries(
-          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/json-to-csharp`])
+          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/json-to-csharp/`])
         ),
-        'x-default': `https://viadreams.cc/en/tools/json-to-csharp`,
+        'x-default': `https://viadreams.cc/en/tools/json-to-csharp/`,
       } },
   };
 }

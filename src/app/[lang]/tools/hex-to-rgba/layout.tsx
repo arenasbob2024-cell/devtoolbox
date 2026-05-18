@@ -7,7 +7,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   const t = await getToolEntry(lang, 'hex-to-rgba');
-  const url = `https://viadreams.cc/${lang}/tools/hex-to-rgba`;
+  const url = `https://viadreams.cc/${lang}/tools/hex-to-rgba/`;
   return {
     title: t?.pageTitle,
     description: t?.pageDescription,
@@ -29,9 +29,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: url,
       languages: {
         ...Object.fromEntries(
-          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/hex-to-rgba`])
+          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/hex-to-rgba/`])
         ),
-        'x-default': `https://viadreams.cc/en/tools/hex-to-rgba`,
+        'x-default': `https://viadreams.cc/en/tools/hex-to-rgba/`,
       },
     },
   };

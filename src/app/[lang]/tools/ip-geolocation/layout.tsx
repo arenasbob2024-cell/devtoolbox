@@ -7,7 +7,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   const t = await getToolEntry(lang, 'ip-geolocation');
-  const url = `https://viadreams.cc/${lang}/tools/ip-geolocation`;
+  const url = `https://viadreams.cc/${lang}/tools/ip-geolocation/`;
   return {
     title: t?.pageTitle,
     description: t?.pageDescription,
@@ -29,9 +29,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: url,
       languages: {
         ...Object.fromEntries(
-          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/ip-geolocation`])
+          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/ip-geolocation/`])
         ),
-        'x-default': `https://viadreams.cc/en/tools/ip-geolocation`,
+        'x-default': `https://viadreams.cc/en/tools/ip-geolocation/`,
       },
     },
   };

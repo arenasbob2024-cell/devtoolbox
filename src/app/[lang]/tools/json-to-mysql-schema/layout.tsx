@@ -7,7 +7,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   const t = await getToolEntry(lang, 'json-to-mysql-schema');
-  const url = `https://viadreams.cc/${lang}/tools/json-to-mysql-schema`;
+  const url = `https://viadreams.cc/${lang}/tools/json-to-mysql-schema/`;
   return {
     title: t?.pageTitle,
     description: t?.pageDescription,
@@ -29,9 +29,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: url,
       languages: {
         ...Object.fromEntries(
-          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/json-to-mysql-schema`])
+          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/json-to-mysql-schema/`])
         ),
-        'x-default': `https://viadreams.cc/en/tools/json-to-mysql-schema`,
+        'x-default': `https://viadreams.cc/en/tools/json-to-mysql-schema/`,
       },
     },
   };

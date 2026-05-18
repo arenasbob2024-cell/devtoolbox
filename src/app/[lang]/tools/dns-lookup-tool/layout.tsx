@@ -7,7 +7,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   const t = await getToolEntry(lang, 'dns-lookup-tool');
-  const url = `https://viadreams.cc/${lang}/tools/dns-lookup-tool`;
+  const url = `https://viadreams.cc/${lang}/tools/dns-lookup-tool/`;
   return {
     title: t?.pageTitle,
     description: t?.pageDescription,
@@ -29,9 +29,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: url,
       languages: {
         ...Object.fromEntries(
-          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/dns-lookup-tool`])
+          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/dns-lookup-tool/`])
         ),
-        'x-default': `https://viadreams.cc/en/tools/dns-lookup-tool`,
+        'x-default': `https://viadreams.cc/en/tools/dns-lookup-tool/`,
       },
     },
   };

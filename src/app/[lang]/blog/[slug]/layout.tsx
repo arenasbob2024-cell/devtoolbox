@@ -21,7 +21,7 @@ export async function generateMetadata({
     return { title: 'Post Not Found' };
   }
 
-  const url = `https://viadreams.cc/${lang}/blog/${slug}`;
+  const url = `https://viadreams.cc/${lang}/blog/${slug}/`;
 
   return {
     title: post.title,
@@ -50,9 +50,9 @@ export async function generateMetadata({
       canonical: url,
       languages: {
         ...Object.fromEntries(
-          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/blog/${slug}`])
+          i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/blog/${slug}/`])
         ),
-        'x-default': `https://viadreams.cc/en/blog/${slug}`,
+        'x-default': `https://viadreams.cc/en/blog/${slug}/`,
       },
     },
   };
@@ -97,7 +97,7 @@ export default async function BlogPostLayout({
                 },
                 mainEntityOfPage: {
                   '@type': 'WebPage',
-                  '@id': `https://viadreams.cc/${lang}/blog/${slug}`
+                  '@id': `https://viadreams.cc/${lang}/blog/${slug}/`
                 },
                 isAccessibleForFree: true,
                 keywords: post.keywords?.join(', ')
@@ -111,9 +111,9 @@ export default async function BlogPostLayout({
                 '@context': 'https://schema.org',
                 '@type': 'BreadcrumbList',
                 itemListElement: [
-                  { '@type': 'ListItem', position: 1, name: 'Home', item: `https://viadreams.cc/${lang}` },
-                  { '@type': 'ListItem', position: 2, name: 'Blog', item: `https://viadreams.cc/${lang}/blog` },
-                  { '@type': 'ListItem', position: 3, name: post.title, item: `https://viadreams.cc/${lang}/blog/${slug}` }
+                  { '@type': 'ListItem', position: 1, name: 'Home', item: `https://viadreams.cc/${lang}/` },
+                  { '@type': 'ListItem', position: 2, name: 'Blog', item: `https://viadreams.cc/${lang}/blog/` },
+                  { '@type': 'ListItem', position: 3, name: post.title, item: `https://viadreams.cc/${lang}/blog/${slug}/` }
                 ]
               })
             }}

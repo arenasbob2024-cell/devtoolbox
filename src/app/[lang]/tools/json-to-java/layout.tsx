@@ -7,7 +7,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params;
   const lang = (i18n.locales.includes(rawLang as Locale) ? rawLang : i18n.defaultLocale) as Locale;
   const t = await getToolEntry(lang, 'json-to-java');
-  const url = `https://viadreams.cc/${lang}/tools/json-to-java`;
+  const url = `https://viadreams.cc/${lang}/tools/json-to-java/`;
   return {
     title: t?.pageTitle,
     description: t?.pageDescription,
@@ -28,8 +28,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     alternates: {
       canonical: url,
       languages: {
-        ...Object.fromEntries(i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/json-to-java`])),
-        'x-default': `https://viadreams.cc/en/tools/json-to-java`,
+        ...Object.fromEntries(i18n.locales.map((l) => [l, `https://viadreams.cc/${l}/tools/json-to-java/`])),
+        'x-default': `https://viadreams.cc/en/tools/json-to-java/`,
       },
     },
   };
