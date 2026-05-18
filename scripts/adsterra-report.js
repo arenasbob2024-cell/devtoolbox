@@ -68,6 +68,7 @@ Options for gate:
   --site-url=https://...    Live site to verify. Defaults to https://viadreams.cc.
   --vercel-scope=SLUG       Also inspect Vercel env var names via vercel env ls.
   --json                   Print machine-readable gate result.
+  --markdown               Print a human-readable Markdown audit report.
 
 Options for recommend:
   --days=7                 Days to include, ending yesterday by default.
@@ -1988,6 +1989,86 @@ function printGateReport(report) {
   }
 }
 
+function markdownStatus(ok) {
+  return ok ? 'PASS' : 'FAIL';
+}
+
+function printGateMarkdownReport(report) {
+  const generatedAt = new Date().toISOString();
+  const adsTxtOk = report.adsTxt.status === 'PASS';
+  const liveInventoryOk = report.readiness.liveInventoryMissing.length === 0 &&
+    report.readiness.sourceInventoryMissing.length === 0;
+  const vercelEnvOk = !report.readiness.vercelEnvChecked || report.readiness.requiredMissing.length === 0;
+  const revenueVerified = Boolean(report.goal);
+  const revenueOk = Boolean(report.goal?.achieved);
+
+  console.log('# Adsterra Revenue Gate Report');
+  console.log('');
+  console.log(`Generated: ${generatedAt}`);
+  console.log(`Site: ${report.siteUrl}`);
+  console.log(`Status: ${report.status}`);
+  console.log('');
+  console.log('## Completion Checklist');
+  console.log('');
+  console.log('| Requirement | Evidence | Status |');
+  console.log('| --- | --- | --- |');
+  console.log(`| Live ads.txt contains configured Adsterra seller line | ${report.adsTxt.live.checked ? `live=${report.adsTxt.live.hasValidLine ? 'present' : 'missing'}, matchesInput=${report.adsTxt.live.matchesInput ? 'yes' : 'no'}` : 'not checked'} | ${markdownStatus(adsTxtOk)} |`);
+  console.log(`| Live ad inventory is present | liveMissing=${report.readiness.liveInventoryMissing.length}, sourceMissing=${report.readiness.sourceInventoryMissing.length} | ${markdownStatus(liveInventoryOk)} |`);
+  console.log(`| Required production Adsterra env vars are present | ${report.readiness.vercelEnvChecked ? `missing=${report.readiness.requiredMissing.length}` : 'Vercel env not checked'} | ${markdownStatus(vercelEnvOk)} |`);
+  console.log(`| Real Adsterra revenue source is available | ${revenueVerified ? `${report.goal.rowCount} daily row(s)` : 'not verified'} | ${markdownStatus(revenueVerified)} |`);
+  console.log(`| Average daily revenue is at least target | ${report.goal ? `${money(report.goal.averageDailyRevenue)} / day vs ${money(report.goal.targetDailyRevenue)} / day` : 'not verified'} | ${markdownStatus(revenueOk)} |`);
+  console.log('| Sample data is not accepted | gate command rejects --sample | PASS |');
+  console.log('');
+
+  if (report.goal) {
+    console.log('## Revenue');
+    console.log('');
+    console.log(`Period: ${report.goal.start} to ${report.goal.end} (${report.goal.days} days)`);
+    console.log(`Total revenue: ${money(report.goal.totalRevenue)} of ${money(report.goal.requiredTotalRevenue)} required`);
+    console.log(`Average daily revenue: ${money(report.goal.averageDailyRevenue)} / day`);
+    console.log(`Gap: ${money(report.goal.gapPerDay)} / day, ${money(report.goal.requiredAdditionalRevenue)} total for this period`);
+    if (report.goal.dailyRows.length > 0) {
+      console.log('');
+      console.log('| Date | Revenue |');
+      console.log('| --- | ---: |');
+      for (const row of report.goal.dailyRows) {
+        console.log(`| ${row.date} | ${money(row.revenue)} |`);
+      }
+    }
+    console.log('');
+  }
+
+  if (report.failures.length > 0) {
+    console.log('## Failures');
+    console.log('');
+    for (const failure of report.failures) {
+      console.log(`- ${failure}`);
+    }
+    console.log('');
+  }
+
+  console.log('## Next Actions');
+  console.log('');
+  if (!adsTxtOk) {
+    console.log('1. Add the exact Adsterra seller line from the publisher dashboard:');
+    console.log('   `npx vercel env add ADSTERRA_ADS_TXT_SELLER_LINE production --scope arenas-projects-ac293cdb`');
+    console.log('2. Redeploy and rerun the gate:');
+    console.log('   `git commit --allow-empty -m "Redeploy with Adsterra seller line" && git push origin main`');
+  }
+  if (!revenueVerified) {
+    console.log('3. Add a real revenue source:');
+    console.log('   `ADSTERRA_API_KEY=... ADSTERRA_ADS_TXT_SELLER_LINE="adsterra.com, <publisher-id>, DIRECT" npm run adsterra:gate -- --vercel-scope=arenas-projects-ac293cdb`');
+    console.log('   or');
+    console.log('   `npm run adsterra:gate -- --file=exports/adsterra-daily.csv --site-url=https://viadreams.cc --vercel-scope=arenas-projects-ac293cdb`');
+  } else if (!revenueOk) {
+    console.log('3. Close the measured revenue gap by scaling high-RPM placements and countries:');
+    console.log('   `ADSTERRA_API_KEY=... npm run adsterra:report -- recommend --days=7 --min-impressions=1000`');
+  }
+  if (report.status === 'PASS') {
+    console.log('No remaining action: the measured Adsterra gate passed.');
+  }
+}
+
 function printStatsTable(payload) {
   const rows = rowsFromStats(payload);
   if (rows.length === 0) {
@@ -2100,6 +2181,8 @@ async function main() {
 
     if (args.json) {
       console.log(JSON.stringify(report, null, 2));
+    } else if (args.markdown) {
+      printGateMarkdownReport(report);
     } else {
       printGateReport(report);
     }

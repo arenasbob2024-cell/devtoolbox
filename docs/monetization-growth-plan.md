@@ -169,6 +169,7 @@ ADSTERRA_API_KEY=... npm run adsterra:report -- stats --days=7 --group-by=countr
 ADSTERRA_API_KEY=... npm run adsterra:report -- stats --days=7 --group-by=placement_sub_id
 ADSTERRA_API_KEY=... npm run adsterra:goal -- --days=7 --target=10
 ADSTERRA_API_KEY=... ADSTERRA_ADS_TXT_SELLER_LINE='adsterra.com, <publisher-id>, DIRECT' npm run adsterra:gate -- --vercel-scope=arenas-projects-ac293cdb
+ADSTERRA_API_KEY=... ADSTERRA_ADS_TXT_SELLER_LINE='adsterra.com, <publisher-id>, DIRECT' npm run adsterra:gate -- --vercel-scope=arenas-projects-ac293cdb --markdown > adsterra-revenue-gate.md
 ADSTERRA_API_KEY=... npm run adsterra:report -- recommend --days=7 --min-impressions=1000
 npm run adsterra:goal -- --sample
 npm run adsterra:report -- recommend --sample
@@ -202,7 +203,7 @@ When `--site-url` is provided, `adsterra:readiness` also fetches representative 
 
 The `adsterra:goal` command is the revenue completion gate. It prints PASS only when the measured average daily Adsterra revenue is at least the target, and exits non-zero when the period is below target so deployment or optimization work is not mistaken for verified revenue.
 
-The `adsterra:gate` command is the stricter final gate for the `$10/day` objective. It does not allow sample data. It passes only when live `/ads.txt` contains the configured Adsterra seller line, required active ad env vars are present, and a real Adsterra API or CSV daily report reaches the target average. Its JSON output summarizes the check without printing the seller line or API token, so it is suitable for a scheduled GitHub Actions artifact.
+The `adsterra:gate` command is the stricter final gate for the `$10/day` objective. It does not allow sample data. It passes only when live `/ads.txt` contains the configured Adsterra seller line, required active ad env vars are present, and a real Adsterra API or CSV daily report reaches the target average. Its JSON output summarizes the check without printing the seller line or API token, so it is suitable for a scheduled GitHub Actions artifact. Add `--markdown` to generate a daily human-readable audit report with the completion checklist, revenue gap, failures, and next commands.
 
 ## Next experiments
 

@@ -55,6 +55,7 @@ jobs:
           set +e
           npm run adsterra:gate -- --site-url=https://viadreams.cc --days="$DAYS" --target="$TARGET" --json > adsterra-revenue-gate.json
           gate_status=$?
+          npm run adsterra:gate -- --site-url=https://viadreams.cc --days="$DAYS" --target="$TARGET" --markdown > adsterra-revenue-gate.md || true
           echo "GATE_STATUS=$gate_status" >> "$GITHUB_ENV"
           exit 0
 
@@ -92,7 +93,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: adsterra-revenue-goal
-          path: adsterra-revenue-gate.json
+          path: |
+            adsterra-revenue-gate.json
+            adsterra-revenue-gate.md
           if-no-files-found: ignore
 
       - name: Fail on unmet revenue gate
