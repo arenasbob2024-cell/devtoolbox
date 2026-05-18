@@ -1,12 +1,15 @@
 const OWNER_DOMAIN = 'viadreams.cc';
 const SELLER_LINE_ENV = 'ADSTERRA_ADS_TXT_SELLER_LINE';
 const ADSTERRA_SELLER_LINE_PATTERN =
-  /^adsterra\.com\s*,\s*(?!ADSTERRA_PUBLISHER_ID_PLACEHOLDER\b)[a-z0-9_-]+\s*,\s*DIRECT(?:\s*,\s*[a-z0-9_-]+)?\s*$/i;
+  /^adsterra\.com\s*,\s*([a-z0-9_-]+)\s*,\s*DIRECT(?:\s*,\s*[a-z0-9_-]+)?\s*$/i;
 
 export const dynamic = 'force-dynamic';
 
 function isValidAdsterraSellerLine(line: string) {
-  return ADSTERRA_SELLER_LINE_PATTERN.test(line);
+  const match = line.match(ADSTERRA_SELLER_LINE_PATTERN);
+  if (!match) return false;
+
+  return !match[1].toLowerCase().includes('placeholder');
 }
 
 function getSellerLines() {
@@ -33,7 +36,7 @@ export function GET() {
       ? sellerLines
       : [
           '# Format: adsterra.com, <publisher-id>, DIRECT, <optional-cert>',
-          '# adsterra.com, ADSTERRA_PUBLISHER_ID_PLACEHOLDER, DIRECT',
+          '# Copy the exact seller line from the Adsterra publisher dashboard.',
         ]),
     '',
   ].join('\n');

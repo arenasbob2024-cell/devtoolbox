@@ -87,7 +87,7 @@ Options for setup:
 `;
 
 const ADSTERRA_SELLER_LINE_PATTERN =
-  /^adsterra\.com\s*,\s*(?!ADSTERRA_PUBLISHER_ID_PLACEHOLDER\b)[a-z0-9_-]+\s*,\s*DIRECT(?:\s*,\s*[a-z0-9_-]+)?\s*$/i;
+  /^adsterra\.com\s*,\s*([a-z0-9_-]+)\s*,\s*DIRECT(?:\s*,\s*[a-z0-9_-]+)?\s*$/i;
 
 const LIVE_INVENTORY_PAGES = [
   {
@@ -619,7 +619,10 @@ function sellerLinesFromText(text) {
 }
 
 function isValidAdsterraSellerLine(line) {
-  return ADSTERRA_SELLER_LINE_PATTERN.test(String(line || '').trim());
+  const match = String(line || '').trim().match(ADSTERRA_SELLER_LINE_PATTERN);
+  if (!match) return false;
+
+  return !match[1].toLowerCase().includes('placeholder');
 }
 
 function validateAdsterraSellerLines(text) {
@@ -651,7 +654,7 @@ function buildAdsTxtBody(sellerLines) {
       ? validLines
       : [
           '# Format: adsterra.com, <publisher-id>, DIRECT, <optional-cert>',
-          '# adsterra.com, ADSTERRA_PUBLISHER_ID_PLACEHOLDER, DIRECT',
+          '# Copy the exact seller line from the Adsterra publisher dashboard.',
         ]),
     '',
   ].join('\n');
