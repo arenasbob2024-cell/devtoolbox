@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "adsterra:report": "node scripts/adsterra-report.js",
+    "adsterra:readiness": "node scripts/adsterra-report.js readiness",
     "adsterra:goal": "node scripts/adsterra-report.js goal"
   },
   "dependencies": {

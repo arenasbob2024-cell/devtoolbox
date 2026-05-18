@@ -146,6 +146,7 @@ Clicks are sent to Google Analytics as `monetization_click` with `monetization_t
 Run the API report after generating an Adsterra Publisher API token:
 
 ```bash
+npm run adsterra:readiness -- --vercel-scope=arenas-projects-ac293cdb
 ADSTERRA_API_KEY=... npm run adsterra:report -- stats --days=7 --group-by=placement
 ADSTERRA_API_KEY=... npm run adsterra:report -- stats --days=7 --group-by=country
 ADSTERRA_API_KEY=... npm run adsterra:report -- stats --days=7 --group-by=placement_sub_id
@@ -171,6 +172,8 @@ npm run adsterra:report -- recommend --placements-file=exports/placements.csv --
 ```
 
 The CSV import path accepts common column names such as placement/ad unit/zone, country/geo, impressions/views/loads, clicks, CTR, CPM/eCPM, revenue/profit/earnings, and prints the same scale/review recommendations as the API flow.
+
+The `adsterra:readiness` command checks local and optional Vercel environment readiness without printing secret values. It reports whether the active Adsterra ad unit env vars are present, whether high-impact experiments such as Smart Direct Link / mobile sticky / Social Bar are configured, whether `public/ads.txt` still has the placeholder seller line, and whether an API token or CSV export is available for a real revenue goal check.
 
 The `adsterra:goal` command is the revenue completion gate. It prints PASS only when the measured average daily Adsterra revenue is at least the target, and exits non-zero when the period is below target so deployment or optimization work is not mistaken for verified revenue.
 

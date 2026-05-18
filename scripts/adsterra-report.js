@@ -9,6 +9,7 @@
  *   ADSTERRA_API_KEY=... npm run adsterra:report -- stats --start=2026-05-01 --end=2026-05-15 --group-by=country
  *   ADSTERRA_API_KEY=... npm run adsterra:report -- goal --days=7 --target=10
  *   ADSTERRA_API_KEY=... npm run adsterra:report -- domains
+ *   npm run adsterra:report -- readiness
  *   npm run adsterra:report -- stats --file=exports/adsterra-placement.csv
  *   npm run adsterra:report -- goal --file=exports/adsterra-daily.csv --target=10
  *   npm run adsterra:report -- recommend --placements-file=exports/placements.csv --countries-file=exports/countries.csv
@@ -26,6 +27,7 @@ Commands:
   stats       Fetch revenue stats. Default command.
   goal        Check whether average daily revenue meets a target.
   recommend   Rank placements/countries and print optimization actions.
+  readiness   Check local Adsterra env/reporting readiness without printing secrets.
   domains     Fetch domains as CSV.
   placements  Fetch placements as CSV.
 
@@ -59,6 +61,11 @@ Options for recommend:
   --countries-file=PATH    Read country CSV export instead of calling the API.
   --sample                 Run with built-in sample rows, no API token needed.
   --json                   Print machine-readable recommendations.
+
+Options for readiness:
+  --env-file=.env.local     Env file to inspect in addition to process env.
+  --vercel-scope=SLUG       Also inspect Vercel env var names via vercel env ls.
+  --json                   Print machine-readable readiness result.
 `;
 
 function parseArgs(argv) {
@@ -219,6 +226,314 @@ async function request(path, query = {}) {
     console.error(body.slice(0, 2000));
     process.exit(1);
   }
+}
+
+function parseEnvFileText(text) {
+  const result = {};
+
+  for (const line of text.split(/\r?\n/)) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith('#')) continue;
+
+    const normalized = trimmed.startsWith('export ') ? trimmed.slice(7).trim() : trimmed;
+    const equalsIndex = normalized.indexOf('=');
+    if (equalsIndex <= 0) continue;
+
+    const key = normalized.slice(0, equalsIndex).trim();
+    let value = normalized.slice(equalsIndex + 1).trim();
+    if (!key) continue;
+
+    const quote = value[0];
+    if ((quote === '"' || quote === "'") && value.endsWith(quote)) {
+      value = value.slice(1, -1);
+    }
+
+    result[key] = value;
+  }
+
+  return result;
+}
+
+async function readOptionalTextFile(filePath) {
+  const [{ readFile }, path] = await Promise.all([
+    import('node:fs/promises'),
+    import('node:path'),
+  ]);
+  const resolvedPath = path.resolve(process.cwd(), filePath);
+
+  try {
+    return {
+      path: resolvedPath,
+      text: await readFile(resolvedPath, 'utf8'),
+    };
+  } catch {
+    return {
+      path: resolvedPath,
+      text: '',
+    };
+  }
+}
+
+async function listOptionalCsvFiles(dirPath) {
+  const [{ readdir }, path] = await Promise.all([
+    import('node:fs/promises'),
+    import('node:path'),
+  ]);
+  const resolvedPath = path.resolve(process.cwd(), dirPath);
+
+  try {
+    const entries = await readdir(resolvedPath, { withFileTypes: true });
+    return entries
+      .filter(entry => entry.isFile() && entry.name.toLowerCase().endsWith('.csv'))
+      .map(entry => path.join(resolvedPath, entry.name));
+  } catch {
+    return [];
+  }
+}
+
+function parseVercelEnvNames(output) {
+  const names = new Set();
+
+  for (const line of output.split(/\r?\n/)) {
+    const match = line.match(/^\s*([A-Z][A-Z0-9_]+)\s{2,}/);
+    if (!match) continue;
+
+    const name = match[1];
+    if (
+      name.startsWith('NEXT_PUBLIC_ADSTERRA_') ||
+      name === 'ADSTERRA_API_KEY'
+    ) {
+      names.add(name);
+    }
+  }
+
+  return Array.from(names).sort();
+}
+
+async function loadVercelEnvPresence(scope) {
+  if (!scope) {
+    return {
+      enabled: false,
+      names: [],
+      error: '',
+    };
+  }
+
+  const { execFile } = await import('node:child_process');
+  const { promisify } = await import('node:util');
+  const execFileAsync = promisify(execFile);
+
+  try {
+    const { stdout } = await execFileAsync('npx', [
+      '--yes',
+      'vercel',
+      'env',
+      'ls',
+      '--scope',
+      scope,
+    ], {
+      cwd: process.cwd(),
+      maxBuffer: 1024 * 1024,
+    });
+
+    return {
+      enabled: true,
+      names: parseVercelEnvNames(stdout),
+      error: '',
+    };
+  } catch (error) {
+    return {
+      enabled: true,
+      names: [],
+      error: error.message || String(error),
+    };
+  }
+}
+
+function envValue(env, key) {
+  const value = env[key];
+  return typeof value === 'string' && value.trim() !== '' ? value.trim() : '';
+}
+
+function buildEnvChecks(env) {
+  const groups = [
+    {
+      title: 'Active production ad units',
+      severity: 'required',
+      checks: [
+        ['NEXT_PUBLIC_ADSTERRA_TOP_KEY', 'Global top leaderboard and fallback leaderboard slots'],
+        ['NEXT_PUBLIC_ADSTERRA_SIDEBAR_KEY', 'Tool sidebar rectangle and secondary rectangle fallback'],
+        ['NEXT_PUBLIC_ADSTERRA_NATIVE_SCRIPT', 'Bottom native banner script'],
+        ['NEXT_PUBLIC_ADSTERRA_NATIVE_KEY', 'Bottom native banner container'],
+      ],
+    },
+    {
+      title: 'High-impact optional Adsterra tests',
+      severity: 'recommended',
+      checks: [
+        ['NEXT_PUBLIC_ADSTERRA_DIRECT_LINK_URL', 'Smart Direct Link offers across high-intent surfaces'],
+        ['NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_KEY', 'Mobile sticky banner'],
+        ['NEXT_PUBLIC_ADSTERRA_SOCIAL_BAR_SCRIPT', 'Delayed Social Bar experiment'],
+      ],
+    },
+    {
+      title: 'Dedicated placement keys for clean RPM reporting',
+      severity: 'recommended',
+      checks: [
+        ['NEXT_PUBLIC_ADSTERRA_HOME_INLINE_KEY', 'Homepage inline slot'],
+        ['NEXT_PUBLIC_ADSTERRA_TOOL_TOP_KEY', 'Tool page top slot'],
+        ['NEXT_PUBLIC_ADSTERRA_TOOL_MID_KEY', 'Tool page post-tool slot'],
+        ['NEXT_PUBLIC_ADSTERRA_TOOL_BOTTOM_KEY', 'Tool page bottom slot'],
+        ['NEXT_PUBLIC_ADSTERRA_SIDEBAR_SECONDARY_KEY', 'Tool sidebar secondary rectangle'],
+        ['NEXT_PUBLIC_ADSTERRA_BLOG_ARTICLE_MID_KEY', 'Blog article post-body slot'],
+      ],
+    },
+    {
+      title: 'Revenue verification',
+      severity: 'verification',
+      checks: [
+        ['ADSTERRA_API_KEY', 'Publisher API token for real goal checks'],
+      ],
+    },
+  ];
+
+  return groups.map(group => ({
+    ...group,
+    checks: group.checks.map(([name, purpose]) => ({
+      name,
+      purpose,
+      present: Boolean(envValue(env, name)),
+    })),
+  }));
+}
+
+async function buildReadinessReport(args) {
+  const envFile = args['env-file'] || '.env.local';
+  const vercelScope = args['vercel-scope'] || args.scope || '';
+  const [
+    { text: envFileText, path: envFilePath },
+    { text: adsTxtText, path: adsTxtPath },
+    csvFiles,
+    vercelEnv,
+  ] = await Promise.all([
+    readOptionalTextFile(envFile),
+    readOptionalTextFile('public/ads.txt'),
+    listOptionalCsvFiles('exports'),
+    loadVercelEnvPresence(vercelScope),
+  ]);
+  const fileEnv = parseEnvFileText(envFileText);
+  const vercelEnvPresence = Object.fromEntries(
+    vercelEnv.names.map(name => [name, '__present_in_vercel__'])
+  );
+  const env = { ...vercelEnvPresence, ...fileEnv, ...process.env };
+  const envGroups = buildEnvChecks(env);
+  const requiredMissing = envGroups
+    .filter(group => group.severity === 'required')
+    .flatMap(group => group.checks.filter(check => !check.present).map(check => check.name));
+  const recommendedMissing = envGroups
+    .filter(group => group.severity === 'recommended')
+    .flatMap(group => group.checks.filter(check => !check.present).map(check => check.name));
+  const verificationMissing = envGroups
+    .filter(group => group.severity === 'verification')
+    .flatMap(group => group.checks.filter(check => !check.present).map(check => check.name));
+  const hasAdsterraSellerLine = /^adsterra\.com\s*,\s*(?!ADSTERRA_PUBLISHER_ID_PLACEHOLDER\b)[^,\s#]+,\s*DIRECT\b/im.test(adsTxtText);
+  const hasAdsTxtPlaceholder = /ADSTERRA_PUBLISHER_ID_PLACEHOLDER/.test(adsTxtText);
+  const hasOwnerDomain = /^OWNERDOMAIN=viadreams\.cc\s*$/im.test(adsTxtText);
+  const revenueCsvFiles = csvFiles.filter(file => /adsterra|daily|placement|country|revenue/i.test(file));
+  const hasRevenueProofSource = Boolean(envValue(env, 'ADSTERRA_API_KEY')) || revenueCsvFiles.length > 0;
+  const warnings = [
+    ...recommendedMissing.map(name => `Missing recommended env: ${name}`),
+    ...verificationMissing.map(name => `Missing verification env: ${name}`),
+  ];
+
+  if (!hasAdsterraSellerLine) {
+    warnings.push('public/ads.txt does not contain the exact active Adsterra seller line.');
+  }
+
+  if (!hasRevenueProofSource) {
+    warnings.push('No API token or exports/*.csv report is available for real revenue goal verification.');
+  }
+
+  if (vercelEnv.error) {
+    warnings.push(`Could not inspect Vercel env names: ${vercelEnv.error}`);
+  }
+
+  const status = requiredMissing.length > 0
+    ? 'FAIL'
+    : warnings.length > 0
+    ? 'WARN'
+    : 'PASS';
+
+  return {
+    status,
+    envFile: {
+      path: envFilePath,
+      found: Boolean(envFileText),
+    },
+    vercelEnv: {
+      enabled: vercelEnv.enabled,
+      scope: vercelScope,
+      names: vercelEnv.names,
+      error: vercelEnv.error,
+    },
+    adsTxt: {
+      path: adsTxtPath,
+      found: Boolean(adsTxtText),
+      hasOwnerDomain,
+      hasAdsterraSellerLine,
+      hasPlaceholder: hasAdsTxtPlaceholder,
+    },
+    reports: {
+      csvFiles: revenueCsvFiles,
+      hasRevenueProofSource,
+    },
+    envGroups,
+    requiredMissing,
+    recommendedMissing,
+    verificationMissing,
+    warnings,
+  };
+}
+
+function printReadinessReport(report) {
+  console.log('Adsterra monetization readiness');
+  console.log(`Status: ${report.status}`);
+  console.log(`Env file: ${report.envFile.found ? 'found' : 'missing'} (${report.envFile.path})`);
+  if (report.vercelEnv.enabled) {
+    console.log(`Vercel env names: ${report.vercelEnv.error ? 'unavailable' : `${report.vercelEnv.names.length} found`} (${report.vercelEnv.scope})`);
+  }
+
+  for (const group of report.envGroups) {
+    console.log(`\n${group.title}`);
+    for (const check of group.checks) {
+      console.log(`  - ${check.present ? 'OK' : 'MISSING'} ${check.name}: ${check.purpose}`);
+    }
+  }
+
+  console.log('\nads.txt');
+  console.log(`  - ${report.adsTxt.found ? 'OK' : 'MISSING'} file: ${report.adsTxt.path}`);
+  console.log(`  - ${report.adsTxt.hasOwnerDomain ? 'OK' : 'MISSING'} OWNERDOMAIN=viadreams.cc`);
+  console.log(`  - ${report.adsTxt.hasAdsterraSellerLine ? 'OK' : 'MISSING'} active Adsterra seller line`);
+  if (report.adsTxt.hasPlaceholder) {
+    console.log('  - WARNING placeholder publisher ID is still present');
+  }
+
+  console.log('\nRevenue proof source');
+  console.log(`  - ${report.reports.hasRevenueProofSource ? 'OK' : 'MISSING'} API token or CSV export for real goal checks`);
+  if (report.reports.csvFiles.length > 0) {
+    for (const file of report.reports.csvFiles) {
+      console.log(`    ${file}`);
+    }
+  }
+
+  if (report.warnings.length > 0) {
+    console.log('\nWarnings');
+    for (const warning of report.warnings) {
+      console.log(`  - ${warning}`);
+    }
+  }
+
+  console.log('\nNote: readiness checks configuration only. Use `npm run adsterra:goal` with the API token or a real CSV export to prove the $10/day revenue goal.');
 }
 
 function rowsFromStats(payload) {
@@ -500,6 +815,21 @@ async function main() {
 
   if (command === 'placements') {
     console.log(await request('placements.csv'));
+    return;
+  }
+
+  if (command === 'readiness') {
+    const report = await buildReadinessReport(args);
+
+    if (args.json) {
+      console.log(JSON.stringify(report, null, 2));
+    } else {
+      printReadinessReport(report);
+    }
+
+    if (report.status === 'FAIL') {
+      process.exitCode = 1;
+    }
     return;
   }
 
