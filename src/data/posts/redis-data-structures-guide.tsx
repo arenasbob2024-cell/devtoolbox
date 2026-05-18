@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import React from 'react';
 
 const codeStrings = `# STRINGS — the simplest type, just bytes
@@ -154,6 +155,21 @@ HDEL user:1000 age
 # Scan a hash incrementally (for large hashes)
 HSCAN user:1000 0 MATCH "em*" COUNT 10`;
 
+const codeHashProtocol = `# Modern Redis hash writes use HSET, including multiple field-value pairs.
+HSET user:1000 name "Alice" age "30" email "alice@example.com"
+
+# HMSET still exists for compatibility, but Redis marks it deprecated.
+# Prefer the multi-field HSET form above when migrating old examples.
+# HMSET user:1000 name "Alice" age "30" email "alice@example.com"
+
+# RESP request shape for: HSET user:1000 name Alice
+# Redis clients send commands as arrays of bulk strings.
+*5\\r\\n
+$4\\r\\nHSET\\r\\n
+$9\\r\\nuser:1000\\r\\n
+$4\\r\\nname\\r\\n
+$5\\r\\nAlice\\r\\n`;
+
 const codeStreams = `# STREAMS — append-only log (like Kafka, but built-in)
 
 # Add an event (auto-generated ID: timestamp-sequence)
@@ -187,6 +203,16 @@ const translations: Record<string, Record<string, string>> = {
   en: {
     title: 'Redis Data Structures Guide: Strings, Lists, Sets, Sorted Sets, Hashes, Streams',
     intro: 'Redis is not just a key-value cache — it is a data structure server. Each Redis data type is optimized for specific use cases, and choosing the right structure dramatically simplifies your application logic. This comprehensive guide covers all seven core Redis data structures with real-world examples and performance characteristics.',
+    hashQuickTitle: 'Quick Answers: Redis Hashes, HSET, and the RESP Protocol',
+    hashQuickIntro: 'Redis hashes are record-like field-value maps stored inside one Redis key. They are the right fit for user profiles, product attributes, counters grouped by object, and partial object updates where JSON strings would force read-modify-write cycles.',
+    hashQuickQ1: 'What are Redis hashes?',
+    hashQuickA1: 'Redis hashes store multiple field-value pairs under one key, similar to an object or map. Use HSET to create or update fields, HGET for one field, HMGET for selected fields, and HGETALL only when the hash is small enough to return completely.',
+    hashQuickQ2: 'Should I use HSET or HMSET?',
+    hashQuickA2: 'Use HSET. Redis 4.0 deprecated HMSET because HSET can set one or many field-value pairs. Old tutorials may still show HMSET, but new code should use HSET key field value [field value ...].',
+    hashQuickQ3: 'What does "protocol" mean for Redis hashes?',
+    hashQuickA3: 'The Redis wire protocol is RESP. Client libraries send HSET, HGET, and HGETALL as arrays of bulk strings, then parse integer, bulk-string, array, or map-like replies into the language-native return shape.',
+    hashQuickQ4: 'When are hashes more memory-efficient than string keys?',
+    hashQuickA4: 'Small objects are often more efficient as one hash key with many fields than as many separate Redis keys. Redis can use compact encodings for small hashes, while many independent keys add key metadata overhead.',
     stringsTitle: 'Strings',
     stringsDesc: 'The most fundamental Redis type. Strings store any sequence of bytes (text, integers, serialized JSON, binary data). Maximum size is 512 MB.',
     listsTitle: 'Lists',
@@ -223,6 +249,16 @@ const translations: Record<string, Record<string, string>> = {
   zh: {
     title: 'Redis 数据结构指南：字符串、列表、集合、有序集合、哈希、流',
     intro: 'Redis 不仅仅是一个键值缓存——它是一个数据结构服务器。每种 Redis 数据类型都针对特定用例进行了优化，选择正确的数据结构可以大幅简化应用程序逻辑。本综合指南涵盖了所有七种核心 Redis 数据结构，并提供了实际示例和性能特征。',
+    hashQuickTitle: '快速回答：Redis Hashes、HSET 与 RESP 协议',
+    hashQuickIntro: 'Redis Hashes 是存储在一个 Redis key 内部的 field-value 映射，类似对象或 map。它适合用户资料、商品属性、按对象分组的计数器，以及只更新部分字段而不想反复读写整段 JSON 的场景。',
+    hashQuickQ1: 'Redis hashes 是什么？',
+    hashQuickA1: 'Redis hashes 在一个 key 下存储多个 field-value。用 HSET 创建或更新字段，用 HGET 读取单个字段，用 HMGET 读取指定字段；只有在 hash 足够小时才用 HGETALL 返回全部字段。',
+    hashQuickQ2: '应该用 HSET 还是 HMSET？',
+    hashQuickA2: '用 HSET。Redis 4.0 已将 HMSET 标记为 deprecated，因为 HSET 已支持一次设置一个或多个 field-value。旧教程可能仍写 HMSET，新代码应使用 HSET key field value [field value ...]。',
+    hashQuickQ3: 'Redis hashes 和 protocol 有什么关系？',
+    hashQuickA3: 'Redis 的网络协议是 RESP。客户端库会把 HSET、HGET、HGETALL 等命令编码成 bulk string 数组发送给 Redis，再把整数、bulk string、数组或 map-like 回复解析成对应语言的返回值。',
+    hashQuickQ4: '什么时候 hashes 比多个 string key 更省内存？',
+    hashQuickA4: '小对象通常适合放在一个 hash key 的多个字段里，而不是拆成很多独立 Redis key。Redis 可以对小 hash 使用紧凑编码，多个独立 key 则会产生更多 key 元数据开销。',
     stringsTitle: '字符串（Strings）',
     stringsDesc: '最基本的 Redis 类型。字符串存储任何字节序列（文本、整数、序列化的 JSON、二进制数据）。最大大小为 512 MB。',
     listsTitle: '列表（Lists）',
@@ -260,6 +296,12 @@ const translations: Record<string, Record<string, string>> = {
 
 export default function RedisDataStructuresGuide({ lang }: { lang: string }) {
   const t = translations[lang] || translations.en;
+  const hashQuickAnswers = [
+    { question: t.hashQuickQ1, answer: t.hashQuickA1 },
+    { question: t.hashQuickQ2, answer: t.hashQuickA2 },
+    { question: t.hashQuickQ3, answer: t.hashQuickA3 },
+    { question: t.hashQuickQ4, answer: t.hashQuickA4 },
+  ];
 
   const faqSchema = {
     '@context': 'https://schema.org',
@@ -270,6 +312,11 @@ export default function RedisDataStructuresGuide({ lang }: { lang: string }) {
       { '@type': 'Question', name: t.faq3q, acceptedAnswer: { '@type': 'Answer', text: t.faq3a } },
       { '@type': 'Question', name: t.faq4q, acceptedAnswer: { '@type': 'Answer', text: t.faq4a } },
       { '@type': 'Question', name: t.faq5q, acceptedAnswer: { '@type': 'Answer', text: t.faq5a } },
+      ...hashQuickAnswers.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: { '@type': 'Answer', text: item.answer },
+      })),
     ],
   };
 
@@ -304,6 +351,20 @@ export default function RedisDataStructuresGuide({ lang }: { lang: string }) {
       />
 
       <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '2rem' }}>{t.intro}</p>
+
+      <section style={{ background: '#fff7ed', border: '1px solid #fed7aa', borderRadius: '10px', padding: '1.5rem', marginBottom: '2rem' }}>
+        <h2 style={{ marginTop: 0 }}>{t.hashQuickTitle}</h2>
+        <p style={{ lineHeight: '1.7', marginBottom: '1.25rem' }}>{t.hashQuickIntro}</p>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))', gap: '0.75rem', marginBottom: '1.25rem' }}>
+          {hashQuickAnswers.map((item) => (
+            <div key={item.question} style={{ background: '#ffffff', border: '1px solid #fed7aa', borderRadius: '8px', padding: '1rem' }}>
+              <strong style={{ display: 'block', marginBottom: '0.5rem', color: '#7c2d12' }}>{item.question}</strong>
+              <p style={{ margin: 0, color: '#4a5568', lineHeight: 1.6 }}>{item.answer}</p>
+            </div>
+          ))}
+        </div>
+        <pre style={{ ...preStyle, marginBottom: 0 }}><code>{codeHashProtocol}</code></pre>
+      </section>
 
       <h2>{t.stringsTitle}</h2>
       <p>{t.stringsDesc}</p>
@@ -399,9 +460,9 @@ export default function RedisDataStructuresGuide({ lang }: { lang: string }) {
       <div style={{ marginTop: '3rem', padding: '1.5rem', background: '#f0f4f8', borderRadius: '8px' }}>
         <h2 style={{ marginTop: 0 }}>{t.relatedTitle}</h2>
         <ul style={{ paddingLeft: '1.25rem', lineHeight: '2' }}>
-          <li><a href="/en/tools/json-formatter" style={{ color: '#3182ce' }}>JSON Formatter</a></li>
-          <li><a href="/en/tools/hash-generator" style={{ color: '#3182ce' }}>Hash Generator</a></li>
-          <li><a href="/en/tools/cron-expression-generator" style={{ color: '#3182ce' }}>Cron Expression Generator</a></li>
+          <li><Link href={`/${lang}/tools/json-formatter`} style={{ color: '#3182ce' }}>JSON Formatter</Link></li>
+          <li><Link href={`/${lang}/tools/hash-generator`} style={{ color: '#3182ce' }}>Hash Generator</Link></li>
+          <li><Link href={`/${lang}/tools/cron-expression-generator`} style={{ color: '#3182ce' }}>Cron Expression Generator</Link></li>
         </ul>
       </div>
     </article>
