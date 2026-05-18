@@ -11,7 +11,8 @@
     "adsterra:ads-txt": "node scripts/adsterra-report.js ads-txt",
     "adsterra:setup": "node scripts/adsterra-report.js setup",
     "adsterra:readiness": "node scripts/adsterra-report.js readiness",
-    "adsterra:goal": "node scripts/adsterra-report.js goal"
+    "adsterra:goal": "node scripts/adsterra-report.js goal",
+    "content:verify": "node scripts/verify-content-ids.js"
   },
   "dependencies": {
     "@types/bcryptjs": "^2.4.6",

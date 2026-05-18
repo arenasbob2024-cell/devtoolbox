@@ -12221,20 +12221,6 @@ export const blogPosts: BlogPost[] = [
     },
   },
   {
-    slug: 'podman-vs-docker-2025',
-    title: 'Podman vs Docker: Container Runtime Comparison 2025',
-    description: 'Compare Podman and Docker container runtimes. Security, architecture, and developer experience.',
-    date: '2026-03-02',
-    author: 'DevToolBox',
-    readingTime: '12 min read',
-    keywords: ['podman vs docker 2025', 'container runtime', 'docker alternative', 'podman security', 'rootless containers'],
-    relatedTools: ['docker-compose-generator', 'yaml-validator'],
-    relatedPosts: ['docker-vs-kubernetes', 'docker-compose-vs-kubernetes'],
-    translations: {
-      zh: { title: 'Podman vs Docker：容器运行时对比 2025', description: '对比 Podman 和 Docker 容器运行时。安全性、架构和开发者体验。', readingTime: '12 分钟阅读', keywords: ['podman vs docker 2025', '容器运行时', 'docker 替代品', 'podman 安全性', '无根容器'] }
-    },
-  },
-  {
     slug: 'backstage-vs-mia-platform',
     title: 'Backstage vs Mia-Platform: Developer Portal Comparison',
     description: 'Compare Backstage and Mia-Platform for building developer portals. Features, extensibility, and community.',
@@ -12582,20 +12568,6 @@ export const blogPosts: BlogPost[] = [
     relatedPosts: ['pnpm-vs-yarn-vs-npm-2025', 'bun-vs-nodejs-performance-2025'],
     translations: {
       zh: { title: 'pnpm vs Bun vs Deno：包管理器和运行时对比 2025', description: '对比 pnpm、Bun 和 Deno 包管理和运行时。性能和生态系统。', readingTime: '13 分钟阅读', keywords: ['pnpm vs bun vs deno', '包管理器 2025', 'javascript 运行时对比', 'bun deno pnpm', 'npm 替代品 2025'] }
-    },
-  },
-  {
-    slug: 'figma-vs-sketch',
-    title: 'Figma vs Sketch: Design Tool Comparison 2025',
-    description: 'Compare Figma and Sketch for UI/UX design. Collaboration, pricing, and platform support.',
-    date: '2026-03-02',
-    author: 'DevToolBox',
-    readingTime: '12 min read',
-    keywords: ['figma vs sketch 2025', 'ui design tool', 'figma sketch comparison', 'design software 2025', 'collaborative design tool'],
-    relatedTools: ['color-palette-generator', 'css-gradient-generator'],
-    relatedPosts: ['tailwind-css-vs-bootstrap', 'css-framework-comparison'],
-    translations: {
-      zh: { title: 'Figma vs Sketch：设计工具对比 2025', description: '对比 Figma 和 Sketch UI/UX 设计。协作、定价和平台支持。', readingTime: '12 分钟阅读', keywords: ['figma vs sketch 2025', 'ui 设计工具', 'figma sketch 对比', '设计软件 2025', '协作设计工具'] }
     },
   },
   {
