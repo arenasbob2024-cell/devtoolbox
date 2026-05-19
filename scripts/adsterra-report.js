@@ -60,6 +60,7 @@ Options for goal:
 
 Options for gate:
   --days=7                 Days to include, ending yesterday by default.
+  --min-days=7             Minimum covered days required by the final gate.
   --start=YYYY-MM-DD       Start date.
   --end=YYYY-MM-DD         End date.
   --target=10              Required average daily revenue in USD.
@@ -1771,7 +1772,12 @@ function buildGoalReport({ payload, start, end, days, targetDailyRevenue }) {
   }
 
   const inferredDays = dailyRevenue.size || inclusiveDateCount(start, end) || days;
-  const normalizedDays = Number.isFinite(inferredDays) && inferredDays > 0 ? inferredDays : 1;
+  const requestedPeriodDays = inclusiveDateCount(start, end) || days;
+  const normalizedDays = Number.isFinite(requestedPeriodDays) && requestedPeriodDays > 0
+    ? requestedPeriodDays
+    : Number.isFinite(inferredDays) && inferredDays > 0
+    ? inferredDays
+    : 1;
   const averageDailyRevenue = totalRevenue / normalizedDays;
   const requiredTotalRevenue = targetDailyRevenue * normalizedDays;
   const gapPerDay = Math.max(0, targetDailyRevenue - averageDailyRevenue);
@@ -1794,6 +1800,8 @@ function buildGoalReport({ payload, start, end, days, targetDailyRevenue }) {
     gapPerDay,
     requiredAdditionalRevenue,
     rowCount: rows.length,
+    reportedDateCount: dailyRevenue.size,
+    missingDateCount: Math.max(0, normalizedDays - dailyRevenue.size),
     dailyRows,
   };
 }
@@ -1871,6 +1879,8 @@ function summarizeAdsTxtForGate(report) {
 
 async function buildGateReport(args) {
   const siteUrl = args['site-url'] || args.site || 'https://viadreams.cc';
+  const minDays = Number(args['min-days'] || 7);
+  const minimumCoveredDays = Number.isFinite(minDays) && minDays > 0 ? minDays : 7;
   const gateArgs = {
     ...args,
     'site-url': siteUrl,
@@ -1900,6 +1910,10 @@ async function buildGateReport(args) {
 
   if (!goalResult.report) {
     failures.push(goalResult.error);
+  } else if (goalResult.report.days < minimumCoveredDays) {
+    failures.push(
+      `Revenue proof covers ${goalResult.report.days} day(s), below the ${minimumCoveredDays}-day minimum for the final gate.`
+    );
   } else if (!goalResult.report.achieved) {
     failures.push(
       `Measured Adsterra revenue is ${money(goalResult.report.averageDailyRevenue)} / day, below the ${money(goalResult.report.targetDailyRevenue)} / day target.`
@@ -1922,6 +1936,7 @@ async function buildGateReport(args) {
       warningCount: readiness.warnings.length,
     },
     goal: goalResult.report,
+    minimumCoveredDays,
     failures,
   };
 }
@@ -1969,6 +1984,7 @@ function printGateReport(report) {
 
   if (report.goal) {
     console.log(`Revenue period: ${report.goal.start} to ${report.goal.end} (${report.goal.days} days)`);
+    console.log(`Minimum covered days: ${report.minimumCoveredDays}`);
     console.log(`Target average: ${money(report.goal.targetDailyRevenue)} / day`);
     console.log(`Actual average: ${money(report.goal.averageDailyRevenue)} / day`);
     console.log(`Total revenue: ${money(report.goal.totalRevenue)} of ${money(report.goal.requiredTotalRevenue)} required`);
@@ -2000,6 +2016,7 @@ function printGateMarkdownReport(report) {
     report.readiness.sourceInventoryMissing.length === 0;
   const vercelEnvOk = !report.readiness.vercelEnvChecked || report.readiness.requiredMissing.length === 0;
   const revenueVerified = Boolean(report.goal);
+  const revenuePeriodOk = Boolean(report.goal && report.goal.days >= report.minimumCoveredDays);
   const revenueOk = Boolean(report.goal?.achieved);
 
   console.log('# Adsterra Revenue Gate Report');
@@ -2015,7 +2032,8 @@ function printGateMarkdownReport(report) {
   console.log(`| Live ads.txt contains configured Adsterra seller line | ${report.adsTxt.live.checked ? `live=${report.adsTxt.live.hasValidLine ? 'present' : 'missing'}, matchesInput=${report.adsTxt.live.matchesInput ? 'yes' : 'no'}` : 'not checked'} | ${markdownStatus(adsTxtOk)} |`);
   console.log(`| Live ad inventory is present | liveMissing=${report.readiness.liveInventoryMissing.length}, sourceMissing=${report.readiness.sourceInventoryMissing.length} | ${markdownStatus(liveInventoryOk)} |`);
   console.log(`| Required production Adsterra env vars are present | ${report.readiness.vercelEnvChecked ? `missing=${report.readiness.requiredMissing.length}` : 'Vercel env not checked'} | ${markdownStatus(vercelEnvOk)} |`);
-  console.log(`| Real Adsterra revenue source is available | ${revenueVerified ? `${report.goal.rowCount} daily row(s)` : 'not verified'} | ${markdownStatus(revenueVerified)} |`);
+  console.log(`| Real Adsterra revenue source is available | ${revenueVerified ? `${report.goal.rowCount} source row(s)` : 'not verified'} | ${markdownStatus(revenueVerified)} |`);
+  console.log(`| Revenue proof covers the minimum final-gate window | ${report.goal ? `${report.goal.days} day(s) vs minimum ${report.minimumCoveredDays}` : 'not verified'} | ${markdownStatus(revenuePeriodOk)} |`);
   console.log(`| Average daily revenue is at least target | ${report.goal ? `${money(report.goal.averageDailyRevenue)} / day vs ${money(report.goal.targetDailyRevenue)} / day` : 'not verified'} | ${markdownStatus(revenueOk)} |`);
   console.log('| Sample data is not accepted | gate command rejects --sample | PASS |');
   console.log('');
@@ -2024,6 +2042,7 @@ function printGateMarkdownReport(report) {
     console.log('## Revenue');
     console.log('');
     console.log(`Period: ${report.goal.start} to ${report.goal.end} (${report.goal.days} days)`);
+    console.log(`Reported date rows: ${report.goal.reportedDateCount}`);
     console.log(`Total revenue: ${money(report.goal.totalRevenue)} of ${money(report.goal.requiredTotalRevenue)} required`);
     console.log(`Average daily revenue: ${money(report.goal.averageDailyRevenue)} / day`);
     console.log(`Gap: ${money(report.goal.gapPerDay)} / day, ${money(report.goal.requiredAdditionalRevenue)} total for this period`);
@@ -2057,9 +2076,9 @@ function printGateMarkdownReport(report) {
   }
   if (!revenueVerified) {
     console.log('3. Add a real revenue source:');
-    console.log('   `ADSTERRA_API_KEY=... ADSTERRA_ADS_TXT_SELLER_LINE="adsterra.com, <publisher-id>, DIRECT" npm run adsterra:gate -- --vercel-scope=arenas-projects-ac293cdb`');
+    console.log('   `ADSTERRA_API_KEY=... ADSTERRA_ADS_TXT_SELLER_LINE="adsterra.com, <publisher-id>, DIRECT" npm run adsterra:gate -- --days=7 --min-days=7 --vercel-scope=arenas-projects-ac293cdb`');
     console.log('   or');
-    console.log('   `npm run adsterra:gate -- --file=exports/adsterra-daily.csv --site-url=https://viadreams.cc --vercel-scope=arenas-projects-ac293cdb`');
+    console.log('   `npm run adsterra:gate -- --file=exports/adsterra-daily.csv --days=7 --min-days=7 --site-url=https://viadreams.cc --vercel-scope=arenas-projects-ac293cdb`');
   } else if (!revenueOk) {
     console.log('3. Close the measured revenue gap by scaling high-RPM placements and countries:');
     console.log('   `ADSTERRA_API_KEY=... npm run adsterra:report -- recommend --days=7 --min-impressions=1000`');

@@ -53,9 +53,9 @@ jobs:
       - name: Run revenue gate
         run: |
           set +e
-          npm run adsterra:gate -- --site-url=https://viadreams.cc --days="$DAYS" --target="$TARGET" --json > adsterra-revenue-gate.json
+          npm run adsterra:gate -- --site-url=https://viadreams.cc --days="$DAYS" --min-days="$DAYS" --target="$TARGET" --json > adsterra-revenue-gate.json
           gate_status=$?
-          npm run adsterra:gate -- --site-url=https://viadreams.cc --days="$DAYS" --target="$TARGET" --markdown > adsterra-revenue-gate.md || true
+          npm run adsterra:gate -- --site-url=https://viadreams.cc --days="$DAYS" --min-days="$DAYS" --target="$TARGET" --markdown > adsterra-revenue-gate.md || true
           echo "GATE_STATUS=$gate_status" >> "$GITHUB_ENV"
           exit 0
 
