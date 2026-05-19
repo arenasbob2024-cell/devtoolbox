@@ -37,6 +37,10 @@ Commands:
   domains     Fetch domains as CSV.
   placements  Fetch placements as CSV.
 
+Global options:
+  --local-env-file=.env.local
+                           Load local env values for API/seller-line checks without printing secrets.
+
 Options for stats:
   --days=7                 Days to include, ending yesterday by default.
   --start=YYYY-MM-DD       Start date.
@@ -82,19 +86,22 @@ Options for recommend:
   --json                   Print machine-readable recommendations.
 
 Options for readiness:
-  --env-file=.env.local     Env file to inspect in addition to process env.
+  --local-env-file=.env.local
+                           Env file to inspect in addition to process env.
   --vercel-scope=SLUG       Also inspect Vercel env var names via vercel env ls.
   --site-url=https://...    Also fetch and verify the live /ads.txt response.
   --json                   Print machine-readable readiness result.
 
 Options for ads-txt:
   --seller-line='...'       Preflight a seller line copied from Adsterra.
-  --env-file=.env.local     Env file to inspect in addition to process env.
+  --local-env-file=.env.local
+                           Env file to inspect in addition to process env.
   --site-url=https://...    Also fetch and verify the live /ads.txt response.
   --json                   Print machine-readable ads.txt validation result.
 
 Options for setup:
-  --env-file=.env.local     Env file to inspect in addition to process env.
+  --local-env-file=.env.local
+                           Env file to inspect in addition to process env.
   --vercel-scope=SLUG       Include scoped Vercel env add commands.
   --site-url=https://...    Also fetch and verify the live /ads.txt response.
   --csv                    Print CSV for copy/paste into an operating sheet.
@@ -196,6 +203,10 @@ function parseArgs(argv) {
     args[key] = value ?? true;
   }
   return args;
+}
+
+function getLocalEnvFileArg(args) {
+  return args['local-env-file'] || args['env-file'] || '.env.local';
 }
 
 function formatDate(date) {
@@ -389,6 +400,39 @@ async function readOptionalTextFile(filePath) {
       text: '',
     };
   }
+}
+
+async function loadProcessEnvFromFile(filePath) {
+  if (!filePath || filePath === 'false') {
+    return {
+      path: '',
+      found: false,
+      loadedNames: [],
+    };
+  }
+
+  const { text, path } = await readOptionalTextFile(filePath);
+  if (!text) {
+    return {
+      path,
+      found: false,
+      loadedNames: [],
+    };
+  }
+
+  const fileEnv = parseEnvFileText(text);
+  const loadedNames = [];
+  for (const [key, value] of Object.entries(fileEnv)) {
+    if (process.env[key] !== undefined || value === '') continue;
+    process.env[key] = value;
+    loadedNames.push(key);
+  }
+
+  return {
+    path,
+    found: true,
+    loadedNames,
+  };
 }
 
 async function listOptionalCsvFiles(dirPath) {
@@ -1143,7 +1187,7 @@ function buildReadinessActions(report) {
 }
 
 async function buildReadinessReport(args) {
-  const envFile = args['env-file'] || '.env.local';
+  const envFile = getLocalEnvFileArg(args);
   const vercelScope = args['vercel-scope'] || args.scope || '';
   const siteUrl = args['site-url'] || args.site || '';
   const [
@@ -1349,7 +1393,7 @@ async function buildSetupReport(args) {
 }
 
 async function buildAdsTxtReport(args) {
-  const envFile = args['env-file'] || '.env.local';
+  const envFile = getLocalEnvFileArg(args);
   const siteUrl = args['site-url'] || args.site || '';
   const [
     { text: envFileText, path: envFilePath },
@@ -2152,6 +2196,8 @@ async function main() {
     console.log(HELP.trim());
     return;
   }
+
+  await loadProcessEnvFromFile(getLocalEnvFileArg(args));
 
   if (command === 'domains') {
     console.log(await request('domains.csv'));

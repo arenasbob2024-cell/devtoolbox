@@ -78,6 +78,8 @@ ADSTERRA_API_KEY=... ADSTERRA_ADS_TXT_SELLER_LINE='adsterra.com, <publisher-id>,
 ADSTERRA_API_KEY=... ADSTERRA_ADS_TXT_SELLER_LINE='adsterra.com, <publisher-id>, DIRECT' npm run adsterra:gate -- --days=7 --min-days=7 --vercel-scope=arenas-projects-ac293cdb --markdown > adsterra-revenue-gate.md
 ```
 
+The Adsterra helper auto-loads `.env.local` for local checks, without printing secret values. Shell-provided env vars still take precedence. Use `--local-env-file=PATH` for a different file.
+
 The workflow template in `docs/adsterra-revenue-goal.workflow.yml` can be enabled as `.github/workflows/adsterra-revenue-goal.yml` with a GitHub token that has `workflow` scope. It passes only when live `ads.txt` contains the configured Adsterra seller line and the rolling Adsterra API report averages at least `$10/day` across the minimum final-gate window, which defaults to 7 days.
 
 ---

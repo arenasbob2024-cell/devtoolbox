@@ -183,6 +183,8 @@ Then decide:
 - Build new content for countries with high CPM and visible search demand.
 - Review `placement_sub_id` tracking for Smartlink experiments and remove weak surfaces quickly.
 
+The helper auto-loads `.env.local` for local API/seller-line checks, so local operators can add `ADSTERRA_API_KEY` and `ADSTERRA_ADS_TXT_SELLER_LINE` there instead of exporting them in every shell. Existing shell env values take precedence, secret values are not printed, and `--local-env-file=PATH` can point checks at a different local env file.
+
 If the Adsterra API token is not available, export placement and country reports from the dashboard as CSV and run:
 
 ```bash
