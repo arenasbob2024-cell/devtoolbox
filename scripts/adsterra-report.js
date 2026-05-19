@@ -774,6 +774,17 @@ const ADSTERRA_SETUP_ITEMS = [
   {
     priority: 'P2',
     group: 'Dedicated RPM placements',
+    name: 'Mobile rectangle',
+    envNames: ['NEXT_PUBLIC_ADSTERRA_MOBILE_RECTANGLE_KEY'],
+    adsterraAction: 'Create a dedicated mobile 300x250 iframe/banner unit',
+    format: 'iframe banner',
+    size: '300x250',
+    placement: 'mobile rectangles across homepage, tool, blog, tools index, and category pages',
+    purpose: 'Separate mobile rectangle RPM from desktop sidebar traffic',
+  },
+  {
+    priority: 'P2',
+    group: 'Dedicated RPM placements',
     name: 'Homepage inline leaderboard',
     envNames: ['NEXT_PUBLIC_ADSTERRA_HOME_INLINE_KEY'],
     adsterraAction: 'Create a dedicated 728x90 iframe/banner unit',
@@ -964,6 +975,7 @@ function buildEnvChecks(env) {
       severity: 'recommended',
       checks: [
         ['NEXT_PUBLIC_ADSTERRA_HOME_INLINE_KEY', 'Homepage inline slot'],
+        ['NEXT_PUBLIC_ADSTERRA_MOBILE_RECTANGLE_KEY', 'Mobile rectangle slot'],
         ['NEXT_PUBLIC_ADSTERRA_TOOL_TOP_KEY', 'Tool page top slot'],
         ['NEXT_PUBLIC_ADSTERRA_TOOL_MID_KEY', 'Tool page post-tool slot'],
         ['NEXT_PUBLIC_ADSTERRA_TOOL_BOTTOM_KEY', 'Tool page bottom slot'],

@@ -13,6 +13,7 @@ declare global {
     __DEVTOOLBOX_ADS__?: {
       topKey?: string;
       sidebarKey?: string;
+      mobileRectangleKey?: string;
     };
   }
 }
@@ -43,7 +44,10 @@ export default function MobileRectangleAd({ placement, category }: MobileRectang
 
   if (!isMobile) return null;
 
-  const adKey = window.__DEVTOOLBOX_ADS__?.sidebarKey || process.env.NEXT_PUBLIC_ADSTERRA_SIDEBAR_KEY;
+  const adKey = window.__DEVTOOLBOX_ADS__?.mobileRectangleKey ||
+    process.env.NEXT_PUBLIC_ADSTERRA_MOBILE_RECTANGLE_KEY ||
+    window.__DEVTOOLBOX_ADS__?.sidebarKey ||
+    process.env.NEXT_PUBLIC_ADSTERRA_SIDEBAR_KEY;
 
   return (
     <AdsterraIframeBanner

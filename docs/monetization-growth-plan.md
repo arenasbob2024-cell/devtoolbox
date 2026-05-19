@@ -41,6 +41,7 @@ The codebase now supports separate Adsterra keys for high-signal placements:
 | `NEXT_PUBLIC_ADSTERRA_BLOG_ARTICLE_SIDEBAR_KEY` | Blog article desktop sidebar 300x250 |
 | `NEXT_PUBLIC_ADSTERRA_CATEGORY_TOP_KEY` | Category landing page, above the tool grid |
 | `NEXT_PUBLIC_ADSTERRA_CATEGORY_BOTTOM_KEY` | Category landing page, after the tool grid |
+| `NEXT_PUBLIC_ADSTERRA_MOBILE_RECTANGLE_KEY` | Mobile-only 300x250 rectangles across homepage, tools, categories, and blog pages |
 | `NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_KEY` | Mobile-only bottom sticky banner |
 | `NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_WIDTH` | Optional sticky banner width, default `320` |
 | `NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_HEIGHT` | Optional sticky banner height, default `50` |
@@ -144,7 +145,7 @@ The global layout also preconnects to the Adsterra iframe script host and the co
 
 Tool pages now include a post-tool Adsterra slot with `placement=tool-mid`. Configure `NEXT_PUBLIC_ADSTERRA_TOOL_MID_KEY` as a separate unit to measure revenue from visitors who reached the tool body and are still engaged enough to share, comment, or continue browsing. If the key is missing or the iframe appears empty, the surface falls back to a Category Sponsor CTA through `tool-mid-ad-fallback` or `tool-mid-ad-empty`.
 
-Mobile tool and blog article pages now also show post-action 300x250 rectangles with `placement=tool-mobile-rectangle` and `placement=blog-mobile-rectangle`. They only mount on mobile viewports, so desktop does not create hidden ad requests, and they reuse `NEXT_PUBLIC_ADSTERRA_SIDEBAR_KEY` until a dedicated mobile rectangle unit is worth splitting out.
+Mobile pages now also show 300x250 rectangles with placements such as `home-mobile-rectangle`, `tool-mobile-rectangle`, `blog-mobile-rectangle`, `tools-index-mobile-rectangle`, and `category-mobile-rectangle`. They only mount on mobile viewports, so desktop does not create hidden ad requests. Set `NEXT_PUBLIC_ADSTERRA_MOBILE_RECTANGLE_KEY` to isolate mobile rectangle RPM; until then they reuse `NEXT_PUBLIC_ADSTERRA_SIDEBAR_KEY`.
 
 The mobile sticky slot now also recovers into a compact direct-sponsor bar. If `NEXT_PUBLIC_ADSTERRA_MOBILE_STICKY_KEY` is not configured, the site shows a dismissible mobile-only sponsor CTA with `placement=mobile-sticky-ad-fallback` after the cookie notice is dismissed; if the configured mobile iframe appears empty after load time, it recovers through `placement=mobile-sticky-ad-empty` after the notice is dismissed. The real Adsterra mobile iframe still mounts as soon as the page is ready so cookie-banner dismissal does not delay the ad request. Closing the bar is remembered for 24 hours in local storage so the test can monetize mobile visibility without reappearing on every reload.
 

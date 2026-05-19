@@ -40,6 +40,7 @@ declare global {
     __DEVTOOLBOX_ADS__?: {
       topKey?: string;
       sidebarKey?: string;
+      mobileRectangleKey?: string;
     };
   }
 }

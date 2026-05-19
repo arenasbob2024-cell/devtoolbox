@@ -72,6 +72,7 @@ export default function RootLayout({
   const adRuntimeConfigScript = `window.__DEVTOOLBOX_ADS__=${JSON.stringify({
     topKey: process.env.NEXT_PUBLIC_ADSTERRA_TOP_KEY || '',
     sidebarKey: process.env.NEXT_PUBLIC_ADSTERRA_SIDEBAR_KEY || '',
+    mobileRectangleKey: process.env.NEXT_PUBLIC_ADSTERRA_MOBILE_RECTANGLE_KEY || '',
   }).replace(/</g, '\\u003c')};`;
 
   return (
