@@ -73,12 +73,15 @@ Useful checks:
 
 ```bash
 npm run adsterra:readiness -- --vercel-scope=arenas-projects-ac293cdb --site-url=https://viadreams.cc
+npm run --silent adsterra:handoff -- --vercel-scope=arenas-projects-ac293cdb --site-url=https://viadreams.cc > adsterra-handoff.md
 ADSTERRA_API_KEY=... npm run adsterra:goal -- --days=7 --target=10
 ADSTERRA_API_KEY=... ADSTERRA_ADS_TXT_SELLER_LINE='adsterra.com, <publisher-id>, DIRECT' npm run adsterra:gate -- --days=7 --min-days=7 --vercel-scope=arenas-projects-ac293cdb
 ADSTERRA_API_KEY=... ADSTERRA_ADS_TXT_SELLER_LINE='adsterra.com, <publisher-id>, DIRECT' npm run adsterra:gate -- --days=7 --min-days=7 --vercel-scope=arenas-projects-ac293cdb --markdown > adsterra-revenue-gate.md
 ```
 
 The Adsterra helper auto-loads `.env.local` for local checks, without printing secret values. Start from `.env.example`, keep real values out of git, and use `--local-env-file=PATH` for a different file. Shell-provided env vars still take precedence.
+
+Use `adsterra:handoff` when an operator needs a redacted Markdown checklist of the exact missing dashboard values, Vercel env names, and final gate command. It is a setup handoff, not revenue proof.
 
 The workflow template in `docs/adsterra-revenue-goal.workflow.yml` can be enabled as `.github/workflows/adsterra-revenue-goal.yml` with a GitHub token that has `workflow` scope. It passes only when live `ads.txt` contains the configured Adsterra seller line and the rolling Adsterra API report averages at least `$10/day` across the minimum final-gate window, which defaults to 7 days.
 

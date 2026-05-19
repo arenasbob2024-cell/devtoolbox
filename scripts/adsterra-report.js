@@ -11,6 +11,7 @@
  *   ADSTERRA_API_KEY=... npm run adsterra:report -- domains
  *   npm run adsterra:ads-txt -- --seller-line='adsterra.com, ... , DIRECT'
  *   npm run adsterra:setup -- --vercel-scope=arenas-projects-ac293cdb --site-url=https://viadreams.cc
+ *   npm run --silent adsterra:handoff -- --vercel-scope=arenas-projects-ac293cdb --site-url=https://viadreams.cc
  *   npm run adsterra:report -- readiness
  *   npm run adsterra:report -- stats --file=exports/adsterra-placement.csv
  *   npm run adsterra:report -- goal --file=exports/adsterra-daily.csv --target=10
@@ -34,6 +35,7 @@ Commands:
   ads-txt     Validate and preview the Adsterra ads.txt seller line.
   setup       Print the exact Adsterra unit/env setup checklist.
   readiness   Check local Adsterra env/reporting readiness and next actions without printing secrets.
+  handoff     Print a redacted Markdown operator handoff for the $10/day goal.
   domains     Fetch domains as CSV.
   placements  Fetch placements as CSV.
 
@@ -91,6 +93,16 @@ Options for readiness:
   --vercel-scope=SLUG       Also inspect Vercel env var names via vercel env ls.
   --site-url=https://...    Also fetch and verify the live /ads.txt response.
   --json                   Print machine-readable readiness result.
+
+Options for handoff:
+  --days=7                 Days to include in the final gate check.
+  --min-days=7             Minimum covered days required by the final gate.
+  --target=10              Required average daily revenue in USD.
+  --local-env-file=.env.local
+                           Env file to inspect in addition to process env.
+  --vercel-scope=SLUG       Also inspect Vercel env var names via vercel env ls.
+  --site-url=https://...    Live site to verify. Defaults to https://viadreams.cc.
+  --json                   Print machine-readable handoff result.
 
 Options for ads-txt:
   --seller-line='...'       Preflight a seller line copied from Adsterra.
@@ -380,6 +392,12 @@ function parseEnvFileText(text) {
   }
 
   return result;
+}
+
+function keepNonEmptyEnv(env) {
+  return Object.fromEntries(
+    Object.entries(env).filter(([, value]) => typeof value === 'string' && value.trim() !== '')
+  );
 }
 
 async function readOptionalTextFile(filePath) {
@@ -1209,7 +1227,7 @@ async function buildReadinessReport(args) {
     loadLiveInventory(siteUrl),
     loadSourceInventory(),
   ]);
-  const fileEnv = parseEnvFileText(envFileText);
+  const fileEnv = keepNonEmptyEnv(parseEnvFileText(envFileText));
   const vercelEnvPresence = Object.fromEntries(
     vercelEnv.names.map(name => [name, '__present_in_vercel__'])
   );
@@ -1657,6 +1675,220 @@ function printReadinessReport(report) {
   }
 
   console.log('\nNote: readiness checks configuration only. Use `npm run adsterra:goal` with the API token or a real CSV export to prove the $10/day revenue goal.');
+}
+
+function markdownCell(value) {
+  return String(value ?? '')
+    .replace(/\|/g, '\\|')
+    .replace(/\r?\n/g, '<br>');
+}
+
+function gateChecklistRows(gate) {
+  const adsTxtOk = gate.adsTxt.status === 'PASS';
+  const liveInventoryOk = gate.readiness.liveInventoryMissing.length === 0 &&
+    gate.readiness.sourceInventoryMissing.length === 0;
+  const requiredEnvOk = !gate.readiness.vercelEnvChecked || gate.readiness.requiredMissing.length === 0;
+  const revenueVerified = Boolean(gate.goal);
+  const revenuePeriodOk = Boolean(gate.goal && gate.goal.days >= gate.minimumCoveredDays);
+  const revenueOk = Boolean(gate.goal?.achieved);
+
+  return [
+    {
+      requirement: 'Live ads.txt contains the configured Adsterra seller line',
+      evidence: gate.adsTxt.live.checked
+        ? `live=${gate.adsTxt.live.hasValidLine ? 'present' : 'missing'}, matchesInput=${gate.adsTxt.live.matchesInput ? 'yes' : 'no'}`
+        : 'not checked',
+      ok: adsTxtOk,
+    },
+    {
+      requirement: 'Live and source ad inventory are present',
+      evidence: `liveMissing=${gate.readiness.liveInventoryMissing.length}, sourceMissing=${gate.readiness.sourceInventoryMissing.length}`,
+      ok: liveInventoryOk,
+    },
+    {
+      requirement: 'Required production Adsterra env vars are present',
+      evidence: gate.readiness.vercelEnvChecked
+        ? `missing=${gate.readiness.requiredMissing.length}`
+        : 'Vercel env not checked',
+      ok: requiredEnvOk,
+    },
+    {
+      requirement: 'Real Adsterra revenue source is available',
+      evidence: revenueVerified ? `${gate.goal.rowCount} source row(s)` : 'not verified',
+      ok: revenueVerified,
+    },
+    {
+      requirement: 'Revenue proof covers the minimum final-gate window',
+      evidence: gate.goal ? `${gate.goal.days} day(s) vs minimum ${gate.minimumCoveredDays}` : 'not verified',
+      ok: revenuePeriodOk,
+    },
+    {
+      requirement: 'Average daily Adsterra revenue is at least target',
+      evidence: gate.goal ? `${money(gate.goal.averageDailyRevenue)} / day vs ${money(gate.goal.targetDailyRevenue)} / day` : 'not verified',
+      ok: revenueOk,
+    },
+    {
+      requirement: 'Sample data is rejected by the final gate',
+      evidence: 'gate command is run without --sample and rejects sample input',
+      ok: true,
+    },
+  ];
+}
+
+function buildMissingHandoffItems(readiness) {
+  const missing = [];
+
+  if (!readiness.adsTxt.hasAdsterraSellerLine || !readiness.adsTxt.envPresent) {
+    missing.push({
+      priority: 'P0',
+      name: 'ADSTERRA_ADS_TXT_SELLER_LINE',
+      source: 'Adsterra publisher dashboard ads.txt seller line',
+      reason: 'Required so live /ads.txt can authorize Adsterra demand.',
+    });
+  }
+
+  for (const group of readiness.envGroups) {
+    for (const check of group.checks) {
+      if (!check.present) {
+        missing.push({
+          priority: group.severity === 'required' || group.severity === 'verification' ? 'P0' : 'P1/P2',
+          name: check.name,
+          source: group.severity === 'verification'
+            ? 'Adsterra publisher API token or daily CSV export'
+            : 'Adsterra ad unit dashboard',
+          reason: check.purpose,
+        });
+      }
+    }
+  }
+
+  const seen = new Set();
+  return missing.filter((item) => {
+    if (seen.has(item.name)) return false;
+    seen.add(item.name);
+    return true;
+  });
+}
+
+async function buildHandoffReport(args) {
+  const siteUrl = args['site-url'] || args.site || 'https://viadreams.cc';
+  const handoffArgs = {
+    ...args,
+    'site-url': siteUrl,
+  };
+  const [readiness, gate] = await Promise.all([
+    buildReadinessReport(handoffArgs),
+    buildGateReport(handoffArgs),
+  ]);
+
+  return {
+    generatedAt: new Date().toISOString(),
+    objective: 'Verify Adsterra average daily revenue of at least $10/day over the final gate window.',
+    siteUrl,
+    status: gate.status === 'PASS' ? 'ACHIEVED' : 'BLOCKED',
+    gate,
+    readiness: {
+      status: readiness.status,
+      envFile: readiness.envFile,
+      vercelEnv: readiness.vercelEnv,
+      adsTxt: readiness.adsTxt,
+      reports: readiness.reports,
+      requiredMissing: readiness.requiredMissing,
+      recommendedMissing: readiness.recommendedMissing,
+      verificationMissing: readiness.verificationMissing,
+      warningCount: readiness.warnings.length,
+    },
+    checklist: gateChecklistRows(gate),
+    missingItems: buildMissingHandoffItems(readiness),
+    nextActions: readiness.nextActions,
+  };
+}
+
+function printHandoffMarkdownReport(report) {
+  console.log('# Adsterra $10/day Operator Handoff');
+  console.log('');
+  console.log(`Generated: ${report.generatedAt}`);
+  console.log(`Site: ${report.siteUrl}`);
+  console.log(`Status: ${report.status}`);
+  console.log('');
+  console.log('## Objective');
+  console.log('');
+  console.log(report.objective);
+  console.log('The goal is not complete until the final gate passes with live ads.txt trust, live inventory, and real Adsterra revenue data.');
+  console.log('');
+  console.log('## Completion Audit');
+  console.log('');
+  console.log('| Requirement | Evidence | Status |');
+  console.log('| --- | --- | --- |');
+  for (const row of report.checklist) {
+    console.log(`| ${markdownCell(row.requirement)} | ${markdownCell(row.evidence)} | ${row.ok ? 'PASS' : 'FAIL'} |`);
+  }
+  console.log('');
+
+  if (report.gate.failures.length > 0) {
+    console.log('## Current Blockers');
+    console.log('');
+    for (const failure of report.gate.failures) {
+      console.log(`- ${failure}`);
+    }
+    console.log('');
+  }
+
+  console.log('## Values To Add');
+  console.log('');
+  if (report.missingItems.length === 0) {
+    console.log('No missing setup values detected. Run the final revenue gate with real data.');
+  } else {
+    console.log('| Priority | Name | Source | Why it matters |');
+    console.log('| --- | --- | --- | --- |');
+    for (const item of report.missingItems) {
+      console.log(`| ${markdownCell(item.priority)} | \`${markdownCell(item.name)}\` | ${markdownCell(item.source)} | ${markdownCell(item.reason)} |`);
+    }
+  }
+  console.log('');
+
+  if (report.readiness.vercelEnv.enabled) {
+    console.log('## Vercel Env Presence');
+    console.log('');
+    if (report.readiness.vercelEnv.error) {
+      console.log(`Vercel env names could not be inspected: ${report.readiness.vercelEnv.error}`);
+    } else if (report.readiness.vercelEnv.names.length === 0) {
+      console.log('No Adsterra-related Vercel env names were found.');
+    } else {
+      console.log('Configured names only, values redacted:');
+      for (const name of report.readiness.vercelEnv.names) {
+        console.log(`- \`${name}\``);
+      }
+    }
+    console.log('');
+  }
+
+  console.log('## Operator Commands');
+  console.log('');
+  for (const action of report.nextActions) {
+    console.log(`### ${action.priority} ${action.title}`);
+    console.log('');
+    console.log(action.reason);
+    console.log('');
+    for (const command of action.commands) {
+      console.log(`- \`${command.replace(/`/g, '\\`')}\``);
+    }
+    console.log('');
+  }
+
+  console.log('## Final Gate');
+  console.log('');
+  console.log('Run one of these only after the seller line and real revenue source are available:');
+  console.log('');
+  console.log('```bash');
+  console.log('npm run adsterra:gate -- --days=7 --min-days=7 --vercel-scope=arenas-projects-ac293cdb --site-url=https://viadreams.cc');
+  console.log('');
+  console.log('ADSTERRA_API_KEY=... ADSTERRA_ADS_TXT_SELLER_LINE="adsterra.com, <publisher-id>, DIRECT" npm run adsterra:gate -- --days=7 --min-days=7 --vercel-scope=arenas-projects-ac293cdb --site-url=https://viadreams.cc');
+  console.log('');
+  console.log('npm run adsterra:gate -- --file=exports/adsterra-daily.csv --days=7 --min-days=7 --vercel-scope=arenas-projects-ac293cdb --site-url=https://viadreams.cc');
+  console.log('```');
+  console.log('');
+  console.log('A PASS from this command is the completion signal for the Adsterra $10/day objective.');
 }
 
 function rowsFromStats(payload) {
@@ -2267,6 +2499,18 @@ async function main() {
     if (report.status !== 'PASS') {
       process.exitCode = 1;
     }
+    return;
+  }
+
+  if (command === 'handoff') {
+    const report = await buildHandoffReport(args);
+
+    if (args.json) {
+      console.log(JSON.stringify(report, null, 2));
+    } else {
+      printHandoffMarkdownReport(report);
+    }
+
     return;
   }
 

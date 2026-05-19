@@ -165,6 +165,7 @@ npm run adsterra:ads-txt -- --site-url=https://viadreams.cc
 npm run adsterra:setup -- --vercel-scope=arenas-projects-ac293cdb --site-url=https://viadreams.cc
 npm run adsterra:setup -- --vercel-scope=arenas-projects-ac293cdb --site-url=https://viadreams.cc --csv
 npm run adsterra:readiness -- --vercel-scope=arenas-projects-ac293cdb --site-url=https://viadreams.cc
+npm run --silent adsterra:handoff -- --vercel-scope=arenas-projects-ac293cdb --site-url=https://viadreams.cc > adsterra-handoff.md
 ADSTERRA_API_KEY=... npm run adsterra:report -- stats --days=7 --group-by=placement
 ADSTERRA_API_KEY=... npm run adsterra:report -- stats --days=7 --group-by=country
 ADSTERRA_API_KEY=... npm run adsterra:report -- stats --days=7 --group-by=placement_sub_id
@@ -203,6 +204,8 @@ The `adsterra:setup` command prints the operational checklist for creating Adste
 The `adsterra:readiness` command checks local, optional Vercel environment, and optional live-site readiness without printing secret values. It reports whether the active Adsterra ad unit env vars are present, whether every supported dedicated placement key is configured for clean RPM reporting, whether high-impact experiments such as Smart Direct Link / mobile sticky / Social Bar are configured, whether `/ads.txt` still lacks the seller line env value or live seller line, whether an API token or CSV export is available for a real revenue goal check, and a prioritized next-action list with the exact Vercel env commands to run after creating the missing Adsterra units.
 
 When `--site-url` is provided, `adsterra:readiness` also fetches representative live pages and checks the real `data-ad-placement` markers for homepage, a high-traffic tool workspace, a blog article, blog listing, all-tools index, and category landing inventory. It also source-checks client-rendered mobile rectangles that do not appear in raw HTML, such as `tool-mobile-rectangle` and `blog-mobile-rectangle`. This catches broken deployments or missing mid-list placements before waiting for Adsterra reports, and it gives the weekly operator a concrete list of live placements to compare against API/CSV revenue by placement.
+
+The `adsterra:handoff` command turns the current readiness and final-gate state into a redacted Markdown operator checklist. Use it when the person with Adsterra dashboard access needs the exact missing values to add, the configured Vercel env names, and the final command that must pass. It does not print secret values and does not replace the final revenue gate.
 
 The `adsterra:goal` command checks measured revenue against the requested date window. It prints PASS only when the measured average daily Adsterra revenue is at least the target, and exits non-zero when the period is below target so deployment or optimization work is not mistaken for verified revenue.
 
