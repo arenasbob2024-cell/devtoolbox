@@ -38,6 +38,15 @@ interface ToolSearchNoResultsEvent {
   placement?: string;
 }
 
+interface ToolUsageEvent {
+  toolId: string;
+  category?: string;
+  language?: string;
+  placement?: string;
+  action?: string;
+  actionCount?: number;
+}
+
 export function trackMonetizationClick({
   type,
   id,
@@ -120,6 +129,64 @@ export function trackToolSearchNoResults({
     result_count: 0,
     language: language || 'unknown',
     placement: placement || 'unknown',
+  });
+}
+
+export function trackToolWorkspaceSeen({
+  toolId,
+  category,
+  language,
+  placement,
+}: ToolUsageEvent) {
+  if (typeof window === 'undefined' || typeof window.gtag !== 'function') {
+    return;
+  }
+
+  window.gtag('event', 'tool_workspace_seen', {
+    tool_id: toolId,
+    tool_category: category || 'unknown',
+    language: language || 'unknown',
+    placement: placement || 'unknown',
+  });
+}
+
+export function trackToolEngagementStart({
+  toolId,
+  category,
+  language,
+  placement,
+  action,
+}: ToolUsageEvent) {
+  if (typeof window === 'undefined' || typeof window.gtag !== 'function') {
+    return;
+  }
+
+  window.gtag('event', 'tool_engagement_start', {
+    tool_id: toolId,
+    tool_category: category || 'unknown',
+    language: language || 'unknown',
+    placement: placement || 'unknown',
+    action: action || 'unknown',
+  });
+}
+
+export function trackToolEngagementQualified({
+  toolId,
+  category,
+  language,
+  placement,
+  actionCount,
+}: ToolUsageEvent) {
+  if (typeof window === 'undefined' || typeof window.gtag !== 'function') {
+    return;
+  }
+
+  window.gtag('event', 'tool_engagement_qualified', {
+    tool_id: toolId,
+    tool_category: category || 'unknown',
+    language: language || 'unknown',
+    placement: placement || 'unknown',
+    action_count: actionCount || 0,
   });
 }
 

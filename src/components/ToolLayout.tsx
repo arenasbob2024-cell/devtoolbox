@@ -12,6 +12,7 @@ import ShareBar from './ugc/ShareBar';
 import AffiliateCard from './AffiliateCard';
 import CommentSection from './CommentSection';
 import MobileRectangleAd from './MobileRectangleAd';
+import ToolEngagementTracker from './ToolEngagementTracker';
 
 interface ToolLayoutProps {
   title: string;
@@ -75,7 +76,9 @@ export default function ToolLayout({ title, description, children, toolId }: Too
         {/* Main Content */}
         <div className="tool-page-main" style={{ flex: 1, minWidth: 0 }}>
           <div className="card">
-            {children}
+            <ToolEngagementTracker toolId={toolId} category={currentTool?.category}>
+              {children}
+            </ToolEngagementTracker>
           </div>
           <AdSlot
             size="leaderboard"

@@ -20,6 +20,8 @@ Last updated: 2026-05-18
 3. Grow high-intent organic traffic to tool pages and comparison/tutorial blog pages.
 4. Add non-ad revenue where intent is strong: affiliate links, sponsorships, and downloadable templates.
 
+Before adding more blog CTAs or ad surfaces, check whether visitors actually use the tools. The tool workspace now emits `tool_workspace_seen`, `tool_engagement_start`, and `tool_engagement_qualified` events so blog pageviews can be separated from real product usage. See `docs/tool-usage-diagnosis.md` for the weekly read and bucket logic.
+
 ## New configurable ad slots
 
 The codebase now supports separate Adsterra keys for high-signal placements:
